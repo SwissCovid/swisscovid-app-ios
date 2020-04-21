@@ -83,11 +83,7 @@ private class NSInformModuleCTAView: UIView {
             make.edges.equalToSuperview().inset(NSPadding.medium)
         }
 
-        if NSContentEnvironment.current.hasSymptomInputs {
-            infoLabel.text = "inform_text_homescreen".ub_localized
-        } else {
-            infoLabel.text = "inform_text_homescreen_nosymptoms".ub_localized
-        }
+        infoLabel.text = "inform_text_homescreen_nosymptoms".ub_localized
 
         informButton.touchUpCallback = {
             self.informCallback?()

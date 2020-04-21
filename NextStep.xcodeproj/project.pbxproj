@@ -40,7 +40,6 @@
 		24780B5A2431B5A9003BB26C /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B552431B5A9003BB26C /* NSPushHandler.swift */; };
 		24780B5B2431B5A9003BB26C /* NSDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* NSDateFormatter.swift */; };
 		24780B5C2431B5A9003BB26C /* NSTracingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B572431B5A9003BB26C /* NSTracingManager.swift */; };
-		24780B5D2431B5A9003BB26C /* NSContentEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B582431B5A9003BB26C /* NSContentEnvironment.swift */; };
 		24780B5E2431B5A9003BB26C /* NSTracingLocalPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B592431B5A9003BB26C /* NSTracingLocalPush.swift */; };
 		24D5EF682448CAB900C197D6 /* NSUIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF672448CAB900C197D6 /* NSUIStateManager.swift */; };
 		24D5EF6A2448CAE800C197D6 /* NSUIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* NSUIStateModel.swift */; };
@@ -156,7 +155,6 @@
 		24780B552431B5A9003BB26C /* NSPushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushHandler.swift; sourceTree = "<group>"; };
 		24780B562431B5A9003BB26C /* NSDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatter.swift; sourceTree = "<group>"; };
 		24780B572431B5A9003BB26C /* NSTracingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTracingManager.swift; sourceTree = "<group>"; };
-		24780B582431B5A9003BB26C /* NSContentEnvironment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSContentEnvironment.swift; sourceTree = "<group>"; };
 		24780B592431B5A9003BB26C /* NSTracingLocalPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTracingLocalPush.swift; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* NSUIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUIStateManager.swift; sourceTree = "<group>"; };
 		24D5EF692448CAE800C197D6 /* NSUIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUIStateModel.swift; sourceTree = "<group>"; };
@@ -416,7 +414,6 @@
 		24780AF9242DF828003BB26C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				24780B582431B5A9003BB26C /* NSContentEnvironment.swift */,
 				24780B0A242DFCFB003BB26C /* NSTabBarController.swift */,
 				24780B23242DFE6D003BB26C /* NSNavigationController.swift */,
 			);
@@ -966,7 +963,6 @@
 				DC702B0B243F6FAE0066C773 /* UBPListValue.swift in Sources */,
 				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,
-				24780B5D2431B5A9003BB26C /* NSContentEnvironment.swift in Sources */,
 				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				6EFB097524459B870097BD3D /* NSBegegnungenDetailViewController.swift in Sources */,
 				DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */,

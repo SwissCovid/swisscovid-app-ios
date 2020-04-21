@@ -79,22 +79,12 @@
 "downloading_csv" = "CSV est en cours de téléchargement";
 "handshakes_title_homescreen" = "Rencontres";
 "inform_title_homescreen" = "Suspicion de COVID-19";
-"inform_text_homescreen" = "Informez les personnes que vous connaissez si vous ressentez des symptômes ou si votre test est positif.";
 "inform_button_title" = "Signaler une maladie";
 "inform_button_title_again" = "Informer à nouveau";
 "inform_last_meldung_text" = "Dernière annonce réussie le {date}";
 
 /*Erstes Tab*/
 "tab_theapp_title" = "L'Appli";
-
-/*Tab Titel*/
-"tab_aktuell_title" = "Actuel";
-
-/*Tab Titel*/
-"tab_verhalten_title" = "Comportement";
-
-/*Tab Titel*/
-"tab_prinzip_title" = "Principe";
 
 /*Abbrechen*/
 "cancel" = "Annuler";
@@ -354,3 +344,6 @@
 
 /*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
 "debug_sdk_reset_text" = "Der lokale Stand des DP-3T SDK wurde zurückgesetzt.";
+
+/*Tab-Titel*/
+"tab_tracing_title" = "Tracing";

@@ -67,21 +67,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 13.0, *) {
             window?.overrideUserInterfaceStyle = .light
         }
-        window?.makeKey()
 
-        if NSContentEnvironment.current.hasTabBar {
-            window?.rootViewController = NSTabBarController()
-        } else {
-            let nvc = NSNavigationController(rootViewController: NSHomescreenViewController())
-            nvc.setNavigationBarHidden(true, animated: false)
-            window?.rootViewController = nvc
-        }
+        NSTracingManager.shared.beginUpdatesAndTracing()
+
+        window?.makeKey()
+        window?.rootViewController = NSTabBarController()
 
         setupAppearance()
 
         window?.makeKeyAndVisible()
-
-        NSTracingManager.shared.beginUpdatesAndTracing()
     }
 
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {

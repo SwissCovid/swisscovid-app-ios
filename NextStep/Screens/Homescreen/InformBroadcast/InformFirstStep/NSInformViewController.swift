@@ -10,11 +10,7 @@ class NSInformViewController: NSInformStepViewController {
     static func present(from rootViewController: UIViewController) {
         let informVC: UIViewController
 
-        if NSContentEnvironment.current.hasSymptomInputs {
-            informVC = NSInformViewController()
-        } else {
-            informVC = NSSendViewController(flow: .tested)
-        }
+        informVC = NSSendViewController(flow: .tested)
 
         let navCon = NSNavigationController(rootViewController: informVC)
         rootViewController.present(navCon, animated: true, completion: nil)

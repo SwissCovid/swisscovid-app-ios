@@ -20,17 +20,9 @@ class NSTabBarController: UITabBarController {
         super.viewDidLoad()
 
         viewControllers = [
-            NSHomescreenViewController(),
-            NSVerhaltenViewController(),
-            NSInfoViewController(),
-            NSAboutViewController(),
+            NSNavigationController(rootViewController: NSHomescreenViewController()),
+            NSNavigationController(rootViewController: NSAboutViewController()),
         ]
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        presentOnboardingIfNeeded()
     }
 
     private func style() {

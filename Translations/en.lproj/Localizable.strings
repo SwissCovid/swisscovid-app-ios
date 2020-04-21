@@ -79,22 +79,12 @@
 "downloading_csv" = "Downloading CSV";
 "handshakes_title_homescreen" = "Encounters";
 "inform_title_homescreen" = "Suspicion of COVID-19";
-"inform_text_homescreen" = "Inform users you've recently encountered if you experience symptoms or if you've tested positive for COVID-19";
 "inform_button_title" = "Inform now";
 "inform_button_title_again" = "Inform again";
 "inform_last_meldung_text" = "last successful signal";
 
 /*Erstes Tab*/
 "tab_theapp_title" = "The App";
-
-/*Tab Titel*/
-"tab_aktuell_title" = "Current";
-
-/*Tab Titel*/
-"tab_verhalten_title" = "Behavior";
-
-/*Tab Titel*/
-"tab_prinzip_title" = "Principle";
 
 /*Abbrechen*/
 "cancel" = "Cancel";
@@ -355,3 +345,6 @@
 
 /*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
 "debug_sdk_reset_text" = "The local data of the dp-3t sdk has been reset.";
+
+/*Tab-Titel*/
+"tab_tracing_title" = "Tracing";

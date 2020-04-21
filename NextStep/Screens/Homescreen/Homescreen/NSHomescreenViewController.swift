@@ -25,11 +25,10 @@ class NSHomescreenViewController: NSViewController {
     override init() {
         super.init()
 
-        if NSContentEnvironment.current.hasTabBar {
-            title = "tab_aktuell_title".ub_localized
-        }
+        title = "app_name".ub_localized
 
         tabBarItem.image = UIImage(named: "home")
+        tabBarItem.title = "tab_tracing_title".ub_localized
     }
 
     // MARK: - View
@@ -60,8 +59,6 @@ class NSHomescreenViewController: NSViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        navigationController?.setNavigationBarHidden(true, animated: true)
 
         NSUIStateManager.shared.refresh()
     }

@@ -16,6 +16,9 @@ extension UIColor {
     public static var ns_background_secondary = UIColor(ub_hexString: "#f7f7f7")!
     public static var ns_background_highlighted = UIColor(ub_hexString: "#f9f9f9")!
 
+    // navigation bar line color
+    public static var ns_navigationBarLine = UIColor(ub_hexString: "#EA0000")
+
     // text color
     public static var ns_text = UIColor(ub_hexString: "#535263")!
     public static var ns_text_secondary = UIColor(ub_hexString: "#e6e6e6")!

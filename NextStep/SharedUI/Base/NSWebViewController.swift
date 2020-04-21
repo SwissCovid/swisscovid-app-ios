@@ -52,8 +52,6 @@ class NSWebViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "close".ub_localized, style: .done, target: self, action: #selector(close))
-
         startLoading(url: url)
     }
 

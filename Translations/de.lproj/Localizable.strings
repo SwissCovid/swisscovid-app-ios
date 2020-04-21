@@ -78,22 +78,12 @@
 "downloading_csv" = "CSV wird heruntergeladen";
 "handshakes_title_homescreen" = "Begegnungen";
 "inform_title_homescreen" = "Verdacht auf eine Corona Erkrankung";
-"inform_text_homescreen" = "Informiere Personen, denen du begegnet bist, wenn du Symptome verspürst oder positiv getestet wurdest.";
 "inform_button_title" = "Erkrankung melden";
 "inform_button_title_again" = "Erneut informieren";
 "inform_last_meldung_text" = "Letzte erfolgreiche Meldung am {date}";
 
 /*Erstes Tab*/
 "tab_theapp_title" = "Die App";
-
-/*Tab Titel*/
-"tab_aktuell_title" = "Aktuell";
-
-/*Tab Titel*/
-"tab_verhalten_title" = "Verhalten";
-
-/*Tab Titel*/
-"tab_prinzip_title" = "Prinzip";
 
 /*Abbrechen*/
 "cancel" = "Abbrechen";
@@ -369,3 +359,6 @@
 
 /*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
 "debug_sdk_reset_text" = "Der lokale Stand des DP-3T SDK wurde zurückgesetzt.";
+
+/*Tab-Titel*/
+"tab_tracing_title" = "Tracing";
