@@ -42,12 +42,6 @@
 /*Inform Subtext*/
 "inform_subtext" = "I want to help break the COVID-19 chain of infection";
 
-/*Inform: Symptome Button*/
-"inform_button_symptom_title" = "Symptoms";
-
-/*Inform: Symptome Button*/
-"inform_button_symptom_text" = "I have Symptoms";
-
 /*Inform: Button Titel*/
 "inform_button_positive_title" = "Positive test result";
 
@@ -62,36 +56,12 @@
 /*Informieren: Positive Testergebnis*/
 "inform_positive_long_text" = "I have recently tested positive for COVID-19. \n\nI want to stop a potential infection chain by allowing the app to anonymously contact people who were recently close by.";
 
-/*Ich leide an einem oder mehreren der folgenden Symptome:*/
-"inform_symptom_starttext" = "I suffer from one or more of the following symptoms:";
-
 /*Informieren: Senden Button*/
 "inform_send_button_title" = "Send";
-
-/*Informieren: Senden Text Symptome*/
-"inform_symptoms_send_text" = "I suffer from the previously listed symptoms which can be attributed to COVID-19.\n\nI want to stop a potential infection chain by allowing the app to anonymously contact people who were recently close by.";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "THANK YOU!";
 "inform_send_thankyou_text" = "Your information was transmitted. You're making an important contribution to keeping the spread of COVID-19 at bay.";
-
-/*Symptome*/
-"inform_symptom_coughdry" = "Cough (mostly dry)";
-
-/*Symptom*/
-"inform_symptom_hals" = "Sore throat";
-
-/*Symptom*/
-"inform_symptom_kurzatmigkeit" = "Shortness of breath";
-
-/*Symptom*/
-"inform_symptom_fieber" = "Fever";
-
-/*Symptom*/
-"inform_symptom_muskel" = "Muscle pain";
-
-/*Symptome*/
-"inform_no_symptom" = "None of the listed symptoms";
 
 /*Text in toast when downloading pdf*/
 "downloading_pdf" = "Downloading PDF";
@@ -107,9 +77,7 @@
 
 /*CSV wird heruntergeladen*/
 "downloading_csv" = "Downloading CSV";
-"handshakes_heading_homescreen" = " ";
 "handshakes_title_homescreen" = "Encounters";
-"inform_heading_homescreen" = " ";
 "inform_title_homescreen" = "Suspicion of COVID-19";
 "inform_text_homescreen" = "Inform users you've recently encountered if you experience symptoms or if you've tested positive for COVID-19";
 "inform_button_title" = "Inform now";

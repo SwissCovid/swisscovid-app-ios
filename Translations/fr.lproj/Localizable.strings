@@ -42,12 +42,6 @@
 /*Inform Subtext*/
 "inform_subtext" = "Je veux aider à briser la chaîne d'infection du COVID-19.";
 
-/*Inform: Symptome Button*/
-"inform_button_symptom_title" = "Symptômes";
-
-/*Inform: Symptome Button*/
-"inform_button_symptom_text" = "Je souffre actuellement de symptômes.";
-
 /*Inform: Button Titel*/
 "inform_button_positive_title" = "Résultat de test positif";
 
@@ -62,36 +56,12 @@
 /*Informieren: Positive Testergebnis*/
 "inform_positive_long_text" = "J'ai récemment testé positif pour COVID-19.\n\nJe voudrais donc éviter une éventuelle chaîne d'infection en avertissant anonymement les personnes que j'ai rencontrées.";
 
-/*Ich leide an einem oder mehreren der folgenden Symptome:*/
-"inform_symptom_starttext" = "J'ai un ou plusieurs des symptômes suivants:";
-
 /*Informieren: Senden Button*/
 "inform_send_button_title" = "Envoyer";
-
-/*Informieren: Senden Text Symptome*/
-"inform_symptoms_send_text" = "Je souffre des symptômes mentionnés ci-dessus, qui peuvent indiquer COVID-19.\n\nJe voudrais donc éviter une éventuelle chaîne d'infection en avertissant anonymement les personnes que j'ai rencontrées.";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "MERCI!";
 "inform_send_thankyou_text" = "Vos informations ont été soumises.\nVous apportez une contribution importante à l'arrêt de la propagation du virus Corona.";
-
-/*Symptome*/
-"inform_symptom_coughdry" = "Toux (généralement sèche)";
-
-/*Symptom*/
-"inform_symptom_hals" = "Maux de gorge";
-
-/*Symptom*/
-"inform_symptom_kurzatmigkeit" = "Essoufflement";
-
-/*Symptom*/
-"inform_symptom_fieber" = "Fièvre, sensation de fièvre";
-
-/*Symptom*/
-"inform_symptom_muskel" = "Douleurs musculaires";
-
-/*Symptome*/
-"inform_no_symptom" = "Aucun des symptômes énumérés";
 
 /*Text in toast when downloading pdf*/
 "downloading_pdf" = "Le PDF est en cours de téléchargement";
@@ -107,9 +77,7 @@
 
 /*CSV wird heruntergeladen*/
 "downloading_csv" = "CSV est en cours de téléchargement";
-"handshakes_heading_homescreen" = " ";
 "handshakes_title_homescreen" = "Rencontres";
-"inform_heading_homescreen" = " ";
 "inform_title_homescreen" = "Suspicion de COVID-19";
 "inform_text_homescreen" = "Informez les personnes que vous connaissez si vous ressentez des symptômes ou si votre test est positif.";
 "inform_button_title" = "Signaler une maladie";

@@ -3,7 +3,6 @@
 "app_name" = "Next Step";
 
 /*App Name unter Icon (iOS)*/
-/*Fuzzy*/
 "CFBundleDisplayName" = "Next Step";
 
 /*Title of the menu item home*/
@@ -42,12 +41,6 @@
 /*Inform Subtext*/
 "inform_subtext" = "Ich möchte helfen, die Infektionskette von COVID-19 zu unterbrechen.";
 
-/*Inform: Symptome Button*/
-"inform_button_symptom_title" = "Symptome";
-
-/*Inform: Symptome Button*/
-"inform_button_symptom_text" = "Ich leide aktuell an Symptomen.";
-
 /*Inform: Button Titel*/
 "inform_button_positive_title" = "Positives Testergebnis";
 
@@ -62,36 +55,12 @@
 /*Informieren: Positive Testergebnis*/
 "inform_positive_long_text" = "Ich wurde kürzlich positiv auf COVID-19 getestet.\n\nIch möchte daher eine mögliche Infektionskette verhindern, indem die App Personen, denen ich begegnet bin, anonym benachrichtigt.";
 
-/*Ich leide an einem oder mehreren der folgenden Symptome:*/
-"inform_symptom_starttext" = "Ich leide an einem oder mehreren der folgenden Symptome:";
-
 /*Informieren: Senden Button*/
 "inform_send_button_title" = "Senden";
-
-/*Informieren: Senden Text Symptome*/
-"inform_symptoms_send_text" = "Ich leide an den zuvor erwähnten Symptomen, welche auf COVID-19 hindeuten können.\n\nIch möchte daher eine mögliche Infektionskette verhindern, indem die App Personen, denen ich begegnet bin, anonym benachrichtigt.";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "DANKE!";
 "inform_send_thankyou_text" = "Deine Infos wurden übermittelt.\nDamit leistest du einen wichtigen Beitrag, die Verbreitung des Corona-Virus zu stoppen.";
-
-/*Symptome*/
-"inform_symptom_coughdry" = "Husten (meist trocken)";
-
-/*Symptom*/
-"inform_symptom_hals" = "Halsschmerzen";
-
-/*Symptom*/
-"inform_symptom_kurzatmigkeit" = "Kurzatmigkeit";
-
-/*Symptom*/
-"inform_symptom_fieber" = "Fieber, Fiebergefühl";
-
-/*Symptom*/
-"inform_symptom_muskel" = "Muskelschmerzen";
-
-/*Symptome*/
-"inform_no_symptom" = "Keine der aufgeführten Symptome";
 
 /*Text in toast when downloading pdf*/
 "downloading_pdf" = "PDF wird heruntergeladen";
@@ -107,9 +76,7 @@
 
 /*CSV wird heruntergeladen*/
 "downloading_csv" = "CSV wird heruntergeladen";
-"handshakes_heading_homescreen" = " ";
 "handshakes_title_homescreen" = "Begegnungen";
-"inform_heading_homescreen" = " ";
 "inform_title_homescreen" = "Verdacht auf eine Corona Erkrankung";
 "inform_text_homescreen" = "Informiere Personen, denen du begegnet bist, wenn du Symptome verspürst oder positiv getestet wurdest.";
 "inform_button_title" = "Erkrankung melden";
