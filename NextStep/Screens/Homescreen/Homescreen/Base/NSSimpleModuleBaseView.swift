@@ -89,10 +89,12 @@ class NSSimpleModuleBaseView: UIView {
             textLabel.snp.makeConstraints { make in
                 make.top.left.equalToSuperview()
                 make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
+                make.bottom.lessThanOrEqualToSuperview()
             }
 
             imageView.snp.makeConstraints { make in
-                make.top.bottom.right.equalToSuperview()
+                make.top.right.equalToSuperview()
+                make.bottom.lessThanOrEqualToSuperview()
             }
 
             addSubview(view)
