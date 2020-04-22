@@ -118,9 +118,9 @@
 "button_permission_location_granted_android" = "Ortung erlaubt";
 "button_ok" = "ok";
 "activate_bluetooth_button" = "Bluetooth aktivieren";
-"activate_push_button" = "Push aktivieren";
+"activate_push_button" = "Mitteilungen aktivieren";
 "bluetooth_activated_label" = "Bluetooth aktiviert";
-"push_activated_label" = "Push aktiviert";
+"push_activated_label" = "Mitteilungen aktiviert";
 "onboarding_continue_button" = "Weiter";
 "onboarding_continue_without_button" = "Weiter ohne Berechtigungen";
 "onboarding_continue_without_popup_text" = "Willst du wirklich fortfahren? Die App funktioniert nicht komplett, wenn sie die nötigen Berechtigungen nicht hat.";
@@ -210,10 +210,10 @@
 "meldungen_no_meldungen_text" = "Du wirst beim Verdacht auf eine mögliche Ansteckung informiert.";
 
 /*Push deaktiviert Titel*/
-"push_deactivated_title" = "Push deaktiviert";
+"push_deactivated_title" = "Mitteilungen deaktiviert";
 
 /*Push deaktiviert Text*/
-"push_deactivated_text" = "Erlaube Push Nachrichten, um bei einer Meldung direkt informiert zu werden.";
+"push_deactivated_text" = "Ändern Sie die Einstellungen, um bei einer Meldung direkt informiert zu werden.";
 
 /*Hinweis Titel*/
 "hinweis_title" = "Wichtiger Hinweis";
@@ -401,3 +401,7 @@
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
 "bluetooth_permission_error_title" = "Bluetooth deaktiviert";
 "bluetooth_permission_error_text" = "Damit anonymes Tracing funktioniert, müssen Sie der App Zugriff auf Bluetooth erlauben.";
+
+/*URL zum Corona Check*/
+"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
+"push_open_settings_button" = "Einstellungen ändern";

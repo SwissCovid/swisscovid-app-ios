@@ -51,7 +51,7 @@ class NSButton: UBButton {
             case let .uppercase(c):
                 return c.withAlphaComponent(0.15)
             case .outlineUppercase:
-                return UIColor.white.withAlphaComponent(0.15)
+                return UIColor.black.withAlphaComponent(0.15)
             }
         }
 

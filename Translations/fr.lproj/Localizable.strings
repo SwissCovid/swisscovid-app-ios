@@ -404,3 +404,7 @@
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
 "bluetooth_permission_error_title" = "Bluetooth deaktiviert";
 "bluetooth_permission_error_text" = "Damit anonymes Tracing funktioniert, müssen Sie der App Zugriff auf Bluetooth erlauben.";
+
+/*URL zum Corona Check*/
+"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
+"push_open_settings_button" = "Einstellungen ändern";
