@@ -19,13 +19,13 @@ class NSHomescreenViewController: NSViewController {
     private let handshakesModuleView = NSBegegnungenModuleView()
     private let meldungView = NSMeldungView()
 
-    private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .primaryOutline)
+    private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .uppercase(.ns_purple))
 
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))
 
     private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
 
-    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_red))
+    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
     private var lastState: NSUIStateModel = .init()
 

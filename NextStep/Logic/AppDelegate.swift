@@ -126,11 +126,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Appearance
 
     private func setupAppearance() {
-        UIBarButtonItem.appearance().tintColor = .ns_secondary
+        UIBarButtonItem.appearance().tintColor = .ns_navigationBar
 
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: NSLabelType.textSemiBold.font,
-            .foregroundColor: UIColor.ns_primary,
+            .font: NSLabelType.textBold.font,
+            .foregroundColor: UIColor.ns_navigationBar,
         ]
     }
 }

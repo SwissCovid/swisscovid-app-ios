@@ -8,40 +8,36 @@ import UIKit
 
 class NSButton: UBButton {
     enum Style {
-        case primary, secondary, primaryOutline, secondaryOutline
-        case outline(UIColor)
+        // bool fo
+        case normal(UIColor)
+        case uppercase(UIColor)
+        case outlineUppercase(UIColor)
 
         var textColor: UIColor {
             switch self {
-            case .primary, .secondary:
-                return .white
-            case .primaryOutline:
-                return .ns_primary
-            case .secondaryOutline:
-                return .ns_secondary
-            case let .outline(c):
+            case .normal:
+                return UIColor.white
+            case .uppercase:
+                return UIColor.white
+            case let .outlineUppercase(c):
                 return c
             }
         }
 
         var backgroundColor: UIColor {
             switch self {
-            case .primary:
-                return .ns_primary
-            case .secondary:
-                return .ns_secondary
-            case .primaryOutline, .secondaryOutline, .outline:
+            case let .normal(c):
+                return c
+            case let .uppercase(c):
+                return c
+            case .outlineUppercase:
                 return .white
             }
         }
 
         var borderColor: UIColor {
             switch self {
-            case .primaryOutline:
-                return .ns_primary
-            case .secondaryOutline:
-                return .ns_secondary
-            case let .outline(c):
+            case let .outlineUppercase(c):
                 return c
             default:
                 return .clear
@@ -50,20 +46,20 @@ class NSButton: UBButton {
 
         var highlightedColor: UIColor {
             switch self {
-            case .primary, .secondary:
-                return UIColor.black.withAlphaComponent(0.3)
-            case .primaryOutline:
-                return UIColor.ns_primary.withAlphaComponent(0.15)
-            case .secondaryOutline:
-                return UIColor.ns_secondary.withAlphaComponent(0.15)
-            case let .outline(c):
+            case let .normal(c):
                 return c.withAlphaComponent(0.15)
+            case let .uppercase(c):
+                return c.withAlphaComponent(0.15)
+            case .outlineUppercase:
+                return UIColor.white.withAlphaComponent(0.15)
             }
         }
 
         var isUppercase: Bool {
             switch self {
-            case .primaryOutline, .outline:
+            case .uppercase:
+                return true
+            case .outlineUppercase:
                 return true
             default:
                 return false
@@ -81,7 +77,7 @@ class NSButton: UBButton {
 
     // MARK: - Init
 
-    init(title: String, style: Style = .secondary) {
+    init(title: String, style: Style = .normal(UIColor.ns_purple)) {
         self.style = style
 
         super.init()

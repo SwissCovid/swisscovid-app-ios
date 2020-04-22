@@ -10,6 +10,8 @@ extension UIColor {
     public static var ns_red = UIColor(ub_hexString: "#e20008")!
     public static var ns_text = UIColor(ub_hexString: "#4a4969")!
 
+    public static var ns_navigationBar = UIColor(ub_hexString: "#535263")!
+
     public static var ns_blue = UIColor(ub_hexString: "#63a0c7")!
     public static var ns_blueBackground = UIColor(ub_hexString: "#eff5f9")!
     public static var ns_green = UIColor(ub_hexString: "#00bfa6")!

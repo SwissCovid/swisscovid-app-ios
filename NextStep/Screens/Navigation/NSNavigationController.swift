@@ -32,13 +32,5 @@ class NSNavigationController: UINavigationController {
             make.centerY.equalTo(navigationBar.snp.bottom)
             make.left.right.equalToSuperview()
         }
-
-//        navigationBar.addSubview(swissFlagImageView)
-//        swissFlagImageView.snp.makeConstraints { make in
-//            make.centerY.equalToSuperview()
-//            make.left.equalToSuperview().offset(15.0)
-//        }
-//
-//        swissFlagImageView.ub_setContentPriorityRequired()
     }
 }

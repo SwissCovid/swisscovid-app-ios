@@ -42,13 +42,13 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
     private let textLabel = NSLabel(.text)
 
-    private let bluetoothButton = NSButton(title: "activate_bluetooth_button".ub_localized, style: .primary)
-    private let pushButton = NSButton(title: "activate_push_button".ub_localized, style: .primary)
+    private let bluetoothButton = NSButton(title: "activate_bluetooth_button".ub_localized, style: .normal(.ns_blue))
+    private let pushButton = NSButton(title: "activate_push_button".ub_localized, style: .normal(.ns_blue))
 
     private let bluetoothEnabledView = EnabledView(text: "bluetooth_activated_label".ub_localized)
     private let pushEnabledView = EnabledView(text: "push_activated_label".ub_localized)
 
-    let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .secondary)
+    let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .normal(.ns_blue))
     let continueWithoutButton = UBButton()
 
     private var isBluetoothEnabled: Bool = false
