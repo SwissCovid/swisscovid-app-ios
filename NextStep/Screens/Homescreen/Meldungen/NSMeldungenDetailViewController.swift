@@ -112,36 +112,11 @@ class NSMeldungenDetailViewController: NSViewController {
 
         stackScrollView.addSpacerView(30.0)
 
-        stackScrollView.addArrangedView(explanationView(title: "meldungen_additional_info_title".ub_localized, texts: [
+        stackScrollView.addArrangedView(NSExplanationView(title: "meldungen_additional_info_title".ub_localized, texts: [
             "meldungen_additional_info_text1".ub_localized, "meldungen_additional_info_text2".ub_localized,
         ]))
 
         stackScrollView.addSpacerView(30.0)
-    }
-
-    private func explanationView(title: String, texts: [String]) -> UIView {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.spacing = 2 * NSPadding.medium
-
-        let titleLabel = NSLabel(.textSemiBold)
-        titleLabel.text = title
-
-        stackView.addArrangedView(titleLabel)
-
-        for t in texts {
-            let v = NSPointTextView(text: t)
-            stackView.addArrangedView(v)
-        }
-
-        let v = UIView()
-        v.addSubview(stackView)
-
-        stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
-        }
-
-        return v
     }
 
     private func meldungenInfoView(meldung: NSUIStateModel.MeldungenDetail.Meldung) -> UIView {

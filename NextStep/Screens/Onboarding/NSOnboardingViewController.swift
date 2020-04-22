@@ -23,7 +23,7 @@ class NSOnboardingViewController: NSViewController {
         [step1VC, step2VC, step3VC, step4VC, step5VC]
     }
 
-    private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized)
+    private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
     private var currentStep: Int = 0
 

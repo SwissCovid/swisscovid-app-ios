@@ -67,7 +67,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     }
 
     private func setupButton() {
-        let button = NSButton(title: "debug_sdk_button_reset".ub_localized, style: .primary)
+        let button = NSButton(title: "debug_sdk_button_reset".ub_localized, style: .uppercase(.ns_purple))
         contentView.addArrangedView(button)
 
         button.touchUpCallback = { [weak self] in

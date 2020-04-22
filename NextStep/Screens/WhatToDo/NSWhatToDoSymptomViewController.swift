@@ -19,6 +19,9 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        view.backgroundColor = UIColor.ns_backgroundSecondary
+
         setupStackScrollView()
         setupLayout()
 

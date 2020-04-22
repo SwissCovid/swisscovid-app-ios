@@ -9,8 +9,12 @@ import UIKit
 class NSSimpleModuleBaseView: UIView {
     // MARK: - Private subviews
 
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
-    private let subtitleLabel = NSLabel(.textBold, textColor: .ns_primary)
+    private let titleLabel = NSLabel(.subtitle)
+    private let subtitleLabel = NSLabel(.textBold)
+
+    private let textLabel = NSLabel(.textLight)
+    private let imageView = UIImageView()
+
     private let sideInset: CGFloat
 
     // MARK: - Public
@@ -19,13 +23,20 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subtitle: String? = nil, sideInset: CGFloat = NSPadding.medium + NSPadding.small) {
-        self.sideInset = sideInset
+    init(title: String, subtitle: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
+        sideInset = NSPadding.large
 
         super.init(frame: .zero)
 
         subtitleLabel.text = subtitle
+
+        if let c = subtitleColor {
+            subtitleLabel.textColor = c
+        }
+
         titleLabel.text = title
+        textLabel.text = text
+        imageView.image = image
 
         setup()
     }
@@ -64,8 +75,37 @@ class NSSimpleModuleBaseView: UIView {
             }
         }
 
+        var lastView: UIView = titleLabel
+
+        if textLabel.text != nil {
+            let view = UIView()
+
+            imageView.contentMode = .scaleAspectFit
+            imageView.ub_setContentPriorityRequired()
+
+            view.addSubview(textLabel)
+            view.addSubview(imageView)
+
+            textLabel.snp.makeConstraints { make in
+                make.top.left.equalToSuperview()
+                make.right.equalTo(imageView.snp.left).inset(NSPadding.medium)
+            }
+
+            imageView.snp.makeConstraints { make in
+                make.top.bottom.right.equalToSuperview()
+            }
+
+            addSubview(view)
+            view.snp.makeConstraints { make in
+                make.top.equalTo(lastView.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                make.left.right.equalToSuperview().inset(sideInset)
+            }
+
+            lastView = view
+        }
+
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(lastView.snp.bottom).offset(NSPadding.small)
             make.left.right.equalToSuperview().inset(sideInset)
             make.bottom.equalToSuperview().inset(sideInset)
         }
