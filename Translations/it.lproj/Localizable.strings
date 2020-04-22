@@ -448,3 +448,6 @@
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Eine Ihrer Begegnungen wurde positiv auf COVID-19 getestet";
 "meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+
+/*Debug Screen: Onboarding Reset Button*/
+"reset_onboarding" = "Onboarding zurücksetzen";

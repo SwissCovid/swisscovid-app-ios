@@ -74,12 +74,25 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
             guard let strongSelf = self else { return }
             strongSelf.resetSDK()
         }
+
+        let button2 = NSButton(title: "reset_onboarding".ub_localized, style: .uppercase(.ns_purple))
+        contentView.addArrangedView(button2)
+
+        button2.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.resetOnboarding()
+        }
     }
 
     // MARK: - Logic
 
     private func resetSDK() {
         NSTracingManager.shared.resetSDK()
+    }
+
+    private func resetOnboarding() {
+        User.shared.hasCompletedOnboarding = false
+        abort()
     }
 
     private func update(_ state: NSUIStateModel) {
