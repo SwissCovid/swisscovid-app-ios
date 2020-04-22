@@ -10,6 +10,7 @@ public enum NSLabelType: UBLabelType {
     case title
     case subtitle
     case text
+    case textBold
     case textSemiBold
     case button // used for button
     case smallBold // used for begegnungen label
@@ -22,6 +23,7 @@ public enum NSLabelType: UBLabelType {
         case .text: return UIFont(name: "Inter-Regular", size: 16.0)!
         case .smallBold: return UIFont(name: "Inter-Bold", size: 12.0)!
         case .textSemiBold: return UIFont(name: "Inter-SemiBold", size: 16.0)!
+        case .textBold: return UIFont(name: "Inter-Bold", size: 16.0)!
         case .button: return UIFont(name: "Inter-Bold", size: 18.0)!
         case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
         }
@@ -43,6 +45,7 @@ public enum NSLabelType: UBLabelType {
         case .title: return 34.0 / 28.0
         case .subtitle: return 31.0 / 24.0
         case .text: return 24.0 / 16.0
+        case .textBold: return 24.0 / 16.0
         case .textSemiBold: return 24.0 / 16.0
         case .button, .smallBold: return 1.0
         case .uppercaseBold: return 26.0 / 16.0

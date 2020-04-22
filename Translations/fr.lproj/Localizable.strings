@@ -347,3 +347,15 @@
 
 /*Tab-Titel*/
 "tab_tracing_title" = "Tracing";
+
+/*Titel auf Homescreen für Was tun Section*/
+"whattodo_title_symptoms" = "Krankheitssymptomen";
+
+/*Subtitel auf Homescreen für Was Tun Section*/
+"whattodo_subtitle_symptoms" = "Was tun bei...";
+
+/*Titel auf Homescreen bei Was tun Section*/
+"whattodo_title_positivetest" = "positiven Testresultat";
+
+/*Subtitel auf Homescreen bei Was tun Section*/
+"whattodo_subtitle_positivetest" = "Was tun bei einem…";

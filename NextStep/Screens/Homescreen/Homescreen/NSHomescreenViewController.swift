@@ -10,6 +10,8 @@ import SnapKit
 import UIKit
 
 class NSHomescreenViewController: NSViewController {
+    // MARK: - Views
+
     private let stackScrollView = NSStackScrollView()
 
     let titleView = NSAppTitleView()
@@ -18,6 +20,11 @@ class NSHomescreenViewController: NSViewController {
     private let meldungView = NSMeldungView()
 
     private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .primaryOutline)
+
+    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))
+
+    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
+
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_error))
 
     // MARK: - View
@@ -54,6 +61,16 @@ class NSHomescreenViewController: NSViewController {
         informButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             NSInformViewController.present(from: strongSelf)
+        }
+
+        whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentWhatToDoPositiveTest()
+        }
+
+        whatToDoSymptomsButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentWhatToDoSymptoms()
         }
     }
 
@@ -99,15 +116,12 @@ class NSHomescreenViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(meldungView)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
-        let buttonContainer = UIView()
-        buttonContainer.addSubview(informButton)
-        informButton.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-        }
-        stackScrollView.addArrangedView(buttonContainer)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addArrangedView(whatToDoSymptomsButton)
+        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
+        stackScrollView.addArrangedView(whatToDoPositiveTestButton)
+        stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         let previewWarning = NSBluetoothSettingsDetailView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
         stackScrollView.addArrangedView(previewWarning)
@@ -188,5 +202,13 @@ class NSHomescreenViewController: NSViewController {
 
     private func presentDebugScreen() {
         navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
+    }
+
+    private func presentWhatToDoPositiveTest() {
+        navigationController?.pushViewController(NSWhatToDoPositiveTestViewController(), animated: true)
+    }
+
+    private func presentWhatToDoSymptoms() {
+        navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
     }
 }
