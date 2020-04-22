@@ -34,7 +34,7 @@ class NSHomescreenViewController: NSViewController {
 
         title = "app_name".ub_localized
 
-        tabBarItem.image = UIImage(named: "home")
+        tabBarItem.image = UIImage(named: "ic-tracing")
         tabBarItem.title = "tab_tracing_title".ub_localized
     }
 
