@@ -481,3 +481,36 @@
 
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
 "date_days_ago" = "vor {COUNT} Tagen";
+
+/*Meldungen Detail: Subtitel Weisse Box*/
+"meldungen_detail_whattodo" = "Was soll ich tun?";
+
+/*Meldungen Detail: Weisse Box Titel*/
+"meldungen_detail_call" = "Rufen Sie uns an";
+
+/*Meldungen Detail Text Weisse Box*/
+"meldungen_detail_call_text" = "Expert*innen der Infoline  beraten Sie telefonisch:  +41 98 765 43 21";
+
+/*Meldungen Detail Weisse Box Button*/
+"meldungen_detail_call_button" = "Jetzt anrufen";
+
+/*Meldungen Detail Weisse Box Titel der Erklärungen*/
+"meldungen_detail_explanation_title" = "Grundsätzlich gilt:";
+
+/*Meldungen Detail Weisse Box Erklärungstext 1*/
+"meldungen_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
+
+/*Meldungen Detail: Weisse Box Erklärtext 2*/
+"meldungen_detail_explanation_text2" = "Schützen Sie andere, in dem Sie Kontakte für 10 Tage meiden. (Selbst-Quarantäne)";
+
+/*Meldungen Detail Weisse Box Titel*/
+"meldungen_detail_guard_others" = "Schützen Sie andere";
+
+/*Meldungen Detail: Weisse Box Text*/
+"meldungen_detail_guard_text" = "Verhalten Sie sich gemäss den Anweisungen der Infoline. +41 98 765 43 21";
+
+/*Meldungen Detail Button Weisse Box*/
+"meldungen_detail_call_again_button" = "Erneut anrufen";
+
+/*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
+"meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";

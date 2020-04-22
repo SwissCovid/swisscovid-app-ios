@@ -73,6 +73,7 @@ class NSMeldungenDetailViewController: NSViewController {
         switch state {
         case .exposed:
             meldungenViewController.view.alpha = 1.0
+        // TODO: set meldungen
         case .infected:
             positiveTestedViewController.view.alpha = 1.0
         case .noMeldung:

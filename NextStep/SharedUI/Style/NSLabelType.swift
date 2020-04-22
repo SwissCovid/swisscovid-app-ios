@@ -14,6 +14,7 @@ public enum NSLabelType: UBLabelType {
     case button // used for button
     case uppercaseBold
     case date
+    case smallRegular
 
     public var font: UIFont {
         switch self {
@@ -24,6 +25,7 @@ public enum NSLabelType: UBLabelType {
         case .button: return UIFont(name: "Inter-Bold", size: 16.0)!
         case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
         case .date: return UIFont(name: "Inter-Bold", size: 13.0)!
+        case .smallRegular: return UIFont(name: "Inter-Regular", size: 13.0)!
         }
     }
 
@@ -31,6 +33,8 @@ public enum NSLabelType: UBLabelType {
         switch self {
         case .button:
             return .white
+        case .smallRegular:
+            return UIColor.black.withAlphaComponent(0.28)
         default:
             return .ns_text
         }
@@ -45,6 +49,7 @@ public enum NSLabelType: UBLabelType {
         case .uppercaseBold: return 26.0 / 16.0
         case .textLight: return 26.0 / 16.0
         case .date: return 2.0
+        case .smallRegular: return 26.0 / 13.0
         }
     }
 
@@ -55,6 +60,10 @@ public enum NSLabelType: UBLabelType {
 
         if self == .date {
             return 0.5
+        }
+
+        if self == .smallRegular {
+            return 0.3
         }
 
         return nil

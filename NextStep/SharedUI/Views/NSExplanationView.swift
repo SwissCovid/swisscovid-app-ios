@@ -5,7 +5,7 @@ import UIKit
 class NSExplanationView: UIView {
     // MARK: - Init
 
-    init(title: String, texts: [String]) {
+    init(title: String, texts: [String], edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)) {
         super.init(frame: .zero)
 
         let stackView = UIStackView()
@@ -25,7 +25,7 @@ class NSExplanationView: UIView {
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+            make.edges.equalToSuperview().inset(edgeInsets)
         }
     }
 
