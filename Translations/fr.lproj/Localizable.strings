@@ -359,3 +359,45 @@
 
 /*Subtitel auf Homescreen bei Was tun Section*/
 "whattodo_subtitle_positivetest" = "Was tun bei einem…";
+
+/*Informieren Detail: Subtitel*/
+"inform_detail_subtitle" = "Was tun bei einem...";
+
+/*Informieren Detail: Titel*/
+"inform_detail_title" = "positiven Test?";
+
+/*Inform Detail: Weisse Box Subtitel*/
+"inform_detail_box_subtitle" = "Was muss ich tun?";
+
+/*Inform Detai Weisse Box Titel*/
+"inform_detail_box_title" = "Begegnungen informieren";
+
+/*Inform Detail Weisse Box Button*/
+"inform_detail_box_button" = "Jetzt informieren";
+
+/*Informieren Detail Weisse Box Text*/
+"inform_detail_box_text" = "Informieren sie Personen mit denen Sie Kontakt hatten anonym über die App.";
+
+/*Symptome Detail Subtitel*/
+"symptom_detail_subtitle" = "Was tun wenn ich...";
+
+/*Symptom Detail Titel*/
+"symptom_detail_title" = "mich krank fühle?";
+
+/*Symptom Detail Weisse Box Subtitel*/
+"symptom_detail_box_subtitle" = "Machen Sie den...";
+
+/*Symptom Detail Weisse Box Titel*/
+"symptom_detail_box_title" = "Coronavirus-Check";
+
+/*Symptom Detail Weisse Box Button*/
+"symptom_detail_box_button" = "Zum Check";
+
+/*Symptom Detail Weisse Box Text*/
+"symptom_detail_box_text" = "Mit dem Evaluations-Tool des BAG erfahren Sie, wie Sie sich verhalten sollen.";
+
+/*Informieren Titel in NavigationBar/Toolbar*/
+"inform_detail_navigation_title" = "Informieren";
+
+/*Symptome Detail: NavigationBar/Toolbar Titel*/
+"symptom_detail_navigation_title" = "Symptome";

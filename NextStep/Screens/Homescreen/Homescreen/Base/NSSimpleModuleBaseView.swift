@@ -10,6 +10,8 @@ class NSSimpleModuleBaseView: UIView {
     // MARK: - Private subviews
 
     private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
+    private let subtitleLabel = NSLabel(.textBold, textColor: .ns_primary)
+    private let sideInset: CGFloat
 
     // MARK: - Public
 
@@ -17,9 +19,14 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String) {
+    init(title: String, subtitle: String? = nil, sideInset: CGFloat = NSPadding.medium + NSPadding.small) {
+        self.sideInset = sideInset
+
         super.init(frame: .zero)
+
+        subtitleLabel.text = subtitle
         titleLabel.text = title
+
         setup()
     }
 
@@ -36,16 +43,31 @@ class NSSimpleModuleBaseView: UIView {
         addSubview(titleLabel)
         addSubview(contentView)
 
-        let inset = NSPadding.medium + NSPadding.small
+        let topInset = NSPadding.medium + NSPadding.small
 
-        titleLabel.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview().inset(inset)
+        if subtitleLabel.text == nil {
+            titleLabel.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(topInset)
+                make.left.right.equalToSuperview().inset(sideInset)
+            }
+        } else {
+            addSubview(subtitleLabel)
+
+            subtitleLabel.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(topInset)
+                make.left.right.equalToSuperview().inset(sideInset)
+            }
+
+            titleLabel.snp.makeConstraints { make in
+                make.top.equalTo(subtitleLabel.snp.bottom).offset(NSPadding.small)
+                make.left.right.equalToSuperview().inset(sideInset)
+            }
         }
 
         contentView.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
-            make.left.right.equalToSuperview().inset(inset)
-            make.bottom.equalToSuperview().inset(inset)
+            make.left.right.equalToSuperview().inset(sideInset)
+            make.bottom.equalToSuperview().inset(sideInset)
         }
 
         contentView.axis = .vertical
