@@ -9,15 +9,6 @@ import UIKit
 class NSModuleBaseView: UIControl {
     var touchUpCallback: (() -> Void)?
 
-    var headerIcon: UIImage? {
-        get {
-            headerView.icon
-        }
-        set {
-            headerView.icon = newValue
-        }
-    }
-
     var headerTitle: String? {
         get {
             headerView.title
@@ -27,12 +18,8 @@ class NSModuleBaseView: UIControl {
         }
     }
 
-    var bottomPadding: CGFloat = NSPadding.large {
-        didSet { updateLayout() }
-    }
-
     private let headerView = NSModuleHeaderView()
-    internal let stackView = UIStackView()
+    internal let stackView = NSClickthroughStackView()
 
     init() {
         super.init(frame: .zero)
@@ -55,11 +42,11 @@ class NSModuleBaseView: UIControl {
 
     private func setupLayout() {
         stackView.axis = .vertical
-        stackView.isUserInteractionEnabled = false
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview()
+            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
@@ -71,8 +58,6 @@ class NSModuleBaseView: UIControl {
         stackView.addArrangedView(headerView)
 
         sectionViews().forEach { stackView.addArrangedView($0) }
-
-        stackView.addSpacerView(bottomPadding)
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {

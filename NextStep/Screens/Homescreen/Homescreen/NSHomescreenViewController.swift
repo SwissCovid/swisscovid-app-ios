@@ -25,7 +25,7 @@ class NSHomescreenViewController: NSViewController {
 
     private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
 
-    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_error))
+    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_red))
 
     // MARK: - View
 
@@ -42,7 +42,7 @@ class NSHomescreenViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_background_secondary
+        view.backgroundColor = .ns_backgroundSecondary
 
         setupLayout()
 

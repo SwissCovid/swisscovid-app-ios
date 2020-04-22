@@ -231,7 +231,7 @@
 "meldungen_meldung_text" = "Eine Person, der du begegnet bist, wurde positiv auf COVID-19 getestet. Bitte informiere dich hier über die Verhaltensempfehlungen.";
 "meldungen_meldung_more_button" = "Mehr erfahren";
 "tracing_active_title" = "Tracing aktiv";
-"tracing_active_text" = "Begegnungen werden anonym auf deinem Gerät gespeichert.";
+"tracing_active_text" = "Begegnungen werden anonym gespeichert";
 "tracing_error_title" = "Tracing nicht aktiv";
 "tracing_error_text" = "Tracing erlauben, um Begegnungen anonym zu speichern.";
 
@@ -400,3 +400,10 @@
 
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
 "symptom_detail_navigation_title" = "Symptome";
+"tracing_turned_off_title" = "Tracing deaktiviert";
+"tracing_turned_off_text" = "Tracing erlauben, um Begegnungen anonym zu speichern.";
+"bluetooth_turned_off_title" = "Bluetooth ausgeschaltet";
+"bluetooth_turned_off_text" = "Schalten Sie Bluetooth ein, damit das anonyme Tracing funktioniert.";
+"bluetooth_turn_on_button_title" = "Bluetooth einschalten";
+"bluetooth_permission_error_title" = "Bluetooth deaktiviert";
+"bluetooth_permission_error_text" = "Damit anonymes Tracing funktioniert, müssen Sie der App Zugriff auf Bluetooth erlauben.";

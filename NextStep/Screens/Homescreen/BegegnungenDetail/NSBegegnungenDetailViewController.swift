@@ -24,7 +24,7 @@ class NSBegegnungenDetailViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_background_secondary
+        view.backgroundColor = .ns_backgroundSecondary
         setup()
     }
 

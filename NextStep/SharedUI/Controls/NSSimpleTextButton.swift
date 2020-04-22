@@ -24,7 +24,7 @@ class NSSimpleTextButton: UBButton {
 
     private func setup() {
         backgroundColor = .clear
-        highlightedBackgroundColor = .ns_background_secondary
+        highlightedBackgroundColor = .ns_backgroundSecondary
 
         highlightXInset = -NSPadding.small
         highlightCornerRadius = 3.0

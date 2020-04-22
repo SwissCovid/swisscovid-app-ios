@@ -76,7 +76,7 @@ class NSWebViewController: NSViewController {
             make.edges.equalToSuperview()
         }
 
-        view.backgroundColor = UIColor.ns_background_secondary
+        view.backgroundColor = UIColor.ns_backgroundSecondary
 
         webView.isOpaque = false
         webView.backgroundColor = UIColor.clear

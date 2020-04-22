@@ -24,7 +24,7 @@ class NSNavigationController: UINavigationController {
     // MARK: - Setup
 
     private func setup() {
-        lineView.backgroundColor = .ns_navigationBarLine
+        lineView.backgroundColor = .ns_red
 
         navigationBar.addSubview(lineView)
         lineView.snp.makeConstraints { make in

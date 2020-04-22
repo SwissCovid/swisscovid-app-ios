@@ -19,12 +19,11 @@ class NSMeldungView: NSModuleBaseView {
 
     private let infectedView = NSBluetoothSettingsDetailView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let noPushView = NSBluetoothSettingsDetailView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_error, subtextColor: .ns_error)
+    private let noPushView = NSBluetoothSettingsDetailView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_red, subtextColor: .ns_red)
 
     override init() {
         super.init()
 
-        headerIcon = UIImage(named: "ic-meldungen")!
         headerTitle = "reports_title_homescreen".ub_localized
 
         updateLayout()

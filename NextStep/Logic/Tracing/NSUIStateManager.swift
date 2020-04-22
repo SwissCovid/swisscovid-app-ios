@@ -18,10 +18,6 @@ class NSUIStateManager: NSObject {
         tracingStartError ?? updateError ?? syncError
     }
 
-    private var bluetoothOk: Bool = true {
-        didSet { refresh() }
-    }
-
     private var pushOk: Bool = false {
         didSet {
             if pushOk != oldValue { refresh() }
@@ -29,6 +25,29 @@ class NSUIStateManager: NSObject {
     }
 
     var tracingState: TracingState?
+
+    var trackingState: TrackingState = .stopped {
+        didSet {
+            switch (oldValue, trackingState) {
+            case (.active, .active), (.stopped, .stopped):
+                return
+            case let (.inactive(e1), .inactive(e2)):
+                switch (e1, e2) {
+                case (.NetworkingError(_), .NetworkingError(_)),
+                     (.CaseSynchronizationError, .CaseSynchronizationError),
+                     (.CryptographyError(_), .CryptographyError(_)),
+                     (.DatabaseError(_), .DatabaseError(_)),
+                     (.BluetoothTurnedOff, .BluetoothTurnedOff),
+                     (.PermissonError, .PermissonError):
+                    return
+                default:
+                    refresh()
+                }
+            default:
+                refresh()
+            }
+        }
+    }
 
     var overwrittenInfectionState: InfectionStatus? {
         didSet { refresh() }
@@ -46,10 +65,6 @@ class NSUIStateManager: NSObject {
         // only one instance
 
         super.init()
-
-        if User.shared.hasCompletedOnboarding {
-            initializeBluetoothObserver()
-        }
 
         NotificationCenter.default.addObserver(self, selector: #selector(updatePush), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -82,10 +97,6 @@ class NSUIStateManager: NSObject {
     }
 
     func refresh() {
-        if User.shared.hasCompletedOnboarding, central == nil {
-            initializeBluetoothObserver()
-        }
-
         updatePush()
 
         uiState = reloadedUIState()
@@ -94,32 +105,42 @@ class NSUIStateManager: NSObject {
     func reloadedUIState() -> NSUIStateModel {
         var newState = NSUIStateModel()
 
-        var tracingNotWorking = false
+        var tracing: NSUIStateModel.Tracing = .active
 
-        switch tracingState?.trackingState {
+        switch trackingState {
         case .active:
             // skd says tracking works.
 
             // other checks, maybe not needed
-            if anyError != nil || !bluetoothOk || !tracingIsActivated {
-                tracingNotWorking = true
+            if anyError != nil || !tracingIsActivated {
+                tracing = .stopped
+            } else {
+                tracing = .active
             }
-
-        default:
-            tracingNotWorking = true
+            newState.homescreen.header = .tracingActive
+        case .stopped:
+            tracing = .stopped
+            newState.homescreen.header = .tracingInactive
+        case let .inactive(error):
+            switch error {
+            case .BluetoothTurnedOff:
+                tracing = .bluetoothTurnedOff
+            case .PermissonError:
+                tracing = .bluetoothPermissionError
+            case let .CryptographyError(e):
+                assertionFailure("CryptographyError: \(e)")
+            case let .DatabaseError(e):
+                assertionFailure("DatabaseError: \(e.localizedDescription)")
+            case let .NetworkingError(e):
+                print("NetworkingError: \(e?.localizedDescription ?? "nil")")
+            case .CaseSynchronizationError:
+                print("CaseSynchronizationError")
+            }
+            newState.homescreen.header = .bluetoothError
         }
 
-        if tracingNotWorking {
-            newState.homescreen.header = .error
-            newState.homescreen.begegnungen.tracing = .inactive
-        }
-
-        if !tracingIsActivated {
-            newState.begegnungenDetail.tracingEnabled = false
-            newState.begegnungenDetail.tracing = .deactivated
-        } else if tracingNotWorking {
-            newState.begegnungenDetail.tracing = .error
-        }
+        newState.homescreen.begegnungen.tracing = tracing
+        newState.begegnungenDetail.tracing = tracing
 
         if !pushOk {
             newState.homescreen.meldungen.pushProblem = true
@@ -159,17 +180,5 @@ class NSUIStateManager: NSObject {
         UBPushManager.shared.queryPushPermissions { success in
             self.pushOk = success
         }
-    }
-
-    private var central: CBCentralManager?
-
-    private func initializeBluetoothObserver() {
-        central = CBCentralManager(delegate: self, queue: nil)
-    }
-}
-
-extension NSUIStateManager: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        bluetoothOk = central.state == .poweredOn
     }
 }

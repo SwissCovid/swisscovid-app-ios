@@ -86,7 +86,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         switch state.homescreen.begegnungen.tracing {
         case .active:
             tracingLabel.text = "bluetooth_setting_tracking_active".ub_localized
-        case .inactive:
+        case .stopped, .bluetoothTurnedOff, .bluetoothPermissionError:
             tracingLabel.text = "bluetooth_setting_tracking_inactive".ub_localized
         }
 

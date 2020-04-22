@@ -9,7 +9,7 @@ import UIKit
 class NSAppTitleView: UIView {
     // MARK: - Init
 
-    var uiState: NSUIStateModel.Homescreen.Header = .normal {
+    var uiState: NSUIStateModel.Homescreen.Header = .tracingActive {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)
@@ -117,7 +117,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func hightlight() {
-        if uiState == .error {
+        if uiState == .bluetoothError || uiState == .tracingInactive {
             return // no highlight in error state
         }
 
@@ -132,7 +132,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func spawnArcs(force: Bool = false) {
-        if uiState == .error {
+        if uiState == .bluetoothError || uiState == .tracingInactive {
             return // no arcs in error state
         }
 
@@ -178,17 +178,17 @@ class NSAppTitleView: UIView {
         }
 
         switch uiState {
-        case .normal:
+        case .tracingActive:
             backgroundColor = .ns_secondary
             checkmark.isHidden = false
             info.isHidden = true
             warning.isHidden = true
-        case .error:
-            backgroundColor = .ns_error
+        case .bluetoothError, .tracingInactive:
+            backgroundColor = .ns_red
             checkmark.isHidden = true
             info.isHidden = true
             warning.isHidden = false
-        case .warning:
+        default:
             backgroundColor = .ns_primary
             checkmark.isHidden = true
             info.isHidden = false

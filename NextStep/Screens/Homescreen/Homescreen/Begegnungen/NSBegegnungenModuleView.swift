@@ -9,17 +9,36 @@ import SnapKit
 import UIKit
 
 class NSBegegnungenModuleView: NSModuleBaseView {
-    var uiState: NSUIStateModel.Homescreen.Begegnungen.Tracing = .active {
+    var uiState: NSUIStateModel.Tracing = .active {
         didSet { updateUI() }
     }
 
     private let tracingActiveView = NSBluetoothSettingsDetailView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check")!, titleColor: .ns_secondary, subtextColor: .ns_text)
-    private let tracingInactiveView = NSBluetoothSettingsDetailView(title: "tracing_error_title".ub_localized, subText: "tracing_error_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .ns_error, subtextColor: .ns_error)
+
+    private var tracingErrorView: NSTracingErrorView? {
+        switch uiState {
+        case .active:
+            return nil
+        case .stopped:
+            return NSTracingErrorView(icon: UIImage(named: "ic-error")!, title: "tracing_turned_off_title".ub_localized, text: "tracing_turned_off_text".ub_localized)
+        case .bluetoothPermissionError:
+            return NSTracingErrorView(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_permission_error_title".ub_localized, text: "bluetooth_permission_error_text".ub_localized, buttonTitle: "activate_bluetooth_button".ub_localized, action: {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
+
+                UIApplication.shared.open(settingsUrl)
+            })
+        case .bluetoothTurnedOff:
+            return NSTracingErrorView(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_turned_off_title".ub_localized, text: "bluetooth_turned_off_text".ub_localized, buttonTitle: "bluetooth_turn_on_button_title".ub_localized, action: {
+                NSTracingManager.shared.endTracing()
+                NSTracingManager.shared.beginUpdatesAndTracing()
+            })
+        }
+    }
 
     override init() {
         super.init()
 
-        headerIcon = UIImage(named: "ic-begegnungen")!
         headerTitle = "handshakes_title_homescreen".ub_localized
 
         updateUI()
@@ -30,17 +49,16 @@ class NSBegegnungenModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        [tracingActiveView, tracingInactiveView]
+        if let errorView = tracingErrorView {
+            return [errorView]
+        } else {
+            return [tracingActiveView]
+        }
     }
 
     private func updateUI() {
-        updateLayout()
         stackView.setNeedsLayout()
-        let isTracingActive = uiState == .active
-        tracingActiveView.alpha = isTracingActive ? 1 : 0
-        tracingInactiveView.alpha = isTracingActive ? 0 : 1
-        tracingActiveView.isHidden = !isTracingActive
-        tracingInactiveView.isHidden = isTracingActive
+        updateLayout()
         stackView.layoutIfNeeded()
     }
 }

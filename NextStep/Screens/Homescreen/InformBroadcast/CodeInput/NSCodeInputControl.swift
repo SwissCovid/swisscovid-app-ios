@@ -178,7 +178,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     }
 
     private func changeBorderStyle(isSelected: Bool) {
-        backgroundColor = UIColor.ns_background_secondary
+        backgroundColor = UIColor.ns_backgroundSecondary
 
         if isSelected {
             layer.borderWidth = 2.0

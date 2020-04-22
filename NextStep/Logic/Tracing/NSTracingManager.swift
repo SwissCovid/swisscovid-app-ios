@@ -44,6 +44,7 @@ class NSTracingManager: NSObject {
     }
 
     func beginUpdatesAndTracing() {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateStatus), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         if User.shared.hasCompletedOnboarding, isActivated {
@@ -112,6 +113,7 @@ class NSTracingManager: NSObject {
             case let .success(st):
                 NSUIStateManager.shared.updateError = nil
                 NSUIStateManager.shared.tracingState = st
+                NSUIStateManager.shared.trackingState = st.trackingState
 
                 // schedule local push if exposed
                 NSTracingLocalPush.shared.update(state: st)
@@ -180,16 +182,11 @@ extension NSTracingManager: CBCentralManagerDelegate {
 }
 
 extension NSTracingManager: DP3TTracingDelegate {
-    func errorOccured(_ error: DP3TTracingErrors) {
-        DispatchQueue.main.async {
-            NSUIStateManager.shared.updateError = error
-        }
-    }
-
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
             NSUIStateManager.shared.updateError = nil
             NSUIStateManager.shared.tracingState = state
+            NSUIStateManager.shared.trackingState = state.trackingState
         }
     }
 }

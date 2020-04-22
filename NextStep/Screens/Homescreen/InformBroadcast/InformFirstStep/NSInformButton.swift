@@ -25,7 +25,7 @@ class NSInformButton: NSButton {
 
     private func setup() {
         backgroundColor = .white
-        highlightedBackgroundColor = .ns_background_secondary
+        highlightedBackgroundColor = .ns_backgroundSecondary
 
         layer.cornerRadius = 4.0
         highlightCornerRadius = 4.0

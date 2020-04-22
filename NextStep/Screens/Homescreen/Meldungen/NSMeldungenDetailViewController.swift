@@ -22,7 +22,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_background_secondary
+        view.backgroundColor = .ns_backgroundSecondary
 
         NSUIStateManager.shared.addObserver(self) { [weak self] state in
             guard let self = self else { return }

@@ -403,3 +403,10 @@
 
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
 "symptom_detail_navigation_title" = "Symptome";
+"tracing_turned_off_title" = "Tracing deaktiviert";
+"tracing_turned_off_text" = "Tracing erlauben, um Begegnungen anonym zu speichern.";
+"bluetooth_turned_off_title" = "Bluetooth ausgeschaltet";
+"bluetooth_turned_off_text" = "Schalten Sie Bluetooth ein, damit das anonyme Tracing funktioniert.";
+"bluetooth_turn_on_button_title" = "Bluetooth einschalten";
+"bluetooth_permission_error_title" = "Bluetooth deaktiviert";
+"bluetooth_permission_error_text" = "Damit anonymes Tracing funktioniert, müssen Sie der App Zugriff auf Bluetooth erlauben.";

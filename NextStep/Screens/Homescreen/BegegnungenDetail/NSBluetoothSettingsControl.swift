@@ -23,7 +23,7 @@ class NSBluetoothSettingsControl: UIView {
 
     private let trackingActiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_active".ub_localized, subText: "bluetooth_setting_tracking_active_subtext".ub_localized, image: UIImage(named: "ic-check"), titleColor: UIColor.ns_secondary, subtextColor: UIColor.ns_text)
 
-    private let trackingUnactiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_inactive".ub_localized, subText: "bluetooth_setting_tracking_inactive_subtext".ub_localized, image: UIImage(named: "ic-error"), titleColor: UIColor.ns_error, subtextColor: UIColor.ns_error)
+    private let trackingUnactiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_inactive".ub_localized, subText: "bluetooth_setting_tracking_inactive_subtext".ub_localized, image: UIImage(named: "ic-error"), titleColor: .ns_red, subtextColor: .ns_red)
 
     var activeViewConstraint: Constraint?
     var unactiveViewConstraint: Constraint?
@@ -86,7 +86,7 @@ class NSBluetoothSettingsControl: UIView {
             make.height.equalTo(1.0)
         }
 
-        line.backgroundColor = .ns_background_secondary
+        line.backgroundColor = .ns_backgroundSecondary
 
         trackingActiveView.snp.makeConstraints { make in
             make.top.equalTo(self.line.snp.bottom).offset(2.0 * NSPadding.medium)
@@ -129,8 +129,8 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
 
-        case .deactivated: fallthrough
-        case .error:
+        case .stopped: fallthrough
+        case .bluetoothTurnedOff, .bluetoothPermissionError:
             unactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()
 

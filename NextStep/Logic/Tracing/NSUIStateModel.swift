@@ -9,19 +9,22 @@ struct NSUIStateModel: Equatable {
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
 
+    enum Tracing: Equatable {
+        case active
+        case stopped
+        case bluetoothTurnedOff
+        case bluetoothPermissionError
+    }
+
     struct Homescreen: Equatable {
         enum Header: Equatable {
-            case normal
-            case error
-            case warning
+            case tracingActive
+            case tracingInactive
+            case bluetoothError
+            case tracingEnded
         }
 
         struct Begegnungen: Equatable {
-            enum Tracing: Equatable {
-                case active
-                case inactive
-            }
-
             var tracing: Tracing = .active
         }
 
@@ -36,7 +39,7 @@ struct NSUIStateModel: Equatable {
             var pushProblem: Bool = false
         }
 
-        var header: Header = .normal
+        var header: Header = .tracingActive
         var begegnungen: Begegnungen = Begegnungen()
         var meldungen: Meldungen = Meldungen()
 
@@ -61,12 +64,6 @@ struct NSUIStateModel: Equatable {
     }
 
     struct BegegnungenDetail: Equatable {
-        enum Tracing: Equatable {
-            case active
-            case deactivated
-            case error
-        }
-
         var tracingEnabled: Bool = true
         var tracing: Tracing = .active
     }
