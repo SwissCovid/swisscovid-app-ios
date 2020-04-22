@@ -3,6 +3,12 @@
 import UIKit
 
 class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
+    // MARK: - API
+
+    public var meldung: NSMeldungModel? {
+        didSet { update() }
+    }
+
     // MARK: - Initial Views
 
     private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
@@ -30,8 +36,7 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
         titleLabel.text = "meldung_detail_exposed_title".ub_localized
         subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
 
-        // TODO: Falsches Datum
-        dateLabel.text = "Heute"
+        dateLabel.text = ""
         dateLabel.alpha = 0.43
     }
 
@@ -131,5 +136,31 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
 
     func updateConstraintsForAnimation() {
         setupClosed()
+    }
+
+    // MARK: - Update
+
+    private func update() {
+        guard let meldung = self.meldung else { return }
+
+        let days = Date().ns_differenceInDaysWithDate(date: meldung.timestamp)
+
+        if days == 0 {
+            dateLabel.text = "date_today".ub_localized
+        } else {
+            dateLabel.text = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
+        }
+    }
+}
+
+extension Date {
+    func ns_differenceInDaysWithDate(date: Date) -> Int {
+        let calendar = Calendar.current
+
+        let date1 = calendar.startOfDay(for: self)
+        let date2 = calendar.startOfDay(for: date)
+
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return components.day ?? 0
     }
 }

@@ -454,3 +454,9 @@
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Onboarding zurücksetzen";
+
+/*Heute*/
+"date_today" = "Heute";
+
+/*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
+"date_days_ago" = "vor {COUNT} Tagen";
