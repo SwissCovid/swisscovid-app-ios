@@ -47,7 +47,7 @@ class NSTracingManager: NSObject {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateStatus), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        if User.shared.hasCompletedOnboarding, isActivated {
+        if NSUser.shared.hasCompletedOnboarding, isActivated {
             do {
                 try DP3TTracing.startTracing()
                 NSUIStateManager.shared.tracingStartError = nil

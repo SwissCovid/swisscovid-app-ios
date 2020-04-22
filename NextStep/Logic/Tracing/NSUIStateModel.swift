@@ -3,6 +3,11 @@
 import DP3TSDK
 import Foundation
 
+struct NSMeldungModel: Equatable {
+    let identifier: String
+    let timestamp: Date
+}
+
 struct NSUIStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
     var debug: Debug = Debug()
@@ -62,6 +67,7 @@ struct NSUIStateModel: Equatable {
         }
 
         var meldung: Meldung = .noMeldung
+        var meldungen: [NSMeldungModel] = []
     }
 
     struct BegegnungenDetail: Equatable {

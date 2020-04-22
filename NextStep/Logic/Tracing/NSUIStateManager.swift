@@ -63,7 +63,6 @@ class NSUIStateManager: NSObject {
 
     override init() {
         // only one instance
-
         super.init()
 
         NotificationCenter.default.addObserver(self, selector: #selector(updatePush), name: UIApplication.didBecomeActiveNotification, object: nil)

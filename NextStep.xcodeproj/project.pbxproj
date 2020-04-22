@@ -23,7 +23,7 @@
 /* Begin PBXBuildFile section */
 		2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* NSHeaderArcView.swift */; };
 		2443948A24463ED2003ED582 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2443948924463ED2003ED582 /* DP3TSDK */; };
-		24780B07242DFCD9003BB26C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* User.swift */; };
+		24780B07242DFCD9003BB26C /* NSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* NSUser.swift */; };
 		24780B09242DFCE4003BB26C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B08242DFCE4003BB26C /* Model.swift */; };
 		24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B0A242DFCFB003BB26C /* NSTabBarController.swift */; };
 		24780B11242DFD2F003BB26C /* NSMeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */; };
@@ -155,7 +155,7 @@
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
 		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		24780B06242DFCD9003BB26C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		24780B06242DFCD9003BB26C /* NSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUser.swift; sourceTree = "<group>"; };
 		24780B08242DFCE4003BB26C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		24780B0A242DFCFB003BB26C /* NSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTabBarController.swift; sourceTree = "<group>"; };
 		24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungModuleView.swift; sourceTree = "<group>"; };
@@ -483,7 +483,7 @@
 		24780B00242DF983003BB26C /* User */ = {
 			isa = PBXGroup;
 			children = (
-				24780B06242DFCD9003BB26C /* User.swift */,
+				24780B06242DFCD9003BB26C /* NSUser.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -1108,7 +1108,7 @@
 				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
 				6E6E518B242FA39C006E532E /* NSVerhaltenViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* NSDateFormatter.swift in Sources */,
-				24780B07242DFCD9003BB26C /* User.swift in Sources */,
+				24780B07242DFCD9003BB26C /* NSUser.swift in Sources */,
 				24780B28242F3A4C003BB26C /* NSSymptomsViewController.swift in Sources */,
 				24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */,
 				6E3308752450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,

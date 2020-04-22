@@ -35,7 +35,7 @@ class NSTabBarController: UITabBarController {
     }
 
     private func presentOnboardingIfNeeded() {
-        if !User.shared.hasCompletedOnboarding {
+        if !NSUser.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             present(onboardingViewController, animated: false)
