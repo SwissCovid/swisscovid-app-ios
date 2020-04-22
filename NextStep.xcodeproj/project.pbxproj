@@ -78,7 +78,7 @@
 		6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */; };
 		6EFB097524459B870097BD3D /* NSBegegnungenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSBegegnungenDetailViewController.swift */; };
 		6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */; };
-		6EFB09792445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09782445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift */; };
+		6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */; };
 		6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097A2445C2210097BD3D /* NSPointTextView.swift */; };
 		6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097D244603560097BD3D /* NSMeldungenDetailViewController.swift */; };
 		8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC98241FCC7D006F2437 /* AppDelegate.swift */; };
@@ -209,7 +209,7 @@
 		6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNoCodeInformationViewController.swift; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSBegegnungenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenDetailViewController.swift; sourceTree = "<group>"; };
 		6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBluetoothSettingsControl.swift; sourceTree = "<group>"; };
-		6EFB09782445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBluetoothSettingsDetailView.swift; sourceTree = "<group>"; };
+		6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxView.swift; sourceTree = "<group>"; };
 		6EFB097A2445C2210097BD3D /* NSPointTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPointTextView.swift; sourceTree = "<group>"; };
 		6EFB097D244603560097BD3D /* NSMeldungenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailViewController.swift; sourceTree = "<group>"; };
 		8E81CC95241FCC7D006F2437 /* NextStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -617,7 +617,6 @@
 			children = (
 				6EFB097424459B870097BD3D /* NSBegegnungenDetailViewController.swift */,
 				6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */,
-				6EFB09782445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift */,
 				6EFB097A2445C2210097BD3D /* NSPointTextView.swift */,
 			);
 			path = BegegnungenDetail;
@@ -777,6 +776,7 @@
 			isa = PBXGroup;
 			children = (
 				DCA3FFB324502D370003F5AD /* NSTracingErrorView.swift */,
+				6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1042,7 +1042,7 @@
 				6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */,
 				DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */,
 				24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */,
-				6EFB09792445B2CA0097BD3D /* NSBluetoothSettingsDetailView.swift in Sources */,
+				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,

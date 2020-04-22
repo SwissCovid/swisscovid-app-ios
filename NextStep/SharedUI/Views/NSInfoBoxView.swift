@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSBluetoothSettingsDetailView: UIView {
+class NSInfoBoxView: UIView {
     // MARK: - Views
 
     private let titleLabel = NSLabel(.uppercaseBold)
@@ -17,17 +17,18 @@ class NSBluetoothSettingsDetailView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, backgroundInset: Bool = true, hasBubble: Bool = false, additionalText: String? = nil) {
+    init(title: String, subText: String, image: UIImage?, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil) {
         super.init(frame: .zero)
 
         titleLabel.text = title
         subtextLabel.text = subText
-        imageView.image = image
+        imageView.image = image?.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = titleColor
         titleLabel.textColor = titleColor
         subtextLabel.textColor = subtextColor
         additionalLabel.textColor = subtextColor
 
-        setup(backgroundColor: backgroundColor, backgroundInset: backgroundInset, hasBubble: hasBubble, additionalText: additionalText)
+        setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText)
     }
 
     required init?(coder _: NSCoder) {
@@ -36,7 +37,7 @@ class NSBluetoothSettingsDetailView: UIView {
 
     // MARK: - Setup
 
-    private func setup(backgroundColor: UIColor?, backgroundInset: Bool, hasBubble: Bool, additionalText: String? = nil) {
+    private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil) {
         var topBottomPadding: CGFloat = 0
 
         if let bgc = backgroundColor {
@@ -45,11 +46,7 @@ class NSBluetoothSettingsDetailView: UIView {
             addSubview(v)
 
             v.snp.makeConstraints { make in
-                if backgroundInset {
-                    make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: NSPadding.medium, bottom: 0, right: NSPadding.medium))
-                } else {
-                    make.edges.equalToSuperview()
-                }
+                make.edges.equalToSuperview()
             }
 
             v.backgroundColor = bgc
@@ -65,7 +62,7 @@ class NSBluetoothSettingsDetailView: UIView {
                 }
             }
 
-            topBottomPadding = backgroundInset ? 14.0 : (2.0 * NSPadding.medium)
+            topBottomPadding = 14
         }
 
         let hasAdditionalStuff = additionalText != nil
@@ -77,14 +74,14 @@ class NSBluetoothSettingsDetailView: UIView {
         imageView.ub_setContentPriorityRequired()
 
         imageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(NSPadding.medium * 2.0)
+            make.left.equalToSuperview().inset(NSPadding.medium)
             make.top.equalToSuperview().inset(topBottomPadding)
         }
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(topBottomPadding + 3.0)
             make.left.equalTo(self.imageView.snp.right).offset(NSPadding.medium)
-            make.right.equalToSuperview().inset(NSPadding.medium * 2.0)
+            make.right.equalToSuperview().inset(NSPadding.medium)
         }
 
         subtextLabel.snp.makeConstraints { make in

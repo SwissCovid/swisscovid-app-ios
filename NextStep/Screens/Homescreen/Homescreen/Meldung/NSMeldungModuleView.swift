@@ -13,13 +13,13 @@ class NSMeldungView: NSModuleBaseView {
     }
 
     // section views
-    private let noMeldungenView = NSBluetoothSettingsDetailView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_text".ub_localized, image: UIImage(named: "ic-check")!, titleColor: .ns_secondary, subtextColor: .ns_text, backgroundColor: UIColor(ub_hexString: "#d3f2ee")!)
+    private let noMeldungenView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_text".ub_localized, image: UIImage(named: "ic-check")!, titleColor: .ns_secondary, subtextColor: .ns_text, backgroundColor: UIColor(ub_hexString: "#d3f2ee")!)
 
-    private let meldungenView = NSBluetoothSettingsDetailView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
+    private let meldungenView = NSInfoBoxView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let infectedView = NSBluetoothSettingsDetailView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
+    private let infectedView = NSInfoBoxView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let noPushView = NSBluetoothSettingsDetailView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_red, subtextColor: .ns_red)
+    private let noPushView = NSInfoBoxView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_red, subtextColor: .ns_red)
 
     override init() {
         super.init()

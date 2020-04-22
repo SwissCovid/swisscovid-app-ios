@@ -141,6 +141,7 @@ class NSUIStateManager: NSObject {
 
         newState.homescreen.begegnungen.tracing = tracing
         newState.begegnungenDetail.tracing = tracing
+        newState.begegnungenDetail.tracingEnabled = NSTracingManager.shared.isActivated
 
         if !pushOk {
             newState.homescreen.meldungen.pushProblem = true

@@ -174,16 +174,12 @@
 "logs_filter_tags" = "filtre de balise (séparé par des virgules)";
 
 /*Titel des Bluetooth Control*/
-"bluetooth_setting_title" = "Suivi";
+/*Fuzzy*/
+"tracing_setting_title" = "Suivi";
 
 /*Text beim Bluetooth Control*/
-"bluetooth_setting_text" = "Autoriser Bluetooth";
-
-/*Bluetooth Control: Tracking aktiv*/
-"bluetooth_setting_tracking_active" = "Suivi actif";
-
-/*Bluetooth Control: Tracking Aktiv Subtext*/
-"bluetooth_setting_tracking_active_subtext" = "Les rencontres sont enregistrées de manière anonyme sur votre appareil.";
+/*Fuzzy*/
+"tracing_setting_text" = "Autoriser Bluetooth";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Suivi désactivé";

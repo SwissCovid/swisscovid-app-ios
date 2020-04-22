@@ -173,16 +173,10 @@
 "logs_filter_tags" = "Tag-Filter (kommagetrennt)";
 
 /*Titel des Bluetooth Control*/
-"bluetooth_setting_title" = "Tracing";
+"tracing_setting_title" = "Tracing";
 
 /*Text beim Bluetooth Control*/
-"bluetooth_setting_text" = "Begegnungen erkennen";
-
-/*Bluetooth Control: Tracking aktiv*/
-"bluetooth_setting_tracking_active" = "Tracing aktiv";
-
-/*Bluetooth Control: Tracking Aktiv Subtext*/
-"bluetooth_setting_tracking_active_subtext" = "Begegnungen werden anonym auf deinem Gerät gespeichert.";
+"tracing_setting_text" = "Anonymes Tracing erlauben";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";

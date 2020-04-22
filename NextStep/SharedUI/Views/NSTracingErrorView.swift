@@ -11,23 +11,35 @@ class NSTracingErrorView: UIView {
     private let textLabel = NSLabel(.text, textColor: .ns_text, textAlignment: .center)
     private let actionButton = NSUnderlinedButton()
 
-    init(icon: UIImage, title: String, text: String, buttonTitle: String? = nil, action: (() -> Void)? = nil) {
+    // MARK: - Model
+
+    struct NSTracingErrorViewModel {
+        let icon: UIImage
+        let title: String
+        let text: String
+        let buttonTitle: String?
+        let action: (() -> Void)?
+    }
+
+    var model: NSTracingErrorViewModel {
+        didSet { update() }
+    }
+
+    init(model: NSTracingErrorViewModel) {
+        self.model = model
+
         super.init(frame: .zero)
 
-        setupView(hasAction: action != nil)
+        setupView()
 
-        imageView.image = icon
-        titleLabel.text = title
-        textLabel.text = text
-        actionButton.touchUpCallback = action
-        actionButton.title = buttonTitle
+        update()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupView(hasAction: Bool) {
+    private func setupView() {
         backgroundColor = .ns_backgroundSecondary
         layer.cornerRadius = 5
 
@@ -39,13 +51,63 @@ class NSTracingErrorView: UIView {
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(NSPadding.medium)
         }
+    }
+
+    private func update() {
+        imageView.image = model.icon
+        titleLabel.text = model.title
+        textLabel.text = model.text
+        actionButton.touchUpCallback = model.action
+        actionButton.title = model.buttonTitle
+
+        stackView.setNeedsLayout()
+        stackView.clearSubviews()
 
         stackView.addArrangedView(imageView)
         stackView.addArrangedView(titleLabel)
         stackView.addArrangedView(textLabel)
-        if hasAction {
+        if model.action != nil {
             stackView.addArrangedView(actionButton)
         }
         stackView.addSpacerView(20)
+
+        stackView.layoutIfNeeded()
+    }
+
+    // MARK: - Factory
+
+    static func tracingErrorView(for state: NSUIStateModel.Tracing) -> NSTracingErrorView? {
+        let model = self.model(for: state)
+        switch state {
+        case .stopped:
+            return NSTracingErrorView(model: model)
+        case .bluetoothPermissionError:
+            return NSTracingErrorView(model: model)
+        case .bluetoothTurnedOff:
+            return NSTracingErrorView(model: model)
+        case .active:
+            return nil
+        }
+    }
+
+    static func model(for state: NSUIStateModel.Tracing) -> NSTracingErrorViewModel {
+        switch state {
+        case .stopped:
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "tracing_turned_off_title".ub_localized, text: "tracing_turned_off_text".ub_localized, buttonTitle: nil, action: nil)
+        case .bluetoothPermissionError:
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_permission_error_title".ub_localized, text: "bluetooth_permission_error_text".ub_localized, buttonTitle: "activate_bluetooth_button".ub_localized, action: {
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
+
+                UIApplication.shared.open(settingsUrl)
+            })
+        case .bluetoothTurnedOff:
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_turned_off_title".ub_localized, text: "bluetooth_turned_off_text".ub_localized, buttonTitle: "bluetooth_turn_on_button_title".ub_localized, action: {
+                NSTracingManager.shared.endTracing()
+                NSTracingManager.shared.beginUpdatesAndTracing()
+            })
+        default:
+            return NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil)
+        }
     }
 }

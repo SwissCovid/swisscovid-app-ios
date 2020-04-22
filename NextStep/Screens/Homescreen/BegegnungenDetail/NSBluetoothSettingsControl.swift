@@ -10,7 +10,7 @@ import UIKit
 class NSBluetoothSettingsControl: UIView {
     // MARK: - Views
 
-    var state: NSUIStateModel.BegegnungenDetail = .init()
+    var state: NSUIStateModel.BegegnungenDetail
 
     public weak var viewToBeLayouted: UIView?
 
@@ -19,25 +19,25 @@ class NSBluetoothSettingsControl: UIView {
 
     private let switchControl = UISwitch()
 
-    private let line = UIView()
+    private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground)
 
-    private let trackingActiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_active".ub_localized, subText: "bluetooth_setting_tracking_active_subtext".ub_localized, image: UIImage(named: "ic-check"), titleColor: UIColor.ns_secondary, subtextColor: UIColor.ns_text)
-
-    private let trackingUnactiveView = NSBluetoothSettingsDetailView(title: "bluetooth_setting_tracking_inactive".ub_localized, subText: "bluetooth_setting_tracking_inactive_subtext".ub_localized, image: UIImage(named: "ic-error"), titleColor: .ns_red, subtextColor: .ns_red)
+    private lazy var tracingErrorView = NSTracingErrorView.tracingErrorView(for: state.tracing) ?? NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
 
     var activeViewConstraint: Constraint?
-    var unactiveViewConstraint: Constraint?
+    var inactiveViewConstraint: Constraint?
 
     // MARK: - Init
 
-    init() {
+    init(initialState: NSUIStateModel.BegegnungenDetail) {
+        state = initialState
+
         super.init(frame: .zero)
 
         backgroundColor = .white
 
-        titleLabel.text = "bluetooth_setting_title".ub_localized
-        subtitleLabel.text = "bluetooth_setting_text".ub_localized
-        switchControl.onTintColor = .ns_secondary
+        titleLabel.text = "tracing_setting_title".ub_localized
+        subtitleLabel.text = "tracing_setting_text".ub_localized
+        switchControl.onTintColor = .ns_blue
 
         setup()
 
@@ -60,9 +60,8 @@ class NSBluetoothSettingsControl: UIView {
         addSubview(subtitleLabel)
         addSubview(switchControl)
 
-        addSubview(line)
-        addSubview(trackingActiveView)
-        addSubview(trackingUnactiveView)
+        addSubview(tracingActiveView)
+        addSubview(tracingErrorView)
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(2.0 * NSPadding.medium - 2.0)
@@ -80,29 +79,21 @@ class NSBluetoothSettingsControl: UIView {
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
         }
 
-        line.snp.makeConstraints { make in
+        tracingActiveView.snp.makeConstraints { make in
             make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
             make.left.right.equalToSuperview().inset(NSPadding.medium)
-            make.height.equalTo(1.0)
-        }
-
-        line.backgroundColor = .ns_backgroundSecondary
-
-        trackingActiveView.snp.makeConstraints { make in
-            make.top.equalTo(self.line.snp.bottom).offset(2.0 * NSPadding.medium)
-            make.left.right.equalToSuperview()
-            activeViewConstraint = make.bottom.equalToSuperview().inset(2.0 * NSPadding.medium).constraint
+            activeViewConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
         }
 
         activeViewConstraint?.deactivate()
 
-        trackingUnactiveView.snp.makeConstraints { make in
-            make.top.equalTo(self.line.snp.bottom).offset(2.0 * NSPadding.medium)
-            make.left.right.equalToSuperview()
-            unactiveViewConstraint = make.bottom.equalToSuperview().inset(2.0 * NSPadding.medium).constraint
+        tracingErrorView.snp.makeConstraints { make in
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            inactiveViewConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
         }
 
-        unactiveViewConstraint?.activate()
+        inactiveViewConstraint?.activate()
     }
 
     // MARK: - Switch Logic
@@ -116,27 +107,28 @@ class NSBluetoothSettingsControl: UIView {
 
     private func updateState(_ state: NSUIStateModel) {
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)
+        tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
 
         switch state.begegnungenDetail.tracing {
         case .active:
 
-            unactiveViewConstraint?.deactivate()
+            inactiveViewConstraint?.deactivate()
             activeViewConstraint?.activate()
 
             UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
-                self.trackingActiveView.alpha = 1
-                self.trackingUnactiveView.alpha = 0
+                self.tracingActiveView.alpha = 1
+                self.tracingErrorView.alpha = 0
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
 
         case .stopped: fallthrough
         case .bluetoothTurnedOff, .bluetoothPermissionError:
-            unactiveViewConstraint?.activate()
+            inactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()
 
             UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
-                self.trackingActiveView.alpha = 0
-                self.trackingUnactiveView.alpha = 1
+                self.tracingActiveView.alpha = 0
+                self.tracingErrorView.alpha = 1
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
         }

@@ -8,15 +8,15 @@ import UIKit
 
 class NSBegegnungenDetailViewController: NSViewController {
     private let stackScrollView = NSStackScrollView()
-
-    private let imageView = UIImageView(image: UIImage(named: "onboarding-4"))
-
-    private let bluetoothControl = NSBluetoothSettingsControl()
+    private let bluetoothControl: NSBluetoothSettingsControl
 
     // MARK: - Init
 
-    override init() {
+    init(initialState: NSUIStateModel.BegegnungenDetail) {
+        bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
+
         super.init()
+
         title = "handshakes_title_homescreen".ub_localized
     }
 
@@ -40,17 +40,6 @@ class NSBegegnungenDetailViewController: NSViewController {
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
-        stackScrollView.addSpacerView(NSPadding.large)
-
-        let v = UIView()
-        v.addSubview(imageView)
-
-        imageView.snp.makeConstraints { make in
-            make.centerX.top.bottom.equalToSuperview()
-        }
-
-        stackScrollView.addArrangedView(v)
 
         stackScrollView.addSpacerView(NSPadding.large)
 

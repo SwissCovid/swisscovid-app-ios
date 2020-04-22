@@ -33,8 +33,6 @@ public enum NSLabelType: UBLabelType {
 
     public var textColor: UIColor {
         switch self {
-        case .title:
-            return .ns_primary
         case .button:
             return .white
         default:

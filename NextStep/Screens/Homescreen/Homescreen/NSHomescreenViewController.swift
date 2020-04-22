@@ -27,6 +27,8 @@ class NSHomescreenViewController: NSViewController {
 
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_red))
 
+    private var lastState: NSUIStateModel = .init()
+
     // MARK: - View
 
     override init() {
@@ -123,7 +125,7 @@ class NSHomescreenViewController: NSViewController {
         stackScrollView.addArrangedView(whatToDoPositiveTestButton)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
-        let previewWarning = NSBluetoothSettingsDetailView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
+        let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
         stackScrollView.addArrangedView(previewWarning)
 
         stackScrollView.addSpacerView(NSPadding.large)
@@ -180,12 +182,14 @@ class NSHomescreenViewController: NSViewController {
             informButton.isEnabled = true
             informButton.alpha = 1.0
         }
+
+        lastState = state
     }
 
     // MARK: - Details
 
     private func presentBegegnungenDetail() {
-        navigationController?.pushViewController(NSBegegnungenDetailViewController(), animated: true)
+        navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
     }
 
     private func presentMeldungenDetail() {
