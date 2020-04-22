@@ -80,20 +80,20 @@ class NSTracingErrorView: UIView {
     static func tracingErrorView(for state: NSUIStateModel.Tracing) -> NSTracingErrorView? {
         let model = self.model(for: state)
         switch state {
-        case .stopped:
+        case .inactive:
             return NSTracingErrorView(model: model)
         case .bluetoothPermissionError:
             return NSTracingErrorView(model: model)
         case .bluetoothTurnedOff:
             return NSTracingErrorView(model: model)
-        case .active:
+        default:
             return nil
         }
     }
 
     static func model(for state: NSUIStateModel.Tracing) -> NSTracingErrorViewModel {
         switch state {
-        case .stopped:
+        case .inactive:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "tracing_turned_off_title".ub_localized, text: "tracing_turned_off_text".ub_localized, buttonTitle: nil, action: nil)
         case .bluetoothPermissionError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_permission_error_title".ub_localized, text: "bluetooth_permission_error_text".ub_localized, buttonTitle: "activate_bluetooth_button".ub_localized, action: {

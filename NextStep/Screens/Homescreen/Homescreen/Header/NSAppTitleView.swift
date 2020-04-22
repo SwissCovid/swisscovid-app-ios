@@ -17,6 +17,9 @@ class NSAppTitleView: UIView {
         }
     }
 
+//    private lazy var backgroundView = NSHeaderImageBackgroundView(initialState: uiState)
+//    private let graphView = NSAnimatedGraphView()
+
     let highlightView = UIView()
 
     // Safe-area aware container
@@ -49,6 +52,10 @@ class NSAppTitleView: UIView {
         highlightView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+//        addSubview(backgroundView)
+//        backgroundView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
 
         addSubview(contentView)
         contentView.snp.makeConstraints { make in
@@ -81,6 +88,12 @@ class NSAppTitleView: UIView {
         warning.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+
+//        contentView.addSubview(graphView)
+//        graphView.snp.makeConstraints { make in
+//            make.center.equalToSuperview()
+//            make.size.equalTo(50)
+//        }
     }
 
     private func animate() {
@@ -194,6 +207,8 @@ class NSAppTitleView: UIView {
             info.isHidden = false
             warning.isHidden = true
         }
+
+//        backgroundView.state = uiState
     }
 }
 

@@ -122,6 +122,7 @@
 		DCA3FFB424502D370003F5AD /* NSTracingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* NSTracingErrorView.swift */; };
 		DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */; };
 		DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
+		DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
 		DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
 		DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D26242D04280017C4F9 /* Inter-ExtraBold.ttf */; };
@@ -264,6 +265,7 @@
 		DCA3FFB324502D370003F5AD /* NSTracingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTracingErrorView.swift; sourceTree = "<group>"; };
 		DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnderlinedButton.swift; sourceTree = "<group>"; };
 		DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClickthroughStackView.swift; sourceTree = "<group>"; };
+		DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderImageBackgroundView.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -553,6 +555,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */,
+				DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */,
 				2443947A2445F062003ED582 /* NSHeaderArcView.swift */,
 			);
 			path = Header;
@@ -1031,6 +1034,7 @@
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,
+				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
 				6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */,
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,

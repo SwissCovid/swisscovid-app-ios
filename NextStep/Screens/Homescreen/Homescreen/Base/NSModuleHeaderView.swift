@@ -16,7 +16,11 @@ class NSModuleHeaderView: UIView {
         set { titleLabel.text = newValue }
     }
 
-    var touchUpCallback: (() -> Void)?
+    var showCaret: Bool = true {
+        didSet {
+            rightCaretImageView.isHidden = !showCaret
+        }
+    }
 
     // MARK: - Init
 

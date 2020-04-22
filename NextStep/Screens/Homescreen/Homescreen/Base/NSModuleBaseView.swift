@@ -18,7 +18,7 @@ class NSModuleBaseView: UIControl {
         }
     }
 
-    private let headerView = NSModuleHeaderView()
+    let headerView = NSModuleHeaderView()
     internal let stackView = NSClickthroughStackView()
 
     init() {

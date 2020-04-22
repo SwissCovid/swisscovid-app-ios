@@ -221,8 +221,8 @@
 /*Hinweis Text*/
 "hinweis_text" = "Eine Person, der du begegnet bist, wurde positiv auf COVID-19 getestet.";
 "button_report_illness" = "Erkrankung melden";
-"meldungen_meldung_title" = "Wichtiger Hinweis";
-"meldungen_meldung_text" = "Eine Person, der du begegnet bist, wurde positiv auf COVID-19 getestet. Bitte informiere dich hier über die Verhaltensempfehlungen.";
+"meldungen_meldung_title" = "Mögliche Ansteckung";
+"meldungen_meldung_text" = "Eine Ihrer Begegnungen wurde positiv auf COVID-19 getestet";
 "meldungen_meldung_more_button" = "Mehr erfahren";
 "tracing_active_title" = "Tracing aktiv";
 "tracing_active_text" = "Begegnungen werden anonym gespeichert";
@@ -405,3 +405,46 @@
 /*URL zum Corona Check*/
 "symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Einstellungen ändern";
+
+/*Meldungen Detail: Subtitel wenn keine Meldungen*/
+"meldungen_no_meldungen_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet";
+
+/*Keine Meldungen Weisse Box Titel*/
+"no_meldungen_box_title" = "Schützen Sie sich";
+
+/*Keine Meldungen Weisse Box Subtitel*/
+"no_meldungen_box_subtitle" = "Was soll ich tun?";
+
+/*Keine Meldungen Weisse Box Text*/
+"no_meldungen_box_text" = "Halten Sie sich an die geltenden Verhaltens- und Hygieneempfehlungen.";
+
+/*Meldung Detail: Positiv Getestet Titel*/
+"meldung_detail_positive_tested_title" = "Positiv getestet";
+
+/*Meldung Detail: Positiv Getestet Subtitel*/
+"meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+
+/*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
+"meldung_detail_positive_test_box_subtitle" = "Was muss ich tun?";
+
+/*Meldung Detail Positiv Getestet Weisse Box Titel*/
+"meldung_detail_positive_test_box_title" = "Selbst-Isolation";
+
+/*Meldung Detail Positiv Getestet Weisse Box Text*/
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen des Testcenters zur Selbst-Isolation";
+"tracing_ended_title" = "Tracing beendet";
+"tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert";
+"exposed_info_contact_hotline" = "Kontaktieren Sie die Infohotline";
+"meldung_homescreen_positive_info_line1" = "Befolgen Sie die Anweisungen";
+"meldung_homescreen_positive_info_line2" = "zur Selbstisolation";
+
+/*Meldung Detail Exposed Neue Meldung*/
+"meldung_detail_exposed_new_meldung" = "Neue Meldung";
+
+/*Meldung Detail Exposed Titel*/
+"meldung_detail_exposed_title" = "Mögliche Ansteckung";
+"meldung_homescreen_positiv_title" = "Positiv getestet";
+
+/*Meldung Detail Exposed Subtitel*/
+"meldung_detail_exposed_subtitle" = "Eine Ihrer Begegnungen wurde positiv auf COVID-19 getestet";
+"meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";

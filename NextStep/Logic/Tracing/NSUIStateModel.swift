@@ -11,9 +11,10 @@ struct NSUIStateModel: Equatable {
 
     enum Tracing: Equatable {
         case active
-        case stopped
+        case inactive
         case bluetoothTurnedOff
         case bluetoothPermissionError
+        case ended
     }
 
     struct Homescreen: Equatable {

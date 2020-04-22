@@ -113,13 +113,13 @@ class NSUIStateManager: NSObject {
 
             // other checks, maybe not needed
             if anyError != nil || !tracingIsActivated {
-                tracing = .stopped
+                tracing = .inactive
             } else {
                 tracing = .active
             }
             newState.homescreen.header = .tracingActive
         case .stopped:
-            tracing = .stopped
+            tracing = .inactive
             newState.homescreen.header = .tracingInactive
         case let .inactive(error):
             switch error {
@@ -162,6 +162,8 @@ class NSUIStateManager: NSObject {
                 newState.homescreen.meldungButtonDisabled = true
                 newState.homescreen.meldungen.meldung = .infected
                 newState.meldungenDetail.meldung = .infected
+                newState.homescreen.header = .tracingEnded
+                newState.homescreen.begegnungen.tracing = .ended
             case .exposed:
                 newState.homescreen.meldungen.meldung = .exposed
                 newState.meldungenDetail.meldung = .exposed

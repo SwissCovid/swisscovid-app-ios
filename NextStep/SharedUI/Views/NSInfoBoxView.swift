@@ -11,22 +11,24 @@ class NSInfoBoxView: UIView {
 
     private let titleLabel = NSLabel(.uppercaseBold)
     private let subtextLabel = NSLabel(.text)
-    private let imageView = UIImageView()
+    private let leadingIconImageView = UIImageView()
+    private let illustrationImageView = UIImageView()
 
     private let additionalLabel = NSLabel(.textSemiBold)
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil) {
+    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil) {
         super.init(frame: .zero)
 
         titleLabel.text = title
         subtextLabel.text = subText
-        imageView.image = image?.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = titleColor
+        leadingIconImageView.image = image?.withRenderingMode(.alwaysTemplate)
+        leadingIconImageView.tintColor = titleColor
         titleLabel.textColor = titleColor
         subtextLabel.textColor = subtextColor
         additionalLabel.textColor = subtextColor
+        illustrationImageView.image = illustration
 
         setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText)
     }
@@ -38,6 +40,8 @@ class NSInfoBoxView: UIView {
     // MARK: - Setup
 
     private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil) {
+        clipsToBounds = false
+
         var topBottomPadding: CGFloat = 0
 
         if let bgc = backgroundColor {
@@ -69,24 +73,34 @@ class NSInfoBoxView: UIView {
 
         addSubview(titleLabel)
         addSubview(subtextLabel)
-        addSubview(imageView)
+        addSubview(leadingIconImageView)
+        addSubview(illustrationImageView)
 
-        imageView.ub_setContentPriorityRequired()
+        illustrationImageView.snp.makeConstraints { make in
+            make.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+        }
 
-        imageView.snp.makeConstraints { make in
+        illustrationImageView.ub_setContentPriorityRequired()
+        leadingIconImageView.ub_setContentPriorityRequired()
+
+        leadingIconImageView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(NSPadding.medium)
             make.top.equalToSuperview().inset(topBottomPadding)
         }
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(topBottomPadding + 3.0)
-            make.left.equalTo(self.imageView.snp.right).offset(NSPadding.medium)
-            make.right.equalToSuperview().inset(NSPadding.medium)
+            make.leading.equalTo(self.leadingIconImageView.snp.trailing).offset(NSPadding.medium)
+            if illustrationImageView.image == nil {
+                make.trailing.equalToSuperview().inset(NSPadding.medium)
+            } else {
+                make.trailing.equalTo(illustrationImageView.snp.leading).inset(NSPadding.medium)
+            }
         }
 
         subtextLabel.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium - 2.0)
-            make.left.right.equalTo(self.titleLabel)
+            make.leading.trailing.equalTo(self.titleLabel)
             if !hasAdditionalStuff {
                 make.bottom.equalToSuperview().inset(topBottomPadding)
             }
@@ -98,7 +112,7 @@ class NSInfoBoxView: UIView {
 
             additionalLabel.snp.makeConstraints { make in
                 make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
-                make.left.right.equalTo(self.titleLabel)
+                make.leading.trailing.equalTo(self.titleLabel)
                 make.bottom.equalToSuperview().inset(topBottomPadding)
             }
         }

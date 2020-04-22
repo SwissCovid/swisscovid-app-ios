@@ -121,7 +121,7 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
 
-        case .stopped: fallthrough
+        case .inactive, .ended: fallthrough
         case .bluetoothTurnedOff, .bluetoothPermissionError:
             inactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()
