@@ -11,12 +11,13 @@ class NSWebViewController: NSViewController {
     // MARK: - Variables
 
     private let webView: WKWebView
-    private let site: String
+    private let site: String?
+    private let local: String?
     private var loadCount: Int = 0
 
     private var url: URL {
         get {
-            NSBackendEnvironment.current.staticApiBaseURL.appendingPathComponent(site)
+            NSBackendEnvironment.current.staticApiBaseURL.appendingPathComponent(site ?? "")
         }
 
         set {}
@@ -26,6 +27,30 @@ class NSWebViewController: NSViewController {
 
     init(site: String) {
         self.site = site
+        local = nil
+
+        // Disable zoom in web view
+        let source: String = "var meta = document.createElement('meta');" +
+            "meta.name = 'viewport';" +
+            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
+        let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd,
+                                                forMainFrameOnly: true)
+
+        let contentController = WKUserContentController()
+        contentController.addUserScript(script)
+
+        let config = WKWebViewConfiguration()
+        config.dataDetectorTypes = []
+        config.userContentController = contentController
+        webView = WKWebView(frame: .zero, configuration: config)
+
+        super.init()
+    }
+
+    init(local: String) {
+        site = nil
+        self.local = local
 
         // Disable zoom in web view
         let source: String = "var meta = document.createElement('meta');" +
@@ -52,7 +77,13 @@ class NSWebViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        startLoading(url: url)
+        if site == nil {
+            let path = Bundle.main.path(forResource: local ?? "", ofType: "html")
+            let url = URL(fileURLWithPath: path!)
+            webView.loadFileURL(url, allowingReadAccessTo: url)
+        } else {
+            startLoading(url: url)
+        }
     }
 
     @objc private func close() {

@@ -84,6 +84,7 @@
 		6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
 		6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
 		6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */; };
+		6EF640BB2450C6D500191EB0 /* impressum.html in Resources */ = {isa = PBXBuildFile; fileRef = 6EF640BA2450C6D500191EB0 /* impressum.html */; };
 		6EFB097524459B870097BD3D /* NSBegegnungenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSBegegnungenDetailViewController.swift */; };
 		6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */; };
 		6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */; };
@@ -224,6 +225,7 @@
 		6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAboutViewController.swift; sourceTree = "<group>"; };
 		6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSimpleTextButton.swift; sourceTree = "<group>"; };
 		6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNoCodeInformationViewController.swift; sourceTree = "<group>"; };
+		6EF640BA2450C6D500191EB0 /* impressum.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = impressum.html; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSBegegnungenDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenDetailViewController.swift; sourceTree = "<group>"; };
 		6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBluetoothSettingsControl.swift; sourceTree = "<group>"; };
 		6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxView.swift; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 		DC9A8196242CE44200AD1548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EF640BA2450C6D500191EB0 /* impressum.html */,
 				6E7C0D23242D01860017C4F9 /* Font */,
 				8E81CCA1241FCC7F006F2437 /* Assets.xcassets */,
 				DC9A81A0242CE5E000AD1548 /* Translations */,
@@ -918,6 +921,7 @@
 			files = (
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
+				6EF640BB2450C6D500191EB0 /* impressum.html in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
 				DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */,

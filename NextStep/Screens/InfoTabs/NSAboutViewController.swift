@@ -10,7 +10,7 @@ class NSAboutViewController: NSWebViewController {
     // MARK: - Init
 
     init() {
-        super.init(site: "about")
+        super.init(local: "impressum")
 
         title = "tab_theapp_title".ub_localized
         tabBarItem.image = UIImage(named: "ic-app")
