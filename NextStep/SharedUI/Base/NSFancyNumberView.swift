@@ -104,7 +104,7 @@ class NSAllNumbersView: UIView {
         var size: CGSize = .zero
 
         for i in 0 ... 9 {
-            let label = NSLabel(.title, textColor: .ns_secondary, textAlignment: .center)
+            let label = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
             label.text = "\(i)"
             stackScrollView.addArrangedView(label)
 

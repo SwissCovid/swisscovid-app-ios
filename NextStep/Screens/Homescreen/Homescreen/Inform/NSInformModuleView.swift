@@ -52,7 +52,7 @@ class NSInformModuleView: NSModuleBaseView {
 
 private class NSInformModuleCTAView: UIView {
     private let infoLabel = NSLabel(.text)
-    private let informButton = NSButton(title: "", style: .normal(.ns_secondary))
+    private let informButton = NSButton(title: "", style: .normal(.ns_green))
     private let lastMeldungLabel = NSLabel(.text)
 
     var lastMeldung: NSInformModuleView.ModuleState {
@@ -108,20 +108,20 @@ private class NSInformModuleCTAView: UIView {
         case .inactive:
             lastMeldungLabel.isHidden = true
 
-            informButton.style = .normal(.ns_secondary)
+            informButton.style = .normal(.ns_green)
             informButton.setTitle("inform_button_title".ub_localized, for: .normal)
 
         case .gemeldet(lastMeldungTime: .none):
             lastMeldungLabel.isHidden = true
 
-            informButton.style = .outlineUppercase(.ns_secondary)
+            informButton.style = .outlineUppercase(.ns_green)
             informButton.setTitle("inform_button_title_again".ub_localized, for: .normal)
 
         case let .gemeldet(lastMeldungTime: .some(date)):
             lastMeldungLabel.text = "inform_last_meldung_text".ub_localized.replacingOccurrences(of: "{date}", with: DateFormatter.ub_string(from: date))
             lastMeldungLabel.isHidden = false
 
-            informButton.style = .outlineUppercase(.ns_secondary)
+            informButton.style = .outlineUppercase(.ns_green)
             informButton.setTitle("inform_button_title_again".ub_localized, for: .normal)
         }
     }
@@ -133,7 +133,7 @@ class NSInformModuleMeldungView: UIView {
     private let stackView = UIStackView()
     private let gemeldetLabel = NSLabel(.text)
     private let gemeldetSpacer = UIView()
-    let whatToDoButton = NSButton(title: "what_to_do_button".ub_localized, style: .normal(.ns_secondary))
+    let whatToDoButton = NSButton(title: "what_to_do_button".ub_localized, style: .normal(.ns_green))
 
     var timestamp: Date? {
         didSet {

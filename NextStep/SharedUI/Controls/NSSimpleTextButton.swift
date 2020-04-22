@@ -29,7 +29,7 @@ class NSSimpleTextButton: UBButton {
         highlightXInset = -NSPadding.small
         highlightCornerRadius = 3.0
 
-        setTitleColor(.ns_secondary, for: .normal)
+        setTitleColor(.ns_green, for: .normal)
         titleLabel?.font = NSLabelType.text.font
     }
 }

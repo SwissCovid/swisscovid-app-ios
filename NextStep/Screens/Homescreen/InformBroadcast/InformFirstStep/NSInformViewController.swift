@@ -17,7 +17,7 @@ class NSInformViewController: NSInformStepViewController {
     }
 
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
-    let titleLabel = NSLabel(.title, textColor: .ns_secondary, textAlignment: .center)
+    let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
     let textLabel = NSLabel(.text, textAlignment: .center)
 
     let buttonSymptome = NSInformButton(title: "inform_button_symptom_title".ub_localized, text: "inform_button_symptom_text".ub_localized)

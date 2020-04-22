@@ -31,7 +31,7 @@ public class NSCheckBoxControl: UIControl {
             inactiveColor = .clear
             inactiveBackground = .clear
         } else {
-            activeColor = .ns_secondary
+            activeColor = .ns_green
             inactiveColor = .ns_text_secondary
             inactiveBackground = .white
         }

@@ -75,7 +75,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         let highlight = meldung != .noMeldung
 
-        let titleColor = highlight ? UIColor.white : UIColor.ns_secondary
+        let titleColor = highlight ? UIColor.white : UIColor.ns_green
         let textColor = highlight ? UIColor.white : UIColor.ns_text
         let image = highlight ? UIImage(named: "ic-info") : UIImage(named: "ic-check")
         let backgroundColor = highlight ? .ns_primary : UIColor(ub_hexString: "#d3f2ee")

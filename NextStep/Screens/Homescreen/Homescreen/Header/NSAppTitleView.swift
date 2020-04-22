@@ -179,7 +179,7 @@ class NSAppTitleView: UIView {
 
         switch uiState {
         case .tracingActive:
-            backgroundColor = .ns_secondary
+            backgroundColor = .ns_green
             checkmark.isHidden = false
             info.isHidden = true
             warning.isHidden = true

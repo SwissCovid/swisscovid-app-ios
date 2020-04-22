@@ -127,7 +127,7 @@ class NSOnboardingViewController: NSViewController {
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.medium)
         }
 
-        pageControl.currentPageIndicatorTintColor = .ns_secondary
+        pageControl.currentPageIndicatorTintColor = .ns_green
         pageControl.pageIndicatorTintColor = .ns_text
         pageControl.numberOfPages = stepViewControllers.count
         pageControl.currentPage = 0

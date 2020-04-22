@@ -25,7 +25,6 @@ extension UIColor {
 
     // primary color
     public static var ns_primary = UIColor(ub_hexString: "#5559a0")!
-    public static var ns_secondary = UIColor(ub_hexString: "#00bfa6")!
 
     // background of views
     public static var ns_background_highlighted = UIColor(ub_hexString: "#f9f9f9")!

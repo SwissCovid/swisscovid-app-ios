@@ -23,7 +23,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             }
             icon.ub_setContentPriorityRequired()
 
-            let label = NSLabel(.textSemiBold, textColor: .ns_secondary)
+            let label = NSLabel(.textSemiBold, textColor: .ns_green)
             label.text = text
             addSubview(label)
             label.snp.makeConstraints { make in
@@ -118,7 +118,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         titleLabel.text = "onboarding_title_4".ub_localized
         textLabel.text = "onboarding_desc_4".ub_localized
         continueWithoutButton.titleLabel?.font = NSLabelType.text.font
-        continueWithoutButton.setTitleColor(.ns_secondary, for: .normal)
+        continueWithoutButton.setTitleColor(.ns_green, for: .normal)
         continueWithoutButton.setTitle("onboarding_continue_without_button".ub_localized, for: .normal)
         continueWithoutButton.highlightCornerRadius = 3
         continueWithoutButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.small, left: NSPadding.small, bottom: NSPadding.small, right: NSPadding.small)
