@@ -33,12 +33,12 @@ class NSUIStateManager: NSObject {
                 return
             case let (.inactive(e1), .inactive(e2)):
                 switch (e1, e2) {
-                case (.NetworkingError(_), .NetworkingError(_)),
-                     (.CaseSynchronizationError, .CaseSynchronizationError),
-                     (.CryptographyError(_), .CryptographyError(_)),
-                     (.DatabaseError(_), .DatabaseError(_)),
-                     (.BluetoothTurnedOff, .BluetoothTurnedOff),
-                     (.PermissonError, .PermissonError):
+                case (.networkingError(_), .networkingError(_)),
+                     (.caseSynchronizationError, .caseSynchronizationError),
+                     (.cryptographyError(_), .cryptographyError(_)),
+                     (.databaseError(_), .databaseError(_)),
+                     (.bluetoothTurnedOff, .bluetoothTurnedOff),
+                     (.permissonError, .permissonError):
                     return
                 default:
                     refresh()
@@ -123,18 +123,20 @@ class NSUIStateManager: NSObject {
             newState.homescreen.header = .tracingInactive
         case let .inactive(error):
             switch error {
-            case .BluetoothTurnedOff:
+            case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
-            case .PermissonError:
+            case .permissonError:
                 tracing = .bluetoothPermissionError
-            case let .CryptographyError(e):
+            case let .cryptographyError(e):
                 assertionFailure("CryptographyError: \(e)")
-            case let .DatabaseError(e):
-                assertionFailure("DatabaseError: \(e.localizedDescription)")
-            case let .NetworkingError(e):
+            case let .databaseError(e):
+                assertionFailure("DatabaseError: \(e?.localizedDescription ?? "unspecified")")
+            case let .networkingError(e):
                 print("NetworkingError: \(e?.localizedDescription ?? "nil")")
-            case .CaseSynchronizationError:
+            case .caseSynchronizationError:
                 print("CaseSynchronizationError")
+            case let .timeInconsistency(shift):
+                print("timeInconsistency with shift: \(shift)")
             }
             newState.homescreen.header = .bluetoothError
         }

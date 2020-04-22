@@ -26,7 +26,7 @@ class NSErrorView: NSModuleBaseView {
 
     // MARK: - Error
 
-    public var error: DP3TTracingErrors? {
+    public var error: DP3TTracingError? {
         didSet {
             setErrorText(error)
         }
@@ -59,7 +59,7 @@ class NSErrorView: NSModuleBaseView {
 
     // MARK: - Error text
 
-    private func setErrorText(_ error: DP3TTracingErrors?) {
+    private func setErrorText(_ error: DP3TTracingError?) {
         let unexpected = "unexpected_error_title".ub_localized
 
         guard let err = error else {
@@ -68,18 +68,20 @@ class NSErrorView: NSModuleBaseView {
         }
 
         switch err {
-        case let .NetworkingError(error):
+        case let .networkingError(error):
             infoLabel.text = error?.localizedDescription
-        case .CaseSynchronizationError:
+        case .caseSynchronizationError:
             infoLabel.text = unexpected.ub_localized.replacingOccurrences(of: "{ERROR}", with: "CCPUID")
-        case let .CryptographyError(error):
+        case let .cryptographyError(error):
             infoLabel.text = error
-        case let .DatabaseError(error):
-            infoLabel.text = error.localizedDescription
-        case .BluetoothTurnedOff:
+        case let .databaseError(error):
+            infoLabel.text = error?.localizedDescription
+        case .bluetoothTurnedOff:
             infoLabel.text = "bluetooth_turned_off".ub_localized
-        case .PermissonError:
+        case .permissonError:
             infoLabel.text = "bluetooth_permission_turned_off".ub_localized
+        case .timeInconsistency:
+            infoLabel.text = nil
         }
     }
 }

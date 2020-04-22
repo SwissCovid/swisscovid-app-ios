@@ -49,7 +49,8 @@ class NSTracingErrorView: UIView {
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(NSPadding.medium)
+            make.top.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
         }
     }
 

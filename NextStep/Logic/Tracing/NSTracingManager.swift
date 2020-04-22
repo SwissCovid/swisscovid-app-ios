@@ -152,23 +152,28 @@ class NSTracingManager: NSObject {
         let taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
         }
-        DP3TTracing.sync { result in
-            switch result {
-            case let .failure(e):
-                NSUIStateManager.shared.syncError = e
-                completionHandler?(.failed)
-            case .success:
-                NSUIStateManager.shared.syncError = nil
-                self.lastDatabaseSync = Date()
+        do {
+            try DP3TTracing.sync { result in
+                switch result {
+                case let .failure(e):
+                    NSUIStateManager.shared.syncError = e
+                    completionHandler?(.failed)
+                case .success:
+                    NSUIStateManager.shared.syncError = nil
+                    self.lastDatabaseSync = Date()
 
-                self.updateStatus()
+                    self.updateStatus()
 
-                completionHandler?(.newData)
+                    completionHandler?(.newData)
+                }
+                if taskIdentifier != .invalid {
+                    UIApplication.shared.endBackgroundTask(taskIdentifier)
+                }
+                self.databaseIsSyncing = false
             }
-            if taskIdentifier != .invalid {
-                UIApplication.shared.endBackgroundTask(taskIdentifier)
-            }
-            self.databaseIsSyncing = false
+        } catch {
+            NSUIStateManager.shared.syncError = error
+            completionHandler?(.failed)
         }
     }
 }

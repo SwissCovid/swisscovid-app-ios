@@ -19,7 +19,12 @@ class NSMeldungView: NSModuleBaseView {
 
     private let infectedView = NSInfoBoxView(title: "meldungen_infected_title".ub_localized, subText: "meldungen_infected_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_primary, additionalText: "meldungen_meldung_more_button".ub_localized)
 
-    private let noPushView = NSInfoBoxView(title: "push_deactivated_title".ub_localized, subText: "push_deactivated_text".ub_localized, image: UIImage(named: "ic-cross")!, titleColor: .ns_red, subtextColor: .ns_red)
+    private let noPushView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(settingsUrl) else { return }
+
+        UIApplication.shared.open(settingsUrl)
+    }))
 
     override init() {
         super.init()
