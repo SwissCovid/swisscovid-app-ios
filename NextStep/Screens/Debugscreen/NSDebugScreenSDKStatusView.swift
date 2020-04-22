@@ -10,7 +10,7 @@ import UIKit
 class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     private let stackView = UIStackView()
 
-    private let tracingLabel = NSLabel(.textSemiBold, textAlignment: .center)
+    private let tracingLabel = NSLabel(.textBold, textAlignment: .center)
     private let commentsLabel = NSLabel(.text, textAlignment: .center)
 
     // MARK: - Init

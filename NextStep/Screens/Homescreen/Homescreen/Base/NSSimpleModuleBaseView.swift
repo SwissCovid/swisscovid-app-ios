@@ -9,7 +9,7 @@ import UIKit
 class NSSimpleModuleBaseView: UIView {
     // MARK: - Private subviews
 
-    private let titleLabel = NSLabel(.subtitle)
+    private let titleLabel = NSLabel(.title)
     private let subtitleLabel = NSLabel(.textBold)
 
     private let textLabel = NSLabel(.textLight)
@@ -88,7 +88,7 @@ class NSSimpleModuleBaseView: UIView {
 
             textLabel.snp.makeConstraints { make in
                 make.top.left.equalToSuperview()
-                make.right.equalTo(imageView.snp.left).inset(NSPadding.medium)
+                make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
             }
 
             imageView.snp.makeConstraints { make in

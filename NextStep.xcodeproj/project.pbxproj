@@ -51,6 +51,13 @@
 		6E3308662450442D00913B0E /* NSWhatToDoInformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308652450442D00913B0E /* NSWhatToDoInformView.swift */; };
 		6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */; };
 		6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086924506E0600913B0E /* NSExplanationView.swift */; };
+		6E33086D245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */; };
+		6E33086F24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */; };
+		6E33087124507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */; };
+		6E33087324507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */; };
+		6E3308752450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */; };
+		6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */; };
+		6E330879245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */; };
 		6E3F65F72449B61A00980A4E /* NSDebugscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65F62449B61A00980A4E /* NSDebugscreenViewController.swift */; };
 		6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65F82449CC9F00980A4E /* NSDebugScreenMockView.swift */; };
 		6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65FA2449CF0900980A4E /* NSSimpleModuleBaseView.swift */; };
@@ -176,6 +183,13 @@
 		6E3308652450442D00913B0E /* NSWhatToDoInformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoInformView.swift; sourceTree = "<group>"; };
 		6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoSymptomView.swift; sourceTree = "<group>"; };
 		6E33086924506E0600913B0E /* NSExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExplanationView.swift; sourceTree = "<group>"; };
+		6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailNoMeldungenViewController.swift; sourceTree = "<group>"; };
+		6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailPositiveTestedViewController.swift; sourceTree = "<group>"; };
+		6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungDetailMeldungenViewController.swift; sourceTree = "<group>"; };
+		6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailNoMeldungenTitleView.swift; sourceTree = "<group>"; };
+		6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailPositiveTestedTitleView.swift; sourceTree = "<group>"; };
+		6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTitleViewScrollViewController.swift; sourceTree = "<group>"; };
+		6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungDetailMeldungTitleView.swift; sourceTree = "<group>"; };
 		6E3F65F62449B61A00980A4E /* NSDebugscreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugscreenViewController.swift; sourceTree = "<group>"; };
 		6E3F65F82449CC9F00980A4E /* NSDebugScreenMockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugScreenMockView.swift; sourceTree = "<group>"; };
 		6E3F65FA2449CF0900980A4E /* NSSimpleModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSimpleModuleBaseView.swift; sourceTree = "<group>"; };
@@ -580,6 +594,20 @@
 			path = WhatToDo;
 			sourceTree = "<group>";
 		};
+		6E33086B245079E500913B0E /* Meldungen */ = {
+			isa = PBXGroup;
+			children = (
+				6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */,
+				6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */,
+				6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */,
+				6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */,
+				6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */,
+				6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */,
+				6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */,
+			);
+			path = Meldungen;
+			sourceTree = "<group>";
+		};
 		6E3F65F52449B5F000980A4E /* Debugscreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -702,6 +730,7 @@
 		DC286A27242CE1D2001D5344 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				6E33086B245079E500913B0E /* Meldungen */,
 				6E33086024503CE700913B0E /* WhatToDo */,
 				24780AF9242DF828003BB26C /* Navigation */,
 				2443948024463B01003ED582 /* Homescreen */,
@@ -996,6 +1025,7 @@
 				24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
+				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */,
 				DC702B21243F70C80066C773 /* UBPushLocalStorage.swift in Sources */,
@@ -1011,6 +1041,7 @@
 				DC702B14243F6FD90066C773 /* UBKeychain.swift in Sources */,
 				DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */,
 				AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */,
+				6E33087324507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */,
 				DC702B17243F70060066C773 /* UIView+NS.swift in Sources */,
 				DC702B23243F70C80066C773 /* UBPushRegistrationManager.swift in Sources */,
 				6E6E5187242F9586006E532E /* NSInformButton.swift in Sources */,
@@ -1023,6 +1054,7 @@
 				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,
 				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
+				6E330879245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift in Sources */,
 				6EFB097524459B870097BD3D /* NSBegegnungenDetailViewController.swift in Sources */,
 				DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */,
 				6E33086424503D0900913B0E /* NSWhatToDoSymptomViewController.swift in Sources */,
@@ -1079,9 +1111,13 @@
 				24780B07242DFCD9003BB26C /* User.swift in Sources */,
 				24780B28242F3A4C003BB26C /* NSSymptomsViewController.swift in Sources */,
 				24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */,
+				6E3308752450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,
 				24780B1C242DFE18003BB26C /* NSInfoViewController.swift in Sources */,
+				6E33087124507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift in Sources */,
+				6E33086D245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */,
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
 				24780B09242DFCE4003BB26C /* Model.swift in Sources */,
+				6E33086F24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,
 				DC702B0F243F6FAE0066C773 /* UBKeychainStored.swift in Sources */,
 				DC702B1F243F70C80066C773 /* UBPushHandler.swift in Sources */,

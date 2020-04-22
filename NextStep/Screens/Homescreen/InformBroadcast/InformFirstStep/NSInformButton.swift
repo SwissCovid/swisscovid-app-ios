@@ -7,7 +7,7 @@
 import UIKit
 
 class NSInformButton: NSButton {
-    private let informTitleLabel = NSLabel(.subtitle, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
+    private let informTitleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
     private let informTextLabel = NSLabel(.text, textAlignment: .center)
 
     init(title: String, text: String) {

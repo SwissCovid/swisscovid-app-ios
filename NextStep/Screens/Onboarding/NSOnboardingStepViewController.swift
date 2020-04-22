@@ -10,7 +10,7 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
     private let headingLabel = NSLabel(.text)
     private let backgroundImageView = UIImageView()
     private let foregroundImageView = UIImageView()
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
+    private let titleLabel = NSLabel(.title, textColor: .ns_primary)
     private let textLabel = NSLabel(.text)
 
     private let model: NSOnboardingStepModel

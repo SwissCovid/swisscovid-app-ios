@@ -14,7 +14,7 @@ class NSInfoBoxView: UIView {
     private let leadingIconImageView = UIImageView()
     private let illustrationImageView = UIImageView()
 
-    private let additionalLabel = NSLabel(.textSemiBold)
+    private let additionalLabel = NSLabel(.textBold)
 
     // MARK: - Init
 

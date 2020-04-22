@@ -8,26 +8,22 @@ import UIKit
 
 public enum NSLabelType: UBLabelType {
     case title
-    case subtitle
     case text
     case textLight
     case textBold
-    case textSemiBold
     case button // used for button
-    case smallBold // used for begegnungen label
     case uppercaseBold
+    case date
 
     public var font: UIFont {
         switch self {
-        case .title: return UIFont(name: "Inter-Bold", size: 28.0)!
-        case .subtitle: return UIFont(name: "Inter-Bold", size: 24.0)!
+        case .title: return UIFont(name: "Inter-Bold", size: 22.0)!
         case .text: return UIFont(name: "Inter-Regular", size: 16.0)!
         case .textLight: return UIFont(name: "Inter-Light", size: 16.0)!
-        case .smallBold: return UIFont(name: "Inter-Bold", size: 12.0)!
-        case .textSemiBold: return UIFont(name: "Inter-SemiBold", size: 16.0)!
         case .textBold: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .button: return UIFont(name: "Inter-Bold", size: 18.0)!
+        case .button: return UIFont(name: "Inter-Bold", size: 16.0)!
         case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
+        case .date: return UIFont(name: "Inter-Bold", size: 13.0)!
         }
     }
 
@@ -42,20 +38,23 @@ public enum NSLabelType: UBLabelType {
 
     public var lineSpacing: CGFloat {
         switch self {
-        case .title: return 34.0 / 28.0
-        case .subtitle: return 31.0 / 24.0
+        case .title: return 30.0 / 22.0
         case .text: return 24.0 / 16.0
         case .textBold: return 24.0 / 16.0
-        case .textSemiBold: return 24.0 / 16.0
-        case .button, .smallBold: return 1.0
+        case .button: return 1.0
         case .uppercaseBold: return 26.0 / 16.0
         case .textLight: return 26.0 / 16.0
+        case .date: return 2.0
         }
     }
 
     public var letterSpacing: CGFloat? {
         if self == .uppercaseBold {
             return 1.0
+        }
+
+        if self == .date {
+            return 0.5
         }
 
         return nil

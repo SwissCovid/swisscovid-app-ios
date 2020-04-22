@@ -9,7 +9,7 @@ import UIKit
 class NSInformNoSymptomsViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
+    private let titleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.text, textAlignment: .center)
 
     override func viewDidLoad() {

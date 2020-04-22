@@ -23,7 +23,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             }
             icon.ub_setContentPriorityRequired()
 
-            let label = NSLabel(.textSemiBold, textColor: .ns_green)
+            let label = NSLabel(.textBold, textColor: .ns_green)
             label.text = text
             addSubview(label)
             label.snp.makeConstraints { make in
@@ -39,7 +39,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
     private let headingLabel = NSLabel(.text)
     private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-4")!)
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary)
+    private let titleLabel = NSLabel(.title, textColor: .ns_primary)
     private let textLabel = NSLabel(.text)
 
     private let bluetoothButton = NSButton(title: "activate_bluetooth_button".ub_localized, style: .normal(.ns_blue))

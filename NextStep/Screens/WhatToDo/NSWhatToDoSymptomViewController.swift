@@ -50,7 +50,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
         let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
         subtitleLabel.text = "symptom_detail_subtitle".ub_localized
 
-        let titleLabel = NSLabel(.subtitle, textAlignment: .center)
+        let titleLabel = NSLabel(.title, textAlignment: .center)
         titleLabel.text = "symptom_detail_title".ub_localized
 
         stackScrollView.addArrangedView(subtitleLabel)

@@ -12,7 +12,7 @@ class NSExplanationView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 2 * NSPadding.medium
 
-        let titleLabel = NSLabel(.textSemiBold)
+        let titleLabel = NSLabel(.textBold)
         titleLabel.text = title
 
         stackView.addArrangedView(titleLabel)

@@ -9,7 +9,7 @@ import UIKit
 class NSSymptomsViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.subtitle, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
+    private let titleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.text, textAlignment: .center)
 
     private let checkboxes = [NSCheckBoxView(text: "inform_symptom_coughdry".ub_localized), NSCheckBoxView(text: "inform_symptom_hals".ub_localized), NSCheckBoxView(text: "inform_symptom_kurzatmigkeit".ub_localized), NSCheckBoxView(text: "inform_symptom_fieber".ub_localized), NSCheckBoxView(text: "inform_symptom_muskel".ub_localized)]

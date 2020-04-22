@@ -50,7 +50,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
         subtitleLabel.text = "inform_detail_subtitle".ub_localized
 
-        let titleLabel = NSLabel(.subtitle, textAlignment: .center)
+        let titleLabel = NSLabel(.title, textAlignment: .center)
         titleLabel.text = "inform_detail_title".ub_localized
 
         stackScrollView.addArrangedView(subtitleLabel)
