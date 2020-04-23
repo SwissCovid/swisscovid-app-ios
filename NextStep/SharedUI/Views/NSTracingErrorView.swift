@@ -8,7 +8,7 @@ class NSTracingErrorView: UIView {
     private let stackView = UIStackView()
     private let imageView = UIImageView()
     private let titleLabel = NSLabel(.uppercaseBold, textColor: .ns_red, numberOfLines: 2, textAlignment: .center)
-    private let textLabel = NSLabel(.text, textColor: .ns_text, textAlignment: .center)
+    private let textLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
     private let actionButton = NSUnderlinedButton()
 
     // MARK: - Model

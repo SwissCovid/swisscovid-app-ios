@@ -9,8 +9,8 @@ import UIKit
 class NSPointTextView: UIView {
     // MARK: - Views
 
-    private let pointLabel = NSLabel(.text)
-    private let label = NSLabel(.text)
+    private let pointLabel = NSLabel(.textLight)
+    private let label = NSLabel(.textLight)
 
     // MARK: - Init
 

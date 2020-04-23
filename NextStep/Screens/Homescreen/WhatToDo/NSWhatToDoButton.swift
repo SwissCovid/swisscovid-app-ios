@@ -6,7 +6,7 @@ class NSWhatToDoButton: UBButton {
     // MARK: - Views
 
     private let titleTextLabel = NSLabel(.textBold)
-    private let subtitleLabel = NSLabel(.text)
+    private let subtitleLabel = NSLabel(.textLight)
 
     private let leftImageView: UIImageView
 

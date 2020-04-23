@@ -30,6 +30,6 @@ class NSSimpleTextButton: UBButton {
         highlightCornerRadius = 3.0
 
         setTitleColor(.ns_green, for: .normal)
-        titleLabel?.font = NSLabelType.text.font
+        titleLabel?.font = NSLabelType.textBold.font
     }
 }

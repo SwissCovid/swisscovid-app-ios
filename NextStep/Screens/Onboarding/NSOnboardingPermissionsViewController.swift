@@ -37,10 +37,10 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         }
     }
 
-    private let headingLabel = NSLabel(.text)
+    private let headingLabel = NSLabel(.textLight)
     private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-4")!)
     private let titleLabel = NSLabel(.title, textColor: .ns_primary)
-    private let textLabel = NSLabel(.text)
+    private let textLabel = NSLabel(.textLight)
 
     private let bluetoothButton = NSButton(title: "activate_bluetooth_button".ub_localized, style: .normal(.ns_blue))
     private let pushButton = NSButton(title: "activate_push_button".ub_localized, style: .normal(.ns_blue))
@@ -117,7 +117,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
         titleLabel.text = "onboarding_title_4".ub_localized
         textLabel.text = "onboarding_desc_4".ub_localized
-        continueWithoutButton.titleLabel?.font = NSLabelType.text.font
+
+        continueWithoutButton.titleLabel?.font = NSLabelType.textLight.font
         continueWithoutButton.setTitleColor(.ns_green, for: .normal)
         continueWithoutButton.setTitle("onboarding_continue_without_button".ub_localized, for: .normal)
         continueWithoutButton.highlightCornerRadius = 3

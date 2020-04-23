@@ -11,7 +11,7 @@ class NSErrorView: NSModuleBaseView {
     private let contentView = UIView()
 
     private var iconImageView = UIImageView(image: UIImage(named: "ic-info-on"))
-    private var infoLabel = NSLabel(.text)
+    private var infoLabel = NSLabel(.textLight)
 
     override init() {
         super.init()

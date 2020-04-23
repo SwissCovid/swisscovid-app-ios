@@ -11,7 +11,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     private let stackView = UIStackView()
 
     private let tracingLabel = NSLabel(.textBold, textAlignment: .center)
-    private let commentsLabel = NSLabel(.text, textAlignment: .center)
+    private let commentsLabel = NSLabel(.textLight, textAlignment: .center)
 
     // MARK: - Init
 
@@ -34,7 +34,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     private func setup() {
         contentView.spacing = NSPadding.small
 
-        let label = NSLabel(.text)
+        let label = NSLabel(.textLight)
         label.text = "debug_sdk_state_text".ub_localized
 
         contentView.addArrangedView(label)

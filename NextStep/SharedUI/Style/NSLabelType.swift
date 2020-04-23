@@ -8,7 +8,6 @@ import UIKit
 
 public enum NSLabelType: UBLabelType {
     case title
-    case text
     case textLight
     case textBold
     case button // used for button
@@ -19,7 +18,6 @@ public enum NSLabelType: UBLabelType {
     public var font: UIFont {
         switch self {
         case .title: return UIFont(name: "Inter-Bold", size: 22.0)!
-        case .text: return UIFont(name: "Inter-Regular", size: 16.0)!
         case .textLight: return UIFont(name: "Inter-Light", size: 16.0)!
         case .textBold: return UIFont(name: "Inter-Bold", size: 16.0)!
         case .button: return UIFont(name: "Inter-Bold", size: 16.0)!
@@ -43,11 +41,10 @@ public enum NSLabelType: UBLabelType {
     public var lineSpacing: CGFloat {
         switch self {
         case .title: return 30.0 / 22.0
-        case .text: return 24.0 / 16.0
         case .textBold: return 24.0 / 16.0
         case .button: return 1.0
         case .uppercaseBold: return 26.0 / 16.0
-        case .textLight: return 26.0 / 16.0
+        case .textLight: return 24.0 / 16.0
         case .date: return 2.0
         case .smallRegular: return 26.0 / 13.0
         }

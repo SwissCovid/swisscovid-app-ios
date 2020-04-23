@@ -68,7 +68,7 @@ class NSMeldungView: NSModuleBaseView {
 }
 
 private class NSMoreInfoView: UIView {
-    private let line1Label = NSLabel(.text)
+    private let line1Label = NSLabel(.textLight)
     private let line2Label = NSLabel(.textBold)
     init(line1: String, line2: String) {
         super.init(frame: .zero)

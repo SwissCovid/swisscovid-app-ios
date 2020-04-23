@@ -10,7 +10,7 @@ class NSInfoBoxView: UIView {
     // MARK: - Views
 
     private let titleLabel = NSLabel(.uppercaseBold)
-    private let subtextLabel = NSLabel(.text)
+    private let subtextLabel = NSLabel(.textLight)
     private let leadingIconImageView = UIImageView()
     private let illustrationImageView = UIImageView()
 

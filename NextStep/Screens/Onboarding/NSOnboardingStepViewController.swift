@@ -7,11 +7,11 @@
 import UIKit
 
 class NSOnboardingStepViewController: NSOnboardingContentViewController {
-    private let headingLabel = NSLabel(.text)
+    private let headingLabel = NSLabel(.textLight)
     private let backgroundImageView = UIImageView()
     private let foregroundImageView = UIImageView()
     private let titleLabel = NSLabel(.title, textColor: .ns_primary)
-    private let textLabel = NSLabel(.text)
+    private let textLabel = NSLabel(.textLight)
 
     private let model: NSOnboardingStepModel
 

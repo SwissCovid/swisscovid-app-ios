@@ -51,9 +51,9 @@ class NSInformModuleView: NSModuleBaseView {
 }
 
 private class NSInformModuleCTAView: UIView {
-    private let infoLabel = NSLabel(.text)
+    private let infoLabel = NSLabel(.textLight)
     private let informButton = NSButton(title: "", style: .normal(.ns_green))
-    private let lastMeldungLabel = NSLabel(.text)
+    private let lastMeldungLabel = NSLabel(.textLight)
 
     var lastMeldung: NSInformModuleView.ModuleState {
         didSet { update() }
@@ -128,10 +128,10 @@ private class NSInformModuleCTAView: UIView {
 }
 
 class NSInformModuleMeldungView: UIView {
-    private let timestampLabel = NSLabel(.text)
+    private let timestampLabel = NSLabel(.textLight)
     private let iconImageView = UIImageView(image: #imageLiteral(resourceName: "ic-info-on"))
     private let stackView = UIStackView()
-    private let gemeldetLabel = NSLabel(.text)
+    private let gemeldetLabel = NSLabel(.textLight)
     private let gemeldetSpacer = UIView()
     let whatToDoButton = NSButton(title: "what_to_do_button".ub_localized, style: .normal(.ns_green))
 
