@@ -39,6 +39,12 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
                 make.leading.trailing.equalTo(self.stackScrollView.stackView)
             }
         }
+
+        let bottomSpacer = UIView()
+        bottomSpacer.snp.makeConstraints { make in
+            make.height.equalTo(40)
+        }
+        addArrangedView(bottomSpacer)
     }
 
     private func fillViews() {
