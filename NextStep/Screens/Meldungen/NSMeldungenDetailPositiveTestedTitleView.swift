@@ -18,7 +18,7 @@ class NSMeldungenDetailPositiveTestedTitleView: UIView, NSTitleViewProtocol {
         super.init(frame: .zero)
 
         titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
-        textLabel.text = "detail_positive_tested_subtitle".ub_localized
+        textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
         // TODO: Wrong text
         dateLabel.text = "Heute"

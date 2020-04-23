@@ -57,6 +57,14 @@ class NSMeldungView: NSModuleBaseView {
         case .exposed:
             views.append(exposedView)
             views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_tel_button_title".ub_localized))
+            let container = UIView()
+            let timeLabel = NSLabel(.date, textColor: .ns_blue)
+            timeLabel.text = "Vor 2 Tagen"
+            container.addSubview(timeLabel)
+            timeLabel.snp.makeConstraints { make in
+                make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+            }
+            views.append(container)
         case .infected:
             views.append(infectedView)
             views.append(NSMoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))
