@@ -78,6 +78,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        appTitleView.changeBackgroundRandomly()
         NSUIStateManager.shared.refresh()
     }
 

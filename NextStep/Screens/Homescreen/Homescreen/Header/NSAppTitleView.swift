@@ -17,7 +17,11 @@ class NSAppTitleView: UIView {
         }
     }
 
-//    private lazy var backgroundView = NSHeaderImageBackgroundView(initialState: uiState)
+    public func changeBackgroundRandomly() {
+        backgroundView.changeBackgroundRandomly()
+    }
+
+    private lazy var backgroundView = NSHeaderImageBackgroundView(initialState: uiState)
 //    private let graphView = NSAnimatedGraphView()
 
     let highlightView = UIView()
@@ -52,10 +56,11 @@ class NSAppTitleView: UIView {
         highlightView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-//        addSubview(backgroundView)
-//        backgroundView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
+
+        addSubview(backgroundView)
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
 
         addSubview(contentView)
         contentView.snp.makeConstraints { make in
@@ -208,7 +213,7 @@ class NSAppTitleView: UIView {
             warning.isHidden = true
         }
 
-//        backgroundView.state = uiState
+        backgroundView.state = uiState
     }
 }
 
