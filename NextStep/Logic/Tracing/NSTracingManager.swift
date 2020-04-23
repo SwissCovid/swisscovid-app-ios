@@ -88,15 +88,17 @@ class NSTracingManager: NSObject {
     }
 
     @objc
-    private func updateStatus() {
+    func updateStatus(completion: ((Error?) -> Void)? = nil) {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
                 NSUIStateManager.shared.updateError = e
+                completion?(e)
             case let .success(st):
                 NSUIStateManager.shared.updateError = nil
                 NSUIStateManager.shared.tracingState = st
                 NSUIStateManager.shared.trackingState = st.trackingState
+                completion?(nil)
 
                 // schedule local push if exposed
                 NSTracingLocalPush.shared.update(state: st)

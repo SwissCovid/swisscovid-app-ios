@@ -121,8 +121,16 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                 self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             } else { // success
                 self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
+                self.changePresentingViewController()
             }
         }
+    }
+
+    private func changePresentingViewController() {
+        let presenting = presentingViewController as? NSTabBarController
+        let tabNav = presenting?.viewControllers?.first as? NSNavigationController
+        tabNav?.popToRootViewController(animated: true)
+        tabNav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
     }
 
     private func noCodeButtonPressed() {

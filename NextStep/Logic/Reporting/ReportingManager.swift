@@ -22,15 +22,22 @@ class ReportingManager {
             switch result {
             case let .success(token: token, date: date):
 
-                print("success with token ", date)
                 DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token)) { result in
                     DispatchQueue.main.async {
                         print(result)
                         switch result {
                         case .success:
-                            completion(nil)
-                        case let .failure:
+                            NSTracingManager.shared.updateStatus { error in
+                                if error != nil {
+                                    completion(.unexpected)
+                                } else {
+                                    completion(nil)
+                                }
+                            }
+                        case .failure(.networkingError(error: _)):
                             completion(.network)
+                        case .failure:
+                            completion(.unexpected)
                         }
                     }
                 }
