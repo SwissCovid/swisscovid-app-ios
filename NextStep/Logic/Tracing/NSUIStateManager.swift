@@ -203,13 +203,17 @@ class NSUIStateManager: NSObject {
                 newState.homescreen.meldungen.meldung = .exposed
                 newState.meldungenDetail.meldung = .exposed
 
-                // TODO: get matched contacts from days in exposed state
-                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())]
+                newState.meldungenDetail.meldungen = days.map { (mc) -> NSMeldungModel in NSMeldungModel(identifier: mc.identifier, timestamp: mc.reportDate)
+                }.sorted(by: { (a, b) -> Bool in
+                    a.timestamp < b.timestamp
+                })
 
                 // in case the infection state is overwritten, we need to
                 // add at least one meldung
                 if let os = overwrittenInfectionState, os == .exposed {
-                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())]
+                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date()), NSMeldungModel(identifier: 123_456_789, timestamp: Date(timeIntervalSince1970: 0))].sorted(by: { (a, b) -> Bool in
+                        a.timestamp < b.timestamp
+                    })
                 }
             }
 
