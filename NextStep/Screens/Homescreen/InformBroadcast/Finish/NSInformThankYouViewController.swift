@@ -30,7 +30,7 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        let imageView = UIImageView(image: UIImage(named: "thank-you")!)
+        let imageView = UIImageView(image: UIImage(named: "outro-thanks"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
