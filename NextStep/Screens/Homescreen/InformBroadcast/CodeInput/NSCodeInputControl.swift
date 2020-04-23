@@ -16,7 +16,7 @@ class NSCodeControl: UIView {
 
     // MARK: - Input number
 
-    private let numberOfInputs = 6
+    private let numberOfInputs = 12
     private var controls: [NSCodeSingleControl] = []
     private var currentControl: NSCodeSingleControl?
 
@@ -28,7 +28,7 @@ class NSCodeControl: UIView {
         super.init(frame: .zero)
         setup()
 
-        // jumpToNextField()
+        jumpToNextField()
     }
 
     required init?(coder _: NSCoder) {
@@ -56,26 +56,21 @@ class NSCodeControl: UIView {
 
         stackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
+            make.left.right.equalToSuperview()
         }
 
-        stackView.spacing = NSPadding.medium
+        stackView.distribution = .fillEqually
+        stackView.spacing = 1.0
 
         for i in 0 ..< numberOfInputs {
             let singleControl = NSCodeSingleControl()
             singleControl.parent = self
 
             controls.append(singleControl)
-
             stackView.addArrangedView(singleControl)
 
-            if i == (numberOfInputs / 2 - 1) {
-                let label = NSLabel(.title)
-                label.text = "–"
-                stackView.addArrangedView(label)
-                label.ub_setContentPriorityRequired()
+            if (i + 1) % 3 == 0, i + 1 != numberOfInputs {
+                stackView.setCustomSpacing(NSPadding.small + 2.0, after: singleControl)
             }
         }
     }
@@ -193,14 +188,13 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     private func setup() {
         snp.makeConstraints { make in
-            make.width.equalTo(36)
-            make.height.equalTo(44)
+            make.height.equalTo(36)
         }
 
         addSubview(textView)
 
         textView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: -2, bottom: 0, right: -2))
         }
 
         changeBorderStyle(isSelected: false)

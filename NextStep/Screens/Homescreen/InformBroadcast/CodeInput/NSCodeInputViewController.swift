@@ -32,7 +32,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
+            make.left.right.equalToSuperview().inset(NSPadding.medium * 2.0)
         }
 
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
@@ -79,9 +79,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         stackScrollView.addSpacerView(NSPadding.large)
 
         codeControl.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
 
         codeControl.controller = self
