@@ -53,7 +53,7 @@
 "inform_continue_button" = "Weiter";
 
 /*Informieren: Positive Testergebnis*/
-"inform_positive_long_text" = "Ich wurde kürzlich positiv auf COVID-19 getestet.\n\nIch möchte daher eine mögliche Infektionskette verhindern, indem die App Personen, denen ich begegnet bin, anonym benachrichtigt.";
+"inform_positive_long_text" = "Informieren Sie die von Ihrer App registrierten Personen über eine mögliche Ansteckung. \n\nSie bleiben dabei anonym.";
 
 /*Informieren: Senden Button*/
 "inform_send_button_title" = "Senden";
@@ -167,7 +167,7 @@
 "inform_code_text" = "Gib den Code ein, den du mit deinem Testergebnis erhalten hast.";
 
 /*Inform: Code eingeben kein Code Button Text*/
-"inform_code_no_code" = "Keinen Code erhalten?";
+"inform_code_no_code" = "Benötigen Sie Hilfe?";
 
 /*hint for filter tags in log-search*/
 "logs_filter_tags" = "Tag-Filter (kommagetrennt)";
@@ -549,3 +549,9 @@
 "onboarding_push_button" = "Mitteilungen erlauben";
 "onboarding_push_gtk_title1" = "Was könnte hier stehen";
 "onboarding_push_gtk_text1" = "Hier könnte etwas stehen, dass die Mitteilungen so sind, dass niemand mitlesen kann";
+
+/*Informieren Flow: Titel erste Seite*/
+"inform_positive_title" = "Begegnungen anonym informieren";
+
+/*Informieren Flow Subtitel erste Seite*/
+"inform_positive_subtitle" = "Positiv getestet";

@@ -530,3 +530,9 @@
 "onboarding_push_button" = "Mitteilungen erlauben";
 "onboarding_push_gtk_title1" = "Was könnte hier stehen";
 "onboarding_push_gtk_text1" = "Hier könnte etwas stehen, dass die Mitteilungen so sind, dass niemand mitlesen kann";
+
+/*Informieren Flow: Titel erste Seite*/
+"inform_positive_title" = "Begegnungen anonym informieren";
+
+/*Informieren Flow Subtitel erste Seite*/
+"inform_positive_subtitle" = "Positiv getestet";

@@ -10,12 +10,12 @@ import UIKit
 class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtocol {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
+    private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
     private let codeControl = NSCodeControl()
 
-    private let sendButton = NSButton(title: "inform_send_button_title".ub_localized)
+    private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 
     private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized)
 
@@ -76,6 +76,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         }
 
         stackScrollView.addArrangedView(noCodeContainer)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         codeControl.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
@@ -110,7 +111,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
 
-        NSTracingManager.shared.sendInformation(type: .tested, authString: codeControl.code()) { [weak self] error in
+        NSTracingManager.shared.sendInformation(authString: codeControl.code()) { [weak self] error in
             guard let self = self else { return }
             if let error = error {
                 self.stopLoading(error: error, reloadHandler: self.sendPressed)

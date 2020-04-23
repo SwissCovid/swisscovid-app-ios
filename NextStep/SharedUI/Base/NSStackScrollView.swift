@@ -31,6 +31,8 @@ class NSStackScrollView: UIView {
             make.edges.equalToSuperview()
         }
 
+        scrollView.ub_enableDefaultKeyboardObserver()
+
         // Add stackViewContainer and stackView
         scrollView.addSubview(stackViewContainer)
         stackViewContainer.snp.makeConstraints { make in

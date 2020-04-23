@@ -28,7 +28,7 @@ class NSCodeControl: UIView {
         super.init(frame: .zero)
         setup()
 
-        jumpToNextField()
+        // jumpToNextField()
     }
 
     required init?(coder _: NSCoder) {
@@ -182,7 +182,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
         if isSelected {
             layer.borderWidth = 2.0
-            layer.borderColor = UIColor.ns_green.cgColor
+            layer.borderColor = UIColor.ns_purple.cgColor
         } else {
             layer.borderWidth = 1.0
             layer.borderColor = UIColor(ub_hexString: "#e5e5e5")?.cgColor

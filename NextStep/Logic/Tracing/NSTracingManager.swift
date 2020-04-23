@@ -81,12 +81,7 @@ class NSTracingManager: NSObject {
         updateStatus()
     }
 
-    enum InformationType {
-        case tested
-        case symptoms
-    }
-
-    func sendInformation(type _: InformationType, authString: String = "", completion: @escaping (Error?) -> Void) {
+    func sendInformation(authString: String = "", completion: @escaping (Error?) -> Void) {
         // TODO: The onset timestamp should not be a hardcoded value, so this implementation
         // will likely change in the future, but at the moment it is unclear where the value will come from
         let exposureOffset: TimeInterval = 60 * 60 * 24 * 14 // 14 days

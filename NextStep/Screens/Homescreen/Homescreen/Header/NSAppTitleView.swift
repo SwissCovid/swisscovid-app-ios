@@ -229,7 +229,6 @@ extension NSAppTitleView: NSTitleViewProtocol {
         }
 
         let inNegativeFactor = max(0, min(1, -offset / 10.0))
-        let inPositiveFactor = max(0, min(1, offset / 70.0))
 
         let s = 1.0 + inNegativeFactor * 0.5
         iconContainer.transform = CGAffineTransform(scaleX: s, y: s)

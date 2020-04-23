@@ -10,7 +10,7 @@ class NSInformViewController: NSInformStepViewController {
     static func present(from rootViewController: UIViewController) {
         let informVC: UIViewController
 
-        informVC = NSSendViewController(flow: .tested)
+        informVC = NSSendViewController()
 
         let navCon = NSNavigationController(rootViewController: informVC)
         rootViewController.present(navCon, animated: true, completion: nil)

@@ -1,12 +1,8 @@
-/*
- * Created by Ubique Innovation AG
- * https://www.ubique.ch
- * Copyright (c) 2020. All rights reserved.
- */
+///
 
 import UIKit
 
-class NSInformThankYouViewController: NSInformBottomButtonViewController {
+class NSInformGetWellViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
@@ -41,19 +37,19 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
         stackScrollView.addArrangedView(textLabel)
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
 
-        bottomButtonTitle = "inform_continue_button".ub_localized
+        bottomButtonTitle = "inform_fertig_button_title".ub_localized
         bottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.sendPressed()
         }
 
-        titleLabel.text = "inform_send_thankyou".ub_localized
-        textLabel.text = "inform_send_thankyou_text".ub_localized
+        titleLabel.text = "inform_send_getwell_title".ub_localized
+        textLabel.text = "inform_send_getwell_text".ub_localized
 
         enableBottomButton = true
     }
 
     private func sendPressed() {
-        navigationController?.pushViewController(NSInformGetWellViewController(), animated: true)
+        dismiss(animated: true, completion: nil)
     }
 }
