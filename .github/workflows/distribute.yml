@@ -4,8 +4,7 @@ on:
   push:
     branches: '**'
   pull_request:
-    branches:
-      - master
+    branches: '**'
 
 jobs:
   testflight_internal:
