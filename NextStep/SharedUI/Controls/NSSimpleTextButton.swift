@@ -7,9 +7,12 @@
 import Foundation
 
 class NSSimpleTextButton: UBButton {
+    private let color: UIColor
+
     // MARK: - Init
 
-    init(title: String) {
+    init(title: String, color: UIColor) {
+        self.color = color
         super.init()
 
         self.title = title
@@ -24,12 +27,12 @@ class NSSimpleTextButton: UBButton {
 
     private func setup() {
         backgroundColor = .clear
-        highlightedBackgroundColor = .ns_backgroundSecondary
+        highlightedBackgroundColor = color.withAlphaComponent(0.15)
 
         highlightXInset = -NSPadding.small
         highlightCornerRadius = 3.0
 
-        setTitleColor(.ns_green, for: .normal)
+        setTitleColor(color, for: .normal)
         titleLabel?.font = NSLabelType.textBold.font
     }
 }

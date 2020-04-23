@@ -17,7 +17,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 
-    private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized)
+    private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized, color: .ns_purple)
 
     override func viewDidLoad() {
         super.viewDidLoad()

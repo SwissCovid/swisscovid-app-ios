@@ -7,7 +7,7 @@ class NSMeldungenDetailNoMeldungenTitleView: UIView, NSTitleViewProtocol {
 
     private let stackView = UIStackView()
 
-    private let imageView = UIImageView(image: UIImage(named: "ic-check"))
+    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle"))
     private let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 

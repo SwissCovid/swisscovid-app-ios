@@ -73,7 +73,7 @@
 "inform_empfehlung_subtext" = "A medical check up or lab test is currently not advised. \n\nPlease continue to practice protective hygiene measures and follow the advised behavior rules.";
 
 /*Inform: Button Titel*/
-"inform_fertig_button_title" = "Finish";
+"inform_fertig_button_title" = "Close";
 
 /*CSV wird heruntergeladen*/
 "downloading_csv" = "Downloading CSV";
@@ -502,23 +502,23 @@
 /*Telefon-Nummer für Infos wenn Exposed*/
 "exposed_info_line_tel" = "+41 98 765 43 21";
 "onboarding_prinzip_heading" = "Das Prinzip";
-"onboarding_prinzip_title" = "Dem Virus einen Schritt voraus";
-"onboarding_prinzip_text1" = "Mit der Swiss Trace App können alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
+"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Ansteckungsketten unterbrochen werden.";
 "onboarding_privacy_heading" = "Privacy by Design";
-"onboarding_privacy_title" = "Schutz der Privatsphäre garantiert";
+"onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
 "onboarding_privacy_text1" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
 "onboarding_privacy_text2" = "Die Kommunikation zwischen den Geräten findet anonym statt. Es werden keine personenbezogene Daten geteilt.";
 "onboarding_begegnungen_heading" = "Was macht die App?";
-"onboarding_begegnungen_title" = "Begegnungen erkennen dank Bluetooth";
+"onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
 "onboarding_begegnungen_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander stehen. ";
 "onboarding_begegnungen_text2" = "Dafür wird Bluetooth Low Energy (BLE) verwendet.";
 "onboarding_meldung_heading" = "Was macht die App?";
-"onboarding_meldung_title" = "Meldung bei einer möglichen Ansteckung";
+"onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
 "onboarding_meldung_text1" = "Die App informiert Sie, falls eine Person der Sie in den letzten Tagen begegnet sind positiv auf COVID-19 getestet wird.";
 "onboarding_meldung_text2" = "So können Sie mithelfen, die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_bluetooth_title" = "Bluetooth erlauben";
-"onboarding_bluetooth_text" = " Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
+"onboarding_bluetooth_text" = "Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
 "onboarding_bluetooth_button" = "Bluetooth erlauben";
 "onboarding_good_to_know" = "Gut zu wissen";
 "onboarding_bluetooth_gtk_title1" = "Sie bleiben anonym";
@@ -532,7 +532,22 @@
 "onboarding_push_gtk_text1" = "Hier könnte etwas stehen, dass die Mitteilungen so sind, dass niemand mitlesen kann";
 
 /*Informieren Flow: Titel erste Seite*/
-"inform_positive_title" = "Begegnungen anonym informieren";
+"inform_positive_title" = "Begegnungen anonym\ninformieren";
 
 /*Informieren Flow Subtitel erste Seite*/
 "inform_positive_subtitle" = "Positiv getestet";
+
+/*Code senden: Abschluss Gute Besserung*/
+"inform_send_getwell_title" = "Gute Besserung";
+
+/*Code senden: Abschluss Gute Besserung*/
+"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die Anweisungen zur Selbst-Isolation.";
+
+/*Titel auf dem letzen Onboarding Screen*/
+"onboarding_go_title" = "Die App ist eingerichtet";
+
+/*Text auf dem letzten Onboarding Screen*/
+"onboarding_go_text" = "Vielen Dank dass Sie mithelfen, die Verbreitung von COVID-19 einzudämmen.";
+
+/*Button-Label auf dem letzten Onboarding screen*/
+"onboarding_go_button" = "Starten";
