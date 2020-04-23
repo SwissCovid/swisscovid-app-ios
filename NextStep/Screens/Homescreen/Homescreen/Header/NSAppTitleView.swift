@@ -9,7 +9,7 @@ import UIKit
 class NSAppTitleView: UIView {
     // MARK: - Init
 
-    var uiState: NSUIStateModel.Homescreen.Header = .tracingActive {
+    var uiState: NSUIStateModel.Tracing = .active {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)
@@ -22,7 +22,6 @@ class NSAppTitleView: UIView {
     }
 
     private lazy var backgroundView = NSHeaderImageBackgroundView(initialState: uiState)
-//    private let graphView = NSAnimatedGraphView()
 
     let highlightView = UIView()
 
@@ -30,17 +29,12 @@ class NSAppTitleView: UIView {
     let contentView = UIView()
 
     // Content
-    let circle = UIImageView(image: UIImage(named: "header-circle"))
-
-    let iconContainer = UIView()
-    let checkmark = NSCheckBoxControl(isChecked: true, noBorder: true)
-    let info = UIImageView(image: UIImage(named: "header-info"))
-    let warning = UIImageView(image: UIImage(named: "header-warning"))
+    private let activeView = NSHeaderActiveView()
+    private lazy var errorView = NSHeaderErrorView(initialState: uiState)
 
     init() {
         super.init(frame: .zero)
         setup()
-        animate()
         startSpawn()
         updateState(animated: false)
     }
@@ -69,59 +63,15 @@ class NSAppTitleView: UIView {
             make.bottom.equalToSuperview().inset(NSPadding.large)
         }
 
-        contentView.addSubview(circle)
-        circle.snp.makeConstraints { make in
+        contentView.addSubview(errorView)
+        errorView.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
 
-        contentView.addSubview(iconContainer)
-        iconContainer.snp.makeConstraints { make in
+        contentView.addSubview(activeView)
+        activeView.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-        iconContainer.backgroundColor = .clear
-
-        checkmark.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        iconContainer.addSubview(checkmark)
-        checkmark.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        iconContainer.addSubview(info)
-        info.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-        iconContainer.addSubview(warning)
-        warning.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-        }
-
-//        contentView.addSubview(graphView)
-//        graphView.snp.makeConstraints { make in
-//            make.center.equalToSuperview()
-//            make.size.equalTo(50)
-//        }
-    }
-
-    private func animate() {
-        let initialDelay = 1.0
-
-        circle.alpha = 0
-        circle.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-        iconContainer.alpha = 0
-        iconContainer.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-
-        UIView.animate(withDuration: 0.3, delay: 0.0 + initialDelay, options: [], animations: {
-            self.circle.alpha = 1
-        }, completion: nil)
-        UIView.animate(withDuration: 1.0, delay: 0.0 + initialDelay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
-            self.circle.transform = .identity
-        }, completion: nil)
-
-        UIView.animate(withDuration: 0.3, delay: 0.3 + initialDelay, options: [], animations: {
-            self.iconContainer.alpha = 1
-        }, completion: nil)
-        UIView.animate(withDuration: 1.0, delay: 0.3 + initialDelay, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.0, options: [], animations: {
-            self.iconContainer.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-        }, completion: nil)
     }
 
     private var timer: Timer?
@@ -135,7 +85,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func hightlight() {
-        if uiState == .bluetoothError || uiState == .tracingInactive {
+        if uiState != .active {
             return // no highlight in error state
         }
 
@@ -150,7 +100,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func spawnArcs(force: Bool = false) {
-        if uiState == .bluetoothError || uiState == .tracingInactive {
+        if uiState != .active {
             return // no arcs in error state
         }
 
@@ -164,7 +114,7 @@ class NSAppTitleView: UIView {
         [left, right].forEach {
             arc in
             arc.alpha = 0
-            arc.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            arc.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
             contentView.addSubview(arc)
 
             arc.snp.makeConstraints { make in
@@ -195,25 +145,10 @@ class NSAppTitleView: UIView {
             return
         }
 
-        switch uiState {
-        case .tracingActive:
-            backgroundColor = .ns_green
-            checkmark.isHidden = false
-            info.isHidden = true
-            warning.isHidden = true
-        case .bluetoothError, .tracingInactive:
-            backgroundColor = .ns_red
-            checkmark.isHidden = true
-            info.isHidden = true
-            warning.isHidden = false
-        default:
-            backgroundColor = .ns_blue
-            checkmark.isHidden = true
-            info.isHidden = false
-            warning.isHidden = true
-        }
+        uiState == .active ? activeView.startAnimating() : activeView.stopAnimating()
 
         backgroundView.state = uiState
+        errorView.state = uiState
     }
 }
 
@@ -232,10 +167,5 @@ extension NSAppTitleView: NSTitleViewProtocol {
                 }
             }
         }
-
-        let inNegativeFactor = max(0, min(1, -offset / 10.0))
-
-        let s = 1.0 + inNegativeFactor * 0.5
-        iconContainer.transform = CGAffineTransform(scaleX: s, y: s)
     }
 }

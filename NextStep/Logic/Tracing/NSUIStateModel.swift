@@ -23,13 +23,6 @@ struct NSUIStateModel: Equatable {
     }
 
     struct Homescreen: Equatable {
-        enum Header: Equatable {
-            case tracingActive
-            case tracingInactive
-            case bluetoothError
-            case tracingEnded
-        }
-
         struct Begegnungen: Equatable {
             var tracing: Tracing = .active
         }
@@ -46,7 +39,7 @@ struct NSUIStateModel: Equatable {
             var syncProblem: Bool = false
         }
 
-        var header: Header = .tracingActive
+        var header: Tracing = .active
         var begegnungen: Begegnungen = Begegnungen()
         var meldungen: Meldungen = Meldungen()
 

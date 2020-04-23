@@ -131,16 +131,18 @@ class NSUIStateManager: NSObject {
             } else {
                 tracing = .active
             }
-            newState.homescreen.header = .tracingActive
+            newState.homescreen.header = .active
         case .stopped:
             tracing = .inactive
-            newState.homescreen.header = .tracingInactive
+            newState.homescreen.header = .inactive
         case let .inactive(error):
             switch error {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
+                newState.homescreen.header = .bluetoothTurnedOff
             case .permissonError:
                 tracing = .bluetoothPermissionError
+                newState.homescreen.header = .bluetoothPermissionError
             case let .cryptographyError(e):
                 assertionFailure("CryptographyError: \(e)")
             case let .databaseError(e):
@@ -152,7 +154,6 @@ class NSUIStateManager: NSObject {
             case let .timeInconsistency(shift):
                 print("timeInconsistency with shift: \(shift)")
             }
-            newState.homescreen.header = .bluetoothError
         }
 
         newState.homescreen.begegnungen.tracing = tracing
@@ -182,7 +183,7 @@ class NSUIStateManager: NSObject {
                 newState.homescreen.meldungButtonDisabled = true
                 newState.homescreen.meldungen.meldung = .infected
                 newState.meldungenDetail.meldung = .infected
-                newState.homescreen.header = .tracingEnded
+                newState.homescreen.header = .ended
                 newState.homescreen.begegnungen.tracing = .ended
             case .exposed:
                 newState.homescreen.meldungen.meldung = .exposed

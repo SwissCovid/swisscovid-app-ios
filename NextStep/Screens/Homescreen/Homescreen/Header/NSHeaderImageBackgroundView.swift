@@ -8,7 +8,7 @@ class NSHeaderImageBackgroundView: UIView {
 
     private let headerImages = [UIImage(named: "header-image-basel-1")!, UIImage(named: "header-image-geneva-1")!, UIImage(named: "header-image-bern-1")!, UIImage(named: "header-image-bern-2")!]
 
-    var state: NSUIStateModel.Homescreen.Header {
+    var state: NSUIStateModel.Tracing {
         didSet { update() }
     }
 
@@ -21,7 +21,7 @@ class NSHeaderImageBackgroundView: UIView {
         }
     }
 
-    init(initialState: NSUIStateModel.Homescreen.Header) {
+    init(initialState: NSUIStateModel.Tracing) {
         state = initialState
 
         super.init(frame: .zero)
@@ -37,6 +37,7 @@ class NSHeaderImageBackgroundView: UIView {
 
     private func setupView() {
         imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
 
         imageView.image = headerImages[0]
 
@@ -55,13 +56,13 @@ class NSHeaderImageBackgroundView: UIView {
         let alpha: CGFloat = 0.7
 
         switch state {
-        case .tracingActive:
+        case .active:
             colorView.backgroundColor = UIColor.ns_blue.withAlphaComponent(alpha)
-        case .tracingInactive:
-            colorView.backgroundColor = UIColor.ns_purple.withAlphaComponent(alpha)
-        case .bluetoothError:
+        case .inactive:
+            colorView.backgroundColor = UIColor.ns_text.withAlphaComponent(alpha)
+        case .bluetoothPermissionError, .bluetoothTurnedOff:
             colorView.backgroundColor = UIColor.ns_red.withAlphaComponent(alpha)
-        case .tracingEnded:
+        case .ended:
             colorView.backgroundColor = UIColor.ns_purple.withAlphaComponent(alpha)
         }
     }

@@ -6,9 +6,10 @@
 
 import UIKit
 
-class NSBegegnungenDetailViewController: NSViewController {
-    private let stackScrollView = NSStackScrollView()
+class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
+
+    private let appTitleView = NSAppTitleView()
 
     // MARK: - Init
 
@@ -18,6 +19,9 @@ class NSBegegnungenDetailViewController: NSViewController {
         super.init()
 
         title = "handshakes_title_homescreen".ub_localized
+        titleView = appTitleView
+
+        NSUIStateManager.shared.addObserver(self, block: updateState(_:))
     }
 
     // MARK: - View
@@ -40,19 +44,10 @@ class NSBegegnungenDetailViewController: NSViewController {
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
-        stackScrollView.addSpacerView(NSPadding.large)
-
-        let control = UIView()
-        control.addSubview(bluetoothControl)
-        bluetoothControl.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(15.0)
-            make.top.bottom.equalToSuperview().inset(15.0)
-        }
-
+        
         bluetoothControl.viewToBeLayouted = view
 
-        stackScrollView.addArrangedView(control)
+        stackScrollView.addArrangedView(bluetoothControl)
 
         stackScrollView.addSpacerView(30.0)
 
@@ -67,5 +62,9 @@ class NSBegegnungenDetailViewController: NSViewController {
         ]))
 
         stackScrollView.addSpacerView(30.0)
+    }
+
+    private func updateState(_ state: NSUIStateModel) {
+        appTitleView.uiState = state.homescreen.header
     }
 }

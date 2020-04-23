@@ -25,15 +25,15 @@ class NSHeaderArcView: UIView {
 
         var startAngle: CGFloat {
             switch self {
-            case .left: return 210.0 / 180.0 * CGFloat.pi
-            case .right: return 30.0 / 180.0 * CGFloat.pi
+            case .left: return 270.0 / 180.0 * CGFloat.pi
+            case .right: return 90.0 / 180.0 * CGFloat.pi
             }
         }
 
         var endAngle: CGFloat {
             switch self {
-            case .left: return 150.0 / 180.0 * CGFloat.pi
-            case .right: return 330.0 / 180.0 * CGFloat.pi
+            case .left: return 90.0 / 180.0 * CGFloat.pi
+            case .right: return 270.0 / 180.0 * CGFloat.pi
             }
         }
     }
@@ -59,7 +59,7 @@ class NSHeaderArcView: UIView {
 
         shapeLayer.lineWidth = 6
 
-        shapeLayer.strokeColor = UIColor(white: 0.0, alpha: 0.1).cgColor
+        shapeLayer.strokeColor = UIColor(white: 1.0, alpha: 0.1).cgColor
         shapeLayer.fillColor = UIColor.clear.cgColor
 
         layer.addSublayer(shapeLayer)

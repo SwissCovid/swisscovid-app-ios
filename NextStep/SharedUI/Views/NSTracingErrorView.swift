@@ -94,18 +94,30 @@ class NSTracingErrorView: UIView {
     static func model(for state: NSUIStateModel.Tracing) -> NSTracingErrorViewModel {
         switch state {
         case .inactive:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "tracing_turned_off_title".ub_localized, text: "tracing_turned_off_text".ub_localized, buttonTitle: nil, action: nil)
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+                                           title: "tracing_turned_off_title".ub_localized,
+                                           text: "tracing_turned_off_text".ub_localized,
+                                           buttonTitle: nil,
+                                           action: nil)
         case .bluetoothPermissionError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_permission_error_title".ub_localized, text: "bluetooth_permission_error_text".ub_localized, buttonTitle: "activate_bluetooth_button".ub_localized, action: {
-                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
+                                           title: "bluetooth_permission_error_title".ub_localized,
+                                           text: "bluetooth_permission_error_text".ub_localized,
+                                           buttonTitle: "activate_bluetooth_button".ub_localized,
+                                           action: {
+                                               guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                                                   UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
-                UIApplication.shared.open(settingsUrl)
+                                               UIApplication.shared.open(settingsUrl)
             })
         case .bluetoothTurnedOff:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!, title: "bluetooth_turned_off_title".ub_localized, text: "bluetooth_turned_off_text".ub_localized, buttonTitle: "bluetooth_turn_on_button_title".ub_localized, action: {
-                NSTracingManager.shared.endTracing()
-                NSTracingManager.shared.beginUpdatesAndTracing()
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
+                                           title: "bluetooth_turned_off_title".ub_localized,
+                                           text: "bluetooth_turned_off_text".ub_localized,
+                                           buttonTitle: "bluetooth_turn_on_button_title".ub_localized,
+                                           action: {
+                                               NSTracingManager.shared.endTracing()
+                                               NSTracingManager.shared.beginUpdatesAndTracing()
             })
         default:
             return NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil)

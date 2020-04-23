@@ -8,7 +8,7 @@ import UIKit
 
 class NSLoadingView: UIView {
     private let errorStackView = UIStackView()
-    private let loadingIndicatorView = NSAnimatedGraphView()
+    private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
 
     private let errorTitleLabel = NSLabel(.title, textAlignment: .center)
     private let errorTextLabel = NSLabel(.textLight, textAlignment: .center)

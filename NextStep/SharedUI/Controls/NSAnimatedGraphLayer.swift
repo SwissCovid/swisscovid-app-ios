@@ -7,10 +7,28 @@
 import UIKit
 
 class NSAnimatedGraphLayer: CALayer {
-    static var tintColor: CGColor = UIColor.ns_text_secondary.cgColor
-    static var nodeRadius: CGFloat = 8
-    static var lineWidth: CGFloat = 2
-    static var timeInterval: TimeInterval = 0.5
+    var tintColor: CGColor {
+        switch type {
+        case .header: return UIColor.white.cgColor
+        case .loading: return UIColor.ns_text_secondary.cgColor
+        }
+    }
+
+    var nodeRadius: CGFloat {
+        switch type {
+        case .header: return 5
+        case .loading: return 8
+        }
+    }
+
+    var lineWidth: CGFloat = 2
+    var timeInterval: TimeInterval {
+        switch type {
+        case .header: return 1.5
+        case .loading: return 0.5
+        }
+    }
+
     static var range: CGFloat = 7
 
     private var nodeCenters: [CGPoint] = []
@@ -20,15 +38,14 @@ class NSAnimatedGraphLayer: CALayer {
 
     private var timer: Timer?
 
-    init(nodeCenters: [CGPoint], edges: [(Int, Int)]) {
+    private let type: NSAnimatedGraphView.GraphType
+
+    init(nodeCenters: [CGPoint], edges: [(Int, Int)], type: NSAnimatedGraphView.GraphType) {
+        self.type = type
         self.nodeCenters = nodeCenters
         self.edges = edges
         super.init()
         draw()
-    }
-
-    override init(layer: Any) {
-        super.init(layer: layer)
     }
 
     required init?(coder _: NSCoder) {
@@ -44,7 +61,7 @@ class NSAnimatedGraphLayer: CALayer {
         // draw nodes
         nodeLayers = []
         for center in scaledCenters {
-            let node = NSAnimatedGraphNodeLayer(at: center, radius: Self.nodeRadius)
+            let node = NSAnimatedGraphNodeLayer(at: center, radius: nodeRadius, color: tintColor)
             nodeLayers.append(node)
             addSublayer(node)
         }
@@ -52,7 +69,7 @@ class NSAnimatedGraphLayer: CALayer {
         // draw edges
         edgeLayers = []
         for (start, end) in edges {
-            let edgeLayer = NSAnimatedGraphEdgeLayer(start: scaledCenters[start], end: scaledCenters[end])
+            let edgeLayer = NSAnimatedGraphEdgeLayer(start: scaledCenters[start], end: scaledCenters[end], color: tintColor, lineWidth: lineWidth)
             edgeLayers.append(edgeLayer)
             addSublayer(edgeLayer)
         }
@@ -75,7 +92,7 @@ class NSAnimatedGraphLayer: CALayer {
     func startAnimating() {
         guard timer == nil else { return }
 
-        timer = Timer.scheduledTimer(withTimeInterval: Self.timeInterval, repeats: true) { [weak self] _ in
+        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { [weak self] _ in
             self?.step()
         }
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02) {
@@ -93,7 +110,7 @@ class NSAnimatedGraphLayer: CALayer {
         }
 
         for (position, node) in zip(newPositions, nodeLayers) {
-            node.move(to: position, duration: Self.timeInterval)
+            node.move(to: position, duration: timeInterval)
         }
 
         let newPoints = zip(nodeCentersInCurrentBounds(), newPositions).map {
@@ -101,7 +118,7 @@ class NSAnimatedGraphLayer: CALayer {
         }
 
         for (edge, layer) in zip(edges, edgeLayers) {
-            layer.move(from: newPoints[edge.0], to: newPoints[edge.1], duration: Self.timeInterval)
+            layer.move(from: newPoints[edge.0], to: newPoints[edge.1], duration: timeInterval)
         }
     }
 
@@ -112,9 +129,9 @@ class NSAnimatedGraphLayer: CALayer {
 }
 
 private class NSAnimatedGraphNodeLayer: CAShapeLayer {
-    init(at center: CGPoint, radius: CGFloat) {
+    init(at center: CGPoint, radius: CGFloat, color: CGColor) {
         super.init()
-        fillColor = NSAnimatedGraphLayer.tintColor
+        fillColor = color
         strokeColor = UIColor.clear.cgColor
 
         let origin = CGPoint(x: center.x - radius, y: center.y - radius)
@@ -142,11 +159,11 @@ private class NSAnimatedGraphNodeLayer: CAShapeLayer {
 }
 
 private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
-    init(start: CGPoint, end: CGPoint) {
+    init(start: CGPoint, end: CGPoint, color: CGColor, lineWidth: CGFloat) {
         super.init()
 
-        strokeColor = NSAnimatedGraphLayer.tintColor
-        lineWidth = NSAnimatedGraphLayer.lineWidth
+        strokeColor = color
+        self.lineWidth = lineWidth
         path = makeLine(from: start, to: end)
     }
 

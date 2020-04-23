@@ -7,6 +7,10 @@
 import UIKit
 
 class NSAnimatedGraphView: UIView {
+    enum GraphType {
+        case header, loading
+    }
+
     let graphLayer: NSAnimatedGraphLayer
 
     let nodeCenters: [CGPoint] = [
@@ -30,8 +34,8 @@ class NSAnimatedGraphView: UIView {
         (4, 5),
     ]
 
-    init() {
-        graphLayer = NSAnimatedGraphLayer(nodeCenters: nodeCenters, edges: edges)
+    init(type: GraphType) {
+        graphLayer = NSAnimatedGraphLayer(nodeCenters: nodeCenters, edges: edges, type: type)
         super.init(frame: .zero)
         layer.addSublayer(graphLayer)
     }
