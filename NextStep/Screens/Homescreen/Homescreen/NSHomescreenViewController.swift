@@ -190,8 +190,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
     }
 
-    private func presentMeldungenDetail() {
-        navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: true)
+    func presentMeldungenDetail(animated: Bool = true) {
+        navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: animated)
     }
 
     private func presentDebugScreen() {

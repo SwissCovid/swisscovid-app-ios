@@ -76,6 +76,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if app is cold-started or comes from background > 30 minutes,
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
+            if NSUIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
+                let tabBarController = window?.rootViewController as? NSTabBarController,
+                let navigationController = tabBarController.viewControllers?.first as? NSNavigationController,
+                let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
+                navigationController.popToRootViewController(animated: false)
+                tabBarController.selectedIndex = 0
+                homescreenVC.presentMeldungenDetail(animated: false)
+            }
             startForceUpdateCheck()
         }
     }

@@ -210,12 +210,17 @@ class NSUIStateManager: NSObject {
                     a.timestamp < b.timestamp
                 })
 
+                if let meldung = newState.meldungenDetail.meldungen.last {
+                    newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) != nil
+                }
+
                 // in case the infection state is overwritten, we need to
                 // add at least one meldung
                 if let os = overwrittenInfectionState, os == .exposed {
                     newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
                         a.timestamp < b.timestamp
                     })
+                    newState.shouldStartAtMeldungenDetail = true
                 }
             }
 

@@ -139,14 +139,13 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard meldungen.count > 0 else { return }
-
-        let m = meldungen[0]
+        guard let last = meldungen.last else { return }
 
         let phoneNumber = "exposed_info_line_tel".ub_localized
         NSPhoneCallHelpers.call(phoneNumber)
 
-        NSUser.shared.registerPhoneCall(identifier: m.identifier)
+        NSUser.shared.registerPhoneCall(identifier: last.identifier)
+        NSUIStateManager.shared.uiState.shouldStartAtMeldungenDetail = false
     }
 }
 

@@ -19,6 +19,7 @@ struct NSUIStateModel: Equatable {
     var debug: Debug = Debug()
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
+    var shouldStartAtMeldungenDetail = false
 
     enum Tracing: Equatable {
         case active
