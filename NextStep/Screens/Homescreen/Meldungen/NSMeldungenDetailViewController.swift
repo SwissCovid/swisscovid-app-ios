@@ -30,8 +30,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         NSUIStateManager.shared.addObserver(self) { [weak self] state in
             guard let self = self else { return }
-            let meldung = state.meldungenDetail.meldung
-            self.setup(meldung)
+            self.setup(state.meldungenDetail)
         }
     }
 
@@ -65,15 +64,15 @@ class NSMeldungenDetailViewController: NSViewController {
         }
     }
 
-    private func setup(_ state: NSUIStateModel.MeldungenDetail.Meldung) {
+    private func setup(_ state: NSUIStateModel.MeldungenDetail) {
         noMeldungenViewController.view.alpha = 0.0
         positiveTestedViewController.view.alpha = 0.0
         meldungenViewController.view.alpha = 0.0
 
-        switch state {
+        switch state.meldung {
         case .exposed:
             meldungenViewController.view.alpha = 1.0
-        // TODO: set meldungen
+            meldungenViewController.meldungen = state.meldungen
         case .infected:
             positiveTestedViewController.view.alpha = 1.0
         case .noMeldung:

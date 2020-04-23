@@ -6,10 +6,16 @@
 
 import UIKit
 
+protocol NSHitTestDelegate {
+    func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool
+}
+
 class NSStackScrollView: UIView {
     private let stackViewContainer = UIView()
     let stackView = UIStackView()
     let scrollView = UIScrollView()
+
+    public var hitTestDelegate: NSHitTestDelegate?
 
     init(axis: NSLayoutConstraint.Axis = .vertical, spacing: CGFloat = 0) {
         super.init(frame: .zero)
@@ -94,7 +100,21 @@ class NSStackScrollView: UIView {
         view.removeFromSuperview()
     }
 
+    func removeAllViews() {
+        for v in stackView.arrangedSubviews {
+            removeView(v)
+        }
+    }
+
     func scrollRectToVisible(_ rect: CGRect, animated: Bool) {
         scrollView.scrollRectToVisible(rect, animated: animated)
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        if hitTestDelegate?.overrideHitTest(point, with: event) ?? false {
+            return nil
+        }
+
+        return super.hitTest(point, with: event)
     }
 }

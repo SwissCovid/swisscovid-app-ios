@@ -5,7 +5,7 @@ import UIKit
 class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
-    public var meldung: NSMeldungModel? {
+    public var meldungen: [NSMeldungModel] = [] {
         didSet { update() }
     }
 
@@ -19,11 +19,21 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSMeldungDetailMeldungTitleView()
+        titleView = NSMeldungDetailMeldungTitleView(overlapInset: titleHeight - startPositionScrollView)
+
+        stackScrollView.hitTestDelegate = self
     }
 
     override var useFullScreenHeaderAnimation: Bool {
         return true
+    }
+
+    override var titleHeight: CGFloat {
+        return 260.0
+    }
+
+    override var startPositionScrollView: CGFloat {
+        return 230.0
     }
 
     // MARK: - Views
@@ -55,10 +65,10 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     private func update() {
         if let tv = titleView as? NSMeldungDetailMeldungTitleView {
-            tv.meldung = meldung
+            tv.meldungen = meldungen
         }
 
-        if let id = meldung?.identifier, let lastCall = NSUser.shared.lastPhoneCall(for: id) {
+        if meldungen.count > 0, let lastCall = NSUser.shared.lastPhoneCall(for: meldungen[0].identifier) {
             callLabel.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
 
             notYetCalledView?.isHidden = true
@@ -128,11 +138,20 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let m = meldung else { return }
+        guard meldungen.count > 0 else { return }
+
+        let m = meldungen[0]
 
         let phoneNumber = "exposed_info_line_tel".ub_localized
         NSPhoneCallHelpers.call(phoneNumber)
 
         NSUser.shared.registerPhoneCall(identifier: m.identifier)
+    }
+}
+
+extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate
+{
+    func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
+        return point.y < startPositionScrollView
     }
 }

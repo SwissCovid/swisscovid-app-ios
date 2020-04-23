@@ -5,39 +5,29 @@ import UIKit
 class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
     // MARK: - API
 
-    public var meldung: NSMeldungModel? {
+    public var meldungen: [NSMeldungModel] = [] {
         didSet { update() }
     }
 
     // MARK: - Initial Views
 
-    private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
-    private let imageInitialView = UIImageView(image: UIImage(named: "illu-anrufen"))
+    private var headers: [NSMeldungDetailMeldungSingleTitleHeader] = []
+    private var stackScrollView = NSStackScrollView(axis: .horizontal, spacing: 0)
 
-    // MARK: - Normal Views
+    private let pageControl = UIPageControl()
+    private let overlapInset: CGFloat
 
-    private let infoImageView = UIImageView(image: UIImage(named: "ic-info-border"))
-    private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
-    private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
-
-    private let dateLabel = NSLabel(.date, textAlignment: .center)
+    private var firstUpdate = true
 
     // MARK: - Init
 
-    init() {
+    init(overlapInset: CGFloat) {
+        self.overlapInset = overlapInset
+
         super.init(frame: .zero)
 
         backgroundColor = .ns_blue
-
-        setupInitialLayout()
-
-        newMeldungInitialView.text = "meldung_detail_exposed_new_meldung".ub_localized
-
-        titleLabel.text = "meldung_detail_exposed_title".ub_localized
-        subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
-
-        dateLabel.text = ""
-        dateLabel.alpha = 0.43
+        setupStackScrollView()
     }
 
     required init?(coder _: NSCoder) {
@@ -46,110 +36,80 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
 
     // MARK: - Setup Layout
 
-    private func setupInitialLayout() {
-        addSubview(newMeldungInitialView)
-        addSubview(imageInitialView)
+    private func setupStackScrollView() {
+        pageControl.pageIndicatorTintColor = UIColor.ns_text.withAlphaComponent(0.46)
+        pageControl.currentPageIndicatorTintColor = .white
+        pageControl.alpha = 0.0
 
-        addSubview(infoImageView)
-        addSubview(titleLabel)
-        addSubview(subtitleLabel)
-        addSubview(dateLabel)
-
-        setupOpen()
-    }
-
-    private func setupOpen() {
-        newMeldungInitialView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(40.0)
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
+        addSubview(pageControl)
+        pageControl.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(overlapInset + NSPadding.medium)
         }
 
-        imageInitialView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+        addSubview(stackScrollView)
+        stackScrollView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(pageControl.snp.top)
         }
 
-        titleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
-        }
-
-        subtitleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
-        }
-
-        dateLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.medium)
-        }
-
-        infoImageView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
-        }
-
-        infoImageView.ub_setContentPriorityRequired()
-
-        infoImageView.alpha = 0.0
-
-        var i = 0
-        for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel] {
-            v.alpha = 0.0
-            v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large)
-
-            UIView.animate(withDuration: 0.25, delay: 0.25 + Double(i) * 0.2, options: [.beginFromCurrentState, .curveEaseInOut], animations: {
-                v.alpha = 1.0
-                v.transform = .identity
-
-            }, completion: nil)
-
-            i = i + 1
-        }
-    }
-
-    private func setupClosed() {
-        titleLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.infoImageView.snp.bottom).offset(NSPadding.medium)
-        }
-
-        subtitleLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
-        }
+        stackScrollView.scrollView.isPagingEnabled = true
+        stackScrollView.scrollView.delegate = self
     }
 
     // MARK: - Protocol
 
     func startInitialAnimation() {
-        imageInitialView.alpha = 0.0
-        newMeldungInitialView.alpha = 0.0
-        infoImageView.alpha = 1.0
+        pageControl.alpha = 1.0
+
+        for h in headers {
+            h.startInitialAnimation()
+        }
     }
 
     func updateConstraintsForAnimation() {
-        setupClosed()
+        for h in headers {
+            h.updateConstraintsForAnimation()
+        }
+
+        firstUpdate = false
     }
 
     // MARK: - Update
 
     private func update() {
-        guard let meldung = self.meldung else { return }
-
-        let days = Date().ns_differenceInDaysWithDate(date: meldung.timestamp)
-
-        if days == 0 {
-            dateLabel.text = "date_today".ub_localized
-        } else {
-            dateLabel.text = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
+        for hv in headers {
+            hv.removeFromSuperview()
         }
+
+        stackScrollView.removeAllViews()
+        headers.removeAll()
+
+        for m in meldungen {
+            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: firstUpdate)
+            v.meldung = m
+
+            stackScrollView.addArrangedView(v)
+
+            v.snp.makeConstraints { make in
+                make.width.equalTo(self)
+            }
+
+            headers.append(v)
+        }
+
+        stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+
+        pageControl.numberOfPages = headers.count
+        pageControl.currentPage = 0
+    }
+}
+
+extension NSMeldungDetailMeldungTitleView: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let fraction = (scrollView.contentOffset.x / scrollView.contentSize.width)
+        let number = Int(fraction * CGFloat(pageControl.numberOfPages))
+        pageControl.currentPage = number
     }
 }
 
