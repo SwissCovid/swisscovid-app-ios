@@ -21,7 +21,8 @@ class NSAnimatedGraphLayer: CALayer {
         }
     }
 
-    var lineWidth: CGFloat = 2
+    static var lineWidth: CGFloat = 2
+
     var timeInterval: TimeInterval {
         switch type {
         case .header: return 1.5
@@ -52,6 +53,11 @@ class NSAnimatedGraphLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        timer?.invalidate()
+        timer = nil
+    }
+
     private func draw() {
         nodeLayers.forEach { $0.removeFromSuperlayer() }
         edgeLayers.forEach { $0.removeFromSuperlayer() }
@@ -69,7 +75,7 @@ class NSAnimatedGraphLayer: CALayer {
         // draw edges
         edgeLayers = []
         for (start, end) in edges {
-            let edgeLayer = NSAnimatedGraphEdgeLayer(start: scaledCenters[start], end: scaledCenters[end], color: tintColor, lineWidth: lineWidth)
+            let edgeLayer = NSAnimatedGraphEdgeLayer(start: scaledCenters[start], end: scaledCenters[end], color: tintColor)
             edgeLayers.append(edgeLayer)
             addSublayer(edgeLayer)
         }
@@ -92,15 +98,18 @@ class NSAnimatedGraphLayer: CALayer {
     func startAnimating() {
         guard timer == nil else { return }
 
-        timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true) { [weak self] _ in
-            self?.step()
-        }
+        timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(step), userInfo: nil, repeats: true)
+
+        timer?.fire()
+
+        RunLoop.main.add(timer!, forMode: .common)
+
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02) {
             self.step()
         }
     }
 
-    private func step() {
+    @objc private func step() {
         let newPositions = zip(nodeCenters, nodeLayers).map { (arg) -> CGPoint in
             let (center, node) = arg
             let rect = node.bounds.inset(by: UIEdgeInsets(top: -Self.range, left: -NSAnimatedGraphLayer.self.range, bottom: -Self.range, right: -Self.range))
@@ -159,11 +168,11 @@ private class NSAnimatedGraphNodeLayer: CAShapeLayer {
 }
 
 private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
-    init(start: CGPoint, end: CGPoint, color: CGColor, lineWidth: CGFloat) {
+    init(start: CGPoint, end: CGPoint, color: CGColor) {
         super.init()
 
         strokeColor = color
-        self.lineWidth = lineWidth
+        lineWidth = NSAnimatedGraphLayer.lineWidth
         path = makeLine(from: start, to: end)
     }
 
