@@ -84,13 +84,12 @@ open class UBPushManager: NSObject {
     // MARK: - App Delegate
 
     /// Needs to be called inside `applicationDidFinishLaunchingWithOptions(_:launchOptions:)`
-    public func didFinishLaunchingWithOptions(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?,
+    public func didFinishLaunchingWithOptions(_: [UIApplication.LaunchOptionsKey: Any]?,
                                               pushHandler: UBPushHandler,
                                               pushRegistrationManager: UBPushRegistrationManager) {
         self.pushHandler = pushHandler
         self.pushRegistrationManager = pushRegistrationManager
         self.pushRegistrationManager.sendPushRegistrationIfOutdated()
-        self.pushHandler.handleLaunchOptions(launchOptions)
     }
 
     /// Needs to be called upon `applicationDidBecomeActiveNotification`
