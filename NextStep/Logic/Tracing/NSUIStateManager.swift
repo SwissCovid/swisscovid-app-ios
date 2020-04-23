@@ -1,7 +1,7 @@
 ///
 
 import CoreBluetooth
-import DP3TSDK
+import DP3TSDK_CALIBRATION
 import Foundation
 import UIKit
 
@@ -160,6 +160,8 @@ class NSUIStateManager: NSObject {
             case .jwtSignitureError:
                 assertionFailure("jwtSignitureError")
             }
+        case .activeReceiving, .activeAdvertising:
+            assertionFailure("These states should never be set in production")
         }
 
         newState.homescreen.begegnungen.tracing = tracing
