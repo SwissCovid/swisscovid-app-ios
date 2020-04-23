@@ -68,7 +68,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
             tv.meldungen = meldungen
         }
 
-        if meldungen.count > 0, let lastCall = NSUser.shared.lastPhoneCall(for: meldungen[0].identifier) {
+        if let lastMeldungId = meldungen.last?.identifier,
+            let lastCall = NSUser.shared.lastPhoneCall(for: lastMeldungId) {
             callLabel.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
 
             notYetCalledView?.isHidden = true
