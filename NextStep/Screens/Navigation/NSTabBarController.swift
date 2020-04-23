@@ -53,7 +53,7 @@ class NSTabBarController: UITabBarController {
     }
 
     private func style() {
-        tabBar.tintColor = UIColor.ns_red
+        tabBar.tintColor = UIColor.ns_blue
 
         let font = UIFont(name: "Inter-Light", size: 12.0)
         let attributes = [NSAttributedString.Key.font: font]

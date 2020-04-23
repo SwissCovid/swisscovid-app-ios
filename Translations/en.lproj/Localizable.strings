@@ -1,7 +1,7 @@
 
 /*Name der App*/
 /*App Name*/
-"app_name" = "Next Step";
+"app_name" = "dp3t-app";
 
 /*App Name unter Icon (iOS)*/
 /*App Name (unter Icon auf iOS)*/
@@ -421,19 +421,19 @@
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
 "symptom_detail_navigation_title" = "Symptome";
 "tracing_turned_off_title" = "Tracing deaktiviert";
-"tracing_turned_off_text" = "Tracing erlauben, um Begegnungen anonym zu speichern.";
+"tracing_turned_off_text" = "Aktivieren Sie das Tracing, damit die App funktioniert.";
 "bluetooth_turned_off_title" = "Bluetooth ausgeschaltet";
-"bluetooth_turned_off_text" = "Schalten Sie Bluetooth ein, damit das anonyme Tracing funktioniert.";
+"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das anonyme Tracing funktioniert.";
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
-"bluetooth_permission_error_title" = "Bluetooth deaktiviert";
-"bluetooth_permission_error_text" = "Damit anonymes Tracing funktioniert, müssen Sie der App Zugriff auf Bluetooth erlauben.";
+"bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
+"bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das anonyme Tracing funktioniert.";
 
 /*URL zum Corona Check*/
 "symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Einstellungen ändern";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
-"meldungen_no_meldungen_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet";
+"meldungen_no_meldungen_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet.";
 
 /*Keine Meldungen Weisse Box Titel*/
 "no_meldungen_box_title" = "Schützen Sie sich";
@@ -448,7 +448,7 @@
 "meldung_detail_positive_tested_title" = "Positiv getestet";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf COVID-19 getestet.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
 "meldung_detail_positive_test_box_subtitle" = "Was muss ich tun?";
@@ -459,7 +459,7 @@
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen des Testcenters zur Selbst-Isolation";
 "tracing_ended_title" = "Tracing beendet";
-"tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert";
+"tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die Infohotline";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die Anweisungen";
 "meldung_homescreen_positive_info_line2" = "zur Selbstisolation";
@@ -473,7 +473,7 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Eine Ihrer Begegnungen wurde positiv auf COVID-19 getestet";
-"meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_homescreen_positiv_text" = "Sie wurden positiv auf COVID-19 getestet.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Onboarding zurücksetzen";
@@ -653,3 +653,12 @@
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "1 day ago";
+"meldung_detail_new_contact_title" = "Erneuter Kontakt";
+"meldung_detail_new_contact_subtitle" = "Eine weitere Begegnung hat einen positiven Test auf COVID-19 gemeldet";
+"time_inconsistency_title" = "Uhrzeit Fehler";
+"time_inconsistency_text" = "Die Uhrzeit muss richtig eingestellt sein, damit Tracing funktioniert.";
+"begegnungen_restart_error_title" = "Neustart erforderlich";
+"begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Gerät neu.";
+"meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
+"meldungen_background_error_text" = "Hintergrundaktualisierung  erlauben, damit neue Meldungen angezeigt werden können.";
+"meldungen_background_error_button" = "Einschalten";

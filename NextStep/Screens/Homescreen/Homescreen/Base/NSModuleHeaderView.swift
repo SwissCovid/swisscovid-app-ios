@@ -33,8 +33,8 @@ class NSModuleHeaderView: UIView {
         addSubview(rightCaretImageView)
 
         titleLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.top.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.leading.equalToSuperview().inset(NSPadding.small)
+            make.top.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
             make.trailing.equalTo(rightCaretImageView.snp.leading).offset(-NSPadding.medium)
         }
         titleLabel.text = title
