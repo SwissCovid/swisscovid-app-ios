@@ -43,7 +43,10 @@ class NSBluetoothSettingsControl: UIView {
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
-        NSUIStateManager.shared.addObserver(self, block: updateState(_:))
+        NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.updateState(state)
+        })
     }
 
     required init?(coder _: NSCoder) {

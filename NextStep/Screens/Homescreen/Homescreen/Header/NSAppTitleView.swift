@@ -77,8 +77,23 @@ class NSAppTitleView: UIView {
     private var timer: Timer?
     private var slowTimer: Timer?
     private func startSpawn() {
-        timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(spawnArcs), userInfo: nil, repeats: true)
-        slowTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(hightlight), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { [weak self] timer in
+            guard let strongSelf = self else {
+                timer.invalidate()
+                return
+            }
+
+            strongSelf.spawnArcs()
+        })
+
+        slowTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self] timer in
+            guard let strongSelf = self else {
+                timer.invalidate()
+                return
+            }
+
+            strongSelf.hightlight()
+        })
     }
 
     private var isOverscrolled = false

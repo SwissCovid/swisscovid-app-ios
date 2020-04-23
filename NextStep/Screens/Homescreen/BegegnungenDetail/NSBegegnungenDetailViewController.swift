@@ -21,7 +21,10 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         title = "handshakes_title_homescreen".ub_localized
         titleView = appTitleView
 
-        NSUIStateManager.shared.addObserver(self, block: updateState(_:))
+        NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.updateState(state)
+         })
     }
 
     // MARK: - View
