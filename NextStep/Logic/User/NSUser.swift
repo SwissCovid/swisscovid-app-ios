@@ -23,6 +23,8 @@ class NSUser {
         lastPhoneCalls["\(identifier)"] = Date()
 
         self.lastPhoneCalls = lastPhoneCalls
+
+        NSUIStateManager.shared.userCalledInfoLine()
     }
 
     func lastPhoneCall(for identifier: Int) -> Date? {

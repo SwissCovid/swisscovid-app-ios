@@ -6,7 +6,7 @@
 /*App Name unter Icon (iOS)*/
 /*App Name (unter Icon auf iOS)*/
 /*Fuzzy*/
-"CFBundleDisplayName" = "Next Step";
+"CFBundleDisplayName" = "dp3t-app";
 
 /*Title of the menu item home*/
 /*Name in Tab Bar unten*/
@@ -114,14 +114,14 @@
 "push_exposed_text" = "Please open the app for more information.";
 "onboarding_top_label_how" = "How does it work:";
 "onboarding_title_1" = "One step ahead";
-"onboarding_desc_1" = "With the Next Step application we can all cooperate to keep the spread of COVID-19 at bay. The Next Step application allows people who have become infected to start isolating before they experience first symptoms.";
+"onboarding_desc_1" = "With the dp3t application we can all cooperate to keep the spread of COVID-19 at bay. The Next Step application allows people who have become infected to start isolating before they experience first symptoms.";
 "onboarding_title_2" = "Automatic and\nanonymous";
 "onboarding_desc_2" = "This app recognizes encounters with other users and saves these encounters anonymously on your device using encryption.";
 "onboarding_title_3" = "Inform";
 "onboarding_desc_3" = "If you test positive you can anonymously inform everyone you've encountered so that they can make the necessary precautionary measures.";
 "onboarding_title_4" = "Authorization";
 "onboarding_desc_4" = "This app needs the following permissions in order to work properly.";
-"onboarding_title_5" = "Next Step";
+"onboarding_title_5" = "dp3t-app";
 "onboarding_desc_5" = "Together we can move towards lifting isolation.";
 "onboarding_android_location_permission_info" = "User tracing is performed using Bluetooth Low Energy technology. The app requires you to keep Bluetooth enabled in order to perform the tracing. On Android, applications need to additionally have Location Services enabled by design in order to access Bluetooth. But we will not at any point access your location.";
 "onboarding_android_battery_saving_info" = "Turn off battery optimization for our app so that we can perform continuous tracing in the background.";

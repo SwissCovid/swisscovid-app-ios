@@ -5,7 +5,7 @@
 
 /*App Name unter Icon (iOS)*/
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "Next Step";
+"CFBundleDisplayName" = "dp3t-app";
 
 /*Title of the menu item home*/
 /*Name in Tab Bar unten*/
@@ -113,14 +113,14 @@
 "push_exposed_text" = "Bitte öffne die App für weitere Informationen.";
 "onboarding_top_label_how" = "Wie funktioniert das:";
 "onboarding_title_1" = "Einen Schritt voraus";
-"onboarding_desc_1" = "Mit der Next Step App können wir alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen. Die App hilft infizierten, sich bereits vor den ersten Symptomen zu isolieren.";
+"onboarding_desc_1" = "Mit der dp3t App können wir alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen. Die App hilft infizierten, sich bereits vor den ersten Symptomen zu isolieren.";
 "onboarding_title_2" = "Automatisch\nund anonym";
 "onboarding_desc_2" = "Die App erkennt Begegnungen und speichert diese anonym und verschlüsselt auf deinem Gerät.";
 "onboarding_title_3" = "Informieren";
 "onboarding_desc_3" = "Bei einem positiven Test kannst du deine Begegnungen anonym informieren, damit diese die richtigen Massnahmen treffen können.";
 "onboarding_title_4" = "Berechtigungen";
 "onboarding_desc_4" = "Bitte stimme noch diesen Berechtigungen zu, damit die App richtig funktioniert.";
-"onboarding_title_5" = "Next Step";
+"onboarding_title_5" = "dp3t-app";
 "onboarding_desc_5" = "Gemeinsam können wir den nächsten Schritt aus der Isolation schaffen.";
 "onboarding_android_location_permission_info" = "Das Tracing funktioniert über Bluetooth Low Energy Technologie, deshalb braucht die App Zugriff auf Bluetooth. Auf Android ist es aber nur möglich, auf Bluetooth zuzugreifen, wenn die App Standort Berechtigung hat.\n\nDie App greift aber nie auf deinen Standort zu!";
 "onboarding_android_battery_saving_info" = "Damit wir das Tracing durchgehend im Hintergrund machen können, muss die Akku Optimierung für unsere App ausgeschaltet werden.";

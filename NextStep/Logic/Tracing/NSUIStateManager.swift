@@ -76,6 +76,10 @@ class NSUIStateManager: NSObject {
         refresh()
     }
 
+    func userCalledInfoLine() {
+        refresh()
+    }
+
     override init() {
         // only one instance
         super.init()

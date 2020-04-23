@@ -6,7 +6,7 @@
 /*App Name unter Icon (iOS)*/
 /*App Name (unter Icon auf iOS)*/
 /*Fuzzy*/
-"CFBundleDisplayName" = "Next Step";
+"CFBundleDisplayName" = "dp3t-app";
 
 /*Title of the menu item home*/
 /*Name in Tab Bar unten*/
@@ -114,14 +114,14 @@
 "push_exposed_text" = "Veuillez ouvrir l'application pour plus d'informations.";
 "onboarding_top_label_how" = "Comment ça marche:";
 "onboarding_title_1" = "Une longueur d'avance";
-"onboarding_desc_1" = "Avec l'application Next Step, nous pouvons tous coopérer pour empêcher la propagation du COVID-19. L'application Next Step permet aux personnes infectées de commencer à s'isoler avant de ressentir les premiers symptômes.";
+"onboarding_desc_1" = "Avec l'application dp3t, nous pouvons tous coopérer pour empêcher la propagation du COVID-19. L'application Next Step permet aux personnes infectées de commencer à s'isoler avant de ressentir les premiers symptômes.";
 "onboarding_title_2" = "Automatiquement\net anonyme";
 "onboarding_desc_2" = "Cette application reconnaît les rencontres avec d'autres utilisateurs et enregistre ces rencontres de manière anonyme sur votre appareil de façon crypté.";
 "onboarding_title_3" = "Informez-vous";
 "onboarding_desc_3" = "Si votre test est positif, vous pouvez informer de manière anonyme toutes les personnes que vous avez rencontrées afin qu'elles puissent prendre les mesures de précaution nécessaires.";
 "onboarding_title_4" = "Autorisations";
 "onboarding_desc_4" = "Cette application a besoin des autorisations suivantes pour fonctionner correctement.";
-"onboarding_title_5" = "Next Step";
+"onboarding_title_5" = "dp3t-app";
 "onboarding_desc_5" = "Ensemble, nous pouvons franchir la prochaine étape de l'isolement.";
 "onboarding_android_location_permission_info" = "Le traçage fonctionne via la technologie Bluetooth Low Energy, donc l'application doit avoir accès à Bluetooth. Sur Android, cependant, il n'est possible d'accéder à Bluetooth que si la localisation est autorisée.\n\nL'application n'accède jamais à votre position!";
 "onboarding_android_battery_saving_info" = "Afin que nous puissions effectuer le traçage en continu en arrière-plan, l'optimisation de la batterie de notre application doit être désactivée.";
