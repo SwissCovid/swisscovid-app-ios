@@ -55,7 +55,9 @@ class NSTracingManager: NSObject {
                 NSUIStateManager.shared.tracingStartError = error
             }
 
-            central = CBCentralManager(delegate: self, queue: nil)
+            if central == nil {
+                central = CBCentralManager(delegate: self, queue: nil)
+            }
         }
 
         updateStatus()
