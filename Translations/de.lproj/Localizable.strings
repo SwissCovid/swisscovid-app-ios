@@ -1,6 +1,6 @@
 
 /*Name der App*/
-"app_name" = "Next Step";
+"app_name" = "Swiss Trace";
 
 /*App Name unter Icon (iOS)*/
 "CFBundleDisplayName" = "Next Step";
@@ -514,3 +514,7 @@
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
 "meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
+"app_subtitle" = "Gemeinsam gegen das Virus";
+
+/*Telefon-Nummer für Infos wenn Exposed*/
+"exposed_info_line_tel" = "+41 98 765 43 21";

@@ -50,14 +50,10 @@ class NSNoCodeInformationViewController: NSInformStepViewController {
 
         sendButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self,
-                var phoneNumber = strongSelf.sendButton.title
+                let phoneNumber = strongSelf.sendButton.title
             else { return }
 
-            phoneNumber = phoneNumber.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "+", with: "00")
-
-            if let url = URL(string: "tel://\(phoneNumber)") {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+            NSPhoneCallHelpers.call(phoneNumber)
         }
     }
 }

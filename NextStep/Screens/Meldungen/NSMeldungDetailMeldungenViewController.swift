@@ -9,9 +9,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         didSet { update() }
     }
 
-    // MARK: - Label
+    // MARK: - Views
 
     private let callLabel = NSLabel(.smallRegular)
+    private var notYetCalledView: UIView?
+    private var alreadyCalledView: UIView?
 
     // MARK: - Init
 
@@ -40,9 +42,12 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Setup
 
     private func setupLayout() {
-        stackScrollView.addArrangedView(notYetCalledView())
-        stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(alreadyCalledView())
+        notYetCalledView = makeNotYetCalledView()
+        alreadyCalledView = makeAlreadyCalledView()
+
+        // !: function have return type UIView
+        stackScrollView.addArrangedView(notYetCalledView!)
+        stackScrollView.addArrangedView(alreadyCalledView!)
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
@@ -53,15 +58,20 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
             tv.meldung = meldung
         }
 
-        if let id = meldung?.identifier,
-            let lastCall = NSUser.shared.lastPhoneCall(for: id) {
+        if let id = meldung?.identifier, let lastCall = NSUser.shared.lastPhoneCall(for: id) {
             callLabel.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
+
+            notYetCalledView?.isHidden = true
+            alreadyCalledView?.isHidden = false
+        } else {
+            notYetCalledView?.isHidden = false
+            alreadyCalledView?.isHidden = true
         }
     }
 
     // MARK: - Detail Views
 
-    private func notYetCalledView() -> UIView {
+    private func makeNotYetCalledView() -> UIView {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldungen_detail_whattodo".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
@@ -86,7 +96,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func alreadyCalledView() -> UIView {
+    private func makeAlreadyCalledView() -> UIView {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_guard_others".ub_localized, subtitle: "meldungen_detail_whattodo".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
@@ -118,6 +128,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        // TODO: Start call and add Date to NSUser for meldung.identifier
+        guard let m = meldung else { return }
+
+        let phoneNumber = "exposed_info_line_tel".ub_localized
+        NSPhoneCallHelpers.call(phoneNumber)
+
+        NSUser.shared.registerPhoneCall(identifier: m.identifier)
     }
 }
