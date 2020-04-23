@@ -64,7 +64,7 @@ class NSUIStateManager: NSObject {
         }
     }
 
-    var overwrittenInfectionState: InfectionStatus? {
+    var overwrittenInfectionState: DebugInfectionStatus? {
         didSet { refresh() }
     }
 
@@ -173,7 +173,14 @@ class NSUIStateManager: NSObject {
         if let tracingState = tracingState {
             var infectionStatus = tracingState.infectionStatus
             if let os = overwrittenInfectionState {
-                infectionStatus = os
+                switch os {
+                case .infected:
+                    infectionStatus = .infected
+                case .exposed:
+                    infectionStatus = .exposed(days: [])
+                case .healthy:
+                    infectionStatus = .healthy
+                }
             }
 
             switch infectionStatus {
@@ -185,15 +192,34 @@ class NSUIStateManager: NSObject {
                 newState.meldungenDetail.meldung = .infected
                 newState.homescreen.header = .ended
                 newState.homescreen.begegnungen.tracing = .ended
-            case .exposed:
+            case let .exposed(days: days):
+
                 newState.homescreen.meldungen.meldung = .exposed
                 newState.meldungenDetail.meldung = .exposed
+
+                // TODO: get matched contacts from days in exposed state
+                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())]
+
+                // in case the infection state is overwritten, we need to
+                // add at least one meldung
+                if let os = overwrittenInfectionState, os == .exposed {
+                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())]
+                }
             }
 
             newState.debug.handshakeCount = tracingState.numberOfHandshakes
             newState.debug.lastSync = tracingState.lastSync
+
             // add real tracing state of sdk and overwritten state
-            newState.debug.infectionStatus = tracingState.infectionStatus
+            switch tracingState.infectionStatus {
+            case .healthy:
+                newState.debug.infectionStatus = .healthy
+            case .exposed:
+                newState.debug.infectionStatus = .exposed
+            case .infected:
+                newState.debug.infectionStatus = .infected
+            }
+
             newState.debug.overwrittenInfectionState = overwrittenInfectionState
         }
 

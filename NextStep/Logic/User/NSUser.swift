@@ -16,18 +16,18 @@ class NSUser {
         }
     }
 
-    func registerPhoneCall(identifier: String) {
+    func registerPhoneCall(identifier: Int) {
         var lastPhoneCalls = self.lastPhoneCalls
         // we only want the last
         lastPhoneCalls.removeAll()
-        lastPhoneCalls[identifier] = Date()
+        lastPhoneCalls["\(identifier)"] = Date()
 
         self.lastPhoneCalls = lastPhoneCalls
     }
 
-    func lastPhoneCall(for identifier: String) -> Date? {
-        if lastPhoneCalls.keys.contains(identifier) {
-            return lastPhoneCalls[identifier]
+    func lastPhoneCall(for identifier: Int) -> Date? {
+        if lastPhoneCalls.keys.contains("\(identifier)") {
+            return lastPhoneCalls["\(identifier)"]
         }
 
         return nil

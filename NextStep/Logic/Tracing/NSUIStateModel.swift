@@ -4,8 +4,14 @@ import DP3TSDK
 import Foundation
 
 struct NSMeldungModel: Equatable {
-    let identifier: String
+    let identifier: Int
     let timestamp: Date
+}
+
+enum DebugInfectionStatus: Equatable {
+    case healthy
+    case exposed
+    case infected
 }
 
 struct NSUIStateModel: Equatable {
@@ -49,8 +55,8 @@ struct NSUIStateModel: Equatable {
     struct Debug: Equatable {
         var handshakeCount: Int?
         var lastSync: Date?
-        var infectionStatus: InfectionStatus = .healthy
-        var overwrittenInfectionState: InfectionStatus?
+        var infectionStatus: DebugInfectionStatus = .healthy
+        var overwrittenInfectionState: DebugInfectionStatus?
     }
 
     struct MeldungenDetail: Equatable {
