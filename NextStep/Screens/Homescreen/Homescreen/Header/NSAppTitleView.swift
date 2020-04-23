@@ -212,7 +212,7 @@ class NSAppTitleView: UIView {
     }
 }
 
-extension NSAppTitleView: UIScrollViewDelegate {
+extension NSAppTitleView: NSTitleViewProtocol {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y + scrollView.safeAreaInsets.top
         let overscrolled = offset < -10
@@ -233,12 +233,5 @@ extension NSAppTitleView: UIScrollViewDelegate {
 
         let s = 1.0 + inNegativeFactor * 0.5
         iconContainer.transform = CGAffineTransform(scaleX: s, y: s)
-
-        let a = 1.0 - inPositiveFactor
-        let t1 = inPositiveFactor * 25.0
-        let t2 = inPositiveFactor * -50.0
-        contentView.alpha = a
-        contentView.transform = CGAffineTransform(translationX: 0, y: t1)
-        transform = CGAffineTransform(translationX: 0, y: t2)
     }
 }

@@ -5,6 +5,7 @@ import UIKit
 @objc protocol NSTitleViewProtocol {
     @objc optional func updateConstraintsForAnimation()
     @objc optional func startInitialAnimation()
+    @objc optional func scrollViewDidScroll(_ scrollView: UIScrollView)
 }
 
 class NSTitleViewScrollViewController: NSViewController {
@@ -119,5 +120,7 @@ extension NSTitleViewScrollViewController: UIScrollViewDelegate {
         titleView?.transform = CGAffineTransform(translationX: 0, y: min(0.0, -0.4 * scrollView.contentOffset.y))
 
         titleView?.alpha = pow(p, 0.8)
+
+        titleView?.scrollViewDidScroll?(scrollView)
     }
 }

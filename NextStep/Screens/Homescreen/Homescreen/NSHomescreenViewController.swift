@@ -9,12 +9,8 @@ import DP3TSDK
 import SnapKit
 import UIKit
 
-class NSHomescreenViewController: NSViewController {
+class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
-
-    private let stackScrollView = NSStackScrollView()
-
-    let titleView = NSAppTitleView()
 
     private let handshakesModuleView = NSBegegnungenModuleView()
     private let meldungView = NSMeldungView()
@@ -29,11 +25,14 @@ class NSHomescreenViewController: NSViewController {
 
     private var lastState: NSUIStateModel = .init()
 
+    private let appTitleView = NSAppTitleView()
+
     // MARK: - View
 
     override init() {
         super.init()
 
+        titleView = appTitleView
         title = "app_name".ub_localized
 
         tabBarItem.image = UIImage(named: "ic-tracing")
@@ -96,24 +95,6 @@ class NSHomescreenViewController: NSViewController {
     // MARK: - Setup
 
     private func setupLayout() {
-        view.addSubview(titleView)
-        titleView.snp.makeConstraints { make in
-            make.left.right.top.equalToSuperview()
-            make.height.equalTo(280)
-        }
-
-        stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
-        stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
-
-        view.addSubview(stackScrollView)
-        stackScrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
-        stackScrollView.scrollView.delegate = titleView
-
-        stackScrollView.addSpacerView(180)
-
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -171,7 +152,7 @@ class NSHomescreenViewController: NSViewController {
     }
 
     func updateState(_ state: NSUIStateModel) {
-        titleView.uiState = state.homescreen.header
+        appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.begegnungen.tracing
         meldungView.uiState = state.homescreen.meldungen
 
