@@ -143,12 +143,15 @@ class NSTracingManager: NSObject {
                 NSUIStateManager.shared.syncError = e
                 if case DP3TTracingError.networkingError = e {
                     NSUIStateManager.shared.lastSyncErrorTime = Date()
+                } else if case DP3TTracingError.timeInconsistency = e {
+                    NSUIStateManager.shared.hasTimeInconsistencyError = true
                 }
                 completionHandler?(.failed)
             case .success:
                 self.lastDatabaseSync = Date()
                 NSUIStateManager.shared.firstSyncErrorTime = nil
                 NSUIStateManager.shared.lastSyncErrorTime = nil
+                NSUIStateManager.shared.hasTimeInconsistencyError = false
 
                 self.updateStatus()
 

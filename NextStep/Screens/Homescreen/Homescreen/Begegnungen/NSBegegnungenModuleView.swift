@@ -9,7 +9,7 @@ import SnapKit
 import UIKit
 
 class NSBegegnungenModuleView: NSModuleBaseView {
-    var uiState: NSUIStateModel.Tracing = .active {
+    var uiState: NSUIStateModel.TracingState = .tracingActive {
         didSet { updateUI() }
     }
 
@@ -34,7 +34,7 @@ class NSBegegnungenModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        if uiState == .ended {
+        if uiState == .tracingEnded {
             return [tracingEndedView]
         }
 
@@ -48,8 +48,8 @@ class NSBegegnungenModuleView: NSModuleBaseView {
     private func updateUI() {
         stackView.setNeedsLayout()
         updateLayout()
-        headerView.showCaret = uiState != .ended
-        isEnabled = uiState != .ended
+        headerView.showCaret = uiState != .tracingEnded
+        isEnabled = uiState != .tracingEnded
         stackView.layoutIfNeeded()
     }
 }

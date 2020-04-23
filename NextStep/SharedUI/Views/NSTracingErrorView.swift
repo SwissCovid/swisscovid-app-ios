@@ -21,7 +21,7 @@ class NSTracingErrorView: UIView {
         let action: (() -> Void)?
     }
 
-    var model: NSTracingErrorViewModel {
+    var model: NSTracingErrorViewModel? {
         didSet { update() }
     }
 
@@ -49,17 +49,18 @@ class NSTracingErrorView: UIView {
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.bottom.equalToSuperview().inset(NSPadding.medium)
             make.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
         }
     }
 
     private func update() {
-        imageView.image = model.icon
-        titleLabel.text = model.title
-        textLabel.text = model.text
-        actionButton.touchUpCallback = model.action
-        actionButton.title = model.buttonTitle
+        imageView.image = model?.icon
+        titleLabel.text = model?.title
+        textLabel.text = model?.text
+        actionButton.touchUpCallback = model?.action
+        actionButton.title = model?.buttonTitle
 
         stackView.setNeedsLayout()
         stackView.clearSubviews()
@@ -67,7 +68,7 @@ class NSTracingErrorView: UIView {
         stackView.addArrangedView(imageView)
         stackView.addArrangedView(titleLabel)
         stackView.addArrangedView(textLabel)
-        if model.action != nil {
+        if model?.action != nil {
             stackView.addArrangedView(actionButton)
         }
         stackView.addSpacerView(20)
@@ -77,23 +78,17 @@ class NSTracingErrorView: UIView {
 
     // MARK: - Factory
 
-    static func tracingErrorView(for state: NSUIStateModel.Tracing) -> NSTracingErrorView? {
-        let model = self.model(for: state)
-        switch state {
-        case .inactive:
+    static func tracingErrorView(for state: NSUIStateModel.TracingState) -> NSTracingErrorView? {
+        if let model = self.model(for: state) {
             return NSTracingErrorView(model: model)
-        case .bluetoothPermissionError:
-            return NSTracingErrorView(model: model)
-        case .bluetoothTurnedOff:
-            return NSTracingErrorView(model: model)
-        default:
-            return nil
         }
+
+        return nil
     }
 
-    static func model(for state: NSUIStateModel.Tracing) -> NSTracingErrorViewModel {
+    static func model(for state: NSUIStateModel.TracingState) -> NSTracingErrorViewModel? {
         switch state {
-        case .inactive:
+        case .tracingDisabled:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "tracing_turned_off_title".ub_localized,
                                            text: "tracing_turned_off_text".ub_localized,
@@ -119,8 +114,20 @@ class NSTracingErrorView: UIView {
                                                NSTracingManager.shared.endTracing()
                                                NSTracingManager.shared.beginUpdatesAndTracing()
             })
+        case .timeInconsistencyError:
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+                                           title: "time_inconsistency_title".ub_localized,
+                                           text: "time_inconsistency_text".ub_localized,
+                                           buttonTitle: nil,
+                                           action: nil)
+        case .unexpectedError:
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+                                           title: "begegnungen_restart_error_title".ub_localized,
+                                           text: "begegnungen_restart_error_text".ub_localized,
+                                           buttonTitle: nil,
+                                           action: nil)
         default:
-            return NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil)
+            return nil
         }
     }
 }

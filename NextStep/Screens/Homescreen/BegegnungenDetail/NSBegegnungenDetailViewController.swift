@@ -9,12 +9,13 @@ import UIKit
 class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
-    private let appTitleView = NSAppTitleView()
+    private let appTitleView: NSAppTitleView
 
     // MARK: - Init
 
     init(initialState: NSUIStateModel.BegegnungenDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
+        appTitleView = NSAppTitleView(initialState: initialState.tracing)
 
         super.init()
 

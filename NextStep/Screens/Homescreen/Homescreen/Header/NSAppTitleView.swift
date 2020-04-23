@@ -9,7 +9,7 @@ import UIKit
 class NSAppTitleView: UIView {
     // MARK: - Init
 
-    var uiState: NSUIStateModel.Tracing = .active {
+    var uiState: NSUIStateModel.TracingState {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)
@@ -32,7 +32,9 @@ class NSAppTitleView: UIView {
     private let activeView = NSHeaderActiveView()
     private lazy var errorView = NSHeaderErrorView(initialState: uiState)
 
-    init() {
+    init(initialState: NSUIStateModel.TracingState = .tracingActive) {
+        uiState = initialState
+
         super.init(frame: .zero)
         setup()
         startSpawn()
@@ -100,7 +102,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func hightlight() {
-        if uiState != .active {
+        if uiState != .tracingActive {
             return // no highlight in error state
         }
 
@@ -115,7 +117,7 @@ class NSAppTitleView: UIView {
 
     @objc
     private func spawnArcs(force: Bool = false) {
-        if uiState != .active {
+        if uiState != .tracingActive {
             return // no arcs in error state
         }
 
@@ -160,7 +162,7 @@ class NSAppTitleView: UIView {
             return
         }
 
-        uiState == .active ? activeView.startAnimating() : activeView.stopAnimating()
+        uiState == .tracingActive ? activeView.startAnimating() : activeView.stopAnimating()
 
         backgroundView.state = uiState
         errorView.state = uiState

@@ -10,7 +10,7 @@ class NSHeaderImageBackgroundView: UIView {
 
     static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
 
-    var state: NSUIStateModel.Tracing {
+    var state: NSUIStateModel.TracingState {
         didSet { update() }
     }
 
@@ -24,7 +24,7 @@ class NSHeaderImageBackgroundView: UIView {
         }
     }
 
-    init(initialState: NSUIStateModel.Tracing) {
+    init(initialState: NSUIStateModel.TracingState) {
         state = initialState
 
         super.init(frame: .zero)
@@ -59,13 +59,13 @@ class NSHeaderImageBackgroundView: UIView {
         let alpha: CGFloat = 0.7
 
         switch state {
-        case .active:
+        case .tracingActive:
             colorView.backgroundColor = UIColor.ns_blue.withAlphaComponent(alpha)
-        case .inactive:
+        case .tracingDisabled:
             colorView.backgroundColor = UIColor.ns_text.withAlphaComponent(alpha)
-        case .bluetoothPermissionError, .bluetoothTurnedOff:
+        case .bluetoothPermissionError, .bluetoothTurnedOff, .timeInconsistencyError, .unexpectedError:
             colorView.backgroundColor = UIColor.ns_red.withAlphaComponent(alpha)
-        case .ended:
+        case .tracingEnded:
             colorView.backgroundColor = UIColor.ns_purple.withAlphaComponent(alpha)
         }
     }

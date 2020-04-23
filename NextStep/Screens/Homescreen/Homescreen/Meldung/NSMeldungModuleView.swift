@@ -30,6 +30,13 @@ class NSMeldungView: NSModuleBaseView {
         NSTracingManager.shared.forceSyncDatabase()
     }))
 
+    private let backgroundFetchProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-refresh")!, title: "meldungen_background_error_title".ub_localized, text: "meldungen_background_error_text".ub_localized, buttonTitle: "meldungen_background_error_button".ub_localized, action: {
+        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(settingsUrl) else { return }
+
+        UIApplication.shared.open(settingsUrl)
+    }))
+
     override init() {
         super.init()
 
@@ -50,9 +57,10 @@ class NSMeldungView: NSModuleBaseView {
             views.append(noMeldungenView)
             if uiState.pushProblem {
                 views.append(noPushView)
-            }
-            if uiState.syncProblem {
+            } else if uiState.syncProblem {
                 views.append(syncProblemView)
+            } else if uiState.backgroundUpdateProblem {
+                views.append(backgroundFetchProblemView)
             }
         case .exposed:
             views.append(exposedView)

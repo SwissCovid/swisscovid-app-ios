@@ -178,8 +178,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     func updateState(_ state: NSUIStateModel) {
         appTitleView.uiState = state.homescreen.header
-        handshakesModuleView.uiState = state.homescreen.begegnungen.tracing
+        handshakesModuleView.uiState = state.homescreen.begegnungen
         meldungView.uiState = state.homescreen.meldungen
+
+        let isInfected = state.homescreen.meldungen.meldung == .infected
+        whatToDoSymptomsButton.isHidden = isInfected
+        whatToDoPositiveTestButton.isHidden = isInfected
 
         lastState = state
     }

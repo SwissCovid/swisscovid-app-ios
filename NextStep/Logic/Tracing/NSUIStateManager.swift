@@ -29,6 +29,9 @@ class NSUIStateManager: NSObject {
     var tracingStartError: Error? { didSet { refresh() } }
     var updateError: Error? { didSet { refresh() } }
 
+    @UBUserDefault(key: "com.ubique.nextstep.hasTimeInconsistencyError", defaultValue: false)
+    var hasTimeInconsistencyError: Bool
+
     var anyError: Error? {
         tracingStartError ?? updateError
     }
@@ -44,6 +47,7 @@ class NSUIStateManager: NSObject {
     var trackingState: TrackingState = .stopped {
         didSet {
             switch (oldValue, trackingState) {
+            // Only trigger a refresh if the tracking state has changed
             case (.active, .active), (.stopped, .stopped):
                 return
             case let (.inactive(e1), .inactive(e2)):
@@ -53,7 +57,9 @@ class NSUIStateManager: NSObject {
                      (.cryptographyError(_), .cryptographyError(_)),
                      (.databaseError(_), .databaseError(_)),
                      (.bluetoothTurnedOff, .bluetoothTurnedOff),
-                     (.permissonError, .permissonError):
+                     (.permissonError, .permissonError),
+                     (.jwtSignitureError, .jwtSignitureError),
+                     (.timeInconsistency(_), .timeInconsistency(_)):
                     return
                 default:
                     refresh()
@@ -123,60 +129,51 @@ class NSUIStateManager: NSObject {
     func reloadedUIState() -> NSUIStateModel {
         var newState = NSUIStateModel()
 
-        var tracing: NSUIStateModel.Tracing = .active
+        // Tracing state
+        var tracing: NSUIStateModel.TracingState = .tracingActive
 
         switch trackingState {
+        case let .inactive(error):
+            switch error {
+            case .timeInconsistency:
+                tracing = .timeInconsistencyError
+            case .bluetoothTurnedOff:
+                tracing = .bluetoothTurnedOff
+            case .permissonError:
+                tracing = .bluetoothPermissionError
+            case .cryptographyError(_), .databaseError(_), .jwtSignitureError:
+                tracing = .unexpectedError
+            case .networkingError(_), .caseSynchronizationError:
+                break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
+            }
+        case .activeReceiving, .activeAdvertising:
+            assertionFailure("These states should never be set in production")
+        case .stopped:
+            tracing = .tracingDisabled
         case .active:
             // skd says tracking works.
 
             // other checks, maybe not needed
             if anyError != nil || !tracingIsActivated {
-                tracing = .inactive
-            } else {
-                tracing = .active
+                tracing = hasTimeInconsistencyError ? .timeInconsistencyError : .tracingDisabled
             }
-            newState.homescreen.header = .active
-        case .stopped:
-            tracing = .inactive
-            newState.homescreen.header = .inactive
-        case let .inactive(error):
-            switch error {
-            case .bluetoothTurnedOff:
-                tracing = .bluetoothTurnedOff
-                newState.homescreen.header = .bluetoothTurnedOff
-            case .permissonError:
-                tracing = .bluetoothPermissionError
-                newState.homescreen.header = .bluetoothPermissionError
-            case let .cryptographyError(e):
-                assertionFailure("CryptographyError: \(e)")
-            case let .databaseError(e):
-                assertionFailure("DatabaseError: \(e?.localizedDescription ?? "unspecified")")
-            case let .networkingError(e):
-                print("NetworkingError: \(e?.localizedDescription ?? "nil")")
-            case .caseSynchronizationError:
-                print("CaseSynchronizationError")
-            case let .timeInconsistency(shift):
-                print("timeInconsistency with shift: \(shift)")
-            case .jwtSignitureError:
-                assertionFailure("jwtSignitureError")
-            }
-        case .activeReceiving, .activeAdvertising:
-            assertionFailure("These states should never be set in production")
         }
 
-        newState.homescreen.begegnungen.tracing = tracing
-        newState.begegnungenDetail.tracing = tracing
-        newState.begegnungenDetail.tracingEnabled = NSTracingManager.shared.isActivated
+        newState.homescreen.header = tracing
+        newState.homescreen.begegnungen = tracing
 
-        if !pushOk {
-            newState.homescreen.meldungen.pushProblem = true
+        newState.homescreen.meldungen.pushProblem = !pushOk
+        if let st = tracingState {
+            newState.homescreen.meldungen.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
-
         if let first = firstSyncErrorTime,
             let last = lastSyncErrorTime,
             last.timeIntervalSince(first) > syncProblemInterval {
             newState.homescreen.meldungen.syncProblem = true
         }
+
+        newState.begegnungenDetail.tracingEnabled = NSTracingManager.shared.isActivated
+        newState.begegnungenDetail.tracing = tracing
 
         if let tracingState = tracingState {
             var infectionStatus = tracingState.infectionStatus
@@ -195,12 +192,11 @@ class NSUIStateManager: NSObject {
             case .healthy:
                 break
             case .infected:
-                newState.homescreen.meldungButtonDisabled = true
                 newState.homescreen.meldungen.meldung = .infected
                 newState.meldungenDetail.meldung = .infected
-                newState.homescreen.header = .ended
-                newState.homescreen.begegnungen.tracing = .ended
-            case let .exposed(days: days):
+                newState.homescreen.header = .tracingEnded
+                newState.homescreen.begegnungen = .tracingEnded
+            case let .exposed(days):
 
                 newState.homescreen.meldungen.meldung = .exposed
                 newState.meldungenDetail.meldung = .exposed

@@ -658,5 +658,5 @@
 "begegnungen_restart_error_title" = "Neustart erforderlich";
 "begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Gerät neu.";
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
-"meldungen_background_error_text" = "Hintergrundaktualisierung  erlauben, damit neue Meldungen angezeigt werden können.";
+"meldungen_background_error_text" = "Hintergrundaktualisierung erlauben, damit neue Meldungen angezeigt werden können.";
 "meldungen_background_error_button" = "Einschalten";

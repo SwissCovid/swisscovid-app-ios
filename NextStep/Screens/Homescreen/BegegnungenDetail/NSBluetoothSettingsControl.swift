@@ -113,7 +113,7 @@ class NSBluetoothSettingsControl: UIView {
         tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
 
         switch state.begegnungenDetail.tracing {
-        case .active:
+        case .tracingActive:
 
             inactiveViewConstraint?.deactivate()
             activeViewConstraint?.activate()
@@ -124,8 +124,8 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
 
-        case .inactive, .ended: fallthrough
-        case .bluetoothTurnedOff, .bluetoothPermissionError:
+        case .tracingDisabled, .tracingEnded: fallthrough
+        case .bluetoothTurnedOff, .bluetoothPermissionError, .timeInconsistencyError, .unexpectedError:
             inactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()
 

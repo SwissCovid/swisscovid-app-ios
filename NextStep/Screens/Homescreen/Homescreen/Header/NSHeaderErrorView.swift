@@ -5,11 +5,11 @@ import UIKit
 class NSHeaderErrorView: UIView {
     private let imageView = UIImageView()
 
-    var state: NSUIStateModel.Tracing {
+    var state: NSUIStateModel.TracingState {
         didSet { update() }
     }
 
-    init(initialState: NSUIStateModel.Tracing) {
+    init(initialState: NSUIStateModel.TracingState) {
         state = initialState
 
         super.init(frame: .zero)
@@ -55,6 +55,8 @@ class NSHeaderErrorView: UIView {
         imageView.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
+
+        alpha = 0
     }
 
     private func createDot() -> UIView {
@@ -69,20 +71,22 @@ class NSHeaderErrorView: UIView {
 
     private func update() {
         UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
-            self.alpha = self.state == .active ? 0 : 1
+            self.alpha = self.state == .tracingActive ? 0 : 1
         }, completion: nil)
 
         UIView.transition(with: imageView, duration: 0.3, options: [.beginFromCurrentState, .transitionCrossDissolve], animations: {
             switch self.state {
-            case .active:
+            case .tracingActive:
                 self.imageView.image = nil
-            case .inactive:
+            case .tracingDisabled:
                 self.imageView.image = UIImage(named: "ic-header-status-off")!
+            case .timeInconsistencyError, .unexpectedError:
+                self.imageView.image = UIImage(named: "ic-header-error")!
             case .bluetoothTurnedOff:
                 self.imageView.image = UIImage(named: "ic-header-bt-off")!
             case .bluetoothPermissionError:
                 self.imageView.image = UIImage(named: "ic-header-bt-disabled")!
-            case .ended:
+            case .tracingEnded:
                 self.imageView.image = UIImage(named: "ic-header-info")!
             }
         }, completion: nil)

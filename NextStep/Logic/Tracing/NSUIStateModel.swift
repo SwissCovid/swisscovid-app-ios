@@ -16,41 +16,38 @@ enum DebugInfectionStatus: Equatable {
 
 struct NSUIStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
-    var debug: Debug = Debug()
-    var meldungenDetail: MeldungenDetail = MeldungenDetail()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
     var shouldStartAtMeldungenDetail = false
+    var meldungenDetail: MeldungenDetail = MeldungenDetail()
+    var debug: Debug = Debug()
 
-    enum Tracing: Equatable {
-        case active
-        case inactive
+    enum TracingState: Equatable {
+        case tracingActive
+        case tracingDisabled
         case bluetoothTurnedOff
         case bluetoothPermissionError
-        case ended
+        case timeInconsistencyError
+        case unexpectedError
+        case tracingEnded
+    }
+
+    enum MeldungState: Equatable {
+        case noMeldung
+        case exposed
+        case infected
     }
 
     struct Homescreen: Equatable {
-        struct Begegnungen: Equatable {
-            var tracing: Tracing = .active
-        }
-
         struct Meldungen: Equatable {
-            enum Meldung: Equatable {
-                case noMeldung
-                case exposed
-                case infected
-            }
-
-            var meldung: Meldung = .noMeldung
+            var meldung: MeldungState = .noMeldung
             var pushProblem: Bool = false
             var syncProblem: Bool = false
+            var backgroundUpdateProblem: Bool = false
         }
 
-        var header: Tracing = .active
-        var begegnungen: Begegnungen = Begegnungen()
+        var header: TracingState = .tracingActive
+        var begegnungen: TracingState = .tracingActive
         var meldungen: Meldungen = Meldungen()
-
-        var meldungButtonDisabled: Bool = false
     }
 
     struct Debug: Equatable {
@@ -61,18 +58,12 @@ struct NSUIStateModel: Equatable {
     }
 
     struct MeldungenDetail: Equatable {
-        enum Meldung: Equatable {
-            case noMeldung
-            case exposed
-            case infected
-        }
-
-        var meldung: Meldung = .noMeldung
+        var meldung: MeldungState = .noMeldung
         var meldungen: [NSMeldungModel] = []
     }
 
     struct BegegnungenDetail: Equatable {
         var tracingEnabled: Bool = true
-        var tracing: Tracing = .active
+        var tracing: TracingState = .tracingActive
     }
 }
