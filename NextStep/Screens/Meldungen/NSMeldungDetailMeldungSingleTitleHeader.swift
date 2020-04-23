@@ -12,7 +12,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     // MARK: - Initial Views
 
     private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
-    private let imageInitialView = UIImageView(image: UIImage(named: "illu-anrufen"))
+    private let imageInitialView = UIImageView(image: UIImage(named: "illu-exposed-banner"))
 
     // MARK: - Normal Views
 
