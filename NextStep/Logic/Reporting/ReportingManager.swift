@@ -20,8 +20,8 @@ class ReportingManager {
         codeValidator.sendCodeRequest(code: covidCode) { result in
 
             switch result {
-            case let .success(token: authString, date: date):
-                DP3TTracing.iWasExposed(onset: date, authString: authString) { result in
+            case let .success(token: token, date: date):
+                DP3TTracing.iWasExposed(onset: date, authentication: .JSONPayload(token: token)) { result in
                     DispatchQueue.main.async {
                         switch result {
                         case .success:

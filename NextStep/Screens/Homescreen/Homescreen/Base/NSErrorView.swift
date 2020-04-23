@@ -82,6 +82,8 @@ class NSErrorView: NSModuleBaseView {
             infoLabel.text = "bluetooth_permission_turned_off".ub_localized
         case .timeInconsistency:
             infoLabel.text = nil
+        case .jwtSignitureError:
+            infoLabel.text = nil
         }
     }
 }

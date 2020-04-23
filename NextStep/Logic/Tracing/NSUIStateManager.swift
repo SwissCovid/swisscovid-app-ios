@@ -157,6 +157,8 @@ class NSUIStateManager: NSObject {
                 print("CaseSynchronizationError")
             case let .timeInconsistency(shift):
                 print("timeInconsistency with shift: \(shift)")
+            case .jwtSignitureError:
+                assertionFailure("jwtSignitureError")
             }
         }
 
