@@ -3,6 +3,9 @@ name: testflight
 on:
   push:
     branches: '**'
+  pull_request:
+    branches:
+      - master
 
 jobs:
   testflight_internal:
