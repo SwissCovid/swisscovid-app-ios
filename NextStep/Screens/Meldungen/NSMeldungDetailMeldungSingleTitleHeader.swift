@@ -26,7 +26,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     // MARK: - Init
 
-    init(setupOpen: Bool) {
+    init(setupOpen: Bool, onceMore: Bool) {
         openSetup = setupOpen
 
         super.init(frame: .zero)
@@ -37,8 +37,13 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
         newMeldungInitialView.text = "meldung_detail_exposed_new_meldung".ub_localized
 
-        titleLabel.text = "meldung_detail_exposed_title".ub_localized
-        subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
+        if onceMore {
+            titleLabel.text = "meldung_detail_new_contact_title".ub_localized
+            subtitleLabel.text = "meldung_detail_new_contact_subtitle".ub_localized
+        } else {
+            titleLabel.text = "meldung_detail_exposed_title".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
+        }
 
         dateLabel.text = ""
         dateLabel.alpha = 0.43

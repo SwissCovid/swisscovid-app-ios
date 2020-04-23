@@ -18,6 +18,7 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
     private let overlapInset: CGFloat
 
     private var firstUpdate = true
+    private var updated = false
 
     // MARK: - Init
 
@@ -85,8 +86,9 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
         stackScrollView.removeAllViews()
         headers.removeAll()
 
+        var first = true
         for m in meldungen {
-            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: firstUpdate)
+            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: firstUpdate, onceMore: !first)
             v.meldung = m
 
             stackScrollView.addArrangedView(v)
@@ -96,12 +98,34 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
             }
 
             headers.append(v)
+
+            first = false
         }
 
-        stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+        let currentPage: Int = max(0, headers.count - 1)
 
         pageControl.numberOfPages = headers.count
-        pageControl.currentPage = 0
+        pageControl.currentPage = currentPage
+
+        updated = true
+        setNeedsLayout()
+
+        stackScrollView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
+        if let obj = object as? UIScrollView {
+            if obj == stackScrollView.scrollView, keyPath == "contentSize" {
+                if let newSize = change?[NSKeyValueChangeKey.newKey] as? CGSize, newSize.width > 0, self.frame.size.width > 0, updated {
+                    stackScrollView.scrollView.setContentOffset(CGPoint(x: CGFloat(pageControl.currentPage) * self.frame.size.width, y: 0), animated: true)
+                    updated = false
+                }
+            }
+        }
+    }
+
+    deinit {
+        self.stackScrollView.scrollView.removeObserver(self, forKeyPath: "contentSize")
     }
 }
 

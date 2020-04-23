@@ -213,7 +213,7 @@ class NSUIStateManager: NSObject {
                 // in case the infection state is overwritten, we need to
                 // add at least one meldung
                 if let os = overwrittenInfectionState, os == .exposed {
-                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date()), NSMeldungModel(identifier: 123_456_789, timestamp: Date(timeIntervalSince1970: 0))].sorted(by: { (a, b) -> Bool in
+                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
                         a.timestamp < b.timestamp
                     })
                 }

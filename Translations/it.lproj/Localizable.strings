@@ -486,7 +486,7 @@
 "meldungen_detail_call" = "Rufen Sie uns an";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Expert*innen der Infoline  beraten Sie telefonisch:  +41 98 765 43 21";
+"meldungen_detail_call_text" = "Expert*innen der Infoline beraten Sie telefonisch: +41 98 765 43 21";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Jetzt anrufen";
