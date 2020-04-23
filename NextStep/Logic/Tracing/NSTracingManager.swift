@@ -35,7 +35,7 @@ class NSTracingManager: NSObject {
 
     func initialize() {
         do {
-            try DP3TTracing.initialize(with: appId, enviroment: NSBackendEnvironment.current.sdkEnvironment)
+            try DP3TTracing.initialize(with: DP3TApplicationInfo.discovery(appId, enviroment: NSBackendEnvironment.current.sdkEnvironment))
         } catch {
             NSUIStateManager.shared.tracingStartError = error
         }
@@ -152,28 +152,23 @@ class NSTracingManager: NSObject {
         let taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
         }
-        do {
-            try DP3TTracing.sync { result in
-                switch result {
-                case let .failure(e):
-                    NSUIStateManager.shared.syncError = e
-                    completionHandler?(.failed)
-                case .success:
-                    NSUIStateManager.shared.syncError = nil
-                    self.lastDatabaseSync = Date()
+        DP3TTracing.sync { result in
+            switch result {
+            case let .failure(e):
+                NSUIStateManager.shared.syncError = e
+                completionHandler?(.failed)
+            case .success:
+                NSUIStateManager.shared.syncError = nil
+                self.lastDatabaseSync = Date()
 
-                    self.updateStatus()
+                self.updateStatus()
 
-                    completionHandler?(.newData)
-                }
-                if taskIdentifier != .invalid {
-                    UIApplication.shared.endBackgroundTask(taskIdentifier)
-                }
-                self.databaseIsSyncing = false
+                completionHandler?(.newData)
             }
-        } catch {
-            NSUIStateManager.shared.syncError = error
-            completionHandler?(.failed)
+            if taskIdentifier != .invalid {
+                UIApplication.shared.endBackgroundTask(taskIdentifier)
+            }
+            self.databaseIsSyncing = false
         }
     }
 }

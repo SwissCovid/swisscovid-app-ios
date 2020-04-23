@@ -109,8 +109,7 @@ class NSTitleViewScrollViewController: NSViewController {
     }
 }
 
-extension NSTitleViewScrollViewController: UIScrollViewDelegate
-{
+extension NSTitleViewScrollViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sp = startPositionScrollView
 
