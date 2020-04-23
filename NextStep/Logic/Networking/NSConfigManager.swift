@@ -24,7 +24,11 @@ class NSConfigManager: NSObject {
     // MARK: - Start config request
 
     public func startConfigRequest(window: UIWindow?) {
-        dataTask = session.dataTask(with: NSEndpoint.config.request(), completionHandler: { [weak self] data, _, _ in
+        let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        let appversion = "ios-\(shortVersion)"
+        let systemVersion = UIDevice.current.systemVersion
+        let osversion = "ios\(systemVersion)"
+        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { [weak self] data, _, _ in
             guard let strongSelf = self else { return }
 
             if let d = data, let config = try? JSONDecoder().decode(NSConfig.self, from: d) {

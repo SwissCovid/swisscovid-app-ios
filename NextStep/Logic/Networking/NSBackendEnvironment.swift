@@ -15,10 +15,9 @@ enum Environment {
     var codegenService: Backend {
         switch self {
         case .dev:
-            return Backend("https://codegen-service-d.bag.admin.ch", version: "v1")
+            return Backend("https://pt1-d.bit.admin.ch", version: "v1")
         case .prod:
-            // TODO: Check URL
-            return Backend("https://codegen-service.bag.admin.ch", version: "v1")
+            return Backend("https://pt1.bit.admin.ch", version: "v1")
         }
     }
 
@@ -93,42 +92,5 @@ struct Backend {
 private extension Encodable {
     var jsonData: Data? {
         try? JSONEncoder().encode(self)
-    }
-}
-
-struct Endpoint {
-    enum Method: String {
-        case get = "GET"
-        case post = "POST"
-    }
-
-    let method: Method
-    let url: URL
-    let headers: [String: String]?
-    let body: Data?
-
-    // MARK: - Request
-
-    func request(timeoutInterval: TimeInterval = 30.0) -> URLRequest {
-        var request = URLRequest(url: url, timeoutInterval: timeoutInterval)
-        request.httpMethod = method.rawValue
-
-        for (k, v) in headers ?? [:] {
-            request.setValue(v, forHTTPHeaderField: k)
-        }
-
-        return request
-    }
-
-    // MARK: - Static
-
-    /// let av = "ios-10"
-    /// let os = "ios13"
-    static func config(appversion av: String, osversion os: String) -> Endpoint {
-        return Environment.current.configService.endpoint("config", queryParameters: ["appversion": av, "osversion": os])
-    }
-
-    static func onset(auth: AuthorizationRequestBody) -> Endpoint {
-        return Environment.current.codegenService.endpoint("onset", method: .post, body: auth)
     }
 }

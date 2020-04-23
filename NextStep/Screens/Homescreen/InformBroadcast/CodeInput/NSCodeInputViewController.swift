@@ -110,15 +110,16 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
 
-        NSTracingManager.shared.sendInformation(authString: codeControl.code()) { [weak self] error in
+        ReportingManager.shared.report(covidCode: codeControl.code()) { [weak self] error in
             guard let self = self else { return }
+
             if let error = error {
                 self.stopLoading(error: error, reloadHandler: self.sendPressed)
 
                 self.navigationItem.hidesBackButton = false
                 self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
                 self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-            } else {
+            } else { // success
                 self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
             }
         }

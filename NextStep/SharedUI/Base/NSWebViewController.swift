@@ -15,6 +15,8 @@ class NSWebViewController: NSViewController {
     private let local: String?
     private var loadCount: Int = 0
 
+    var url: URL = URL(string: "https://www.ubique.ch")!
+
     // MARK: - Init
 
     init(site: String) {

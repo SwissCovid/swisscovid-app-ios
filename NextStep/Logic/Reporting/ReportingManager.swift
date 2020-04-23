@@ -1,0 +1,43 @@
+///
+
+import DP3TSDK
+import Foundation
+
+class ReportingManager {
+    static let shared = ReportingManager()
+
+    private init() {}
+
+    enum ReportingError: Error {
+        case network
+        case unexpected
+        case invalidCode
+    }
+
+    let codeValidator = CodeValidator()
+
+    func report(covidCode: String, completion: @escaping (ReportingError?) -> Void) {
+        codeValidator.sendCodeRequest(code: covidCode) { result in
+
+            switch result {
+            case let .success(token: authString, date: date):
+                DP3TTracing.iWasExposed(onset: date, authString: authString) { result in
+                    DispatchQueue.main.async {
+                        switch result {
+                        case .success:
+                            completion(nil)
+                        case let .failure:
+                            completion(.network)
+                        }
+                    }
+                }
+            case .networkError:
+                completion(.network)
+            case .unexpectedError:
+                completion(.unexpected)
+            case .invalidTokenError:
+                completion(.invalidCode)
+            }
+        }
+    }
+}

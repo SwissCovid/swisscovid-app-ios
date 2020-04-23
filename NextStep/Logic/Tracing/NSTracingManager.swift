@@ -35,7 +35,7 @@ class NSTracingManager: NSObject {
 
     func initialize() {
         do {
-            try DP3TTracing.initialize(with: DP3TApplicationInfo.discovery(appId, enviroment: NSBackendEnvironment.current.sdkEnvironment))
+            try DP3TTracing.initialize(with: DP3TApplicationInfo.discovery(appId, enviroment: Environment.current.sdkEnvironment))
         } catch {
             NSUIStateManager.shared.tracingStartError = error
         }
@@ -81,24 +81,6 @@ class NSTracingManager: NSObject {
         }
 
         updateStatus()
-    }
-
-    func sendInformation(authString: String = "", completion: @escaping (Error?) -> Void) {
-        // TODO: The onset timestamp should not be a hardcoded value, so this implementation
-        // will likely change in the future, but at the moment it is unclear where the value will come from
-        let exposureOffset: TimeInterval = 60 * 60 * 24 * 14 // 14 days
-
-        DP3TTracing.iWasExposed(onset: Date().addingTimeInterval(-exposureOffset), authString: authString) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success:
-                    completion(nil)
-                    self.updateStatus()
-                case let .failure(e):
-                    completion(e)
-                }
-            }
-        }
     }
 
     @objc
