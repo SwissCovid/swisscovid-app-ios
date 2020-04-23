@@ -153,6 +153,7 @@
 		DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +312,7 @@
 		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
+		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -663,6 +665,7 @@
 				6E3F65F62449B61A00980A4E /* NSDebugscreenViewController.swift */,
 				6E3F65F82449CC9F00980A4E /* NSDebugScreenMockView.swift */,
 				6E3F65FC2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift */,
+				DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */,
 			);
 			path = Debugscreen;
 			sourceTree = "<group>";
@@ -1143,6 +1146,7 @@
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
+				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				6EC47BD42451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift in Sources */,
 				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
