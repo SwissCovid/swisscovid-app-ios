@@ -18,12 +18,12 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil) {
+    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, leadingIconRenderingMode: UIImage.RenderingMode = .alwaysTemplate) {
         super.init(frame: .zero)
 
         titleLabel.text = title
         subtextLabel.text = subText
-        leadingIconImageView.image = image?.withRenderingMode(.alwaysTemplate)
+        leadingIconImageView.image = image?.withRenderingMode(leadingIconRenderingMode)
         leadingIconImageView.tintColor = titleColor
         titleLabel.textColor = titleColor
         subtextLabel.textColor = subtextColor

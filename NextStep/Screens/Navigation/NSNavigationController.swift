@@ -29,7 +29,7 @@ class NSNavigationController: UINavigationController {
         navigationBar.addSubview(lineView)
         lineView.snp.makeConstraints { make in
             make.height.equalTo(3.0)
-            make.centerY.equalTo(navigationBar.snp.bottom)
+            make.top.equalTo(navigationBar.snp.bottom)
             make.left.right.equalToSuperview()
         }
     }

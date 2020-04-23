@@ -15,8 +15,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let handshakesModuleView = NSBegegnungenModuleView()
     private let meldungView = NSMeldungView()
 
-    private let informButton = NSButton(title: "inform_button_title".ub_localized, style: .uppercase(.ns_purple))
-
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))
 
     private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
@@ -57,11 +55,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         handshakesModuleView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentBegegnungenDetail()
-        }
-
-        informButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            NSInformViewController.present(from: strongSelf)
         }
 
         whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
@@ -105,7 +98,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(whatToDoPositiveTestButton)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
-        let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
+        let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
         stackScrollView.addArrangedView(previewWarning)
 
         stackScrollView.addSpacerView(NSPadding.large)
@@ -127,7 +120,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.alpha = 0
         meldungView.alpha = 0
-        informButton.alpha = 0
+        whatToDoSymptomsButton.alpha = 0
+        whatToDoPositiveTestButton.alpha = 0
+        debugScreenContainer.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -137,15 +132,21 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             UIView.animate(withDuration: 0.3, delay: 0.35, options: [.allowUserInteraction], animations: {
                 self.handshakesModuleView.alpha = 1
             }, completion: nil)
+
             UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
                 self.meldungView.alpha = 1
             }, completion: nil)
+
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                if NSUIStateManager.shared.uiState.homescreen.meldungButtonDisabled {
-                    self.informButton.alpha = 0.2
-                } else {
-                    self.informButton.alpha = 1.0
-                }
+                self.whatToDoSymptomsButton.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                self.whatToDoPositiveTestButton.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                debugScreenContainer.alpha = 1
             }, completion: nil)
         }
     }
@@ -154,14 +155,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.begegnungen.tracing
         meldungView.uiState = state.homescreen.meldungen
-
-        if state.homescreen.meldungButtonDisabled {
-            informButton.isEnabled = false
-            informButton.alpha = 0.2
-        } else {
-            informButton.isEnabled = true
-            informButton.alpha = 1.0
-        }
 
         lastState = state
     }
