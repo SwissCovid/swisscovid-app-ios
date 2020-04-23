@@ -15,14 +15,6 @@ class NSWebViewController: NSViewController {
     private let local: String?
     private var loadCount: Int = 0
 
-    private var url: URL {
-        get {
-            NSBackendEnvironment.current.staticApiBaseURL.appendingPathComponent(site ?? "")
-        }
-
-        set {}
-    }
-
     // MARK: - Init
 
     init(site: String) {

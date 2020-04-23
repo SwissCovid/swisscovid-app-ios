@@ -23,6 +23,8 @@
 /* Begin PBXBuildFile section */
 		2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* NSHeaderArcView.swift */; };
 		2443948A24463ED2003ED582 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2443948924463ED2003ED582 /* DP3TSDK */; };
+		2462BA132451F0F60046906D /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
+		2462BA152451FD150046906D /* AuthorizationRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA142451FD150046906D /* AuthorizationRequestBody.swift */; };
 		24780B07242DFCD9003BB26C /* NSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* NSUser.swift */; };
 		24780B09242DFCE4003BB26C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B08242DFCE4003BB26C /* Model.swift */; };
 		24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B0A242DFCFB003BB26C /* NSTabBarController.swift */; };
@@ -164,6 +166,8 @@
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
 		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2462BA122451F0F60046906D /* CodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidator.swift; sourceTree = "<group>"; };
+		2462BA142451FD150046906D /* AuthorizationRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationRequestBody.swift; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* NSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUser.swift; sourceTree = "<group>"; };
 		24780B08242DFCE4003BB26C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		24780B0A242DFCFB003BB26C /* NSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTabBarController.swift; sourceTree = "<group>"; };
@@ -415,6 +419,15 @@
 				6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */,
 			);
 			path = Finish;
+			sourceTree = "<group>";
+		};
+		2462BA112451F0D90046906D /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				2462BA122451F0F60046906D /* CodeValidator.swift */,
+				2462BA142451FD150046906D /* AuthorizationRequestBody.swift */,
+			);
+			path = Reporting;
 			sourceTree = "<group>";
 		};
 		24780AF5242DF7F6003BB26C /* Homescreen */ = {
@@ -756,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				8E81CC98241FCC7D006F2437 /* AppDelegate.swift */,
+				2462BA112451F0D90046906D /* Reporting */,
 				2443947E24463A14003ED582 /* Tracing */,
 				24780B00242DF983003BB26C /* User */,
 				24780AFF242DF970003BB26C /* Networking */,
@@ -1095,6 +1109,7 @@
 				6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */,
 				DC702B0B243F6FAE0066C773 /* UBPListValue.swift in Sources */,
 				DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */,
+				2462BA152451FD150046906D /* AuthorizationRequestBody.swift in Sources */,
 				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,
 				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
@@ -1171,6 +1186,7 @@
 				DC702B0F243F6FAE0066C773 /* UBKeychainStored.swift in Sources */,
 				DC702B1F243F70C80066C773 /* UBPushHandler.swift in Sources */,
 				6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */,
+				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

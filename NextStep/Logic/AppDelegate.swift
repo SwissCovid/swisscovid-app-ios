@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
 
-        // setup and handle push
+        // setup and handle local notifications
         let pushHandler = NSPushHandler()
-        let pushRegistrationManager = UBPushRegistrationManager(registrationUrl: NSEndpoint.register.url)
+        let pushRegistrationManager = UBPushRegistrationManager(registrationUrl: nil)
         UBPushManager.shared.didFinishLaunchingWithOptions(
             launchOptions,
             pushHandler: pushHandler,
