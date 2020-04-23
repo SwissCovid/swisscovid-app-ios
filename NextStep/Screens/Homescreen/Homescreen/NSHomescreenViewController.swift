@@ -86,8 +86,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
-
-        presentOnboardingIfNeeded()
     }
 
     private var finishTransition: (() -> Void)?
@@ -175,14 +173,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private func presentMeldungenDetail() {
         navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: true)
-    }
-
-    private func presentOnboardingIfNeeded() {
-        if !NSUser.shared.hasCompletedOnboarding {
-            let onboardingViewController = NSOnboardingViewController()
-            onboardingViewController.modalPresentationStyle = .fullScreen
-            present(onboardingViewController, animated: false)
-        }
     }
 
     private func presentDebugScreen() {

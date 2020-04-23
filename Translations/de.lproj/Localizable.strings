@@ -570,3 +570,54 @@
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Starten";
+
+/*Titel auf Location-Permission Screen*/
+"onboarding_android_bt_permission_title" = "Standort erlauben für Bluetooth";
+
+/*Text auf Location-Permission Screen*/
+"onboarding_android_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie Sie die Standort-Funktion erlauben.";
+
+/*Button-Text auf Location-Permission Screen*/
+"onboarding_android_bt_permission_button" = "Zulassen";
+
+/*Label für Info-Section*/
+"onboarding_android_bt_permission_goodtoknow" = "Gut zu wissen";
+
+/*Info-Titel 1 auf Location-Permission Screen*/
+"onboarding_android_bt_permission_info_1_title" = "Standort erlauben für Bluetooth";
+
+/*Info-Text 1 auf Location-Permission Screen*/
+"onboarding_android_bt_permission_info_1_text" = "Bei Android-Geräten ist die Freigabe von Bluetooth an die Freigabe des Standorts gekoppelt. Deshalb muss die Standort-Funktion aktiviert werden, auch wenn die App zu keinem Zeitpunkt auf Ihren Standort zugreift.";
+
+/*Info-Titel 2 auf Location-Permission Screen*/
+"onboarding_android_bt_permission_info_2_title" = "Sie bleiben anonym";
+
+/*Info-Text 2 auf Location-Permission Screen*/
+"onboarding_android_bt_permission_info_2_text" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
+
+/*Titel auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_title" = "Präzision gewährleisten";
+
+/*Text auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_text" = "Für eine grösstmögliche Präzision des Contact Tracing muss der Energiesparmodus ausgeschaltet sein.";
+
+/*Button-Text auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_button" = "Energiesparmodus konfigurieren";
+
+/*Info-Titel 1 auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_info_1_title" = "Hintergrund-Aktivitäten (Standby)";
+
+/*Info-Text 1 auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_info_1_text" = "Damit das Contact Tracing optimal funktioniert, muss die App auch im Hintergrund ausgeführt werden können. Deshalb sollte der Energiesparmodus für dp3t-app nicht aktiviert sein.";
+
+/*Info-Titel 2 auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
+
+/*Info-Text 2 auf Battery-Permission Screen*/
+"onboarding_android_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich leicht. \n(ca. 6–8%)";
+
+/*Button-Text auf Location-Permission Screen - Zugelassen*/
+"onboarding_android_bt_permission_button_allowed" = "Zugelassen";
+
+/*Button-Text auf Battery-Permission Screen - Deaktiviert*/
+"onboarding_android_battery_permission_button_deactivated" = "Deaktiviert";

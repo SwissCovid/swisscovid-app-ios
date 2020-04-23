@@ -8,10 +8,8 @@ import UIKit
 
 class NSOnboardingStepViewController: NSOnboardingContentViewController {
     private let headingLabel = NSLabel(.textLight)
-    private let backgroundImageView = UIImageView()
     private let foregroundImageView = UIImageView()
-    private let titleLabel = NSLabel(.title, textColor: .ns_primary)
-    private let textLabel = NSLabel(.textLight)
+    private let titleLabel = NSLabel(.title)
 
     private let model: NSOnboardingStepModel
 
@@ -28,25 +26,62 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
     }
 
     private func setupViews() {
-        addArrangedView(headingLabel, spacing: NSPadding.large)
-        addArrangedView(foregroundImageView, spacing: (useLessSpacing ? 1.0 : 1.5) * NSPadding.large)
+        addArrangedView(headingLabel, spacing: NSPadding.medium)
+        headingLabel.textColor = model.headingColor
 
-        addArrangedView(titleLabel, spacing: (useLessSpacing ? 1.0 : 1.0) * NSPadding.large)
-        addArrangedView(textLabel)
-
+        addArrangedView(foregroundImageView, spacing: 2 * NSPadding.medium)
+        addArrangedView(foregroundImageView)
         foregroundImageView.contentMode = .scaleAspectFit
         foregroundImageView.snp.makeConstraints { make in
-            make.height.equalTo(self.useSmallerImages ? 150 : 220)
+            make.height.equalTo(self.useSmallerImages ? 150 : 180)
         }
 
+        addArrangedView(titleLabel, spacing: NSPadding.large)
         titleLabel.textAlignment = .center
-        textLabel.textAlignment = .center
+
+        for (icon, text) in model.textGroups {
+            let v = MoreInfoTextView(icon: icon, text: text)
+            addArrangedView(v)
+            v.snp.makeConstraints { make in
+                make.leading.trailing.equalTo(self.stackScrollView.stackView)
+            }
+        }
     }
 
     private func fillViews() {
         headingLabel.text = model.heading
         foregroundImageView.image = model.foregroundImage
         titleLabel.text = model.title
-        textLabel.text = model.text
+    }
+}
+
+private class MoreInfoTextView: UIView {
+    init(icon: UIImage, text: String) {
+        super.init(frame: .zero)
+
+        let imgView = UIImageView(image: icon)
+        imgView.ub_setContentPriorityRequired()
+
+        let label = NSLabel(.textLight)
+        label.text = text
+
+        addSubview(imgView)
+        addSubview(label)
+
+        imgView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.leading.equalToSuperview().inset(2 * NSPadding.medium)
+        }
+
+        label.snp.makeConstraints { make in
+            make.top.equalTo(imgView)
+            make.leading.equalTo(imgView.snp.trailing).offset(NSPadding.medium + NSPadding.small)
+            make.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+            make.bottom.equalToSuperview().inset(NSPadding.medium)
+        }
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

@@ -8,21 +8,22 @@ import SnapKit
 import UIKit
 
 class NSOnboardingViewController: NSViewController {
-    private let pageControl = UIPageControl()
-
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
-    private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel(heading: " ", foregroundImage: UIImage(named: "onboarding-1")!, title: "onboarding_title_1".ub_localized, text: "onboarding_desc_1".ub_localized))
-    private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel(heading: "Was macht die App:", foregroundImage: UIImage(named: "onboarding-2")!, title: "onboarding_title_2".ub_localized, text: "onboarding_desc_2".ub_localized))
-    private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel(heading: "Was macht die App:", foregroundImage: UIImage(named: "onboarding-3")!, title: "onboarding_title_3".ub_localized, text: "onboarding_desc_3".ub_localized))
-    private let step4VC = NSOnboardingPermissionsViewController()
-    private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel(heading: " ", foregroundImage: UIImage(named: "onboarding-3")!, title: "onboarding_title_5".ub_localized, text: "onboarding_desc_5".ub_localized))
+    private let splashVC = NSSplashViewController()
+
+    private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
+    private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
+    private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
+    private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
 
     private var stepViewControllers: [NSOnboardingContentViewController] {
-        [step1VC, step2VC, step3VC, step4VC, step5VC]
+        [step1VC, step2VC, step3VC, step5VC]
     }
 
+    private let continueContainer = UIView()
+    private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
     private var currentStep: Int = 0
@@ -30,32 +31,50 @@ class NSOnboardingViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupViews()
+        setupButtons()
 
-        step4VC.continueButton.touchUpCallback = { [weak self] in
-            guard let self = self else { return }
-            self.setOnboardingStep(self.currentStep + 1, animated: true)
-        }
-
-        step4VC.continueWithoutButton.touchUpCallback = { [weak self] in
-            guard let self = self else { return }
-            let alert = UIAlertController(title: nil, message: "onboarding_continue_without_popup_text".ub_localized, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_abort".ub_localized, style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_continue".ub_localized, style: .default, handler: { _ in
-                self.setOnboardingStep(self.currentStep + 1, animated: true)
-            }))
-
-            self.present(alert, animated: true, completion: nil)
-        }
+//        step4VC.continueButton.touchUpCallback = { [weak self] in
+//            guard let self = self else { return }
+//            self.setOnboardingStep(self.currentStep + 1, animated: true)
+//        }
+//
+//        step4VC.continueWithoutButton.touchUpCallback = { [weak self] in
+//            guard let self = self else { return }
+//            let alert = UIAlertController(title: nil, message: "onboarding_continue_without_popup_text".ub_localized, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_abort".ub_localized, style: .cancel, handler: nil))
+//            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_continue".ub_localized, style: .default, handler: { _ in
+//                self.setOnboardingStep(self.currentStep + 1, animated: true)
+//            }))
+//
+//            self.present(alert, animated: true, completion: nil)
+//        }
 
         setupSwipeRecognizers()
         addStepViewControllers()
+        addSplashViewController()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         setOnboardingStep(0, animated: true)
+        startSplashCountDown()
+    }
+
+    private func addSplashViewController() {
+        addChild(splashVC)
+        view.addSubview(splashVC.view)
+        splashVC.view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
+    private func startSplashCountDown() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            UIView.animate(withDuration: 0.5) {
+                self.splashVC.view.alpha = 0
+            }
+        }
     }
 
     fileprivate func setOnboardingStep(_ step: Int, animated: Bool) {
@@ -81,6 +100,7 @@ class NSOnboardingViewController: NSViewController {
         let vcToShow = stepViewControllers[step]
         vcToShow.view.isHidden = false
 
+        vcToShow.view.setNeedsLayout()
         vcToShow.view.layoutIfNeeded()
 
         if animated {
@@ -103,9 +123,10 @@ class NSOnboardingViewController: NSViewController {
             })
         }
 
-        currentStep = step
+        vcToShow.view.setNeedsLayout()
+        vcToShow.view.layoutIfNeeded()
 
-        pageControl.currentPage = currentStep
+        currentStep = step
     }
 
     private func finishAnimation() {
@@ -120,26 +141,43 @@ class NSOnboardingViewController: NSViewController {
         }
     }
 
-    private func setupViews() {
-        view.addSubview(pageControl)
-        pageControl.snp.makeConstraints { make in
+    private func setupButtons() {
+        continueContainer.backgroundColor = .ns_background
+        continueContainer.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+
+        continueContainer.addSubview(continueButton)
+        continueButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.medium)
+            make.centerY.equalToSuperview().offset(-self.view.safeAreaInsets.bottom)
         }
 
-        pageControl.currentPageIndicatorTintColor = .ns_green
-        pageControl.pageIndicatorTintColor = .ns_text
-        pageControl.numberOfPages = stepViewControllers.count
-        pageControl.currentPage = 0
-        pageControl.isUserInteractionEnabled = false
-
-        view.addSubview(finishButton)
-        finishButton.snp.makeConstraints { make in
-            make.bottom.equalTo(pageControl.snp.top).offset(-NSPadding.small)
-            make.centerX.equalToSuperview()
+        view.addSubview(continueContainer)
+        continueContainer.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
         }
-        finishButton.touchUpCallback = finishAnimation
-        finishButton.alpha = 0
+
+        continueButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: 2 * NSPadding.large, bottom: NSPadding.medium, right: 2 * NSPadding.large)
+        continueButton.touchUpCallback = {
+            self.setOnboardingStep(self.currentStep + 1, animated: true)
+        }
+//        view.addSubview(finishButton)
+//        finishButton.snp.makeConstraints { make in
+//            make.bottom.equalToSuperview().inset(NSPadding.large)
+//            make.centerX.equalToSuperview()
+//        }
+//        finishButton.touchUpCallback = finishAnimation
+//        finishButton.alpha = 0
+    }
+
+    override func viewSafeAreaInsetsDidChange() {
+        continueButton.snp.updateConstraints { make in
+            make.centerY.equalToSuperview().offset(-self.view.safeAreaInsets.bottom / 2.0)
+        }
+
+        continueContainer.snp.updateConstraints { make in
+            make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
+        }
     }
 
     private func setupSwipeRecognizers() {
@@ -158,11 +196,13 @@ class NSOnboardingViewController: NSViewController {
             view.insertSubview(vc.view, belowSubview: finishButton)
             vc.view.snp.makeConstraints { make in
                 make.top.leading.trailing.equalToSuperview()
-                make.bottom.equalTo(pageControl.snp.top).inset(NSPadding.small)
+                make.bottom.equalTo(continueContainer.snp.top)
             }
             vc.didMove(toParent: self)
 
-            vc.view.isHidden = true
+            if vc != stepViewControllers.first {
+                vc.view.isHidden = true
+            }
         }
     }
 

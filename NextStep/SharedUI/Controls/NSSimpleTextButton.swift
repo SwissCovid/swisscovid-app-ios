@@ -4,7 +4,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import Foundation
+import UIKit
 
 class NSSimpleTextButton: UBButton {
     private let color: UIColor
@@ -16,16 +16,7 @@ class NSSimpleTextButton: UBButton {
         super.init()
 
         self.title = title
-        setup()
-    }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - Setup
-
-    private func setup() {
         backgroundColor = .clear
         highlightedBackgroundColor = color.withAlphaComponent(0.15)
 
@@ -34,5 +25,9 @@ class NSSimpleTextButton: UBButton {
 
         setTitleColor(color, for: .normal)
         titleLabel?.font = NSLabelType.textBold.font
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }

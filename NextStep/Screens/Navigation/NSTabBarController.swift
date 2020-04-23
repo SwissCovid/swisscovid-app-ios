@@ -25,6 +25,12 @@ class NSTabBarController: UITabBarController {
         ]
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        presentOnboardingIfNeeded()
+    }
+
     private func style() {
         tabBar.tintColor = UIColor.ns_red
 
