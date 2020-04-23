@@ -4,7 +4,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import DP3TSDK
+import DP3TSDK_CALIBRATION
 import Foundation
 
 /// The backend environment under which the application runs.
@@ -54,7 +54,7 @@ enum Environment {
         #endif
     }
 
-    var sdkEnvironment: DP3TSDK.Enviroment {
+    var sdkEnvironment: DP3TSDK_CALIBRATION.Enviroment {
         switch self {
         case .dev:
             return .dev

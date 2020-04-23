@@ -5,7 +5,7 @@
  */
 
 import CoreBluetooth
-import DP3TSDK
+import DP3TSDK_CALIBRATION
 import Foundation
 import UIKit
 

@@ -5,7 +5,7 @@
  */
 
 import CoreBluetooth
-import DP3TSDK
+import DP3TSDK_CALIBRATION
 import SnapKit
 import UIKit
 
@@ -119,13 +119,31 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(debugScreenContainer)
 
+        // DEBUG version for testing
         stackScrollView.addSpacerView(NSPadding.large)
+
+        let uploadDBContainer = UIView()
+        uploadDBContainer.addSubview(uploadDBButton)
+        uploadDBButton.snp.makeConstraints { make in
+            make.top.bottom.centerX.equalToSuperview()
+        }
+
+        uploadDBButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.uploadDatabaseForDebugPurposes()
+        }
+
+        stackScrollView.addArrangedView(uploadDBContainer)
+
+        stackScrollView.addSpacerView(NSPadding.large)
+        // End DEBUG version for testing
 
         handshakesModuleView.alpha = 0
         meldungView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
         debugScreenContainer.alpha = 0
+        uploadDBContainer.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -150,6 +168,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
             UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 debugScreenContainer.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                uploadDBContainer.alpha = 1
             }, completion: nil)
         }
     }
@@ -182,5 +204,38 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private func presentWhatToDoSymptoms() {
         navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
+    }
+
+    private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
+    private let uploadHelper = NSDebugDatabaseUploadHelper()
+    private func uploadDatabaseForDebugPurposes() {
+        let alert = UIAlertController(title: "Username", message: nil, preferredStyle: .alert)
+        alert.addTextField { $0.text = "" }
+        alert.addAction(UIAlertAction(title: "Upload", style: .default, handler: { [weak alert, weak self] _ in
+            let username = alert?.textFields?.first?.text ?? ""
+            self?.uploadDB(with: username)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func uploadDB(with username: String) {
+        let loading = UIAlertController(title: "Uploading...", message: "Please wait", preferredStyle: .alert)
+        present(loading, animated: true)
+
+        uploadHelper.uploadDatabase(username: username) { result in
+            let alert: UIAlertController
+            switch result {
+            case .success:
+                alert = UIAlertController(title: "Upload successful", message: nil, preferredStyle: .alert)
+            case let .failure(error):
+                alert = UIAlertController(title: "Upload failed", message: error.message, preferredStyle: .alert)
+            }
+
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            loading.dismiss(animated: false) {
+                self.present(alert, animated: false)
+            }
+        }
     }
 }

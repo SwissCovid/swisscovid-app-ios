@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* NSHeaderArcView.swift */; };
-		2443948A24463ED2003ED582 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 2443948924463ED2003ED582 /* DP3TSDK */; };
 		2462BA132451F0F60046906D /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
 		2462BA152451FD150046906D /* AuthorizationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA142451FD150046906D /* AuthorizationModels.swift */; };
 		2462BA1724520A260046906D /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1624520A250046906D /* Endpoints.swift */; };
@@ -153,6 +152,8 @@
 		DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
+		DF86B5F8245233C70019C229 /* DP3TSDK_CALIBRATION in Frameworks */ = {isa = PBXBuildFile; productRef = DF86B5F7245233C70019C229 /* DP3TSDK_CALIBRATION */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -311,6 +312,7 @@
 		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
+		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,8 +320,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2443948A24463ED2003ED582 /* DP3TSDK in Frameworks */,
 				8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */,
+				DF86B5F8245233C70019C229 /* DP3TSDK_CALIBRATION in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +665,7 @@
 				6E3F65F62449B61A00980A4E /* NSDebugscreenViewController.swift */,
 				6E3F65F82449CC9F00980A4E /* NSDebugScreenMockView.swift */,
 				6E3F65FC2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift */,
+				DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */,
 			);
 			path = Debugscreen;
 			sourceTree = "<group>";
@@ -899,7 +902,7 @@
 			name = NextStep;
 			packageProductDependencies = (
 				8E81CCCE241FD813006F2437 /* SnapKit */,
-				2443948924463ED2003ED582 /* DP3TSDK */,
+				DF86B5F7245233C70019C229 /* DP3TSDK_CALIBRATION */,
 			);
 			productName = IVC;
 			productReference = 8E81CC95241FCC7D006F2437 /* NextStep.app */;
@@ -961,7 +964,7 @@
 			mainGroup = 8E81CC8C241FCC7D006F2437;
 			packageReferences = (
 				8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				2443948824463ED2003ED582 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
+				DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
 			);
 			productRefGroup = 8E81CC96241FCC7D006F2437 /* Products */;
 			projectDirPath = "";
@@ -1143,6 +1146,7 @@
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
+				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				6EC47BD42451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift in Sources */,
 				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
@@ -1753,14 +1757,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2443948824463ED2003ED582 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
 		8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -1769,18 +1765,26 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2443948924463ED2003ED582 /* DP3TSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2443948824463ED2003ED582 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
-			productName = DP3TSDK;
-		};
 		8E81CCCE241FD813006F2437 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		DF86B5F7245233C70019C229 /* DP3TSDK_CALIBRATION */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
+			productName = DP3TSDK_CALIBRATION;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
