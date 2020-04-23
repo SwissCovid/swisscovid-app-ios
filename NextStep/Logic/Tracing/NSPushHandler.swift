@@ -11,9 +11,4 @@ class NSPushHandler: UBPushHandler {
         // called for every received push when the app is in foreground
         // we don't show push in app, so we can ignore it
     }
-
-    override func updateLocalData(withSilent _: Bool, remoteNotification _: UBPushNotification) {
-        // for every received push, we enforce a database sync
-        NSTracingManager.shared.forceSyncDatabase()
-    }
 }

@@ -34,14 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
-    }
-
-    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
-    }
-
     private func shouldSetupWindow(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         if application.applicationState == .background {
             return false
@@ -107,14 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         NSTracingManager.shared.performFetch(completionHandler: completionHandler)
-    }
-
-    func application(_: UIApplication, didReceiveRemoteNotification _: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NSTracingManager.shared.performFetch(completionHandler: completionHandler)
-    }
-
-    func application(_: UIApplication, didReceiveRemoteNotification _: [AnyHashable: Any]) {
-        NSTracingManager.shared.syncDatabaseIfNeeded()
     }
 
     // MARK: - Force update

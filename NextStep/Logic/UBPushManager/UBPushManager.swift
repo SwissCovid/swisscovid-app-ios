@@ -30,14 +30,6 @@ import UserNotifications
 ///                                              pushRegistrationManager: pushRegistrationManager)
 ///         }
 ///
-///    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-///        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
-///    }
-///
-///    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-///        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
-///    }
-///
 open class UBPushManager: NSObject {
     /// Closure to handle the permission request result
     public typealias PermissionRequestCallback = (PermissionRequestResult) -> Void
@@ -139,10 +131,6 @@ open class UBPushManager: NSObject {
                 callback(.success)
                 self.permissionRequestCallback = nil
             }
-
-            DispatchQueue.main.async {
-                UIApplication.shared.registerForRemoteNotifications()
-            }
         }
     }
 
@@ -153,28 +141,6 @@ open class UBPushManager: NSObject {
         } else {
             assert(!includingCritical)
             return [.alert, .badge, .sound]
-        }
-    }
-
-    /// Needs to be called inside `application(_:didRegisterForRemoteNotificationsWithDeviceToken:)`
-    public func didRegisterForRemoteNotificationsWithDeviceToken(_ token: Data) {
-        let tokenString = token.hexString
-
-        pushRegistrationManager.setPushToken(tokenString)
-
-        if let callback = permissionRequestCallback {
-            callback(.success)
-            permissionRequestCallback = nil
-        }
-    }
-
-    /// Needs to be called inside `application(_:didFailToRegisterForRemoteNotificationsWithError:)`
-    public func didFailToRegisterForRemoteNotifications(with _: Error) {
-        pushRegistrationManager.setPushToken(nil)
-
-        if let callback = permissionRequestCallback {
-            callback(.nonRecoverableFailure)
-            permissionRequestCallback = nil
         }
     }
 

@@ -52,28 +52,7 @@ open class UBPushHandler {
     /// Manually call this method after showInAppPushAlert(withTitle:proposedMessage:userInfo:) if required
     open func showInAppPushDetails(for _: UBPushNotification) {}
 
-    /// Override to update local data (e.g. current warnings) after every remote notification.
-    open func updateLocalData(withSilent _: Bool, remoteNotification _: UBPushNotification) {}
-
     // MARK: - Handlers
-
-    /// Handles notifications for the app to process upon launch. Resets the application icon badge number after user interaction.
-    public func handleLaunchOptions(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        if let userInfo = launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] {
-            lastPushed = Date()
-
-            showInAppPushDetails(for: UBPushNotification(userInfo))
-        }
-
-        // Only reset badge number if user started the app by tapping on the app icon
-        // or tapping on a notification (but not when started in background because of
-        // a location change or some other event).
-        if launchOptions == nil ||
-            launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil ||
-            launchOptions?[UIApplication.LaunchOptionsKey.shortcutItem] != nil {
-            UIApplication.shared.applicationIconBadgeNumber = 0
-        }
-    }
 
     /// Handles a notification that arrived while the app was running in the foreground.
     public func handleWillPresentNotification(_ notification: UNNotification, completionHandler _: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -88,18 +67,6 @@ open class UBPushHandler {
     }
 
     // MARK: - Helpers
-
-    private func didReceive(_ notification: UBPushNotification, whileActive isActive: Bool) {
-        lastPushed = Date()
-
-        if !notification.isSilentPush {
-            updateLocalData(withSilent: false, remoteNotification: notification)
-            showNonSilent(notification, isActive: isActive)
-
-        } else {
-            updateLocalData(withSilent: true, remoteNotification: notification)
-        }
-    }
 
     private func showNonSilent(_ notification: UBPushNotification, isActive: Bool) {
         // Non-silent push while active
