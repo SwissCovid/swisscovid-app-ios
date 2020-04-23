@@ -11,12 +11,12 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     // MARK: - Views
 
-    private let informButton = NSButton(title: "inform_detail_box_button".ub_localized, style: .uppercase(.ns_blue))
+    private let informButton = NSButton(title: "inform_detail_box_button".ub_localized, style: .uppercase(.ns_purple))
 
     // MARK: - Init
 
     init() {
-        super.init(title: "inform_detail_box_title".ub_localized, subtitle: "inform_detail_box_subtitle".ub_localized, text: "inform_detail_box_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
+        super.init(title: "inform_detail_box_title".ub_localized, subtitle: "inform_detail_box_subtitle".ub_localized, text: "inform_detail_box_text".ub_localized, image: nil, subtitleColor: .ns_purple)
         setup()
     }
 
@@ -27,7 +27,19 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.addSpacerView(NSPadding.medium)
-        contentView.addArrangedView(informButton)
+        contentView.addSpacerView(NSPadding.large)
+
+        let view = UIView()
+        view.addSubview(informButton)
+
+        let inset = NSPadding.small + NSPadding.medium
+
+        informButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview().inset(inset)
+        }
+
+        contentView.addArrangedView(view)
+        contentView.addSpacerView(NSPadding.small)
     }
 }

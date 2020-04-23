@@ -354,7 +354,7 @@
 "whattodo_title_positivetest" = "positiven Testresultat";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Was tun bei einem…";
+"whattodo_subtitle_positivetest" = "Infektionskette unterbrechen";
 
 /*Informieren Detail: Subtitel*/
 "inform_detail_subtitle" = "Was tun bei einem...";
@@ -369,10 +369,10 @@
 "inform_detail_box_title" = "Begegnungen informieren";
 
 /*Inform Detail Weisse Box Button*/
-"inform_detail_box_button" = "Jetzt informieren";
+"inform_detail_box_button" = "Covid-Code eingeben";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Informieren sie Personen mit denen Sie Kontakt hatten anonym über die App.";
+"inform_detail_box_text" = "Informieren Sie Begegnungen über eine mögliche Ansteckung. \nDazu benötigen Sie den Covid-Code aus dem Testergebnis.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Was tun wenn ich...";
@@ -493,7 +493,38 @@
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
 "meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
+
+/*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Gemeinsam gegen das Virus";
 
 /*Telefon-Nummer für Infos wenn Exposed*/
 "exposed_info_line_tel" = "+41 98 765 43 21";
+"onboarding_prinzip_heading" = "Das Prinzip";
+"onboarding_prinzip_title" = "Dem Virus einen Schritt voraus";
+"onboarding_prinzip_text1" = "Mit der Swiss Trace App können alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Ansteckungsketten unterbrochen werden.";
+"onboarding_privacy_heading" = "Privacy by Design";
+"onboarding_privacy_title" = "Schutz der Privatsphäre garantiert";
+"onboarding_privacy_text1" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
+"onboarding_privacy_text2" = "Die Kommunikation zwischen den Geräten findet anonym statt. Es werden keine personenbezogene Daten geteilt.";
+"onboarding_begegnungen_heading" = "Was macht die App?";
+"onboarding_begegnungen_title" = "Begegnungen erkennen dank Bluetooth";
+"onboarding_begegnungen_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander stehen. ";
+"onboarding_begegnungen_text2" = "Dafür wird Bluetooth Low Energy (BLE) verwendet.";
+"onboarding_meldung_heading" = "Was macht die App?";
+"onboarding_meldung_title" = "Meldung bei einer möglichen Ansteckung";
+"onboarding_meldung_text1" = "Die App informiert Sie, falls eine Person der Sie in den letzten Tagen begegnet sind positiv auf COVID-19 getestet wird.";
+"onboarding_meldung_text2" = "So können Sie mithelfen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_bluetooth_title" = "Bluetooth erlauben";
+"onboarding_bluetooth_text" = " Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
+"onboarding_bluetooth_button" = "Bluetooth erlauben";
+"onboarding_good_to_know" = "Gut zu wissen";
+"onboarding_bluetooth_gtk_title1" = "Sie bleiben anonym";
+"onboarding_bluetooth_gtk_text1" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
+"onboarding_bluetooth_gtk_title2" = "Leicht erhöhte Batterienutzung";
+"onboarding_bluetooth_gtk_text2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich leicht (ca. 6-8%).";
+"onboarding_push_title" = "Mitteilungen erlauben";
+"onboarding_push_text" = "Damit Sie von der App informiert werden, müssen Sie Mitteilungen erlauben.";
+"onboarding_push_button" = "Mitteilungen erlauben";
+"onboarding_push_gtk_title1" = "Was könnte hier stehen";
+"onboarding_push_gtk_text1" = "Hier könnte etwas stehen, dass die Mitteilungen so sind, dass niemand mitlesen kann";

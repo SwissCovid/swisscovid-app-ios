@@ -16,7 +16,7 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
     // MARK: - Init
 
     init() {
-        super.init(title: "symptom_detail_box_title".ub_localized, subtitle: "symptom_detail_box_subtitle".ub_localized, text: "symptom_detail_box_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
+        super.init(title: "symptom_detail_box_title".ub_localized, subtitle: "symptom_detail_box_subtitle".ub_localized, text: "symptom_detail_box_text".ub_localized, image: nil, subtitleColor: .ns_blue)
         setup()
     }
 
@@ -27,7 +27,8 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.addSpacerView(NSPadding.medium)
+        contentView.addSpacerView(NSPadding.large)
         contentView.addArrangedView(checkButton)
+        contentView.addSpacerView(NSPadding.small)
     }
 }
