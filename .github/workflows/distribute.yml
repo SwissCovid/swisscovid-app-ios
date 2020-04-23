@@ -35,6 +35,7 @@ jobs:
       run: bundle exec fastlane sign_and_build
       
     - name: Upload and distribution
+      if: github.event_name == 'pull_request' && github.base_ref == 'refs/heads/master'
       env:
         FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
@@ -68,6 +69,7 @@ jobs:
       run: bundle exec fastlane sign_and_build
       
     - name: Upload and distribution
+      if: github.event_name == 'pull_request' && github.base_ref == 'refs/heads/master'
       env:
         FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
