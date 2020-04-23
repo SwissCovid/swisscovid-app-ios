@@ -149,8 +149,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 }
 
-extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate
-{
+extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
         return point.y < startPositionScrollView
     }

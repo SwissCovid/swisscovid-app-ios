@@ -6,7 +6,9 @@ class NSHeaderImageBackgroundView: UIView {
     private let imageView = UIImageView()
     private let colorView = UIView()
 
-    private let headerImages = [UIImage(named: "header-image-basel-1")!, UIImage(named: "header-image-geneva-1")!, UIImage(named: "header-image-bern-1")!, UIImage(named: "header-image-bern-2")!]
+    private static let headerImages = [UIImage(named: "header-image-basel-1")!, UIImage(named: "header-image-geneva-1")!, UIImage(named: "header-image-bern-1")!, UIImage(named: "header-image-bern-2")!]
+
+    static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
 
     var state: NSUIStateModel.Tracing {
         didSet { update() }
@@ -16,8 +18,9 @@ class NSHeaderImageBackgroundView: UIView {
         let chanceToChange = 0.3
         let random = Double.random(in: 0 ..< 1)
 
-        if random < chanceToChange, let image = headerImages.randomElement() {
+        if random < chanceToChange, let image = NSHeaderImageBackgroundView.headerImages.randomElement() {
             imageView.image = image
+            NSHeaderImageBackgroundView.activeImage = image
         }
     }
 
@@ -39,7 +42,7 @@ class NSHeaderImageBackgroundView: UIView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 
-        imageView.image = headerImages[0]
+        imageView.image = NSHeaderImageBackgroundView.activeImage
 
         addSubview(imageView)
         imageView.snp.makeConstraints { make in

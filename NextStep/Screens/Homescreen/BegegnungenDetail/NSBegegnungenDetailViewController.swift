@@ -44,7 +44,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
+
         bluetoothControl.viewToBeLayouted = view
 
         stackScrollView.addArrangedView(bluetoothControl)
