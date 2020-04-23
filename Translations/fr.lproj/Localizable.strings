@@ -600,3 +600,6 @@
 
 /*Button-Text auf Battery-Permission Screen - Deaktiviert*/
 "onboarding_android_battery_permission_button_deactivated" = "Deaktiviert";
+"homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
+"homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Gerät mit dem Internet verbunden ist.";
+"homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";

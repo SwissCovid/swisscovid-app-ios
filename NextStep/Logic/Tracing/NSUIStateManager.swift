@@ -10,12 +10,27 @@ class NSUIStateManager: NSObject {
         NSTracingManager.shared.uiStateManager
     }
 
-    var tracingStartError: Error? { didSet { refresh() } }
-    var updateError: Error? { didSet { refresh() } }
+    private let syncProblemInterval: TimeInterval = 60 * 60 * 24 // 1 day
+
+    @UBOptionalUserDefault(key: "com.ubique.nextstep.firstSyncErrorTime")
+    var firstSyncErrorTime: Date?
+
+    var lastSyncErrorTime: Date? {
+        didSet {
+            if let time = lastSyncErrorTime, firstSyncErrorTime == nil {
+                firstSyncErrorTime = time
+            }
+            refresh()
+        }
+    }
+
     var syncError: Error? { didSet { refresh() } }
 
+    var tracingStartError: Error? { didSet { refresh() } }
+    var updateError: Error? { didSet { refresh() } }
+
     var anyError: Error? {
-        tracingStartError ?? updateError ?? syncError
+        tracingStartError ?? updateError
     }
 
     private var pushOk: Bool = false {
@@ -146,6 +161,12 @@ class NSUIStateManager: NSObject {
 
         if !pushOk {
             newState.homescreen.meldungen.pushProblem = true
+        }
+
+        if let first = firstSyncErrorTime,
+            let last = lastSyncErrorTime,
+            last.timeIntervalSince(first) > syncProblemInterval {
+            newState.homescreen.meldungen.syncProblem = true
         }
 
         if let tracingState = tracingState {

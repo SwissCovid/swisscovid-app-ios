@@ -43,6 +43,7 @@ struct NSUIStateModel: Equatable {
 
             var meldung: Meldung = .noMeldung
             var pushProblem: Bool = false
+            var syncProblem: Bool = false
         }
 
         var header: Header = .tracingActive

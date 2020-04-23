@@ -26,6 +26,10 @@ class NSMeldungView: NSModuleBaseView {
         UIApplication.shared.open(settingsUrl)
     }))
 
+    private let syncProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "homescreen_meldung_data_outdated_title".ub_localized, text: "homescreen_meldung_data_outdated_text".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: {
+        NSTracingManager.shared.forceSyncDatabase()
+    }))
+
     override init() {
         super.init()
 
@@ -46,6 +50,9 @@ class NSMeldungView: NSModuleBaseView {
             views.append(noMeldungenView)
             if uiState.pushProblem {
                 views.append(noPushView)
+            }
+            if uiState.syncProblem {
+                views.append(syncProblemView)
             }
         case .exposed:
             views.append(exposedView)

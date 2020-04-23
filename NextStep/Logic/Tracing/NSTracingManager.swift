@@ -153,10 +153,14 @@ class NSTracingManager: NSObject {
             switch result {
             case let .failure(e):
                 NSUIStateManager.shared.syncError = e
+                if case DP3TTracingError.networkingError = e {
+                    NSUIStateManager.shared.lastSyncErrorTime = Date()
+                }
                 completionHandler?(.failed)
             case .success:
-                NSUIStateManager.shared.syncError = nil
                 self.lastDatabaseSync = Date()
+                NSUIStateManager.shared.firstSyncErrorTime = nil
+                NSUIStateManager.shared.lastSyncErrorTime = nil
 
                 self.updateStatus()
 
