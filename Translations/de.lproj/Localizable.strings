@@ -1,44 +1,54 @@
 
 /*Name der App*/
+/*App Name*/
 "app_name" = "dp3t-app";
 
 /*App Name unter Icon (iOS)*/
+/*App Name (unter Icon auf iOS)*/
 "CFBundleDisplayName" = "Next Step";
 
 /*Title of the menu item home*/
+/*Name in Tab Bar unten*/
 "menu_item_home" = "Home";
 
 /*Title of the menu item info*/
+/*Name in Tab Bar unten*/
 "menu_item_info" = "Info";
 
 /*Title of the menu item tracking*/
+/*Name in Tab Bar unten*/
 "menu_item_tracking" = "Tracing";
 
+/*Loading View: Erneut laden*/
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Erneut laden";
 
 /*Loading View: Titel*/
+/*Fehler in Loading View*/
 "loading_view_error_title" = "Fehler";
 
 /*Text on grant permission button*/
+/*Button Erlaubnis*/
 "grant_permission_button" = "Erlaubnis erteilen";
 
 /*Text on grant permission button if permission is granted*/
+/*Text, wenn Erlaubnis erteilt*/
 "granted_permission_button" = "Erlaubnis erteilt";
 
 /*Sprachen-Key*/
+/*Offizieller Sprach Schlüssel (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
 
 /*Force Update Alert Titel*/
+/*Titel wenn die App muss geupdatet werden*/
 "force_update_title" = "Update";
-"homescreen_handshakes_module_count_info_label" = "Begegnungen werden anonym auf deinem Gerät gespeichert.";
-"homescreen_handshakes_module_count_label_format" = "{count} in den letzten 48h";
-"homescreen_handshakes_module_info_label" = "Hier werden Informationen deiner Begegnungen über COVID-19 angezeigt.";
 
 /*Informieren Titel*/
+/*Titel beim Informieren*/
 "inform_title" = "Infektionskette unterbrechen";
 
 /*Inform Subtext*/
+/*Subtex beim Informieren*/
 "inform_subtext" = "Ich möchte helfen, die Infektionskette von COVID-19 zu unterbrechen.";
 
 /*Inform: Button Titel*/
@@ -56,7 +66,7 @@
 "inform_positive_long_text" = "Informieren Sie die von Ihrer App registrierten Personen über eine mögliche Ansteckung. \n\nSie bleiben dabei anonym.";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Senden";
+"inform_send_button_title" = "Jetzt senden";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Vielen Dank!";
@@ -151,6 +161,7 @@
 /*Bluetooth Permission Text für iOS*/
 "NSBluetoothAlwaysUsageDescription" = "Begegnungen werden über Bluetooth energiesparend im Hintergrund erkannt.";
 
+/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
 /*Text der bei Android in der permanenten Notification immer angezeigt wird*/
 "foreground_service_notification_text" = "Begegnungen werden anonym auf deinem Gerät gespeichert.";
 
@@ -279,10 +290,20 @@
 
 /*Fuzzy*/
 "meldungen_infected_text" = "Vielen Dank! Nutzer denen du begegnet bist, werden anonym informiert und können sich isolieren.";
+
+/*Fehlertitel mit Foreground Service Notification*/
 "foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
+
+/*Fehler Beschreibung*/
 "foreground_service_notification_error_network_sync" = "beim Laden der Daten ist ein Fehler aufgetreten";
+
+/*Fehler Beschreibung*/
 "foreground_service_notification_error_location_permission" = "Standort Berechtigung fehlt (benötigt um auf Bluetooth zuzugreifen)";
+
+/*Fehler Beschreibung Bluetooth*/
 "foreground_service_notification_error_bluetooth_disabled" = "Bluetooth ist deaktiviert";
+
+/*Fehler Beschreibung Akku*/
 "foreground_service_notification_error_battery_optimization" = "Akku Optimierung ist aktiviert (verhindert zuverlässiges Scanning im Hintergrund)";
 
 /*Beruhigender Text für Detail-Seite, falls Meldung eingegangen ist*/
@@ -371,7 +392,7 @@
 "whattodo_title_positivetest" = "positiven Testresultat";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Infektionskette unterbrechen";
+"whattodo_subtitle_positivetest" = "Was tun bei einem...";
 
 /*Informieren Detail: Subtitel*/
 "inform_detail_subtitle" = "Was tun bei einem...";
@@ -380,7 +401,7 @@
 "inform_detail_title" = "positiven Test?";
 
 /*Inform Detail: Weisse Box Subtitel*/
-"inform_detail_box_subtitle" = "Was muss ich tun?";
+"inform_detail_box_subtitle" = "Infektionskette unterbrechen";
 
 /*Inform Detai Weisse Box Titel*/
 "inform_detail_box_title" = "Begegnungen informieren";
@@ -624,3 +645,30 @@
 "homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
 "homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Gerät mit dem Internet verbunden ist.";
 "homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";
+
+/*Titel Fehlermeldung für ungültigen Code*/
+"inform_code_invalid_title" = "Code ungültig";
+
+/*Fehlermeldung Subtitle ungültiger Code*/
+"inform_code_invalid_subtitle" = "Versuchen Sie es erneut";
+
+/*Titel für Info-Teil unter Box*/
+"inform_detail_info_title" = "Hier kommt noch mehr (tbd)";
+
+/*1. Info-Text unter Box*/
+"inform_detail_info_text_1" = "Wird noch erarbeitet";
+
+/*2. Info-Text unter Box*/
+"inform_detail_info_text_2" = "Wird noch erarbeitet";
+
+/*Titel für Info-Teil unter Box*/
+"symptom_detail_info_title" = "Hier kommt noch mehr (tbd)";
+
+/*1. Info-Text unter Box*/
+"symptom_detail_info_text_1" = "Wird noch erarbeitet";
+
+/*2. Info-Text unter Box*/
+"symptom_detail_info_text_2" = "Wird noch erarbeitet";
+
+/*Datum: Vor 1 Tag*/
+"date_one_day_ago" = "vor 1 Tag";

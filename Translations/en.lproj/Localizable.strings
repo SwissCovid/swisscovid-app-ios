@@ -1,45 +1,55 @@
 
 /*Name der App*/
+/*App Name*/
 "app_name" = "Next Step";
 
 /*App Name unter Icon (iOS)*/
+/*App Name (unter Icon auf iOS)*/
 /*Fuzzy*/
 "CFBundleDisplayName" = "Next Step";
 
 /*Title of the menu item home*/
+/*Name in Tab Bar unten*/
 "menu_item_home" = "Home";
 
 /*Title of the menu item info*/
+/*Name in Tab Bar unten*/
 "menu_item_info" = "Info";
 
 /*Title of the menu item tracking*/
+/*Name in Tab Bar unten*/
 "menu_item_tracking" = "Tracing";
 
+/*Loading View: Erneut laden*/
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Reload";
 
 /*Loading View: Titel*/
+/*Fehler in Loading View*/
 "loading_view_error_title" = "Error";
 
 /*Text on grant permission button*/
+/*Button Erlaubnis*/
 "grant_permission_button" = "Grant permission";
 
 /*Text on grant permission button if permission is granted*/
+/*Text, wenn Erlaubnis erteilt*/
 "granted_permission_button" = "Permission granted";
 
 /*Sprachen-Key*/
+/*Offizieller Sprach Schlüssel (BITTE NICHT ÄNDERN)*/
 "language_key" = "en";
 
 /*Force Update Alert Titel*/
+/*Titel wenn die App muss geupdatet werden*/
 "force_update_title" = "Update";
-"homescreen_handshakes_module_count_info_label" = "Encounters are anonymously stored on your device";
-"homescreen_handshakes_module_count_label_format" = "{count} last 48 hours";
-"homescreen_handshakes_module_info_label" = "Here you'll see when users you've encountered inform about COVID-19.";
 
 /*Informieren Titel*/
+/*Titel beim Informieren*/
 "inform_title" = "Stop the chain of infection";
 
 /*Inform Subtext*/
+/*Subtex beim Informieren*/
 "inform_subtext" = "I want to help break the COVID-19 chain of infection";
 
 /*Inform: Button Titel*/
@@ -57,7 +67,7 @@
 "inform_positive_long_text" = "I have recently tested positive for COVID-19. \n\nI want to stop a potential infection chain by allowing the app to anonymously contact people who were recently close by.";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Send";
+"inform_send_button_title" = "Jetzt senden";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "THANK YOU!";
@@ -152,6 +162,7 @@
 /*Bluetooth Permission Text für iOS*/
 "NSBluetoothAlwaysUsageDescription" = "Encounters are recognized via Bluetooth, in the Background and energy-saving";
 
+/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
 /*Text der bei Android in der permanenten Notification immer angezeigt wird*/
 "foreground_service_notification_text" = "App is scanning in the Background";
 
@@ -266,10 +277,20 @@
 "meldungen_additional_info_text3_reduced" = "Experts from the FOPH give you advice by phone.";
 "meldungen_infected_title" = "Infection reported";
 "meldungen_infected_text" = "Thank you so much! People you met are informed anonymously and can isolate themselves.";
+
+/*Fehlertitel mit Foreground Service Notification*/
 "foreground_service_notification_errors" = "App cannot work properly at the moment:";
+
+/*Fehler Beschreibung*/
 "foreground_service_notification_error_network_sync" = "Error occurred while loading data";
+
+/*Fehler Beschreibung*/
 "foreground_service_notification_error_location_permission" = "Location permission is missing (needed for accessing bluetooth)";
+
+/*Fehler Beschreibung Bluetooth*/
 "foreground_service_notification_error_bluetooth_disabled" = "Bluetooth is deactivated";
+
+/*Fehler Beschreibung Akku*/
 "foreground_service_notification_error_battery_optimization" = "Battery optimization is activated (prevents reliable background scanning)";
 
 /*Beruhigender Text für Detail-Seite, falls Meldung eingegangen ist*/
@@ -356,7 +377,7 @@
 "whattodo_title_positivetest" = "positiven Testresultat";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Infektionskette unterbrechen";
+"whattodo_subtitle_positivetest" = "Was tun bei einem...";
 
 /*Informieren Detail: Subtitel*/
 "inform_detail_subtitle" = "Was tun bei einem...";
@@ -365,7 +386,7 @@
 "inform_detail_title" = "positiven Test?";
 
 /*Inform Detail: Weisse Box Subtitel*/
-"inform_detail_box_subtitle" = "Was muss ich tun?";
+"inform_detail_box_subtitle" = "Infektionskette unterbrechen";
 
 /*Inform Detai Weisse Box Titel*/
 "inform_detail_box_title" = "Begegnungen informieren";
@@ -605,3 +626,30 @@
 "homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
 "homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Gerät mit dem Internet verbunden ist.";
 "homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";
+
+/*Titel Fehlermeldung für ungültigen Code*/
+"inform_code_invalid_title" = "Code ungültig";
+
+/*Fehlermeldung Subtitle ungültiger Code*/
+"inform_code_invalid_subtitle" = "Versuchen Sie es erneut";
+
+/*Titel für Info-Teil unter Box*/
+"inform_detail_info_title" = "Hier kommt noch mehr (tbd)";
+
+/*1. Info-Text unter Box*/
+"inform_detail_info_text_1" = "Wird noch erarbeitet";
+
+/*2. Info-Text unter Box*/
+"inform_detail_info_text_2" = "Wird noch erarbeitet";
+
+/*Titel für Info-Teil unter Box*/
+"symptom_detail_info_title" = "Hier kommt noch mehr (tbd)";
+
+/*1. Info-Text unter Box*/
+"symptom_detail_info_text_1" = "Wird noch erarbeitet";
+
+/*2. Info-Text unter Box*/
+"symptom_detail_info_text_2" = "Wird noch erarbeitet";
+
+/*Datum: Vor 1 Tag*/
+"date_one_day_ago" = "1 day ago";

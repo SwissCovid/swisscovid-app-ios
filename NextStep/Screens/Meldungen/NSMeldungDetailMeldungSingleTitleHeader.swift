@@ -152,10 +152,12 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     private func update() {
         guard let m = meldung else { return }
 
-        let days = Date().ns_differenceInDaysWithDate(date: m.timestamp)
+        let days = m.timestamp.ns_differenceInDaysWithDate(date: Date())
 
         if days == 0 {
             dateLabel.text = "date_today".ub_localized
+        } else if days == 1 {
+            dateLabel.text = "date_one_day_ago".ub_localized
         } else {
             dateLabel.text = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
         }
