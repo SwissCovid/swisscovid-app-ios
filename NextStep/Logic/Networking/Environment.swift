@@ -15,9 +15,9 @@ enum Environment {
     var codegenService: Backend {
         switch self {
         case .dev:
-            return Backend("https://pt1-d.bit.admin.ch", version: "v1")
+            return Backend("https://codegen-service-d.bag.admin.ch", version: "v1")
         case .prod:
-            return Backend("https://pt1.bit.admin.ch", version: "v1")
+            return Backend("https://codegen-service.bag.admin.ch", version: "v1")
         }
     }
 
@@ -33,9 +33,9 @@ enum Environment {
     var publishService: Backend {
         switch self {
         case .dev:
-            return Backend("https://www.pt1-d.bfs.admin.ch/exposed", version: nil)
+            return Backend("https://www.pt1-d.bfs.admin.ch", version: "v1")
         case .prod:
-            return Backend("https://www.pt1.bfs.admin.ch/exposed", version: nil)
+            return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
         }
     }
 

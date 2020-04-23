@@ -21,8 +21,11 @@ class ReportingManager {
 
             switch result {
             case let .success(token: token, date: date):
+
+                print("success with token ", date)
                 DP3TTracing.iWasExposed(onset: date, authentication: .JSONPayload(token: token)) { result in
                     DispatchQueue.main.async {
+                        print(result)
                         switch result {
                         case .success:
                             completion(nil)

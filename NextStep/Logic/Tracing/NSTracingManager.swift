@@ -35,7 +35,11 @@ class NSTracingManager: NSObject {
 
     func initialize() {
         do {
-            try DP3TTracing.initialize(with: DP3TApplicationInfo.discovery(appId, enviroment: Environment.current.sdkEnvironment))
+            let bucketBaseUrl = Environment.current.publishService.baseURL
+            let reportBaseUrl = Environment.current.configService.baseURL
+            let pk = Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFL1k5eGUwanBOVGNLMXkxMVdpN3NWK0t2Mm5QTwo0d3FqSklRNjZJU05TWXI3THU1am81cVhJQkg0VURRNmFENm9kMExjUXdSRzBwRVgxTUtyMlYrdzRRPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
+            let descriptor = ApplicationDescriptor(appId: appId, bucketBaseUrl: bucketBaseUrl, reportBaseUrl: reportBaseUrl, jwtPublicKey: pk)
+            try DP3TTracing.initialize(with: .manual(descriptor))
         } catch {
             NSUIStateManager.shared.tracingStartError = error
         }
