@@ -23,9 +23,6 @@ extension UIColor {
 
     // MARK: - Deprecated colors
 
-    // primary color
-    public static var ns_primary = UIColor(ub_hexString: "#5559a0")!
-
     // background of views
     public static var ns_background_highlighted = UIColor(ub_hexString: "#f9f9f9")!
 

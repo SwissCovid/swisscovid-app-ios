@@ -12,55 +12,17 @@ enum NSOnboardingPermissionType {
 }
 
 class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
-//    private class EnabledView: UIView {
-//        init(text: String) {
-//            super.init(frame: .zero)
-//
-//            snp.makeConstraints { make in
-//                make.height.equalTo(44)
-//            }
-//
-//            let icon = UIImageView(image: #imageLiteral(resourceName: "ic-check"))
-//            addSubview(icon)
-//            icon.snp.makeConstraints { make in
-//                make.leading.centerY.equalToSuperview()
-//            }
-//            icon.ub_setContentPriorityRequired()
-//
-//            let label = NSLabel(.textBold, textColor: .ns_green)
-//            label.text = text
-//            addSubview(label)
-//            label.snp.makeConstraints { make in
-//                make.trailing.centerY.equalToSuperview()
-//                make.leading.equalTo(icon.snp.trailing).offset(NSPadding.medium)
-//            }
-//        }
-//
-//        required init?(coder _: NSCoder) {
-//            fatalError("init(coder:) has not been implemented")
-//        }
-//    }
-
-    private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-4")!)
-    private let titleLabel = NSLabel(.title, textColor: .ns_primary, textAlignment: .center)
+    private let foregroundImageView = UIImageView()
+    private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
-    private let bluetoothButton = NSButton(title: "activate_bluetooth_button".ub_localized, style: .normal(.ns_blue))
-    private let pushButton = NSButton(title: "activate_push_button".ub_localized, style: .normal(.ns_blue))
+    let permissionButton = NSButton(title: "", style: .normal(.ns_blue))
 
-//    private let bluetoothEnabledView = EnabledView(text: "bluetooth_activated_label".ub_localized)
-//    private let pushEnabledView = EnabledView(text: "push_activated_label".ub_localized)
+    private let goodToKnowContainer = UIView()
+    private let goodToKnowLabel = NSLabel(.textLight, textColor: .ns_blue)
 
-//    let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .normal(.ns_blue))
-//    let continueWithoutButton = UBButton()
+    private let background = UIView()
 
-//    private var isBluetoothEnabled: Bool = false
-//    private var bluetoothAsked: Bool = false
-
-    private var centralManager: CBCentralManager?
-
-//    private var isPushEnabled: Bool = false
-//    private var pushAsked: Bool = false
     private let type: NSOnboardingPermissionType
 
     init(type: NSOnboardingPermissionType) {
@@ -72,11 +34,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        NotificationCenter.default.addObserver(self, selector: #selector(checkPermissionSettings), name: UIApplication.didBecomeActiveNotification, object: nil)
-
         setupViews()
-
-//        checkPermissionSettings()
+        fillViews()
     }
 
     deinit {
@@ -84,127 +43,75 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     }
 
     private func setupViews() {
-        addArrangedView(foregroundImageView, spacing: (useLessSpacing ? 1.0 : 1.5) * NSPadding.large)
-        foregroundImageView.contentMode = .scaleAspectFit
-        foregroundImageView.snp.makeConstraints { make in
-            make.height.equalTo(self.useSmallerImages ? 150.0 : 180.0)
-        }
+        addArrangedView(foregroundImageView, spacing: NSPadding.medium)
 
-        addArrangedView(titleLabel, spacing: (useLessSpacing ? 1.0 : 1.0) * NSPadding.large)
-        addArrangedView(textLabel, spacing: (useLessSpacing ? 1.0 : 1.5) * NSPadding.large)
+        let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
+        addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
+        addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
+        addArrangedView(permissionButton, spacing: 2 * NSPadding.large)
+
+        addArrangedView(goodToKnowContainer)
+
+        background.backgroundColor = .ns_backgroundSecondary
+        background.alpha = 0
+
+        view.insertSubview(background, at: 0)
+        background.snp.makeConstraints { make in
+            make.top.equalTo(goodToKnowContainer)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+    }
+
+    private func fillViews() {
+        goodToKnowLabel.text = "onboarding_good_to_know".ub_localized
+        goodToKnowContainer.addSubview(goodToKnowLabel)
+        goodToKnowLabel.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+        }
 
         switch type {
         case .bluetooth:
-            addArrangedView(bluetoothButton, spacing: NSPadding.medium)
+            foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
+            titleLabel.text = "onboarding_bluetooth_title".ub_localized
+            textLabel.text = "onboarding_bluetooth_text".ub_localized
+            permissionButton.title = "onboarding_bluetooth_button".ub_localized
+
+            let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_bluetooth_gtk_text1".ub_localized, title: "onboarding_bluetooth_gtk_title1".ub_localized)
+            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
+            goodToKnowContainer.addSubview(info1)
+            goodToKnowContainer.addSubview(info2)
+            info1.snp.makeConstraints { make in
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.leading.trailing.equalToSuperview()
+            }
+            info2.snp.makeConstraints { make in
+                make.top.equalTo(info1.snp.bottom)
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+            }
         case .push:
-            addArrangedView(pushButton, spacing: (useLessSpacing ? 1.0 : 1.5) * NSPadding.large)
-        }
+            foregroundImageView.image = UIImage(named: "onboarding-meldung-permission")!
+            titleLabel.text = "onboarding_push_title".ub_localized
+            textLabel.text = "onboarding_push_text".ub_localized
+            permissionButton.title = "onboarding_push_button".ub_localized
 
-        bluetoothButton.touchUpCallback = {
-            self.centralManager = CBCentralManager(delegate: self, queue: nil, options: [:])
-        }
-
-        pushButton.touchUpCallback = {
-            self.pushButton.isEnabled = false
-
-            UBPushManager.shared.requestPushPermissions { _ in
-//                self.pushAsked = true
-//
-//                switch result {
-//                case .nonRecoverableFailure, .recoverableFailure:
-//                    self.isPushEnabled = false
-//                case .success:
-//                    self.isPushEnabled = true
-//                    self.pushButton.superview?.removeFromSuperview()
-//                    self.addArrangedView(self.pushEnabledView, spacing: (self.useLessSpacing ? 1.0 : 1.5) * NSPadding.large, index: 5)
-//                    self.pushEnabledView.alpha = 1
-//                }
-//
-//                self.updateUI()
+            let info = NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "onboarding_push_gtk_text1".ub_localized, title: "onboarding_push_gtk_title1".ub_localized)
+            goodToKnowContainer.addSubview(info)
+            info.snp.makeConstraints { make in
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
             }
         }
-
-        titleLabel.text = "onboarding_title_4".ub_localized
-        textLabel.text = "onboarding_desc_4".ub_localized
-
-//        continueWithoutButton.titleLabel?.font = NSLabelType.textLight.font
-//        continueWithoutButton.setTitleColor(.ns_green, for: .normal)
-//        continueWithoutButton.setTitle("onboarding_continue_without_button".ub_localized, for: .normal)
-//        continueWithoutButton.highlightCornerRadius = 3
-//        continueWithoutButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.small, left: NSPadding.small, bottom: NSPadding.small, right: NSPadding.small)
     }
 
-//    @objc private func checkPermissionSettings() {
-//        if #available(iOS 13.1, *) {
-//            switch CBCentralManager.authorization {
-//            case .notDetermined:
-//                self.bluetoothAsked = false
-//                self.isBluetoothEnabled = false
-//            case .allowedAlways:
-//                self.bluetoothAsked = true
-//                self.isBluetoothEnabled = true
-//                self.bluetoothButton.superview?.removeFromSuperview()
-//                if self.bluetoothEnabledView.superview == nil {
-//                    self.addArrangedView(self.bluetoothEnabledView, spacing: NSPadding.medium, index: 4)
-//                }
-//                self.bluetoothEnabledView.alpha = 1
-//            case .denied, .restricted:
-//                self.bluetoothAsked = true
-//                self.isBluetoothEnabled = false
-//            @unknown default:
-//                fatalError()
-//            }
-//        } else {
-//            bluetoothAsked = true
-//            isBluetoothEnabled = true
-//            bluetoothButton.superview?.removeFromSuperview()
-//        }
-//
-//        UBPushManager.shared.queryPushPermissions { enabled in
-//            self.isPushEnabled = enabled
-//            print("Bluetooth: \(self.isBluetoothEnabled) / Push: \(self.isPushEnabled)")
-//            self.updateUI()
-//        }
-//    }
+    override func fadeAnimation(fromFactor: CGFloat, toFactor: CGFloat, delay: TimeInterval, completion: ((Bool) -> Void)?) {
+        super.fadeAnimation(fromFactor: fromFactor, toFactor: toFactor, delay: delay, completion: completion)
 
-//    private func updateUI() {
-//        continueButton.isEnabled = isBluetoothEnabled && isPushEnabled
-//        let showContinueWithout = bluetoothAsked && pushAsked && (!isBluetoothEnabled || !isPushEnabled)
-//        continueWithoutButton.isHidden = !showContinueWithout
-//    }
-}
+        setViewState(view: background, factor: fromFactor)
 
-extension NSOnboardingPermissionsViewController: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_: CBCentralManager) {}
-
-//    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-//        bluetoothButton.isEnabled = false
-//
-//        if #available(iOS 13.0, *) {
-//            switch central.authorization {
-//            case .notDetermined:
-//                self.bluetoothAsked = false
-//            case .allowedAlways:
-//                self.bluetoothAsked = true
-//                self.isBluetoothEnabled = true
-//                self.bluetoothButton.superview?.removeFromSuperview()
-//                if self.bluetoothEnabledView.superview == nil {
-//                    self.addArrangedView(self.bluetoothEnabledView, spacing: NSPadding.medium, index: 4)
-//                }
-//                self.bluetoothEnabledView.alpha = 1
-//
-//                central.delegate = nil
-//            case .denied, .restricted:
-//                self.bluetoothAsked = true
-//                self.isBluetoothEnabled = false
-//            @unknown default:
-//                fatalError()
-//            }
-//        } else {
-//            bluetoothAsked = true
-//            isBluetoothEnabled = true
-//
-//            bluetoothButton.superview?.removeFromSuperview()
-//        }
-//    }
+        UIView.animate(withDuration: 0.5, delay: delay + 4 * 0.05, options: [.beginFromCurrentState], animations: {
+            self.setViewState(view: self.background, factor: toFactor)
+        }, completion: nil)
+    }
 }

@@ -134,6 +134,8 @@
 		DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
 		DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
 		DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */; };
+		DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
+		DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
 		DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
 		DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D26242D04280017C4F9 /* Inter-ExtraBold.ttf */; };
@@ -291,6 +293,8 @@
 		DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClickthroughStackView.swift; sourceTree = "<group>"; };
 		DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderImageBackgroundView.swift; sourceTree = "<group>"; };
 		DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSplashViewController.swift; sourceTree = "<group>"; };
+		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
+		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -428,7 +432,9 @@
 				DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */,
 				DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */,
 				DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */,
+				DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */,
 				DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */,
+				DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */,
 				DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */,
 			);
 			path = Onboarding;
@@ -1047,6 +1053,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* NSTracingManager.swift in Sources */,
 				24780B5A2431B5A9003BB26C /* NSPushHandler.swift in Sources */,
@@ -1103,6 +1110,7 @@
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
+				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
 				24780B13242DFD3D003BB26C /* NSInformModuleView.swift in Sources */,
 				6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */,

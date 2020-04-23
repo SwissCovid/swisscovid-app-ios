@@ -25,6 +25,27 @@ class NSTabBarController: UITabBarController {
         ]
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // If the onboarding screen needs to shown, we cover the underlying screen so it doesn't flash before the onboarding is presented
+        if !NSUser.shared.hasCompletedOnboarding {
+            let v = UIView()
+            v.backgroundColor = .ns_background
+            selectedViewController?.view.addSubview(v)
+            v.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                UIView.animate(withDuration: 0.5) {
+                    v.alpha = 0.0
+                    v.isUserInteractionEnabled = false
+                }
+            }
+        }
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 

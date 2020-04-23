@@ -4,6 +4,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
+import CoreBluetooth
 import SnapKit
 import UIKit
 
@@ -16,15 +17,20 @@ class NSOnboardingViewController: NSViewController {
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
     private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
+    private let step4VC = NSOnboardingPermissionsViewController(type: .bluetooth)
     private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
+    private let step6VC = NSOnboardingPermissionsViewController(type: .push)
+    private let step7VC = NSOnboardingFinishViewController()
 
     private var stepViewControllers: [NSOnboardingContentViewController] {
-        [step1VC, step2VC, step3VC, step5VC]
+        [step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC]
     }
 
     private let continueContainer = UIView()
     private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
+
+    private var central: CBCentralManager?
 
     private var currentStep: Int = 0
 
@@ -32,6 +38,20 @@ class NSOnboardingViewController: NSViewController {
         super.viewDidLoad()
 
         setupButtons()
+
+        step4VC.permissionButton.touchUpCallback = {
+            self.central = CBCentralManager(delegate: self, queue: .main)
+        }
+
+        step6VC.permissionButton.touchUpCallback = {
+            UBPushManager.shared.requestPushPermissions { _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.setOnboardingStep(self.currentStep + 1, animated: true)
+                }
+            }
+        }
+
+        step7VC.finishButton.touchUpCallback = finishAnimation
 
 //        step4VC.continueButton.touchUpCallback = { [weak self] in
 //            guard let self = self else { return }
@@ -81,6 +101,12 @@ class NSOnboardingViewController: NSViewController {
         guard step >= 0, step < stepViewControllers.count else { return }
         let isLast = step == stepViewControllers.count - 1
 
+        if step == 3 || step == 5 || step == 6 {
+            hideContinueButton()
+        } else {
+            showContinueButton()
+        }
+
         if isLast {
             finishButton.alpha = 0
             finishButton.transform = CGAffineTransform(translationX: 300, y: 0)
@@ -129,6 +155,18 @@ class NSOnboardingViewController: NSViewController {
         currentStep = step
     }
 
+    private func showContinueButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+            self.continueContainer.transform = .identity
+        }, completion: nil)
+    }
+
+    private func hideContinueButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
+            self.continueContainer.transform = CGAffineTransform(translationX: 0, y: 130)
+        }, completion: nil)
+    }
+
     private func finishAnimation() {
         let vcToHide = stepViewControllers[currentStep]
         UIView.animate(withDuration: 0.4, delay: 0, options: [.beginFromCurrentState], animations: {
@@ -161,13 +199,6 @@ class NSOnboardingViewController: NSViewController {
         continueButton.touchUpCallback = {
             self.setOnboardingStep(self.currentStep + 1, animated: true)
         }
-//        view.addSubview(finishButton)
-//        finishButton.snp.makeConstraints { make in
-//            make.bottom.equalToSuperview().inset(NSPadding.large)
-//            make.centerX.equalToSuperview()
-//        }
-//        finishButton.touchUpCallback = finishAnimation
-//        finishButton.alpha = 0
     }
 
     override func viewSafeAreaInsetsDidChange() {
@@ -196,7 +227,11 @@ class NSOnboardingViewController: NSViewController {
             view.insertSubview(vc.view, belowSubview: finishButton)
             vc.view.snp.makeConstraints { make in
                 make.top.leading.trailing.equalToSuperview()
-                make.bottom.equalTo(continueContainer.snp.top)
+                if vc is NSOnboardingPermissionsViewController {
+                    make.bottom.equalToSuperview()
+                } else {
+                    make.bottom.equalTo(continueContainer.snp.top)
+                }
             }
             vc.didMove(toParent: self)
 
@@ -207,16 +242,33 @@ class NSOnboardingViewController: NSViewController {
     }
 
     @objc private func didSwipe(recognizer: UISwipeGestureRecognizer) {
+        if currentStep == 6 { // Completely disable swipe on last screen
+            return
+        }
+
         switch recognizer.direction {
         case .left:
-            if currentStep == 3 { // Disable swipe forward on permission screen
+            if currentStep == 3 || currentStep == 5 { // Disable swipe forward on permission screens
                 return
             }
             setOnboardingStep(currentStep + 1, animated: true)
         case .right:
+            if currentStep == 4 { // Disable swipe back on screen 4
+                return
+            }
             setOnboardingStep(currentStep - 1, animated: true)
         default:
             break
+        }
+    }
+}
+
+extension NSOnboardingViewController: CBCentralManagerDelegate {
+    func centralManagerDidUpdateState(_: CBCentralManager) {
+        central = nil
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.setOnboardingStep(self.currentStep + 1, animated: true)
         }
     }
 }

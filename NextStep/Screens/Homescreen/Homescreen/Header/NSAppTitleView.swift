@@ -202,7 +202,7 @@ class NSAppTitleView: UIView {
             info.isHidden = true
             warning.isHidden = false
         default:
-            backgroundColor = .ns_primary
+            backgroundColor = .ns_blue
             checkmark.isHidden = true
             info.isHidden = false
             warning.isHidden = true

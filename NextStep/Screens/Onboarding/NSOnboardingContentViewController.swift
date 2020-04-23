@@ -12,10 +12,6 @@ class NSOnboardingContentViewController: NSViewController {
     private let defaultAnimationOffset: CGFloat = 200
     private let imageAnimationOffset: CGFloat = 400
 
-    // on iPhone
-    public let useLessSpacing = UIScreen.main.bounds.width < 375
-    public let useSmallerImages = UIScreen.main.bounds.height < 750
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,12 +30,12 @@ class NSOnboardingContentViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    internal func addArrangedView(_ view: UIView, spacing: CGFloat? = nil, index: Int? = nil) {
+    internal func addArrangedView(_ view: UIView, spacing: CGFloat? = nil, index: Int? = nil, insets: UIEdgeInsets = .zero) {
         let wrapperView = UIView()
         wrapperView.ub_setContentPriorityRequired()
         wrapperView.addSubview(view)
         view.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(insets)
         }
 
         view.alpha = 0
@@ -74,7 +70,7 @@ class NSOnboardingContentViewController: NSViewController {
         }
     }
 
-    private func setViewState(view: UIView, factor: CGFloat) {
+    internal func setViewState(view: UIView, factor: CGFloat) {
         if view is UIImageView || view is UIButton {
             view.transform = CGAffineTransform(translationX: imageAnimationOffset * factor, y: 0)
             view.alpha = 1

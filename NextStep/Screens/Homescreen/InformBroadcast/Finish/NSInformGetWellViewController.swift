@@ -5,7 +5,7 @@ import UIKit
 class NSInformGetWellViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.title, textColor: .ns_primary, numberOfLines: 0, textAlignment: .center)
+    private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
     override func viewDidLoad() {

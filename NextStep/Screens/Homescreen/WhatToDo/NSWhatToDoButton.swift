@@ -63,7 +63,7 @@ class NSWhatToDoButton: UBButton {
             make.left.bottom.equalToSuperview().inset(NSPadding.medium)
         }
 
-        rightCaretImageView.tintColor = .ns_primary
+        rightCaretImageView.tintColor = .ns_text
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
