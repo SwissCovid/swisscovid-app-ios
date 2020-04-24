@@ -49,7 +49,7 @@ class NSTracingManager: NSObject {
 
     func beginUpdatesAndTracing() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateStatus), name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
 
         if NSUser.shared.hasCompletedOnboarding, isActivated {
             do {
@@ -64,7 +64,7 @@ class NSTracingManager: NSObject {
             }
         }
 
-        updateStatus()
+        updateStatus(completion: nil)
     }
 
     func endTracing() {
@@ -84,11 +84,15 @@ class NSTracingManager: NSObject {
             NSUIStateManager.shared.tracingStartError = error
         }
 
-        updateStatus()
+        updateStatus(completion: nil)
     }
 
     @objc
-    func updateStatus(completion: ((Error?) -> Void)? = nil) {
+    func willEnterForegroundNotification() {
+        updateStatus(completion: nil)
+    }
+
+    func updateStatus(completion: ((Error?) -> Void)?) {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
@@ -153,7 +157,7 @@ class NSTracingManager: NSObject {
                 NSUIStateManager.shared.lastSyncErrorTime = nil
                 NSUIStateManager.shared.hasTimeInconsistencyError = false
 
-                self.updateStatus()
+                self.updateStatus(completion: nil)
 
                 completionHandler?(.newData)
             }
