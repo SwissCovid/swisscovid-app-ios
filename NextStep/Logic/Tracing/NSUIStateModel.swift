@@ -40,6 +40,7 @@ struct NSUIStateModel: Equatable {
     struct Homescreen: Equatable {
         struct Meldungen: Equatable {
             var meldung: MeldungState = .noMeldung
+            var lastMeldung: Date?
             var pushProblem: Bool = false
             var syncProblem: Bool = false
             var backgroundUpdateProblem: Bool = false
