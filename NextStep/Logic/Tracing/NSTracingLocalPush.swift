@@ -23,7 +23,7 @@ class NSTracingLocalPush {
         }
     }
 
-    @UBUserDefault(key: "com.ubique.nextstep.exposureIdentifiers", defaultValue: [])
+    @UBUserDefault(key: "ch.admin.bag.exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [Int] {
         didSet {
             for identifier in exposureIdentifiers {
@@ -33,8 +33,9 @@ class NSTracingLocalPush {
                     content.body = "push_exposed_text".ub_localized
 
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                    let request = UNNotificationRequest(identifier: "ch.ubique.push.exposed", content: content, trigger: trigger)
+                    let request = UNNotificationRequest(identifier: "ch.admin.bag.push.exposed", content: content, trigger: trigger)
                     UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                    return
                 }
             }
         }
