@@ -112,7 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Force update
 
     private func startForceUpdateCheck() {
-        NSConfigManager.shared.startConfigRequest(window: window)
+        ConfigManager().startConfigRequest(window: window)
     }
 
     // MARK: - Appearance

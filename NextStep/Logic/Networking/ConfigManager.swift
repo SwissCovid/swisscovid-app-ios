@@ -7,11 +7,7 @@
 import UIKit
 
 /// Config request allows to disable old versions of the app if
-class NSConfigManager: NSObject {
-    // MARK: - Shared
-
-    public static let shared: NSConfigManager = NSConfigManager()
-
+class ConfigManager: NSObject {
     // MARK: - Data Task
 
     private let session = URLSession.shared
@@ -19,28 +15,40 @@ class NSConfigManager: NSObject {
 
     // MARK: - Init
 
-    override init() {}
+    override init() {
+        if #available(iOS 13.0, *) {
+            ConfigBackgroundTaskManager().register()
+        }
+    }
 
     // MARK: - Start config request
 
-    public func startConfigRequest(window: UIWindow?) {
+    public func loadConfig(completion: @escaping (NSConfig?) -> Void) {
         let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let appversion = "ios-\(shortVersion)"
         let systemVersion = UIDevice.current.systemVersion
         let osversion = "ios\(systemVersion)"
-        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { [weak self] data, _, _ in
-            guard let strongSelf = self else { return }
+        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { data, _, _ in
 
             DispatchQueue.main.async {
                 if let d = data, let config = try? JSONDecoder().decode(NSConfig.self, from: d) {
-                    strongSelf.presentAlertIfNeeded(config: config, window: window)
+                    completion(config)
                 } else {
-                    // do nothing
+                    completion(nil)
                 }
             }
         })
 
         dataTask?.resume()
+    }
+
+    public func startConfigRequest(window: UIWindow?) {
+        loadConfig { [weak self] config in
+            guard let strongSelf = self else { return }
+            if let config = config {
+                strongSelf.presentAlertIfNeeded(config: config, window: window)
+            }
+        }
     }
 
     private func presentAlertIfNeeded(config: NSConfig, window: UIWindow?) {
