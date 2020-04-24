@@ -14,25 +14,28 @@ class NSTracingLocalPush {
 
     func update(state: TracingState) {
         switch state.infectionStatus {
-        case .exposed:
-            userHasBeenExposed = true
+        case let .exposed(matches):
+            exposureIdentifiers = matches.map { $0.identifier }
         case .healthy:
-            userHasBeenExposed = false
+            exposureIdentifiers = []
         case .infected:
             break // don't update
         }
     }
 
-    @UBUserDefault(key: "com.ubique.nextstep.hasBeenExposed", defaultValue: false)
-    private var userHasBeenExposed: Bool {
+    @UBUserDefault(key: "com.ubique.nextstep.exposureIdentifiers", defaultValue: [])
+    private var exposureIdentifiers: [Int] {
         didSet {
-            if userHasBeenExposed, !oldValue {
-                let content = UNMutableNotificationContent()
-                content.title = "push_exposed_title".ub_localized
-                content.body = "push_exposed_text".ub_localized
+            for identifier in exposureIdentifiers {
+                if !oldValue.contains(identifier) {
+                    let content = UNMutableNotificationContent()
+                    content.title = "push_exposed_title".ub_localized
+                    content.body = "push_exposed_text".ub_localized
 
-                let request = UNNotificationRequest(identifier: "ch.ubique.push.exposed", content: content, trigger: nil)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                    let request = UNNotificationRequest(identifier: "ch.ubique.push.exposed", content: content, trigger: trigger)
+                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                }
             }
         }
     }
