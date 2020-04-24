@@ -55,6 +55,7 @@ struct NSUIStateModel: Equatable {
         var lastSync: Date?
         var infectionStatus: DebugInfectionStatus = .healthy
         var overwrittenInfectionState: DebugInfectionStatus?
+        var secretKeyRepresentation: String?
     }
 
     struct MeldungenDetail: Equatable {

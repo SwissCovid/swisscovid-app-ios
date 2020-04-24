@@ -222,6 +222,7 @@ class NSUIStateManager: NSObject {
 
             newState.debug.handshakeCount = tracingState.numberOfHandshakes
             newState.debug.lastSync = tracingState.lastSync
+            newState.debug.secretKeyRepresentation = try? DP3TTracing.getSecretKeyRepresentationForToday()
 
             // add real tracing state of sdk and overwritten state
             switch tracingState.infectionStatus {

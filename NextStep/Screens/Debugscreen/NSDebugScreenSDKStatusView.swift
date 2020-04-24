@@ -115,6 +115,9 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         texts.append("\("debug_sdk_state_contact_exposed".ub_localized)\(yesOrNo(isExposed))")
         texts.append("\("debug_sdk_state_number_handshakes".ub_localized)\(handshakes(state.debug.handshakeCount))")
 
+        let secretKeyRepresentation = state.debug.secretKeyRepresentation ?? "???"
+        texts.append("SK: " + secretKeyRepresentation)
+
         commentsLabel.text = texts.joined(separator: "\n")
     }
 
