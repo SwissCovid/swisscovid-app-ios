@@ -15,9 +15,7 @@ class ConfigManager: NSObject {
 
     // MARK: - Init
 
-    override init() {
-        
-    }
+    override init() {}
 
     // MARK: - Start config request
 

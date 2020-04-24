@@ -36,8 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             pushRegistrationManager: pushRegistrationManager
         )
 
-
-
         return true
     }
 
