@@ -21,8 +21,10 @@ extension JWTToken {
     var body: JWTBody? {
         let components = split(separator: ".")
         let body = String(components[1])
+        let bodyFixed = body + "=="
         let data = Data(base64Encoded: body, options: [])
-        if let data = data {
+        let dataFixed = Data(base64Encoded: bodyFixed, options: [])
+        if let data = data ?? dataFixed {
             return try? JSONDecoder().decode(JWTBody.self, from: data)
         }
         return nil

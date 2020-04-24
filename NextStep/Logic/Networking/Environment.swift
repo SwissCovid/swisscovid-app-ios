@@ -21,6 +21,15 @@ enum Environment {
         }
     }
 
+    var jwtPublicKey: Data {
+        switch self {
+        case .dev:
+            return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFL1k5eGUwanBOVGNLMXkxMVdpN3NWK0t2Mm5QTwo0d3FqSklRNjZJU05TWXI3THU1am81cVhJQkg0VURRNmFENm9kMExjUXdSRzBwRVgxTUtyMlYrdzRRPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
+        case .prod:
+            return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFV2t1WlZTTTVuOXJtZVVyeTBDWk96ZWQzU3hJTQo2dkZxQzJJaDZZUkVqdVFQZlZqU3NhSUFzTnZqTEUwaGJnMzRMWjQwWGE1ZHc0c281R0pLWkhVdDZRPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
+        }
+    }
+
     var configService: Backend {
         switch self {
         case .dev:
@@ -52,15 +61,6 @@ enum Environment {
         #else
             fatalError("Missing build setting for environment")
         #endif
-    }
-
-    var sdkEnvironment: DP3TSDK_CALIBRATION.Enviroment {
-        switch self {
-        case .dev:
-            return .dev
-        case .prod:
-            return .prod
-        }
     }
 }
 

@@ -521,9 +521,9 @@
 		24780AFF242DF970003BB26C /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				DC286A25242CE0B9001D5344 /* Environment.swift */,
 				6E6E516E242F4FE0006E532E /* ConfigManager.swift */,
 				245626A0245265340058D11F /* BackgroundConfigCheck.swift */,
-				DC286A25242CE0B9001D5344 /* Environment.swift */,
 				2462BA1624520A250046906D /* Endpoints.swift */,
 				2462BA1824520A480046906D /* Endpoint+Request.swift */,
 			);
