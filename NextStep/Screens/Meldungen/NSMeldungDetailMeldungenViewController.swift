@@ -13,7 +13,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     private let callLabel = NSLabel(.smallRegular)
     private var notYetCalledView: UIView?
-    private var alreadyCalledView: UIView?
+    private var alreadyCalledView: NSSimpleModuleBaseView?
 
     // MARK: - Init
 
@@ -68,6 +68,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
             tv.meldungen = meldungen
         }
 
+        // set title when already called to call again or guard others
+        let callAgain = meldungen.count > 1
+        let title = (callAgain ? "meldungen_detail_call_again" : "meldungen_detail_guard_others").ub_localized
+        alreadyCalledView?.title = title
+
         if let lastMeldungId = meldungen.last?.identifier,
             let lastCall = NSUser.shared.lastPhoneCall(for: lastMeldungId) {
             callLabel.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
@@ -107,8 +112,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func makeAlreadyCalledView() -> UIView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_guard_others".ub_localized, subtitle: "meldungen_detail_whattodo".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
+    private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
+        let whiteBoxView = NSSimpleModuleBaseView(title: "", subtitle: "meldungen_detail_whattodo".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 

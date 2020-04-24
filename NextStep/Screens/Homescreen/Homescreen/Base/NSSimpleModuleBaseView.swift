@@ -9,6 +9,10 @@ import UIKit
 class NSSimpleModuleBaseView: UIView {
     // MARK: - Private subviews
 
+    public var title: String? {
+        didSet { titleLabel.text = title }
+    }
+
     private let titleLabel = NSLabel(.title)
     private let subtitleLabel = NSLabel(.textBold)
 

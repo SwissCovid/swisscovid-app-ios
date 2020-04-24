@@ -595,3 +595,4 @@
 "force_update_text" = "Führen Sie ein Update durch, damit die App richtig funktioniert.";
 "meldung_in_app_alert_ignore_button" = "Ignorieren";
 "meldung_in_app_alert_accept_button" = "Zu den Informationen";
+"meldungen_detail_call_again" = "Rufen Sie erneut an";
