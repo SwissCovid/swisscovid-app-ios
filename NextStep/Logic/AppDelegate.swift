@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // setup sdk
         NSTracingManager.shared.initialize()
 
+        // Schedule Update check in background
+        if #available(iOS 13.0, *) {
+            ConfigBackgroundTaskManager().register()
+        }
+
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
@@ -30,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             pushHandler: pushHandler,
             pushRegistrationManager: pushRegistrationManager
         )
+
+
 
         return true
     }
