@@ -58,7 +58,6 @@
 /*Inform Button Positiv*/
 "inform_button_positive_text" = "I was recently tested positive";
 "what_to_do_button" = "What to do";
-"homescreen_handshakes_module_gemeldet_label" = "An encounter you have recently met has informed about COVID-19";
 
 /*Inform-Flow*/
 "inform_continue_button" = "Next";
@@ -113,18 +112,6 @@
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
 "push_exposed_text" = "Please open the app for more information.";
 "onboarding_top_label_how" = "How does it work:";
-"onboarding_title_1" = "One step ahead";
-"onboarding_desc_1" = "With the dp3t application we can all cooperate to keep the spread of COVID-19 at bay. The Next Step application allows people who have become infected to start isolating before they experience first symptoms.";
-"onboarding_title_2" = "Automatic and\nanonymous";
-"onboarding_desc_2" = "This app recognizes encounters with other users and saves these encounters anonymously on your device using encryption.";
-"onboarding_title_3" = "Inform";
-"onboarding_desc_3" = "If you test positive you can anonymously inform everyone you've encountered so that they can make the necessary precautionary measures.";
-"onboarding_title_4" = "Authorization";
-"onboarding_desc_4" = "This app needs the following permissions in order to work properly.";
-"onboarding_title_5" = "dp3t-app";
-"onboarding_desc_5" = "Together we can move towards lifting isolation.";
-"onboarding_android_location_permission_info" = "User tracing is performed using Bluetooth Low Energy technology. The app requires you to keep Bluetooth enabled in order to perform the tracing. On Android, applications need to additionally have Location Services enabled by design in order to access Bluetooth. But we will not at any point access your location.";
-"onboarding_android_battery_saving_info" = "Turn off battery optimization for our app so that we can perform continuous tracing in the background.";
 "button_permission_location_android" = "Allow tracing";
 "button_permission_location_granted_android" = "Tracing allowed";
 "button_ok" = "ok";
@@ -140,9 +127,6 @@
 "onboarding_finish_button" = "Finish";
 "button_battery_optimization" = "Deactivate battery optimization";
 "button_battery_optimization_deactivated" = "Activate battery optimization";
-
-/*Gleicher Inhalt wie homescreen_handshakes_module_info_label, aber ohne Symptome*/
-"homescreen_handshakes_module_info_label_nosymptoms" = "Here you will be informed, if one of your encounters has been positively tested on COVID-19.";
 
 /*Siehe inform_text_homescreen*/
 "inform_text_homescreen_nosymptoms" = "Inform your encounters, if you have been positively tested on COVID-19.";
@@ -205,13 +189,13 @@
 "bluetooth_setting_data_explanation_title" = "Is my data safe?";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "Via BLE (Bluetooth Low Energy) the app recognizes ecounters with other users. Such encouters will be registered by the app, if two users stand close to each other for a certain time period, and are deleted after 21 days.";
+"bluetooth_setting_tracking_explanation_text1" = "Via BLE (Bluetooth Low Energy) the app recognizes ecounters with other users. Such encouters will be registered by the app if two users stand close to each other for a certain time period, and are deleted after 21 days.";
 
 /*Bluetooth Setting: Text unten*/
 "bluetooth_setting_tracking_explanation_text2" = "Encounters with other users are only saved locally on your smartphone.";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Each App has its own dynamic ID that is randomly generated via «HMAC(SHA256)» and changes every 15 minutes. This way each user remains anonymous.";
+"bluetooth_setting_data_explanation_text1" = "Each App has its own dynamic ID that is randomly generated via «HMAC(SHA256)» and changes every 15 minutes. This way, each user remains anonymous.";
 
 /*Bluetooth Setting: Text unten*/
 "bluetooth_setting_data_explanation_text2" = "Important features:\n- No location tracking\n- No analytics or advertising\n- Open architecture / protocol and specification incl. SDK for iOS and Android\n- Interoperability (own app, own Backend)\n- Open source";
@@ -247,10 +231,10 @@
 "meldungen_additional_info_title" = "What does that mean?";
 
 /*Meldungen: Info Text 1*/
-"meldungen_additional_info_text1" = "To stop a viral outbreak, you must break the chain of transmission. You can do this by isolating contagious people. Only, there is a problem with COVID-19. Infected people can be contagious, before having symptoms, which means: You can spread the virus without knowing. If only people with symptoms isolate themselves, the virus can still spread. We are one step behind.";
+"meldungen_additional_info_text1" = "To stop a viral outbreak, you must break the chain of transmission. You can do this by isolating contagious people. However, there is a problem with COVID-19. Infected people can be contagious before having symptoms, which means: You might spread the virus unknowingly. If only those people with symptoms isolate themselves, the virus can still spread. We are one step behind.";
 
 /*Meldungen: zusätzlicher Info Text*/
-"meldungen_additional_info_text2" = "Therefore, exposed contacts should be informed. Then, they can also precociously isolate early – before they feel sick. Not everyone exposed contact will have the Virus. But those who do won’t pass it on. The trick is to be one step ahead.";
+"meldungen_additional_info_text2" = "Therefore, exposed contacts should be informed. Then they can also precociously isolate early – before they feel sick. Not every exposed contact necessarily has the virus. But those who do won’t pass it on. The trick is to be one step ahead.";
 
 /*Hinweis beim Eingabefeld für den Authentifizierungs-Code*/
 "auth_code_input_hint" = "000-000";
@@ -524,7 +508,7 @@
 "exposed_info_line_tel" = "+41 98 765 43 21";
 "onboarding_prinzip_heading" = "Das Prinzip";
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
-"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Ansteckungsketten unterbrochen werden.";
 "onboarding_privacy_heading" = "Privacy by Design";
 "onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
@@ -537,7 +521,7 @@
 "onboarding_meldung_heading" = "Was macht die App?";
 "onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
 "onboarding_meldung_text1" = "Die App informiert Sie, falls eine Person der Sie in den letzten Tagen begegnet sind positiv auf COVID-19 getestet wird.";
-"onboarding_meldung_text2" = "So können Sie mithelfen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_meldung_text2" = "So können Sie mithelfen die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_bluetooth_title" = "Bluetooth erlauben";
 "onboarding_bluetooth_text" = "Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
 "onboarding_bluetooth_button" = "Bluetooth erlauben";
@@ -577,7 +561,7 @@
 "onboarding_android_bt_permission_title" = "Standort erlauben für Bluetooth";
 
 /*Text auf Location-Permission Screen*/
-"onboarding_android_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie Sie die Standort-Funktion erlauben.";
+"onboarding_android_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie die Standort-Funktion erlauben.";
 
 /*Button-Text auf Location-Permission Screen*/
 "onboarding_android_bt_permission_button" = "Zulassen";

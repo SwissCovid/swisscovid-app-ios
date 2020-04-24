@@ -58,7 +58,6 @@
 /*Inform Button Positiv*/
 "inform_button_positive_text" = "J'ai récemment testé positif.";
 "what_to_do_button" = "Que faire?";
-"homescreen_handshakes_module_gemeldet_label" = "Une personne que vous avez récemment rencontrée a signaler avoir COVID-19";
 
 /*Inform-Flow*/
 "inform_continue_button" = "Suivant";
@@ -113,18 +112,6 @@
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
 "push_exposed_text" = "Veuillez ouvrir l'application pour plus d'informations.";
 "onboarding_top_label_how" = "Comment ça marche:";
-"onboarding_title_1" = "Une longueur d'avance";
-"onboarding_desc_1" = "Avec l'application dp3t, nous pouvons tous coopérer pour empêcher la propagation du COVID-19. L'application Next Step permet aux personnes infectées de commencer à s'isoler avant de ressentir les premiers symptômes.";
-"onboarding_title_2" = "Automatiquement\net anonyme";
-"onboarding_desc_2" = "Cette application reconnaît les rencontres avec d'autres utilisateurs et enregistre ces rencontres de manière anonyme sur votre appareil de façon crypté.";
-"onboarding_title_3" = "Informez-vous";
-"onboarding_desc_3" = "Si votre test est positif, vous pouvez informer de manière anonyme toutes les personnes que vous avez rencontrées afin qu'elles puissent prendre les mesures de précaution nécessaires.";
-"onboarding_title_4" = "Autorisations";
-"onboarding_desc_4" = "Cette application a besoin des autorisations suivantes pour fonctionner correctement.";
-"onboarding_title_5" = "dp3t-app";
-"onboarding_desc_5" = "Ensemble, nous pouvons franchir la prochaine étape de l'isolement.";
-"onboarding_android_location_permission_info" = "Le traçage fonctionne via la technologie Bluetooth Low Energy, donc l'application doit avoir accès à Bluetooth. Sur Android, cependant, il n'est possible d'accéder à Bluetooth que si la localisation est autorisée.\n\nL'application n'accède jamais à votre position!";
-"onboarding_android_battery_saving_info" = "Afin que nous puissions effectuer le traçage en continu en arrière-plan, l'optimisation de la batterie de notre application doit être désactivée.";
 "button_permission_location_android" = "Autoriser le suivi";
 "button_permission_location_granted_android" = "Suivi autorisé";
 "button_ok" = "Ok";
@@ -140,9 +127,6 @@
 "onboarding_finish_button" = "Terminé";
 "button_battery_optimization" = "Désactiver l'optimisation de la batterie";
 "button_battery_optimization_deactivated" = "Optimisation de la batterie désactivée";
-
-/*Gleicher Inhalt wie homescreen_handshakes_module_info_label, aber ohne Symptome*/
-"homescreen_handshakes_module_info_label_nosymptoms" = "Ici, vous serez informé si l'une de vos rencontres a été testée positivement pour COVID-19.";
 
 /*Siehe inform_text_homescreen*/
 "inform_text_homescreen_nosymptoms" = "Faites savoir anonymement aux personnes que vous connaissez si votre test est positif pour COVID-19.";
@@ -522,7 +506,7 @@
 "exposed_info_line_tel" = "+41 98 765 43 21";
 "onboarding_prinzip_heading" = "Das Prinzip";
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
-"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Ansteckungsketten unterbrochen werden.";
 "onboarding_privacy_heading" = "Privacy by Design";
 "onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
@@ -535,7 +519,7 @@
 "onboarding_meldung_heading" = "Was macht die App?";
 "onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
 "onboarding_meldung_text1" = "Die App informiert Sie, falls eine Person der Sie in den letzten Tagen begegnet sind positiv auf COVID-19 getestet wird.";
-"onboarding_meldung_text2" = "So können Sie mithelfen, die Verbreitung von COVID-19 einzudämmen.";
+"onboarding_meldung_text2" = "So können Sie mithelfen die Verbreitung von COVID-19 einzudämmen.";
 "onboarding_bluetooth_title" = "Bluetooth erlauben";
 "onboarding_bluetooth_text" = "Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
 "onboarding_bluetooth_button" = "Bluetooth erlauben";
@@ -575,7 +559,7 @@
 "onboarding_android_bt_permission_title" = "Standort erlauben für Bluetooth";
 
 /*Text auf Location-Permission Screen*/
-"onboarding_android_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie Sie die Standort-Funktion erlauben.";
+"onboarding_android_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie die Standort-Funktion erlauben.";
 
 /*Button-Text auf Location-Permission Screen*/
 "onboarding_android_bt_permission_button" = "Zulassen";
