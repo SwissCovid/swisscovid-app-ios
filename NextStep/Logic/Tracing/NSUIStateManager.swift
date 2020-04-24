@@ -208,6 +208,7 @@ class NSUIStateManager: NSObject {
 
                 if let meldung = newState.meldungenDetail.meldungen.last {
                     newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) != nil
+                    newState.homescreen.meldungen.lastMeldung = meldung.timestamp
                 }
 
                 // in case the infection state is overwritten, we need to

@@ -49,6 +49,15 @@ class NSCodeControl: UIView {
         return code
     }
 
+    public func clearAndRestart() {
+        for control in controls {
+            control.clearInput()
+        }
+
+        currentControl = nil
+        jumpToNextField()
+    }
+
     // MARK: - Setup
 
     private func setup() {
@@ -154,6 +163,11 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     public func code() -> String? {
         textView.text?.replacingOccurrences(of: emptyCharacter, with: "")
+    }
+
+    public func clearInput() {
+        textView.resignFirstResponder()
+        textView.text = ""
     }
 
     // MARK: - First responder
