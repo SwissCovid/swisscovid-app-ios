@@ -53,22 +53,6 @@ class NSOnboardingViewController: NSViewController {
 
         step7VC.finishButton.touchUpCallback = finishAnimation
 
-//        step4VC.continueButton.touchUpCallback = { [weak self] in
-//            guard let self = self else { return }
-//            self.setOnboardingStep(self.currentStep + 1, animated: true)
-//        }
-//
-//        step4VC.continueWithoutButton.touchUpCallback = { [weak self] in
-//            guard let self = self else { return }
-//            let alert = UIAlertController(title: nil, message: "onboarding_continue_without_popup_text".ub_localized, preferredStyle: .alert)
-//            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_abort".ub_localized, style: .cancel, handler: nil))
-//            alert.addAction(UIAlertAction(title: "onboarding_continue_without_popup_continue".ub_localized, style: .default, handler: { _ in
-//                self.setOnboardingStep(self.currentStep + 1, animated: true)
-//            }))
-//
-//            self.present(alert, animated: true, completion: nil)
-//        }
-
         setupSwipeRecognizers()
         addStepViewControllers()
         addSplashViewController()
