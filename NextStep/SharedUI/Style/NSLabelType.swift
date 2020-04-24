@@ -6,6 +6,13 @@
 
 import UIKit
 
+private class NSFontSize {
+    public static let bodyFontSize: CGFloat = {
+        // default is 17.
+        UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize - 1.0
+    }()
+}
+
 public enum NSLabelType: UBLabelType {
     case title
     case textLight
@@ -16,14 +23,20 @@ public enum NSLabelType: UBLabelType {
     case smallRegular
 
     public var font: UIFont {
+        let preferredSize: CGFloat = 16.0
+        let maximum: CGFloat = 1.5 * preferredSize
+        let minimum: CGFloat = 0.5 * preferredSize
+
+        let bfs = min(max(minimum, NSFontSize.bodyFontSize), maximum)
+
         switch self {
-        case .title: return UIFont(name: "Inter-Bold", size: 22.0)!
-        case .textLight: return UIFont(name: "Inter-Light", size: 16.0)!
-        case .textBold: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .button: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .date: return UIFont(name: "Inter-Bold", size: 13.0)!
-        case .smallRegular: return UIFont(name: "Inter-Regular", size: 13.0)!
+        case .title: return UIFont(name: "Inter-Bold", size: bfs + 6.0)!
+        case .textLight: return UIFont(name: "Inter-Light", size: bfs)!
+        case .textBold: return UIFont(name: "Inter-Bold", size: bfs)!
+        case .button: return UIFont(name: "Inter-Bold", size: bfs)!
+        case .uppercaseBold: return UIFont(name: "Inter-Bold", size: bfs)!
+        case .date: return UIFont(name: "Inter-Bold", size: bfs - 3.0)!
+        case .smallRegular: return UIFont(name: "Inter-Regular", size: bfs - 3.0)!
         }
     }
 
