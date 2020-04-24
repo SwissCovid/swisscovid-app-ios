@@ -16,9 +16,7 @@ class ConfigManager: NSObject {
     // MARK: - Init
 
     override init() {
-        if #available(iOS 13.0, *) {
-            ConfigBackgroundTaskManager().register()
-        }
+        
     }
 
     // MARK: - Start config request

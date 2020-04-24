@@ -16,7 +16,7 @@ private class ConfigLoadOperation: Operation {
                 content.title = "force_update_title".ub_localized
                 content.body = "force_update_text".ub_localized
 
-                let request = UNNotificationRequest(identifier: "ch.ubique.push.exposed", content: content, trigger: nil)
+                let request = UNNotificationRequest(identifier: "ch.admin.bag.dp3t.update", content: content, trigger: nil)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             } else {
                 self.cancel()
@@ -79,8 +79,11 @@ class ConfigBackgroundTaskManager {
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
 
         do {
+            BGTaskScheduler.shared.cancelAllTaskRequests()
             try BGTaskScheduler.shared.submit(syncTask)
-        } catch {}
+        } catch {
+            print(error)
+        }
     }
 
     @objc
