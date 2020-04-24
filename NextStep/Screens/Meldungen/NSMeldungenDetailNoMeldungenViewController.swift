@@ -20,7 +20,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
     // MARK: - Setup
 
     private func setupLayout() {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "no_meldungen_box_title".ub_localized, subtitle: "meldungen_no_meldungen_subtitle".ub_localized, text: "no_meldungen_box_text".ub_localized, image: UIImage(named: "illu-no-message"), subtitleColor: .ns_green)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "no_meldungen_box_title".ub_localized, subtitle: "no_meldungen_box_subtitle".ub_localized, text: "no_meldungen_box_text".ub_localized, image: UIImage(named: "illu-no-message"), subtitleColor: .ns_green)
 
         stackScrollView.addArrangedView(whiteBoxView)
     }
