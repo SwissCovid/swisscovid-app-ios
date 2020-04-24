@@ -25,7 +25,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
-         })
+        })
     }
 
     // MARK: - View
