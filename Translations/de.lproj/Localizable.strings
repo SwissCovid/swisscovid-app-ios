@@ -681,3 +681,6 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 "meldungen_background_error_text" = "Hintergrundaktualisierung erlauben, damit neue Meldungen angezeigt werden können.";
 "meldungen_background_error_button" = "Einschalten";
+
+/*Default message for force update*/
+"force_update_text" = "Führen Sie ein Update durch, damit die App richtig funktioniert.";

@@ -31,10 +31,12 @@ class NSConfigManager: NSObject {
         dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { [weak self] data, _, _ in
             guard let strongSelf = self else { return }
 
-            if let d = data, let config = try? JSONDecoder().decode(NSConfig.self, from: d) {
-                strongSelf.presentAlertIfNeeded(config: config, window: window)
-            } else {
-                // do nothing
+            DispatchQueue.main.async {
+                if let d = data, let config = try? JSONDecoder().decode(NSConfig.self, from: d) {
+                    strongSelf.presentAlertIfNeeded(config: config, window: window)
+                } else {
+                    // do nothing
+                }
             }
         })
 
@@ -43,7 +45,7 @@ class NSConfigManager: NSObject {
 
     private func presentAlertIfNeeded(config: NSConfig, window: UIWindow?) {
         if config.forceUpdate {
-            let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg, preferredStyle: .alert)
+            let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg ?? "force_update_text".ub_localized, preferredStyle: .alert)
 
             window?.rootViewController?.present(alert, animated: true, completion: nil)
         }
