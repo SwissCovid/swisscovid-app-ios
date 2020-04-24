@@ -13,6 +13,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
+    private let errorView = UIView()
+    private let errorTitleLabel = NSLabel(.uppercaseBold, textColor: .ns_red, textAlignment: .center)
+    private let errorTextLabel = NSLabel(.textLight, textColor: .ns_red, textAlignment: .center)
+
     private let codeControl = NSCodeControl()
 
     private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
@@ -28,6 +32,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private func setup() {
         titleLabel.text = "inform_code_title".ub_localized
         textLabel.text = "inform_code_text".ub_localized
+        errorTitleLabel.text = "inform_code_invalid_title".ub_localized
+        errorTextLabel.text = "inform_code_invalid_subtitle".ub_localized
 
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
@@ -39,6 +45,23 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         stackScrollView.addArrangedView(titleLabel)
         stackScrollView.addSpacerView(NSPadding.medium * 2.0)
         stackScrollView.addArrangedView(textLabel)
+
+        // Error View
+        errorView.addSubview(errorTitleLabel)
+        errorView.addSubview(errorTextLabel)
+        errorView.isHidden = true
+
+        errorTitleLabel.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
+
+        errorTextLabel.snp.makeConstraints { make in
+            make.top.equalTo(self.errorTitleLabel.snp.bottom).offset(NSPadding.small)
+            make.bottom.left.right.equalToSuperview()
+        }
+
+        stackScrollView.addArrangedView(errorView)
+
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
 
         let codeControlContainer = UIView()
@@ -114,12 +137,25 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
             guard let self = self else { return }
 
             if let error = error {
-                self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                switch error {
+                case .network:
+                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
+
+                case .unexpected:
+                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
+
+                case .invalidCode:
+                    self.codeControl.clearAndRestart()
+                    self.errorView.isHidden = false
+                    self.textLabel.isHidden = true
+                    self.stopLoading()
+                }
 
                 self.navigationItem.hidesBackButton = false
                 self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
                 self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-            } else { // success
+            } else {
+                // success
                 self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
                 self.changePresentingViewController()
             }
