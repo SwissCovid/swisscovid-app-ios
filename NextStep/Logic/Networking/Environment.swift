@@ -12,6 +12,21 @@ enum Environment {
     case dev
     case prod
 
+    /// The current environment, as configured in build settings.
+    static var current: Environment {
+        #if DEBUG
+            return .dev
+        #elseif RELEASE_TEST
+            return .dev
+        #elseif RELEASE_PROD
+            return .prod
+        #elseif RELEASE_UBDIAG
+            return .dev
+        #else
+            fatalError("Missing build setting for environment")
+        #endif
+    }
+
     var codegenService: Backend {
         switch self {
         case .dev:
@@ -46,21 +61,6 @@ enum Environment {
         case .prod:
             return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
         }
-    }
-
-    /// The current environment, as configured in build settings.
-    static var current: Environment {
-        #if DEBUG
-            return .dev
-        #elseif RELEASE_TEST
-            return .dev
-        #elseif RELEASE_PROD
-            return .prod
-        #elseif RELEASE_UBDIAG
-            return .dev
-        #else
-            fatalError("Missing build setting for environment")
-        #endif
     }
 }
 

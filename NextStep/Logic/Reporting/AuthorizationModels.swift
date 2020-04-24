@@ -20,11 +20,15 @@ typealias JWTToken = String
 extension JWTToken {
     var body: JWTBody? {
         let components = split(separator: ".")
-        let body = String(components[1])
-        let bodyFixed = body + "=="
+        var body = String(components[1])
+        let remainder = body.count % 4
+        if remainder > 0 {
+            body = body.padding(toLength: body.count + 4 - remainder,
+                                withPad: "=",
+                                startingAt: 0)
+        }
         let data = Data(base64Encoded: body, options: [])
-        let dataFixed = Data(base64Encoded: bodyFixed, options: [])
-        if let data = data ?? dataFixed {
+        if let data = data {
             return try? JSONDecoder().decode(JWTBody.self, from: data)
         }
         return nil
