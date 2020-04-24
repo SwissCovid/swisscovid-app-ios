@@ -35,10 +35,13 @@ class NSTracingManager: NSObject {
 
     func initialize() {
         do {
-            let bucketBaseUrl = Environment.current.publishService.baseURL
-            let reportBaseUrl = Environment.current.configService.baseURL
+            let bucketBaseUrl = Environment.current.configService.baseURL
+            let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
-            let descriptor = ApplicationDescriptor(appId: appId, bucketBaseUrl: bucketBaseUrl, reportBaseUrl: reportBaseUrl, jwtPublicKey: nil)
+            let descriptor = ApplicationDescriptor(appId: appId,
+                                                   bucketBaseUrl: bucketBaseUrl,
+                                                   reportBaseUrl: reportBaseUrl,
+                                                   jwtPublicKey: nil)
             try DP3TTracing.initialize(with: .manual(descriptor))
         } catch {
             NSUIStateManager.shared.tracingStartError = error
