@@ -28,16 +28,44 @@ class NSTracingLocalPush {
         didSet {
             for identifier in exposureIdentifiers {
                 if !oldValue.contains(identifier) {
-                    let content = UNMutableNotificationContent()
-                    content.title = "push_exposed_title".ub_localized
-                    content.body = "push_exposed_text".ub_localized
+                    if UIApplication.shared.applicationState == .active {
+                        showAlert()
+                    } else {
+                        let content = UNMutableNotificationContent()
+                        content.title = "push_exposed_title".ub_localized
+                        content.body = "push_exposed_text".ub_localized
 
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                    let request = UNNotificationRequest(identifier: "ch.admin.bag.push.exposed", content: content, trigger: trigger)
-                    UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+                        let request = UNNotificationRequest(identifier: "ch.admin.bag.push.exposed", content: content, trigger: trigger)
+                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                    }
                     return
                 }
             }
         }
+    }
+
+    private func showAlert() {
+        let alert = UIAlertController(title: "push_exposed_title".ub_localized, message: nil, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "meldung_in_app_alert_accept_button".ub_localized, style: .default, handler: { _ in
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                let rootVC = appDelegate.window?.rootViewController as? NSTabBarController {
+                if rootVC.selectedIndex == 0 {
+                    let navigationVC = rootVC.selectedViewController as? NSNavigationController
+                    navigationVC?.popToRootViewController(animated: false)
+                    (navigationVC?.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
+                } else {
+                    (rootVC.viewControllers?[0] as? NSNavigationController)?.popToRootViewController(animated: false)
+                    rootVC.selectedIndex = 0
+                    let navigationVC = rootVC.selectedViewController as? NSNavigationController
+                    (navigationVC?.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
+                }
+            }
+        }))
+
+        alert.addAction(UIAlertAction(title: "meldung_in_app_alert_ignore_button".ub_localized, style: .cancel, handler: nil))
+
+        UIApplication.shared.keyWindow?.rootViewController?.show(alert, sender: nil)
     }
 }
