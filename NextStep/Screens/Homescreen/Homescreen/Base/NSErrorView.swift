@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import DP3TSDK_CALIBRATION
 import UIKit
 
 class NSErrorView: NSModuleBaseView {
@@ -26,7 +25,7 @@ class NSErrorView: NSModuleBaseView {
 
     // MARK: - Error
 
-    public var error: DP3TTracingError? {
+    public var error: Error? {
         didSet {
             setErrorText(error)
         }
@@ -59,31 +58,14 @@ class NSErrorView: NSModuleBaseView {
 
     // MARK: - Error text
 
-    private func setErrorText(_ error: DP3TTracingError?) {
+    private func setErrorText(_ error: Error?) {
         let unexpected = "unexpected_error_title".ub_localized
 
-        guard let err = error else {
+        guard let err = error as? LocalizedError else {
             infoLabel.text = unexpected.replacingOccurrences(of: "{ERROR}", with: "")
             return
         }
 
-        switch err {
-        case let .networkingError(error):
-            infoLabel.text = error?.localizedDescription
-        case .caseSynchronizationError:
-            infoLabel.text = unexpected.ub_localized.replacingOccurrences(of: "{ERROR}", with: "CCPUID")
-        case let .cryptographyError(error):
-            infoLabel.text = error
-        case let .databaseError(error):
-            infoLabel.text = error?.localizedDescription
-        case .bluetoothTurnedOff:
-            infoLabel.text = "bluetooth_turned_off".ub_localized
-        case .permissonError:
-            infoLabel.text = "bluetooth_permission_turned_off".ub_localized
-        case .timeInconsistency:
-            infoLabel.text = nil
-        case .jwtSignitureError:
-            infoLabel.text = nil
-        }
+        infoLabel.text = err.localizedDescription
     }
 }

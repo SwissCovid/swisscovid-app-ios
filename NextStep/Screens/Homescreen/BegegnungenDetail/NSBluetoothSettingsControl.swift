@@ -43,7 +43,7 @@ class NSBluetoothSettingsControl: UIView {
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
-        NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
+        UIStateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
@@ -103,8 +103,8 @@ class NSBluetoothSettingsControl: UIView {
 
     @objc private func switchChanged() {
         // change tracing manager
-        if NSTracingManager.shared.isActivated != switchControl.isOn {
-            NSTracingManager.shared.isActivated = switchControl.isOn
+        if TracingManager.shared.isActivated != switchControl.isOn {
+            TracingManager.shared.isActivated = switchControl.isOn
         }
     }
 

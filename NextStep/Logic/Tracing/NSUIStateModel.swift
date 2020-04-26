@@ -1,6 +1,5 @@
 ///
 
-import DP3TSDK_CALIBRATION
 import Foundation
 
 struct NSMeldungModel: Equatable {

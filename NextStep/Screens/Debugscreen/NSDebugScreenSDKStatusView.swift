@@ -19,7 +19,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         super.init(title: "debug_sdk_state_title".ub_localized)
         setup()
 
-        NSUIStateManager.shared.addObserver(self) { [weak self] stateModel in
+        UIStateManager.shared.addObserver(self) { [weak self] stateModel in
             guard let strongSelf = self else { return }
             strongSelf.update(stateModel)
         }
@@ -87,7 +87,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     // MARK: - Logic
 
     private func resetSDK() {
-        NSTracingManager.shared.resetSDK()
+        TracingManager.shared.resetSDK()
     }
 
     private func resetOnboarding() {

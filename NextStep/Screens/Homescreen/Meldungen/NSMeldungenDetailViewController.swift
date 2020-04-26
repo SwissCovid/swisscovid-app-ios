@@ -28,7 +28,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         setupViewControllers()
 
-        NSUIStateManager.shared.addObserver(self) { [weak self] state in
+        UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.setup(state.meldungenDetail)
         }

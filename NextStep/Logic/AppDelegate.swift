@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // setup sdk
-        NSTracingManager.shared.initialize()
+        TracingManager.shared.initialize()
 
         // Schedule Update check in background
         if #available(iOS 13.0, *) {
@@ -26,15 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
-
-        // setup and handle local notifications
-        let pushHandler = NSPushHandler()
-        let pushRegistrationManager = UBPushRegistrationManager(registrationUrl: nil)
-        UBPushManager.shared.didFinishLaunchingWithOptions(
-            launchOptions,
-            pushHandler: pushHandler,
-            pushRegistrationManager: pushRegistrationManager
-        )
 
         return true
     }
@@ -65,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window?.overrideUserInterfaceStyle = .light
         }
 
-        NSTracingManager.shared.beginUpdatesAndTracing()
+        TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
         window?.rootViewController = NSTabBarController()
@@ -81,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if app is cold-started or comes from background > 30 minutes,
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
-            if NSUIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
+            if UIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
                 let tabBarController = window?.rootViewController as? NSTabBarController,
                 let navigationController = tabBarController.viewControllers?.first as? NSNavigationController,
                 let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
@@ -111,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        NSTracingManager.shared.performFetch(completionHandler: completionHandler)
+        TracingManager.shared.performFetch(completionHandler: completionHandler)
     }
 
     // MARK: - Force update

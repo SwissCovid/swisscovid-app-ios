@@ -5,7 +5,6 @@
  */
 
 import CoreBluetooth
-import DP3TSDK_CALIBRATION
 import SnapKit
 import UIKit
 
@@ -50,7 +49,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentMeldungenDetail()
         }
 
-        NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
+        UIStateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
@@ -75,7 +74,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         super.viewWillAppear(animated)
 
         appTitleView.changeBackgroundRandomly()
-        NSUIStateManager.shared.refresh()
+        UIStateManager.shared.refresh()
     }
 
     override func viewDidAppear(_ animated: Bool) {

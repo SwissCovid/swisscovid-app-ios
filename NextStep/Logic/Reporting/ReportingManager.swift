@@ -1,6 +1,11 @@
 ///
 
-import DP3TSDK_CALIBRATION
+#if CALIBRATION_SDK
+    import DP3TSDK_CALIBRATION
+#else
+    import DP3TSDK
+#endif
+
 import Foundation
 
 class ReportingManager {
@@ -63,7 +68,7 @@ class ReportingManager {
                 print(result)
                 switch result {
                 case .success:
-                    NSTracingManager.shared.updateStatus { error in
+                    TracingManager.shared.updateStatus { error in
                         if error != nil {
                             completion(.unexpected)
                         } else {

@@ -18,7 +18,7 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
         super.init(title: "debug_state_setting_title".ub_localized)
         setup()
 
-        NSUIStateManager.shared.addObserver(self) { [weak self] stateModel in
+        UIStateManager.shared.addObserver(self) { [weak self] stateModel in
             guard let strongSelf = self else { return }
             strongSelf.update(stateModel)
         }
@@ -64,7 +64,7 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
     // MARK: - Logic
 
     private func select(_ checkBox: NSCheckBoxView) {
-        let stateManager = NSTracingManager.shared.uiStateManager
+        let stateManager = TracingManager.shared.uiStateManager
 
         if let index = checkboxes.firstIndex(of: checkBox) {
             switch index {

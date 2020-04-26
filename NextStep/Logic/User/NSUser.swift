@@ -12,7 +12,7 @@ class NSUser {
     @UBUserDefault(key: "com.ubique.nextstep.hascompletedonboarding", defaultValue: false)
     var hasCompletedOnboarding: Bool {
         didSet {
-            NSTracingManager.shared.userHasCompletedOnboarding()
+            TracingManager.shared.userHasCompletedOnboarding()
         }
     }
 
@@ -24,7 +24,7 @@ class NSUser {
 
         self.lastPhoneCalls = lastPhoneCalls
 
-        NSUIStateManager.shared.userCalledInfoLine()
+        UIStateManager.shared.userCalledInfoLine()
     }
 
     func lastPhoneCall(for identifier: Int) -> Date? {
