@@ -24,7 +24,7 @@ class TracingManager: NSObject {
 
     let uiStateManager = UIStateManager()
 
-    @UBUserDefault(key: "com.ubique.nextstep.isActivated", defaultValue: true)
+    @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
         didSet {
             if isActivated {
@@ -140,7 +140,7 @@ class TracingManager: NSObject {
         syncDatabase(completionHandler: nil)
     }
 
-    @UBOptionalUserDefault(key: "com.ubique.nextstep.lastDatabaseSync") private var lastDatabaseSync: Date?
+    @UBOptionalUserDefault(key: "lastDatabaseSync") private var lastDatabaseSync: Date?
     private var databaseIsSyncing = false
     private var databaseSyncInterval: TimeInterval = 10
 

@@ -28,7 +28,7 @@ class NSTracingLocalPush {
         }
     }
 
-    @UBUserDefault(key: "ch.admin.bag.exposureIdentifiers", defaultValue: [])
+    @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [Int] {
         didSet {
             for identifier in exposureIdentifiers {

@@ -21,7 +21,7 @@ class NSMeldungenDetailPositiveTestedTitleView: UIView, NSTitleViewProtocol {
         textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
         // TODO: Wrong text
-        dateLabel.text = "Heute"
+        // dateLabel.text = "Heute"
         dateLabel.alpha = 0.43
 
         backgroundColor = UIColor.ns_purple
