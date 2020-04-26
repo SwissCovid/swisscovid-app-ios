@@ -9,10 +9,10 @@ import UIKit
 class NSUser {
     static let shared = NSUser()
 
-    @UBUserDefault(key: "com.ubique.nextstep.hascompletedonboarding", defaultValue: false)
+    @UBUserDefault(key: "hasCompletedOnboarding", defaultValue: false)
     var hasCompletedOnboarding: Bool {
         didSet {
-            NSTracingManager.shared.userHasCompletedOnboarding()
+            TracingManager.shared.userHasCompletedOnboarding()
         }
     }
 
@@ -24,7 +24,7 @@ class NSUser {
 
         self.lastPhoneCalls = lastPhoneCalls
 
-        NSUIStateManager.shared.userCalledInfoLine()
+        UIStateManager.shared.userCalledInfoLine()
     }
 
     func lastPhoneCall(for identifier: Int) -> Date? {
@@ -35,6 +35,6 @@ class NSUser {
         return nil
     }
 
-    @UBUserDefault(key: "com.ubique.nextstep.meldungen", defaultValue: [:])
+    @UBUserDefault(key: "lastPhoneCalls", defaultValue: [:])
     private var lastPhoneCalls: [String: Date]
 }

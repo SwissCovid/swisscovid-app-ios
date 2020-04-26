@@ -5,21 +5,26 @@
  */
 
 import CoreBluetooth
-import DP3TSDK_CALIBRATION
 import Foundation
 import UIKit
 
+#if CALIBRATION_SDK
+    import DP3TSDK_CALIBRATION
+#else
+    import DP3TSDK
+#endif
+
 /// Glue code between SDK and UI
-class NSTracingManager: NSObject {
+class TracingManager: NSObject {
     /// Identifier known to
     /// https://github.com/DP-3T/dp3t-discovery/blob/master/discovery.json
     let appId = "org.dpppt.demo" // "ch.ubique.nextstep"
 
-    static let shared = NSTracingManager()
+    static let shared = TracingManager()
 
-    let uiStateManager = NSUIStateManager()
+    let uiStateManager = UIStateManager()
 
-    @UBUserDefault(key: "com.ubique.nextstep.isActivated", defaultValue: true)
+    @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
         didSet {
             if isActivated {
@@ -27,7 +32,7 @@ class NSTracingManager: NSObject {
             } else {
                 endTracing()
             }
-            NSUIStateManager.shared.changedTracingActivated()
+            UIStateManager.shared.changedTracingActivated()
         }
     }
 
@@ -44,7 +49,7 @@ class NSTracingManager: NSObject {
                                                    jwtPublicKey: nil)
             try DP3TTracing.initialize(with: .manual(descriptor))
         } catch {
-            NSUIStateManager.shared.tracingStartError = error
+            UIStateManager.shared.tracingStartError = error
         }
 
         UIApplication.shared.setMinimumBackgroundFetchInterval(databaseSyncInterval)
@@ -57,9 +62,9 @@ class NSTracingManager: NSObject {
         if NSUser.shared.hasCompletedOnboarding, isActivated {
             do {
                 try DP3TTracing.startTracing()
-                NSUIStateManager.shared.tracingStartError = nil
+                UIStateManager.shared.tracingStartError = nil
             } catch {
-                NSUIStateManager.shared.tracingStartError = error
+                UIStateManager.shared.tracingStartError = error
             }
 
             if central == nil {
@@ -76,15 +81,15 @@ class NSTracingManager: NSObject {
 
     func resetSDK() {
         try? DP3TTracing.reset()
-        NSUIStateManager.shared.overwrittenInfectionState = nil
+        UIStateManager.shared.overwrittenInfectionState = nil
     }
 
     func userHasCompletedOnboarding() {
         do {
             try DP3TTracing.startTracing()
-            NSUIStateManager.shared.tracingStartError = nil
+            UIStateManager.shared.tracingStartError = nil
         } catch {
-            NSUIStateManager.shared.tracingStartError = error
+            UIStateManager.shared.tracingStartError = error
         }
 
         updateStatus(completion: nil)
@@ -99,12 +104,12 @@ class NSTracingManager: NSObject {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
-                NSUIStateManager.shared.updateError = e
+                UIStateManager.shared.updateError = e
                 completion?(e)
             case let .success(st):
-                NSUIStateManager.shared.updateError = nil
-                NSUIStateManager.shared.tracingState = st
-                NSUIStateManager.shared.trackingState = st.trackingState
+                UIStateManager.shared.updateError = nil
+                UIStateManager.shared.tracingState = st
+                UIStateManager.shared.trackingState = st.trackingState
                 completion?(nil)
 
                 // schedule local push if exposed
@@ -135,7 +140,7 @@ class NSTracingManager: NSObject {
         syncDatabase(completionHandler: nil)
     }
 
-    @UBOptionalUserDefault(key: "com.ubique.nextstep.lastDatabaseSync") private var lastDatabaseSync: Date?
+    @UBOptionalUserDefault(key: "lastDatabaseSync") private var lastDatabaseSync: Date?
     private var databaseIsSyncing = false
     private var databaseSyncInterval: TimeInterval = 10
 
@@ -147,18 +152,18 @@ class NSTracingManager: NSObject {
         DP3TTracing.sync { result in
             switch result {
             case let .failure(e):
-                NSUIStateManager.shared.syncError = e
+                UIStateManager.shared.syncError = e
                 if case DP3TTracingError.networkingError = e {
-                    NSUIStateManager.shared.lastSyncErrorTime = Date()
+                    UIStateManager.shared.lastSyncErrorTime = Date()
                 } else if case DP3TTracingError.timeInconsistency = e {
-                    NSUIStateManager.shared.hasTimeInconsistencyError = true
+                    UIStateManager.shared.hasTimeInconsistencyError = true
                 }
                 completionHandler?(.failed)
             case .success:
                 self.lastDatabaseSync = Date()
-                NSUIStateManager.shared.firstSyncErrorTime = nil
-                NSUIStateManager.shared.lastSyncErrorTime = nil
-                NSUIStateManager.shared.hasTimeInconsistencyError = false
+                UIStateManager.shared.firstSyncErrorTime = nil
+                UIStateManager.shared.lastSyncErrorTime = nil
+                UIStateManager.shared.hasTimeInconsistencyError = false
 
                 self.updateStatus(completion: nil)
 
@@ -172,7 +177,7 @@ class NSTracingManager: NSObject {
     }
 }
 
-extension NSTracingManager: CBCentralManagerDelegate {
+extension TracingManager: CBCentralManagerDelegate {
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
         if central.state == .poweredOn, isActivated {
             beginUpdatesAndTracing()
@@ -180,12 +185,12 @@ extension NSTracingManager: CBCentralManagerDelegate {
     }
 }
 
-extension NSTracingManager: DP3TTracingDelegate {
+extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
-            NSUIStateManager.shared.updateError = nil
-            NSUIStateManager.shared.tracingState = state
-            NSUIStateManager.shared.trackingState = state.trackingState
+            UIStateManager.shared.updateError = nil
+            UIStateManager.shared.tracingState = state
+            UIStateManager.shared.trackingState = state.trackingState
         }
     }
 }

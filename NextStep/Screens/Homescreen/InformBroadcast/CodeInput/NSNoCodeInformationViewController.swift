@@ -53,7 +53,7 @@ class NSNoCodeInformationViewController: NSInformStepViewController {
                 let phoneNumber = strongSelf.sendButton.title
             else { return }
 
-            NSPhoneCallHelpers.call(phoneNumber)
+            PhoneCallHelper.call(phoneNumber)
         }
     }
 }

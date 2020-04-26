@@ -13,7 +13,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
     // MARK: - Init
 
-    init(initialState: NSUIStateModel.BegegnungenDetail) {
+    init(initialState: UIStateModel.BegegnungenDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
 
@@ -22,7 +22,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         title = "handshakes_title_homescreen".ub_localized
         titleView = appTitleView
 
-        NSUIStateManager.shared.addObserver(self, block: { [weak self] state in
+        UIStateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
@@ -68,7 +68,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(30.0)
     }
 
-    private func updateState(_ state: NSUIStateModel) {
+    private func updateState(_ state: UIStateModel) {
         appTitleView.uiState = state.homescreen.header
     }
 }

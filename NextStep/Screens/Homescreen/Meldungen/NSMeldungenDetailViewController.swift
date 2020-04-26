@@ -28,7 +28,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         setupViewControllers()
 
-        NSUIStateManager.shared.addObserver(self) { [weak self] state in
+        UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.setup(state.meldungenDetail)
         }
@@ -64,7 +64,7 @@ class NSMeldungenDetailViewController: NSViewController {
         }
     }
 
-    private func setup(_ state: NSUIStateModel.MeldungenDetail) {
+    private func setup(_ state: UIStateModel.MeldungenDetail) {
         noMeldungenViewController.view.alpha = 0.0
         positiveTestedViewController.view.alpha = 0.0
         meldungenViewController.view.alpha = 0.0
