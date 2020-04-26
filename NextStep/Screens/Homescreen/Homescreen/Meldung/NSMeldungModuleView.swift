@@ -7,7 +7,7 @@
 import UIKit
 
 class NSMeldungView: NSModuleBaseView {
-    var uiState: NSUIStateModel.Homescreen.Meldungen
+    var uiState: UIStateModel.Homescreen.Meldungen
         = .init(meldung: .noMeldung, pushProblem: false) {
         didSet { updateLayout() }
     }

@@ -13,7 +13,7 @@ enum DebugInfectionStatus: Equatable {
     case infected
 }
 
-struct NSUIStateModel: Equatable {
+struct UIStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
     var shouldStartAtMeldungenDetail = false

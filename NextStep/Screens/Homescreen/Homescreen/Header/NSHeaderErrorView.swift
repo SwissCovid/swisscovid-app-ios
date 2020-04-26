@@ -5,11 +5,11 @@ import UIKit
 class NSHeaderErrorView: UIView {
     private let imageView = UIImageView()
 
-    var state: NSUIStateModel.TracingState {
+    var state: UIStateModel.TracingState {
         didSet { update() }
     }
 
-    init(initialState: NSUIStateModel.TracingState) {
+    init(initialState: UIStateModel.TracingState) {
         state = initialState
 
         super.init(frame: .zero)

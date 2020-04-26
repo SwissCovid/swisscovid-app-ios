@@ -95,7 +95,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         abort()
     }
 
-    private func update(_ state: NSUIStateModel) {
+    private func update(_ state: UIStateModel) {
         switch state.homescreen.begegnungen {
         case .tracingActive:
             tracingLabel.text = "bluetooth_setting_tracking_active".ub_localized

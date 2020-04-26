@@ -9,11 +9,11 @@ import Foundation
 #endif
 
 class UIStateLogic {
-    static func state(from manager: UIStateManager) -> NSUIStateModel {
-        var newState = NSUIStateModel()
+    static func state(from manager: UIStateManager) -> UIStateModel {
+        var newState = UIStateModel()
 
         // Tracing state
-        var tracing: NSUIStateModel.TracingState = .tracingActive
+        var tracing: UIStateModel.TracingState = .tracingActive
 
         switch manager.trackingState {
         case let .inactive(error):

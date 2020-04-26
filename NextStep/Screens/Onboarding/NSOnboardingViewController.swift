@@ -44,7 +44,8 @@ class NSOnboardingViewController: NSViewController {
         }
 
         step6VC.permissionButton.touchUpCallback = {
-            UBPushManager.shared.requestPushPermissions { _ in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     self.setOnboardingStep(self.currentStep + 1, animated: true)
                 }

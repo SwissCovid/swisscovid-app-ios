@@ -107,17 +107,17 @@ class UIStateManager: NSObject {
 
     struct Observer {
         weak var object: AnyObject?
-        var block: (NSUIStateModel) -> Void
+        var block: (UIStateModel) -> Void
     }
 
     private var observers: [Observer] = []
 
-    func addObserver(_ object: AnyObject, block: @escaping (NSUIStateModel) -> Void) {
+    func addObserver(_ object: AnyObject, block: @escaping (UIStateModel) -> Void) {
         observers.append(Observer(object: object, block: block))
         block(uiState)
     }
 
-    var uiState: NSUIStateModel! {
+    var uiState: UIStateModel! {
         didSet {
             if uiState != oldValue {
                 observers = observers.filter { $0.object != nil }
@@ -135,8 +135,11 @@ class UIStateManager: NSObject {
     // MARK: - Permission Checks
 
     @objc private func updatePush() {
-        UBPushManager.shared.queryPushPermissions { success in
-            self.pushOk = success
+        UNUserNotificationCenter.current().getNotificationSettings { settings in
+            let isEnabled = settings.alertSetting == .enabled
+            DispatchQueue.main.async {
+                self.pushOk = isEnabled
+            }
         }
     }
 }

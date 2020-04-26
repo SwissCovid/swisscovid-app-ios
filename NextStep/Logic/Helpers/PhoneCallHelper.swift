@@ -2,7 +2,7 @@
 
 import UIKit
 
-class NSPhoneCallHelpers: NSObject {
+class PhoneCallHelper: NSObject {
     // MARK: - API
 
     public static func call(_ phoneNumber: String) {

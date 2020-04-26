@@ -19,7 +19,7 @@ class ConfigManager: NSObject {
 
     // MARK: - Start config request
 
-    public func loadConfig(completion: @escaping (NSConfig?) -> Void) {
+    public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
         let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let appversion = "ios-\(shortVersion)"
         let systemVersion = UIDevice.current.systemVersion
@@ -27,7 +27,7 @@ class ConfigManager: NSObject {
         dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { data, _, _ in
 
             DispatchQueue.main.async {
-                if let d = data, let config = try? JSONDecoder().decode(NSConfig.self, from: d) {
+                if let d = data, let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: d) {
                     completion(config)
                 } else {
                     completion(nil)
@@ -47,7 +47,7 @@ class ConfigManager: NSObject {
         }
     }
 
-    private func presentAlertIfNeeded(config: NSConfig, window: UIWindow?) {
+    private func presentAlertIfNeeded(config: ConfigResponseBody, window: UIWindow?) {
         if config.forceUpdate {
             let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg ?? "force_update_text".ub_localized, preferredStyle: .alert)
 

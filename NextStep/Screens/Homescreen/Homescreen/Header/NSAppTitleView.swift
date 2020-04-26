@@ -9,7 +9,7 @@ import UIKit
 class NSAppTitleView: UIView {
     // MARK: - Init
 
-    var uiState: NSUIStateModel.TracingState {
+    var uiState: UIStateModel.TracingState {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)
@@ -32,7 +32,7 @@ class NSAppTitleView: UIView {
     private let activeView = NSHeaderActiveView()
     private lazy var errorView = NSHeaderErrorView(initialState: uiState)
 
-    init(initialState: NSUIStateModel.TracingState = .tracingActive) {
+    init(initialState: UIStateModel.TracingState = .tracingActive) {
         uiState = initialState
 
         super.init(frame: .zero)

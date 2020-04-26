@@ -10,7 +10,7 @@ class NSHeaderImageBackgroundView: UIView {
 
     static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
 
-    var state: NSUIStateModel.TracingState {
+    var state: UIStateModel.TracingState {
         didSet { update() }
     }
 
@@ -24,7 +24,7 @@ class NSHeaderImageBackgroundView: UIView {
         }
     }
 
-    init(initialState: NSUIStateModel.TracingState) {
+    init(initialState: UIStateModel.TracingState) {
         state = initialState
 
         super.init(frame: .zero)

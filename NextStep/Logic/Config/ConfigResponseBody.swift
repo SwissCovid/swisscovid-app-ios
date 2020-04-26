@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSConfig: Codable {
+class ConfigResponseBody: Codable {
     public let forceUpdate: Bool
     public let msg: String? = nil
 }

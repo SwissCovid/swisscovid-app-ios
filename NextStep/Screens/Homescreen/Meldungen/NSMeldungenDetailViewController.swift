@@ -64,7 +64,7 @@ class NSMeldungenDetailViewController: NSViewController {
         }
     }
 
-    private func setup(_ state: NSUIStateModel.MeldungenDetail) {
+    private func setup(_ state: UIStateModel.MeldungenDetail) {
         noMeldungenViewController.view.alpha = 0.0
         positiveTestedViewController.view.alpha = 0.0
         meldungenViewController.view.alpha = 0.0
