@@ -332,6 +332,7 @@
 				2485F4722455D00800C3D8C3 /* DP3TTracingError+Localized.swift */,
 				24780B592431B5A9003BB26C /* NSTracingLocalPush.swift */,
 				2485F4752455E30800C3D8C3 /* UIState */,
+				2462BA112451F0D90046906D /* Reporting */,
 			);
 			path = Tracing;
 			sourceTree = "<group>";
@@ -765,7 +766,6 @@
 				8E81CC98241FCC7D006F2437 /* AppDelegate.swift */,
 				2443947E24463A14003ED582 /* Tracing */,
 				2485F4742455DBB000C3D8C3 /* Config */,
-				2462BA112451F0D90046906D /* Reporting */,
 				24780B00242DF983003BB26C /* User */,
 				24780AFF242DF970003BB26C /* Networking */,
 				2443947F24463A46003ED582 /* Helpers */,
