@@ -22,11 +22,15 @@ class NSCodeControl: UIView {
 
     private let stackView = UIStackView()
 
+    private var currentIndex = 0
+
     // MARK: - Init
 
     init() {
         super.init(frame: .zero)
         setup()
+        // isAccessibilityElement = true
+        // accessibilityLabel = "Input Number \(currentIndex)"
     }
 
     required init?(coder _: NSCoder) {
@@ -59,6 +63,7 @@ class NSCodeControl: UIView {
     // MARK: - Setup
 
     private func setup() {
+        var elements = [Any]()
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
@@ -70,16 +75,18 @@ class NSCodeControl: UIView {
         stackView.spacing = 1.0
 
         for i in 0 ..< numberOfInputs {
-            let singleControl = NSCodeSingleControl()
+            let singleControl = NSCodeSingleControl(index: i)
             singleControl.parent = self
 
             controls.append(singleControl)
             stackView.addArrangedView(singleControl)
-
+            elements.append(singleControl)
             if (i + 1) % 3 == 0, i + 1 != numberOfInputs {
                 stackView.setCustomSpacing(NSPadding.small + 2.0, after: singleControl)
             }
         }
+
+        accessibilityElements = elements
     }
 
     // MARK: - Control
@@ -143,10 +150,17 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     private let textView = UITextField()
     private let emptyCharacter = "\u{200B}"
 
-    init() {
+    init(index: Int) {
         super.init(frame: .zero)
         setup()
         textView.text = emptyCharacter
+        textView.accessibilityTraits = .none
+        isAccessibilityElement = true
+        textView.accessibilityLabel = "\(index)"
+    }
+
+    override func accessibilityElementDidBecomeFocused() {
+        textView.becomeFirstResponder()
     }
 
     required init?(coder _: NSCoder) {

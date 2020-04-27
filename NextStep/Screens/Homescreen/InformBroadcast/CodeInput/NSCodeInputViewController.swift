@@ -31,6 +31,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         super.viewDidLoad()
 
         setup()
+        setupAccessibility()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -132,6 +133,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         sendButton.isEnabled = false
     }
 
+    func setupAccessibility() {}
+
     // MARK: - Send Logic
 
     private var rightBarButtonItem: UIBarButtonItem?
@@ -187,5 +190,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     func changeSendPermission(to sendAllowed: Bool) {
         sendButton.isEnabled = sendAllowed
+        if sendAllowed {
+            sendButton.accessibilityHint = ""
+
+        } else {
+            sendButton.accessibilityHint = ". Pressen nicht möglich, da nicht den ganzen Code eingeben."
+        }
     }
 }
