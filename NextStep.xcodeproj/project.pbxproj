@@ -631,11 +631,11 @@
 			isa = PBXGroup;
 			children = (
 				6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */,
-				6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */,
-				6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */,
 				6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */,
+				6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */,
 				6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */,
 				6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */,
+				6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */,
 				6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */,
 				6EC47BD32451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift */,
 			);
