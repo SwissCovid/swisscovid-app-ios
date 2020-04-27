@@ -37,14 +37,28 @@ public enum NSLabelType: UBLabelType {
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize
 
+        var boldFontName = "Inter-Bold"
+        var regularFontName = "Inter-Regular"
+        var lightFontName = "Inter-Light"
+
+        if #available(iOS 13.0, *) {
+            switch UITraitCollection.current.legibilityWeight {
+            case .bold:
+                boldFontName = "Inter-ExtraBold"
+                regularFontName = "Inter-Bold"
+                lightFontName = "Inter-Medium"
+            default: break
+            }
+        }
+
         switch self {
-        case .title: return UIFont(name: "Inter-Bold", size: bfs + 6.0)!
-        case .textLight: return UIFont(name: "Inter-Light", size: bfs)!
-        case .textBold: return UIFont(name: "Inter-Bold", size: bfs)!
-        case .button: return UIFont(name: "Inter-Bold", size: bfs)!
-        case .uppercaseBold: return UIFont(name: "Inter-Bold", size: bfs)!
-        case .date: return UIFont(name: "Inter-Bold", size: bfs - 3.0)!
-        case .smallRegular: return UIFont(name: "Inter-Regular", size: bfs - 3.0)!
+        case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
+        case .textLight: return UIFont(name: lightFontName, size: bfs)!
+        case .textBold: return UIFont(name: boldFontName, size: bfs)!
+        case .button: return UIFont(name: boldFontName, size: bfs)!
+        case .uppercaseBold: return UIFont(name: boldFontName, size: bfs)!
+        case .date: return UIFont(name: boldFontName, size: bfs - 3.0)!
+        case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         }
     }
 
