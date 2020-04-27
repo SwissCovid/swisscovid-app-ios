@@ -75,6 +75,22 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         appTitleView.changeBackgroundRandomly()
         UIStateManager.shared.refresh()
+
+        if !NSUser.shared.hasCompletedOnboarding {
+            let v = UIView()
+            v.backgroundColor = .ns_background
+            view.addSubview(v)
+            v.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                UIView.animate(withDuration: 0.5) {
+                    v.alpha = 0.0
+                    v.isUserInteractionEnabled = false
+                }
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -82,6 +98,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
+
+        presentOnboardingIfNeeded()
     }
 
     private var finishTransition: (() -> Void)?
@@ -195,6 +213,14 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     // MARK: - Details
+
+    private func presentOnboardingIfNeeded() {
+        if !NSUser.shared.hasCompletedOnboarding {
+            let onboardingViewController = NSOnboardingViewController()
+            onboardingViewController.modalPresentationStyle = .fullScreen
+            present(onboardingViewController, animated: false)
+        }
+    }
 
     private func presentBegegnungenDetail() {
         navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
