@@ -21,6 +21,7 @@ class NSLoadingView: UIView {
 
         backgroundColor = .ns_background
         setup()
+        accessibilityViewIsModal = true
     }
 
     required init?(coder _: NSCoder) {
