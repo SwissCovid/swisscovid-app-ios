@@ -224,7 +224,7 @@
 "foreground_service_notification_error_network_sync" = "Error occurred while loading data";
 
 /*Fehler Beschreibung*/
-"foreground_service_notification_error_location_permission" = "Location permission is missing (needed for accessing bluetooth)";
+"foreground_service_notification_error_location_permission" = "Damit die App Bluetooth nützen kann, müssen Sie die Verwendung des Standorts zulassen.";
 
 /*Fehler Beschreibung Bluetooth*/
 "foreground_service_notification_error_bluetooth_disabled" = "Bluetooth is deactivated";
@@ -614,3 +614,44 @@
 "accessibility_tracing_inactive" = "deaktiviert";
 "accessibility_tracing_activate" = "Tracing aktivieren";
 "accessibility_tracing_deactivate" = "Tracing deaktivieren";
+"error_location_permission_title" = "Standort Verwendung abgelehnt";
+"error_location_permission_button" = "Zulassen";
+
+/*Fuzzy*/
+"accessibility_date" = "Date";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_1nd" = "Erstes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_2nd" = "Zweites";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_3nd" = "Drittes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_4nd" = "Viertes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_5nd" = "Fünftes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_6nd" = "Sechstes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_7nd" = "Siebtes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_8nd" = "Achtes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_9nd" = "Neuntes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_10nd" = "Zehntes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_11nd" = "Elftes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_12nd" = "Zwölftes";
