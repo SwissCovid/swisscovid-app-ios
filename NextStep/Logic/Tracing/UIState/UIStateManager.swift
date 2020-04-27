@@ -32,7 +32,15 @@ class UIStateManager: NSObject {
 
     var uiState: UIStateModel! = UIStateModel() {
         didSet {
-            if uiState != oldValue {
+            var stateHasChanged = uiState != oldValue
+            #if CALIBRATION_SDK
+                var newUIStateWithoutDebug = uiState
+                newUIStateWithoutDebug?.debug = .init()
+                var oldUIStateWithoutDebug = oldValue
+                oldUIStateWithoutDebug?.debug = .init()
+                stateHasChanged = newUIStateWithoutDebug != oldUIStateWithoutDebug
+            #endif
+            if stateHasChanged {
                 observers = observers.filter { $0.object != nil }
                 observers.forEach { $0.block(uiState) }
                 dprint("New UI State")
@@ -41,9 +49,28 @@ class UIStateManager: NSObject {
     }
 
     func refresh() {
+        // disable updates until end of block update
+        guard !isPerformingBlockUpdate else {
+            return
+        }
+
+        // we don't have callback for push permission
+        // thus fetch state with every refresh
         updatePush()
 
+        // build new state, sending update to observers if changed
         uiState = UIStateLogic(manager: self).buildState()
+    }
+
+    // MARK: - Block Update
+
+    private var isPerformingBlockUpdate = false
+
+    func blockUpdate(_ update: () -> Void) {
+        isPerformingBlockUpdate = true
+        update()
+        isPerformingBlockUpdate = false
+        refresh()
     }
 
     // MARK: - State Observers
@@ -105,13 +132,7 @@ class UIStateManager: NSObject {
         tracingStartError ?? updateError
     }
 
-    var pushOk: Bool = false {
-        didSet {
-            if pushOk != oldValue {
-                refresh()
-            }
-        }
-    }
+    var pushOk: Bool = true
 
     var tracingState: TracingState?
 
@@ -164,7 +185,10 @@ class UIStateManager: NSObject {
         UNUserNotificationCenter.current().getNotificationSettings { settings in
             let isEnabled = settings.alertSetting == .enabled
             DispatchQueue.main.async {
-                self.pushOk = isEnabled
+                if self.pushOk != isEnabled {
+                    self.pushOk = isEnabled
+                    self.refresh()
+                }
             }
         }
     }
