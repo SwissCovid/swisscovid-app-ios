@@ -150,7 +150,7 @@ class UIStateLogic {
                 if let os = manager.overwrittenInfectionState, os == .exposed {
                     newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
                         a.timestamp < b.timestamp
-                })
+                    })
                     newState.shouldStartAtMeldungenDetail = true
                 }
             }
