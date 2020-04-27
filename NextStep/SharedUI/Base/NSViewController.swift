@@ -42,7 +42,7 @@ class NSViewController: UIViewController {
         view.backgroundColor = UIColor.ns_background
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-
+        navigationController?.navigationBar.accessibilityElementsHidden = true
         if navigationController?.viewControllers.count == 1 {
             navigationItem.leftBarButtonItem = UIBarButtonItem(image: swissFlagImage, landscapeImagePhone: swissFlagImage, style: .plain, target: nil, action: nil)
         }
