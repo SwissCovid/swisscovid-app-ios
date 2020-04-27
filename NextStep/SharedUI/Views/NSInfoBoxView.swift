@@ -31,6 +31,7 @@ class NSInfoBoxView: UIView {
         illustrationImageView.image = illustration
 
         setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText)
+        setupAccessibility(title: title, subText: subText)
     }
 
     required init?(coder _: NSCoder) {
@@ -116,5 +117,14 @@ class NSInfoBoxView: UIView {
                 make.bottom.equalToSuperview().inset(topBottomPadding)
             }
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension NSInfoBoxView {
+    private func setupAccessibility(title: String, subText: String) {
+        isAccessibilityElement = true
+        accessibilityLabel = "\(title), \(subText)"
     }
 }

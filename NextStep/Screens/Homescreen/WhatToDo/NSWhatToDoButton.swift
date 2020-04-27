@@ -24,6 +24,8 @@ class NSWhatToDoButton: UBButton {
 
         setupBackground()
         setup()
+
+        setupAccessibility()
     }
 
     required init?(coder _: NSCoder) {
@@ -81,5 +83,16 @@ class NSWhatToDoButton: UBButton {
         snp.makeConstraints { make in
             make.height.greaterThanOrEqualTo(88)
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension NSWhatToDoButton {
+    func setupAccessibility() {
+        accessibilityLabel = [subtitleLabel, titleTextLabel]
+            .compactMap { $0.text }
+            .joined(separator: " ")
+            .replacingOccurrences(of: "...", with: "")
     }
 }

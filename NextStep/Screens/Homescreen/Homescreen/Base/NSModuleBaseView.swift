@@ -15,6 +15,7 @@ class NSModuleBaseView: UIControl {
         }
         set {
             headerView.title = newValue
+            stackView.accessibilityLabel = newValue
         }
     }
 
@@ -31,6 +32,8 @@ class NSModuleBaseView: UIControl {
         updateLayout()
 
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
+
+        setupAccessibility()
     }
 
     required init?(coder _: NSCoder) {
@@ -43,11 +46,12 @@ class NSModuleBaseView: UIControl {
 
     private func setupLayout() {
         stackView.axis = .vertical
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.edges.equalToSuperview()
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
@@ -59,6 +63,8 @@ class NSModuleBaseView: UIControl {
         stackView.addArrangedView(headerView)
 
         sectionViews().forEach { stackView.addArrangedView($0) }
+
+        updateAccessibility()
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
@@ -73,5 +79,18 @@ class NSModuleBaseView: UIControl {
         didSet {
             backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_background
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension NSModuleBaseView {
+    func setupAccessibility() {
+        isAccessibilityElement = false
+        accessibilityElementsHidden = false
+
+        accessibilityElements = [stackView] + sectionViews()
+        stackView.isAccessibilityElement = true
+        stackView.accessibilityTraits = [.button]
     }
 }
