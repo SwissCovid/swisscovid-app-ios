@@ -54,6 +54,7 @@ class UIStateLogic {
 
         // Set debug helpers
         #if CALIBRATION_SDK
+            setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
         #endif
 
@@ -144,15 +145,17 @@ class UIStateLogic {
                 }
 
                 newState.debug.overwrittenInfectionState = os
+            }
+        }
 
-                // in case the infection state is overwritten, we need to
-                // add at least one meldung
-                if let os = manager.overwrittenInfectionState, os == .exposed {
-                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
-                        a.timestamp < b.timestamp
-                    })
-                    newState.shouldStartAtMeldungenDetail = true
-                }
+        private func setDebugMeldungen(_ newState: inout UIStateModel) {
+            // in case the infection state is overwritten, we need to
+            // add at least one meldung
+            if let os = manager.overwrittenInfectionState, os == .exposed {
+                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
+                    a.timestamp < b.timestamp
+                })
+                newState.shouldStartAtMeldungenDetail = true
             }
         }
 
