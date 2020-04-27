@@ -26,6 +26,8 @@ class NSBluetoothSettingsControl: UIView {
     var activeViewConstraint: Constraint?
     var inactiveViewConstraint: Constraint?
 
+    private lazy var switchAccessibilityGroup = UIAccessibilityElement(accessibilityContainer: self)
+
     // MARK: - Init
 
     init(initialState: UIStateModel.BegegnungenDetail) {
@@ -41,6 +43,7 @@ class NSBluetoothSettingsControl: UIView {
         switchControl.onTintColor = .ns_blue
 
         setup()
+        updateAccessibility()
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
@@ -100,6 +103,32 @@ class NSBluetoothSettingsControl: UIView {
         inactiveViewConstraint?.activate()
     }
 
+    private func updateAccessibility() {
+        var elements = [Any]()
+
+        // Switch control
+        elements.append(switchAccessibilityGroup)
+        switchAccessibilityGroup.accessibilityLabel = ["tracing_setting_title".ub_localized, state.tracingEnabled ? "accessibility_tracing_active".ub_localized : "accessibility_tracing_inactive".ub_localized].joined(separator: ", ")
+        switchAccessibilityGroup.accessibilityCustomActions = [UIAccessibilityCustomAction(name: state.tracingEnabled ? "accessibility_tracing_deactivate".ub_localized : "accessibility_tracing_activate".ub_localized, target: self, selector: #selector(accessibilityChangeSwitch))]
+        switchAccessibilityGroup.accessibilityFrameInContainerSpace = titleLabel.frame.union(subtitleLabel.frame).union(switchControl.frame)
+
+        // Active or error view
+        if state.tracing == .tracingActive {
+            elements.append(tracingActiveView)
+        } else {
+            elements.append(tracingErrorView)
+        }
+
+        accessibilityElements = elements
+        UIAccessibility.post(notification: .layoutChanged, argument: nil)
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        switchAccessibilityGroup.accessibilityFrameInContainerSpace = titleLabel.frame.union(subtitleLabel.frame).union(switchControl.frame)
+    }
+
     // MARK: - Switch Logic
 
     @objc private func switchChanged() {
@@ -109,7 +138,18 @@ class NSBluetoothSettingsControl: UIView {
         }
     }
 
+    @objc private func accessibilityChangeSwitch() -> Bool {
+        let on = !TracingManager.shared.isActivated
+
+        switchControl.setOn(on, animated: true)
+        TracingManager.shared.isActivated = on
+
+        return true
+    }
+
     private func updateState(_ state: UIStateModel) {
+        self.state = state.begegnungenDetail
+
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)
         tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
 
@@ -136,5 +176,7 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
         }
+
+        updateAccessibility()
     }
 }

@@ -59,6 +59,7 @@ class NSTracingErrorView: UIView {
     private func update() {
         imageView.image = model?.icon
         titleLabel.text = model?.title
+        titleLabel.accessibilityLabel = "\("loading_view_error_title".ub_localized): \(titleLabel.text ?? "")"
         textLabel.text = model?.text
         actionButton.touchUpCallback = model?.action
         actionButton.title = model?.buttonTitle

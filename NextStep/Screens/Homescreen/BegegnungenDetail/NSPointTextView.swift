@@ -21,6 +21,9 @@ class NSPointTextView: UIView {
         label.text = text
 
         setup()
+
+        isAccessibilityElement = true
+        accessibilityLabel = text
     }
 
     required init?(coder _: NSCoder) {
