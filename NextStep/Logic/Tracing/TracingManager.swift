@@ -40,13 +40,6 @@ class TracingManager: NSObject {
 
     func initialize() {
         do {
-            switch Environment.current {
-            case .dev:
-                // 5min Batch lenght on develop
-                DP3TTracing.batchLenght = 5 * 60
-            case .prod:
-                break
-            }
             let bucketBaseUrl = Environment.current.configService.baseURL
             let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
@@ -54,7 +47,21 @@ class TracingManager: NSObject {
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
                                                    jwtPublicKey: nil)
-            try DP3TTracing.initialize(with: .manual(descriptor))
+
+            switch Environment.current {
+            case .dev:
+                // 5min Batch lenght on dev Enviroment
+                DP3TTracing.batchLenght = 5 * 60
+                var appVersion = "N/A"
+                if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                    let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                    appVersion = "\(version)(\(build))"
+                }
+                try DP3TTracing.initialize(with: .manual(descriptor),
+                                           mode: .calibration(identifierPrefix: "", appVersion: appVersion))
+            case .prod:
+                try DP3TTracing.initialize(with: .manual(descriptor))
+            }
         } catch {
             UIStateManager.shared.tracingStartError = error
         }
