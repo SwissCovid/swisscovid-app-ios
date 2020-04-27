@@ -63,6 +63,8 @@ class NSModuleBaseView: UIControl {
         stackView.addArrangedView(headerView)
 
         sectionViews().forEach { stackView.addArrangedView($0) }
+
+        updateAccessibility()
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
@@ -86,9 +88,13 @@ extension NSModuleBaseView {
     func setupAccessibility() {
         isAccessibilityElement = false
         accessibilityElementsHidden = false
-
-        accessibilityElements = [stackView] + sectionViews()
         stackView.isAccessibilityElement = true
         stackView.accessibilityTraits = [.button]
+        updateAccessibility()
+    }
+
+    func updateAccessibility() {
+        accessibilityElements = [stackView] + sectionViews()
+        UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 }
