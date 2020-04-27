@@ -110,7 +110,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // navigation bar
         let image = UIImage(named: "ic-info")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
-
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
         // other views
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
