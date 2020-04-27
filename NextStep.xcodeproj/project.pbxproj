@@ -29,7 +29,6 @@
 		2462BA1924520A480046906D /* Endpoint+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1824520A480046906D /* Endpoint+Request.swift */; };
 		2462BA1B24521CE70046906D /* ReportingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1A24521CE70046906D /* ReportingManager.swift */; };
 		24780B07242DFCD9003BB26C /* NSUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* NSUser.swift */; };
-		24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B0A242DFCFB003BB26C /* NSTabBarController.swift */; };
 		24780B11242DFD2F003BB26C /* NSMeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */; };
 		24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */; };
@@ -172,7 +171,6 @@
 		2462BA1824520A480046906D /* Endpoint+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Request.swift"; sourceTree = "<group>"; };
 		2462BA1A24521CE70046906D /* ReportingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingManager.swift; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* NSUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUser.swift; sourceTree = "<group>"; };
-		24780B0A242DFCFB003BB26C /* NSTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTabBarController.swift; sourceTree = "<group>"; };
 		24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungModuleView.swift; sourceTree = "<group>"; };
 		24780B16242DFD7C003BB26C /* NSInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformViewController.swift; sourceTree = "<group>"; };
 		24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleBaseView.swift; sourceTree = "<group>"; };
@@ -473,7 +471,6 @@
 		24780AF9242DF828003BB26C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				24780B0A242DFCFB003BB26C /* NSTabBarController.swift */,
 				24780B23242DFE6D003BB26C /* NSNavigationController.swift */,
 			);
 			path = Navigation;
@@ -1125,7 +1122,6 @@
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
 				6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */,
 				DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */,
-				24780B0B242DFCFB003BB26C /* NSTabBarController.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,

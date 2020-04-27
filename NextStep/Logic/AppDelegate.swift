@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
-        window?.rootViewController = NSTabBarController()
+        window?.rootViewController = NSNavigationController(rootViewController: NSHomescreenViewController())
 
         setupAppearance()
 
@@ -73,11 +73,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
             if UIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
-                let tabBarController = window?.rootViewController as? NSTabBarController,
-                let navigationController = tabBarController.viewControllers?.first as? NSNavigationController,
+                let navigationController = window?.rootViewController as? NSNavigationController,
                 let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
                 navigationController.popToRootViewController(animated: false)
-                tabBarController.selectedIndex = 0
                 homescreenVC.presentMeldungenDetail(animated: false)
             }
             startForceUpdateCheck()

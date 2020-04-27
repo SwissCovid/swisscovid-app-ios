@@ -176,10 +176,9 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     }
 
     private func changePresentingViewController() {
-        let presenting = presentingViewController as? NSTabBarController
-        let tabNav = presenting?.viewControllers?.first as? NSNavigationController
-        tabNav?.popToRootViewController(animated: true)
-        tabNav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
+        let nav = presentingViewController as? NSNavigationController
+        nav?.popToRootViewController(animated: true)
+        nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
     }
 
     private func noCodeButtonPressed() {

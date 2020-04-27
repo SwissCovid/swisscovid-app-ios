@@ -89,6 +89,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Setup
 
     private func setupLayout() {
+        // navigation bar
+        let image = UIImage(named: "ic-info")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
+
+        // other views
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -209,6 +214,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private func presentWhatToDoSymptoms() {
         navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
+    }
+
+    @objc private func infoButtonPressed() {
+        present(NSNavigationController(rootViewController: NSAboutViewController()), animated: true)
     }
 
     private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
