@@ -596,3 +596,12 @@
 "meldung_in_app_alert_ignore_button" = "Ignorieren";
 "meldung_in_app_alert_accept_button" = "Zu den Informationen";
 "meldungen_detail_call_again" = "Rufen Sie erneut an";
+
+/*Fehlernachricht für Netzwerkfehler*/
+"network_error" = "Es ist ein Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.";
+
+/*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
+"unexpected_error_with_retry" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
+
+/*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
+"invalid_response_auth_code" = "Aufgrund eines System-Fehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";

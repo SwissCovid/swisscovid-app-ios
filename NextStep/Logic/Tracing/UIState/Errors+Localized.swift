@@ -8,13 +8,7 @@
 #endif
 
 extension DP3TTracingError: LocalizedError {
-    var localizedDescription: String {
-        let unexpected = "unexpected_error_title".ub_localized.replacingOccurrences(of: "{ERROR}", with: "")
-
-        return localized ?? unexpected
-    }
-
-    private var localized: String? {
+    public var errorDescription: String? {
         let unexpected = "unexpected_error_title".ub_localized
         switch self {
         case let .networkingError(error):
@@ -33,6 +27,20 @@ extension DP3TTracingError: LocalizedError {
             return nil
         case .jwtSignitureError:
             return nil
+        }
+    }
+}
+
+extension ReportingManager.ReportingError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .network:
+            return "network_error".ub_localized
+        case .invalidCode:
+            assertionFailure("Should not show error, go back to code input")
+            return "inform_code_invalid_title".ub_localized
+        case .unexpected:
+            return "unexpected_error_title".ub_localized.replacingOccurrences(of: "{ERROR}", with: "REPUN")
         }
     }
 }

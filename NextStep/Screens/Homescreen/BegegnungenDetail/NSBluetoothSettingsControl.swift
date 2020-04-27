@@ -32,7 +32,7 @@ class NSBluetoothSettingsControl: UIView {
         state = initialState
 
         super.init(frame: .zero)
-        translatesAutoresizingMaskIntoConstraints = false   
+        translatesAutoresizingMaskIntoConstraints = false
 
         backgroundColor = .white
 
