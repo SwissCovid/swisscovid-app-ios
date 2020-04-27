@@ -9,8 +9,8 @@ import UIKit
 class NSMeldungView: NSModuleBaseView {
     var uiState: UIStateModel.Homescreen.Meldungen
         = .init(meldung: .noMeldung, pushProblem: false) {
-            didSet { updateLayout() }
-        }
+        didSet { updateLayout() }
+    }
 
     // section views
     private let noMeldungenView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_subtitle".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-no-message")!, titleColor: .ns_green, subtextColor: .ns_text, backgroundColor: .ns_greenBackground)

@@ -138,7 +138,7 @@ class NSOnboardingViewController: NSViewController {
         vcToShow.view.layoutIfNeeded()
 
         currentStep = step
-        
+
         UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 
