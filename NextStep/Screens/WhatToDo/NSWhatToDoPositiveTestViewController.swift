@@ -8,6 +8,11 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
     private let informView = NSWhatToDoInformView()
 
+    private let titleElement = UIAccessibilityElement(accessibilityContainer: self)
+    private var titleContentStackView = UIStackView()
+    private var subtitleLabel: NSLabel!
+    private var titleLabel: NSLabel!
+
     // MARK: - Init
 
     override init() {
@@ -29,6 +34,8 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.presentInformViewController()
         }
+
+        setupAccessibility()
     }
 
     // MARK: - Setup
@@ -44,18 +51,21 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     }
 
     private func setupLayout() {
+        titleContentStackView.axis = .vertical
         stackScrollView.addSpacerView(NSPadding.large)
 
         // Title & subtitle
-        let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
+        subtitleLabel = NSLabel(.textLight, textAlignment: .center)
         subtitleLabel.text = "inform_detail_subtitle".ub_localized
 
-        let titleLabel = NSLabel(.title, textAlignment: .center)
+        titleLabel = NSLabel(.title, textAlignment: .center)
         titleLabel.text = "inform_detail_title".ub_localized
 
-        stackScrollView.addArrangedView(subtitleLabel)
-        stackScrollView.addSpacerView(3.0)
-        stackScrollView.addArrangedView(titleLabel)
+        titleContentStackView.addArrangedView(subtitleLabel)
+        titleContentStackView.addArrangedView(titleLabel)
+        titleContentStackView.addSpacerView(3.0)
+
+        stackScrollView.addArrangedView(titleContentStackView)
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -68,6 +78,12 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         stackScrollView.addArrangedView(informView)
 
         stackScrollView.addSpacerView(NSPadding.large)
+    }
+
+    private func setupAccessibility() {
+        titleContentStackView.isAccessibilityElement = true
+        titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
+        accessibilityElements = [titleContentStackView, informView]
     }
 
     // MARK: - Present

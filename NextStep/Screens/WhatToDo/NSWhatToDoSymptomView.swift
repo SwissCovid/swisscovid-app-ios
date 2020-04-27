@@ -11,13 +11,24 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
 
     // MARK: - Views
 
-    private let checkButton = NSButton(title: "symptom_detail_box_button".ub_localized, style: .outlineUppercase(.ns_blue))
+    public let checkButton = NSButton(title: "symptom_detail_box_button".ub_localized, style: .outlineUppercase(.ns_blue))
+
+    // MARK: = State
 
     // MARK: - Init
 
     init() {
-        super.init(title: "symptom_detail_box_title".ub_localized, subtitle: "symptom_detail_box_subtitle".ub_localized, text: "symptom_detail_box_text".ub_localized, image: nil, subtitleColor: .ns_blue)
+        // var accessibilityGroup = [Any]()
+
+        let titleText = "symptom_detail_box_title".ub_localized
+        let subtitleText = "symptom_detail_box_subtitle".ub_localized
+        let text = "symptom_detail_box_text".ub_localized
+
+        super.init(title: titleText, subtitle: subtitleText, text: text, image: nil, subtitleColor: .ns_blue)
         setup()
+
+        isAccessibilityElement = false
+        accessibilityLabel = subtitleText.deleteSuffix("...") + titleText
     }
 
     required init?(coder _: NSCoder) {
