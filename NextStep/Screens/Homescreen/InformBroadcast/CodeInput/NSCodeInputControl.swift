@@ -29,8 +29,6 @@ class NSCodeControl: UIView {
     init() {
         super.init(frame: .zero)
         setup()
-        // isAccessibilityElement = true
-        // accessibilityLabel = "Input Number \(currentIndex)"
     }
 
     required init?(coder _: NSCoder) {
@@ -152,6 +150,8 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     private let textView = UITextField()
     private let emptyCharacter = "\u{200B}"
 
+    private var hadText: Bool = false
+
     init(index: Int) {
         super.init(frame: .zero)
         setup()
@@ -198,6 +198,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     func reset() {
         textView.text = emptyCharacter
+        hadText = false
     }
 
     private func changeBorderStyle(isSelected: Bool) {
@@ -238,17 +239,22 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     // MARK: - Textfield Delegate
 
-    func textField(_: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
-        string != " "
+    func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 
     @objc private func editingChanged(sender: UITextField) {
         if let text = sender.text, text.count >= 1 {
             sender.text = String(text.dropFirst(text.count - 1))
+            hadText = true
             parent?.jumpToNextField()
         } else if let text = sender.text, text.count == 0 {
             sender.text = emptyCharacter
-            parent?.jumpToPreviousField()
+            if !hadText {
+                parent?.jumpToPreviousField()
+            }
+
+            hadText = false
         }
     }
 
