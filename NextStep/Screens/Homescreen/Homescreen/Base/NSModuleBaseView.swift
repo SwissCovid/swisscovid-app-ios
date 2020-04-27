@@ -23,6 +23,7 @@ class NSModuleBaseView: UIControl {
 
     init() {
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         backgroundColor = .ns_background
 

@@ -29,6 +29,7 @@ class NSTracingErrorView: UIView {
         self.model = model
 
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         setupView()
 
