@@ -8,6 +8,8 @@ import Foundation
 import UIKit
 
 class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtocol {
+    // MARK: - Views
+
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
@@ -23,11 +25,20 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized, color: .ns_purple)
 
+    // MARK: - View
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        codeControl.jumpToNextField()
+    }
+
+    // MARK: - Setup
 
     private func setup() {
         titleLabel.text = "inform_code_title".ub_localized
@@ -38,7 +49,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(NSPadding.medium * 2.0)
         }
 
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
@@ -120,6 +131,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
         sendButton.isEnabled = false
     }
+
+    // MARK: - Send Logic
 
     private var rightBarButtonItem: UIBarButtonItem?
 

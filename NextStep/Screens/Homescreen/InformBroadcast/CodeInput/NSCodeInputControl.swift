@@ -16,7 +16,7 @@ class NSCodeControl: UIView {
 
     // MARK: - Input number
 
-    private let numberOfInputs = 9
+    private let numberOfInputs = 12
     private var controls: [NSCodeSingleControl] = []
     private var currentControl: NSCodeSingleControl?
 
@@ -27,8 +27,6 @@ class NSCodeControl: UIView {
     init() {
         super.init(frame: .zero)
         setup()
-
-        jumpToNextField()
     }
 
     required init?(coder _: NSCoder) {
@@ -69,7 +67,7 @@ class NSCodeControl: UIView {
         }
 
         stackView.distribution = .fillEqually
-        stackView.spacing = 2.0
+        stackView.spacing = 1.0
 
         for i in 0 ..< numberOfInputs {
             let singleControl = NSCodeSingleControl()
