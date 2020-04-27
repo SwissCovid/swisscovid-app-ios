@@ -63,8 +63,6 @@ class NSModuleBaseView: UIControl {
         stackView.addArrangedView(headerView)
 
         sectionViews().forEach { stackView.addArrangedView($0) }
-
-        updateAccessibility()
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
