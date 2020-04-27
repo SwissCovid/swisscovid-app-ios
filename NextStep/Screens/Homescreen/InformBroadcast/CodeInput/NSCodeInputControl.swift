@@ -156,7 +156,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
         textView.text = emptyCharacter
         textView.accessibilityTraits = .none
         isAccessibilityElement = true
-        textView.accessibilityLabel = "\(index)"
+        textView.accessibilityLabel = "accessibility_\(index)nd".ub_localized
     }
 
     override func accessibilityElementDidBecomeFocused() {
