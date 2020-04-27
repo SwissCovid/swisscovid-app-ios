@@ -167,10 +167,14 @@ class TracingManager: NSObject {
             switch result {
             case let .failure(e):
                 UIStateManager.shared.syncError = e
-                if case DP3TTracingError.networkingError = e {
+                if case let DP3TTracingError.networkingError(wrappedError) = e {
+                    switch wrappedError {
+                    case .timeInconsistency:
+                        UIStateManager.shared.hasTimeInconsistencyError = true
+                    default:
+                        break
+                    }
                     UIStateManager.shared.lastSyncErrorTime = Date()
-                } else if case DP3TTracingError.timeInconsistency = e {
-                    UIStateManager.shared.hasTimeInconsistencyError = true
                 }
                 completionHandler?(.failed)
             case .success:

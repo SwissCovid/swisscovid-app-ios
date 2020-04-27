@@ -64,15 +64,13 @@ class UIStateLogic {
         switch manager.trackingState {
         case let .inactive(error):
             switch error {
-            case .timeInconsistency:
-                tracing = .timeInconsistencyError
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
             case .permissonError:
                 tracing = .bluetoothPermissionError
-            case .cryptographyError(_), .databaseError(_), .jwtSignitureError:
+            case .cryptographyError(_), .databaseError:
                 tracing = .unexpectedError
-            case .networkingError(_), .caseSynchronizationError:
+            case .networkingError, .caseSynchronizationError:
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
         case .activeReceiving, .activeAdvertising:

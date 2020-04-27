@@ -118,26 +118,24 @@ class UIStateManager: NSObject {
     var trackingState: TrackingState = .stopped {
         didSet {
             switch (oldValue, trackingState) {
-                // Only trigger a refresh if the tracking state has changed
-                case (.active, .active), (.stopped, .stopped):
+            // Only trigger a refresh if the tracking state has changed
+            case (.active, .active), (.stopped, .stopped):
+                return
+            case let (.inactive(e1), .inactive(e2)):
+                switch (e1, e2) {
+                case (.networkingError(_), .networkingError(_)),
+                     (.caseSynchronizationError, .caseSynchronizationError),
+                     (.cryptographyError(_), .cryptographyError(_)),
+                     (.databaseError(_), .databaseError(_)),
+                     (.bluetoothTurnedOff, .bluetoothTurnedOff),
+                     (.permissonError, .permissonError):
                     return
-                case let (.inactive(e1), .inactive(e2)):
-                    switch (e1, e2) {
-                        case (.networkingError(_), .networkingError(_)),
-                             (.caseSynchronizationError, .caseSynchronizationError),
-                             (.cryptographyError(_), .cryptographyError(_)),
-                             (.databaseError(_), .databaseError(_)),
-                             (.bluetoothTurnedOff, .bluetoothTurnedOff),
-                             (.permissonError, .permissonError),
-                             (.jwtSignitureError, .jwtSignitureError),
-                             (.timeInconsistency(_), .timeInconsistency(_)):
-                            return
-                        // TODO: Long changing list of errors and default value is dangerous
-                        default:
-                            refresh()
-                }
+                // TODO: Long changing list of errors and default value is dangerous
                 default:
                     refresh()
+                }
+            default:
+                refresh()
             }
         }
     }
