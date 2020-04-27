@@ -53,6 +53,10 @@ class TracingManager: NSObject {
         }
 
         UIApplication.shared.setMinimumBackgroundFetchInterval(databaseSyncInterval)
+
+        updateStatus { _ in
+            self.uiStateManager.refresh()
+        }
     }
 
     func beginUpdatesAndTracing() {
