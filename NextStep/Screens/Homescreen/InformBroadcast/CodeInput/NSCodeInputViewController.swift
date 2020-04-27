@@ -194,7 +194,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
             sendButton.accessibilityHint = ""
 
         } else {
-            sendButton.accessibilityHint = ". Pressen nicht möglich, da nicht den ganzen Code eingeben."
+            sendButton.accessibilityHint = "accessibility_code_button_disabled_hint".ub_localized
         }
     }
 }
