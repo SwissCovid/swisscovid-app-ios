@@ -108,6 +108,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let debugScreenContainer = UIView()
         debugScreenContainer.addSubview(debugScreenButton)
         debugScreenButton.snp.makeConstraints { make in
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
             make.top.bottom.centerX.equalToSuperview()
         }
 
@@ -124,6 +125,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let uploadDBContainer = UIView()
         uploadDBContainer.addSubview(uploadDBButton)
         uploadDBButton.snp.makeConstraints { make in
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
             make.top.bottom.centerX.equalToSuperview()
         }
 

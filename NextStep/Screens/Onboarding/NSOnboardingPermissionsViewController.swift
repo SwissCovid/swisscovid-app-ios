@@ -52,7 +52,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
         addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
-        addArrangedView(permissionButton, spacing: 2 * NSPadding.large)
+        addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
 
         addArrangedView(goodToKnowContainer)
 
@@ -62,7 +62,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         view.insertSubview(background, at: 0)
         background.snp.makeConstraints { make in
             make.top.equalTo(goodToKnowContainer)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.bottom.equalTo(goodToKnowContainer).offset(2000)
+            make.leading.trailing.equalToSuperview()
         }
     }
 

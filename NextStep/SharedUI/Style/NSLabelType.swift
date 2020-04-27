@@ -7,9 +7,17 @@
 import UIKit
 
 private class NSFontSize {
+    private static let normalBodyFontSize: CGFloat = 16.0
+
     public static let bodyFontSize: CGFloat = {
-        // default is 17.
-        UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize - 1.0
+        // default from system is 17.
+        let bfs = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize - 1.0
+
+        let preferredSize: CGFloat = normalBodyFontSize
+        let maximum: CGFloat = 1.5 * preferredSize
+        let minimum: CGFloat = 0.5 * preferredSize
+
+        return min(max(minimum, bfs), maximum)
     }()
 }
 
@@ -23,11 +31,7 @@ public enum NSLabelType: UBLabelType {
     case smallRegular
 
     public var font: UIFont {
-        let preferredSize: CGFloat = 16.0
-        let maximum: CGFloat = 1.5 * preferredSize
-        let minimum: CGFloat = 0.5 * preferredSize
-
-        let bfs = min(max(minimum, NSFontSize.bodyFontSize), maximum)
+        let bfs = NSFontSize.bodyFontSize
 
         switch self {
         case .title: return UIFont(name: "Inter-Bold", size: bfs + 6.0)!
