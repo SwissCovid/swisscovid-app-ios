@@ -40,6 +40,13 @@ class TracingManager: NSObject {
 
     func initialize() {
         do {
+            switch Environment.current {
+            case .dev:
+                // 5min Batch lenght on develop
+                DP3TTracing.batchLenght = 5 * 60
+            case .prod:
+                break
+            }
             let bucketBaseUrl = Environment.current.configService.baseURL
             let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
