@@ -34,6 +34,8 @@ class UIStateLogic {
             return newState
         }
 
+        setHomescreenState(&newState, tracing: tracing)
+
         //
         // Detect exposure, infection
         //
@@ -74,6 +76,7 @@ class UIStateLogic {
             case .cryptographyError(_), .databaseError(_), .jwtSignitureError:
                 tracing = .unexpectedError
             case .networkingError(_), .caseSynchronizationError:
+                // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
         case .activeReceiving, .activeAdvertising:
