@@ -6,7 +6,7 @@
 
 import UIKit
 
-private class NSFontSize {
+class NSFontSize {
     private static let normalBodyFontSize: CGFloat = 16.0
 
     public static let bodyFontSize: CGFloat = {
@@ -18,6 +18,10 @@ private class NSFontSize {
         let minimum: CGFloat = 0.5 * preferredSize
 
         return min(max(minimum, bfs), maximum)
+    }()
+
+    public static let fontSizeMultiplicator: CGFloat = {
+        max(1.0, bodyFontSize / normalBodyFontSize)
     }()
 }
 

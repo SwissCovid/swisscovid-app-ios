@@ -24,4 +24,12 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         stackScrollView.addArrangedView(whiteBoxView)
     }
+
+    override var titleHeight: CGFloat {
+        return super.titleHeight * NSFontSize.fontSizeMultiplicator
+    }
+
+    override var startPositionScrollView: CGFloat {
+        return titleHeight - 30
+    }
 }

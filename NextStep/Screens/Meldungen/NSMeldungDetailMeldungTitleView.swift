@@ -42,16 +42,17 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.alpha = 0.0
 
+        addSubview(stackScrollView)
         addSubview(pageControl)
+
         pageControl.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview().inset(overlapInset + NSPadding.medium)
         }
 
-        addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.bottom.equalTo(pageControl.snp.top)
+            make.bottom.equalTo(pageControl.snp.bottom)
         }
 
         stackScrollView.scrollView.isPagingEnabled = true
