@@ -26,8 +26,6 @@ class NSBluetoothSettingsControl: UIView {
     var activeViewConstraint: Constraint?
     var inactiveViewConstraint: Constraint?
 
-    private lazy var switchAccessibilityGroup = UIAccessibilityElement(accessibilityContainer: self)
-
     // MARK: - Init
 
     init(initialState: UIStateModel.BegegnungenDetail) {
@@ -104,29 +102,11 @@ class NSBluetoothSettingsControl: UIView {
     }
 
     private func updateAccessibility() {
-        var elements = [Any]()
+        isAccessibilityElement = false
+        titleLabel.isAccessibilityElement = false
+        subtitleLabel.isAccessibilityElement = false
 
-        // Switch control
-        elements.append(switchAccessibilityGroup)
-        switchAccessibilityGroup.accessibilityLabel = ["tracing_setting_title".ub_localized, state.tracingEnabled ? "accessibility_tracing_active".ub_localized : "accessibility_tracing_inactive".ub_localized].joined(separator: ", ")
-        switchAccessibilityGroup.accessibilityCustomActions = [UIAccessibilityCustomAction(name: state.tracingEnabled ? "accessibility_tracing_deactivate".ub_localized : "accessibility_tracing_activate".ub_localized, target: self, selector: #selector(accessibilityChangeSwitch))]
-        switchAccessibilityGroup.accessibilityFrameInContainerSpace = titleLabel.frame.union(subtitleLabel.frame).union(switchControl.frame)
-
-        // Active or error view
-        if state.tracing == .tracingActive {
-            elements.append(tracingActiveView)
-        } else {
-            elements.append(tracingErrorView)
-        }
-
-        accessibilityElements = elements
-        UIAccessibility.post(notification: .layoutChanged, argument: nil)
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        switchAccessibilityGroup.accessibilityFrameInContainerSpace = titleLabel.frame.union(subtitleLabel.frame).union(switchControl.frame)
+        switchControl.accessibilityLabel = [titleLabel.text ?? "", subtitleLabel.text ?? ""].joined(separator: ",")
     }
 
     // MARK: - Switch Logic
@@ -136,15 +116,8 @@ class NSBluetoothSettingsControl: UIView {
         if TracingManager.shared.isActivated != switchControl.isOn {
             TracingManager.shared.isActivated = switchControl.isOn
         }
-    }
 
-    @objc private func accessibilityChangeSwitch() -> Bool {
-        let on = !TracingManager.shared.isActivated
-
-        switchControl.setOn(on, animated: true)
-        TracingManager.shared.isActivated = on
-
-        return true
+        updateAccessibility()
     }
 
     private func updateState(_ state: UIStateModel) {

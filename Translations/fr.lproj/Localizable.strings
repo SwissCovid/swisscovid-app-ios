@@ -608,10 +608,6 @@
 
 /*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
 "invalid_response_auth_code" = "Aufgrund eines System-Fehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";
-"accessibility_tracing_active" = "aktiviert";
-"accessibility_tracing_inactive" = "deaktiviert";
-"accessibility_tracing_activate" = "Tracing aktivieren";
-"accessibility_tracing_deactivate" = "Tracing deaktivieren";
 "error_location_permission_title" = "Standort Verwendung abgelehnt";
 "error_location_permission_button" = "Zulassen";
 "accessibility_date" = "Datum";
@@ -651,3 +647,4 @@
 
 /*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
 "accessibility_12nd" = "Zwölftes";
+"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde";
