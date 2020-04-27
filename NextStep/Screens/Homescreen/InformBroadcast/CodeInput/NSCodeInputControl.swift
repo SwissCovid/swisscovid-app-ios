@@ -57,7 +57,9 @@ class NSCodeControl: UIView {
         }
 
         currentControl = nil
-        jumpToNextField()
+        if !UIAccessibility.isVoiceOverRunning {
+            jumpToNextField()
+        }
     }
 
     // MARK: - Setup

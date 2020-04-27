@@ -36,7 +36,9 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        codeControl.jumpToNextField()
+        if !UIAccessibility.isVoiceOverRunning {
+            codeControl.jumpToNextField()
+        }
     }
 
     // MARK: - Setup
@@ -164,7 +166,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                     self.codeControl.clearAndRestart()
                     self.errorView.isHidden = false
                     self.textLabel.isHidden = true
+
                     self.stopLoading()
+                    if UIAccessibility.isVoiceOverRunning {
+                        UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
+                    }
                 }
 
                 self.navigationItem.hidesBackButton = false
