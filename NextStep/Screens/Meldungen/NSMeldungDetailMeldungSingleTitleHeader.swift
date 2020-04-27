@@ -47,6 +47,8 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
         dateLabel.text = ""
         dateLabel.alpha = 0.43
+        isAccessibilityElement = true
+        accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \("accessibility_date".ub_localized): \(dateLabel.text ?? "")"
     }
 
     required init?(coder _: NSCoder) {
@@ -166,5 +168,6 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         } else {
             dateLabel.text = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
         }
+        accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
     }
 }

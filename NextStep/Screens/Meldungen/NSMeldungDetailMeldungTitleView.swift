@@ -43,6 +43,7 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
         pageControl.alpha = 0.0
 
         addSubview(stackScrollView)
+
         addSubview(pageControl)
 
         pageControl.snp.makeConstraints { make in
@@ -112,6 +113,7 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
         setNeedsLayout()
 
         stackScrollView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        accessibilityElements = [stackScrollView]
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context _: UnsafeMutableRawPointer?) {
