@@ -13,7 +13,10 @@ class NSCheckBoxView: UIView {
     private let button = NSButton(title: "")
 
     public var isChecked: Bool = false {
-        didSet { checkBox.setChecked(checked: isChecked, animated: true) }
+        didSet {
+            checkBox.setChecked(checked: isChecked, animated: true)
+            accessibilityTraits = isChecked ? [.selected, .button] : [.button]
+        }
     }
 
     public var touchUpCallback: (() -> Void)?
@@ -27,6 +30,10 @@ class NSCheckBoxView: UIView {
         setup()
 
         textLabel.text = text
+
+        isAccessibilityElement = true
+        accessibilityLabel = text
+        accessibilityTraits = isChecked ? [.selected, .button] : [.button]
     }
 
     required init?(coder _: NSCoder) {
