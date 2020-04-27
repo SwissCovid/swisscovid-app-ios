@@ -29,11 +29,10 @@ class NSModuleBaseView: UIControl {
         backgroundColor = .ns_background
 
         setupLayout()
+        setupAccessibility()
         updateLayout()
 
         addTarget(self, action: #selector(didTap), for: .touchUpInside)
-
-        setupAccessibility()
     }
 
     required init?(coder _: NSCoder) {
@@ -62,9 +61,11 @@ class NSModuleBaseView: UIControl {
 
         stackView.addArrangedView(headerView)
 
-        sectionViews().forEach { stackView.addArrangedView($0) }
+        let sections = sectionViews()
 
-        updateAccessibility()
+        sections.forEach { stackView.addArrangedView($0) }
+
+        updateAccessibility(with: sections)
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
@@ -90,11 +91,10 @@ extension NSModuleBaseView {
         accessibilityElementsHidden = false
         stackView.isAccessibilityElement = true
         stackView.accessibilityTraits = [.button]
-        updateAccessibility()
     }
 
-    func updateAccessibility() {
-        accessibilityElements = [stackView] + sectionViews()
+    func updateAccessibility(with sectionViews: [UIView]) {
+        accessibilityElements = [stackView] + sectionViews
         UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 }

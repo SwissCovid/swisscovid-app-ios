@@ -32,6 +32,7 @@ class NSTracingErrorView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
 
         setupView()
+        setupAccessibility()
 
         update()
     }
@@ -47,12 +48,12 @@ class NSTracingErrorView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.spacing = NSPadding.medium
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: NSPadding.medium + NSPadding.small, left: 2 * NSPadding.medium, bottom: NSPadding.medium, right: 2 * NSPadding.medium)
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
-            make.bottom.equalToSuperview().inset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+            make.edges.equalToSuperview()
         }
     }
 
@@ -76,6 +77,8 @@ class NSTracingErrorView: UIView {
         stackView.addSpacerView(20)
 
         stackView.layoutIfNeeded()
+
+        updateAccessibility()
     }
 
     // MARK: - Factory
@@ -131,5 +134,22 @@ class NSTracingErrorView: UIView {
         default:
             return nil
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension NSTracingErrorView {
+    func setupAccessibility() {
+        isAccessibilityElement = false
+        accessibilityElementsHidden = false
+        stackView.isAccessibilityElement = true
+        updateAccessibility()
+    }
+
+    func updateAccessibility() {
+        accessibilityElements = model?.action != nil ? [stackView, actionButton] : [stackView]
+        stackView.accessibilityLabel = model.map { "\($0.title), \($0.text)" }
+        UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 }
