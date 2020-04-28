@@ -84,4 +84,28 @@ class NSTracingLocalPush {
             (navigationVC.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
         }
     }
+
+    // MARK: - Sync warnings
+
+    private let notificationIdentifier1 = "ch.admin.bag.notification.syncWarning1"
+    private let notificationIdentifier2 = "ch.admin.bag.notification.syncWarning2"
+
+    private let timeInterval1: TimeInterval = 60 * 60 * 24 * 2 // Two days
+    private let timeInterval2: TimeInterval = 60 * 60 * 24 * 7 // Seven days
+
+    func resetSyncWarningTriggers() {
+        let content = UNMutableNotificationContent()
+        content.title = "sync_warning_notification_title".ub_localized
+        content.body = "sync_warning_notification_text".ub_localized
+
+        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1, repeats: false)
+        let request1 = UNNotificationRequest(identifier: notificationIdentifier1, content: content, trigger: trigger1)
+
+        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2, repeats: false)
+        let request2 = UNNotificationRequest(identifier: notificationIdentifier2, content: content, trigger: trigger2)
+
+        // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
+        UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
+        UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
+    }
 }
