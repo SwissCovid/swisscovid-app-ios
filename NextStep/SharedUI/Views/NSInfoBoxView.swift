@@ -15,10 +15,29 @@ class NSInfoBoxView: UIView {
     private let illustrationImageView = UIImageView()
 
     private let additionalLabel = NSLabel(.textBold)
+    private let externalLinkButton = NSExternalLinkButton()
+
+    // MARK: - Update
+
+    public func updateTexts(title: String?, subText: String?, additionalText: String?, additionalURL: String?) {
+        titleLabel.text = title
+        subtextLabel.text = subText
+
+        if let url = additionalURL {
+            externalLinkButton.title = additionalText
+
+            externalLinkButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.openLink(url)
+            }
+        } else {
+            additionalLabel.text = additionalText
+        }
+    }
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, leadingIconRenderingMode: UIImage.RenderingMode = .alwaysTemplate) {
+    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, leadingIconRenderingMode: UIImage.RenderingMode = .alwaysTemplate) {
         super.init(frame: .zero)
 
         titleLabel.text = title
@@ -30,7 +49,7 @@ class NSInfoBoxView: UIView {
         additionalLabel.textColor = subtextColor
         illustrationImageView.image = illustration
 
-        setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText)
+        setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText, additionalURL: additionalURL)
         setupAccessibility(title: title, subText: subText)
     }
 
@@ -40,7 +59,7 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Setup
 
-    private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil) {
+    private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil, additionalURL: String? = nil) {
         clipsToBounds = false
 
         var topBottomPadding: CGFloat = 0
@@ -108,14 +127,39 @@ class NSInfoBoxView: UIView {
         }
 
         if let adt = additionalText {
-            addSubview(additionalLabel)
-            additionalLabel.text = adt
+            if let url = additionalURL {
+                addSubview(externalLinkButton)
+                externalLinkButton.title = adt
 
-            additionalLabel.snp.makeConstraints { make in
-                make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
-                make.leading.trailing.equalTo(self.titleLabel)
-                make.bottom.equalToSuperview().inset(topBottomPadding)
+                externalLinkButton.touchUpCallback = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.openLink(url)
+                }
+
+                externalLinkButton.snp.makeConstraints { make in
+                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                    make.leading.equalTo(self.titleLabel)
+                    make.trailing.lessThanOrEqualTo(self.titleLabel)
+                    make.bottom.equalToSuperview().inset(NSPadding.large)
+                }
+            } else {
+                addSubview(additionalLabel)
+                additionalLabel.text = adt
+
+                additionalLabel.snp.makeConstraints { make in
+                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
+                    make.leading.trailing.equalTo(self.titleLabel)
+                    make.bottom.equalToSuperview().inset(topBottomPadding)
+                }
             }
+        }
+    }
+
+    // MARK: - Link logic
+
+    private func openLink(_ link: String) {
+        if let url = URL(string: link) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

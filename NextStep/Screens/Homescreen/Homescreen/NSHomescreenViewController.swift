@@ -11,6 +11,7 @@ import UIKit
 class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
+    private let globalProblemView = NSGlobalProblemView()
     private let handshakesModuleView = NSBegegnungenModuleView()
     private let meldungView = NSMeldungView()
 
@@ -111,7 +112,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let image = UIImage(named: "ic-info")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
         navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
+
         // other views
+        stackScrollView.addArrangedView(globalProblemView)
+
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -208,6 +212,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let isInfected = state.homescreen.meldungen.meldung == .infected
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
+
+        globalProblemView.uiState = state.homescreen.globalProblem
+        globalProblemView.isHidden = state.homescreen.globalProblem == nil
 
         lastState = state
     }

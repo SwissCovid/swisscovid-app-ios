@@ -34,7 +34,7 @@ class UIStateLogic {
             return newState
         }
 
-        setHomescreenState(&newState, tracing: tracing)
+        setHomescreenState(&newState, tracing: tracing, globalProblem: manager.globalProblem)
 
         //
         // Detect exposure, infection
@@ -91,9 +91,10 @@ class UIStateLogic {
         }
     }
 
-    private func setHomescreenState(_ newState: inout UIStateModel, tracing: UIStateModel.TracingState) {
+    private func setHomescreenState(_ newState: inout UIStateModel, tracing: UIStateModel.TracingState, globalProblem: UIStateModel.Homescreen.GlobalProblem?) {
         newState.homescreen.header = tracing
         newState.homescreen.begegnungen = tracing
+        newState.homescreen.globalProblem = globalProblem
 
         newState.homescreen.meldungen.pushProblem = !manager.pushOk
         if let st = manager.tracingState {
