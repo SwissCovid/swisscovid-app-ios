@@ -19,8 +19,12 @@ import Foundation
                         _ in DebugAlert.lastAlert = nil
                     }))
 
-                    let top = UIApplication.shared.keyWindow?.rootViewController
-                    top?.present(alert, animated: true, completion: nil)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                        var top = UIApplication.shared.keyWindow?.rootViewController
+                        top = top?.presentedViewController ?? top
+
+                        top?.present(alert, animated: true, completion: nil)
+                    }
 
                     lastAlert = alert
                 }
