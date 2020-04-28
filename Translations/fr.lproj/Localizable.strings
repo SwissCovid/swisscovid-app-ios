@@ -230,7 +230,7 @@
 "foreground_service_notification_error_bluetooth_disabled" = "Bluetooth ist deaktiviert";
 
 /*Fehler Beschreibung Akku*/
-"foreground_service_notification_error_battery_optimization" = "Akku Optimierung ist aktiviert (verhindert zuverlässiges Scanning im Hintergrund)";
+"foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden.";
 
 /*Titel der Nachricht, die auf Beta-Status Hinweist*/
 "preview_warning_title" = "Vorschau Version";
@@ -648,3 +648,14 @@
 /*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
 "accessibility_12nd" = "Zwölftes";
 "accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde";
+"error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
+"foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann.";
+
+/*Location Services ausgeschaltet Titel*/
+"error_location_services_title" = "Standort ausgeschaltet";
+
+/*Location Services ausgeschaltet Button*/
+"error_location_services_button" = "Standort einschalten";
+
+/*Information Button in the navigation bar*/
+"accessibility_info_button" = "Information";
