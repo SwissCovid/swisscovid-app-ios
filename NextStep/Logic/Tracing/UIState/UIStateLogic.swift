@@ -122,11 +122,11 @@ class UIStateLogic {
         newState.homescreen.begegnungen = .tracingEnded
     }
 
-    private func setExposedState(_ newState: inout UIStateModel, days: [MatchedContact]) {
+    private func setExposedState(_ newState: inout UIStateModel, days: [ExposureDay]) {
         newState.homescreen.meldungen.meldung = .exposed
         newState.meldungenDetail.meldung = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> NSMeldungModel in NSMeldungModel(identifier: mc.identifier, timestamp: mc.reportDate)
+        newState.meldungenDetail.meldungen = days.map { (mc) -> NSMeldungModel in NSMeldungModel(identifier: mc.identifier!, timestamp: mc.reportDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
