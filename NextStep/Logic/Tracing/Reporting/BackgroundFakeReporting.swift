@@ -8,19 +8,14 @@ import BackgroundTasks
 import Foundation
 import UIKit.UIApplication
 
-private class ConfigLoadOperation: Operation {
+private class FakePublishOperation: Operation {
     override func main() {
-        ConfigManager().loadConfig { config in
-            if let c = config, c.forceUpdate {
-                let content = UNMutableNotificationContent()
-                content.title = "force_update_title".ub_localized
-                content.body = "force_update_text".ub_localized
-
-                let request = UNNotificationRequest(identifier: "ch.admin.bag.dp3t.update", content: content, trigger: nil)
-                UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-            } else {
+        ReportingManager.shared.report(isFakeRequest: true) { error in
+            if error != nil {
                 self.cancel()
-                DebugAlert.show("No forced update")
+                DebugAlert.show("Fake request failed")
+            } else {
+                DebugAlert.show("Fake request success")
             }
         }
     }
@@ -31,10 +26,10 @@ private class ConfigLoadOperation: Operation {
 private var didRegisterBackgroundTask: Bool = false
 
 @available(iOS 13.0, *)
-class ConfigBackgroundTaskManager {
-    fileprivate static let taskIdentifier: String = "ch.admin.bag.dp3t.config"
+class FakePublishBackgroundTaskManager {
+    static let taskIdentifier: String = "fake-publish"
 
-    fileprivate static let syncInterval: TimeInterval = 24 * 60 * 60
+    static let syncInterval: TimeInterval = 24 * 60 * 60
 
     /// A logger for debugging
     #if CALIBRATION
@@ -52,7 +47,7 @@ class ConfigBackgroundTaskManager {
     func register() {
         guard !didRegisterBackgroundTask else { return }
         didRegisterBackgroundTask = true
-        BGTaskScheduler.shared.register(forTaskWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier, using: .global()) { task in
+        BGTaskScheduler.shared.register(forTaskWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier, using: .global()) { task in
             self.handleBackgroundTask(task)
         }
     }
@@ -63,7 +58,7 @@ class ConfigBackgroundTaskManager {
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
 
-        queue.addOperation(ConfigLoadOperation())
+        queue.addOperation(FakePublishOperation())
 
         task.expirationHandler = {
             queue.cancelAllOperations()
@@ -76,8 +71,8 @@ class ConfigBackgroundTaskManager {
     }
 
     private func scheduleBackgroundTask() {
-        let syncTask = BGAppRefreshTaskRequest(identifier: ConfigBackgroundTaskManager.taskIdentifier)
-        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
+        let syncTask = BGAppRefreshTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
+        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval)
 
         do {
             BGTaskScheduler.shared.cancelAllTaskRequests()

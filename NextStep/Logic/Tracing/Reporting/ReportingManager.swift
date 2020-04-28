@@ -33,13 +33,15 @@ class ReportingManager {
 
     // MARK: - API
 
-    func report(covidCode: String, completion: @escaping (ReportingError?) -> Void) {
+    static let fakeCode = "000000000000"
+
+    func report(covidCode: String = ReportingManager.fakeCode, isFakeRequest fake: Bool = false, completion: @escaping (ReportingError?) -> Void) {
         if let tokenDate = codeDictionary[covidCode] {
             // only second part needed
-            sendIWasExposed(token: tokenDate.0, date: tokenDate.1, completion: completion)
+            sendIWasExposed(token: tokenDate.0, date: tokenDate.1, isFakeRequest: fake, completion: completion)
         } else {
             // get token and date first
-            codeValidator.sendCodeRequest(code: covidCode) { [weak self] result in
+            codeValidator.sendCodeRequest(code: covidCode, isFakeRequest: fake) { [weak self] result in
                 guard let strongSelf = self else { return }
 
                 switch result {
@@ -48,7 +50,7 @@ class ReportingManager {
                     strongSelf.codeDictionary[covidCode] = (token, date)
 
                     // second part
-                    strongSelf.sendIWasExposed(token: token, date: date, completion: completion)
+                    strongSelf.sendIWasExposed(token: token, date: date, isFakeRequest: fake, completion: completion)
                 case .networkError:
                     completion(.network)
                 case .unexpectedError:
@@ -62,8 +64,8 @@ class ReportingManager {
 
     // MARK: - Second part: I was exposed
 
-    private func sendIWasExposed(token: String, date: Date, completion: @escaping (ReportingError?) -> Void) {
-        DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token)) { result in
+    private func sendIWasExposed(token: String, date: Date, isFakeRequest fake: Bool, completion: @escaping (ReportingError?) -> Void) {
+        DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: fake) { result in
             DispatchQueue.main.async {
                 dprint(result)
                 switch result {

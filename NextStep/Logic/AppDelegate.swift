@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Schedule Update check in background
         if #available(iOS 13.0, *) {
             ConfigBackgroundTaskManager().register()
+            FakePublishBackgroundTaskManager().register()
         }
 
         // defer window initialization if app was launched in
