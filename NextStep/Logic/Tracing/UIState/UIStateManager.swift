@@ -125,14 +125,6 @@ class UIStateManager: NSObject {
         }
     }
 
-    var globalProblem: UIStateModel.Homescreen.GlobalProblem? {
-        didSet {
-            if (globalProblem == nil) != (oldValue == nil) {
-                refresh()
-            }
-        }
-    }
-
     @UBUserDefault(key: "hasTimeInconsistencyError", defaultValue: false)
     var hasTimeInconsistencyError: Bool
 

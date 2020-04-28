@@ -19,7 +19,7 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Update
 
-    public func updateTexts(title: String?, subText: String?, additionalText: String?, additionalURL: String?) {
+    public func updateTexts(title: String?, subText: String?, additionalText: String?, additionalURL: URL?) {
         titleLabel.text = title
         subtextLabel.text = subText
 
@@ -30,8 +30,12 @@ class NSInfoBoxView: UIView {
                 guard let strongSelf = self else { return }
                 strongSelf.openLink(url)
             }
+
+            illustrationImageView.isHidden = false
         } else {
             additionalLabel.text = additionalText
+
+            illustrationImageView.isHidden = true
         }
     }
 
@@ -161,6 +165,10 @@ class NSInfoBoxView: UIView {
         if let url = URL(string: link) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
+
+    private func openLink(_ url: URL) {
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
 

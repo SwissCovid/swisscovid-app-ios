@@ -48,8 +48,8 @@ struct UIStateModel: Equatable {
         struct GlobalProblem: Equatable {
             var title: String
             var text: String
-            var link: String
-            var url: String
+            var link: String?
+            var url: URL?
         }
 
         var header: TracingState = .tracingActive

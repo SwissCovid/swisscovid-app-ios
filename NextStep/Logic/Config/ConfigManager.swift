@@ -17,6 +17,15 @@ class ConfigManager: NSObject {
 
     override init() {}
 
+    // MARK: - Last Loaded Config
+
+    @UBOptionalUserDefault(key: "config")
+    static var currentConfig: ConfigResponseBody? {
+        didSet {
+            UIStateManager.shared.refresh()
+        }
+    }
+
     // MARK: - Start config request
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
@@ -28,6 +37,7 @@ class ConfigManager: NSObject {
 
             DispatchQueue.main.async {
                 if let d = data, let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: d) {
+                    ConfigManager.currentConfig = config
                     completion(config)
                 } else {
                     DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")

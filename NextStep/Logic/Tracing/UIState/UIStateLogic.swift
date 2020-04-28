@@ -34,7 +34,8 @@ class UIStateLogic {
             return newState
         }
 
-        setHomescreenState(&newState, tracing: tracing, globalProblem: manager.globalProblem)
+        setHomescreenState(&newState, tracing: tracing)
+        setGlobalProblemState(&newState)
 
         //
         // Detect exposure, infection
@@ -91,10 +92,9 @@ class UIStateLogic {
         }
     }
 
-    private func setHomescreenState(_ newState: inout UIStateModel, tracing: UIStateModel.TracingState, globalProblem: UIStateModel.Homescreen.GlobalProblem?) {
+    private func setHomescreenState(_ newState: inout UIStateModel, tracing: UIStateModel.TracingState) {
         newState.homescreen.header = tracing
         newState.homescreen.begegnungen = tracing
-        newState.homescreen.globalProblem = globalProblem
 
         newState.homescreen.meldungen.pushProblem = !manager.pushOk
         if let st = manager.tracingState {
@@ -104,6 +104,12 @@ class UIStateLogic {
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblem = true
+        }
+    }
+
+    private func setGlobalProblemState(_ newState: inout UIStateModel) {
+        if let infoBox = ConfigManager.currentConfig?.infobox {
+            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title, text: infoBox.msg, link: infoBox.urlTitle, url: infoBox.url)
         }
     }
 
