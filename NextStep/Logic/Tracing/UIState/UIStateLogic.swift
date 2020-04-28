@@ -158,7 +158,7 @@ class UIStateLogic {
                 newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date()), NSMeldungModel(identifier: 123_333_333, timestamp: Date(timeIntervalSinceNow: 10000))].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
-                newState.shouldStartAtMeldungenDetail = false
+                newState.shouldStartAtMeldungenDetail = true
             }
         }
 
