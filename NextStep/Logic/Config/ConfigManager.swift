@@ -26,14 +26,22 @@ class ConfigManager: NSObject {
         }
     }
 
+    // MARK: - Version Numbers
+
+    static var appVersion: String {
+        let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        return "ios-\(shortVersion)"
+    }
+
+    static var osVersion: String {
+        let systemVersion = UIDevice.current.systemVersion
+        return "ios\(systemVersion)"
+    }
+
     // MARK: - Start config request
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-        let shortVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        let appversion = "ios-\(shortVersion)"
-        let systemVersion = UIDevice.current.systemVersion
-        let osversion = "ios\(systemVersion)"
-        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { data, _, error in
+        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, _, error in
 
             DispatchQueue.main.async {
                 if let d = data, let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: d) {
