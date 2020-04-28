@@ -35,6 +35,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         tabBarItem.image = UIImage(named: "ic-tracing")
         tabBarItem.title = "tab_tracing_title".ub_localized
+
+        // always load view at init, even if app starts at meldungen detail
+        loadViewIfNeeded()
     }
 
     // MARK: - View
@@ -68,6 +71,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentWhatToDoSymptoms()
+        }
+
+        // Ensure that Screen builds without animation if app not started on homescreen
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.finishTransition?()
+            self.finishTransition = nil
         }
     }
 

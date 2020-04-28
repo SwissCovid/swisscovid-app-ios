@@ -70,6 +70,7 @@ struct UIStateModel: Equatable {
     struct MeldungenDetail: Equatable {
         var meldung: MeldungState = .noMeldung
         var meldungen: [NSMeldungModel] = []
+        var showMeldungWithAnimation: Bool = false
     }
 
     struct BegegnungenDetail: Equatable {

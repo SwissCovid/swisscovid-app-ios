@@ -41,12 +41,16 @@ class NSViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ns_background
 
+        setup()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         if navigationController?.viewControllers.count == 1 {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
         }
-
-        setup()
     }
 
     // MARK: - Setup

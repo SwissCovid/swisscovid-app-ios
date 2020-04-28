@@ -116,6 +116,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView {
 
         updated = true
         setNeedsLayout()
+        layoutIfNeeded()
 
         stackScrollView.scrollView.isScrollEnabled = !startAnimationNotDone && headers.count > 1
         stackScrollView.scrollView.alwaysBounceHorizontal = !startAnimationNotDone && headers.count > 1

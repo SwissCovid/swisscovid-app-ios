@@ -9,6 +9,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         didSet { update() }
     }
 
+    public var showMeldungWithAnimation: Bool = false
+
     // MARK: - Views
 
     private let callLabel = NSLabel(.smallRegular)
@@ -27,7 +29,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     override var useFullScreenHeaderAnimation: Bool {
-        return true
+        return showMeldungWithAnimation
     }
 
     override var titleHeight: CGFloat {
