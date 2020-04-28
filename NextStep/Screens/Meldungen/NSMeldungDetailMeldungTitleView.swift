@@ -2,7 +2,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
+class NSMeldungDetailMeldungTitleView: NSTitleView {
     // MARK: - API
 
     public var meldungen: [NSMeldungModel] = [] {
@@ -17,7 +17,7 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
     private let pageControl = UIPageControl()
     private let overlapInset: CGFloat
 
-    private var firstUpdate = true
+    private var startAnimationNotDone = true
     private var updated = false
 
     // MARK: - Init
@@ -38,6 +38,8 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
     // MARK: - Setup Layout
 
     private func setupStackScrollView() {
+        stackScrollView.scrollView.isScrollEnabled = false
+
         pageControl.pageIndicatorTintColor = UIColor.ns_text.withAlphaComponent(0.46)
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.alpha = 0.0
@@ -62,20 +64,21 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
 
     // MARK: - Protocol
 
-    func startInitialAnimation() {
-        pageControl.alpha = 1.0
+    override func startInitialAnimation() {
+        stackScrollView.scrollView.isScrollEnabled = headers.count > 0
+        pageControl.alpha = headers.count > 1 ? 1.0 : 0.0
 
         for h in headers {
             h.startInitialAnimation()
         }
     }
 
-    func updateConstraintsForAnimation() {
+    override func updateConstraintsForAnimation() {
         for h in headers {
             h.updateConstraintsForAnimation()
         }
 
-        firstUpdate = false
+        startAnimationNotDone = false
     }
 
     // MARK: - Update
@@ -90,8 +93,9 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
 
         var first = true
         for m in meldungen {
-            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: firstUpdate, onceMore: !first)
+            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
             v.meldung = m
+            v.headerView = self
 
             stackScrollView.addArrangedView(v)
 
@@ -108,10 +112,13 @@ class NSMeldungDetailMeldungTitleView: UIView, NSTitleViewProtocol {
 
         pageControl.numberOfPages = headers.count
         pageControl.currentPage = currentPage
+        pageControl.alpha = (!startAnimationNotDone && headers.count > 1) ? 1.0 : 0.0
 
         updated = true
         setNeedsLayout()
 
+        stackScrollView.scrollView.isScrollEnabled = !startAnimationNotDone && headers.count > 1
+        stackScrollView.scrollView.alwaysBounceHorizontal = !startAnimationNotDone && headers.count > 1
         stackScrollView.scrollView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         accessibilityElements = [stackScrollView]
     }

@@ -2,7 +2,7 @@
 
 import UIKit
 
-class NSMeldungenDetailNoMeldungenTitleView: UIView, NSTitleViewProtocol {
+class NSMeldungenDetailNoMeldungenTitleView: NSTitleView {
     // MARK: - Views
 
     private let stackView = UIStackView()

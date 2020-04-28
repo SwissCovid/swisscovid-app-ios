@@ -2,10 +2,14 @@
 
 import UIKit
 
-@objc protocol NSTitleViewProtocol {
-    @objc optional func updateConstraintsForAnimation()
-    @objc optional func startInitialAnimation()
-    @objc optional func scrollViewDidScroll(_ scrollView: UIScrollView)
+class NSTitleView: UIView {
+    public weak var viewController: NSTitleViewScrollViewController?
+
+    public func updateConstraintsForAnimation() {}
+
+    public func startInitialAnimation() {}
+
+    @objc public func scrollViewDidScroll(_: UIScrollView) {}
 }
 
 class NSTitleViewScrollViewController: NSViewController {
@@ -13,7 +17,10 @@ class NSTitleViewScrollViewController: NSViewController {
 
     public let stackScrollView = NSStackScrollView()
 
-    public var titleView: (UIView & NSTitleViewProtocol)?
+    public var titleView: NSTitleView? {
+        didSet { titleView?.viewController = self }
+    }
+
     private let spacerView = UIView()
 
     public var titleHeight: CGFloat {
@@ -40,6 +47,20 @@ class NSTitleViewScrollViewController: NSViewController {
 
     private func setupLogic() {
         stackScrollView.scrollView.delegate = self
+    }
+
+    // MARK: - API
+
+    public func startHeaderAnimation() {
+        guard let tv = titleView else { return }
+
+        updateClosedConstraints()
+        tv.updateConstraintsForAnimation()
+
+        UIView.animate(withDuration: 0.55, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [.beginFromCurrentState, .curveEaseInOut], animations: {
+            self.view.layoutIfNeeded()
+            tv.startInitialAnimation()
+        }, completion: nil)
     }
 
     // MARK: - Setup
@@ -73,26 +94,10 @@ class NSTitleViewScrollViewController: NSViewController {
             make.height.equalTo(self.view)
         }
 
-        if useFullScreenHeaderAnimation {
-            startInitialAnimation()
-        } else {
+        if !useFullScreenHeaderAnimation {
             updateClosedConstraints()
-            tv.updateConstraintsForAnimation?()
-            tv.startInitialAnimation?()
-        }
-    }
-
-    private func startInitialAnimation() {
-        guard let tv = titleView else { return }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            self.updateClosedConstraints()
-            tv.updateConstraintsForAnimation?()
-
-            UIView.animate(withDuration: 0.55, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [.beginFromCurrentState, .curveEaseInOut], animations: {
-                self.view.layoutIfNeeded()
-                tv.startInitialAnimation?()
-            }, completion: nil)
+            tv.updateConstraintsForAnimation()
+            tv.startInitialAnimation()
         }
     }
 
@@ -121,6 +126,6 @@ extension NSTitleViewScrollViewController: UIScrollViewDelegate {
 
         titleView?.alpha = pow(p, 0.8)
 
-        titleView?.scrollViewDidScroll?(scrollView)
+        titleView?.scrollViewDidScroll(scrollView)
     }
 }

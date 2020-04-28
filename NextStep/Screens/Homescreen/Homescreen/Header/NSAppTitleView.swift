@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSAppTitleView: UIView {
+class NSAppTitleView: NSTitleView {
     // MARK: - Init
 
     var uiState: UIStateModel.TracingState {
@@ -167,10 +167,8 @@ class NSAppTitleView: UIView {
         backgroundView.state = uiState
         errorView.state = uiState
     }
-}
 
-extension NSAppTitleView: NSTitleViewProtocol {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offset = scrollView.contentOffset.y + scrollView.safeAreaInsets.top
         let overscrolled = offset < -10
         if overscrolled != isOverscrolled {

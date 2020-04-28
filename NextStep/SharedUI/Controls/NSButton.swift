@@ -70,7 +70,7 @@ class NSButton: UBButton {
 
     // MARK: - Init
 
-    init(title: String, style: Style = .normal(UIColor.ns_purple)) {
+    init(title: String, style: Style = .normal(UIColor.ns_purple), customTextColor: UIColor? = nil) {
         self.style = style
 
         super.init()
@@ -79,6 +79,11 @@ class NSButton: UBButton {
 
         titleLabel?.font = NSLabelType.button.font
         setTitleColor(style.textColor, for: .normal)
+
+        if let c = customTextColor {
+            setTitleColor(c, for: .normal)
+        }
+
         backgroundColor = style.backgroundColor
         highlightedBackgroundColor = style.highlightedColor
 

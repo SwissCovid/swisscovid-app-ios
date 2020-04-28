@@ -15,6 +15,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     private var notYetCalledView: UIView?
     private var alreadyCalledView: NSSimpleModuleBaseView?
 
+    private var overrideHitTestAnyway: Bool = true
+
     // MARK: - Init
 
     override init() {
@@ -34,6 +36,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     override var startPositionScrollView: CGFloat {
         return titleHeight - 30
+    }
+
+    override func startHeaderAnimation() {
+        overrideHitTestAnyway = false
+        super.startHeaderAnimation()
     }
 
     // MARK: - Views
@@ -156,6 +163,10 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
 extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
+        if overrideHitTestAnyway {
+            return true
+        }
+
         return point.y + stackScrollView.scrollView.contentOffset.y < startPositionScrollView
     }
 }

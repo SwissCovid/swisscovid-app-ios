@@ -5,6 +5,8 @@ import UIKit
 class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     // MARK: - API
 
+    public weak var headerView: NSTitleView?
+
     public var meldung: NSMeldungModel? {
         didSet { update() }
     }
@@ -21,6 +23,8 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
 
     private let dateLabel = NSLabel(.date, textAlignment: .center)
+
+    private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
     private let openSetup: Bool
 
@@ -65,6 +69,12 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         addSubview(titleLabel)
         addSubview(subtitleLabel)
         addSubview(dateLabel)
+        addSubview(continueButton)
+
+        continueButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.headerView?.viewController?.startHeaderAnimation()
+        }
 
         setupOpen()
 
@@ -104,6 +114,12 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.medium)
         }
 
+        continueButton.snp.makeConstraints { make in
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.large + NSPadding.small)
+            make.centerX.equalToSuperview()
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large)
+        }
+
         infoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
@@ -115,7 +131,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
         if openSetup {
             var i = 0
-            for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel] {
+            for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel, continueButton] {
                 v.alpha = 0.0
                 v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large)
 
@@ -150,6 +166,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         imageInitialView.alpha = 0.0
         newMeldungInitialView.alpha = 0.0
         infoImageView.alpha = 1.0
+        continueButton.alpha = 0.0
     }
 
     func updateConstraintsForAnimation() {
