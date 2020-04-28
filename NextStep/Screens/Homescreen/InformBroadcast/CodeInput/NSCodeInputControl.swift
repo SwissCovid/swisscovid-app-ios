@@ -94,7 +94,6 @@ class NSCodeControl: UIView {
     public func jumpToNextField() {
         if let c = currentControl, let i = controls.firstIndex(of: c) {
             if i + 1 < numberOfInputs {
-                _ = c.resignFirstResponder()
                 _ = controls[i + 1].becomeFirstResponder()
                 currentControl = controls[i + 1]
             }
@@ -109,7 +108,6 @@ class NSCodeControl: UIView {
     public func jumpToPreviousField() {
         if let c = currentControl, let i = controls.firstIndex(of: c) {
             if i > 0 {
-                _ = c.resignFirstResponder()
                 _ = controls[i - 1].becomeFirstResponder()
                 controls[i - 1].reset()
                 currentControl = controls[i - 1]
