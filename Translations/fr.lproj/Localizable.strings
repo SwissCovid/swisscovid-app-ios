@@ -660,3 +660,8 @@
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Information";
 "debug_sdk_state_number_contacts" = "Anzahl kontakte: ";
+"sync_warning_notification_title" = "Es ist ein Fehler aufgetreten";
+"sync_warning_notification_text" = "Öffnen Sie die App, um den Fehler zu beheben.";
+
+/*Meldungen Detail: Button bei Vollansicht*/
+"meldung_animation_continue_button" = "Weiter";
