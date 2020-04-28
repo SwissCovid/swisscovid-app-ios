@@ -2,7 +2,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungTitleView: NSTitleView {
+class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
     public var meldungen: [NSMeldungModel] = [] {
@@ -138,12 +138,10 @@ class NSMeldungDetailMeldungTitleView: NSTitleView {
     deinit {
         self.stackScrollView.scrollView.removeObserver(self, forKeyPath: "contentSize")
     }
-}
 
-extension NSMeldungDetailMeldungTitleView: UIScrollViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let fraction = (scrollView.contentOffset.x / scrollView.contentSize.width)
-        let number = Int(fraction * CGFloat(pageControl.numberOfPages))
+        let number = Int(round(fraction * CGFloat(pageControl.numberOfPages)))
         pageControl.currentPage = number
     }
 }

@@ -129,7 +129,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         continueButton.snp.makeConstraints { make in
             make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.large + NSPadding.small)
             make.centerX.equalToSuperview()
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large)
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
         }
 
         infoImageView.snp.makeConstraints { make in
