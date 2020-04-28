@@ -60,6 +60,7 @@ struct UIStateModel: Equatable {
 
     struct Debug: Equatable {
         var handshakeCount: Int?
+        var contactCount: Int?
         var lastSync: Date?
         var infectionStatus: DebugInfectionStatus = .healthy
         var overwrittenInfectionState: DebugInfectionStatus?

@@ -656,3 +656,4 @@
 
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Information";
+"debug_sdk_state_number_contacts" = "Anzahl kontakte: ";
