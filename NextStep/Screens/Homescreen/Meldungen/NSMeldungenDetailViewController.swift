@@ -26,12 +26,12 @@ class NSMeldungenDetailViewController: NSViewController {
         super.viewDidLoad()
         view.backgroundColor = .ns_backgroundSecondary
 
-        setupViewControllers()
-
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.setup(state.meldungenDetail)
         }
+
+        setupViewControllers()
     }
 
     // MARK: - Setup
@@ -65,6 +65,8 @@ class NSMeldungenDetailViewController: NSViewController {
     }
 
     private func setup(_ state: UIStateModel.MeldungenDetail) {
+        meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
+
         noMeldungenViewController.view.alpha = 0.0
         positiveTestedViewController.view.alpha = 0.0
         meldungenViewController.view.alpha = 0.0
@@ -73,7 +75,6 @@ class NSMeldungenDetailViewController: NSViewController {
         case .exposed:
             meldungenViewController.view.alpha = 1.0
             meldungenViewController.meldungen = state.meldungen
-            meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
         case .infected:
             positiveTestedViewController.view.alpha = 1.0
         case .noMeldung:
