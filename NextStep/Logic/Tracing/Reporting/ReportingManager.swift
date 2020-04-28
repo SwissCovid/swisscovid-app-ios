@@ -72,6 +72,7 @@ class ReportingManager {
                         if error != nil {
                             completion(.unexpected)
                         } else {
+                            NSUser.shared.positiveTestSendDate = Date()
                             completion(nil)
                         }
                     }

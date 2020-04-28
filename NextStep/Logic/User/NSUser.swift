@@ -37,4 +37,7 @@ class NSUser {
 
     @UBUserDefault(key: "lastPhoneCalls", defaultValue: [:])
     private var lastPhoneCalls: [String: Date]
+
+    @UBOptionalUserDefault(key: "positiveTestSendDate")
+    public var positiveTestSendDate: Date?
 }

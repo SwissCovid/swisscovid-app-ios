@@ -20,8 +20,12 @@ class NSMeldungenDetailPositiveTestedTitleView: UIView, NSTitleViewProtocol {
         titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
         textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
-        // TODO: Wrong text
-        // dateLabel.text = "Heute"
+        if let date = NSUser.shared.positiveTestSendDate {
+            dateLabel.text = DateFormatter.ub_daysAgo(from: date)
+        } else {
+            dateLabel.text = ""
+        }
+
         dateLabel.alpha = 0.43
 
         backgroundColor = UIColor.ns_purple

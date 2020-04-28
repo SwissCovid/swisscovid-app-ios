@@ -68,15 +68,9 @@ class NSMeldungView: NSModuleBaseView {
             if let lastMeldung = uiState.lastMeldung {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)
-                let days = lastMeldung.ns_differenceInDaysWithDate(date: Date())
 
-                if days == 0 {
-                    dateLabel.text = "date_today".ub_localized
-                } else if days == 1 {
-                    dateLabel.text = "date_one_day_ago".ub_localized
-                } else {
-                    dateLabel.text = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
-                }
+                dateLabel.text = DateFormatter.ub_daysAgo(from: lastMeldung)
+
                 container.addSubview(dateLabel)
                 dateLabel.snp.makeConstraints { make in
                     make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
