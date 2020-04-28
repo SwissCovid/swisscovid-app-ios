@@ -133,22 +133,27 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         let debugScreenContainer = UIView()
-        debugScreenContainer.addSubview(debugScreenButton)
-        debugScreenButton.snp.makeConstraints { make in
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-            make.top.bottom.centerX.equalToSuperview()
-        }
 
-        debugScreenButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentDebugScreen()
-        }
+        #if CALIBRATION_SDK
+            if Environment.current != Environment.prod {
+                debugScreenContainer.addSubview(debugScreenButton)
+                debugScreenButton.snp.makeConstraints { make in
+                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                    make.top.bottom.centerX.equalToSuperview()
+                }
 
-        stackScrollView.addArrangedView(debugScreenContainer)
+                debugScreenButton.touchUpCallback = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.presentDebugScreen()
+                }
+
+                stackScrollView.addArrangedView(debugScreenContainer)
+
+                stackScrollView.addSpacerView(NSPadding.large)
+            }
+        #endif
 
         // DEBUG version for testing
-        stackScrollView.addSpacerView(NSPadding.large)
-
         let uploadDBContainer = UIView()
         uploadDBContainer.addSubview(uploadDBButton)
         uploadDBButton.snp.makeConstraints { make in
