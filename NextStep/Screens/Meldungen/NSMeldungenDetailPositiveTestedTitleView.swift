@@ -32,7 +32,7 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
         setup()
 
         isAccessibilityElement = true
-        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")"
+        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? ""). \(dateLabel.text ?? "")"
     }
 
     required init?(coder _: NSCoder) {

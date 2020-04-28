@@ -117,20 +117,21 @@ private class NSMoreInfoView: UIView {
         addSubview(container)
         container.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(NSPadding.small)
-            make.centerX.equalToSuperview()
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.small).priority(.low)
+            make.left.equalToSuperview().inset(2 * NSPadding.large)
+            make.right.equalToSuperview().inset(NSPadding.medium)
         }
 
         container.addSubview(line1Label)
         container.addSubview(line2Label)
 
         line1Label.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.top.left.right.equalToSuperview()
         }
 
         line2Label.snp.makeConstraints { make in
             make.top.equalTo(line1Label.snp.bottom).offset(NSPadding.small)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.left.right.equalTo(self.line1Label)
+            make.bottom.equalToSuperview()
         }
     }
 }

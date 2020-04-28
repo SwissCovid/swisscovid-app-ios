@@ -63,7 +63,10 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     private func setupInitialLayout() {
         addSubview(newMeldungInitialView)
-        addSubview(imageInitialView)
+
+        if NSFontSize.fontSizeMultiplicator <= 1.0 {
+            addSubview(imageInitialView)
+        }
 
         addSubview(infoImageView)
         addSubview(titleLabel)
@@ -91,15 +94,24 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.centerX.equalToSuperview()
         }
 
-        imageInitialView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+        if NSFontSize.fontSizeMultiplicator <= 1.0 {
+            imageInitialView.snp.makeConstraints { make in
+                make.centerX.equalToSuperview()
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+            }
+
+            imageInitialView.contentMode = .scaleAspectFit
         }
 
         titleLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
+
+            if NSFontSize.fontSizeMultiplicator <= 1.0 {
+                make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
+            } else {
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+            }
         }
 
         subtitleLabel.snp.makeConstraints { make in

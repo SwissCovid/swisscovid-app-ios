@@ -29,7 +29,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     override var useFullScreenHeaderAnimation: Bool {
-        return showMeldungWithAnimation
+        return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
     }
 
     override var titleHeight: CGFloat {
