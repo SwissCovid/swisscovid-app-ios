@@ -199,6 +199,8 @@ class TracingManager: NSObject {
                     UIStateManager.shared.hasTimeInconsistencyError = false
                 }
 
+                NSTracingLocalPush.shared.resetSyncWarningTriggers()
+
                 self.updateStatus(completion: nil)
 
                 completionHandler?(.newData)
