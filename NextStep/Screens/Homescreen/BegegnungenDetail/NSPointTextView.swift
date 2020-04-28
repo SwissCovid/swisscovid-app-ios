@@ -18,9 +18,13 @@ class NSPointTextView: UIView {
         super.init(frame: .zero)
 
         pointLabel.text = "•"
+        pointLabel.isAccessibilityElement = false
         label.text = text
 
         setup()
+
+        isAccessibilityElement = true
+        accessibilityLabel = text
     }
 
     required init?(coder _: NSCoder) {

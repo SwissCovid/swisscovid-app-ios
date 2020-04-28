@@ -21,6 +21,8 @@ class NSMeldungenDetailNoMeldungenTitleView: UIView, NSTitleViewProtocol {
 
         backgroundColor = UIColor.ns_greenBackground
         setup()
+        isAccessibilityElement = true
+        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")"
     }
 
     required init?(coder _: NSCoder) {

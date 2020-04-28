@@ -25,6 +25,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
     private let type: NSOnboardingPermissionType
 
+    private var elements: [Any] = []
     init(type: NSOnboardingPermissionType) {
         self.type = type
 
@@ -33,9 +34,12 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        elements = [titleLabel, textLabel, goodToKnowLabel].compactMap { $0 }
         setupViews()
         fillViews()
+
+        elements.append(permissionButton)
+        accessibilityElements = elements.compactMap { $0 }
     }
 
     deinit {
@@ -48,7 +52,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
         addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
-        addArrangedView(permissionButton, spacing: 2 * NSPadding.large)
+        addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
 
         addArrangedView(goodToKnowContainer)
 
@@ -58,7 +62,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         view.insertSubview(background, at: 0)
         background.snp.makeConstraints { make in
             make.top.equalTo(goodToKnowContainer)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.bottom.equalTo(goodToKnowContainer).offset(2000)
+            make.leading.trailing.equalToSuperview()
         }
     }
 
@@ -78,6 +83,9 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
             let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_bluetooth_gtk_text1".ub_localized, title: "onboarding_bluetooth_gtk_title1".ub_localized)
             let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
+            elements.append(info1)
+            elements.append(info2)
+
             goodToKnowContainer.addSubview(info1)
             goodToKnowContainer.addSubview(info2)
             info1.snp.makeConstraints { make in
@@ -96,6 +104,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             permissionButton.title = "onboarding_push_button".ub_localized
 
             let info = NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "onboarding_push_gtk_text1".ub_localized, title: "onboarding_push_gtk_title1".ub_localized)
+            elements.append(info)
             goodToKnowContainer.addSubview(info)
             info.snp.makeConstraints { make in
                 make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)

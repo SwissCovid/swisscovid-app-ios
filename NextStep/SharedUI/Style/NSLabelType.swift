@@ -6,6 +6,25 @@
 
 import UIKit
 
+class NSFontSize {
+    private static let normalBodyFontSize: CGFloat = 16.0
+
+    public static let bodyFontSize: CGFloat = {
+        // default from system is 17.
+        let bfs = UIFontDescriptor.preferredFontDescriptor(withTextStyle: UIFont.TextStyle.body).pointSize - 1.0
+
+        let preferredSize: CGFloat = normalBodyFontSize
+        let maximum: CGFloat = 1.5 * preferredSize
+        let minimum: CGFloat = 0.5 * preferredSize
+
+        return min(max(minimum, bfs), maximum)
+    }()
+
+    public static let fontSizeMultiplicator: CGFloat = {
+        max(1.0, bodyFontSize / normalBodyFontSize)
+    }()
+}
+
 public enum NSLabelType: UBLabelType {
     case title
     case textLight
@@ -16,14 +35,30 @@ public enum NSLabelType: UBLabelType {
     case smallRegular
 
     public var font: UIFont {
+        let bfs = NSFontSize.bodyFontSize
+
+        var boldFontName = "Inter-Bold"
+        var regularFontName = "Inter-Regular"
+        var lightFontName = "Inter-Light"
+
+        if #available(iOS 13.0, *) {
+            switch UITraitCollection.current.legibilityWeight {
+            case .bold:
+                boldFontName = "Inter-ExtraBold"
+                regularFontName = "Inter-Bold"
+                lightFontName = "Inter-Medium"
+            default: break
+            }
+        }
+
         switch self {
-        case .title: return UIFont(name: "Inter-Bold", size: 22.0)!
-        case .textLight: return UIFont(name: "Inter-Light", size: 16.0)!
-        case .textBold: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .button: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .uppercaseBold: return UIFont(name: "Inter-Bold", size: 16.0)!
-        case .date: return UIFont(name: "Inter-Bold", size: 13.0)!
-        case .smallRegular: return UIFont(name: "Inter-Regular", size: 13.0)!
+        case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
+        case .textLight: return UIFont(name: lightFontName, size: bfs)!
+        case .textBold: return UIFont(name: boldFontName, size: bfs)!
+        case .button: return UIFont(name: boldFontName, size: bfs)!
+        case .uppercaseBold: return UIFont(name: boldFontName, size: bfs)!
+        case .date: return UIFont(name: boldFontName, size: bfs - 3.0)!
+        case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         }
     }
 

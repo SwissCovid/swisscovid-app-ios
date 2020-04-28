@@ -82,7 +82,7 @@ class ConfigBackgroundTaskManager {
             BGTaskScheduler.shared.cancelAllTaskRequests()
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
-            print(error)
+            dprint(error)
         }
     }
 

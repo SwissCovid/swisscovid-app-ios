@@ -16,19 +16,19 @@ class NSCodeControl: UIView {
 
     // MARK: - Input number
 
-    private let numberOfInputs = 9
+    private let numberOfInputs = 12
     private var controls: [NSCodeSingleControl] = []
     private var currentControl: NSCodeSingleControl?
 
     private let stackView = UIStackView()
+
+    private var currentIndex = 0
 
     // MARK: - Init
 
     init() {
         super.init(frame: .zero)
         setup()
-
-        jumpToNextField()
     }
 
     required init?(coder _: NSCoder) {
@@ -55,12 +55,15 @@ class NSCodeControl: UIView {
         }
 
         currentControl = nil
-        jumpToNextField()
+        if !UIAccessibility.isVoiceOverRunning {
+            jumpToNextField()
+        }
     }
 
     // MARK: - Setup
 
     private func setup() {
+        var elements = [Any]()
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
@@ -69,19 +72,21 @@ class NSCodeControl: UIView {
         }
 
         stackView.distribution = .fillEqually
-        stackView.spacing = 2.0
+        stackView.spacing = 1.0
 
         for i in 0 ..< numberOfInputs {
-            let singleControl = NSCodeSingleControl()
+            let singleControl = NSCodeSingleControl(index: i)
             singleControl.parent = self
 
             controls.append(singleControl)
             stackView.addArrangedView(singleControl)
-
+            elements.append(singleControl)
             if (i + 1) % 3 == 0, i + 1 != numberOfInputs {
                 stackView.setCustomSpacing(NSPadding.small + 2.0, after: singleControl)
             }
         }
+
+        accessibilityElements = elements
     }
 
     // MARK: - Control
@@ -145,10 +150,19 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     private let textView = UITextField()
     private let emptyCharacter = "\u{200B}"
 
-    init() {
+    private var hadText: Bool = false
+
+    init(index: Int) {
         super.init(frame: .zero)
         setup()
         textView.text = emptyCharacter
+        textView.accessibilityTraits = .none
+        isAccessibilityElement = true
+        textView.accessibilityLabel = "accessibility_\(index + 1)nd".ub_localized
+    }
+
+    override func accessibilityElementDidBecomeFocused() {
+        textView.becomeFirstResponder()
     }
 
     required init?(coder _: NSCoder) {
@@ -184,6 +198,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     func reset() {
         textView.text = emptyCharacter
+        hadText = false
     }
 
     private func changeBorderStyle(isSelected: Bool) {
@@ -224,17 +239,22 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     // MARK: - Textfield Delegate
 
-    func textField(_: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
-        string != " "
+    func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+        return string != " "
     }
 
     @objc private func editingChanged(sender: UITextField) {
         if let text = sender.text, text.count >= 1 {
             sender.text = String(text.dropFirst(text.count - 1))
+            hadText = true
             parent?.jumpToNextField()
         } else if let text = sender.text, text.count == 0 {
             sender.text = emptyCharacter
-            parent?.jumpToPreviousField()
+            if !hadText {
+                parent?.jumpToPreviousField()
+            }
+
+            hadText = false
         }
     }
 

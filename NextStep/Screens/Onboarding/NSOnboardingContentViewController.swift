@@ -53,7 +53,7 @@ class NSOnboardingContentViewController: NSViewController {
     func fadeAnimation(fromFactor: CGFloat, toFactor: CGFloat, delay: TimeInterval, completion: ((Bool) -> Void)?) {
         for (idx, wrapperView) in stackScrollView.stackView.arrangedSubviews.enumerated() {
             if wrapperView.subviews.count == 0 {
-                print("Error: stack contains subview that were not added with addArrangedView(:,height:)")
+                dprint("Error: stack contains subview that were not added with addArrangedView(:,height:)")
                 continue
             }
 

@@ -62,7 +62,7 @@ class NSErrorView: NSModuleBaseView {
         let unexpected = "unexpected_error_title".ub_localized
 
         guard let err = error as? LocalizedError else {
-            infoLabel.text = unexpected.replacingOccurrences(of: "{ERROR}", with: "")
+            infoLabel.text = unexpected.replacingOccurrences(of: "{ERROR}", with: "NONLOC")
             return
         }
 

@@ -221,7 +221,7 @@
 "foreground_service_notification_error_network_sync" = "beim Laden der Daten ist ein Fehler aufgetreten";
 
 /*Fehler Beschreibung*/
-"foreground_service_notification_error_location_permission" = "Standort Berechtigung fehlt (benötigt um auf Bluetooth zuzugreifen)";
+"foreground_service_notification_error_location_permission" = "Damit die App Bluetooth nützen kann, müssen Sie die Verwendung des Standorts zulassen.";
 
 /*Fehler Beschreibung Bluetooth*/
 "foreground_service_notification_error_bluetooth_disabled" = "Bluetooth ist deaktiviert";
@@ -596,3 +596,52 @@
 "meldung_in_app_alert_ignore_button" = "Ignorieren";
 "meldung_in_app_alert_accept_button" = "Zu den Informationen";
 "meldungen_detail_call_again" = "Rufen Sie erneut an";
+
+/*Fehlernachricht für Netzwerkfehler*/
+"network_error" = "Es ist ein Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.";
+
+/*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
+"unexpected_error_with_retry" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
+
+/*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
+"invalid_response_auth_code" = "Aufgrund eines System-Fehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";
+"error_location_permission_title" = "Standort Verwendung abgelehnt";
+"error_location_permission_button" = "Zulassen";
+"accessibility_date" = "Datum";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_1nd" = "Erstes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_2nd" = "Zweites";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_3nd" = "Drittes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_4nd" = "Viertes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_5nd" = "Fünftes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_6nd" = "Sechstes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_7nd" = "Siebtes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_8nd" = "Achtes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_9nd" = "Neuntes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_10nd" = "Zehntes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_11nd" = "Elftes";
+
+/*E.g. {accessibility_1nd} -> "Erstes" Textfeld*/
+"accessibility_12nd" = "Zwölftes";
+"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde";

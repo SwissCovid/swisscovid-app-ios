@@ -8,6 +8,11 @@ class NSWhatToDoSymptomViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
     private let symptomView = NSWhatToDoSymptomView()
 
+    private let titleElement = UIAccessibilityElement(accessibilityContainer: self)
+    private var titleContentStackView = UIStackView()
+    private var subtitleLabel: NSLabel!
+    private var titleLabel: NSLabel!
+
     // MARK: - Init
 
     override init() {
@@ -29,6 +34,8 @@ class NSWhatToDoSymptomViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.presentCoronaCheck()
         }
+
+        setupAccessibility()
     }
 
     // MARK: - Setup
@@ -44,18 +51,21 @@ class NSWhatToDoSymptomViewController: NSViewController {
     }
 
     private func setupLayout() {
+        titleContentStackView.axis = .vertical
         stackScrollView.addSpacerView(NSPadding.large)
 
         // Title & subtitle
-        let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
+        subtitleLabel = NSLabel(.textLight, textAlignment: .center)
         subtitleLabel.text = "symptom_detail_subtitle".ub_localized
 
-        let titleLabel = NSLabel(.title, textAlignment: .center)
+        titleLabel = NSLabel(.title, textAlignment: .center)
         titleLabel.text = "symptom_detail_title".ub_localized
 
-        stackScrollView.addArrangedView(subtitleLabel)
-        stackScrollView.addSpacerView(3.0)
-        stackScrollView.addArrangedView(titleLabel)
+        titleContentStackView.addArrangedView(subtitleLabel)
+        titleContentStackView.addArrangedView(titleLabel)
+        titleContentStackView.addSpacerView(3.0)
+
+        stackScrollView.addArrangedView(titleContentStackView)
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -70,13 +80,25 @@ class NSWhatToDoSymptomViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
+    private func setupAccessibility() {
+        titleContentStackView.isAccessibilityElement = true
+        titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
+        accessibilityElements = [titleContentStackView, symptomView]
+    }
+
     // MARK: - Detail
 
     private func presentCoronaCheck() {
-        // TODO: do the presenting
         if let url =
             URL(string: "symptom_detail_corona_check_url".ub_localized) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+    }
+}
+
+extension String {
+    func deleteSuffix(_ suffix: String) -> String {
+        guard hasSuffix(suffix) else { return self }
+        return String(dropLast(suffix.count))
     }
 }

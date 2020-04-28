@@ -24,10 +24,21 @@ class NSUnderlinedButton: UBButton {
         super.init()
 
         highlightCornerRadius = 3
-        contentEdgeInsets = UIEdgeInsets(top: NSPadding.small, left: NSPadding.medium, bottom: NSPadding.small, right: NSPadding.medium)
+        highlightedBackgroundColor = UIColor.ns_text.withAlphaComponent(0.15)
+        contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
+
+        if contentSize.height > 44.0 {
+            contentSize.height = contentSize.height + NSPadding.medium
+        }
+
+        return contentSize
     }
 }

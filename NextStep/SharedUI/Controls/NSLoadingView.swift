@@ -21,6 +21,7 @@ class NSLoadingView: UIView {
 
         backgroundColor = .ns_background
         setup()
+        accessibilityViewIsModal = true
     }
 
     required init?(coder _: NSCoder) {
@@ -41,7 +42,11 @@ class NSLoadingView: UIView {
         loadingIndicatorView.stopAnimating()
 
         if let err = error {
-            errorTextLabel.text = err.localizedDescription
+            if let locErr = err as? LocalizedError {
+                errorTextLabel.text = locErr.localizedDescription
+            } else {
+                errorTextLabel.text = err.localizedDescription
+            }
             reloadButton.touchUpCallback = reloadHandler
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0

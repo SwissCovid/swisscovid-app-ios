@@ -110,6 +110,8 @@ private class NSMoreInfoView: UIView {
 
         line1Label.text = line1
         line2Label.text = line2
+
+        setupAccessibility()
     }
 
     required init?(coder _: NSCoder) {
@@ -122,6 +124,8 @@ private class NSMoreInfoView: UIView {
         container.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(NSPadding.small)
             make.centerX.equalToSuperview()
+
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.small)
         }
 
         container.addSubview(line1Label)
@@ -136,5 +140,16 @@ private class NSMoreInfoView: UIView {
             make.leading.bottom.equalToSuperview()
             make.trailing.lessThanOrEqualToSuperview()
         }
+    }
+}
+
+// MARK: - Accessibility
+
+extension NSMoreInfoView {
+    private func setupAccessibility() {
+        isAccessibilityElement = true
+        accessibilityLabel = [line1Label, line2Label]
+            .compactMap { $0.text }
+            .joined(separator: " ")
     }
 }

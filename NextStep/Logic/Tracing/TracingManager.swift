@@ -53,6 +53,10 @@ class TracingManager: NSObject {
         }
 
         UIApplication.shared.setMinimumBackgroundFetchInterval(databaseSyncInterval)
+
+        updateStatus { _ in
+            self.uiStateManager.refresh()
+        }
     }
 
     func beginUpdatesAndTracing() {
@@ -107,9 +111,12 @@ class TracingManager: NSObject {
                 UIStateManager.shared.updateError = e
                 completion?(e)
             case let .success(st):
-                UIStateManager.shared.updateError = nil
-                UIStateManager.shared.tracingState = st
-                UIStateManager.shared.trackingState = st.trackingState
+                UIStateManager.shared.blockUpdate {
+                    UIStateManager.shared.updateError = nil
+                    UIStateManager.shared.tracingState = st
+                    UIStateManager.shared.trackingState = st.trackingState
+                }
+
                 completion?(nil)
 
                 // schedule local push if exposed
@@ -152,18 +159,23 @@ class TracingManager: NSObject {
         DP3TTracing.sync { result in
             switch result {
             case let .failure(e):
-                UIStateManager.shared.syncError = e
-                if case DP3TTracingError.networkingError = e {
-                    UIStateManager.shared.lastSyncErrorTime = Date()
-                } else if case DP3TTracingError.timeInconsistency = e {
-                    UIStateManager.shared.hasTimeInconsistencyError = true
+                UIStateManager.shared.blockUpdate {
+                    UIStateManager.shared.syncError = e
+                    if case DP3TTracingError.networkingError = e {
+                        UIStateManager.shared.lastSyncErrorTime = Date()
+                    } else if case DP3TTracingError.timeInconsistency = e {
+                        UIStateManager.shared.hasTimeInconsistencyError = true
+                    }
                 }
+
                 completionHandler?(.failed)
             case .success:
-                self.lastDatabaseSync = Date()
-                UIStateManager.shared.firstSyncErrorTime = nil
-                UIStateManager.shared.lastSyncErrorTime = nil
-                UIStateManager.shared.hasTimeInconsistencyError = false
+                UIStateManager.shared.blockUpdate {
+                    self.lastDatabaseSync = Date()
+                    UIStateManager.shared.firstSyncErrorTime = nil
+                    UIStateManager.shared.lastSyncErrorTime = nil
+                    UIStateManager.shared.hasTimeInconsistencyError = false
+                }
 
                 self.updateStatus(completion: nil)
 
@@ -188,9 +200,11 @@ extension TracingManager: CBCentralManagerDelegate {
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
-            UIStateManager.shared.updateError = nil
-            UIStateManager.shared.tracingState = state
-            UIStateManager.shared.trackingState = state.trackingState
+            UIStateManager.shared.blockUpdate {
+                UIStateManager.shared.updateError = nil
+                UIStateManager.shared.tracingState = state
+                UIStateManager.shared.trackingState = state.trackingState
+            }
         }
     }
 }

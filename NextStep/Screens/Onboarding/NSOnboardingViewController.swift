@@ -138,6 +138,8 @@ class NSOnboardingViewController: NSViewController {
         vcToShow.view.layoutIfNeeded()
 
         currentStep = step
+
+        UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 
     private func showContinueButton() {
@@ -212,7 +214,7 @@ class NSOnboardingViewController: NSViewController {
             view.insertSubview(vc.view, belowSubview: finishButton)
             vc.view.snp.makeConstraints { make in
                 make.top.leading.trailing.equalToSuperview()
-                if vc is NSOnboardingPermissionsViewController {
+                if vc is NSOnboardingPermissionsViewController || vc is NSOnboardingFinishViewController {
                     make.bottom.equalToSuperview()
                 } else {
                     make.bottom.equalTo(continueContainer.snp.top)

@@ -89,6 +89,8 @@ class NSButton: UBButton {
         layer.cornerRadius = 3
         contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.large, bottom: NSPadding.medium, right: NSPadding.large)
 
+        titleLabel?.numberOfLines = 2
+
         snp.makeConstraints { make in
             make.height.greaterThanOrEqualTo(44.0)
         }
@@ -102,5 +104,15 @@ class NSButton: UBButton {
         didSet {
             backgroundColor = isEnabled ? style.backgroundColor : UIColor.black.withAlphaComponent(0.15)
         }
+    }
+
+    override var intrinsicContentSize: CGSize {
+        var contentSize = super.intrinsicContentSize
+
+        if contentSize.height > 44.0 {
+            contentSize.height = contentSize.height + NSPadding.medium
+        }
+
+        return contentSize
     }
 }

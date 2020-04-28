@@ -32,6 +32,7 @@ class NSBluetoothSettingsControl: UIView {
         state = initialState
 
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         backgroundColor = .white
 
@@ -40,6 +41,7 @@ class NSBluetoothSettingsControl: UIView {
         switchControl.onTintColor = .ns_blue
 
         setup()
+        updateAccessibility()
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
@@ -99,6 +101,14 @@ class NSBluetoothSettingsControl: UIView {
         inactiveViewConstraint?.activate()
     }
 
+    private func updateAccessibility() {
+        isAccessibilityElement = false
+        titleLabel.isAccessibilityElement = false
+        subtitleLabel.isAccessibilityElement = false
+
+        switchControl.accessibilityLabel = [titleLabel.text ?? "", subtitleLabel.text ?? ""].joined(separator: ",")
+    }
+
     // MARK: - Switch Logic
 
     @objc private func switchChanged() {
@@ -106,9 +116,13 @@ class NSBluetoothSettingsControl: UIView {
         if TracingManager.shared.isActivated != switchControl.isOn {
             TracingManager.shared.isActivated = switchControl.isOn
         }
+
+        updateAccessibility()
     }
 
     private func updateState(_ state: UIStateModel) {
+        self.state = state.begegnungenDetail
+
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)
         tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
 
@@ -135,5 +149,7 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
         }
+
+        updateAccessibility()
     }
 }

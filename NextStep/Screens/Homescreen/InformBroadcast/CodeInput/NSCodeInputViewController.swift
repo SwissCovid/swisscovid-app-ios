@@ -8,6 +8,8 @@ import Foundation
 import UIKit
 
 class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtocol {
+    // MARK: - Views
+
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
@@ -23,11 +25,23 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized, color: .ns_purple)
 
+    // MARK: - View
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setup()
+        setupAccessibility()
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !UIAccessibility.isVoiceOverRunning {
+            codeControl.jumpToNextField()
+        }
+    }
+
+    // MARK: - Setup
 
     private func setup() {
         titleLabel.text = "inform_code_title".ub_localized
@@ -38,7 +52,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(NSPadding.medium * 2.0)
         }
 
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
@@ -121,6 +135,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         sendButton.isEnabled = false
     }
 
+    func setupAccessibility() {}
+
+    // MARK: - Send Logic
+
     private var rightBarButtonItem: UIBarButtonItem?
 
     private func sendPressed() {
@@ -148,7 +166,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                     self.codeControl.clearAndRestart()
                     self.errorView.isHidden = false
                     self.textLabel.isHidden = true
+
                     self.stopLoading()
+                    if UIAccessibility.isVoiceOverRunning {
+                        UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
+                    }
                 }
 
                 self.navigationItem.hidesBackButton = false
@@ -163,10 +185,9 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     }
 
     private func changePresentingViewController() {
-        let presenting = presentingViewController as? NSTabBarController
-        let tabNav = presenting?.viewControllers?.first as? NSNavigationController
-        tabNav?.popToRootViewController(animated: true)
-        tabNav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
+        let nav = presentingViewController as? NSNavigationController
+        nav?.popToRootViewController(animated: true)
+        nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
     }
 
     private func noCodeButtonPressed() {
@@ -175,5 +196,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     func changeSendPermission(to sendAllowed: Bool) {
         sendButton.isEnabled = sendAllowed
+        if sendAllowed {
+            sendButton.accessibilityHint = ""
+
+        } else {
+            sendButton.accessibilityHint = "accessibility_code_button_disabled_hint".ub_localized
+        }
     }
 }

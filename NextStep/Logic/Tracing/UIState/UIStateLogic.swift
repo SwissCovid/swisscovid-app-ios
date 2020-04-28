@@ -34,6 +34,8 @@ class UIStateLogic {
             return newState
         }
 
+        setHomescreenState(&newState, tracing: tracing)
+
         //
         // Detect exposure, infection
         //
@@ -54,6 +56,7 @@ class UIStateLogic {
 
         // Set debug helpers
         #if CALIBRATION_SDK
+            setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
         #endif
 
@@ -73,6 +76,7 @@ class UIStateLogic {
             case .cryptographyError(_), .databaseError(_), .jwtSignitureError:
                 tracing = .unexpectedError
             case .networkingError(_), .caseSynchronizationError:
+                // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
         case .activeReceiving, .activeAdvertising:
@@ -144,15 +148,17 @@ class UIStateLogic {
                 }
 
                 newState.debug.overwrittenInfectionState = os
+            }
+        }
 
-                // in case the infection state is overwritten, we need to
-                // add at least one meldung
-                if let os = manager.overwrittenInfectionState, os == .exposed {
-                    newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date())].sorted(by: { (a, b) -> Bool in
-                        a.timestamp < b.timestamp
+        private func setDebugMeldungen(_ newState: inout UIStateModel) {
+            // in case the infection state is overwritten, we need to
+            // add at least one meldung
+            if let os = manager.overwrittenInfectionState, os == .exposed {
+                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date()), NSMeldungModel(identifier: 123_333_333, timestamp: Date(timeIntervalSinceNow: 10000))].sorted(by: { (a, b) -> Bool in
+                    a.timestamp < b.timestamp
                 })
-                    newState.shouldStartAtMeldungenDetail = true
-                }
+                newState.shouldStartAtMeldungenDetail = true
             }
         }
 

@@ -29,11 +29,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     override var titleHeight: CGFloat {
-        return 260.0
+        return 260.0 * NSFontSize.fontSizeMultiplicator
     }
 
     override var startPositionScrollView: CGFloat {
-        return 230.0
+        return titleHeight - 30
     }
 
     // MARK: - Views
@@ -156,6 +156,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
 extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
-        return point.y < startPositionScrollView
+        return point.y + stackScrollView.scrollView.contentOffset.y < startPositionScrollView
     }
 }

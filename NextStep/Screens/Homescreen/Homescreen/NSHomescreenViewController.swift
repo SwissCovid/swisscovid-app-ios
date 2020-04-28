@@ -75,6 +75,22 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         appTitleView.changeBackgroundRandomly()
         UIStateManager.shared.refresh()
+
+        if !NSUser.shared.hasCompletedOnboarding {
+            let v = UIView()
+            v.backgroundColor = .ns_background
+            view.addSubview(v)
+            v.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                UIView.animate(withDuration: 0.5) {
+                    v.alpha = 0.0
+                    v.isUserInteractionEnabled = false
+                }
+            }
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -82,6 +98,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
+
+        presentOnboardingIfNeeded()
     }
 
     private var finishTransition: (() -> Void)?
@@ -89,6 +107,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Setup
 
     private func setupLayout() {
+        // navigation bar
+        let image = UIImage(named: "ic-info")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
+        // other views
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -108,6 +131,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let debugScreenContainer = UIView()
         debugScreenContainer.addSubview(debugScreenButton)
         debugScreenButton.snp.makeConstraints { make in
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
             make.top.bottom.centerX.equalToSuperview()
         }
 
@@ -124,6 +148,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let uploadDBContainer = UIView()
         uploadDBContainer.addSubview(uploadDBButton)
         uploadDBButton.snp.makeConstraints { make in
+            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
             make.top.bottom.centerX.equalToSuperview()
         }
 
@@ -189,6 +214,14 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     // MARK: - Details
 
+    private func presentOnboardingIfNeeded() {
+        if !NSUser.shared.hasCompletedOnboarding {
+            let onboardingViewController = NSOnboardingViewController()
+            onboardingViewController.modalPresentationStyle = .fullScreen
+            present(onboardingViewController, animated: false)
+        }
+    }
+
     private func presentBegegnungenDetail() {
         navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
     }
@@ -207,6 +240,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private func presentWhatToDoSymptoms() {
         navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
+    }
+
+    @objc private func infoButtonPressed() {
+        present(NSNavigationController(rootViewController: NSAboutViewController()), animated: true)
     }
 
     private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))

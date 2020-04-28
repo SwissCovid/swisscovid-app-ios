@@ -64,17 +64,9 @@ class NSTracingLocalPush {
 
     private func jumpToMeldung() {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let rootVC = appDelegate.window?.rootViewController as? NSTabBarController {
-            if rootVC.selectedIndex == 0 {
-                let navigationVC = rootVC.selectedViewController as? NSNavigationController
-                navigationVC?.popToRootViewController(animated: false)
-                (navigationVC?.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
-            } else {
-                (rootVC.viewControllers?[0] as? NSNavigationController)?.popToRootViewController(animated: false)
-                rootVC.selectedIndex = 0
-                let navigationVC = rootVC.selectedViewController as? NSNavigationController
-                (navigationVC?.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
-            }
+            let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
+            navigationVC.popToRootViewController(animated: false)
+            (navigationVC.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
         }
     }
 }
