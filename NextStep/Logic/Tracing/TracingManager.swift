@@ -47,7 +47,25 @@ class TracingManager: NSObject {
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
                                                    jwtPublicKey: nil)
-            try DP3TTracing.initialize(with: .manual(descriptor))
+
+            #if CALIBRATION_SDK
+                switch Environment.current {
+                case .dev:
+                    // 5min Batch lenght on dev Enviroment
+                    DP3TTracing.batchLength = 5 * 60
+                    var appVersion = "N/A"
+                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                        appVersion = "\(version)(\(build))"
+                    }
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               mode: .calibration(identifierPrefix: "", appVersion: appVersion))
+                case .prod:
+                    try DP3TTracing.initialize(with: .manual(descriptor))
+                }
+            #else
+                try DP3TTracing.initialize(with: .manual(descriptor))
+            #endif
         } catch {
             UIStateManager.shared.tracingStartError = error
         }
@@ -161,10 +179,14 @@ class TracingManager: NSObject {
             case let .failure(e):
                 UIStateManager.shared.blockUpdate {
                     UIStateManager.shared.syncError = e
-                    if case DP3TTracingError.networkingError = e {
+                    if case let DP3TTracingError.networkingError(wrappedError) = e {
+                        switch wrappedError {
+                        case .timeInconsistency:
+                            UIStateManager.shared.hasTimeInconsistencyError = true
+                        default:
+                            break
+                        }
                         UIStateManager.shared.lastSyncErrorTime = Date()
-                    } else if case DP3TTracingError.timeInconsistency = e {
-                        UIStateManager.shared.hasTimeInconsistencyError = true
                     }
                 }
 

@@ -149,9 +149,7 @@ class UIStateManager: NSObject {
                      (.cryptographyError(_), .cryptographyError(_)),
                      (.databaseError(_), .databaseError(_)),
                      (.bluetoothTurnedOff, .bluetoothTurnedOff),
-                     (.permissonError, .permissonError),
-                     (.jwtSignitureError, .jwtSignitureError),
-                     (.timeInconsistency(_), .timeInconsistency(_)):
+                     (.permissonError, .permissonError):
                     return
                 // TODO: Long changing list of errors and default value is dangerous
                 default:

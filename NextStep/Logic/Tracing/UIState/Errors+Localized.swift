@@ -12,7 +12,7 @@ extension DP3TTracingError: LocalizedError {
         let unexpected = "unexpected_error_title".ub_localized
         switch self {
         case let .networkingError(error):
-            return error?.localizedDescription
+            return error.localizedDescription
         case .caseSynchronizationError:
             return unexpected.ub_localized.replacingOccurrences(of: "{ERROR}", with: "CCPUID")
         case let .cryptographyError(error):
@@ -23,10 +23,6 @@ extension DP3TTracingError: LocalizedError {
             return "bluetooth_turned_off".ub_localized
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized
-        case .timeInconsistency:
-            return nil
-        case .jwtSignitureError:
-            return nil
         }
     }
 }
