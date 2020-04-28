@@ -31,3 +31,15 @@ extension DateFormatter {
         }
     }
 }
+
+extension Date {
+    func ns_differenceInDaysWithDate(date: Date) -> Int {
+        let calendar = Calendar.current
+
+        let date1 = calendar.startOfDay(for: self)
+        let date2 = calendar.startOfDay(for: date)
+
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        return components.day ?? 0
+    }
+}
