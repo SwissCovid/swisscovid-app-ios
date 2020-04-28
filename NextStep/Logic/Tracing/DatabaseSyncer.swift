@@ -77,6 +77,8 @@ class DatabaseSyncer {
 
                 completionHandler?(.newData)
 
+                NSTracingLocalPush.shared.resetSyncWarningTriggers()
+
                 DebugAlert.show("Synced Database")
             }
             if taskIdentifier != .invalid {
