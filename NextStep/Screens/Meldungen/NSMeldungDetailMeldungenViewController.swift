@@ -150,7 +150,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         PhoneCallHelper.call(phoneNumber)
 
         NSUser.shared.registerPhoneCall(identifier: last.identifier)
-        UIStateManager.shared.uiState.shouldStartAtMeldungenDetail = false
+        UIStateManager.shared.refresh()
     }
 }
 

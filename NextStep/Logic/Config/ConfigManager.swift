@@ -24,12 +24,13 @@ class ConfigManager: NSObject {
         let appversion = "ios-\(shortVersion)"
         let systemVersion = UIDevice.current.systemVersion
         let osversion = "ios\(systemVersion)"
-        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { data, _, _ in
+        dataTask = session.dataTask(with: Endpoint.config(appversion: appversion, osversion: osversion).request(), completionHandler: { data, _, error in
 
             DispatchQueue.main.async {
                 if let d = data, let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: d) {
                     completion(config)
                 } else {
+                    DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                     completion(nil)
                 }
             }
@@ -52,6 +53,8 @@ class ConfigManager: NSObject {
             let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg ?? "force_update_text".ub_localized, preferredStyle: .alert)
 
             window?.rootViewController?.present(alert, animated: true, completion: nil)
+        } else {
+            DebugAlert.show("NO force update alert")
         }
     }
 }

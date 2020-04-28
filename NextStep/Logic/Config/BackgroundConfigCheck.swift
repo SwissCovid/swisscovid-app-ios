@@ -20,6 +20,7 @@ private class ConfigLoadOperation: Operation {
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             } else {
                 self.cancel()
+                DebugAlert.show("No forced update")
             }
         }
     }

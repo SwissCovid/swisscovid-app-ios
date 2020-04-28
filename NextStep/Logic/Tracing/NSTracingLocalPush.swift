@@ -34,19 +34,24 @@ class NSTracingLocalPush {
             for identifier in exposureIdentifiers {
                 if !oldValue.contains(identifier) {
                     if UIApplication.shared.applicationState == .active {
-                        showAlert()
+                        if !alreadyShowsMeldung() {
+                            showAlert()
+                        }
                     } else {
                         let content = UNMutableNotificationContent()
                         content.title = "push_exposed_title".ub_localized
                         content.body = "push_exposed_text".ub_localized
 
                         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                        let request = UNNotificationRequest(identifier: "ch.admin.bag.push.exposed", content: content, trigger: trigger)
+                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                     }
                     return
                 }
             }
+            #if CALIBRATION_SDK
+                DebugAlert.show("Keine neuen Meldungen")
+            #endif
         }
     }
 
@@ -59,7 +64,17 @@ class NSTracingLocalPush {
 
         alert.addAction(UIAlertAction(title: "meldung_in_app_alert_ignore_button".ub_localized, style: .cancel, handler: nil))
 
-        UIApplication.shared.keyWindow?.rootViewController?.show(alert, sender: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+    }
+
+    private func alreadyShowsMeldung() -> Bool {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+            let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
+            if navigationVC.viewControllers.last is NSMeldungenDetailViewController {
+                return true
+            }
+        }
+        return false
     }
 
     private func jumpToMeldung() {

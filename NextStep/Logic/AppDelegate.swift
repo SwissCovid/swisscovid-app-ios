@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        TracingManager.shared.performFetch(completionHandler: completionHandler)
+        DatabaseSyncer.shared.performFetch(completionHandler: completionHandler)
     }
 
     // MARK: - Force update

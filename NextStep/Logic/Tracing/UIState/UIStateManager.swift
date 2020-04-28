@@ -30,7 +30,7 @@ class UIStateManager: NSObject {
 
     // MARK: - UI State Update
 
-    var uiState: UIStateModel! = UIStateModel() {
+    private(set) var uiState: UIStateModel! = UIStateModel() {
         didSet {
             var stateHasChanged = uiState != oldValue
             #if CALIBRATION_SDK
