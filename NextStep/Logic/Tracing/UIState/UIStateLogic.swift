@@ -163,6 +163,7 @@ class UIStateLogic {
 
         private func setDebugDisplayValues(_ newState: inout UIStateModel, tracingState: TracingState) {
             newState.debug.handshakeCount = tracingState.numberOfHandshakes
+            newState.debug.contactCount = tracingState.numberOfContacts
             newState.debug.lastSync = tracingState.lastSync
             newState.debug.secretKeyRepresentation = try? DP3TTracing.getSecretKeyRepresentationForToday()
 
