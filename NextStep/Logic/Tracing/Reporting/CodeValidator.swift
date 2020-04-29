@@ -12,8 +12,8 @@ class CodeValidator {
         case invalidTokenError
     }
 
-    func sendCodeRequest(code: String, isFakeRequest _: Bool, completion: @escaping (ValidationResult) -> Void) {
-        let auth = AuthorizationRequestBody(authorizationCode: code)
+    func sendCodeRequest(code: String, isFakeRequest fake: Bool, completion: @escaping (ValidationResult) -> Void) {
+        let auth = AuthorizationRequestBody(authorizationCode: code, fake: fake ? 1 : 0)
 
         let dataTask = URLSession.shared.dataTask(with: Endpoint.onset(auth: auth).request(), completionHandler: { data, response, error in
 

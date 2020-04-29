@@ -4,6 +4,7 @@ import Foundation
 
 struct AuthorizationRequestBody: Codable {
     let authorizationCode: String
+    let fake: Int
 }
 
 struct AuthorizationResponseBody: Codable {
