@@ -51,7 +51,7 @@ class NSLoadingView: UIView {
             if let codedError = err as? CodedError {
                 errorCodeLabel.text = codedError.errorCodeString
             } else {
-                errorCodeLabel.text = nil
+                errorCodeLabel.text = CodeErrorUnexpected
             }
             reloadButton.touchUpCallback = reloadHandler
             loadingIndicatorView.alpha = 0.0

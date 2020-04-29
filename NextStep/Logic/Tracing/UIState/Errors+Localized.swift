@@ -11,6 +11,8 @@ protocol CodedError {
     var errorCodeString: String? { get }
 }
 
+let CodeErrorUnexpected = "UNKNW"
+
 extension DP3TTracingError: LocalizedError, CodedError {
     public var errorDescription: String? {
         let unexpected = "unexpected_error_title".ub_localized
