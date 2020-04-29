@@ -78,7 +78,6 @@
 		6E6E518B242FA39C006E532E /* NSVerhaltenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518A242FA39C006E532E /* NSVerhaltenViewController.swift */; };
 		6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */; };
 		6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */; };
-		6E6E5192243121D2006E532E /* NSErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5191243121D2006E532E /* NSErrorView.swift */; };
 		6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */; };
 		6E7C0D20242CE1190017C4F9 /* UIColor+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */; };
 		6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* NSButton.swift */; };
@@ -226,7 +225,6 @@
 		6E6E518A242FA39C006E532E /* NSVerhaltenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSVerhaltenViewController.swift; sourceTree = "<group>"; };
 		6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAppTitleView.swift; sourceTree = "<group>"; };
 		6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFancyNumberView.swift; sourceTree = "<group>"; };
-		6E6E5191243121D2006E532E /* NSErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSErrorView.swift; sourceTree = "<group>"; };
 		6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabelType.swift; sourceTree = "<group>"; };
 		6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NS.swift"; sourceTree = "<group>"; };
 		6E7C0D21242CE2100017C4F9 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
@@ -578,7 +576,6 @@
 				6E3F65FA2449CF0900980A4E /* NSSimpleModuleBaseView.swift */,
 				24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */,
 				AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */,
-				6E6E5191243121D2006E532E /* NSErrorView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1158,7 +1155,6 @@
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
-				6E6E5192243121D2006E532E /* NSErrorView.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
