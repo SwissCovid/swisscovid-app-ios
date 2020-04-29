@@ -20,7 +20,7 @@ class NSTracingLocalPush {
     func update(state: TracingState) {
         switch state.infectionStatus {
         case let .exposed(matches):
-            exposureIdentifiers = matches.map { $0.identifier! }
+            exposureIdentifiers = matches.map { $0.identifier }
         case .healthy:
             exposureIdentifiers = []
         case .infected:
