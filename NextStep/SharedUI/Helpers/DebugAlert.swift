@@ -9,6 +9,7 @@ import Foundation
 
         static func show(_ message: String) {
             dprint("Alert: ", message)
+            /*
             if UIApplication.shared.applicationState == .active {
                 messages.insert(message, at: 0)
 
@@ -40,6 +41,7 @@ import Foundation
                 let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
                 UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
             }
+             */
         }
     }
 #endif
