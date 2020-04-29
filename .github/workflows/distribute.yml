@@ -70,7 +70,7 @@ jobs:
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
         MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
         APP_SCHEME: "Release-Abnahme"
-        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_ABNAHME }}
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_TEST }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
       run: bundle exec fastlane sign_and_build
       
