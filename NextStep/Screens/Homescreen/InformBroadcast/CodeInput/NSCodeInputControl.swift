@@ -140,12 +140,36 @@ class NSCodeControl: UIView {
 
         controller?.changeSendPermission(to: true)
     }
+
+    // MARK: - Copy & paste
+
+    public func fill(text: String, startControl: NSCodeSingleControl) {
+        var started = false
+
+        var onlyDigits = text.filter { Int("\($0)") != nil }
+
+        for c in controls {
+            if c == startControl {
+                started = true
+            }
+
+            if let first = onlyDigits.first, started {
+                c.setDigit(digit: String(first))
+                onlyDigits.removeFirst()
+                _ = c.becomeFirstResponder()
+            }
+        }
+
+        jumpToNextField()
+
+        checkSendAllowed()
+    }
 }
 
 class NSCodeSingleControl: UIView, UITextFieldDelegate {
     public weak var parent: NSCodeControl?
 
-    private let textView = UITextField()
+    private let textField = NSTextField()
     private let emptyCharacter = "\u{200B}"
 
     private var hadText: Bool = false
@@ -153,14 +177,14 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     init(index: Int) {
         super.init(frame: .zero)
         setup()
-        textView.text = emptyCharacter
-        textView.accessibilityTraits = .none
+        textField.text = emptyCharacter
+        textField.accessibilityTraits = .none
         isAccessibilityElement = true
-        textView.accessibilityLabel = "accessibility_\(index + 1)nd".ub_localized
+        textField.accessibilityLabel = "accessibility_\(index + 1)nd".ub_localized
     }
 
     override func accessibilityElementDidBecomeFocused() {
-        textView.becomeFirstResponder()
+        textField.becomeFirstResponder()
     }
 
     required init?(coder _: NSCoder) {
@@ -170,32 +194,42 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
     // MARK: - Checks/Code
 
     public func codeIsSet() -> Bool {
-        (textView.text ?? "").replacingOccurrences(of: emptyCharacter, with: "").count > 0
+        (textField.text ?? "").replacingOccurrences(of: emptyCharacter, with: "").count > 0
     }
 
     public func code() -> String? {
-        textView.text?.replacingOccurrences(of: emptyCharacter, with: "")
+        textField.text?.replacingOccurrences(of: emptyCharacter, with: "")
     }
 
     public func clearInput() {
-        textView.resignFirstResponder()
-        textView.text = ""
+        textField.resignFirstResponder()
+        textField.text = ""
+    }
+
+    // MARK: - Copy&paste
+
+    public func fill(text: String) {
+        parent?.fill(text: text, startControl: self)
+    }
+
+    public func setDigit(digit: String) {
+        textField.text = digit
     }
 
     // MARK: - First responder
 
     override func becomeFirstResponder() -> Bool {
         changeBorderStyle(isSelected: true)
-        return textView.becomeFirstResponder()
+        return textField.becomeFirstResponder()
     }
 
     override func resignFirstResponder() -> Bool {
         changeBorderStyle(isSelected: false)
-        return textView.resignFirstResponder()
+        return textField.resignFirstResponder()
     }
 
     func reset() {
-        textView.text = emptyCharacter
+        textField.text = emptyCharacter
         hadText = false
     }
 
@@ -218,21 +252,22 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
             make.height.equalTo(36)
         }
 
-        addSubview(textView)
+        addSubview(textField)
 
-        textView.snp.makeConstraints { make in
+        textField.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0, left: -2, bottom: 0, right: -2))
         }
 
         changeBorderStyle(isSelected: false)
 
-        textView.font = NSLabelType.title.font
-        textView.textAlignment = .center
-        textView.textColor = .ns_text
-        textView.keyboardType = .numberPad
+        textField.font = NSLabelType.title.font
+        textField.textAlignment = .center
+        textField.textColor = .ns_text
+        textField.keyboardType = .numberPad
 
-        textView.addTarget(self, action: #selector(editingChanged(sender:)), for: .editingChanged)
-        textView.delegate = self
+        textField.addTarget(self, action: #selector(editingChanged(sender:)), for: .editingChanged)
+        textField.delegate = self
+        textField.singleControl = self
     }
 
     // MARK: - Textfield Delegate
@@ -263,5 +298,21 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     func textFieldDidEndEditing(_: UITextField) {
         changeBorderStyle(isSelected: false)
+    }
+}
+
+class NSTextField: UITextField {
+    public weak var singleControl: NSCodeSingleControl?
+
+    override func paste(_: Any?) {
+        let pasteboard = UIPasteboard.general
+
+        if let text = pasteboard.string {
+            singleControl?.fill(text: text)
+        }
+    }
+
+    override func canPerformAction(_ action: Selector, withSender _: Any?) -> Bool {
+        return action == #selector(UIResponderStandardEditActions.paste)
     }
 }
