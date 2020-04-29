@@ -9,12 +9,15 @@ import Foundation
 /// The backend environment under which the application runs.
 enum Environment {
     case dev
+    case abnahme
     case prod
 
     /// The current environment, as configured in build settings.
     static var current: Environment {
         #if DEBUG
             return .dev
+        #elseif RELEASE_ABNAHME
+            return .abnahme
         #elseif RELEASE_TEST
             return .dev
         #elseif RELEASE_PROD
@@ -30,6 +33,8 @@ enum Environment {
         switch self {
         case .dev:
             return Backend("https://codegen-service-d.bag.admin.ch", version: "v1")
+        case .abnahme:
+            return Backend("https://codegen-service-a.bag.admin.ch", version: "v1")
         case .prod:
             return Backend("https://codegen-service.bag.admin.ch", version: "v1")
         }
@@ -38,6 +43,8 @@ enum Environment {
     var jwtPublicKey: Data {
         switch self {
         case .dev:
+            return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFeDBBNGZjNmVvWjhVVnprS1ZQWW81NXJlTnlwRAo2TStUcy80K2hCenpIcHBXQU9oNG1rOURKNXhYbXVoR0RhNXVtbXY3YTh1MmUrRThqcjUwWURnc0lBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
+        case .abnahme:
             return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFeDBBNGZjNmVvWjhVVnprS1ZQWW81NXJlTnlwRAo2TStUcy80K2hCenpIcHBXQU9oNG1rOURKNXhYbXVoR0RhNXVtbXY3YTh1MmUrRThqcjUwWURnc0lBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
         case .prod:
             return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFeDBBNGZjNmVvWjhVVnprS1ZQWW81NXJlTnlwRAo2TStUcy80K2hCenpIcHBXQU9oNG1rOURKNXhYbXVoR0RhNXVtbXY3YTh1MmUrRThqcjUwWURnc0lBPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
@@ -48,6 +55,8 @@ enum Environment {
         switch self {
         case .dev:
             return Backend("https://www.pt-d.bfs.admin.ch", version: "v1")
+        case .abnahme:
+            return Backend("https://www.pt-a.bfs.admin.ch", version: "v1")
         case .prod:
             return Backend("https://www.pt.bfs.admin.ch", version: "v1")
         }
@@ -57,6 +66,8 @@ enum Environment {
         switch self {
         case .dev:
             return Backend("https://www.pt1-d.bfs.admin.ch", version: "v1")
+        case .abnahme:
+            return Backend("https://www.pt1-a.bfs.admin.ch", version: "v1")
         case .prod:
             return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
         }

@@ -61,6 +61,8 @@ class TracingManager: NSObject {
                     }
                     try DP3TTracing.initialize(with: .manual(descriptor),
                                                mode: .calibration(identifierPrefix: "", appVersion: appVersion))
+                case .abnahme:
+                    try DP3TTracing.initialize(with: .manual(descriptor))
                 case .prod:
                     try DP3TTracing.initialize(with: .manual(descriptor))
                 }
