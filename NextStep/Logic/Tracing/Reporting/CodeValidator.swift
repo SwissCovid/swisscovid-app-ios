@@ -8,8 +8,7 @@ import Foundation
 class CodeValidator {
     enum ValidationResult {
         case success(token: String, date: Date)
-        case networkError
-        case unexpectedError
+        case failure(error: Error)
         case invalidTokenError
     }
 
@@ -20,7 +19,7 @@ class CodeValidator {
 
             DispatchQueue.main.async {
                 if response == nil {
-                    completion(.networkError)
+                    completion(.failure(error: NetworkError.networkError))
                     return
                 }
 
@@ -28,36 +27,36 @@ class CodeValidator {
                     if response.statusCode == 404 {
                         completion(.invalidTokenError)
                         return
-                    } else if response.statusCode >= 300 {
-                        completion(.unexpectedError)
+                    } else if response.statusCode >= 400 {
+                        completion(.failure(error: NetworkError.statusError(code: response.statusCode)))
                         return
                     }
                 }
 
-                if error != nil {
-                    completion(.unexpectedError)
+                if let error = error {
+                    completion(.failure(error: error))
                     return
                 }
 
                 guard let d = data, let result = try? JSONDecoder().decode(AuthorizationResponseBody.self, from: d) else {
-                    completion(.unexpectedError)
+                    completion(.failure(error: NetworkError.parseError))
                     return
                 }
 
                 guard let jwtBody = result.accessToken.body else {
-                    completion(.unexpectedError)
+                    completion(.failure(error: NetworkError.parseError))
                     return
                 }
 
                 guard let dateString = jwtBody.keydate ?? jwtBody.onset else {
-                    completion(.unexpectedError)
+                    completion(.failure(error: NetworkError.parseError))
                     return
                 }
 
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 guard let date = formatter.date(from: dateString) else {
-                    completion(.unexpectedError)
+                    completion(.failure(error: NetworkError.parseError))
                     return
                 }
 

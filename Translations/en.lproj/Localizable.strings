@@ -669,3 +669,9 @@
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Weiter";
+
+/*Titel Impressum Menu*/
+"menu_impressum" = "Impressum";
+"sync_error_title" = "Unerwarteter Fehler";
+"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
+"sync_error_button" = "Erneut versuchen";

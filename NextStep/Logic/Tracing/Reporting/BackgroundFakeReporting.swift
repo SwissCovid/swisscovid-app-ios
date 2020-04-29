@@ -29,7 +29,7 @@ private var didRegisterBackgroundTask: Bool = false
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "fake-publish"
 
-    static let syncInterval: TimeInterval = 24 * 60 * 60
+    static let syncInterval: TimeInterval = 24 * 60 * 60 * 5 // 5 days
 
     /// A logger for debugging
     #if CALIBRATION

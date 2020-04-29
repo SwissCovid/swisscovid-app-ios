@@ -11,6 +11,7 @@ class NSErrorView: NSModuleBaseView {
 
     private var iconImageView = UIImageView(image: UIImage(named: "ic-info-on"))
     private var infoLabel = NSLabel(.textLight)
+    private var errorCodeLabel = NSLabel(.smallRegular)
 
     override init() {
         super.init()
@@ -36,11 +37,17 @@ class NSErrorView: NSModuleBaseView {
     private func setup() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(infoLabel)
+        contentView.addSubview(errorCodeLabel)
 
         layoutMargins = UIEdgeInsets(top: 18, left: 70, bottom: 25, right: 22)
 
         infoLabel.snp.makeConstraints { make in
-            make.leading.top.trailing.bottom.equalTo(layoutMargins)
+            make.leading.top.trailing.equalTo(layoutMargins)
+        }
+
+        errorCodeLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoLabel).offset(NSPadding.small)
+            make.bottom.equalTo(layoutMargins)
         }
 
         iconImageView.snp.makeConstraints { make in
@@ -59,13 +66,16 @@ class NSErrorView: NSModuleBaseView {
     // MARK: - Error text
 
     private func setErrorText(_ error: Error?) {
-        let unexpected = "unexpected_error_title".ub_localized
-
-        guard let err = error as? LocalizedError else {
-            infoLabel.text = unexpected.replacingOccurrences(of: "{ERROR}", with: "NONLOC")
-            return
+        if let locErr = error as? LocalizedError {
+            infoLabel.text = locErr.localizedDescription
+        } else {
+            infoLabel.text = error?.localizedDescription
         }
 
-        infoLabel.text = err.localizedDescription
+        if let codedError = error as? CodedError {
+            errorCodeLabel.text = codedError.errorCodeString
+        } else {
+            errorCodeLabel.text = nil
+        }
     }
 }

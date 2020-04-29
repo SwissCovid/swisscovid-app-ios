@@ -95,7 +95,7 @@
 "inform_text_homescreen_nosymptoms" = "Informiere Personen, denen du begegnet bist anonym, wenn du positiv auf COVID-19 getestet wurdest.";
 
 /*Unerwarteter Fehler*/
-"unexpected_error_title" = "Ein unerwarteter Fehler ist aufgetreten ({ERROR}).";
+"unexpected_error_title" = "Ein unerwarteter Fehler ist aufgetreten.";
 
 /*Bluetooth Fehlermeldung*/
 "bluetooth_turned_off" = "Die App funktioniert nicht, weil Bluetooth ausgeschaltet ist.";
@@ -687,3 +687,9 @@
 /*Meldungen Detail: Button bei Vollansicht*/
 /*Fuzzy*/
 "meldung_animation_continue_button" = "Weiter";
+
+/*Titel Impressum Menu*/
+"menu_impressum" = "Impressum";
+"sync_error_title" = "Unerwarteter Fehler";
+"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
+"sync_error_button" = "Erneut versuchen";

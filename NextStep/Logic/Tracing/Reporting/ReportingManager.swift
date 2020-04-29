@@ -19,9 +19,8 @@ class ReportingManager {
 
     // MARK: - Variables
 
-    enum ReportingError: Error {
-        case network
-        case unexpected
+    enum ReportingProblem {
+        case failure(error: Error)
         case invalidCode
     }
 
@@ -35,7 +34,7 @@ class ReportingManager {
 
     static let fakeCode = "000000000000"
 
-    func report(covidCode: String = ReportingManager.fakeCode, isFakeRequest fake: Bool = false, completion: @escaping (ReportingError?) -> Void) {
+    func report(covidCode: String = ReportingManager.fakeCode, isFakeRequest fake: Bool = false, completion: @escaping (ReportingProblem?) -> Void) {
         if let tokenDate = codeDictionary[covidCode] {
             // only second part needed
             sendIWasExposed(token: tokenDate.0, date: tokenDate.1, isFakeRequest: fake, completion: completion)
@@ -51,10 +50,8 @@ class ReportingManager {
 
                     // second part
                     strongSelf.sendIWasExposed(token: token, date: date, isFakeRequest: fake, completion: completion)
-                case .networkError:
-                    completion(.network)
-                case .unexpectedError:
-                    completion(.unexpected)
+                case let .failure(error: error):
+                    completion(.failure(error: error))
                 case .invalidTokenError:
                     completion(.invalidCode)
                 }
@@ -64,24 +61,22 @@ class ReportingManager {
 
     // MARK: - Second part: I was exposed
 
-    private func sendIWasExposed(token: String, date: Date, isFakeRequest fake: Bool, completion: @escaping (ReportingError?) -> Void) {
+    private func sendIWasExposed(token: String, date: Date, isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void) {
         DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: fake) { result in
             DispatchQueue.main.async {
                 dprint(result)
                 switch result {
                 case .success:
                     TracingManager.shared.updateStatus { error in
-                        if error != nil {
-                            completion(.unexpected)
+                        if let error = error {
+                            completion(.failure(error: error))
                         } else {
                             NSUser.shared.positiveTestSendDate = Date()
                             completion(nil)
                         }
                     }
-                case .failure(.networkingError(error: _)):
-                    completion(.network)
-                case .failure:
-                    completion(.unexpected)
+                case let .failure(error):
+                    completion(.failure(error: error))
                 }
             }
         }

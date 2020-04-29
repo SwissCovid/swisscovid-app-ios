@@ -156,11 +156,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
             if let error = error {
                 switch error {
-                case .network:
+                case let .failure(error: error):
                     self.stopLoading(error: error, reloadHandler: self.sendPressed)
 
-                case .unexpected:
-                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
 
                 case .invalidCode:
                     self.codeControl.clearAndRestart()
@@ -171,11 +170,12 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                     if UIAccessibility.isVoiceOverRunning {
                         UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
                     }
+
+                    self.navigationItem.hidesBackButton = false
+                    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
                 }
 
-                self.navigationItem.hidesBackButton = false
-                self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             } else {
                 // success
                 self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)

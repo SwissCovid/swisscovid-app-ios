@@ -12,6 +12,7 @@ class NSLoadingView: UIView {
 
     private let errorTitleLabel = NSLabel(.title, textAlignment: .center)
     private let errorTextLabel = NSLabel(.textLight, textAlignment: .center)
+    private let errorCodeLabel = NSLabel(.smallRegular)
     private let reloadButton = NSButton(title: "loading_view_reload".ub_localized)
 
     // MARK: - Init
@@ -47,6 +48,11 @@ class NSLoadingView: UIView {
             } else {
                 errorTextLabel.text = err.localizedDescription
             }
+            if let codedError = err as? CodedError {
+                errorCodeLabel.text = codedError.errorCodeString
+            } else {
+                errorCodeLabel.text = nil
+            }
             reloadButton.touchUpCallback = reloadHandler
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0
@@ -79,6 +85,7 @@ class NSLoadingView: UIView {
 
         errorStackView.addArrangedSubview(errorTitleLabel)
         errorStackView.addArrangedSubview(errorTextLabel)
+        errorStackView.addArrangedView(errorCodeLabel)
         errorStackView.addArrangedSubview(reloadButton)
 
         errorStackView.alpha = 0.0

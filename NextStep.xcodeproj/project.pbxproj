@@ -48,6 +48,7 @@
 		2485F47A24585B5200C3D8C3 /* DebugAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47924585B5200C3D8C3 /* DebugAlert.swift */; };
 		2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */; };
 		2485F47E2458AC9000C3D8C3 /* BackgroundFakeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */; };
+		2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF672448CAB900C197D6 /* UIStateManager.swift */; };
 		6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
 		6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
@@ -194,6 +195,7 @@
 		2485F47924585B5200C3D8C3 /* DebugAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugAlert.swift; sourceTree = "<group>"; };
 		2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSyncer.swift; sourceTree = "<group>"; };
 		2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFakeReporting.swift; sourceTree = "<group>"; };
+		2485F47F2459631A00C3D8C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* UIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateManager.swift; sourceTree = "<group>"; };
 		24D5EF692448CAE800C197D6 /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
 		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				DC286A25242CE0B9001D5344 /* Environment.swift */,
+				2485F47F2459631A00C3D8C3 /* NetworkError.swift */,
 				2462BA1624520A250046906D /* Endpoints.swift */,
 				2462BA1824520A480046906D /* Endpoint+Request.swift */,
 			);
@@ -1189,6 +1192,7 @@
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,
 				DC702B0F243F6FAE0066C773 /* UBKeychainStored.swift in Sources */,
 				6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */,
+				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
 				2485F47624560EDC00C3D8C3 /* UIStateModel.swift in Sources */,
 			);

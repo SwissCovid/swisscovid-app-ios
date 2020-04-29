@@ -96,7 +96,7 @@
 "inform_text_homescreen_nosymptoms" = "Faites savoir anonymement aux personnes que vous connaissez si votre test est positif pour COVID-19.";
 
 /*Unerwarteter Fehler*/
-"unexpected_error_title" = "Une erreur inattendue s'est produite ({ERROR}).";
+"unexpected_error_title" = "Une erreur inattendue s'est produite.";
 
 /*Bluetooth Fehlermeldung*/
 "bluetooth_turned_off" = "L'application ne fonctionne pas car Bluetooth est désactivé.";
@@ -665,3 +665,9 @@
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Weiter";
+
+/*Titel Impressum Menu*/
+"menu_impressum" = "Impressum";
+"sync_error_title" = "Unerwarteter Fehler";
+"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
+"sync_error_button" = "Erneut versuchen";
