@@ -108,6 +108,7 @@
 		8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E81CCA1241FCC7F006F2437 /* Assets.xcassets */; };
 		8E81CCB0241FCC7F006F2437 /* NextStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CCAF241FCC7F006F2437 /* NextStepTests.swift */; };
 		8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E81CCCE241FD813006F2437 /* SnapKit */; };
+		8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
 		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
@@ -283,6 +284,7 @@
 		8E81CCAB241FCC7F006F2437 /* NextStepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextStepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CCAF241FCC7F006F2437 /* NextStepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepTests.swift; sourceTree = "<group>"; };
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
 		AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenModuleView.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				24780B562431B5A9003BB26C /* DateFormatter.swift */,
 				F80E737D245B0BC300C934B8 /* Language.swift */,
 				6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */,
+				8EB23D77245AF2C30073E83A /* RandomGenerators.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1190,6 +1193,7 @@
 				DC702B01243F6F640066C773 /* String+NS.swift in Sources */,
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,
 				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,
+				8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,

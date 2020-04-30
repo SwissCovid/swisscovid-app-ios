@@ -60,6 +60,7 @@ class ConfigBackgroundTaskManager {
         guard !didRegisterBackgroundTask else { return }
         didRegisterBackgroundTask = true
         BGTaskScheduler.shared.register(forTaskWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier, using: .global()) { task in
+            dprint("Background Task executed: \(ConfigBackgroundTaskManager.taskIdentifier)")
             self.handleBackgroundTask(task)
         }
     }
@@ -83,11 +84,12 @@ class ConfigBackgroundTaskManager {
     }
 
     private func scheduleBackgroundTask() {
-        let syncTask = BGAppRefreshTaskRequest(identifier: ConfigBackgroundTaskManager.taskIdentifier)
+        let syncTask = BGProcessingTaskRequest(identifier: ConfigBackgroundTaskManager.taskIdentifier)
+        syncTask.requiresExternalPower = false
+        syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
 
         do {
-            BGTaskScheduler.shared.cancelAllTaskRequests()
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
             dprint(error)
