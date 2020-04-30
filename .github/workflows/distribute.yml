@@ -2,9 +2,11 @@ name: testflight
 
 on:
   push:
-    branches: '**'
+    branches:
+      - master
   pull_request:
-    branches: '**'
+    branches:
+      - master
 
 jobs:
   testflight_internal:
@@ -37,7 +39,6 @@ jobs:
       run: bundle exec fastlane sign_and_build
       
     - name: Upload and distribution
-      if: github.event_name == 'pull_request' && github.base_ref == 'master'
       env:
         FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
@@ -75,7 +76,6 @@ jobs:
       run: bundle exec fastlane sign_and_build
       
     - name: Upload and distribution
-      if: github.event_name == 'pull_request' && github.base_ref == 'master'
       env:
         FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
         FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
@@ -87,7 +87,6 @@ jobs:
     runs-on: macOS-latest
 
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
     - name: Switch to Xcode 11.4.1
@@ -107,12 +106,15 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         SKIP_ADD_BADGE: true
       run: bundle exec fastlane sign_and_build
-      
-    - name: Upload and distribution
-      if: github.event_name == 'pull_request' && github.base_ref == 'master'
-      env:
-        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
-        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
-      run: bundle exec fastlane upload_and_distribute
+
+    - name: Archive ipa file
+      uses: actions/upload-artifact@v1
+      with:
+        name: dp3t.ipa
+        path: "NextStep.ipa"
+    
+    - name: Archive dSYM files
+      uses: actions/upload-artifact@v1
+      with:
+        name: dp3t_dSYMs.zip
+        path: "NextStep.app.dSYM.zip"
