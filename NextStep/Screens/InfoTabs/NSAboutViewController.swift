@@ -25,11 +25,7 @@ class NSAboutViewController: NSWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 13.0, *) {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "close".ub_localized, style: .done, target: self, action: #selector(didPressClose))
-        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
     }
 
     // MARK: - Navigation

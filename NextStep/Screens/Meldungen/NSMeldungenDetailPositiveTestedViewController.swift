@@ -18,11 +18,18 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         setupLayout()
     }
 
+    override var titleHeight: CGFloat {
+        return super.titleHeight * NSFontSize.fontSizeMultiplicator
+    }
+
+    override var startPositionScrollView: CGFloat {
+        return titleHeight - 30
+    }
+
     // MARK: - Setup
 
     private func setupLayout() {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple)
-
 
         let buttonView = UIView()
 
@@ -34,7 +41,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         }
 
         buttonView.addSubview(externalLinkButton)
-        externalLinkButton.snp.makeConstraints { (make) in
+        externalLinkButton.snp.makeConstraints { make in
             make.top.left.bottom.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()
         }
@@ -55,10 +62,8 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    private func externalLinkPressed()
-    {
-        if let url = URL(string: "meldungen_explanation_link_url".ub_localized)
-        {
+    private func externalLinkPressed() {
+        if let url = URL(string: "meldungen_explanation_link_url".ub_localized) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

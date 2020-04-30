@@ -305,7 +305,7 @@
 "meldung_detail_positive_test_box_title" = "Selbst-Isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen des Testcenters zur Selbst-Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Selbst-Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
@@ -327,7 +327,7 @@
 "reset_onboarding" = "Onboarding zurücksetzen";
 
 /*Heute*/
-"date_today" = "Heute";
+"date_today" = "heute";
 
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
 "date_days_ago" = "vor {COUNT} Tagen";
@@ -393,7 +393,7 @@
 "onboarding_privacy_text2" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Was macht die App?";
+"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
@@ -712,7 +712,7 @@
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
 
 /*Meldungen: Meldung Weisse Box Link Titel*/
-"meldungen_explanation_link_title" = "Anweisung zur Selbstquarantäne";
+"meldungen_explanation_link_title" = "Anweisungen zur Selbst-Isolation";
 
 /*Meldungen: Meldung Weisse Box Link URL*/
 "meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
@@ -722,12 +722,6 @@
 
 /*Meldungen: Meldungen FAQ Text*/
 "meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
-
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
-
-/*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
@@ -800,3 +794,22 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
+
+/*Meldungen: Meldungen FAQ Titel*/
+"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
+
+/*Meldungen: Meldungen FAQ Tex*/
+"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
+
+/*Meldungen Homescreen: Name Hotline*/
+/*Fuzzy*/
+"exposed_info_contact_hotline_name" = "Infoline Coronavirus";
+
+/*Meldung Detail: "Noch 1 Tag" Label*/
+"date_in_one_day" = "Noch 1 Tag";
+
+/*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
+"date_in_days" = "Noch {COUNT} Tage";
+
+/*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
+"date_text_before_date" = "am {DATE}";

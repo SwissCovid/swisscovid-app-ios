@@ -6,6 +6,8 @@ import Foundation
 // 697 132 178
 
 class CodeValidator {
+    private let session = URLSession.certificatePinned
+
     enum ValidationResult {
         case success(token: String, date: Date)
         case failure(error: Error)
@@ -15,7 +17,7 @@ class CodeValidator {
     func sendCodeRequest(code: String, isFakeRequest fake: Bool, completion: @escaping (ValidationResult) -> Void) {
         let auth = AuthorizationRequestBody(authorizationCode: code, fake: fake ? 1 : 0)
 
-        let dataTask = URLSession.shared.dataTask(with: Endpoint.onset(auth: auth).request(), completionHandler: { data, response, error in
+        let dataTask = session.dataTask(with: Endpoint.onset(auth: auth).request(), completionHandler: { data, response, error in
 
             DispatchQueue.main.async {
                 if response == nil {

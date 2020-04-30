@@ -25,7 +25,6 @@ private class FakePublishOperation: Operation {
 /// If the SDK gets destroyed and initialized again this would cause a crash
 private var didRegisterBackgroundTask: Bool = false
 
-@available(iOS 13.0, *)
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 

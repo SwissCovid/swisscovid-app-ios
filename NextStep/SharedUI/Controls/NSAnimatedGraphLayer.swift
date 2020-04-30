@@ -100,7 +100,6 @@ class NSAnimatedGraphLayer: CALayer {
         guard timer == nil else { return }
 
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(step), userInfo: nil, repeats: true)
-        timer?.tolerance = timeInterval
 
         timer?.fire()
 

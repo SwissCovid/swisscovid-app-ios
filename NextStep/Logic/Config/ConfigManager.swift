@@ -15,7 +15,7 @@ import UIKit
 class ConfigManager: NSObject {
     // MARK: - Data Task
 
-    private let session = URLSession.shared
+    private let session = URLSession.certificatePinned
     private var dataTask: URLSessionDataTask?
 
     // MARK: - Init
@@ -64,16 +64,16 @@ class ConfigManager: NSObject {
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
-            
+
             guard let httpResponse = response as? HTTPURLResponse,
-                  let data = data else {
+                let data = data else {
                 DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completion(nil) }
                 return
             }
 
             // Validate JWT
-            if #available(iOS 11.0, *), let publicKey = Environment.current.configJwtPublicKey {
+            if let publicKey = Environment.current.configJwtPublicKey {
                 let verifier = DP3TJWTVerifier(publicKey: publicKey,
                                                jwtTokenHeaderKey: "Signature")
                 do {

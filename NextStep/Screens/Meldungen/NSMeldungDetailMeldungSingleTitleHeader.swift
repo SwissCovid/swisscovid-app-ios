@@ -22,7 +22,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
     private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
 
-    private let dateLabel = NSLabel(.date, textAlignment: .center)
+    private let dateLabel = NSLabel(.textBold, textAlignment: .center)
 
     private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
@@ -34,6 +34,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         openSetup = setupOpen
 
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         backgroundColor = .ns_blue
 
@@ -50,7 +51,6 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         }
 
         dateLabel.text = ""
-        dateLabel.alpha = 0.43
         isAccessibilityElement = true
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \("accessibility_date".ub_localized): \(dateLabel.text ?? "")"
     }
@@ -114,20 +114,20 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             }
         }
 
-        subtitleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
-        }
-
         dateLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
+        }
+
+        subtitleLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(2.0 * NSPadding.medium)
         }
 
         continueButton.snp.makeConstraints { make in
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.large + NSPadding.small)
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.large + NSPadding.medium)
             make.centerX.equalToSuperview()
             make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
         }
@@ -143,7 +143,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
         if openSetup {
             var i = 0
-            for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel, continueButton] {
+            for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
                 v.alpha = 0.0
                 v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large)
 
@@ -165,10 +165,16 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.top.equalTo(self.infoImageView.snp.bottom).offset(NSPadding.medium)
         }
 
+        dateLabel.snp.remakeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
+        }
+
         subtitleLabel.snp.remakeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.medium)
         }
     }
 
@@ -188,7 +194,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     private func update() {
         guard let m = meldung else { return }
 
-        dateLabel.text = DateFormatter.ub_daysAgo(from: m.timestamp)
+        dateLabel.text = DateFormatter.ub_daysAgo(from: m.timestamp, addExplicitDate: true)
 
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
     }
