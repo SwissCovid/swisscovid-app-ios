@@ -3,7 +3,11 @@
 import UIKit
 
 class NSOnboardingInfoView: UIView {
-    init(icon: UIImage, text: String, title: String? = nil) {
+    private let leftRightInset : CGFloat
+
+    init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium) {
+        self.leftRightInset = leftRightInset
+
         super.init(frame: .zero)
 
         let hasTitle = title != nil
@@ -24,7 +28,7 @@ class NSOnboardingInfoView: UIView {
 
             titleLabel.snp.makeConstraints { make in
                 make.top.equalToSuperview().inset(NSPadding.medium)
-                make.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+                make.leading.trailing.equalToSuperview().inset(leftRightInset)
             }
         }
 
@@ -34,13 +38,13 @@ class NSOnboardingInfoView: UIView {
             } else {
                 make.top.equalToSuperview().inset(NSPadding.medium)
             }
-            make.leading.equalToSuperview().inset(2 * NSPadding.medium)
+            make.leading.equalToSuperview().inset(leftRightInset)
         }
 
         label.snp.makeConstraints { make in
             make.top.equalTo(imgView)
             make.leading.equalTo(imgView.snp.trailing).offset(NSPadding.medium + NSPadding.small)
-            make.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+            make.trailing.equalToSuperview().inset(leftRightInset)
             make.bottom.equalToSuperview().inset(NSPadding.medium)
         }
     }
