@@ -11,39 +11,12 @@ class NSWebViewController: NSViewController {
     // MARK: - Variables
 
     private let webView: WKWebView
-    private let site: String?
     private let local: String?
     private var loadCount: Int = 0
 
-    var url: URL = URL(string: "https://www.ubique.ch")!
-
     // MARK: - Init
 
-    init(site: String) {
-        self.site = site
-        local = nil
-
-        // Disable zoom in web view
-        let source: String = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
-        let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd,
-                                                forMainFrameOnly: true)
-
-        let contentController = WKUserContentController()
-        contentController.addUserScript(script)
-
-        let config = WKWebViewConfiguration()
-        config.dataDetectorTypes = []
-        config.userContentController = contentController
-        webView = WKWebView(frame: .zero, configuration: config)
-
-        super.init()
-    }
-
     init(local: String) {
-        site = nil
         self.local = local
 
         // Disable zoom in web view
@@ -71,24 +44,22 @@ class NSWebViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        if site == nil {
-            let path = Bundle.main.path(forResource: local ?? "", ofType: "html")
-            let url = URL(fileURLWithPath: path!)
-            webView.loadFileURL(url, allowingReadAccessTo: url)
-        } else {
-            startLoading(url: url)
-        }
+        guard let path = Bundle.main.path(forResource: local ?? "", ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
+        else { return }
+
+        let url = URL(fileURLWithPath: path)
+
+        do {
+            let string = try String(contentsOf: url)
+
+            // TODO: Replace Version and Build number
+
+            webView.loadHTMLString(string, baseURL: url.deletingLastPathComponent())
+        } catch {}
     }
 
     @objc private func close() {
         dismiss(animated: true, completion: nil)
-    }
-
-    // MARK: - Start loading
-
-    private func startLoading(url: URL) {
-        startLoading()
-        webView.load(URLRequest(url: url))
     }
 
     // MARK: - Setup
@@ -124,22 +95,12 @@ extension NSWebViewController: WKNavigationDelegate {
                 return
             }
 
-            if scheme != "http", scheme != "https" {
-                guard let host = url.host
-                else {
-                    decisionHandler(.allow)
-                    return
-                }
-
-                if host == "inform" {
-                    NSInformViewController.present(from: self)
+            if scheme == "file" {
+                let webVC = NSWebViewController(local: url.lastPathComponent + "-ios")
+                if let navVC = navigationController {
+                    navVC.pushViewController(webVC, animated: true)
                 } else {
-                    let webVC = NSWebViewController(site: host)
-                    if let navVC = navigationController {
-                        navVC.pushViewController(webVC, animated: true)
-                    } else {
-                        present(NSNavigationController(rootViewController: webVC), animated: true, completion: nil)
-                    }
+                    present(NSNavigationController(rootViewController: webVC), animated: true, completion: nil)
                 }
 
                 decisionHandler(.cancel)
@@ -155,29 +116,29 @@ extension NSWebViewController: WKNavigationDelegate {
         }
     }
 
-    func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
-        loadCount = 1
-    }
-
-    func webView(_: WKWebView, didFailProvisionalNavigation _: WKNavigation!, withError error: Error) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.loadCount -= 1
-
-            if strongSelf.loadCount == 0 {
-                strongSelf.stopLoading(error: error, reloadHandler: { strongSelf.startLoading(url: strongSelf.url) })
-            }
-        }
-    }
-
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.loadCount -= 1
-
-            if strongSelf.loadCount == 0 {
-                strongSelf.stopLoading()
-            }
-        }
-    }
+//    func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
+//        loadCount = 1
+//    }
+//
+//    func webView(_: WKWebView, didFailProvisionalNavigation _: WKNavigation!, withError error: Error) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.loadCount -= 1
+//
+//            if strongSelf.loadCount == 0 {
+//                strongSelf.stopLoading(error: error, reloadHandler: { strongSelf.startLoading(url: strongSelf.url) })
+//            }
+//        }
+//    }
+//
+//    func webView(_: WKWebView, didFinish _: WKNavigation!) {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+//            guard let strongSelf = self else { return }
+//            strongSelf.loadCount -= 1
+//
+//            if strongSelf.loadCount == 0 {
+//                strongSelf.stopLoading()
+//            }
+//        }
+//    }
 }

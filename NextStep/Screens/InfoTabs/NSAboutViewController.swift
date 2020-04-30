@@ -11,9 +11,7 @@ class NSAboutViewController: NSWebViewController {
 
     init() {
         super.init(local: "impressum")
-
-        title = "tab_theapp_title".ub_localized
-        tabBarItem.image = UIImage(named: "ic-app")
+        title = "menu_impressum".ub_localized
     }
 
     required init?(coder _: NSCoder) {
