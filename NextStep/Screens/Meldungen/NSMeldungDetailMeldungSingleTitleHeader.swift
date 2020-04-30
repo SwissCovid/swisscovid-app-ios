@@ -165,13 +165,13 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.top.equalTo(self.infoImageView.snp.bottom).offset(NSPadding.medium)
         }
 
-        dateLabel.snp.makeConstraints { make in
+        dateLabel.snp.remakeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
         }
 
-        subtitleLabel.snp.makeConstraints { make in
+        subtitleLabel.snp.remakeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
             make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.medium)
