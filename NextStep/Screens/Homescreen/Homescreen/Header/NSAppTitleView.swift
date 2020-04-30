@@ -78,6 +78,7 @@ class NSAppTitleView: NSTitleView {
 
     private var timer: Timer?
     private var slowTimer: Timer?
+    @objc
     private func startSpawn() {
         timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else {
@@ -87,6 +88,7 @@ class NSAppTitleView: NSTitleView {
 
             strongSelf.spawnArcs()
         })
+        timer?.tolerance = 2.0
 
         slowTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else {
@@ -96,6 +98,19 @@ class NSAppTitleView: NSTitleView {
 
             strongSelf.hightlight()
         })
+        slowTimer?.tolerance = 5.0
+
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseSpawn), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+
+    @objc
+    private func pauseSpawn() {
+        timer?.invalidate()
+        timer = nil
+        slowTimer?.invalidate()
+        slowTimer = nil
+
+        NotificationCenter.default.addObserver(self, selector: #selector(startSpawn), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
     private var isOverscrolled = false

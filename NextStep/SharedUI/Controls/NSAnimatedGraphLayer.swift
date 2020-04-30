@@ -95,10 +95,12 @@ class NSAnimatedGraphLayer: CALayer {
         draw()
     }
 
+    @objc
     func startAnimating() {
         guard timer == nil else { return }
 
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(step), userInfo: nil, repeats: true)
+        timer?.tolerance = timeInterval
 
         timer?.fire()
 
@@ -107,6 +109,16 @@ class NSAnimatedGraphLayer: CALayer {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02) {
             self.step()
         }
+
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseAnimating), name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+
+    @objc
+    func pauseAnimating() {
+        timer?.invalidate()
+        timer = nil
+
+        NotificationCenter.default.addObserver(self, selector: #selector(startAnimating), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
     @objc private func step() {
