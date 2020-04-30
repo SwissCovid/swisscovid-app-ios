@@ -6,7 +6,18 @@ class NSHeaderImageBackgroundView: UIView {
     private let imageView = UIImageView()
     private let colorView = UIView()
 
-    private static let headerImages = [UIImage(named: "header-image-basel-1")!, UIImage(named: "header-image-geneva-1")!, UIImage(named: "header-image-bern-1")!]
+    private static let headerImages = [
+        UIImage(named: "header-image-basel"),
+        UIImage(named: "header-image-bern"),
+        UIImage(named: "header-image-chur"),
+        UIImage(named: "header-image-geneva"),
+        UIImage(named: "header-image-lausanne"),
+        UIImage(named: "header-image-locarno"),
+        UIImage(named: "header-image-lugano"),
+        UIImage(named: "header-image-luzern"),
+        UIImage(named: "header-image-st-gallen"),
+        UIImage(named: "header-image-zurich"),
+        ].compactMap({ $0 })
 
     static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
 

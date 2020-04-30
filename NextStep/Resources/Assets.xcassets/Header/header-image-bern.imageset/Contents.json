@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "header-image-basel-1.png",
+      "filename" : "header-image-bern.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "header-image-basel-01@2x.png",
+      "filename" : "header-image-bern@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "header-image-basel-01@3x.png",
+      "filename" : "header-image-bern@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
