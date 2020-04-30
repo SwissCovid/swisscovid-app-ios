@@ -75,6 +75,7 @@ class NSMeldungenDetailViewController: NSViewController {
         case .exposed:
             meldungenViewController.view.alpha = 1.0
             meldungenViewController.meldungen = state.meldungen
+            meldungenViewController.phoneCallState = state.phoneCallState
         case .infected:
             positiveTestedViewController.view.alpha = 1.0
         case .noMeldung:

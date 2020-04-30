@@ -16,6 +16,7 @@ class NSSimpleModuleBaseView: UIView {
     private let titleLabel = NSLabel(.title)
     private let subtitleLabel = NSLabel(.textBold)
 
+    private let boldTextLabel = NSLabel(.textBold)
     private let textLabel = NSLabel(.textLight)
     private let imageView = UIImageView()
 
@@ -27,7 +28,7 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subtitle: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
+    init(title: String, subtitle: String? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
         sideInset = NSPadding.large
 
         super.init(frame: .zero)
@@ -39,6 +40,7 @@ class NSSimpleModuleBaseView: UIView {
         }
 
         titleLabel.text = title
+        boldTextLabel.text = boldText
         textLabel.text = text
         imageView.image = image
 
@@ -89,9 +91,21 @@ class NSSimpleModuleBaseView: UIView {
 
             view.addSubview(textLabel)
             view.addSubview(imageView)
+            if boldTextLabel.text != nil {
+                view.addSubview(boldTextLabel)
+                boldTextLabel.snp.makeConstraints { (make) in
+                    make.top.left.equalToSuperview()
+                    make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
+                }
+            }
 
             textLabel.snp.makeConstraints { make in
-                make.top.left.equalToSuperview()
+                if boldTextLabel.text != nil {
+                    make.top.equalTo(boldTextLabel.snp.bottom).offset(NSPadding.small)
+                } else {
+                    make.top.equalToSuperview()
+                }
+                make.left.equalToSuperview()
                 make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
                 make.bottom.lessThanOrEqualToSuperview()
             }

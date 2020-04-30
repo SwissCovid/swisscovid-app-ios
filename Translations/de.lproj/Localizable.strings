@@ -723,12 +723,6 @@
 /*Meldungen: Meldungen FAQ Text*/
 "meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
 
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
-
-/*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
-
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
 
@@ -800,3 +794,18 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
+
+/*Meldungen: Meldungen FAQ Titel*/
+"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
+
+/*Meldungen: Meldungen FAQ Tex*/
+"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
+
+/*Meldungen Homescreen: Name Hotline*/
+"exposed_info_contact_hotline_name" = "Infoline Coronavirus";
+
+/*Meldung Detail: "Noch 1 Tag" Label*/
+"date_in_one_day" = "Noch 1 Tag";
+
+/*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
+"date_in_days" = "Noch {COUNT} Tage";
