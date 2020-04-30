@@ -15,7 +15,7 @@ import UIKit
 class ConfigManager: NSObject {
     // MARK: - Data Task
 
-    private let session = URLSession.shared
+    private let session = URLSession.certificatePinned
     private var dataTask: URLSessionDataTask?
 
     // MARK: - Init
@@ -28,6 +28,9 @@ class ConfigManager: NSObject {
     static var currentConfig: ConfigResponseBody? {
         didSet {
             UIStateManager.shared.refresh()
+            if let sdkConfig = currentConfig?.sdkConfig {
+                ConfigManager.updateSDKParameters(config: sdkConfig)
+            }
         }
     }
 
@@ -61,9 +64,9 @@ class ConfigManager: NSObject {
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
-            
+
             guard let httpResponse = response as? HTTPURLResponse,
-                  let data = data else {
+                let data = data else {
                 DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completion(nil) }
                 return
@@ -109,9 +112,30 @@ class ConfigManager: NSObject {
         }
     }
 
+    public static func updateSDKParameters(config: ConfigResponseBody.SDKConfig) {
+        var parameters = DP3TTracing.parameters
+
+        if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
+            parameters.contactMatching.numberOfWindowsForExposure = numberOfWindowsForExposure
+        }
+        if let eventThreshold = config.eventThreshold {
+            parameters.contactMatching.eventThreshold = eventThreshold
+        }
+        if let badAttenuationThreshold = config.badAttenuationThreshold {
+            parameters.contactMatching.badAttenuationThreshold = badAttenuationThreshold
+        }
+        if let contactAttenuationThreshold = config.contactAttenuationThreshold {
+            parameters.contactMatching.contactAttenuationThreshold = contactAttenuationThreshold
+        }
+
+        DP3TTracing.parameters = parameters
+    }
+
     private func presentAlertIfNeeded(config: ConfigResponseBody, window: UIWindow?) {
         if config.forceUpdate {
-            let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg ?? "force_update_text".ub_localized, preferredStyle: .alert)
+            let alert = UIAlertController(title: "force_update_title".ub_localized,
+                                          message: "force_update_text".ub_localized,
+                                          preferredStyle: .alert)
 
             window?.rootViewController?.present(alert, animated: true, completion: nil)
         } else {

@@ -305,7 +305,7 @@
 "meldung_detail_positive_test_box_title" = "Selbst-Isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen des Testcenters zur Selbst-Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Selbst-Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
@@ -711,7 +711,7 @@
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
 
 /*Meldungen: Meldung Weisse Box Link Titel*/
-"meldungen_explanation_link_title" = "Anweisung zur Selbstquarantäne";
+"meldungen_explanation_link_title" = "Anweisungen zur Selbst-Isolation";
 
 /*Meldungen: Meldung Weisse Box Link URL*/
 "meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";

@@ -3,7 +3,6 @@
 import UIKit
 
 class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
-
     // MARK: - Init
 
     init() {

@@ -25,11 +25,15 @@ private class FakePublishOperation: Operation {
 /// If the SDK gets destroyed and initialized again this would cause a crash
 private var didRegisterBackgroundTask: Bool = false
 
-@available(iOS 13.0, *)
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
-    static let syncInterval: TimeInterval = 24 * 60 * 60 * 5 // 5 days
+    static let syncInterval: TimeInterval = {
+        // Rate corresponding to 1 dummy per 5 days
+        let randomDay = ExponentialDistribution.sample(rate: 0.2)
+        let secondsInADay = Double(24 * 60 * 60)
+        return randomDay * secondsInADay
+    }()
 
     /// A logger for debugging
     #if CALIBRATION
@@ -48,6 +52,7 @@ class FakePublishBackgroundTaskManager {
         guard !didRegisterBackgroundTask else { return }
         didRegisterBackgroundTask = true
         BGTaskScheduler.shared.register(forTaskWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier, using: .global()) { task in
+            dprint("Background Task executed: \(FakePublishBackgroundTaskManager.taskIdentifier)")
             self.handleBackgroundTask(task)
         }
     }
@@ -71,11 +76,12 @@ class FakePublishBackgroundTaskManager {
     }
 
     private func scheduleBackgroundTask() {
-        let syncTask = BGAppRefreshTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
+        let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
+        syncTask.requiresExternalPower = false
+        syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval)
 
         do {
-            BGTaskScheduler.shared.cancelAllTaskRequests()
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
             dprint(error)

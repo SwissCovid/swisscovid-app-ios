@@ -35,6 +35,14 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.hitTestDelegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        for m in meldungen {
+            NSUser.shared.registerSeenMessages(identifier: m.identifier)
+        }
+    }
+
     override var useFullScreenHeaderAnimation: Bool {
         return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
     }
@@ -190,13 +198,13 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     private func createExplanationView() -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized,], edgeInsets: .zero)
+        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
         let daysLeftLabel = NSLabel(.textBold)
         daysLeftLabels.append(daysLeftLabel)
         wrapper.addSubview(daysLeftLabel)
-        daysLeftLabel.snp.makeConstraints { (make) in
+        daysLeftLabel.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(30)
         }

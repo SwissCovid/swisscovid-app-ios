@@ -60,11 +60,14 @@ class TracingManager: NSObject {
                         appVersion = "\(version)(\(build))"
                     }
                     try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned,
                                                mode: .calibration(identifierPrefix: "", appVersion: appVersion))
                 case .abnahme:
-                    try DP3TTracing.initialize(with: .manual(descriptor))
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned)
                 case .prod:
-                    try DP3TTracing.initialize(with: .manual(descriptor))
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned)
                 }
             #else
                 try DP3TTracing.initialize(with: .manual(descriptor))
@@ -117,7 +120,7 @@ class TracingManager: NSObject {
         } catch DP3TTracingError.userAlreadyMarkedAsInfected {
             // Tracing should not start if the user is marked as infected
             UIStateManager.shared.tracingStartError = nil
-        }  catch {
+        } catch {
             UIStateManager.shared.tracingStartError = error
         }
 
@@ -170,6 +173,15 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.tracingState = state
                 UIStateManager.shared.trackingState = state.trackingState
             }
+        }
+    }
+
+    func didAddLog(logEntry: LogEntry) {
+        switch logEntry.type {
+        case .backgroundTask:
+            dprint(logEntry.message)
+        default:
+            break
         }
     }
 }

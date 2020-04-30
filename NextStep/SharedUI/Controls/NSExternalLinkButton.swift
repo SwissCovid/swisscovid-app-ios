@@ -6,10 +6,9 @@ class NSExternalLinkButton: UBButton {
     // MARK: - Init
 
     init(color: UIColor? = nil) {
-
         super.init()
 
-        let c : UIColor = color ?? UIColor.white
+        let c: UIColor = color ?? UIColor.white
 
         let image = UIImage(named: "ic-link-external")?.ub_image(with: c)
         setImage(image, for: .normal)

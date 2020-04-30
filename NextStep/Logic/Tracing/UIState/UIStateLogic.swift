@@ -53,6 +53,7 @@ class UIStateLogic {
 
         case let .exposed(days):
             setExposedState(&newState, days: days)
+            setLastMeldungState(&newState)
         }
 
         // Set debug helpers
@@ -97,19 +98,39 @@ class UIStateLogic {
         newState.homescreen.begegnungen = tracing
 
         newState.homescreen.meldungen.pushProblem = !manager.pushOk
+
         if let st = manager.tracingState {
             newState.homescreen.meldungen.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
+
+        if manager.immediatelyShowSyncError {
+            newState.homescreen.meldungen.syncProblemOtherError = true
+        }
+
         if let first = manager.firstSyncErrorTime,
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
-            newState.homescreen.meldungen.syncProblem = true
+            newState.homescreen.meldungen.syncProblemNetworkingError = true
         }
     }
 
     private func setGlobalProblemState(_ newState: inout UIStateModel) {
-        if let infoBox = ConfigManager.currentConfig?.infobox {
-            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title, text: infoBox.msg, link: infoBox.urlTitle, url: infoBox.url)
+        if let localizedInfoBox = ConfigManager.currentConfig?.infobox {
+            let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
+            switch Language.current {
+            case .german:
+                infoBox = localizedInfoBox.deInfoBox
+            case .italian:
+                infoBox = localizedInfoBox.itInfoBox
+            case .english:
+                infoBox = localizedInfoBox.enInfoBox
+            case .france:
+                infoBox = localizedInfoBox.frInfoBox
+            }
+            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title,
+                                                                                      text: infoBox.msg,
+                                                                                      link: infoBox.urlTitle,
+                                                                                      url: infoBox.url)
         }
     }
 
@@ -130,11 +151,13 @@ class UIStateLogic {
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
+    }
 
+    private func setLastMeldungState(_ newState: inout UIStateModel) {
         if let meldung = newState.meldungenDetail.meldungen.last {
             newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) == nil
             newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-            newState.meldungenDetail.showMeldungWithAnimation = newState.shouldStartAtMeldungenDetail
+            newState.meldungenDetail.showMeldungWithAnimation = !NSUser.shared.hasSeenMessage(for: meldung.identifier)
 
             if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
                 if lastPhoneCall > meldung.timestamp {
@@ -172,26 +195,13 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), NSMeldungModel(identifier: 123_333_333, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_781, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), NSMeldungModel(identifier: 123_333_332, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true
                 newState.meldungenDetail.showMeldungWithAnimation = true
 
-                let meldung = newState.meldungenDetail.meldungen.last!
-                
-                newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-
-                if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
-                    if lastPhoneCall > meldung.timestamp {
-                        newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
-                    } else {
-                        newState.meldungenDetail.phoneCallState = newState.meldungenDetail.meldungen.count > 1
-                            ? .multipleExposuresNotCalled : .notCalled
-                    }
-                } else {
-                    newState.meldungenDetail.phoneCallState = .notCalled
-                }
+                setLastMeldungState(&newState)
             }
         }
 

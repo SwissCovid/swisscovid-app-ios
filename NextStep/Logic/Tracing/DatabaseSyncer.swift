@@ -15,10 +15,6 @@ class DatabaseSyncer {
 
     private var databaseSyncInterval: TimeInterval = 10
 
-    init() {
-        UIApplication.shared.setMinimumBackgroundFetchInterval(databaseSyncInterval)
-    }
-
     func performFetch(completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         syncDatabaseIfNeeded(completionHandler: completionHandler)
     }
@@ -59,6 +55,13 @@ class DatabaseSyncer {
                             break
                         }
                         UIStateManager.shared.lastSyncErrorTime = Date()
+                        if case DP3TNetworkingError.networkSessionError(_) = wrappedError {
+                            UIStateManager.shared.immediatelyShowSyncError = false
+                        } else {
+                            UIStateManager.shared.immediatelyShowSyncError = true
+                        }
+                    } else {
+                        UIStateManager.shared.immediatelyShowSyncError = true
                     }
                 }
 
@@ -71,6 +74,7 @@ class DatabaseSyncer {
                     UIStateManager.shared.firstSyncErrorTime = nil
                     UIStateManager.shared.lastSyncErrorTime = nil
                     UIStateManager.shared.hasTimeInconsistencyError = false
+                    UIStateManager.shared.immediatelyShowSyncError = false
                 }
 
                 TracingManager.shared.updateStatus(completion: nil)

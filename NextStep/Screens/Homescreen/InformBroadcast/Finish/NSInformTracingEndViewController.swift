@@ -3,7 +3,6 @@
 import UIKit
 
 class NSInformTracingEndViewController: NSInformBottomButtonViewController {
-
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
@@ -52,6 +51,5 @@ class NSInformTracingEndViewController: NSInformBottomButtonViewController {
 
     private func sendPressed() {
         navigationController?.pushViewController(NSInformGetWellViewController(), animated: true)
-        
     }
 }

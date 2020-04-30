@@ -3,7 +3,6 @@
 import UIKit
 
 class NSExplanationView: UIView {
-
     let stackView = UIStackView()
 
     // MARK: - Init

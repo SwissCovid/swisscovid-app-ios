@@ -27,6 +27,10 @@ class NSUser {
         UIStateManager.shared.userCalledInfoLine()
     }
 
+    func registerSeenMessages(identifier: Int) {
+        seenMessages.append("\(identifier)")
+    }
+
     var lastPhoneCallDate: Date? {
         let allDates = lastPhoneCalls.values
 
@@ -41,8 +45,15 @@ class NSUser {
         return nil
     }
 
+    func hasSeenMessage(for identifier: Int) -> Bool {
+        return seenMessages.contains("\(identifier)")
+    }
+
     @UBUserDefault(key: "lastPhoneCalls", defaultValue: [:])
     private var lastPhoneCalls: [String: Date]
+
+    @UBUserDefault(key: "seenMessages", defaultValue: [])
+    private var seenMessages: [String]
 
     @UBOptionalUserDefault(key: "positiveTestSendDate")
     public var positiveTestSendDate: Date?

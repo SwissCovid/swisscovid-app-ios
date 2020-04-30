@@ -11,9 +11,7 @@ class NSAboutViewController: NSWebViewController {
 
     init() {
         super.init(local: "impressum")
-
-        title = "tab_theapp_title".ub_localized
-        tabBarItem.image = UIImage(named: "ic-app")
+        title = "menu_impressum".ub_localized
     }
 
     required init?(coder _: NSCoder) {
@@ -25,11 +23,7 @@ class NSAboutViewController: NSWebViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if #available(iOS 13.0, *) {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
-        } else {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "close".ub_localized, style: .done, target: self, action: #selector(didPressClose))
-        }
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
     }
 
     // MARK: - Navigation
