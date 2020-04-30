@@ -57,9 +57,9 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         // for these host we just pin the intermediate certificate of quoVadis
         if let c = bundle.getCertificate(with: "QuoVadis") {
             let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [c], validateHost: true)
-            evaluators["pt-d.bfs.admin.ch"] = evaluator
-            evaluators["pt-a.bfs.admin.ch"] = evaluator
-            evaluators["pt.bfs.admin.ch"] = evaluator
+            evaluators["www.pt-d.bfs.admin.ch"] = evaluator
+            evaluators["www.pt-a.bfs.admin.ch"] = evaluator
+            evaluators["www.pt.bfs.admin.ch"] = evaluator
         }
 
         trustManager = UBServerTrustManager(evaluators: evaluators)
@@ -75,7 +75,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         case NSURLAuthenticationMethodServerTrust:
             evaluation = attemptServerTrustAuthentication(with: challenge)
         default:
-            evaluation = (.performDefaultHandling, nil, nil)
+            evaluation = (.cancelAuthenticationChallenge, nil, nil)
         }
 
         completionHandler(evaluation.disposition, evaluation.credential)
@@ -87,12 +87,13 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
 
          guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
              let trust = challenge.protectionSpace.serverTrust else {
-             return (.performDefaultHandling, nil, nil)
+             return (.cancelAuthenticationChallenge, nil, nil)
          }
 
          do {
              guard let evaluator = trustManager.serverTrustEvaluator(forHost: host) else {
-                 return (.performDefaultHandling, nil, nil)
+                // If we don't have a evaluator we fail
+                 return (.cancelAuthenticationChallenge, nil, nil)
              }
 
              try evaluator.evaluate(trust, forHost: host)
