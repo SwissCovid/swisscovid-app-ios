@@ -41,14 +41,13 @@ public enum NSLabelType: UBLabelType {
         var regularFontName = "Inter-Regular"
         var lightFontName = "Inter-Light"
 
-        if #available(iOS 13.0, *) {
-            switch UITraitCollection.current.legibilityWeight {
-            case .bold:
-                boldFontName = "Inter-ExtraBold"
-                regularFontName = "Inter-Bold"
-                lightFontName = "Inter-Medium"
-            default: break
-            }
+        switch UITraitCollection.current.legibilityWeight {
+        case .bold:
+            boldFontName = "Inter-ExtraBold"
+            regularFontName = "Inter-Bold"
+            lightFontName = "Inter-Medium"
+        default:
+            break
         }
 
         switch self {

@@ -4,7 +4,6 @@ import Foundation
 import Security
 
 extension URLSession {
-
     static let evaluator = CertificateEvaluator()
 
     static let certificatePinned: URLSession = {
@@ -13,24 +12,20 @@ extension URLSession {
                                  delegateQueue: nil)
         return session
     }()
-
 }
 
-
 class CertificateEvaluator: NSObject, URLSessionDelegate {
-
     typealias AuthenticationChallengeCompletion = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
 
     private let trustManager: UBServerTrustManager
 
     #if DEBUG
-    static let useCertificatePinning = true
+        static let useCertificatePinning = true
     #else
-    static let useCertificatePinning = true
+        static let useCertificatePinning = true
     #endif
 
     override init() {
-
         if !CertificateEvaluator.useCertificatePinning {
             trustManager = UBServerTrustManager(evaluators: ["*": UBDisabledEvaluator()])
             return
@@ -68,7 +63,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
     // MARK: - URLSessionDelegate
 
     private typealias ChallengeEvaluation = (disposition: URLSession.AuthChallengeDisposition, credential: URLCredential?, error: Error?)
-    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    func urlSession(_: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         let evaluation: ChallengeEvaluation
 
         switch challenge.protectionSpace.authenticationMethod {
@@ -81,35 +76,35 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         completionHandler(evaluation.disposition, evaluation.credential)
     }
 
-     /// :nodoc:
-     private func attemptServerTrustAuthentication(with challenge: URLAuthenticationChallenge) -> ChallengeEvaluation {
-         let host = challenge.protectionSpace.host
+    /// :nodoc:
+    private func attemptServerTrustAuthentication(with challenge: URLAuthenticationChallenge) -> ChallengeEvaluation {
+        let host = challenge.protectionSpace.host
 
-         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
-             let trust = challenge.protectionSpace.serverTrust else {
-             return (.cancelAuthenticationChallenge, nil, nil)
-         }
+        guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
+            let trust = challenge.protectionSpace.serverTrust else {
+            return (.cancelAuthenticationChallenge, nil, nil)
+        }
 
-         do {
-             guard let evaluator = trustManager.serverTrustEvaluator(forHost: host) else {
+        do {
+            guard let evaluator = trustManager.serverTrustEvaluator(forHost: host) else {
                 // If we don't have a evaluator we fail
-                 return (.cancelAuthenticationChallenge, nil, nil)
-             }
+                return (.cancelAuthenticationChallenge, nil, nil)
+            }
 
-             try evaluator.evaluate(trust, forHost: host)
+            try evaluator.evaluate(trust, forHost: host)
 
-             return (.useCredential, URLCredential(trust: trust), nil)
-         } catch {
-             return (.cancelAuthenticationChallenge, nil, error)
-         }
-     }
+            return (.useCredential, URLCredential(trust: trust), nil)
+        } catch {
+            return (.cancelAuthenticationChallenge, nil, error)
+        }
+    }
 }
 
 extension Bundle {
     func getCertificate(with name: String, fileExtension: String = "der") -> SecCertificate? {
         if let certificateURL = url(forResource: name, withExtension: fileExtension),
-           let certificateData = try? Data(contentsOf: certificateURL),
-           let certificate = SecCertificateCreateWithData(nil, certificateData as CFData){
+            let certificateData = try? Data(contentsOf: certificateURL),
+            let certificate = SecCertificateCreateWithData(nil, certificateData as CFData) {
             return certificate
         }
         return nil

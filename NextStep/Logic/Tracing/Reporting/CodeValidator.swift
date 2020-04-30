@@ -6,7 +6,6 @@ import Foundation
 // 697 132 178
 
 class CodeValidator {
-
     private let session = URLSession.certificatePinned
 
     enum ValidationResult {

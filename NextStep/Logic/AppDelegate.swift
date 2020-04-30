@@ -16,10 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.initialize()
 
         // Schedule Update check in background
-        if #available(iOS 13.0, *) {
-            ConfigBackgroundTaskManager().register()
-            FakePublishBackgroundTaskManager().register()
-        }
+        ConfigBackgroundTaskManager().register()
+        FakePublishBackgroundTaskManager().register()
 
         // defer window initialization if app was launched in
         // background because of location change
@@ -53,9 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func setupWindow() {
         window = UIWindow(frame: UIScreen.main.bounds)
-        if #available(iOS 13.0, *) {
-            window?.overrideUserInterfaceStyle = .light
-        }
+        window?.overrideUserInterfaceStyle = .light
 
         TracingManager.shared.beginUpdatesAndTracing()
 

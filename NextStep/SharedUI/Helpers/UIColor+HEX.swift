@@ -31,7 +31,7 @@ extension UIColor {
     }
 
     /// :nodoc:
-    private convenience init(hex6: UInt32) {
+    private convenience init(hex6: UInt64) {
         let divisor = CGFloat(0xFF)
         let red = CGFloat((hex6 & 0xFF0000) >> 16) / divisor
         let green = CGFloat((hex6 & 0x00FF00) >> 8) / divisor
@@ -40,7 +40,7 @@ extension UIColor {
     }
 
     /// :nodoc:
-    private convenience init(hex8: UInt32) {
+    private convenience init(hex8: UInt64) {
         let divisor = CGFloat(0xFF)
         let red = CGFloat((hex8 & 0xFF00_0000) >> 24) / divisor
         let green = CGFloat((hex8 & 0x00FF_0000) >> 16) / divisor
@@ -71,9 +71,9 @@ extension UIColor {
         }
 
         let hexString = String(input[hexCapturedRange])
-        var hexValue: UInt32 = 0
+        var hexValue: UInt64 = 0
 
-        guard Scanner(string: hexString).scanHexInt32(&hexValue) else {
+        guard Scanner(string: hexString).scanHexInt64(&hexValue) else {
             return nil
         }
 
