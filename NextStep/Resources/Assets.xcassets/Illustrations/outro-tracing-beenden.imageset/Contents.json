@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "illu-no-message.png",
+      "filename" : "outro-tracing-beenden.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "illu-no-message@2x.png",
+      "filename" : "outro-tracing-beenden@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illu-no-message@3x.png",
+      "filename" : "outro-tracing-beenden@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
