@@ -179,6 +179,8 @@ class UIStateLogic {
                 newState.meldungenDetail.showMeldungWithAnimation = true
 
                 let meldung = newState.meldungenDetail.meldungen.last!
+                
+                newState.homescreen.meldungen.lastMeldung = meldung.timestamp
 
                 if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
                     if lastPhoneCall > meldung.timestamp {
