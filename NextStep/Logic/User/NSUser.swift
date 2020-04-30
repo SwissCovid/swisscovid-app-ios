@@ -27,6 +27,12 @@ class NSUser {
         UIStateManager.shared.userCalledInfoLine()
     }
 
+    var lastPhoneCallDate: Date? {
+        let allDates = lastPhoneCalls.values
+
+        return allDates.sorted().last
+    }
+
     func lastPhoneCall(for identifier: Int) -> Date? {
         if lastPhoneCalls.keys.contains("\(identifier)") {
             return lastPhoneCalls["\(identifier)"]

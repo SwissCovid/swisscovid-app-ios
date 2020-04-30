@@ -64,12 +64,12 @@ class NSMeldungView: NSModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
-            views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_tel_button_title".ub_localized))
+            views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
             if let lastMeldung = uiState.lastMeldung {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)
 
-                dateLabel.text = DateFormatter.ub_daysAgo(from: lastMeldung)
+                dateLabel.text = DateFormatter.ub_daysAgo(from: lastMeldung, addExplicitDate: false)
 
                 container.addSubview(dateLabel)
                 dateLabel.snp.makeConstraints { make in

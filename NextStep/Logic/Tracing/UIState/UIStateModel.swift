@@ -36,6 +36,12 @@ struct UIStateModel: Equatable {
         case infected
     }
 
+    enum PhoneCallState: Equatable {
+        case notCalled
+        case calledAfterLastExposure
+        case multipleExposuresNotCalled
+    }
+
     struct Homescreen: Equatable {
         struct Meldungen: Equatable {
             var meldung: MeldungState = .noMeldung
@@ -70,6 +76,7 @@ struct UIStateModel: Equatable {
     struct MeldungenDetail: Equatable {
         var meldung: MeldungState = .noMeldung
         var meldungen: [NSMeldungModel] = []
+        var phoneCallState: PhoneCallState = .notCalled
         var showMeldungWithAnimation: Bool = false
     }
 

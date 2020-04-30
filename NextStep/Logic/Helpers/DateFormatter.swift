@@ -15,19 +15,48 @@ extension DateFormatter {
         return dateFormatter
     }()
 
+    private static let dayDateFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YYYY"
+        return dateFormatter
+    }()
+
     static func ub_string(from date: Date) -> String {
         dateFormatter.string(from: date)
     }
 
-    static func ub_daysAgo(from date: Date) -> String {
+    static func ub_daysAgo(from date: Date, addExplicitDate: Bool) -> String {
         let days = date.ns_differenceInDaysWithDate(date: Date())
 
+        var daysAgo = ""
+
         if days == 0 {
-            return "date_today".ub_localized
+            daysAgo = "date_today".ub_localized
         } else if days == 1 {
-            return "date_one_day_ago".ub_localized
+            daysAgo = "date_one_day_ago".ub_localized
         } else {
-            return "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
+            daysAgo = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
+        }
+
+        if addExplicitDate
+        {
+            let dateText = "date_text_before_date".ub_localized.replacingOccurrences(of: "{DATE}", with: dayDateFormatter.string(from: date))
+
+            return "\(dateText) / \(daysAgo)"
+        }
+        else
+        {
+            return daysAgo
+        }
+    }
+
+    static func ub_inDays(until date: Date) -> String {
+        let days = Date().ns_differenceInDaysWithDate(date: date)
+
+        if days <= 1 {
+            return "date_in_one_day".ub_localized
+        } else {
+            return "date_in_days".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
         }
     }
 }

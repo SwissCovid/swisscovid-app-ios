@@ -3,12 +3,14 @@
 import UIKit
 
 class NSExplanationView: UIView {
+
+    let stackView = UIStackView()
+
     // MARK: - Init
 
     init(title: String, texts: [String], edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)) {
         super.init(frame: .zero)
 
-        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.spacing = 2 * NSPadding.medium
 

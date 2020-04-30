@@ -135,6 +135,17 @@ class UIStateLogic {
             newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) == nil
             newState.homescreen.meldungen.lastMeldung = meldung.timestamp
             newState.meldungenDetail.showMeldungWithAnimation = newState.shouldStartAtMeldungenDetail
+
+            if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
+                if lastPhoneCall > meldung.timestamp {
+                    newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
+                } else {
+                    newState.meldungenDetail.phoneCallState = newState.meldungenDetail.meldungen.count > 1
+                        ? .multipleExposuresNotCalled : .notCalled
+                }
+            } else {
+                newState.meldungenDetail.phoneCallState = .notCalled
+            }
         }
     }
 
@@ -166,6 +177,21 @@ class UIStateLogic {
                 })
                 newState.shouldStartAtMeldungenDetail = true
                 newState.meldungenDetail.showMeldungWithAnimation = true
+
+                let meldung = newState.meldungenDetail.meldungen.last!
+                
+                newState.homescreen.meldungen.lastMeldung = meldung.timestamp
+
+                if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
+                    if lastPhoneCall > meldung.timestamp {
+                        newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
+                    } else {
+                        newState.meldungenDetail.phoneCallState = newState.meldungenDetail.meldungen.count > 1
+                            ? .multipleExposuresNotCalled : .notCalled
+                    }
+                } else {
+                    newState.meldungenDetail.phoneCallState = .notCalled
+                }
             }
         }
 
