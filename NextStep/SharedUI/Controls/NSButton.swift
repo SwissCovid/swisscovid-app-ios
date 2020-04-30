@@ -31,7 +31,7 @@ class NSButton: UBButton {
             case let .uppercase(c):
                 return c
             case .outlineUppercase:
-                return .white
+                return .clear
             }
         }
 

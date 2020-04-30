@@ -68,6 +68,16 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(notYetCalledView!)
         stackScrollView.addArrangedView(alreadyCalledView!)
         stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addSpacerView(2 * NSPadding.large)
+
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0))
+
+        stackScrollView.addSpacerView(3 * NSPadding.large)
+
+        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
+
+        stackScrollView.addSpacerView(NSPadding.large)
     }
 
     // MARK: - Update
