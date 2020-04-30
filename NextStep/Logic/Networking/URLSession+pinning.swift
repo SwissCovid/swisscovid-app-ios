@@ -19,11 +19,22 @@ extension URLSession {
 
 class CertificateEvaluator: NSObject, URLSessionDelegate {
 
-    public typealias AuthenticationChallengeCompletion = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+    typealias AuthenticationChallengeCompletion = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
 
-    let trustManager: UBServerTrustManager
+    private let trustManager: UBServerTrustManager
+
+    #if DEBUG
+    static let useCertificatePinning = true
+    #else
+    static let useCertificatePinning = true
+    #endif
 
     override init() {
+
+        if !CertificateEvaluator.useCertificatePinning {
+            trustManager = UBServerTrustManager(evaluators: ["*": UBDisabledEvaluator()])
+            return
+        }
 
         var evaluators: [String: UBServerTrustEvaluator] = [:]
 
