@@ -27,7 +27,7 @@ private var didRegisterBackgroundTask: Bool = false
 
 @available(iOS 13.0, *)
 class FakePublishBackgroundTaskManager {
-    static let taskIdentifier: String = "fake-publish"
+    static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
     static let syncInterval: TimeInterval = 24 * 60 * 60 * 5 // 5 days
 

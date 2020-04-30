@@ -40,7 +40,7 @@ private var didRegisterBackgroundTask: Bool = false
 
 @available(iOS 13.0, *)
 class ConfigBackgroundTaskManager {
-    fileprivate static let taskIdentifier: String = "ch.admin.bag.dp3t.config"
+    fileprivate static let taskIdentifier: String = "ch.admin.bag.dp3t.configtask" // must be in info.plist
 
     fileprivate static let syncInterval: TimeInterval = 24 * 60 * 60
 

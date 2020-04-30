@@ -4,7 +4,8 @@
 <dict>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
-		<string>ch.admin.bag.dp3t.config</string>
+		<string>ch.admin.bag.dp3t.configtask</string>
+		<string>ch.admin.bag.dp3t.fakerequesttask</string>
 		<string>org.dpppt.synctask</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
