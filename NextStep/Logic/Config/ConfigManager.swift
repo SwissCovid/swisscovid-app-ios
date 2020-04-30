@@ -73,8 +73,8 @@ class ConfigManager: NSObject {
             }
 
             // Validate JWT
-            if let publicKey = Environment.current.configJwtPublicKey {
-                let verifier = DP3TJWTVerifier(publicKey: publicKey,
+            if #available(iOS 11.0, *) {
+                let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
                                                jwtTokenHeaderKey: "Signature")
                 do {
                     try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
