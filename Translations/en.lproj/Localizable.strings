@@ -790,3 +790,12 @@
 
 /*Symptome: FAQ Text*/
 "symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG für eine Handlungsempfehlung.";
+
+/*Meldungen: Positiv getestet FAQ Titel*/
+"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
+
+/*Meldungen: Positiv getestet FAQ Text*/
+"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
+
+/*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
+"language_key" = "en";

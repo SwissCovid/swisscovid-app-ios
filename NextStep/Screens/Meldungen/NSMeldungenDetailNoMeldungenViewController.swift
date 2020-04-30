@@ -38,6 +38,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
             make.right.lessThanOrEqualToSuperview()
         }
 
+        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addArrangedView(buttonView)
 
         stackScrollView.addArrangedView(whiteBoxView)
