@@ -89,7 +89,7 @@ extension NSWebViewController: WKNavigationDelegate {
                 return
             }
 
-            if scheme == "http" || scheme == "https" {
+            if scheme == "http" || scheme == "https" || scheme == "mailto" {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 decisionHandler(.cancel)
                 return
@@ -115,30 +115,4 @@ extension NSWebViewController: WKNavigationDelegate {
             return
         }
     }
-
-//    func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
-//        loadCount = 1
-//    }
-//
-//    func webView(_: WKWebView, didFailProvisionalNavigation _: WKNavigation!, withError error: Error) {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-//            guard let strongSelf = self else { return }
-//            strongSelf.loadCount -= 1
-//
-//            if strongSelf.loadCount == 0 {
-//                strongSelf.stopLoading(error: error, reloadHandler: { strongSelf.startLoading(url: strongSelf.url) })
-//            }
-//        }
-//    }
-//
-//    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-//            guard let strongSelf = self else { return }
-//            strongSelf.loadCount -= 1
-//
-//            if strongSelf.loadCount == 0 {
-//                strongSelf.stopLoading()
-//            }
-//        }
-//    }
 }
