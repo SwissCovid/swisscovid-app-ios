@@ -15,10 +15,6 @@ class DatabaseSyncer {
 
     private var databaseSyncInterval: TimeInterval = 10
 
-    init() {
-        UIApplication.shared.setMinimumBackgroundFetchInterval(databaseSyncInterval)
-    }
-
     func performFetch(completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         syncDatabaseIfNeeded(completionHandler: completionHandler)
     }
