@@ -10,7 +10,6 @@ class NSSendViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
-    private let subtitleLabel = NSLabel(.textBold, textColor: .ns_purple, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
     override init() {
@@ -30,14 +29,12 @@ class NSSendViewController: NSInformBottomButtonViewController {
             make.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
         }
 
-        let imageView = UIImageView(image: UIImage(named: "24-ansteckung"))
+        let imageView = UIImageView(image: UIImage(named: "illu-code-wichtiger-hinweis"))
         imageView.contentMode = .scaleAspectFit
 
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(imageView)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(subtitleLabel)
-        stackScrollView.addSpacerView(3.0)
         stackScrollView.addArrangedView(titleLabel)
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(textLabel)
@@ -47,11 +44,10 @@ class NSSendViewController: NSInformBottomButtonViewController {
     }
 
     private func setupTested() {
-        titleLabel.text = "inform_positive_title".ub_localized
-        subtitleLabel.text = "inform_positive_subtitle".ub_localized
-        textLabel.text = "inform_positive_long_text".ub_localized
+        titleLabel.text = "inform_code_intro_title".ub_localized
+        textLabel.text = "inform_code_intro_text".ub_localized
 
-        bottomButtonTitle = "inform_continue_button".ub_localized
+        bottomButtonTitle = "inform_code_intro_button".ub_localized
 
         bottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }

@@ -1,12 +1,9 @@
-/*
- * Created by Ubique Innovation AG
- * https://www.ubique.ch
- * Copyright (c) 2020. All rights reserved.
- */
+///
 
 import UIKit
 
-class NSInformThankYouViewController: NSInformBottomButtonViewController {
+class NSInformTracingEndViewController: NSInformBottomButtonViewController {
+
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
@@ -30,7 +27,7 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        let imageView = UIImageView(image: UIImage(named: "outro-danke"))
+        let imageView = UIImageView(image: UIImage(named: "outro-tracing-beenden"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
@@ -47,13 +44,14 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
             strongSelf.sendPressed()
         }
 
-        titleLabel.text = "inform_send_thankyou".ub_localized
-        textLabel.text = "inform_send_thankyou_text".ub_localized
+        titleLabel.text = "tracing_ended_title".ub_localized
+        textLabel.text = "tracing_ended_text".ub_localized
 
         enableBottomButton = true
     }
 
     private func sendPressed() {
-        navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
+        navigationController?.pushViewController(NSInformGetWellViewController(), animated: true)
+        
     }
 }
