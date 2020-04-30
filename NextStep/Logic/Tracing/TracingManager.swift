@@ -47,13 +47,13 @@ class TracingManager: NSObject {
             let descriptor = ApplicationDescriptor(appId: appId,
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: nil)
+                                                   jwtPublicKey: Environment.current.jwtPublicKey)
 
             #if CALIBRATION_SDK
                 switch Environment.current {
                 case .dev:
                     // 5min Batch lenght on dev Enviroment
-                    DP3TTracing.batchLength = 5 * 60
+                    DP3TTracing.parameters.networking.batchLength = 5 * 60
                     var appVersion = "N/A"
                     if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
                         let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
@@ -86,6 +86,9 @@ class TracingManager: NSObject {
             do {
                 try DP3TTracing.startTracing()
                 UIStateManager.shared.tracingStartError = nil
+            } catch DP3TTracingError.userAlreadyMarkedAsInfected {
+                // Tracing should not start if the user is marked as infected
+                UIStateManager.shared.tracingStartError = nil
             } catch {
                 UIStateManager.shared.tracingStartError = error
             }
@@ -111,7 +114,10 @@ class TracingManager: NSObject {
         do {
             try DP3TTracing.startTracing()
             UIStateManager.shared.tracingStartError = nil
-        } catch {
+        } catch DP3TTracingError.userAlreadyMarkedAsInfected {
+            // Tracing should not start if the user is marked as infected
+            UIStateManager.shared.tracingStartError = nil
+        }  catch {
             UIStateManager.shared.tracingStartError = error
         }
 

@@ -19,7 +19,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
         switch self {
         case let .networkingError(error):
             return error.localizedDescription
-        case .caseSynchronizationError:
+        case .caseSynchronizationError, .userAlreadyMarkedAsInfected:
             return unexpected.ub_localized
         case let .cryptographyError(error):
             return error
@@ -33,7 +33,8 @@ extension DP3TTracingError: LocalizedError, CodedError {
     }
 
     var errorCodeString: String? {
-        switch self { case let .networkingError(error: error):
+        switch self {
+        case let .networkingError(error: error):
             return error.errorCodeString
         case .caseSynchronizationError(errors: _):
             return "CASYN"
@@ -45,6 +46,8 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "BLOFF"
         case .permissonError:
             return "PERME"
+        case .userAlreadyMarkedAsInfected:
+            return "UAMAI"
         }
     }
 }
