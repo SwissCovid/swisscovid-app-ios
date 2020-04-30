@@ -51,8 +51,15 @@ enum Environment {
         }
     }
 
-    var configJwtPublicKey: Data {
-        jwtPublicKey
+    var configJwtPublicKey: Data? {
+        switch self {
+        case .dev:
+            return Data(base64Encoded: "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUZrd0V3WUhLb1pJemowQ0FRWUlLb1pJemowREFRY0RRZ0FFaXFSZ2FvYzdMb0pjdUx3d3F1OGszNmhVc2dheQp1a0lTR2p2cEtab05vNGZRNWJsekFUV3VBK0E4eklDRnFDOFNXQmlvZkFCRmxqandNeDR2ejlobGVnPT0KLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0t")!
+        case .abnahme:
+            return nil
+        case .prod:
+            return nil
+        }
     }
 
     var configService: Backend {

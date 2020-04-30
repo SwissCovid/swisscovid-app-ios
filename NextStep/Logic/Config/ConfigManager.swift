@@ -70,9 +70,8 @@ class ConfigManager: NSObject {
             }
 
             // Validate JWT
-            // disabled until backend signes the config request
-            if false, #available(iOS 11.0, *) {
-                let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
+            if #available(iOS 11.0, *), let publicKey = Environment.current.configJwtPublicKey {
+                let verifier = DP3TJWTVerifier(publicKey: publicKey,
                                                jwtTokenHeaderKey: "Signature")
                 do {
                     try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
