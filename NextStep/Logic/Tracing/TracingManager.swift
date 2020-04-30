@@ -47,7 +47,7 @@ class TracingManager: NSObject {
             let descriptor = ApplicationDescriptor(appId: appId,
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: nil)
+                                                   jwtPublicKey: Environment.current.jwtPublicKey)
 
             #if CALIBRATION_SDK
                 switch Environment.current {
