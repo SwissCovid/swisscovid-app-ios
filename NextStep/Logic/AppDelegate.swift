@@ -79,8 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func applicationDidEnterBackground(_: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         lastForegroundActivity = Date()
+
+        // App should not have badges
+        // Reset to 0 to ensure a unexpected badge doesn't stay forever
+        application.applicationIconBadgeNumber = 0
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
