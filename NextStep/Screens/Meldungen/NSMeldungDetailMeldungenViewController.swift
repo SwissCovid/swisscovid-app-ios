@@ -35,6 +35,14 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.hitTestDelegate = self
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        for m in meldungen {
+            NSUser.shared.registerSeenMessages(identifier: m.identifier)
+        }
+    }
+
     override var useFullScreenHeaderAnimation: Bool {
         return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
     }

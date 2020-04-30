@@ -34,6 +34,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
         openSetup = setupOpen
 
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         backgroundColor = .ns_blue
 
