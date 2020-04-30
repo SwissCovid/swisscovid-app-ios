@@ -51,6 +51,10 @@ enum Environment {
         }
     }
 
+    var configJwtPublicKey: Data {
+        jwtPublicKey
+    }
+
     var configService: Backend {
         switch self {
         case .dev:

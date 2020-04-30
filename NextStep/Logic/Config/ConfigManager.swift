@@ -5,6 +5,11 @@
  */
 
 import UIKit
+#if CALIBRATION_SDK
+    import DP3TSDK_CALIBRATION
+#else
+    import DP3TSDK
+#endif
 
 /// Config request allows to disable old versions of the app if
 class ConfigManager: NSObject {
@@ -40,11 +45,51 @@ class ConfigManager: NSObject {
 
     // MARK: - Start config request
 
+    private struct ConfigClaims: DP3TClaims {
+        let iss: String
+        let iat: Date
+        let exp: Date
+        let contentHash: String
+        let hashAlg: String
+
+        enum CodingKeys: String, CodingKey {
+            case contentHash = "content-hash"
+            case hashAlg = "hash-alg"
+            case iss, iat, exp
+        }
+    }
+
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, _, error in
+        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
+            //
+
+            guard let httpResponse = response as? HTTPURLResponse,
+                  let data = data else {
+                DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
+                DispatchQueue.main.async { completion(nil) }
+                return
+            }
+
+            // Validate JWT
+            // disabled until backend signes the config request
+            if false, #available(iOS 11.0, *) {
+                let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
+                                               jwtTokenHeaderKey: "Signature")
+                do {
+                    let _: ConfigClaims = try verifier.verify(httpResponse: httpResponse, httpBody: data)
+                } catch let error as DP3TNetworkingError {
+                    DebugAlert.show("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
+                    DispatchQueue.main.async { completion(nil) }
+                    return
+                } catch {
+                    DebugAlert.show("Failed to verify config signature, error: \(error.localizedDescription)")
+                    DispatchQueue.main.async { completion(nil) }
+                    return
+                }
+            }
 
             DispatchQueue.main.async {
-                if let d = data, let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: d) {
+                if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
                     completion(config)
                 } else {
