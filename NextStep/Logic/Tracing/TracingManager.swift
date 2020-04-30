@@ -60,11 +60,14 @@ class TracingManager: NSObject {
                         appVersion = "\(version)(\(build))"
                     }
                     try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned,
                                                mode: .calibration(identifierPrefix: "", appVersion: appVersion))
                 case .abnahme:
-                    try DP3TTracing.initialize(with: .manual(descriptor))
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned)
                 case .prod:
-                    try DP3TTracing.initialize(with: .manual(descriptor))
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned)
                 }
             #else
                 try DP3TTracing.initialize(with: .manual(descriptor))
