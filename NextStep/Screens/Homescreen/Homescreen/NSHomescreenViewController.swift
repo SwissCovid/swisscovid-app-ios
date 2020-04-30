@@ -118,8 +118,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private func setupLayout() {
         // navigation bar
-        let image = UIImage(named: "ic-info")
+        let image = UIImage(named: "ic-info-outline")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
+        navigationItem.rightBarButtonItem?.tintColor = .ns_blue
         navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
 
         // other views
