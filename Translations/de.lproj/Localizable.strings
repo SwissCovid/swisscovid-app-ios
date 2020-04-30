@@ -776,3 +776,18 @@
 
 /*URL für Häufige Fragen Button*/
 "faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+
+/*Informieren Flow: Titel erster Screen*/
+"inform_code_intro_title" = "Wichtiger Hinweis";
+
+/*Informieren-Flow: Erster Screen Text*/
+"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+
+/*Inform-Flow: Erster Screen Button*/
+"inform_code_intro_button" = "Verstanden";
+
+/*Symptome: FAQ Titel*/
+"symptom_faq1_title" = "Unsicher bei Symptomen?";
+
+/*Symptome: FAQ Text*/
+"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG für eine Handlungsempfehlung.";

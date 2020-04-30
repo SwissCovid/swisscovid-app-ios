@@ -124,9 +124,9 @@ class NSButton: UBButton {
 
 extension NSButton
 {
-    static func faqButton() -> UIView
+    static func faqButton(color: UIColor) -> UIView
     {
-        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(.ns_blue))
+        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
 
         faqButton.touchUpCallback = {
            if let url = URL(string: "faq_button_url".ub_localized) {

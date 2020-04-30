@@ -52,10 +52,9 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton())
+        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
 
         stackScrollView.addSpacerView(NSPadding.large)
-
     }
 
     override var titleHeight: CGFloat {
