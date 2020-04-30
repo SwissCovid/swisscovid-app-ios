@@ -109,8 +109,22 @@ class UIStateLogic {
     }
 
     private func setGlobalProblemState(_ newState: inout UIStateModel) {
-        if let infoBox = ConfigManager.currentConfig?.infobox {
-            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title, text: infoBox.msg, link: infoBox.urlTitle, url: infoBox.url)
+        if let localizedInfoBox = ConfigManager.currentConfig?.infobox {
+            let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
+            switch Language.current {
+            case .german:
+                infoBox = localizedInfoBox.deInfoBox
+            case .italian:
+                infoBox = localizedInfoBox.itInfoBox
+            case .english:
+                infoBox = localizedInfoBox.enInfoBox
+            case .france:
+                infoBox = localizedInfoBox.frInfoBox
+            }
+            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title,
+                                                                                      text: infoBox.msg,
+                                                                                      link: infoBox.urlTitle,
+                                                                                      url: infoBox.url)
         }
     }
 

@@ -28,6 +28,9 @@ class ConfigManager: NSObject {
     static var currentConfig: ConfigResponseBody? {
         didSet {
             UIStateManager.shared.refresh()
+            if let sdkConfig = currentConfig?.sdkConfig {
+                ConfigManager.updateSDKParameters(config: sdkConfig)
+            }
         }
     }
 
@@ -109,9 +112,30 @@ class ConfigManager: NSObject {
         }
     }
 
+    static public func updateSDKParameters(config: ConfigResponseBody.SDKConfig){
+        var parameters = DP3TTracing.parameters
+
+        if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
+            parameters.contactMatching.numberOfWindowsForExposure = numberOfWindowsForExposure
+        }
+        if let eventThreshold = config.eventThreshold {
+            parameters.contactMatching.eventThreshold = eventThreshold
+        }
+        if let badAttenuationThreshold = config.badAttenuationThreshold {
+            parameters.contactMatching.badAttenuationThreshold = badAttenuationThreshold
+        }
+        if let contactAttenuationThreshold = config.contactAttenuationThreshold {
+            parameters.contactMatching.contactAttenuationThreshold = contactAttenuationThreshold
+        }
+
+        DP3TTracing.parameters = parameters
+    }
+
     private func presentAlertIfNeeded(config: ConfigResponseBody, window: UIWindow?) {
         if config.forceUpdate {
-            let alert = UIAlertController(title: "force_update_title".ub_localized, message: config.msg ?? "force_update_text".ub_localized, preferredStyle: .alert)
+            let alert = UIAlertController(title: "force_update_title".ub_localized,
+                                          message: "force_update_text".ub_localized,
+                                          preferredStyle: .alert)
 
             window?.rootViewController?.present(alert, animated: true, completion: nil)
         } else {

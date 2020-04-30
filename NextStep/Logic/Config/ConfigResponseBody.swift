@@ -8,14 +8,26 @@ import UIKit
 
 class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
-    public let msg: String?
+    public let infobox: LocalizedInfobox?
+    public let sdkConfig: SDKConfig?
 
-    public let infobox: Infobox?
+    class LocalizedInfobox: UBCodable {
+        let deInfoBox: InfoBox
+        let frInfoBox: InfoBox
+        let itInfoBox: InfoBox
+        let enInfoBox: InfoBox
 
-    class Infobox: UBCodable {
-        let title: String
-        let msg: String
-        let url: URL?
-        let urlTitle: String?
+        class InfoBox: UBCodable {
+            let title, msg: String
+            let url: URL?
+            let urlTitle: String?
+        }
+
+    }
+    class SDKConfig: Codable {
+        let numberOfWindowsForExposure: Int?
+        let eventThreshold: Double?
+        let badAttenuationThreshold: Double?
+        let contactAttenuationThreshold: Double?
     }
 }
