@@ -50,7 +50,12 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0))
 
+        stackScrollView.addSpacerView(3 * NSPadding.large)
+
+        stackScrollView.addArrangedView(NSButton.faqButton())
+
         stackScrollView.addSpacerView(NSPadding.large)
+
     }
 
     override var titleHeight: CGFloat {

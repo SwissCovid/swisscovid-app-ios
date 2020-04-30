@@ -720,7 +720,7 @@
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Ja, es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
+"meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
 
 /*Meldungen: Meldungen FAQ Titel*/
 "meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
@@ -772,3 +772,6 @@
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
+
+/*URL für Häufige Fragen Button*/
+"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
