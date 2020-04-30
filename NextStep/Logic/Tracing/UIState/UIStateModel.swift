@@ -47,7 +47,8 @@ struct UIStateModel: Equatable {
             var meldung: MeldungState = .noMeldung
             var lastMeldung: Date?
             var pushProblem: Bool = false
-            var syncProblem: Bool = false
+            var syncProblemNetworkingError: Bool = false
+            var syncProblemOtherError: Bool = false
             var backgroundUpdateProblem: Bool = false
         }
 

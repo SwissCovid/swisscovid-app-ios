@@ -98,13 +98,19 @@ class UIStateLogic {
         newState.homescreen.begegnungen = tracing
 
         newState.homescreen.meldungen.pushProblem = !manager.pushOk
+
         if let st = manager.tracingState {
             newState.homescreen.meldungen.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
+
+        if manager.immediatelyShowSyncError {
+            newState.homescreen.meldungen.syncProblemOtherError = true
+        }
+
         if let first = manager.firstSyncErrorTime,
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
-            newState.homescreen.meldungen.syncProblem = true
+            newState.homescreen.meldungen.syncProblemNetworkingError = true
         }
     }
 

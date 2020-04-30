@@ -26,6 +26,10 @@ class NSMeldungView: NSModuleBaseView {
         UIApplication.shared.open(settingsUrl)
     }))
 
+    private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: {
+        DatabaseSyncer.shared.forceSyncDatabase()
+    }))
+
     private let syncProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "homescreen_meldung_data_outdated_title".ub_localized, text: "homescreen_meldung_data_outdated_text".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: {
         DatabaseSyncer.shared.forceSyncDatabase()
     }))
@@ -57,7 +61,9 @@ class NSMeldungView: NSModuleBaseView {
             views.append(noMeldungenView)
             if uiState.pushProblem {
                 views.append(noPushView)
-            } else if uiState.syncProblem {
+            } else if uiState.syncProblemOtherError {
+                views.append(unexpectedErrorView)
+            } else if uiState.syncProblemNetworkingError {
                 views.append(syncProblemView)
             } else if uiState.backgroundUpdateProblem {
                 views.append(backgroundFetchProblemView)

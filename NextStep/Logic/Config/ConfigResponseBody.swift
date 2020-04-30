@@ -22,8 +22,8 @@ class ConfigResponseBody: UBCodable {
             let url: URL?
             let urlTitle: String?
         }
-
     }
+
     class SDKConfig: Codable {
         let numberOfWindowsForExposure: Int?
         let eventThreshold: Double?

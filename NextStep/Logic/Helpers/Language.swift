@@ -2,7 +2,6 @@
 
 import Foundation
 
-
 /// Languages supported by the app
 enum Language: String {
     case german = "de"
@@ -11,7 +10,6 @@ enum Language: String {
     case france = "fr"
 
     static var current: Language {
-
         let preferredLanguages = Locale.preferredLanguages
 
         for preferredLanguage in preferredLanguages {

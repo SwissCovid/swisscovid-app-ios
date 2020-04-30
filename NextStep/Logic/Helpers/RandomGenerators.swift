@@ -9,6 +9,6 @@ enum ExponentialDistribution {
     static func sample(rate: Double = 1.0) -> Double {
         assert(rate > 0, "Cannot divide by 0")
         // We use -log(1-U) since U is [0, 1)
-        return -log(1-Double.random(in: 0..<1)) / rate
+        return -log(1 - Double.random(in: 0 ..< 1)) / rate
     }
 }

@@ -112,7 +112,7 @@ class ConfigManager: NSObject {
         }
     }
 
-    static public func updateSDKParameters(config: ConfigResponseBody.SDKConfig){
+    public static func updateSDKParameters(config: ConfigResponseBody.SDKConfig) {
         var parameters = DP3TTracing.parameters
 
         if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
