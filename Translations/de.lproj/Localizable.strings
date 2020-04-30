@@ -327,7 +327,7 @@
 "reset_onboarding" = "Onboarding zurücksetzen";
 
 /*Heute*/
-"date_today" = "Heute";
+"date_today" = "heute";
 
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
 "date_days_ago" = "vor {COUNT} Tagen";
@@ -393,7 +393,7 @@
 "onboarding_privacy_text2" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Was macht die App?";
+"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
@@ -802,6 +802,7 @@
 "meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
+/*Fuzzy*/
 "exposed_info_contact_hotline_name" = "Infoline Coronavirus";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
@@ -809,3 +810,6 @@
 
 /*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
 "date_in_days" = "Noch {COUNT} Tage";
+
+/*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
+"date_text_before_date" = "am {DATE}";
