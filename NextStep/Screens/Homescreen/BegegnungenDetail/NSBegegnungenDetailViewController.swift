@@ -53,19 +53,23 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(bluetoothControl)
 
-        stackScrollView.addSpacerView(30.0)
+        stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSExplanationView(title: "bluetooth_setting_tracking_explanation_title".ub_localized, texts: [
-            "bluetooth_setting_tracking_explanation_text1".ub_localized, "bluetooth_setting_tracking_explanation_text2".ub_localized,
-        ]))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "begegnung_detail_faq1_text".ub_localized, title: "begegnung_detail_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(30.0)
+        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSExplanationView(title: "bluetooth_setting_data_explanation_title".ub_localized, texts: [
-            "bluetooth_setting_data_explanation_text1".ub_localized, "bluetooth_setting_data_explanation_text2".ub_localized,
-        ]))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(30.0)
+        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-bt")!, text: "begegnungen_detail_faq3_text".ub_localized, title: "begegnungen_detail_faq3_title".ub_localized, leftRightInset: 0))
+
+        stackScrollView.addSpacerView(3 * NSPadding.large)
+
+        stackScrollView.addArrangedView(NSButton.faqButton())
+
+        stackScrollView.addSpacerView(NSPadding.large)
     }
 
     private func updateState(_ state: UIStateModel) {

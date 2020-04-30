@@ -678,7 +678,7 @@
 "begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für mehrere Minuten nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.\n";
+"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für mehrere Minuten nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
