@@ -5,10 +5,13 @@ import UIKit
 class NSExternalLinkButton: UBButton {
     // MARK: - Init
 
-    override init() {
+    init(color: UIColor? = nil) {
+
         super.init()
 
-        let image = UIImage(named: "ic-link-external")?.withRenderingMode(.alwaysOriginal)
+        let c : UIColor = color ?? UIColor.white
+
+        let image = UIImage(named: "ic-link-external")?.ub_image(with: c)
         setImage(image, for: .normal)
 
         titleLabel?.font = NSLabelType.button.font
@@ -16,7 +19,7 @@ class NSExternalLinkButton: UBButton {
         titleLabel?.numberOfLines = 1
         titleLabel?.lineBreakMode = .byTruncatingTail
 
-        setTitleColor(UIColor.white, for: .normal)
+        setTitleColor(c, for: .normal)
 
         highlightXInset = -NSPadding.small
         highlightYInset = -NSPadding.small

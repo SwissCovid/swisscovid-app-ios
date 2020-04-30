@@ -23,8 +23,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 
-    private let noCodeButton = NSSimpleTextButton(title: "inform_code_no_code".ub_localized, color: .ns_purple)
-
     // MARK: - View
 
     override func viewDidLoad() {
@@ -82,10 +80,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         codeControlContainer.addSubview(codeControl)
 
         codeControl.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
+
+        codeControl.controller = self
 
         stackScrollView.addArrangedView(codeControlContainer)
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
@@ -101,35 +100,11 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
         stackScrollView.addArrangedView(sendContainer)
 
-        stackScrollView.addSpacerView(NSPadding.medium * 2.0)
-
-        let noCodeContainer = UIView()
-        noCodeContainer.addSubview(noCodeButton)
-
-        noCodeButton.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
-        }
-
-        stackScrollView.addArrangedView(noCodeContainer)
         stackScrollView.addSpacerView(NSPadding.large)
-
-        codeControl.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview()
-        }
-
-        codeControl.controller = self
 
         sendButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.sendPressed()
-        }
-
-        noCodeButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.noCodeButtonPressed()
         }
 
         sendButton.isEnabled = false

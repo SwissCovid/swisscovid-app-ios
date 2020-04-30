@@ -3,3 +3,4 @@
 //
 
 #include "UIScrollView+UBKeyboardObserver.h"
+#include "UIImage+UBHelpers.h"

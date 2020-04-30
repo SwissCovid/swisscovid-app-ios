@@ -121,3 +121,29 @@ class NSButton: UBButton {
         return contentSize
     }
 }
+
+extension NSButton
+{
+    static func faqButton() -> UIView
+    {
+        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(.ns_blue))
+
+        faqButton.touchUpCallback = {
+           if let url = URL(string: "faq_button_url".ub_localized) {
+               UIApplication.shared.open(url, options: [:], completionHandler: nil)
+           }
+        }
+
+        let view = UIView()
+
+        view.addSubview(faqButton)
+
+        faqButton.snp.makeConstraints { (make) in
+            make.top.bottom.centerX.equalToSuperview()
+            make.right.lessThanOrEqualToSuperview()
+            make.left.greaterThanOrEqualToSuperview()
+        }
+
+        return view
+    }
+}
