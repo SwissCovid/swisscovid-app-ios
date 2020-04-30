@@ -53,6 +53,7 @@ class UIStateLogic {
 
         case let .exposed(days):
             setExposedState(&newState, days: days)
+            setLastMeldungState(&newState)
         }
 
         // Set debug helpers
@@ -130,11 +131,13 @@ class UIStateLogic {
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
+    }
 
+    private func setLastMeldungState(_ newState: inout UIStateModel) {
         if let meldung = newState.meldungenDetail.meldungen.last {
             newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) == nil
             newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-            newState.meldungenDetail.showMeldungWithAnimation = newState.shouldStartAtMeldungenDetail
+            newState.meldungenDetail.showMeldungWithAnimation = !NSUser.shared.hasSeenMessage(for: meldung.identifier)
 
             if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
                 if lastPhoneCall > meldung.timestamp {
@@ -172,26 +175,13 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_789, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), NSMeldungModel(identifier: 123_333_333, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_456_781, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), NSMeldungModel(identifier: 123_333_332, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true
                 newState.meldungenDetail.showMeldungWithAnimation = true
 
-                let meldung = newState.meldungenDetail.meldungen.last!
-                
-                newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-
-                if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
-                    if lastPhoneCall > meldung.timestamp {
-                        newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
-                    } else {
-                        newState.meldungenDetail.phoneCallState = newState.meldungenDetail.meldungen.count > 1
-                            ? .multipleExposuresNotCalled : .notCalled
-                    }
-                } else {
-                    newState.meldungenDetail.phoneCallState = .notCalled
-                }
+                setLastMeldungState(&newState)
             }
         }
 

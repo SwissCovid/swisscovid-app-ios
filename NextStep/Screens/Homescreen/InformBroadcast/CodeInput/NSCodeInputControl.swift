@@ -130,7 +130,7 @@ class NSCodeControl: UIView {
 
     // MARK: - Protocol
 
-    private func checkSendAllowed() {
+    public func checkSendAllowed() {
         for c in controls {
             if !c.codeIsSet() {
                 controller?.changeSendPermission(to: false)
@@ -203,7 +203,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     public func clearInput() {
         textField.resignFirstResponder()
-        textField.text = ""
+        textField.text = emptyCharacter
     }
 
     // MARK: - Copy&paste
@@ -285,6 +285,8 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
             sender.text = emptyCharacter
             if !hadText {
                 parent?.jumpToPreviousField()
+            } else {
+                parent?.checkSendAllowed()
             }
 
             hadText = false

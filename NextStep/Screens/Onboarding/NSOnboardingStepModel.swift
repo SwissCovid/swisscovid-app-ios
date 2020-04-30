@@ -48,6 +48,6 @@ struct NSOnboardingStepModel {
                                              title: "onboarding_meldung_title".ub_localized,
                                              textGroups: [
                                                  (UIImage(named: "ic-meldung")!, "onboarding_meldung_text1".ub_localized),
-                                                 (UIImage(named: "ic-tracing-onboarding")!, "onboarding_meldung_text2".ub_localized),
+                                                 (UIImage(named: "ic-isolation")!, "onboarding_meldung_text2".ub_localized),
                                              ])
 }

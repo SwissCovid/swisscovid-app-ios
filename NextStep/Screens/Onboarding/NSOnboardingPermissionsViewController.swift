@@ -82,7 +82,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             permissionButton.title = "onboarding_bluetooth_button".ub_localized
 
             let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_bluetooth_gtk_text1".ub_localized, title: "onboarding_bluetooth_gtk_title1".ub_localized)
-            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
+            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!.ub_image(with: .ns_blue), text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
             elements.append(info1)
             elements.append(info2)
 

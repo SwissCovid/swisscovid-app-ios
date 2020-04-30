@@ -38,14 +38,11 @@ extension DateFormatter {
             daysAgo = "date_days_ago".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
         }
 
-        if addExplicitDate
-        {
+        if addExplicitDate {
             let dateText = "date_text_before_date".ub_localized.replacingOccurrences(of: "{DATE}", with: dayDateFormatter.string(from: date))
 
             return "\(dateText) / \(daysAgo)"
-        }
-        else
-        {
+        } else {
             return daysAgo
         }
     }

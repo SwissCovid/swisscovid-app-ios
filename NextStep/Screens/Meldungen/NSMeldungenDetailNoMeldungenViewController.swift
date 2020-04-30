@@ -22,7 +22,6 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
     private func setupLayout() {
         let whiteBoxView = NSSimpleModuleBaseView(title: "no_meldungen_box_title".ub_localized, subtitle: "no_meldungen_box_subtitle".ub_localized, text: "no_meldungen_box_text".ub_localized, image: UIImage(named: "illu-no-message"), subtitleColor: .ns_green)
 
-
         let buttonView = UIView()
 
         let externalLinkButton = NSExternalLinkButton(color: .ns_green)
@@ -33,7 +32,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
         }
 
         buttonView.addSubview(externalLinkButton)
-        externalLinkButton.snp.makeConstraints { (make) in
+        externalLinkButton.snp.makeConstraints { make in
             make.top.left.bottom.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()
         }
@@ -68,10 +67,8 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
     // MARK: - Logic
 
-    private func externalLinkPressed()
-    {
-        if let url = URL(string: "no_meldungen_box_url".ub_localized)
-        {
+    private func externalLinkPressed() {
+        if let url = URL(string: "no_meldungen_box_url".ub_localized) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
