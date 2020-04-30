@@ -387,7 +387,7 @@
 "onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Es werden zu keinem Zeitpunkt personenbezogene Daten geteilt. Die Kommunikation zwischen den Geräten findet anonym statt.";
+"onboarding_privacy_text1" = "Die Kommunikation zwischen den Geräten findet anonym statt.";
 
 /*Onboarding Privacy: Text*/
 "onboarding_privacy_text2" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
@@ -750,7 +750,7 @@
 "no_meldungen_box_link" = "So schützen wir uns";
 
 /*Keine Meldungen Weisse Box Link URL*/
-"no_meldungen_box_url" = "www.bag-coronavirus.ch";
+"no_meldungen_box_url" = "https://www.bag-coronavirus.ch";
 
 /*Informieren Detail: FAQ Titel*/
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";

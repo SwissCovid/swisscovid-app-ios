@@ -139,9 +139,9 @@ extension NSButton
         view.addSubview(faqButton)
 
         faqButton.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview()
-            make.centerX.equalToSuperview()
-            make.left.right.lessThanOrEqualToSuperview().priority(.low)
+            make.top.bottom.centerX.equalToSuperview()
+            make.right.lessThanOrEqualToSuperview()
+            make.left.greaterThanOrEqualToSuperview()
         }
 
         return view

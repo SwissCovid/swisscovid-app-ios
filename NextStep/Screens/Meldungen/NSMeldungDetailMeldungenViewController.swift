@@ -155,7 +155,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     private func call() {
         guard let last = meldungen.last else { return }
 
-        let phoneNumber = "exposed_info_line_tel".ub_localized
+        let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
         NSUser.shared.registerPhoneCall(identifier: last.identifier)
