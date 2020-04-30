@@ -15,7 +15,7 @@ import UIKit
 class ConfigManager: NSObject {
     // MARK: - Data Task
 
-    private let session = URLSession.shared
+    private let session = URLSession.certificatePinned
     private var dataTask: URLSessionDataTask?
 
     // MARK: - Init

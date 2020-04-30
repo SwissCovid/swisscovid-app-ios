@@ -1,0 +1,105 @@
+///
+
+import Foundation
+import Security
+
+extension URLSession {
+
+    static let evaluator = CertificateEvaluator()
+
+    static let certificatePinned: URLSession = {
+        let session = URLSession(configuration: .default,
+                                 delegate: URLSession.evaluator,
+                                 delegateQueue: nil)
+        return session
+    }()
+
+}
+
+
+class CertificateEvaluator: NSObject, URLSessionDelegate {
+
+    public typealias AuthenticationChallengeCompletion = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
+
+    let trustManager: UBServerTrustManager
+
+    override init() {
+
+        var evaluators: [String: UBServerTrustEvaluator] = [:]
+
+        let bundle = Bundle.main
+
+        // all these hosts have a seperate certificate
+        let hosts = ["pt1.bfs.admin.ch",
+                     "pt1-d.bfs.admin.ch",
+                     "pt1-a.bfs.admin.ch",
+                     "codegen-service.bag.admin.ch",
+                     "codegen-service-d.bag.admin.ch",
+                     "codegen-service-a.bag.admin.ch"]
+        for host in hosts {
+            if let certificate = bundle.getCertificate(with: host) {
+                let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [certificate], validateHost: true)
+                evaluators[host] = evaluator
+            }
+        }
+
+        // for these host we just pin the intermediate certificate of quoVadis
+        if let c = bundle.getCertificate(with: "QuoVadis") {
+            let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [c], validateHost: true)
+            evaluators["pt-d.bfs.admin.ch"] = evaluator
+            evaluators["pt-a.bfs.admin.ch"] = evaluator
+            evaluators["pt.bfs.admin.ch"] = evaluator
+        }
+
+        trustManager = UBServerTrustManager(evaluators: evaluators)
+    }
+
+    // MARK: - URLSessionDelegate
+
+    private typealias ChallengeEvaluation = (disposition: URLSession.AuthChallengeDisposition, credential: URLCredential?, error: Error?)
+    func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+        let evaluation: ChallengeEvaluation
+
+        switch challenge.protectionSpace.authenticationMethod {
+        case NSURLAuthenticationMethodServerTrust:
+            evaluation = attemptServerTrustAuthentication(with: challenge)
+        default:
+            evaluation = (.performDefaultHandling, nil, nil)
+        }
+
+        completionHandler(evaluation.disposition, evaluation.credential)
+    }
+
+     /// :nodoc:
+     private func attemptServerTrustAuthentication(with challenge: URLAuthenticationChallenge) -> ChallengeEvaluation {
+         let host = challenge.protectionSpace.host
+
+         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
+             let trust = challenge.protectionSpace.serverTrust else {
+             return (.performDefaultHandling, nil, nil)
+         }
+
+         do {
+             guard let evaluator = trustManager.serverTrustEvaluator(forHost: host) else {
+                 return (.performDefaultHandling, nil, nil)
+             }
+
+             try evaluator.evaluate(trust, forHost: host)
+
+             return (.useCredential, URLCredential(trust: trust), nil)
+         } catch {
+             return (.cancelAuthenticationChallenge, nil, error)
+         }
+     }
+}
+
+extension Bundle {
+    func getCertificate(with name: String, fileExtension: String = "der") -> SecCertificate? {
+        if let certificateURL = url(forResource: name, withExtension: fileExtension),
+           let certificateData = try? Data(contentsOf: certificateURL),
+           let certificate = SecCertificateCreateWithData(nil, certificateData as CFData){
+            return certificate
+        }
+        return nil
+    }
+}
