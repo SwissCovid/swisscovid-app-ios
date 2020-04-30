@@ -2,22 +2,91 @@ name: testflight
 
 on:
   push:
-    branches: '**'
+    branches:
+      - master
   pull_request:
-    branches: 'master'
+    branches:
+      - master
 
 jobs:
-  #testflight_dev:
-  #mit upload
+  testflight_internal:
+    runs-on: macOS-latest
 
-  #testflight_abnahme:
-  #mit upload
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Switch to Xcode 11.4.1
+      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+
+    - name: Installs librsvg
+      run: brew install librsvg
+
+    - name: Installs magick
+      run: brew install imagemagick
+
+    - name: Sets up bundler
+      run: bundle update --bundler
+      
+    - name: Sign and build
+      env:
+        MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+        MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
+        APP_SCHEME: "Release-Internal"
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_INTERNAL }}
+        FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
+      run: bundle exec fastlane sign_and_build
+      
+    - name: Upload and distribution
+      env:
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
+        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
+      run: bundle exec fastlane upload_and_distribute
+
+  testflight_abnahme:
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Switch to Xcode 11.4.1
+      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+
+    - name: Installs librsvg
+      run: brew install librsvg
+
+    - name: Installs magick
+      run: brew install imagemagick
+
+    - name: Sets up bundler
+      run: bundle update --bundler
+      
+    - name: Sign and build
+      env:
+        MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
+        MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
+        APP_SCHEME: "Release-Abnahme"
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_TEST }}
+        FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
+      run: bundle exec fastlane sign_and_build
+      
+    - name: Upload and distribution
+      env:
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
+        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
+      run: bundle exec fastlane upload_and_distribute
 
   testflight_prod:
     runs-on: macOS-latest
 
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
     - name: Switch to Xcode 11.4.1
