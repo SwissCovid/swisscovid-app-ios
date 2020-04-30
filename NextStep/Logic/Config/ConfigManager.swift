@@ -75,7 +75,7 @@ class ConfigManager: NSObject {
                 let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
                                                jwtTokenHeaderKey: "Signature")
                 do {
-                    let _: ConfigClaims = try verifier.verify(httpResponse: httpResponse, httpBody: data)
+                    try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
                 } catch let error as DP3TNetworkingError {
                     DebugAlert.show("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
                     DispatchQueue.main.async { completion(nil) }
