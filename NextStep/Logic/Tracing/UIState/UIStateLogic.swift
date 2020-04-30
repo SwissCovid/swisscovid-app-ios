@@ -131,7 +131,6 @@ class UIStateLogic {
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
-
     }
 
     private func setLastMeldungState(_ newState: inout UIStateModel) {

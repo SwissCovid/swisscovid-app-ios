@@ -61,9 +61,9 @@ class ConfigManager: NSObject {
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
-            
+
             guard let httpResponse = response as? HTTPURLResponse,
-                  let data = data else {
+                let data = data else {
                 DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completion(nil) }
                 return

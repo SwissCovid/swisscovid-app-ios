@@ -88,7 +88,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
         }
 
         buttonView.addSubview(externalLinkButton)
-        externalLinkButton.snp.makeConstraints { (make) in
+        externalLinkButton.snp.makeConstraints { make in
             make.top.left.bottom.equalToSuperview()
             make.right.lessThanOrEqualToSuperview()
         }

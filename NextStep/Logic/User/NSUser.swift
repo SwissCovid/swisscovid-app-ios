@@ -29,7 +29,7 @@ class NSUser {
 
     func registerSeenMessages(identifier: Int) {
         seenMessages.append("\(identifier)")
-}
+    }
 
     var lastPhoneCallDate: Date? {
         let allDates = lastPhoneCalls.values

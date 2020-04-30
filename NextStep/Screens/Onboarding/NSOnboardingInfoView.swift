@@ -3,10 +3,9 @@
 import UIKit
 
 class NSOnboardingInfoView: UIView {
-
     public let stackView = UIStackView()
 
-    private let leftRightInset : CGFloat
+    private let leftRightInset: CGFloat
 
     init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium) {
         self.leftRightInset = leftRightInset
@@ -55,7 +54,7 @@ class NSOnboardingInfoView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 0
 
-        stackView.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom)
             make.leading.equalTo(imgView.snp.trailing).offset(NSPadding.medium + NSPadding.small)
             make.trailing.equalToSuperview().inset(leftRightInset)

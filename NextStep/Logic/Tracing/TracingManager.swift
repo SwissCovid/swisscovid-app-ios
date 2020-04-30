@@ -117,7 +117,7 @@ class TracingManager: NSObject {
         } catch DP3TTracingError.userAlreadyMarkedAsInfected {
             // Tracing should not start if the user is marked as infected
             UIStateManager.shared.tracingStartError = nil
-        }  catch {
+        } catch {
             UIStateManager.shared.tracingStartError = error
         }
 

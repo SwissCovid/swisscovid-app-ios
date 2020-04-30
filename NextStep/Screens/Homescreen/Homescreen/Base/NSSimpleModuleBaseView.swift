@@ -93,7 +93,7 @@ class NSSimpleModuleBaseView: UIView {
             view.addSubview(imageView)
             if boldTextLabel.text != nil {
                 view.addSubview(boldTextLabel)
-                boldTextLabel.snp.makeConstraints { (make) in
+                boldTextLabel.snp.makeConstraints { make in
                     make.top.left.equalToSuperview()
                     make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
                 }

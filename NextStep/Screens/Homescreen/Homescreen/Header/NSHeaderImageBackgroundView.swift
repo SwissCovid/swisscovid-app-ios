@@ -17,7 +17,7 @@ class NSHeaderImageBackgroundView: UIView {
         UIImage(named: "header-image-luzern"),
         UIImage(named: "header-image-st-gallen"),
         UIImage(named: "header-image-zurich"),
-        ].compactMap({ $0 })
+    ].compactMap { $0 }
 
     static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
 
