@@ -50,9 +50,10 @@ class NSWebViewController: NSViewController {
         let url = URL(fileURLWithPath: path)
 
         do {
-            let string = try String(contentsOf: url)
+            var string = try String(contentsOf: url)
 
-            // TODO: Replace Version and Build number
+            string = string.replacingOccurrences(of: "{VERSION}", with: Bundle.appVersion)
+            string = string.replacingOccurrences(of: "{BUILDNR}", with: Bundle.buildNumber)
 
             webView.loadHTMLString(string, baseURL: url.deletingLastPathComponent())
         } catch {}
@@ -114,5 +115,18 @@ extension NSWebViewController: WKNavigationDelegate {
             decisionHandler(.allow)
             return
         }
+    }
+}
+
+extension Bundle {
+    static var appVersion: String {
+        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0"
+    }
+
+    static var buildNumber: String {
+        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
+
+        // We take the last component because the CI service prepends build numbers with the date and time
+        return buildNumber.components(separatedBy: ".").last ?? buildNumber
     }
 }
