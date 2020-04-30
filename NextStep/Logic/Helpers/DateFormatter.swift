@@ -53,7 +53,7 @@ extension DateFormatter {
     static func ub_inDays(until date: Date) -> String {
         let days = Date().ns_differenceInDaysWithDate(date: date)
 
-        if days <= 0 {
+        if days <= 1 {
             return "date_in_one_day".ub_localized
         } else {
             return "date_in_days".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
