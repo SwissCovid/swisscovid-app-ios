@@ -20,7 +20,6 @@ class CodeValidator {
         let dataTask = session.dataTask(with: Endpoint.onset(auth: auth).request(), completionHandler: { data, response, error in
 
             DispatchQueue.main.async {
-
                 if let response = response as? HTTPURLResponse {
                     if response.statusCode == 404 {
                         completion(.invalidTokenError)
@@ -34,8 +33,7 @@ class CodeValidator {
                 if let error = error {
                     completion(.failure(error: error))
                     return
-                }
-                else if response == nil {
+                } else if response == nil {
                     completion(.failure(error: NetworkError.networkError))
                     return
                 }

@@ -55,7 +55,7 @@ class DatabaseSyncer {
                             break
                         }
                         UIStateManager.shared.lastSyncErrorTime = Date()
-                        if case DP3TNetworkingError.networkSessionError(_) = wrappedError {
+                        if case DP3TNetworkingError.networkSessionError = wrappedError {
                             UIStateManager.shared.immediatelyShowSyncError = false
                         } else {
                             UIStateManager.shared.immediatelyShowSyncError = true
