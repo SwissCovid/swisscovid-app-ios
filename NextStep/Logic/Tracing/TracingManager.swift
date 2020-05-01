@@ -110,7 +110,9 @@ class TracingManager: NSObject {
 
     func resetSDK() {
         try? DP3TTracing.reset()
+        #if ENABLE_TESTING
         UIStateManager.shared.overwrittenInfectionState = nil
+        #endif
     }
 
     func userHasCompletedOnboarding() {
