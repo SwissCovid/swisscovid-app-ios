@@ -107,10 +107,10 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-        loadConfig { [weak self] config in
-            guard let strongSelf = self else { return }
+        loadConfig { config in
+            // self must be strong
             if let config = config {
-                strongSelf.presentAlertIfNeeded(config: config, window: window)
+                self.presentAlertIfNeeded(config: config, window: window)
             }
         }
     }
