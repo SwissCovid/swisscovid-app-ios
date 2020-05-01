@@ -139,6 +139,7 @@ class TracingManager: NSObject {
                 UIStateManager.shared.updateError = e
                 completion?(e)
             case let .success(st):
+
                 UIStateManager.shared.blockUpdate {
                     UIStateManager.shared.updateError = nil
                     UIStateManager.shared.tracingState = st

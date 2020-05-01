@@ -70,19 +70,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
 
-            UIStateManager.shared.overwrittenInfectionState = .exposed
-
-            if !jumpToMessageIfRequired() {
+            if !jumpToMessageIfRequired(onlyFirst: true) {
                 DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
-                    _ = self.jumpToMessageIfRequired()
+                    _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
             startForceUpdateCheck()
         }
+        else {
+            _ = jumpToMessageIfRequired(onlyFirst: false)
+        }
     }
 
-    func jumpToMessageIfRequired() -> Bool {
-        if UIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
+    func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
+        let shouldJump: Bool
+        if onlyFirst {
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail
+        }
+        else {
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail && UIStateManager.shared.uiState.meldungenDetail.showMeldungWithAnimation
+        }
+        if shouldJump,
             let navigationController = window?.rootViewController as? NSNavigationController,
             let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
             navigationController.popToRootViewController(animated: false)
