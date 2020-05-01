@@ -42,6 +42,7 @@ class DatabaseSyncer {
         let taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
         }
+        Logger.log("Start Database Sync", appState: true)
         DP3TTracing.sync { result in
             switch result {
             case let .failure(e):
@@ -83,7 +84,6 @@ class DatabaseSyncer {
 
                 NSTracingLocalPush.shared.resetSyncWarningTriggers()
 
-                Logger.log("Synced Database")
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)

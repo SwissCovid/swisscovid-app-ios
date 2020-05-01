@@ -10,6 +10,7 @@ import UIKit.UIApplication
 
 private class FakePublishOperation: Operation {
     override func main() {
+        Logger.log("Start Fake Publish", appState: true)
         ReportingManager.shared.report(isFakeRequest: true) { error in
             if error != nil {
                 self.cancel()
@@ -84,7 +85,7 @@ class FakePublishBackgroundTaskManager {
         do {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
-            dprint(error)
+            Logger.log("Failed to schedule Fake Publish: \(error)")
         }
     }
 

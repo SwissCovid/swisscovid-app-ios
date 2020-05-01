@@ -49,9 +49,6 @@ class NSTracingLocalPush {
                     return
                 }
             }
-            #if ENABLE_TESTING
-                Logger.log("Keine neuen Meldungen")
-            #endif
         }
     }
 

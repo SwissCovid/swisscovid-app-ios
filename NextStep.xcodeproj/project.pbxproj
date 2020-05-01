@@ -323,7 +323,6 @@
 /* Begin PBXFileReference section */
 		242D21D0245C3853005DAEA8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		242D2272245C4BD8005DAEA8 /* NextStepCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStepCalibration.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		242D2273245C4BD8005DAEA8 /* NextStep copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "NextStep copy-Info.plist"; path = "/Users/maerki/Ubique/repos/projekte/ubvscovid/ubiquevscovid19-ios/NextStep copy-Info.plist"; sourceTree = "<absolute>"; };
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
 		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -932,7 +931,6 @@
 				8E81CCAE241FCC7F006F2437 /* NextStepTests */,
 				8E81CC96241FCC7D006F2437 /* Products */,
 				24780B3B2430BC00003BB26C /* Frameworks */,
-				242D2273245C4BD8005DAEA8 /* NextStep copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1701,7 +1699,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "NextStep copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1724,7 +1722,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "NextStep copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1746,7 +1744,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "NextStep copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1768,7 +1766,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "NextStep copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1790,7 +1788,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "NextStep copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

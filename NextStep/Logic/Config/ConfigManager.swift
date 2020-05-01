@@ -63,6 +63,9 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
+
+        Logger.log("Load Config", appState: true)
+
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse,
