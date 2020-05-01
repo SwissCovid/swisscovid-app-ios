@@ -36,9 +36,9 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         let bundle = Bundle.main
 
         // all these hosts have a seperate certificate
-        let hosts = ["pt1.bfs.admin.ch",
-                     "pt1-d.bfs.admin.ch",
-                     "pt1-a.bfs.admin.ch",
+        let hosts = ["www.pt1.bfs.admin.ch",
+                     "www.pt1-d.bfs.admin.ch",
+                     "www.pt1-a.bfs.admin.ch",
                      "codegen-service.bag.admin.ch",
                      "codegen-service-d.bag.admin.ch",
                      "codegen-service-a.bag.admin.ch"]
