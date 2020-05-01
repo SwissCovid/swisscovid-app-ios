@@ -33,6 +33,9 @@ class UIStateManager: NSObject {
     private(set) var uiState: UIStateModel! = UIStateModel() {
         didSet {
             var stateHasChanged = uiState != oldValue
+
+            // don't trigger ui update based on debug values
+            // otherwise behaviour in prob build could be different
             #if CALIBRATION_SDK
                 var newUIStateWithoutDebug = uiState
                 newUIStateWithoutDebug?.debug = .init()

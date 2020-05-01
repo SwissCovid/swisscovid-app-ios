@@ -18,7 +18,10 @@ struct UIStateModel: Equatable {
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
     var shouldStartAtMeldungenDetail = false
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
+
+    #if CALIBRATION_SDK
     var debug: Debug = Debug()
+    #endif
 
     enum TracingState: Equatable {
         case tracingActive
@@ -65,15 +68,6 @@ struct UIStateModel: Equatable {
         var globalProblem: GlobalProblem?
     }
 
-    struct Debug: Equatable {
-        var handshakeCount: Int?
-        var contactCount: Int?
-        var lastSync: Date?
-        var infectionStatus: DebugInfectionStatus = .healthy
-        var overwrittenInfectionState: DebugInfectionStatus?
-        var secretKeyRepresentation: String?
-    }
-
     struct MeldungenDetail: Equatable {
         var meldung: MeldungState = .noMeldung
         var meldungen: [NSMeldungModel] = []
@@ -85,4 +79,16 @@ struct UIStateModel: Equatable {
         var tracingEnabled: Bool = true
         var tracing: TracingState = .tracingActive
     }
+
+    #if CALIBRATION_SDK
+    struct Debug: Equatable {
+        var handshakeCount: Int?
+        var contactCount: Int?
+        var lastSync: Date?
+        var infectionStatus: DebugInfectionStatus = .healthy
+        var overwrittenInfectionState: DebugInfectionStatus?
+        var secretKeyRepresentation: String?
+        var logOutput: NSAttributedString = NSAttributedString()
+    }
+    #endif
 }

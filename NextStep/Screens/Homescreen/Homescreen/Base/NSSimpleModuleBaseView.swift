@@ -17,7 +17,7 @@ class NSSimpleModuleBaseView: UIView {
     private let subtitleLabel = NSLabel(.textBold)
 
     private let boldTextLabel = NSLabel(.textBold)
-    private let textLabel = NSLabel(.textLight)
+    let textLabel = NSLabel(.textLight)
     private let imageView = UIImageView()
     private let subview: UIView?
 

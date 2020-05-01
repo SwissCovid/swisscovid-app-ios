@@ -179,7 +179,7 @@ extension TracingManager: DP3TTracingDelegate {
     func didAddLog(logEntry: LogEntry) {
         switch logEntry.type {
         case .backgroundTask:
-            dprint(logEntry.message)
+            Logger.log(logEntry.message)
         default:
             break
         }

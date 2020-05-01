@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		242D21D1245C3853005DAEA8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D21D0245C3853005DAEA8 /* Logger.swift */; };
 		2443947B2445F062003ED582 /* NSHeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* NSHeaderArcView.swift */; };
 		245626A1245265340058D11F /* BackgroundConfigCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245626A0245265340058D11F /* BackgroundConfigCheck.swift */; };
 		2462BA132451F0F60046906D /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
@@ -177,6 +178,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242D21D0245C3853005DAEA8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
 		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -375,6 +377,7 @@
 				F80E737D245B0BC300C934B8 /* Language.swift */,
 				6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */,
 				8EB23D77245AF2C30073E83A /* RandomGenerators.swift */,
+				242D21D0245C3853005DAEA8 /* Logger.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1211,6 +1214,7 @@
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
 				6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */,
 				DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */,
+				242D21D1245C3853005DAEA8 /* Logger.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,

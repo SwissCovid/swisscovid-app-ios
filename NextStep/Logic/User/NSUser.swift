@@ -57,4 +57,5 @@ class NSUser {
 
     @UBOptionalUserDefault(key: "positiveTestSendDate")
     public var positiveTestSendDate: Date?
+
 }

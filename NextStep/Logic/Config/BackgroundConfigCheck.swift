@@ -60,7 +60,7 @@ class ConfigBackgroundTaskManager {
         guard !didRegisterBackgroundTask else { return }
         didRegisterBackgroundTask = true
         BGTaskScheduler.shared.register(forTaskWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier, using: .global()) { task in
-            dprint("Background Task executed: \(ConfigBackgroundTaskManager.taskIdentifier)")
+            Logger.log("Background Task executed: \(ConfigBackgroundTaskManager.taskIdentifier)")
             self.handleBackgroundTask(task)
         }
     }
@@ -92,7 +92,7 @@ class ConfigBackgroundTaskManager {
         do {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
-            dprint(error)
+            Logger.log(error)
         }
     }
 

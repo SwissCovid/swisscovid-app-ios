@@ -52,7 +52,7 @@ class FakePublishBackgroundTaskManager {
         guard !didRegisterBackgroundTask else { return }
         didRegisterBackgroundTask = true
         BGTaskScheduler.shared.register(forTaskWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier, using: .global()) { task in
-            dprint("Background Task executed: \(FakePublishBackgroundTaskManager.taskIdentifier)")
+            Logger.log("Background Task executed: \(FakePublishBackgroundTaskManager.taskIdentifier)")
             self.handleBackgroundTask(task)
         }
     }

@@ -15,6 +15,7 @@ class NSDebugscreenViewController: NSViewController {
 
     private let mockModuleView = NSDebugScreenMockView()
     private let sdkStatusView = NSDebugScreenSDKStatusView()
+    private let logsView = NSSimpleModuleBaseView(title: "Logs", text: "")
 
     // MARK: - Init
 
@@ -34,6 +35,11 @@ class NSDebugscreenViewController: NSViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        updateLogs()
+    }
+
+    private func updateLogs() {
+        logsView.textLabel.attributedText = UIStateManager.shared.uiState.debug.logOutput
     }
 
     // MARK: - Setup
@@ -70,6 +76,10 @@ class NSDebugscreenViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(mockModuleView)
+
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(logsView)
 
         stackScrollView.addSpacerView(NSPadding.large)
     }

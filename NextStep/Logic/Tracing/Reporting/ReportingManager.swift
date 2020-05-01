@@ -64,7 +64,6 @@ class ReportingManager {
     private func sendIWasExposed(token: String, date: Date, isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void) {
         DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: fake) { result in
             DispatchQueue.main.async {
-                dprint(result)
                 switch result {
                 case .success:
                     TracingManager.shared.updateStatus { error in
