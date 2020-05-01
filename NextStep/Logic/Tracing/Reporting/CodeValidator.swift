@@ -20,10 +20,6 @@ class CodeValidator {
         let dataTask = session.dataTask(with: Endpoint.onset(auth: auth).request(), completionHandler: { data, response, error in
 
             DispatchQueue.main.async {
-                if response == nil {
-                    completion(.failure(error: NetworkError.networkError))
-                    return
-                }
 
                 if let response = response as? HTTPURLResponse {
                     if response.statusCode == 404 {
@@ -37,6 +33,10 @@ class CodeValidator {
 
                 if let error = error {
                     completion(.failure(error: error))
+                    return
+                }
+                else if response == nil {
+                    completion(.failure(error: NetworkError.networkError))
                     return
                 }
 
@@ -57,6 +57,7 @@ class CodeValidator {
 
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
+                formatter.locale = Locale(identifier: "en_US_POSIX")
                 guard let date = formatter.date(from: dateString) else {
                     completion(.failure(error: NetworkError.parseError))
                     return
