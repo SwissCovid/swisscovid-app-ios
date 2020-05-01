@@ -4,6 +4,8 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
+#if ENABLE_TESTING
+
 import SnapKit
 import UIKit
 
@@ -140,3 +142,5 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         (value ? "debug_sdk_state_boolean_true" : "debug_sdk_state_boolean_false").ub_localized
     }
 }
+
+#endif

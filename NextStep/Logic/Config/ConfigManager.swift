@@ -5,7 +5,7 @@
  */
 
 import UIKit
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -63,11 +63,14 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
+
+        Logger.log("Load Config", appState: true)
+
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse,
                 let data = data else {
-                DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
+                Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completion(nil) }
                 return
             }
@@ -79,11 +82,11 @@ class ConfigManager: NSObject {
                 do {
                     try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
                 } catch let error as DP3TNetworkingError {
-                    DebugAlert.show("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
+                    Logger.log("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
                     DispatchQueue.main.async { completion(nil) }
                     return
                 } catch {
-                    DebugAlert.show("Failed to verify config signature, error: \(error.localizedDescription)")
+                    Logger.log("Failed to verify config signature, error: \(error.localizedDescription)")
                     DispatchQueue.main.async { completion(nil) }
                     return
                 }
@@ -94,7 +97,7 @@ class ConfigManager: NSObject {
                     ConfigManager.currentConfig = config
                     completion(config)
                 } else {
-                    DebugAlert.show("Failed to load config, error: \(error?.localizedDescription ?? "?")")
+                    Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                     completion(nil)
                 }
             }
@@ -139,7 +142,7 @@ class ConfigManager: NSObject {
 
             window?.rootViewController?.present(alert, animated: true, completion: nil)
         } else {
-            DebugAlert.show("NO force update alert")
+            Logger.log("NO force update alert")
         }
     }
 }

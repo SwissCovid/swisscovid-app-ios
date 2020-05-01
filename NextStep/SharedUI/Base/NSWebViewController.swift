@@ -53,7 +53,7 @@ class NSWebViewController: NSViewController {
             var string = try String(contentsOf: url)
 
             string = string.replacingOccurrences(of: "{VERSION}", with: Bundle.appVersion)
-            string = string.replacingOccurrences(of: "{BUILDNR}", with: Bundle.buildNumber)
+            string = string.replacingOccurrences(of: "{BUILD}", with: Bundle.buildNumber + Bundle.environment)
 
             webView.loadHTMLString(string, baseURL: url.deletingLastPathComponent())
         } catch {}
@@ -96,8 +96,15 @@ extension NSWebViewController: WKNavigationDelegate {
                 return
             }
 
-            if scheme == "file" {
-                let webVC = NSWebViewController(local: url.lastPathComponent + "-ios")
+            if scheme == "dp3t" || scheme == "file" {
+                let webVC: NSWebViewController
+                if url.absoluteString.contains("licence") {
+                    webVC = NSWebViewController(local: "license-ios")
+                }
+                else {
+                    webVC = NSWebViewController(local: url.lastPathComponent)
+                }
+                webVC.title = self.title
                 if let navVC = navigationController {
                     navVC.pushViewController(webVC, animated: true)
                 } else {
@@ -126,7 +133,28 @@ extension Bundle {
     static var buildNumber: String {
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
 
-        // We take the last component because the CI service prepends build numbers with the date and time
-        return buildNumber.components(separatedBy: ".").last ?? buildNumber
+        return buildNumber
+    }
+
+    static var environment: String {
+        #if ENABLE_TESTING
+        switch Environment.current {
+            case .dev:
+            return " DEV"
+            case .abnahme:
+            return " ABNAHME"
+            case .prod:
+            return " PROD"
+        }
+        #else
+        switch Environment.current {
+            case .dev:
+                return " DEV"
+            case .abnahme:
+                return " ABNAHME"
+            case .prod:
+                return "p"
+        }
+        #endif
     }
 }

@@ -2,7 +2,7 @@
 
 import Foundation
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -42,7 +42,9 @@ class UIStateLogic {
         //
 
         var infectionStatus = tracingState.infectionStatus
+        #if ENABLE_TESTING
         setDebugOverwrite(&infectionStatus, &newState)
+        #endif
 
         switch infectionStatus {
         case .healthy:
@@ -57,7 +59,7 @@ class UIStateLogic {
         }
 
         // Set debug helpers
-        #if CALIBRATION_SDK
+        #if ENABLE_TESTING
             setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
             setDebugLog(&newState)
@@ -80,8 +82,10 @@ class UIStateLogic {
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
+            #if ENABLE_TESTING
         case .activeReceiving, .activeAdvertising:
             assertionFailure("These states should never be set in production")
+            #endif
         case .stopped:
             tracing = .tracingDisabled
         case .active:
@@ -173,7 +177,7 @@ class UIStateLogic {
         }
     }
 
-    #if CALIBRATION_SDK
+    #if ENABLE_TESTING
 
         // MARK: - DEBUG Helpers
 
@@ -226,12 +230,12 @@ class UIStateLogic {
     private func setDebugLog(_ newState: inout UIStateModel) {
         let logs = Logger.lastLogs
         let df = DateFormatter()
-        df.dateFormat = "dd.MM, HH:mm:ss"
+        df.dateFormat = "dd.MM, HH:mm"
         let attr = NSMutableAttributedString()
         logs.forEach { (date, log)  in
-            let s1 = NSAttributedString(string: log, attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
+            let s1 = NSAttributedString(string: df.string(from: date), attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
             let s2 = NSAttributedString(string: " ")
-            let s3 = NSAttributedString(string: df.string(from: date), attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
+            let s3 = NSAttributedString(string: log, attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
             let s4 = NSAttributedString(string: "\n")
             attr.append(s1)
             attr.append(s2)

@@ -137,6 +137,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(whatToDoPositiveTestButton)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
+        #if ENABLE_TESTING
+
         let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
         stackScrollView.addArrangedView(previewWarning)
 
@@ -144,7 +146,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         let debugScreenContainer = UIView()
 
-        #if CALIBRATION_SDK
             if Environment.current != Environment.prod {
                 debugScreenContainer.addSubview(debugScreenButton)
                 debugScreenButton.snp.makeConstraints { make in
@@ -161,7 +162,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
                 stackScrollView.addSpacerView(NSPadding.large)
             }
-        #endif
 
         // DEBUG version for testing
         let uploadDBContainer = UIView()
@@ -179,14 +179,16 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(uploadDBContainer)
 
         stackScrollView.addSpacerView(NSPadding.large)
+
+        debugScreenContainer.alpha = 0
+        uploadDBContainer.alpha = 0
+        #endif
         // End DEBUG version for testing
 
         handshakesModuleView.alpha = 0
         meldungView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
-        debugScreenContainer.alpha = 0
-        uploadDBContainer.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -209,6 +211,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 self.whatToDoPositiveTestButton.alpha = 1
             }, completion: nil)
 
+            #if ENABLE_TESTING
             UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 debugScreenContainer.alpha = 1
             }, completion: nil)
@@ -216,6 +219,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 uploadDBContainer.alpha = 1
             }, completion: nil)
+            #endif
         }
     }
 
@@ -252,9 +256,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: animated)
     }
 
+    #if ENABLE_TESTING
     private func presentDebugScreen() {
         navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
     }
+    #endif
 
     private func presentWhatToDoPositiveTest() {
         navigationController?.pushViewController(NSWhatToDoPositiveTestViewController(), animated: true)

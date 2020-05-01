@@ -4,7 +4,7 @@ import Foundation
 
 class Logger {
 
-    #if CALIBRATION_SDK
+    #if ENABLE_TESTING
     @UBUserDefault(key: "debugLogs", defaultValue: [])
     static private var debugLogs: [String]
 
@@ -15,19 +15,36 @@ class Logger {
 
     static let changedNotification = Notification.Name(rawValue: "LoggerChanged")
 
-    #endif
-
-    private init() {}
-
     static var lastLogs: [(Date, String)] {
         Array(zip(debugDates, debugLogs))
     }
 
-    public static func log(_ log: Any) {
-        #if CALIBRATION_SDK
+    #endif
+
+    private init() {}
+
+
+
+    public static func log(_ log: Any, appState: Bool = false) {
+        #if ENABLE_TESTING
 
         Logger.logQueue.async {
-            Logger.debugLogs.append(String(describing: log))
+            var text = String(describing: log)
+            if appState {
+                DispatchQueue.main.sync {
+                    switch UIApplication.shared.applicationState {
+                        case .active:
+                            text += ", active"
+                        case .inactive:
+                            text += ", inactive"
+                        case .background:
+                            text += ", background"
+                        @unknown default:
+                            text += ", unknown"
+                    }
+                }
+            }
+            Logger.debugLogs.append(text)
             Logger.debugDates.append(Date())
 
             if Logger.debugLogs.count > 100 {

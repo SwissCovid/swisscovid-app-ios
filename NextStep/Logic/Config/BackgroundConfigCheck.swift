@@ -28,7 +28,7 @@ private class ConfigLoadOperation: Operation {
                 }
             } else {
                 self.cancel()
-                DebugAlert.show("No forced update")
+                Logger.log("No forced update")
             }
         }
     }
@@ -90,9 +90,13 @@ class ConfigBackgroundTaskManager {
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
 
         do {
+            BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier)
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
-            Logger.log(error)
+            Logger.log("Failed to schedule Config Update: \(error)")
+            BGTaskScheduler.shared.getPendingTaskRequests { (requests) in
+                Logger.log("Pending requests are \(requests)")
+            }
         }
     }
 

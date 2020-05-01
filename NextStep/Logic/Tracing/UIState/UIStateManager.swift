@@ -4,7 +4,7 @@ import CoreBluetooth
 import Foundation
 import UIKit
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -36,7 +36,7 @@ class UIStateManager: NSObject {
 
             // don't trigger ui update based on debug values
             // otherwise behaviour in prob build could be different
-            #if CALIBRATION_SDK
+            #if ENABLE_TESTING
                 var newUIStateWithoutDebug = uiState
                 newUIStateWithoutDebug?.debug = .init()
                 var oldUIStateWithoutDebug = oldValue

@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DP^3T</title>
-    <link>/it/licence-ios.html</link>
+    <link>/fr/license-ios.html</link>
     <description>Recent content on DP^3T</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>de</language>
     
-	<atom:link href="/it/licence-ios/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/fr/license-ios/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

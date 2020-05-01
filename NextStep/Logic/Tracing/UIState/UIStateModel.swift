@@ -19,7 +19,7 @@ struct UIStateModel: Equatable {
     var shouldStartAtMeldungenDetail = false
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
 
-    #if CALIBRATION_SDK
+    #if ENABLE_TESTING
     var debug: Debug = Debug()
     #endif
 
@@ -80,7 +80,7 @@ struct UIStateModel: Equatable {
         var tracing: TracingState = .tracingActive
     }
 
-    #if CALIBRATION_SDK
+    #if ENABLE_TESTING
     struct Debug: Equatable {
         var handshakeCount: Int?
         var contactCount: Int?

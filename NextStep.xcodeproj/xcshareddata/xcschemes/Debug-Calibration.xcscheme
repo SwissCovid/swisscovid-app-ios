@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "NextStep.app"
-               BlueprintName = "NextStep"
+               BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+               BuildableName = "NextStepCalibration.app"
+               BlueprintName = "NextStepCalibration"
                ReferencedContainer = "container:NextStep.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -44,15 +44,22 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "NextStepCalibration.app"
+            BlueprintName = "NextStepCalibration"
             ReferencedContainer = "container:NextStep.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Release-Internal"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -61,18 +68,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "NextStepCalibration.app"
+            BlueprintName = "NextStepCalibration"
             ReferencedContainer = "container:NextStep.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release-Abnahme">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Release-Internal"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
