@@ -72,8 +72,9 @@ extension DP3TNetworkingError: LocalizedError, CodedError {
 
     var errorCodeString: String? {
         switch self {
-        case .networkSessionError(error: _):
-            return "NETER"
+        case .networkSessionError(error: let error):
+            let nsError = error as NSError
+            return "NET\(nsError.code)"
         case .notHTTPResponse:
             return "NORES"
         case let .HTTPFailureResponse(status: status):
