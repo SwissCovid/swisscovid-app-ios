@@ -28,7 +28,7 @@ private class ConfigLoadOperation: Operation {
                 }
             } else {
                 self.cancel()
-                DebugAlert.show("No forced update")
+                Logger.log("No forced update")
             }
         }
     }

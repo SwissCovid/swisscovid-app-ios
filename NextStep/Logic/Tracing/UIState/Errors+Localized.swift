@@ -1,7 +1,7 @@
 
 ///
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK

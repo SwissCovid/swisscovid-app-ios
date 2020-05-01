@@ -8,7 +8,7 @@ import CoreBluetooth
 import Foundation
 import UIKit
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -49,7 +49,7 @@ class TracingManager: NSObject {
                                                    reportBaseUrl: reportBaseUrl,
                                                    jwtPublicKey: Environment.current.jwtPublicKey)
 
-            #if CALIBRATION_SDK
+            #if ENABLE_TESTING
                 switch Environment.current {
                 case .dev:
                     // 5min Batch lenght on dev Enviroment
@@ -176,6 +176,7 @@ extension TracingManager: DP3TTracingDelegate {
         }
     }
 
+    #if ENABLE_TESTING
     func didAddLog(logEntry: LogEntry) {
         switch logEntry.type {
         case .backgroundTask:
@@ -184,4 +185,5 @@ extension TracingManager: DP3TTracingDelegate {
             break
         }
     }
+    #endif
 }

@@ -4,6 +4,8 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
+#if ENABLE_TESTING
+
 import UIKit
 
 class NSDebugscreenViewController: NSViewController {
@@ -84,3 +86,5 @@ class NSDebugscreenViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
     }
 }
+
+#endif

@@ -2,7 +2,7 @@
 
 import Foundation
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -65,7 +65,7 @@ class DatabaseSyncer {
                     }
                 }
 
-                DebugAlert.show("Sync Database failed, \(e)")
+                Logger.log("Sync Database failed, \(e)")
 
                 completionHandler?(.failed)
             case .success:
@@ -83,7 +83,7 @@ class DatabaseSyncer {
 
                 NSTracingLocalPush.shared.resetSyncWarningTriggers()
 
-                DebugAlert.show("Synced Database")
+                Logger.log("Synced Database")
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)

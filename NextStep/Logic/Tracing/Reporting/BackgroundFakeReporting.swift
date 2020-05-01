@@ -13,9 +13,9 @@ private class FakePublishOperation: Operation {
         ReportingManager.shared.report(isFakeRequest: true) { error in
             if error != nil {
                 self.cancel()
-                DebugAlert.show("Fake request failed")
+                Logger.log("Fake request failed")
             } else {
-                DebugAlert.show("Fake request success")
+                Logger.log("Fake request success")
             }
         }
     }

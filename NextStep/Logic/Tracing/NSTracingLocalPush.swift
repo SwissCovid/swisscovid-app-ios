@@ -7,7 +7,7 @@
 import Foundation
 import UserNotifications
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
 #else
     import DP3TSDK
@@ -49,8 +49,8 @@ class NSTracingLocalPush {
                     return
                 }
             }
-            #if CALIBRATION_SDK
-                DebugAlert.show("Keine neuen Meldungen")
+            #if ENABLE_TESTING
+                Logger.log("Keine neuen Meldungen")
             #endif
         }
     }

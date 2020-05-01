@@ -4,7 +4,7 @@ import Foundation
 
 class Logger {
 
-    #if CALIBRATION_SDK
+    #if ENABLE_TESTING
     @UBUserDefault(key: "debugLogs", defaultValue: [])
     static private var debugLogs: [String]
 
@@ -15,16 +15,18 @@ class Logger {
 
     static let changedNotification = Notification.Name(rawValue: "LoggerChanged")
 
-    #endif
-
-    private init() {}
-
     static var lastLogs: [(Date, String)] {
         Array(zip(debugDates, debugLogs))
     }
 
+    #endif
+
+    private init() {}
+
+
+
     public static func log(_ log: Any) {
-        #if CALIBRATION_SDK
+        #if ENABLE_TESTING
 
         Logger.logQueue.async {
             Logger.debugLogs.append(String(describing: log))

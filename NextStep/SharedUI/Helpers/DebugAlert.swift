@@ -2,7 +2,7 @@
 
 import Foundation
 
-#if CALIBRATION_SDK
+#if ENABLE_TESTING
     class DebugAlert {
         private static var messages: [String] = []
         private static var lastAlert: UIAlertController?

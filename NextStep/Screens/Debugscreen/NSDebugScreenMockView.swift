@@ -4,6 +4,8 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
+#if ENABLE_TESTING
+
 import SnapKit
 import UIKit
 
@@ -96,3 +98,5 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
         }
     }
 }
+
+#endif

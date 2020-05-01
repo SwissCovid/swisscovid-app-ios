@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "NextStep.app"
-               BlueprintName = "NextStep"
+               BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+               BuildableName = "NextStepCalibration.app"
+               BlueprintName = "NextStepCalibration"
                ReferencedContainer = "container:NextStep.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,9 +44,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "NextStepCalibration.app"
+            BlueprintName = "NextStepCalibration"
             ReferencedContainer = "container:NextStep.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -57,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "NextStepCalibration.app"
+            BlueprintName = "NextStepCalibration"
             ReferencedContainer = "container:NextStep.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Release-Internal">
