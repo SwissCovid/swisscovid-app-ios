@@ -120,7 +120,7 @@ class UIStateLogic {
     }
 
     private func setGlobalProblemState(_ newState: inout UIStateModel) {
-        if let localizedInfoBox = ConfigManager.currentConfig?.infobox {
+        if let localizedInfoBox = ConfigManager.currentConfig?.infoBox {
             let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
             switch Language.current {
             case .german:

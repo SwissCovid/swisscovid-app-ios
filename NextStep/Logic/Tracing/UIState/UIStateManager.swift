@@ -45,7 +45,11 @@ class UIStateManager: NSObject {
             #endif
             if stateHasChanged {
                 observers = observers.filter { $0.object != nil }
-                observers.forEach { $0.block(uiState) }
+                DispatchQueue.main.async {
+                    self.observers.forEach { observer in
+                        observer.block(self.uiState)
+                    }
+                }
                 dprint("New UI State")
             }
         }
