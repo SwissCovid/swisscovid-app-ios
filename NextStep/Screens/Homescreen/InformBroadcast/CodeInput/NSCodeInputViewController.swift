@@ -32,8 +32,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         setupAccessibility()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         if !UIAccessibility.isVoiceOverRunning {
             codeControl.jumpToNextField()
         }
