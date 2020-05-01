@@ -80,6 +80,7 @@ class ConfigBackgroundTaskManager {
         let lastOperation = queue.operations.last
         lastOperation?.completionBlock = {
             task.setTaskCompleted(success: !(lastOperation?.isCancelled ?? false))
+            self.scheduleBackgroundTask()
         }
     }
 
@@ -89,8 +90,9 @@ class ConfigBackgroundTaskManager {
         syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
 
+        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier)
+
         do {
-            BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier)
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
             Logger.log("Failed to schedule Config Update: \(error)")

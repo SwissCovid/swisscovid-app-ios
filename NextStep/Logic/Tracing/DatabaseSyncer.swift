@@ -70,6 +70,7 @@ class DatabaseSyncer {
 
                 completionHandler?(.failed)
             case .success:
+
                 UIStateManager.shared.blockUpdate {
                     self.lastDatabaseSync = Date()
                     UIStateManager.shared.firstSyncErrorTime = nil

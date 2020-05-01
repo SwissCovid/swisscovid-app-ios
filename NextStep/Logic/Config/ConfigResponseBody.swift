@@ -8,7 +8,7 @@ import UIKit
 
 class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
-    public let infobox: LocalizedInfobox?
+    public let infoBox: LocalizedInfobox?
     public let sdkConfig: SDKConfig?
 
     class LocalizedInfobox: UBCodable {

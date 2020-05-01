@@ -64,6 +64,8 @@ class ConfigManager: NSObject {
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
 
+
+
         Logger.log("Load Config", appState: true)
 
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
@@ -107,10 +109,16 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-        loadConfig { [weak self] config in
-            guard let strongSelf = self else { return }
+
+        // immediate alert if old config enforced update
+        if let oldConfig = ConfigManager.currentConfig {
+            presentAlertIfNeeded(config: oldConfig, window: window)
+        }
+
+        loadConfig { config in
+            // self must be strong
             if let config = config {
-                strongSelf.presentAlertIfNeeded(config: config, window: window)
+                self.presentAlertIfNeeded(config: config, window: window)
             }
         }
     }

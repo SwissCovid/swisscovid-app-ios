@@ -29,12 +29,12 @@ private var didRegisterBackgroundTask: Bool = false
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
-    static let syncInterval: TimeInterval = {
+    static func syncInterval() -> TimeInterval  {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
         let secondsInADay = Double(24 * 60 * 60)
         return randomDay * secondsInADay
-    }()
+    }
 
     /// A logger for debugging
     #if CALIBRATION
@@ -73,6 +73,7 @@ class FakePublishBackgroundTaskManager {
         let lastOperation = queue.operations.last
         lastOperation?.completionBlock = {
             task.setTaskCompleted(success: !(lastOperation?.isCancelled ?? false))
+            self.scheduleBackgroundTask()
         }
     }
 
@@ -80,7 +81,9 @@ class FakePublishBackgroundTaskManager {
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
         syncTask.requiresExternalPower = false
         syncTask.requiresNetworkConnectivity = true
-        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval)
+        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
+
+        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier)
 
         do {
             try BGTaskScheduler.shared.submit(syncTask)

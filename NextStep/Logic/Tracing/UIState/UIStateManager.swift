@@ -30,7 +30,7 @@ class UIStateManager: NSObject {
 
     // MARK: - UI State Update
 
-    private(set) var uiState: UIStateModel! = UIStateModel() {
+    private(set) var uiState: UIStateModel! {
         didSet {
             var stateHasChanged = uiState != oldValue
 
@@ -45,7 +45,11 @@ class UIStateManager: NSObject {
             #endif
             if stateHasChanged {
                 observers = observers.filter { $0.object != nil }
-                observers.forEach { $0.block(uiState) }
+                DispatchQueue.main.async {
+                    self.observers.forEach { observer in
+                        observer.block(self.uiState)
+                    }
+                }
                 dprint("New UI State")
             }
         }
@@ -170,9 +174,11 @@ class UIStateManager: NSObject {
         }
     }
 
+    #if ENABLE_TESTING
     var overwrittenInfectionState: DebugInfectionStatus? {
         didSet { refresh() }
     }
+    #endif
 
     var tracingIsActivated: Bool {
         TracingManager.shared.isActivated

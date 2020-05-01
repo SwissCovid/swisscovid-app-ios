@@ -45,6 +45,11 @@ class NSAppTitleView: NSTitleView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    deinit {
+        timer?.invalidate()
+        slowTimer?.invalidate()
+    }
+
     // MARK: - Setup
 
     private func setup() {
@@ -80,6 +85,10 @@ class NSAppTitleView: NSTitleView {
     private var slowTimer: Timer?
     @objc
     private func startSpawn() {
+
+        timer?.invalidate()
+        slowTimer?.invalidate()
+
         timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { [weak self] timer in
             guard let strongSelf = self else {
                 timer.invalidate()

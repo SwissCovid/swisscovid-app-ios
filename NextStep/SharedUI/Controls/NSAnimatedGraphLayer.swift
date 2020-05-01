@@ -99,6 +99,8 @@ class NSAnimatedGraphLayer: CALayer {
     func startAnimating() {
         guard timer == nil else { return }
 
+        timer?.invalidate()
+
         timer = Timer.scheduledTimer(timeInterval: timeInterval, target: self, selector: #selector(step), userInfo: nil, repeats: true)
 
         timer?.fire()

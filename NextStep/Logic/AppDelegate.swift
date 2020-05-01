@@ -69,13 +69,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if app is cold-started or comes from background > 30 minutes,
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
-            if UIStateManager.shared.uiState.shouldStartAtMeldungenDetail,
-                let navigationController = window?.rootViewController as? NSNavigationController,
-                let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
-                navigationController.popToRootViewController(animated: false)
-                homescreenVC.presentMeldungenDetail(animated: false)
+
+            if !jumpToMessageIfRequired(onlyFirst: true) {
+                DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
+                    _ = self.jumpToMessageIfRequired(onlyFirst: true)
+                }
             }
             startForceUpdateCheck()
+        }
+        else {
+            _ = jumpToMessageIfRequired(onlyFirst: false)
+        }
+    }
+
+    func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
+        let shouldJump: Bool
+        if onlyFirst {
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail
+        }
+        else {
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail && UIStateManager.shared.uiState.meldungenDetail.showMeldungWithAnimation
+        }
+        if shouldJump,
+            let navigationController = window?.rootViewController as? NSNavigationController,
+            let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
+            navigationController.popToRootViewController(animated: false)
+            homescreenVC.presentMeldungenDetail(animated: false)
+            return true
+        }
+        else {
+            return false
         }
     }
 
