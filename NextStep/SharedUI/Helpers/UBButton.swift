@@ -56,6 +56,8 @@ class UBButton: UIButton {
 
         titleLabel?.numberOfLines = 0
         titleLabel?.textAlignment = .center
+        titleLabel?.setContentCompressionResistancePriority(.required, for: .horizontal)
+        titleLabel?.setContentCompressionResistancePriority(.required, for: .vertical)
 
         highlightView.alpha = 0
         if let imageView = imageView {

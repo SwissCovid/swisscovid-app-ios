@@ -15,8 +15,8 @@ class NSExternalLinkButton: UBButton {
 
         titleLabel?.font = NSLabelType.button.font
         titleLabel?.textAlignment = .left
-        titleLabel?.numberOfLines = 1
-        titleLabel?.lineBreakMode = .byTruncatingTail
+
+        contentHorizontalAlignment = .leading
 
         setTitleColor(c, for: .normal)
 
@@ -27,7 +27,7 @@ class NSExternalLinkButton: UBButton {
 
         let spacing: CGFloat = 8.0
         imageEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: spacing)
-        titleEdgeInsets = UIEdgeInsets(top: 0.0, left: spacing, bottom: 0.0, right: 0.0)
+        titleEdgeInsets = UIEdgeInsets(top: 4.0, left: spacing, bottom: 4.0, right: 0.0)
     }
 
     required init?(coder _: NSCoder) {
@@ -37,8 +37,9 @@ class NSExternalLinkButton: UBButton {
     // MARK: - Fix content size
 
     public override var intrinsicContentSize: CGSize {
-        var size = super.intrinsicContentSize
-        size.width = size.width + titleEdgeInsets.left + titleEdgeInsets.right
+        var size = titleLabel?.intrinsicContentSize ?? super.intrinsicContentSize
+        size.width = size.width + titleEdgeInsets.left + titleEdgeInsets.right + 30
+        size.height = size.height + titleEdgeInsets.top + titleEdgeInsets.bottom + 10
         return size
     }
 }

@@ -67,19 +67,19 @@ class NSMeldungenDetailViewController: NSViewController {
     private func setup(_ state: UIStateModel.MeldungenDetail) {
         meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
 
-        noMeldungenViewController.view.alpha = 0.0
-        positiveTestedViewController.view.alpha = 0.0
-        meldungenViewController.view.alpha = 0.0
+        noMeldungenViewController.view.isHidden = true
+        positiveTestedViewController.view.isHidden = true
+        meldungenViewController.view.isHidden = true
 
         switch state.meldung {
         case .exposed:
-            meldungenViewController.view.alpha = 1.0
+            meldungenViewController.view.isHidden = false
             meldungenViewController.meldungen = state.meldungen
             meldungenViewController.phoneCallState = state.phoneCallState
         case .infected:
-            positiveTestedViewController.view.alpha = 1.0
+            positiveTestedViewController.view.isHidden = false
         case .noMeldung:
-            noMeldungenViewController.view.alpha = 1.0
+            noMeldungenViewController.view.isHidden = false
         }
     }
 }

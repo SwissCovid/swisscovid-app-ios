@@ -154,17 +154,16 @@
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
 		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
 		DF86B5F8245233C70019C229 /* DP3TSDK_CALIBRATION in Frameworks */ = {isa = PBXBuildFile; productRef = DF86B5F7245233C70019C229 /* DP3TSDK_CALIBRATION */; };
-		F80E737E245B0BC300C934B8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E737D245B0BC300C934B8 /* Language.swift */; };
 		F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
-		F80E7371245AF51C00C934B8 /* pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* pt1-a.bfs.admin.ch.der */; };
-		F80E7372245AF51C00C934B8 /* pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* pt1-d.bfs.admin.ch.der */; };
-		F80E7373245AF51C00C934B8 /* pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* pt1.bfs.admin.ch.der */; };
+		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
+		F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
+		F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */; };
 		F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7370245AF38E00C934B8 /* QuoVadis.der */; };
 		F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */; };
 		F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
 		F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
-
+		F80E737E245B0BC300C934B8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E737D245B0BC300C934B8 /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -325,19 +324,16 @@
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
-
-		F80E737D245B0BC300C934B8 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
-
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
-		F80E736D245AF38E00C934B8 /* pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
-		F80E736E245AF38E00C934B8 /* pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F80E736F245AF38E00C934B8 /* pt1-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pt1-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
+		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
+		F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
+		F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7370245AF38E00C934B8 /* QuoVadis.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuoVadis.der; sourceTree = "<group>"; };
 		F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBPinnedCertificatesTrustEvaluator.swift; sourceTree = "<group>"; };
 		F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-a.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-d.bag.admin.ch.der"; sourceTree = "<group>"; };
-
+		F80E737D245B0BC300C934B8 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -917,9 +913,9 @@
 				F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */,
 				F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */,
 				F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */,
-				F80E736E245AF38E00C934B8 /* pt1-a.bfs.admin.ch.der */,
-				F80E736F245AF38E00C934B8 /* pt1-d.bfs.admin.ch.der */,
-				F80E736D245AF38E00C934B8 /* pt1.bfs.admin.ch.der */,
+				F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */,
+				F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */,
+				F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */,
 				F80E7370245AF38E00C934B8 /* QuoVadis.der */,
 			);
 			path = Certificates;
@@ -1029,9 +1025,9 @@
 				F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */,
 				F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */,
 				F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */,
-				F80E7371245AF51C00C934B8 /* pt1-a.bfs.admin.ch.der in Resources */,
-				F80E7372245AF51C00C934B8 /* pt1-d.bfs.admin.ch.der in Resources */,
-				F80E7373245AF51C00C934B8 /* pt1.bfs.admin.ch.der in Resources */,
+				F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */,
+				F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
+				F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
@@ -1092,7 +1088,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif which swiftformat >/dev/null; then\nswiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif which swiftformat >/dev/null; then\n# swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\necho \"warning: SwiftFormat disabled\"\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 		8E81CCC1241FD2EE006F2437 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;

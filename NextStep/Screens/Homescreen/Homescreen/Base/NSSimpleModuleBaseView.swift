@@ -19,6 +19,7 @@ class NSSimpleModuleBaseView: UIView {
     private let boldTextLabel = NSLabel(.textBold)
     private let textLabel = NSLabel(.textLight)
     private let imageView = UIImageView()
+    private let subview: UIView?
 
     private let sideInset: CGFloat
 
@@ -28,10 +29,12 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subtitle: String? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
+    init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
         sideInset = NSPadding.large
+        self.subview = subview
 
         super.init(frame: .zero)
+        translatesAutoresizingMaskIntoConstraints = false
 
         subtitleLabel.text = subtitle
 
@@ -110,6 +113,16 @@ class NSSimpleModuleBaseView: UIView {
                 make.bottom.lessThanOrEqualToSuperview()
             }
 
+            if let subview = subview {
+                view.addSubview(subview)
+                subview.snp.makeConstraints { (make) in
+                    make.top.equalTo(textLabel.snp.bottom).offset(NSPadding.large)
+                    make.left.equalToSuperview()
+                    make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
+                    make.bottom.lessThanOrEqualToSuperview().offset(-NSPadding.medium)
+                }
+            }
+
             imageView.snp.makeConstraints { make in
                 make.top.right.equalToSuperview()
                 make.bottom.lessThanOrEqualToSuperview()
@@ -127,6 +140,15 @@ class NSSimpleModuleBaseView: UIView {
         contentView.snp.makeConstraints { make in
             make.top.equalTo(lastView.snp.bottom).offset(NSPadding.small)
             make.left.right.equalToSuperview().inset(sideInset)
+            /*
+            make.left.equalToSuperview().inset(sideInset)
+            if imageView.superview != nil {
+                make.right.equalTo(imageView.snp.left).offset(-sideInset)
+            }
+            else {
+                make.right.equalToSuperview().offset(-sideInset)
+            }
+             */
             make.bottom.equalToSuperview().inset(sideInset)
         }
 
