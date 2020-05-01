@@ -30,7 +30,7 @@ class UIStateManager: NSObject {
 
     // MARK: - UI State Update
 
-    private(set) var uiState: UIStateModel! = UIStateModel() {
+    private(set) var uiState: UIStateModel! {
         didSet {
             var stateHasChanged = uiState != oldValue
 
@@ -174,9 +174,11 @@ class UIStateManager: NSObject {
         }
     }
 
+    #if ENABLE_TESTING
     var overwrittenInfectionState: DebugInfectionStatus? {
         didSet { refresh() }
     }
+    #endif
 
     var tracingIsActivated: Bool {
         TracingManager.shared.isActivated

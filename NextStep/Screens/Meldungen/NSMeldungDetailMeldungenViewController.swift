@@ -35,13 +35,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.hitTestDelegate = self
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
 
-        for m in meldungen {
-            NSUser.shared.registerSeenMessages(identifier: m.identifier)
-        }
-    }
 
     override var useFullScreenHeaderAnimation: Bool {
         return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
@@ -57,6 +51,11 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     override func startHeaderAnimation() {
         overrideHitTestAnyway = false
+
+        for m in meldungen {
+            NSUser.shared.registerSeenMessages(identifier: m.identifier)
+        }
+        
         super.startHeaderAnimation()
     }
 
@@ -68,10 +67,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         setupLayout()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        update()
-    }
 
     // MARK: - Setup
 
