@@ -83,6 +83,8 @@ class FakePublishBackgroundTaskManager {
         syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
 
+        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier)
+
         do {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {

@@ -90,6 +90,8 @@ class ConfigBackgroundTaskManager {
         syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
 
+        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier)
+
         do {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
