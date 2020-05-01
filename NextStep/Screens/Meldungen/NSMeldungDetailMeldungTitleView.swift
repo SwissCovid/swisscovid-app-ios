@@ -113,6 +113,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
         pageControl.numberOfPages = headers.count
         pageControl.currentPage = currentPage
         pageControl.alpha = (!startAnimationNotDone && headers.count > 1) ? 1.0 : 0.0
+        pageControl.isUserInteractionEnabled = false
 
         updated = true
         setNeedsLayout()

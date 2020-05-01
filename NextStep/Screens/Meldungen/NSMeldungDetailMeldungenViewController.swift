@@ -242,7 +242,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
 extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
-        if overrideHitTestAnyway {
+        if overrideHitTestAnyway && useFullScreenHeaderAnimation {
             return true
         }
 
