@@ -4,7 +4,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-@testable import NextStep
+@testable import DP3T_App
 import XCTest
 
-class NextStepTests: XCTestCase {}
+class DP3TAppTests: XCTestCase {}

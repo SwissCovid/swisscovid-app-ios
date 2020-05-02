@@ -252,7 +252,7 @@
 		8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC98241FCC7D006F2437 /* AppDelegate.swift */; };
 		8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC9C241FCC7D006F2437 /* NSViewController.swift */; };
 		8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E81CCA1241FCC7F006F2437 /* Assets.xcassets */; };
-		8E81CCB0241FCC7F006F2437 /* NextStepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CCAF241FCC7F006F2437 /* NextStepTests.swift */; };
+		8E81CCB0241FCC7F006F2437 /* DP3TAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */; };
 		8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E81CCCE241FD813006F2437 /* SnapKit */; };
 		8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
@@ -325,7 +325,7 @@
 
 /* Begin PBXFileReference section */
 		242D21D0245C3853005DAEA8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		242D2272245C4BD8005DAEA8 /* NextStepCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStepCalibration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DP3T-AppCalibration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+PublicKeys.swift"; sourceTree = "<group>"; };
 		242D227A245D6557005DAEA8 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		242D227C245D6581005DAEA8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 		6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWebViewController.swift; sourceTree = "<group>"; };
 		6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLoadingView.swift; sourceTree = "<group>"; };
 		6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAboutViewController.swift; sourceTree = "<group>"; };
-		6E8FC0F524518BF1002AB1E5 /* NextStep-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NextStep-Bridging-Header.h"; sourceTree = "<group>"; };
+		6E8FC0F524518BF1002AB1E5 /* DP3T-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DP3T-App-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E8FC0F624518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UBKeyboardObserver.h"; sourceTree = "<group>"; };
 		6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UBKeyboardObserver.m"; sourceTree = "<group>"; };
 		6E8FC0F824518BF2002AB1E5 /* UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBKeyboardObserver.h; sourceTree = "<group>"; };
@@ -423,13 +423,13 @@
 		6EFF9AE1245AAFC800C98FF3 /* UIImage+UBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UBHelpers.h"; sourceTree = "<group>"; };
 		6EFF9AE2245AAFC800C98FF3 /* UIImage+UBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UBHelpers.m"; sourceTree = "<group>"; };
 		6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformTracingEndViewController.swift; sourceTree = "<group>"; };
-		8E81CC95241FCC7D006F2437 /* NextStep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStep.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E81CC95241FCC7D006F2437 /* DP3T-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DP3T-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CC98241FCC7D006F2437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E81CC9C241FCC7D006F2437 /* NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
 		8E81CCA1241FCC7F006F2437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E81CCA6241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E81CCAB241FCC7F006F2437 /* NextStepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextStepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E81CCAF241FCC7F006F2437 /* NextStepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStepTests.swift; sourceTree = "<group>"; };
+		8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DP3T-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DP3TAppTests.swift; sourceTree = "<group>"; };
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
@@ -899,7 +899,6 @@
 				6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */,
 				6E8FC0F624518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.h */,
 				6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */,
-				6E8FC0F524518BF1002AB1E5 /* NextStep-Bridging-Header.h */,
 			);
 			path = UBKeyboardHelpers;
 			sourceTree = "<group>";
@@ -944,7 +943,7 @@
 			children = (
 				2443947D2445F8A1003ED582 /* README.md */,
 				2443947C2445F8A1003ED582 /* LICENCE.md */,
-				8E81CC97241FCC7D006F2437 /* NextStep */,
+				8E81CC97241FCC7D006F2437 /* DP3T-App */,
 				8E81CCAE241FCC7F006F2437 /* NextStepTests */,
 				8E81CC96241FCC7D006F2437 /* Products */,
 				24780B3B2430BC00003BB26C /* Frameworks */,
@@ -954,14 +953,14 @@
 		8E81CC96241FCC7D006F2437 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E81CC95241FCC7D006F2437 /* NextStep.app */,
-				8E81CCAB241FCC7F006F2437 /* NextStepTests.xctest */,
-				242D2272245C4BD8005DAEA8 /* NextStepCalibration.app */,
+				8E81CC95241FCC7D006F2437 /* DP3T-App.app */,
+				8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */,
+				242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E81CC97241FCC7D006F2437 /* NextStep */ = {
+		8E81CC97241FCC7D006F2437 /* DP3T-App */ = {
 			isa = PBXGroup;
 			children = (
 				DC286A24242CE0AD001D5344 /* Logic */,
@@ -970,13 +969,13 @@
 				DC9A8196242CE44200AD1548 /* Resources */,
 				DC9A8197242CE46F00AD1548 /* Supporting Files */,
 			);
-			path = NextStep;
+			path = "DP3T-App";
 			sourceTree = "<group>";
 		};
 		8E81CCAE241FCC7F006F2437 /* NextStepTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E81CCAF241FCC7F006F2437 /* NextStepTests.swift */,
+				8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 			);
 			path = NextStepTests;
@@ -1057,6 +1056,7 @@
 		DC9A8197242CE46F00AD1548 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E8FC0F524518BF1002AB1E5 /* DP3T-App-Bridging-Header.h */,
 				8E81CCA6241FCC7F006F2437 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -1098,9 +1098,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		242D21D2245C4BD8005DAEA8 /* NextStepCalibration */ = {
+		242D21D2245C4BD8005DAEA8 /* DP3T-AppCalibration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "NextStepCalibration" */;
+			buildConfigurationList = 242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3T-AppCalibration" */;
 			buildPhases = (
 				242D21D7245C4BD8005DAEA8 /* Swift Format */,
 				242D21D8245C4BD8005DAEA8 /* Swift Lint */,
@@ -1113,18 +1113,18 @@
 			);
 			dependencies = (
 			);
-			name = NextStepCalibration;
+			name = "DP3T-AppCalibration";
 			packageProductDependencies = (
 				242D21D3245C4BD8005DAEA8 /* SnapKit */,
 				242D21D5245C4BD8005DAEA8 /* DP3TSDK_CALIBRATION */,
 			);
 			productName = IVC;
-			productReference = 242D2272245C4BD8005DAEA8 /* NextStepCalibration.app */;
+			productReference = 242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E81CC94241FCC7D006F2437 /* NextStep */ = {
+		8E81CC94241FCC7D006F2437 /* DP3T-App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "NextStep" */;
+			buildConfigurationList = 8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-App" */;
 			buildPhases = (
 				8E81CCC0241FD2BC006F2437 /* Swift Format */,
 				8E81CCC1241FD2EE006F2437 /* Swift Lint */,
@@ -1137,18 +1137,18 @@
 			);
 			dependencies = (
 			);
-			name = NextStep;
+			name = "DP3T-App";
 			packageProductDependencies = (
 				8E81CCCE241FD813006F2437 /* SnapKit */,
 				242D2274245C4BE6005DAEA8 /* DP3TSDK */,
 			);
 			productName = IVC;
-			productReference = 8E81CC95241FCC7D006F2437 /* NextStep.app */;
+			productReference = 8E81CC95241FCC7D006F2437 /* DP3T-App.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E81CCAA241FCC7F006F2437 /* NextStepTests */ = {
+		8E81CCAA241FCC7F006F2437 /* DP3T-AppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "NextStepTests" */;
+			buildConfigurationList = 8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-AppTests" */;
 			buildPhases = (
 				8E81CCA7241FCC7F006F2437 /* Sources */,
 				8E81CCA8241FCC7F006F2437 /* Frameworks */,
@@ -1159,9 +1159,9 @@
 			dependencies = (
 				8E81CCAD241FCC7F006F2437 /* PBXTargetDependency */,
 			);
-			name = NextStepTests;
+			name = "DP3T-AppTests";
 			productName = IVCTests;
-			productReference = 8E81CCAB241FCC7F006F2437 /* NextStepTests.xctest */;
+			productReference = 8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1188,7 +1188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "NextStep" */;
+			buildConfigurationList = 8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3T-App" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = de;
 			hasScannedForEncodings = 0;
@@ -1208,9 +1208,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E81CC94241FCC7D006F2437 /* NextStep */,
-				242D21D2245C4BD8005DAEA8 /* NextStepCalibration */,
-				8E81CCAA241FCC7F006F2437 /* NextStepTests */,
+				8E81CC94241FCC7D006F2437 /* DP3T-App */,
+				242D21D2245C4BD8005DAEA8 /* DP3T-AppCalibration */,
+				8E81CCAA241FCC7F006F2437 /* DP3T-AppTests */,
 				8E81CCC2241FD475006F2437 /* Translation */,
 			);
 		};
@@ -1671,7 +1671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E81CCB0241FCC7F006F2437 /* NextStepTests.swift in Sources */,
+				8E81CCB0241FCC7F006F2437 /* DP3TAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1680,7 +1680,7 @@
 /* Begin PBXTargetDependency section */
 		8E81CCAD241FCC7F006F2437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E81CC94241FCC7D006F2437 /* NextStep */;
+			target = 8E81CC94241FCC7D006F2437 /* DP3T-App */;
 			targetProxy = 8E81CCAC241FCC7F006F2437 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1719,7 +1719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1727,7 +1727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1742,7 +1742,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1750,7 +1750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_TEST ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1764,7 +1764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1772,7 +1772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1786,7 +1786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1794,7 +1794,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_UBDIAG ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1808,7 +1808,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1816,7 +1816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_PROD ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1873,7 +1873,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_ABNAHME";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.ubique.suit.test;
+				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.debug;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_ABNAHME;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1890,14 +1890,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1921,7 +1921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NextStep.app/NextStep";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
 			};
 			name = "Release-Abnahme";
 		};
@@ -1992,7 +1992,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.ubique.nextstep.debug;
+				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.debug;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2050,7 +2050,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_TEST";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.ubique.suit.test;
+				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.debug;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_TEST;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2067,14 +2067,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2089,14 +2089,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2120,7 +2120,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NextStep.app/NextStep";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
 			};
 			name = Debug;
 		};
@@ -2142,7 +2142,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NextStep.app/NextStep";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
 			};
 			name = "Release-Internal";
 		};
@@ -2197,7 +2197,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_PROD";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.ubique.suit.test;
+				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.debug;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_PROD;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2214,14 +2214,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2245,7 +2245,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NextStep.app/NextStep";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
 			};
 			name = "Release-Prod";
 		};
@@ -2330,7 +2330,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_UBDIAG";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.ubique.nextstep.debug;
+				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.debug;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_UBDIAG;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -2347,14 +2347,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/NextStep/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "NextStep/SharedUI/Helpers/UBKeyboardHelpers/NextStep-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2378,7 +2378,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NextStep.app/NextStep";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
 			};
 			name = "Release-UBDiag";
 		};
@@ -2395,7 +2395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "NextStepCalibration" */ = {
+		242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3T-AppCalibration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				242D226D245C4BD8005DAEA8 /* Debug */,
@@ -2407,7 +2407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "NextStep" */ = {
+		8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3T-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB2241FCC7F006F2437 /* Debug */,
@@ -2419,7 +2419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "NextStep" */ = {
+		8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB5241FCC7F006F2437 /* Debug */,
@@ -2431,7 +2431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "NextStepTests" */ = {
+		8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-AppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB8241FCC7F006F2437 /* Debug */,

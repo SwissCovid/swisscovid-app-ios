@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-               BuildableName = "NextStepCalibration.app"
-               BlueprintName = "NextStepCalibration"
-               ReferencedContainer = "container:NextStep.xcodeproj">
+               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
+               BuildableName = "DP3T-App.app"
+               BlueprintName = "DP3T-App"
+               ReferencedContainer = "container:DP3T-App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-UBDiag"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-UBDiag"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -44,35 +44,25 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "NextStepCalibration.app"
-            BlueprintName = "NextStepCalibration"
-            ReferencedContainer = "container:NextStep.xcodeproj">
+            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
+            BuildableName = "DP3T-App.app"
+            BlueprintName = "DP3T-App"
+            ReferencedContainer = "container:DP3T-App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-UBDiag"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "NextStepCalibration.app"
-            BlueprintName = "NextStepCalibration"
-            ReferencedContainer = "container:NextStep.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release-Internal">
+      buildConfiguration = "Release-UBDiag">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-UBDiag"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

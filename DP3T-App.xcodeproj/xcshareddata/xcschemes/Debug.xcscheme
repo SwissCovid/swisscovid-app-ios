@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1140"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,25 +15,36 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "NextStep.app"
-               BlueprintName = "NextStep"
-               ReferencedContainer = "container:NextStep.xcodeproj">
+               BuildableName = "DP3T-App.app"
+               BlueprintName = "DP3T-App"
+               ReferencedContainer = "container:DP3T-App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E81CCAA241FCC7F006F2437"
+               BuildableName = "DP3T-AppTests.xctest"
+               BlueprintName = "DP3T-AppTests"
+               ReferencedContainer = "container:DP3T-App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = "de"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,16 +56,23 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
-            ReferencedContainer = "container:NextStep.xcodeproj">
+            BuildableName = "DP3T-App.app"
+            BlueprintName = "DP3T-App"
+            ReferencedContainer = "container:DP3T-App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
+      savedToolIdentifier = "Time Profiler"
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
@@ -62,17 +80,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "NextStep.app"
-            BlueprintName = "NextStep"
-            ReferencedContainer = "container:NextStep.xcodeproj">
+            BuildableName = "DP3T-App.app"
+            BlueprintName = "DP3T-App"
+            ReferencedContainer = "container:DP3T-App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release-Abnahme">
+      buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release-Abnahme"
+      buildConfiguration = "Debug"
+      customArchiveName = "Release-Internal"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

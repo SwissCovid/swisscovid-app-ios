@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1140"
+   LastUpgradeVersion = "1130"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,15 +15,15 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-               BuildableName = "NextStepCalibration.app"
-               BlueprintName = "NextStepCalibration"
-               ReferencedContainer = "container:NextStep.xcodeproj">
+               BuildableName = "DP3T-AppCalibration.app"
+               BlueprintName = "DP3T-AppCalibration"
+               ReferencedContainer = "container:DP3T-App.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release-Internal"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,10 +31,9 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release-Internal"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -46,18 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "NextStepCalibration.app"
-            BlueprintName = "NextStepCalibration"
-            ReferencedContainer = "container:NextStep.xcodeproj">
+            BuildableName = "DP3T-AppCalibration.app"
+            BlueprintName = "DP3T-AppCalibration"
+            ReferencedContainer = "container:DP3T-App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "disable"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release-Internal"
@@ -70,14 +62,14 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "NextStepCalibration.app"
-            BlueprintName = "NextStepCalibration"
-            ReferencedContainer = "container:NextStep.xcodeproj">
+            BuildableName = "DP3T-AppCalibration.app"
+            BlueprintName = "DP3T-AppCalibration"
+            ReferencedContainer = "container:DP3T-App.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "Release-Internal">
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release-Internal"
