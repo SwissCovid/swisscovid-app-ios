@@ -73,7 +73,6 @@ class FakePublishBackgroundTaskManager {
         let lastOperation = queue.operations.last
         lastOperation?.completionBlock = {
             task.setTaskCompleted(success: !(lastOperation?.isCancelled ?? false))
-            self.scheduleBackgroundTask()
         }
     }
 
@@ -82,8 +81,6 @@ class FakePublishBackgroundTaskManager {
         syncTask.requiresExternalPower = false
         syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
-
-        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: FakePublishBackgroundTaskManager.taskIdentifier)
 
         do {
             try BGTaskScheduler.shared.submit(syncTask)

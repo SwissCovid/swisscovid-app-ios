@@ -80,7 +80,6 @@ class ConfigBackgroundTaskManager {
         let lastOperation = queue.operations.last
         lastOperation?.completionBlock = {
             task.setTaskCompleted(success: !(lastOperation?.isCancelled ?? false))
-            self.scheduleBackgroundTask()
         }
     }
 
@@ -89,8 +88,6 @@ class ConfigBackgroundTaskManager {
         syncTask.requiresExternalPower = false
         syncTask.requiresNetworkConnectivity = true
         syncTask.earliestBeginDate = Date(timeIntervalSinceNow: ConfigBackgroundTaskManager.syncInterval)
-
-        BGTaskScheduler.shared.cancel(taskRequestWithIdentifier: ConfigBackgroundTaskManager.taskIdentifier)
 
         do {
             try BGTaskScheduler.shared.submit(syncTask)
