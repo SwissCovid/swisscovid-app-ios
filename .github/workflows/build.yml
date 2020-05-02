@@ -4,6 +4,7 @@ on:
   push:
     branches-ignore:
       - master
+      - release
 
 jobs:
   build_release_prod:

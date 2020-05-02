@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - release
   pull_request:
     branches:
       - master
@@ -111,10 +112,10 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: dp3t.ipa
-        path: "NextStep.ipa"
+        path: "DP3TApp.ipa"
     
     - name: Archive dSYM files
       uses: actions/upload-artifact@v1
       with:
         name: dp3t_dSYMs.zip
-        path: "NextStep.app.dSYM.zip"
+        path: "DP3TApp.app.dSYM.zip"
