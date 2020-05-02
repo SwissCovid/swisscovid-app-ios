@@ -1,9 +1,10 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import Foundation
-
-// 211 561 679
-// 697 132 178
 
 class CodeValidator {
     private let session = URLSession.certificatePinned

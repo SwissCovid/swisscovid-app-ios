@@ -1,4 +1,8 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import Foundation
 
@@ -8,7 +12,7 @@ import Foundation
     import DP3TSDK
 #endif
 
-/// Implementation of business rules to link SDK to UI State
+/// Implementation of business rules to link SDK and all errors and states  to UI state
 class UIStateLogic {
     let manager: UIStateManager
 
@@ -153,7 +157,7 @@ class UIStateLogic {
         newState.homescreen.meldungen.meldung = .exposed
         newState.meldungenDetail.meldung = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> NSMeldungModel in NSMeldungModel(identifier: mc.identifier, timestamp: mc.reportDate)
+        newState.meldungenDetail.meldungen = days.map { (mc) -> UIStateModel.MeldungenDetail.NSMeldungModel in UIStateModel.MeldungenDetail.NSMeldungModel(identifier: mc.identifier, timestamp: mc.reportDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
@@ -161,11 +165,11 @@ class UIStateLogic {
 
     private func setLastMeldungState(_ newState: inout UIStateModel) {
         if let meldung = newState.meldungenDetail.meldungen.last {
-            newState.shouldStartAtMeldungenDetail = NSUser.shared.lastPhoneCall(for: meldung.identifier) == nil
+            newState.shouldStartAtMeldungenDetail = UserStorage.shared.lastPhoneCall(for: meldung.identifier) == nil
             newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-            newState.meldungenDetail.showMeldungWithAnimation = !NSUser.shared.hasSeenMessage(for: meldung.identifier)
+            newState.meldungenDetail.showMeldungWithAnimation = !UserStorage.shared.hasSeenMessage(for: meldung.identifier)
 
-            if let lastPhoneCall = NSUser.shared.lastPhoneCallDate {
+            if let lastPhoneCall = UserStorage.shared.lastPhoneCallDate {
                 if lastPhoneCall > meldung.timestamp {
                     newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
                 } else {

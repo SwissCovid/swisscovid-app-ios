@@ -1,4 +1,4 @@
-# DP3T iOS Demo App
+# DP3T App Switzerland
 
 [![Swift Package Manager compatible](https://img.shields.io/badge/SPM-%E2%9C%93-brightgreen.svg?style=flat)](https://github.com/apple/swift-package-manager)
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://github.com/DP-3T/dp3t-sdk-ios/blob/master/LICENSE)
@@ -11,17 +11,23 @@ DP-3T is a free-standing effort started at EPFL and ETHZ that produced this prot
 
 
 ## Introduction
-This is a COVID-19 tracing client using the [DP3T iOS SDK](https://github.com/DP-3T/dp3t-sdk-ios). It is based on the previously released demo app, but uses the newest version of the SDK and has a focus on Switzerland.
+This is a COVID-19 tracing client using the [DP3T iOS SDK](https://github.com/DP-3T/dp3t-sdk-ios). It is based on the previously released demo app, but uses the newest version of the SDK. This project will be released as the official COVID-19 tracing solution for Switzerland, therefore UX, messages and flows are optimized for this specific case. Nevertheless, the source code should be a solid foundation to build a similar app for other countries and demostrate how the SDK can be used in a real app. 
 
 <p align="center">
 <img src="Documentation/screenshots/screenshots.png" width="80%">
 </p>
 
+## Contribution Guide
+
+The DP3T App is not yet complete. It has not yet been reviewed or audited for security and compatibility. We are both continuing the development and have started a security review. This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
+
+Bugs or potential problems should be reported using Github issues. We welcome all pull requests that improve the quality the source code. Please note that the app will be available with approved translations in English, German, French and Italian. Pull requests for additional translations currently won't be merged.
+
 ## Repositories
 * Android SDK & Calibration app: [dp3t-sdk-android](https://github.com/DP-3T/dp3t-sdk-android)
 * iOS SDK & Calibration app: [dp3t-sdk-ios](https://github.com/DP-3T/dp3t-sdk-ios)
-* Android Demo App: [dp3t-app-android](https://github.com/DP-3T/dp3t-app-android)
-* iOS Demo App: [dp3t-app-ios](https://github.com/DP-3T/dp3t-app-ios)
+* Android App: [dp3t-app-android](https://github.com/DP-3T/dp3t-app-android-wip)
+* iOS App: [dp3t-app-ios](https://github.com/DP-3T/dp3t-app-ios-wip)
 * Backend SDK: [dp3t-sdk-backend](https://github.com/DP-3T/dp3t-sdk-backend)
 
 

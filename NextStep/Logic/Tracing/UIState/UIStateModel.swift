@@ -1,18 +1,13 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import Foundation
 
-struct NSMeldungModel: Equatable {
-    let identifier: Int
-    let timestamp: Date
-}
-
-enum DebugInfectionStatus: Equatable {
-    case healthy
-    case exposed
-    case infected
-}
-
+/// Global state model for all screens that are connected to tracing state and results
+/// We use a single state model to ensure that all elements have a consistent state
 struct UIStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
@@ -39,12 +34,6 @@ struct UIStateModel: Equatable {
         case infected
     }
 
-    enum PhoneCallState: Equatable {
-        case notCalled
-        case calledAfterLastExposure
-        case multipleExposuresNotCalled
-    }
-
     struct Homescreen: Equatable {
         struct Meldungen: Equatable {
             var meldung: MeldungState = .noMeldung
@@ -68,17 +57,29 @@ struct UIStateModel: Equatable {
         var infoBox: InfoBox?
     }
 
+    struct BegegnungenDetail: Equatable {
+        var tracingEnabled: Bool = true
+        var tracing: TracingState = .tracingActive
+    }
+
     struct MeldungenDetail: Equatable {
         var meldung: MeldungState = .noMeldung
         var meldungen: [NSMeldungModel] = []
         var phoneCallState: PhoneCallState = .notCalled
         var showMeldungWithAnimation: Bool = false
+
+        struct NSMeldungModel: Equatable {
+            let identifier: Int
+            let timestamp: Date
+        }
+
+        enum PhoneCallState: Equatable {
+            case notCalled
+            case calledAfterLastExposure
+            case multipleExposuresNotCalled
+        }
     }
 
-    struct BegegnungenDetail: Equatable {
-        var tracingEnabled: Bool = true
-        var tracing: TracingState = .tracingActive
-    }
 
     #if ENABLE_TESTING
     struct Debug: Equatable {
@@ -89,6 +90,12 @@ struct UIStateModel: Equatable {
         var overwrittenInfectionState: DebugInfectionStatus?
         var secretKeyRepresentation: String?
         var logOutput: NSAttributedString = NSAttributedString()
+
+        enum DebugInfectionStatus: Equatable {
+            case healthy
+            case exposed
+            case infected
+        }
     }
     #endif
 }

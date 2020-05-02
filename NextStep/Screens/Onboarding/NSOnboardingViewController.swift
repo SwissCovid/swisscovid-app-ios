@@ -161,7 +161,7 @@ class NSOnboardingViewController: NSViewController {
             self.finishButton.transform = CGAffineTransform(translationX: -300, y: 0)
         }, completion: nil)
         vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0) { (_) -> Void in
-            NSUser.shared.hasCompletedOnboarding = true
+            UserStorage.shared.hasCompletedOnboarding = true
             self.dismiss(animated: true, completion: nil)
         }
     }

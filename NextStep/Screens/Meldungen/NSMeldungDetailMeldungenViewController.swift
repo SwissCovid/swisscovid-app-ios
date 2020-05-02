@@ -1,17 +1,21 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import UIKit
 
 class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
-    public var meldungen: [NSMeldungModel] = [] {
+    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
         didSet { update() }
     }
 
     public var showMeldungWithAnimation: Bool = false
 
-    public var phoneCallState: UIStateModel.PhoneCallState = .notCalled {
+    public var phoneCallState: UIStateModel.MeldungenDetail.PhoneCallState = .notCalled {
         didSet { update() }
     }
 
@@ -53,7 +57,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         overrideHitTestAnyway = false
 
         for m in meldungen {
-            NSUser.shared.registerSeenMessages(identifier: m.identifier)
+            UserStorage.shared.registerSeenMessages(identifier: m.identifier)
         }
         
         super.startHeaderAnimation()
@@ -104,7 +108,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         callAgainView?.isHidden = phoneCallState != .multipleExposuresNotCalled
 
         if let lastMeldungId = meldungen.last?.identifier,
-            let lastCall = NSUser.shared.lastPhoneCall(for: lastMeldungId) {
+            let lastCall = UserStorage.shared.lastPhoneCall(for: lastMeldungId) {
             callLabels.forEach {
                 $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
@@ -230,7 +234,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        NSUser.shared.registerPhoneCall(identifier: last.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: last.identifier)
         UIStateManager.shared.refresh()
     }
 }

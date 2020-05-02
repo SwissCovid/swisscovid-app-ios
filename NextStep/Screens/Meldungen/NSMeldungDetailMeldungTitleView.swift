@@ -1,11 +1,15 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import UIKit
 
 class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
-    public var meldungen: [NSMeldungModel] = [] {
+    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
         didSet { update() }
     }
 

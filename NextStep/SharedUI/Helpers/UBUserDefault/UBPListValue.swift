@@ -9,7 +9,7 @@ import Foundation
 /// The types that can be stored in `UserDefaults` out of the box.
 ///
 /// From the `UserDefaults Documentation`
-/// "NSUserDefaults stores Property List objects (NSString, NSData, NSNumber, NSDate, NSArray, and NSDictionary) identified by NSString keys"
+/// "UserStorageDefaults stores Property List objects (NSString, NSData, NSNumber, NSDate, NSArray, and NSDictionary) identified by NSString keys"
 public protocol UBPListValue: UBUserDefaultValue {}
 
 extension UBPListValue {

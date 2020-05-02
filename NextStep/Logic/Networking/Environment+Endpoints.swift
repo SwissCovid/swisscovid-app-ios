@@ -1,8 +1,12 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import Foundation
 
-struct Endpoint {
+extension Endpoint {
     /// Load Config
     /// let av = "ios-10"
     /// let os = "ios13"
@@ -14,16 +18,5 @@ struct Endpoint {
     static func onset(auth: AuthorizationRequestBody) -> Endpoint {
         return Environment.current.codegenService.endpoint("onset", method: .post, headers: ["accept": "*/*", "Content-Type": "application/json"], body: auth)
     }
-
-    // MARK: - Implementation
-
-    enum Method: String {
-        case get = "GET"
-        case post = "POST"
-    }
-
-    let method: Method
-    let url: URL
-    let headers: [String: String]?
-    let body: Data?
 }
+

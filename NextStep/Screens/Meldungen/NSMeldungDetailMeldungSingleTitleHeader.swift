@@ -1,4 +1,8 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import UIKit
 
@@ -7,7 +11,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     public weak var headerView: NSTitleView?
 
-    public var meldung: NSMeldungModel? {
+    public var meldung: UIStateModel.MeldungenDetail.NSMeldungModel? {
         didSet { update() }
     }
 

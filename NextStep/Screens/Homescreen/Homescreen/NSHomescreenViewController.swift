@@ -86,7 +86,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         appTitleView.changeBackgroundRandomly()
         UIStateManager.shared.refresh()
 
-        if !NSUser.shared.hasCompletedOnboarding {
+        if !UserStorage.shared.hasCompletedOnboarding {
             let v = UIView()
             v.backgroundColor = .ns_background
             view.addSubview(v)
@@ -241,7 +241,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Details
 
     private func presentOnboardingIfNeeded() {
-        if !NSUser.shared.hasCompletedOnboarding {
+        if !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             present(onboardingViewController, animated: false)

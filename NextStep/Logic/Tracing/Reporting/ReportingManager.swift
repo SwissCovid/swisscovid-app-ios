@@ -1,4 +1,8 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 #if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
@@ -70,7 +74,7 @@ class ReportingManager {
                         if let error = error {
                             completion(.failure(error: error))
                         } else {
-                            NSUser.shared.positiveTestSendDate = Date()
+                            UserStorage.shared.positiveTestSendDate = Date()
                             completion(nil)
                         }
                     }

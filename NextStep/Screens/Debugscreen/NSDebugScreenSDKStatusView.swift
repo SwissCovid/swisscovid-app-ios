@@ -93,7 +93,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
     }
 
     private func resetOnboarding() {
-        NSUser.shared.hasCompletedOnboarding = false
+        UserStorage.shared.hasCompletedOnboarding = false
         abort()
     }
 

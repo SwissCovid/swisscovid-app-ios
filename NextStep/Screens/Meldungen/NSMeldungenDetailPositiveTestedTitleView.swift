@@ -1,4 +1,8 @@
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 import UIKit
 
@@ -20,7 +24,7 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
         titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
         textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
-        if let date = NSUser.shared.positiveTestSendDate {
+        if let date = UserStorage.shared.positiveTestSendDate {
             dateLabel.text = DateFormatter.ub_daysAgo(from: date, addExplicitDate: true)
         } else {
             dateLabel.text = ""

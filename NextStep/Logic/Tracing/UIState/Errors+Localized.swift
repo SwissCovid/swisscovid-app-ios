@@ -1,5 +1,9 @@
 
-///
+/*
+ * Created by Ubique Innovation AG
+ * https://www.ubique.ch
+ * Copyright (c) 2020. All rights reserved.
+ */
 
 #if ENABLE_TESTING
     import DP3TSDK_CALIBRATION
@@ -26,9 +30,9 @@ extension DP3TTracingError: LocalizedError, CodedError {
         case let .databaseError(error):
             return error?.localizedDescription
         case .bluetoothTurnedOff:
-            return "bluetooth_turned_off".ub_localized
+            return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
-            return "bluetooth_permission_turned_off".ub_localized
+            return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
         }
     }
 

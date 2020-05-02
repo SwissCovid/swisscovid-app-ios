@@ -6,8 +6,8 @@
 
 import UIKit
 
-class NSUser {
-    static let shared = NSUser()
+class UserStorage {
+    static let shared = UserStorage()
 
     @UBUserDefault(key: "hasCompletedOnboarding", defaultValue: false)
     var hasCompletedOnboarding: Bool {
