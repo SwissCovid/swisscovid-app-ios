@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "DP3T-App.app"
-               BlueprintName = "DP3T-App"
-               ReferencedContainer = "container:DP3T-App.xcodeproj">
+               BuildableName = "DP3TApp.app"
+               BlueprintName = "DP3TApp"
+               ReferencedContainer = "container:DP3TApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3T-App.app"
-            BlueprintName = "DP3T-App"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BuildableName = "DP3TApp.app"
+            BlueprintName = "DP3TApp"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3T-App.app"
-            BlueprintName = "DP3T-App"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BuildableName = "DP3TApp.app"
+            BlueprintName = "DP3TApp"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

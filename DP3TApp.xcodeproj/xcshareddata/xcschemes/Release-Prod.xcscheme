@@ -14,16 +14,16 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-               BuildableName = "DP3T-AppCalibration.app"
-               BlueprintName = "DP3T-AppCalibration"
-               ReferencedContainer = "container:DP3T-App.xcodeproj">
+               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
+               BuildableName = "DP3TApp.app"
+               BlueprintName = "DP3TApp"
+               ReferencedContainer = "container:DP3TApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-Prod"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
@@ -31,7 +31,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-Prod"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -44,35 +44,34 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "DP3T-AppCalibration.app"
-            BlueprintName = "DP3T-AppCalibration"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
+            BuildableName = "DP3TApp.app"
+            BlueprintName = "DP3TApp"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-Prod"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
-            BuildableName = "DP3T-AppCalibration.app"
-            BlueprintName = "DP3T-AppCalibration"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
+            BuildableName = "DP3TApp.app"
+            BlueprintName = "DP3TApp"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Release-Internal">
+      buildConfiguration = "Release-Prod">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Release-Internal"
+      buildConfiguration = "Release-Prod"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1140"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "DP3T-App.app"
-               BlueprintName = "DP3T-App"
-               ReferencedContainer = "container:DP3T-App.xcodeproj">
+               BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+               BuildableName = "DP3TAppCalibration.app"
+               BlueprintName = "DP3TAppCalibration"
+               ReferencedContainer = "container:DP3TApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,23 +28,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E81CCAA241FCC7F006F2437"
-               BuildableName = "DP3T-AppTests.xctest"
-               BlueprintName = "DP3T-AppTests"
-               ReferencedContainer = "container:DP3T-App.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      language = "de"
+      language = "en"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -55,10 +45,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3T-App.app"
-            BlueprintName = "DP3T-App"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "DP3TAppCalibration.app"
+            BlueprintName = "DP3TAppCalibration"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -70,19 +60,19 @@
       </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release-Internal"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = "Time Profiler"
+      savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3T-App.app"
-            BlueprintName = "DP3T-App"
-            ReferencedContainer = "container:DP3T-App.xcodeproj">
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "DP3TAppCalibration.app"
+            BlueprintName = "DP3TAppCalibration"
+            ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -90,8 +80,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
-      customArchiveName = "Release-Internal"
+      buildConfiguration = "Release-Internal"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

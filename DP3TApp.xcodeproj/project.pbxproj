@@ -325,7 +325,7 @@
 
 /* Begin PBXFileReference section */
 		242D21D0245C3853005DAEA8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DP3T-AppCalibration.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP3TAppCalibration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+PublicKeys.swift"; sourceTree = "<group>"; };
 		242D227A245D6557005DAEA8 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		242D227C245D6581005DAEA8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -402,7 +402,7 @@
 		6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWebViewController.swift; sourceTree = "<group>"; };
 		6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLoadingView.swift; sourceTree = "<group>"; };
 		6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAboutViewController.swift; sourceTree = "<group>"; };
-		6E8FC0F524518BF1002AB1E5 /* DP3T-App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DP3T-App-Bridging-Header.h"; sourceTree = "<group>"; };
+		6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DP3TApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E8FC0F624518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UBKeyboardObserver.h"; sourceTree = "<group>"; };
 		6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UBKeyboardObserver.m"; sourceTree = "<group>"; };
 		6E8FC0F824518BF2002AB1E5 /* UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBKeyboardObserver.h; sourceTree = "<group>"; };
@@ -423,12 +423,12 @@
 		6EFF9AE1245AAFC800C98FF3 /* UIImage+UBHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+UBHelpers.h"; sourceTree = "<group>"; };
 		6EFF9AE2245AAFC800C98FF3 /* UIImage+UBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UBHelpers.m"; sourceTree = "<group>"; };
 		6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformTracingEndViewController.swift; sourceTree = "<group>"; };
-		8E81CC95241FCC7D006F2437 /* DP3T-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DP3T-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E81CC95241FCC7D006F2437 /* DP3TApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP3TApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CC98241FCC7D006F2437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E81CC9C241FCC7D006F2437 /* NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
 		8E81CCA1241FCC7F006F2437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E81CCA6241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DP3T-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E81CCAB241FCC7F006F2437 /* DP3TAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DP3TAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DP3TAppTests.swift; sourceTree = "<group>"; };
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
@@ -943,8 +943,8 @@
 			children = (
 				2443947D2445F8A1003ED582 /* README.md */,
 				2443947C2445F8A1003ED582 /* LICENCE.md */,
-				8E81CC97241FCC7D006F2437 /* DP3T-App */,
-				8E81CCAE241FCC7F006F2437 /* NextStepTests */,
+				8E81CC97241FCC7D006F2437 /* DP3TApp */,
+				8E81CCAE241FCC7F006F2437 /* DP3TAppTests */,
 				8E81CC96241FCC7D006F2437 /* Products */,
 				24780B3B2430BC00003BB26C /* Frameworks */,
 			);
@@ -953,14 +953,14 @@
 		8E81CC96241FCC7D006F2437 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8E81CC95241FCC7D006F2437 /* DP3T-App.app */,
-				8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */,
-				242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */,
+				8E81CC95241FCC7D006F2437 /* DP3TApp.app */,
+				8E81CCAB241FCC7F006F2437 /* DP3TAppTests.xctest */,
+				242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8E81CC97241FCC7D006F2437 /* DP3T-App */ = {
+		8E81CC97241FCC7D006F2437 /* DP3TApp */ = {
 			isa = PBXGroup;
 			children = (
 				DC286A24242CE0AD001D5344 /* Logic */,
@@ -969,16 +969,16 @@
 				DC9A8196242CE44200AD1548 /* Resources */,
 				DC9A8197242CE46F00AD1548 /* Supporting Files */,
 			);
-			path = "DP3T-App";
+			path = DP3TApp;
 			sourceTree = "<group>";
 		};
-		8E81CCAE241FCC7F006F2437 /* NextStepTests */ = {
+		8E81CCAE241FCC7F006F2437 /* DP3TAppTests */ = {
 			isa = PBXGroup;
 			children = (
 				8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 			);
-			path = NextStepTests;
+			path = DP3TAppTests;
 			sourceTree = "<group>";
 		};
 		AAF73664242F2E300051E34A /* Begegnungen */ = {
@@ -1056,7 +1056,7 @@
 		DC9A8197242CE46F00AD1548 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E8FC0F524518BF1002AB1E5 /* DP3T-App-Bridging-Header.h */,
+				6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */,
 				8E81CCA6241FCC7F006F2437 /* Info.plist */,
 			);
 			path = "Supporting Files";
@@ -1098,9 +1098,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		242D21D2245C4BD8005DAEA8 /* DP3T-AppCalibration */ = {
+		242D21D2245C4BD8005DAEA8 /* DP3TAppCalibration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3T-AppCalibration" */;
+			buildConfigurationList = 242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3TAppCalibration" */;
 			buildPhases = (
 				242D21D7245C4BD8005DAEA8 /* Swift Format */,
 				242D21D8245C4BD8005DAEA8 /* Swift Lint */,
@@ -1113,18 +1113,18 @@
 			);
 			dependencies = (
 			);
-			name = "DP3T-AppCalibration";
+			name = DP3TAppCalibration;
 			packageProductDependencies = (
 				242D21D3245C4BD8005DAEA8 /* SnapKit */,
 				242D21D5245C4BD8005DAEA8 /* DP3TSDK_CALIBRATION */,
 			);
 			productName = IVC;
-			productReference = 242D2272245C4BD8005DAEA8 /* DP3T-AppCalibration.app */;
+			productReference = 242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E81CC94241FCC7D006F2437 /* DP3T-App */ = {
+		8E81CC94241FCC7D006F2437 /* DP3TApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-App" */;
+			buildConfigurationList = 8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3TApp" */;
 			buildPhases = (
 				8E81CCC0241FD2BC006F2437 /* Swift Format */,
 				8E81CCC1241FD2EE006F2437 /* Swift Lint */,
@@ -1137,18 +1137,18 @@
 			);
 			dependencies = (
 			);
-			name = "DP3T-App";
+			name = DP3TApp;
 			packageProductDependencies = (
 				8E81CCCE241FD813006F2437 /* SnapKit */,
 				242D2274245C4BE6005DAEA8 /* DP3TSDK */,
 			);
 			productName = IVC;
-			productReference = 8E81CC95241FCC7D006F2437 /* DP3T-App.app */;
+			productReference = 8E81CC95241FCC7D006F2437 /* DP3TApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8E81CCAA241FCC7F006F2437 /* DP3T-AppTests */ = {
+		8E81CCAA241FCC7F006F2437 /* DP3TAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-AppTests" */;
+			buildConfigurationList = 8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3TAppTests" */;
 			buildPhases = (
 				8E81CCA7241FCC7F006F2437 /* Sources */,
 				8E81CCA8241FCC7F006F2437 /* Frameworks */,
@@ -1159,9 +1159,9 @@
 			dependencies = (
 				8E81CCAD241FCC7F006F2437 /* PBXTargetDependency */,
 			);
-			name = "DP3T-AppTests";
+			name = DP3TAppTests;
 			productName = IVCTests;
-			productReference = 8E81CCAB241FCC7F006F2437 /* DP3T-AppTests.xctest */;
+			productReference = 8E81CCAB241FCC7F006F2437 /* DP3TAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1188,7 +1188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3T-App" */;
+			buildConfigurationList = 8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3TApp" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = de;
 			hasScannedForEncodings = 0;
@@ -1208,9 +1208,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8E81CC94241FCC7D006F2437 /* DP3T-App */,
-				242D21D2245C4BD8005DAEA8 /* DP3T-AppCalibration */,
-				8E81CCAA241FCC7F006F2437 /* DP3T-AppTests */,
+				8E81CC94241FCC7D006F2437 /* DP3TApp */,
+				242D21D2245C4BD8005DAEA8 /* DP3TAppCalibration */,
+				8E81CCAA241FCC7F006F2437 /* DP3TAppTests */,
 				8E81CCC2241FD475006F2437 /* Translation */,
 			);
 		};
@@ -1680,7 +1680,7 @@
 /* Begin PBXTargetDependency section */
 		8E81CCAD241FCC7F006F2437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8E81CC94241FCC7D006F2437 /* DP3T-App */;
+			target = 8E81CC94241FCC7D006F2437 /* DP3TApp */;
 			targetProxy = 8E81CCAC241FCC7F006F2437 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1719,7 +1719,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1727,7 +1727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1742,7 +1742,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1750,7 +1750,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_TEST ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1764,7 +1764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1772,7 +1772,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1786,7 +1786,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1794,7 +1794,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_UBDIAG ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1808,7 +1808,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1816,7 +1816,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_PROD ENABLE_TESTING";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1890,14 +1890,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1921,7 +1921,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
 			};
 			name = "Release-Abnahme";
 		};
@@ -2067,14 +2067,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2089,14 +2089,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2120,7 +2120,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
 			};
 			name = Debug;
 		};
@@ -2142,7 +2142,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
 			};
 			name = "Release-Internal";
 		};
@@ -2214,14 +2214,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2245,7 +2245,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
 			};
 			name = "Release-Prod";
 		};
@@ -2347,14 +2347,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = "$(SRCROOT)/DP3T-App/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3T-App/Supporting Files/DP3T-App-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -2378,7 +2378,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3T-App.app/DP3T-App";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
 			};
 			name = "Release-UBDiag";
 		};
@@ -2395,7 +2395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3T-AppCalibration" */ = {
+		242D226C245C4BD8005DAEA8 /* Build configuration list for PBXNativeTarget "DP3TAppCalibration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				242D226D245C4BD8005DAEA8 /* Debug */,
@@ -2407,7 +2407,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3T-App" */ = {
+		8E81CC90241FCC7D006F2437 /* Build configuration list for PBXProject "DP3TApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB2241FCC7F006F2437 /* Debug */,
@@ -2419,7 +2419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-App" */ = {
+		8E81CCB4241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3TApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB5241FCC7F006F2437 /* Debug */,
@@ -2431,7 +2431,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3T-AppTests" */ = {
+		8E81CCB7241FCC7F006F2437 /* Build configuration list for PBXNativeTarget "DP3TAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8E81CCB8241FCC7F006F2437 /* Debug */,
