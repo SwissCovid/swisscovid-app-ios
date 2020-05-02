@@ -55,7 +55,7 @@ struct UIStateModel: Equatable {
             var backgroundUpdateProblem: Bool = false
         }
 
-        struct GlobalProblem: Equatable {
+        struct InfoBox: Equatable {
             var title: String
             var text: String
             var link: String?
@@ -65,7 +65,7 @@ struct UIStateModel: Equatable {
         var header: TracingState = .tracingActive
         var begegnungen: TracingState = .tracingActive
         var meldungen: Meldungen = Meldungen()
-        var globalProblem: GlobalProblem?
+        var infoBox: InfoBox?
     }
 
     struct MeldungenDetail: Equatable {

@@ -14,8 +14,8 @@ import UserNotifications
 #endif
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
-class NSTracingLocalPush {
-    static let shared = NSTracingLocalPush()
+class TracingLocalPush {
+    static let shared = TracingLocalPush()
 
     func update(state: TracingState) {
         switch state.infectionStatus {
@@ -33,23 +33,29 @@ class NSTracingLocalPush {
         didSet {
             for identifier in exposureIdentifiers {
                 if !oldValue.contains(identifier) {
+                    // in foreground, show alert (unless already on detail screen)
                     if UIApplication.shared.applicationState == .active {
                         if !alreadyShowsMeldung() {
                             showAlert()
                         }
+                    // in background schedule notification
                     } else {
-                        let content = UNMutableNotificationContent()
-                        content.title = "push_exposed_title".ub_localized
-                        content.body = "push_exposed_text".ub_localized
-
-                        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-                        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+                        scheduleNotification()
                     }
                     return
                 }
             }
         }
+    }
+
+    private func scheduleNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "push_exposed_title".ub_localized
+        content.body = "push_exposed_text".ub_localized
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
     }
 
     private func showAlert() {
@@ -83,6 +89,8 @@ class NSTracingLocalPush {
     }
 
     // MARK: - Sync warnings
+    // If sync doesnt work for 2 days, we show a notification
+    // User should open app to fix issues
 
     private let notificationIdentifier1 = "ch.admin.bag.notification.syncWarning1"
     private let notificationIdentifier2 = "ch.admin.bag.notification.syncWarning2"

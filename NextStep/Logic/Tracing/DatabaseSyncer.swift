@@ -46,6 +46,11 @@ class DatabaseSyncer {
         DP3TTracing.sync { result in
             switch result {
             case let .failure(e):
+
+                // 3 kinds of errors with different behaviour
+                // - network, things that happen on mobile -> only show error if not recovered for 24h
+                // - time inconsitency error -> detected during sync, but actually a tracing problem
+                // - unexpected errors -> immediately show, backend could  be broken
                 UIStateManager.shared.blockUpdate {
                     UIStateManager.shared.syncError = e
                     if case let DP3TTracingError.networkingError(wrappedError) = e {
@@ -71,6 +76,7 @@ class DatabaseSyncer {
                 completionHandler?(.failed)
             case .success:
 
+                // reset errors in UI
                 UIStateManager.shared.blockUpdate {
                     self.lastDatabaseSync = Date()
                     UIStateManager.shared.firstSyncErrorTime = nil
@@ -79,11 +85,14 @@ class DatabaseSyncer {
                     UIStateManager.shared.immediatelyShowSyncError = false
                 }
 
+                // wait another 2 days befor warning
+                TracingLocalPush.shared.resetSyncWarningTriggers()
+
+                // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
 
                 completionHandler?(.newData)
 
-                NSTracingLocalPush.shared.resetSyncWarningTriggers()
 
             }
             if taskIdentifier != .invalid {

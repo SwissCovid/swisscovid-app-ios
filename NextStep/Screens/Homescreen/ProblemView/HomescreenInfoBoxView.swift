@@ -2,10 +2,10 @@
 
 import UIKit
 
-class NSGlobalProblemView: UIView {
+class HomescreenInfoBoxView: UIView {
     // MARK: - API
 
-    var uiState: UIStateModel.Homescreen.GlobalProblem? {
+    var uiState: UIStateModel.Homescreen.InfoBox? {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)

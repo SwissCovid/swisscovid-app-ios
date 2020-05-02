@@ -11,7 +11,7 @@ import UIKit
 class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
-    private let globalProblemView = NSGlobalProblemView()
+    private let infoBoxView = HomescreenInfoBoxView()
     private let handshakesModuleView = NSBegegnungenModuleView()
     private let meldungView = NSMeldungView()
 
@@ -124,7 +124,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
 
         // other views
-        stackScrollView.addArrangedView(globalProblemView)
+        stackScrollView.addArrangedView(infoBoxView)
 
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
@@ -232,8 +232,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
-        globalProblemView.uiState = state.homescreen.globalProblem
-        globalProblemView.isHidden = state.homescreen.globalProblem == nil
+        infoBoxView.uiState = state.homescreen.infoBox
+        infoBoxView.isHidden = state.homescreen.infoBox == nil
 
         lastState = state
     }

@@ -34,8 +34,9 @@ class UIStateLogic {
             return newState
         }
 
+        // Update homescreen UI
         setHomescreenState(&newState, tracing: tracing)
-        setGlobalProblemState(&newState)
+        setInfoBoxState(&newState)
 
         //
         // Detect exposure, infection
@@ -119,7 +120,7 @@ class UIStateLogic {
         }
     }
 
-    private func setGlobalProblemState(_ newState: inout UIStateModel) {
+    private func setInfoBoxState(_ newState: inout UIStateModel) {
         if let localizedInfoBox = ConfigManager.currentConfig?.infoBox {
             let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
             switch Language.current {
@@ -132,7 +133,7 @@ class UIStateLogic {
             case .france:
                 infoBox = localizedInfoBox.frInfoBox
             }
-            newState.homescreen.globalProblem = UIStateModel.Homescreen.GlobalProblem(title: infoBox.title,
+            newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
                                                                                       text: infoBox.msg,
                                                                                       link: infoBox.urlTitle,
                                                                                       url: infoBox.url)
