@@ -41,6 +41,5 @@ The project should be opened with the latest Xcode versions, 11.4. Dependencies 
 
 
 
-
 ## License
 This project is licensed under the terms of the MPL 2 license. See the [LICENSE](LICENSE) file.

@@ -329,6 +329,9 @@
 		242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+PublicKeys.swift"; sourceTree = "<group>"; };
 		242D227A245D6557005DAEA8 /* Backend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backend.swift; sourceTree = "<group>"; };
 		242D227C245D6581005DAEA8 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		242D227F245D7362005DAEA8 /* distribute.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = distribute.yml; path = .github/workflows/distribute.yml; sourceTree = SOURCE_ROOT; };
+		242D2280245D7363005DAEA8 /* build.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = build.yml; path = .github/workflows/build.yml; sourceTree = SOURCE_ROOT; };
+		242D2281245D7386005DAEA8 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
 		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -1058,6 +1061,9 @@
 			children = (
 				6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */,
 				8E81CCA6241FCC7F006F2437 /* Info.plist */,
+				242D2280245D7363005DAEA8 /* build.yml */,
+				242D227F245D7362005DAEA8 /* distribute.yml */,
+				242D2281245D7386005DAEA8 /* Fastfile */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
