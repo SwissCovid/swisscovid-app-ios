@@ -6,808 +6,812 @@
 "CFBundleDisplayName" = "dp3t-app";
 
 /*Loading View: Erneut laden*/
-"loading_view_reload" = "Erneut laden";
+"loading_view_reload" = "Ricarica";
 
 /*Fehler Titel in Loading View*/
-"loading_view_error_title" = "Fehler";
+"loading_view_error_title" = "Errore";
 
 /*Alert: Titel wenn die App muss geupdatet werden*/
-"force_update_title" = "Update benötigt";
+"force_update_title" = "Aggiornamento necessario";
 
 /*Informieren: Weiter Button*/
-"inform_continue_button" = "Weiter";
+"inform_continue_button" = "Avanti";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Anonym melden";
+"inform_send_button_title" = "Segnala anonimamente";
 
 /*Informieren: Danke*/
-"inform_send_thankyou" = "Vielen Dank";
+"inform_send_thankyou" = "Grazie";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Sie haben Ihren positiven Test anonym in der App gemeldet.\n\nDamit helfen Sie mit, die Verbreitung des neuen Coronavirus einzudämmen.";
+"inform_send_thankyou_text" = "Hai segnalato anonimamente il tuo test positivo nell'app.\n\nCosì contribuisci a contenere la dffusione del nuovo coronavirus.";
 
 /*Informieren: Button Titel*/
-"inform_fertig_button_title" = "Schliessen";
+"inform_fertig_button_title" = "Chiudi";
 
 /*Titel auf Homescreen für Begegnungen*/
-"handshakes_title_homescreen" = "Begegnungen";
+"handshakes_title_homescreen" = "Incontri";
 
 /*Titel der About Seite*/
-"tab_theapp_title" = "Die App";
+"tab_theapp_title" = "L'app";
 
 /*Abbrechen*/
-"cancel" = "Abbrechen";
+"cancel" = "Annulla";
 
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
-"push_exposed_title" = "Neue Nachricht";
+"push_exposed_title" = "Nuovo messaggio";
 
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
-"push_exposed_text" = "Öffnen Sie die App um die Nachricht zu lesen.";
+"push_exposed_text" = "Apri l'app per leggere il messaggio.";
 
 /*Titel für Button um Ortung zu erlauben*/
-"android_button_permission_location" = "Ortung erlauben";
+"android_button_permission_location" = "Consenti localizzazione";
 
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
 
 /*Onboarding: Weiter Button Titel*/
-"onboarding_continue_button" = "Weiter";
+"onboarding_continue_button" = "Avanti";
 
 /*Onboarding: Fertig Button*/
-"onboarding_finish_button" = "Fertig";
+"onboarding_finish_button" = "Fatto";
 
 /*Unerwarteter Fehler*/
-"unexpected_error_title" = "Ein unerwarteter Fehler ist aufgetreten.";
+"unexpected_error_title" = "Si è verificato un errore imprevisto.";
 
 /*Bluetooth Fehlermeldung*/
-"bluetooth_turned_off" = "Die App funktioniert nicht, weil Bluetooth ausgeschaltet ist.";
+"bluetooth_turned_off" = "L'app non funziona perché Bluetooth è disattivato.";
 
 /*Bluetooth Permission Fehler*/
-"bluetooth_permission_turned_off" = "Die App funktioniert nicht, weil die Bluetooth Berechtigung nicht gegeben ist.";
+"bluetooth_permission_turned_off" = "L'app non funziona perché non è stata concessa l'autorizzazione Bluetooth.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothPeripheralUsageDescription" = "Begegnungen werden über Bluetooth energiesparend im Hintergrund erkannt.";
+"NSBluetoothPeripheralUsageDescription" = "Gli incontri vengono riconosciuti tramite Bluetooth in background risparmiando energia.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothAlwaysUsageDescription" = "Begegnungen werden über Bluetooth energiesparend im Hintergrund erkannt.";
+"NSBluetoothAlwaysUsageDescription" = "Gli incontri vengono riconosciuti tramite Bluetooth in background risparmiando energia.";
 
 /*Text der bei Android in der permanenten Notification immer angezeigt wird*/
-"android_foreground_service_notification_text" = "Begegnungen werden anonym auf Ihrem Gerät gespeichert.";
+"android_foreground_service_notification_text" = "Gli incontri vengono salvati anonimamente sul tuo dispositivo.";
 
 /*Inform: Titel der Code abschicken Seite*/
-"inform_code_title" = "Covidcode eingeben";
+"inform_code_title" = "Immettere il codice Covid";
 
 /*Inform: Code eingeben Subtext*/
-"inform_code_text" = "Geben Sie den Ihnen zugestellten Covidcode ein.";
+"inform_code_text" = "Immettere il codice Covid ricevuto.";
 
 /*Inform: Code eingeben kein Code Button Text*/
-"inform_code_no_code" = "Benötigen Sie Hilfe?";
+"inform_code_no_code" = "Serve aiuto?";
 
 /*Titel des Bluetooth Control*/
-"tracing_setting_title" = "Tracing";
+"tracing_setting_title" = "Tracciamento";
 
 /*Text beim Bluetooth Control*/
-"tracing_setting_text" = "Anonymes Tracing erlauben";
+"tracing_setting_text" = "Consenti tracciamento anonimo";
 
 /*Bluetooth Control: Tracking deaktiviert*/
-"bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
+"bluetooth_setting_tracking_inactive" = "Tracciamento disattivato";
 
 /*Bluetooth Setting: Titel unten*/
-"bluetooth_setting_tracking_explanation_title" = "Wie funktioniert das Tracing?";
+"bluetooth_setting_tracking_explanation_title" = "Come funziona il tracciamento?";
 
 /*Bluetooth Setting Text unten*/
-"bluetooth_setting_data_explanation_title" = "Sind meine Daten sicher?";
+"bluetooth_setting_data_explanation_title" = "I miei dati sono sicuri?";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "Die App erkennt mittels Bluetooth, genauer gesagt Bluetooth Low Energy, Begegnungen mit anderen Nutzern. Eine Begegnung wird durch die App registriert, wenn zwei Nutzer sich für eine bestimmte Zeit in der Nähe aufhalten, und nach 21 Tagen wieder gelöscht.";
+"bluetooth_setting_tracking_explanation_text1" = "L'app riconosce gli incontri con altri utenti tramite Bluetooth (Bluetooth Low Energy). Un incontro viene registrato dall'app quando due utenti stanno uno vicino all'altro per un determinato tempo, e viene nuovamente eliminato dopo 21 giorni.";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text2" = "Eine Begegnung mit einem anderen Nutzer wird nur lokal auf deinem Smartphone gespeichert.";
+"bluetooth_setting_tracking_explanation_text2" = "Un incontro con un altro utente viene salvato soltanto localmente sul tuo smartphone.";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Jede App hat eine dynamische ID, die alle 15 Minuten mittels «HMAC(SHA256)» zufällig generiert wird. So bleibt jeder Nutzer anonym.";
+"bluetooth_setting_data_explanation_text1" = "Ogni app ha un ID dinamico, generato casualmente ogni 15 minuti tramite «HMAC(SHA256)». Così ogni utente resta anonimo.";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text2" = "Wichtige Eigenschaften:\n- Kein Location-Tracking\n- Keine Analytics oder Advertising Dienste\n- Offene Architektur / Protokoll und Spezifikation inkl. SDK für iOS und Android\n- Interoperabilität (Eigene App, eigenes Backend)\n- Open Source";
+"bluetooth_setting_data_explanation_text2" = "Caratteristiche importanti:\n- nessun location tracking\n- niente servizi di analytics o di advertising\n- architettura aperta / protocollo e specifiche incl. SDK per iOS e Android\n- interoperabilità (app e backend propri)\n- open source";
 
 /*Titel auf Homescreen*/
-"reports_title_homescreen" = "Meldungen";
+"reports_title_homescreen" = "Segnalazioni";
 
 /*Keine Meldungen Titel*/
-"meldungen_no_meldungen_title" = "Keine Meldungen";
+"meldungen_no_meldungen_title" = "Nessuna segnalazione";
 
 /*Push deaktiviert Titel*/
-"push_deactivated_title" = "Mitteilungen deaktiviert";
+"push_deactivated_title" = "Segnalazioni disattivate";
 
 /*Push deaktiviert Text*/
-"push_deactivated_text" = "Ändern Sie die Einstellungen, um bei einer Meldung direkt informiert zu werden.";
+"push_deactivated_text" = "Modifica le impostazioni per essere informato direttamente di una segnalazione.";
 
 /*Titel im Meldung Detail*/
-"meldungen_meldung_title" = "Mögliche Ansteckung";
+"meldungen_meldung_title" = "Possibile contagio";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Es besteht der Verdacht auf eine mögliche Ansteckung.";
+"meldungen_meldung_text" = "Vi è il sospetto di un possibile contagio.";
 
 /*Titel ob Tracing aktiv*/
-"tracing_active_title" = "Tracing aktiv";
+"tracing_active_title" = "Tracciamento attivo";
 
 /*Text bei Tracing aktiv*/
-"tracing_active_text" = "Begegnungen werden anonym gespeichert";
+"tracing_active_text" = "Gli incontri vengono salvati anonimamente";
 
 /*Android: Fehler Text bei Tracing*/
-"android_tracing_error_title" = "Tracing nicht aktiv";
+"android_tracing_error_title" = "Tracciamento non attivo";
 
 /*Android Meldungen Detail: Gemeldet Titel*/
-"android_meldungen_infected_title" = "Infektion gemeldet";
+"android_meldungen_infected_title" = "Infezione segnalata";
 
 /*Android: Meldungen Text*/
-"android_meldungen_infected_text" = "Vielen Dank! Nutzer denen du begegnet bist, werden anonym informiert und können sich isolieren.";
+"android_meldungen_infected_text" = "Grazie mille! Gli utenti che hai incontrato vengono informati anonimamente e possono mettersi in quarantena.";
 
 /*Fehlertitel mit Foreground Service Notification*/
-"android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
+"android_foreground_service_notification_errors" = "Attualmente l'app non è in grado di funzionare correttamente:";
 
 /*Fehler Beschreibung*/
-"android_foreground_service_notification_error_network_sync" = "beim Laden der Daten ist ein Fehler aufgetreten";
+"android_foreground_service_notification_error_network_sync" = "Si è verificato un errore durante il caricamento dei dati.";
 
 /*Fehler Beschreibung*/
-"android_foreground_service_notification_error_location_permission" = "Damit die App Bluetooth nützen kann, müssen Sie die Verwendung des Standorts zulassen. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
+"android_foreground_service_notification_error_location_permission" = "Per permettere all'app di utilizzare Bluetooth occorre consentire l'uso della posizione. L'app non conosce mai la posizione dell'utente.";
 
 /*Fehler Beschreibung Akku*/
-"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
+"android_foreground_service_notification_error_battery_optimization" = "Per un funzionamento preciso del tracciamento, l'app deve essere eseguita anche in background. Il consumo della batteria aumenta solo leggermente.";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_title" = "Vorschau Version";
+"preview_warning_title" = "Versione anteprima";
 
 /*Text der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_text" = "Diese App dient als Vorschau, um die DP-3T Implementation zu zeigen. Es ist kein produktiv verwendbarer COVID-19 Tracer.";
+"preview_warning_text" = "Questa app funge da anteprima per mostrare l'implementazione DP-3T. Non è un'app per il tracciamento della COVID-19 utilizzabile produttivamente.";
 
 /*Debug: Label auf dem Button, der zum Debug-Screen führt*/
-"debug_settings_title" = "Debug Einstellungen";
+"debug_settings_title" = "Impostazioni di debug";
 
 /*Debug: Titel für die Debug-Einstellungen zur Status-Überschreibung*/
-"debug_state_setting_title" = "App-Zustand überschreiben";
+"debug_state_setting_title" = "Sovrascrivi lo stato dell'app";
 
 /*Debug: Erklärungstext für die Debug-Einstellungen zur Status-Überschreibung*/
-"debug_state_setting_text" = "Diese Einstellung überschreibt den visuellen Zustand der App. Die Tracing-Funktionalität wird davon nicht beeinflusst.";
+"debug_state_setting_text" = "Questa impostazione sovrascrive lo stato visuale dell'app. La funzionalità di tracciamento non ne viene influenzata.";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Keine*/
-"debug_state_setting_option_none" = "Keine Überschreibung";
+"debug_state_setting_option_none" = "Non sovrascrivere";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Gesund*/
-"debug_state_setting_option_ok" = "Gesund";
+"debug_state_setting_option_ok" = "Sano";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_exposed" = "Positiv getesteter Kontakt";
+"debug_state_setting_option_exposed" = "Contatto positivo al test";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Selbst positiv getestet*/
-"debug_state_setting_option_infected" = "Selbst positiv gemeldet";
+"debug_state_setting_option_infected" = "Utente autosegnalatosi positivo";
 
 /*Debug: Titel für die Debug-Info zum Tracing-Status*/
-"debug_sdk_state_title" = "SDK Status";
+"debug_sdk_state_title" = "Stato SDK";
 
 /*Debug: Erklärungstext für die Debug-Info zum Tracing-Status*/
-"debug_sdk_state_text" = "Der aktuelle Zustand des DP-3T SDKs.";
+"debug_sdk_state_text" = "Stato attuale dell'SDK DP-3T.";
 
 /*Debug: Bezeichnung für den letzen sync-Zeitpunkt*/
-"debug_sdk_state_last_synced" = "Letzte Synchronisation: ";
+"debug_sdk_state_last_synced" = "Ultima sincronizzazione: ";
 
 /*Debug: Bezeichnung für den Fall, bei dem der User selber als positiv getestet gemeldet wurde*/
-"debug_sdk_state_self_exposed" = "Selbst gemeldet: ";
+"debug_sdk_state_self_exposed" = "Autosegnalato: ";
 
 /*Debug: Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde*/
-"debug_sdk_state_contact_exposed" = "Kontakt gemeldet: ";
+"debug_sdk_state_contact_exposed" = "Contatto segnalato: ";
 
 /*Debug: Bezeichnung für die Anzahl bluetooth-handshakes, die ausgeführt wurden*/
-"debug_sdk_state_number_handshakes" = "Anzahl handshakes: ";
+"debug_sdk_state_number_handshakes" = "Numero di handshake: ";
 
 /*Debug-Status-Bezeichnung für boleschen Wert 'true'*/
-"debug_sdk_state_boolean_true" = "ja";
+"debug_sdk_state_boolean_true" = "sì";
 
 /*Debug-Status-Bezeichnung für boleschen Wert 'false'*/
-"debug_sdk_state_boolean_false" = "nein";
+"debug_sdk_state_boolean_false" = "no";
 
 /*Debug: Button-Text für das Zurücksetzen des lokalen SDK Zustandes*/
-"debug_sdk_button_reset" = "SDK zurücksetzen";
+"debug_sdk_button_reset" = "Reimpostazione SDK";
 
 /*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
-"android_debug_sdk_reset_text" = "Der lokale Stand des DP-3T SDK wurde zurückgesetzt.";
+"android_debug_sdk_reset_text" = "Lo stato locale dell'SDK DP-3T è stato reimpostato.";
 
 /*Tab-Titel*/
-"tab_tracing_title" = "Tracing";
+"tab_tracing_title" = "Tracciamento";
 
 /*Titel auf Homescreen für Was tun Section*/
-"whattodo_title_symptoms" = "Krankheitssymptomen";
+"whattodo_title_symptoms" = "ho sintomi di malattia";
 
 /*Subtitel auf Homescreen für Was Tun Section*/
-"whattodo_subtitle_symptoms" = "Was tun bei...";
+"whattodo_subtitle_symptoms" = "Cosa faccio se...";
 
 /*Titel auf Homescreen bei Was tun Section*/
-"whattodo_title_positivetest" = "positiven Testresultat";
+"whattodo_title_positivetest" = "il risultato del test è positivo";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Was tun bei einem...";
+"whattodo_subtitle_positivetest" = "Cosa faccio se...";
 
 /*Informieren Detail: Subtitel*/
-"inform_detail_subtitle" = "Was tun bei einem...";
+"inform_detail_subtitle" = "Cosa faccio se...";
 
 /*Informieren Detail: Titel*/
-"inform_detail_title" = "positiven Test?";
+"inform_detail_title" = "il test è positivo?";
 
 /*Inform Detail: Weisse Box Subtitel*/
-"inform_detail_box_subtitle" = "Mit dem Covidcode...";
+"inform_detail_box_subtitle" = "Con il codice Covid...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Anonym melden";
+"inform_detail_box_title" = "Segnala anonimamente";
 
 /*Inform Detail Weisse Box Button*/
-"inform_detail_box_button" = "Covidcode eingeben";
+"inform_detail_box_button" = "Immetti il codice Covid";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Mit dem Ihnen zugestellten Covidcode können Sie den Test anonym in der App melden.";
+"inform_detail_box_text" = "Con il codice Covid che hai ricevuto puoi segnalare anonimamente il test nell'app.";
 
 /*Symptome Detail Subtitel*/
-"symptom_detail_subtitle" = "Was tun wenn ich...";
+"symptom_detail_subtitle" = "Cosa faccio se...";
 
 /*Symptom Detail Titel*/
-"symptom_detail_title" = "mich krank fühle?";
+"symptom_detail_title" = "mi sento malato?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Bei Symptomen...";
+"symptom_detail_box_subtitle" = "In caso di sintomi...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Arzt/Ärztin kontaktieren";
+"symptom_detail_box_title" = "Contatta il medico";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Zum Coronavirus-Check";
+"symptom_detail_box_button" = "All'autovalutazione sul coronavirus";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen die auf das neue Coronavirus hindeuten Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
+"symptom_detail_box_text" = "In caso di sintomi che fanno pensare al nuovo coronavirus, contatta il tuo medico o la guardia medica.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
-"inform_detail_navigation_title" = "Positiv getestet";
+"inform_detail_navigation_title" = "Positivo al test";
 
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
-"symptom_detail_navigation_title" = "Symptome";
-"tracing_turned_off_title" = "Tracing deaktiviert";
-"tracing_turned_off_text" = "Aktivieren Sie das Tracing, damit die App funktioniert.";
-"bluetooth_turned_off_title" = "Bluetooth Off";
-"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das anonyme Tracing funktioniert.";
-"bluetooth_turn_on_button_title" = "Bluetooth einschalten";
-"bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
-"bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das anonyme Tracing funktioniert.";
+"symptom_detail_navigation_title" = "Sintomi";
+"tracing_turned_off_title" = "Tracciamento disattivato";
+"tracing_turned_off_text" = "Attiva il tracciamento per far funzionare l'app.";
+"bluetooth_turned_off_title" = "Bluetooth disattivato";
+"bluetooth_turned_off_text" = "Attiva Bluetooth sul tuo dispositivo per far funzionare il tracciamento anonimo.";
+"bluetooth_turn_on_button_title" = "Attiva Bluetooth";
+"bluetooth_permission_error_title" = "Uso di Bluetooth negato";
+"bluetooth_permission_error_text" = "Consenti l'uso di Bluetooth sul tuo dispositivo per far funzionare il tracciamento anonimo.";
 
 /*URL zum Corona Check*/
-"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
-"push_open_settings_button" = "Einstellungen ändern";
+"symptom_detail_corona_check_url" = "https://ufsp-coronavirus.ch/check/";
+"push_open_settings_button" = "Modifica impostazioni";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
-"meldungen_no_meldungen_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet";
+"meldungen_no_meldungen_subtitle" = "Non è stato segnalato nessun possibile contagio";
 
 /*Keine Meldungen Weisse Box Titel*/
-"no_meldungen_box_title" = "Schützen Sie sich";
+"no_meldungen_box_title" = "Proteggiti";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Sie schützen andere";
+"no_meldungen_box_subtitle" = "Proteggi gli altri";
 
 /*Keine Meldungen Weisse Box Text*/
-"no_meldungen_box_text" = "Halten Sie sich an die geltenden BAG Verhaltens- und Hygieneempfehlungen.";
+"no_meldungen_box_text" = "Segui le raccomandazioni di igiene e di comportamento vigenti dell'UFSP.";
 
 /*Meldung Detail: Positiv Getestet Titel*/
-"meldung_detail_positive_tested_title" = "Positiv getestet";
+"meldung_detail_positive_tested_title" = "Positivo al test";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_detail_positive_tested_subtitle" = "Sei risultato positivo al test del nuovo coronavirus.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
-"meldung_detail_positive_test_box_subtitle" = "Was muss ich tun?";
+"meldung_detail_positive_test_box_subtitle" = "Cosa devo fare?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Selbst-Isolation";
+"meldung_detail_positive_test_box_title" = "Auto-isolamento";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Selbst-Isolation";
-"tracing_ended_title" = "Tracing beendet";
-"tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
-"exposed_info_contact_hotline" = "Kontaktieren Sie die";
-"meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
-"meldung_homescreen_positive_info_line2" = "Anweisungen zur Selbstisolation";
+"meldung_detail_positive_test_box_text" = "Segui le istruzioni sull'auto-isolamento del centro che ha effettuato il test.";
+"tracing_ended_title" = "Tracciamento terminato";
+"tracing_ended_text" = "Gli incontri non vengono più salvati.";
+"exposed_info_contact_hotline" = "Contatta la";
+"meldung_homescreen_positive_info_line1" = "Segui le";
+"meldung_homescreen_positive_info_line2" = "istruzioni sull'auto-isolamento";
 
 /*Meldung Detail Exposed Neue Meldung*/
-"meldung_detail_exposed_new_meldung" = "Neue Meldung";
+"meldung_detail_exposed_new_meldung" = "Nuova segnalazione";
 
 /*Meldung Detail Exposed Titel*/
-"meldung_detail_exposed_title" = "Mögliche Ansteckung";
-"meldung_homescreen_positiv_title" = "Positiv getestet";
+"meldung_detail_exposed_title" = "Possibile contagio";
+"meldung_homescreen_positiv_title" = "Positivo al test";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Es besteht der Verdacht auf eine mögliche Ansteckung.";
-"meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_detail_exposed_subtitle" = "Vi è il sospetto di un possibile contagio.";
+"meldung_homescreen_positiv_text" = "Sei risultato positivo al test del nuovo coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
-"reset_onboarding" = "Onboarding zurücksetzen";
+"reset_onboarding" = "Reimposta onboarding";
 
 /*Heute*/
-"date_today" = "heute";
+"date_today" = "oggi";
 
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
-"date_days_ago" = "vor {COUNT} Tagen";
+"date_days_ago" = "{COUNT} giorni fa";
 
 /*Meldungen Detail: Subtitel Weisse Box*/
-"meldungen_detail_whattodo" = "Was soll ich tun?";
+"meldungen_detail_whattodo" = "Cosa devo fare?";
 
 /*Meldungen Detail: Weisse Box Titel*/
-"meldungen_detail_call" = "Rufen Sie uns an";
+"meldungen_detail_call" = "Telefonaci";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline Coronavirus\n(täglich, 24h)";
+"meldungen_detail_call_text" = "Infoline coronavirus\n(tutti i giorni, 24 ore al giorno)";
 
 /*Meldungen Detail Weisse Box Button*/
-"meldungen_detail_call_button" = "Jetzt anrufen";
+"meldungen_detail_call_button" = "Telefona ora";
 
 /*Meldungen Detail Weisse Box Titel der Erklärungen*/
-"meldungen_detail_explanation_title" = "Vorsicht!";
+"meldungen_detail_explanation_title" = "Attenzione!";
 
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
-"meldungen_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
+"meldungen_detail_explanation_text1" = "Potresti essere contagioso senza rendertene conto.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld, indem Sie in den nächsten 10 Tagen Kontakte vermeiden.";
+"meldungen_detail_explanation_text2" = "Proteggi la tua famiglia e i tuoi amici e conoscenti. Evita i contatti per un periodo fino a 10 giorni da un possibile contagio. Ne restano ancora 6.";
 
 /*Meldungen Detail Weisse Box Titel*/
-"meldungen_detail_guard_others" = "Schützen Sie andere";
+"meldungen_detail_guard_others" = "Proteggi gli altri";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline Coronavirus\n+41 58 387 77 78";
+"meldungen_detail_guard_text" = "Per domande:\nInfoline coronavirus\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
-"meldungen_detail_call_again_button" = "Erneut anrufen";
+"meldungen_detail_call_again_button" = "Telefona di nuovo";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
+"meldungen_detail_call_last_call" = "Ultima telefonata: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
-"app_subtitle" = "Gemeinsam gegen das Virus";
+"app_subtitle" = "Insieme contro il virus";
 
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "Das Prinzip";
+"onboarding_prinzip_heading" = "Il principio";
 
 /*Onboarding: Titel*/
-"onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
+"onboarding_prinzip_title" = "Anticipare il virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der dp3t-app können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Con l'app dp3t-app tutti possono contribuire a contenere la diffusione del nuovo coronavirus.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
+"onboarding_prinzip_text2" = "L'app informa in caso di sospetto. Così è possibile interrompere le catene di infezione.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
+"onboarding_privacy_title" = "Protezione della sfera privata\ngarantita";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Die Kommunikation zwischen den Geräten findet anonym statt.";
+"onboarding_privacy_text1" = "La comunicazione tra i dispositivi avviene in forma anonima.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
+"onboarding_privacy_text2" = "Tutti i dati vengono criptati e salvati soltanto localmente sullo smartphone.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
+"onboarding_begegnungen_heading" = "Cosa fa l'app?";
 
 /*Onboarding Begegnungen: Titel*/
-"onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
+"onboarding_begegnungen_title" = "Riconosce gli incontri\ngrazie a Bluetooth";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander sind.";
+"onboarding_begegnungen_text1" = "L'app riconosce automaticamente quando due utenti sono stati uno vicino all'altro per un certo tempo.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Dafür wird nur Bluetooth Low Energy (BLE) verwendet. Keine GPS-Daten.";
+"onboarding_begegnungen_text2" = "L'app utilizza soltanto Bluetooth Low Energy (BLE), non i dati GPS.";
 
 /*Onboarding Meldung: Text oben*/
-"onboarding_meldung_heading" = "Was macht die App?";
+"onboarding_meldung_heading" = "Cosa fa l'app?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
+"onboarding_meldung_title" = "Segnalazione in caso di\npossibile contagio";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Die App informiert Sie bei einem Verdacht auf eine mögliche Ansteckung.";
+"onboarding_meldung_text1" = "L'app ti informa in caso di sospetto di contagio.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Mit dem richtigen Verhalten können Sie sich und andere schützen.";
+"onboarding_meldung_text2" = "Con il comportamento giusto puoi proteggere te stesso e gli altri.";
 
 /*Onboarding Bluetooth: Titel*/
-"onboarding_bluetooth_title" = "Bluetooth erlauben";
+"onboarding_bluetooth_title" = "Consenti Bluetooth";
 
 /*Onboarding Bluetooth: Text*/
-"onboarding_bluetooth_text" = "Um die App nutzen zu können, müssen Sie Bluetooth erlauben.";
+"onboarding_bluetooth_text" = "Per poter utilizzare l'app devi consentire Bluetooth.";
 
 /*Onboarding Bluetooth: Button*/
-"onboarding_bluetooth_button" = "Bluetooth erlauben";
+"onboarding_bluetooth_button" = "Consenti Bluetooth";
 
 /*Onboarding: Untetitel unten*/
-"onboarding_good_to_know" = "Gut zu wissen";
+"onboarding_good_to_know" = "Buono a sapersi:";
 
 /*Onboarding Bluetooth: Titel unten*/
-"onboarding_bluetooth_gtk_title1" = "Sie bleiben anonym";
+"onboarding_bluetooth_gtk_title1" = "L'anonimato è garantito";
 
 /*Onboarding Bluetooth: Text unten*/
-"onboarding_bluetooth_gtk_text1" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
+"onboarding_bluetooth_gtk_text1" = "Bluetooth non permette la visualizzazione di dati personali.";
 
 /*Onboarding Bluetooth: Titel unten*/
-"onboarding_bluetooth_gtk_title2" = "Leicht erhöhte Batterienutzung";
+"onboarding_bluetooth_gtk_title2" = "Il consumo della batteria aumenta leggermente";
 
 /*Onboarding Bluetooth: Text unten*/
-"onboarding_bluetooth_gtk_text2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
+"onboarding_bluetooth_gtk_text2" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
 
 /*Onboarding Mitteilungen: Titel*/
-"onboarding_push_title" = "Mitteilungen erlauben";
+"onboarding_push_title" = "Consenti messaggi";
 
 /*Onboarding Mitteilungen: Text*/
-"onboarding_push_text" = "Damit Sie von der App informiert werden, müssen Sie Mitteilungen erlauben.";
+"onboarding_push_text" = "Per poter essere informato dall'app, devi consentire i messaggi.";
 
 /*Onboarding Mitteilungen: Button*/
-"onboarding_push_button" = "Mitteilungen erlauben";
+"onboarding_push_button" = "Consenti messaggi";
 
 /*Onboarding Mitteilungen: Titel Unten*/
-"onboarding_push_gtk_title1" = "Sofort informiert";
+"onboarding_push_gtk_title1" = "Informazioni in tempo reale";
 
 /*Onboarding Mitteilungen: Text unten*/
-"onboarding_push_gtk_text1" = "Bei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
+"onboarding_push_gtk_text1" = "Un messaggio sulla schermata di blocco ti informa in caso di possibile contagio.";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_title" = "Gute Besserung";
+"inform_send_getwell_title" = "Buona guarigione";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die Anweisungen zur Selbst-Isolation.";
+"inform_send_getwell_text" = "Guarisci presto.\n\nSegui le istruzioni sull'auto-isolamento.";
 
 /*Titel auf dem letzen Onboarding Screen*/
-"onboarding_go_title" = "Die App ist eingerichtet";
+"onboarding_go_title" = "L'app è installata";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Vielen Dank dass Sie mithelfen, sich und andere zu schützen.";
+"onboarding_go_text" = "Grazie che ci aiuti a proteggere te e gli altri.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
-"onboarding_go_button" = "Starten";
+"onboarding_go_button" = "Avvia";
 
 /*Titel auf Location-Permission Screen*/
-"android_onboarding_bt_permission_title" = "Standort erlauben für Bluetooth";
+"android_onboarding_bt_permission_title" = "Consenti posizione per Bluetooth";
 
 /*Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie die Standort-Funktion erlauben.";
+"android_onboarding_bt_permission_text" = "Affinché l'app funzioni e abbia accesso a Bluetooth, devi consentire la posizione.";
 
 /*Button-Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_button" = "Zulassen";
+"android_onboarding_bt_permission_button" = "Consenti";
 
 /*Label für Info-Section*/
-"android_onboarding_bt_permission_goodtoknow" = "Gut zu wissen";
+"android_onboarding_bt_permission_goodtoknow" = "Buono a sapersi:";
 
 /*Info-Titel 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_title" = "Ihr Standort bleibt geheim";
+"android_onboarding_bt_permission_info_1_title" = "La tua posizione rimane segreta";
 
 /*Info-Text 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_text" = "Bei Android-Geräten ist die Freigabe von Bluetooth an die Freigabe des Standorts gekoppelt. Deshalb muss die Standort-Funktion aktiviert werden, auch wenn die App zu keinem Zeitpunkt auf Ihren Standort zugreift.";
+"android_onboarding_bt_permission_info_1_text" = "Nei dispositivi Android l'autorizzazione di Bluetooth è associata all'autorizzazione della posizione. Per questo occorre attivare la relativa funzione, anche se l'app non accede mai alla posizione dell'utente.";
 
 /*Info-Titel 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_title" = "Sie bleiben anonym";
+"android_onboarding_bt_permission_info_2_title" = "L'anonimato è garantito";
 
 /*Info-Text 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_text" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
+"android_onboarding_bt_permission_info_2_text" = "Bluetooth non permette la visualizzazione di dati personali.";
 
 /*Titel auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
+"android_onboarding_battery_permission_title" = "Ignora l'ottimizzazione della batteria";
 
 /*Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
+"android_onboarding_battery_permission_text" = "Per poter riconoscere sempre gli incontri, l'ottimizzazione della batteria deve essere disattivata per questa app.";
 
 /*Button-Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_button" = "Zulassen";
+"android_onboarding_battery_permission_button" = "Consenti";
 
 /*Info-Titel 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
+"android_onboarding_battery_permission_info_1_title" = "Solo per questa app";
 
 /*Info-Text 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Die Akku-Optimierung kann für einzelne Apps ausgeschaltet werden, damit dies möglich ist.";
+"android_onboarding_battery_permission_info_1_text" = "Per funzionare, l'app deve poter essere eseguita anche in background. Affinché ciò sia possibile, l'ottimizzazione della batteria può essere disattivata per le singole app.";
 
 /*Info-Titel 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
+"android_onboarding_battery_permission_info_2_title" = "Il consumo della batteria aumenta leggermente";
 
 /*Info-Text 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
+"android_onboarding_battery_permission_info_2_text" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
 
 /*Button-Text auf Location-Permission Screen - Zugelassen*/
-"android_onboarding_bt_permission_button_allowed" = "Zugelassen";
+"android_onboarding_bt_permission_button_allowed" = "Autorizzata";
 
 /*Button-Text auf Battery-Permission Screen - Deaktiviert*/
-"android_onboarding_battery_permission_button_deactivated" = "Deaktiviert";
+"android_onboarding_battery_permission_button_deactivated" = "Disattivata";
 
 /*Homescreen: Titel bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
+"homescreen_meldung_data_outdated_title" = "Non ci sono dati aggiornati";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Gerät mit dem Internet verbunden ist.";
+"homescreen_meldung_data_outdated_text" = "Da qualche tempo non è stato possibile sincronizzare le segnalazioni. Assicurati che il tuo dispositivo sia connesso a Internet.";
 
 /*Homescreen: Button Titel*/
-"homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";
+"homescreen_meldung_data_outdated_retry_button" = "Riprova";
 
 /*Titel Fehlermeldung für ungültigen Code*/
-"inform_code_invalid_title" = "Code ungültig";
+"inform_code_invalid_title" = "Codice non valido";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Bei Fragen: Infoline Coronavirus\n+41 58 463 00 00";
+"inform_code_invalid_subtitle" = "Per domande: Infoline coronavirus\n+41 58 463 00 00";
 
 /*Datum: Vor 1 Tag*/
-"date_one_day_ago" = "vor 1 Tag";
+"date_one_day_ago" = "1 giorno fa";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Erneuter Verdacht";
+"meldung_detail_new_contact_title" = "Nuovo sospetto";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "An diesem Tag war eine Ansteckung ebenfalls möglich.";
+"meldung_detail_new_contact_subtitle" = "Potrebbe essersi verificato un contagio anche in questa data.";
 
 /*Fehler mit Uhrzeit Titel*/
-"time_inconsistency_title" = "Uhrzeit Fehler";
+"time_inconsistency_title" = "Errore nell'impostazione dell'ora";
 
 /*Fehler mit Uhrzeit Text*/
-"time_inconsistency_text" = "Die Uhrzeit muss richtig eingestellt sein, damit Tracing funktioniert.";
+"time_inconsistency_text" = "Affinché il tracciamento funzioni l'ora deve essere impostata correttamente.";
 
 /*Begegnungen: Neustart Titel*/
-"begegnungen_restart_error_title" = "Neustart erforderlich";
+"begegnungen_restart_error_title" = "Riavvio necessario";
 
 /*Begegnungen: Neustart Text*/
-"begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Gerät neu.";
+"begegnungen_restart_error_text" = "Si è verificato un errore imprevisto. Riavvia il dispositivo.";
 
 /*Fehler Titel für Hintergrund-Fehler*/
-"meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
+"meldungen_background_error_title" = "Aggiornamento in background disattivato";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+"meldungen_background_error_text" = "Modifica le impostazioni per essere informato anche al di fuori dell'app in caso di nuova segnalazione.";
 
 /*Button Titel für Hintergrundfehler beheben*/
-"meldungen_background_error_button" = "Einstellungen ändern";
+"meldungen_background_error_button" = "Modifica impostazioni";
 
 /*Default message for force update*/
-"force_update_text" = "Laden Sie die neue Version der App, damit Tracing funktioniert.";
+"force_update_text" = "Scarica la nuova versione dell'app per permettere il tracciamento.";
 
 /*Ignorieren Button Titel*/
-"meldung_in_app_alert_ignore_button" = "Ignorieren";
+"meldung_in_app_alert_ignore_button" = "Ignora";
 
 /*Button Titel*/
-"meldung_in_app_alert_accept_button" = "Zu den Informationen";
+"meldung_in_app_alert_accept_button" = "Alle informazioni";
 
 /*Meldungen Detail: Button Titel*/
-"meldungen_detail_call_again" = "Rufen Sie erneut an";
+"meldungen_detail_call_again" = "Telefona di nuovo";
 
 /*Fehlernachricht für Netzwerkfehler*/
-"network_error" = "Bitte überprüfen Sie Ihre Internet Verbindung.";
+"network_error" = "Verifica la connessione a Internet.";
 
 /*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
-"unexpected_error_with_retry" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
+"unexpected_error_with_retry" = "Si è verificato un errore imprevisto. Riprova.";
 
 /*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
-"invalid_response_auth_code" = "Aufgrund eines System-Fehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";
+"invalid_response_auth_code" = "A causa di un errore di sistema non è stato possibile utilizzare correttamente il codice di attivazione. Telefona alla hotline.";
 
 /*Titel für Fehlermeldung mit Standort*/
-"error_location_permission_title" = "Standort Verwendung abgelehnt";
+"error_location_permission_title" = "Uso della posizione negato";
 
 /*Button für Fehlermeldung mit Standort*/
-"error_location_permission_button" = "Zulassen";
+"error_location_permission_button" = "Consenti";
 
 /*VoiceOver: Datum*/
-"accessibility_date" = "Datum";
+"accessibility_date" = "Data";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_1nd" = "Erstes";
+"accessibility_1nd" = "Primo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_2nd" = "Zweites";
+"accessibility_2nd" = "Secondo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_3nd" = "Drittes";
+"accessibility_3nd" = "Terzo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_4nd" = "Viertes";
+"accessibility_4nd" = "Quarto";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_5nd" = "Fünftes";
+"accessibility_5nd" = "Quinto";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_6nd" = "Sechstes";
+"accessibility_6nd" = "Sesto";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_7nd" = "Siebtes";
+"accessibility_7nd" = "Settimo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_8nd" = "Achtes";
+"accessibility_8nd" = "Ottavo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_9nd" = "Neuntes";
+"accessibility_9nd" = "Nono";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_10nd" = "Zehntes";
+"accessibility_10nd" = "Decimo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_11nd" = "Elftes";
+"accessibility_11nd" = "Undicesimo";
 
 /*Voiceover Codeeingabe: Nummerierte Textfelder*/
-"accessibility_12nd" = "Zwölftes";
+"accessibility_12nd" = "Dodicesimo";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
-"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde";
+"accessibility_code_button_disabled_hint" = "Impossibile premere: il codice immesso non è completo";
 
 /*Fehler Titel: Akkuverbrauch aktiviert*/
-"error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
+"error_battery_optimization_title" = "Ottimizzazione della batteria attivata";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
+"foreground_service_notification_error_location_service" = "Attiva le informazioni sulla posizione per permettere all'app di utilizzare Bluetooth. L'app non conosce mai la posizione dell'utente.";
 
 /*Location Services ausgeschaltet Titel*/
-"error_location_services_title" = "Standort ausgeschaltet";
+"error_location_services_title" = "Posizione disattivata";
 
 /*Location Services ausgeschaltet Button*/
-"error_location_services_button" = "Standort einschalten";
+"error_location_services_button" = "Attiva la posizione";
 
 /*Information Button in the navigation bar*/
-"accessibility_info_button" = "Information";
+"accessibility_info_button" = "Informazione";
 
 /*Debug: Anzahl Kontakte Titel*/
-"debug_sdk_state_number_contacts" = "Anzahl Kontakte: ";
+"debug_sdk_state_number_contacts" = "Numero di contatti: ";
 
 /*Synchronisations-Fehler Titel*/
-"sync_warning_notification_title" = "Es ist ein Fehler aufgetreten";
+"sync_warning_notification_title" = "Si è verificato un errore";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "Öffnen Sie die App, um den Fehler zu beheben.";
+"sync_warning_notification_text" = "Apri l'app per risolvere l'errore.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
-"meldung_animation_continue_button" = "Weiter";
+"meldung_animation_continue_button" = "Avanti";
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
 
 /*Synchronisations-Fehler Titel*/
-"sync_error_title" = "Unerwarteter Fehler";
+"sync_error_title" = "Errore imprevisto";
 
 /*Synchronisations-Fehler Text*/
-"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
+"sync_error_text" = "Si è verificato un errore nella sincronizzazione.";
 
 /*Synchronisations-Fehler Button Titel*/
-"sync_error_button" = "Erneut versuchen";
+"sync_error_button" = "Riprova";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
+"begegnung_detail_faq1_title" = "Cosa significa incontro?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für mehrere Minuten nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
+"begegnung_detail_faq1_text" = "Se due telefoni con l'app si trovano uno vicino all'altro per diversi minuti, l'incontro viene salvato nel dispositivo.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
+"begegnung_detail_faq2_title" = "I miei dati sono sicuri?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "Bei einer Begegnung wird nur ein verschlüsselter Code ausgetauscht.\n\nDieser wird lokal auf den Geräten gespeichert und nach 21 Tagen wieder gelöscht.";
+"begegnung_detail_faq2_text" = "In caso di incontro viene scambiato soltanto un codice criptato.\n\nIl codice viene salvato localmente sui dispositivi e nuovamente eliminato dopo 21 giorni.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
+"begegnungen_detail_faq3_title" = "Bluetooth deve sempre essere attivato?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
+"begegnungen_detail_faq3_text" = "Per poter riconoscere gli incontri, Bluetooth deve sempre essere attivato.\n\nIl consumo della batteria aumenta soltanto leggermente.";
 
 /*FAQ Button Titel*/
-"faq_button_title" = "Häufige Fragen";
+"faq_button_title" = "Domande frequenti";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq1_title" = "Was sind Meldungen?";
+"meldungen_nomeldungen_faq1_title" = "Cosa sono le segnalazioni?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Die App kontrolliert regelmässig, ob bei Ihnen gespeicherte Begegnungen positiv getestet wurden.\n\nBei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
+"meldungen_nomeldungen_faq1_text" = "L'app controlla regolarmente se gli incontri salvati sul tuo dispositivo sono risultati positivi al test.\n\nIn caso di possibile contagio viene visualizzato un messaggio sulla schermata di blocco.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
+"meldungen_nomeldungen_faq2_titel" = "Cosa significa possibile contagio?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist werden sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "L'app non solo controlla se ci sono stati incontri con persone infette, ma anche a quale distanza e per quanto tempo.\n\nL'utente viene informato soltanto se il sospetto di un contagio è sufficientemente fondato.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
+"meldungen_detail_explanation_text3" = "Ai primi sintomi contatta il tuo medico.";
 
 /*Meldungen: Meldung Weisse Box Link Titel*/
-"meldungen_explanation_link_title" = "Anweisungen zur Selbst-Isolation";
+"meldungen_explanation_link_title" = "Istruzioni per l'auto-quarantena";
 
 /*Meldungen: Meldung Weisse Box Link URL*/
-"meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
+"meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/it/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
 
 /*Meldungen: Meldungen FAQ*/
-"meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
+"meldungen_meldungen_faq1_title" = "Devo telefonare?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
+"meldungen_meldungen_faq1_text" = "È importante telefonare a ogni nuova segnalazione.\n\nL'utente resta anonimo. Non vengono registrati dati personali.";
 
 /*Meldungen Detail: Anruf Titel*/
-"meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
+"meldungen_detail_call_thankyou_title" = "Grazie per la tua partecipazione";
 
 /*Meldungen Detail Anruf Danke Subtitel*/
-"meldungen_detail_call_thankyou_subtitle" = "Sie schützen andere";
+"meldungen_detail_call_thankyou_subtitle" = "Proteggi gli altri";
 
 /*Meldungen Detail Keine Meldungen Titel*/
-"meldungen_detail_no_meldungen_title" = "Keine neuen Meldungen";
+"meldungen_detail_no_meldungen_title" = "Nessuna nuova segnalazione";
 
 /*Meldungen Detail Keine Meldung Subtitel*/
-"meldungen_detail_no_meldungen_subtitle" = "Die letzte mögliche Ansteckung fand vor mehr als 10 Tagen statt.";
+"meldungen_detail_no_meldungen_subtitle" = "L'ultimo possibile contagio è avvenuto più di 10 giorni fa.";
 
 /*Meldungen Detail: Keine Meldungen Button*/
-"meldungen_detail_no_meldungen_continue" = "Weiter";
+"meldungen_detail_no_meldungen_continue" = "Avanti";
 
 /*Meldungen Detail: Keine Meldungen Hinweis*/
-"meldungen_detail_no_meldungen_hinweis" = "Hinweis";
+"meldungen_detail_no_meldungen_hinweis" = "Avvertenza";
 
 /*Keine Meldungen Link in weisser Box Titel*/
-"no_meldungen_box_link" = "So schützen wir uns";
+"no_meldungen_box_link" = "Così ci proteggiamo";
 
 /*Keine Meldungen Weisse Box Link URL*/
-"no_meldungen_box_url" = "https://www.bag-coronavirus.ch";
+"no_meldungen_box_url" = "https://www.ufsp-coronavirus.ch";
 
 /*Informieren Detail: FAQ Titel*/
-"inform_detail_faq1_title" = "Was ist ein Covidcode?";
+"inform_detail_faq1_title" = "Cos'è un codice Covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
+"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.";
 
 /*Inform Detail: FAQ Titel*/
-"inform_detail_faq2_title" = "Wie bleibe ich anonym?";
+"inform_detail_faq2_title" = "Com'è tutelato il mio anonimato?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet. Keine persönlichen Daten.\n\nDamit können andere dp3t-app App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
+"inform_detail_faq2_text" = "Vengono inviate soltanto le chiavi temporanee della tua app, non i tuoi dati personali.\n\nCon esse gli altri utenti dell'app dp3t-app possono controllare se nei giorni scorsi si sono incontrati con te.";
 
 /*Informieren: Titel Tracing beendet*/
-"inform_send_endtracing_title" = "Tracing beendet";
+"inform_send_endtracing_title" = "Tracciamento terminato";
 
 /*Informieren: Text Tracing beendet*/
-"inform_send_endtracing_text" = "Nach einem positiven Test wird das Tracing automatisch beendet.";
+"inform_send_endtracing_text" = "Dopo un test positivo il tracciamento viene terminato automaticamente.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
 
 /*URL für Häufige Fragen Button*/
-"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+"faq_button_url" = "https://www.bag.admin.ch/bag/it/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
 
 /*Informieren Flow: Titel erster Screen*/
-"inform_code_intro_title" = "Wichtiger Hinweis";
+"inform_code_intro_title" = "Avvertenza importante";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+"inform_code_intro_text" = "Anche se non vengono inviati dati personali, è possibile che qualcuno possa ricordarsi dell'incontro sulla base della data in cui è avvenuto.";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "Verstanden";
+"inform_code_intro_button" = "Capito";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Unsicher bei Symptomen?";
+"symptom_faq1_title" = "Incertezza in caso di sintomi?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG für eine Handlungsempfehlung.";
+"symptom_faq1_text" = "Hai dei sintomi e non sai bene come comportarti? \n\nRispondi alle domande dell'autovalutazione sul coronavirus dell'UFSP per ricevere una raccomandazione pratica.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
+"meldungen_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
+"meldungen_positive_tested_faq1_text" = "Dopo un test positivo il tracciamento nell'app viene terminato automaticamente.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "it";
 
 /*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
+"meldungen_meldungen_faq2_title" = "Cosa accade dopo 10 giorni?";
 
 /*Meldungen: Meldungen FAQ Tex*/
 "meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
-"exposed_info_contact_hotline_name" = "Infoline Coronavirus";
+"exposed_info_contact_hotline_name" = "Infoline coronavirus";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
-"date_in_one_day" = "Noch 1 Tag";
+"date_in_one_day" = "Ancora 1 giorno";
 
 /*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
-"date_in_days" = "Noch {COUNT} Tage";
+"date_in_days" = "Ancora {COUNT} giorni";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
-"date_text_before_date" = "am {DATE}";
+"date_text_before_date" = "il {DATE}";
+
+/*Accessibility Talk back information for android back button in toolbar*/
+/*Fuzzy*/
+"android_accessibility_back_button" = "Indietro";
