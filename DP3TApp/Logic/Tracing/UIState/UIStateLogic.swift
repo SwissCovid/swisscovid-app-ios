@@ -159,7 +159,7 @@ class UIStateLogic {
         newState.homescreen.meldungen.meldung = .exposed
         newState.meldungenDetail.meldung = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> UIStateModel.MeldungenDetail.NSMeldungModel in UIStateModel.MeldungenDetail.NSMeldungModel(identifier: mc.identifier, timestamp: mc.reportDate)
+        newState.meldungenDetail.meldungen = days.map { (mc) -> UIStateModel.MeldungenDetail.NSMeldungModel in UIStateModel.MeldungenDetail.NSMeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
