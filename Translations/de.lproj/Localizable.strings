@@ -59,11 +59,9 @@
 /*Unerwarteter Fehler*/
 "unexpected_error_title" = "Ein unerwarteter Fehler ist aufgetreten.";
 
-/*CFL: Wo kommt das vor? Vermutlich OLD*/
 /*Bluetooth Fehlermeldung*/
 "bluetooth_turned_off" = "Die App funktioniert nicht, weil Bluetooth ausgeschaltet ist.";
 
-/*CFL: Wo kommt der vor?*/
 /*Bluetooth Permission Fehler*/
 "bluetooth_permission_turned_off" = "Die App funktioniert nicht, weil die Bluetooth Berechtigung nicht gegeben ist.";
 
@@ -94,28 +92,11 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
 
-/*CFL: Obsolet*/
-/*Bluetooth Setting: Titel unten*/
-"bluetooth_setting_tracking_explanation_title" = "Wie funktioniert das Tracing?";
-
 /*Bluetooth Setting Text unten*/
 "bluetooth_setting_data_explanation_title" = "Sind meine Daten sicher?";
 
-/*CFL: Obsolet*/
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "Die App erkennt mittels Bluetooth, genauer gesagt Bluetooth Low Energy, Begegnungen mit anderen Nutzern. Eine Begegnung wird durch die App registriert, wenn zwei Nutzer sich für eine bestimmte Zeit nahe beieinander aufhalten, und nach 21 Tagen wieder gelöscht.";
-
-/*CFL. Kommt der noch vor?*/
 /*Bluetooth Setting: Text unten*/
 "bluetooth_setting_tracking_explanation_text2" = "Eine Begegnung mit einem anderen Nutzer wird nur lokal auf ihrem Smartphone gespeichert.";
-
-/*CFL: Obsolet*/
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Jede App hat eine dynamische ID, die alle 15 Minuten mittels «HMAC(SHA256)» zufällig generiert wird. So bleibt jeder Nutzer anonym.";
-
-/*CFL: Obsolet*/
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text2" = "Wichtige Eigenschaften:\n- Kein Location-Tracking\n- Keine Analytics oder Advertising Dienste\n- Offene Architektur / Protokoll und Spezifikation inkl. SDK für iOS und Android\n- Interoperabilität (Eigene App, eigenes Backend)\n- Open Source";
 
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Meldungen";
@@ -143,14 +124,6 @@
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Tracing nicht aktiv";
-
-/*CFL: Diesen Text gibt es nicht, sollte gleich sein wie bei iOS*/
-/*Android Meldungen Detail: Gemeldet Titel*/
-"android_meldungen_infected_title" = "Infektion gemeldet";
-
-/*CFL: Diesen Text gibt es nicht, sollte gleich sein wie bei iOS*/
-/*Android: Meldungen Text*/
-"android_meldungen_infected_text" = "Vielen Dank! Nutzer denen du begegnet bist, werden anonym informiert und können sich in Quarantäne begeben.";
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
@@ -282,8 +255,6 @@
 "bluetooth_turned_off_title" = "Bluetooth Off";
 "bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das anonyme Tracing funktioniert.";
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
-
-/*CFL: Wo kommt der vor?*/
 "bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
 "bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das anonyme Tracing funktioniert.";
 
@@ -297,13 +268,11 @@
 /*Keine Meldungen Weisse Box Titel*/
 "no_meldungen_box_title" = "Schützen Sie sich";
 
-/*CFL: Text falsch, sollte heissen "Was soll ich tun?" – Schauen wir, wenn Übersetzungen da sind*/
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Sie schützen andere";
+"no_meldungen_box_subtitle" = "Was soll ich tun?";
 
-/*CFL: Der ist ziemlich lang und bricht unschön um: Schauen wir nach den Übersetzungen, ob wir das noch fixen können*/
 /*Keine Meldungen Weisse Box Text*/
-"no_meldungen_box_text" = "Halten Sie sich an die geltenden BAG Verhaltens- und Hygieneempfehlungen.";
+"no_meldungen_box_text" = "Halten Sie sich an die geltenden Empfehlungen des BAG.";
 
 /*Meldung Detail: Positiv Getestet Titel*/
 "meldung_detail_positive_tested_title" = "Positiv getestet";
@@ -317,9 +286,8 @@
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
 "meldung_detail_positive_test_box_title" = "Selbst-Isolation";
 
-/*CFL: Wo kommt der vor? Testcenter?*/
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen des Testcenters zur Selbst-Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Selbst-Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
@@ -384,11 +352,10 @@
 
 /*CFL: Platzhalter-Text Onboarding – ev. später obsolet*/
 /*Subtitel im Onboarding erste Seite*/
-"app_subtitle" = "Gemeinsam gegen das Virus";
+"app_subtitle" = "Untertitel";
 
-/*CFL: Sollte Das Ziel heissen – Nach den Übersetzungen*/
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "Das Prinzip";
+"onboarding_prinzip_heading" = "Das Ziel";
 
 /*Onboarding: Titel*/
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
@@ -554,7 +521,7 @@
 "inform_code_invalid_title" = "Code ungültig";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Bei Fragen: Infoline Coronavirus\n+41 58 463 00 00";
+"inform_code_invalid_subtitle" = "Bei Fragen: App-Hotline\n+41 58 466 07 99";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "vor 1 Tag";
@@ -815,12 +782,6 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
-
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Was passiert nach 10 Tagen?";
-
-/*Meldungen: Meldungen FAQ Tex*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
 /*Fuzzy*/

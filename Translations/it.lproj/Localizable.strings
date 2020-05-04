@@ -92,23 +92,11 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracciamento disattivato";
 
-/*Bluetooth Setting: Titel unten*/
-"bluetooth_setting_tracking_explanation_title" = "Come funziona il tracciamento?";
-
 /*Bluetooth Setting Text unten*/
 "bluetooth_setting_data_explanation_title" = "I miei dati sono sicuri?";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "L'app riconosce gli incontri con altri utenti tramite Bluetooth (Bluetooth Low Energy). Un incontro viene registrato dall'app quando due utenti stanno uno vicino all'altro per un determinato tempo, e viene nuovamente eliminato dopo 21 giorni.";
-
-/*Bluetooth Setting: Text unten*/
 "bluetooth_setting_tracking_explanation_text2" = "Un incontro con un altro utente viene salvato soltanto localmente sul tuo smartphone.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Ogni app ha un ID dinamico, generato casualmente ogni 15 minuti tramite «HMAC(SHA256)». Così ogni utente resta anonimo.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text2" = "Caratteristiche importanti:\n- nessun location tracking\n- niente servizi di analytics o di advertising\n- architettura aperta / protocollo e specifiche incl. SDK per iOS e Android\n- interoperabilità (app e backend propri)\n- open source";
 
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Segnalazioni";
@@ -136,12 +124,6 @@
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Tracciamento non attivo";
-
-/*Android Meldungen Detail: Gemeldet Titel*/
-"android_meldungen_infected_title" = "Infezione segnalata";
-
-/*Android: Meldungen Text*/
-"android_meldungen_infected_text" = "Grazie mille! Gli utenti che hai incontrato vengono informati anonimamente e possono mettersi in quarantena.";
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "Attualmente l'app non è in grado di funzionare correttamente:";
@@ -287,7 +269,7 @@
 "no_meldungen_box_title" = "Proteggiti";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Proteggi gli altri";
+"no_meldungen_box_subtitle" = "Cosa devo fare?";
 
 /*Keine Meldungen Weisse Box Text*/
 "no_meldungen_box_text" = "Segui le raccomandazioni di igiene e di comportamento vigenti dell'UFSP.";
@@ -305,7 +287,7 @@
 "meldung_detail_positive_test_box_title" = "Auto-isolamento";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Segui le istruzioni sull'auto-isolamento del centro che ha effettuato il test.";
+"meldung_detail_positive_test_box_text" = "Segui le istruzioni sull'auto-isolamento.";
 "tracing_ended_title" = "Tracciamento terminato";
 "tracing_ended_text" = "Gli incontri non vengono più salvati.";
 "exposed_info_contact_hotline" = "Contatta la";
@@ -366,10 +348,10 @@
 "meldungen_detail_call_last_call" = "Ultima telefonata: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
-"app_subtitle" = "Insieme contro il virus";
+"app_subtitle" = "Subtitle";
 
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "Il principio";
+"onboarding_prinzip_heading" = "Lo scopo";
 
 /*Onboarding: Titel*/
 "onboarding_prinzip_title" = "Anticipare il virus";
@@ -534,7 +516,7 @@
 "inform_code_invalid_title" = "Codice non valido";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Per domande: Infoline coronavirus\n+41 58 463 00 00";
+"inform_code_invalid_subtitle" = "Per domande: App-Hotline\n+41 58 466 07 99";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "1 giorno fa";
@@ -793,12 +775,6 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "it";
-
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Cosa accade dopo 10 giorni?";
-
-/*Meldungen: Meldungen FAQ Tex*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Infoline coronavirus";
