@@ -10,6 +10,13 @@ import UIKit.UIApplication
 
 private class FakePublishOperation: Operation {
     override func main() {
+
+        guard let startDate = FakePublishBackgroundTaskManager.shared.nextScheduledFakeRequestDate,
+            Date() >= startDate else {
+                Logger.log("Too early for fake request")
+            return
+        }
+
         Logger.log("Start Fake Publish", appState: true)
         ReportingManager.shared.report(isFakeRequest: true) { error in
             if error != nil {
@@ -30,7 +37,7 @@ class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
-    private var nextScheduledFakeRequestDate: Date?
+    private(set) var nextScheduledFakeRequestDate: Date?
 
     static func syncInterval() -> TimeInterval  {
         // Rate corresponding to 1 dummy per 5 days
@@ -81,11 +88,33 @@ class FakePublishBackgroundTaskManager {
         }
     }
 
+    func runForegroundTask() {
+
+        scheduleBackgroundTask()
+
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+
+        queue.addOperation(FakePublishOperation())
+    }
+
+    private func getNewScheduleDate() -> Date {
+        Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
+    }
+
     private func scheduleBackgroundTask() {
+
+        var nextDate = self.nextScheduledFakeRequestDate ?? self.getNewScheduleDate()
+        if nextDate <= Date() {
+            nextDate = self.getNewScheduleDate()
+        }
+
+        self.nextScheduledFakeRequestDate = nextDate
+
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
         syncTask.requiresExternalPower = false
         syncTask.requiresNetworkConnectivity = true
-        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
+        syncTask.earliestBeginDate = nextDate
 
         do {
             try BGTaskScheduler.shared.submit(syncTask)
