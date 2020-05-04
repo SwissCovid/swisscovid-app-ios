@@ -29,6 +29,9 @@ private var didRegisterBackgroundTask: Bool = false
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
+    @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
+    private var nextScheduledFakeRequestDate: Date?
+
     static func syncInterval() -> TimeInterval  {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
@@ -41,7 +44,9 @@ class FakePublishBackgroundTaskManager {
         public weak var logger: LoggingDelegate?
     #endif
 
-    init() {
+    static let shared = FakePublishBackgroundTaskManager()
+
+    private init() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didEnterBackground),
                                                name: UIApplication.didEnterBackgroundNotification,

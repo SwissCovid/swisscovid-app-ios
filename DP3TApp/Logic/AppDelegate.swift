@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Schedule Update check in background
         ConfigBackgroundTaskManager().register()
-        FakePublishBackgroundTaskManager().register()
+        FakePublishBackgroundTaskManager.shared.register()
 
         // defer window initialization if app was launched in
         // background because of location change
