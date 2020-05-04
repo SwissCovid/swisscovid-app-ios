@@ -31,7 +31,17 @@ class ConfigManager: NSObject {
             if let sdkConfig = currentConfig?.sdkConfig {
                 ConfigManager.updateSDKParameters(config: sdkConfig)
             }
+            if let config = currentConfig, config.forceTraceShutdown {
+                TracingManager.shared.endTracing()
+            }
         }
+    }
+
+    static var allowTracing: Bool {
+        if let config = self.currentConfig {
+            return !config.forceTraceShutdown
+        }
+        return true
     }
 
     // MARK: - Version Numbers

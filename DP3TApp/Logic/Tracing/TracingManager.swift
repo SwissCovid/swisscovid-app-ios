@@ -85,7 +85,7 @@ class TracingManager: NSObject {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
 
-        if UserStorage.shared.hasCompletedOnboarding, isActivated {
+        if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing()
                 UIStateManager.shared.tracingStartError = nil
@@ -117,7 +117,9 @@ class TracingManager: NSObject {
 
     func userHasCompletedOnboarding() {
         do {
-            try DP3TTracing.startTracing()
+            if ConfigManager.allowTracing {
+                try DP3TTracing.startTracing()
+            }
             UIStateManager.shared.tracingStartError = nil
         } catch DP3TTracingError.userAlreadyMarkedAsInfected {
             // Tracing should not start if the user is marked as infected
