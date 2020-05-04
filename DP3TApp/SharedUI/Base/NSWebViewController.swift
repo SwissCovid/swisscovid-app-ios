@@ -44,7 +44,7 @@ class NSWebViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        guard let path = Bundle.main.path(forResource: local ?? "", ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
+        guard let path = Bundle.main.path(forResource: local ?? "index", ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
         else { return }
 
         let url = URL(fileURLWithPath: path)
@@ -98,12 +98,13 @@ extension NSWebViewController: WKNavigationDelegate {
 
             if scheme == "dp3t" || scheme == "file" {
                 let webVC: NSWebViewController
-                if url.absoluteString.contains("licence") {
-                    webVC = NSWebViewController(local: "license-ios")
-                }
-                else {
-                    webVC = NSWebViewController(local: url.lastPathComponent)
-                }
+//                if url.absoluteString.contains("licence") {
+//                    webVC = NSWebViewController(local: "license-ios")
+//                }
+//                else {
+                let path = (url.host ?? url.lastPathComponent).replacingOccurrences(of: ".html", with: "")
+                webVC = NSWebViewController(local: path)
+//                }
                 webVC.title = self.title
                 if let navVC = navigationController {
                     navVC.pushViewController(webVC, animated: true)

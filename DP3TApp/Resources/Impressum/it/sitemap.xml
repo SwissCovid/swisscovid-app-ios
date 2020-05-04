@@ -28,52 +28,27 @@
   </url>
   
   <url>
-    <loc>/it/license-android.html</loc>
+    <loc>/it/licence.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="/de/license-android.html"
+                href="/de/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/license-android.html"
+                href="/en/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="fr"
-                href="/fr/license-android.html"
+                href="/fr/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it"
-                href="/it/license-android.html"
-                />
-  </url>
-  
-  <url>
-    <loc>/it/license-ios.html</loc>
-    <priority>0</priority>
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="/de/license-ios.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/license-ios.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/license-ios.html"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="it"
-                href="/it/license-ios.html"
+                href="/it/licence.html"
                 />
   </url>
   

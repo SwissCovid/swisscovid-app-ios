@@ -10,8 +10,8 @@ extension Endpoint {
     /// Load Config
     /// let av = "ios-10"
     /// let os = "ios13"
-    static func config(appversion av: String, osversion os: String) -> Endpoint {
-        return Environment.current.configService.endpoint("config", queryParameters: ["appversion": av, "osversion": os])
+    static func config(appversion av: String, osversion os: String, buildnr: String) -> Endpoint {
+        return Environment.current.configService.endpoint("config", queryParameters: ["appversion": av, "osversion": os, "buildnr": buildnr])
     }
 
     /// Validate Code

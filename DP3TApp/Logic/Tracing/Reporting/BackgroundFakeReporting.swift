@@ -10,6 +10,13 @@ import UIKit.UIApplication
 
 private class FakePublishOperation: Operation {
     override func main() {
+
+        guard let startDate = FakePublishBackgroundTaskManager.shared.nextScheduledFakeRequestDate,
+            Date() >= startDate else {
+                Logger.log("Too early for fake request")
+            return
+        }
+
         Logger.log("Start Fake Publish", appState: true)
         ReportingManager.shared.report(isFakeRequest: true) { error in
             if error != nil {
@@ -29,6 +36,9 @@ private var didRegisterBackgroundTask: Bool = false
 class FakePublishBackgroundTaskManager {
     static let taskIdentifier: String = "ch.admin.bag.dp3t.fakerequesttask" // must be in info.plist
 
+    @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
+    private(set) var nextScheduledFakeRequestDate: Date?
+
     static func syncInterval() -> TimeInterval  {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
@@ -41,7 +51,9 @@ class FakePublishBackgroundTaskManager {
         public weak var logger: LoggingDelegate?
     #endif
 
-    init() {
+    static let shared = FakePublishBackgroundTaskManager()
+
+    private init() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(didEnterBackground),
                                                name: UIApplication.didEnterBackgroundNotification,
@@ -76,11 +88,33 @@ class FakePublishBackgroundTaskManager {
         }
     }
 
+    func runForegroundTask() {
+
+        scheduleBackgroundTask()
+
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+
+        queue.addOperation(FakePublishOperation())
+    }
+
+    private func getNewScheduleDate() -> Date {
+        Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
+    }
+
     private func scheduleBackgroundTask() {
+
+        var nextDate = self.nextScheduledFakeRequestDate ?? self.getNewScheduleDate()
+        if nextDate <= Date() {
+            nextDate = self.getNewScheduleDate()
+        }
+
+        self.nextScheduledFakeRequestDate = nextDate
+
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
         syncTask.requiresExternalPower = false
         syncTask.requiresNetworkConnectivity = true
-        syncTask.earliestBeginDate = Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
+        syncTask.earliestBeginDate = nextDate
 
         do {
             try BGTaskScheduler.shared.submit(syncTask)

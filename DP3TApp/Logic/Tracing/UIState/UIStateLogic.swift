@@ -83,6 +83,8 @@ class UIStateLogic {
                 tracing = .bluetoothPermissionError
             case .cryptographyError(_), .databaseError:
                 tracing = .unexpectedError
+                case .coreBluetoothError:
+                    tracing = .unexpectedError
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
