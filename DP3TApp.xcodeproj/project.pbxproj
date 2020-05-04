@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D227C245D6581005DAEA8 /* Endpoint.swift */; };
+		2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D227A245D6557005DAEA8 /* Backend.swift */; };
+		2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */; };
 		242D21D1245C3853005DAEA8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D21D0245C3853005DAEA8 /* Logger.swift */; };
 		242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
 		242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
@@ -1471,6 +1474,7 @@
 				242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */,
+				2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */,
 				242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */,
 				242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
@@ -1490,10 +1494,12 @@
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
 				242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */,
 				242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */,
+				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
 				242D2221245C4BD8005DAEA8 /* UBDeviceUUID.swift in Sources */,
 				242D2222245C4BD8005DAEA8 /* NSInformTracingEndViewController.swift in Sources */,
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
+				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2226245C4BD8005DAEA8 /* NSNoCodeInformationViewController.swift in Sources */,
 				242D2227245C4BD8005DAEA8 /* UBKeychainAccessibility.swift in Sources */,

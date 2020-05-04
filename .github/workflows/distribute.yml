@@ -75,7 +75,7 @@ jobs:
         APP_SCHEME: "Release-Abnahme"
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_TEST }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
-        BADGE_TITLE: "Abnahme"
+        BADGE_TITLE: "ABN"
       run: bundle exec fastlane sign_and_build
       
     - name: Upload and distribution
