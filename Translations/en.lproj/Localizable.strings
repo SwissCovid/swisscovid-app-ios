@@ -312,7 +312,7 @@
 "date_today" = "Today";
 
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
-"date_days_ago" = "(COUNT) days ago";
+"date_days_ago" = "{COUNT} days ago";
 
 /*Meldungen Detail: Subtitel Weisse Box*/
 "meldungen_detail_whattodo" = "What should I do?";
@@ -333,7 +333,7 @@
 "meldungen_detail_explanation_text1" = "You could be infectious without realising it.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Please protect your family, your friends and those around you. Avoid contacts for up to 10 days after a possible infection. There are 6 days left.";
+"meldungen_detail_explanation_text2" = "Please protect your family, your friends and those around you. Avoid contacts for up to 10 days after a possible infection.";
 
 /*Meldungen Detail Weisse Box Titel*/
 "meldungen_detail_guard_others" = "Protect other people";
@@ -783,7 +783,7 @@
 "date_in_one_day" = "1 more day";
 
 /*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
-"date_in_days" = "(COUNT) more days";
+"date_in_days" = "There are {COUNT} days left";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
 "date_text_before_date" = "on {DATE}";
