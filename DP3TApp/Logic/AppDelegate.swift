@@ -80,6 +80,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
+
+        FakePublishBackgroundTaskManager.shared.runForegroundTask()
     }
 
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
