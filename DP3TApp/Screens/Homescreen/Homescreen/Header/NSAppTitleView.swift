@@ -48,6 +48,9 @@ class NSAppTitleView: NSTitleView {
     deinit {
         timer?.invalidate()
         slowTimer?.invalidate()
+
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     // MARK: - Setup

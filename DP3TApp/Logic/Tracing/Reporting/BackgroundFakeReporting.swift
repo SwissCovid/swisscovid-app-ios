@@ -48,6 +48,10 @@ class FakePublishBackgroundTaskManager {
                                                object: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+    }
+
     /// Register a background task
     func register() {
         guard !didRegisterBackgroundTask else { return }

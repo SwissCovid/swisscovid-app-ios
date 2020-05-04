@@ -56,6 +56,9 @@ class NSAnimatedGraphLayer: CALayer {
     deinit {
         timer?.invalidate()
         timer = nil
+
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     private func draw() {

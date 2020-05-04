@@ -104,6 +104,10 @@ class TracingManager: NSObject {
         updateStatus(completion: nil)
     }
 
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+    }
+
     func endTracing() {
         DP3TTracing.stopTracing()
     }
