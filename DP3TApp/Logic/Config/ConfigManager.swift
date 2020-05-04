@@ -46,6 +46,11 @@ class ConfigManager: NSObject {
         return "ios\(systemVersion)"
     }
 
+    static var buildNumber: String {
+        let shortVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+        return "ios-\(shortVersion)"
+    }
+
     // MARK: - Start config request
 
     private struct ConfigClaims: DP3TClaims {
@@ -68,7 +73,7 @@ class ConfigManager: NSObject {
 
         Logger.log("Load Config", appState: true)
 
-        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion).request(), completionHandler: { data, response, error in
+        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request(), completionHandler: { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse,
                 let data = data else {
