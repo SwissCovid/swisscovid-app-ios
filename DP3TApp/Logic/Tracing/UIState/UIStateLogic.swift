@@ -205,7 +205,7 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [NSMeldungModel(identifier: 123_452621, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), NSMeldungModel(identifier: 252525252, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [UIStateModel.MeldungenDetail.NSMeldungModel(identifier: 123_452621, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), UIStateModel.MeldungenDetail.NSMeldungModel(identifier: 252525252, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true

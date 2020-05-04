@@ -92,35 +92,23 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Traçage désactivé";
 
-/*Bluetooth Setting: Titel unten*/
-"bluetooth_setting_tracking_explanation_title" = "Comment fonctionne le traçage ?";
-
 /*Bluetooth Setting Text unten*/
 "bluetooth_setting_data_explanation_title" = "Mes données sont-elles sûres ?";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "L'application utilise Bluetooth (faible consommation) pour détecter les contacts avec d'autres utilisateurs. Un contact est enregistré quand deux utilisateurs se sont trouvés à proximité pour un certain temps. Il est supprimé après 21 jours.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text2" = "Le contact avec un autre utilisateur n'est sauvegardé que de manière locale sur votre smartphone.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Chaque application dispose d'une identité dynamique, modifiée aléatoirement toutes les 15 minutes à l'aide de « HMAC(SHA256) ». Ainsi, chaque utilisateur reste anonyme.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text2" = "Propriétés principales :\n- Pas de géolocalisation\n- Pas de publicité ou d'analyse des données\n- Architecture ouverte / protocole et spécification y compris SDK pour iOS et Android\n- Interopérabilité (propres application et back-end) \n- Open source";
+"bluetooth_setting_tracking_explanation_text2" = "Le contact avec un autre utilisateur n'est sauvegardé que localement sur votre smartphone.";
 
 /*Titel auf Homescreen*/
-"reports_title_homescreen" = "Alerte";
+"reports_title_homescreen" = "Notifications";
 
 /*Keine Meldungen Titel*/
-"meldungen_no_meldungen_title" = "Pas d'alerte";
+"meldungen_no_meldungen_title" = "Pas de notification";
 
 /*Push deaktiviert Titel*/
 "push_deactivated_title" = "Communications désactivées";
 
 /*Push deaktiviert Text*/
-"push_deactivated_text" = "Veuillez modifier les paramètres pour pouvoir recevoir les alertes";
+"push_deactivated_text" = "Veuillez modifier les paramètres pour pouvoir recevoir les notifications";
 
 /*Titel im Meldung Detail*/
 "meldungen_meldung_title" = "Infection possible";
@@ -136,12 +124,6 @@
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Traçage désactivé";
-
-/*Android Meldungen Detail: Gemeldet Titel*/
-"android_meldungen_infected_title" = "Infection signalée";
-
-/*Android: Meldungen Text*/
-"android_meldungen_infected_text" = "Merci beaucoup !  Les utilisateurs avec qui vous avez été en contact seront informés de manière anonyme et pourront s'isoler.";
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "L'application ne peut pas fonctionner correctement :";
@@ -287,7 +269,7 @@
 "no_meldungen_box_title" = "Protégez-vous";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Vous protégez les autres";
+"no_meldungen_box_subtitle" = "Que dois-je faire ?";
 
 /*Keine Meldungen Weisse Box Text*/
 "no_meldungen_box_text" = "Respectez les règles d'hygiène et de conduite de l'OFSP.";
@@ -305,7 +287,7 @@
 "meldung_detail_positive_test_box_title" = "Auto-isolement";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Suivez les consignes des centres de test sur l'auto-isolement.";
+"meldung_detail_positive_test_box_text" = "Suivez les consignes sur l'auto-isolement.";
 "tracing_ended_title" = "Traçage terminé";
 "tracing_ended_text" = "Plus aucun contact ne sera sauvegardé.";
 "exposed_info_contact_hotline" = "Contactez";
@@ -351,7 +333,7 @@
 "meldungen_detail_explanation_text1" = "Vous pourriez être contagieux sans le savoir.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Protégez votre famille, vos amis et votre entourage. Évitez tout contact jusqu'à 10 jours suivant une éventuelle infection. Il reste encore 6 jours.";
+"meldungen_detail_explanation_text2" = "Protégez votre famille, vos amis et votre entourage. Évitez les contacts jusqu'à 10 jours suivant une possible infection. Il reste encore 6 jours.";
 
 /*Meldungen Detail Weisse Box Titel*/
 "meldungen_detail_guard_others" = "Protégez les autres";
@@ -366,10 +348,10 @@
 "meldungen_detail_call_last_call" = "Dernier appel : {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
-"app_subtitle" = "Ensemble contre le virus";
+"app_subtitle" = "Subtitle";
 
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "Le principe :";
+"onboarding_prinzip_heading" = "Le but :";
 
 /*Onboarding: Titel*/
 "onboarding_prinzip_title" = "Gardons une longueur d'avance sur le virus";
@@ -390,7 +372,7 @@
 "onboarding_privacy_text1" = "La communication entre les appareils est anonyme.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Toutes les données sont cryptées et uniquement sauvegardées de manière locale sur l'appareil.";
+"onboarding_privacy_text2" = "Toutes les données sont cryptées et uniquement sauvegardées localement sur l'appareil.";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "Que fait l'application ?";
@@ -408,13 +390,13 @@
 "onboarding_meldung_heading" = "Que fait l'application ?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_meldung_title" = "Alerte en cas de risque de contamination.";
+"onboarding_meldung_title" = "Notification en cas de possible infection";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "L'application indique s'il y a un risque des contamination.";
+"onboarding_meldung_text1" = "L'application vous informe si vous avez peut-être été infecté.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "En adoptant une bonne conduite, vous pouvez vous protéger et protéger les autres.";
+"onboarding_meldung_text2" = "En adoptant le bon comportement, vous pouvez vous protéger et protéger les autres.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Autoriser Bluetooth";
@@ -525,7 +507,7 @@
 "homescreen_meldung_data_outdated_title" = "Aucune donnée actuelle";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Les alertes n'ont pas pu être synchronisées depuis quelques temps. Assurez-vous que votre appareil est connecté à internet.";
+"homescreen_meldung_data_outdated_text" = "Les notifications n'ont pas pu être synchronisées depuis quelques temps. Assurez-vous que votre appareil est connecté à internet.";
 
 /*Homescreen: Button Titel*/
 "homescreen_meldung_data_outdated_retry_button" = "Réessayer";
@@ -534,7 +516,7 @@
 "inform_code_invalid_title" = "Code incorrect";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "En cas de questions, appelez l'infoline coronavirus au +41 58 387 77 78";
+"inform_code_invalid_subtitle" = "En cas de questions, appelez +41 58 466 07 99";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "depuis 1 jour";
@@ -561,7 +543,7 @@
 "meldungen_background_error_title" = "Actualisation de l'arrière-plan désactivée";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Veuillez modifier les paramètres pour pouvoir recevoir les nouvelles alertes même en dehors de l'application.";
+"meldungen_background_error_text" = "Veuillez modifier les paramètres pour pouvoir recevoir les nouvelles notifications même en dehors de l'application.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Modifier les paramètres";
@@ -681,7 +663,7 @@
 "begegnung_detail_faq1_text" = "Si des téléphones équipés de l'application se trouvent à proximité pendant plusieurs minutes, ce fait est enregistré comme un contact dans l'appareil.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq2_title" = "Mes données sont-elles sûres ?";
+"begegnung_detail_faq2_title" = "Mes données sont-elles en sécurité?";
 
 /*Begegnungen: FAQ Text*/
 "begegnung_detail_faq2_text" = "Lors d'un contact, seul un code crypté est échangé.\n\nCe code est enregistré localement dans les appareils et effacé au bout de 21 jours.";
@@ -696,13 +678,13 @@
 "faq_button_title" = "Questions fréquentes";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq1_title" = "Que sont les alertes ?";
+"meldungen_nomeldungen_faq1_title" = "Que sont les notifications ?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "L'application contrôle régulièrement si des contacts enregistrés chez vous ont été testés positifs.\n\nEn cas de risque d'infection, vous serez informé par message sur l'écran de verrouillage.";
+"meldungen_nomeldungen_faq1_text" = "L'application contrôle régulièrement si des contacts enregistrés chez vous ont été testés positifs.\n\nEn cas de possible infection, vous serez informé par message sur l'écran de verrouillage.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Que signifie infection possible ?";
+"meldungen_nomeldungen_faq2_titel" = "Que signifie possible infection ?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
 "meldungen_nomeldungen_faq2_text" = "L'application ne détecte pas seulement si des contacts avec des personnes infectées ont eu lieu, mais aussi la durée et la proximité de ces contacts.\n\nVous serez informé seulement lorsque le risque d'infection est suffisamment important.";
@@ -729,7 +711,7 @@
 "meldungen_detail_call_thankyou_subtitle" = "Vous protégez les autres";
 
 /*Meldungen Detail Keine Meldungen Titel*/
-"meldungen_detail_no_meldungen_title" = "Aucune nouvelle alerte";
+"meldungen_detail_no_meldungen_title" = "Aucune nouvelle notification";
 
 /*Meldungen Detail Keine Meldung Subtitel*/
 "meldungen_detail_no_meldungen_subtitle" = "La dernière infection possible a eu lieu il y a plus de 10 jours";
@@ -793,13 +775,6 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "fr";
-
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "Que se passe-t-il après 10 jours ?";
-
-/*CFL: löschen?*/
-/*Meldungen: Meldungen FAQ Tex*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Infoline Coronavirus";

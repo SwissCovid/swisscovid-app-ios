@@ -179,7 +179,7 @@ class UIStateManager: NSObject {
     }
 
     #if ENABLE_TESTING
-    var overwrittenInfectionState: DebugInfectionStatus? {
+    var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
         didSet { refresh() }
     }
     #endif

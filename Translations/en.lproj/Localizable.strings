@@ -92,23 +92,11 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deactivated";
 
-/*Bluetooth Setting: Titel unten*/
-"bluetooth_setting_tracking_explanation_title" = "How does tracing work?";
-
 /*Bluetooth Setting Text unten*/
 "bluetooth_setting_data_explanation_title" = "Are my data secure?";
 
 /*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text1" = "The app uses Bluetooth Low Energy to recognise encounters with other users. An encounter is registered by the app if two users are in close proximity for a certain time, and then deleted after 21 days.";
-
-/*Bluetooth Setting: Text unten*/
 "bluetooth_setting_tracking_explanation_text2" = "An encounter with another user is only saved locally on your smartphone.";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text1" = "Each app has a dynamic ID that is generated randomly every 15 minutes using HMAC(SHA256). This way the user remains anonymous. ";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_data_explanation_text2" = "Crucial features:\n- No location tracking\n- No analytics or advertising\n- Open architecture / protocol and specification incl. SDK for iOS and Android\n- Interoperability (own app, own backend)\n- Open source";
 
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Reports";
@@ -136,12 +124,6 @@
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Tracing not active";
-
-/*Android Meldungen Detail: Gemeldet Titel*/
-"android_meldungen_infected_title" = "Infection reported";
-
-/*Android: Meldungen Text*/
-"android_meldungen_infected_text" = "Thank you! Users that you have encountered will be notified anonymously and can go into quarantine.";
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "App currently unable to function properly";
@@ -287,7 +269,7 @@
 "no_meldungen_box_title" = "Protect yourself";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Protect others";
+"no_meldungen_box_subtitle" = "What should I do?";
 
 /*Keine Meldungen Weisse Box Text*/
 "no_meldungen_box_text" = "Follow the government recommendations on hygiene and social distancing.";
@@ -305,7 +287,7 @@
 "meldung_detail_positive_test_box_title" = "Self-isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Follow the instructions you receive from the test centre on self-isolation.";
+"meldung_detail_positive_test_box_text" = "Follow the instructions on self-isolation.";
 "tracing_ended_title" = "Tracing ended";
 "tracing_ended_text" = "No further encounters registered";
 "exposed_info_contact_hotline" = "Contact the";
@@ -351,7 +333,7 @@
 "meldungen_detail_explanation_text1" = "You could be infectious without realising it.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Please protect your family, your friends and those around you. Avoid any contact for up to 10 days after a possible infection. There are 6 days left.";
+"meldungen_detail_explanation_text2" = "Please protect your family, your friends and those around you. Avoid contacts for up to 10 days after a possible infection. There are 6 days left.";
 
 /*Meldungen Detail Weisse Box Titel*/
 "meldungen_detail_guard_others" = "Protect other people";
@@ -366,10 +348,10 @@
 "meldungen_detail_call_last_call" = "Last call: (DATE)";
 
 /*Subtitel im Onboarding erste Seite*/
-"app_subtitle" = "Together against the virus";
+"app_subtitle" = "Subtitle";
 
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "How it works";
+"onboarding_prinzip_heading" = "The aim";
 
 /*Onboarding: Titel*/
 "onboarding_prinzip_title" = "Staying one step ahead of the virus";
@@ -534,7 +516,7 @@
 "inform_code_invalid_title" = "Code invalid";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "If you have any questions: Coronavirus Infoline\n+41 58 463 00 00";
+"inform_code_invalid_subtitle" = "If you have any questions: App-Hotline\n+41 58 466 07 99";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "1 day ago";
@@ -793,12 +775,6 @@
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
-
-/*Meldungen: Meldungen FAQ Titel*/
-"meldungen_meldungen_faq2_title" = "What happens after 10 days?";
-
-/*Meldungen: Meldungen FAQ Tex*/
-"meldungen_meldungen_faq2_text" = "Die App informiert Sie 10 Tage nach einer möglichen Ansteckung. Sind bis dann keine Symptome aufgetreten, können Sie die Selbst-Quarantäne beenden.";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Coronavirus infoline";
