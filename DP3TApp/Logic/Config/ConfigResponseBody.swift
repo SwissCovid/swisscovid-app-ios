@@ -27,8 +27,6 @@ class ConfigResponseBody: UBCodable {
 
     class SDKConfig: Codable {
         let numberOfWindowsForExposure: Int?
-        let eventThreshold: Double?
-        let badAttenuationThreshold: Double?
         let contactAttenuationThreshold: Double?
     }
 }
