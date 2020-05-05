@@ -786,7 +786,7 @@
 "date_in_days" = "Il reste encore {COUNT} jours.";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
-"date_text_before_date" = "le";
+"date_text_before_date" = "le {DATE}";
 
 /*Accessibility Talk back information for android back button in toolbar*/
 /*Fuzzy*/
