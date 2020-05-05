@@ -144,12 +144,6 @@ class ConfigManager: NSObject {
         if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
             parameters.contactMatching.numberOfWindowsForExposure = numberOfWindowsForExposure
         }
-        if let eventThreshold = config.eventThreshold {
-            parameters.contactMatching.eventThreshold = eventThreshold
-        }
-        if let badAttenuationThreshold = config.badAttenuationThreshold {
-            parameters.contactMatching.badAttenuationThreshold = badAttenuationThreshold
-        }
         if let contactAttenuationThreshold = config.contactAttenuationThreshold {
             parameters.contactMatching.contactAttenuationThreshold = contactAttenuationThreshold
         }
