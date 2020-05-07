@@ -82,9 +82,9 @@ class UIStateLogic {
             case .permissonError:
                 tracing = .bluetoothPermissionError
             case .cryptographyError(_), .databaseError:
-                tracing = .unexpectedError
+                tracing = .unexpectedError(code: error.errorCodeString)
                 case .coreBluetoothError:
-                    tracing = .unexpectedError
+                    tracing = .unexpectedError(code: error.errorCodeString)
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
@@ -117,12 +117,18 @@ class UIStateLogic {
 
         if manager.immediatelyShowSyncError {
             newState.homescreen.meldungen.syncProblemOtherError = true
+            if let codedError = UIStateManager.shared.syncError as? CodedError {
+                newState.homescreen.meldungen.errorCode = codedError.errorCodeString
+            }
         }
 
         if let first = manager.firstSyncErrorTime,
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
+            if let codedError = UIStateManager.shared.syncError as? CodedError {
+                newState.homescreen.meldungen.errorCode = codedError.errorCodeString
+            }
         }
     }
 

@@ -13,6 +13,7 @@ class NSTracingErrorView: UIView {
     private let imageView = UIImageView()
     private let titleLabel = NSLabel(.uppercaseBold, textColor: .ns_red, numberOfLines: 2, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
+    private let errorCodeLabel = NSLabel(.smallRegular, textAlignment: .center)
     private let actionButton = NSUnderlinedButton()
 
     // MARK: - Model
@@ -26,6 +27,10 @@ class NSTracingErrorView: UIView {
     }
 
     var model: NSTracingErrorViewModel? {
+        didSet { update() }
+    }
+
+    var errorCode: String? {
         didSet { update() }
     }
 
@@ -77,6 +82,10 @@ class NSTracingErrorView: UIView {
         stackView.addArrangedView(textLabel)
         if model?.action != nil {
             stackView.addArrangedView(actionButton)
+        }
+        if let code = self.errorCode {
+            stackView.addArrangedView(errorCodeLabel)
+            errorCodeLabel.text = code
         }
         stackView.addSpacerView(20)
 

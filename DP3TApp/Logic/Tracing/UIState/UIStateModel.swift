@@ -24,7 +24,7 @@ struct UIStateModel: Equatable {
         case bluetoothTurnedOff
         case bluetoothPermissionError
         case timeInconsistencyError
-        case unexpectedError
+        case unexpectedError(code: String?)
         case tracingEnded
     }
 
@@ -42,6 +42,7 @@ struct UIStateModel: Equatable {
             var syncProblemNetworkingError: Bool = false
             var syncProblemOtherError: Bool = false
             var backgroundUpdateProblem: Bool = false
+            var errorCode: String? = nil
         }
 
         struct InfoBox: Equatable {
