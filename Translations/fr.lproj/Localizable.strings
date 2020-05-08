@@ -1,9 +1,9 @@
 
 /*App Name*/
-"app_name" = "dp3t-app";
+"app_name" = "Swiss PT";
 
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "dp3t-app";
+"CFBundleDisplayName" = "Swiss PT";
 
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Recharger";
@@ -357,7 +357,7 @@
 "onboarding_prinzip_title" = "Gardons une longueur d'avance sur le virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Grâce à dp3t-app, tout le monde peut contribuer à endiguer la propagation du virus.";
+"onboarding_prinzip_text1" = "Grâce à Swiss PT app, tout le monde peut contribuer à endiguer la propagation du virus.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "L'application signale les infections potentielles et permet d'interrompre les chaînes de transmission.";
@@ -738,7 +738,7 @@
 "inform_detail_faq2_title" = "Comment rester anonyme ?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Seules les clés temporaires de votre application sont envoyées, aucune donnée personnelle.\n\nAinsi, d'autres utilisateurs de l'application dp3t-app peuvent vérifier s'ils ont été en contact avec vous ces derniers jours.";
+"inform_detail_faq2_text" = "Seules les clés temporaires de votre application sont envoyées, aucune donnée personnelle.\n\nAinsi, d'autres utilisateurs de l'application Swiss PT peuvent vérifier s'ils ont été en contact avec vous ces derniers jours.";
 
 /*Informieren: Titel Tracing beendet*/
 "inform_send_endtracing_title" = "Traçage terminé";
