@@ -6,7 +6,7 @@
 	<array>
 		<string>ch.admin.bag.dp3t.configtask</string>
 		<string>ch.admin.bag.dp3t.fakerequesttask</string>
-		<string>org.dpppt.synctask</string>
+		<string>org.dpppt.exposure-notification</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

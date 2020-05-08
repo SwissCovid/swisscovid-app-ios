@@ -54,20 +54,35 @@ class TracingManager: NSObject {
                 case .dev:
                     // 5min Batch lenght on dev Enviroment
                     DP3TTracing.parameters.networking.batchLength = 5 * 60
-                    var appVersion = "N/A"
-                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
-                        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                        appVersion = "\(version)(\(build))"
+
+                    if #available(iOS 13.5, *) {
+                        try DP3TTracing.initialize(with: .manual(descriptor),
+                                                   urlSession: URLSession.certificatePinned,
+                                                   mode: .exposureNotificationFramework,
+                                                   backgroundHandler: self)
+                    } else {
+                        var appVersion = "N/A"
+                        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+                            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+                            appVersion = "\(version)(\(build))"
+                        }
+                        try DP3TTracing.initialize(with: .manual(descriptor),
+                                                   urlSession: URLSession.certificatePinned,
+                                                   mode: .customImplementationCalibration(identifierPrefix: "", appVersion: appVersion),
+                                                   backgroundHandler: self)
                     }
-                    try DP3TTracing.initialize(with: .manual(descriptor),
-                                               urlSession: URLSession.certificatePinned,
-                                               mode: .calibration(identifierPrefix: "", appVersion: appVersion))
-                case .abnahme:
-                    try DP3TTracing.initialize(with: .manual(descriptor),
-                                               urlSession: URLSession.certificatePinned)
-                case .prod:
-                    try DP3TTracing.initialize(with: .manual(descriptor),
-                                               urlSession: URLSession.certificatePinned)
+                case .abnahme, .prod:
+                    if #available(iOS 13.5, *) {
+                        try DP3TTracing.initialize(with: .manual(descriptor),
+                                                   urlSession: URLSession.certificatePinned,
+                                                   mode: .exposureNotificationFramework,
+                                                   backgroundHandler: self)
+                    } else {
+                        try DP3TTracing.initialize(with: .manual(descriptor),
+                                                   urlSession: URLSession.certificatePinned,
+                                                   mode: .customImplementation,
+                                                   backgroundHandler: self)
+                    }
                 }
             #else
                 try DP3TTracing.initialize(with: .manual(descriptor))
@@ -191,4 +206,31 @@ extension TracingManager: DP3TTracingDelegate {
         }
     }
     #endif
+}
+
+extension TracingManager: DP3TBackgroundHandler {
+    func performBackgroundTasks(completionHandler: (Bool) -> Void) {
+        let queue = OperationQueue()
+
+        let group = DispatchGroup()
+
+        let configOperation = ConfigLoadOperation()
+        group.enter()
+        configOperation.completionBlock = {
+            group.leave()
+        }
+
+        let fakePublishOperation = FakePublishOperation()
+        group.enter()
+        fakePublishOperation.completionBlock = {
+            group.leave()
+        }
+
+        queue.addOperation(ConfigLoadOperation())
+        queue.addOperation(FakePublishOperation())
+
+        group.wait()
+
+        completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+    }
 }

@@ -8,7 +8,7 @@ import BackgroundTasks
 import Foundation
 import UIKit.UIApplication
 
-private class FakePublishOperation: Operation {
+class FakePublishOperation: Operation {
     override func main() {
 
         guard let startDate = FakePublishBackgroundTaskManager.shared.nextScheduledFakeRequestDate,

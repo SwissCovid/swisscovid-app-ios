@@ -8,7 +8,7 @@ import BackgroundTasks
 import Foundation
 import UIKit.UIApplication
 
-private class ConfigLoadOperation: Operation {
+class ConfigLoadOperation: Operation {
     @UBOptionalUserDefault(key: "presentedConfigForVersion")
     static var presentedConfigForVersion: String?
 

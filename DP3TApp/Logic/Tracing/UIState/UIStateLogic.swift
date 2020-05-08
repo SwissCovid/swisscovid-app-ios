@@ -85,14 +85,10 @@ class UIStateLogic {
                 tracing = .unexpectedError(code: error.errorCodeString)
                 case .coreBluetoothError:
                     tracing = .unexpectedError(code: error.errorCodeString)
-            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected:
+            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .exposureNotificationError:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
-            #if ENABLE_TESTING
-        case .activeReceiving, .activeAdvertising:
-            assertionFailure("These states should never be set in production")
-            #endif
         case .stopped:
             tracing = .tracingDisabled
         case .active:
