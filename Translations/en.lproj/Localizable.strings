@@ -1,9 +1,9 @@
 
 /*App Name*/
-"app_name" = "dp3t app";
+"app_name" = "Swiss PT";
 
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "dp3t app";
+"CFBundleDisplayName" = "Swiss PT";
 
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Reload";
@@ -141,7 +141,7 @@
 "preview_warning_title" = "Version preview";
 
 /*Text der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_text" = "This app provides a preview of how the DP-*T works. It is not a functioning COVIS-19 tracer.";
+"preview_warning_text" = "This app provides a preview of how the DP-3T works. It is not a functioning COVIS-19 tracer.";
 
 /*Debug: Label auf dem Button, der zum Debug-Screen führt*/
 "debug_settings_title" = "Debug settings";
@@ -357,7 +357,7 @@
 "onboarding_prinzip_title" = "Staying one step ahead of the virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "By using the dp3t app, we can all help to contain the spread of the new coronavirus.";
+"onboarding_prinzip_text1" = "By using the Swiss PT app, we can all help to contain the spread of the new coronavirus.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "The app provides information on suspected infections. In this way, the chain of infection can be broken.";
@@ -738,7 +738,7 @@
 "inform_detail_faq2_title" = "How do I remain anonymous?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Only the temporary keys from your app are sent. No personal data. Other dp3t apps can then check if they have had an encounter with your app in the past few days. ";
+"inform_detail_faq2_text" = "Only the temporary keys from your app are sent. No personal data. Other Swiss PT apps can then check if they have had an encounter with your app in the past few days.";
 
 /*Informieren: Titel Tracing beendet*/
 "inform_send_endtracing_title" = "Tracing ended";

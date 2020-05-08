@@ -1,9 +1,9 @@
 
 /*App Name*/
-"app_name" = "dp3t-app";
+"app_name" = "Swiss PT";
 
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "dp3t-app";
+"CFBundleDisplayName" = "Swiss PT";
 
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Ricarica";
@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Grazie";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Hai segnalato anonimamente il tuo test positivo nell'app.\n\nCosì contribuisci a contenere la dffusione del nuovo coronavirus.";
+"inform_send_thankyou_text" = "Hai segnalato anonimamente il tuo test positivo nell'app.\n\nCosì contribuisci a contenere la diffusione del nuovo coronavirus.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Chiudi";
@@ -357,7 +357,7 @@
 "onboarding_prinzip_title" = "Anticipare il virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Con l'app dp3t-app tutti possono contribuire a contenere la diffusione del nuovo coronavirus.";
+"onboarding_prinzip_text1" = "Con l'app Swiss PT tutti possono contribuire a contenere la diffusione del nuovo coronavirus.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "L'app informa in caso di sospetto. Così è possibile interrompere le catene di infezione.";
@@ -738,7 +738,7 @@
 "inform_detail_faq2_title" = "Com'è tutelato il mio anonimato?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Vengono inviate soltanto le chiavi temporanee della tua app, non i tuoi dati personali.\n\nCon esse gli altri utenti dell'app dp3t-app possono controllare se nei giorni scorsi si sono incontrati con te.";
+"inform_detail_faq2_text" = "Vengono inviate soltanto le chiavi temporanee della tua app, non i tuoi dati personali.\n\nCon esse gli altri utenti dell'app Swiss PT possono controllare se nei giorni scorsi si sono incontrati con te.";
 
 /*Informieren: Titel Tracing beendet*/
 "inform_send_endtracing_title" = "Tracciamento terminato";
