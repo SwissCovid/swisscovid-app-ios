@@ -2530,7 +2530,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				branch = develop;
+				branch = "feature/exposure-notification-framework";
 				kind = branch;
 			};
 		};
