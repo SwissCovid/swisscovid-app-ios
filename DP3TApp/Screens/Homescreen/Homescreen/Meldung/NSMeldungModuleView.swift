@@ -63,10 +63,13 @@ class NSMeldungView: NSModuleBaseView {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
                 views.append(unexpectedErrorView)
+                unexpectedErrorView.errorCode = uiState.errorCode
             } else if uiState.syncProblemNetworkingError {
                 views.append(syncProblemView)
+                syncProblemView.errorCode = uiState.errorCode
             } else if uiState.backgroundUpdateProblem {
                 views.append(backgroundFetchProblemView)
+                backgroundFetchProblemView.errorCode = uiState.errorCode
             }
         case .exposed:
             views.append(exposedView)
