@@ -85,7 +85,14 @@ class TracingManager: NSObject {
                     }
                 }
             #else
-                try DP3TTracing.initialize(with: .manual(descriptor))
+                if #available(iOS 13.5, *) {
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned,
+                                               mode: .exposureNotificationFramework,
+                                               backgroundHandler: self)
+                } else {
+                    try DP3TTracing.initialize(with: .manual(descriptor))
+                }
             #endif
         } catch {
             UIStateManager.shared.tracingStartError = error
