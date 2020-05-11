@@ -185,10 +185,10 @@ extension SecTrust {
     ///                            `Error`.
     /// - Throws:                  The `Error` produced by the `errorProducer` closure.
     func validate() throws {
-        var result = SecTrustResultType.invalid
-        let status = SecTrustEvaluate(self, &result)
+        var error: CFError?
+        let status = SecTrustEvaluateWithError(self, &error)
 
-        guard status.isSuccess, result.isSuccess else {
+        guard status, error == nil else {
             throw CertificateValidationError.validationFailed
         }
     }
