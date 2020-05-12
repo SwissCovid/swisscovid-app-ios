@@ -5,11 +5,7 @@
  */
 
 import UIKit
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 /// Config request allows to disable old versions of the app if
 class ConfigManager: NSObject {

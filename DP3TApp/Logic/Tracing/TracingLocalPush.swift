@@ -7,11 +7,7 @@
 import Foundation
 import UserNotifications
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
 class TracingLocalPush {

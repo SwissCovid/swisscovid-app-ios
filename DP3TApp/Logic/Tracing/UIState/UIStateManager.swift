@@ -8,11 +8,7 @@ import CoreBluetooth
 import Foundation
 import UIKit
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 class UIStateManager: NSObject {
     static var shared: UIStateManager {
@@ -163,7 +159,6 @@ class UIStateManager: NSObject {
                 switch (e1, e2) {
                 case (.networkingError(_), .networkingError(_)),
                      (.caseSynchronizationError, .caseSynchronizationError),
-                     (.cryptographyError(_), .cryptographyError(_)),
                      (.databaseError(_), .databaseError(_)),
                      (.bluetoothTurnedOff, .bluetoothTurnedOff),
                      (.permissonError, .permissonError):

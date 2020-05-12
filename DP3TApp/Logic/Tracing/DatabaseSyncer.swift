@@ -6,11 +6,7 @@
 
 import Foundation
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {

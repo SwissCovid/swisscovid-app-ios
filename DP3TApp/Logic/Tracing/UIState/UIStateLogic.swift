@@ -6,11 +6,7 @@
 
 import Foundation
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
 class UIStateLogic {
@@ -81,10 +77,8 @@ class UIStateLogic {
                 tracing = .bluetoothTurnedOff
             case .permissonError:
                 tracing = .bluetoothPermissionError
-            case .cryptographyError(_), .databaseError:
+            case .databaseError:
                 tracing = .unexpectedError(code: error.errorCodeString)
-                case .coreBluetoothError:
-                    tracing = .unexpectedError(code: error.errorCodeString)
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .exposureNotificationError:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now

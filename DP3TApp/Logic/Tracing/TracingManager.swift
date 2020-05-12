@@ -8,11 +8,7 @@ import CoreBluetooth
 import Foundation
 import UIKit
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
@@ -55,44 +51,18 @@ class TracingManager: NSObject {
                     // 5min Batch lenght on dev Enviroment
                     DP3TTracing.parameters.networking.batchLength = 5 * 60
 
-                    if #available(iOS 13.5, *) {
-                        try DP3TTracing.initialize(with: .manual(descriptor),
-                                                   urlSession: URLSession.certificatePinned,
-                                                   mode: .exposureNotificationFramework,
-                                                   backgroundHandler: self)
-                    } else {
-                        var appVersion = "N/A"
-                        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
-                            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                            appVersion = "\(version)(\(build))"
-                        }
-                        try DP3TTracing.initialize(with: .manual(descriptor),
-                                                   urlSession: URLSession.certificatePinned,
-                                                   mode: .customImplementationCalibration(identifierPrefix: "", appVersion: appVersion),
-                                                   backgroundHandler: self)
-                    }
-                case .abnahme, .prod:
-                    if #available(iOS 13.5, *) {
-                        try DP3TTracing.initialize(with: .manual(descriptor),
-                                                   urlSession: URLSession.certificatePinned,
-                                                   mode: .exposureNotificationFramework,
-                                                   backgroundHandler: self)
-                    } else {
-                        try DP3TTracing.initialize(with: .manual(descriptor),
-                                                   urlSession: URLSession.certificatePinned,
-                                                   mode: .customImplementation,
-                                                   backgroundHandler: self)
-                    }
-                }
-            #else
-                if #available(iOS 13.5, *) {
                     try DP3TTracing.initialize(with: .manual(descriptor),
                                                urlSession: URLSession.certificatePinned,
-                                               mode: .exposureNotificationFramework,
                                                backgroundHandler: self)
-                } else {
-                    try DP3TTracing.initialize(with: .manual(descriptor))
-                }
+                case .abnahme, .prod:
+                    try DP3TTracing.initialize(with: .manual(descriptor),
+                                               urlSession: URLSession.certificatePinned,
+                                               backgroundHandler: self)
+            }
+            #else
+                try DP3TTracing.initialize(with: .manual(descriptor),
+                                           urlSession: URLSession.certificatePinned,
+                                           backgroundHandler: self)
             #endif
         } catch {
             UIStateManager.shared.tracingStartError = error

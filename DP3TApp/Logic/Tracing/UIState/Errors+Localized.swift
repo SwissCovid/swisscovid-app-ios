@@ -5,11 +5,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 protocol CodedError {
     var errorCodeString: String? { get }
@@ -25,16 +21,12 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return error.localizedDescription
         case .caseSynchronizationError, .userAlreadyMarkedAsInfected:
             return unexpected.ub_localized
-        case let .cryptographyError(error):
-            return error
         case let .databaseError(error):
             return error?.localizedDescription
         case .bluetoothTurnedOff:
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
-        case .coreBluetoothError(error: let error):
-            return error.localizedDescription
         case .exposureNotificationError(error: let error):
             return error.localizedDescription
         }
@@ -46,8 +38,6 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return error.errorCodeString
         case .caseSynchronizationError(errors: _):
             return "CASYN"
-        case .cryptographyError(error: _):
-            return "CRYPT"
         case .databaseError(error: _):
             return "DBERR"
         case .bluetoothTurnedOff:
@@ -56,9 +46,6 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "PERME"
         case .userAlreadyMarkedAsInfected:
             return "UAMAI"
-        case .coreBluetoothError(error: let error):
-            let nsError = error as NSError
-            return "BLE\(nsError.code)"
         case .exposureNotificationError(error: let error):
             let nsError = error as NSError
             return "EN\(nsError.code)"
