@@ -31,7 +31,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
 
     override init() {
         if !CertificateEvaluator.useCertificatePinning {
-            trustManager = UBServerTrustManager(evaluators: ["*": UBDisabledEvaluator()])
+            trustManager = UBServerTrustManager(evaluators: [:], default: UBDisabledEvaluator())
             return
         }
 
