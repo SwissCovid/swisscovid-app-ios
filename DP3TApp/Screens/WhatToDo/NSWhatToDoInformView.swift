@@ -45,17 +45,16 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
         contentView.addArrangedView(view)
         contentView.addSpacerView(NSPadding.small)
-        
-        contentView.accessibilityLabel = "inform_detail_box_subtitle".ub_localized.deleteSuffix("...")  + "inform_detail_box_title".ub_localized + "." + "inform_detail_box_text".ub_localized
-        
+                
         informButton.isAccessibilityElement = true
         isAccessibilityElement = false
         accessibilityElementsHidden = false
-        contentView.isAccessibilityElement = true
-        accessibilityElements = [contentView, informButton]
     }
     
     override func layoutSubviews() {
-        contentView.accessibilityFrame =  self.accessibilityFrame // UIAccessibility.convertToScreenCoordinates(self., in: superview!)
+        let el = UIAccessibilityElement(accessibilityContainer: self)
+        el.accessibilityLabel = "inform_detail_box_subtitle".ub_localized.deleteSuffix("...")  + "inform_detail_box_title".ub_localized + "." + "inform_detail_box_text".ub_localized
+        el.accessibilityFrameInContainerSpace = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        accessibilityElements = [el, informButton]
     }
 }
