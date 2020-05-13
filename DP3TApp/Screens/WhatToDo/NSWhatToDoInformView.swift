@@ -46,7 +46,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         contentView.addArrangedView(view)
         contentView.addSpacerView(NSPadding.small)
         
-        contentView.accessibilityLabel = "inform_detail_box_subtitle".ub_localized.replacingOccurrences(of: "...", with: "")  + "inform_detail_box_title".ub_localized + "." + "inform_detail_box_text".ub_localized
+        contentView.accessibilityLabel = "inform_detail_box_subtitle".ub_localized.deleteSuffix("...")  + "inform_detail_box_title".ub_localized + "." + "inform_detail_box_text".ub_localized
         
         informButton.isAccessibilityElement = true
         isAccessibilityElement = false

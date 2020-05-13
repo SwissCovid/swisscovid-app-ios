@@ -16,8 +16,8 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
 
         super.init(title: titleText, subtitle: subtitleText, text: text, image: nil, subtitleColor: .ns_purple)
 
-        isAccessibilityElement = false
-        accessibilityLabel = subtitleText.deleteSuffix("...") + titleText
+        isAccessibilityElement = true
+        accessibilityLabel = subtitleText.deleteSuffix("...") + titleText + "." + text
     }
 
     required init?(coder _: NSCoder) {
