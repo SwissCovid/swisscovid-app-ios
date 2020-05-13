@@ -141,7 +141,8 @@ extension NSButton {
             make.right.lessThanOrEqualToSuperview()
             make.left.greaterThanOrEqualToSuperview()
         }
-
+        
+        faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         return view
     }
 }

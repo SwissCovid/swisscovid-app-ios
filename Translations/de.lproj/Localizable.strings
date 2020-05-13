@@ -813,3 +813,6 @@
 
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
+
+/*Accessibility: FAW Button Titel */
+"accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
