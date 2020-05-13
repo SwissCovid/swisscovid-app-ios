@@ -615,6 +615,7 @@
 "accessibility_12nd" = "Douzième";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
+/*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Code incomplet : impossible d'imprimer.";
 
 /*Fehler Titel: Akkuverbrauch aktiviert*/
@@ -791,3 +792,15 @@
 /*Accessibility Talk back information for android back button in toolbar*/
 /*Fuzzy*/
 "android_accessibility_back_button" = "Retour";
+
+/*VoiceOver: Hilfetext bei Codeeingabe Button*/
+"accessibility_code_button_current_code_hint" = "Eingegebener Code: ";
+
+/*Accessibility: Codeeingabe einer Ziffer*/
+"accessibility_code_input_textfield" = "Textfeld. Momentane Ziffer: ";
+
+/*Accessibility: Code Input Textfeld wenn leer*/
+"accessibility_code_input_textfield_empty" = "Textfeld. Leer.";
+
+/*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
+"accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
