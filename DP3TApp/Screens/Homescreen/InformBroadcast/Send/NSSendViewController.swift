@@ -35,11 +35,18 @@ class NSSendViewController: NSInformBottomButtonViewController {
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(imageView)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(titleLabel)
+        
+        let container = UIStackView()
+        container.isAccessibilityElement = true
+        container.axis = .vertical
+        container.addArrangedView(titleLabel)
+        container.addSpacerView(NSPadding.large)
+        container.addArrangedView(textLabel)
+        container.accessibilityLabel = (titleLabel.text ?? "") + "." + (textLabel.text ?? "")
+        
+        stackScrollView.addArrangedView(container)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(textLabel)
-        stackScrollView.addSpacerView(NSPadding.large)
-
+        UIAccessibility.post(notification: .layoutChanged, argument: container)
         enableBottomButton = true
     }
 

@@ -48,7 +48,7 @@
 "android_button_permission_location" = "Permit localisation";
 
 /*Okay Button Titel*/
-"android_button_ok" = "Ok";
+"android_button_ok" = "OK";
 
 /*Onboarding: Weiter Button Titel*/
 "onboarding_continue_button" = "Continue";
@@ -93,7 +93,7 @@
 "bluetooth_setting_tracking_inactive" = "Tracing deactivated";
 
 /*Bluetooth Setting Text unten*/
-"bluetooth_setting_data_explanation_title" = "Are my data secure?";
+"bluetooth_setting_data_explanation_title" = "Is my data secure?";
 
 /*Bluetooth Setting: Text unten*/
 "bluetooth_setting_tracking_explanation_text2" = "An encounter with another user is only saved locally on your smartphone.";
@@ -141,7 +141,7 @@
 "preview_warning_title" = "Version preview";
 
 /*Text der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_text" = "This app provides a preview of how the DP-3T works. It is not a functioning COVIS-19 tracer.";
+"preview_warning_text" = "This app provides a preview of how the DP-3T works. It is not a functioning COVID-19 tracker.";
 
 /*Debug: Label auf dem Button, der zum Debug-Screen führt*/
 "debug_settings_title" = "Debug settings";
@@ -351,7 +351,7 @@
 "app_subtitle" = "Subtitle";
 
 /*Onboarding: Titel oben*/
-"onboarding_prinzip_heading" = "The aim";
+"onboarding_prinzip_heading" = "The goal";
 
 /*Onboarding: Titel*/
 "onboarding_prinzip_title" = "Staying one step ahead of the virus";
@@ -384,7 +384,7 @@
 "onboarding_begegnungen_text1" = "The app automatically recognises when two users have been in close proximity for a certain time.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "It uses Bluetooth Low Energy (BLE) to do this. No GPS data are used.";
+"onboarding_begegnungen_text2" = "It uses Bluetooth Low Energy (BLE) to do this. No GPS data is used.";
 
 /*Onboarding Meldung: Text oben*/
 "onboarding_meldung_heading" = "What does the app do?";
@@ -615,6 +615,7 @@
 "accessibility_12nd" = "Twelfth";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
+/*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Please enter the code in full, then press button.";
 
 /*Fehler Titel: Akkuverbrauch aktiviert*/
@@ -663,7 +664,7 @@
 "begegnung_detail_faq1_text" = "If smartphones with the app are in close proximity for several minutes, this is registered on your device as an encounter.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq2_title" = "Are my data secure?";
+"begegnung_detail_faq2_title" = "Is my data secure?";
 
 /*Begegnungen: FAQ Text*/
 "begegnung_detail_faq2_text" = "In the event of an encounter, only an encrypted code is exchanged. This is saved locally on the devices and then deleted 21 days later.";
@@ -687,7 +688,7 @@
 "meldungen_nomeldungen_faq2_titel" = "What is a potential infection?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "The app not only checks whether you have had encounters with infected persons, but how long and how close these were. You will only be notified if there is sufficent suspicion that you have been infected. ";
+"meldungen_nomeldungen_faq2_text" = "The app not only checks whether you have had encounters with infected persons, but how long and how close these were. You will only be notified if there is sufficient suspicion that you have been infected.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "As soon as you have any symptoms, contact your doctor.";
@@ -759,13 +760,13 @@
 "inform_code_intro_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date. ";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "ok";
+"inform_code_intro_button" = "OK";
 
 /*Symptome: FAQ Titel*/
 "symptom_faq1_title" = "Unsure about symptoms?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "You have symptoms but are unsuare what you should do? Answer the questions in the FOPH Coronavirus Check to receive advice on what to do.";
+"symptom_faq1_text" = "You have symptoms but are unsure what you should do? Answer the questions in the FOPH Coronavirus Check to receive advice on what to do.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Why has tracing ended?";
@@ -774,7 +775,7 @@
 "meldungen_positive_tested_faq1_text" = "Following a positive text, tracing in the app is automatically ended.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "de";
+"language_key" = "en";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Coronavirus infoline";
@@ -790,3 +791,18 @@
 
 /*Accessibility Talk back information for android back button in toolbar*/
 "android_accessibility_back_button" = "Back";
+
+/*VoiceOver: Hilfetext bei Codeeingabe Button*/
+"accessibility_code_button_current_code_hint" = "Eingegebener Code: ";
+
+/*Accessibility: Codeeingabe einer Ziffer*/
+"accessibility_code_input_textfield" = "Textfeld. Momentane Ziffer: ";
+
+/*Accessibility: Code Input Textfeld wenn leer*/
+"accessibility_code_input_textfield_empty" = "Textfeld. Leer.";
+
+/*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
+"accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
+
+/*Accessibility: FAW Button Titel */
+"accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";

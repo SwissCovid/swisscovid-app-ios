@@ -29,7 +29,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         super.viewDidLoad()
 
         setup()
-        setupAccessibility()
+        updateAccessibilityLabelOfButton(sendAllowed: false)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -110,7 +110,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         sendButton.isEnabled = false
     }
 
-    func setupAccessibility() {}
 
     // MARK: - Send Logic
 
@@ -170,14 +169,30 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private func noCodeButtonPressed() {
         navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
     }
-
+    
+    // MARK: - NSCodeControlProtocol
+    
     func changeSendPermission(to sendAllowed: Bool) {
         sendButton.isEnabled = sendAllowed
+        updateAccessibilityLabelOfButton(sendAllowed: sendAllowed)
+    }
+    
+    func lastInputControlEntered() {
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(notification: .screenChanged, argument: sendButton)
+        }
+    }
+    
+    private func updateAccessibilityLabelOfButton(sendAllowed: Bool) {
+        let codeEingabe = "accessibility_code_button_current_code_hint".ub_localized +  codeControl.code()
         if sendAllowed {
-            sendButton.accessibilityHint = ""
-
+          sendButton.accessibilityHint = codeEingabe
         } else {
-            sendButton.accessibilityHint = "accessibility_code_button_disabled_hint".ub_localized
+          var accessibilityLabel = "accessibility_code_button_disabled_hint".ub_localized
+          if (!codeControl.code().isEmpty) {
+              accessibilityLabel += codeEingabe
+          }
+          sendButton.accessibilityHint = accessibilityLabel
         }
     }
 }
