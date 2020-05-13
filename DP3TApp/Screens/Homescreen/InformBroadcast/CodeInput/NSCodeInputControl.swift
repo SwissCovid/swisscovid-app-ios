@@ -98,7 +98,6 @@ class NSCodeControl: UIView {
                 _ = controls[i + 1].becomeFirstResponder()
                 currentControl = controls[i + 1]
             } else {
-                _ = c.resignFirstResponder()
                 controller?.lastInputControlEntered()
             }
         } else {
