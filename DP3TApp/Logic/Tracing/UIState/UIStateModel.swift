@@ -84,12 +84,9 @@ struct UIStateModel: Equatable {
 
     #if ENABLE_TESTING
     struct Debug: Equatable {
-        var handshakeCount: Int?
-        var contactCount: Int?
         var lastSync: Date?
         var infectionStatus: DebugInfectionStatus = .healthy
         var overwrittenInfectionState: DebugInfectionStatus?
-        var secretKeyRepresentation: String?
         var logOutput: NSAttributedString = NSAttributedString()
 
         enum DebugInfectionStatus: Equatable {

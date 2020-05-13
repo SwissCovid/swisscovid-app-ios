@@ -53,10 +53,12 @@ class TracingManager: NSObject {
 
                     try DP3TTracing.initialize(with: .manual(descriptor),
                                                urlSession: URLSession.certificatePinned,
+                                               mode: .calibration,
                                                backgroundHandler: self)
                 case .abnahme, .prod:
                     try DP3TTracing.initialize(with: .manual(descriptor),
                                                urlSession: URLSession.certificatePinned,
+                                               mode: .calibration,
                                                backgroundHandler: self)
             }
             #else
@@ -172,17 +174,6 @@ extension TracingManager: DP3TTracingDelegate {
             }
         }
     }
-
-    #if ENABLE_TESTING
-    func didAddLog(logEntry: LogEntry) {
-        switch logEntry.type {
-        case .backgroundTask:
-            Logger.log(logEntry.message)
-        default:
-            break
-        }
-    }
-    #endif
 }
 
 extension TracingManager: DP3TBackgroundHandler {
