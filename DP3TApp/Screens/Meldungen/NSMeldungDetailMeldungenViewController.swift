@@ -136,8 +136,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
-        whiteBoxView.contentView.addSpacerView(20.0)
+   
 
         return whiteBoxView
     }
@@ -160,8 +159,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
-        whiteBoxView.contentView.addSpacerView(20.0)
 
         return whiteBoxView
     }
@@ -184,7 +181,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
         whiteBoxView.contentView.addSpacerView(20.0)
 
         return whiteBoxView
@@ -212,18 +208,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
 
         return ev
-    }
-
-    private func createExternalLinkButton() -> NSExternalLinkButton {
-        let button = NSExternalLinkButton(color: .ns_blue)
-        button.title = "meldungen_explanation_link_title".ub_localized
-        button.touchUpCallback = {
-            if let url = URL(string: "meldungen_explanation_link_url".ub_localized), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }
-
-        return button
     }
 
     // MARK: - Logic
