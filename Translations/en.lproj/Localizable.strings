@@ -832,13 +832,13 @@
 "onboarding_gaen_button_activated" = "Aktiviert";
 
 /*Meldung in der App löschen, wenn möglicherweise angesteckt*/
-"delete_reports_text" = "Meldung löschen";
+"delete_reports_button" = "Meldung löschen";
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
-"delete_reports_dialog_text" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
+"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
-"delete_infection_text" = "Meldung löschen";
+"delete_infection_button" = "Meldung löschen";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
-"delete_infection_dialog_text" = "Möchten sie die Meldung wirklich löschen?";
+"delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
