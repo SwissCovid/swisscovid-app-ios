@@ -199,11 +199,16 @@ class UIStateLogic {
             }
         }
 
+        static let randIdentifier1 = UUID()
+        static let randIdentifier2 = UUID()
+    static let randDate1 = Date(timeIntervalSinceNow: -10000)
+    static let randDate2 = Date(timeIntervalSinceNow: -100000)
+
         private func setDebugMeldungen(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [UIStateModel.MeldungenDetail.NSMeldungModel(identifier: 123_452621, timestamp: Date(timeIntervalSinceReferenceDate: 609_777_287)), UIStateModel.MeldungenDetail.NSMeldungModel(identifier: 252525252, timestamp: Date(timeIntervalSinceReferenceDate: 609_787_287))].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [UIStateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), UIStateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true

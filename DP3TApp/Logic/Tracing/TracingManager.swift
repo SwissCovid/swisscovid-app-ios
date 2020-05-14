@@ -51,18 +51,18 @@ class TracingManager: NSObject {
                     // 5min Batch lenght on dev Enviroment
                     DP3TTracing.parameters.networking.batchLength = 5 * 60
 
-                    try DP3TTracing.initialize(with: .manual(descriptor),
+                    try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
                                                mode: .calibration,
                                                backgroundHandler: self)
                 case .abnahme, .prod:
-                    try DP3TTracing.initialize(with: .manual(descriptor),
+                    try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
                                                mode: .calibration,
                                                backgroundHandler: self)
             }
             #else
-                try DP3TTracing.initialize(with: .manual(descriptor),
+                try DP3TTracing.initialize(with: descriptor,
                                            urlSession: URLSession.certificatePinned,
                                            backgroundHandler: self)
             #endif

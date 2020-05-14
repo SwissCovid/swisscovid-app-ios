@@ -16,7 +16,7 @@ class TracingLocalPush {
     func update(state: TracingState) {
         switch state.infectionStatus {
         case let .exposed(matches):
-            exposureIdentifiers = matches.map { $0.identifier }
+            exposureIdentifiers = matches.map { $0.identifier.uuidString }
         case .healthy:
             exposureIdentifiers = []
         case .infected:
@@ -25,7 +25,7 @@ class TracingLocalPush {
     }
 
     @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])
-    private var exposureIdentifiers: [Int] {
+    private var exposureIdentifiers: [String] {
         didSet {
             for identifier in exposureIdentifiers {
                 if !oldValue.contains(identifier) {

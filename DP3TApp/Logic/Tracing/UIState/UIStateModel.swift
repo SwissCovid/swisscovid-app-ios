@@ -70,7 +70,7 @@ struct UIStateModel: Equatable {
         var showMeldungWithAnimation: Bool = false
 
         struct NSMeldungModel: Equatable {
-            let identifier: Int
+            let identifier: UUID
             let timestamp: Date
         }
 
