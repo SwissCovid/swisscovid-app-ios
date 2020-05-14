@@ -4,11 +4,11 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import Foundation
 import UIKit
 
 import DP3TSDK
+import ExposureNotification
 
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
@@ -32,8 +32,6 @@ class TracingManager: NSObject {
             UIStateManager.shared.changedTracingActivated()
         }
     }
-
-    private var central: CBCentralManager?
 
     func initialize() {
         do {
@@ -75,6 +73,14 @@ class TracingManager: NSObject {
         }
     }
 
+    private let enManager = ENManager()
+
+    func requestTracingPermission(completion: @escaping (Error?)->Void) {
+        enManager.setExposureNotificationEnabled(true) { error in
+            completion(error)
+        }
+    }
+
     func beginUpdatesAndTracing() {
         NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(willEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
@@ -90,9 +96,7 @@ class TracingManager: NSObject {
                 UIStateManager.shared.tracingStartError = error
             }
 
-            if central == nil {
-                central = CBCentralManager(delegate: self, queue: nil)
-            }
+
         }
 
         updateStatus(completion: nil)
@@ -172,13 +176,7 @@ class TracingManager: NSObject {
     }
 }
 
-extension TracingManager: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if central.state == .poweredOn, isActivated {
-            beginUpdatesAndTracing()
-        }
-    }
-}
+
 
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
