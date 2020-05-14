@@ -105,7 +105,7 @@
 "meldungen_no_meldungen_title" = "Pas de notification";
 
 /*Push deaktiviert Titel*/
-"push_deactivated_title" = "Communications désactivées";
+"push_deactivated_title" = "Notifications désactivées";
 
 /*Push deaktiviert Text*/
 "push_deactivated_text" = "Veuillez modifier les paramètres pour pouvoir recevoir les notifications";
@@ -423,13 +423,13 @@
 "onboarding_bluetooth_gtk_text2" = "L'application utilise aussi peu d'énergie que possible. La consommation n'augmente que légèrement.";
 
 /*Onboarding Mitteilungen: Titel*/
-"onboarding_push_title" = "Autoriser les communications";
+"onboarding_push_title" = "Autoriser les notifications";
 
 /*Onboarding Mitteilungen: Text*/
-"onboarding_push_text" = "Vous devez autorisez les communications pour recevoir des informations de la part de l'application.";
+"onboarding_push_text" = "Vous devez autorisez les notifications pour recevoir des informations de la part de l'application.";
 
 /*Onboarding Mitteilungen: Button*/
-"onboarding_push_button" = "Autoriser les communications";
+"onboarding_push_button" = "Autoriser les notifications";
 
 /*Onboarding Mitteilungen: Titel Unten*/
 "onboarding_push_gtk_title1" = "Information immédiate";
