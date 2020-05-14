@@ -91,7 +91,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
     }
 
     private func externalLinkPressed() {
-        if let url = URL(string: "meldungen_explanation_link_url".ub_localized) {
+        if let url = URL(string: "ios_meldungen_explanation_link_url".ub_localized) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }

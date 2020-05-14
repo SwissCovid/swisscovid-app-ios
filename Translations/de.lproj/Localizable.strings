@@ -32,9 +32,6 @@
 /*Titel auf Homescreen für Begegnungen*/
 "handshakes_title_homescreen" = "Begegnungen";
 
-/*Titel der About Seite*/
-"tab_theapp_title" = "Die App";
-
 /*Abbrechen*/
 "cancel" = "Abbrechen";
 
@@ -179,9 +176,6 @@
 /*Debug: Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde*/
 "debug_sdk_state_contact_exposed" = "Kontakt gemeldet: ";
 
-/*Debug: Bezeichnung für die Anzahl bluetooth-handshakes, die ausgeführt wurden*/
-"debug_sdk_state_number_handshakes" = "Anzahl handshakes: ";
-
 /*Debug-Status-Bezeichnung für boleschen Wert 'true'*/
 "debug_sdk_state_boolean_true" = "ja";
 
@@ -316,9 +310,6 @@
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
 "date_days_ago" = "vor {COUNT} Tagen";
 
-/*Meldungen Detail: Subtitel Weisse Box*/
-"meldungen_detail_whattodo" = "Was soll ich tun?";
-
 /*Meldungen Detail: Weisse Box Titel*/
 "meldungen_detail_call" = "Rufen Sie uns an";
 
@@ -337,9 +328,6 @@
 /*CFL: Hier hats die Latest Version deutsch mit "10 Tage ab Anstechung" nicht mehr reingeschafft. Schauen wir, wenn Übersetzungen da sind.*/
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
 "meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
-
-/*Meldungen Detail Weisse Box Titel*/
-"meldungen_detail_guard_others" = "Schützen Sie andere";
 
 /*Meldungen Detail: Weisse Box Text*/
 "meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline Coronavirus\n+41 58 387 77 78";
@@ -571,16 +559,6 @@
 /*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
 "unexpected_error_with_retry" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
 
-/*CFL: Nummer anzeigen?*/
-/*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
-"invalid_response_auth_code" = "Aufgrund eines Systemfehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";
-
-/*Titel für Fehlermeldung mit Standort*/
-"error_location_permission_title" = "Standort-Verwendung abgelehnt";
-
-/*Button für Fehlermeldung mit Standort*/
-"error_location_permission_button" = "Zulassen";
-
 /*VoiceOver: Datum*/
 "accessibility_date" = "Datum";
 
@@ -624,9 +602,6 @@
 /*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde. ";
 
-/*Fehler Titel: Akkuverbrauch aktiviert*/
-"error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
-
 /*Fehler: Standortinformationen / Bluetooth*/
 "foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
 
@@ -639,9 +614,6 @@
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Information";
 
-/*Debug: Anzahl Kontakte Titel*/
-"debug_sdk_state_number_contacts" = "Anzahl Kontakte: ";
-
 /*Synchronisations-Fehler Titel*/
 "sync_warning_notification_title" = "Es ist ein Fehler aufgetreten";
 
@@ -653,15 +625,6 @@
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
-
-/*Synchronisations-Fehler Titel*/
-"sync_error_title" = "Unerwarteter Fehler";
-
-/*Synchronisations-Fehler Text*/
-"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
-
-/*Synchronisations-Fehler Button Titel*/
-"sync_error_button" = "Erneut versuchen";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
@@ -700,7 +663,8 @@
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
 
 /*Meldungen: Meldung Weisse Box Link URL*/
-"meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
+/*Fuzzy*/
+"ios_meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
 
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
@@ -713,18 +677,6 @@
 
 /*Meldungen Detail Anruf Danke Subtitel*/
 "meldungen_detail_call_thankyou_subtitle" = "Sie schützen andere";
-
-/*Meldungen Detail Keine Meldungen Titel*/
-"meldungen_detail_no_meldungen_title" = "Keine neuen Meldungen";
-
-/*Meldungen Detail Keine Meldung Subtitel*/
-"meldungen_detail_no_meldungen_subtitle" = "Die letzte mögliche Ansteckung fand vor mehr als 10 Tagen statt.";
-
-/*Meldungen Detail: Keine Meldungen Button*/
-"meldungen_detail_no_meldungen_continue" = "Weiter";
-
-/*Meldungen Detail: Keine Meldungen Hinweis*/
-"meldungen_detail_no_meldungen_hinweis" = "Hinweis";
 
 /*Keine Meldungen Link in weisser Box Titel*/
 "no_meldungen_box_link" = "So schützen wir uns";
@@ -743,12 +695,6 @@
 
 /*Inform Detail FAQ Text*/
 "inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet. Keine persönlichen Daten.\n\nDamit können andere Swiss PT App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
-
-/*Informieren: Titel Tracing beendet*/
-"inform_send_endtracing_title" = "Tracing beendet";
-
-/*Informieren: Text Tracing beendet*/
-"inform_send_endtracing_text" = "Nach einem positiven Test wird das Tracing automatisch beendet.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
