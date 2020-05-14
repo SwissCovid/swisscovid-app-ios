@@ -36,6 +36,8 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple)
 
+        addDeleteButton(whiteBoxView)
+
 
         stackScrollView.addArrangedView(whiteBoxView)
 
@@ -48,6 +50,18 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
 
         stackScrollView.addSpacerView(NSPadding.large)
+    }
+
+    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+
+        whiteBoxView.contentView.addSpacerView(15)
+
+        let deleteButton = NSButton(title: "delete_meldung_button_title".ub_localized, style: .borderlessUppercase(.ns_purple))
+        whiteBoxView.contentView.addArrangedView(deleteButton)
+
+        deleteButton.setContentHuggingPriority(.required, for: .vertical)
+
     }
 
     private func externalLinkPressed() {

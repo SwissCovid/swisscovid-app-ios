@@ -136,6 +136,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
+
+        self.addDeleteButton(whiteBoxView)
    
 
         return whiteBoxView
@@ -160,6 +162,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
+        self.addDeleteButton(whiteBoxView)
+
         return whiteBoxView
     }
 
@@ -181,9 +185,22 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addSpacerView(20.0)
+
+        self.addDeleteButton(whiteBoxView)
 
         return whiteBoxView
+    }
+
+    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+
+        whiteBoxView.contentView.addSpacerView(15)
+        
+        let deleteButton = NSButton(title: "delete_meldung_button_title".ub_localized, style: .borderlessUppercase(.ns_blue))
+        whiteBoxView.contentView.addArrangedView(deleteButton)
+
+        deleteButton.setContentHuggingPriority(.required, for: .vertical)
+
     }
 
     private func createCallLabel() -> NSLabel {

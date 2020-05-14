@@ -21,6 +21,8 @@ extension UIColor {
     public static var ns_backgroundSecondary = UIColor(ub_hexString: "#f7f7f7")!
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!
 
+    public static var ns_line = UIColor(ub_hexString: "#ecebeb")!
+
     // MARK: - Deprecated colors
 
     // background of views

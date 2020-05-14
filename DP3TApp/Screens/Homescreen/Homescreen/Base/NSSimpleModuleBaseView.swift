@@ -149,7 +149,7 @@ class NSSimpleModuleBaseView: UIView {
                 make.right.equalToSuperview().offset(-sideInset)
             }
              */
-            make.bottom.equalToSuperview().inset(sideInset)
+            make.bottom.equalToSuperview().inset(15)
         }
 
         contentView.axis = .vertical
