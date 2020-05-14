@@ -34,7 +34,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
     private func setupLayout() {
 
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
 
         addDeleteButton(whiteBoxView)
 
@@ -54,14 +54,24 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
     private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
 
-        whiteBoxView.contentView.addSpacerView(15)
+        whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
 
-        whiteBoxView.contentView.addSpacerView(15)
-
         let deleteButton = NSButton(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
-        whiteBoxView.contentView.addArrangedView(deleteButton)
+
+        let container = UIView()
+        whiteBoxView.contentView.addArrangedView(container)
+
+        container.addSubview(deleteButton)
+
+        deleteButton.highlightCornerRadius = 0
+
+        deleteButton.snp.makeConstraints { (make) in
+            make.height.equalTo(60)
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().inset(-2*12.0)
+        }
 
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
 

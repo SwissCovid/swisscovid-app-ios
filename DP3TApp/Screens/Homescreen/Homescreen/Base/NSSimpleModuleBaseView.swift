@@ -22,6 +22,7 @@ class NSSimpleModuleBaseView: UIView {
     private let subview: UIView?
 
     private let sideInset: CGFloat
+    private let bottomPadding: Bool
 
     // MARK: - Public
 
@@ -29,8 +30,9 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil) {
+    init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil, bottomPadding: Bool = true) {
         sideInset = NSPadding.large
+        self.bottomPadding = bottomPadding
         self.subview = subview
 
         super.init(frame: .zero)
@@ -149,7 +151,12 @@ class NSSimpleModuleBaseView: UIView {
                 make.right.equalToSuperview().offset(-sideInset)
             }
              */
-            make.bottom.equalToSuperview().inset(15)
+            if bottomPadding {
+                make.bottom.equalToSuperview().inset(15)
+            }
+            else {
+                make.bottom.equalToSuperview()
+            }
         }
 
         contentView.axis = .vertical

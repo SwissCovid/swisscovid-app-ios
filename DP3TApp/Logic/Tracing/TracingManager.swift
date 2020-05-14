@@ -107,25 +107,44 @@ class TracingManager: NSObject {
     }
 
     func resetSDK() {
+
+        // completely reset SDK
         try? DP3TTracing.reset()
+
+        // reset debugi fake data to test UI reset
         #if ENABLE_TESTING
         UIStateManager.shared.overwrittenInfectionState = nil
         #endif
     }
 
     func deletePositiveTest() {
+
+        // reset infection status
         try? DP3TTracing.resetInfectionStatus()
+
+        // reset debug fake data to test UI reset
         #if ENABLE_TESTING
         UIStateManager.shared.overwrittenInfectionState = nil
         #endif
+
+        // during infection, tracing is diabled
+        // after infection, it works again, but user must manually
+        // enable if desired
+        isActivated = false
+
         UIStateManager.shared.refresh()
     }
 
     func deleteMeldungen() {
+
+        // delete all visible messages
         try? DP3TTracing.resetExposureDays()
+
+        // reset debug fake data to test UI reset
         #if ENABLE_TESTING
         UIStateManager.shared.overwrittenInfectionState = nil
         #endif
+        
         UIStateManager.shared.refresh()
     }
 
