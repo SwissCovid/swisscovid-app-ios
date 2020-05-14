@@ -615,6 +615,7 @@
 "accessibility_12nd" = "Douzième";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
+/*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Code incomplet : impossible d'imprimer.";
 
 /*Fehler Titel: Akkuverbrauch aktiviert*/
@@ -691,9 +692,6 @@
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Contactez un médecin dès les premiers symptômes";
-
-/*Meldungen: Meldung Weisse Box Link Titel*/
-"meldungen_explanation_link_title" = "Consigne concernant l'auto-quarantaine";
 
 /*Meldungen: Meldung Weisse Box Link URL*/
 "meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/fr/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
@@ -791,3 +789,57 @@
 /*Accessibility Talk back information for android back button in toolbar*/
 /*Fuzzy*/
 "android_accessibility_back_button" = "Retour";
+
+/*VoiceOver: Hilfetext bei Codeeingabe Button*/
+"accessibility_code_button_current_code_hint" = "Eingegebener Code: ";
+
+/*Accessibility: Codeeingabe einer Ziffer*/
+"accessibility_code_input_textfield" = "Textfeld. Momentane Ziffer: ";
+
+/*Accessibility: Code Input Textfeld wenn leer*/
+"accessibility_code_input_textfield_empty" = "Textfeld. Leer.";
+
+/*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
+"accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
+
+/*Accessibility: FAW Button Titel */
+"accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
+
+/*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_title" = "Tracing aktivieren";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_text" = "Um die App nutzen zu können, muss die Funktion (COVID-19 Exposure Logging) aktiviert werden.";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activate" = "Aktivieren";
+
+/*Onboarding Page für die Permission der Exposure-Library: "Gut zu wissen" Titel*/
+"onboarding_gaen_good_to_know" = "Gut zu wissen:";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
+"onboarding_gaen_info_title_1" = "Sie bleiben anonym";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
+"onboarding_gaen_info_text_1" = "Es werden nur anonyme IDs ausgetauscht. Keine Daten zum Standort oder Ihrer Person.";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
+"onboarding_gaen_info_title_2" = "Leicht erhöhte Batterienutzung";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
+"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activated" = "Aktiviert";
+
+/*Meldung in der App löschen, wenn möglicherweise angesteckt*/
+"delete_reports_text" = "Meldung löschen";
+
+/*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
+"delete_reports_dialog_text" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
+
+/*Code-Eingabe in der App löschen, wenn infiziert*/
+"delete_infection_text" = "Meldung löschen";
+
+/*Meldung im Löschen Dialog nach Code-Einfragen*/
+"delete_infection_dialog_text" = "Möchten sie die Meldung wirklich löschen?";

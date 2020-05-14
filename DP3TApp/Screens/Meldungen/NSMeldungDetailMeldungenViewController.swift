@@ -196,10 +196,21 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(15)
         
-        let deleteButton = NSButton(title: "delete_meldung_button_title".ub_localized, style: .borderlessUppercase(.ns_blue))
+        let deleteButton = NSButton(title: "delete_reports_text".ub_localized, style: .borderlessUppercase(.ns_blue))
         whiteBoxView.contentView.addArrangedView(deleteButton)
 
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
+
+        deleteButton.touchUpCallback = { [weak self] in
+            let alert = UIAlertController(title: nil, message: "delete_reports_dialog_text".ub_localized, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "delete_reports_text".ub_localized, style: .destructive, handler: { (_) in
+                TracingManager.shared.deletePositiveTest()
+            }))
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { (_) in
+
+            }))
+            self?.present(alert, animated: true, completion: nil)
+        }
 
     }
 

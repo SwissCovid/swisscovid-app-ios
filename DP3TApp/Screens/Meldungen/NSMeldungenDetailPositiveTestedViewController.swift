@@ -57,11 +57,24 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
         whiteBoxView.contentView.addSpacerView(15)
 
-        let deleteButton = NSButton(title: "delete_meldung_button_title".ub_localized, style: .borderlessUppercase(.ns_purple))
+        let deleteButton = NSButton(title: "delete_infection_text".ub_localized, style: .borderlessUppercase(.ns_purple))
         whiteBoxView.contentView.addArrangedView(deleteButton)
 
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
 
+        deleteButton.touchUpCallback = { [weak self] in
+
+            deleteButton.touchUpCallback = {
+                let alert = UIAlertController(title: nil, message: "delete_infection_dialog_text".ub_localized, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "delete_infection_text".ub_localized, style: .destructive, handler: { (_) in
+                    TracingManager.shared.deletePositiveTest()
+                }))
+                alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { (_) in
+
+                }))
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     private func externalLinkPressed() {

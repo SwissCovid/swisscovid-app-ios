@@ -109,6 +109,22 @@ class TracingManager: NSObject {
         #endif
     }
 
+    func deletePositiveTest() {
+        try? DP3TTracing.resetInfectionStatus()
+        #if ENABLE_TESTING
+        UIStateManager.shared.overwrittenInfectionState = nil
+        #endif
+        UIStateManager.shared.refresh()
+    }
+
+    func deleteMeldungen() {
+        try? DP3TTracing.resetExposureDays()
+        #if ENABLE_TESTING
+        UIStateManager.shared.overwrittenInfectionState = nil
+        #endif
+        UIStateManager.shared.refresh()
+    }
+
     func userHasCompletedOnboarding() {
         do {
             if ConfigManager.allowTracing {
