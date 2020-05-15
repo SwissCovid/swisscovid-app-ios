@@ -314,6 +314,7 @@
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
 		F80E737E245B0BC300C934B8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E737D245B0BC300C934B8 /* Language.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
+		F86E287E246E6D2300255978 /* DP3TSDK_LOGGING_STORAGE in Frameworks */ = {isa = PBXBuildFile; productRef = F86E287D246E6D2300255978 /* DP3TSDK_LOGGING_STORAGE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -501,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */,
+				F86E287E246E6D2300255978 /* DP3TSDK_LOGGING_STORAGE in Frameworks */,
 				242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1128,6 +1130,7 @@
 			packageProductDependencies = (
 				242D21D3245C4BD8005DAEA8 /* SnapKit */,
 				F8287D16246ABCAF0022CFD9 /* DP3TSDK */,
+				F86E287D246E6D2300255978 /* DP3TSDK_LOGGING_STORAGE */,
 			);
 			productName = IVC;
 			productReference = 242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */;
@@ -2558,6 +2561,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
 			productName = DP3TSDK;
+		};
+		F86E287D246E6D2300255978 /* DP3TSDK_LOGGING_STORAGE */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
+			productName = DP3TSDK_LOGGING_STORAGE;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

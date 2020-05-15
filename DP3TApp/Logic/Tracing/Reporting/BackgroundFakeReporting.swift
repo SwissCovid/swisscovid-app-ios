@@ -102,14 +102,22 @@ class FakePublishBackgroundTaskManager {
         Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
     }
 
-    private func scheduleBackgroundTask() {
+    @discardableResult
+    func rescheduleFakeRequest(force: Bool = false) -> Date{
 
         var nextDate = self.nextScheduledFakeRequestDate ?? self.getNewScheduleDate()
-        if nextDate <= Date() {
+
+        if nextDate <= Date() || force {
             nextDate = self.getNewScheduleDate()
         }
 
         self.nextScheduledFakeRequestDate = nextDate
+        return nextDate
+    }
+
+    private func scheduleBackgroundTask() {
+
+        let nextDate = rescheduleFakeRequest()
 
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
         syncTask.requiresExternalPower = false

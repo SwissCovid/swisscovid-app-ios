@@ -10,6 +10,11 @@ import UIKit
 import DP3TSDK
 import ExposureNotification
 
+#if ENABLE_TESTING
+import  DP3TSDK_LOGGING_STORAGE
+extension DP3TLoggingStorage: LoggingDelegate {}
+#endif
+
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
     /// Identifier known to
@@ -20,6 +25,10 @@ class TracingManager: NSObject {
 
     let uiStateManager = UIStateManager()
     let databaseSyncer = DatabaseSyncer()
+
+    #if ENABLE_TESTING
+    var loggingStorage: DP3TLoggingStorage?
+    #endif
 
     @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
@@ -44,6 +53,10 @@ class TracingManager: NSObject {
                                                    jwtPublicKey: Environment.current.jwtPublicKey)
 
             #if ENABLE_TESTING
+                // Set logging Storage
+                loggingStorage = try? .init()
+                DP3TTracing.loggingDelegate = loggingStorage
+            
                 switch Environment.current {
                 case .dev:
                     // 5min Batch lenght on dev Enviroment
@@ -51,12 +64,10 @@ class TracingManager: NSObject {
 
                     try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
-                                               mode: .calibration,
                                                backgroundHandler: self)
                 case .abnahme, .prod:
                     try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
-                                               mode: .calibration,
                                                backgroundHandler: self)
             }
             #else
