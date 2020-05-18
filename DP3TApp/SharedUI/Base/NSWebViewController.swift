@@ -142,6 +142,8 @@ extension Bundle {
         switch Environment.current {
             case .dev:
             return " DEV"
+            case .test:
+            return " TEST"
             case .abnahme:
             return " ABNAHME"
             case .prod:
@@ -151,6 +153,8 @@ extension Bundle {
         switch Environment.current {
             case .dev:
                 return " DEV"
+            case .test:
+                return " TEST"
             case .abnahme:
                 return " ABNAHME"
             case .prod:

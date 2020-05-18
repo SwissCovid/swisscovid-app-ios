@@ -65,7 +65,7 @@ class TracingManager: NSObject {
                     try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
                                                backgroundHandler: self)
-                case .abnahme, .prod:
+                case .test, .abnahme, .prod:
                     try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
                                                backgroundHandler: self)
