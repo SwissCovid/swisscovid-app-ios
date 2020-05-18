@@ -23,6 +23,7 @@ class NSOnboardingInfoView: UIView {
 
         let label = NSLabel(.textLight)
         label.text = text
+        label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
 
         addSubview(imgView)
         addSubview(label)

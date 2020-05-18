@@ -50,7 +50,7 @@ platform :ios do
   pilot(
     ipa: ENV["IPA_OUTPUT_PATH"], 
     changelog: changelog,
-    groups: ["Ubique"],
+    groups: ["Ubique Internal"],
     beta_app_review_info: {
       contact_email: ENV["REVIEW_CONTACT_EMAIL"],
       contact_first_name: "Nicolas",

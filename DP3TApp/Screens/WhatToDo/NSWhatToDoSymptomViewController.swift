@@ -110,7 +110,6 @@ class NSWhatToDoSymptomViewController: NSViewController {
     private func setupAccessibility() {
         titleContentStackView.isAccessibilityElement = true
         titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
-        accessibilityElements = [titleContentStackView, symptomView]
     }
 
     // MARK: - Detail

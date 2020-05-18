@@ -99,7 +99,6 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     private func setupAccessibility() {
         titleContentStackView.isAccessibilityElement = true
         titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
-        accessibilityElements = [titleContentStackView, informView]
     }
 
     // MARK: - Present

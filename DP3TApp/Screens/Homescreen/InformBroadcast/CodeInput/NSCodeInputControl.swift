@@ -9,6 +9,7 @@ import UIKit
 
 protocol NSCodeControlProtocol {
     func changeSendPermission(to sendAllowed: Bool)
+    func lastInputControlEntered()
 }
 
 class NSCodeControl: UIView {
@@ -80,7 +81,7 @@ class NSCodeControl: UIView {
 
             controls.append(singleControl)
             stackView.addArrangedView(singleControl)
-            elements.append(singleControl)
+            elements.append(singleControl.textField)
             if (i + 1) % 3 == 0, i + 1 != numberOfInputs {
                 stackView.setCustomSpacing(NSPadding.small + 2.0, after: singleControl)
             }
@@ -96,6 +97,8 @@ class NSCodeControl: UIView {
             if i + 1 < numberOfInputs {
                 _ = controls[i + 1].becomeFirstResponder()
                 currentControl = controls[i + 1]
+            } else {
+                controller?.lastInputControlEntered()
             }
         } else {
             _ = controls[0].becomeFirstResponder()
@@ -169,19 +172,24 @@ class NSCodeControl: UIView {
 class NSCodeSingleControl: UIView, UITextFieldDelegate {
     public weak var parent: NSCodeControl?
 
-    private let textField = NSTextField()
+    public let textField = NSTextField()
     private let emptyCharacter = "\u{200B}"
 
     private var hadText: Bool = false
-
+    public var indexInCodeControl: Int
+    
     init(index: Int) {
+        indexInCodeControl = index
         super.init(frame: .zero)
         setup()
-        textField.text = emptyCharacter
-        textField.accessibilityTraits = .none
+        
+        textField.text = UIAccessibility.isVoiceOverRunning ? "" : emptyCharacter
+        textField.accessibilityTraits = .staticText
+        accessibilityTraits = .staticText
         isAccessibilityElement = true
-        textField.accessibilityLabel = "accessibility_\(index + 1)nd".ub_localized
     }
+    
+   
 
     override func accessibilityElementDidBecomeFocused() {
         textField.becomeFirstResponder()
@@ -316,5 +324,27 @@ class NSTextField: UITextField {
 
     override func canPerformAction(_ action: Selector, withSender _: Any?) -> Bool {
         return action == #selector(UIResponderStandardEditActions.paste)
+    }
+    
+    override var accessibilityLabel: String? {
+        get {
+            if  let text = text, !text.isEmpty {
+                return (singleControl == nil ? "" : "accessibility_\(singleControl!.indexInCodeControl + 1)nd".ub_localized) + "accessibility_code_input_textfield".ub_localized
+            } else {
+                return (singleControl == nil ? "" : "accessibility_\(singleControl!.indexInCodeControl + 1)nd".ub_localized) + "accessibility_code_input_textfield_empty".ub_localized
+            }
+        }
+        set {
+            super.accessibilityLabel = newValue
+        }
+    }
+    
+    override var accessibilityHint: String? {
+        get {
+            return "accessibility_code_input_hint".ub_localized
+        }
+        set {
+            super.accessibilityHint = newValue
+        }
     }
 }
