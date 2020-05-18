@@ -90,6 +90,8 @@ class NSHeaderErrorView: UIView {
                 self.imageView.image = UIImage(named: "ic-header-bt-off")!
             case .bluetoothPermissionError:
                 self.imageView.image = UIImage(named: "ic-header-bt-disabled")!
+            case .tracingPermissionError:
+                self.imageView.image = UIImage(named: "ic-tracing-error")!
             }
         }, completion: nil)
     }

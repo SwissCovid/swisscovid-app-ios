@@ -41,9 +41,6 @@
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
 "push_exposed_text" = "Apri l'app per leggere il messaggio.";
 
-/*Titel für Button um Ortung zu erlauben*/
-"android_button_permission_location" = "Consenti localizzazione";
-
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
 
@@ -89,12 +86,6 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracciamento disattivato";
 
-/*Bluetooth Setting Text unten*/
-"bluetooth_setting_data_explanation_title" = "I miei dati sono sicuri?";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text2" = "Un incontro con un altro utente viene salvato soltanto localmente sul tuo smartphone.";
-
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Segnalazioni";
 
@@ -124,15 +115,6 @@
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "Attualmente l'app non è in grado di funzionare correttamente:";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_network_sync" = "Si è verificato un errore durante il caricamento dei dati.";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_location_permission" = "Per permettere all'app di utilizzare Bluetooth occorre consentire l'uso della posizione. L'app non conosce mai la posizione dell'utente.";
-
-/*Fehler Beschreibung Akku*/
-"android_foreground_service_notification_error_battery_optimization" = "Per un funzionamento preciso del tracciamento, l'app deve essere eseguita anche in background. Il consumo della batteria aumenta solo leggermente.";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_title" = "Versione anteprima";
@@ -184,9 +166,6 @@
 
 /*Debug: Button-Text für das Zurücksetzen des lokalen SDK Zustandes*/
 "debug_sdk_button_reset" = "Reimpostazione SDK";
-
-/*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
-"android_debug_sdk_reset_text" = "Lo stato locale dell'SDK DP-3T è stato reimpostato.";
 
 /*Tab-Titel*/
 "tab_tracing_title" = "Tracciamento";
@@ -440,57 +419,6 @@
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Avvia";
 
-/*Titel auf Location-Permission Screen*/
-"android_onboarding_bt_permission_title" = "Consenti posizione per Bluetooth";
-
-/*Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_text" = "Affinché l'app funzioni e abbia accesso a Bluetooth, devi consentire la posizione.";
-
-/*Button-Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_button" = "Consenti";
-
-/*Label für Info-Section*/
-"android_onboarding_bt_permission_goodtoknow" = "Buono a sapersi:";
-
-/*Info-Titel 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_title" = "La tua posizione rimane segreta";
-
-/*Info-Text 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_text" = "Nei dispositivi Android l'autorizzazione di Bluetooth è associata all'autorizzazione della posizione. Per questo occorre attivare la relativa funzione, anche se l'app non accede mai alla posizione dell'utente.";
-
-/*Info-Titel 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_title" = "L'anonimato è garantito";
-
-/*Info-Text 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_text" = "Bluetooth non permette la visualizzazione di dati personali.";
-
-/*Titel auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_title" = "Ignora l'ottimizzazione della batteria";
-
-/*Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_text" = "Per poter riconoscere sempre gli incontri, l'ottimizzazione della batteria deve essere disattivata per questa app.";
-
-/*Button-Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_button" = "Consenti";
-
-/*Info-Titel 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_title" = "Solo per questa app";
-
-/*Info-Text 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_text" = "Per funzionare, l'app deve poter essere eseguita anche in background. Affinché ciò sia possibile, l'ottimizzazione della batteria può essere disattivata per le singole app.";
-
-/*Info-Titel 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_title" = "Il consumo della batteria aumenta leggermente";
-
-/*Info-Text 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_text" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
-
-/*Button-Text auf Location-Permission Screen - Zugelassen*/
-"android_onboarding_bt_permission_button_allowed" = "Autorizzata";
-
-/*Button-Text auf Battery-Permission Screen - Deaktiviert*/
-"android_onboarding_battery_permission_button_deactivated" = "Disattivata";
-
 /*Homescreen: Titel bei Fehler mit Daten*/
 "homescreen_meldung_data_outdated_title" = "Non ci sono dati aggiornati";
 
@@ -598,13 +526,16 @@
 "accessibility_code_button_disabled_hint" = "Impossibile premere: il codice immesso non è completo";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"foreground_service_notification_error_location_service" = "Attiva le informazioni sulla posizione per permettere all'app di utilizzare Bluetooth. L'app non conosce mai la posizione dell'utente.";
+/*Fuzzy*/
+"android_foreground_service_notification_error_location_service" = "Attiva le informazioni sulla posizione per permettere all'app di utilizzare Bluetooth. L'app non conosce mai la posizione dell'utente.";
 
 /*Location Services ausgeschaltet Titel*/
-"error_location_services_title" = "Posizione disattivata";
+/*Fuzzy*/
+"android_error_location_services_title" = "Posizione disattivata";
 
 /*Location Services ausgeschaltet Button*/
-"error_location_services_button" = "Attiva la posizione";
+/*Fuzzy*/
+"android_error_location_services_button" = "Attiva la posizione";
 
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Informazione";
@@ -790,3 +721,28 @@
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 "delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
+"android_onboarding_battery_permission_title" = "Ignora l'ottimizzazione della batteria";
+"android_onboarding_battery_permission_text" = "Per poter riconoscere sempre gli incontri, l'ottimizzazione della batteria deve essere disattivata per questa app.";
+"android_onboarding_battery_permission_button" = "Consenti";
+"android_onboarding_battery_permission_button_deactivated" = "Disattivata";
+"android_onboarding_battery_permission_info_1_title" = "Solo per questa app";
+"android_onboarding_battery_permission_info_1_text" = "Per funzionare, l'app deve poter essere eseguita anche in background. Affinché ciò sia possibile, l'ottimizzazione della batteria può essere disattivata per le singole app.";
+"android_onboarding_battery_permission_info_2_title" = "Il consumo della batteria aumenta leggermente";
+"android_onboarding_battery_permission_info_2_text" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
+"android_foreground_service_notification_error_battery_optimization" = "Per un funzionamento preciso del tracciamento, l'app deve essere eseguita anche in background. Il consumo della batteria aumenta solo leggermente.";
+"error_battery_optimization_title" = "Optimisation of battery usage activated";
+
+/*Google Play Services nicht aktuell*/
+"gaen_not_aviable" = "Google Play Services nicht aktuell";
+
+/*Google Play Services nicht aktuell text*/
+"gaen_not_available_text" = "Bitte aktualisieren sie ihre Google Play Services";
+
+/*Tracing erneute starten*/
+"gaen_not_unexpectedly_disabled" = "Tracing ist deaktiviert. Versuchen sie er erneut zu starten";
+
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_title" = "(COVID-19 Exposure Logging) deaktiviert";
+
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_text" = "Aktivieren Sie die Funktion (COVID-19 Exposure Logging), damit das anonyme Tracing funktioniert.";

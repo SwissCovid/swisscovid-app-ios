@@ -41,9 +41,6 @@
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
 "push_exposed_text" = "Öffnen Sie die App um die Nachricht zu lesen.";
 
-/*Titel für Button um Ortung zu erlauben*/
-"android_button_permission_location" = "Ortung erlauben";
-
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
 
@@ -89,12 +86,6 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
 
-/*Bluetooth Setting Text unten*/
-"bluetooth_setting_data_explanation_title" = "Sind meine Daten sicher?";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text2" = "Eine Begegnung mit einem anderen Nutzer wird nur lokal auf ihrem Smartphone gespeichert.";
-
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Meldungen";
 
@@ -124,15 +115,6 @@
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_network_sync" = "beim Laden der Daten ist ein Fehler aufgetreten";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_location_permission" = "Damit die App Bluetooth nützen kann, müssen Sie die Verwendung des Standorts zulassen. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
-
-/*Fehler Beschreibung Akku*/
-"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_title" = "Vorschau Version";
@@ -184,9 +166,6 @@
 
 /*Debug: Button-Text für das Zurücksetzen des lokalen SDK Zustandes*/
 "debug_sdk_button_reset" = "SDK zurücksetzen";
-
-/*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
-"android_debug_sdk_reset_text" = "Der lokale Stand des DP-3T SDK wurde zurückgesetzt.";
 
 /*Tab-Titel*/
 "tab_tracing_title" = "Tracing";
@@ -444,58 +423,6 @@
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Starten";
 
-/*Titel auf Location-Permission Screen*/
-"android_onboarding_bt_permission_title" = "Standort erlauben für Bluetooth";
-
-/*Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie die Standort-Funktion erlauben.";
-
-/*Button-Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_button" = "Zulassen";
-
-/*Label für Info-Section*/
-"android_onboarding_bt_permission_goodtoknow" = "Gut zu wissen";
-
-/*Info-Titel 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_title" = "Ihr Standort bleibt geheim";
-
-/*Info-Text 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_text" = "Bei Android-Geräten ist die Freigabe von Bluetooth an die Freigabe des Standorts gekoppelt. Deshalb muss die Standort-Funktion aktiviert werden, auch wenn die App zu keinem Zeitpunkt auf Ihren Standort zugreift.";
-
-/*Info-Titel 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_title" = "Sie bleiben anonym";
-
-/*Info-Text 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_text" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
-
-/*Titel auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
-
-/*Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
-
-/*Button-Text auf Battery-Permission Screen*/
-/*Fuzzy*/
-"android_onboarding_battery_permission_button" = "Zulassen";
-
-/*Info-Titel 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
-
-/*Info-Text 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
-
-/*Info-Titel 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
-
-/*Info-Text 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
-
-/*Button-Text auf Location-Permission Screen - Zugelassen*/
-"android_onboarding_bt_permission_button_allowed" = "Zugelassen";
-
-/*Button-Text auf Battery-Permission Screen - Deaktiviert*/
-"android_onboarding_battery_permission_button_deactivated" = "Deaktiviert";
-
 /*Homescreen: Titel bei Fehler mit Daten*/
 "homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
 
@@ -603,13 +530,16 @@
 "accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde. ";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
+/*Fuzzy*/
+"android_foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
 
 /*Location Services ausgeschaltet Titel*/
-"error_location_services_title" = "Standort ausgeschaltet";
+/*Fuzzy*/
+"android_error_location_services_title" = "Standort ausgeschaltet";
 
 /*Location Services ausgeschaltet Button*/
-"error_location_services_button" = "Standort einschalten";
+/*Fuzzy*/
+"android_error_location_services_button" = "Standort einschalten";
 
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Information";
@@ -801,3 +731,28 @@
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 /*Fuzzy*/
 "delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
+"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
+"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
+"android_onboarding_battery_permission_button" = "Zulassen";
+"android_onboarding_battery_permission_button_deactivated" = "Deaktiviert";
+"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
+"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
+"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
+"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
+"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
+"error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
+
+/*Google Play Services nicht aktuell*/
+"gaen_not_aviable" = "Google Play Services nicht aktuell";
+
+/*Google Play Services nicht aktuell text*/
+"gaen_not_available_text" = "Bitte aktualisieren sie ihre Google Play Services";
+
+/*Tracing erneute starten*/
+"gaen_not_unexpectedly_disabled" = "Tracing ist deaktiviert. Versuchen sie er erneut zu starten";
+
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_title" = "(COVID-19 Exposure Logging) deaktiviert";
+
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_text" = "Aktivieren Sie die Funktion (COVID-19 Exposure Logging), damit das anonyme Tracing funktioniert.";
