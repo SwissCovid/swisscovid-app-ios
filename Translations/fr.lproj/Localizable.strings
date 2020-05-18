@@ -588,10 +588,6 @@
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Contactez un médecin dès les premiers symptômes";
 
-/*Meldungen: Meldung Weisse Box Link URL*/
-/*Fuzzy*/
-"ios_meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/fr/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
-
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Dois-je appeler ?";
 
@@ -730,7 +726,6 @@
 "android_onboarding_battery_permission_info_2_title" = "Légère augmentation de la consommation d'énergie.";
 "android_onboarding_battery_permission_info_2_text" = "L'application utilise aussi peu d'énergie que possible. La consommation n'augmente que légèrement.";
 "android_foreground_service_notification_error_battery_optimization" = "Pour que le traçage soit précis, l'application doit aussi pouvoir fonctionner en arrière-plan. Cela n'augmente que légèrement la consommation d'énergie.";
-"error_battery_optimization_title" = "Optimisation de la consommation de la batterie activée";
 
 /*Google Play Services nicht aktuell*/
 "gaen_not_aviable" = "Google Play Services nicht aktuell";

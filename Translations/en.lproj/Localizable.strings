@@ -588,10 +588,6 @@
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "As soon as you have any symptoms, contact your doctor.";
 
-/*Meldungen: Meldung Weisse Box Link URL*/
-/*Fuzzy*/
-"ios_meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
-
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Do I have to call?";
 
@@ -729,7 +725,6 @@
 "android_onboarding_battery_permission_info_2_title" = "Minor increase in battery usage";
 "android_onboarding_battery_permission_info_2_text" = "The app operates using as little energy as possible. There is only a minor increase in battery usage.";
 "android_foreground_service_notification_error_battery_optimization" = "For tracing to work precisely, the app must also run in the background. This will cause a minor increase in battery usage.";
-"error_battery_optimization_title" = "Optimisation of battery usage activated";
 
 /*Google Play Services nicht aktuell*/
 "gaen_not_aviable" = "Google Play Services nicht aktuell";

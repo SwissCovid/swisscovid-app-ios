@@ -588,10 +588,6 @@
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Ai primi sintomi contatta il tuo medico.";
 
-/*Meldungen: Meldung Weisse Box Link URL*/
-/*Fuzzy*/
-"ios_meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/it/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
-
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Devo telefonare?";
 
@@ -730,7 +726,6 @@
 "android_onboarding_battery_permission_info_2_title" = "Il consumo della batteria aumenta leggermente";
 "android_onboarding_battery_permission_info_2_text" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
 "android_foreground_service_notification_error_battery_optimization" = "Per un funzionamento preciso del tracciamento, l'app deve essere eseguita anche in background. Il consumo della batteria aumenta solo leggermente.";
-"error_battery_optimization_title" = "Optimisation of battery usage activated";
 
 /*Google Play Services nicht aktuell*/
 "gaen_not_aviable" = "Google Play Services nicht aktuell";
