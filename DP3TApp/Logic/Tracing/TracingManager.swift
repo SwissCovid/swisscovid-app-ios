@@ -47,33 +47,40 @@ class TracingManager: NSObject {
             let bucketBaseUrl = Environment.current.configService.baseURL
             let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
+
+            #if ENABLE_TESTING
+            // Set logging Storage
+            loggingStorage = try? .init()
+            DP3TTracing.loggingDelegate = loggingStorage
+
+            let descriptor = ApplicationDescriptor(appId: appId,
+                                                   bucketBaseUrl: bucketBaseUrl,
+                                                   reportBaseUrl: reportBaseUrl,
+                                                   jwtPublicKey: Environment.current.jwtPublicKey,
+                                                   mode: .test)
+            
+            switch Environment.current {
+            case .dev:
+
+                try DP3TTracing.initialize(with: descriptor,
+                                           urlSession: URLSession.certificatePinned,
+                                           backgroundHandler: self)
+            case .test, .abnahme, .prod:
+                try DP3TTracing.initialize(with: descriptor,
+                                           urlSession: URLSession.certificatePinned,
+                                           backgroundHandler: self)
+            }
+            #else
+
+
             let descriptor = ApplicationDescriptor(appId: appId,
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
                                                    jwtPublicKey: Environment.current.jwtPublicKey)
 
-            #if ENABLE_TESTING
-                // Set logging Storage
-                loggingStorage = try? .init()
-                DP3TTracing.loggingDelegate = loggingStorage
-            
-                switch Environment.current {
-                case .dev:
-                    // 5min Batch lenght on dev Enviroment
-                    DP3TTracing.parameters.networking.batchLength = 5 * 60
-
-                    try DP3TTracing.initialize(with: descriptor,
-                                               urlSession: URLSession.certificatePinned,
-                                               backgroundHandler: self)
-                case .test, .abnahme, .prod:
-                    try DP3TTracing.initialize(with: descriptor,
-                                               urlSession: URLSession.certificatePinned,
-                                               backgroundHandler: self)
-            }
-            #else
-                try DP3TTracing.initialize(with: descriptor,
-                                           urlSession: URLSession.certificatePinned,
-                                           backgroundHandler: self)
+            try DP3TTracing.initialize(with: descriptor,
+                                       urlSession: URLSession.certificatePinned,
+                                       backgroundHandler: self)
             #endif
         } catch {
             UIStateManager.shared.tracingStartError = error

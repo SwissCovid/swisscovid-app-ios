@@ -503,6 +503,7 @@
 		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-d.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E737D245B0BC300C934B8 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1076,6 +1077,7 @@
 			isa = PBXGroup;
 			children = (
 				2411CA9E2462ADBE002FB5A9 /* Entitlements.entitlements */,
+				F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */,
 				6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */,
 				8E81CCA6241FCC7F006F2437 /* Info.plist */,
 				242D2280245D7363005DAEA8 /* build.yml */,
@@ -1751,7 +1753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -1777,7 +1779,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -1802,7 +1804,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -1827,7 +1829,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -1852,7 +1854,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -2517,6 +2519,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
@@ -2538,6 +2541,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
 				DEVELOPMENT_TEAM = JH7CQD4MLU;
