@@ -8,7 +8,6 @@ import Foundation
 import UIKit
 
 import DP3TSDK
-import ExposureNotification
 
 #if ENABLE_TESTING
 import  DP3TSDK_LOGGING_STORAGE
@@ -91,12 +90,8 @@ class TracingManager: NSObject {
         }
     }
 
-    private let enManager = ENManager()
-
     func requestTracingPermission(completion: @escaping (Error?)->Void) {
-        enManager.setExposureNotificationEnabled(true) { error in
-            completion(error)
-        }
+        try? DP3TTracing.startTracing(completionHandler: completion)
     }
 
     func beginUpdatesAndTracing() {
