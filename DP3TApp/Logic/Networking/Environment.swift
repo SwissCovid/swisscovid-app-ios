@@ -25,8 +25,6 @@ enum Environment {
             return .abnahme
         #elseif RELEASE_PROD
             return .prod
-        #elseif RELEASE_UBDIAG
-            return .dev
         #else
             fatalError("Missing build setting for environment")
         #endif
