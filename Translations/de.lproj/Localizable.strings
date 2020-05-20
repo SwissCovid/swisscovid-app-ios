@@ -1,9 +1,9 @@
 
 /*App Name*/
-"app_name" = "Swiss PT";
+"app_name" = "SwissCovid";
 
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "Swiss PT";
+"CFBundleDisplayName" = "SwissCovid";
 
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Erneut laden";
@@ -328,7 +328,7 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der Swiss PT App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
@@ -418,7 +418,7 @@
 "onboarding_go_title" = "Die App ist eingerichtet";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Vielen Dank dass Sie mithelfen, sich und andere zu schützen.";
+"onboarding_go_text" = "Vielen Dank, dass Sie mithelfen, sich und andere zu schützen.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Starten";
@@ -572,7 +572,7 @@
 "begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
+"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können, muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Häufige Fragen";
@@ -620,7 +620,7 @@
 "inform_detail_faq2_title" = "Wie bleibe ich anonym?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet. Keine persönlichen Daten.\n\nDamit können andere Swiss PT App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
+"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -632,7 +632,7 @@
 "inform_code_intro_title" = "Wichtiger Hinweis";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden, kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "Verstanden";
@@ -694,9 +694,6 @@
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
 
-/*Onboarding Page für die Permission der Exposure-Library: "Gut zu wissen" Titel*/
-"onboarding_gaen_good_to_know" = "Gut zu wissen:";
-
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
 "onboarding_gaen_info_title_1" = "Sie bleiben anonym";
 
@@ -730,7 +727,7 @@
 "android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
 "android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
 "android_onboarding_battery_permission_button" = "Zulassen";
-"android_onboarding_battery_permission_button_deactivated" = "Deaktiviert";
+"android_onboarding_battery_permission_button_deactivated" = "OK";
 "android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
 "android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
 "android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
@@ -741,13 +738,32 @@
 "gaen_not_aviable" = "Google Play Services nicht aktuell";
 
 /*Google Play Services nicht aktuell text*/
-"gaen_not_available_text" = "Bitte aktualisieren sie ihre Google Play Services";
+"gaen_not_available_text" = "Bitte aktualisieren Sie die Google Play Services.";
 
-/*Tracing erneute starten*/
-"gaen_not_unexpectedly_disabled" = "Tracing ist deaktiviert. Versuchen sie er erneut zu starten";
+/*Tracing wurde vom System deaktiviert, erneut starten*/
+"gaen_unexpectedly_disabled" = "Tracing wurde deaktiviert. Bitte starten Sie es erneut.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
 "tracing_permission_error_title" = "(COVID-19 Exposure Logging) deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
 "tracing_permission_error_text" = "Aktivieren Sie die Funktion (COVID-19 Exposure Logging), damit das anonyme Tracing funktioniert.";
+
+/*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
+"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufall-IDs mit der SwissCovid-App.";
+
+/*Button um die Google Play Services zu aktualisieren*/
+"playservices_update" = "Aktualisieren";
+
+/*Button um die Google Play Services zu installieren*/
+"playservices_install" = "Installieren";
+
+/*Titel für Infos zu den Google Play Services*/
+"playservices_title" = "Google Play Services";
+
+/*Meldung, dass die Google Play Services benötigt werden*/
+"playservices_text" = "Um das Tracing aktivieren zu können, wird eine aktuelle Version der Google Play Services benötigt. \n\nFalls auf Ihrem Gerät zurzeit kein Update verfügbar ist, versuchen Sie es bitte später nochmals.";
+
+/*Fuzzy*/
+"android_error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
+"android_error_battery_optimization_button" = "Zulassen";

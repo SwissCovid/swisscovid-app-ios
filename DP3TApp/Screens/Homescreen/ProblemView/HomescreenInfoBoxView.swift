@@ -19,7 +19,7 @@ class HomescreenInfoBoxView: UIView {
 
     // MARK: - Views
 
-    let infoBoxView = NSInfoBoxView(title: "", subText: "", image: UIImage(named: "ic-info"), illustration: nil, titleColor: UIColor.white, subtextColor: UIColor.white, backgroundColor: .ns_purple, additionalText: "", additionalURL: "")
+    let infoBoxView = NSInfoBoxView(title: "", subText: "", image: UIImage(named: "ic-info"), illustration: nil, titleColor: UIColor.white, subtextColor: UIColor.white, backgroundColor: .ns_darkBlueBackground, additionalText: "", additionalURL: "")
 
     // MARK: - Init
 
