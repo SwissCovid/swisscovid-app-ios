@@ -11,7 +11,7 @@ protocol CodedError {
     var errorCodeString: String? { get }
 }
 
-let CodeErrorUnexpected = "UNKNW"
+let CodeErrorUnexpected = "IUKN"
 
 extension DP3TTracingError: LocalizedError, CodedError {
     public var errorDescription: String? {
@@ -37,18 +37,18 @@ extension DP3TTracingError: LocalizedError, CodedError {
         case let .networkingError(error: error):
             return error.errorCodeString
         case .caseSynchronizationError(errors: _):
-            return "CASYN"
+            return "ICASYN"
         case .databaseError(error: _):
-            return "DBERR"
+            return "IDBERR"
         case .bluetoothTurnedOff:
-            return "BLOFF"
+            return "IBLOFF"
         case .permissonError:
-            return "PERME"
+            return "IPERME"
         case .userAlreadyMarkedAsInfected:
-            return "UAMAI"
+            return "IUAMAI"
         case .exposureNotificationError(error: let error):
             let nsError = error as NSError
-            return "EN\(nsError.code)"
+            return "IEN\(nsError.code)"
         }
     }
 }
@@ -75,23 +75,23 @@ extension DP3TNetworkingError: LocalizedError, CodedError {
         switch self {
         case let .networkSessionError(error: error):
             let nsError = error as NSError
-            return "NET\(nsError.code)"
+            return "INET\(nsError.code)"
         case .notHTTPResponse:
-            return "NORES"
+            return "INORES"
         case let .HTTPFailureResponse(status: status):
-            return "ST\(status)"
+            return "ISST\(status)"
         case .noDataReturned:
-            return "NODAT"
+            return "INODAT"
         case .couldNotParseData(error: _, origin: _):
-            return "PARSE"
+            return "IPARS"
         case .couldNotEncodeBody:
-            return "BODEN"
+            return "IBODEN"
         case .batchReleaseTimeMissmatch:
-            return "BRTMM"
+            return "IBRTMM"
         case .timeInconsistency(shift: _):
-            return "TIMIN"
+            return "ITIMIN"
         case .jwtSignatureError(code: _, debugDescription: _):
-            return "JWTSE"
+            return "IJWTSE"
         }
     }
 }
@@ -110,11 +110,11 @@ extension NetworkError: LocalizedError, CodedError {
     var errorCodeString: String? {
         switch self {
         case .networkError:
-            return "CNETE"
+            return "ICNETE"
         case let .statusError(code: code):
-            return "CC\(code)"
+            return "IBST\(code)"
         case .parseError:
-            return "CPARS"
+            return "ICPARS"
         }
     }
 }
