@@ -28,6 +28,10 @@ extension DP3TTracingError: LocalizedError, CodedError {
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
         case .exposureNotificationError(error: let error):
+            let nsError = error as NSError
+            if nsError.domain == "ENErrorDomain" && nsError.code == 4 {
+                return "user_cancelled_key_sharing_error".ub_localized
+            }
             return error.localizedDescription
         }
     }
@@ -79,7 +83,7 @@ extension DP3TNetworkingError: LocalizedError, CodedError {
         case .notHTTPResponse:
             return "INORES"
         case let .HTTPFailureResponse(status: status):
-            return "ISST\(status)"
+            return "IRST\(status)"
         case .noDataReturned:
             return "INODAT"
         case .couldNotParseData(error: _, origin: _):
