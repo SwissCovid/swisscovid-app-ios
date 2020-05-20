@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-               BuildableName = "DP3TApp.app"
-               BlueprintName = "DP3TApp"
-               ReferencedContainer = "container:DP3TApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Release-Dev"
@@ -44,9 +28,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3TApp.app"
-            BlueprintName = "DP3TApp"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "DP3TAppCalibration.app"
+            BlueprintName = "DP3TAppCalibration"
             ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,9 +45,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8E81CC94241FCC7D006F2437"
-            BuildableName = "DP3TApp.app"
-            BlueprintName = "DP3TApp"
+            BlueprintIdentifier = "242D21D2245C4BD8005DAEA8"
+            BuildableName = "DP3TAppCalibration.app"
+            BlueprintName = "DP3TAppCalibration"
             ReferencedContainer = "container:DP3TApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
