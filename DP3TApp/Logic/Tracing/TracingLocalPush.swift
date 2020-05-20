@@ -61,6 +61,11 @@ class TracingLocalPush: NSObject {
     }
 
     private func jumpToMeldung() {
+
+        guard !self.alreadyShowsMeldung() else {
+            return
+        }
+
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
             navigationVC.popToRootViewController(animated: false)
@@ -101,7 +106,12 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
     {
-        completionHandler(.alert)
+        if self.alreadyShowsMeldung() && exposureIdentifiers.contains(notification.request.identifier) {
+            completionHandler([])
+        }
+        else {
+            completionHandler([.alert, .sound])
+        }
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
