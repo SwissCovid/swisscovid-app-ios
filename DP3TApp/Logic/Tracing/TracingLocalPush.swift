@@ -10,8 +10,13 @@ import UserNotifications
 import DP3TSDK
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
-class TracingLocalPush {
+class TracingLocalPush: NSObject {
     static let shared = TracingLocalPush()
+
+    override init() {
+        super.init()
+        UNUserNotificationCenter.current().delegate = self
+    }
 
     func update(state: TracingState) {
         switch state.infectionStatus {
@@ -29,41 +34,20 @@ class TracingLocalPush {
         didSet {
             for identifier in exposureIdentifiers {
                 if !oldValue.contains(identifier) {
-                    // in foreground, show alert (unless already on detail screen)
-                    if UIApplication.shared.applicationState == .active {
-                        if !alreadyShowsMeldung() {
-                            showAlert()
-                        }
-                    // in background schedule notification
-                    } else {
-                        scheduleNotification()
-                    }
+                    scheduleNotification(identifier: identifier)
                     return
                 }
             }
         }
     }
 
-    private func scheduleNotification() {
+    private func scheduleNotification(identifier: String) {
         let content = UNMutableNotificationContent()
         content.title = "push_exposed_title".ub_localized
         content.body = "push_exposed_text".ub_localized
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-    }
-
-    private func showAlert() {
-        let alert = UIAlertController(title: "push_exposed_title".ub_localized, message: nil, preferredStyle: .alert)
-
-        alert.addAction(UIAlertAction(title: "meldung_in_app_alert_accept_button".ub_localized, style: .default, handler: { _ in
-            self.jumpToMeldung()
-        }))
-
-        alert.addAction(UIAlertAction(title: "meldung_in_app_alert_ignore_button".ub_localized, style: .cancel, handler: nil))
-
-        UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
     }
 
     private func alreadyShowsMeldung() -> Bool {
@@ -109,4 +93,27 @@ class TracingLocalPush {
         UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
         UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
     }
+}
+
+extension TracingLocalPush: UNUserNotificationCenterDelegate {
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler(.alert)
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        guard exposureIdentifiers.contains(response.notification.request.identifier) else {
+            return // not a exposure notification
+        }
+
+        guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else {
+            return // cancelled
+        }
+
+        jumpToMeldung()
+    }
+
 }
