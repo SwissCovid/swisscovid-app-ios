@@ -61,6 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupAppearance()
 
         window?.makeKeyAndVisible()
+
+        if !UserStorage.shared.hasCompletedOnboarding {
+            let onboardingViewController = NSOnboardingViewController()
+            onboardingViewController.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(onboardingViewController, animated: false)
+        }
     }
 
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {

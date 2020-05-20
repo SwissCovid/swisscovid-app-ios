@@ -146,15 +146,36 @@ class ConfigManager: NSObject {
         DP3TTracing.parameters = parameters
     }
 
+    private static var configAlert: UIAlertController?
+
     private func presentAlertIfNeeded(config: ConfigResponseBody, window: UIWindow?) {
         if config.forceUpdate {
-            let alert = UIAlertController(title: "force_update_title".ub_localized,
-                                          message: "force_update_text".ub_localized,
-                                          preferredStyle: .alert)
+            if Self.configAlert == nil {
+                let alert = UIAlertController(title: "force_update_title".ub_localized,
+                                              message: "force_update_text".ub_localized,
+                                              preferredStyle: .alert)
 
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
+                window?.rootViewController?.topViewController.present(alert, animated: false, completion: nil)
+                Self.configAlert = alert
+            }
         } else {
             Logger.log("NO force update alert")
+            if Self.configAlert != nil {
+                Self.configAlert?.dismiss(animated: true, completion: nil)
+                Self.configAlert = nil
+            }
+        }
+    }
+
+}
+
+fileprivate extension UIViewController {
+    var topViewController: UIViewController {
+        if let p = presentedViewController {
+            return p.topViewController
+        }
+        else {
+            return self
         }
     }
 }
