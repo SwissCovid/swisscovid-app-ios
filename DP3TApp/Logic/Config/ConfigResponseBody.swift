@@ -10,7 +10,7 @@ class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
     public let forceTraceShutdown: Bool
     public let infoBox: LocalizedInfobox?
-    public let sdkConfig: SDKConfig?
+    public let gaenSdkConfig: GAENSDKConfig?
 
     class LocalizedInfobox: UBCodable {
         let deInfoBox: InfoBox
@@ -25,8 +25,11 @@ class ConfigResponseBody: UBCodable {
         }
     }
 
-    class SDKConfig: Codable {
-        let numberOfWindowsForExposure: Int?
-        let contactAttenuationThreshold: Double?
+    class GAENSDKConfig: Codable {
+        let lowerThreshold: Int
+        let higherThreshold: Int
+        let factorLow: Double
+        let factorHigh: Double
+        let triggerThreshold: Int
     }
 }

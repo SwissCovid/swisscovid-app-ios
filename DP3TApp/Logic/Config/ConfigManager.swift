@@ -24,8 +24,8 @@ class ConfigManager: NSObject {
     static var currentConfig: ConfigResponseBody? {
         didSet {
             UIStateManager.shared.refresh()
-            if let sdkConfig = currentConfig?.sdkConfig {
-                ConfigManager.updateSDKParameters(config: sdkConfig)
+            if let config = currentConfig?.gaenSdkConfig {
+                ConfigManager.updateSDKParameters(config: config)
             }
             if let config = currentConfig, config.forceTraceShutdown {
                 TracingManager.shared.endTracing()
@@ -134,15 +134,14 @@ class ConfigManager: NSObject {
         }
     }
 
-    public static func updateSDKParameters(config: ConfigResponseBody.SDKConfig) {
+    public static func updateSDKParameters(config: ConfigResponseBody.GAENSDKConfig) {
         var parameters = DP3TTracing.parameters
 
-        if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
-            parameters.contactMatching.numberOfWindowsForExposure = numberOfWindowsForExposure
-        }
-        if let contactAttenuationThreshold = config.contactAttenuationThreshold {
-            parameters.contactMatching.contactAttenuationThreshold = contactAttenuationThreshold
-        }
+        parameters.contactMatching.factorHigh = config.factorHigh
+        parameters.contactMatching.factorLow = config.factorLow
+        parameters.contactMatching.lowerThreshold = config.lowerThreshold
+        parameters.contactMatching.higherThreshold = config.higherThreshold
+        parameters.contactMatching.triggerThreshold = config.triggerThreshold
 
         DP3TTracing.parameters = parameters
     }
