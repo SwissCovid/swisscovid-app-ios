@@ -79,7 +79,9 @@ class UIStateLogic {
                 tracing = .tracingPermissionError
             case .databaseError:
                 tracing = .unexpectedError(code: error.errorCodeString)
-            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .exposureNotificationError:
+            case .exposureNotificationError:
+                tracing = .tracingPermissionError
+            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
