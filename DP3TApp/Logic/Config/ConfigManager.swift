@@ -27,16 +27,10 @@ class ConfigManager: NSObject {
             if let config = currentConfig?.gaenSdkConfig {
                 ConfigManager.updateSDKParameters(config: config)
             }
-            if let config = currentConfig, config.forceTraceShutdown {
-                TracingManager.shared.endTracing()
-            }
         }
     }
 
     static var allowTracing: Bool {
-        if let config = self.currentConfig {
-            return !config.forceTraceShutdown
-        }
         return true
     }
 
