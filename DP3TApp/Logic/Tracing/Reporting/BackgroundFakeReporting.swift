@@ -17,13 +17,17 @@ class FakePublishOperation: Operation {
             return
         }
 
-        Logger.log("Start Fake Publish", appState: true)
-        ReportingManager.shared.report(isFakeRequest: true) { error in
-            if error != nil {
-                self.cancel()
-                Logger.log("Fake request failed")
-            } else {
-                Logger.log("Fake request success")
+        // add a delay so its not guessable from http traffic if a report was fake or not
+        let delay = Double.random(in: 20...30)
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
+            Logger.log("Start Fake Publish", appState: true)
+            ReportingManager.shared.report(isFakeRequest: true) { error in
+                if error != nil {
+                    self.cancel()
+                    Logger.log("Fake request failed")
+                } else {
+                    Logger.log("Fake request success")
+                }
             }
         }
     }
