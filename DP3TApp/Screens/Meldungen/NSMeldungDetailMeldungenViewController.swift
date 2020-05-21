@@ -214,7 +214,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         deleteButton.touchUpCallback = { [weak self] in
             let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { (_) in
-                TracingManager.shared.deletePositiveTest()
+                TracingManager.shared.deleteMeldungen()
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { (_) in
 
