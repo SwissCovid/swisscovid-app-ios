@@ -47,17 +47,28 @@ class TracingManager: NSObject {
             let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
 
-            #if ENABLE_TESTING
-            // Set logging Storage
-            loggingStorage = try? .init()
-            DP3TTracing.loggingDelegate = loggingStorage
-
+            #if TEST_ENTITLEMENT
             let descriptor = ApplicationDescriptor(appId: appId,
                                                    bucketBaseUrl: bucketBaseUrl,
                                                    reportBaseUrl: reportBaseUrl,
                                                    jwtPublicKey: Environment.current.jwtPublicKey,
                                                    mode: .test)
-            
+            #else
+            let descriptor = ApplicationDescriptor(appId: appId,
+                                                   bucketBaseUrl: bucketBaseUrl,
+                                                   reportBaseUrl: reportBaseUrl,
+                                                   jwtPublicKey: Environment.current.jwtPublicKey)
+            #endif
+
+            #if ENABLE_TESTING
+            // Set logging Storage
+            loggingStorage = try? .init()
+            #if DEBUG
+            DP3TTracing.loggingDelegate = self
+            #else
+            DP3TTracing.loggingDelegate = loggingStorage
+            #endif
+
             switch Environment.current {
             case .dev:
 
@@ -70,12 +81,6 @@ class TracingManager: NSObject {
                                            backgroundHandler: self)
             }
             #else
-
-
-            let descriptor = ApplicationDescriptor(appId: appId,
-                                                   bucketBaseUrl: bucketBaseUrl,
-                                                   reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: Environment.current.jwtPublicKey)
 
             try DP3TTracing.initialize(with: descriptor,
                                        urlSession: URLSession.certificatePinned,
@@ -248,3 +253,16 @@ extension TracingManager: DP3TBackgroundHandler {
         completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
     }
 }
+
+
+#if DEBUG
+extension TracingManager: LoggingDelegate {
+    func log(_ string: String, type: OSLogType) {
+        print(string)
+        #if ENABLE_TESTING
+        loggingStorage?.log(string, type: type)
+        #endif
+    }
+}
+#endif
+
