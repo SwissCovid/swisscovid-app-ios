@@ -24,7 +24,7 @@ class ConfigManager: NSObject {
     static var currentConfig: ConfigResponseBody? {
         didSet {
             UIStateManager.shared.refresh()
-            if let config = currentConfig?.gaenSdkConfig {
+            if let config = currentConfig?.iOSGaenSdkConfig {
                 ConfigManager.updateSDKParameters(config: config)
             }
         }

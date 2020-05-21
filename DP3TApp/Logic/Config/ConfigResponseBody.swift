@@ -9,7 +9,7 @@ import UIKit
 class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
     public let infoBox: LocalizedInfobox?
-    public let gaenSdkConfig: GAENSDKConfig?
+    public let iOSGaenSdkConfig: GAENSDKConfig?
 
     class LocalizedInfobox: UBCodable {
         let deInfoBox: InfoBox
