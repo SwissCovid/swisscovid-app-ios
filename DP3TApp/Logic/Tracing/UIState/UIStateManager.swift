@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import Foundation
 import UIKit
 

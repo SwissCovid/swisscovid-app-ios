@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
 
-        let backgroundOnlyKeys: [UIApplication.LaunchOptionsKey] = [.location, .bluetoothCentrals, .bluetoothPeripherals]
+        let backgroundOnlyKeys: [UIApplication.LaunchOptionsKey] = [.location]
 
         for k in backgroundOnlyKeys {
             if launchOptions.keys.contains(k) {
