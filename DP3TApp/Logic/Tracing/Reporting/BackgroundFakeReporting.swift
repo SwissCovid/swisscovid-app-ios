@@ -19,6 +19,8 @@ class FakePublishOperation: Operation {
 
         // add a delay so its not guessable from http traffic if a report was fake or not
         let delay = Double.random(in: 20...30)
+        let group = DispatchGroup()
+        group.enter()
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
             Logger.log("Start Fake Publish", appState: true)
             ReportingManager.shared.report(isFakeRequest: true) { error in
@@ -28,8 +30,10 @@ class FakePublishOperation: Operation {
                 } else {
                     Logger.log("Fake request success")
                 }
+                group.leave()
             }
         }
+        group.wait()
     }
 }
 
