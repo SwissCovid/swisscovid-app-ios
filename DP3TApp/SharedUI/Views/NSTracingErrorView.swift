@@ -127,11 +127,8 @@ class NSTracingErrorView: UIView {
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,
                                            text: "bluetooth_turned_off_text".ub_localized,
-                                           buttonTitle: "bluetooth_turn_on_button_title".ub_localized,
-                                           action: {
-                                               TracingManager.shared.endTracing()
-                                               TracingManager.shared.beginUpdatesAndTracing()
-            })
+                                           buttonTitle: nil,
+                                           action: nil)
         case .timeInconsistencyError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "time_inconsistency_title".ub_localized,
