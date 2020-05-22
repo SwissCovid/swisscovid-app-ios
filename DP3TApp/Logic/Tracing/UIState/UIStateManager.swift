@@ -146,7 +146,14 @@ class UIStateManager: NSObject {
 
     var pushOk: Bool = true
 
-    var tracingState: TracingState?
+    var tracingState: TracingState? {
+        didSet {
+            guard let oldValue = oldValue, let newValue = tracingState else { return }
+            if oldValue.backgroundRefreshState != newValue.backgroundRefreshState {
+                refresh()
+            }
+        }
+    }
 
     var trackingState: TrackingState = .stopped {
         didSet {
