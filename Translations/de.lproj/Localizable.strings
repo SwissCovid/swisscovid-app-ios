@@ -689,6 +689,7 @@
 "onboarding_gaen_title" = "Tracing aktivieren";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
+/*Fuzzy*/
 "onboarding_gaen_text" = "Um die App nutzen zu können, muss die Funktion (COVID-19 Exposure Logging) aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -767,3 +768,9 @@
 /*Fuzzy*/
 "android_error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
 "android_error_battery_optimization_button" = "Zulassen";
+
+/*Telefonnummer für Hilfe bei App-Problemen*/
+"app_hotline_tel_number" = "+41 58 466 07 99";
+
+/*text shown in notification when we get an exception from the GAEN api*/
+"sync_api_error" = "Es ist ein unerwarteter Fehler beim Synchronisieren der Meldungen aufgetreten.";

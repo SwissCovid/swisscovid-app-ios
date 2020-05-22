@@ -757,3 +757,9 @@
 /*Fuzzy*/
 "android_error_battery_optimization_title" = "Ottimizzazione della batteria attivata";
 "android_error_battery_optimization_button" = "Consenti";
+
+/*Telefonnummer für Hilfe bei App-Problemen*/
+"app_hotline_tel_number" = "+41 58 466 07 99";
+
+/*text shown in notification when we get an exception from the GAEN api*/
+"sync_api_error" = "Si è verificato un errore durante la sincronizzazione delle segnalazioni.";
