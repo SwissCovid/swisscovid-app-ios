@@ -26,7 +26,9 @@ class NSMeldungView: NSModuleBaseView {
         UIApplication.shared.open(settingsUrl)
     }))
 
-    private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: {
+    private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_title".ub_localized, buttonTitle: nil, action: nil))
+
+    private let unexpectedErrorWithRetryView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: {
         DatabaseSyncer.shared.forceSyncDatabase()
     }))
 
@@ -62,7 +64,11 @@ class NSMeldungView: NSModuleBaseView {
             if uiState.pushProblem {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
-                views.append(unexpectedErrorView)
+                if uiState.errorCode?.contains("IEN13") ?? false {
+                    views.append(unexpectedErrorView)
+                } else {
+                    views.append(unexpectedErrorWithRetryView)
+                }
                 unexpectedErrorView.errorCode = uiState.errorCode
             } else if uiState.syncProblemNetworkingError {
                 views.append(syncProblemView)
