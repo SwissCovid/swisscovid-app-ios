@@ -105,7 +105,7 @@ extension NSWebViewController: WKNavigationDelegate {
                 let path = (url.host ?? url.lastPathComponent).replacingOccurrences(of: ".html", with: "")
                 webVC = NSWebViewController(local: path)
 //                }
-                webVC.title = self.title
+                webVC.title = title
                 if let navVC = navigationController {
                     navVC.pushViewController(webVC, animated: true)
                 } else {
@@ -139,18 +139,18 @@ extension Bundle {
 
     static var environment: String {
         #if ENABLE_TESTING
-        switch Environment.current {
+            switch Environment.current {
             case .dev:
-            return " DEV"
+                return " DEV"
             case .test:
-            return " TEST"
+                return " TEST"
             case .abnahme:
-            return " ABNAHME"
+                return " ABNAHME"
             case .prod:
-            return " PROD"
-        }
+                return " PROD"
+            }
         #else
-        switch Environment.current {
+            switch Environment.current {
             case .dev:
                 return " DEV"
             case .test:
@@ -159,7 +159,7 @@ extension Bundle {
                 return " ABNAHME"
             case .prod:
                 return "p"
-        }
+            }
         #endif
     }
 }

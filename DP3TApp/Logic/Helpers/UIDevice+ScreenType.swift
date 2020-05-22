@@ -4,20 +4,17 @@
 import Foundation
 
 extension UIDevice {
-    
     var isSmallScreenPhone: Bool {
-        
         let currentScreenType = UIDevice.current.screenType
-        
+
         if currentScreenType == .iPhones_4_4S || currentScreenType == .iPhones_5_5s_5c_SE {
             return true
         }
-        
+
         return false
     }
-    
+
     enum ScreenType: String {
-        
         case iPhones_4_4S = "iPhone 4 or iPhone 4S"
         case iPhones_5_5s_5c_SE = "iPhone 5, iPhone 5s, iPhone 5c or iPhone SE"
         case iPhones_6_6s_7_8 = "iPhone 6, iPhone 6S, iPhone 7 or iPhone 8"
@@ -28,9 +25,8 @@ extension UIDevice {
         case iPhone_11Pro = "iPhone 11 Pro"
         case unknown
     }
-    
+
     var screenType: ScreenType {
-        
         switch UIScreen.main.nativeBounds.height {
         case 960:
             return .iPhones_4_4S

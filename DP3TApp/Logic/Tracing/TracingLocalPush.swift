@@ -61,8 +61,7 @@ class TracingLocalPush: NSObject {
     }
 
     private func jumpToMeldung() {
-
-        guard !self.alreadyShowsMeldung() else {
+        guard !alreadyShowsMeldung() else {
             return
         }
 
@@ -74,6 +73,7 @@ class TracingLocalPush: NSObject {
     }
 
     // MARK: - Sync warnings
+
     // If sync doesnt work for 2 days, we show a notification
     // User should open app to fix issues
 
@@ -101,20 +101,17 @@ class TracingLocalPush: NSObject {
 }
 
 extension TracingLocalPush: UNUserNotificationCenterDelegate {
-
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
+    func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
-    {
-        if self.alreadyShowsMeldung() && exposureIdentifiers.contains(notification.request.identifier) {
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        if alreadyShowsMeldung(), exposureIdentifiers.contains(notification.request.identifier) {
             completionHandler([])
-        }
-        else {
+        } else {
             completionHandler([.alert, .sound])
         }
     }
 
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler _: @escaping () -> Void) {
         guard exposureIdentifiers.contains(response.notification.request.identifier) else {
             return // not a exposure notification
         }
@@ -125,5 +122,4 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
 
         jumpToMeldung()
     }
-
 }

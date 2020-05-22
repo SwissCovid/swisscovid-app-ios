@@ -85,7 +85,6 @@ class NSAppTitleView: NSTitleView {
     private var slowTimer: Timer?
     @objc
     private func startSpawn() {
-
         timer?.invalidate()
         slowTimer?.invalidate()
 

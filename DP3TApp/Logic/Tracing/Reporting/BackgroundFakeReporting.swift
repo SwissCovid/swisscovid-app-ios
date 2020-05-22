@@ -10,15 +10,14 @@ import UIKit.UIApplication
 
 class FakePublishOperation: Operation {
     override func main() {
-
         guard let startDate = FakePublishBackgroundTaskManager.shared.nextScheduledFakeRequestDate,
             Date() >= startDate else {
-                Logger.log("Too early for fake request")
+            Logger.log("Too early for fake request")
             return
         }
 
         // add a delay so its not guessable from http traffic if a report was fake or not
-        let delay = Double.random(in: 20...30)
+        let delay = Double.random(in: 20 ... 30)
         let group = DispatchGroup()
         group.enter()
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
@@ -47,7 +46,7 @@ class FakePublishBackgroundTaskManager {
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
     private(set) var nextScheduledFakeRequestDate: Date?
 
-    static func syncInterval() -> TimeInterval  {
+    static func syncInterval() -> TimeInterval {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
         let secondsInADay = Double(24 * 60 * 60)
@@ -97,7 +96,6 @@ class FakePublishBackgroundTaskManager {
     }
 
     func runForegroundTask() {
-
         scheduleBackgroundTask()
 
         let queue = OperationQueue()
@@ -111,20 +109,18 @@ class FakePublishBackgroundTaskManager {
     }
 
     @discardableResult
-    func rescheduleFakeRequest(force: Bool = false) -> Date{
-
-        var nextDate = self.nextScheduledFakeRequestDate ?? self.getNewScheduleDate()
+    func rescheduleFakeRequest(force: Bool = false) -> Date {
+        var nextDate = nextScheduledFakeRequestDate ?? getNewScheduleDate()
 
         if nextDate <= Date() || force {
-            nextDate = self.getNewScheduleDate()
+            nextDate = getNewScheduleDate()
         }
 
-        self.nextScheduledFakeRequestDate = nextDate
+        nextScheduledFakeRequestDate = nextDate
         return nextDate
     }
 
     private func scheduleBackgroundTask() {
-
         let nextDate = rescheduleFakeRequest()
 
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)

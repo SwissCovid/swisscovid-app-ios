@@ -29,8 +29,6 @@ class NSOnboardingViewController: NSViewController {
     private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
-
-
     private var currentStep: Int = 0
 
     override func viewDidLoad() {
@@ -84,7 +82,7 @@ class NSOnboardingViewController: NSViewController {
     }
 
     fileprivate func animateToNextStep() {
-        self.setOnboardingStep(self.currentStep+1, animated: true)
+        setOnboardingStep(currentStep + 1, animated: true)
     }
 
     fileprivate func setOnboardingStep(_ step: Int, animated: Bool) {

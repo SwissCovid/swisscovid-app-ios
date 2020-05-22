@@ -43,7 +43,6 @@ enum Environment {
         }
     }
 
-
     var configService: Backend {
         switch self {
         case .dev:
@@ -70,5 +69,3 @@ enum Environment {
         }
     }
 }
-
-

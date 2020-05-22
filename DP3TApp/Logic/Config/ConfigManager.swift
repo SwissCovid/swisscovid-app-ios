@@ -4,8 +4,8 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import UIKit
 import DP3TSDK
+import UIKit
 
 /// Config request allows to disable old versions of the app if
 class ConfigManager: NSObject {
@@ -68,9 +68,6 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-
-
-
         Logger.log("Load Config", appState: true)
 
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request(), completionHandler: { data, response, error in
@@ -114,7 +111,6 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-
         // immediate alert if old config enforced update
         if let oldConfig = ConfigManager.currentConfig {
             presentAlertIfNeeded(config: oldConfig, window: window)
@@ -160,15 +156,13 @@ class ConfigManager: NSObject {
             }
         }
     }
-
 }
 
-fileprivate extension UIViewController {
+private extension UIViewController {
     var topViewController: UIViewController {
         if let p = presentedViewController {
             return p.topViewController
-        }
-        else {
+        } else {
             return self
         }
     }

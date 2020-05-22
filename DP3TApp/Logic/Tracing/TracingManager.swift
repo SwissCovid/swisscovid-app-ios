@@ -10,8 +10,8 @@ import UIKit
 import DP3TSDK
 
 #if ENABLE_TESTING
-import  DP3TSDK_LOGGING_STORAGE
-extension DP3TLoggingStorage: LoggingDelegate {}
+    import DP3TSDK_LOGGING_STORAGE
+    extension DP3TLoggingStorage: LoggingDelegate {}
 #endif
 
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
@@ -26,7 +26,7 @@ class TracingManager: NSObject {
     let databaseSyncer = DatabaseSyncer()
 
     #if ENABLE_TESTING
-    var loggingStorage: DP3TLoggingStorage?
+        var loggingStorage: DP3TLoggingStorage?
     #endif
 
     @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
@@ -48,43 +48,43 @@ class TracingManager: NSObject {
             // JWT is not supported for now since the backend keeps rotating the private key
 
             #if TEST_ENTITLEMENT
-            let descriptor = ApplicationDescriptor(appId: appId,
-                                                   bucketBaseUrl: bucketBaseUrl,
-                                                   reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: Environment.current.jwtPublicKey,
-                                                   mode: .test)
+                let descriptor = ApplicationDescriptor(appId: appId,
+                                                       bucketBaseUrl: bucketBaseUrl,
+                                                       reportBaseUrl: reportBaseUrl,
+                                                       jwtPublicKey: Environment.current.jwtPublicKey,
+                                                       mode: .test)
             #else
-            let descriptor = ApplicationDescriptor(appId: appId,
-                                                   bucketBaseUrl: bucketBaseUrl,
-                                                   reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: Environment.current.jwtPublicKey)
+                let descriptor = ApplicationDescriptor(appId: appId,
+                                                       bucketBaseUrl: bucketBaseUrl,
+                                                       reportBaseUrl: reportBaseUrl,
+                                                       jwtPublicKey: Environment.current.jwtPublicKey)
             #endif
 
             #if ENABLE_TESTING
-            // Set logging Storage
-            loggingStorage = try? .init()
-            #if DEBUG
-            DP3TTracing.loggingDelegate = self
-            #else
-            DP3TTracing.loggingDelegate = loggingStorage
-            #endif
+                // Set logging Storage
+                loggingStorage = try? .init()
+                #if DEBUG
+                    DP3TTracing.loggingDelegate = self
+                #else
+                    DP3TTracing.loggingDelegate = loggingStorage
+                #endif
 
-            switch Environment.current {
-            case .dev:
+                switch Environment.current {
+                case .dev:
+
+                    try DP3TTracing.initialize(with: descriptor,
+                                               urlSession: URLSession.certificatePinned,
+                                               backgroundHandler: self)
+                case .test, .abnahme, .prod:
+                    try DP3TTracing.initialize(with: descriptor,
+                                               urlSession: URLSession.certificatePinned,
+                                               backgroundHandler: self)
+                }
+            #else
 
                 try DP3TTracing.initialize(with: descriptor,
                                            urlSession: URLSession.certificatePinned,
                                            backgroundHandler: self)
-            case .test, .abnahme, .prod:
-                try DP3TTracing.initialize(with: descriptor,
-                                           urlSession: URLSession.certificatePinned,
-                                           backgroundHandler: self)
-            }
-            #else
-
-            try DP3TTracing.initialize(with: descriptor,
-                                       urlSession: URLSession.certificatePinned,
-                                       backgroundHandler: self)
             #endif
         } catch {
             UIStateManager.shared.tracingStartError = error
@@ -95,7 +95,7 @@ class TracingManager: NSObject {
         }
     }
 
-    func requestTracingPermission(completion: @escaping (Error?)->Void) {
+    func requestTracingPermission(completion: @escaping (Error?) -> Void) {
         try? DP3TTracing.startTracing(completionHandler: completion)
     }
 
@@ -113,8 +113,6 @@ class TracingManager: NSObject {
             } catch {
                 UIStateManager.shared.tracingStartError = error
             }
-
-
         }
 
         updateStatus(completion: nil)
@@ -125,24 +123,22 @@ class TracingManager: NSObject {
     }
 
     func resetSDK() {
-
         // completely reset SDK
         try? DP3TTracing.reset()
 
         // reset debugi fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+            UIStateManager.shared.overwrittenInfectionState = nil
         #endif
     }
 
     func deletePositiveTest() {
-
         // reset infection status
         try? DP3TTracing.resetInfectionStatus()
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+            UIStateManager.shared.overwrittenInfectionState = nil
         #endif
 
         // during infection, tracing is diabled
@@ -154,15 +150,14 @@ class TracingManager: NSObject {
     }
 
     func deleteMeldungen() {
-
         // delete all visible messages
         try? DP3TTracing.resetExposureDays()
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+            UIStateManager.shared.overwrittenInfectionState = nil
         #endif
-        
+
         UIStateManager.shared.refresh()
     }
 
@@ -213,8 +208,6 @@ class TracingManager: NSObject {
     }
 }
 
-
-
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
@@ -254,15 +247,13 @@ extension TracingManager: DP3TBackgroundHandler {
     }
 }
 
-
 #if DEBUG
-extension TracingManager: LoggingDelegate {
-    func log(_ string: String, type: OSLogType) {
-        print(string)
-        #if ENABLE_TESTING
-        loggingStorage?.log(string, type: type)
-        #endif
+    extension TracingManager: LoggingDelegate {
+        func log(_ string: String, type: OSLogType) {
+            print(string)
+            #if ENABLE_TESTING
+                loggingStorage?.log(string, type: type)
+            #endif
+        }
     }
-}
 #endif
-

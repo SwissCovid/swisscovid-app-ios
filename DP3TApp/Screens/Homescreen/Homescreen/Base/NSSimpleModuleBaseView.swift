@@ -117,7 +117,7 @@ class NSSimpleModuleBaseView: UIView {
 
             if let subview = subview {
                 view.addSubview(subview)
-                subview.snp.makeConstraints { (make) in
+                subview.snp.makeConstraints { make in
                     make.top.equalTo(textLabel.snp.bottom).offset(NSPadding.large)
                     make.left.equalToSuperview()
                     make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
@@ -143,18 +143,17 @@ class NSSimpleModuleBaseView: UIView {
             make.top.equalTo(lastView.snp.bottom).offset(NSPadding.small)
             make.left.right.equalToSuperview().inset(sideInset)
             /*
-            make.left.equalToSuperview().inset(sideInset)
-            if imageView.superview != nil {
-                make.right.equalTo(imageView.snp.left).offset(-sideInset)
-            }
-            else {
-                make.right.equalToSuperview().offset(-sideInset)
-            }
+             make.left.equalToSuperview().inset(sideInset)
+             if imageView.superview != nil {
+                 make.right.equalTo(imageView.snp.left).offset(-sideInset)
+             }
+             else {
+                 make.right.equalToSuperview().offset(-sideInset)
+             }
              */
             if bottomPadding {
                 make.bottom.equalToSuperview().inset(15)
-            }
-            else {
+            } else {
                 make.bottom.equalToSuperview()
             }
         }

@@ -75,15 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // if app is cold-started or comes from background > 30 minutes,
         // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
-
             if !jumpToMessageIfRequired(onlyFirst: true) {
-                DispatchQueue.main.asyncAfter(deadline: .now()+3.0) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
             startForceUpdateCheck()
-        }
-        else {
+        } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
 
@@ -94,8 +92,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let shouldJump: Bool
         if onlyFirst {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail
-        }
-        else {
+        } else {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail && UIStateManager.shared.uiState.meldungenDetail.showMeldungWithAnimation
         }
         if shouldJump,
@@ -104,8 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationController.popToRootViewController(animated: false)
             homescreenVC.presentMeldungenDetail(animated: false)
             return true
-        }
-        else {
+        } else {
             return false
         }
     }

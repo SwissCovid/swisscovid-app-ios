@@ -173,9 +173,9 @@ class UIStateManager: NSObject {
     }
 
     #if ENABLE_TESTING
-    var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
-        didSet { refresh() }
-    }
+        var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
+            didSet { refresh() }
+        }
     #endif
 
     var tracingIsActivated: Bool {

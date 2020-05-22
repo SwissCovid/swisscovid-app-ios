@@ -96,27 +96,27 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
                 make.leading.trailing.equalToSuperview()
                 make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
             }
-            case .bluetooth:
-                foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
-                titleLabel.text = "onboarding_bluetooth_title".ub_localized
-                textLabel.text = "onboarding_bluetooth_text".ub_localized
-                permissionButton.title = "onboarding_bluetooth_button".ub_localized
+        case .bluetooth:
+            foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
+            titleLabel.text = "onboarding_bluetooth_title".ub_localized
+            textLabel.text = "onboarding_bluetooth_text".ub_localized
+            permissionButton.title = "onboarding_bluetooth_button".ub_localized
 
-                let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_bluetooth_gtk_text1".ub_localized, title: "onboarding_bluetooth_gtk_title1".ub_localized)
-                let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!.ub_image(with: .ns_blue), text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
-                elements.append(info1)
-                elements.append(info2)
+            let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_bluetooth_gtk_text1".ub_localized, title: "onboarding_bluetooth_gtk_title1".ub_localized)
+            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!.ub_image(with: .ns_blue), text: "onboarding_bluetooth_gtk_text2".ub_localized, title: "onboarding_bluetooth_gtk_title2".ub_localized)
+            elements.append(info1)
+            elements.append(info2)
 
-                goodToKnowContainer.addSubview(info1)
-                goodToKnowContainer.addSubview(info2)
-                info1.snp.makeConstraints { make in
-                    make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
-                    make.leading.trailing.equalToSuperview()
-                }
-                info2.snp.makeConstraints { make in
-                    make.top.equalTo(info1.snp.bottom)
-                    make.leading.trailing.equalToSuperview()
-                    make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+            goodToKnowContainer.addSubview(info1)
+            goodToKnowContainer.addSubview(info2)
+            info1.snp.makeConstraints { make in
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.leading.trailing.equalToSuperview()
+            }
+            info2.snp.makeConstraints { make in
+                make.top.equalTo(info1.snp.bottom)
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
             }
         case .push:
             foregroundImageView.image = UIImage(named: "onboarding-meldung-permission")!

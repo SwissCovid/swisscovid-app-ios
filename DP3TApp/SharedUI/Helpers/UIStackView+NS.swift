@@ -58,7 +58,7 @@ extension UIStackView {
         addArrangedView(container)
         container.addSubview(line)
 
-        line.snp.makeConstraints { (make) in
+        line.snp.makeConstraints { make in
             make.height.equalTo(1.0 / UIScreen.main.scale)
             make.left.right.equalToSuperview().inset(inset)
             make.top.bottom.equalToSuperview()

@@ -57,5 +57,4 @@ class UserStorage {
 
     @UBOptionalUserDefault(key: "positiveTestSendDate")
     public var positiveTestSendDate: Date?
-
 }

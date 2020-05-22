@@ -11,7 +11,7 @@ extension Endpoint {
         var request = URLRequest(url: url, timeoutInterval: timeoutInterval)
         request.httpMethod = method.rawValue
 
-        request.setValue(self.userAgentHeader, forHTTPHeaderField: "User-Agent")
+        request.setValue(userAgentHeader, forHTTPHeaderField: "User-Agent")
 
         for (k, v) in headers ?? [:] {
             request.setValue(v, forHTTPHeaderField: k)

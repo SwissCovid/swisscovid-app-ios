@@ -15,7 +15,7 @@ struct UIStateModel: Equatable {
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
 
     #if ENABLE_TESTING
-    var debug: Debug = Debug()
+        var debug: Debug = Debug()
     #endif
 
     enum TracingState: Equatable {
@@ -43,7 +43,7 @@ struct UIStateModel: Equatable {
             var syncProblemNetworkingError: Bool = false
             var syncProblemOtherError: Bool = false
             var backgroundUpdateProblem: Bool = false
-            var errorCode: String? = nil
+            var errorCode: String?
         }
 
         struct InfoBox: Equatable {
@@ -82,19 +82,18 @@ struct UIStateModel: Equatable {
         }
     }
 
-
     #if ENABLE_TESTING
-    struct Debug: Equatable {
-        var lastSync: Date?
-        var infectionStatus: DebugInfectionStatus = .healthy
-        var overwrittenInfectionState: DebugInfectionStatus?
-        var logOutput: NSAttributedString = NSAttributedString()
+        struct Debug: Equatable {
+            var lastSync: Date?
+            var infectionStatus: DebugInfectionStatus = .healthy
+            var overwrittenInfectionState: DebugInfectionStatus?
+            var logOutput: NSAttributedString = NSAttributedString()
 
-        enum DebugInfectionStatus: Equatable {
-            case healthy
-            case exposed
-            case infected
+            enum DebugInfectionStatus: Equatable {
+                case healthy
+                case exposed
+                case infected
+            }
         }
-    }
     #endif
 }

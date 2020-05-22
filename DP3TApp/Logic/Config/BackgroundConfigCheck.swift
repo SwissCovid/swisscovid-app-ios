@@ -93,7 +93,7 @@ class ConfigBackgroundTaskManager {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
             Logger.log("Failed to schedule Config Update: \(error)")
-            BGTaskScheduler.shared.getPendingTaskRequests { (requests) in
+            BGTaskScheduler.shared.getPendingTaskRequests { requests in
                 Logger.log("Pending requests are \(requests)")
             }
         }

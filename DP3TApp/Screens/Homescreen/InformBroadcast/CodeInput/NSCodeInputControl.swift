@@ -177,19 +177,17 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     private var hadText: Bool = false
     public var indexInCodeControl: Int
-    
+
     init(index: Int) {
         indexInCodeControl = index
         super.init(frame: .zero)
         setup()
-        
+
         textField.text = UIAccessibility.isVoiceOverRunning ? "" : emptyCharacter
         textField.accessibilityTraits = .staticText
         accessibilityTraits = .staticText
         isAccessibilityElement = true
     }
-    
-   
 
     override func accessibilityElementDidBecomeFocused() {
         textField.becomeFirstResponder()
@@ -325,10 +323,10 @@ class NSTextField: UITextField {
     override func canPerformAction(_ action: Selector, withSender _: Any?) -> Bool {
         return action == #selector(UIResponderStandardEditActions.paste)
     }
-    
+
     override var accessibilityLabel: String? {
         get {
-            if  let text = text, !text.isEmpty {
+            if let text = text, !text.isEmpty {
                 return (singleControl == nil ? "" : "accessibility_\(singleControl!.indexInCodeControl + 1)nd".ub_localized) + "accessibility_code_input_textfield".ub_localized
             } else {
                 return (singleControl == nil ? "" : "accessibility_\(singleControl!.indexInCodeControl + 1)nd".ub_localized) + "accessibility_code_input_textfield_empty".ub_localized
@@ -338,7 +336,7 @@ class NSTextField: UITextField {
             super.accessibilityLabel = newValue
         }
     }
-    
+
     override var accessibilityHint: String? {
         get {
             return "accessibility_code_input_hint".ub_localized

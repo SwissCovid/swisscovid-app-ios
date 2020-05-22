@@ -27,9 +27,9 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
-        case .exposureNotificationError(error: let error):
+        case let .exposureNotificationError(error: error):
             let nsError = error as NSError
-            if nsError.domain == "ENErrorDomain" && nsError.code == 4 {
+            if nsError.domain == "ENErrorDomain", nsError.code == 4 {
                 return "user_cancelled_key_sharing_error".ub_localized
             }
             return error.localizedDescription
@@ -50,7 +50,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "IPERME"
         case .userAlreadyMarkedAsInfected:
             return "IUAMAI"
-        case .exposureNotificationError(error: let error):
+        case let .exposureNotificationError(error: error):
             let nsError = error as NSError
             return "IEN\(nsError.code)"
         }

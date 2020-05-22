@@ -93,8 +93,6 @@ class DatabaseSyncer {
                 TracingManager.shared.updateStatus(completion: nil)
 
                 completionHandler?(.newData)
-
-
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)

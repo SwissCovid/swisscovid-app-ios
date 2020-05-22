@@ -44,7 +44,7 @@ class UIStateLogic {
 
         var infectionStatus = tracingState.infectionStatus
         #if ENABLE_TESTING
-        setDebugOverwrite(&infectionStatus, &newState)
+            setDebugOverwrite(&infectionStatus, &newState)
         #endif
 
         switch infectionStatus {
@@ -138,9 +138,9 @@ class UIStateLogic {
                 infoBox = localizedInfoBox.frInfoBox
             }
             newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
-                                                                                      text: infoBox.msg,
-                                                                                      link: infoBox.urlTitle,
-                                                                                      url: infoBox.url)
+                                                                          text: infoBox.msg,
+                                                                          link: infoBox.urlTitle,
+                                                                          url: infoBox.url)
         }
     }
 
@@ -203,8 +203,8 @@ class UIStateLogic {
 
         static let randIdentifier1 = UUID()
         static let randIdentifier2 = UUID()
-    static let randDate1 = Date(timeIntervalSinceNow: -10000)
-    static let randDate2 = Date(timeIntervalSinceNow: -100000)
+        static let randDate1 = Date(timeIntervalSinceNow: -10000)
+        static let randDate2 = Date(timeIntervalSinceNow: -100_000)
 
         private func setDebugMeldungen(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
@@ -234,23 +234,23 @@ class UIStateLogic {
             }
         }
 
-    private func setDebugLog(_ newState: inout UIStateModel) {
-        let logs = Logger.lastLogs
-        let df = DateFormatter()
-        df.dateFormat = "dd.MM, HH:mm"
-        let attr = NSMutableAttributedString()
-        logs.forEach { (date, log)  in
-            let s1 = NSAttributedString(string: df.string(from: date), attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])
-            let s2 = NSAttributedString(string: " ")
-            let s3 = NSAttributedString(string: log, attributes: [NSAttributedString.Key.foregroundColor : UIColor.black])
-            let s4 = NSAttributedString(string: "\n")
-            attr.append(s1)
-            attr.append(s2)
-            attr.append(s3)
-            attr.append(s4)
+        private func setDebugLog(_ newState: inout UIStateModel) {
+            let logs = Logger.lastLogs
+            let df = DateFormatter()
+            df.dateFormat = "dd.MM, HH:mm"
+            let attr = NSMutableAttributedString()
+            logs.forEach { date, log in
+                let s1 = NSAttributedString(string: df.string(from: date), attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+                let s2 = NSAttributedString(string: " ")
+                let s3 = NSAttributedString(string: log, attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+                let s4 = NSAttributedString(string: "\n")
+                attr.append(s1)
+                attr.append(s2)
+                attr.append(s3)
+                attr.append(s4)
+            }
+            newState.debug.logOutput = attr
         }
-        newState.debug.logOutput = attr
-    }
 
     #endif
 }

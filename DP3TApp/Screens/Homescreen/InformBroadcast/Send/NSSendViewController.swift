@@ -35,7 +35,7 @@ class NSSendViewController: NSInformBottomButtonViewController {
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(imageView)
         stackScrollView.addSpacerView(NSPadding.large)
-        
+
         let container = UIStackView()
         container.isAccessibilityElement = true
         container.axis = .vertical
@@ -43,7 +43,7 @@ class NSSendViewController: NSInformBottomButtonViewController {
         container.addSpacerView(NSPadding.large)
         container.addArrangedView(textLabel)
         container.accessibilityLabel = (titleLabel.text ?? "") + "." + (textLabel.text ?? "")
-        
+
         stackScrollView.addArrangedView(container)
         stackScrollView.addSpacerView(NSPadding.large)
         UIAccessibility.post(notification: .layoutChanged, argument: container)

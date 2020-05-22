@@ -50,7 +50,7 @@ class NSAnimatedGraphLayer: CALayer {
     }
 
     override init(layer: Any) {
-        self.type = .header
+        type = .header
         super.init(layer: layer)
     }
 

@@ -39,8 +39,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.hitTestDelegate = self
     }
 
-
-
     override var useFullScreenHeaderAnimation: Bool {
         return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
     }
@@ -59,7 +57,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         for m in meldungen {
             UserStorage.shared.registerSeenMessages(identifier: m.identifier)
         }
-        
+
         super.startHeaderAnimation()
     }
 
@@ -70,7 +68,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
         setupLayout()
     }
-
 
     // MARK: - Setup
 
@@ -137,8 +134,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
-        self.addDeleteButton(whiteBoxView)
-   
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
     }
@@ -162,7 +158,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
-        self.addDeleteButton(whiteBoxView)
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
     }
@@ -186,7 +182,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
-        self.addDeleteButton(whiteBoxView)
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
     }
@@ -203,25 +199,24 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
         deleteButton.highlightCornerRadius = 0
 
-        deleteButton.snp.makeConstraints { (make) in
+        deleteButton.snp.makeConstraints { make in
             make.height.equalTo(60)
             make.centerX.top.bottom.equalToSuperview()
-            make.width.equalToSuperview().inset(-2*12.0)
+            make.width.equalToSuperview().inset(-2 * 12.0)
         }
 
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
 
         deleteButton.touchUpCallback = { [weak self] in
             let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
                 TracingManager.shared.deleteMeldungen()
             }))
-            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
             }))
             self?.present(alert, animated: true, completion: nil)
         }
-
     }
 
     private func createCallLabel() -> NSLabel {
@@ -263,7 +258,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
 extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
-        if overrideHitTestAnyway && useFullScreenHeaderAnimation {
+        if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true
         }
 

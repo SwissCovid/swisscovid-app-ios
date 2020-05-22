@@ -59,7 +59,7 @@ class NSButton: UBButton {
                 return true
             case .outlineUppercase:
                 return true
-                case .borderlessUppercase:
+            case .borderlessUppercase:
                 return true
             default:
                 return false
@@ -148,7 +148,7 @@ extension NSButton {
             make.right.lessThanOrEqualToSuperview()
             make.left.greaterThanOrEqualToSuperview()
         }
-        
+
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         return view
     }

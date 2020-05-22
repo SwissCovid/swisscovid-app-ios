@@ -156,7 +156,6 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
                     v.transform = .identity
                 }, completion: nil)
 
-
                 i = i + 1
             }
         }

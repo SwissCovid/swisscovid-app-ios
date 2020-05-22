@@ -24,8 +24,9 @@ extension UIColor {
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!.withHighContrastColor(color: .black)
 
     // MARK: - UIAccessibility Contrast extension
+
     func withHighContrastColor(color: UIColor) -> UIColor {
-       return UIColor {_ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
+        return UIColor { _ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
     }
 
     public static var ns_line = UIColor(ub_hexString: "#ecebeb")!
@@ -37,6 +38,4 @@ extension UIColor {
 
     // text color
     public static var ns_text_secondary = UIColor(ub_hexString: "#e6e6e6")!
-    
-   
 }

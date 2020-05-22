@@ -83,7 +83,7 @@ class NSTracingErrorView: UIView {
         if model?.action != nil {
             stackView.addArrangedView(actionButton)
         }
-        if let code = self.errorCode {
+        if let code = errorCode {
             stackView.addArrangedView(errorCodeLabel)
             errorCodeLabel.text = code
         }
