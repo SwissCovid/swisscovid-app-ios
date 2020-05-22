@@ -47,6 +47,7 @@ class NSAnimatedGraphLayer: CALayer {
         self.edges = edges
         super.init()
         draw()
+        addObservers()
     }
 
     override init(layer: Any) {
@@ -115,14 +116,16 @@ class NSAnimatedGraphLayer: CALayer {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02) {
             self.step()
         }
-
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseAnimating), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     @objc
     func pauseAnimating() {
         timer?.invalidate()
         timer = nil
+    }
+
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseAnimating), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(startAnimating), name: UIApplication.willEnterForegroundNotification, object: nil)
     }

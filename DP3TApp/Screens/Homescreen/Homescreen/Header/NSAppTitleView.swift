@@ -38,6 +38,7 @@ class NSAppTitleView: NSTitleView {
         super.init(frame: .zero)
         setup()
         startSpawn()
+        addObservers()
         updateState(animated: false)
     }
 
@@ -107,8 +108,6 @@ class NSAppTitleView: NSTitleView {
             strongSelf.hightlight()
         })
         slowTimer?.tolerance = 5.0
-
-        NotificationCenter.default.addObserver(self, selector: #selector(pauseSpawn), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
 
     @objc
@@ -117,6 +116,10 @@ class NSAppTitleView: NSTitleView {
         timer = nil
         slowTimer?.invalidate()
         slowTimer = nil
+    }
+
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(pauseSpawn), name: UIApplication.didEnterBackgroundNotification, object: nil)
 
         NotificationCenter.default.addObserver(self, selector: #selector(startSpawn), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
