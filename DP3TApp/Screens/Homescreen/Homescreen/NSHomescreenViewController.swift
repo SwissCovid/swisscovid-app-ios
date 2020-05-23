@@ -257,7 +257,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     }
 
     private func presentWhatToDoSymptoms() {
-        navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
+        navigationController?.pushViewController(WhatToDoSymptomViewController(), animated: true)
     }
 
     @objc private func infoButtonPressed() {

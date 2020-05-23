@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSWhatToDoSymptomViewController: ViewController {
+class WhatToDoSymptomViewController: ViewController {
     // MARK: - Views
 
     private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
