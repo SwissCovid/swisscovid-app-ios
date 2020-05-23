@@ -136,7 +136,7 @@
 		242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* InformViewController.swift */; };
 		242D2248245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */; };
 		242D2249245C4BD8005DAEA8 /* NSMeldungDetailMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */; };
-		242D224A245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */; };
+		242D224A245C4BD8005DAEA8 /* MeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift */; };
 		242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B03243F6FAE0066C773 /* UBOptionalUserDefault.swift */; };
 		242D224C245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */; };
 		242D224D245C4BD8005DAEA8 /* SimpleModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65FA2449CF0900980A4E /* SimpleModuleBaseView.swift */; };
@@ -212,7 +212,7 @@
 		6E3308662450442D00913B0E /* NSWhatToDoInformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308652450442D00913B0E /* NSWhatToDoInformView.swift */; };
 		6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */; };
 		6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086924506E0600913B0E /* NSExplanationView.swift */; };
-		6E33086D245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */; };
+		6E33086D245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift */; };
 		6E33086F24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */; };
 		6E33087124507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */; };
 		6E33087324507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */; };
@@ -383,7 +383,7 @@
 		6E3308652450442D00913B0E /* NSWhatToDoInformView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoInformView.swift; sourceTree = "<group>"; };
 		6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoSymptomView.swift; sourceTree = "<group>"; };
 		6E33086924506E0600913B0E /* NSExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExplanationView.swift; sourceTree = "<group>"; };
-		6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailNoMeldungenViewController.swift; sourceTree = "<group>"; };
+		6E33086C245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailNoMeldungenViewController.swift; sourceTree = "<group>"; };
 		6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailPositiveTestedViewController.swift; sourceTree = "<group>"; };
 		6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungDetailMeldungenViewController.swift; sourceTree = "<group>"; };
 		6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungenDetailNoMeldungenTitleView.swift; sourceTree = "<group>"; };
@@ -862,7 +862,7 @@
 		6E33086B245079E500913B0E /* Meldungen */ = {
 			isa = PBXGroup;
 			children = (
-				6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */,
+				6E33086C245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift */,
 				6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */,
 				6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */,
 				6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */,
@@ -1560,7 +1560,7 @@
 				242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,
 				242D2249245C4BD8005DAEA8 /* NSMeldungDetailMeldungenViewController.swift in Sources */,
-				242D224A245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */,
+				242D224A245C4BD8005DAEA8 /* MeldungenDetailNoMeldungenViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */,
 				242D224D245C4BD8005DAEA8 /* SimpleModuleBaseView.swift in Sources */,
@@ -1692,7 +1692,7 @@
 				24780B17242DFD7C003BB26C /* InformViewController.swift in Sources */,
 				6E3308752450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,
 				6E33087124507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift in Sources */,
-				6E33086D245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */,
+				6E33086D245079FF00913B0E /* MeldungenDetailNoMeldungenViewController.swift in Sources */,
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
 				6E33086F24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* SimpleModuleBaseView.swift in Sources */,
