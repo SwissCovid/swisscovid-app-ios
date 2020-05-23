@@ -253,7 +253,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     #endif
 
     private func presentWhatToDoPositiveTest() {
-        navigationController?.pushViewController(NSWhatToDoPositiveTestViewController(), animated: true)
+        navigationController?.pushViewController(WhatToDoPositiveTestViewController(), animated: true)
     }
 
     private func presentWhatToDoSymptoms() {
