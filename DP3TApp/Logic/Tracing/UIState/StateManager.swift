@@ -65,7 +65,7 @@ class StateManager: NSObject {
         updatePush()
 
         // build new state, sending update to observers if changed
-        uiState = UIStateLogic(manager: self).buildState()
+        uiState = StateLogic(manager: self).buildState()
     }
 
     // MARK: - Block Update

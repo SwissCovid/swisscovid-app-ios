@@ -9,7 +9,7 @@ import Foundation
 import DP3TSDK
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
-class UIStateLogic {
+class StateLogic {
     let manager: StateManager
 
     init(manager: StateManager) {
