@@ -10,7 +10,7 @@ class CheckBoxView: UIView {
     private let textLabel = Label(.textLight)
     private let checkBox = CheckBoxControl(isChecked: false)
 
-    private let button = NSButton(title: "")
+    private let button = Button(title: "")
 
     public var isChecked: Bool = false {
         didSet {

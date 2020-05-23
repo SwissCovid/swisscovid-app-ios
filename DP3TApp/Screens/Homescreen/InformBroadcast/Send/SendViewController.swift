@@ -67,6 +67,6 @@ class SendViewController: InformBottomButtonViewController {
     private var rightBarButtonItem: UIBarButtonItem?
 
     private func continuePressed() {
-        navigationController?.pushViewController(NSCodeInputViewController(), animated: true)
+        navigationController?.pushViewController(CodeInputViewController(), animated: true)
     }
 }

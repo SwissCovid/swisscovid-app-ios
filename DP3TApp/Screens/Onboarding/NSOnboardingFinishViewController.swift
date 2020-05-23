@@ -11,7 +11,7 @@ class NSOnboardingFinishViewController: NSOnboardingContentViewController {
     private let titleLabel = Label(.title, textAlignment: .center)
     private let textLabel = Label(.textLight, textAlignment: .center)
 
-    let finishButton = NSButton(title: "onboarding_go_button".ub_localized, style: .normal(.ns_blue))
+    let finishButton = Button(title: "onboarding_go_button".ub_localized, style: .normal(.ns_blue))
 
     override func viewDidLoad() {
         super.viewDidLoad()

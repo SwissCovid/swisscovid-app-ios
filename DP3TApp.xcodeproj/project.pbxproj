@@ -36,7 +36,7 @@
 		242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */; };
 		242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */; };
-		242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* NSButton.swift */; };
+		242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* Button.swift */; };
 		242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* StateLogic.swift */; };
 		242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */; };
 		242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B592431B5A9003BB26C /* TracingLocalPush.swift */; };
@@ -77,7 +77,7 @@
 		242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */; };
 		242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
-		242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
+		242D220E245C4BD8005DAEA8 /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* CodeInputViewController.swift */; };
 		242D220F245C4BD8005DAEA8 /* PointTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097A2445C2210097BD3D /* PointTextView.swift */; };
 		242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* HeaderActiveView.swift */; };
 		242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
@@ -204,7 +204,7 @@
 		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */; };
 		48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */; };
 		48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */; };
-		6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
+		6E1771542440B09A0008D73D /* CodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* CodeInputViewController.swift */; };
 		6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
 		6E33085F24502BBD00913B0E /* WhatToDoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33085E24502BBD00913B0E /* WhatToDoButton.swift */; };
 		6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */; };
@@ -233,7 +233,7 @@
 		6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */; };
 		6E7C0D1E242CE02D0017C4F9 /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */; };
 		6E7C0D20242CE1190017C4F9 /* UIColor+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */; };
-		6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* NSButton.swift */; };
+		6E7C0D22242CE2100017C4F9 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* Button.swift */; };
 		6E7C0D37242E02600017C4F9 /* NSStackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D36242E02600017C4F9 /* NSStackScrollView.swift */; };
 		6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D38242E02A20017C4F9 /* NSLayoutConstants.swift */; };
 		6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
@@ -375,7 +375,7 @@
 		24D5EF692448CAE800C197D6 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
 		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.cer"; sourceTree = "<group>"; };
 		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.cer"; sourceTree = "<group>"; };
-		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
+		6E1771532440B09A0008D73D /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
 		6E1771552440B5140008D73D /* NSCodeInputControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputControl.swift; sourceTree = "<group>"; };
 		6E33085E24502BBD00913B0E /* WhatToDoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoButton.swift; sourceTree = "<group>"; };
 		6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoPositiveTestViewController.swift; sourceTree = "<group>"; };
@@ -404,7 +404,7 @@
 		6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFancyNumberView.swift; sourceTree = "<group>"; };
 		6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelType.swift; sourceTree = "<group>"; };
 		6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NS.swift"; sourceTree = "<group>"; };
-		6E7C0D21242CE2100017C4F9 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
+		6E7C0D21242CE2100017C4F9 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		6E7C0D26242D04280017C4F9 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
@@ -590,7 +590,7 @@
 		2443948124463B71003ED582 /* CodeInput */ = {
 			isa = PBXGroup;
 			children = (
-				6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */,
+				6E1771532440B09A0008D73D /* CodeInputViewController.swift */,
 				6E1771552440B5140008D73D /* NSCodeInputControl.swift */,
 				6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */,
 			);
@@ -759,7 +759,7 @@
 		24780B04242DF9ED003BB26C /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				6E7C0D21242CE2100017C4F9 /* NSButton.swift */,
+				6E7C0D21242CE2100017C4F9 /* Button.swift */,
 				DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */,
 				6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */,
 				AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */,
@@ -1455,7 +1455,7 @@
 				242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */,
 				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
-				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
+				242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */,
 				242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */,
 				242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */,
@@ -1499,7 +1499,7 @@
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */,
 				2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */,
-				242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */,
+				242D220E245C4BD8005DAEA8 /* CodeInputViewController.swift in Sources */,
 				242D220F245C4BD8005DAEA8 /* PointTextView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
@@ -1587,7 +1587,7 @@
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
-				6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */,
+				6E7C0D22242CE2100017C4F9 /* Button.swift in Sources */,
 				2485F4712455C5AE00C3D8C3 /* StateLogic.swift in Sources */,
 				6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */,
 				24780B5E2431B5A9003BB26C /* TracingLocalPush.swift in Sources */,
@@ -1632,7 +1632,7 @@
 				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,
 				8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
-				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
+				6E1771542440B09A0008D73D /* CodeInputViewController.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* PointTextView.swift in Sources */,
 				DC746D5A2451DF78009426B1 /* HeaderActiveView.swift in Sources */,
 				F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */,

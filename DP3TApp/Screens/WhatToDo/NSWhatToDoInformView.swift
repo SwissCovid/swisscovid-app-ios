@@ -15,7 +15,7 @@ class NSWhatToDoInformView: SimpleModuleBaseView {
 
     // MARK: - Views
 
-    private let informButton = NSButton(title: "inform_detail_box_button".ub_localized, style: .uppercase(.ns_purple))
+    private let informButton = Button(title: "inform_detail_box_button".ub_localized, style: .uppercase(.ns_purple))
 
     // MARK: - Init
 

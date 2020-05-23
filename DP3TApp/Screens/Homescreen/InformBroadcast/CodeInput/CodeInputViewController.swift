@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-class NSCodeInputViewController: InformStepViewController, NSCodeControlProtocol {
+class CodeInputViewController: InformStepViewController, NSCodeControlProtocol {
     // MARK: - Views
 
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
@@ -21,7 +21,7 @@ class NSCodeInputViewController: InformStepViewController, NSCodeControlProtocol
 
     private let codeControl = NSCodeControl()
 
-    private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
+    private let sendButton = Button(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 
     // MARK: - View
 

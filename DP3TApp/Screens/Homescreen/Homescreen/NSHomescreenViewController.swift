@@ -18,7 +18,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
 
     private let whatToDoPositiveTestButton = WhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
 
-    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
+    private let debugScreenButton = Button(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
     private var lastState: StateModel = .init()
 
@@ -264,7 +264,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
         present(NavigationController(rootViewController: NSAboutViewController()), animated: true)
     }
 
-    private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
+    private let uploadDBButton = Button(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
     private let uploadHelper = NSDebugDatabaseUploadHelper()
     private func uploadDatabaseForDebugPurposes() {
         let alert = UIAlertController(title: "Username", message: nil, preferredStyle: .alert)

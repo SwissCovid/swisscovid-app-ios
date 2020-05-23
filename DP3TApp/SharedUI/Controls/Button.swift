@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSButton: UBButton {
+class Button: UBButton {
     enum Style {
         // bool fo
         case normal(UIColor)
@@ -129,9 +129,9 @@ class NSButton: UBButton {
     }
 }
 
-extension NSButton {
+extension Button {
     static func faqButton(color: UIColor) -> UIView {
-        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
+        let faqButton = Button(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
 
         faqButton.touchUpCallback = {
             if let url = URL(string: "faq_button_url".ub_localized) {

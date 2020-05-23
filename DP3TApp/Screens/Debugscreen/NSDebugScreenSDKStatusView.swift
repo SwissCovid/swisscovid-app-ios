@@ -69,7 +69,7 @@ class NSDebugScreenSDKStatusView: SimpleModuleBaseView {
     }
 
     private func setupButton() {
-        let button = NSButton(title: "debug_sdk_button_reset".ub_localized, style: .uppercase(.ns_purple))
+        let button = Button(title: "debug_sdk_button_reset".ub_localized, style: .uppercase(.ns_purple))
         contentView.addArrangedView(button)
 
         button.touchUpCallback = { [weak self] in
@@ -77,7 +77,7 @@ class NSDebugScreenSDKStatusView: SimpleModuleBaseView {
             strongSelf.resetSDK()
         }
 
-        let button2 = NSButton(title: "reset_onboarding".ub_localized, style: .uppercase(.ns_purple))
+        let button2 = Button(title: "reset_onboarding".ub_localized, style: .uppercase(.ns_purple))
         contentView.addArrangedView(button2)
 
         button2.touchUpCallback = { [weak self] in

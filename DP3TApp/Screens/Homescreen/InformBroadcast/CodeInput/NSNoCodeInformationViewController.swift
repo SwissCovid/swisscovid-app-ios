@@ -13,7 +13,7 @@ class NSNoCodeInformationViewController: InformStepViewController {
     private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = Label(.textLight, textAlignment: .center)
 
-    private let sendButton = NSButton(title: "exposed_info_tel_button_title".ub_localized)
+    private let sendButton = Button(title: "exposed_info_tel_button_title".ub_localized)
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -91,7 +91,7 @@ class NSWhatToDoPositiveTestViewController: ViewController {
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
+        stackScrollView.addArrangedView(Button.faqButton(color: .ns_purple))
 
         stackScrollView.addSpacerView(NSPadding.large)
     }

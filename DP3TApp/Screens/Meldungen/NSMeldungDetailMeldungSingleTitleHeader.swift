@@ -28,7 +28,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     private let dateLabel = Label(.textBold, textAlignment: .center)
 
-    private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
+    private let continueButton = Button(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
     private let openSetup: Bool
 

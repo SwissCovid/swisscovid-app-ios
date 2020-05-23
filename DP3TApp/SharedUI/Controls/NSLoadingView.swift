@@ -13,7 +13,7 @@ class NSLoadingView: UIView {
     private let errorTitleLabel = Label(.title, textAlignment: .center)
     private let errorTextLabel = Label(.textLight, textAlignment: .center)
     private let errorCodeLabel = Label(.smallRegular)
-    private let reloadButton = NSButton(title: "loading_view_reload".ub_localized)
+    private let reloadButton = Button(title: "loading_view_reload".ub_localized)
 
     // MARK: - Init
 

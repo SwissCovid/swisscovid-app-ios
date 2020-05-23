@@ -27,7 +27,7 @@ class InformBottomButtonViewController: InformStepViewController {
 
     private let buttonView = UIView()
 
-    private let button = NSButton(title: "")
+    private let button = Button(title: "")
 
     override func viewDidLoad() {
         super.viewDidLoad()

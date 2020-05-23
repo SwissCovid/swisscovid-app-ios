@@ -91,7 +91,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
+        stackScrollView.addArrangedView(Button.faqButton(color: .ns_blue))
 
         stackScrollView.addSpacerView(NSPadding.large)
     }
@@ -125,7 +125,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
+        let callButton = Button(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -148,7 +148,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
+        let callButton = Button(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -172,7 +172,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
+        let callButton = Button(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -194,7 +194,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
     private func addDeleteButton(_ whiteBoxView: SimpleModuleBaseView) {
         whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
 
-        let deleteButton = NSButton(title: "delete_reports_button".ub_localized, style: .borderlessUppercase(.ns_blue))
+        let deleteButton = Button(title: "delete_reports_button".ub_localized, style: .borderlessUppercase(.ns_blue))
 
         let container = UIView()
         whiteBoxView.contentView.addArrangedView(container)

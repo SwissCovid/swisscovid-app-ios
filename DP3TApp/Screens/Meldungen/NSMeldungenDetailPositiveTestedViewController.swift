@@ -47,7 +47,7 @@ class NSMeldungenDetailPositiveTestedViewController: TitleViewScrollViewControll
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
+        stackScrollView.addArrangedView(Button.faqButton(color: .ns_purple))
 
         stackScrollView.addSpacerView(NSPadding.large)
     }
@@ -58,7 +58,7 @@ class NSMeldungenDetailPositiveTestedViewController: TitleViewScrollViewControll
 
         whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
 
-        let deleteButton = NSButton(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
+        let deleteButton = Button(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
 
         let container = UIView()
         whiteBoxView.contentView.addArrangedView(container)

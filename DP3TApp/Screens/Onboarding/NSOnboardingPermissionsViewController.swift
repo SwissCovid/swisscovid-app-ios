@@ -15,7 +15,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let titleLabel = Label(.title, textAlignment: .center)
     private let textLabel = Label(.textLight, textAlignment: .center)
 
-    let permissionButton = NSButton(title: "", style: .normal(.ns_blue))
+    let permissionButton = Button(title: "", style: .normal(.ns_blue))
 
     private let goodToKnowContainer = UIView()
     private let goodToKnowLabel = Label(.textLight, textColor: .ns_blue)

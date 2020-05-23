@@ -27,7 +27,7 @@ class NSOnboardingViewController: ViewController {
 
     private let continueContainer = UIView()
     private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
-    private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
+    private let finishButton = Button(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
 
 
