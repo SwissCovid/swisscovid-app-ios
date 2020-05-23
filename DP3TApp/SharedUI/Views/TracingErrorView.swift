@@ -18,7 +18,7 @@ class TracingErrorView: UIView {
 
     // MARK: - Model
 
-    struct NSTracingErrorViewModel {
+    struct TracingErrorViewModel {
         let icon: UIImage
         let title: String
         let text: String
@@ -26,7 +26,7 @@ class TracingErrorView: UIView {
         let action: (() -> Void)?
     }
 
-    var model: NSTracingErrorViewModel? {
+    var model: TracingErrorViewModel? {
         didSet { update() }
     }
 
@@ -34,7 +34,7 @@ class TracingErrorView: UIView {
         didSet { update() }
     }
 
-    init(model: NSTracingErrorViewModel) {
+    init(model: TracingErrorViewModel) {
         self.model = model
 
         super.init(frame: .zero)
@@ -104,16 +104,16 @@ class TracingErrorView: UIView {
         return nil
     }
 
-    static func model(for state: StateModel.TracingState) -> NSTracingErrorViewModel? {
+    static func model(for state: StateModel.TracingState) -> TracingErrorViewModel? {
         switch state {
         case .tracingDisabled:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+            return TracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "tracing_turned_off_title".ub_localized,
                                            text: "tracing_turned_off_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
         case .tracingPermissionError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
+            return TracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
                                            title: "tracing_permission_error_title".ub_localized,
                                            text: "tracing_permission_error_text".ub_localized,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
@@ -124,7 +124,7 @@ class TracingErrorView: UIView {
                                                UIApplication.shared.open(settingsUrl)
             })
         case .bluetoothTurnedOff:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
+            return TracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,
                                            text: "bluetooth_turned_off_text".ub_localized,
                                            buttonTitle: "bluetooth_turn_on_button_title".ub_localized,
@@ -133,13 +133,13 @@ class TracingErrorView: UIView {
                                                TracingManager.shared.beginUpdatesAndTracing()
             })
         case .timeInconsistencyError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+            return TracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "time_inconsistency_title".ub_localized,
                                            text: "time_inconsistency_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
         case .unexpectedError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+            return TracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "begegnungen_restart_error_title".ub_localized,
                                            text: "begegnungen_restart_error_text".ub_localized,
                                            buttonTitle: nil,

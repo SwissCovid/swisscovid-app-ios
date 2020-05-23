@@ -21,7 +21,7 @@ class NSBluetoothSettingsControl: UIView {
 
     private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground)
 
-    private lazy var tracingErrorView = TracingErrorView.tracingErrorView(for: state.tracing) ?? TracingErrorView(model: TracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
+    private lazy var tracingErrorView = TracingErrorView.tracingErrorView(for: state.tracing) ?? TracingErrorView(model: TracingErrorView.TracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
 
     var activeViewConstraint: Constraint?
     var inactiveViewConstraint: Constraint?
