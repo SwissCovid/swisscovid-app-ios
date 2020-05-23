@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSCheckBoxView: UIView {
+class CheckBoxView: UIView {
     private let textLabel = Label(.textLight)
     private let checkBox = CheckBoxControl(isChecked: false)
 

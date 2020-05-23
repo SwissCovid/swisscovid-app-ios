@@ -12,7 +12,7 @@ import UIKit
 class NSDebugScreenMockView: SimpleModuleBaseView {
     private let stackView = UIStackView()
 
-    private let checkboxes = [NSCheckBoxView(text: "debug_state_setting_option_none".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_ok".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_infected".ub_localized)]
+    private let checkboxes = [CheckBoxView(text: "debug_state_setting_option_none".ub_localized), CheckBoxView(text: "debug_state_setting_option_ok".ub_localized), CheckBoxView(text: "debug_state_setting_option_exposed".ub_localized), CheckBoxView(text: "debug_state_setting_option_infected".ub_localized)]
 
     // MARK: - Init
 
@@ -65,7 +65,7 @@ class NSDebugScreenMockView: SimpleModuleBaseView {
 
     // MARK: - Logic
 
-    private func select(_ checkBox: NSCheckBoxView) {
+    private func select(_ checkBox: CheckBoxView) {
         let stateManager = TracingManager.shared.uiStateManager
 
         if let index = checkboxes.firstIndex(of: checkBox) {
