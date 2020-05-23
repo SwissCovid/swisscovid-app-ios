@@ -19,7 +19,7 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
     private let errorTitleLabel = Label(.uppercaseBold, textColor: .ns_red, textAlignment: .center)
     private let errorTextLabel = Label(.textLight, textColor: .ns_red, textAlignment: .center)
 
-    private let codeControl = NSCodeControl()
+    private let codeControl = CodeControl()
 
     private let sendButton = Button(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 

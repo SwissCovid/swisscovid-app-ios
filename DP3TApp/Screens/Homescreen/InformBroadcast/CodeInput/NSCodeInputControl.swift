@@ -12,7 +12,7 @@ protocol CodeControlProtocol {
     func lastInputControlEntered()
 }
 
-class NSCodeControl: UIView {
+class CodeControl: UIView {
     public var controller: CodeControlProtocol?
 
     // MARK: - Input number
@@ -170,7 +170,7 @@ class NSCodeControl: UIView {
 }
 
 class NSCodeSingleControl: UIView, UITextFieldDelegate {
-    public weak var parent: NSCodeControl?
+    public weak var parent: CodeControl?
 
     public let textField = NSTextField()
     private let emptyCharacter = "\u{200B}"
