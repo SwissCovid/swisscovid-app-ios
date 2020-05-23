@@ -15,7 +15,7 @@ class MeldungDetailMeldungTitleView: TitleView, UIScrollViewDelegate {
 
     // MARK: - Initial Views
 
-    private var headers: [NSMeldungDetailMeldungSingleTitleHeader] = []
+    private var headers: [MeldungDetailMeldungSingleTitleHeader] = []
     private var horizontalStackScrollView = StackScrollView(axis: .horizontal, spacing: 0)
 
     private let pageControl = UIPageControl()
@@ -97,7 +97,7 @@ class MeldungDetailMeldungTitleView: TitleView, UIScrollViewDelegate {
 
         var first = true
         for m in meldungen {
-            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
+            let v = MeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
             v.meldung = m
             v.headerView = self
 
