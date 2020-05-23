@@ -14,8 +14,8 @@ class NSBluetoothSettingsControl: UIView {
 
     public weak var viewToBeLayouted: UIView?
 
-    private let titleLabel = NSLabel(.title)
-    private let subtitleLabel = NSLabel(.textLight)
+    private let titleLabel = Label(.title)
+    private let subtitleLabel = Label(.textLight)
 
     private let switchControl = UISwitch()
 

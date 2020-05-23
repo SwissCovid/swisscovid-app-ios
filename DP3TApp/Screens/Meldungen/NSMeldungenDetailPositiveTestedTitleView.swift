@@ -12,9 +12,9 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
     private let stackView = UIStackView()
 
     private let imageView = UIImageView(image: UIImage(named: "ic-info-border"))
-    private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
-    private let dateLabel = NSLabel(.textBold, textAlignment: .center)
+    private let titleLabel = Label(.title, textColor: .white, textAlignment: .center)
+    private let textLabel = Label(.textLight, textColor: .white, textAlignment: .center)
+    private let dateLabel = Label(.textBold, textAlignment: .center)
 
     // MARK: - Init
 

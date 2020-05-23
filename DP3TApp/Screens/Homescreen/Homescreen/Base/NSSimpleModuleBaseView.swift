@@ -13,11 +13,11 @@ class NSSimpleModuleBaseView: UIView {
         didSet { titleLabel.text = title }
     }
 
-    private let titleLabel = NSLabel(.title)
-    private let subtitleLabel = NSLabel(.textBold)
+    private let titleLabel = Label(.title)
+    private let subtitleLabel = Label(.textBold)
 
-    private let boldTextLabel = NSLabel(.textBold)
-    let textLabel = NSLabel(.textLight)
+    private let boldTextLabel = Label(.textBold)
+    let textLabel = Label(.textLight)
     private let imageView = UIImageView()
     private let subview: UIView?
 

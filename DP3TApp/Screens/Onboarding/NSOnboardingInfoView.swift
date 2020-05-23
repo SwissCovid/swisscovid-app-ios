@@ -21,14 +21,14 @@ class NSOnboardingInfoView: UIView {
         let imgView = UIImageView(image: icon)
         imgView.ub_setContentPriorityRequired()
 
-        let label = NSLabel(.textLight)
+        let label = Label(.textLight)
         label.text = text
         label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
 
         addSubview(imgView)
         addSubview(label)
 
-        let titleLabel = NSLabel(.textBold)
+        let titleLabel = Label(.textBold)
         if hasTitle {
             addSubview(titleLabel)
             titleLabel.text = title

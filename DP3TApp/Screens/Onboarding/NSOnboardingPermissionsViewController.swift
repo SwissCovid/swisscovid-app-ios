@@ -12,13 +12,13 @@ enum NSOnboardingPermissionType {
 
 class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let foregroundImageView = UIImageView()
-    private let titleLabel = NSLabel(.title, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let titleLabel = Label(.title, textAlignment: .center)
+    private let textLabel = Label(.textLight, textAlignment: .center)
 
     let permissionButton = NSButton(title: "", style: .normal(.ns_blue))
 
     private let goodToKnowContainer = UIView()
-    private let goodToKnowLabel = NSLabel(.textLight, textColor: .ns_blue)
+    private let goodToKnowLabel = Label(.textLight, textColor: .ns_blue)
 
     private let background = UIView()
 

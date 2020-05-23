@@ -12,12 +12,12 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
+    private let textLabel = Label(.textLight, textAlignment: .center)
 
     private let errorView = UIView()
-    private let errorTitleLabel = NSLabel(.uppercaseBold, textColor: .ns_red, textAlignment: .center)
-    private let errorTextLabel = NSLabel(.textLight, textColor: .ns_red, textAlignment: .center)
+    private let errorTitleLabel = Label(.uppercaseBold, textColor: .ns_red, textAlignment: .center)
+    private let errorTextLabel = Label(.textLight, textColor: .ns_red, textAlignment: .center)
 
     private let codeControl = NSCodeControl()
 

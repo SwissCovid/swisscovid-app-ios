@@ -12,10 +12,10 @@ class NSSplashViewController: UIViewController {
 
         view.backgroundColor = .ns_background
 
-        let title = NSLabel(.title, textAlignment: .center)
+        let title = Label(.title, textAlignment: .center)
         title.text = "app_name".ub_localized
 
-        let subtitle = NSLabel(.textLight, textAlignment: .center)
+        let subtitle = Label(.textLight, textAlignment: .center)
         //subtitle.text = "app_subtitle".ub_localized
 
         let imgView = UIImageView(image: UIImage(named: "bag-logo"))

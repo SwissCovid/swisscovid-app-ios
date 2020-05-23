@@ -9,12 +9,12 @@ import UIKit
 class NSInfoBoxView: UIView {
     // MARK: - Views
 
-    private let titleLabel = NSLabel(.uppercaseBold)
-    private let subtextLabel = NSLabel(.textLight)
+    private let titleLabel = Label(.uppercaseBold)
+    private let subtextLabel = Label(.textLight)
     private let leadingIconImageView = UIImageView()
     private let illustrationImageView = UIImageView()
 
-    private let additionalLabel = NSLabel(.textBold)
+    private let additionalLabel = Label(.textBold)
     private let externalLinkButton = NSExternalLinkButton()
 
     // MARK: - Update

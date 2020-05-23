@@ -14,8 +14,8 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
     private let titleElement = UIAccessibilityElement(accessibilityContainer: self)
     private var titleContentStackView = UIStackView()
-    private var subtitleLabel: NSLabel!
-    private var titleLabel: NSLabel!
+    private var subtitleLabel: Label!
+    private var titleLabel: Label!
 
     // MARK: - Init
 
@@ -54,10 +54,10 @@ class NSWhatToDoSymptomViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         // Title & subtitle
-        subtitleLabel = NSLabel(.textLight, textAlignment: .center)
+        subtitleLabel = Label(.textLight, textAlignment: .center)
         subtitleLabel.text = "symptom_detail_subtitle".ub_localized
 
-        titleLabel = NSLabel(.title, textAlignment: .center)
+        titleLabel = Label(.title, textAlignment: .center)
         titleLabel.text = "symptom_detail_title".ub_localized
 
         titleContentStackView.addArrangedView(subtitleLabel)

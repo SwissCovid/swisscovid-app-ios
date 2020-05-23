@@ -9,8 +9,8 @@ import UIKit
 class NSWhatToDoButton: UBButton {
     // MARK: - Views
 
-    private let titleTextLabel = NSLabel(.textBold)
-    private let subtitleLabel = NSLabel(.textLight)
+    private let titleTextLabel = Label(.textBold)
+    private let subtitleLabel = Label(.textLight)
 
     private let leftImageView: UIImageView
 

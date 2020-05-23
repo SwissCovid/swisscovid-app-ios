@@ -10,9 +10,9 @@ class NSLoadingView: UIView {
     private let errorStackView = UIStackView()
     private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
 
-    private let errorTitleLabel = NSLabel(.title, textAlignment: .center)
-    private let errorTextLabel = NSLabel(.textLight, textAlignment: .center)
-    private let errorCodeLabel = NSLabel(.smallRegular)
+    private let errorTitleLabel = Label(.title, textAlignment: .center)
+    private let errorTextLabel = Label(.textLight, textAlignment: .center)
+    private let errorCodeLabel = Label(.smallRegular)
     private let reloadButton = NSButton(title: "loading_view_reload".ub_localized)
 
     // MARK: - Init

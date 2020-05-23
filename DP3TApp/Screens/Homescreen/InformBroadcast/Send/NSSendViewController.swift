@@ -9,8 +9,8 @@ import UIKit
 class NSSendViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
+    private let textLabel = Label(.textLight, textAlignment: .center)
 
     override init() {
         super.init()

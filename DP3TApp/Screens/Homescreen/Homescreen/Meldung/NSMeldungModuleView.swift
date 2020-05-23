@@ -76,7 +76,7 @@ class NSMeldungView: NSModuleBaseView {
             views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
             if let lastMeldung = uiState.lastMeldung {
                 let container = UIView()
-                let dateLabel = NSLabel(.date, textColor: .ns_blue)
+                let dateLabel = Label(.date, textColor: .ns_blue)
 
                 dateLabel.text = DateFormatter.ub_daysAgo(from: lastMeldung, addExplicitDate: false)
 
@@ -104,8 +104,8 @@ class NSMeldungView: NSModuleBaseView {
 }
 
 private class NSMoreInfoView: UIView {
-    private let line1Label = NSLabel(.textLight)
-    private let line2Label = NSLabel(.textBold)
+    private let line1Label = Label(.textLight)
+    private let line2Label = Label(.textBold)
     init(line1: String, line2: String) {
         super.init(frame: .zero)
 

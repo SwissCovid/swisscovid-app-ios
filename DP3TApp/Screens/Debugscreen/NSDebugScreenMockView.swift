@@ -35,7 +35,7 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
     private func setup() {
         contentView.spacing = NSPadding.small
 
-        let label = NSLabel(.textLight)
+        let label = Label(.textLight)
         label.text = "debug_state_setting_text".ub_localized
 
         contentView.addArrangedView(label)

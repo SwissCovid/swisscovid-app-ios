@@ -17,16 +17,16 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     // MARK: - Initial Views
 
-    private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
+    private let newMeldungInitialView = Label(.textBold, textAlignment: .center)
     private let imageInitialView = UIImageView(image: UIImage(named: "illu-exposed-banner"))
 
     // MARK: - Normal Views
 
     private let infoImageView = UIImageView(image: UIImage(named: "ic-info-border"))
-    private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
-    private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
+    private let titleLabel = Label(.title, textColor: .white, textAlignment: .center)
+    private let subtitleLabel = Label(.textLight, textColor: .white, textAlignment: .center)
 
-    private let dateLabel = NSLabel(.textBold, textAlignment: .center)
+    private let dateLabel = Label(.textBold, textAlignment: .center)
 
     private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 

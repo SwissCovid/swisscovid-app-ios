@@ -21,12 +21,12 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     // MARK: - Views
 
-    private var callLabels = [NSLabel]()
+    private var callLabels = [Label]()
     private var notYetCalledView: NSSimpleModuleBaseView?
     private var alreadyCalledView: NSSimpleModuleBaseView?
     private var callAgainView: NSSimpleModuleBaseView?
 
-    private var daysLeftLabels = [NSLabel]()
+    private var daysLeftLabels = [Label]()
 
     private var overrideHitTestAnyway: Bool = true
 
@@ -224,8 +224,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     }
 
-    private func createCallLabel() -> NSLabel {
-        let label = NSLabel(.smallRegular)
+    private func createCallLabel() -> Label {
+        let label = Label(.smallRegular)
         callLabels.append(label)
         return label
     }
@@ -234,7 +234,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
-        let daysLeftLabel = NSLabel(.textBold)
+        let daysLeftLabel = Label(.textBold)
         daysLeftLabels.append(daysLeftLabel)
         wrapper.addSubview(daysLeftLabel)
         daysLeftLabel.snp.makeConstraints { make in

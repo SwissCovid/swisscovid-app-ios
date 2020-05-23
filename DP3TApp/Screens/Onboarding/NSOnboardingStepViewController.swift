@@ -7,9 +7,9 @@
 import UIKit
 
 class NSOnboardingStepViewController: NSOnboardingContentViewController {
-    private let headingLabel = NSLabel(.textLight)
+    private let headingLabel = Label(.textLight)
     private let foregroundImageView = UIImageView()
-    private let titleLabel = NSLabel(.title, textAlignment: .center)
+    private let titleLabel = Label(.title, textAlignment: .center)
 
     private let model: OnboardingStepModel
 

@@ -117,4 +117,4 @@ public enum LabelType: UBLabelType {
     }
 }
 
-class NSLabel: UBLabel<LabelType> {}
+class Label: UBLabel<LabelType> {}

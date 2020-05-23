@@ -8,8 +8,8 @@ import UIKit
 
 class NSOnboardingFinishViewController: NSOnboardingContentViewController {
     private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-outro")!)
-    private let titleLabel = NSLabel(.title, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let titleLabel = Label(.title, textAlignment: .center)
+    private let textLabel = Label(.textLight, textAlignment: .center)
 
     let finishButton = NSButton(title: "onboarding_go_button".ub_localized, style: .normal(.ns_blue))
 
