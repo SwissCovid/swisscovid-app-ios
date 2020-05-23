@@ -12,9 +12,9 @@ class BegegnungenModuleView: ModuleBaseView {
         didSet { updateUI() }
     }
 
-    private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-tracking-active")!, titleColor: .ns_blue, subtextColor: .ns_text, backgroundColor: .ns_blueBackground)
+    private let tracingActiveView = InfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-tracking-active")!, titleColor: .ns_blue, subtextColor: .ns_text, backgroundColor: .ns_blueBackground)
 
-    private let tracingEndedView = NSInfoBoxView(title: "tracing_ended_title".ub_localized, subText: "tracing_ended_text".ub_localized, image: UIImage(named: "ic-stopp")!, illustration: UIImage(named: "illu-tracing-ended")!, titleColor: .ns_purple, subtextColor: .ns_text, backgroundColor: .ns_purpleBackground)
+    private let tracingEndedView = InfoBoxView(title: "tracing_ended_title".ub_localized, subText: "tracing_ended_text".ub_localized, image: UIImage(named: "ic-stopp")!, illustration: UIImage(named: "illu-tracing-ended")!, titleColor: .ns_purple, subtextColor: .ns_text, backgroundColor: .ns_purpleBackground)
 
     private var tracingErrorView: TracingErrorView? {
         TracingErrorView.tracingErrorView(for: uiState)
