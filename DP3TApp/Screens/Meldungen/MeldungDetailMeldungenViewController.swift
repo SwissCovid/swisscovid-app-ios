@@ -34,7 +34,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSMeldungDetailMeldungTitleView(overlapInset: titleHeight - startPositionScrollView)
+        titleView = MeldungDetailMeldungTitleView(overlapInset: titleHeight - startPositionScrollView)
 
         stackScrollView.hitTestDelegate = self
     }
@@ -99,7 +99,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSMeldungDetailMeldungTitleView {
+        if let tv = titleView as? MeldungDetailMeldungTitleView {
             tv.meldungen = meldungen
         }
 
