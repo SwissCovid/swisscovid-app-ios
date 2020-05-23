@@ -268,7 +268,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
         changeBorderStyle(isSelected: false)
 
-        textField.font = NSLabelType.title.font
+        textField.font = LabelType.title.font
         textField.textAlignment = .center
         textField.textColor = .ns_text
         textField.keyboardType = .numberPad

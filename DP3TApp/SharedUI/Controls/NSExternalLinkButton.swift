@@ -17,7 +17,7 @@ class NSExternalLinkButton: UBButton {
         let image = UIImage(named: "ic-link-external")?.ub_image(with: c)
         setImage(image, for: .normal)
 
-        titleLabel?.font = NSLabelType.button.font
+        titleLabel?.font = LabelType.button.font
         titleLabel?.textAlignment = .left
 
         contentHorizontalAlignment = .leading

@@ -147,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIBarButtonItem.appearance().tintColor = .ns_text
 
         UINavigationBar.appearance().titleTextAttributes = [
-            .font: NSLabelType.textBold.font,
+            .font: LabelType.textBold.font,
             .foregroundColor: UIColor.ns_text,
         ]
     }

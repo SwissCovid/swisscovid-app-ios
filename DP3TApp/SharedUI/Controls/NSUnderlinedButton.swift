@@ -15,7 +15,7 @@ class NSUnderlinedButton: UBButton {
             let attributedText = NSMutableAttributedString(string: t)
             attributedText.addAttributes([
                 .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .font: NSLabelType.button.font,
+                .font: LabelType.button.font,
                 .underlineColor: UIColor.ns_text,
                 .foregroundColor: UIColor.ns_text,
             ], range: range)

@@ -59,7 +59,7 @@
 		242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NSNavigationController.swift */; };
 		242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */; };
 		242D21FB245C4BD8005DAEA8 /* TracingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* TracingErrorView.swift */; };
-		242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */; };
+		242D21FC245C4BD8005DAEA8 /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */; };
 		242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B04243F6FAE0066C773 /* UBPListValue.swift */; };
 		242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */; };
 		242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA142451FD150046906D /* AuthorizationModels.swift */; };
@@ -231,7 +231,7 @@
 		6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* NSSendViewController.swift */; };
 		6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */; };
 		6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */; };
-		6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */; };
+		6E7C0D1E242CE02D0017C4F9 /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */; };
 		6E7C0D20242CE1190017C4F9 /* UIColor+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */; };
 		6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* NSButton.swift */; };
 		6E7C0D37242E02600017C4F9 /* NSStackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D36242E02600017C4F9 /* NSStackScrollView.swift */; };
@@ -402,7 +402,7 @@
 		6E6E5182242F9586006E532E /* NSSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSendViewController.swift; sourceTree = "<group>"; };
 		6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAppTitleView.swift; sourceTree = "<group>"; };
 		6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFancyNumberView.swift; sourceTree = "<group>"; };
-		6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabelType.swift; sourceTree = "<group>"; };
+		6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelType.swift; sourceTree = "<group>"; };
 		6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+NS.swift"; sourceTree = "<group>"; };
 		6E7C0D21242CE2100017C4F9 /* NSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 		6E7C0D26242D04280017C4F9 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -738,7 +738,7 @@
 		24780B02242DF9C7003BB26C /* Style */ = {
 			isa = PBXGroup;
 			children = (
-				6E7C0D1D242CE02D0017C4F9 /* NSLabelType.swift */,
+				6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */,
 				6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */,
 				6E7C0D38242E02A20017C4F9 /* NSLayoutConstants.swift */,
 			);
@@ -1479,7 +1479,7 @@
 				242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* TracingErrorView.swift in Sources */,
-				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
+				242D21FC245C4BD8005DAEA8 /* LabelType.swift in Sources */,
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
@@ -1612,7 +1612,7 @@
 				24780B24242DFE6D003BB26C /* NSNavigationController.swift in Sources */,
 				6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */,
 				DCA3FFB424502D370003F5AD /* TracingErrorView.swift in Sources */,
-				6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */,
+				6E7C0D1E242CE02D0017C4F9 /* LabelType.swift in Sources */,
 				DC702B0B243F6FAE0066C773 /* UBPListValue.swift in Sources */,
 				DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */,
 				242D227D245D6581005DAEA8 /* Endpoint.swift in Sources */,

@@ -84,7 +84,7 @@ class NSButton: UBButton {
 
         self.title = style.isUppercase ? title.uppercased() : title
 
-        titleLabel?.font = NSLabelType.button.font
+        titleLabel?.font = LabelType.button.font
         setTitleColor(style.textColor, for: .normal)
 
         if let c = customTextColor {
