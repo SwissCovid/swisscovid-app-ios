@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSModuleBaseView: UIControl {
+class ModuleBaseView: UIControl {
     var touchUpCallback: (() -> Void)?
 
     var headerTitle: String? {
@@ -85,7 +85,7 @@ class NSModuleBaseView: UIControl {
 
 // MARK: - Accessibility
 
-extension NSModuleBaseView {
+extension ModuleBaseView {
     func setupAccessibility() {
         isAccessibilityElement = false
         accessibilityElementsHidden = false
