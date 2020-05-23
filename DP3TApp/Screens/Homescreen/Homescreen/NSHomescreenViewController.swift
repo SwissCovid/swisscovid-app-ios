@@ -11,7 +11,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()
-    private let handshakesModuleView = NSBegegnungenModuleView()
+    private let handshakesModuleView = BegegnungenModuleView()
     private let meldungView = MeldungView()
 
     private let whatToDoSymptomsButton = WhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))

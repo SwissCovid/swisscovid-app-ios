@@ -111,7 +111,7 @@
 		242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */; };
 		242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
-		242D2230245C4BD8005DAEA8 /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
+		242D2230245C4BD8005DAEA8 /* BegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */; };
 		242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */; };
 		242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B06243F6FAE0066C773 /* UBCodable.swift */; };
 		242D2233245C4BD8005DAEA8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC98241FCC7D006F2437 /* AppDelegate.swift */; };
@@ -265,7 +265,7 @@
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* ModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */; };
-		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
+		AAF73666242F2EA00051E34A /* BegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
@@ -451,7 +451,7 @@
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleHeaderView.swift; sourceTree = "<group>"; };
-		AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenModuleView.swift; sourceTree = "<group>"; };
+		AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BegegnungenModuleView.swift; sourceTree = "<group>"; };
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
 		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
@@ -1004,7 +1004,7 @@
 		AAF73664242F2E300051E34A /* Begegnungen */ = {
 			isa = PBXGroup;
 			children = (
-				AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */,
+				AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */,
 			);
 			path = Begegnungen;
 			sourceTree = "<group>";
@@ -1535,7 +1535,7 @@
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
-				242D2230245C4BD8005DAEA8 /* NSBegegnungenModuleView.swift in Sources */,
+				242D2230245C4BD8005DAEA8 /* BegegnungenModuleView.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
 				242D2233245C4BD8005DAEA8 /* AppDelegate.swift in Sources */,
@@ -1667,7 +1667,7 @@
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
-				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
+				AAF73666242F2EA00051E34A /* BegegnungenModuleView.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
