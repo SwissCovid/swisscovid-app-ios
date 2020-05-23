@@ -11,7 +11,7 @@ import UIKit
 class NSDebugscreenViewController: ViewController {
     // MARK: - Views
 
-    private let stackScrollView = NSStackScrollView()
+    private let stackScrollView = StackScrollView()
 
     private let imageView = UIImageView(image: UIImage(named: "03-privacy"))
 

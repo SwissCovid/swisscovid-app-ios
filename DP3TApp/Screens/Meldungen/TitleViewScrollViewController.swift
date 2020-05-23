@@ -19,7 +19,7 @@ class NSTitleView: UIView {
 class TitleViewScrollViewController: ViewController {
     // MARK: - Views
 
-    public let stackScrollView = NSStackScrollView()
+    public let stackScrollView = StackScrollView()
 
     public var titleView: NSTitleView? {
         didSet { titleView?.viewController = self }

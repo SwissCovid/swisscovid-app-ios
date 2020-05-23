@@ -16,7 +16,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - Initial Views
 
     private var headers: [NSMeldungDetailMeldungSingleTitleHeader] = []
-    private var horizontalStackScrollView = NSStackScrollView(axis: .horizontal, spacing: 0)
+    private var horizontalStackScrollView = StackScrollView(axis: .horizontal, spacing: 0)
 
     private let pageControl = UIPageControl()
     private let overlapInset: CGFloat

@@ -9,7 +9,7 @@ import UIKit
 class NSWhatToDoSymptomViewController: ViewController {
     // MARK: - Views
 
-    private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
+    private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
     private let symptomView = NSWhatToDoSymptomView()
 
     private let titleElement = UIAccessibilityElement(accessibilityContainer: self)

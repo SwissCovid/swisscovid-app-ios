@@ -9,7 +9,7 @@ import UIKit
 class NSWhatToDoPositiveTestViewController: ViewController {
     // MARK: - Views
 
-    private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
+    private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
     private let informView = NSWhatToDoInformView()
 
     private let titleElement = UIAccessibilityElement(accessibilityContainer: self)

@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 class NoCodeInformationViewController: InformStepViewController {
-    let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
+    let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = Label(.textLight, textAlignment: .center)

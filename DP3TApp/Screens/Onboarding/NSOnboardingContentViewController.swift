@@ -7,7 +7,7 @@
 import UIKit
 
 class NSOnboardingContentViewController: ViewController {
-    internal let stackScrollView = NSStackScrollView()
+    internal let stackScrollView = StackScrollView()
 
     private let defaultAnimationOffset: CGFloat = 200
     private let imageAnimationOffset: CGFloat = 400

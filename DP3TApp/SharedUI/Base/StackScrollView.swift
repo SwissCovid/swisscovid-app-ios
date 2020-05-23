@@ -10,7 +10,7 @@ protocol NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool
 }
 
-class NSStackScrollView: UIView {
+class StackScrollView: UIView {
     private let stackViewContainer = UIView()
     let stackView = UIStackView()
     let scrollView = UIScrollView()

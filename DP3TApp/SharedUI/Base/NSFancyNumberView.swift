@@ -66,7 +66,7 @@ class NSFancyNumberView: UIView {
 }
 
 class NSAllNumbersView: UIView {
-    private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
+    private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
 
     private var currentNumber: Int = 0
 
