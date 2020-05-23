@@ -89,7 +89,7 @@
 		242D2217245C4BD8005DAEA8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E737D245B0BC300C934B8 /* Language.swift */; };
 		242D2218245C4BD8005DAEA8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D44242E4AA90017C4F9 /* LoadingView.swift */; };
 		242D2219245C4BD8005DAEA8 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* SendViewController.swift */; };
-		242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		242D221A245C4BD8005DAEA8 /* HomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* HomescreenViewController.swift */; };
 		242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */; };
 		242D221C245C4BD8005DAEA8 /* DebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* DebugDatabaseUploadHelper.swift */; };
 		242D221D245C4BD8005DAEA8 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift */; };
@@ -307,7 +307,7 @@
 		DCB4430C242DD34700F19AA5 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2C242D04290017C4F9 /* Inter-Medium.ttf */; };
 		DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
-		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		DCB44315242DFF8000F19AA5 /* HomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* HomescreenViewController.swift */; };
 		DF3BA22324520EE3009086E7 /* DebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* DebugDatabaseUploadHelper.swift */; };
 		F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
 		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
@@ -491,7 +491,7 @@
 		DCA3FFBB2451621D0003F5AD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		DCA3FFBD24518E850003F5AD /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* OnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFinishViewController.swift; sourceTree = "<group>"; };
-		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
+		DCB44314242DFF8000F19AA5 /* HomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenViewController.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* DebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
 		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
@@ -655,7 +655,7 @@
 		24780AF5242DF7F6003BB26C /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
-				DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */,
+				DCB44314242DFF8000F19AA5 /* HomescreenViewController.swift */,
 				24F35ACF2445BDB500A1B7AB /* Header */,
 				24780B18242DFD98003BB26C /* Base */,
 				24780AFE242DF8AA003BB26C /* Meldung */,
@@ -1511,7 +1511,7 @@
 				242D2217245C4BD8005DAEA8 /* Language.swift in Sources */,
 				242D2218245C4BD8005DAEA8 /* LoadingView.swift in Sources */,
 				242D2219245C4BD8005DAEA8 /* SendViewController.swift in Sources */,
-				242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */,
+				242D221A245C4BD8005DAEA8 /* HomescreenViewController.swift in Sources */,
 				242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* DebugDatabaseUploadHelper.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */,
@@ -1644,7 +1644,7 @@
 				F80E737E245B0BC300C934B8 /* Language.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* LoadingView.swift in Sources */,
 				6E6E5188242F9586006E532E /* SendViewController.swift in Sources */,
-				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
+				DCB44315242DFF8000F19AA5 /* HomescreenViewController.swift in Sources */,
 				242D2279245D64BA005DAEA8 /* Environment+PublicKeys.swift in Sources */,
 				2485F47E2458AC9000C3D8C3 /* BackgroundFakeReporting.swift in Sources */,
 				DF3BA22324520EE3009086E7 /* DebugDatabaseUploadHelper.swift in Sources */,
