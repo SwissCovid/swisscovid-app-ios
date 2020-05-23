@@ -64,7 +64,7 @@ class NSMeldungenDetailViewController: NSViewController {
         }
     }
 
-    private func setup(_ state: UIStateModel.MeldungenDetail) {
+    private func setup(_ state: StateModel.MeldungenDetail) {
         meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
 
         noMeldungenViewController.view.isHidden = true

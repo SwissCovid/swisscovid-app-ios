@@ -10,7 +10,7 @@ import UIKit
 class NSBluetoothSettingsControl: UIView {
     // MARK: - Views
 
-    var state: UIStateModel.BegegnungenDetail
+    var state: StateModel.BegegnungenDetail
 
     public weak var viewToBeLayouted: UIView?
 
@@ -28,7 +28,7 @@ class NSBluetoothSettingsControl: UIView {
 
     // MARK: - Init
 
-    init(initialState: UIStateModel.BegegnungenDetail) {
+    init(initialState: StateModel.BegegnungenDetail) {
         state = initialState
 
         super.init(frame: .zero)
@@ -120,7 +120,7 @@ class NSBluetoothSettingsControl: UIView {
         updateAccessibility()
     }
 
-    private func updateState(_ state: UIStateModel) {
+    private func updateState(_ state: StateModel) {
         self.state = state.begegnungenDetail
 
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)

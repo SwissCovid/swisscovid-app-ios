@@ -82,7 +82,7 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
         }
     }
 
-    private func update(_ stateModel: UIStateModel) {
+    private func update(_ stateModel: StateModel) {
         // only set once because it's animated
         let status = stateModel.debug.overwrittenInfectionState
         checkboxes[0].isChecked = status == nil

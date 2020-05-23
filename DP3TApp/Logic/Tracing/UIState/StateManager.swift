@@ -29,7 +29,7 @@ class StateManager: NSObject {
 
     // MARK: - UI State Update
 
-    private(set) var uiState: UIStateModel! {
+    private(set) var uiState: StateModel! {
         didSet {
             var stateHasChanged = uiState != oldValue
 
@@ -83,12 +83,12 @@ class StateManager: NSObject {
 
     struct Observer {
         weak var object: AnyObject?
-        var block: (UIStateModel) -> Void
+        var block: (StateModel) -> Void
     }
 
     private var observers: [Observer] = []
 
-    func addObserver(_ object: AnyObject, block: @escaping (UIStateModel) -> Void) {
+    func addObserver(_ object: AnyObject, block: @escaping (StateModel) -> Void) {
         observers.append(Observer(object: object, block: block))
         block(uiState)
     }
@@ -173,7 +173,7 @@ class StateManager: NSObject {
     }
 
     #if ENABLE_TESTING
-    var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
+    var overwrittenInfectionState: StateModel.Debug.DebugInfectionStatus? {
         didSet { refresh() }
     }
     #endif

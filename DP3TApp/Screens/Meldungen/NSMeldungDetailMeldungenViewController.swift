@@ -9,13 +9,13 @@ import UIKit
 class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
-    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
+    public var meldungen: [StateModel.MeldungenDetail.NSMeldungModel] = [] {
         didSet { update() }
     }
 
     public var showMeldungWithAnimation: Bool = false
 
-    public var phoneCallState: UIStateModel.MeldungenDetail.PhoneCallState = .notCalled {
+    public var phoneCallState: StateModel.MeldungenDetail.PhoneCallState = .notCalled {
         didSet { update() }
     }
 

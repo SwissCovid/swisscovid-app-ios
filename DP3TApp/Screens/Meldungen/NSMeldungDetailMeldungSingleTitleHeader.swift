@@ -11,7 +11,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
 
     public weak var headerView: NSTitleView?
 
-    public var meldung: UIStateModel.MeldungenDetail.NSMeldungModel? {
+    public var meldung: StateModel.MeldungenDetail.NSMeldungModel? {
         didSet { update() }
     }
 

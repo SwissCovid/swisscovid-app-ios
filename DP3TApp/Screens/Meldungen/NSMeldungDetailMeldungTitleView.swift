@@ -9,7 +9,7 @@ import UIKit
 class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
-    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
+    public var meldungen: [StateModel.MeldungenDetail.NSMeldungModel] = [] {
         didSet { update() }
     }
 

@@ -13,7 +13,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
     // MARK: - Init
 
-    init(initialState: UIStateModel.BegegnungenDetail) {
+    init(initialState: StateModel.BegegnungenDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
 
@@ -72,7 +72,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    private func updateState(_ state: UIStateModel) {
+    private func updateState(_ state: StateModel) {
         appTitleView.uiState = state.homescreen.header
     }
 }
