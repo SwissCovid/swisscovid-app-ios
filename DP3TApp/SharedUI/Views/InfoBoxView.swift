@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInfoBoxView: UIView {
+class InfoBoxView: UIView {
     // MARK: - Views
 
     private let titleLabel = Label(.uppercaseBold)
@@ -174,7 +174,7 @@ class NSInfoBoxView: UIView {
 
 // MARK: - Accessibility
 
-extension NSInfoBoxView {
+extension InfoBoxView {
     private func setupAccessibility(title: String, subText: String) {
         isAccessibilityElement = true
         accessibilityLabel = "\(title), \(subText)"
