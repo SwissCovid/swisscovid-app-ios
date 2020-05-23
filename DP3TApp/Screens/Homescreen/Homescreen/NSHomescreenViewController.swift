@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class NSHomescreenViewController: NSTitleViewScrollViewController {
+class NSHomescreenViewController: TitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()

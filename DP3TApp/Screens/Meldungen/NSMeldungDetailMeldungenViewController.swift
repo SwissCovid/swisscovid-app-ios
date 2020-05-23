@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
+class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
     // MARK: - API
 
     public var meldungen: [StateModel.MeldungenDetail.NSMeldungModel] = [] {

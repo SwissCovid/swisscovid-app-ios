@@ -7,7 +7,7 @@
 import UIKit
 
 class NSTitleView: UIView {
-    public weak var viewController: NSTitleViewScrollViewController?
+    public weak var viewController: TitleViewScrollViewController?
 
     public func updateConstraintsForAnimation() {}
 
@@ -16,7 +16,7 @@ class NSTitleView: UIView {
     @objc public func scrollViewDidScroll(_: UIScrollView) {}
 }
 
-class NSTitleViewScrollViewController: NSViewController {
+class TitleViewScrollViewController: NSViewController {
     // MARK: - Views
 
     public let stackScrollView = NSStackScrollView()
@@ -119,7 +119,7 @@ class NSTitleViewScrollViewController: NSViewController {
     }
 }
 
-extension NSTitleViewScrollViewController: UIScrollViewDelegate {
+extension TitleViewScrollViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let sp = startPositionScrollView
 

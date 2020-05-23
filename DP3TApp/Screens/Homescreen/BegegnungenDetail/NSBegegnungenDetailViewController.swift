@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
+class NSBegegnungenDetailViewController: TitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
     private let appTitleView: AppTitleView
