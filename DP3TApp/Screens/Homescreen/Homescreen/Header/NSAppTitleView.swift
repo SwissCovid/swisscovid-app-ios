@@ -29,7 +29,7 @@ class NSAppTitleView: NSTitleView {
     let contentView = UIView()
 
     // Content
-    private let activeView = NSHeaderActiveView()
+    private let activeView = HeaderActiveView()
     private lazy var errorView = NSHeaderErrorView(initialState: uiState)
 
     init(initialState: StateModel.TracingState = .tracingActive) {

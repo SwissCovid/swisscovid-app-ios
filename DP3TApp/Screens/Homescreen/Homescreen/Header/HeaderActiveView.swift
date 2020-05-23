@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSHeaderActiveView: UIView {
+class HeaderActiveView: UIView {
     private let graphView = NSAnimatedGraphView(type: .header)
 
     init() {

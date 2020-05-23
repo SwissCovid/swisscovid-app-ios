@@ -79,7 +79,7 @@
 		242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
 		242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
 		242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097A2445C2210097BD3D /* NSPointTextView.swift */; };
-		242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */; };
+		242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* HeaderActiveView.swift */; };
 		242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
 		242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1624520A250046906D /* Environment+Endpoints.swift */; };
 		242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
@@ -289,7 +289,7 @@
 		DC702B17243F70060066C773 /* UIView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B16243F70060066C773 /* UIView+NS.swift */; };
 		DC702B26243F74E70066C773 /* UBDeviceUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B25243F74E70066C773 /* UBDeviceUUID.swift */; };
 		DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */; };
-		DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */; };
+		DC746D5A2451DF78009426B1 /* HeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* HeaderActiveView.swift */; };
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A3242CE5E000AD1548 /* InfoPlist.strings */; };
 		DCA3FFB424502D370003F5AD /* TracingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* TracingErrorView.swift */; };
@@ -475,7 +475,7 @@
 		DC702B16243F70060066C773 /* UIView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NS.swift"; sourceTree = "<group>"; };
 		DC702B25243F74E70066C773 /* UBDeviceUUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBDeviceUUID.swift; sourceTree = "<group>"; };
 		DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderErrorView.swift; sourceTree = "<group>"; };
-		DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderActiveView.swift; sourceTree = "<group>"; };
+		DC746D592451DF78009426B1 /* HeaderActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderActiveView.swift; sourceTree = "<group>"; };
 		DC9A81A2242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC9A81A4242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC9A81A5242CE5E000AD1548 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -832,7 +832,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */,
-				DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */,
+				DC746D592451DF78009426B1 /* HeaderActiveView.swift */,
 				DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */,
 				DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */,
 				2443947A2445F062003ED582 /* NSHeaderArcView.swift */,
@@ -1501,7 +1501,7 @@
 				2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */,
 				242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */,
 				242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */,
-				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
+				242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
 				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
@@ -1634,7 +1634,7 @@
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,
-				DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */,
+				DC746D5A2451DF78009426B1 /* HeaderActiveView.swift in Sources */,
 				F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */,
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
 				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
