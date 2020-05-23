@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSWhatToDoSymptomView: SimpleModuleBaseView {
+class WhatToDoSymptomView: SimpleModuleBaseView {
     // MARK: - Init
 
     init() {

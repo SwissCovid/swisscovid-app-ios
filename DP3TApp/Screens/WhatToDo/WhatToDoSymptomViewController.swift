@@ -10,7 +10,7 @@ class WhatToDoSymptomViewController: ViewController {
     // MARK: - Views
 
     private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
-    private let symptomView = NSWhatToDoSymptomView()
+    private let symptomView = WhatToDoSymptomView()
 
     private let titleElement = UIAccessibilityElement(accessibilityContainer: self)
     private var titleContentStackView = UIStackView()
