@@ -6,7 +6,7 @@
 
 import UIKit
 
-public class NSCheckBoxControl: UIControl {
+public class CheckBoxControl: UIControl {
     private let checkmarkShortLineView = UIView()
     private let checkmarkLongLineView = UIView()
 

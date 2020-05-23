@@ -8,7 +8,7 @@ import UIKit
 
 class NSCheckBoxView: UIView {
     private let textLabel = Label(.textLight)
-    private let checkBox = NSCheckBoxControl(isChecked: false)
+    private let checkBox = CheckBoxControl(isChecked: false)
 
     private let button = NSButton(title: "")
 
