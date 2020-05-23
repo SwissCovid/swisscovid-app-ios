@@ -22,7 +22,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private var lastState: StateModel = .init()
 
-    private let appTitleView = NSAppTitleView()
+    private let appTitleView = AppTitleView()
 
     // MARK: - View
 

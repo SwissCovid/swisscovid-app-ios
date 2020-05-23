@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSAppTitleView: NSTitleView {
+class AppTitleView: NSTitleView {
     // MARK: - Init
 
     var uiState: StateModel.TracingState {
