@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSWhatToDoPositiveTestViewController: ViewController {
+class WhatToDoPositiveTestViewController: ViewController {
     // MARK: - Views
 
     private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
