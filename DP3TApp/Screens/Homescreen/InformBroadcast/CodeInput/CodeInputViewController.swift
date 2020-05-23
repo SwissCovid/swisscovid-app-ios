@@ -156,7 +156,7 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
                 // success
                 //reschedule next fake request
                 FakePublishBackgroundTaskManager.shared.rescheduleFakeRequest(force: true)
-                self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
+                self.navigationController?.pushViewController(InformThankYouViewController(), animated: true)
                 self.changePresentingViewController()
             }
         }
