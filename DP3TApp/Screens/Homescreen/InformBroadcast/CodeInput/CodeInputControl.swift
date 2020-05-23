@@ -18,8 +18,8 @@ class CodeControl: UIView {
     // MARK: - Input number
 
     private let numberOfInputs = 12
-    private var controls: [NSCodeSingleControl] = []
-    private var currentControl: NSCodeSingleControl?
+    private var controls: [CodeSingleControl] = []
+    private var currentControl: CodeSingleControl?
 
     private let stackView = UIStackView()
 
@@ -76,7 +76,7 @@ class CodeControl: UIView {
         stackView.spacing = 1.0
 
         for i in 0 ..< numberOfInputs {
-            let singleControl = NSCodeSingleControl(index: i)
+            let singleControl = CodeSingleControl(index: i)
             singleControl.parent = self
 
             controls.append(singleControl)
@@ -123,7 +123,7 @@ class CodeControl: UIView {
         checkSendAllowed()
     }
 
-    public func changeControl(control: NSCodeSingleControl) {
+    public func changeControl(control: CodeSingleControl) {
         currentControl = control
     }
 
@@ -146,7 +146,7 @@ class CodeControl: UIView {
 
     // MARK: - Copy & paste
 
-    public func fill(text: String, startControl: NSCodeSingleControl) {
+    public func fill(text: String, startControl: CodeSingleControl) {
         var started = false
 
         var onlyDigits = text.filter { Int("\($0)") != nil }
@@ -169,7 +169,7 @@ class CodeControl: UIView {
     }
 }
 
-class NSCodeSingleControl: UIView, UITextFieldDelegate {
+class CodeSingleControl: UIView, UITextFieldDelegate {
     public weak var parent: CodeControl?
 
     public let textField = NSTextField()
@@ -312,7 +312,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 }
 
 class NSTextField: UITextField {
-    public weak var singleControl: NSCodeSingleControl?
+    public weak var singleControl: CodeSingleControl?
 
     override func paste(_: Any?) {
         let pasteboard = UIPasteboard.general
