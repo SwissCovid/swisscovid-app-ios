@@ -239,7 +239,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     // MARK: - Details
 
     private func presentBegegnungenDetail() {
-        navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
+        navigationController?.pushViewController(BegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
     }
 
     func presentMeldungenDetail(animated: Bool = true) {
