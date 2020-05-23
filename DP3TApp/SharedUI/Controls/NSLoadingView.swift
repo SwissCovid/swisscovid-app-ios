@@ -49,7 +49,11 @@ class NSLoadingView: UIView {
                 errorTextLabel.text = err.localizedDescription
             }
             if let codedError = err as? CodedError {
+                #if ENABLE_TESTING
+                errorCodeLabel.text = "\(codedError.errorCodeString): \(codedError)"
+                #else
                 errorCodeLabel.text = codedError.errorCodeString
+                #endif
             } else {
                 errorCodeLabel.text = CodeErrorUnexpected
             }
