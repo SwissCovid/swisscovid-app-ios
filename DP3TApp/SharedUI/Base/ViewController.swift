@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class NSViewController: UIViewController {
+class ViewController: UIViewController {
     // MARK: - Views
 
     private let loadingView = NSLoadingView()

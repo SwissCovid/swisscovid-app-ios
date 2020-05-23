@@ -16,7 +16,7 @@ class NSTitleView: UIView {
     @objc public func scrollViewDidScroll(_: UIScrollView) {}
 }
 
-class TitleViewScrollViewController: NSViewController {
+class TitleViewScrollViewController: ViewController {
     // MARK: - Views
 
     public let stackScrollView = NSStackScrollView()

@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSMeldungenDetailViewController: NSViewController {
+class NSMeldungenDetailViewController: ViewController {
     private let noMeldungenViewController = NSMeldungenDetailNoMeldungenViewController()
 
     private let positiveTestedViewController = NSMeldungenDetailPositiveTestedViewController()

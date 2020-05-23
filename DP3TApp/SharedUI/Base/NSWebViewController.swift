@@ -7,7 +7,7 @@
 import UIKit
 import WebKit
 
-class NSWebViewController: NSViewController {
+class NSWebViewController: ViewController {
     // MARK: - Variables
 
     private let webView: WKWebView

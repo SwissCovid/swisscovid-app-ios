@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NSDebugscreenViewController: NSViewController {
+class NSDebugscreenViewController: ViewController {
     // MARK: - Views
 
     private let stackScrollView = NSStackScrollView()

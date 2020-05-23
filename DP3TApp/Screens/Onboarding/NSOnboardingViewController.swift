@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class NSOnboardingViewController: NSViewController {
+class NSOnboardingViewController: ViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
