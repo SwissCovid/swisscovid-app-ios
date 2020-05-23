@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInformViewController: InformStepViewController {
+class InformViewController: InformStepViewController {
     static func present(from rootViewController: UIViewController) {
         let informVC: UIViewController
 

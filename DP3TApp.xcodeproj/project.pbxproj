@@ -133,7 +133,7 @@
 		242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4722455D00800C3D8C3 /* Errors+Localized.swift */; };
 		242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
-		242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
+		242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* InformViewController.swift */; };
 		242D2248245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */; };
 		242D2249245C4BD8005DAEA8 /* NSMeldungDetailMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */; };
 		242D224A245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */; };
@@ -180,7 +180,7 @@
 		2462BA1924520A480046906D /* Endpoint+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1824520A480046906D /* Endpoint+Request.swift */; };
 		2462BA1B24521CE70046906D /* ReportingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1A24521CE70046906D /* ReportingManager.swift */; };
 		24780B11242DFD2F003BB26C /* MeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* MeldungModuleView.swift */; };
-		24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
+		24780B17242DFD7C003BB26C /* InformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* InformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* ModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* ModuleBaseView.swift */; };
 		24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		24780B24242DFE6D003BB26C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NavigationController.swift */; };
@@ -354,7 +354,7 @@
 		2462BA1A24521CE70046906D /* ReportingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingManager.swift; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		24780B10242DFD2F003BB26C /* MeldungModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungModuleView.swift; sourceTree = "<group>"; };
-		24780B16242DFD7C003BB26C /* NSInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformViewController.swift; sourceTree = "<group>"; };
+		24780B16242DFD7C003BB26C /* InformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformViewController.swift; sourceTree = "<group>"; };
 		24780B19242DFDAE003BB26C /* ModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBaseView.swift; sourceTree = "<group>"; };
 		24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingViewController.swift; sourceTree = "<group>"; };
 		24780B23242DFE6D003BB26C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
@@ -609,7 +609,7 @@
 		2443948324463BB4003ED582 /* InformFirstStep */ = {
 			isa = PBXGroup;
 			children = (
-				24780B16242DFD7C003BB26C /* NSInformViewController.swift */,
+				24780B16242DFD7C003BB26C /* InformViewController.swift */,
 			);
 			path = InformFirstStep;
 			sourceTree = "<group>";
@@ -1557,7 +1557,7 @@
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
-				242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */,
+				242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,
 				242D2249245C4BD8005DAEA8 /* NSMeldungDetailMeldungenViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */,
@@ -1689,7 +1689,7 @@
 				2485F4732455D00800C3D8C3 /* Errors+Localized.swift in Sources */,
 				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */,
-				24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */,
+				24780B17242DFD7C003BB26C /* InformViewController.swift in Sources */,
 				6E3308752450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift in Sources */,
 				6E33087124507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift in Sources */,
 				6E33086D245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift in Sources */,

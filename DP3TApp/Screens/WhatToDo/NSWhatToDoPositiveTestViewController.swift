@@ -104,6 +104,6 @@ class NSWhatToDoPositiveTestViewController: ViewController {
     // MARK: - Present
 
     private func presentInformViewController() {
-        NSInformViewController.present(from: self)
+        InformViewController.present(from: self)
     }
 }
