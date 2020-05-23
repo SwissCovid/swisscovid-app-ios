@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class NSBluetoothSettingsControl: UIView {
+class BluetoothSettingsControl: UIView {
     // MARK: - Views
 
     var state: StateModel.BegegnungenDetail
