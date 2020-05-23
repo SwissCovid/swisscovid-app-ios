@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSMeldungenDetailPositiveTestedViewController: TitleViewScrollViewController {
+class MeldungenDetailPositiveTestedViewController: TitleViewScrollViewController {
     // MARK: - Init
 
     override init() {
