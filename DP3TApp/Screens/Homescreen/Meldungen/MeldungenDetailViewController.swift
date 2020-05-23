@@ -11,7 +11,7 @@ class MeldungenDetailViewController: ViewController {
 
     private let positiveTestedViewController = MeldungenDetailPositiveTestedViewController()
 
-    private let meldungenViewController = NSMeldungDetailMeldungenViewController()
+    private let meldungenViewController = MeldungDetailMeldungenViewController()
 
     // MARK: - Init
 

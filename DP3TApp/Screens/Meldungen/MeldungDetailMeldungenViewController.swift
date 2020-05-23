@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
+class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     // MARK: - API
 
     public var meldungen: [StateModel.MeldungenDetail.NSMeldungModel] = [] {
@@ -261,7 +261,7 @@ class NSMeldungDetailMeldungenViewController: TitleViewScrollViewController {
     }
 }
 
-extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
+extension MeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
         if overrideHitTestAnyway && useFullScreenHeaderAnimation {
             return true
