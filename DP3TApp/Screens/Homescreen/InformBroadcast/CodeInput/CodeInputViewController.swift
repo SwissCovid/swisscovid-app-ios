@@ -169,7 +169,7 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
     }
 
     private func noCodeButtonPressed() {
-        navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
+        navigationController?.pushViewController(NoCodeInformationViewController(), animated: true)
     }
     
     // MARK: - NSCodeControlProtocol
