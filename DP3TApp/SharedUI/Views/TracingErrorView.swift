@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSTracingErrorView: UIView {
+class TracingErrorView: UIView {
     // MARK: - Views
 
     private let stackView = UIStackView()
@@ -96,9 +96,9 @@ class NSTracingErrorView: UIView {
 
     // MARK: - Factory
 
-    static func tracingErrorView(for state: StateModel.TracingState) -> NSTracingErrorView? {
+    static func tracingErrorView(for state: StateModel.TracingState) -> TracingErrorView? {
         if let model = self.model(for: state) {
-            return NSTracingErrorView(model: model)
+            return TracingErrorView(model: model)
         }
 
         return nil
@@ -152,7 +152,7 @@ class NSTracingErrorView: UIView {
 
 // MARK: - Accessibility
 
-extension NSTracingErrorView {
+extension TracingErrorView {
     func setupAccessibility() {
         isAccessibilityElement = false
         accessibilityElementsHidden = false

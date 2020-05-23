@@ -16,8 +16,8 @@ class NSBegegnungenModuleView: NSModuleBaseView {
 
     private let tracingEndedView = NSInfoBoxView(title: "tracing_ended_title".ub_localized, subText: "tracing_ended_text".ub_localized, image: UIImage(named: "ic-stopp")!, illustration: UIImage(named: "illu-tracing-ended")!, titleColor: .ns_purple, subtextColor: .ns_text, backgroundColor: .ns_purpleBackground)
 
-    private var tracingErrorView: NSTracingErrorView? {
-        NSTracingErrorView.tracingErrorView(for: uiState)
+    private var tracingErrorView: TracingErrorView? {
+        TracingErrorView.tracingErrorView(for: uiState)
     }
 
     override init() {
