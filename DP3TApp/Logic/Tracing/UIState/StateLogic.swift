@@ -157,7 +157,7 @@ class StateLogic {
         newState.homescreen.meldungen.meldung = .exposed
         newState.meldungenDetail.meldung = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> StateModel.MeldungenDetail.NSMeldungModel in StateModel.MeldungenDetail.NSMeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
+        newState.meldungenDetail.meldungen = days.map { (mc) -> StateModel.MeldungenDetail.MeldungModel in StateModel.MeldungenDetail.MeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
@@ -210,7 +210,7 @@ class StateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [StateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), StateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [StateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), StateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true

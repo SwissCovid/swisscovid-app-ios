@@ -66,11 +66,11 @@ struct StateModel: Equatable {
 
     struct MeldungenDetail: Equatable {
         var meldung: MeldungState = .noMeldung
-        var meldungen: [NSMeldungModel] = []
+        var meldungen: [MeldungModel] = []
         var phoneCallState: PhoneCallState = .notCalled
         var showMeldungWithAnimation: Bool = false
 
-        struct NSMeldungModel: Equatable {
+        struct MeldungModel: Equatable {
             let identifier: UUID
             let timestamp: Date
         }
