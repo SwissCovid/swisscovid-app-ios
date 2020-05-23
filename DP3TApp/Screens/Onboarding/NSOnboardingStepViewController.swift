@@ -11,9 +11,9 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
     private let foregroundImageView = UIImageView()
     private let titleLabel = NSLabel(.title, textAlignment: .center)
 
-    private let model: NSOnboardingStepModel
+    private let model: OnboardingStepModel
 
-    init(model: NSOnboardingStepModel) {
+    init(model: OnboardingStepModel) {
         self.model = model
         super.init()
     }

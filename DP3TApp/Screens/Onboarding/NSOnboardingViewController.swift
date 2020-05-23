@@ -13,11 +13,11 @@ class NSOnboardingViewController: NSViewController {
 
     private let splashVC = NSSplashViewController()
 
-    private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
-    private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
-    private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
+    private let step1VC = NSOnboardingStepViewController(model: OnboardingStepModel.step1)
+    private let step2VC = NSOnboardingStepViewController(model: OnboardingStepModel.step2)
+    private let step3VC = NSOnboardingStepViewController(model: OnboardingStepModel.step3)
     private let step4VC = NSOnboardingPermissionsViewController(type: .gapple)
-    private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
+    private let step5VC = NSOnboardingStepViewController(model: OnboardingStepModel.step5)
     private let step6VC = NSOnboardingPermissionsViewController(type: .push)
     private let step7VC = NSOnboardingFinishViewController()
 
