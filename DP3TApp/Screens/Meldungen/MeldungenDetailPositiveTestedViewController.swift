@@ -11,7 +11,7 @@ class MeldungenDetailPositiveTestedViewController: TitleViewScrollViewController
 
     override init() {
         super.init()
-        titleView = NSMeldungenDetailPositiveTestedTitleView()
+        titleView = MeldungenDetailPositiveTestedTitleView()
     }
 
     // MARK: - View
