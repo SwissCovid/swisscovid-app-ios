@@ -7,7 +7,7 @@
 import UIKit
 import WebKit
 
-class NSWebViewController: ViewController {
+class WebViewController: ViewController {
     // MARK: - Variables
 
     private let webView: WKWebView
@@ -80,7 +80,7 @@ class NSWebViewController: ViewController {
     }
 }
 
-extension NSWebViewController: WKNavigationDelegate {
+extension WebViewController: WKNavigationDelegate {
     func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         switch navigationAction.navigationType {
         case .linkActivated:
@@ -97,13 +97,13 @@ extension NSWebViewController: WKNavigationDelegate {
             }
 
             if scheme == "dp3t" || scheme == "file" {
-                let webVC: NSWebViewController
+                let webVC: WebViewController
 //                if url.absoluteString.contains("licence") {
 //                    webVC = NSWebViewController(local: "license-ios")
 //                }
 //                else {
                 let path = (url.host ?? url.lastPathComponent).replacingOccurrences(of: ".html", with: "")
-                webVC = NSWebViewController(local: path)
+                webVC = WebViewController(local: path)
 //                }
                 webVC.title = self.title
                 if let navVC = navigationController {
