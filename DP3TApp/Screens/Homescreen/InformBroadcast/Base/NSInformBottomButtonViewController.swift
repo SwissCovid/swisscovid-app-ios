@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInformBottomButtonViewController: NSInformStepViewController {
+class NSInformBottomButtonViewController: InformStepViewController {
     // MARK: - API
 
     public let contentView = UIView()

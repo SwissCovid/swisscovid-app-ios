@@ -29,7 +29,7 @@
 		242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
 		242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4772456185000C3D8C3 /* DebugLog.swift */; };
 		242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B572431B5A9003BB26C /* TracingManager.swift */; };
-		242D21DE245C4BD8005DAEA8 /* NSInformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */; };
+		242D21DE245C4BD8005DAEA8 /* InformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* InformStepViewController.swift */; };
 		242D21DF245C4BD8005DAEA8 /* UBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFC243F6E410066C773 /* UBButton.swift */; };
 		242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		242D21E1245C4BD8005DAEA8 /* TitleViewScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087624508CFF00913B0E /* TitleViewScrollViewController.swift */; };
@@ -184,7 +184,7 @@
 		24780B1A242DFDAE003BB26C /* ModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* ModuleBaseView.swift */; };
 		24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		24780B24242DFE6D003BB26C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NavigationController.swift */; };
-		24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */; };
+		24780B2C242F3CC2003BB26C /* InformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* InformStepViewController.swift */; };
 		24780B30242F3EAF003BB26C /* NSInformBottomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2F242F3EAF003BB26C /* NSInformBottomButtonViewController.swift */; };
 		24780B34242FDF4C003BB26C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24780B33242FDF4C003BB26C /* Launch Screen.storyboard */; };
 		24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
@@ -358,7 +358,7 @@
 		24780B19242DFDAE003BB26C /* ModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBaseView.swift; sourceTree = "<group>"; };
 		24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingViewController.swift; sourceTree = "<group>"; };
 		24780B23242DFE6D003BB26C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
-		24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformStepViewController.swift; sourceTree = "<group>"; };
+		24780B2B242F3CC2003BB26C /* InformStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformStepViewController.swift; sourceTree = "<group>"; };
 		24780B2F242F3EAF003BB26C /* NSInformBottomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformBottomButtonViewController.swift; sourceTree = "<group>"; };
 		24780B33242FDF4C003BB26C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		24780B562431B5A9003BB26C /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
@@ -617,7 +617,7 @@
 		2443948424463BCE003ED582 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				24780B2B242F3CC2003BB26C /* NSInformStepViewController.swift */,
+				24780B2B242F3CC2003BB26C /* InformStepViewController.swift */,
 				24780B2F242F3EAF003BB26C /* NSInformBottomButtonViewController.swift */,
 			);
 			path = Base;
@@ -1448,7 +1448,7 @@
 				242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */,
 				242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */,
 				242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */,
-				242D21DE245C4BD8005DAEA8 /* NSInformStepViewController.swift in Sources */,
+				242D21DE245C4BD8005DAEA8 /* InformStepViewController.swift in Sources */,
 				242D21DF245C4BD8005DAEA8 /* UBButton.swift in Sources */,
 				242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */,
 				242D21E1245C4BD8005DAEA8 /* TitleViewScrollViewController.swift in Sources */,
@@ -1580,7 +1580,7 @@
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */,
-				24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */,
+				24780B2C242F3CC2003BB26C /* InformStepViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
 				6E33087724508CFF00913B0E /* TitleViewScrollViewController.swift in Sources */,

@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInformStepViewController: ViewController {
+class InformStepViewController: ViewController {
     override init() {
         super.init()
 
