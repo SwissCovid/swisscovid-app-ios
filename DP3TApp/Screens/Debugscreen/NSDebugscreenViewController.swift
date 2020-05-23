@@ -17,7 +17,7 @@ class NSDebugscreenViewController: NSViewController {
 
     private let mockModuleView = NSDebugScreenMockView()
     private let sdkStatusView = NSDebugScreenSDKStatusView()
-    private let logsView = NSSimpleModuleBaseView(title: "Logs", text: "")
+    private let logsView = SimpleModuleBaseView(title: "Logs", text: "")
 
     // MARK: - Init
 

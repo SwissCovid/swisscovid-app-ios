@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSWhatToDoInformView: NSSimpleModuleBaseView {
+class NSWhatToDoInformView: SimpleModuleBaseView {
     // MARK: - API
 
     public var touchUpCallback: (() -> Void)? {

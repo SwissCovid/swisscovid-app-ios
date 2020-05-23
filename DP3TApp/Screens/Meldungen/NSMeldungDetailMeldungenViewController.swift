@@ -22,9 +22,9 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private var callLabels = [Label]()
-    private var notYetCalledView: NSSimpleModuleBaseView?
-    private var alreadyCalledView: NSSimpleModuleBaseView?
-    private var callAgainView: NSSimpleModuleBaseView?
+    private var notYetCalledView: SimpleModuleBaseView?
+    private var alreadyCalledView: SimpleModuleBaseView?
+    private var callAgainView: SimpleModuleBaseView?
 
     private var daysLeftLabels = [Label]()
 
@@ -120,8 +120,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     // MARK: - Detail Views
 
-    private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+    private func makeNotYetCalledView() -> SimpleModuleBaseView {
+        let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -143,8 +143,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
+    private func makeAlreadyCalledView() -> SimpleModuleBaseView {
+        let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -167,8 +167,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+    private func makeCallAgainView() -> SimpleModuleBaseView {
+        let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -191,7 +191,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+    private func addDeleteButton(_ whiteBoxView: SimpleModuleBaseView) {
         whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
 
         let deleteButton = NSButton(title: "delete_reports_button".ub_localized, style: .borderlessUppercase(.ns_blue))

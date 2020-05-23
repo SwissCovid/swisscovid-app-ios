@@ -34,7 +34,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
     private func setupLayout() {
 
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
+        let whiteBoxView = SimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
 
         addDeleteButton(whiteBoxView)
 
@@ -52,7 +52,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+    private func addDeleteButton(_ whiteBoxView: SimpleModuleBaseView) {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 

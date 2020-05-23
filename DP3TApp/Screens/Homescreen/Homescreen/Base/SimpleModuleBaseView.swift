@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSSimpleModuleBaseView: UIView {
+class SimpleModuleBaseView: UIView {
     // MARK: - Private subviews
 
     public var title: String? {

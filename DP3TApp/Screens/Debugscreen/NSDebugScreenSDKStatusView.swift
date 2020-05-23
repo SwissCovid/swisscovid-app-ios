@@ -9,7 +9,7 @@
 import SnapKit
 import UIKit
 
-class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
+class NSDebugScreenSDKStatusView: SimpleModuleBaseView {
     private let stackView = UIStackView()
 
     private let tracingLabel = Label(.textBold, textAlignment: .center)
