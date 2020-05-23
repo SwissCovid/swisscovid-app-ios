@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
 
         if !UserStorage.shared.hasCompletedOnboarding {
-            let onboardingViewController = NSOnboardingViewController()
+            let onboardingViewController = OnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
         }

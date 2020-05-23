@@ -7,26 +7,26 @@
 import SnapKit
 import UIKit
 
-class NSOnboardingViewController: ViewController {
+class OnboardingViewController: ViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
-    private let splashVC = NSSplashViewController()
+    private let splashVC = SplashViewController()
 
-    private let step1VC = NSOnboardingStepViewController(model: OnboardingStepModel.step1)
-    private let step2VC = NSOnboardingStepViewController(model: OnboardingStepModel.step2)
-    private let step3VC = NSOnboardingStepViewController(model: OnboardingStepModel.step3)
-    private let step4VC = NSOnboardingPermissionsViewController(type: .gapple)
-    private let step5VC = NSOnboardingStepViewController(model: OnboardingStepModel.step5)
-    private let step6VC = NSOnboardingPermissionsViewController(type: .push)
-    private let step7VC = NSOnboardingFinishViewController()
+    private let step1VC = OnboardingStepViewController(model: OnboardingStepModel.step1)
+    private let step2VC = OnboardingStepViewController(model: OnboardingStepModel.step2)
+    private let step3VC = OnboardingStepViewController(model: OnboardingStepModel.step3)
+    private let step4VC = OnboardingPermissionsViewController(type: .gapple)
+    private let step5VC = OnboardingStepViewController(model: OnboardingStepModel.step5)
+    private let step6VC = OnboardingPermissionsViewController(type: .push)
+    private let step7VC = OnboardingFinishViewController()
 
-    private var stepViewControllers: [NSOnboardingContentViewController] {
+    private var stepViewControllers: [OnboardingContentViewController] {
         [step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC]
     }
 
     private let continueContainer = UIView()
-    private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
+    private let continueButton = SimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
     private let finishButton = Button(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
 
@@ -219,7 +219,7 @@ class NSOnboardingViewController: ViewController {
             view.insertSubview(vc.view, belowSubview: finishButton)
             vc.view.snp.makeConstraints { make in
                 make.top.leading.trailing.equalToSuperview()
-                if vc is NSOnboardingPermissionsViewController || vc is NSOnboardingFinishViewController {
+                if vc is OnboardingPermissionsViewController || vc is OnboardingFinishViewController {
                     make.bottom.equalToSuperview()
                 } else {
                     make.bottom.equalTo(continueContainer.snp.top)

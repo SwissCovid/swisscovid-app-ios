@@ -25,7 +25,7 @@
 		2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D227A245D6557005DAEA8 /* Backend.swift */; };
 		2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */; };
 		242D21D1245C3853005DAEA8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D21D0245C3853005DAEA8 /* Logger.swift */; };
-		242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
+		242D21DA245C4BD8005DAEA8 /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* OnboardingInfoView.swift */; };
 		242D21DB245C4BD8005DAEA8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* AboutViewController.swift */; };
 		242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4772456185000C3D8C3 /* DebugLog.swift */; };
 		242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B572431B5A9003BB26C /* TracingManager.swift */; };
@@ -34,7 +34,7 @@
 		242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		242D21E1245C4BD8005DAEA8 /* TitleViewScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087624508CFF00913B0E /* TitleViewScrollViewController.swift */; };
 		242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */; };
-		242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
+		242D21E3245C4BD8005DAEA8 /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* OnboardingStepViewController.swift */; };
 		242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */; };
 		242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* Button.swift */; };
 		242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* StateLogic.swift */; };
@@ -46,7 +46,7 @@
 		242D21EC245C4BD8005DAEA8 /* WhatToDoInformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308652450442D00913B0E /* WhatToDoInformView.swift */; };
 		242D21ED245C4BD8005DAEA8 /* StackScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D36242E02600017C4F9 /* StackScrollView.swift */; };
 		242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
-		242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
+		242D21EF245C4BD8005DAEA8 /* SimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* SimpleTextButton.swift */; };
 		242D21F0245C4BD8005DAEA8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC9C241FCC7D006F2437 /* ViewController.swift */; };
 		242D21F1245C4BD8005DAEA8 /* UBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B12243F6FD90066C773 /* UBKeychain.swift */; };
 		242D21F2245C4BD8005DAEA8 /* UBUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B05243F6FAE0066C773 /* UBUserDefault.swift */; };
@@ -65,7 +65,7 @@
 		242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA142451FD150046906D /* AuthorizationModels.swift */; };
 		242D2200245C4BD8005DAEA8 /* ModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */; };
 		242D2201245C4BD8005DAEA8 /* ModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* ModuleBaseView.swift */; };
-		242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
+		242D2202245C4BD8005DAEA8 /* OnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift */; };
 		242D2203245C4BD8005DAEA8 /* MeldungDetailMeldungTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E330878245098E900913B0E /* MeldungDetailMeldungTitleView.swift */; };
 		242D2204245C4BD8005DAEA8 /* BegegnungenDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* BegegnungenDetailViewController.swift */; };
 		242D2205245C4BD8005DAEA8 /* OnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* OnboardingStepModel.swift */; };
@@ -93,7 +93,7 @@
 		242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */; };
 		242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
 		242D221D245C4BD8005DAEA8 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift */; };
-		242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
+		242D221E245C4BD8005DAEA8 /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* OnboardingFinishViewController.swift */; };
 		242D221F245C4BD8005DAEA8 /* CheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5180242F9586006E532E /* CheckBoxView.swift */; };
 		242D2220245C4BD8005DAEA8 /* InformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* InformGetWellViewController.swift */; };
 		242D2221245C4BD8005DAEA8 /* UBDeviceUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B25243F74E70066C773 /* UBDeviceUUID.swift */; };
@@ -121,17 +121,17 @@
 		242D2237245C4BD8005DAEA8 /* UIColor+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1F242CE1190017C4F9 /* UIColor+NS.swift */; };
 		242D2238245C4BD8005DAEA8 /* HeaderArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2443947A2445F062003ED582 /* HeaderArcView.swift */; };
 		242D2239245C4BD8005DAEA8 /* ReportingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1A24521CE70046906D /* ReportingManager.swift */; };
-		242D223A245C4BD8005DAEA8 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
+		242D223A245C4BD8005DAEA8 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* OnboardingContentViewController.swift */; };
 		242D223B245C4BD8005DAEA8 /* HeaderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D572451D50B009426B1 /* HeaderErrorView.swift */; };
 		242D223C245C4BD8005DAEA8 /* InformBottomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2F242F3EAF003BB26C /* InformBottomButtonViewController.swift */; };
 		242D223D245C4BD8005DAEA8 /* NSDebugscreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65F62449B61A00980A4E /* NSDebugscreenViewController.swift */; };
-		242D223E245C4BD8005DAEA8 /* NSSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */; };
+		242D223E245C4BD8005DAEA8 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* SplashViewController.swift */; };
 		242D223F245C4BD8005DAEA8 /* MeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* MeldungModuleView.swift */; };
 		242D2240245C4BD8005DAEA8 /* ConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E516E242F4FE0006E532E /* ConfigManager.swift */; };
 		242D2241245C4BD8005DAEA8 /* InformThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E517E242F9586006E532E /* InformThankYouViewController.swift */; };
 		242D2242245C4BD8005DAEA8 /* WhatToDoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33085E24502BBD00913B0E /* WhatToDoButton.swift */; };
 		242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4722455D00800C3D8C3 /* Errors+Localized.swift */; };
-		242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
+		242D2244245C4BD8005DAEA8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* OnboardingViewController.swift */; };
 		242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
 		242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* InformViewController.swift */; };
 		242D2248245C4BD8005DAEA8 /* MeldungenDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* MeldungenDetailPositiveTestedTitleView.swift */; };
@@ -182,7 +182,7 @@
 		24780B11242DFD2F003BB26C /* MeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* MeldungModuleView.swift */; };
 		24780B17242DFD7C003BB26C /* InformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* InformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* ModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* ModuleBaseView.swift */; };
-		24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
+		24780B20242DFE33003BB26C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* OnboardingViewController.swift */; };
 		24780B24242DFE6D003BB26C /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NavigationController.swift */; };
 		24780B2C242F3CC2003BB26C /* InformStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2B242F3CC2003BB26C /* InformStepViewController.swift */; };
 		24780B30242F3EAF003BB26C /* InformBottomButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B2F242F3EAF003BB26C /* InformBottomButtonViewController.swift */; };
@@ -241,7 +241,7 @@
 		6E7C0D47242E58600017C4F9 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* AboutViewController.swift */; };
 		6E8FC0FA24518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */; };
 		6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */; };
-		6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
+		6EA49E2924443E69009EFCAB /* SimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* SimpleTextButton.swift */; };
 		6EA49E2B2444410D009EFCAB /* NoCodeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2A2444410D009EFCAB /* NoCodeInformationViewController.swift */; };
 		6EC47BD42451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift */; };
 		6EC7E821245B27E10015A55B /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7E820245B27E10015A55B /* Impressum */; };
@@ -268,11 +268,11 @@
 		AAF73666242F2EA00051E34A /* BegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
-		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
-		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
+		DC175E402430C4C700BD2AD6 /* OnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* OnboardingContentViewController.swift */; };
+		DC175E422430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
 		DC56B8B9242EA7760077B99C /* OnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* OnboardingStepModel.swift */; };
-		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
+		DC56B8BB242EACF00077B99C /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* OnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
 		DC702AFD243F6E410066C773 /* UBButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFC243F6E410066C773 /* UBButton.swift */; };
 		DC702AFF243F6ED90066C773 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */; };
@@ -296,9 +296,9 @@
 		DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */; };
 		DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
 		DCA3FFBA245092D50003F5AD /* HeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */; };
-		DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */; };
-		DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
-		DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
+		DCA3FFBC2451621D0003F5AD /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* SplashViewController.swift */; };
+		DCA3FFBE24518E850003F5AD /* OnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* OnboardingInfoView.swift */; };
+		DCA3FFC02451975F0003F5AD /* OnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* OnboardingFinishViewController.swift */; };
 		DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
 		DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D26242D04280017C4F9 /* Inter-ExtraBold.ttf */; };
@@ -356,7 +356,7 @@
 		24780B10242DFD2F003BB26C /* MeldungModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungModuleView.swift; sourceTree = "<group>"; };
 		24780B16242DFD7C003BB26C /* InformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformViewController.swift; sourceTree = "<group>"; };
 		24780B19242DFDAE003BB26C /* ModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBaseView.swift; sourceTree = "<group>"; };
-		24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingViewController.swift; sourceTree = "<group>"; };
+		24780B1F242DFE33003BB26C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		24780B23242DFE6D003BB26C /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		24780B2B242F3CC2003BB26C /* InformStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformStepViewController.swift; sourceTree = "<group>"; };
 		24780B2F242F3EAF003BB26C /* InformBottomButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformBottomButtonViewController.swift; sourceTree = "<group>"; };
@@ -423,7 +423,7 @@
 		6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UBKeyboardObserver.m"; sourceTree = "<group>"; };
 		6E8FC0F824518BF2002AB1E5 /* UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UBKeyboardObserver.h; sourceTree = "<group>"; };
 		6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBKeyboardObserver.m; sourceTree = "<group>"; };
-		6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSimpleTextButton.swift; sourceTree = "<group>"; };
+		6EA49E2824443E69009EFCAB /* SimpleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTextButton.swift; sourceTree = "<group>"; };
 		6EA49E2A2444410D009EFCAB /* NoCodeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCodeInformationViewController.swift; sourceTree = "<group>"; };
 		6EC47BD32451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungDetailMeldungSingleTitleHeader.swift; sourceTree = "<group>"; };
 		6EC7E820245B27E10015A55B /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
@@ -454,11 +454,11 @@
 		AAF73665242F2EA00051E34A /* BegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BegegnungenModuleView.swift; sourceTree = "<group>"; };
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
-		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
-		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
+		DC175E3F2430C4C700BD2AD6 /* OnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentViewController.swift; sourceTree = "<group>"; };
+		DC175E412430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DC56B8B8242EA7760077B99C /* OnboardingStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepModel.swift; sourceTree = "<group>"; };
-		DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepViewController.swift; sourceTree = "<group>"; };
+		DC56B8BA242EACF00077B99C /* OnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepViewController.swift; sourceTree = "<group>"; };
 		DC702AFA243F6D870066C773 /* UBLabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBLabelType.swift; sourceTree = "<group>"; };
 		DC702AFC243F6E410066C773 /* UBButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBButton.swift; sourceTree = "<group>"; };
 		DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+HEX.swift"; sourceTree = "<group>"; };
@@ -488,9 +488,9 @@
 		DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnderlinedButton.swift; sourceTree = "<group>"; };
 		DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClickthroughStackView.swift; sourceTree = "<group>"; };
 		DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImageBackgroundView.swift; sourceTree = "<group>"; };
-		DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSplashViewController.swift; sourceTree = "<group>"; };
-		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
-		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
+		DCA3FFBB2451621D0003F5AD /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		DCA3FFBD24518E850003F5AD /* OnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoView.swift; sourceTree = "<group>"; };
+		DCA3FFBF2451975F0003F5AD /* OnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
@@ -667,13 +667,13 @@
 		24780AF6242DF801003BB26C /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */,
-				DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */,
-				DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */,
-				DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */,
-				DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */,
-				DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */,
-				DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */,
+				24780B1F242DFE33003BB26C /* OnboardingViewController.swift */,
+				DCA3FFBB2451621D0003F5AD /* SplashViewController.swift */,
+				DC175E3F2430C4C700BD2AD6 /* OnboardingContentViewController.swift */,
+				DC56B8BA242EACF00077B99C /* OnboardingStepViewController.swift */,
+				DCA3FFBD24518E850003F5AD /* OnboardingInfoView.swift */,
+				DC175E412430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift */,
+				DCA3FFBF2451975F0003F5AD /* OnboardingFinishViewController.swift */,
 				DC56B8B8242EA7760077B99C /* OnboardingStepModel.swift */,
 			);
 			path = Onboarding;
@@ -764,7 +764,7 @@
 				6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */,
 				AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */,
 				AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */,
-				6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */,
+				6EA49E2824443E69009EFCAB /* SimpleTextButton.swift */,
 				DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */,
 				6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */,
 			);
@@ -1444,7 +1444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */,
+				242D21DA245C4BD8005DAEA8 /* OnboardingInfoView.swift in Sources */,
 				242D21DB245C4BD8005DAEA8 /* AboutViewController.swift in Sources */,
 				242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */,
 				242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */,
@@ -1453,7 +1453,7 @@
 				242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */,
 				242D21E1245C4BD8005DAEA8 /* TitleViewScrollViewController.swift in Sources */,
 				242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */,
-				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
+				242D21E3245C4BD8005DAEA8 /* OnboardingStepViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */,
 				242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */,
@@ -1465,7 +1465,7 @@
 				242D21EC245C4BD8005DAEA8 /* WhatToDoInformView.swift in Sources */,
 				242D21ED245C4BD8005DAEA8 /* StackScrollView.swift in Sources */,
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
-				242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */,
+				242D21EF245C4BD8005DAEA8 /* SimpleTextButton.swift in Sources */,
 				242D21F0245C4BD8005DAEA8 /* ViewController.swift in Sources */,
 				242D21F1245C4BD8005DAEA8 /* UBKeychain.swift in Sources */,
 				242D21F2245C4BD8005DAEA8 /* UBUserDefault.swift in Sources */,
@@ -1485,7 +1485,7 @@
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
 				242D2200245C4BD8005DAEA8 /* ModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* ModuleBaseView.swift in Sources */,
-				242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */,
+				242D2202245C4BD8005DAEA8 /* OnboardingPermissionsViewController.swift in Sources */,
 				242D2203245C4BD8005DAEA8 /* MeldungDetailMeldungTitleView.swift in Sources */,
 				242D2204245C4BD8005DAEA8 /* BegegnungenDetailViewController.swift in Sources */,
 				242D2205245C4BD8005DAEA8 /* OnboardingStepModel.swift in Sources */,
@@ -1515,7 +1515,7 @@
 				242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */,
-				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
+				242D221E245C4BD8005DAEA8 /* OnboardingFinishViewController.swift in Sources */,
 				242D221F245C4BD8005DAEA8 /* CheckBoxView.swift in Sources */,
 				242D2220245C4BD8005DAEA8 /* InformGetWellViewController.swift in Sources */,
 				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
@@ -1545,17 +1545,17 @@
 				242D2237245C4BD8005DAEA8 /* UIColor+NS.swift in Sources */,
 				242D2238245C4BD8005DAEA8 /* HeaderArcView.swift in Sources */,
 				242D2239245C4BD8005DAEA8 /* ReportingManager.swift in Sources */,
-				242D223A245C4BD8005DAEA8 /* NSOnboardingContentViewController.swift in Sources */,
+				242D223A245C4BD8005DAEA8 /* OnboardingContentViewController.swift in Sources */,
 				242D223B245C4BD8005DAEA8 /* HeaderErrorView.swift in Sources */,
 				242D223C245C4BD8005DAEA8 /* InformBottomButtonViewController.swift in Sources */,
 				242D223D245C4BD8005DAEA8 /* NSDebugscreenViewController.swift in Sources */,
-				242D223E245C4BD8005DAEA8 /* NSSplashViewController.swift in Sources */,
+				242D223E245C4BD8005DAEA8 /* SplashViewController.swift in Sources */,
 				242D223F245C4BD8005DAEA8 /* MeldungModuleView.swift in Sources */,
 				242D2240245C4BD8005DAEA8 /* ConfigManager.swift in Sources */,
 				242D2241245C4BD8005DAEA8 /* InformThankYouViewController.swift in Sources */,
 				242D2242245C4BD8005DAEA8 /* WhatToDoButton.swift in Sources */,
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
-				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
+				242D2244245C4BD8005DAEA8 /* OnboardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
 				242D2247245C4BD8005DAEA8 /* InformViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* MeldungenDetailPositiveTestedTitleView.swift in Sources */,
@@ -1576,7 +1576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
+				DCA3FFBE24518E850003F5AD /* OnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* AboutViewController.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */,
@@ -1585,7 +1585,7 @@
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
 				6E33087724508CFF00913B0E /* TitleViewScrollViewController.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
-				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
+				DC56B8BB242EACF00077B99C /* OnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
 				6E7C0D22242CE2100017C4F9 /* Button.swift in Sources */,
 				2485F4712455C5AE00C3D8C3 /* StateLogic.swift in Sources */,
@@ -1598,7 +1598,7 @@
 				A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */,
 				6E7C0D37242E02600017C4F9 /* StackScrollView.swift in Sources */,
 				DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */,
-				6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */,
+				6EA49E2924443E69009EFCAB /* SimpleTextButton.swift in Sources */,
 				8E81CC9D241FCC7D006F2437 /* ViewController.swift in Sources */,
 				DC702B14243F6FD90066C773 /* UBKeychain.swift in Sources */,
 				DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */,
@@ -1619,7 +1619,7 @@
 				2462BA152451FD150046906D /* AuthorizationModels.swift in Sources */,
 				AAF73663242F2DC90051E34A /* ModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* ModuleBaseView.swift in Sources */,
-				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
+				DC175E422430C4F900BD2AD6 /* OnboardingPermissionsViewController.swift in Sources */,
 				6E330879245098E900913B0E /* MeldungDetailMeldungTitleView.swift in Sources */,
 				6EFB097524459B870097BD3D /* BegegnungenDetailViewController.swift in Sources */,
 				DC56B8B9242EA7760077B99C /* OnboardingStepModel.swift in Sources */,
@@ -1649,7 +1649,7 @@
 				2485F47E2458AC9000C3D8C3 /* BackgroundFakeReporting.swift in Sources */,
 				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				6EC47BD42451C3C2000D7686 /* MeldungDetailMeldungSingleTitleHeader.swift in Sources */,
-				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
+				DCA3FFC02451975F0003F5AD /* OnboardingFinishViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* CheckBoxView.swift in Sources */,
 				6EED5DAC24518DB400AD42D9 /* InformGetWellViewController.swift in Sources */,
 				DC702B26243F74E70066C773 /* UBDeviceUUID.swift in Sources */,
@@ -1677,17 +1677,17 @@
 				6E7C0D20242CE1190017C4F9 /* UIColor+NS.swift in Sources */,
 				2443947B2445F062003ED582 /* HeaderArcView.swift in Sources */,
 				2462BA1B24521CE70046906D /* ReportingManager.swift in Sources */,
-				DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */,
+				DC175E402430C4C700BD2AD6 /* OnboardingContentViewController.swift in Sources */,
 				DC746D582451D50B009426B1 /* HeaderErrorView.swift in Sources */,
 				24780B30242F3EAF003BB26C /* InformBottomButtonViewController.swift in Sources */,
 				6E3F65F72449B61A00980A4E /* NSDebugscreenViewController.swift in Sources */,
-				DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */,
+				DCA3FFBC2451621D0003F5AD /* SplashViewController.swift in Sources */,
 				24780B11242DFD2F003BB26C /* MeldungModuleView.swift in Sources */,
 				6E6E516F242F4FE0006E532E /* ConfigManager.swift in Sources */,
 				6E6E5184242F9586006E532E /* InformThankYouViewController.swift in Sources */,
 				6E33085F24502BBD00913B0E /* WhatToDoButton.swift in Sources */,
 				2485F4732455D00800C3D8C3 /* Errors+Localized.swift in Sources */,
-				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
+				24780B20242DFE33003BB26C /* OnboardingViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */,
 				24780B17242DFD7C003BB26C /* InformViewController.swift in Sources */,
 				6E3308752450885300913B0E /* MeldungenDetailPositiveTestedTitleView.swift in Sources */,

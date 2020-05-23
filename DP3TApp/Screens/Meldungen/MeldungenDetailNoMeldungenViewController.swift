@@ -48,11 +48,11 @@ class MeldungenDetailNoMeldungenViewController: TitleViewScrollViewController {
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

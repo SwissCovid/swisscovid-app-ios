@@ -78,7 +78,7 @@ class WhatToDoSymptomViewController: ViewController {
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
-        let infoView = NSOnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
+        let infoView = OnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
 
         stackScrollView.addArrangedView(infoView)
 

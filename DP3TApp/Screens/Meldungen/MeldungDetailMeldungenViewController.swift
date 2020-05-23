@@ -87,7 +87,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

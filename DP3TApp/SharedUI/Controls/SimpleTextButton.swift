@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSSimpleTextButton: UBButton {
+class SimpleTextButton: UBButton {
     private let color: UIColor
 
     // MARK: - Init

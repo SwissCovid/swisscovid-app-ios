@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSOnboardingStepViewController: NSOnboardingContentViewController {
+class OnboardingStepViewController: OnboardingContentViewController {
     private let headingLabel = Label(.textLight)
     private let foregroundImageView = UIImageView()
     private let titleLabel = Label(.title, textAlignment: .center)
@@ -33,7 +33,7 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
         addArrangedView(titleLabel, spacing: NSPadding.large + NSPadding.small)
 
         for (icon, text) in model.textGroups {
-            let v = NSOnboardingInfoView(icon: icon, text: text)
+            let v = OnboardingInfoView(icon: icon, text: text)
             addArrangedView(v)
             v.snp.makeConstraints { make in
                 make.leading.trailing.equalTo(self.stackScrollView.stackView)

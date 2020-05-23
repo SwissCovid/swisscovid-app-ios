@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSOnboardingFinishViewController: NSOnboardingContentViewController {
+class OnboardingFinishViewController: OnboardingContentViewController {
     private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-outro")!)
     private let titleLabel = Label(.title, textAlignment: .center)
     private let textLabel = Label(.textLight, textAlignment: .center)
