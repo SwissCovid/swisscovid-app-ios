@@ -261,7 +261,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     }
 
     @objc private func infoButtonPressed() {
-        present(NavigationController(rootViewController: NSAboutViewController()), animated: true)
+        present(NavigationController(rootViewController: AboutViewController()), animated: true)
     }
 
     private let uploadDBButton = Button(title: "Upload DB to server", style: .outlineUppercase(.ns_red))

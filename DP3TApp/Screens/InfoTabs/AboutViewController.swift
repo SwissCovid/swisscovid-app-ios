@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSAboutViewController: NSWebViewController {
+class AboutViewController: NSWebViewController {
     // MARK: - Init
 
     init() {
