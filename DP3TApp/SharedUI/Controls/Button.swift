@@ -99,7 +99,7 @@ class Button: UBButton {
 
         highlightCornerRadius = 3
         layer.cornerRadius = 3
-        contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.large, bottom: NSPadding.medium, right: NSPadding.large)
+        contentEdgeInsets = UIEdgeInsets(top: Padding.medium, left: Padding.large, bottom: Padding.medium, right: Padding.large)
 
         titleLabel?.numberOfLines = 2
 
@@ -122,7 +122,7 @@ class Button: UBButton {
         var contentSize = super.intrinsicContentSize
 
         if contentSize.height > 44.0 {
-            contentSize.height = contentSize.height + NSPadding.medium
+            contentSize.height = contentSize.height + Padding.medium
         }
 
         return contentSize

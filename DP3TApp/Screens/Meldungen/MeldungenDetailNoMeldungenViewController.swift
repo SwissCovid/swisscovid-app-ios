@@ -28,7 +28,7 @@ class MeldungenDetailNoMeldungenViewController: TitleViewScrollViewController {
 
         let buttonView = UIView()
 
-        let externalLinkButton = NSExternalLinkButton(color: .ns_green)
+        let externalLinkButton = ExternalLinkButton(color: .ns_green)
         externalLinkButton.title = "no_meldungen_box_link".ub_localized
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -41,24 +41,24 @@ class MeldungenDetailNoMeldungenViewController: TitleViewScrollViewController {
             make.right.lessThanOrEqualToSuperview()
         }
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
         whiteBoxView.contentView.addArrangedView(buttonView)
 
         stackScrollView.addArrangedView(whiteBoxView)
 
-        stackScrollView.addSpacerView(3.0 * NSPadding.large)
+        stackScrollView.addSpacerView(3.0 * Padding.large)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+        stackScrollView.addSpacerView(2.0 * Padding.medium)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_blue))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     override var titleHeight: CGFloat {

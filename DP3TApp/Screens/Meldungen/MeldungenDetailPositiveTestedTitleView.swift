@@ -51,7 +51,7 @@ class MeldungenDetailPositiveTestedTitleView: TitleView {
 
         stackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
         }
 
         let v = UIView()
@@ -60,13 +60,13 @@ class MeldungenDetailPositiveTestedTitleView: TitleView {
             make.top.bottom.centerX.equalToSuperview()
         }
 
-        stackView.addSpacerView(NSPadding.medium + NSPadding.small)
+        stackView.addSpacerView(Padding.medium + Padding.small)
         stackView.addArrangedSubview(v)
-        stackView.addSpacerView(NSPadding.medium)
+        stackView.addSpacerView(Padding.medium)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addSpacerView(NSPadding.small)
+        stackView.addSpacerView(Padding.small)
         stackView.addArrangedSubview(dateLabel)
-        stackView.addSpacerView(NSPadding.medium)
+        stackView.addSpacerView(Padding.medium)
         stackView.addArrangedSubview(textLabel)
     }
 }

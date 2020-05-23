@@ -56,7 +56,7 @@ class DebugscreenViewController: ViewController {
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         // image view
         let v = UIView()
@@ -71,19 +71,19 @@ class DebugscreenViewController: ViewController {
 
         stackScrollView.addArrangedView(v)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(sdkStatusView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(mockModuleView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(logsView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 }
 

@@ -67,7 +67,7 @@ class AppTitleView: TitleView {
         contentView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide)
             make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview().inset(NSPadding.large)
+            make.bottom.equalToSuperview().inset(Padding.large)
         }
 
         contentView.addSubview(errorView)

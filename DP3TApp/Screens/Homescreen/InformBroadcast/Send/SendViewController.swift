@@ -26,26 +26,26 @@ class SendViewController: InformBottomButtonViewController {
         contentView.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
+            make.left.right.equalToSuperview().inset(Padding.medium * 3.0)
         }
 
         let imageView = UIImageView(image: UIImage(named: "illu-code-wichtiger-hinweis"))
         imageView.contentMode = .scaleAspectFit
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
         stackScrollView.addArrangedView(imageView)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
         
         let container = UIStackView()
         container.isAccessibilityElement = true
         container.axis = .vertical
         container.addArrangedView(titleLabel)
-        container.addSpacerView(NSPadding.large)
+        container.addSpacerView(Padding.large)
         container.addArrangedView(textLabel)
         container.accessibilityLabel = (titleLabel.text ?? "") + "." + (textLabel.text ?? "")
         
         stackScrollView.addArrangedView(container)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
         UIAccessibility.post(notification: .layoutChanged, argument: container)
         enableBottomButton = true
     }

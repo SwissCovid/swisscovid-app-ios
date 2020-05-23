@@ -14,7 +14,7 @@ class TracingErrorView: UIView {
     private let titleLabel = Label(.uppercaseBold, textColor: .ns_red, numberOfLines: 2, textAlignment: .center)
     private let textLabel = Label(.textLight, textColor: .ns_text, textAlignment: .center)
     private let errorCodeLabel = Label(.smallRegular, textAlignment: .center)
-    private let actionButton = NSUnderlinedButton()
+    private let actionButton = UnderlinedButton()
 
     // MARK: - Model
 
@@ -56,9 +56,9 @@ class TracingErrorView: UIView {
 
         stackView.axis = .vertical
         stackView.alignment = .center
-        stackView.spacing = NSPadding.medium
+        stackView.spacing = Padding.medium
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: NSPadding.medium + NSPadding.small, left: 2 * NSPadding.medium, bottom: NSPadding.medium, right: 2 * NSPadding.medium)
+        stackView.layoutMargins = UIEdgeInsets(top: Padding.medium + Padding.small, left: 2 * Padding.medium, bottom: Padding.medium, right: 2 * Padding.medium)
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in

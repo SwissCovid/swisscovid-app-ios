@@ -56,7 +56,7 @@ class WhatToDoPositiveTestViewController: ViewController {
 
     private func setupLayout() {
         titleContentStackView.axis = .vertical
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         // Title & subtitle
         subtitleLabel = Label(.textLight, textAlignment: .center)
@@ -71,29 +71,29 @@ class WhatToDoPositiveTestViewController: ViewController {
 
         stackScrollView.addArrangedView(titleContentStackView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         let imageView = UIImageView(image: UIImage(named: "illu-positiv-title"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(informView)
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+        stackScrollView.addSpacerView(2.0 * Padding.medium)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_purple))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     private func setupAccessibility() {

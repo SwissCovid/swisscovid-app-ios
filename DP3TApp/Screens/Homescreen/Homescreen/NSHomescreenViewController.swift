@@ -125,29 +125,29 @@ class NSHomescreenViewController: TitleViewScrollViewController {
         stackScrollView.addArrangedView(infoBoxView)
 
         stackScrollView.addArrangedView(handshakesModuleView)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(meldungView)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        stackScrollView.addSpacerView(2.0 * Padding.large)
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
-        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
+        stackScrollView.addSpacerView(Padding.large + Padding.medium)
         stackScrollView.addArrangedView(whatToDoPositiveTestButton)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        stackScrollView.addSpacerView(2.0 * Padding.large)
 
         #if ENABLE_TESTING
 
         let previewWarning = InfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
         stackScrollView.addArrangedView(previewWarning)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         let debugScreenContainer = UIView()
 
             if Environment.current != Environment.prod {
                 debugScreenContainer.addSubview(debugScreenButton)
                 debugScreenButton.snp.makeConstraints { make in
-                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                    make.left.right.lessThanOrEqualToSuperview().inset(Padding.medium)
                     make.top.bottom.centerX.equalToSuperview()
                 }
 
@@ -158,14 +158,14 @@ class NSHomescreenViewController: TitleViewScrollViewController {
 
                 stackScrollView.addArrangedView(debugScreenContainer)
 
-                stackScrollView.addSpacerView(NSPadding.large)
+                stackScrollView.addSpacerView(Padding.large)
             }
 
         // DEBUG version for testing
         let uploadDBContainer = UIView()
         uploadDBContainer.addSubview(uploadDBButton)
         uploadDBButton.snp.makeConstraints { make in
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+            make.left.right.lessThanOrEqualToSuperview().inset(Padding.medium)
             make.top.bottom.centerX.equalToSuperview()
         }
 
@@ -176,7 +176,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
 
         stackScrollView.addArrangedView(uploadDBContainer)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         debugScreenContainer.alpha = 0
         uploadDBContainer.alpha = 0

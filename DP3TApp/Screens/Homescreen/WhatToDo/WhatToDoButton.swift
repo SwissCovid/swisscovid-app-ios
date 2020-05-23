@@ -66,21 +66,21 @@ class WhatToDoButton: UBButton {
 
         leftImageView.ub_setContentPriorityRequired()
         leftImageView.snp.makeConstraints { make in
-            make.left.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.left.bottom.equalToSuperview().inset(Padding.medium)
         }
 
         rightCaretImageView.tintColor = .ns_text
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
-            make.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.trailing.equalToSuperview().inset(Padding.medium)
         }
 
         textViewContainer.snp.makeConstraints { make in
-            make.left.equalTo(self.leftImageView.snp.right).offset(NSPadding.medium)
-            make.right.equalTo(self.rightCaretImageView.snp.left).offset(-NSPadding.medium)
-            make.top.greaterThanOrEqualToSuperview().inset(NSPadding.medium + NSPadding.small)
-            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.left.equalTo(self.leftImageView.snp.right).offset(Padding.medium)
+            make.right.equalTo(self.rightCaretImageView.snp.left).offset(-Padding.medium)
+            make.top.greaterThanOrEqualToSuperview().inset(Padding.medium + Padding.small)
+            make.bottom.lessThanOrEqualToSuperview().inset(Padding.medium + Padding.small)
             make.centerY.equalToSuperview()
         }
 

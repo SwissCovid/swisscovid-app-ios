@@ -73,9 +73,9 @@ class CheckBoxView: UIView {
         addSubview(textLabel)
 
         textLabel.snp.makeConstraints { make in
-            make.left.equalTo(checkBox.snp.right).offset(NSPadding.medium + NSPadding.small)
+            make.left.equalTo(checkBox.snp.right).offset(Padding.medium + Padding.small)
             make.top.equalToSuperview().offset(2.0)
-            make.bottom.right.equalToSuperview().inset(NSPadding.small)
+            make.bottom.right.equalToSuperview().inset(Padding.small)
         }
     }
 }

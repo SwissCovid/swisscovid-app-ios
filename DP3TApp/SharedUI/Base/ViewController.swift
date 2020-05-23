@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     // MARK: - Views
 
-    private let loadingView = NSLoadingView()
+    private let loadingView = LoadingView()
     private let swissFlagImage = UIImage(named: "ic_navbar_schweiz_wappen")?.withRenderingMode(.alwaysOriginal)
 
     // MARK: - Public API

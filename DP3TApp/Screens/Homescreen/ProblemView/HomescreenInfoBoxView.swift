@@ -39,7 +39,7 @@ class HomescreenInfoBoxView: UIView {
 
         infoBoxView.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.bottom.equalToSuperview().inset(Padding.medium + Padding.small)
         }
 
         layer.cornerRadius = 3.0

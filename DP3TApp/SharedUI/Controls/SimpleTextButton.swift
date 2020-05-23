@@ -20,7 +20,7 @@ class SimpleTextButton: UBButton {
         backgroundColor = .clear
         highlightedBackgroundColor = color.withAlphaComponent(0.15)
 
-        highlightXInset = -NSPadding.small
+        highlightXInset = -Padding.small
         highlightCornerRadius = 3.0
 
         setTitleColor(color, for: .normal)

@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSAnimatedGraphLayer: CALayer {
+class AnimatedGraphLayer: CALayer {
     var tintColor: CGColor {
         switch type {
         case .header: return UIColor.white.cgColor
@@ -39,9 +39,9 @@ class NSAnimatedGraphLayer: CALayer {
 
     private var timer: Timer?
 
-    private let type: NSAnimatedGraphView.GraphType
+    private let type: AnimatedGraphView.GraphType
 
-    init(nodeCenters: [CGPoint], edges: [(Int, Int)], type: NSAnimatedGraphView.GraphType) {
+    init(nodeCenters: [CGPoint], edges: [(Int, Int)], type: AnimatedGraphView.GraphType) {
         self.type = type
         self.nodeCenters = nodeCenters
         self.edges = edges
@@ -130,7 +130,7 @@ class NSAnimatedGraphLayer: CALayer {
     @objc private func step() {
         let newPositions = zip(nodeCenters, nodeLayers).map { (arg) -> CGPoint in
             let (center, node) = arg
-            let rect = node.bounds.inset(by: UIEdgeInsets(top: -Self.range, left: -NSAnimatedGraphLayer.self.range, bottom: -Self.range, right: -Self.range))
+            let rect = node.bounds.inset(by: UIEdgeInsets(top: -Self.range, left: -AnimatedGraphLayer.self.range, bottom: -Self.range, right: -Self.range))
 
             let randomPoint = CGPoint.makeRandom(in: rect)
             return CGPoint(x: center.x + randomPoint.x, y: center.y + randomPoint.y)
@@ -190,7 +190,7 @@ private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
         super.init()
 
         strokeColor = color
-        lineWidth = NSAnimatedGraphLayer.lineWidth
+        lineWidth = AnimatedGraphLayer.lineWidth
         path = makeLine(from: start, to: end)
     }
 

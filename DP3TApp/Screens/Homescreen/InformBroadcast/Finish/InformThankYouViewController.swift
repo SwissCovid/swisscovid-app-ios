@@ -26,20 +26,20 @@ class InformThankYouViewController: InformBottomButtonViewController {
         contentView.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
+            make.left.right.equalToSuperview().inset(Padding.medium * 3.0)
         }
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
         let imageView = UIImageView(image: UIImage(named: "outro-danke"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        stackScrollView.addSpacerView(2.0 * Padding.large)
 
         stackScrollView.addArrangedView(titleLabel)
-        stackScrollView.addSpacerView(NSPadding.medium * 2.0)
+        stackScrollView.addSpacerView(Padding.medium * 2.0)
         stackScrollView.addArrangedView(textLabel)
-        stackScrollView.addSpacerView(NSPadding.medium * 4.0)
+        stackScrollView.addSpacerView(Padding.medium * 4.0)
 
         bottomButtonTitle = "inform_continue_button".ub_localized
         bottomButtonTouchUpCallback = { [weak self] in

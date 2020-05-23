@@ -27,7 +27,7 @@ class OnboardingContentViewController: ViewController {
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     internal func addArrangedView(_ view: UIView, spacing: CGFloat? = nil, index: Int? = nil, insets: UIEdgeInsets = .zero) {

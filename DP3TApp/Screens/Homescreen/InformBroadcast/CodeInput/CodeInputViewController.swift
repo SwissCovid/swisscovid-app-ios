@@ -50,12 +50,12 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.medium * 2.0)
+            make.left.right.equalToSuperview().inset(Padding.medium * 2.0)
         }
 
-        stackScrollView.addSpacerView(NSPadding.medium * 4.0)
+        stackScrollView.addSpacerView(Padding.medium * 4.0)
         stackScrollView.addArrangedView(titleLabel)
-        stackScrollView.addSpacerView(NSPadding.medium * 2.0)
+        stackScrollView.addSpacerView(Padding.medium * 2.0)
         stackScrollView.addArrangedView(textLabel)
 
         // Error View
@@ -68,13 +68,13 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
         }
 
         errorTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.errorTitleLabel.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(self.errorTitleLabel.snp.bottom).offset(Padding.small)
             make.bottom.left.right.equalToSuperview()
         }
 
         stackScrollView.addArrangedView(errorView)
 
-        stackScrollView.addSpacerView(NSPadding.medium * 4.0)
+        stackScrollView.addSpacerView(Padding.medium * 4.0)
 
         let codeControlContainer = UIView()
         codeControlContainer.addSubview(codeControl)
@@ -87,7 +87,7 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
         codeControl.controller = self
 
         stackScrollView.addArrangedView(codeControlContainer)
-        stackScrollView.addSpacerView(NSPadding.medium * 4.0)
+        stackScrollView.addSpacerView(Padding.medium * 4.0)
 
         let sendContainer = UIView()
         sendContainer.addSubview(sendButton)
@@ -100,7 +100,7 @@ class CodeInputViewController: InformStepViewController, CodeControlProtocol {
 
         stackScrollView.addArrangedView(sendContainer)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         sendButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }

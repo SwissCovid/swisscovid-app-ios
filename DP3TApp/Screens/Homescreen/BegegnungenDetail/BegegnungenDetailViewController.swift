@@ -53,23 +53,23 @@ class BegegnungenDetailViewController: TitleViewScrollViewController {
 
         stackScrollView.addArrangedView(bluetoothControl)
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "begegnung_detail_faq1_text".ub_localized, title: "begegnung_detail_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+        stackScrollView.addSpacerView(2.0 * Padding.medium)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+        stackScrollView.addSpacerView(2.0 * Padding.medium)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-bt")!, text: "begegnungen_detail_faq3_text".ub_localized, title: "begegnungen_detail_faq3_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_blue))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     private func updateState(_ state: StateModel) {

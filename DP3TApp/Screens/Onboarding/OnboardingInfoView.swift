@@ -11,7 +11,7 @@ class OnboardingInfoView: UIView {
 
     private let leftRightInset: CGFloat
 
-    init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium) {
+    init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * Padding.medium) {
         self.leftRightInset = leftRightInset
 
         super.init(frame: .zero)
@@ -34,23 +34,23 @@ class OnboardingInfoView: UIView {
             titleLabel.text = title
 
             titleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().inset(NSPadding.medium)
+                make.top.equalToSuperview().inset(Padding.medium)
                 make.leading.trailing.equalToSuperview().inset(leftRightInset)
             }
         }
 
         imgView.snp.makeConstraints { make in
             if hasTitle {
-                make.top.equalTo(titleLabel.snp.bottom).offset(NSPadding.medium)
+                make.top.equalTo(titleLabel.snp.bottom).offset(Padding.medium)
             } else {
-                make.top.equalToSuperview().inset(NSPadding.medium)
+                make.top.equalToSuperview().inset(Padding.medium)
             }
             make.leading.equalToSuperview().inset(leftRightInset)
         }
 
         label.snp.makeConstraints { make in
             make.top.equalTo(imgView)
-            make.leading.equalTo(imgView.snp.trailing).offset(NSPadding.medium + NSPadding.small)
+            make.leading.equalTo(imgView.snp.trailing).offset(Padding.medium + Padding.small)
             make.trailing.equalToSuperview().inset(leftRightInset)
         }
 
@@ -61,9 +61,9 @@ class OnboardingInfoView: UIView {
 
         stackView.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom)
-            make.leading.equalTo(imgView.snp.trailing).offset(NSPadding.medium + NSPadding.small)
+            make.leading.equalTo(imgView.snp.trailing).offset(Padding.medium + Padding.small)
             make.trailing.equalToSuperview().inset(leftRightInset)
-            make.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.equalToSuperview().inset(Padding.medium)
         }
     }
 

@@ -6,9 +6,9 @@
 
 import UIKit
 
-class NSLoadingView: UIView {
+class LoadingView: UIView {
     private let errorStackView = UIStackView()
-    private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
+    private let loadingIndicatorView = AnimatedGraphView(type: .loading)
 
     private let errorTitleLabel = Label(.title, textAlignment: .center)
     private let errorTextLabel = Label(.textLight, textAlignment: .center)
@@ -72,15 +72,15 @@ class NSLoadingView: UIView {
         addSubview(errorStackView)
 
         errorStackView.snp.makeConstraints { make in
-            make.edges.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
+            make.edges.lessThanOrEqualToSuperview().inset(Padding.large).priority(.low)
             make.centerY.centerX.equalToSuperview()
-            make.width.lessThanOrEqualToSuperview().inset(NSPadding.large)
+            make.width.lessThanOrEqualToSuperview().inset(Padding.large)
         }
 
         errorTitleLabel.text = "loading_view_error_title".ub_localized
 
         errorStackView.axis = .vertical
-        errorStackView.spacing = NSPadding.medium
+        errorStackView.spacing = Padding.medium
         errorStackView.alignment = .center
 
         errorStackView.addArrangedSubview(errorTitleLabel)

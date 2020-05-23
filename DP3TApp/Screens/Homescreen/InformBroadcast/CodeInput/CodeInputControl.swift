@@ -83,7 +83,7 @@ class CodeControl: UIView {
             stackView.addArrangedView(singleControl)
             elements.append(singleControl.textField)
             if (i + 1) % 3 == 0, i + 1 != numberOfInputs {
-                stackView.setCustomSpacing(NSPadding.small + 2.0, after: singleControl)
+                stackView.setCustomSpacing(Padding.small + 2.0, after: singleControl)
             }
         }
 

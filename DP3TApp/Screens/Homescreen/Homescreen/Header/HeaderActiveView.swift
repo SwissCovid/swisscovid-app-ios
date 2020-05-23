@@ -7,7 +7,7 @@
 import UIKit
 
 class HeaderActiveView: UIView {
-    private let graphView = NSAnimatedGraphView(type: .header)
+    private let graphView = AnimatedGraphView(type: .header)
 
     init() {
         super.init(frame: .zero)

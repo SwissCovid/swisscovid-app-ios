@@ -83,17 +83,17 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         stackScrollView.addArrangedView(notYetCalledView!)
         stackScrollView.addArrangedView(alreadyCalledView!)
         stackScrollView.addArrangedView(callAgainView!)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
-        stackScrollView.addSpacerView(2 * NSPadding.large)
+        stackScrollView.addSpacerView(2 * Padding.large)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_blue))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     // MARK: - Update
@@ -123,7 +123,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     private func makeNotYetCalledView() -> SimpleModuleBaseView {
         let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
 
         let callButton = Button(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
@@ -135,7 +135,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(callButton)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
-        whiteBoxView.contentView.addSpacerView(NSPadding.large)
+        whiteBoxView.contentView.addSpacerView(Padding.large)
 
         self.addDeleteButton(whiteBoxView)
    
@@ -146,7 +146,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     private func makeAlreadyCalledView() -> SimpleModuleBaseView {
         let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
 
         let callButton = Button(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
 
@@ -156,11 +156,11 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
         whiteBoxView.contentView.addArrangedSubview(createCallLabel())
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
-        whiteBoxView.contentView.addSpacerView(NSPadding.large)
+        whiteBoxView.contentView.addSpacerView(Padding.large)
 
         self.addDeleteButton(whiteBoxView)
 
@@ -170,7 +170,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     private func makeCallAgainView() -> SimpleModuleBaseView {
         let whiteBoxView = SimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
 
         let callButton = Button(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
@@ -180,11 +180,11 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
+        whiteBoxView.contentView.addSpacerView(Padding.medium)
         whiteBoxView.contentView.addArrangedSubview(createCallLabel())
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
-        whiteBoxView.contentView.addSpacerView(NSPadding.large)
+        whiteBoxView.contentView.addSpacerView(Padding.large)
 
         self.addDeleteButton(whiteBoxView)
 
@@ -192,7 +192,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     }
 
     private func addDeleteButton(_ whiteBoxView: SimpleModuleBaseView) {
-        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+        whiteBoxView.contentView.addDividerView(inset: -Padding.large)
 
         let deleteButton = Button(title: "delete_reports_button".ub_localized, style: .borderlessUppercase(.ns_blue))
 
@@ -231,7 +231,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
     }
 
     private func createExplanationView() -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized], edgeInsets: .zero)
+        let ev = ExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
         let daysLeftLabel = Label(.textBold)
@@ -243,7 +243,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         }
 
         ev.stackView.insertArrangedSubview(wrapper, at: 3)
-        ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
+        ev.stackView.setCustomSpacing(Padding.small, after: ev.stackView.arrangedSubviews[2])
 
         return ev
     }

@@ -94,51 +94,51 @@ class MeldungDetailMeldungSingleTitleHeader: UIView {
     private func setupOpen() {
         newMeldungInitialView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(40.0)
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
         }
 
         if FontSize.fontSizeMultiplicator <= 1.0 {
             imageInitialView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(Padding.large)
             }
 
             imageInitialView.contentMode = .scaleAspectFit
         }
 
         titleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
 
             if FontSize.fontSizeMultiplicator <= 1.0 {
-                make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
+                make.top.equalTo(self.imageInitialView.snp.bottom).offset(Padding.large)
             } else {
-                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(Padding.large)
             }
         }
 
         dateLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(Padding.small)
         }
 
         subtitleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(2.0 * NSPadding.medium)
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(2.0 * Padding.medium)
         }
 
         continueButton.snp.makeConstraints { make in
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.large + NSPadding.medium)
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(Padding.large + Padding.medium)
             make.centerX.equalToSuperview()
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
+            make.left.right.lessThanOrEqualToSuperview().inset(Padding.large).priority(.low)
         }
 
         infoImageView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalToSuperview().inset(Padding.medium + Padding.small)
         }
 
         infoImageView.ub_setContentPriorityRequired()
@@ -149,7 +149,7 @@ class MeldungDetailMeldungSingleTitleHeader: UIView {
             var i = 0
             for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
                 v.alpha = 0.0
-                v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large).scaledBy(x: 0.8, y: 0.8)
+                v.transform = CGAffineTransform(translationX: 0, y: -Padding.large).scaledBy(x: 0.8, y: 0.8)
 
                 UIView.animate(withDuration: 0.45, delay: 0.2 + Double(i) * 0.15, usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: .beginFromCurrentState, animations: {
                     v.alpha = 1.0
@@ -164,21 +164,21 @@ class MeldungDetailMeldungSingleTitleHeader: UIView {
 
     private func setupClosed() {
         titleLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.infoImageView.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(self.infoImageView.snp.bottom).offset(Padding.medium)
         }
 
         dateLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(Padding.medium)
         }
 
         subtitleLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(self.dateLabel.snp.bottom).offset(Padding.medium)
         }
     }
 

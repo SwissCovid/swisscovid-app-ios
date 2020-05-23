@@ -31,12 +31,12 @@ class WhatToDoInformView: SimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.addSpacerView(NSPadding.large)
+        contentView.addSpacerView(Padding.large)
 
         let view = UIView()
         view.addSubview(informButton)
 
-        let inset = NSPadding.small + NSPadding.medium
+        let inset = Padding.small + Padding.medium
 
         informButton.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
@@ -44,7 +44,7 @@ class WhatToDoInformView: SimpleModuleBaseView {
         }
 
         contentView.addArrangedView(view)
-        contentView.addSpacerView(NSPadding.small)
+        contentView.addSpacerView(Padding.small)
                 
         informButton.isAccessibilityElement = true
         isAccessibilityElement = false

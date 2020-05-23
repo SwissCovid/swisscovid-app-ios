@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSExternalLinkButton: UBButton {
+class ExternalLinkButton: UBButton {
     // MARK: - Init
 
     init(color: UIColor? = nil) {
@@ -24,8 +24,8 @@ class NSExternalLinkButton: UBButton {
 
         setTitleColor(c, for: .normal)
 
-        highlightXInset = -NSPadding.small
-        highlightYInset = -NSPadding.small
+        highlightXInset = -Padding.small
+        highlightYInset = -Padding.small
         highlightedBackgroundColor = UIColor.black.withAlphaComponent(0.15)
         highlightCornerRadius = 3.0
 

@@ -69,33 +69,33 @@ class BluetoothSettingsControl: UIView {
         addSubview(tracingErrorView)
 
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(2.0 * NSPadding.medium - 2.0)
-            make.left.equalToSuperview().inset(2.0 * NSPadding.medium)
-            make.right.equalTo(self.switchControl.snp.left).inset(NSPadding.medium)
+            make.top.equalToSuperview().inset(2.0 * Padding.medium - 2.0)
+            make.left.equalToSuperview().inset(2.0 * Padding.medium)
+            make.right.equalTo(self.switchControl.snp.left).inset(Padding.medium)
         }
 
         switchControl.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(2.0 * NSPadding.medium)
+            make.right.equalToSuperview().inset(2.0 * Padding.medium)
             make.centerY.equalTo(self.titleLabel)
         }
 
         subtitleLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(2.0 * NSPadding.medium)
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
+            make.left.right.equalToSuperview().inset(2.0 * Padding.medium)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(Padding.small)
         }
 
         tracingActiveView.snp.makeConstraints { make in
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
-            make.left.right.equalToSuperview().inset(NSPadding.medium)
-            activeViewConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * Padding.medium)
+            make.left.right.equalToSuperview().inset(Padding.medium)
+            activeViewConstraint = make.bottom.equalToSuperview().inset(Padding.medium).constraint
         }
 
         activeViewConstraint?.deactivate()
 
         tracingErrorView.snp.makeConstraints { make in
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
-            make.left.right.equalToSuperview().inset(NSPadding.medium)
-            inactiveViewConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * Padding.medium)
+            make.left.right.equalToSuperview().inset(Padding.medium)
+            inactiveViewConstraint = make.bottom.equalToSuperview().inset(Padding.medium).constraint
         }
 
         inactiveViewConstraint?.activate()

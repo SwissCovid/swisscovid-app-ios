@@ -46,12 +46,12 @@ class OnboardingPermissionsViewController: OnboardingContentViewController {
     }
 
     private func setupViews() {
-        addArrangedView(foregroundImageView, spacing: NSPadding.medium)
+        addArrangedView(foregroundImageView, spacing: Padding.medium)
 
-        let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
-        addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
-        addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
-        addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+        let sidePadding = UIEdgeInsets(top: 0, left: Padding.large, bottom: 0, right: Padding.large)
+        addArrangedView(titleLabel, spacing: Padding.medium, insets: sidePadding)
+        addArrangedView(textLabel, spacing: Padding.large + Padding.medium, insets: sidePadding)
+        addArrangedView(permissionButton, spacing: 2 * Padding.large, insets: UIEdgeInsets(top: 0, left: Padding.large, bottom: 0, right: Padding.large))
 
         addArrangedView(goodToKnowContainer)
 
@@ -70,7 +70,7 @@ class OnboardingPermissionsViewController: OnboardingContentViewController {
         goodToKnowLabel.text = "onboarding_good_to_know".ub_localized
         goodToKnowContainer.addSubview(goodToKnowLabel)
         goodToKnowLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(2 * NSPadding.medium)
+            make.top.leading.trailing.equalToSuperview().inset(2 * Padding.medium)
         }
 
         switch type {
@@ -88,13 +88,13 @@ class OnboardingPermissionsViewController: OnboardingContentViewController {
             goodToKnowContainer.addSubview(info1)
             goodToKnowContainer.addSubview(info2)
             info1.snp.makeConstraints { make in
-                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * Padding.medium)
                 make.leading.trailing.equalToSuperview()
             }
             info2.snp.makeConstraints { make in
                 make.top.equalTo(info1.snp.bottom)
                 make.leading.trailing.equalToSuperview()
-                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+                make.bottom.equalToSuperview().inset(2 * Padding.medium)
             }
             case .bluetooth:
                 foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
@@ -110,13 +110,13 @@ class OnboardingPermissionsViewController: OnboardingContentViewController {
                 goodToKnowContainer.addSubview(info1)
                 goodToKnowContainer.addSubview(info2)
                 info1.snp.makeConstraints { make in
-                    make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                    make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * Padding.medium)
                     make.leading.trailing.equalToSuperview()
                 }
                 info2.snp.makeConstraints { make in
                     make.top.equalTo(info1.snp.bottom)
                     make.leading.trailing.equalToSuperview()
-                    make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+                    make.bottom.equalToSuperview().inset(2 * Padding.medium)
             }
         case .push:
             foregroundImageView.image = UIImage(named: "onboarding-meldung-permission")!
@@ -128,9 +128,9 @@ class OnboardingPermissionsViewController: OnboardingContentViewController {
             elements.append(info)
             goodToKnowContainer.addSubview(info)
             info.snp.makeConstraints { make in
-                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * Padding.medium)
                 make.leading.trailing.equalToSuperview()
-                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+                make.bottom.equalToSuperview().inset(2 * Padding.medium)
             }
         }
     }

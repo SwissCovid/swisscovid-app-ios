@@ -187,7 +187,7 @@ class OnboardingViewController: ViewController {
             make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
         }
 
-        continueButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: 2 * NSPadding.large, bottom: NSPadding.medium, right: 2 * NSPadding.large)
+        continueButton.contentEdgeInsets = UIEdgeInsets(top: Padding.medium, left: 2 * Padding.large, bottom: Padding.medium, right: 2 * Padding.large)
         continueButton.touchUpCallback = {
             self.setOnboardingStep(self.currentStep + 1, animated: true)
         }

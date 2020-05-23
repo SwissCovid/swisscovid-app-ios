@@ -15,7 +15,7 @@ class InfoBoxView: UIView {
     private let illustrationImageView = UIImageView()
 
     private let additionalLabel = Label(.textBold)
-    private let externalLinkButton = NSExternalLinkButton()
+    private let externalLinkButton = ExternalLinkButton()
 
     // MARK: - Update
 
@@ -86,7 +86,7 @@ class InfoBoxView: UIView {
 
                 imageView.snp.makeConstraints { make in
                     make.top.equalTo(self.snp.bottom)
-                    make.left.equalToSuperview().inset(NSPadding.large)
+                    make.left.equalToSuperview().inset(Padding.large)
                 }
             }
 
@@ -101,29 +101,29 @@ class InfoBoxView: UIView {
         addSubview(illustrationImageView)
 
         illustrationImageView.snp.makeConstraints { make in
-            make.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+            make.trailing.bottom.equalToSuperview().inset(Padding.small)
         }
 
         illustrationImageView.ub_setContentPriorityRequired()
         leadingIconImageView.ub_setContentPriorityRequired()
 
         leadingIconImageView.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(NSPadding.medium)
+            make.left.equalToSuperview().inset(Padding.medium)
             make.top.equalToSuperview().inset(topBottomPadding)
         }
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(topBottomPadding + 3.0)
-            make.leading.equalTo(self.leadingIconImageView.snp.trailing).offset(NSPadding.medium)
+            make.leading.equalTo(self.leadingIconImageView.snp.trailing).offset(Padding.medium)
             if illustrationImageView.image == nil {
-                make.trailing.equalToSuperview().inset(NSPadding.medium)
+                make.trailing.equalToSuperview().inset(Padding.medium)
             } else {
-                make.trailing.equalTo(illustrationImageView.snp.leading).inset(NSPadding.medium)
+                make.trailing.equalTo(illustrationImageView.snp.leading).inset(Padding.medium)
             }
         }
 
         subtextLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium - 2.0)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(Padding.medium - 2.0)
             make.leading.trailing.equalTo(self.titleLabel)
             if !hasAdditionalStuff {
                 make.bottom.equalToSuperview().inset(topBottomPadding)
@@ -141,17 +141,17 @@ class InfoBoxView: UIView {
                 }
 
                 externalLinkButton.snp.makeConstraints { make in
-                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(Padding.medium + Padding.small)
                     make.leading.equalTo(self.titleLabel)
                     make.trailing.lessThanOrEqualTo(self.titleLabel)
-                    make.bottom.equalToSuperview().inset(NSPadding.large)
+                    make.bottom.equalToSuperview().inset(Padding.large)
                 }
             } else {
                 addSubview(additionalLabel)
                 additionalLabel.text = adt
 
                 additionalLabel.snp.makeConstraints { make in
-                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
+                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(Padding.medium)
                     make.leading.trailing.equalTo(self.titleLabel)
                     make.bottom.equalToSuperview().inset(topBottomPadding)
                 }

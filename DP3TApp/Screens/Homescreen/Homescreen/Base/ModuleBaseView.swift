@@ -20,7 +20,7 @@ class ModuleBaseView: UIControl {
     }
 
     let headerView = ModuleHeaderView()
-    internal let stackView = NSClickthroughStackView()
+    internal let stackView = ClickthroughStackView()
 
     init() {
         super.init(frame: .zero)
@@ -46,7 +46,7 @@ class ModuleBaseView: UIControl {
     private func setupLayout() {
         stackView.axis = .vertical
         stackView.isLayoutMarginsRelativeArrangement = true
-        stackView.layoutMargins = UIEdgeInsets(top: 0, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: Padding.medium, bottom: Padding.medium, right: Padding.medium)
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in

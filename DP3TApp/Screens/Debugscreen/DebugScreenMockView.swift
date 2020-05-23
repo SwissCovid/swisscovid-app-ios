@@ -33,7 +33,7 @@ class DebugScreenMockView: SimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.spacing = NSPadding.small
+        contentView.spacing = Padding.small
 
         let label = Label(.textLight)
         label.text = "debug_state_setting_text".ub_localized
@@ -41,7 +41,7 @@ class DebugScreenMockView: SimpleModuleBaseView {
         contentView.addArrangedView(label)
 
         let checkBoxStackView = UIStackView()
-        checkBoxStackView.spacing = NSPadding.small
+        checkBoxStackView.spacing = Padding.small
         checkBoxStackView.axis = .vertical
 
         for c in checkboxes {
@@ -57,7 +57,7 @@ class DebugScreenMockView: SimpleModuleBaseView {
         cbc.addSubview(checkBoxStackView)
 
         checkBoxStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0.0, left: NSPadding.medium + NSPadding.small, bottom: 0.0, right: NSPadding.medium))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0.0, left: Padding.medium + Padding.small, bottom: 0.0, right: Padding.medium))
         }
 
         contentView.addArrangedView(cbc)

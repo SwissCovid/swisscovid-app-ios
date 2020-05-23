@@ -26,20 +26,20 @@ class SplashViewController: UIViewController {
 
         imgView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.large).priority(.low)
-            make.bottom.lessThanOrEqualTo(self.view.snp.bottom).inset(NSPadding.large)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(Padding.large).priority(.low)
+            make.bottom.lessThanOrEqualTo(self.view.snp.bottom).inset(Padding.large)
         }
 
         imgView.ub_setContentPriorityRequired()
 
         title.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerY.equalToSuperview().offset(2 * NSPadding.large)
+            make.left.right.equalToSuperview().inset(Padding.large)
+            make.centerY.equalToSuperview().offset(2 * Padding.large)
         }
 
         subtitle.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.top.equalTo(title.snp.bottom).offset(NSPadding.medium)
+            make.left.right.equalToSuperview().inset(Padding.large)
+            make.top.equalTo(title.snp.bottom).offset(Padding.medium)
         }
     }
 }

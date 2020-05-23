@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSPadding {
+class Padding {
     /// A padding of 5 pixels
     public static let small: CGFloat = 5.0
     /// A padding of 10 pixels

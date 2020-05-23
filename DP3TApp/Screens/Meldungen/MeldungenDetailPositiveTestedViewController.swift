@@ -41,22 +41,22 @@ class MeldungenDetailPositiveTestedViewController: TitleViewScrollViewController
 
         stackScrollView.addArrangedView(whiteBoxView)
 
-        stackScrollView.addSpacerView(2 * NSPadding.large)
+        stackScrollView.addSpacerView(2 * Padding.large)
 
         stackScrollView.addArrangedView(OnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: "meldungen_positive_tested_faq1_text".ub_localized, title: "meldungen_positive_tested_faq1_title".ub_localized, leftRightInset: 0))
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_purple))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     private func addDeleteButton(_ whiteBoxView: SimpleModuleBaseView) {
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.large)
+        whiteBoxView.contentView.addSpacerView(Padding.large)
 
-        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+        whiteBoxView.contentView.addDividerView(inset: -Padding.large)
 
         let deleteButton = Button(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
 

@@ -51,7 +51,7 @@ class WhatToDoSymptomViewController: ViewController {
 
     private func setupLayout() {
         titleContentStackView.axis = .vertical
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         // Title & subtitle
         subtitleLabel = Label(.textLight, textAlignment: .center)
@@ -66,17 +66,17 @@ class WhatToDoSymptomViewController: ViewController {
 
         stackScrollView.addArrangedView(titleContentStackView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         let imageView = UIImageView(image: UIImage(named: "illu-symptome-title"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
 
         stackScrollView.addArrangedView(symptomView)
 
-        stackScrollView.addSpacerView(3.0 * NSPadding.large)
+        stackScrollView.addSpacerView(3.0 * Padding.large)
 
         let infoView = OnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
 
@@ -84,7 +84,7 @@ class WhatToDoSymptomViewController: ViewController {
 
         let buttonView = UIView()
 
-        let externalLinkButton = NSExternalLinkButton(color: .ns_purple)
+        let externalLinkButton = ExternalLinkButton(color: .ns_purple)
         externalLinkButton.title = "symptom_detail_box_button".ub_localized
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -97,14 +97,14 @@ class WhatToDoSymptomViewController: ViewController {
             make.right.lessThanOrEqualToSuperview()
         }
 
-        infoView.stackView.addSpacerView(2 * NSPadding.medium)
+        infoView.stackView.addSpacerView(2 * Padding.medium)
         infoView.stackView.addArrangedView(buttonView)
 
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(3 * Padding.large)
 
         stackScrollView.addArrangedView(Button.faqButton(color: .ns_purple))
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(Padding.large)
     }
 
     private func setupAccessibility() {

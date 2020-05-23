@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSUnderlinedButton: UBButton {
+class UnderlinedButton: UBButton {
     override var title: String? {
         didSet {
             guard let t = title else { return }
@@ -29,7 +29,7 @@ class NSUnderlinedButton: UBButton {
 
         highlightCornerRadius = 3
         highlightedBackgroundColor = UIColor.ns_text.withAlphaComponent(0.15)
-        contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
+        contentEdgeInsets = UIEdgeInsets(top: Padding.medium, left: Padding.medium, bottom: Padding.medium, right: Padding.medium)
     }
 
     required init?(coder _: NSCoder) {
@@ -40,7 +40,7 @@ class NSUnderlinedButton: UBButton {
         var contentSize = super.intrinsicContentSize
 
         if contentSize.height > 44.0 {
-            contentSize.height = contentSize.height + NSPadding.medium
+            contentSize.height = contentSize.height + Padding.medium
         }
 
         return contentSize

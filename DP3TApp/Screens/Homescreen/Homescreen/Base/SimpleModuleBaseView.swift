@@ -31,7 +31,7 @@ class SimpleModuleBaseView: UIView {
     // MARK: - Init
 
     init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil, bottomPadding: Bool = true) {
-        sideInset = NSPadding.large
+        sideInset = Padding.large
         self.bottomPadding = bottomPadding
         self.subview = subview
 
@@ -65,7 +65,7 @@ class SimpleModuleBaseView: UIView {
         addSubview(titleLabel)
         addSubview(contentView)
 
-        let topInset = NSPadding.medium + NSPadding.small
+        let topInset = Padding.medium + Padding.small
 
         if subtitleLabel.text == nil {
             titleLabel.snp.makeConstraints { make in
@@ -81,7 +81,7 @@ class SimpleModuleBaseView: UIView {
             }
 
             titleLabel.snp.makeConstraints { make in
-                make.top.equalTo(subtitleLabel.snp.bottom).offset(NSPadding.small)
+                make.top.equalTo(subtitleLabel.snp.bottom).offset(Padding.small)
                 make.left.right.equalToSuperview().inset(sideInset)
             }
         }
@@ -100,28 +100,28 @@ class SimpleModuleBaseView: UIView {
                 view.addSubview(boldTextLabel)
                 boldTextLabel.snp.makeConstraints { make in
                     make.top.left.equalToSuperview()
-                    make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
+                    make.right.equalTo(imageView.snp.left).offset(-Padding.medium)
                 }
             }
 
             textLabel.snp.makeConstraints { make in
                 if boldTextLabel.text != nil {
-                    make.top.equalTo(boldTextLabel.snp.bottom).offset(NSPadding.small)
+                    make.top.equalTo(boldTextLabel.snp.bottom).offset(Padding.small)
                 } else {
                     make.top.equalToSuperview()
                 }
                 make.left.equalToSuperview()
-                make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
+                make.right.equalTo(imageView.snp.left).offset(-Padding.medium)
                 make.bottom.lessThanOrEqualToSuperview()
             }
 
             if let subview = subview {
                 view.addSubview(subview)
                 subview.snp.makeConstraints { (make) in
-                    make.top.equalTo(textLabel.snp.bottom).offset(NSPadding.large)
+                    make.top.equalTo(textLabel.snp.bottom).offset(Padding.large)
                     make.left.equalToSuperview()
-                    make.right.equalTo(imageView.snp.left).offset(-NSPadding.medium)
-                    make.bottom.lessThanOrEqualToSuperview().offset(-NSPadding.medium)
+                    make.right.equalTo(imageView.snp.left).offset(-Padding.medium)
+                    make.bottom.lessThanOrEqualToSuperview().offset(-Padding.medium)
                 }
             }
 
@@ -132,7 +132,7 @@ class SimpleModuleBaseView: UIView {
 
             addSubview(view)
             view.snp.makeConstraints { make in
-                make.top.equalTo(lastView.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                make.top.equalTo(lastView.snp.bottom).offset(Padding.medium + Padding.small)
                 make.left.right.equalToSuperview().inset(sideInset)
             }
 
@@ -140,7 +140,7 @@ class SimpleModuleBaseView: UIView {
         }
 
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(lastView.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(lastView.snp.bottom).offset(Padding.small)
             make.left.right.equalToSuperview().inset(sideInset)
             /*
             make.left.equalToSuperview().inset(sideInset)

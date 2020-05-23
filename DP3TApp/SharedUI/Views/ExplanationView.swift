@@ -6,16 +6,16 @@
 
 import UIKit
 
-class NSExplanationView: UIView {
+class ExplanationView: UIView {
     let stackView = UIStackView()
 
     // MARK: - Init
 
-    init(title: String, texts: [String], edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)) {
+    init(title: String, texts: [String], edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 0, left: Padding.large, bottom: 0, right: Padding.large)) {
         super.init(frame: .zero)
 
         stackView.axis = .vertical
-        stackView.spacing = 2 * NSPadding.medium
+        stackView.spacing = 2 * Padding.medium
 
         let titleLabel = Label(.textBold)
         titleLabel.text = title

@@ -16,9 +16,9 @@ class OnboardingFinishViewController: OnboardingContentViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addArrangedView(foregroundImageView, spacing: NSPadding.medium)
-        addArrangedView(titleLabel, spacing: NSPadding.medium, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
-        addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+        addArrangedView(foregroundImageView, spacing: Padding.medium)
+        addArrangedView(titleLabel, spacing: Padding.medium, insets: UIEdgeInsets(top: 0, left: Padding.large, bottom: 0, right: Padding.large))
+        addArrangedView(textLabel, spacing: Padding.large + Padding.medium, insets: UIEdgeInsets(top: 0, left: Padding.large, bottom: 0, right: Padding.large))
         addArrangedView(finishButton)
 
         titleLabel.text = "onboarding_go_title".ub_localized

@@ -82,7 +82,7 @@ class MeldungView: ModuleBaseView {
 
                 container.addSubview(dateLabel)
                 dateLabel.snp.makeConstraints { make in
-                    make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+                    make.top.trailing.bottom.equalToSuperview().inset(Padding.small)
                 }
                 views.append(container)
             }
@@ -97,9 +97,9 @@ class MeldungView: ModuleBaseView {
     override func updateLayout() {
         super.updateLayout()
 
-        setCustomSpacing(NSPadding.medium, after: noMeldungenView)
-        setCustomSpacing(NSPadding.medium, after: exposedView)
-        setCustomSpacing(NSPadding.medium, after: infectedView)
+        setCustomSpacing(Padding.medium, after: noMeldungenView)
+        setCustomSpacing(Padding.medium, after: exposedView)
+        setCustomSpacing(Padding.medium, after: infectedView)
     }
 }
 
@@ -125,9 +125,9 @@ private class MoreInfoView: UIView {
         let container = UIView()
         addSubview(container)
         container.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(NSPadding.small)
-            make.left.equalToSuperview().inset(2 * NSPadding.large)
-            make.right.equalToSuperview().inset(NSPadding.medium)
+            make.top.bottom.equalToSuperview().inset(Padding.small)
+            make.left.equalToSuperview().inset(2 * Padding.large)
+            make.right.equalToSuperview().inset(Padding.medium)
         }
 
         container.addSubview(line1Label)
@@ -138,7 +138,7 @@ private class MoreInfoView: UIView {
         }
 
         line2Label.snp.makeConstraints { make in
-            make.top.equalTo(line1Label.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(line1Label.snp.bottom).offset(Padding.small)
             make.left.right.equalTo(self.line1Label)
             make.bottom.equalToSuperview()
         }

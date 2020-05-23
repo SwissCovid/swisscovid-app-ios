@@ -54,7 +54,7 @@ class MeldungDetailMeldungTitleView: TitleView, UIScrollViewDelegate {
 
         pageControl.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.bottom.equalToSuperview().inset(overlapInset + NSPadding.medium)
+            make.bottom.equalToSuperview().inset(overlapInset + Padding.medium)
         }
 
         horizontalStackScrollView.snp.makeConstraints { make in

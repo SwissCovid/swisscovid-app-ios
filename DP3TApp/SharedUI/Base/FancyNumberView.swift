@@ -6,10 +6,10 @@
 
 import UIKit
 
-class NSFancyNumberView: UIView {
+class FancyNumberView: UIView {
     private var number: Int = 0
 
-    private var views: [NSAllNumbersView] = []
+    private var views: [AllNumbersView] = []
     private let stackView = UIStackView()
 
     init() {
@@ -30,7 +30,7 @@ class NSFancyNumberView: UIView {
 
         if newViews > 0 {
             for _ in 0 ..< newViews {
-                let v = NSAllNumbersView()
+                let v = AllNumbersView()
                 stackView.insertArrangedSubview(v, at: 0)
                 views.insert(v, at: 0)
             }
@@ -65,7 +65,7 @@ class NSFancyNumberView: UIView {
     }
 }
 
-class NSAllNumbersView: UIView {
+class AllNumbersView: UIView {
     private let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
 
     private var currentNumber: Int = 0

@@ -34,13 +34,13 @@ class DebugScreenSDKStatusView: SimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.spacing = NSPadding.small
+        contentView.spacing = Padding.small
 
         let label = Label(.textLight)
         label.text = "debug_sdk_state_text".ub_localized
 
         contentView.addArrangedView(label)
-        contentView.setCustomSpacing(NSPadding.medium, after: label)
+        contentView.setCustomSpacing(Padding.medium, after: label)
 
         setupState()
         setupButton()
@@ -61,11 +61,11 @@ class DebugScreenSDKStatusView: SimpleModuleBaseView {
 
         v.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(NSPadding.medium)
+            make.edges.equalToSuperview().inset(Padding.medium)
         }
 
         contentView.addArrangedView(v)
-        contentView.setCustomSpacing(NSPadding.medium, after: v)
+        contentView.setCustomSpacing(Padding.medium, after: v)
     }
 
     private func setupButton() {

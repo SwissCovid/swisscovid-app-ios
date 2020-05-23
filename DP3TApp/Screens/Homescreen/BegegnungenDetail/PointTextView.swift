@@ -41,12 +41,12 @@ class PointTextView: UIView {
 
         pointLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
-            make.left.equalToSuperview().inset(NSPadding.medium)
+            make.left.equalToSuperview().inset(Padding.medium)
         }
 
         label.snp.makeConstraints { make in
             make.top.bottom.right.equalToSuperview()
-            make.left.equalTo(pointLabel.snp.right).offset(NSPadding.medium)
+            make.left.equalTo(pointLabel.snp.right).offset(Padding.medium)
         }
     }
 }
