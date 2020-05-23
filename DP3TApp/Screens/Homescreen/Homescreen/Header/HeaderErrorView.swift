@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSHeaderErrorView: UIView {
+class HeaderErrorView: UIView {
     private let imageView = UIImageView()
 
     var state: StateModel.TracingState {
