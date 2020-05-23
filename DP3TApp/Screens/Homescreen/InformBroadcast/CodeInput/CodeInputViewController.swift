@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-class CodeInputViewController: InformStepViewController, NSCodeControlProtocol {
+class CodeInputViewController: InformStepViewController, CodeControlProtocol {
     // MARK: - Views
 
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)

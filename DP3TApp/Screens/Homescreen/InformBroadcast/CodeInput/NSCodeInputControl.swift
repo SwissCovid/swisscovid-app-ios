@@ -7,13 +7,13 @@
 import Foundation
 import UIKit
 
-protocol NSCodeControlProtocol {
+protocol CodeControlProtocol {
     func changeSendPermission(to sendAllowed: Bool)
     func lastInputControlEntered()
 }
 
 class NSCodeControl: UIView {
-    public var controller: NSCodeControlProtocol?
+    public var controller: CodeControlProtocol?
 
     // MARK: - Input number
 
