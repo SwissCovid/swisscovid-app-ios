@@ -7,7 +7,7 @@
 import SnapKit
 import UIKit
 
-class NSModuleHeaderView: UIView {
+class ModuleHeaderView: UIView {
     private let titleLabel = Label(.title)
     private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-arrow-forward")?.withRenderingMode(.alwaysTemplate))
 

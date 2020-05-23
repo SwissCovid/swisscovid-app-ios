@@ -19,7 +19,7 @@ class ModuleBaseView: UIControl {
         }
     }
 
-    let headerView = NSModuleHeaderView()
+    let headerView = ModuleHeaderView()
     internal let stackView = NSClickthroughStackView()
 
     init() {

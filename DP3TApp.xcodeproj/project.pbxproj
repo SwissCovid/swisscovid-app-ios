@@ -63,7 +63,7 @@
 		242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B04243F6FAE0066C773 /* UBPListValue.swift */; };
 		242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */; };
 		242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA142451FD150046906D /* AuthorizationModels.swift */; };
-		242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
+		242D2200245C4BD8005DAEA8 /* ModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */; };
 		242D2201245C4BD8005DAEA8 /* ModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* ModuleBaseView.swift */; };
 		242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
 		242D2203245C4BD8005DAEA8 /* NSMeldungDetailMeldungTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */; };
@@ -264,7 +264,7 @@
 		8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
-		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
+		AAF73663242F2DC90051E34A /* ModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */; };
 		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
@@ -450,7 +450,7 @@
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
-		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
+		AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleHeaderView.swift; sourceTree = "<group>"; };
 		AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenModuleView.swift; sourceTree = "<group>"; };
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
@@ -795,7 +795,7 @@
 			children = (
 				6E3F65FA2449CF0900980A4E /* SimpleModuleBaseView.swift */,
 				24780B19242DFDAE003BB26C /* ModuleBaseView.swift */,
-				AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */,
+				AAF73662242F2DC90051E34A /* ModuleHeaderView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1483,7 +1483,7 @@
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
-				242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */,
+				242D2200245C4BD8005DAEA8 /* ModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* ModuleBaseView.swift in Sources */,
 				242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				242D2203245C4BD8005DAEA8 /* NSMeldungDetailMeldungTitleView.swift in Sources */,
@@ -1617,7 +1617,7 @@
 				DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */,
 				242D227D245D6581005DAEA8 /* Endpoint.swift in Sources */,
 				2462BA152451FD150046906D /* AuthorizationModels.swift in Sources */,
-				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
+				AAF73663242F2DC90051E34A /* ModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* ModuleBaseView.swift in Sources */,
 				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				6E330879245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift in Sources */,
