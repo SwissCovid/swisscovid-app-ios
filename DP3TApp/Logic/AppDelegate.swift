@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
-        window?.rootViewController = NSNavigationController(rootViewController: NSHomescreenViewController())
+        window?.rootViewController = NavigationController(rootViewController: NSHomescreenViewController())
 
         setupAppearance()
 
@@ -99,7 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldJump = StateManager.shared.uiState.shouldStartAtMeldungenDetail && StateManager.shared.uiState.meldungenDetail.showMeldungWithAnimation
         }
         if shouldJump,
-            let navigationController = window?.rootViewController as? NSNavigationController,
+            let navigationController = window?.rootViewController as? NavigationController,
             let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
             navigationController.popToRootViewController(animated: false)
             homescreenVC.presentMeldungenDetail(animated: false)

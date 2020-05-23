@@ -109,7 +109,7 @@ extension NSWebViewController: WKNavigationDelegate {
                 if let navVC = navigationController {
                     navVC.pushViewController(webVC, animated: true)
                 } else {
-                    present(NSNavigationController(rootViewController: webVC), animated: true, completion: nil)
+                    present(NavigationController(rootViewController: webVC), animated: true, completion: nil)
                 }
 
                 decisionHandler(.cancel)

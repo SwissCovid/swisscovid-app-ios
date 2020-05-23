@@ -52,7 +52,7 @@ class TracingLocalPush: NSObject {
 
     private func alreadyShowsMeldung() -> Bool {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
+            let navigationVC = appDelegate.window?.rootViewController as? NavigationController {
             if navigationVC.viewControllers.last is NSMeldungenDetailViewController {
                 return true
             }
@@ -67,7 +67,7 @@ class TracingLocalPush: NSObject {
         }
 
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
+            let navigationVC = appDelegate.window?.rootViewController as? NavigationController {
             navigationVC.popToRootViewController(animated: false)
             (navigationVC.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
         }

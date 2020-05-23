@@ -12,7 +12,7 @@ class NSInformViewController: NSInformStepViewController {
 
         informVC = NSSendViewController()
 
-        let navCon = NSNavigationController(rootViewController: informVC)
+        let navCon = NavigationController(rootViewController: informVC)
         
         if UIDevice.current.isSmallScreenPhone {
             navCon.modalPresentationStyle = .fullScreen

@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSNavigationController: UINavigationController {
+class NavigationController: UINavigationController {
     // MARK: - Views
 
     let lineView = UIView()
