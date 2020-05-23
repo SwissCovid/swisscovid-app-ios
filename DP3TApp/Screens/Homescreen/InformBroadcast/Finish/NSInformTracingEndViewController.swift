@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInformTracingEndViewController: NSInformBottomButtonViewController {
+class NSInformTracingEndViewController: InformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
