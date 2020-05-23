@@ -82,7 +82,7 @@
 		242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* HeaderActiveView.swift */; };
 		242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
 		242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1624520A250046906D /* Environment+Endpoints.swift */; };
-		242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
+		242D2213245C4BD8005DAEA8 /* HeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */; };
 		242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65FC2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift */; };
 		242D2215245C4BD8005DAEA8 /* NSExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086924506E0600913B0E /* NSExplanationView.swift */; };
 		242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E517F242F9586006E532E /* NSCheckboxControl.swift */; };
@@ -295,7 +295,7 @@
 		DCA3FFB424502D370003F5AD /* TracingErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* TracingErrorView.swift */; };
 		DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */; };
 		DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
-		DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
+		DCA3FFBA245092D50003F5AD /* HeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */; };
 		DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */; };
 		DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
 		DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
@@ -487,7 +487,7 @@
 		DCA3FFB324502D370003F5AD /* TracingErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingErrorView.swift; sourceTree = "<group>"; };
 		DCA3FFB5245048A50003F5AD /* NSUnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnderlinedButton.swift; sourceTree = "<group>"; };
 		DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClickthroughStackView.swift; sourceTree = "<group>"; };
-		DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderImageBackgroundView.swift; sourceTree = "<group>"; };
+		DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderImageBackgroundView.swift; sourceTree = "<group>"; };
 		DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSplashViewController.swift; sourceTree = "<group>"; };
 		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
@@ -834,7 +834,7 @@
 				6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */,
 				DC746D592451DF78009426B1 /* HeaderActiveView.swift */,
 				DC746D572451D50B009426B1 /* HeaderErrorView.swift */,
-				DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */,
+				DCA3FFB9245092D50003F5AD /* HeaderImageBackgroundView.swift */,
 				2443947A2445F062003ED582 /* NSHeaderArcView.swift */,
 			);
 			path = Header;
@@ -1504,7 +1504,7 @@
 				242D2210245C4BD8005DAEA8 /* HeaderActiveView.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
-				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
+				242D2213245C4BD8005DAEA8 /* HeaderImageBackgroundView.swift in Sources */,
 				242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */,
 				242D2215245C4BD8005DAEA8 /* NSExplanationView.swift in Sources */,
 				242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */,
@@ -1637,7 +1637,7 @@
 				DC746D5A2451DF78009426B1 /* HeaderActiveView.swift in Sources */,
 				F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */,
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
-				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
+				DCA3FFBA245092D50003F5AD /* HeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
 				6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */,
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,

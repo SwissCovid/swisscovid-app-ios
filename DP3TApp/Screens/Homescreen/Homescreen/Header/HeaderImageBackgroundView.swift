@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSHeaderImageBackgroundView: UIView {
+class HeaderImageBackgroundView: UIView {
     private let imageView = UIImageView()
     private let colorView = UIView()
 
@@ -23,7 +23,7 @@ class NSHeaderImageBackgroundView: UIView {
         UIImage(named: "header-image-zurich"),
     ].compactMap { $0 }
 
-    static var activeImage: UIImage = NSHeaderImageBackgroundView.headerImages.randomElement()!
+    static var activeImage: UIImage = HeaderImageBackgroundView.headerImages.randomElement()!
 
     var state: StateModel.TracingState {
         didSet { update() }
@@ -33,9 +33,9 @@ class NSHeaderImageBackgroundView: UIView {
         let chanceToChange = 0.3
         let random = Double.random(in: 0 ..< 1)
 
-        if random < chanceToChange, let image = NSHeaderImageBackgroundView.headerImages.randomElement() {
+        if random < chanceToChange, let image = HeaderImageBackgroundView.headerImages.randomElement() {
             imageView.image = image
-            NSHeaderImageBackgroundView.activeImage = image
+            HeaderImageBackgroundView.activeImage = image
         }
     }
 
@@ -57,7 +57,7 @@ class NSHeaderImageBackgroundView: UIView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 
-        imageView.image = NSHeaderImageBackgroundView.activeImage
+        imageView.image = HeaderImageBackgroundView.activeImage
 
         addSubview(imageView)
         imageView.snp.makeConstraints { make in

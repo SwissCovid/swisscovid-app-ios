@@ -21,7 +21,7 @@ class NSAppTitleView: NSTitleView {
         backgroundView.changeBackgroundRandomly()
     }
 
-    private lazy var backgroundView = NSHeaderImageBackgroundView(initialState: uiState)
+    private lazy var backgroundView = HeaderImageBackgroundView(initialState: uiState)
 
     let highlightView = UIView()
 
