@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSPointTextView: UIView {
+class PointTextView: UIView {
     // MARK: - Views
 
     private let pointLabel = Label(.textLight)

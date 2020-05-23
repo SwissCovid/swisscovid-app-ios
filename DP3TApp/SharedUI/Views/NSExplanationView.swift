@@ -23,7 +23,7 @@ class NSExplanationView: UIView {
         stackView.addArrangedView(titleLabel)
 
         for t in texts {
-            let v = NSPointTextView(text: t)
+            let v = PointTextView(text: t)
             stackView.addArrangedView(v)
         }
 
