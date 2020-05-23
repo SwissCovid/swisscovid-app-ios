@@ -248,7 +248,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
 
     #if ENABLE_TESTING
     private func presentDebugScreen() {
-        navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
+        navigationController?.pushViewController(DebugscreenViewController(), animated: true)
     }
     #endif
 
@@ -265,7 +265,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     }
 
     private let uploadDBButton = Button(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
-    private let uploadHelper = NSDebugDatabaseUploadHelper()
+    private let uploadHelper = DebugDatabaseUploadHelper()
     private func uploadDatabaseForDebugPurposes() {
         let alert = UIAlertController(title: "Username", message: nil, preferredStyle: .alert)
         alert.addTextField { $0.text = "" }

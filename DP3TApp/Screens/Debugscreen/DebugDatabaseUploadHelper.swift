@@ -1,6 +1,6 @@
 import Foundation
 
-class NSDebugDatabaseUploadHelper {
+class DebugDatabaseUploadHelper {
     private var deviceToken: String {
         if let deviceToken: String = UserDefaults.standard.string(forKey: "org.dpppt.unique_device_token") {
             return deviceToken

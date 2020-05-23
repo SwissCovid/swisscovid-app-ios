@@ -8,15 +8,15 @@
 
 import UIKit
 
-class NSDebugscreenViewController: ViewController {
+class DebugscreenViewController: ViewController {
     // MARK: - Views
 
     private let stackScrollView = StackScrollView()
 
     private let imageView = UIImageView(image: UIImage(named: "03-privacy"))
 
-    private let mockModuleView = NSDebugScreenMockView()
-    private let sdkStatusView = NSDebugScreenSDKStatusView()
+    private let mockModuleView = DebugScreenMockView()
+    private let sdkStatusView = DebugScreenSDKStatusView()
     private let logsView = SimpleModuleBaseView(title: "Logs", text: "")
 
     // MARK: - Init

@@ -9,7 +9,7 @@
 import SnapKit
 import UIKit
 
-class NSDebugScreenMockView: SimpleModuleBaseView {
+class DebugScreenMockView: SimpleModuleBaseView {
     private let stackView = UIStackView()
 
     private let checkboxes = [CheckBoxView(text: "debug_state_setting_option_none".ub_localized), CheckBoxView(text: "debug_state_setting_option_ok".ub_localized), CheckBoxView(text: "debug_state_setting_option_exposed".ub_localized), CheckBoxView(text: "debug_state_setting_option_infected".ub_localized)]
