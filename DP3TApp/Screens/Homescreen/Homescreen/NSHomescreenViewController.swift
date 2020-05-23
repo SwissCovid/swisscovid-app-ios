@@ -243,7 +243,7 @@ class NSHomescreenViewController: TitleViewScrollViewController {
     }
 
     func presentMeldungenDetail(animated: Bool = true) {
-        navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: animated)
+        navigationController?.pushViewController(MeldungenDetailViewController(), animated: animated)
     }
 
     #if ENABLE_TESTING
