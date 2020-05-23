@@ -68,7 +68,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     private func setupInitialLayout() {
         addSubview(newMeldungInitialView)
 
-        if NSFontSize.fontSizeMultiplicator <= 1.0 {
+        if FontSize.fontSizeMultiplicator <= 1.0 {
             addSubview(imageInitialView)
         }
 
@@ -98,7 +98,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.centerX.equalToSuperview()
         }
 
-        if NSFontSize.fontSizeMultiplicator <= 1.0 {
+        if FontSize.fontSizeMultiplicator <= 1.0 {
             imageInitialView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
                 make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
@@ -111,7 +111,7 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
 
-            if NSFontSize.fontSizeMultiplicator <= 1.0 {
+            if FontSize.fontSizeMultiplicator <= 1.0 {
                 make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
             } else {
                 make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)

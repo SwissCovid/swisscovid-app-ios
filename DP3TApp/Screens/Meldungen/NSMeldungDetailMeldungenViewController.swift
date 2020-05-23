@@ -46,7 +46,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     override var titleHeight: CGFloat {
-        return 260.0 * NSFontSize.fontSizeMultiplicator
+        return 260.0 * FontSize.fontSizeMultiplicator
     }
 
     override var startPositionScrollView: CGFloat {

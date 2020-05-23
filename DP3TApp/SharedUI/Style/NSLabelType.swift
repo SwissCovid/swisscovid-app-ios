@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSFontSize {
+class FontSize {
     private static let normalBodyFontSize: CGFloat = 16.0
 
     public static let bodyFontSize: CGFloat = {
@@ -35,7 +35,7 @@ public enum NSLabelType: UBLabelType {
     case smallRegular
 
     public var font: UIFont {
-        let bfs = NSFontSize.bodyFontSize
+        let bfs = FontSize.bodyFontSize
 
         var boldFontName = "Inter-Bold"
         var regularFontName = "Inter-Regular"

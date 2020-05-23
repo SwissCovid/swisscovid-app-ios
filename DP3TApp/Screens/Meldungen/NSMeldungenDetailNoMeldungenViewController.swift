@@ -62,7 +62,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
     }
 
     override var titleHeight: CGFloat {
-        return super.titleHeight * NSFontSize.fontSizeMultiplicator
+        return super.titleHeight * FontSize.fontSizeMultiplicator
     }
 
     override var startPositionScrollView: CGFloat {
