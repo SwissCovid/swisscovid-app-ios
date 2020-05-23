@@ -11,7 +11,7 @@ class MeldungenDetailNoMeldungenViewController: TitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSMeldungenDetailNoMeldungenTitleView()
+        titleView = MeldungenDetailNoMeldungenTitleView()
     }
 
     // MARK: - View
