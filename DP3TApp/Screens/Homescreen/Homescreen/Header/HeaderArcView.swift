@@ -8,7 +8,7 @@ import Foundation
 import SnapKit
 import UIKit
 
-class NSHeaderArcView: UIView {
+class HeaderArcView: UIView {
     var angle: CGFloat = 0.0 {
         didSet {
             transform = CGAffineTransform(rotationAngle: angle / 180.0 * CGFloat.pi)

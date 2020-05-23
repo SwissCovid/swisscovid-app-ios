@@ -149,8 +149,8 @@ class NSAppTitleView: NSTitleView {
             return // drop random events
         }
 
-        let left = NSHeaderArcView(angle: .left)
-        let right = NSHeaderArcView(angle: .right)
+        let left = HeaderArcView(angle: .left)
+        let right = HeaderArcView(angle: .right)
 
         [left, right].forEach {
             arc in
