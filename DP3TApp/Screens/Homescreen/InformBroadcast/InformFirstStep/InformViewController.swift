@@ -10,7 +10,7 @@ class InformViewController: InformStepViewController {
     static func present(from rootViewController: UIViewController) {
         let informVC: UIViewController
 
-        informVC = NSSendViewController()
+        informVC = SendViewController()
 
         let navCon = NavigationController(rootViewController: informVC)
         

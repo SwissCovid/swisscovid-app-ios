@@ -88,7 +88,7 @@
 		242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E517F242F9586006E532E /* NSCheckboxControl.swift */; };
 		242D2217245C4BD8005DAEA8 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E737D245B0BC300C934B8 /* Language.swift */; };
 		242D2218245C4BD8005DAEA8 /* NSLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */; };
-		242D2219245C4BD8005DAEA8 /* NSSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* NSSendViewController.swift */; };
+		242D2219245C4BD8005DAEA8 /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* SendViewController.swift */; };
 		242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
 		242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */; };
 		242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
@@ -228,7 +228,7 @@
 		6E6E5184242F9586006E532E /* NSInformThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E517E242F9586006E532E /* NSInformThankYouViewController.swift */; };
 		6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E517F242F9586006E532E /* NSCheckboxControl.swift */; };
 		6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5180242F9586006E532E /* NSCheckBoxView.swift */; };
-		6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* NSSendViewController.swift */; };
+		6E6E5188242F9586006E532E /* SendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5182242F9586006E532E /* SendViewController.swift */; };
 		6E6E518E242FB9A8006E532E /* AppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518D242FB9A8006E532E /* AppTitleView.swift */; };
 		6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */; };
 		6E7C0D1E242CE02D0017C4F9 /* LabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */; };
@@ -399,7 +399,7 @@
 		6E6E517E242F9586006E532E /* NSInformThankYouViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSInformThankYouViewController.swift; sourceTree = "<group>"; };
 		6E6E517F242F9586006E532E /* NSCheckboxControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckboxControl.swift; sourceTree = "<group>"; };
 		6E6E5180242F9586006E532E /* NSCheckBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckBoxView.swift; sourceTree = "<group>"; };
-		6E6E5182242F9586006E532E /* NSSendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSendViewController.swift; sourceTree = "<group>"; };
+		6E6E5182242F9586006E532E /* SendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendViewController.swift; sourceTree = "<group>"; };
 		6E6E518D242FB9A8006E532E /* AppTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleView.swift; sourceTree = "<group>"; };
 		6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFancyNumberView.swift; sourceTree = "<group>"; };
 		6E7C0D1D242CE02D0017C4F9 /* LabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelType.swift; sourceTree = "<group>"; };
@@ -626,7 +626,7 @@
 		2443948624463BFB003ED582 /* Send */ = {
 			isa = PBXGroup;
 			children = (
-				6E6E5182242F9586006E532E /* NSSendViewController.swift */,
+				6E6E5182242F9586006E532E /* SendViewController.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -1510,7 +1510,7 @@
 				242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */,
 				242D2217245C4BD8005DAEA8 /* Language.swift in Sources */,
 				242D2218245C4BD8005DAEA8 /* NSLoadingView.swift in Sources */,
-				242D2219245C4BD8005DAEA8 /* NSSendViewController.swift in Sources */,
+				242D2219245C4BD8005DAEA8 /* SendViewController.swift in Sources */,
 				242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */,
 				242D221B245C4BD8005DAEA8 /* BackgroundFakeReporting.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
@@ -1643,7 +1643,7 @@
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,
 				F80E737E245B0BC300C934B8 /* Language.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
-				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
+				6E6E5188242F9586006E532E /* SendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
 				242D2279245D64BA005DAEA8 /* Environment+PublicKeys.swift in Sources */,
 				2485F47E2458AC9000C3D8C3 /* BackgroundFakeReporting.swift in Sources */,
