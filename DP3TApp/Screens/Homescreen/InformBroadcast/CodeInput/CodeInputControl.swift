@@ -172,7 +172,7 @@ class CodeControl: UIView {
 class CodeSingleControl: UIView, UITextFieldDelegate {
     public weak var parent: CodeControl?
 
-    public let textField = NSTextField()
+    public let textField = TextField()
     private let emptyCharacter = "\u{200B}"
 
     private var hadText: Bool = false
@@ -311,7 +311,7 @@ class CodeSingleControl: UIView, UITextFieldDelegate {
     }
 }
 
-class NSTextField: UITextField {
+class TextField: UITextField {
     public weak var singleControl: CodeSingleControl?
 
     override func paste(_: Any?) {
