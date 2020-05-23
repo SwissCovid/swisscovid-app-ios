@@ -23,7 +23,7 @@ class ConfigManager: NSObject {
     @UBOptionalUserDefault(key: "config")
     static var currentConfig: ConfigResponseBody? {
         didSet {
-            UIStateManager.shared.refresh()
+            StateManager.shared.refresh()
             if let config = currentConfig?.iOSGaenSdkConfig {
                 ConfigManager.updateSDKParameters(config: config)
             }

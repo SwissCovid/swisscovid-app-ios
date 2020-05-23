@@ -52,7 +52,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentMeldungenDetail()
         }
 
-        UIStateManager.shared.addObserver(self, block: { [weak self] state in
+        StateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
@@ -83,7 +83,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         super.viewWillAppear(animated)
 
         appTitleView.changeBackgroundRandomly()
-        UIStateManager.shared.refresh()
+        StateManager.shared.refresh()
 
         if !UserStorage.shared.hasCompletedOnboarding {
             let v = UIView()

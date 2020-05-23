@@ -257,7 +257,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         PhoneCallHelper.call(phoneNumber)
 
         UserStorage.shared.registerPhoneCall(identifier: last.identifier)
-        UIStateManager.shared.refresh()
+        StateManager.shared.refresh()
     }
 }
 

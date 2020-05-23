@@ -24,7 +24,7 @@ class UserStorage {
 
         self.lastPhoneCalls = lastPhoneCalls
 
-        UIStateManager.shared.userCalledInfoLine()
+        StateManager.shared.userCalledInfoLine()
     }
 
     func registerSeenMessages(identifier: UUID) {

@@ -21,7 +21,7 @@ class NSDebugScreenSDKStatusView: NSSimpleModuleBaseView {
         super.init(title: "debug_sdk_state_title".ub_localized)
         setup()
 
-        UIStateManager.shared.addObserver(self) { [weak self] stateModel in
+        StateManager.shared.addObserver(self) { [weak self] stateModel in
             guard let strongSelf = self else { return }
             strongSelf.update(stateModel)
         }

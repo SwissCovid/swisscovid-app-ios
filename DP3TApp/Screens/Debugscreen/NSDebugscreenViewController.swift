@@ -41,7 +41,7 @@ class NSDebugscreenViewController: NSViewController {
     }
 
     private func updateLogs() {
-        logsView.textLabel.attributedText = UIStateManager.shared.uiState.debug.logOutput
+        logsView.textLabel.attributedText = StateManager.shared.uiState.debug.logOutput
     }
 
     // MARK: - Setup

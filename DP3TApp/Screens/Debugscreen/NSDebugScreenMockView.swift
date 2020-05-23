@@ -20,7 +20,7 @@ class NSDebugScreenMockView: NSSimpleModuleBaseView {
         super.init(title: "debug_state_setting_title".ub_localized)
         setup()
 
-        UIStateManager.shared.addObserver(self) { [weak self] stateModel in
+        StateManager.shared.addObserver(self) { [weak self] stateModel in
             guard let strongSelf = self else { return }
             strongSelf.update(stateModel)
         }

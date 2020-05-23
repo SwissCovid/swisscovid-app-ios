@@ -10,9 +10,9 @@ import DP3TSDK
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
 class UIStateLogic {
-    let manager: UIStateManager
+    let manager: StateManager
 
-    init(manager: UIStateManager) {
+    init(manager: StateManager) {
         self.manager = manager
     }
 
@@ -109,7 +109,7 @@ class UIStateLogic {
 
         if manager.immediatelyShowSyncError {
             newState.homescreen.meldungen.syncProblemOtherError = true
-            if let codedError = UIStateManager.shared.syncError as? CodedError {
+            if let codedError = StateManager.shared.syncError as? CodedError {
                 newState.homescreen.meldungen.errorCode = codedError.errorCodeString
             }
         }
@@ -118,7 +118,7 @@ class UIStateLogic {
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
-            if let codedError = UIStateManager.shared.syncError as? CodedError {
+            if let codedError = StateManager.shared.syncError as? CodedError {
                 newState.homescreen.meldungen.errorCode = codedError.errorCodeString
             }
         }

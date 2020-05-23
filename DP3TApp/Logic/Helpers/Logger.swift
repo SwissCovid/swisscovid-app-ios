@@ -56,7 +56,7 @@ class Logger {
                 Logger.debugDates = Array(Logger.debugDates.dropFirst())
             }
 
-            UIStateManager.shared.refresh()
+            StateManager.shared.refresh()
         }
 
         #endif

@@ -22,7 +22,7 @@ class TracingManager: NSObject {
 
     static let shared = TracingManager()
 
-    let uiStateManager = UIStateManager()
+    let uiStateManager = StateManager()
     let databaseSyncer = DatabaseSyncer()
 
     #if ENABLE_TESTING
@@ -37,7 +37,7 @@ class TracingManager: NSObject {
             } else {
                 endTracing()
             }
-            UIStateManager.shared.changedTracingActivated()
+            StateManager.shared.changedTracingActivated()
         }
     }
 
@@ -87,7 +87,7 @@ class TracingManager: NSObject {
                                        backgroundHandler: self)
             #endif
         } catch {
-            UIStateManager.shared.tracingStartError = error
+            StateManager.shared.tracingStartError = error
         }
 
         updateStatus { _ in
@@ -106,12 +106,12 @@ class TracingManager: NSObject {
         if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing()
-                UIStateManager.shared.tracingStartError = nil
+                StateManager.shared.tracingStartError = nil
             } catch DP3TTracingError.userAlreadyMarkedAsInfected {
                 // Tracing should not start if the user is marked as infected
-                UIStateManager.shared.tracingStartError = nil
+                StateManager.shared.tracingStartError = nil
             } catch {
-                UIStateManager.shared.tracingStartError = error
+                StateManager.shared.tracingStartError = error
             }
 
 
@@ -131,7 +131,7 @@ class TracingManager: NSObject {
 
         // reset debugi fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+        StateManager.shared.overwrittenInfectionState = nil
         #endif
     }
 
@@ -142,7 +142,7 @@ class TracingManager: NSObject {
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+        StateManager.shared.overwrittenInfectionState = nil
         #endif
 
         // during infection, tracing is diabled
@@ -150,7 +150,7 @@ class TracingManager: NSObject {
         // enable if desired
         isActivated = false
 
-        UIStateManager.shared.refresh()
+        StateManager.shared.refresh()
     }
 
     func deleteMeldungen() {
@@ -160,10 +160,10 @@ class TracingManager: NSObject {
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+        StateManager.shared.overwrittenInfectionState = nil
         #endif
         
-        UIStateManager.shared.refresh()
+        StateManager.shared.refresh()
     }
 
     func userHasCompletedOnboarding() {
@@ -171,12 +171,12 @@ class TracingManager: NSObject {
             if ConfigManager.allowTracing {
                 try DP3TTracing.startTracing()
             }
-            UIStateManager.shared.tracingStartError = nil
+            StateManager.shared.tracingStartError = nil
         } catch DP3TTracingError.userAlreadyMarkedAsInfected {
             // Tracing should not start if the user is marked as infected
-            UIStateManager.shared.tracingStartError = nil
+            StateManager.shared.tracingStartError = nil
         } catch {
-            UIStateManager.shared.tracingStartError = error
+            StateManager.shared.tracingStartError = error
         }
 
         updateStatus(completion: nil)
@@ -191,14 +191,14 @@ class TracingManager: NSObject {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
-                UIStateManager.shared.updateError = e
+                StateManager.shared.updateError = e
                 completion?(e)
             case let .success(st):
 
-                UIStateManager.shared.blockUpdate {
-                    UIStateManager.shared.updateError = nil
-                    UIStateManager.shared.tracingState = st
-                    UIStateManager.shared.trackingState = st.trackingState
+                StateManager.shared.blockUpdate {
+                    StateManager.shared.updateError = nil
+                    StateManager.shared.tracingState = st
+                    StateManager.shared.trackingState = st.trackingState
                 }
 
                 completion?(nil)
@@ -218,10 +218,10 @@ class TracingManager: NSObject {
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
-            UIStateManager.shared.blockUpdate {
-                UIStateManager.shared.updateError = nil
-                UIStateManager.shared.tracingState = state
-                UIStateManager.shared.trackingState = state.trackingState
+            StateManager.shared.blockUpdate {
+                StateManager.shared.updateError = nil
+                StateManager.shared.tracingState = state
+                StateManager.shared.trackingState = state.trackingState
             }
         }
     }
