@@ -683,7 +683,7 @@
 "onboarding_gaen_title" = "Attivare il tracciamento";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Per utilizzare l'app è necessario attivare la funzione (COVID-19 Exposure Logging).";
+"onboarding_gaen_text" = "Per utilizzare l'app è necessario attivare la funzione \"Notifiche relative al COVID-19\".";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Attivare";
@@ -734,10 +734,10 @@
 "gaen_unexpectedly_disabled" = "Il tracciamento è disattivato. Prova a riavviare.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_title" = "(COVID-19 Exposure Logging) disabilitato";
+"tracing_permission_error_title" = "Notifiche relative al COVID-19 disabilitato";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Attivare la funzione (COVID-19 Exposure Logging) in modo che il tracciamento anonimo funzioni.";
+"tracing_permission_error_text" = "Attivare la funzione \"Notifiche relative al COVID-19\" in modo che il tracciamento anonimo funzioni.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Il messaggio non ha potuto essere inviato. Ti preghiamo di consentire la condivisione dei tuoi ID casuali con l'app SwissCovid.";
