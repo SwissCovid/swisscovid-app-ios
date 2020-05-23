@@ -54,6 +54,6 @@ class NSInformTracingEndViewController: InformBottomButtonViewController {
     }
 
     private func sendPressed() {
-        navigationController?.pushViewController(NSInformGetWellViewController(), animated: true)
+        navigationController?.pushViewController(InformGetWellViewController(), animated: true)
     }
 }

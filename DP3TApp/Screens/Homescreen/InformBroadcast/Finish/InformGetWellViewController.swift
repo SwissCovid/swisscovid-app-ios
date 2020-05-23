@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSInformGetWellViewController: InformBottomButtonViewController {
+class InformGetWellViewController: InformBottomButtonViewController {
     let stackScrollView = StackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = Label(.title, numberOfLines: 0, textAlignment: .center)
