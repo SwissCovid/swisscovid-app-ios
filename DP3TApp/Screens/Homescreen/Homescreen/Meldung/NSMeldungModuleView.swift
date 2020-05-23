@@ -73,7 +73,7 @@ class NSMeldungView: ModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
-            views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
+            views.append(MoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
             if let lastMeldung = uiState.lastMeldung {
                 let container = UIView()
                 let dateLabel = Label(.date, textColor: .ns_blue)
@@ -88,7 +88,7 @@ class NSMeldungView: ModuleBaseView {
             }
         case .infected:
             views.append(infectedView)
-            views.append(NSMoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))
+            views.append(MoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))
         }
 
         return views
@@ -103,7 +103,7 @@ class NSMeldungView: ModuleBaseView {
     }
 }
 
-private class NSMoreInfoView: UIView {
+private class MoreInfoView: UIView {
     private let line1Label = Label(.textLight)
     private let line2Label = Label(.textBold)
     init(line1: String, line2: String) {
@@ -147,7 +147,7 @@ private class NSMoreInfoView: UIView {
 
 // MARK: - Accessibility
 
-extension NSMoreInfoView {
+extension MoreInfoView {
     private func setupAccessibility() {
         isAccessibilityElement = true
         accessibilityLabel = [line1Label, line2Label]
