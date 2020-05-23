@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
+class NSMeldungDetailMeldungTitleView: TitleView, UIScrollViewDelegate {
     // MARK: - API
 
     public var meldungen: [StateModel.MeldungenDetail.NSMeldungModel] = [] {

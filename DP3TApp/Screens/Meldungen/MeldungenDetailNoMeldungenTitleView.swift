@@ -6,7 +6,7 @@
 
 import UIKit
 
-class MeldungenDetailNoMeldungenTitleView: NSTitleView {
+class MeldungenDetailNoMeldungenTitleView: TitleView {
     // MARK: - Views
 
     private let stackView = UIStackView()

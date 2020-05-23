@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NSTitleView: UIView {
+class TitleView: UIView {
     public weak var viewController: TitleViewScrollViewController?
 
     public func updateConstraintsForAnimation() {}
@@ -21,7 +21,7 @@ class TitleViewScrollViewController: ViewController {
 
     public let stackScrollView = StackScrollView()
 
-    public var titleView: NSTitleView? {
+    public var titleView: TitleView? {
         didSet { titleView?.viewController = self }
     }
 

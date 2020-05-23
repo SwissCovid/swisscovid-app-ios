@@ -9,7 +9,7 @@ import UIKit
 class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     // MARK: - API
 
-    public weak var headerView: NSTitleView?
+    public weak var headerView: TitleView?
 
     public var meldung: StateModel.MeldungenDetail.NSMeldungModel? {
         didSet { update() }
