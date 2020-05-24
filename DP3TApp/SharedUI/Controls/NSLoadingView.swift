@@ -50,9 +50,9 @@ class NSLoadingView: UIView {
             }
             if let codedError = err as? CodedError {
                 #if ENABLE_TESTING
-                errorCodeLabel.text = "\(codedError.errorCodeString): \(codedError)"
+                    errorCodeLabel.text = "\(codedError.errorCodeString): \(codedError)"
                 #else
-                errorCodeLabel.text = codedError.errorCodeString
+                    errorCodeLabel.text = codedError.errorCodeString
                 #endif
             } else {
                 errorCodeLabel.text = CodeErrorUnexpected
