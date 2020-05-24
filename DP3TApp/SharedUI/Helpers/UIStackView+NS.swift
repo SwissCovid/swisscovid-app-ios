@@ -50,6 +50,21 @@ extension UIStackView {
         }
     }
 
+    func addDividerView(inset: CGFloat) {
+        let container = UIView()
+        let line = UIView()
+        line.backgroundColor = .ns_line
+
+        addArrangedView(container)
+        container.addSubview(line)
+
+        line.snp.makeConstraints { make in
+            make.height.equalTo(1.0 / UIScreen.main.scale)
+            make.left.right.equalToSuperview().inset(inset)
+            make.top.bottom.equalToSuperview()
+        }
+    }
+
     func clearSubviews() {
         for v in arrangedSubviews {
             v.removeFromSuperview()

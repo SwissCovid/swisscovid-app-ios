@@ -4,11 +4,10 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import UIKit
 
 enum NSOnboardingPermissionType {
-    case bluetooth, push
+    case bluetooth, push, gapple
 }
 
 class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
@@ -75,6 +74,28 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         }
 
         switch type {
+        case .gapple:
+            foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
+            titleLabel.text = "onboarding_gaen_title".ub_localized
+            textLabel.text = "onboarding_gaen_text".ub_localized
+            permissionButton.title = "onboarding_gaen_button_activate".ub_localized
+
+            let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_gaen_info_text_1".ub_localized, title: "onboarding_gaen_info_title_1".ub_localized)
+            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!.ub_image(with: .ns_blue), text: "onboarding_gaen_info_text_2".ub_localized, title: "onboarding_gaen_info_title_2".ub_localized)
+            elements.append(info1)
+            elements.append(info2)
+
+            goodToKnowContainer.addSubview(info1)
+            goodToKnowContainer.addSubview(info2)
+            info1.snp.makeConstraints { make in
+                make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)
+                make.leading.trailing.equalToSuperview()
+            }
+            info2.snp.makeConstraints { make in
+                make.top.equalTo(info1.snp.bottom)
+                make.leading.trailing.equalToSuperview()
+                make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
+            }
         case .bluetooth:
             foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
             titleLabel.text = "onboarding_bluetooth_title".ub_localized

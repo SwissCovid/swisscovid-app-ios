@@ -78,7 +78,7 @@ class NSHeaderImageBackgroundView: UIView {
             colorView.backgroundColor = UIColor.ns_blue.withHighContrastColor(color: UIColor(ub_hexString: "#63a0c7")!).withAlphaComponent(alpha)
         case .tracingDisabled:
             colorView.backgroundColor = UIColor.ns_text.withHighContrastColor(color: UIColor(ub_hexString: "#4a4969")!).withAlphaComponent(alpha)
-        case .bluetoothPermissionError, .bluetoothTurnedOff, .timeInconsistencyError, .unexpectedError:
+        case .bluetoothPermissionError, .bluetoothTurnedOff, .timeInconsistencyError, .unexpectedError, .tracingPermissionError:
             colorView.backgroundColor = UIColor.ns_red.withAlphaComponent(alpha)
         case .tracingEnded:
             colorView.backgroundColor = UIColor.ns_purple.withHighContrastColor(color: UIColor(ub_hexString: "#8d6a9f")!).withAlphaComponent(alpha)

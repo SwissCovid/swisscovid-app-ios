@@ -4,11 +4,7 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 import Foundation
 

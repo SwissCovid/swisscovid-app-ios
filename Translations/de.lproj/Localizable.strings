@@ -1,9 +1,9 @@
 
 /*App Name*/
-"app_name" = "Swiss PT";
+"app_name" = "SwissCovid";
 
 /*App Name (unter Icon auf iOS)*/
-"CFBundleDisplayName" = "Swiss PT";
+"CFBundleDisplayName" = "SwissCovid";
 
 /*Loading View: Erneut laden*/
 "loading_view_reload" = "Erneut laden";
@@ -32,9 +32,6 @@
 /*Titel auf Homescreen für Begegnungen*/
 "handshakes_title_homescreen" = "Begegnungen";
 
-/*Titel der About Seite*/
-"tab_theapp_title" = "Die App";
-
 /*Abbrechen*/
 "cancel" = "Abbrechen";
 
@@ -43,9 +40,6 @@
 
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
 "push_exposed_text" = "Öffnen Sie die App um die Nachricht zu lesen.";
-
-/*Titel für Button um Ortung zu erlauben*/
-"android_button_permission_location" = "Ortung erlauben";
 
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
@@ -92,12 +86,6 @@
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
 
-/*Bluetooth Setting Text unten*/
-"bluetooth_setting_data_explanation_title" = "Sind meine Daten sicher?";
-
-/*Bluetooth Setting: Text unten*/
-"bluetooth_setting_tracking_explanation_text2" = "Eine Begegnung mit einem anderen Nutzer wird nur lokal auf ihrem Smartphone gespeichert.";
-
 /*Titel auf Homescreen*/
 "reports_title_homescreen" = "Meldungen";
 
@@ -127,15 +115,6 @@
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_network_sync" = "beim Laden der Daten ist ein Fehler aufgetreten";
-
-/*Fehler Beschreibung*/
-"android_foreground_service_notification_error_location_permission" = "Damit die App Bluetooth nützen kann, müssen Sie die Verwendung des Standorts zulassen. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
-
-/*Fehler Beschreibung Akku*/
-"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_title" = "Vorschau Version";
@@ -179,9 +158,6 @@
 /*Debug: Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde*/
 "debug_sdk_state_contact_exposed" = "Kontakt gemeldet: ";
 
-/*Debug: Bezeichnung für die Anzahl bluetooth-handshakes, die ausgeführt wurden*/
-"debug_sdk_state_number_handshakes" = "Anzahl handshakes: ";
-
 /*Debug-Status-Bezeichnung für boleschen Wert 'true'*/
 "debug_sdk_state_boolean_true" = "ja";
 
@@ -190,9 +166,6 @@
 
 /*Debug: Button-Text für das Zurücksetzen des lokalen SDK Zustandes*/
 "debug_sdk_button_reset" = "SDK zurücksetzen";
-
-/*Infotext, wenn lokal das SDK zurückgesetzt wurde*/
-"android_debug_sdk_reset_text" = "Der lokale Stand des DP-3T SDK wurde zurückgesetzt.";
 
 /*Tab-Titel*/
 "tab_tracing_title" = "Tracing";
@@ -316,9 +289,6 @@
 /*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
 "date_days_ago" = "vor {COUNT} Tagen";
 
-/*Meldungen Detail: Subtitel Weisse Box*/
-"meldungen_detail_whattodo" = "Was soll ich tun?";
-
 /*Meldungen Detail: Weisse Box Titel*/
 "meldungen_detail_call" = "Rufen Sie uns an";
 
@@ -337,9 +307,6 @@
 /*CFL: Hier hats die Latest Version deutsch mit "10 Tage ab Anstechung" nicht mehr reingeschafft. Schauen wir, wenn Übersetzungen da sind.*/
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
 "meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
-
-/*Meldungen Detail Weisse Box Titel*/
-"meldungen_detail_guard_others" = "Schützen Sie andere";
 
 /*Meldungen Detail: Weisse Box Text*/
 "meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline Coronavirus\n+41 58 387 77 78";
@@ -361,7 +328,7 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der Swiss PT App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
@@ -451,62 +418,10 @@
 "onboarding_go_title" = "Die App ist eingerichtet";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Vielen Dank dass Sie mithelfen, sich und andere zu schützen.";
+"onboarding_go_text" = "Vielen Dank, dass Sie mithelfen, sich und andere zu schützen.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Starten";
-
-/*Titel auf Location-Permission Screen*/
-"android_onboarding_bt_permission_title" = "Standort erlauben für Bluetooth";
-
-/*Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_text" = "Damit die App funktioniert und Zugriff auf Bluetooth hat, müssen Sie die Standort-Funktion erlauben.";
-
-/*Button-Text auf Location-Permission Screen*/
-"android_onboarding_bt_permission_button" = "Zulassen";
-
-/*Label für Info-Section*/
-"android_onboarding_bt_permission_goodtoknow" = "Gut zu wissen";
-
-/*Info-Titel 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_title" = "Ihr Standort bleibt geheim";
-
-/*Info-Text 1 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_1_text" = "Bei Android-Geräten ist die Freigabe von Bluetooth an die Freigabe des Standorts gekoppelt. Deshalb muss die Standort-Funktion aktiviert werden, auch wenn die App zu keinem Zeitpunkt auf Ihren Standort zugreift.";
-
-/*Info-Titel 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_title" = "Sie bleiben anonym";
-
-/*Info-Text 2 auf Location-Permission Screen*/
-"android_onboarding_bt_permission_info_2_text" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
-
-/*Titel auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
-
-/*Text auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
-
-/*Button-Text auf Battery-Permission Screen*/
-/*Fuzzy*/
-"android_onboarding_battery_permission_button" = "Zulassen";
-
-/*Info-Titel 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
-
-/*Info-Text 1 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
-
-/*Info-Titel 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
-
-/*Info-Text 2 auf Battery-Permission Screen*/
-"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
-
-/*Button-Text auf Location-Permission Screen - Zugelassen*/
-"android_onboarding_bt_permission_button_allowed" = "Zugelassen";
-
-/*Button-Text auf Battery-Permission Screen - Deaktiviert*/
-"android_onboarding_battery_permission_button_deactivated" = "Deaktiviert";
 
 /*Homescreen: Titel bei Fehler mit Daten*/
 "homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
@@ -571,16 +486,6 @@
 /*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
 "unexpected_error_with_retry" = "Ein unerwarteter Fehler ist aufgetreten. Bitte versuchen Sie es erneut.";
 
-/*CFL: Nummer anzeigen?*/
-/*Fehlermeldung, wenn die Antwort des Authentifizierungs-Services nicht verwertbar ist*/
-"invalid_response_auth_code" = "Aufgrund eines Systemfehlers konnte Ihr Authentifizierungs-Code nicht korrekt verwendet werden. Bitte rufen Sie die Hotline an.";
-
-/*Titel für Fehlermeldung mit Standort*/
-"error_location_permission_title" = "Standort-Verwendung abgelehnt";
-
-/*Button für Fehlermeldung mit Standort*/
-"error_location_permission_button" = "Zulassen";
-
 /*VoiceOver: Datum*/
 "accessibility_date" = "Datum";
 
@@ -624,23 +529,20 @@
 /*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde. ";
 
-/*Fehler Titel: Akkuverbrauch aktiviert*/
-"error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
-
 /*Fehler: Standortinformationen / Bluetooth*/
-"foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
+/*Fuzzy*/
+"android_foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
 
 /*Location Services ausgeschaltet Titel*/
-"error_location_services_title" = "Standort ausgeschaltet";
+/*Fuzzy*/
+"android_error_location_services_title" = "Standort ausgeschaltet";
 
 /*Location Services ausgeschaltet Button*/
-"error_location_services_button" = "Standort einschalten";
+/*Fuzzy*/
+"android_error_location_services_button" = "Standort einschalten";
 
 /*Information Button in the navigation bar*/
 "accessibility_info_button" = "Information";
-
-/*Debug: Anzahl Kontakte Titel*/
-"debug_sdk_state_number_contacts" = "Anzahl Kontakte: ";
 
 /*Synchronisations-Fehler Titel*/
 "sync_warning_notification_title" = "Es ist ein Fehler aufgetreten";
@@ -653,15 +555,6 @@
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
-
-/*Synchronisations-Fehler Titel*/
-"sync_error_title" = "Unerwarteter Fehler";
-
-/*Synchronisations-Fehler Text*/
-"sync_error_text" = "Es ist ein Fehler bei der Synchronisierung aufgetreten.";
-
-/*Synchronisations-Fehler Button Titel*/
-"sync_error_button" = "Erneut versuchen";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
@@ -679,7 +572,7 @@
 "begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
+"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können, muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Häufige Fragen";
@@ -699,13 +592,6 @@
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
 
-/*CFL: Den sollte es ev. 2x geben*/
-/*Meldungen: Meldung Weisse Box Link Titel*/
-"meldungen_explanation_link_title" = "Anweisung zur Selbstquarantäne";
-
-/*Meldungen: Meldung Weisse Box Link URL*/
-"meldungen_explanation_link_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/selbst-isolierung-und-selbst-quarantaene.html";
-
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
@@ -717,18 +603,6 @@
 
 /*Meldungen Detail Anruf Danke Subtitel*/
 "meldungen_detail_call_thankyou_subtitle" = "Sie schützen andere";
-
-/*Meldungen Detail Keine Meldungen Titel*/
-"meldungen_detail_no_meldungen_title" = "Keine neuen Meldungen";
-
-/*Meldungen Detail Keine Meldung Subtitel*/
-"meldungen_detail_no_meldungen_subtitle" = "Die letzte mögliche Ansteckung fand vor mehr als 10 Tagen statt.";
-
-/*Meldungen Detail: Keine Meldungen Button*/
-"meldungen_detail_no_meldungen_continue" = "Weiter";
-
-/*Meldungen Detail: Keine Meldungen Hinweis*/
-"meldungen_detail_no_meldungen_hinweis" = "Hinweis";
 
 /*Keine Meldungen Link in weisser Box Titel*/
 "no_meldungen_box_link" = "So schützen wir uns";
@@ -746,13 +620,7 @@
 "inform_detail_faq2_title" = "Wie bleibe ich anonym?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet. Keine persönlichen Daten.\n\nDamit können andere Swiss PT App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
-
-/*Informieren: Titel Tracing beendet*/
-"inform_send_endtracing_title" = "Tracing beendet";
-
-/*Informieren: Text Tracing beendet*/
-"inform_send_endtracing_text" = "Nach einem positiven Test wird das Tracing automatisch beendet.";
+"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -764,7 +632,7 @@
 "inform_code_intro_title" = "Wichtiger Hinweis";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+"inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden, kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "Verstanden";
@@ -816,3 +684,93 @@
 
 /*Accessibility: FAW Button Titel */
 "accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
+
+/*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_title" = "Tracing aktivieren";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library*/
+/*Fuzzy*/
+"onboarding_gaen_text" = "Um die App nutzen zu können, muss die Funktion \"COVID-19 Benachrichtigungen\"aktiviert werden.";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activate" = "Aktivieren";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
+"onboarding_gaen_info_title_1" = "Sie bleiben anonym";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
+"onboarding_gaen_info_text_1" = "Es werden nur anonyme IDs ausgetauscht. Keine Daten zum Standort oder Ihrer Person.";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
+"onboarding_gaen_info_title_2" = "Leicht erhöhte Batterienutzung";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
+"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activated" = "Aktiviert";
+
+/*Meldung in der App löschen, wenn möglicherweise angesteckt*/
+/*Fuzzy*/
+"delete_reports_button" = "Meldung löschen";
+
+/*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
+/*Fuzzy*/
+"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
+
+/*Code-Eingabe in der App löschen, wenn infiziert*/
+/*Fuzzy*/
+"delete_infection_button" = "Meldung löschen";
+
+/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Fuzzy*/
+"delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
+"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
+"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
+"android_onboarding_battery_permission_button" = "Zulassen";
+"android_onboarding_battery_permission_button_deactivated" = "OK";
+"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
+"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
+"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
+"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
+"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
+
+/*Google Play Services nicht aktuell*/
+"gaen_not_aviable" = "Google Play Services nicht aktuell";
+
+/*Google Play Services nicht aktuell text*/
+"gaen_not_available_text" = "Bitte aktualisieren Sie die Google Play Services.";
+
+/*Tracing wurde vom System deaktiviert, erneut starten*/
+"gaen_unexpectedly_disabled" = "Tracing wurde deaktiviert. Bitte starten Sie es erneut.";
+
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_title" = "COVID-19 Benachrichtigungen deaktiviert";
+
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
+"tracing_permission_error_text" = "Aktivieren Sie die Funktion \"COVID-19 Benachrichtigungen\", damit das anonyme Tracing funktioniert.";
+
+/*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
+"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufall-IDs mit der SwissCovid-App.";
+
+/*Button um die Google Play Services zu aktualisieren*/
+"playservices_update" = "Aktualisieren";
+
+/*Button um die Google Play Services zu installieren*/
+"playservices_install" = "Installieren";
+
+/*Titel für Infos zu den Google Play Services*/
+"playservices_title" = "Google Play Services";
+
+/*Meldung, dass die Google Play Services benötigt werden*/
+"playservices_text" = "Um das Tracing aktivieren zu können, wird eine aktuelle Version der Google Play Services benötigt. \n\nFalls auf Ihrem Gerät zurzeit kein Update verfügbar ist, versuchen Sie es bitte später nochmals.";
+
+/*Fuzzy*/
+"android_error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
+"android_error_battery_optimization_button" = "Zulassen";
+
+/*Telefonnummer für Hilfe bei App-Problemen*/
+"app_hotline_tel_number" = "+41 58 466 07 99";
+
+/*text shown in notification when we get an exception from the GAEN api*/
+"sync_api_error" = "Es ist ein unerwarteter Fehler beim Synchronisieren der Meldungen aufgetreten.";

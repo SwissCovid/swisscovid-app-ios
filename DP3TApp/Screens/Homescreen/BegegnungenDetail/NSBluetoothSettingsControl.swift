@@ -139,7 +139,7 @@ class NSBluetoothSettingsControl: UIView {
             }, completion: nil)
 
         case .tracingDisabled, .tracingEnded: fallthrough
-        case .bluetoothTurnedOff, .bluetoothPermissionError, .timeInconsistencyError, .unexpectedError:
+        case .bluetoothTurnedOff, .bluetoothPermissionError, .timeInconsistencyError, .unexpectedError, .tracingPermissionError:
             inactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()
 

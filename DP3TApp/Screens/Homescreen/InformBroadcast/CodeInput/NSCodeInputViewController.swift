@@ -110,7 +110,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         sendButton.isEnabled = false
     }
 
-
     // MARK: - Send Logic
 
     private var rightBarButtonItem: UIBarButtonItem?
@@ -154,6 +153,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
             } else {
                 // success
+                // reschedule next fake request
+                FakePublishBackgroundTaskManager.shared.rescheduleFakeRequest(force: true)
                 self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
                 self.changePresentingViewController()
             }
@@ -169,30 +170,30 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private func noCodeButtonPressed() {
         navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
     }
-    
+
     // MARK: - NSCodeControlProtocol
-    
+
     func changeSendPermission(to sendAllowed: Bool) {
         sendButton.isEnabled = sendAllowed
         updateAccessibilityLabelOfButton(sendAllowed: sendAllowed)
     }
-    
+
     func lastInputControlEntered() {
         if UIAccessibility.isVoiceOverRunning {
             UIAccessibility.post(notification: .screenChanged, argument: sendButton)
         }
     }
-    
+
     private func updateAccessibilityLabelOfButton(sendAllowed: Bool) {
-        let codeEingabe = "accessibility_code_button_current_code_hint".ub_localized +  codeControl.code()
+        let codeEingabe = "accessibility_code_button_current_code_hint".ub_localized + codeControl.code()
         if sendAllowed {
-          sendButton.accessibilityHint = codeEingabe
+            sendButton.accessibilityHint = codeEingabe
         } else {
-          var accessibilityLabel = "accessibility_code_button_disabled_hint".ub_localized
-          if (!codeControl.code().isEmpty) {
-              accessibilityLabel += codeEingabe
-          }
-          sendButton.accessibilityHint = accessibilityLabel
+            var accessibilityLabel = "accessibility_code_button_disabled_hint".ub_localized
+            if !codeControl.code().isEmpty {
+                accessibilityLabel += codeEingabe
+            }
+            sendButton.accessibilityHint = accessibilityLabel
         }
     }
 }

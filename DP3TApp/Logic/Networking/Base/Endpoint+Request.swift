@@ -11,6 +11,8 @@ extension Endpoint {
         var request = URLRequest(url: url, timeoutInterval: timeoutInterval)
         request.httpMethod = method.rawValue
 
+        request.setValue(userAgentHeader, forHTTPHeaderField: "User-Agent")
+
         for (k, v) in headers ?? [:] {
             request.setValue(v, forHTTPHeaderField: k)
         }
@@ -18,5 +20,15 @@ extension Endpoint {
         request.httpBody = body
 
         return request
+    }
+
+    private var userAgentHeader: String {
+        let appId = TracingManager.shared.appId
+        let appVersion = Bundle.appVersion
+        let build = Bundle.buildNumber
+        let os = "iOS"
+        let systemVersion = UIDevice.current.systemVersion
+        let header = [appId, appVersion, build, os, systemVersion].joined(separator: ";")
+        return header
     }
 }

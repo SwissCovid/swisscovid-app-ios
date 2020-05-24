@@ -16,19 +16,19 @@ class UserStorage {
         }
     }
 
-    func registerPhoneCall(identifier: Int) {
+    func registerPhoneCall(identifier: UUID) {
         var lastPhoneCalls = self.lastPhoneCalls
         // we only want the last
         lastPhoneCalls.removeAll()
-        lastPhoneCalls["\(identifier)"] = Date()
+        lastPhoneCalls["\(identifier.uuidString)"] = Date()
 
         self.lastPhoneCalls = lastPhoneCalls
 
         UIStateManager.shared.userCalledInfoLine()
     }
 
-    func registerSeenMessages(identifier: Int) {
-        seenMessages.append("\(identifier)")
+    func registerSeenMessages(identifier: UUID) {
+        seenMessages.append("\(identifier.uuidString)")
     }
 
     var lastPhoneCallDate: Date? {
@@ -37,16 +37,16 @@ class UserStorage {
         return allDates.sorted().last
     }
 
-    func lastPhoneCall(for identifier: Int) -> Date? {
-        if lastPhoneCalls.keys.contains("\(identifier)") {
+    func lastPhoneCall(for identifier: UUID) -> Date? {
+        if lastPhoneCalls.keys.contains("\(identifier.uuidString)") {
             return lastPhoneCalls["\(identifier)"]
         }
 
         return nil
     }
 
-    func hasSeenMessage(for identifier: Int) -> Bool {
-        return seenMessages.contains("\(identifier)")
+    func hasSeenMessage(for identifier: UUID) -> Bool {
+        return seenMessages.contains("\(identifier.uuidString)")
     }
 
     @UBUserDefault(key: "lastPhoneCalls", defaultValue: [:])
@@ -57,5 +57,4 @@ class UserStorage {
 
     @UBOptionalUserDefault(key: "positiveTestSendDate")
     public var positiveTestSendDate: Date?
-
 }

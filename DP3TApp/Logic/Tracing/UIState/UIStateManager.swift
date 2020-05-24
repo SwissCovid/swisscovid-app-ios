@@ -4,15 +4,10 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import Foundation
 import UIKit
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 class UIStateManager: NSObject {
     static var shared: UIStateManager {
@@ -163,7 +158,6 @@ class UIStateManager: NSObject {
                 switch (e1, e2) {
                 case (.networkingError(_), .networkingError(_)),
                      (.caseSynchronizationError, .caseSynchronizationError),
-                     (.cryptographyError(_), .cryptographyError(_)),
                      (.databaseError(_), .databaseError(_)),
                      (.bluetoothTurnedOff, .bluetoothTurnedOff),
                      (.permissonError, .permissonError):
@@ -179,9 +173,9 @@ class UIStateManager: NSObject {
     }
 
     #if ENABLE_TESTING
-    var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
-        didSet { refresh() }
-    }
+        var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
+            didSet { refresh() }
+        }
     #endif
 
     var tracingIsActivated: Bool {

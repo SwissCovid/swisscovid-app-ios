@@ -149,12 +149,11 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
             var i = 0
             for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
                 v.alpha = 0.0
-                v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large)
+                v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large).scaledBy(x: 0.8, y: 0.8)
 
-                UIView.animate(withDuration: 0.25, delay: 0.25 + Double(i) * 0.2, options: [.beginFromCurrentState, .curveEaseInOut], animations: {
+                UIView.animate(withDuration: 0.45, delay: 0.2 + Double(i) * 0.15, usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: .beginFromCurrentState, animations: {
                     v.alpha = 1.0
                     v.transform = .identity
-
                 }, completion: nil)
 
                 i = i + 1

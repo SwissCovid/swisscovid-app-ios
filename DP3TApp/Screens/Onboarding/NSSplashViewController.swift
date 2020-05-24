@@ -16,7 +16,7 @@ class NSSplashViewController: UIViewController {
         title.text = "app_name".ub_localized
 
         let subtitle = NSLabel(.textLight, textAlignment: .center)
-        subtitle.text = "app_subtitle".ub_localized
+        // subtitle.text = "app_subtitle".ub_localized
 
         let imgView = UIImageView(image: UIImage(named: "bag-logo"))
 

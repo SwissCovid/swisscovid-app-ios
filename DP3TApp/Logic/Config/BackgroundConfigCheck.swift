@@ -8,7 +8,7 @@ import BackgroundTasks
 import Foundation
 import UIKit.UIApplication
 
-private class ConfigLoadOperation: Operation {
+class ConfigLoadOperation: Operation {
     @UBOptionalUserDefault(key: "presentedConfigForVersion")
     static var presentedConfigForVersion: String?
 
@@ -93,7 +93,7 @@ class ConfigBackgroundTaskManager {
             try BGTaskScheduler.shared.submit(syncTask)
         } catch {
             Logger.log("Failed to schedule Config Update: \(error)")
-            BGTaskScheduler.shared.getPendingTaskRequests { (requests) in
+            BGTaskScheduler.shared.getPendingTaskRequests { requests in
                 Logger.log("Pending requests are \(requests)")
             }
         }

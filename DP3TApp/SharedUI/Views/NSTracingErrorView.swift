@@ -83,7 +83,7 @@ class NSTracingErrorView: UIView {
         if model?.action != nil {
             stackView.addArrangedView(actionButton)
         }
-        if let code = self.errorCode {
+        if let code = errorCode {
             stackView.addArrangedView(errorCodeLabel)
             errorCodeLabel.text = code
         }
@@ -112,11 +112,11 @@ class NSTracingErrorView: UIView {
                                            text: "tracing_turned_off_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
-        case .bluetoothPermissionError:
+        case .tracingPermissionError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                           title: "bluetooth_permission_error_title".ub_localized,
-                                           text: "bluetooth_permission_error_text".ub_localized,
-                                           buttonTitle: "onboarding_bluetooth_button".ub_localized,
+                                           title: "tracing_permission_error_title".ub_localized,
+                                           text: "tracing_permission_error_text".ub_localized,
+                                           buttonTitle: "onboarding_gaen_button_activate".ub_localized,
                                            action: {
                                                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
                                                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
@@ -127,11 +127,8 @@ class NSTracingErrorView: UIView {
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,
                                            text: "bluetooth_turned_off_text".ub_localized,
-                                           buttonTitle: "bluetooth_turn_on_button_title".ub_localized,
-                                           action: {
-                                               TracingManager.shared.endTracing()
-                                               TracingManager.shared.beginUpdatesAndTracing()
-            })
+                                           buttonTitle: nil,
+                                           action: nil)
         case .timeInconsistencyError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "time_inconsistency_title".ub_localized,

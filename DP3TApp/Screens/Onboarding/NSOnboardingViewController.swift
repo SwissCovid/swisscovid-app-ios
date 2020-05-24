@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import SnapKit
 import UIKit
 
@@ -17,7 +16,7 @@ class NSOnboardingViewController: NSViewController {
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
     private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
-    private let step4VC = NSOnboardingPermissionsViewController(type: .bluetooth)
+    private let step4VC = NSOnboardingPermissionsViewController(type: .gapple)
     private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
     private let step6VC = NSOnboardingPermissionsViewController(type: .push)
     private let step7VC = NSOnboardingFinishViewController()
@@ -30,8 +29,6 @@ class NSOnboardingViewController: NSViewController {
     private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
-    private var central: CBCentralManager?
-
     private var currentStep: Int = 0
 
     override func viewDidLoad() {
@@ -39,8 +36,10 @@ class NSOnboardingViewController: NSViewController {
 
         setupButtons()
 
-        step4VC.permissionButton.touchUpCallback = {
-            self.central = CBCentralManager(delegate: self, queue: .main)
+        step4VC.permissionButton.touchUpCallback = { [weak self] in
+            TracingManager.shared.requestTracingPermission { _ in
+                self?.animateToNextStep()
+            }
         }
 
         step6VC.permissionButton.touchUpCallback = {
@@ -80,6 +79,10 @@ class NSOnboardingViewController: NSViewController {
                 self.splashVC.view.alpha = 0
             }
         }
+    }
+
+    fileprivate func animateToNextStep() {
+        setOnboardingStep(currentStep + 1, animated: true)
     }
 
     fileprivate func setOnboardingStep(_ step: Int, animated: Bool) {
@@ -246,16 +249,6 @@ class NSOnboardingViewController: NSViewController {
             setOnboardingStep(currentStep - 1, animated: true)
         default:
             break
-        }
-    }
-}
-
-extension NSOnboardingViewController: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_: CBCentralManager) {
-        central = nil
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setOnboardingStep(self.currentStep + 1, animated: true)
         }
     }
 }

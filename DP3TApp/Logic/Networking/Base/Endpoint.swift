@@ -7,7 +7,6 @@
 import Foundation
 
 struct Endpoint {
-
     // MARK: - Implementation
 
     enum Method: String {

@@ -17,14 +17,19 @@ extension UIColor {
     public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
     public static var ns_purpleBackground = UIColor(ub_hexString: "#f3f0f5")!
 
+    public static var ns_darkBlueBackground = UIColor(ub_hexString: "#4a4969")!
+
     public static var ns_background = UIColor.white
     public static var ns_backgroundSecondary = UIColor(ub_hexString: "#f7f7f7")!
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!.withHighContrastColor(color: .black)
 
     // MARK: - UIAccessibility Contrast extension
+
     func withHighContrastColor(color: UIColor) -> UIColor {
-       return UIColor {_ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
+        return UIColor { _ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
     }
+
+    public static var ns_line = UIColor(ub_hexString: "#ecebeb")!
 
     // MARK: - Deprecated colors
 
@@ -33,6 +38,4 @@ extension UIColor {
 
     // text color
     public static var ns_text_secondary = UIColor(ub_hexString: "#e6e6e6")!
-    
-   
 }

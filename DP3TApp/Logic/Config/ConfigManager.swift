@@ -4,12 +4,8 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
+import DP3TSDK
 import UIKit
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
 
 /// Config request allows to disable old versions of the app if
 class ConfigManager: NSObject {
@@ -28,19 +24,13 @@ class ConfigManager: NSObject {
     static var currentConfig: ConfigResponseBody? {
         didSet {
             UIStateManager.shared.refresh()
-            if let sdkConfig = currentConfig?.sdkConfig {
-                ConfigManager.updateSDKParameters(config: sdkConfig)
-            }
-            if let config = currentConfig, config.forceTraceShutdown {
-                TracingManager.shared.endTracing()
+            if let config = currentConfig?.iOSGaenSdkConfig {
+                ConfigManager.updateSDKParameters(config: config)
             }
         }
     }
 
     static var allowTracing: Bool {
-        if let config = self.currentConfig {
-            return !config.forceTraceShutdown
-        }
         return true
     }
 
@@ -78,9 +68,6 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-
-
-
         Logger.log("Load Config", appState: true)
 
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request(), completionHandler: { data, response, error in
@@ -124,7 +111,6 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-
         // immediate alert if old config enforced update
         if let oldConfig = ConfigManager.currentConfig {
             presentAlertIfNeeded(config: oldConfig, window: window)
@@ -138,28 +124,46 @@ class ConfigManager: NSObject {
         }
     }
 
-    public static func updateSDKParameters(config: ConfigResponseBody.SDKConfig) {
+    public static func updateSDKParameters(config: ConfigResponseBody.GAENSDKConfig) {
         var parameters = DP3TTracing.parameters
 
-        if let numberOfWindowsForExposure = config.numberOfWindowsForExposure {
-            parameters.contactMatching.numberOfWindowsForExposure = numberOfWindowsForExposure
-        }
-        if let contactAttenuationThreshold = config.contactAttenuationThreshold {
-            parameters.contactMatching.contactAttenuationThreshold = contactAttenuationThreshold
-        }
+        parameters.contactMatching.factorHigh = config.factorHigh
+        parameters.contactMatching.factorLow = config.factorLow
+        parameters.contactMatching.lowerThreshold = config.lowerThreshold
+        parameters.contactMatching.higherThreshold = config.higherThreshold
+        parameters.contactMatching.triggerThreshold = config.triggerThreshold
 
         DP3TTracing.parameters = parameters
     }
 
+    private static var configAlert: UIAlertController?
+
     private func presentAlertIfNeeded(config: ConfigResponseBody, window: UIWindow?) {
         if config.forceUpdate {
-            let alert = UIAlertController(title: "force_update_title".ub_localized,
-                                          message: "force_update_text".ub_localized,
-                                          preferredStyle: .alert)
+            if Self.configAlert == nil {
+                let alert = UIAlertController(title: "force_update_title".ub_localized,
+                                              message: "force_update_text".ub_localized,
+                                              preferredStyle: .alert)
 
-            window?.rootViewController?.present(alert, animated: true, completion: nil)
+                window?.rootViewController?.topViewController.present(alert, animated: false, completion: nil)
+                Self.configAlert = alert
+            }
         } else {
             Logger.log("NO force update alert")
+            if Self.configAlert != nil {
+                Self.configAlert?.dismiss(animated: true, completion: nil)
+                Self.configAlert = nil
+            }
+        }
+    }
+}
+
+private extension UIViewController {
+    var topViewController: UIViewController {
+        if let p = presentedViewController {
+            return p.topViewController
+        } else {
+            return self
         }
     }
 }

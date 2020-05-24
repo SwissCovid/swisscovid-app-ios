@@ -6,11 +6,7 @@
 
 import Foundation
 
-#if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
-#endif
+import DP3TSDK
 
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
@@ -24,7 +20,8 @@ class DatabaseSyncer {
     }
 
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
-        guard !databaseIsSyncing else {
+        guard !databaseIsSyncing,
+            UserStorage.shared.hasCompletedOnboarding else {
             completionHandler?(.noData)
             return
         }
@@ -96,8 +93,6 @@ class DatabaseSyncer {
                 TracingManager.shared.updateStatus(completion: nil)
 
                 completionHandler?(.newData)
-
-
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)

@@ -14,7 +14,6 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
     private let imageView = UIImageView(image: UIImage(named: "ic-info-border"))
     private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
-    private let dateLabel = NSLabel(.textBold, textAlignment: .center)
 
     // MARK: - Init
 
@@ -24,17 +23,11 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
         titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
         textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
-        if let date = UserStorage.shared.positiveTestSendDate {
-            dateLabel.text = DateFormatter.ub_daysAgo(from: date, addExplicitDate: true)
-        } else {
-            dateLabel.text = ""
-        }
-
         backgroundColor = UIColor.ns_purple
         setup()
 
         isAccessibilityElement = true
-        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? ""). \(dateLabel.text ?? "")"
+        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")."
     }
 
     required init?(coder _: NSCoder) {
@@ -64,8 +57,6 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
         stackView.addArrangedSubview(v)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addSpacerView(NSPadding.small)
-        stackView.addArrangedSubview(dateLabel)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedSubview(textLabel)
     }

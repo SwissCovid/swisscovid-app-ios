@@ -4,7 +4,6 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import SnapKit
 import UIKit
 
@@ -108,8 +107,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
-
-        presentOnboardingIfNeeded()
     }
 
     private var finishTransition: (() -> Void)?
@@ -139,12 +136,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         #if ENABLE_TESTING
 
-        let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
-        stackScrollView.addArrangedView(previewWarning)
+            let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
+            stackScrollView.addArrangedView(previewWarning)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+            stackScrollView.addSpacerView(NSPadding.large)
 
-        let debugScreenContainer = UIView()
+            let debugScreenContainer = UIView()
 
             if Environment.current != Environment.prod {
                 debugScreenContainer.addSubview(debugScreenButton)
@@ -163,25 +160,25 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 stackScrollView.addSpacerView(NSPadding.large)
             }
 
-        // DEBUG version for testing
-        let uploadDBContainer = UIView()
-        uploadDBContainer.addSubview(uploadDBButton)
-        uploadDBButton.snp.makeConstraints { make in
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-            make.top.bottom.centerX.equalToSuperview()
-        }
+            // DEBUG version for testing
+            let uploadDBContainer = UIView()
+            uploadDBContainer.addSubview(uploadDBButton)
+            uploadDBButton.snp.makeConstraints { make in
+                make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                make.top.bottom.centerX.equalToSuperview()
+            }
 
-        uploadDBButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.uploadDatabaseForDebugPurposes()
-        }
+            uploadDBButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.uploadDatabaseForDebugPurposes()
+            }
 
-        stackScrollView.addArrangedView(uploadDBContainer)
+            stackScrollView.addArrangedView(uploadDBContainer)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+            stackScrollView.addSpacerView(NSPadding.large)
 
-        debugScreenContainer.alpha = 0
-        uploadDBContainer.alpha = 0
+            debugScreenContainer.alpha = 0
+            uploadDBContainer.alpha = 0
         #endif
         // End DEBUG version for testing
 
@@ -212,12 +209,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             #if ENABLE_TESTING
-            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
-                debugScreenContainer.alpha = 1
+                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                    debugScreenContainer.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
-                uploadDBContainer.alpha = 1
+                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                    uploadDBContainer.alpha = 1
             }, completion: nil)
             #endif
         }
@@ -240,14 +237,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     // MARK: - Details
 
-    private func presentOnboardingIfNeeded() {
-        if !UserStorage.shared.hasCompletedOnboarding {
-            let onboardingViewController = NSOnboardingViewController()
-            onboardingViewController.modalPresentationStyle = .fullScreen
-            present(onboardingViewController, animated: false)
-        }
-    }
-
     private func presentBegegnungenDetail() {
         navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
     }
@@ -257,9 +246,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     #if ENABLE_TESTING
-    private func presentDebugScreen() {
-        navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
-    }
+        private func presentDebugScreen() {
+            navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
+        }
     #endif
 
     private func presentWhatToDoPositiveTest() {

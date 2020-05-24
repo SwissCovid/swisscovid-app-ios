@@ -19,4 +19,3 @@ extension Endpoint {
         return Environment.current.codegenService.endpoint("onset", method: .post, headers: ["accept": "*/*", "Content-Type": "application/json"], body: auth)
     }
 }
-

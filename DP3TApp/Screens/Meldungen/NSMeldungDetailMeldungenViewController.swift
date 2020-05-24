@@ -39,8 +39,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         stackScrollView.hitTestDelegate = self
     }
 
-
-
     override var useFullScreenHeaderAnimation: Bool {
         return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
     }
@@ -59,7 +57,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         for m in meldungen {
             UserStorage.shared.registerSeenMessages(identifier: m.identifier)
         }
-        
+
         super.startHeaderAnimation()
     }
 
@@ -70,7 +68,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
         setupLayout()
     }
-
 
     // MARK: - Setup
 
@@ -121,7 +118,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Detail Views
 
     private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -136,14 +133,14 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
-        whiteBoxView.contentView.addSpacerView(20.0)
+
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
     }
 
     private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -160,14 +157,14 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
-        whiteBoxView.contentView.addSpacerView(20.0)
+
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
     }
 
     private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -184,10 +181,42 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addArrangedSubview(createExternalLinkButton())
-        whiteBoxView.contentView.addSpacerView(20.0)
+
+        addDeleteButton(whiteBoxView)
 
         return whiteBoxView
+    }
+
+    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+
+        let deleteButton = NSButton(title: "delete_reports_button".ub_localized, style: .borderlessUppercase(.ns_blue))
+
+        let container = UIView()
+        whiteBoxView.contentView.addArrangedView(container)
+
+        container.addSubview(deleteButton)
+
+        deleteButton.highlightCornerRadius = 0
+
+        deleteButton.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().inset(-2 * 12.0)
+        }
+
+        deleteButton.setContentHuggingPriority(.required, for: .vertical)
+
+        deleteButton.touchUpCallback = { [weak self] in
+            let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
+                TracingManager.shared.deleteMeldungen()
+            }))
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+
+            }))
+            self?.present(alert, animated: true, completion: nil)
+        }
     }
 
     private func createCallLabel() -> NSLabel {
@@ -214,18 +243,6 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         return ev
     }
 
-    private func createExternalLinkButton() -> NSExternalLinkButton {
-        let button = NSExternalLinkButton(color: .ns_blue)
-        button.title = "meldungen_explanation_link_title".ub_localized
-        button.touchUpCallback = {
-            if let url = URL(string: "meldungen_explanation_link_url".ub_localized), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        }
-
-        return button
-    }
-
     // MARK: - Logic
 
     private func call() {
@@ -241,7 +258,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
 extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
-        if overrideHitTestAnyway && useFullScreenHeaderAnimation {
+        if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true
         }
 

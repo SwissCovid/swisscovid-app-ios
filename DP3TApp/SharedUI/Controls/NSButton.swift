@@ -12,6 +12,7 @@ class NSButton: UBButton {
         case normal(UIColor)
         case uppercase(UIColor)
         case outlineUppercase(UIColor)
+        case borderlessUppercase(UIColor)
 
         var textColor: UIColor {
             switch self {
@@ -20,6 +21,8 @@ class NSButton: UBButton {
             case .uppercase:
                 return UIColor.white
             case let .outlineUppercase(c):
+                return c
+            case let .borderlessUppercase(c):
                 return c
             }
         }
@@ -31,6 +34,8 @@ class NSButton: UBButton {
             case let .uppercase(c):
                 return c
             case .outlineUppercase:
+                return .clear
+            case .borderlessUppercase:
                 return .clear
             }
         }
@@ -53,6 +58,8 @@ class NSButton: UBButton {
             case .uppercase:
                 return true
             case .outlineUppercase:
+                return true
+            case .borderlessUppercase:
                 return true
             default:
                 return false
@@ -141,7 +148,7 @@ extension NSButton {
             make.right.lessThanOrEqualToSuperview()
             make.left.greaterThanOrEqualToSuperview()
         }
-        
+
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         return view
     }

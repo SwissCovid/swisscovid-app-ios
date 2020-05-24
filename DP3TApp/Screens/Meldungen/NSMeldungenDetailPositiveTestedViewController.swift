@@ -33,16 +33,9 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
     // MARK: - Setup
 
     private func setupLayout() {
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
 
-        let externalLinkButton = NSExternalLinkButton(color: .ns_purple)
-        externalLinkButton.title = "meldungen_explanation_link_title".ub_localized
-        externalLinkButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.externalLinkPressed()
-        }
-
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: externalLinkButton, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple)
-
+        addDeleteButton(whiteBoxView)
 
         stackScrollView.addArrangedView(whiteBoxView)
 
@@ -57,9 +50,40 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    private func externalLinkPressed() {
-        if let url = URL(string: "meldungen_explanation_link_url".ub_localized) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    private func addDeleteButton(_ whiteBoxView: NSSimpleModuleBaseView) {
+        whiteBoxView.contentView.addSpacerView(NSPadding.large)
+
+        whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
+
+        let deleteButton = NSButton(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
+
+        let container = UIView()
+        whiteBoxView.contentView.addArrangedView(container)
+
+        container.addSubview(deleteButton)
+
+        deleteButton.highlightCornerRadius = 0
+
+        deleteButton.snp.makeConstraints { make in
+            make.height.equalTo(60)
+            make.centerX.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().inset(-2 * 12.0)
+        }
+
+        deleteButton.setContentHuggingPriority(.required, for: .vertical)
+
+        deleteButton.touchUpCallback = { [weak self] in
+
+            deleteButton.touchUpCallback = {
+                let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "delete_infection_button".ub_localized, style: .destructive, handler: { _ in
+                    TracingManager.shared.deletePositiveTest()
+                }))
+                alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+
+                }))
+                self?.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

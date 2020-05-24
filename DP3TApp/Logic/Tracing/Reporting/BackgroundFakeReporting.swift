@@ -8,24 +8,31 @@ import BackgroundTasks
 import Foundation
 import UIKit.UIApplication
 
-private class FakePublishOperation: Operation {
+class FakePublishOperation: Operation {
     override func main() {
-
         guard let startDate = FakePublishBackgroundTaskManager.shared.nextScheduledFakeRequestDate,
             Date() >= startDate else {
-                Logger.log("Too early for fake request")
+            Logger.log("Too early for fake request")
             return
         }
 
-        Logger.log("Start Fake Publish", appState: true)
-        ReportingManager.shared.report(isFakeRequest: true) { error in
-            if error != nil {
-                self.cancel()
-                Logger.log("Fake request failed")
-            } else {
-                Logger.log("Fake request success")
+        // add a delay so its not guessable from http traffic if a report was fake or not
+        let delay = Double.random(in: 20 ... 30)
+        let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
+            Logger.log("Start Fake Publish", appState: true)
+            ReportingManager.shared.report(isFakeRequest: true) { error in
+                if error != nil {
+                    self.cancel()
+                    Logger.log("Fake request failed")
+                } else {
+                    Logger.log("Fake request success")
+                }
+                group.leave()
             }
         }
+        group.wait()
     }
 }
 
@@ -39,7 +46,7 @@ class FakePublishBackgroundTaskManager {
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
     private(set) var nextScheduledFakeRequestDate: Date?
 
-    static func syncInterval() -> TimeInterval  {
+    static func syncInterval() -> TimeInterval {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
         let secondsInADay = Double(24 * 60 * 60)
@@ -89,7 +96,6 @@ class FakePublishBackgroundTaskManager {
     }
 
     func runForegroundTask() {
-
         scheduleBackgroundTask()
 
         let queue = OperationQueue()
@@ -102,14 +108,20 @@ class FakePublishBackgroundTaskManager {
         Date(timeIntervalSinceNow: FakePublishBackgroundTaskManager.syncInterval())
     }
 
-    private func scheduleBackgroundTask() {
+    @discardableResult
+    func rescheduleFakeRequest(force: Bool = false) -> Date {
+        var nextDate = nextScheduledFakeRequestDate ?? getNewScheduleDate()
 
-        var nextDate = self.nextScheduledFakeRequestDate ?? self.getNewScheduleDate()
-        if nextDate <= Date() {
-            nextDate = self.getNewScheduleDate()
+        if nextDate <= Date() || force {
+            nextDate = getNewScheduleDate()
         }
 
-        self.nextScheduledFakeRequestDate = nextDate
+        nextScheduledFakeRequestDate = nextDate
+        return nextDate
+    }
+
+    private func scheduleBackgroundTask() {
+        let nextDate = rescheduleFakeRequest()
 
         let syncTask = BGProcessingTaskRequest(identifier: FakePublishBackgroundTaskManager.taskIdentifier)
         syncTask.requiresExternalPower = false

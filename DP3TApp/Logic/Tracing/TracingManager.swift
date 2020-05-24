@@ -4,14 +4,14 @@
  * Copyright (c) 2020. All rights reserved.
  */
 
-import CoreBluetooth
 import Foundation
 import UIKit
 
+import DP3TSDK
+
 #if ENABLE_TESTING
-    import DP3TSDK_CALIBRATION
-#else
-    import DP3TSDK
+    import DP3TSDK_LOGGING_STORAGE
+    extension DP3TLoggingStorage: LoggingDelegate {}
 #endif
 
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
@@ -25,6 +25,10 @@ class TracingManager: NSObject {
     let uiStateManager = UIStateManager()
     let databaseSyncer = DatabaseSyncer()
 
+    #if ENABLE_TESTING
+        var loggingStorage: DP3TLoggingStorage?
+    #endif
+
     @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
         didSet {
@@ -37,40 +41,50 @@ class TracingManager: NSObject {
         }
     }
 
-    private var central: CBCentralManager?
-
     func initialize() {
         do {
             let bucketBaseUrl = Environment.current.configService.baseURL
             let reportBaseUrl = Environment.current.publishService.baseURL
             // JWT is not supported for now since the backend keeps rotating the private key
-            let descriptor = ApplicationDescriptor(appId: appId,
-                                                   bucketBaseUrl: bucketBaseUrl,
-                                                   reportBaseUrl: reportBaseUrl,
-                                                   jwtPublicKey: Environment.current.jwtPublicKey)
+
+            #if TEST_ENTITLEMENT
+                let descriptor = ApplicationDescriptor(appId: appId,
+                                                       bucketBaseUrl: bucketBaseUrl,
+                                                       reportBaseUrl: reportBaseUrl,
+                                                       jwtPublicKey: Environment.current.jwtPublicKey,
+                                                       mode: .test)
+            #else
+                let descriptor = ApplicationDescriptor(appId: appId,
+                                                       bucketBaseUrl: bucketBaseUrl,
+                                                       reportBaseUrl: reportBaseUrl,
+                                                       jwtPublicKey: Environment.current.jwtPublicKey)
+            #endif
 
             #if ENABLE_TESTING
+                // Set logging Storage
+                loggingStorage = try? .init()
+                #if DEBUG
+                    DP3TTracing.loggingDelegate = self
+                #else
+                    DP3TTracing.loggingDelegate = loggingStorage
+                #endif
+
                 switch Environment.current {
                 case .dev:
-                    // 5min Batch lenght on dev Enviroment
-                    DP3TTracing.parameters.networking.batchLength = 5 * 60
-                    var appVersion = "N/A"
-                    if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
-                        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
-                        appVersion = "\(version)(\(build))"
-                    }
-                    try DP3TTracing.initialize(with: .manual(descriptor),
+
+                    try DP3TTracing.initialize(with: descriptor,
                                                urlSession: URLSession.certificatePinned,
-                                               mode: .calibration(identifierPrefix: "", appVersion: appVersion))
-                case .abnahme:
-                    try DP3TTracing.initialize(with: .manual(descriptor),
-                                               urlSession: URLSession.certificatePinned)
-                case .prod:
-                    try DP3TTracing.initialize(with: .manual(descriptor),
-                                               urlSession: URLSession.certificatePinned)
+                                               backgroundHandler: self)
+                case .test, .abnahme, .prod:
+                    try DP3TTracing.initialize(with: descriptor,
+                                               urlSession: URLSession.certificatePinned,
+                                               backgroundHandler: self)
                 }
             #else
-                try DP3TTracing.initialize(with: .manual(descriptor))
+
+                try DP3TTracing.initialize(with: descriptor,
+                                           urlSession: URLSession.certificatePinned,
+                                           backgroundHandler: self)
             #endif
         } catch {
             UIStateManager.shared.tracingStartError = error
@@ -79,6 +93,10 @@ class TracingManager: NSObject {
         updateStatus { _ in
             self.uiStateManager.refresh()
         }
+    }
+
+    func requestTracingPermission(completion: @escaping (Error?) -> Void) {
+        try? DP3TTracing.startTracing(completionHandler: completion)
     }
 
     func beginUpdatesAndTracing() {
@@ -95,10 +113,6 @@ class TracingManager: NSObject {
             } catch {
                 UIStateManager.shared.tracingStartError = error
             }
-
-            if central == nil {
-                central = CBCentralManager(delegate: self, queue: nil)
-            }
         }
 
         updateStatus(completion: nil)
@@ -109,10 +123,42 @@ class TracingManager: NSObject {
     }
 
     func resetSDK() {
+        // completely reset SDK
         try? DP3TTracing.reset()
+
+        // reset debugi fake data to test UI reset
         #if ENABLE_TESTING
-        UIStateManager.shared.overwrittenInfectionState = nil
+            UIStateManager.shared.overwrittenInfectionState = nil
         #endif
+    }
+
+    func deletePositiveTest() {
+        // reset infection status
+        try? DP3TTracing.resetInfectionStatus()
+
+        // reset debug fake data to test UI reset
+        #if ENABLE_TESTING
+            UIStateManager.shared.overwrittenInfectionState = nil
+        #endif
+
+        // during infection, tracing is diabled
+        // after infection, it works again, but user must manually
+        // enable if desired
+        isActivated = false
+
+        UIStateManager.shared.refresh()
+    }
+
+    func deleteMeldungen() {
+        // delete all visible messages
+        try? DP3TTracing.resetExposureDays()
+
+        // reset debug fake data to test UI reset
+        #if ENABLE_TESTING
+            UIStateManager.shared.overwrittenInfectionState = nil
+        #endif
+
+        UIStateManager.shared.refresh()
     }
 
     func userHasCompletedOnboarding() {
@@ -162,14 +208,6 @@ class TracingManager: NSObject {
     }
 }
 
-extension TracingManager: CBCentralManagerDelegate {
-    func centralManagerDidUpdateState(_ central: CBCentralManager) {
-        if central.state == .poweredOn, isActivated {
-            beginUpdatesAndTracing()
-        }
-    }
-}
-
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
@@ -180,15 +218,42 @@ extension TracingManager: DP3TTracingDelegate {
             }
         }
     }
+}
 
-    #if ENABLE_TESTING
-    func didAddLog(logEntry: LogEntry) {
-        switch logEntry.type {
-        case .backgroundTask:
-            Logger.log(logEntry.message)
-        default:
-            break
+extension TracingManager: DP3TBackgroundHandler {
+    func performBackgroundTasks(completionHandler: (Bool) -> Void) {
+        let queue = OperationQueue()
+
+        let group = DispatchGroup()
+
+        let configOperation = ConfigLoadOperation()
+        group.enter()
+        configOperation.completionBlock = {
+            group.leave()
+        }
+
+        let fakePublishOperation = FakePublishOperation()
+        group.enter()
+        fakePublishOperation.completionBlock = {
+            group.leave()
+        }
+
+        queue.addOperation(ConfigLoadOperation())
+        queue.addOperation(FakePublishOperation())
+
+        group.wait()
+
+        completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+    }
+}
+
+#if DEBUG
+    extension TracingManager: LoggingDelegate {
+        func log(_ string: String, type: OSLogType) {
+            print(string)
+            #if ENABLE_TESTING
+                loggingStorage?.log(string, type: type)
+            #endif
         }
     }
-    #endif
-}
+#endif
