@@ -16,9 +16,7 @@ import DP3TSDK
 
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
-    /// Identifier known to
-    /// https://github.com/DP-3T/dp3t-discovery/blob/master/discovery.json
-    let appId = "org.dpppt.demo" // "ch.ubique.nextstep"
+    let appId = "ch.admin.bag.dp3t"
 
     static let shared = TracingManager()
 
