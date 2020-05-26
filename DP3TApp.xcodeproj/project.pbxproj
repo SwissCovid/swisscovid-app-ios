@@ -200,10 +200,10 @@
 		2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF672448CAB900C197D6 /* UIStateManager.swift */; };
 		24F4D967246C33610011DC90 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
-		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */; };
-		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */; };
-		48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */; };
-		48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */; };
+		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
+		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
+		48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */; };
+		48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */; };
 		6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
 		6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
 		6E33085F24502BBD00913B0E /* NSWhatToDoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33085E24502BBD00913B0E /* NSWhatToDoButton.swift */; };
@@ -373,8 +373,8 @@
 		2485F47F2459631A00C3D8C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* UIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateManager.swift; sourceTree = "<group>"; };
 		24D5EF692448CAE800C197D6 /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
-		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.cer"; sourceTree = "<group>"; };
-		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.cer"; sourceTree = "<group>"; };
+		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.der"; sourceTree = "<group>"; };
+		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
 		6E1771552440B5140008D73D /* NSCodeInputControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputControl.swift; sourceTree = "<group>"; };
 		6E33085E24502BBD00913B0E /* NSWhatToDoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoButton.swift; sourceTree = "<group>"; };
@@ -1109,11 +1109,11 @@
 		F80E735C245ADEBC00C934B8 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
-				48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */,
+				48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */,
 				F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */,
 				F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */,
 				F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */,
-				48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */,
+				48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */,
 				F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */,
 				F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */,
 				F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */,
@@ -1253,13 +1253,13 @@
 				242D2258245C4BD8005DAEA8 /* codegen-service-d.bag.admin.ch.der in Resources */,
 				242D2259245C4BD8005DAEA8 /* codegen-service.bag.admin.ch.der in Resources */,
 				242D225A245C4BD8005DAEA8 /* www.pt1-a.bfs.admin.ch.der in Resources */,
-				48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer in Resources */,
+				48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
 				242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				242D225D245C4BD8005DAEA8 /* QuoVadis.der in Resources */,
 				242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */,
 				242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */,
-				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */,
+				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */,
 				242D2261245C4BD8005DAEA8 /* Assets.xcassets in Resources */,
 				242D2262245C4BD8005DAEA8 /* InfoPlist.strings in Resources */,
@@ -1282,13 +1282,13 @@
 				F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */,
 				F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */,
 				F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */,
-				48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer in Resources */,
+				48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
 				F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
-				48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer in Resources */,
+				48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
 				DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */,
