@@ -20,7 +20,7 @@ class ReportingManager {
     // MARK: - Variables
 
     enum ReportingProblem {
-        case failure(error: Error)
+        case failure(error: CodedError)
         case invalidCode
     }
 

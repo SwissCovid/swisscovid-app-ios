@@ -109,7 +109,7 @@ class UIStateLogic {
 
         if manager.immediatelyShowSyncError {
             newState.homescreen.meldungen.syncProblemOtherError = true
-            if let codedError = UIStateManager.shared.syncError as? CodedError, let errorCode = codedError.errorCodeString {
+            if let codedError = UIStateManager.shared.syncError, let errorCode = codedError.errorCodeString {
                 newState.homescreen.meldungen.errorCode = codedError.errorCodeString
 
                 #if ENABLE_TESTING
@@ -126,7 +126,7 @@ class UIStateLogic {
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
-            if let codedError = UIStateManager.shared.syncError as? CodedError {
+            if let codedError = UIStateManager.shared.syncError {
                 #if ENABLE_TESTING
                     newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else

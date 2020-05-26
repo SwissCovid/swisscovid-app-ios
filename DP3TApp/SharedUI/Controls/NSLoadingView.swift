@@ -39,7 +39,7 @@ class NSLoadingView: UIView {
         loadingIndicatorView.startAnimating()
     }
 
-    public func stopLoading(error: Error? = nil, reloadHandler: (() -> Void)? = nil) {
+    public func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
         loadingIndicatorView.stopAnimating()
 
         if let err = error {
@@ -48,15 +48,12 @@ class NSLoadingView: UIView {
             } else {
                 errorTextLabel.text = err.localizedDescription
             }
-            if let codedError = err as? CodedError {
-                #if ENABLE_TESTING
-                    errorCodeLabel.text = "\(codedError.errorCodeString ?? "-"): \(codedError)"
-                #else
-                    errorCodeLabel.text = codedError.errorCodeString
-                #endif
-            } else {
-                errorCodeLabel.text = CodeErrorUnexpected
-            }
+            #if ENABLE_TESTING
+                errorCodeLabel.text = "\(err.errorCodeString ?? "-"): \(err)"
+            #else
+                errorCodeLabel.text = error.errorCodeString
+            #endif
+
             reloadButton.touchUpCallback = reloadHandler
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0

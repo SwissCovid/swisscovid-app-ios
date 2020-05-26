@@ -20,7 +20,7 @@ class NSViewController: UIViewController {
         loadingView.startLoading()
     }
 
-    public func stopLoading(error: Error? = nil, reloadHandler: (() -> Void)? = nil) {
+    public func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
         loadingView.stopLoading(error: error, reloadHandler: reloadHandler)
     }
 

@@ -107,7 +107,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    var syncError: Error? {
+    var syncError: CodedError? {
         didSet {
             if (syncError == nil) != (oldValue == nil) {
                 refresh()
@@ -121,7 +121,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    var tracingStartError: Error? {
+    var tracingStartError: CodedError? {
         didSet {
             if (tracingStartError == nil) != (oldValue == nil) {
                 refresh()
@@ -129,7 +129,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    var updateError: Error? {
+    var updateError: CodedError? {
         didSet {
             if (updateError == nil) != (oldValue == nil) {
                 refresh()
@@ -140,7 +140,7 @@ class UIStateManager: NSObject {
     @UBUserDefault(key: "hasTimeInconsistencyError", defaultValue: false)
     var hasTimeInconsistencyError: Bool
 
-    var anyError: Error? {
+    var anyError: CodedError? {
         tracingStartError ?? updateError
     }
 
