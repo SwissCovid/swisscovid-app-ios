@@ -37,7 +37,7 @@
 		242D21E3245C4BD8005DAEA8 /* OnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* OnboardingStepViewController.swift */; };
 		242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */; };
 		242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D21242CE2100017C4F9 /* Button.swift */; };
-		242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* StateLogic.swift */; };
+		242D21E6245C4BD8005DAEA8 /* InterfaceStateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* InterfaceStateLogic.swift */; };
 		242D21E7245C4BD8005DAEA8 /* WhatToDoSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086724504BF400913B0E /* WhatToDoSymptomView.swift */; };
 		242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B592431B5A9003BB26C /* TracingLocalPush.swift */; };
 		242D21E9245C4BD8005DAEA8 /* UIColor+HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */; };
@@ -144,7 +144,7 @@
 		242D224F245C4BD8005DAEA8 /* DebugScreenMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65F82449CC9F00980A4E /* DebugScreenMockView.swift */; };
 		242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
-		242D2252245C4BD8005DAEA8 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* StateModel.swift */; };
+		242D2252245C4BD8005DAEA8 /* InterfaceStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* InterfaceStateModel.swift */; };
 		242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 242D21D3245C4BD8005DAEA8 /* SnapKit */; };
 		242D2257245C4BD8005DAEA8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
 		242D2258245C4BD8005DAEA8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
@@ -190,9 +190,9 @@
 		24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
 		24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B572431B5A9003BB26C /* TracingManager.swift */; };
 		24780B5E2431B5A9003BB26C /* TracingLocalPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B592431B5A9003BB26C /* TracingLocalPush.swift */; };
-		2485F4712455C5AE00C3D8C3 /* StateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* StateLogic.swift */; };
+		2485F4712455C5AE00C3D8C3 /* InterfaceStateLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4702455C5AE00C3D8C3 /* InterfaceStateLogic.swift */; };
 		2485F4732455D00800C3D8C3 /* Errors+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4722455D00800C3D8C3 /* Errors+Localized.swift */; };
-		2485F47624560EDC00C3D8C3 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* StateModel.swift */; };
+		2485F47624560EDC00C3D8C3 /* InterfaceStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* InterfaceStateModel.swift */; };
 		2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4772456185000C3D8C3 /* DebugLog.swift */; };
 		2485F47A24585B5200C3D8C3 /* DebugAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47924585B5200C3D8C3 /* DebugAlert.swift */; };
 		2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */; };
@@ -364,7 +364,7 @@
 		24780B562431B5A9003BB26C /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		24780B572431B5A9003BB26C /* TracingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingManager.swift; sourceTree = "<group>"; };
 		24780B592431B5A9003BB26C /* TracingLocalPush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPush.swift; sourceTree = "<group>"; };
-		2485F4702455C5AE00C3D8C3 /* StateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateLogic.swift; sourceTree = "<group>"; };
+		2485F4702455C5AE00C3D8C3 /* InterfaceStateLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStateLogic.swift; sourceTree = "<group>"; };
 		2485F4722455D00800C3D8C3 /* Errors+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Errors+Localized.swift"; sourceTree = "<group>"; };
 		2485F4772456185000C3D8C3 /* DebugLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugLog.swift; sourceTree = "<group>"; };
 		2485F47924585B5200C3D8C3 /* DebugAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugAlert.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		2485F47D2458AC9000C3D8C3 /* BackgroundFakeReporting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundFakeReporting.swift; sourceTree = "<group>"; };
 		2485F47F2459631A00C3D8C3 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* InterfaceStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStateManager.swift; sourceTree = "<group>"; };
-		24D5EF692448CAE800C197D6 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		24D5EF692448CAE800C197D6 /* InterfaceStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStateModel.swift; sourceTree = "<group>"; };
 		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.cer"; sourceTree = "<group>"; };
 		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.cer"; sourceTree = "<group>"; };
 		6E1771532440B09A0008D73D /* CodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewController.swift; sourceTree = "<group>"; };
@@ -820,9 +820,9 @@
 		2485F4752455E30800C3D8C3 /* UIState */ = {
 			isa = PBXGroup;
 			children = (
-				2485F4702455C5AE00C3D8C3 /* StateLogic.swift */,
+				2485F4702455C5AE00C3D8C3 /* InterfaceStateLogic.swift */,
 				24D5EF672448CAB900C197D6 /* InterfaceStateManager.swift */,
-				24D5EF692448CAE800C197D6 /* StateModel.swift */,
+				24D5EF692448CAE800C197D6 /* InterfaceStateModel.swift */,
 				2485F4722455D00800C3D8C3 /* Errors+Localized.swift */,
 			);
 			path = UIState;
@@ -1456,7 +1456,7 @@
 				242D21E3245C4BD8005DAEA8 /* OnboardingStepViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* Button.swift in Sources */,
-				242D21E6245C4BD8005DAEA8 /* StateLogic.swift in Sources */,
+				242D21E6245C4BD8005DAEA8 /* InterfaceStateLogic.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* WhatToDoSymptomView.swift in Sources */,
 				242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */,
 				242D21E9245C4BD8005DAEA8 /* UIColor+HEX.swift in Sources */,
@@ -1568,7 +1568,7 @@
 				242D224F245C4BD8005DAEA8 /* DebugScreenMockView.swift in Sources */,
 				242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */,
 				242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */,
-				242D2252245C4BD8005DAEA8 /* StateModel.swift in Sources */,
+				242D2252245C4BD8005DAEA8 /* InterfaceStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1588,7 +1588,7 @@
 				DC56B8BB242EACF00077B99C /* OnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
 				6E7C0D22242CE2100017C4F9 /* Button.swift in Sources */,
-				2485F4712455C5AE00C3D8C3 /* StateLogic.swift in Sources */,
+				2485F4712455C5AE00C3D8C3 /* InterfaceStateLogic.swift in Sources */,
 				6E33086824504BF400913B0E /* WhatToDoSymptomView.swift in Sources */,
 				24780B5E2431B5A9003BB26C /* TracingLocalPush.swift in Sources */,
 				DC702AFF243F6ED90066C773 /* UIColor+HEX.swift in Sources */,
@@ -1700,7 +1700,7 @@
 				6E3F65F92449CC9F00980A4E /* DebugScreenMockView.swift in Sources */,
 				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
-				2485F47624560EDC00C3D8C3 /* StateModel.swift in Sources */,
+				2485F47624560EDC00C3D8C3 /* InterfaceStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

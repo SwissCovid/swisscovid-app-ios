@@ -96,7 +96,7 @@ class TracingErrorView: UIView {
 
     // MARK: - Factory
 
-    static func tracingErrorView(for state: StateModel.TracingState) -> TracingErrorView? {
+    static func tracingErrorView(for state: InterfaceStateModel.TracingState) -> TracingErrorView? {
         if let model = self.model(for: state) {
             return TracingErrorView(model: model)
         }
@@ -104,7 +104,7 @@ class TracingErrorView: UIView {
         return nil
     }
 
-    static func model(for state: StateModel.TracingState) -> TracingErrorViewModel? {
+    static func model(for state: InterfaceStateModel.TracingState) -> TracingErrorViewModel? {
         switch state {
         case .tracingDisabled:
             return TracingErrorViewModel(icon: UIImage(named: "ic-error")!,

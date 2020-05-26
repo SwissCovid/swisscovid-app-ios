@@ -29,7 +29,7 @@ class InterfaceStateManager: NSObject {
 
     // MARK: - UI State Update
 
-    private(set) var uiState: StateModel! {
+    private(set) var uiState: InterfaceStateModel! {
         didSet {
             var stateHasChanged = uiState != oldValue
 
@@ -65,7 +65,7 @@ class InterfaceStateManager: NSObject {
         updatePush()
 
         // build new state, sending update to observers if changed
-        uiState = StateLogic(manager: self).buildState()
+        uiState = InterfaceStateLogic(manager: self).buildState()
     }
 
     // MARK: - Block Update
@@ -83,12 +83,12 @@ class InterfaceStateManager: NSObject {
 
     struct Observer {
         weak var object: AnyObject?
-        var block: (StateModel) -> Void
+        var block: (InterfaceStateModel) -> Void
     }
 
     private var observers: [Observer] = []
 
-    func addObserver(_ object: AnyObject, block: @escaping (StateModel) -> Void) {
+    func addObserver(_ object: AnyObject, block: @escaping (InterfaceStateModel) -> Void) {
         observers.append(Observer(object: object, block: block))
         block(uiState)
     }
@@ -173,7 +173,7 @@ class InterfaceStateManager: NSObject {
     }
 
     #if ENABLE_TESTING
-    var overwrittenInfectionState: StateModel.Debug.DebugInfectionStatus? {
+    var overwrittenInfectionState: InterfaceStateModel.Debug.DebugInfectionStatus? {
         didSet { refresh() }
     }
     #endif

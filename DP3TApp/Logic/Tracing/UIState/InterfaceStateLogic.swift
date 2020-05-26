@@ -9,17 +9,17 @@ import Foundation
 import DP3TSDK
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
-class StateLogic {
+class InterfaceStateLogic {
     let manager: InterfaceStateManager
 
     init(manager: InterfaceStateManager) {
         self.manager = manager
     }
 
-    func buildState() -> StateModel {
+    func buildState() -> InterfaceStateModel {
         // Default state = active tracing, no errors or warnings
-        var newState = StateModel()
-        var tracing: StateModel.TracingState = .tracingActive
+        var newState = InterfaceStateModel()
+        var tracing: InterfaceStateModel.TracingState = .tracingActive
 
         // Check errors
         setErrorStates(&newState, tracing: &tracing)
@@ -69,7 +69,7 @@ class StateLogic {
         return newState
     }
 
-    private func setErrorStates(_: inout StateModel, tracing: inout StateModel.TracingState) {
+    private func setErrorStates(_: inout InterfaceStateModel, tracing: inout InterfaceStateModel.TracingState) {
         switch manager.trackingState {
         case let .inactive(error):
             switch error {
@@ -97,7 +97,7 @@ class StateLogic {
         }
     }
 
-    private func setHomescreenState(_ newState: inout StateModel, tracing: StateModel.TracingState) {
+    private func setHomescreenState(_ newState: inout InterfaceStateModel, tracing: InterfaceStateModel.TracingState) {
         newState.homescreen.header = tracing
         newState.homescreen.begegnungen = tracing
 
@@ -124,7 +124,7 @@ class StateLogic {
         }
     }
 
-    private func setInfoBoxState(_ newState: inout StateModel) {
+    private func setInfoBoxState(_ newState: inout InterfaceStateModel) {
         if let localizedInfoBox = ConfigManager.currentConfig?.infoBox {
             let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
             switch Language.current {
@@ -137,7 +137,7 @@ class StateLogic {
             case .france:
                 infoBox = localizedInfoBox.frInfoBox
             }
-            newState.homescreen.infoBox = StateModel.Homescreen.InfoBox(title: infoBox.title,
+            newState.homescreen.infoBox = InterfaceStateModel.Homescreen.InfoBox(title: infoBox.title,
                                                                                       text: infoBox.msg,
                                                                                       link: infoBox.urlTitle,
                                                                                       url: infoBox.url)
@@ -146,24 +146,24 @@ class StateLogic {
 
     // MARK: - Set global state to infected or exposed
 
-    private func setInfectedState(_ newState: inout StateModel) {
+    private func setInfectedState(_ newState: inout InterfaceStateModel) {
         newState.homescreen.meldungen.meldung = .infected
         newState.meldungenDetail.meldung = .infected
         newState.homescreen.header = .tracingEnded
         newState.homescreen.begegnungen = .tracingEnded
     }
 
-    private func setExposedState(_ newState: inout StateModel, days: [ExposureDay]) {
+    private func setExposedState(_ newState: inout InterfaceStateModel, days: [ExposureDay]) {
         newState.homescreen.meldungen.meldung = .exposed
         newState.meldungenDetail.meldung = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> StateModel.MeldungenDetail.MeldungModel in StateModel.MeldungenDetail.MeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
+        newState.meldungenDetail.meldungen = days.map { (mc) -> InterfaceStateModel.MeldungenDetail.MeldungModel in InterfaceStateModel.MeldungenDetail.MeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
     }
 
-    private func setLastMeldungState(_ newState: inout StateModel) {
+    private func setLastMeldungState(_ newState: inout InterfaceStateModel) {
         if let meldung = newState.meldungenDetail.meldungen.last {
             newState.shouldStartAtMeldungenDetail = UserStorage.shared.lastPhoneCall(for: meldung.identifier) == nil
             newState.homescreen.meldungen.lastMeldung = meldung.timestamp
@@ -186,7 +186,7 @@ class StateLogic {
 
         // MARK: - DEBUG Helpers
 
-        private func setDebugOverwrite(_ infectionStatus: inout InfectionStatus, _ newState: inout StateModel) {
+        private func setDebugOverwrite(_ infectionStatus: inout InfectionStatus, _ newState: inout InterfaceStateModel) {
             if let os = manager.overwrittenInfectionState {
                 switch os {
                 case .infected:
@@ -206,11 +206,11 @@ class StateLogic {
     static let randDate1 = Date(timeIntervalSinceNow: -10000)
     static let randDate2 = Date(timeIntervalSinceNow: -100000)
 
-        private func setDebugMeldungen(_ newState: inout StateModel) {
+        private func setDebugMeldungen(_ newState: inout InterfaceStateModel) {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [StateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), StateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
+                newState.meldungenDetail.meldungen = [InterfaceStateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), InterfaceStateModel.MeldungenDetail.MeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
                 newState.shouldStartAtMeldungenDetail = true
@@ -220,7 +220,7 @@ class StateLogic {
             }
         }
 
-        private func setDebugDisplayValues(_ newState: inout StateModel, tracingState: TracingState) {
+        private func setDebugDisplayValues(_ newState: inout InterfaceStateModel, tracingState: TracingState) {
             newState.debug.lastSync = tracingState.lastSync
 
             // add real tracing state of sdk and overwritten state
@@ -234,7 +234,7 @@ class StateLogic {
             }
         }
 
-    private func setDebugLog(_ newState: inout StateModel) {
+    private func setDebugLog(_ newState: inout InterfaceStateModel) {
         let logs = Logger.lastLogs
         let df = DateFormatter()
         df.dateFormat = "dd.MM, HH:mm"

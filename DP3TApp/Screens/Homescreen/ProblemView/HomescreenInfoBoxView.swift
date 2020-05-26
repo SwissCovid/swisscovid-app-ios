@@ -9,7 +9,7 @@ import UIKit
 class HomescreenInfoBoxView: UIView {
     // MARK: - API
 
-    var uiState: StateModel.Homescreen.InfoBox? {
+    var uiState: InterfaceStateModel.Homescreen.InfoBox? {
         didSet {
             if uiState != oldValue {
                 updateState(animated: true)

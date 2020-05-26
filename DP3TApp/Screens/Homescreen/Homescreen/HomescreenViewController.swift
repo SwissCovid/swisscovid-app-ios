@@ -20,7 +20,7 @@ class HomescreenViewController: TitleViewScrollViewController {
 
     private let debugScreenButton = Button(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
-    private var lastState: StateModel = .init()
+    private var lastState: InterfaceStateModel = .init()
 
     private let appTitleView = AppTitleView()
 
@@ -221,7 +221,7 @@ class HomescreenViewController: TitleViewScrollViewController {
         }
     }
 
-    func updateState(_ state: StateModel) {
+    func updateState(_ state: InterfaceStateModel) {
         appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.begegnungen
         meldungView.uiState = state.homescreen.meldungen

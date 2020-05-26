@@ -10,7 +10,7 @@ import UIKit
 class BluetoothSettingsControl: UIView {
     // MARK: - Views
 
-    var state: StateModel.BegegnungenDetail
+    var state: InterfaceStateModel.BegegnungenDetail
 
     public weak var viewToBeLayouted: UIView?
 
@@ -28,7 +28,7 @@ class BluetoothSettingsControl: UIView {
 
     // MARK: - Init
 
-    init(initialState: StateModel.BegegnungenDetail) {
+    init(initialState: InterfaceStateModel.BegegnungenDetail) {
         state = initialState
 
         super.init(frame: .zero)
@@ -120,7 +120,7 @@ class BluetoothSettingsControl: UIView {
         updateAccessibility()
     }
 
-    private func updateState(_ state: StateModel) {
+    private func updateState(_ state: InterfaceStateModel) {
         self.state = state.begegnungenDetail
 
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)

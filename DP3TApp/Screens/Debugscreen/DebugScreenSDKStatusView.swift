@@ -97,7 +97,7 @@ class DebugScreenSDKStatusView: SimpleModuleBaseView {
         abort()
     }
 
-    private func update(_ state: StateModel) {
+    private func update(_ state: InterfaceStateModel) {
         switch state.homescreen.begegnungen {
         case .tracingActive:
             tracingLabel.text = "tracing_active_title".ub_localized

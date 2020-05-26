@@ -8,7 +8,7 @@ import Foundation
 
 /// Global state model for all screens that are connected to tracing state and results
 /// We use a single state model to ensure that all elements have a consistent state
-struct StateModel: Equatable {
+struct InterfaceStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
     var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
     var shouldStartAtMeldungenDetail = false

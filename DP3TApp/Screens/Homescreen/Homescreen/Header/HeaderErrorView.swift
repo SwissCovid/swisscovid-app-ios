@@ -9,11 +9,11 @@ import UIKit
 class HeaderErrorView: UIView {
     private let imageView = UIImageView()
 
-    var state: StateModel.TracingState {
+    var state: InterfaceStateModel.TracingState {
         didSet { update() }
     }
 
-    init(initialState: StateModel.TracingState) {
+    init(initialState: InterfaceStateModel.TracingState) {
         state = initialState
 
         super.init(frame: .zero)
