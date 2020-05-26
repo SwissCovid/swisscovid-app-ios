@@ -54,9 +54,12 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "IUAMAI"
         case let .exposureNotificationError(error: error):
             let nsError = error as NSError
-            return "IEN\(nsError.code)"
+            return "IEN\(nsError.code)" // Should match code below
         }
     }
+
+    /// We know that Exposure Notification Error with Code 13 is not recoverable
+    static let nonRecoverableSyncErrorCode = "IEN13"
 }
 
 extension DP3TNetworkingError: LocalizedError, CodedError {

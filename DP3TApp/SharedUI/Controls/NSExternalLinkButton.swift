@@ -40,7 +40,7 @@ class NSExternalLinkButton: UBButton {
 
     // MARK: - Fix content size
 
-    public override var intrinsicContentSize: CGSize {
+    override public var intrinsicContentSize: CGSize {
         var size = titleLabel?.intrinsicContentSize ?? super.intrinsicContentSize
         size.width = size.width + titleEdgeInsets.left + titleEdgeInsets.right + 30
         size.height = size.height + titleEdgeInsets.top + titleEdgeInsets.bottom + 10

@@ -64,7 +64,7 @@ class NSMeldungView: NSModuleBaseView {
             if uiState.pushProblem {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
-                if uiState.errorCode?.contains("IEN13") ?? false {
+                if uiState.canRetrySyncError {
                     views.append(unexpectedErrorView)
                 } else {
                     views.append(unexpectedErrorWithRetryView)

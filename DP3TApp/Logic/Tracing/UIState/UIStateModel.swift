@@ -42,6 +42,7 @@ struct UIStateModel: Equatable {
             var pushProblem: Bool = false
             var syncProblemNetworkingError: Bool = false
             var syncProblemOtherError: Bool = false
+            var canRetrySyncError: Bool = true
             var backgroundUpdateProblem: Bool = false
             var errorCode: String?
         }
