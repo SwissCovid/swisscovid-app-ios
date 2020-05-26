@@ -22,7 +22,7 @@ class BegegnungenDetailViewController: TitleViewScrollViewController {
         title = "handshakes_title_homescreen".ub_localized
         titleView = appTitleView
 
-        StateManager.shared.addObserver(self, block: { [weak self] state in
+        InterfaceStateManager.shared.addObserver(self, block: { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })

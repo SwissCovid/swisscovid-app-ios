@@ -26,7 +26,7 @@ class MeldungenDetailViewController: ViewController {
         super.viewDidLoad()
         view.backgroundColor = .ns_backgroundSecondary
 
-        StateManager.shared.addObserver(self) { [weak self] state in
+        InterfaceStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.setup(state.meldungenDetail)
         }

@@ -9,8 +9,8 @@ import UIKit
 
 import DP3TSDK
 
-class StateManager: NSObject {
-    static var shared: StateManager {
+class InterfaceStateManager: NSObject {
+    static var shared: InterfaceStateManager {
         TracingManager.shared.uiStateManager
     }
 

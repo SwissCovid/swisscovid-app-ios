@@ -257,7 +257,7 @@ class MeldungDetailMeldungenViewController: TitleViewScrollViewController {
         PhoneCallHelper.call(phoneNumber)
 
         UserStorage.shared.registerPhoneCall(identifier: last.identifier)
-        StateManager.shared.refresh()
+        InterfaceStateManager.shared.refresh()
     }
 }
 

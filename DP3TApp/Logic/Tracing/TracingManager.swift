@@ -14,7 +14,7 @@ import  DP3TSDK_LOGGING_STORAGE
 extension DP3TLoggingStorage: LoggingDelegate {}
 #endif
 
-/// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
+/// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via StateManager
 class TracingManager: NSObject {
     /// Identifier known to
     /// https://github.com/DP-3T/dp3t-discovery/blob/master/discovery.json
@@ -22,7 +22,7 @@ class TracingManager: NSObject {
 
     static let shared = TracingManager()
 
-    let uiStateManager = StateManager()
+    let uiStateManager = InterfaceStateManager()
     let databaseSyncer = DatabaseSyncer()
 
     #if ENABLE_TESTING
@@ -37,7 +37,7 @@ class TracingManager: NSObject {
             } else {
                 endTracing()
             }
-            StateManager.shared.changedTracingActivated()
+            InterfaceStateManager.shared.changedTracingActivated()
         }
     }
 
@@ -87,7 +87,7 @@ class TracingManager: NSObject {
                                        backgroundHandler: self)
             #endif
         } catch {
-            StateManager.shared.tracingStartError = error
+            InterfaceStateManager.shared.tracingStartError = error
         }
 
         updateStatus { _ in
@@ -106,12 +106,12 @@ class TracingManager: NSObject {
         if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing()
-                StateManager.shared.tracingStartError = nil
+                InterfaceStateManager.shared.tracingStartError = nil
             } catch DP3TTracingError.userAlreadyMarkedAsInfected {
                 // Tracing should not start if the user is marked as infected
-                StateManager.shared.tracingStartError = nil
+                InterfaceStateManager.shared.tracingStartError = nil
             } catch {
-                StateManager.shared.tracingStartError = error
+                InterfaceStateManager.shared.tracingStartError = error
             }
 
 
@@ -131,7 +131,7 @@ class TracingManager: NSObject {
 
         // reset debugi fake data to test UI reset
         #if ENABLE_TESTING
-        StateManager.shared.overwrittenInfectionState = nil
+        InterfaceStateManager.shared.overwrittenInfectionState = nil
         #endif
     }
 
@@ -142,7 +142,7 @@ class TracingManager: NSObject {
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        StateManager.shared.overwrittenInfectionState = nil
+        InterfaceStateManager.shared.overwrittenInfectionState = nil
         #endif
 
         // during infection, tracing is diabled
@@ -150,7 +150,7 @@ class TracingManager: NSObject {
         // enable if desired
         isActivated = false
 
-        StateManager.shared.refresh()
+        InterfaceStateManager.shared.refresh()
     }
 
     func deleteMeldungen() {
@@ -160,10 +160,10 @@ class TracingManager: NSObject {
 
         // reset debug fake data to test UI reset
         #if ENABLE_TESTING
-        StateManager.shared.overwrittenInfectionState = nil
+        InterfaceStateManager.shared.overwrittenInfectionState = nil
         #endif
         
-        StateManager.shared.refresh()
+        InterfaceStateManager.shared.refresh()
     }
 
     func userHasCompletedOnboarding() {
@@ -171,12 +171,12 @@ class TracingManager: NSObject {
             if ConfigManager.allowTracing {
                 try DP3TTracing.startTracing()
             }
-            StateManager.shared.tracingStartError = nil
+            InterfaceStateManager.shared.tracingStartError = nil
         } catch DP3TTracingError.userAlreadyMarkedAsInfected {
             // Tracing should not start if the user is marked as infected
-            StateManager.shared.tracingStartError = nil
+            InterfaceStateManager.shared.tracingStartError = nil
         } catch {
-            StateManager.shared.tracingStartError = error
+            InterfaceStateManager.shared.tracingStartError = error
         }
 
         updateStatus(completion: nil)
@@ -191,14 +191,14 @@ class TracingManager: NSObject {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
-                StateManager.shared.updateError = e
+                InterfaceStateManager.shared.updateError = e
                 completion?(e)
             case let .success(st):
 
-                StateManager.shared.blockUpdate {
-                    StateManager.shared.updateError = nil
-                    StateManager.shared.tracingState = st
-                    StateManager.shared.trackingState = st.trackingState
+                InterfaceStateManager.shared.blockUpdate {
+                    InterfaceStateManager.shared.updateError = nil
+                    InterfaceStateManager.shared.tracingState = st
+                    InterfaceStateManager.shared.trackingState = st.trackingState
                 }
 
                 completion?(nil)
@@ -218,10 +218,10 @@ class TracingManager: NSObject {
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
         DispatchQueue.main.async {
-            StateManager.shared.blockUpdate {
-                StateManager.shared.updateError = nil
-                StateManager.shared.tracingState = state
-                StateManager.shared.trackingState = state.trackingState
+            InterfaceStateManager.shared.blockUpdate {
+                InterfaceStateManager.shared.updateError = nil
+                InterfaceStateManager.shared.tracingState = state
+                InterfaceStateManager.shared.trackingState = state.trackingState
             }
         }
     }

@@ -56,7 +56,7 @@ class Logger {
                 Logger.debugDates = Array(Logger.debugDates.dropFirst())
             }
 
-            StateManager.shared.refresh()
+            InterfaceStateManager.shared.refresh()
         }
 
         #endif
