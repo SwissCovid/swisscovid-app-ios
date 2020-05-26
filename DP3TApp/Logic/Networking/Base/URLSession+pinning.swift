@@ -52,6 +52,8 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
             if let certificate = bundle.getCertificate(with: host) {
                 let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [certificate], validateHost: true)
                 evaluators[host] = evaluator
+            } else {
+                assertionFailure("Could not load certificate for pinned host")
             }
         }
 
