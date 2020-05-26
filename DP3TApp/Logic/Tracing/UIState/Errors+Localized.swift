@@ -127,3 +127,12 @@ extension NetworkError: LocalizedError, CodedError {
         }
     }
 }
+extension CertificateValidationError: LocalizedError, CodedError {
+    var errorDescription: String? {
+        return "certificate_validation_error".ub_localized
+    }
+
+    var errorCodeString: String? {
+        return "ICERT"
+    }
+}
