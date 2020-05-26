@@ -124,6 +124,9 @@ extension NetworkError: LocalizedError, CodedError {
             return "IBST\(code)"
         case .parseError:
             return "ICPARS"
+        case let .unexpected(error: error):
+            let nsError = error as NSError
+            return "IUNXN\(nsError.code)"
         }
     }
 }
