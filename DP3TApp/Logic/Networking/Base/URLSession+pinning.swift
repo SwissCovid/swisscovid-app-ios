@@ -67,9 +67,11 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         #endif
     }
 
-    private static func getEmptyServerTrustManager() -> UBServerTrustManager {
-        UBServerTrustManager(evaluators: [:], default: UBDisabledEvaluator())
-    }
+    #if DEBUG || ENABLE_TESTING
+        private static func getEmptyServerTrustManager() -> UBServerTrustManager {
+            UBServerTrustManager(evaluators: [:], default: UBDisabledEvaluator())
+        }
+    #endif
 
     private static func getServerTrustManager() -> UBServerTrustManager {
         var evaluators: [String: UBServerTrustEvaluator] = [:]
