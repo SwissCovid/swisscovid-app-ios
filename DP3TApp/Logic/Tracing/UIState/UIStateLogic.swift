@@ -81,7 +81,7 @@ class UIStateLogic {
                 tracing = .unexpectedError(code: error.errorCodeString)
             case .exposureNotificationError:
                 tracing = .tracingPermissionError
-            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected:
+            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }
@@ -112,9 +112,9 @@ class UIStateLogic {
             if let codedError = UIStateManager.shared.syncError as? CodedError {
                 newState.homescreen.meldungen.errorCode = codedError.errorCodeString
                 #if ENABLE_TESTING
-                newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
+                    newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else
-                newState.homescreen.meldungen.errorCode = codedError.errorCodeString
+                    newState.homescreen.meldungen.errorCode = codedError.errorCodeString
                 #endif
             }
         }
@@ -125,9 +125,9 @@ class UIStateLogic {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
             if let codedError = UIStateManager.shared.syncError as? CodedError {
                 #if ENABLE_TESTING
-                newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
+                    newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else
-                newState.homescreen.meldungen.errorCode = codedError.errorCodeString
+                    newState.homescreen.meldungen.errorCode = codedError.errorCodeString
                 #endif
             }
         }
