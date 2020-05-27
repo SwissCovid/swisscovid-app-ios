@@ -121,7 +121,7 @@ public final class UBPinnedCertificatesTrustEvaluator: UBServerTrustEvaluator {
     }
 }
 
-#if DEBUG
+#if DEBUG || ENABLE_TESTING
     /// Disables all evaluation which in turn will always consider any server trust as valid.
     ///
     /// THIS EVALUATOR SHOULD NEVER BE USED IN PRODUCTION!
