@@ -65,7 +65,11 @@ extension DP3TTracingError: LocalizedError, CodedError {
 extension DP3TNetworkingError: LocalizedError, CodedError {
     public var errorDescription: String? {
         switch self {
-        case .networkSessionError(error: _):
+        case let .networkSessionError(error: error):
+            let nsError = error as NSError
+            if nsError.domain == NSURLErrorDomain, nsError.code == -999 {
+                return CertificateValidationError.validationFailed.errorDescription
+            }
             return "network_error".ub_localized
 
         case .notHTTPResponse: fallthrough

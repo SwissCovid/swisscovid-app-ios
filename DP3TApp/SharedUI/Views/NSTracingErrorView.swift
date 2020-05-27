@@ -19,11 +19,11 @@ class NSTracingErrorView: UIView {
     // MARK: - Model
 
     struct NSTracingErrorViewModel {
-        let icon: UIImage
-        let title: String
-        let text: String
-        let buttonTitle: String?
-        let action: (() -> Void)?
+        var icon: UIImage
+        var title: String
+        var text: String
+        var buttonTitle: String?
+        var action: (() -> Void)?
     }
 
     var model: NSTracingErrorViewModel? {

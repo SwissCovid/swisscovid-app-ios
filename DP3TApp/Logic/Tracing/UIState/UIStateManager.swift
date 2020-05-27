@@ -121,6 +121,12 @@ class UIStateManager: NSObject {
         }
     }
 
+    var syncErrorIsNetworkError: Bool = false {
+        didSet {
+            if oldValue != immediatelyShowSyncError { refresh() }
+        }
+    }
+
     var tracingStartError: CodedError? {
         didSet {
             if (tracingStartError == nil) != (oldValue == nil) {
