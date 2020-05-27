@@ -32,8 +32,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "bugfix/threading-fixes",
-          "revision": "22ffdfad856e9e4d0b71f952168f3e32006f5419",
+          "branch": "develop",
+          "revision": "0000972e152208147c06087c242a0754a8dd1223",
           "version": null
         }
       },
