@@ -74,7 +74,6 @@ class ReportingManager {
                         if let error = error {
                             completion(.failure(error: error))
                         } else {
-                            UserStorage.shared.positiveTestSendDate = Date()
                             completion(nil)
                         }
                     }

@@ -54,7 +54,4 @@ class UserStorage {
 
     @UBUserDefault(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]
-
-    @UBOptionalUserDefault(key: "positiveTestSendDate")
-    public var positiveTestSendDate: Date?
 }
