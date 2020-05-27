@@ -677,13 +677,13 @@
 "accessibility_code_input_hint" = "Double tapotement pour éditer";
 
 /*Accessibility: FAW Button Titel */
-"accessibility_faq_button_hint" = "Ce bouton permet de quitter l'application et d'ouvrir le site du O.F.S.P.";
+"accessibility_faq_button_hint" = "Ce bouton permet de quitter l'application et d'ouvrir le site de l'O.F.S.P.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Activer le traçage";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Pour utiliser l'application, la fonction \"Notifications COVID-19\" doit être activée.";
+"onboarding_gaen_text" = "Pour utiliser l'application, les notifications COVID-19 doivent être activée.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Activer";
@@ -692,7 +692,7 @@
 "onboarding_gaen_info_title_1" = "Vous restez anonyme.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Seules des pièces d'identité anonymes sont échangées. Aucune donnée sur votre localisation ou votre personne.";
+"onboarding_gaen_info_text_1" = "Seuls des identifiants anonymes sont échangés. Aucune donnée sur votre localisation ou votre personne.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "Légère augmentation de la consommation d'énergie.";
@@ -737,7 +737,7 @@
 "tracing_permission_error_title" = "Notifications COVID-19 désactivé";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Activez la fonction \"Notifications COVID-19\" pour que le traçage anonyme fonctionne.";
+"tracing_permission_error_text" = "Activez les notifications COVID-19 pour que le traçage anonyme fonctionne.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Le message n'a pas pu être envoyé. Veuillez autoriser le partage de vos identifiants aléatoires avec l'application SwissCovid.";
@@ -763,3 +763,6 @@
 
 /*text shown in notification when we get an exception from the GAEN api*/
 "sync_api_error" = "Une erreur inattendue s'est produite lors de la synchronisation des notifications.";
+
+/*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
+"certificate_validation_error" = "Connexion sécurisée au serveur impossible. Vérifiez ou désactivez votre VPN ou proxy, ou contrôlez si vous êtes connecté à un WLAN public.";

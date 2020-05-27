@@ -278,7 +278,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 
     // MARK: - Textfield Delegate
 
-    func textField(_ textField: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
+    func textField(_: UITextField, shouldChangeCharactersIn _: NSRange, replacementString string: String) -> Bool {
         return string != " "
     }
 
