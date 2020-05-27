@@ -777,3 +777,11 @@
 
 /*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
 "certificate_validation_error" = "Keine sichere Verbindung zum Server möglich. Bitte prüfen oder deaktivieren Sie Ihr VPN bzw. Ihren Proxy oder prüfen Sie, ob Sie über ein Public WLAN verbunden sind.";
+
+/*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
+"android_en_start_failure" = "COVID-19 Benachrichtigungen konnten nicht aktiviert werden";
+
+/*Certificate pinning Debug screen section title*/
+"certificate-pinning.title" = "Certificate Pinning";
+"certificate-pinning.button.disable" = "Deaktivieren";
+"certificate-pinning.button.enable" = "Aktivieren";
