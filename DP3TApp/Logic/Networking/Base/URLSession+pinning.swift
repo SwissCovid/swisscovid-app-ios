@@ -46,7 +46,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         }
 
     #elseif DEBUG
-        private static let useCertificatePinning = false
+        private static let useCertificatePinning = true
     #endif
 
     override init() {
