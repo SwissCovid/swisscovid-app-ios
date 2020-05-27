@@ -16,12 +16,15 @@ class NSWhatToDoSymptomViewController: NSViewController {
     private var titleContentStackView = UIStackView()
     private var subtitleLabel: NSLabel!
     private var titleLabel: NSLabel!
+    
+    fileprivate var viewModel: WhatToDoSymptomViewModel!
 
     // MARK: - Init
 
     override init() {
+        viewModel = WhatToDoSymptomViewModel()
         super.init()
-        title = "symptom_detail_navigation_title".ub_localized
+        title = viewModel.screenTitle
     }
 
     // MARK: - View
@@ -55,10 +58,10 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         // Title & subtitle
         subtitleLabel = NSLabel(.textLight, textAlignment: .center)
-        subtitleLabel.text = "symptom_detail_subtitle".ub_localized
+        subtitleLabel.text = viewModel.subtitleTextLabel
 
         titleLabel = NSLabel(.title, textAlignment: .center)
-        titleLabel.text = "symptom_detail_title".ub_localized
+        titleLabel.text = viewModel.titleTextLabel
 
         titleContentStackView.addArrangedView(subtitleLabel)
         titleContentStackView.addArrangedView(titleLabel)
@@ -78,14 +81,14 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
-        let infoView = NSOnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
+        let infoView = NSOnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: viewModel.infoViewText , title: viewModel.infoViewTitle, leftRightInset: 0)
 
         stackScrollView.addArrangedView(infoView)
 
         let buttonView = UIView()
 
         let externalLinkButton = NSExternalLinkButton(color: .ns_purple)
-        externalLinkButton.title = "symptom_detail_box_button".ub_localized
+        externalLinkButton.title = viewModel.externalLinkButtonTitle
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentCoronaCheck()
@@ -109,22 +112,14 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
     private func setupAccessibility() {
         titleContentStackView.isAccessibilityElement = true
-        titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
+        titleContentStackView.accessibilityLabel = viewModel.titleAccesibilityLabel
     }
 
     // MARK: - Detail
 
     private func presentCoronaCheck() {
-        if let url =
-            URL(string: "symptom_detail_corona_check_url".ub_localized) {
+        if let url = viewModel.presentCoronaCheckURL {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
-    }
-}
-
-extension String {
-    func deleteSuffix(_ suffix: String) -> String {
-        guard hasSuffix(suffix) else { return self }
-        return String(dropLast(suffix.count))
     }
 }

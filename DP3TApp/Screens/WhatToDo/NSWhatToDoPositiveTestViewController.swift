@@ -17,7 +17,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     private var subtitleLabel: NSLabel!
     private var titleLabel: NSLabel!
     
-    var viewModel: WhatToDoPositiveTestViewModel!
+    fileprivate var viewModel: WhatToDoPositiveTestViewModel!
     
     // MARK: - Init
     

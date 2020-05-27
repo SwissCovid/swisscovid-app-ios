@@ -10,4 +10,9 @@ extension String {
     var ub_localized: String {
         NSLocalizedString(self, comment: "")
     }
+    
+    func deleteSuffix(_ suffix: String) -> String {
+        guard hasSuffix(suffix) else { return self }
+        return String(dropLast(suffix.count))
+    }
 }
