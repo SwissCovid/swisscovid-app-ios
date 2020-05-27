@@ -665,37 +665,37 @@
 "android_accessibility_back_button" = "Indietro";
 
 /*VoiceOver: Hilfetext bei Codeeingabe Button*/
-"accessibility_code_button_current_code_hint" = "Codice inserito: ";
+"accessibility_code_button_current_code_hint" = "Codice immesso: ";
 
 /*Accessibility: Codeeingabe einer Ziffer*/
 "accessibility_code_input_textfield" = "Casella di testo. Cifra corrente: ";
 
 /*Accessibility: Code Input Textfeld wenn leer*/
-"accessibility_code_input_textfield_empty" = "Casella di testo. Vuoto.";
+"accessibility_code_input_textfield_empty" = "Casella di testo. Vuota.";
 
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Doppio tocco per modificare";
 
 /*Accessibility: FAW Button Titel */
-"accessibility_faq_button_hint" = "Questo pulsante lascia l'app e apre il sito web del U.F.S.P.";
+"accessibility_faq_button_hint" = "Questo pulsante abbandona l'app e apre il sito web dell'U.F.S.P.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Attivare il tracciamento";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Per utilizzare l'app è necessario attivare la funzione \"Notifiche relative al COVID-19\".";
+"onboarding_gaen_text" = "Per utilizzare l'app è necessario attivare le notifiche relative al COVID-19.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_button_activate" = "Attivare";
+"onboarding_gaen_button_activate" = "Attiva";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
-"onboarding_gaen_info_title_1" = "L'anonimato è garantito";
+"onboarding_gaen_info_title_1" = "L'anonimato è garantito.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Vengono scambiati solo ID anonimi. Nessun dato sulla vostra posizione o sulla vostra persona.";
+"onboarding_gaen_info_text_1" = "Vengono scambiati solo ID anonimi. Nessun dato sulla tua posizione o sulla tua persona.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
-"onboarding_gaen_info_title_2" = "Il consumo della batteria aumenta leggermente";
+"onboarding_gaen_info_title_2" = "Il consumo della batteria aumenta leggermente.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
 "onboarding_gaen_info_text_2" = "L'app è stata realizzata per funzionare con il massimo risparmio energetico. Il consumo della batteria aumenta soltanto leggermente.";
@@ -704,16 +704,16 @@
 "onboarding_gaen_button_activated" = "Attivato";
 
 /*Meldung in der App löschen, wenn möglicherweise angesteckt*/
-"delete_reports_button" = "Cancellare la notifica";
+"delete_reports_button" = "Elimina segnalazione";
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
-"delete_reports_dialog" = "Volete davvero cancellare la notifica? ";
+"delete_reports_dialog" = "Eliminare la segnalazione?";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
-"delete_infection_button" = "Cancellare la notifica";
+"delete_infection_button" = "Elimina segnalazione";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
-"delete_infection_dialog" = "Volete davvero cancellare la notifica? ";
+"delete_infection_dialog" = "Eliminare la segnalazione?";
 "android_onboarding_battery_permission_title" = "Ignora l'ottimizzazione della batteria";
 "android_onboarding_battery_permission_text" = "Per poter riconoscere sempre gli incontri, l'ottimizzazione della batteria deve essere disattivata per questa app.";
 "android_onboarding_battery_permission_button" = "Consenti";
@@ -725,34 +725,34 @@
 "android_foreground_service_notification_error_battery_optimization" = "Per un funzionamento preciso del tracciamento, l'app deve essere eseguita anche in background. Il consumo della batteria aumenta solo leggermente.";
 
 /*Google Play Services nicht aktuell*/
-"gaen_not_aviable" = "Google Play Services non aggiornato";
+"gaen_not_aviable" = "Google Play Services non è aggiornato";
 
 /*Google Play Services nicht aktuell text*/
-"gaen_not_available_text" = "Si prega di aggiornare i servizi di Google Play";
+"gaen_not_available_text" = "Aggiorna Google Play Services";
 
 /*Tracing wurde vom System deaktiviert, erneut starten*/
 "gaen_unexpectedly_disabled" = "Il tracciamento è disattivato. Prova a riavviare.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_title" = "Notifiche relative al COVID-19 disabilitato";
+"tracing_permission_error_title" = "Notifiche relative al COVID-19 disattivato";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Attivare la funzione \"Notifiche relative al COVID-19\" in modo che il tracciamento anonimo funzioni.";
+"tracing_permission_error_text" = "Attiva le notifiche relative al COVID-19 per avviare il tracciamento anonimo.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "Il messaggio non ha potuto essere inviato. Ti preghiamo di consentire la condivisione dei tuoi ID casuali con l'app SwissCovid.";
+"user_cancelled_key_sharing_error" = "Impossibile inviare la segnalazione. Consenti la condivisione dei tuoi ID casuali con l'app SwissCovid.";
 
 /*Button um die Google Play Services zu aktualisieren*/
-"playservices_update" = "Aggiornare";
+"playservices_update" = "Aggiorna";
 
 /*Button um die Google Play Services zu installieren*/
-"playservices_install" = "Installare";
+"playservices_install" = "Installa";
 
 /*Titel für Infos zu den Google Play Services*/
 "playservices_title" = "Google Play Services";
 
 /*Meldung, dass die Google Play Services benötigt werden*/
-"playservices_text" = "Per attivare il tracciamento, è necessaria una versione corrente di Google Play Services. \n\nSe al momento non è disponibile alcun aggiornamento sul vostro dispositivo, si prega di riprovare più tardi.";
+"playservices_text" = "Per poter attivare il tracciamento è necessaria una versione aggiornata di Google Play Services. \n\nSe al momento non è disponibile alcun aggiornamento sul tuo dispositivo, riprova più tardi.";
 
 /*Fuzzy*/
 "android_error_battery_optimization_title" = "Ottimizzazione della batteria attivata";
@@ -763,3 +763,6 @@
 
 /*text shown in notification when we get an exception from the GAEN api*/
 "sync_api_error" = "Si è verificato un errore durante la sincronizzazione delle segnalazioni.";
+
+/*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
+"certificate_validation_error" = "Impossibile stabilire una connessione sicura al server. Verifica o disattiva la tua rete VPN o il tuo proxy oppure controlla se sei connesso attraverso una WLAN pubblica.";
