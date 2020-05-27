@@ -64,7 +64,7 @@ class DatabaseSyncer {
                         UIStateManager.shared.lastSyncErrorTime = Date()
                         switch wrappedError {
                         case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
-                            UIStateManager.shared.immediatelyShowSyncError = true
+                            UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case DP3TNetworkingError.networkSessionError:
                             UIStateManager.shared.immediatelyShowSyncError = false
