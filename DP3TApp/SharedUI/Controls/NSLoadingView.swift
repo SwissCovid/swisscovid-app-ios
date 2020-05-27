@@ -51,7 +51,7 @@ class NSLoadingView: UIView {
             #if ENABLE_TESTING
                 errorCodeLabel.text = "\(err.errorCodeString ?? "-"): \(err)"
             #else
-                errorCodeLabel.text = error.errorCodeString
+                errorCodeLabel.text = error?.errorCodeString
             #endif
 
             reloadButton.touchUpCallback = reloadHandler
