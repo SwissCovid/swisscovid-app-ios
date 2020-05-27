@@ -19,7 +19,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
         switch self {
         case let .networkingError(error):
             return error.localizedDescription
-        case .caseSynchronizationError, .userAlreadyMarkedAsInfected:
+        case .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
             return unexpected.ub_localized
         case let .databaseError(error):
             return error?.localizedDescription
@@ -46,6 +46,8 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "IDBERR"
         case .bluetoothTurnedOff:
             return "IBLOFF"
+        case .cancelled:
+            return "ICANCU"
         case .permissonError:
             return "IPERME"
         case .userAlreadyMarkedAsInfected:
