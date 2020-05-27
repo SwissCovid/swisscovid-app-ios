@@ -32,7 +32,9 @@ class ReportingManager {
 
     // MARK: - API
 
-    static let fakeCode = "000000000000"
+    private static var fakeCode: String {
+        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
+    }
 
     func report(covidCode: String = ReportingManager.fakeCode, isFakeRequest fake: Bool = false, completion: @escaping (ReportingProblem?) -> Void) {
         if let tokenDate = codeDictionary[covidCode] {
