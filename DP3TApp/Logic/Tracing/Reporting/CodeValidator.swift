@@ -32,8 +32,11 @@ class CodeValidator {
                 }
 
                 if let error = error {
+                    let nsError = error as NSError
                     if let e = error as? CodedError {
                         completion(.failure(error: e))
+                    } else if nsError.domain == NSURLErrorDomain, nsError.code == -999 {
+                        completion(.failure(error: CertificateValidationError.validationFailed))
                     } else {
                         completion(.failure(error: NetworkError.unexpected(error: error)))
                     }
