@@ -19,7 +19,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
         switch self {
         case let .networkingError(error):
             return error.localizedDescription
-        case .caseSynchronizationError, .userAlreadyMarkedAsInfected:
+        case .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
             return unexpected.ub_localized
         case let .databaseError(error):
             return error?.localizedDescription
@@ -27,8 +27,6 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
-        case .cancelled:
-            return nil
         case let .exposureNotificationError(error: error):
             let nsError = error as NSError
             if nsError.domain == "ENErrorDomain", nsError.code == 4 {
