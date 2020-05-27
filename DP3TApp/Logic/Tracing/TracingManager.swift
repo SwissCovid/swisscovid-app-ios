@@ -214,6 +214,7 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.tracingState = state
                 UIStateManager.shared.trackingState = state.trackingState
             }
+            TracingLocalPush.shared.update(state: state)
         }
     }
 }
