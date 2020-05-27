@@ -211,11 +211,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             #if ENABLE_TESTING
                 UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                     debugScreenContainer.alpha = 1
-            }, completion: nil)
+                }, completion: nil)
 
                 UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                     uploadDBContainer.alpha = 1
-            }, completion: nil)
+                }, completion: nil)
             #endif
         }
     }

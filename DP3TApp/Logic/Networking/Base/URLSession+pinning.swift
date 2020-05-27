@@ -20,21 +20,60 @@ extension URLSession {
 
 class CertificateEvaluator: NSObject, URLSessionDelegate {
     typealias AuthenticationChallengeCompletion = (URLSession.AuthChallengeDisposition, URLCredential?) -> Void
-
-    private let trustManager: UBServerTrustManager
-
-    #if DEBUG
-        static let useCertificatePinning = true
+    #if ENABLE_TESTING
+        private var trustManager: UBServerTrustManager
     #else
-        static let useCertificatePinning = true
+        private let trustManager: UBServerTrustManager
+    #endif
+
+    #if ENABLE_TESTING
+        private static var useCertificatePinning: Bool {
+            UserDefaults.standard.bool(forKey: "useCertificatePinning")
+        }
+
+        var useCertificatePinning: Bool {
+            get {
+                Self.useCertificatePinning
+            }
+            set {
+                UserDefaults.standard.set(newValue, forKey: "useCertificatePinning")
+                if newValue {
+                    trustManager = Self.getServerTrustManager()
+                } else {
+                    trustManager = Self.getEmptyServerTrustManager()
+                }
+            }
+        }
+
+    #elseif DEBUG
+        private static let useCertificatePinning = true
     #endif
 
     override init() {
-        if !CertificateEvaluator.useCertificatePinning {
-            trustManager = UBServerTrustManager(evaluators: [:], default: UBDisabledEvaluator())
-            return
-        }
+        #if ENABLE_TESTING
+            if Self.useCertificatePinning {
+                trustManager = Self.getServerTrustManager()
+            } else {
+                trustManager = Self.getEmptyServerTrustManager()
+            }
+        #elseif DEBUG
+            if CertificateEvaluator.useCertificatePinning {
+                trustManager = Self.getServerTrustManager()
+            } else {
+                trustManager = Self.getEmptyServerTrustManager()
+            }
+        #else
+            trustManager = Self.getServerTrustManager()
+        #endif
+    }
 
+    #if DEBUG || ENABLE_TESTING
+        private static func getEmptyServerTrustManager() -> UBServerTrustManager {
+            UBServerTrustManager(evaluators: [:], default: UBDisabledEvaluator())
+        }
+    #endif
+
+    private static func getServerTrustManager() -> UBServerTrustManager {
         var evaluators: [String: UBServerTrustEvaluator] = [:]
 
         let bundle = Bundle.main
@@ -66,7 +105,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
             evaluators["www.pt.bfs.admin.ch"] = evaluator
         }
 
-        trustManager = UBServerTrustManager(evaluators: evaluators)
+        return UBServerTrustManager(evaluators: evaluators)
     }
 
     // MARK: - URLSessionDelegate

@@ -147,7 +147,7 @@ public class NSCheckBoxControl: UIControl {
         }
     }
 
-    override public func hitTest(_: CGPoint, with _: UIEvent?) -> UIView? {
+    public override func hitTest(_: CGPoint, with _: UIEvent?) -> UIView? {
         nil
     }
 }
