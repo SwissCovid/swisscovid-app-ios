@@ -233,7 +233,7 @@ extension TracingManager: DP3TTracingDelegate {
 }
 
 extension TracingManager: DP3TBackgroundHandler {
-    func performBackgroundTasks(completionHandler: (Bool) -> Void) {
+    func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
         let queue = OperationQueue()
 
         let group = DispatchGroup()
@@ -250,12 +250,12 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        queue.addOperation(ConfigLoadOperation())
-        queue.addOperation(FakePublishOperation())
+        queue.addOperation(configOperation)
+        queue.addOperation(fakePublishOperation)
 
-        group.wait()
-
-        completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+        group.notify(queue: .global(qos: .background)) {
+            completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+        }
     }
 }
 

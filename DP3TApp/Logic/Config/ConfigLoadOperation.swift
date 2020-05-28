@@ -12,6 +12,7 @@ class ConfigLoadOperation: Operation {
     static var presentedConfigForVersion: String?
 
     override func main() {
+        let semaphore = DispatchSemaphore(value: 0)
         ConfigManager().loadConfig { config in
             if let c = config, c.forceUpdate {
                 // only show notification once per app update
@@ -29,6 +30,8 @@ class ConfigLoadOperation: Operation {
                 self.cancel()
                 Logger.log("No forced update")
             }
+            semaphore.signal()
         }
+        semaphore.wait()
     }
 }
