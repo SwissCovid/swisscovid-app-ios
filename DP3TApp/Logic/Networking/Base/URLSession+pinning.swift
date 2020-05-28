@@ -28,20 +28,16 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
 
     #if ENABLE_TESTING
         private let useCertificatePinningKey = "useCertificatePinning"
-        private static var useCertificatePinning: Bool {
-            guard UserDefaults.standard.value(forKey: useCertificatePinningKey) != nil else {
-                UserDefaults.standard.set(true, forKey: "useCertificatePinning")
-                return true
-            }
-            UserDefaults.standard.bool(forKey: useCertificatePinningKey)
-        }
+
+        @UBUserDefault(key: "useCertificatePinning", defaultValue: true)
+        private(set) static var useCertificatePinning: Bool
 
         var useCertificatePinning: Bool {
             get {
                 Self.useCertificatePinning
             }
             set {
-                UserDefaults.standard.set(newValue, forKey: "useCertificatePinning")
+                Self.useCertificatePinning = newValue
                 if newValue {
                     trustManager = Self.getServerTrustManager()
                 } else {
