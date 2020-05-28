@@ -103,11 +103,11 @@
 
         private func updateCertificatePinningView() {
             if URLSession.evaluator.useCertificatePinning {
-                certificatePinningView.title = "certificate-pinning.title".ub_localized + "🔒"
-                certificatePinningButton.setTitle("certificate-pinning.button.disable".ub_localized, for: .normal)
+                certificatePinningView.title = "certificate_pinning_title".ub_localized + "🔒"
+                certificatePinningButton.setTitle("certificate_pinning_button_disable".ub_localized, for: .normal)
             } else {
-                certificatePinningView.title = "certificate-pinning.title".ub_localized + "🔓"
-                certificatePinningButton.setTitle("certificate-pinning.button.enable".ub_localized, for: .normal)
+                certificatePinningView.title = "certificate_pinning_title".ub_localized + "🔓"
+                certificatePinningButton.setTitle("certificate_pinning_button_enable".ub_localized, for: .normal)
             }
         }
     }
