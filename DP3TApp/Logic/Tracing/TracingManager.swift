@@ -211,6 +211,7 @@ class TracingManager: NSObject {
 
                 // schedule local push if exposed
                 TracingLocalPush.shared.update(state: st)
+                TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: st)
             }
             DP3TTracing.delegate = self
         }
@@ -228,6 +229,7 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.trackingState = state.trackingState
             }
             TracingLocalPush.shared.update(state: state)
+            TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
         }
     }
 }
