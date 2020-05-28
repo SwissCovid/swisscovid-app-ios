@@ -28,9 +28,23 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
     private func setupViews() {
         headingLabel.textColor = model.headingColor
 
-        addArrangedView(headingLabel, spacing: NSPadding.medium)
+        let headingContainer = UIView()
+        headingContainer.addSubview(headingLabel)
+        headingLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            make.top.bottom.equalToSuperview()
+        }
+        addArrangedView(headingContainer, spacing: NSPadding.medium)
+
         addArrangedView(foregroundImageView, spacing: NSPadding.medium)
-        addArrangedView(titleLabel, spacing: NSPadding.large + NSPadding.small)
+
+        let titleContainer = UIView()
+        titleContainer.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            make.top.bottom.equalToSuperview()
+        }
+        addArrangedView(titleContainer, spacing: NSPadding.large + NSPadding.small)
 
         for (icon, text) in model.textGroups {
             let v = NSOnboardingInfoView(icon: icon, text: text)
