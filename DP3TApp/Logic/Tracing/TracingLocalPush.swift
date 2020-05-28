@@ -83,15 +83,23 @@ class TracingLocalPush: NSObject {
     private let timeInterval1: TimeInterval = 60 * 60 * 24 * 2 // Two days
     private let timeInterval2: TimeInterval = 60 * 60 * 24 * 7 // Seven days
 
-    func resetSyncWarningTriggers() {
+    func resetSyncWarningTriggers(tracingState: TracingState) {
+        if let lastSync = tracingState.lastSync {
+            resetSyncWarningTriggers(lastSuccess: lastSync)
+        }
+    }
+
+    func resetSyncWarningTriggers(lastSuccess: Date) {
         let content = UNMutableNotificationContent()
         content.title = "sync_warning_notification_title".ub_localized
         content.body = "sync_warning_notification_text".ub_localized
 
-        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1, repeats: false)
+        let timePassed = lastSuccess.timeIntervalSinceNow
+
+        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1 - timePassed, repeats: false)
         let request1 = UNNotificationRequest(identifier: notificationIdentifier1, content: content, trigger: trigger1)
 
-        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2, repeats: false)
+        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2 - timePassed, repeats: false)
         let request2 = UNNotificationRequest(identifier: notificationIdentifier2, content: content, trigger: trigger2)
 
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present

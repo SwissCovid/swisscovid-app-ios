@@ -95,7 +95,7 @@ class DatabaseSyncer {
                 }
 
                 // wait another 2 days befor warning
-                TracingLocalPush.shared.resetSyncWarningTriggers()
+                TracingLocalPush.shared.resetSyncWarningTriggers(lastSuccess: Date())
 
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
