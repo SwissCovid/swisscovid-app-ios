@@ -9,7 +9,7 @@ import UIKit
 class UserStorage {
     static let shared = UserStorage()
 
-    @UBUserDefault(key: "hasCompletedNewOnboarding", defaultValue: false)
+    @UBUserDefault(key: "hasCompletedOnboarding", defaultValue: false)
     var hasCompletedOnboarding: Bool {
         didSet {
             TracingManager.shared.userHasCompletedOnboarding()
