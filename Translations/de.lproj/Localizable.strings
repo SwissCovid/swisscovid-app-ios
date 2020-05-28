@@ -782,9 +782,11 @@
 "android_en_start_failure" = "COVID-19 Benachrichtigungen konnten nicht aktiviert werden";
 
 /*Certificate pinning Debug screen section title*/
-"certificate-pinning.title" = "Certificate Pinning";
-"certificate-pinning.button.disable" = "Deaktivieren";
-"certificate-pinning.button.enable" = "Aktivieren";
+"certificate_pinning_title" = "Certificate Pinning";
+
+/*Fuzzy*/
+"certificate_pinning_button_disable" = "Deaktivieren";
+"certificate_pinning_button_enable" = "Aktivieren";
 
 /*Erster Onboarding-Screen für Pilot: Überschrift*/
 "onboarding_legal_heading" = "Preview Version";
