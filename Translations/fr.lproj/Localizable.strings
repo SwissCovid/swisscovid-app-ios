@@ -778,31 +778,31 @@
 "certificate_pinning_button_enable" = "Activer";
 
 /*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Preview Version";
+"onboarding_legal_heading" = "Version préliminaire";
 
 /*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "Nutzung nur für Teilnehmer der Pilotphase";
+"onboarding_legal_title" = "A utiliser uniquement par les participants de la phase pilote";
 
 /*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "Die Nutzung dieser App ist zur Zeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
+"onboarding_legal_text1" = "L'utilisation de cette application est actuellement destinée et autorisée uniquement aux groupes suivants, qui ont été invités par l'OFSP à participer au projet pilote: Membres de l'armée suisse en formation, en assistance et en service actif, personnel des universités, personnel des hôpitaux et des cliniques, personnel des administrations cantonales et de l'administration fédérale, membres d'associations souhaitant contribuer à l'amélioration de la qualité du système.";
 
 /*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "Die Pilotphase wird mit produktiven Systemen durchgeführt und beinhaltet echte Daten. Kantonsärzte dürfen im Falle eines positiven COVID-19-Tests den nicht zugelassenen Nutzern keinen CovidCode für die Benachrichtigung aus der App generieren. Angriffe («Penetration Tests») auf das System ausserhalb des abgegrenzten Public Security Tests sind Angriffe auf das produktive System und somit illegal.";
+"onboarding_legal_text2" = "La phase pilote est réalisée avec des systèmes productifs et contient des données réelles. En cas de test COVID-19 positif, les médecins cantonaux ne sont pas autorisés à générer un code covid pour la notification à partir de l'application pour les utilisateurs non autorisés. Les attaques (\"tests de pénétration\") sur le système en dehors du test de sécurité publique délimité sont des attaques sur le système productif et sont donc illégales.";
 
 /*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Gehören Sie zu einer Organisation, die an der Pilotphase teilnehmen darf?";
+"onboarding_legal_alert_title" = "Appartenez-vous à une organisation qui est autorisée à participer à la phase pilote ?";
 
 /*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Gehören Sie zu einer der folgenden Gruppen: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen";
+"onboarding_legal_alert_message" = "Appartenez-vous à l'un des groupes suivants : Les membres de l'armée suisse en formation, en assistance et en service actif, les employés des universités, les employés des hôpitaux et des cliniques, les employés des administrations cantonales et de l'administration fédérale, les membres des associations qui souhaitent contribuer à l'amélioration de la qualité du système?";
 
 /*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Nein";
+"onboarding_legal_alert_no" = "Non";
 
 /*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Ja";
+"onboarding_legal_alert_yes" = "Oui";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Pilotphase";
+"onboarding_legal_blocker_title" = "Phase pilote";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";
+"onboarding_legal_blocker_message" = "Vous ne faites pas partie d'une organisation participant à la phase pilote. Veuillez installer la mise à jour appropriée après le lancement officiel de l'application et ouvrir l'application à nouveau.";
