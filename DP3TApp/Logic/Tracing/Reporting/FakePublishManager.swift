@@ -27,7 +27,11 @@ class FakePublishManager {
         }
     }
 
-    func syncInterval() -> TimeInterval {
+    var now: Date {
+        .init()
+    }
+
+    private func syncInterval() -> TimeInterval {
         // Rate corresponding to 1 dummy per 5 days
         let randomDay = ExponentialDistribution.sample(rate: 0.2)
         let secondsInADay = Double(24 * 60 * 60)
@@ -35,7 +39,7 @@ class FakePublishManager {
     }
 
     private func getNewScheduleDate() -> Date {
-        Date(timeIntervalSinceNow: syncInterval())
+        Date(timeInterval: syncInterval(), since: now)
     }
 
     @discardableResult
@@ -43,7 +47,7 @@ class FakePublishManager {
         queue.sync {
             var nextDate = nextScheduledFakeRequestDateStore ?? getNewScheduleDate()
 
-            if nextDate <= Date() || force {
+            if nextDate <= now || force {
                 nextDate = getNewScheduleDate()
             }
 

@@ -259,7 +259,7 @@
 		8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC98241FCC7D006F2437 /* AppDelegate.swift */; };
 		8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC9C241FCC7D006F2437 /* NSViewController.swift */; };
 		8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E81CCA1241FCC7F006F2437 /* Assets.xcassets */; };
-		8E81CCB0241FCC7F006F2437 /* DP3TAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */; };
+		8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */; };
 		8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 8E81CCCE241FD813006F2437 /* SnapKit */; };
 		8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
@@ -445,7 +445,7 @@
 		8E81CCA1241FCC7F006F2437 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E81CCA6241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E81CCAB241FCC7F006F2437 /* DP3TAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DP3TAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DP3TAppTests.swift; sourceTree = "<group>"; };
+		8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePublishManagerTests.swift; sourceTree = "<group>"; };
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
@@ -995,7 +995,7 @@
 		8E81CCAE241FCC7F006F2437 /* DP3TAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				8E81CCAF241FCC7F006F2437 /* DP3TAppTests.swift */,
+				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 			);
 			path = DP3TAppTests;
@@ -1708,7 +1708,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E81CCB0241FCC7F006F2437 /* DP3TAppTests.swift in Sources */,
+				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
