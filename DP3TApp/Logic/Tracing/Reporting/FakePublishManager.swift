@@ -10,8 +10,16 @@ import Foundation
 class FakePublishManager {
     static let shared = FakePublishManager()
 
+    private let queue = DispatchQueue(label: "org.dpppt.fakepublishmanager")
+
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
-    private(set) var nextScheduledFakeRequestDate: Date?
+    private var nextScheduledFakeRequestDateStore: Date?
+
+    var nextScheduledFakeRequestDate: Date? {
+        queue.sync {
+            self.nextScheduledFakeRequestDateStore
+        }
+    }
 
     func syncInterval() -> TimeInterval {
         // Rate corresponding to 1 dummy per 5 days
@@ -26,22 +34,21 @@ class FakePublishManager {
 
     @discardableResult
     func rescheduleFakeRequest(force: Bool = false) -> Date {
-        var nextDate = nextScheduledFakeRequestDate ?? getNewScheduleDate()
+        queue.sync {
+            var nextDate = nextScheduledFakeRequestDateStore ?? getNewScheduleDate()
 
-        if nextDate <= Date() || force {
-            nextDate = getNewScheduleDate()
+            if nextDate <= Date() || force {
+                nextDate = getNewScheduleDate()
+            }
+
+            nextScheduledFakeRequestDateStore = nextDate
+            return nextDate
         }
-
-        nextScheduledFakeRequestDate = nextDate
-        return nextDate
     }
 
     func runForegroundTask() {
-        rescheduleFakeRequest()
-
         let queue = OperationQueue()
         queue.maxConcurrentOperationCount = 1
-
         queue.addOperation(FakePublishOperation())
     }
 }
@@ -66,6 +73,7 @@ class FakePublishOperation: Operation {
                     Logger.log("Fake request failed")
                 } else {
                     Logger.log("Fake request success")
+                    FakePublishManager.shared.rescheduleFakeRequest()
                 }
                 group.leave()
             }
