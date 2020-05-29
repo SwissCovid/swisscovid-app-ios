@@ -12,6 +12,8 @@ class ConfigLoadOperation: Operation {
     static var presentedConfigForVersion: String?
 
     override func main() {
+        guard isCancelled == false else { return }
+
         let semaphore = DispatchSemaphore(value: 0)
         ConfigManager().loadConfig { config in
             if let c = config, c.forceUpdate {
