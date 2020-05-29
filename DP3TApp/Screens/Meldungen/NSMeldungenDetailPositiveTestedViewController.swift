@@ -7,10 +7,13 @@
 import UIKit
 
 class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewController {
+    
+    fileprivate var viewModel: MeldungenDetailPositiveTestedViewModel!
     // MARK: - Init
 
     override init() {
         super.init()
+        viewModel = MeldungenDetailPositiveTestedViewModel()
         titleView = NSMeldungenDetailPositiveTestedTitleView()
     }
 
@@ -33,7 +36,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
     // MARK: - Setup
 
     private func setupLayout() {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: viewModel.simpleModuleTitleText, subtitle: viewModel.simpleModuleSubtitleText, subview: nil, text: viewModel.simpleModuleText, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
 
         addDeleteButton(whiteBoxView)
 
@@ -41,7 +44,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: "meldungen_positive_tested_faq1_text".ub_localized, title: "meldungen_positive_tested_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: viewModel.onboardingInfoText, title: viewModel.onboardingInfoTitleText, leftRightInset: 0))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -55,7 +58,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
         whiteBoxView.contentView.addDividerView(inset: -NSPadding.large)
 
-        let deleteButton = NSButton(title: "delete_infection_button".ub_localized, style: .borderlessUppercase(.ns_purple))
+        let deleteButton = NSButton(title: viewModel.deleteButtonTitle, style: .borderlessUppercase(.ns_purple))
 
         let container = UIView()
         whiteBoxView.contentView.addArrangedView(container)
@@ -75,11 +78,11 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
         deleteButton.touchUpCallback = { [weak self] in
 
             deleteButton.touchUpCallback = {
-                let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .actionSheet)
-                alert.addAction(UIAlertAction(title: "delete_infection_button".ub_localized, style: .destructive, handler: { _ in
+                let alert = UIAlertController(title: nil, message: self?.viewModel.alertMessageString, preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: self?.viewModel.alertDestructiveTitleText, style: .destructive, handler: { _ in
                     TracingManager.shared.deletePositiveTest()
                 }))
-                alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+                alert.addAction(UIAlertAction(title: self?.viewModel.alertCancelString, style: .cancel, handler: { _ in
 
                 }))
                 self?.present(alert, animated: true, completion: nil)
