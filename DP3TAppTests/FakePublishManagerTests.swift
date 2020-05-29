@@ -15,7 +15,7 @@ class MockFakePublishManager: FakePublishManager {
 }
 
 class FakePublishManagerTests: XCTestCase {
-    func testRescheduleFakeRequest(){
+    func testRescheduleFakeRequest() {
         let manager = MockFakePublishManager()
         let nextRequest = manager.rescheduleFakeRequest()
         manager.nowStore = nextRequest

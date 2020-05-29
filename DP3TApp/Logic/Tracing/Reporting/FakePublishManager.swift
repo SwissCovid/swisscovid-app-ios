@@ -76,7 +76,7 @@ private class FakePublishOperation: Operation {
     }
 
     override func main() {
-        guard let startDate = FakePublishManager.shared.nextScheduledFakeRequestDate,
+        guard let startDate = manager.nextScheduledFakeRequestDate,
             Date() >= startDate else {
             Logger.log("Too early for fake request")
             return
@@ -94,7 +94,7 @@ private class FakePublishOperation: Operation {
                     Logger.log("Fake request failed")
                 } else {
                     Logger.log("Fake request success")
-                    FakePublishManager.shared.rescheduleFakeRequest()
+                    manager.rescheduleFakeRequest()
                 }
                 group.leave()
             }
