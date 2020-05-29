@@ -690,7 +690,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
 /*Fuzzy*/
-"onboarding_gaen_text" = "Um die App nutzen zu können, muss die Funktion \"COVID-19 Benachrichtigungen\"aktiviert werden.";
+"onboarding_gaen_text" = "Um die App nutzen zu können, müssen COVID-19 Benachrichtigungen aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
@@ -748,7 +748,7 @@
 "tracing_permission_error_title" = "COVID-19 Benachrichtigungen deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Aktivieren Sie die Funktion \"COVID-19 Benachrichtigungen\", damit das anonyme Tracing funktioniert.";
+"tracing_permission_error_text" = "Aktivieren Sie COVID-19 Benachrichtigungen, damit das anonyme Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufall-IDs mit der SwissCovid-App.";
@@ -774,3 +774,46 @@
 
 /*text shown in notification when we get an exception from the GAEN api*/
 "sync_api_error" = "Es ist ein unerwarteter Fehler beim Synchronisieren der Meldungen aufgetreten.";
+
+/*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
+"certificate_validation_error" = "Keine sichere Verbindung zum Server möglich. Bitte prüfen oder deaktivieren Sie Ihr VPN bzw. Ihren Proxy oder prüfen Sie, ob Sie über ein Public WLAN verbunden sind.";
+
+/*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
+"android_en_start_failure" = "COVID-19 Benachrichtigungen konnten nicht aktiviert werden";
+
+/*Certificate pinning Debug screen section title*/
+"certificate_pinning_title" = "Certificate Pinning";
+
+/*Fuzzy*/
+"certificate_pinning_button_disable" = "Deaktivieren";
+"certificate_pinning_button_enable" = "Aktivieren";
+
+/*Erster Onboarding-Screen für Pilot: Überschrift*/
+"onboarding_legal_heading" = "Preview Version";
+
+/*Erster Onboarding-Screen für Pilot: Titel*/
+"onboarding_legal_title" = "Nutzung nur für Teilnehmer der Pilotphase";
+
+/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
+"onboarding_legal_text1" = "Die Nutzung dieser App ist zur Zeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
+
+/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
+"onboarding_legal_text2" = "Die Pilotphase wird mit produktiven Systemen durchgeführt und beinhaltet echte Daten. Kantonsärzte dürfen im Falle eines positiven COVID-19-Tests den nicht zugelassenen Nutzern keinen CovidCode für die Benachrichtigung aus der App generieren. Angriffe («Penetration Tests») auf das System ausserhalb des abgegrenzten Public Security Tests sind Angriffe auf das produktive System und somit illegal.";
+
+/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_title" = "Gehören Sie zu einer Organisation, die an der Pilotphase teilnehmen darf?";
+
+/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_message" = "Gehören Sie zu einer der folgenden Gruppen: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen?";
+
+/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_no" = "Nein";
+
+/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_yes" = "Ja";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
+"onboarding_legal_blocker_title" = "Pilotphase";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
+"onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";

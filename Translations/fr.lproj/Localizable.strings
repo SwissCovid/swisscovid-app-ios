@@ -677,13 +677,13 @@
 "accessibility_code_input_hint" = "Double tapotement pour éditer";
 
 /*Accessibility: FAW Button Titel */
-"accessibility_faq_button_hint" = "Ce bouton permet de quitter l'application et d'ouvrir le site du O.F.S.P.";
+"accessibility_faq_button_hint" = "Ce bouton permet de quitter l'application et d'ouvrir le site de l'O.F.S.P.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Activer le traçage";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Pour utiliser l'application, la fonction \"Notifications COVID-19\" doit être activée.";
+"onboarding_gaen_text" = "Pour utiliser l'application, les notifications COVID-19 doivent être activée.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Activer";
@@ -692,7 +692,7 @@
 "onboarding_gaen_info_title_1" = "Vous restez anonyme.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Seules des pièces d'identité anonymes sont échangées. Aucune donnée sur votre localisation ou votre personne.";
+"onboarding_gaen_info_text_1" = "Seuls des identifiants anonymes sont échangés. Aucune donnée sur votre localisation ou votre personne.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "Légère augmentation de la consommation d'énergie.";
@@ -737,7 +737,7 @@
 "tracing_permission_error_title" = "Notifications COVID-19 désactivé";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Activez la fonction \"Notifications COVID-19\" pour que le traçage anonyme fonctionne.";
+"tracing_permission_error_text" = "Activez les notifications COVID-19 pour que le traçage anonyme fonctionne.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Le message n'a pas pu être envoyé. Veuillez autoriser le partage de vos identifiants aléatoires avec l'application SwissCovid.";
@@ -763,3 +763,46 @@
 
 /*text shown in notification when we get an exception from the GAEN api*/
 "sync_api_error" = "Une erreur inattendue s'est produite lors de la synchronisation des notifications.";
+
+/*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
+"certificate_validation_error" = "Connexion sécurisée au serveur impossible. Vérifiez ou désactivez votre VPN ou proxy, ou contrôlez si vous êtes connecté à un WLAN public.";
+
+/*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
+"android_en_start_failure" = "Impossible d'activer les notifications COVID-19";
+
+/*Certificate pinning Debug screen section title*/
+"certificate_pinning_title" = "Certificate Pinning";
+
+/*Fuzzy*/
+"certificate_pinning_button_disable" = "Désactiver";
+"certificate_pinning_button_enable" = "Activer";
+
+/*Erster Onboarding-Screen für Pilot: Überschrift*/
+"onboarding_legal_heading" = "Version préliminaire";
+
+/*Erster Onboarding-Screen für Pilot: Titel*/
+"onboarding_legal_title" = "A utiliser uniquement par les participants de la phase pilote";
+
+/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
+"onboarding_legal_text1" = "L'utilisation de cette application est actuellement destinée et autorisée uniquement aux groupes suivants, qui ont été invités par l'OFSP à participer au projet pilote: Membres de l'armée suisse en formation, en assistance et en service actif, personnel des universités, personnel des hôpitaux et des cliniques, personnel des administrations cantonales et de l'administration fédérale, membres d'associations souhaitant contribuer à l'amélioration de la qualité du système.";
+
+/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
+"onboarding_legal_text2" = "La phase pilote est réalisée avec des systèmes productifs et contient des données réelles. En cas de test COVID-19 positif, les médecins cantonaux ne sont pas autorisés à générer un code covid pour la notification à partir de l'application pour les utilisateurs non autorisés. Les attaques (\"tests de pénétration\") sur le système en dehors du test de sécurité publique délimité sont des attaques sur le système productif et sont donc illégales.";
+
+/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_title" = "Appartenez-vous à une organisation qui est autorisée à participer à la phase pilote ?";
+
+/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_message" = "Appartenez-vous à l'un des groupes suivants : Les membres de l'armée suisse en formation, en assistance et en service actif, les employés des universités, les employés des hôpitaux et des cliniques, les employés des administrations cantonales et de l'administration fédérale, les membres des associations qui souhaitent contribuer à l'amélioration de la qualité du système?";
+
+/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_no" = "Non";
+
+/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_yes" = "Oui";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
+"onboarding_legal_blocker_title" = "Phase pilote";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
+"onboarding_legal_blocker_message" = "Vous ne faites pas partie d'une organisation participant à la phase pilote. Veuillez installer la mise à jour appropriée après le lancement officiel de l'application et ouvrir l'application à nouveau.";

@@ -11,7 +11,7 @@ class CodeValidator {
 
     enum ValidationResult {
         case success(token: String, date: Date)
-        case failure(error: Error)
+        case failure(error: CodedError)
         case invalidTokenError
     }
 
@@ -32,7 +32,14 @@ class CodeValidator {
                 }
 
                 if let error = error {
-                    completion(.failure(error: error))
+                    let nsError = error as NSError
+                    if let e = error as? CodedError {
+                        completion(.failure(error: e))
+                    } else if nsError.domain == NSURLErrorDomain, nsError.code == -999 {
+                        completion(.failure(error: CertificateValidationError.validationFailed))
+                    } else {
+                        completion(.failure(error: NetworkError.unexpected(error: error)))
+                    }
                     return
                 } else if response == nil {
                     completion(.failure(error: NetworkError.networkError))

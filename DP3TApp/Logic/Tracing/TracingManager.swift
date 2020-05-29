@@ -84,8 +84,13 @@ class TracingManager: NSObject {
                                            urlSession: URLSession.certificatePinned,
                                            backgroundHandler: self)
             #endif
+
         } catch {
-            UIStateManager.shared.tracingStartError = error
+            if let e = error as? DP3TTracingError {
+                UIStateManager.shared.tracingStartError = e
+            } else {
+                UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
+            }
         }
 
         updateStatus { _ in
@@ -109,7 +114,11 @@ class TracingManager: NSObject {
                 // Tracing should not start if the user is marked as infected
                 UIStateManager.shared.tracingStartError = nil
             } catch {
-                UIStateManager.shared.tracingStartError = error
+                if let e = error as? DP3TTracingError {
+                    UIStateManager.shared.tracingStartError = e
+                } else {
+                    UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
+                }
             }
         }
 
@@ -169,7 +178,11 @@ class TracingManager: NSObject {
             // Tracing should not start if the user is marked as infected
             UIStateManager.shared.tracingStartError = nil
         } catch {
-            UIStateManager.shared.tracingStartError = error
+            if let e = error as? DP3TTracingError {
+                UIStateManager.shared.tracingStartError = e
+            } else {
+                UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
+            }
         }
 
         updateStatus(completion: nil)
@@ -180,7 +193,7 @@ class TracingManager: NSObject {
         updateStatus(completion: nil)
     }
 
-    func updateStatus(completion: ((Error?) -> Void)?) {
+    func updateStatus(completion: ((CodedError?) -> Void)?) {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
@@ -198,6 +211,7 @@ class TracingManager: NSObject {
 
                 // schedule local push if exposed
                 TracingLocalPush.shared.update(state: st)
+                TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: st)
             }
             DP3TTracing.delegate = self
         }
@@ -214,12 +228,14 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.tracingState = state
                 UIStateManager.shared.trackingState = state.trackingState
             }
+            TracingLocalPush.shared.update(state: state)
+            TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
         }
     }
 }
 
 extension TracingManager: DP3TBackgroundHandler {
-    func performBackgroundTasks(completionHandler: (Bool) -> Void) {
+    func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
         let queue = OperationQueue()
 
         let group = DispatchGroup()
@@ -236,12 +252,12 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        queue.addOperation(ConfigLoadOperation())
-        queue.addOperation(FakePublishOperation())
+        queue.addOperation(configOperation)
+        queue.addOperation(fakePublishOperation)
 
-        group.wait()
-
-        completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+        group.notify(queue: .global(qos: .background)) {
+            completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
+        }
     }
 }
 

@@ -17,6 +17,8 @@
 
         private let mockModuleView = NSDebugScreenMockView()
         private let sdkStatusView = NSDebugScreenSDKStatusView()
+        private let certificatePinningButton = NSButton(title: "", style: .uppercase(.ns_purple))
+        private let certificatePinningView = NSSimpleModuleBaseView(title: "")
         private let logsView = NSSimpleModuleBaseView(title: "Logs", text: "")
 
         // MARK: - Init
@@ -32,12 +34,15 @@
             super.viewDidLoad()
             view.backgroundColor = .ns_backgroundSecondary
             setup()
+            certificatePinningView.contentView.addArrangedView(certificatePinningButton)
+            certificatePinningButton.addTarget(self, action: #selector(toggleCertificatePinning), for: .touchUpInside)
         }
 
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             navigationController?.setNavigationBarHidden(false, animated: true)
             updateLogs()
+            updateCertificatePinningView()
         }
 
         private func updateLogs() {
@@ -81,9 +86,29 @@
 
             stackScrollView.addSpacerView(NSPadding.large)
 
+            stackScrollView.addArrangedView(certificatePinningView)
+
+            stackScrollView.addSpacerView(NSPadding.large)
+
             stackScrollView.addArrangedView(logsView)
 
             stackScrollView.addSpacerView(NSPadding.large)
+        }
+
+        @objc
+        private func toggleCertificatePinning() {
+            URLSession.evaluator.useCertificatePinning.toggle()
+            updateCertificatePinningView()
+        }
+
+        private func updateCertificatePinningView() {
+            if URLSession.evaluator.useCertificatePinning {
+                certificatePinningView.title = "certificate_pinning_title".ub_localized + "🔒"
+                certificatePinningButton.setTitle("certificate_pinning_button_disable".ub_localized, for: .normal)
+            } else {
+                certificatePinningView.title = "certificate_pinning_title".ub_localized + "🔓"
+                certificatePinningButton.setTitle("certificate_pinning_button_enable".ub_localized, for: .normal)
+            }
         }
     }
 

@@ -15,10 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // setup sdk
         TracingManager.shared.initialize()
 
-        // Schedule Update check in background
-        ConfigBackgroundTaskManager().register()
-        FakePublishBackgroundTaskManager.shared.register()
-
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
@@ -85,7 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
 
-        FakePublishBackgroundTaskManager.shared.runForegroundTask()
+        FakePublishManager.shared.runForegroundTask()
     }
 
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
