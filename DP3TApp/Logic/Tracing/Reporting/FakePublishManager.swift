@@ -56,14 +56,12 @@ class FakePublishManager {
         }
     }
 
-    func getOperation(completionBlock: (() -> Void)? = nil) -> Operation {
+    @discardableResult
+    func runTask(completionBlock: (() -> Void)? = nil) -> Operation {
         let operation = FakePublishOperation(manager: self)
         operation.completionBlock = completionBlock
+        operationQueue.addOperation(operation)
         return operation
-    }
-
-    func runForegroundTask(completionBlock: (() -> Void)? = nil) {
-        operationQueue.addOperation(getOperation(completionBlock: completionBlock))
     }
 }
 
@@ -76,6 +74,8 @@ private class FakePublishOperation: Operation {
     }
 
     override func main() {
+        guard isCancelled == false else { return }
+
         guard let startDate = manager.nextScheduledFakeRequestDate,
             Date() >= startDate else {
             Logger.log("Too early for fake request")
@@ -86,15 +86,16 @@ private class FakePublishOperation: Operation {
         let delay = Double.random(in: 20 ... 30)
         let group = DispatchGroup()
         group.enter()
-        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
+        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) { [weak self] in
             Logger.log("Start Fake Publish", appState: true)
-            ReportingManager.shared.report(isFakeRequest: true) { error in
+            ReportingManager.shared.report(isFakeRequest: true) { [weak self] error in
+                guard let self = self else { return }
                 if error != nil {
                     self.cancel()
                     Logger.log("Fake request failed")
                 } else {
                     Logger.log("Fake request success")
-                    manager.rescheduleFakeRequest()
+                    self.manager.rescheduleFakeRequest()
                 }
                 group.leave()
             }

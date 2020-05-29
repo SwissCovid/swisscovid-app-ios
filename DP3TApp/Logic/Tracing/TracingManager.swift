@@ -247,12 +247,11 @@ extension TracingManager: DP3TBackgroundHandler {
         }
 
         group.enter()
-        let fakePublishOperation = FakePublishManager.shared.getOperation {
+        let fakePublishOperation = FakePublishManager.shared.runTask {
             group.leave()
         }
 
         queue.addOperation(configOperation)
-        queue.addOperation(fakePublishOperation)
 
         group.notify(queue: .global(qos: .background)) {
             completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
