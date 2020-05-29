@@ -266,6 +266,8 @@
 		A61580AB247E4938000A51EC /* WhatToDoSymptomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */; };
 		A6256C36247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
 		A6256C37247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
+		A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
+		A693B20E24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
@@ -454,6 +456,7 @@
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoSymptomViewModel.swift; sourceTree = "<group>"; };
 		A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoPositiveTestViewModel.swift; sourceTree = "<group>"; };
+		A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailNoMeldungenViewModel.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
@@ -871,6 +874,7 @@
 			isa = PBXGroup;
 			children = (
 				6E33086C245079FF00913B0E /* NSMeldungenDetailNoMeldungenViewController.swift */,
+				A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */,
 				6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */,
 				6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */,
 				6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */,
@@ -1546,6 +1550,7 @@
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
 				242D2230245C4BD8005DAEA8 /* NSBegegnungenModuleView.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				A693B20E24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */,
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
 				242D2233245C4BD8005DAEA8 /* AppDelegate.swift in Sources */,
 				242D2234245C4BD8005DAEA8 /* NSFancyNumberView.swift in Sources */,
@@ -1680,6 +1685,7 @@
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
 				6E6E5190242FCE13006E532E /* NSFancyNumberView.swift in Sources */,
