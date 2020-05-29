@@ -12,6 +12,12 @@ class FakePublishManager {
 
     private let queue = DispatchQueue(label: "org.dpppt.fakepublishmanager")
 
+    private let operationQueue: OperationQueue = {
+        let queue = OperationQueue()
+        queue.maxConcurrentOperationCount = 1
+        return queue
+    }()
+
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
     private var nextScheduledFakeRequestDateStore: Date?
 
@@ -46,14 +52,25 @@ class FakePublishManager {
         }
     }
 
-    func runForegroundTask() {
-        let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
-        queue.addOperation(FakePublishOperation())
+    func getOperation(completionBlock: (() -> Void)? = nil) -> Operation {
+        let operation = FakePublishOperation(manager: self)
+        operation.completionBlock = completionBlock
+        return operation
+    }
+
+    func runForegroundTask(completionBlock: (() -> Void)? = nil) {
+        operationQueue.addOperation(getOperation(completionBlock: completionBlock))
     }
 }
 
-class FakePublishOperation: Operation {
+private class FakePublishOperation: Operation {
+    weak var manager: FakePublishManager!
+
+    init(manager: FakePublishManager) {
+        self.manager = manager
+        super.init()
+    }
+
     override func main() {
         guard let startDate = FakePublishManager.shared.nextScheduledFakeRequestDate,
             Date() >= startDate else {

@@ -246,9 +246,8 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        let fakePublishOperation = FakePublishOperation()
         group.enter()
-        fakePublishOperation.completionBlock = {
+        let fakePublishOperation = FakePublishManager.shared.getOperation {
             group.leave()
         }
 
