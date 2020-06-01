@@ -107,8 +107,8 @@ extension DP3TNetworkingError: LocalizedError, CodedError {
             return "IBRTMM"
         case .timeInconsistency(shift: _):
             return "ITIMIN"
-        case .jwtSignatureError(code: _, debugDescription: _):
-            return "IJWTSE"
+        case let .jwtSignatureError(code: code, debugDescription: _):
+            return "IJWTSE\(code)"
         }
     }
 }
