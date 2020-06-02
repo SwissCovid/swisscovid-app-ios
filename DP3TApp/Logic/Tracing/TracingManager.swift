@@ -1,7 +1,11 @@
 /*
- * Created by Ubique Innovation AG
- * https://www.ubique.ch
- * Copyright (c) 2020. All rights reserved.
+ * Copyright (c) 2020 Ubique Innovation AG <https://www.ubique.ch>
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * SPDX-License-Identifier: MPL-2.0
  */
 
 import Foundation
@@ -246,14 +250,12 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        let fakePublishOperation = FakePublishOperation()
         group.enter()
-        fakePublishOperation.completionBlock = {
+        let fakePublishOperation = FakePublishManager.shared.runTask {
             group.leave()
         }
 
         queue.addOperation(configOperation)
-        queue.addOperation(fakePublishOperation)
 
         group.notify(queue: .global(qos: .background)) {
             completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
