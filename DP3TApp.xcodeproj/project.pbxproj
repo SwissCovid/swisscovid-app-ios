@@ -266,6 +266,10 @@
 		A61580AB247E4938000A51EC /* WhatToDoSymptomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */; };
 		A6256C36247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
 		A6256C37247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
+		A66D0F5E24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */; };
+		A66D0F5F24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */; };
+		A66D0F61248655BC00462A76 /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */; };
+		A66D0F62248655BC00462A76 /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */; };
 		A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A693B20E24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A693B21024812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */; };
@@ -458,6 +462,8 @@
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoSymptomViewModel.swift; sourceTree = "<group>"; };
 		A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoPositiveTestViewModel.swift; sourceTree = "<group>"; };
+		A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
+		A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailNoMeldungenViewModel.swift; sourceTree = "<group>"; };
 		A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailPositiveTestedViewModel.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
@@ -603,6 +609,7 @@
 			isa = PBXGroup;
 			children = (
 				6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */,
+				A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */,
 				6E1771552440B5140008D73D /* NSCodeInputControl.swift */,
 				6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */,
 			);
@@ -668,6 +675,7 @@
 			isa = PBXGroup;
 			children = (
 				DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */,
+				A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */,
 				24F35ACF2445BDB500A1B7AB /* Header */,
 				24780B18242DFD98003BB26C /* Base */,
 				24780AFE242DF8AA003BB26C /* Meldung */,
@@ -1469,6 +1477,7 @@
 				242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */,
 				242D21E1245C4BD8005DAEA8 /* NSTitleViewScrollViewController.swift in Sources */,
 				242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */,
+				A66D0F5F24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */,
 				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
@@ -1547,6 +1556,7 @@
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
 				242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */,
 				242D222A245C4BD8005DAEA8 /* NSExternalLinkButton.swift in Sources */,
+				A66D0F62248655BC00462A76 /* CodeInputViewModel.swift in Sources */,
 				242D222B245C4BD8005DAEA8 /* NSMeldungenDetailViewController.swift in Sources */,
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
@@ -1605,6 +1615,7 @@
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
+				A66D0F5E24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
 				6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */,
@@ -1683,6 +1694,7 @@
 				242D21D1245C3853005DAEA8 /* Logger.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */,
+				A66D0F61248655BC00462A76 /* CodeInputViewModel.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,

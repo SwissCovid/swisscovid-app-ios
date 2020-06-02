@@ -11,9 +11,9 @@
 import Foundation
 import UIKit
 
-class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtocol {
+class NSCodeInputViewController: NSInformStepViewController {
+    
     // MARK: - Views
-
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
@@ -26,8 +26,13 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private let codeControl = NSCodeControl()
 
     private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
+    
+    private var rightBarButtonItem: UIBarButtonItem?
+    
+    var viewModel: CodeInputViewModel!
 
-    // MARK: - View
+    
+    // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,10 +51,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     // MARK: - Setup
 
     private func setup() {
-        titleLabel.text = "inform_code_title".ub_localized
-        textLabel.text = "inform_code_text".ub_localized
-        errorTitleLabel.text = "inform_code_invalid_title".ub_localized
-        errorTextLabel.text = "inform_code_invalid_subtitle".ub_localized
+        titleLabel.text = viewModel.titleLabelText
+        textLabel.text = viewModel.textLabelText
+        errorTitleLabel.text = viewModel.errorTitleLabelText
+        errorTextLabel.text = viewModel.errorTextLabelText
 
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
@@ -116,8 +121,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     // MARK: - Send Logic
 
-    private var rightBarButtonItem: UIBarButtonItem?
-
     private func sendPressed() {
         _ = codeControl.resignFirstResponder()
 
@@ -129,38 +132,27 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
-
-        ReportingManager.shared.report(covidCode: codeControl.code()) { [weak self] error in
-            guard let self = self else { return }
-
+        
+        viewModel.send(codeControl.code(), success: {
+            self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
+            self.changePresentingViewController()
+        }) { (error) in
             if let error = error {
-                switch error {
-                case let .failure(error: error):
-                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
+            } else {
+                self.codeControl.clearAndRestart()
+                self.errorView.isHidden = false
+                self.textLabel.isHidden = true
 
-                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-
-                case .invalidCode:
-                    self.codeControl.clearAndRestart()
-                    self.errorView.isHidden = false
-                    self.textLabel.isHidden = true
-
-                    self.stopLoading()
-                    if UIAccessibility.isVoiceOverRunning {
-                        UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
-                    }
-
-                    self.navigationItem.hidesBackButton = false
-                    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
+                self.stopLoading()
+                if UIAccessibility.isVoiceOverRunning {
+                    UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
                 }
 
-            } else {
-                // success
-                // reschedule next fake request
-                FakePublishManager.shared.rescheduleFakeRequest(force: true)
-                self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
-                self.changePresentingViewController()
+                self.navigationItem.hidesBackButton = false
+                self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             }
         }
     }
@@ -175,8 +167,25 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
     }
 
-    // MARK: - NSCodeControlProtocol
+    private func updateAccessibilityLabelOfButton(sendAllowed: Bool) {
+        let codeInput = "accessibility_code_button_current_code_hint".ub_localized + codeControl.code()
+        if sendAllowed {
+            sendButton.accessibilityHint = codeInput
+        } else {
+            var accessibilityLabel = "accessibility_code_button_disabled_hint".ub_localized
+            if !codeControl.code().isEmpty {
+                accessibilityLabel += codeInput
+            }
+            sendButton.accessibilityHint = accessibilityLabel
+        }
+    }
+}
 
+
+// MARK: - NSCodeControlProtocol
+
+extension NSCodeInputViewController: NSCodeControlProtocol {
+    
     func changeSendPermission(to sendAllowed: Bool) {
         sendButton.isEnabled = sendAllowed
         updateAccessibilityLabelOfButton(sendAllowed: sendAllowed)
@@ -185,19 +194,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     func lastInputControlEntered() {
         if UIAccessibility.isVoiceOverRunning {
             UIAccessibility.post(notification: .screenChanged, argument: sendButton)
-        }
-    }
-
-    private func updateAccessibilityLabelOfButton(sendAllowed: Bool) {
-        let codeEingabe = "accessibility_code_button_current_code_hint".ub_localized + codeControl.code()
-        if sendAllowed {
-            sendButton.accessibilityHint = codeEingabe
-        } else {
-            var accessibilityLabel = "accessibility_code_button_disabled_hint".ub_localized
-            if !codeControl.code().isEmpty {
-                accessibilityLabel += codeEingabe
-            }
-            sendButton.accessibilityHint = accessibilityLabel
         }
     }
 }

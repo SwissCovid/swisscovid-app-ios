@@ -71,6 +71,9 @@ class NSSendViewController: NSInformBottomButtonViewController {
     private var rightBarButtonItem: UIBarButtonItem?
 
     private func continuePressed() {
-        navigationController?.pushViewController(NSCodeInputViewController(), animated: true)
+        
+        let codeInputVC = NSCodeInputViewController()
+        codeInputVC.viewModel = CodeInputViewModel(reportingManager: ReportingManager.shared)
+        navigationController?.pushViewController(codeInputVC, animated: true)
     }
 }
