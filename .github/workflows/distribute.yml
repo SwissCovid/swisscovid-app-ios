@@ -15,7 +15,7 @@ on:
 #      - master
 
 jobs:
-  testflight_internal:
+  testflight_dev:
     runs-on: macOS-latest
 
     steps:
@@ -39,8 +39,8 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
         MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
-        APP_SCHEME: "Release-Internal"
-        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_INTERNAL }}
+        APP_SCHEME: "Release-Dev"
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_DEV }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "DEV"
       run: bundle exec fastlane sign_and_build
