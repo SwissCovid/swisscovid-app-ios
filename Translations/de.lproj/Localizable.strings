@@ -39,7 +39,7 @@
 "push_exposed_title" = "Neue Nachricht";
 
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
-"push_exposed_text" = "Öffnen Sie die App um die Nachricht zu lesen.";
+"push_exposed_text" = "Öffnen Sie die App, um die Nachricht zu lesen.";
 
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
@@ -216,7 +216,7 @@
 "symptom_detail_box_button" = "Zum Coronavirus-Check";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen die auf das neue Coronavirus hindeuten Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
+"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen, die auf das neue Coronavirus hindeuten, Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positiv getestet";
@@ -328,7 +328,7 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen, die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
@@ -587,7 +587,7 @@
 "meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist werden sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist, werden sie informiert.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
@@ -641,7 +641,7 @@
 "symptom_faq1_title" = "Unsicher bei Symptomen?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG für eine Handlungsempfehlung.";
+"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG, um eine Handlungsempfehlung zu erhalten.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
