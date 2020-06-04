@@ -2,12 +2,17 @@ name: testflight
 
 on:
   push:
-    branches:
-      - master
-      - release
-  pull_request:
-    branches:
-      - master
+    branches-ignore:
+      - '**'
+
+#on:
+#  push:
+#    branches:
+#      - master
+#      - release
+#  pull_request:
+#    branches:
+#      - master
 
 jobs:
   testflight_internal:
