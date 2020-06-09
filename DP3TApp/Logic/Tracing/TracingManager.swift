@@ -10,8 +10,11 @@
 
 import Foundation
 import UIKit
-
 import DP3TSDK
+
+#if DEBUG || RELEASE_DEV
+import UserNotifications
+#endif
 
 #if ENABLE_TESTING
     import DP3TSDK_LOGGING_STORAGE
@@ -240,6 +243,19 @@ extension TracingManager: DP3TTracingDelegate {
 
 extension TracingManager: DP3TBackgroundHandler {
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
+
+        #if DEBUG || RELEASE_DEV
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "Debug"
+        content.body = "Backgroundtask got triggered at \(Date().description)"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+        #endif
+
+
         let queue = OperationQueue()
 
         let group = DispatchGroup()
