@@ -806,3 +806,11 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "Vous ne faites pas partie d'une organisation participant à la phase pilote. Veuillez installer la mise à jour appropriée après le lancement officiel de l'application et ouvrir l'application à nouveau.";
+"begegnung_detail_last_sync_title" = "Latest successful synchronisation";
+"synchronizations_view_title" = "";
+"synchronizations_view_info_title" = "";
+"synchronizations_view_info_question" = "";
+"synchronizations_view_info_answer" = "";
+"synchronizations_view_period_title" = "";
+"synchronizations_view_sync_via_open" = "";
+"synchronizations_view_sync_via_background" = "";
