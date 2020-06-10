@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/fr/impressum.html</loc>
+    <loc>/sr/impressum.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -14,6 +14,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/impressum.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/impressum.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -37,11 +42,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="sr"
-                href="/sr/impressum.html"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="bs"
                 href="/bs/impressum.html"
                 />
@@ -52,13 +52,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/impressum.html"
+                hreflang="sr"
+                href="/sr/impressum.html"
                 />
   </url>
   
   <url>
-    <loc>/fr/licence.html</loc>
+    <loc>/sr/licence.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -69,6 +69,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/licence.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -92,11 +97,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="sr"
-                href="/sr/licence.html"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="bs"
                 href="/bs/licence.html"
                 />
@@ -107,13 +107,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/licence.html"
+                hreflang="sr"
+                href="/sr/licence.html"
                 />
   </url>
   
   <url>
-    <loc>/fr/</loc>
+    <loc>/sr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -123,6 +123,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -146,11 +151,6 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="sr"
-                href="/sr/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="bs"
                 href="/bs/"
                 />
@@ -161,8 +161,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="fr"
-                href="/fr/"
+                hreflang="sr"
+                href="/sr/"
                 />
   </url>
   

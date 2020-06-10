@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/fr/impressum.html</loc>
+    <loc>/hr/impressum.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -14,6 +14,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/impressum.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/impressum.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -50,15 +55,10 @@
                 hreflang="hr"
                 href="/hr/impressum.html"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/impressum.html"
-                />
   </url>
   
   <url>
-    <loc>/fr/licence.html</loc>
+    <loc>/hr/licence.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -69,6 +69,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/licence.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -105,15 +110,10 @@
                 hreflang="hr"
                 href="/hr/licence.html"
                 />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/licence.html"
-                />
   </url>
   
   <url>
-    <loc>/fr/</loc>
+    <loc>/hr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -123,6 +123,11 @@
                 rel="alternate"
                 hreflang="en"
                 href="/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="fr"
+                href="/fr/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -158,11 +163,6 @@
                 rel="alternate"
                 hreflang="hr"
                 href="/hr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="fr"
-                href="/fr/"
                 />
   </url>
   
