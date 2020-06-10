@@ -8,10 +8,9 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
 import UIKit
 
-class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtocol {
+class NSCodeInputViewController: NSInformStepViewController {
     // MARK: - Views
 
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
@@ -88,7 +87,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
             make.left.right.equalToSuperview()
         }
 
-        codeControl.controller = self
+        codeControl.delegate = self
 
         stackScrollView.addArrangedView(codeControlContainer)
         stackScrollView.addSpacerView(NSPadding.medium * 4.0)
@@ -175,19 +174,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
     }
 
-    // MARK: - NSCodeControlProtocol
-
-    func changeSendPermission(to sendAllowed: Bool) {
-        sendButton.isEnabled = sendAllowed
-        updateAccessibilityLabelOfButton(sendAllowed: sendAllowed)
-    }
-
-    func lastInputControlEntered() {
-        if UIAccessibility.isVoiceOverRunning {
-            UIAccessibility.post(notification: .screenChanged, argument: sendButton)
-        }
-    }
-
     private func updateAccessibilityLabelOfButton(sendAllowed: Bool) {
         let codeEingabe = "accessibility_code_button_current_code_hint".ub_localized + codeControl.code()
         if sendAllowed {
@@ -199,5 +185,36 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
             }
             sendButton.accessibilityHint = accessibilityLabel
         }
+    }
+}
+
+// MARK: - NSCodeControlDelegate
+
+extension NSCodeInputViewController: NSCodeControlDelegate {
+    
+    func didChangeSendPermission(to sendAllowed: Bool) {
+        sendButton.isEnabled = sendAllowed
+        updateAccessibilityLabelOfButton(sendAllowed: sendAllowed)
+    }
+    
+    func lastInputControlEntered() {
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(notification: .screenChanged, argument: sendButton)
+        }
+    }
+    
+    func didEnterAnInvalidCode() {
+        self.codeControl.clearAndRestart()
+        self.errorView.isHidden = false
+        self.textLabel.isHidden = true
+
+        self.stopLoading()
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
+        }
+
+        self.navigationItem.hidesBackButton = false
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
     }
 }
