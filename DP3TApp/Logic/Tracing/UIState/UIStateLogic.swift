@@ -47,7 +47,7 @@ class UIStateLogic {
         //
 
         var infectionStatus = tracingState.infectionStatus
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             setDebugOverwrite(&infectionStatus, &newState)
         #endif
 
@@ -64,12 +64,12 @@ class UIStateLogic {
         }
 
         // Set debug helpers
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
         #endif
 
-        #if ENABLE_LOGGING
+        #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
             setDebugLog(&newState)
         #endif
 
@@ -200,7 +200,7 @@ class UIStateLogic {
         }
     }
 
-    #if ENABLE_TESTING
+    #if ENABLE_STATUS_OVERRIDE
 
         // MARK: - DEBUG Helpers
 
@@ -253,7 +253,7 @@ class UIStateLogic {
         }
     #endif
 
-    #if ENABLE_LOGGING
+    #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
         private func setDebugLog(_ newState: inout UIStateModel) {
             let logs = Logger.lastLogs
             let df = DateFormatter()
