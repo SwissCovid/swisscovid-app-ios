@@ -80,12 +80,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
+            NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
             startForceUpdateCheck()
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
 
         FakePublishManager.shared.runTask()
+
+        NSSynchronizationPersistence.shared?.appendLog(eventType: .open, date: Date(), payload: nil)
     }
 
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {

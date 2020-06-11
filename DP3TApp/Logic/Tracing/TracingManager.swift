@@ -16,11 +16,6 @@ import UIKit
     import UserNotifications
 #endif
 
-#if ENABLE_LOGGING
-    import DP3TSDK_LOGGING_STORAGE
-    extension DP3TLoggingStorage: LoggingDelegate {}
-#endif
-
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
     let appId = "ch.admin.bag.dp3t"
@@ -31,7 +26,7 @@ class TracingManager: NSObject {
     let databaseSyncer = DatabaseSyncer()
 
     #if ENABLE_LOGGING
-        var loggingStorage: DP3TLoggingStorage?
+        var loggingStorage: LoggingStorage?
     #endif
 
     @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
@@ -74,6 +69,8 @@ class TracingManager: NSObject {
                     DP3TTracing.loggingDelegate = loggingStorage
                 #endif
             #endif
+
+            DP3TTracing.activityDelegate = self
 
             try DP3TTracing.initialize(with: descriptor,
                                        urlSession: URLSession.certificatePinned,
@@ -229,6 +226,12 @@ extension TracingManager: DP3TTracingDelegate {
 }
 
 extension TracingManager: DP3TBackgroundHandler {
+    func didScheduleBackgrounTask() {
+        #if ENABLE_SYNC_LOGGING
+            NSSynchronizationPersistence.shared?.appendLog(eventType: .scheduled, date: Date(), payload: nil)
+        #endif
+    }
+
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
         #if DEBUG || RELEASE_DEV
             let center = UNUserNotificationCenter.current()
@@ -256,6 +259,8 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
+        NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
+
         queue.addOperation(configOperation)
 
         group.notify(queue: .global(qos: .background)) {
@@ -274,3 +279,55 @@ extension TracingManager: DP3TBackgroundHandler {
         }
     }
 #endif
+
+extension TracingManager: ActivityDelegate {
+    func syncCompleted(totalRequest: Int, errors: [DP3TNetworkingError]) {
+        let encoding = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+        let numberOfSuccess = totalRequest - errors.count
+        var numberOfInstantErrors: Int = 0
+        var numberOfDelayedErrors: Int = 0
+
+        for error in errors {
+            switch error {
+            case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                numberOfDelayedErrors += 1 // If error is certificate
+            case DP3TNetworkingError.networkSessionError:
+                numberOfDelayedErrors += 1 // If error is networking
+            default:
+                numberOfInstantErrors += 1
+            }
+        }
+
+        var payload = String(encoding[min(numberOfInstantErrors, encoding.count - 1)])
+        payload += String(encoding[min(numberOfDelayedErrors, encoding.count - 1)])
+        payload += String(encoding[min(numberOfSuccess, encoding.count - 1)])
+        NSSynchronizationPersistence.shared?.appendLog(eventType: .sync, date: Date(), payload: payload)
+    }
+
+    func fakeRequestCompleted(result: Result<Int, DP3TNetworkingError>) {
+        #if ENABLE_SYNC_LOGGING
+            var payload: String?
+            switch result {
+            case let .success(code):
+                payload = "\(code)"
+            case let .failure(error):
+                payload = "\(error.errorCode) \(error.errorDescription ?? "")"
+            }
+            NSSynchronizationPersistence.shared?.appendLog(eventType: .fakeRequest, date: Date(), payload: payload)
+        #endif
+    }
+
+    func outstandingKeyUploadCompleted(result: Result<Int, DP3TNetworkingError>) {
+        #if ENABLE_SYNC_LOGGING
+            var payload: String?
+            switch result {
+            case let .success(code):
+                payload = "\(code)"
+            case let .failure(error):
+                payload = "\(error.errorCode) \(error.errorDescription ?? "")"
+            }
+            NSSynchronizationPersistence.shared?.appendLog(eventType: .nextDayKeyUpload, date: Date(), payload: payload)
+        #endif
+    }
+}
