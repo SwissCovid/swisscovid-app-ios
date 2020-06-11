@@ -67,6 +67,9 @@ class UIStateLogic {
         #if ENABLE_TESTING
             setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
+        #endif
+
+        #if ENABLE_LOGGING
             setDebugLog(&newState)
         #endif
 
@@ -124,7 +127,7 @@ class UIStateLogic {
                     newState.homescreen.meldungen.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
                 }
 
-                #if ENABLE_TESTING
+                #if ENABLE_VERBOSE
                     newState.homescreen.meldungen.errorCode = "\(errorCode): \(codedError)"
                 #else
                     newState.homescreen.meldungen.errorCode = errorCode
@@ -141,7 +144,7 @@ class UIStateLogic {
             if let codedError = UIStateManager.shared.syncError {
                 newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
 
-                #if ENABLE_TESTING
+                #if ENABLE_VERBOSE
                     newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else
                     newState.homescreen.meldungen.errorCode = codedError.errorCodeString
@@ -259,7 +262,9 @@ class UIStateLogic {
                 newState.debug.infectionStatus = .infected
             }
         }
+    #endif
 
+    #if ENABLE_LOGGING
         private func setDebugLog(_ newState: inout UIStateModel) {
             let logs = Logger.lastLogs
             let df = DateFormatter()

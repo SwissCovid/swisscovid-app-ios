@@ -2,22 +2,27 @@ name: testflight
 
 on:
   push:
-    branches:
-      - master
-      - release
-  pull_request:
-    branches:
-      - master
+    branches-ignore:
+      - '**'
+
+#on:
+#  push:
+#    branches:
+#      - master
+#      - release
+#  pull_request:
+#    branches:
+#      - master
 
 jobs:
-  testflight_internal:
+  testflight_dev:
     runs-on: macOS-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.4.1
-      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+    - name: Switch to Xcode 11.5
+      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -34,8 +39,8 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         MATCH_GIT_BASIC_AUTHORIZATION: ${{ secrets.MATCH_GIT_BASIC_AUTHORIZATION }}
         MATCH_GIT_BRANCH: ${{ secrets.MATCH_GIT_BRANCH }}
-        APP_SCHEME: "Release-Internal"
-        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_INTERNAL }}
+        APP_SCHEME: "Release-Dev"
+        APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_DEV }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "DEV"
       run: bundle exec fastlane sign_and_build
@@ -54,8 +59,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.4.1
-      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+    - name: Switch to Xcode 11.5
+      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -92,8 +97,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.4.1
-      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+    - name: Switch to Xcode 11.5
+      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -130,8 +135,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.4.1
-      run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+    - name: Switch to Xcode 11.5
+      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
     
     - name: Sets up bundler
       run: bundle update --bundler

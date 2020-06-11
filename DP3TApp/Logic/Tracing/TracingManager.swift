@@ -10,10 +10,14 @@
 
 import Foundation
 import UIKit
-
 import DP3TSDK
 
-#if ENABLE_TESTING
+#if DEBUG || RELEASE_DEV
+import UserNotifications
+#endif
+
+
+#if ENABLE_LOGGING
     import DP3TSDK_LOGGING_STORAGE
     extension DP3TLoggingStorage: LoggingDelegate {}
 #endif
@@ -27,7 +31,7 @@ class TracingManager: NSObject {
     let uiStateManager = UIStateManager()
     let databaseSyncer = DatabaseSyncer()
 
-    #if ENABLE_TESTING
+    #if ENABLE_LOGGING
         var loggingStorage: DP3TLoggingStorage?
     #endif
 
@@ -62,7 +66,7 @@ class TracingManager: NSObject {
                                                        jwtPublicKey: Environment.current.jwtPublicKey)
             #endif
 
-            #if ENABLE_TESTING
+            #if ENABLE_LOGGING
                 // Set logging Storage
                 loggingStorage = try? .init()
                 #if DEBUG
@@ -70,24 +74,11 @@ class TracingManager: NSObject {
                 #else
                     DP3TTracing.loggingDelegate = loggingStorage
                 #endif
-
-                switch Environment.current {
-                case .dev:
-
-                    try DP3TTracing.initialize(with: descriptor,
-                                               urlSession: URLSession.certificatePinned,
-                                               backgroundHandler: self)
-                case .test, .abnahme, .prod:
-                    try DP3TTracing.initialize(with: descriptor,
-                                               urlSession: URLSession.certificatePinned,
-                                               backgroundHandler: self)
-                }
-            #else
-
-                try DP3TTracing.initialize(with: descriptor,
-                                           urlSession: URLSession.certificatePinned,
-                                           backgroundHandler: self)
             #endif
+
+            try DP3TTracing.initialize(with: descriptor,
+                                       urlSession: URLSession.certificatePinned,
+                                       backgroundHandler: self)
 
         } catch {
             if let e = error as? DP3TTracingError {
@@ -240,6 +231,19 @@ extension TracingManager: DP3TTracingDelegate {
 
 extension TracingManager: DP3TBackgroundHandler {
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
+
+        #if DEBUG || RELEASE_DEV
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "Debug"
+        content.body = "Backgroundtask got triggered at \(Date().description)"
+        content.sound = UNNotificationSound.default
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+        #endif
+
+
         let queue = OperationQueue()
 
         let group = DispatchGroup()
@@ -267,7 +271,7 @@ extension TracingManager: DP3TBackgroundHandler {
     extension TracingManager: LoggingDelegate {
         func log(_ string: String, type: OSLogType) {
             print(string)
-            #if ENABLE_TESTING
+            #if ENABLE_LOGGING
                 loggingStorage?.log(string, type: type)
             #endif
         }

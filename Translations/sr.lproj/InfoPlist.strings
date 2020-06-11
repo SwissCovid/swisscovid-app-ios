@@ -1,0 +1,3 @@
+"CFBundleDisplayName" = "SwissCovid";
+"NSBluetoothPeripheralUsageDescription" = "Kontakti se prepoznaju u pozadini preko Bluetooth-a, uz uštedu energije.";
+"NSBluetoothAlwaysUsageDescription" = "Kontakti se prepoznaju u pozadini preko Bluetooth-a, uz uštedu energije.";
