@@ -128,7 +128,7 @@ class TracingManager: NSObject {
         try? DP3TTracing.reset()
 
         // reset debugi fake data to test UI reset
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
     }
@@ -138,7 +138,7 @@ class TracingManager: NSObject {
         try? DP3TTracing.resetInfectionStatus()
 
         // reset debug fake data to test UI reset
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
 
@@ -155,7 +155,7 @@ class TracingManager: NSObject {
         try? DP3TTracing.resetExposureDays()
 
         // reset debug fake data to test UI reset
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
 
