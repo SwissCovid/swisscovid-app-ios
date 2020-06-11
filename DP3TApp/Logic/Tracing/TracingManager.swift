@@ -16,11 +16,6 @@ import UIKit
     import UserNotifications
 #endif
 
-#if ENABLE_LOGGING
-    import DP3TSDK_LOGGING_STORAGE
-    extension DP3TLoggingStorage: LoggingDelegate {}
-#endif
-
 /// Glue code between SDK and UI. TracingManager is responsible for starting and stopping the SDK and update the interface via UIStateManager
 class TracingManager: NSObject {
     let appId = "ch.admin.bag.dp3t"
@@ -31,7 +26,7 @@ class TracingManager: NSObject {
     let databaseSyncer = DatabaseSyncer()
 
     #if ENABLE_LOGGING
-        var loggingStorage: DP3TLoggingStorage?
+        var loggingStorage: LoggingStorage?
     #endif
 
     @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
