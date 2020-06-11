@@ -115,6 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // App should not have badges
         // Reset to 0 to ensure a unexpected badge doesn't stay forever
         application.applicationIconBadgeNumber = 0
+        TracingLocalPush.shared.clearNotifications()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -127,6 +128,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let backgroundTime = -(lastForegroundActivity?.timeIntervalSinceNow ?? 0)
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
+            application.applicationIconBadgeNumber = 0
+            TracingLocalPush.shared.clearNotifications()
         }
     }
 
