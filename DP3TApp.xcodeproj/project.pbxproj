@@ -254,7 +254,6 @@
 		6EFF9AE3245AAFC800C98FF3 /* UIImage+UBHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF9AE2245AAFC800C98FF3 /* UIImage+UBHelpers.m */; };
 		6EFF9AE5245AD18D00C98FF3 /* NSInformTracingEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */; };
 		8E24DEC124914088002B1F16 /* NSSynchronizationPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */; };
-		8E24DEC4249140A9002B1F16 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = 8E24DEC3249140A9002B1F16 /* SQLite */; };
 		8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC98241FCC7D006F2437 /* AppDelegate.swift */; };
 		8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC9C241FCC7D006F2437 /* NSViewController.swift */; };
 		8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E81CCA1241FCC7F006F2437 /* Assets.xcassets */; };
@@ -327,9 +326,10 @@
 		F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
-		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
-		F830799124928FA1005D3C65 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F830799024928FA1005D3C65 /* SQLite */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
+		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
+		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
+		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -539,7 +539,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F830799124928FA1005D3C65 /* SQLite in Frameworks */,
+				F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */,
 				F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */,
 				242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */,
 			);
@@ -549,7 +549,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E24DEC4249140A9002B1F16 /* SQLite in Frameworks */,
+				F870A5B72492C6D500C34FFA /* SQLite in Frameworks */,
 				242D2275245C4BE6005DAEA8 /* DP3TSDK in Frameworks */,
 				8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */,
 			);
@@ -1186,7 +1186,7 @@
 			packageProductDependencies = (
 				242D21D3245C4BD8005DAEA8 /* SnapKit */,
 				F8287D16246ABCAF0022CFD9 /* DP3TSDK */,
-				F830799024928FA1005D3C65 /* SQLite */,
+				F870A5B82492C6DE00C34FFA /* SQLite */,
 			);
 			productName = IVC;
 			productReference = 242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */;
@@ -1211,7 +1211,7 @@
 			packageProductDependencies = (
 				8E81CCCE241FD813006F2437 /* SnapKit */,
 				242D2274245C4BE6005DAEA8 /* DP3TSDK */,
-				8E24DEC3249140A9002B1F16 /* SQLite */,
+				F870A5B62492C6D500C34FFA /* SQLite */,
 			);
 			productName = IVC;
 			productReference = 8E81CC95241FCC7D006F2437 /* DP3TApp.app */;
@@ -1281,7 +1281,7 @@
 			packageReferences = (
 				8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */,
-				8E24DEC2249140A9002B1F16 /* XCRemoteSwiftPackageReference "SQLite" */,
+				F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = 8E81CC96241FCC7D006F2437 /* Products */;
 			projectDirPath = "";
@@ -1987,16 +1987,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEVELOPMENT_TEAM = XPL89PTG92;
+				DEVELOPMENT_TEAM = JH7CQD4MLU;
 				INFOPLIST_FILE = "DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.dbg;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
@@ -2126,18 +2125,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEVELOPMENT_TEAM = XPL89PTG92;
+				DEVELOPMENT_TEAM = JH7CQD4MLU;
 				INFOPLIST_FILE = "DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.dbg;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME TEST_ENTITLEMENT ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2621,18 +2618,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEVELOPMENT_TEAM = XPL89PTG92;
+				DEVELOPMENT_TEAM = JH7CQD4MLU;
 				INFOPLIST_FILE = "DP3TApp/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.dbg;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -2750,14 +2745,6 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		8E24DEC2249140A9002B1F16 /* XCRemoteSwiftPackageReference "SQLite" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.12.2;
-			};
-		};
 		8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
@@ -2774,6 +2761,14 @@
 				kind = branch;
 			};
 		};
+		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.12.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2787,11 +2782,6 @@
 			package = DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
 			productName = DP3TSDK;
 		};
-		8E24DEC3249140A9002B1F16 /* SQLite */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8E24DEC2249140A9002B1F16 /* XCRemoteSwiftPackageReference "SQLite" */;
-			productName = SQLite;
-		};
 		8E81CCCE241FD813006F2437 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -2802,9 +2792,14 @@
 			package = DF86B5F6245233C70019C229 /* XCRemoteSwiftPackageReference "dp3t-sdk-ios" */;
 			productName = DP3TSDK;
 		};
-		F830799024928FA1005D3C65 /* SQLite */ = {
+		F870A5B62492C6D500C34FFA /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8E24DEC2249140A9002B1F16 /* XCRemoteSwiftPackageReference "SQLite" */;
+			package = F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		F870A5B82492C6DE00C34FFA /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
