@@ -114,7 +114,7 @@
 "android_tracing_error_title" = "Tracing nicht aktiv";
 
 /*Fehlertitel mit Foreground Service Notification*/
-"android_foreground_service_notification_errors" = "App kann zurzeit nicht richtig funktionieren:";
+"android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_title" = "Vorschau Version";
@@ -174,16 +174,16 @@
 "whattodo_title_symptoms" = "Krankheitssymptomen";
 
 /*Subtitel auf Homescreen für Was Tun Section*/
-"whattodo_subtitle_symptoms" = "Was tun bei ...";
+"whattodo_subtitle_symptoms" = "Was tun bei...";
 
 /*Titel auf Homescreen bei Was tun Section*/
 "whattodo_title_positivetest" = "positiven Testresultat";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Was tun bei einem ...";
+"whattodo_subtitle_positivetest" = "Was tun bei einem...";
 
 /*Informieren Detail: Subtitel*/
-"inform_detail_subtitle" = "Was tun bei einem ...";
+"inform_detail_subtitle" = "Was tun bei einem...";
 
 /*Informieren Detail: Titel*/
 "inform_detail_title" = "positiven Test?";
@@ -201,7 +201,7 @@
 "inform_detail_box_text" = "Mit dem Ihnen zugestellten Covidcode können Sie den Test anonym in der App melden.";
 
 /*Symptome Detail Subtitel*/
-"symptom_detail_subtitle" = "Was tun, wenn ich ...";
+"symptom_detail_subtitle" = "Was tun wenn ich...";
 
 /*Symptom Detail Titel*/
 "symptom_detail_title" = "mich krank fühle?";
@@ -216,7 +216,7 @@
 "symptom_detail_box_button" = "Zum Coronavirus-Check";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen, die auf das neue Coronavirus hindeuten, Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
+"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen die auf das neue Coronavirus hindeuten Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positiv getestet";
@@ -265,8 +265,6 @@
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
-
-/*CFL: Selbst-Isolation*/
 "meldung_homescreen_positive_info_line2" = "Anweisungen zur Selbstisolation";
 
 /*Meldung Detail Exposed Neue Meldung*/
@@ -304,7 +302,6 @@
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
 "meldungen_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
 
-/*CFL: Hier hats die Latest Version deutsch mit "10 Tage ab Anstechung" nicht mehr reingeschafft. Schauen wir, wenn Übersetzungen da sind.*/
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
 "meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
 
@@ -317,7 +314,6 @@
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
 "meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
 
-/*CFL: Platzhalter-Text Onboarding – ev. später obsolet*/
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Untertitel";
 
@@ -328,7 +324,7 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
@@ -526,19 +522,15 @@
 "accessibility_12nd" = "Zwölftes";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
-/*Fuzzy*/
-"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde. ";
+"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-/*Fuzzy*/
 "android_foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
 
 /*Location Services ausgeschaltet Titel*/
-/*Fuzzy*/
 "android_error_location_services_title" = "Standort ausgeschaltet";
 
 /*Location Services ausgeschaltet Button*/
-/*Fuzzy*/
 "android_error_location_services_button" = "Standort einschalten";
 
 /*Information Button in the navigation bar*/
@@ -587,7 +579,7 @@
 "meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist, werden Sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist werden sie informiert.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
@@ -596,7 +588,7 @@
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
+"meldungen_meldungen_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
@@ -620,7 +612,7 @@
 "inform_detail_faq2_title" = "Wie bleibe ich anonym?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
+"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovi- App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -653,24 +645,21 @@
 "language_key" = "de";
 
 /*Meldungen Homescreen: Name Hotline*/
-/*Fuzzy*/
 "exposed_info_contact_hotline_name" = "Infoline Coronavirus";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
 "date_in_one_day" = "Noch 1 Tag";
 
 /*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
-"date_in_days" = "Davon bleiben noch {COUNT} Tage";
+"date_in_days" = "Noch {COUNT} Tage";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
 "date_text_before_date" = "am {DATE}";
 
 /*Accessibility Talk back information for android back button in toolbar*/
-/*Fuzzy*/
 "android_accessibility_back_button" = "Zurück";
 
 /*VoiceOver: Hilfetext bei Codeeingabe Button*/
-/*Fuzzy*/
 "accessibility_code_button_current_code_hint" = "Eingegebener Code: ";
 
 /*Accessibility: Codeeingabe einer Ziffer*/
@@ -689,7 +678,6 @@
 "onboarding_gaen_title" = "Tracing aktivieren";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-/*Fuzzy*/
 "onboarding_gaen_text" = "Um die App nutzen zu können, müssen COVID-19 Benachrichtigungen aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -705,44 +693,40 @@
 "onboarding_gaen_info_title_2" = "Leicht erhöhte Batterienutzung";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
-"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
+"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activated" = "Aktiviert";
 
 /*Meldung in der App löschen, wenn möglicherweise angesteckt*/
-/*Fuzzy*/
 "delete_reports_button" = "Meldung löschen";
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
-/*Fuzzy*/
-"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
+"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen? ";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
-/*Fuzzy*/
 "delete_infection_button" = "Meldung löschen";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
-/*Fuzzy*/
 "delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
-"android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
-"android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
-"android_onboarding_battery_permission_button" = "Zulassen";
+"android_onboarding_battery_permission_title" = "Ignore battery optimisation";
+"android_onboarding_battery_permission_text" = "To be able to recognise encounters at all times, the battery optimisation function for this app must be disabled.";
+"android_onboarding_battery_permission_button" = "Allow";
 "android_onboarding_battery_permission_button_deactivated" = "OK";
-"android_onboarding_battery_permission_info_1_title" = "Nur für diese App";
-"android_onboarding_battery_permission_info_1_text" = "Damit die App funktioniert, muss sie auch im Hintergrund ausgeführt werden. Zu diesem Zweck kann die Akku-Optimierung für einzelne Apps ausgeschaltet werden.";
-"android_onboarding_battery_permission_info_2_title" = "Leicht erhöhte Batterienutzung";
-"android_onboarding_battery_permission_info_2_text" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
-"android_foreground_service_notification_error_battery_optimization" = "Damit Tracing präzise funktioniert, muss die App auch im Hintergrund ausgeführt werden. Die Batterienutzung erhöht sich nur leicht.";
+"android_onboarding_battery_permission_info_1_title" = "Only for this app";
+"android_onboarding_battery_permission_info_1_text" = "For the app to work, it must also run in the background. Battery optimisation can be disabled for individual apps, so that this is possible.";
+"android_onboarding_battery_permission_info_2_title" = "Minor increase in battery usage";
+"android_onboarding_battery_permission_info_2_text" = "The app operates using as little energy as possible. There is only a minor increase in battery usage.";
+"android_foreground_service_notification_error_battery_optimization" = "For tracing to work precisely, the app must also run in the background. This will cause a minor increase in battery usage.";
 
 /*Google Play Services nicht aktuell*/
 "gaen_not_aviable" = "Google Play Services nicht aktuell";
 
 /*Google Play Services nicht aktuell text*/
-"gaen_not_available_text" = "Bitte aktualisieren Sie die Google Play Services.";
+"gaen_not_available_text" = "Bitte aktualisieren sie ihre Google Play Services";
 
 /*Tracing wurde vom System deaktiviert, erneut starten*/
-"gaen_unexpectedly_disabled" = "Tracing wurde deaktiviert. Bitte starten Sie es erneut.";
+"gaen_unexpectedly_disabled" = "Tracing is deactivated. Try to start it again.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
 "tracing_permission_error_title" = "COVID-19 Benachrichtigungen deaktiviert";
@@ -751,77 +735,73 @@
 "tracing_permission_error_text" = "Aktivieren Sie COVID-19 Benachrichtigungen, damit das anonyme Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufall-IDs mit der SwissCovid-App.";
+"user_cancelled_key_sharing_error" = "The message could not be sent. Please allow your random IDs to be shared with the SwissCovid app.";
 
 /*Button um die Google Play Services zu aktualisieren*/
-"playservices_update" = "Aktualisieren";
+"playservices_update" = "Update";
 
 /*Button um die Google Play Services zu installieren*/
-"playservices_install" = "Installieren";
+"playservices_install" = "Install";
 
 /*Titel für Infos zu den Google Play Services*/
 "playservices_title" = "Google Play Services";
 
 /*Meldung, dass die Google Play Services benötigt werden*/
-"playservices_text" = "Um das Tracing aktivieren zu können, wird eine aktuelle Version der Google Play Services benötigt. \n\nFalls auf Ihrem Gerät zurzeit kein Update verfügbar ist, versuchen Sie es bitte später nochmals.";
-
-/*Fuzzy*/
-"android_error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
-"android_error_battery_optimization_button" = "Zulassen";
+"playservices_text" = "To activate tracing, an up-to-date version of Google Play Services is required.\n\nIf no update is currently available on your device, please try again later.";
+"android_error_battery_optimization_title" = "Optimisation of battery usage activated";
+"android_error_battery_optimization_button" = "Allow";
 
 /*Telefonnummer für Hilfe bei App-Problemen*/
 "app_hotline_tel_number" = "+41 58 466 07 99";
 
 /*text shown in notification when we get an exception from the GAEN api*/
-"sync_api_error" = "Es ist ein unerwarteter Fehler beim Synchronisieren der Meldungen aufgetreten.";
+"sync_api_error" = "An unexpected error has occurred while synchronising reports.";
 
 /*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
-"certificate_validation_error" = "Keine sichere Verbindung zum Server möglich. Bitte prüfen oder deaktivieren Sie Ihr VPN bzw. Ihren Proxy oder prüfen Sie, ob Sie über ein Public WLAN verbunden sind.";
+"certificate_validation_error" = "A secure connection cannot be made to the server. Please check or deactivate your VPN and/or your proxy or check whether you are connected via a public Wi-Fi network.";
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
-"android_en_start_failure" = "COVID-19 Benachrichtigungen konnten nicht aktiviert werden";
+"android_en_start_failure" = "Failed to enable COVID-19 Notifications";
 
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
-
-/*Fuzzy*/
-"certificate_pinning_button_disable" = "Deaktivieren";
-"certificate_pinning_button_enable" = "Aktivieren";
+"certificate_pinning_button_disable" = "Disable";
+"certificate_pinning_button_enable" = "Enable";
 
 /*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Preview Version";
+"onboarding_legal_heading" = "Preview version";
 
 /*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "Nutzung nur für Teilnehmer der Pilotphase";
+"onboarding_legal_title" = "Use only for participants of the pilot phase";
 
 /*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "Die Nutzung dieser App ist zurzeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
+"onboarding_legal_text1" = "The use of this app is currently intended and authorised only for the following groups, who have been invited by the FOPH to take part in the pilot: Members of the Swiss Armed Forces in training, assistance and active service, staff of universities, staff of hospitals and clinics, staff of cantonal administrations and the Federal Administration, members of associations wishing to contribute to improving the quality of the system.";
 
 /*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "Die Pilotphase wird mit produktiven Systemen durchgeführt und beinhaltet echte Daten. Kantonsärzte dürfen im Falle eines positiven COVID-19-Tests den nicht zugelassenen Nutzern keinen CovidCode für die Benachrichtigung aus der App generieren. Angriffe («Penetration Tests») auf das System ausserhalb des abgegrenzten Public Security Tests sind Angriffe auf das produktive System und somit illegal.";
+"onboarding_legal_text2" = "The pilot phase is carried out with productive systems and contains real data. In case of a positive COVID-19 test, cantonal physicians are not allowed to generate a covid code for notification from the app for non-authorized users. Attacks (\"penetration tests\") on the system outside the delimited public security test are attacks on the productive system and are therefore illegal.";
 
 /*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Gehören Sie zu einer Organisation, die an der Pilotphase teilnehmen darf?";
+"onboarding_legal_alert_title" = "Do you belong to an organization that is allowed to participate in the pilot phase?";
 
 /*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Gehören Sie zu einer der folgenden Gruppen: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen?";
+"onboarding_legal_alert_message" = "Do you belong to one of the following groups: Members of the Swiss Armed Forces in training, assistance and active service, employees of universities, employees of hospitals and clinics, employees of cantonal administrations and the Federal Administration, members of associations who wish to contribute to the quality improvement of the system?\n";
 
 /*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Nein";
+"onboarding_legal_alert_no" = "No";
 
 /*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Ja";
+"onboarding_legal_alert_yes" = "Yes";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Pilotphase";
+"onboarding_legal_blocker_title" = "Pilot phase";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";
-"begegnung_detail_last_sync_title" = "Letzte erfolgreiche Synchronisation";
-"synchronizations_view_title" = "Übersicht";
-"synchronizations_view_info_title" = "Synchronisationen";
-"synchronizations_view_info_question" = "Was sind Synchronisationen?";
-"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten Schlüssel.";
-"synchronizations_view_period_title" = "In den letzten 14 Tagen";
-"synchronizations_view_sync_via_open" = "  •  Open";
-"synchronizations_view_sync_via_background" = "  •  Sync";
+"onboarding_legal_blocker_message" = "You are not part of an organization participating in the pilot phase. Please install the appropriate update after the official launch of the app and open the app again.";
+"begegnung_detail_last_sync_title" = "Latest successful synchronisation";
+"synchronizations_view_title" = "";
+"synchronizations_view_info_title" = "";
+"synchronizations_view_info_question" = "";
+"synchronizations_view_info_answer" = "";
+"synchronizations_view_period_title" = "";
+"synchronizations_view_sync_via_open" = "";
+"synchronizations_view_sync_via_background" = "";

@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
           "branch": "develop",
-          "revision": "85d738609b1899df943cf5b89e6178257dba3d43",
+          "revision": "79db5f54e25a3648f27812188f385a224e63f0d1",
           "version": null
         }
       },
@@ -66,7 +66,7 @@
       },
       {
         "package": "SQLite.swift",
-        "repositoryURL": "https://github.com/stephencelis/SQLite.swift.git",
+        "repositoryURL": "https://github.com/stephencelis/SQLite.swift",
         "state": {
           "branch": null,
           "revision": "0a9893ec030501a3956bee572d6b4fdd3ae158a1",

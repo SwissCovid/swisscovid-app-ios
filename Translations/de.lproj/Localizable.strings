@@ -705,7 +705,7 @@
 "onboarding_gaen_info_title_2" = "Leicht erhöhte Batterienutzung";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
-"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
+"onboarding_gaen_info_text_2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterie-nutzung erhöht sich nur leicht.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activated" = "Aktiviert";
@@ -829,15 +829,3 @@
 "synchronizations_view_sync_via_scheduled" = "  • Geplant";
 "synchronizations_view_sync_via_fake_request" = "  • Gefälschte Anfrage";
 "synchronizations_view_sync_via_next_day_key_upload" = "  • Hochladen";
-
-/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Vor dem Gespräch";
-
-/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Notieren Sie sich bitte folgende Angaben";
-
-/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Datum";
-
-/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Nummer";
