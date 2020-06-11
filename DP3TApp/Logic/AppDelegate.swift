@@ -80,12 +80,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
+            NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
             startForceUpdateCheck()
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
 
         FakePublishManager.shared.runTask()
+
+        NSSynchronizationPersistence.shared?.appendLog(eventType: .open, date: Date(), payload: nil)
     }
 
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
@@ -112,6 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // App should not have badges
         // Reset to 0 to ensure a unexpected badge doesn't stay forever
         application.applicationIconBadgeNumber = 0
+        TracingLocalPush.shared.clearNotifications()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -124,6 +128,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let backgroundTime = -(lastForegroundActivity?.timeIntervalSinceNow ?? 0)
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
+            application.applicationIconBadgeNumber = 0
+            TracingLocalPush.shared.clearNotifications()
         }
     }
 

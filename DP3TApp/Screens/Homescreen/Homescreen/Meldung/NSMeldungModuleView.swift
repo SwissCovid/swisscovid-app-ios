@@ -69,11 +69,11 @@ class NSMeldungView: NSModuleBaseView {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
                 if uiState.canRetrySyncError {
-                    unexpectedErrorView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
-                    views.append(unexpectedErrorView)
-                } else {
                     unexpectedErrorWithRetryView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
                     views.append(unexpectedErrorWithRetryView)
+                } else {
+                    unexpectedErrorView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
+                    views.append(unexpectedErrorView)
                 }
                 unexpectedErrorView.errorCode = uiState.errorCode
             } else if uiState.syncProblemNetworkingError {

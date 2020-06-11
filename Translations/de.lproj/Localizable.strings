@@ -114,7 +114,7 @@
 "android_tracing_error_title" = "Tracing nicht aktiv";
 
 /*Fehlertitel mit Foreground Service Notification*/
-"android_foreground_service_notification_errors" = "App kann zur Zeit nicht richtig funktionieren:";
+"android_foreground_service_notification_errors" = "App kann zurzeit nicht richtig funktionieren:";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_title" = "Vorschau Version";
@@ -174,16 +174,16 @@
 "whattodo_title_symptoms" = "Krankheitssymptomen";
 
 /*Subtitel auf Homescreen für Was Tun Section*/
-"whattodo_subtitle_symptoms" = "Was tun bei...";
+"whattodo_subtitle_symptoms" = "Was tun bei ...";
 
 /*Titel auf Homescreen bei Was tun Section*/
 "whattodo_title_positivetest" = "positiven Testresultat";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
-"whattodo_subtitle_positivetest" = "Was tun bei einem...";
+"whattodo_subtitle_positivetest" = "Was tun bei einem ...";
 
 /*Informieren Detail: Subtitel*/
-"inform_detail_subtitle" = "Was tun bei einem...";
+"inform_detail_subtitle" = "Was tun bei einem ...";
 
 /*Informieren Detail: Titel*/
 "inform_detail_title" = "positiven Test?";
@@ -201,7 +201,7 @@
 "inform_detail_box_text" = "Mit dem Ihnen zugestellten Covidcode können Sie den Test anonym in der App melden.";
 
 /*Symptome Detail Subtitel*/
-"symptom_detail_subtitle" = "Was tun wenn ich...";
+"symptom_detail_subtitle" = "Was tun, wenn ich ...";
 
 /*Symptom Detail Titel*/
 "symptom_detail_title" = "mich krank fühle?";
@@ -216,7 +216,7 @@
 "symptom_detail_box_button" = "Zum Coronavirus-Check";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen die auf das neue Coronavirus hindeuten Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
+"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen, die auf das neue Coronavirus hindeuten, Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positiv getestet";
@@ -254,7 +254,7 @@
 "meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
-"meldung_detail_positive_test_box_subtitle" = "Was muss ich tun?";
+"meldung_detail_positive_test_box_subtitle" = "Was soll ich tun?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
 "meldung_detail_positive_test_box_title" = "Selbst-Isolation";
@@ -293,7 +293,7 @@
 "meldungen_detail_call" = "Rufen Sie uns an";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline Coronavirus\n(täglich, 24h)";
+"meldungen_detail_call_text" = "Infoline Coronavirus";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Jetzt anrufen";
@@ -587,7 +587,7 @@
 "meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist werden sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist, werden Sie informiert.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
@@ -596,7 +596,7 @@
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Es ist wichtig, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
+"meldungen_meldungen_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
@@ -620,7 +620,7 @@
 "inform_detail_faq2_title" = "Wie bleibe ich anonym?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob Sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
+"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -660,7 +660,7 @@
 "date_in_one_day" = "Noch 1 Tag";
 
 /*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
-"date_in_days" = "Davon bleiben noch {COUNT} Tage";
+"date_in_days" = "Noch {COUNT} Tage";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
 "date_text_before_date" = "am {DATE}";
@@ -795,7 +795,7 @@
 "onboarding_legal_title" = "Nutzung nur für Teilnehmer der Pilotphase";
 
 /*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "Die Nutzung dieser App ist zur Zeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
+"onboarding_legal_text1" = "Die Nutzung dieser App ist zurzeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
 
 /*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
 "onboarding_legal_text2" = "Die Pilotphase wird mit produktiven Systemen durchgeführt und beinhaltet echte Daten. Kantonsärzte dürfen im Falle eines positiven COVID-19-Tests den nicht zugelassenen Nutzern keinen CovidCode für die Benachrichtigung aus der App generieren. Angriffe («Penetration Tests») auf das System ausserhalb des abgegrenzten Public Security Tests sind Angriffe auf das produktive System und somit illegal.";
@@ -817,3 +817,15 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";
+"begegnung_detail_last_sync_title" = "Letzte erfolgreiche Synchronisation";
+"synchronizations_view_title" = "Übersicht";
+"synchronizations_view_info_title" = "Synchronisationen";
+"synchronizations_view_info_question" = "Was sind Synchronisationen?";
+"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten Schlüssel.";
+"synchronizations_view_period_title" = "In den letzten 14 Tagen";
+"synchronizations_view_sync_via_open" = "  • Open";
+"synchronizations_view_sync_via_background" = "  • Sync";
+"synchronizations_view_empty_list" = "Keine Einträge";
+"synchronizations_view_sync_via_scheduled" = "  • Geplant";
+"synchronizations_view_sync_via_fake_request" = "  • Gefälschte Anfrage";
+"synchronizations_view_sync_via_next_day_key_upload" = "  • Hochladen";
