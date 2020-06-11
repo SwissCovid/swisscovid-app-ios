@@ -291,7 +291,7 @@
 "meldungen_detail_call" = "Telefonaci";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline coronavirus\n(tutti i giorni, 24 ore al giorno)";
+"meldungen_detail_call_text" = "Infoline coronavirus";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Telefona ora";
@@ -807,10 +807,26 @@
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "Non fate parte di un'organizzazione che partecipa alla fase pilota. Si prega di installare l'aggiornamento appropriato dopo il lancio ufficiale dell'applicazione e di riaprire l'applicazione.";
 "begegnung_detail_last_sync_title" = "Latest successful synchronisation";
-"synchronizations_view_title" = "";
-"synchronizations_view_info_title" = "";
-"synchronizations_view_info_question" = "";
-"synchronizations_view_info_answer" = "";
-"synchronizations_view_period_title" = "";
+"synchronizations_view_title" = "Overview";
+"synchronizations_view_info_title" = "Synchronizations";
+"synchronizations_view_info_question" = "What are synchronizations?";
+"synchronizations_view_info_answer" = "The app regularly checks the published keys from users that were tested positive.";
+"synchronizations_view_period_title" = "During the last 14 days";
 "synchronizations_view_sync_via_open" = "";
-"synchronizations_view_sync_via_background" = "";
+"synchronizations_view_sync_via_background" = "  • Sync";
+"synchronizations_view_empty_list" = "No entries";
+"synchronizations_view_sync_via_scheduled" = "  • Scheduled";
+"synchronizations_view_sync_via_fake_request" = "  • Fake Report";
+"synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
+
+/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_before_title" = "Before you call";
+
+/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_main_title" = "Please write down the following information";
+
+/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_box_datum" = "Date";
+
+/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_box_number" = "Code";
