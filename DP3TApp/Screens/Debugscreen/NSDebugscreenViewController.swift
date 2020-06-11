@@ -48,13 +48,13 @@
         override func viewWillAppear(_ animated: Bool) {
             super.viewWillAppear(animated)
             navigationController?.setNavigationBarHidden(false, animated: true)
-            #if ENABLE_LOGGING
+            #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
                 updateLogs()
             #endif
             updateCertificatePinningView()
         }
 
-        #if ENABLE_LOGGING
+        #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
             private func updateLogs() {
                 logsView.textLabel.attributedText = UIStateManager.shared.uiState.debug.logOutput
             }
