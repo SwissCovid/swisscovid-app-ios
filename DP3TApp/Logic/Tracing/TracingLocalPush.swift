@@ -8,29 +8,56 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import Foundation
 import UserNotifications
 
-import DP3TSDK
+protocol UserNotificationCenter {
+    var delegate: UNUserNotificationCenterDelegate? { get set }
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
+    func removeAllDeliveredNotifications()
+}
+
+extension UNUserNotificationCenter: UserNotificationCenter {}
+
+protocol ExposureIdentifierProvider {
+    var exposureIdentifiers: [String]? { get }
+}
+
+extension TracingState: ExposureIdentifierProvider {
+    var exposureIdentifiers: [String]? {
+        switch infectionStatus {
+        case let .exposed(matches):
+            return matches.map { $0.identifier.uuidString }
+        case .healthy:
+            return []
+        case .infected:
+            return nil
+        }
+    }
+}
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
 class TracingLocalPush: NSObject {
     static let shared = TracingLocalPush()
 
-    override init() {
+    private var center: UserNotificationCenter
+
+    init(notificationCenter: UserNotificationCenter = UNUserNotificationCenter.current(), defaults: UserDefaults = .standard) {
+        center = notificationCenter
+        _exposureIdentifiers.userDefaults = defaults
         super.init()
-        UNUserNotificationCenter.current().delegate = self
+        center.delegate = self
     }
 
-    func update(state: TracingState) {
-        switch state.infectionStatus {
-        case let .exposed(matches):
-            exposureIdentifiers = matches.map { $0.identifier.uuidString }
-        case .healthy:
-            exposureIdentifiers = []
-        case .infected:
-            break // don't update
+    func update(provider: ExposureIdentifierProvider) {
+        if let identifers = provider.exposureIdentifiers {
+            exposureIdentifiers = identifers
         }
+    }
+
+    func clearNotifications() {
+        center.removeAllDeliveredNotifications()
     }
 
     @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])
@@ -51,7 +78,7 @@ class TracingLocalPush: NSObject {
         content.body = "push_exposed_text".ub_localized
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        center.add(request, withCompletionHandler: nil)
     }
 
     private func alreadyShowsMeldung() -> Bool {
@@ -107,8 +134,8 @@ class TracingLocalPush: NSObject {
         let request2 = UNNotificationRequest(identifier: notificationIdentifier2, content: content, trigger: trigger2)
 
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
-        UNUserNotificationCenter.current().add(request1, withCompletionHandler: nil)
-        UNUserNotificationCenter.current().add(request2, withCompletionHandler: nil)
+        center.add(request1, withCompletionHandler: nil)
+        center.add(request2, withCompletionHandler: nil)
     }
 }
 
