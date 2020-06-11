@@ -33,6 +33,12 @@ class TracingLocalPush: NSObject {
         }
     }
 
+    func clearNotifications() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
+    }
+
     @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [String] {
         didSet {
