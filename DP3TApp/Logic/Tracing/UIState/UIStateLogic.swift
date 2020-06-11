@@ -69,7 +69,7 @@ class UIStateLogic {
             setDebugDisplayValues(&newState, tracingState: tracingState)
         #endif
 
-        #if ENABLE_STATUS_OVERRIDE
+        #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
             setDebugLog(&newState)
         #endif
 
