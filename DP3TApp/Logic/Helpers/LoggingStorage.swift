@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import Foundation
 import os.log
 import SQLite
@@ -20,7 +21,7 @@ public struct LogEntry: Identifiable {
 }
 
 /// Storage used to persist Logs
-public class LoggingStorage {
+public class LoggingStorage: LoggingDelegate {
     /// Database connection
     private let database: Connection
 
