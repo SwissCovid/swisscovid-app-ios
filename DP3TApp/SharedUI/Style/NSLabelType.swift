@@ -37,6 +37,8 @@ public enum NSLabelType: UBLabelType {
     case uppercaseBold
     case date
     case smallRegular
+    case interRegular
+    case interBold
 
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize
@@ -62,6 +64,8 @@ public enum NSLabelType: UBLabelType {
         case .uppercaseBold: return UIFont(name: boldFontName, size: bfs)!
         case .date: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
+        case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
+        case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
         }
     }
 
@@ -85,6 +89,8 @@ public enum NSLabelType: UBLabelType {
         case .textLight: return 24.0 / 16.0
         case .date: return 2.0
         case .smallRegular: return 26.0 / 13.0
+        case .interRegular: return 24.0 / 16.0
+        case .interBold: return 24.0 / 16.0
         }
     }
 

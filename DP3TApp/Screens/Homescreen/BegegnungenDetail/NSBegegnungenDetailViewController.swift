@@ -13,6 +13,8 @@ import UIKit
 class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
+    private let lastSyncronizationControl: NSLastSyncronizationControl
+
     private let appTitleView: NSAppTitleView
 
     // MARK: - Init
@@ -20,7 +22,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     init(initialState: UIStateModel.BegegnungenDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
-
+        lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)
         super.init()
 
         title = "handshakes_title_homescreen".ub_localized
@@ -43,6 +45,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
     }
 
     // MARK: - Setup
@@ -56,6 +59,10 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         bluetoothControl.viewToBeLayouted = view
 
         stackScrollView.addArrangedView(bluetoothControl)
+
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(lastSyncronizationControl)
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -74,9 +81,18 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
 
         stackScrollView.addSpacerView(NSPadding.large)
+
+        lastSyncronizationControl.addTarget(self, action: #selector(openSynchronizationStatusDetails(sender:)), for: .touchUpInside)
     }
 
     private func updateState(_ state: UIStateModel) {
+        lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
         appTitleView.uiState = state.homescreen.header
+    }
+
+    @objc
+    private func openSynchronizationStatusDetails(sender _: UIControl?) {
+        let syncViewController = NSSynchronizationStatusDetailController()
+        navigationController?.pushViewController(syncViewController, animated: true)
     }
 }
