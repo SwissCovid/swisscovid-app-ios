@@ -16,7 +16,6 @@ protocol UserNotificationCenter {
     var delegate: UNUserNotificationCenterDelegate? { get set }
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
     func removeAllDeliveredNotifications()
-    func removeAllPendingNotificationRequests()
 }
 
 extension UNUserNotificationCenter: UserNotificationCenter {}
@@ -59,7 +58,6 @@ class TracingLocalPush: NSObject {
 
     func clearNotifications() {
         center.removeAllDeliveredNotifications()
-        center.removeAllPendingNotificationRequests()
     }
 
     @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])

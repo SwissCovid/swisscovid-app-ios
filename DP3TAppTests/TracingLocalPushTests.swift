@@ -16,8 +16,6 @@ private class MockNotificationCenter: UserNotificationCenter {
 
     var removeAllDeliveredNotificationsCalled = 0
 
-    var removeAllPendingNotificationRequestsCalled = 0
-
     var requests: [UNNotificationRequest] = []
 
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
@@ -27,10 +25,6 @@ private class MockNotificationCenter: UserNotificationCenter {
 
     func removeAllDeliveredNotifications() {
         removeAllDeliveredNotificationsCalled += 1
-    }
-
-    func removeAllPendingNotificationRequests() {
-        removeAllPendingNotificationRequestsCalled += 1
     }
 }
 
@@ -60,9 +54,6 @@ class TracingLocalPushTests: XCTestCase {
         tlp.clearNotifications()
         XCTAssertEqual(
             center.removeAllDeliveredNotificationsCalled, 1
-        )
-        XCTAssertEqual(
-            center.removeAllPendingNotificationRequestsCalled, 1
         )
     }
 
