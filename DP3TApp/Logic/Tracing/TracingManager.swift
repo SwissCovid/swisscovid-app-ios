@@ -29,7 +29,7 @@ class TracingManager: NSObject {
         var loggingStorage: LoggingStorage?
     #endif
 
-    @UBUserDefault(key: "tracingIsActivated", defaultValue: true)
+    @KeychainPersisted(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
         didSet {
             if isActivated {

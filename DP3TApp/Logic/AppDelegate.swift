@@ -50,6 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupWindow() {
+        KeychainMigration.migrate()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.overrideUserInterfaceStyle = .light
 

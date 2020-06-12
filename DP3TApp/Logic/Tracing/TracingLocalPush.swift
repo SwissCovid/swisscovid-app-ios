@@ -43,9 +43,9 @@ class TracingLocalPush: NSObject {
 
     private var center: UserNotificationCenter
 
-    init(notificationCenter: UserNotificationCenter = UNUserNotificationCenter.current(), defaults: UserDefaults = .standard) {
+    init(notificationCenter: UserNotificationCenter = UNUserNotificationCenter.current(), keychain: KeychainProtocol = Keychain()) {
         center = notificationCenter
-        _exposureIdentifiers.userDefaults = defaults
+        _exposureIdentifiers.keychain = keychain
         super.init()
         center.delegate = self
     }
@@ -60,7 +60,7 @@ class TracingLocalPush: NSObject {
         center.removeAllDeliveredNotifications()
     }
 
-    @UBUserDefault(key: "exposureIdentifiers", defaultValue: [])
+    @KeychainPersisted(key: "exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [String] {
         didSet {
             for identifier in exposureIdentifiers {

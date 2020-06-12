@@ -48,7 +48,6 @@
 		242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
 		242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
 		242D21F0245C4BD8005DAEA8 /* NSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E81CC9C241FCC7D006F2437 /* NSViewController.swift */; };
-		242D21F1245C4BD8005DAEA8 /* UBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B12243F6FD90066C773 /* UBKeychain.swift */; };
 		242D21F2245C4BD8005DAEA8 /* UBUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B05243F6FAE0066C773 /* UBUserDefault.swift */; };
 		242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
 		242D21F4245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087224507B6A00913B0E /* NSMeldungenDetailNoMeldungenTitleView.swift */; };
@@ -94,13 +93,11 @@
 		242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
 		242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5180242F9586006E532E /* NSCheckBoxView.swift */; };
 		242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
-		242D2221245C4BD8005DAEA8 /* UBDeviceUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B25243F74E70066C773 /* UBDeviceUUID.swift */; };
 		242D2222245C4BD8005DAEA8 /* NSInformTracingEndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */; };
 		242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5170242F5026006E532E /* ConfigResponseBody.swift */; };
 		242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D38242E02A20017C4F9 /* NSLayoutConstants.swift */; };
 		242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
 		242D2226245C4BD8005DAEA8 /* NSNoCodeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */; };
-		242D2227245C4BD8005DAEA8 /* UBKeychainAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B13243F6FD90066C773 /* UBKeychainAccessibility.swift */; };
 		242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D21D0245C3853005DAEA8 /* Logger.swift */; };
 		242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */; };
 		242D222A245C4BD8005DAEA8 /* NSExternalLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */; };
@@ -138,7 +135,6 @@
 		242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B03243F6FAE0066C773 /* UBOptionalUserDefault.swift */; };
 		242D224C245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift */; };
 		242D224D245C4BD8005DAEA8 /* NSSimpleModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65FA2449CF0900980A4E /* NSSimpleModuleBaseView.swift */; };
-		242D224E245C4BD8005DAEA8 /* UBKeychainStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B08243F6FAE0066C773 /* UBKeychainStored.swift */; };
 		242D224F245C4BD8005DAEA8 /* NSDebugScreenMockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3F65F82449CC9F00980A4E /* NSDebugScreenMockView.swift */; };
 		242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
@@ -289,12 +285,8 @@
 		DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B05243F6FAE0066C773 /* UBUserDefault.swift */; };
 		DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B06243F6FAE0066C773 /* UBCodable.swift */; };
 		DC702B0E243F6FAE0066C773 /* UBRawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B07243F6FAE0066C773 /* UBRawRepresentable.swift */; };
-		DC702B0F243F6FAE0066C773 /* UBKeychainStored.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B08243F6FAE0066C773 /* UBKeychainStored.swift */; };
 		DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B09243F6FAE0066C773 /* UBUserDefaultValue.swift */; };
-		DC702B14243F6FD90066C773 /* UBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B12243F6FD90066C773 /* UBKeychain.swift */; };
-		DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B13243F6FD90066C773 /* UBKeychainAccessibility.swift */; };
 		DC702B17243F70060066C773 /* UIView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B16243F70060066C773 /* UIView+NS.swift */; };
-		DC702B26243F74E70066C773 /* UBDeviceUUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B25243F74E70066C773 /* UBDeviceUUID.swift */; };
 		DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */; };
 		DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */; };
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
@@ -327,6 +319,9 @@
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
+		F84089EC2493695200A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
+		F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
@@ -495,12 +490,8 @@
 		DC702B05243F6FAE0066C773 /* UBUserDefault.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBUserDefault.swift; sourceTree = "<group>"; };
 		DC702B06243F6FAE0066C773 /* UBCodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBCodable.swift; sourceTree = "<group>"; };
 		DC702B07243F6FAE0066C773 /* UBRawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBRawRepresentable.swift; sourceTree = "<group>"; };
-		DC702B08243F6FAE0066C773 /* UBKeychainStored.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBKeychainStored.swift; sourceTree = "<group>"; };
 		DC702B09243F6FAE0066C773 /* UBUserDefaultValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBUserDefaultValue.swift; sourceTree = "<group>"; };
-		DC702B12243F6FD90066C773 /* UBKeychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBKeychain.swift; sourceTree = "<group>"; };
-		DC702B13243F6FD90066C773 /* UBKeychainAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBKeychainAccessibility.swift; sourceTree = "<group>"; };
 		DC702B16243F70060066C773 /* UIView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+NS.swift"; sourceTree = "<group>"; };
-		DC702B25243F74E70066C773 /* UBDeviceUUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBDeviceUUID.swift; sourceTree = "<group>"; };
 		DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderErrorView.swift; sourceTree = "<group>"; };
 		DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderActiveView.swift; sourceTree = "<group>"; };
 		DC9A81A2242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -530,6 +521,9 @@
 		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-d.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F830798E24928EC4005D3C65 /* LoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingStorage.swift; sourceTree = "<group>"; };
+		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
+		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -812,9 +806,9 @@
 				DC702AFC243F6E410066C773 /* UBButton.swift */,
 				DC702AFE243F6ED90066C773 /* UIColor+HEX.swift */,
 				DC702B00243F6F640066C773 /* String+NS.swift */,
+				DC702B11243F6FD90066C773 /* Keychain */,
 				DC702B02243F6FAE0066C773 /* UBUserDefault */,
 				DC702B16243F70060066C773 /* UIView+NS.swift */,
-				DC702B25243F74E70066C773 /* UBDeviceUUID.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1028,6 +1022,7 @@
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
+				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 			);
 			path = DP3TAppTests;
 			sourceTree = "<group>";
@@ -1081,25 +1076,23 @@
 		DC702B02243F6FAE0066C773 /* UBUserDefault */ = {
 			isa = PBXGroup;
 			children = (
-				DC702B11243F6FD90066C773 /* UBKeychain */,
 				DC702B03243F6FAE0066C773 /* UBOptionalUserDefault.swift */,
 				DC702B04243F6FAE0066C773 /* UBPListValue.swift */,
 				DC702B05243F6FAE0066C773 /* UBUserDefault.swift */,
 				DC702B06243F6FAE0066C773 /* UBCodable.swift */,
 				DC702B07243F6FAE0066C773 /* UBRawRepresentable.swift */,
-				DC702B08243F6FAE0066C773 /* UBKeychainStored.swift */,
 				DC702B09243F6FAE0066C773 /* UBUserDefaultValue.swift */,
 			);
 			path = UBUserDefault;
 			sourceTree = "<group>";
 		};
-		DC702B11243F6FD90066C773 /* UBKeychain */ = {
+		DC702B11243F6FD90066C773 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				DC702B12243F6FD90066C773 /* UBKeychain.swift */,
-				DC702B13243F6FD90066C773 /* UBKeychainAccessibility.swift */,
+				F84089EB2493695200A66CD1 /* Keychain.swift */,
+				F84089ED2493696500A66CD1 /* KeychainPersisted.swift */,
 			);
-			path = UBKeychain;
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 		DC9A8196242CE44200AD1548 /* Resources */ = {
@@ -1519,7 +1512,6 @@
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
 				242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */,
 				242D21F0245C4BD8005DAEA8 /* NSViewController.swift in Sources */,
-				242D21F1245C4BD8005DAEA8 /* UBKeychain.swift in Sources */,
 				242D21F2245C4BD8005DAEA8 /* UBUserDefault.swift in Sources */,
 				242D2277245D62D9005DAEA8 /* UserStorage.swift in Sources */,
 				242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */,
@@ -1572,7 +1564,6 @@
 				242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */,
 				242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */,
 				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
-				242D2221245C4BD8005DAEA8 /* UBDeviceUUID.swift in Sources */,
 				F830799424929090005D3C65 /* LoggingStorage.swift in Sources */,
 				242D2222245C4BD8005DAEA8 /* NSInformTracingEndViewController.swift in Sources */,
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
@@ -1580,7 +1571,6 @@
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2226245C4BD8005DAEA8 /* NSNoCodeInformationViewController.swift in Sources */,
-				242D2227245C4BD8005DAEA8 /* UBKeychainAccessibility.swift in Sources */,
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
 				242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */,
 				242D222A245C4BD8005DAEA8 /* NSExternalLinkButton.swift in Sources */,
@@ -1619,7 +1609,6 @@
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */,
 				242D224D245C4BD8005DAEA8 /* NSSimpleModuleBaseView.swift in Sources */,
-				242D224E245C4BD8005DAEA8 /* UBKeychainStored.swift in Sources */,
 				242D224F245C4BD8005DAEA8 /* NSDebugScreenMockView.swift in Sources */,
 				242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */,
 				242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */,
@@ -1655,7 +1644,6 @@
 				DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */,
 				6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */,
 				8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */,
-				DC702B14243F6FD90066C773 /* UBKeychain.swift in Sources */,
 				DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */,
 				242D2276245D62D8005DAEA8 /* UserStorage.swift in Sources */,
 				AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */,
@@ -1709,13 +1697,12 @@
 				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
 				6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */,
-				DC702B26243F74E70066C773 /* UBDeviceUUID.swift in Sources */,
 				6EFF9AE5245AD18D00C98FF3 /* NSInformTracingEndViewController.swift in Sources */,
 				6E6E5171242F5026006E532E /* ConfigResponseBody.swift in Sources */,
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
+				F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */,
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
 				6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */,
-				DC702B15243F6FD90066C773 /* UBKeychainAccessibility.swift in Sources */,
 				242D21D1245C3853005DAEA8 /* Logger.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */,
@@ -1754,7 +1741,7 @@
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
 				6E33086F24507A1600913B0E /* NSMeldungenDetailPositiveTestedViewController.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,
-				DC702B0F243F6FAE0066C773 /* UBKeychainStored.swift in Sources */,
+				F84089EC2493695200A66CD1 /* Keychain.swift in Sources */,
 				6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */,
 				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
@@ -1767,6 +1754,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
+				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

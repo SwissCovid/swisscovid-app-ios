@@ -35,19 +35,12 @@ private class MockIdentifierProvider: ExposureIdentifierProvider {
 class TracingLocalPushTests: XCTestCase {
     fileprivate var center: MockNotificationCenter!
     fileprivate var tlp: TracingLocalPush!
-    fileprivate var defaults: UserDefaults!
+    fileprivate var keychain: MockKeychain!
 
     override func setUp() {
-        defaults = UserDefaults()
-
-        //clear defaults after every run
-        let dictionary = defaults.dictionaryRepresentation()
-        dictionary.keys.forEach { key in
-            defaults.removeObject(forKey: key)
-        }
-
+        keychain = MockKeychain()
         center = MockNotificationCenter()
-        tlp = TracingLocalPush(notificationCenter: center, defaults: defaults)
+        tlp = TracingLocalPush(notificationCenter: center, keychain: keychain)
     }
 
     func testRemovingNotification() {
