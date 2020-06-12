@@ -387,8 +387,6 @@
 		24D33D932487B8140068E509 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D33D942487B8590068E509 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/Localizable.strings; sourceTree = "<group>"; };
 		24D33D952487B8590068E509 /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		24D33D9B24880D880068E509 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		24D33D9C24880D880068E509 /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D33D9D24880D9A0068E509 /* bs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bs; path = bs.lproj/Localizable.strings; sourceTree = "<group>"; };
 		24D33D9E24880D9A0068E509 /* bs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bs; path = bs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D33D9F24880F6C0068E509 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -470,6 +468,8 @@
 		8E81CCAB241FCC7F006F2437 /* DP3TAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DP3TAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakePublishManagerTests.swift; sourceTree = "<group>"; };
 		8E81CCB1241FCC7F006F2437 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E86FDE324936683009B2D90 /* sr-Latn-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn-RS"; path = "sr-Latn-RS.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8E86FDE424936683009B2D90 /* sr-Latn-RS */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "sr-Latn-RS"; path = "sr-Latn-RS.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		8EB23D77245AF2C30073E83A /* RandomGenerators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGenerators.swift; sourceTree = "<group>"; };
 		8EF2A6E42490E26F002263C3 /* NSLastSyncronizationControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLastSyncronizationControl.swift; sourceTree = "<group>"; };
 		8EF2A6E72490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationStatusDetailController.swift; sourceTree = "<group>"; };
@@ -1272,10 +1272,10 @@
 				sq,
 				es,
 				pt,
-				sr,
 				bs,
 				hr,
 				rm,
+				"sr-Latn-RS",
 			);
 			mainGroup = 8E81CC8C241FCC7D006F2437;
 			packageReferences = (
@@ -1486,7 +1486,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if ! [ -x \"$(command -v iOSTranslations)\" ]; then\n  echo 'Error: iOSTranslation not installed. Download it from https://bitbucket.org/ubique-innovation/iostranslations/' >&2\n  exit 1\nfi\necho \"Running Translation Script. This will take a few seconds...\"\niOSTranslations POEditor 334421 $PROJECT_DIR/Translations\n";
+			shellScript = "if ! [ -x \"$(command -v iOSTranslations)\" ]; then\n  echo 'Error: iOSTranslation not installed. Download it from https://bitbucket.org/ubique-innovation/iostranslations/' >&2\n  exit 1\nfi\necho \"Running Translation Script. This will take a few seconds...\"\npwd\niOSTranslations\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1792,10 +1792,10 @@
 				24D33D902487B7FE0068E509 /* sq */,
 				24D33D922487B8140068E509 /* es */,
 				24D33D942487B8590068E509 /* pt */,
-				24D33D9B24880D880068E509 /* sr */,
 				24D33D9D24880D9A0068E509 /* bs */,
 				24D33D9F24880F6C0068E509 /* hr */,
 				247395B4249165B900B30767 /* rm */,
+				8E86FDE324936683009B2D90 /* sr-Latn-RS */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1810,10 +1810,10 @@
 				24D33D912487B7FE0068E509 /* sq */,
 				24D33D932487B8140068E509 /* es */,
 				24D33D952487B8590068E509 /* pt */,
-				24D33D9C24880D880068E509 /* sr */,
 				24D33D9E24880D9A0068E509 /* bs */,
 				24D33DA024880F6C0068E509 /* hr */,
 				247395B5249165BA00B30767 /* rm */,
+				8E86FDE424936683009B2D90 /* sr-Latn-RS */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
