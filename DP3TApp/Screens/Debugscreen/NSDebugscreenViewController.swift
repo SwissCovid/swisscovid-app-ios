@@ -19,8 +19,11 @@
 
         private let imageView = UIImageView(image: UIImage(named: "03-privacy"))
 
-        private let mockModuleView = NSDebugScreenMockView()
-        private let sdkStatusView = NSDebugScreenSDKStatusView()
+        #if ENABLE_STATUS_OVERRIDE
+            private let sdkStatusView = NSDebugScreenSDKStatusView()
+            private let mockModuleView = NSDebugScreenMockView()
+        #endif
+
         private let certificatePinningButton = NSButton(title: "", style: .uppercase(.ns_purple))
         private let certificatePinningView = NSSimpleModuleBaseView(title: "")
 
@@ -89,13 +92,15 @@
 
             stackScrollView.addSpacerView(NSPadding.large)
 
-            stackScrollView.addArrangedView(sdkStatusView)
+            #if ENABLE_STATUS_OVERRIDE
+                stackScrollView.addArrangedView(sdkStatusView)
 
-            stackScrollView.addSpacerView(NSPadding.large)
+                stackScrollView.addSpacerView(NSPadding.large)
 
-            stackScrollView.addArrangedView(mockModuleView)
+                stackScrollView.addArrangedView(mockModuleView)
 
-            stackScrollView.addSpacerView(NSPadding.large)
+                stackScrollView.addSpacerView(NSPadding.large)
+            #endif
 
             stackScrollView.addArrangedView(certificatePinningView)
 
