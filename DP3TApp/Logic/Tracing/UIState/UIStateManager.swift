@@ -147,7 +147,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    @UBUserDefault(key: "hasTimeInconsistencyError", defaultValue: false)
+    @KeychainPersisted(key: "hasTimeInconsistencyError", defaultValue: false)
     var hasTimeInconsistencyError: Bool
 
     var anyError: CodedError? {
