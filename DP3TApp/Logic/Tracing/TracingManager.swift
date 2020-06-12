@@ -281,20 +281,30 @@ extension TracingManager: DP3TBackgroundHandler {
 #endif
 
 extension TracingManager: ActivityDelegate {
-    func syncCompleted(totalRequest: Int, errors: [DP3TNetworkingError]) {
+    func syncCompleted(totalRequest: Int, errors: [DP3TTracingError]) {
         let encoding = Array("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 
         let numberOfSuccess = totalRequest - errors.count
         var numberOfInstantErrors: Int = 0
         var numberOfDelayedErrors: Int = 0
 
-        for error in errors {
-            switch error {
-            case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
-                numberOfDelayedErrors += 1 // If error is certificate
-            case DP3TNetworkingError.networkSessionError:
-                numberOfDelayedErrors += 1 // If error is networking
-            default:
+        for e in errors {
+            if case let DP3TTracingError.networkingError(wrappedError) = e {
+                switch wrappedError {
+                case .timeInconsistency:
+                    UIStateManager.shared.hasTimeInconsistencyError = true
+                default:
+                    break
+                }
+                switch wrappedError {
+                case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                    numberOfDelayedErrors += 1 // If error is certificate
+                case DP3TNetworkingError.networkSessionError:
+                    numberOfDelayedErrors += 1 // If error is networking
+                default:
+                    numberOfInstantErrors += 1
+                }
+            } else {
                 numberOfInstantErrors += 1
             }
         }
