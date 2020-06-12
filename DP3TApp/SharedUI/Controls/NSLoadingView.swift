@@ -52,7 +52,7 @@ class NSLoadingView: UIView {
             } else {
                 errorTextLabel.text = err.localizedDescription
             }
-            #if ENABLE_TESTING
+            #if ENABLE_VERBOSE
                 errorCodeLabel.text = "\(err.errorCodeString ?? "-"): \(err)"
             #else
                 errorCodeLabel.text = error?.errorCodeString

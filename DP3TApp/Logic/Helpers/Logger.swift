@@ -11,7 +11,7 @@
 import Foundation
 
 class Logger {
-    #if ENABLE_TESTING
+    #if ENABLE_LOGGING
         @UBUserDefault(key: "debugLogs", defaultValue: [])
         private static var debugLogs: [String]
 
@@ -31,7 +31,7 @@ class Logger {
     private init() {}
 
     public static func log(_ log: Any, appState: Bool = false) {
-        #if ENABLE_TESTING
+        #if ENABLE_LOGGING
 
             Logger.logQueue.async {
                 var text = String(describing: log)
