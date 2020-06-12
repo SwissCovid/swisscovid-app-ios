@@ -2,6 +2,6 @@
 	"platform": "POEditor",
 	"projectID": "334421",
 	"translationDirectory": "Translations",
-	"excludedLanguages": ["rm"],
+	"excludedLanguages": [],
 	"mapped": {"sr": "sr-Latn-RS"}
 }
