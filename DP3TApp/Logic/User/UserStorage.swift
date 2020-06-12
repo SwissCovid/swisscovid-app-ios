@@ -61,7 +61,7 @@ class UserStorage {
 }
 
 class KeychainMigration {
-    @UBUserDefault(key: "didMigrateToKeychain", defaultValue: false)
+    @KeychainPersisted(key: "didMigrateToKeychain", defaultValue: false)
     static var didMigrateToKeychain: Bool
 
     static func migrate() {

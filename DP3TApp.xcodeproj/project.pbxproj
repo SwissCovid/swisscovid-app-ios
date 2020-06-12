@@ -322,6 +322,8 @@
 		F84089EC2493695200A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
+		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
+		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
@@ -1529,6 +1531,7 @@
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
 				242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* NSModuleBaseView.swift in Sources */,
+				F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */,
 				242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				242D2203245C4BD8005DAEA8 /* NSMeldungDetailMeldungTitleView.swift in Sources */,
 				242D2204245C4BD8005DAEA8 /* NSBegegnungenDetailViewController.swift in Sources */,
@@ -1549,6 +1552,7 @@
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
 				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
+				F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */,
 				242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */,
 				242D2215245C4BD8005DAEA8 /* NSExplanationView.swift in Sources */,
 				242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */,
