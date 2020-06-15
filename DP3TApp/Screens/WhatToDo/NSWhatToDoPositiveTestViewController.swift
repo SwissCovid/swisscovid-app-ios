@@ -100,6 +100,12 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: viewModel.userText, title: viewModel.userTitle, leftRightInset: 0))
         
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0))
+
+        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0))
+
         stackScrollView.addSpacerView(3 * NSPadding.large)
         
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))

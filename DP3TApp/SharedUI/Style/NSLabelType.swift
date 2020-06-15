@@ -31,6 +31,7 @@ class NSFontSize {
 
 public enum NSLabelType: UBLabelType {
     case title
+    case splashTitle
     case textLight
     case textBold
     case button // used for button
@@ -58,6 +59,7 @@ public enum NSLabelType: UBLabelType {
 
         switch self {
         case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
+        case .splashTitle: return UIFont(name: boldFontName, size: bfs + 11.0)!
         case .textLight: return UIFont(name: lightFontName, size: bfs)!
         case .textBold: return UIFont(name: boldFontName, size: bfs)!
         case .button: return UIFont(name: boldFontName, size: bfs)!
@@ -71,7 +73,7 @@ public enum NSLabelType: UBLabelType {
 
     public var textColor: UIColor {
         switch self {
-        case .button:
+        case .button, .splashTitle:
             return .white
         case .smallRegular:
             return UIColor.black.withAlphaComponent(0.28)
@@ -83,6 +85,7 @@ public enum NSLabelType: UBLabelType {
     public var lineSpacing: CGFloat {
         switch self {
         case .title: return 30.0 / 22.0
+        case .splashTitle: return 30.0 / 22.0
         case .textBold: return 24.0 / 16.0
         case .button: return 1.0
         case .uppercaseBold: return 26.0 / 16.0

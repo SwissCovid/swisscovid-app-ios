@@ -27,6 +27,10 @@ extension UIColor {
     public static var ns_backgroundSecondary = UIColor(ub_hexString: "#f7f7f7")!
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!.withHighContrastColor(color: .black)
 
+    // MARK: - Splashscreen
+
+    public static var ns_backgroundOnboardingSplashscreen = UIColor(ub_hexString: "#07a0e2")!
+
     // MARK: - UIAccessibility Contrast extension
 
     func withHighContrastColor(color: UIColor) -> UIColor {
