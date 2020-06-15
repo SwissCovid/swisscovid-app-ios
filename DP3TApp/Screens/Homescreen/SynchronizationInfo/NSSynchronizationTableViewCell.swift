@@ -13,40 +13,40 @@ import SnapKit
 import UIKit
 
 #if ENABLE_SYNC_LOGGING
-    class NSSynchronizationTableViewCell: UITableViewCell {
-        private let titleLabel = NSLabel(.textLight)
-        private let dateLabel = NSLabel(.textLight)
-
-        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-            contentView.addSubview(dateLabel)
-            contentView.addSubview(titleLabel)
-
-            selectionStyle = .none
-
-            titleLabel.numberOfLines = 0
-            dateLabel.numberOfLines = 1
-
-            titleLabel.snp.makeConstraints { make in
-                make.leading.top.bottom.equalTo(contentView.layoutMarginsGuide)
-                make.trailing.lessThanOrEqualTo(dateLabel.snp.leading)
-            }
-
-            dateLabel.snp.makeConstraints { make in
-                make.trailing.top.equalTo(contentView.layoutMarginsGuide)
-            }
-
-            titleLabel.setContentCompressionResistancePriority(UILayoutPriority(700), for: .horizontal)
+class NSSynchronizationTableViewCell: UITableViewCell {
+    private let titleLabel = NSLabel(.textLight)
+    private let dateLabel = NSLabel(.textLight)
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        contentView.addSubview(dateLabel)
+        contentView.addSubview(titleLabel)
+        
+        selectionStyle = .none
+        
+        titleLabel.numberOfLines = 0
+        dateLabel.numberOfLines = 1
+        
+        titleLabel.snp.makeConstraints { make in
+            make.leading.top.bottom.equalTo(contentView.layoutMarginsGuide)
+            make.trailing.lessThanOrEqualTo(dateLabel.snp.leading)
         }
-
-        func set(title: String, date: String) {
-            titleLabel.text = title
-            dateLabel.text = date
+        
+        dateLabel.snp.makeConstraints { make in
+            make.trailing.top.equalTo(contentView.layoutMarginsGuide)
         }
-
-        required init?(coder _: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+        
+        titleLabel.setContentCompressionResistancePriority(UILayoutPriority(700), for: .horizontal)
     }
+    
+    func set(title: String, date: String) {
+        titleLabel.text = title
+        dateLabel.text = date
+    }
+    
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 #endif

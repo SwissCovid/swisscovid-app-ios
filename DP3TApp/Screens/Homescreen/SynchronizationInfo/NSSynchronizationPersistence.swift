@@ -20,25 +20,25 @@ struct NSSynchronizationPersistanceLog {
 
 class NSSynchronizationPersistence {
     static let shared = NSSynchronizationPersistence()
-
+    
     private var connection: Connection
     private let table = Table("synchronization-status")
-
+    
     private let idColumn = Expression<Int>("id")
     private let eventTypeColumn = Expression<EventType>("event-type")
     private let dateColumn = Expression<Date>("date")
     private let payloadColumn = Expression<String?>("payload")
-
+    
     enum EventType {
         case sync
         case open
         #if ENABLE_SYNC_LOGGING
-            case scheduled
-            case fakeRequest
-            case nextDayKeyUpload
+        case scheduled
+        case fakeRequest
+        case nextDayKeyUpload
         #endif
     }
-
+    
     init?() {
         guard let documentLocation = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             return nil
@@ -47,12 +47,12 @@ class NSSynchronizationPersistence {
         do {
             connection = try Connection(dbFileLocation.absoluteString)
             try (dbFileLocation as NSURL).setResourceValue(true, forKey: URLResourceKey.isExcludedFromBackupKey)
-
+            
             #if ENABLE_LOGGING
-                print("Sync DB location \(dbFileLocation)")
-                connection.trace { print($0) }
+            print("Sync DB location \(dbFileLocation)")
+            connection.trace { print($0) }
             #endif
-
+            
             try connection.run(table.create(ifNotExists: true, block: { t in
                 t.column(idColumn, primaryKey: .autoincrement)
                 t.column(eventTypeColumn)
@@ -63,7 +63,7 @@ class NSSynchronizationPersistence {
             return nil
         }
     }
-
+    
     func appendLog(eventType: EventType, date: Date, payload: String?) {
         do {
             try connection.run(table.insert(
@@ -76,7 +76,7 @@ class NSSynchronizationPersistence {
             return
         }
     }
-
+    
     func fetchAll() -> [NSSynchronizationPersistanceLog] {
         do {
             var collector: [NSSynchronizationPersistanceLog] = []
@@ -89,7 +89,7 @@ class NSSynchronizationPersistence {
             return []
         }
     }
-
+    
     func fetchLatestSuccessfulSync() -> NSSynchronizationPersistanceLog? {
         do {
             let query = table.filter(eventTypeColumn == EventType.sync).order(dateColumn.desc)
@@ -102,14 +102,14 @@ class NSSynchronizationPersistence {
             return nil
         }
     }
-
+    
     func removeLogsBefore14Days() {
         guard let expiryDate = Calendar.current.date(byAdding: .day, value: -14, to: Date()) else {
             return
         }
         removeAllLogs(before: expiryDate)
     }
-
+    
     func removeAllLogs(before dateLimit: Date) {
         do {
             let query = table.filter(dateColumn < dateLimit).delete()
@@ -119,7 +119,7 @@ class NSSynchronizationPersistence {
             return
         }
     }
-
+    
     private func buildLog(from row: Row) -> NSSynchronizationPersistanceLog {
         NSSynchronizationPersistanceLog(evetType: row[eventTypeColumn], date: row[dateColumn], payload: row[payloadColumn])
     }
@@ -129,29 +129,29 @@ extension NSSynchronizationPersistence.EventType: Value {
     static var declaredDatatype: String {
         "INTEGER"
     }
-
+    
     static func fromDatatypeValue(_ datatypeValue: Int64) -> NSSynchronizationPersistence.EventType {
         switch datatypeValue {
         case 0: return .sync
         case 1: return .open
-        #if ENABLE_SYNC_LOGGING
-            case 2: return .scheduled
-            case 3: return .fakeRequest
-            case 4: return .nextDayKeyUpload
-        #endif
+            #if ENABLE_SYNC_LOGGING
+        case 2: return .scheduled
+        case 3: return .fakeRequest
+        case 4: return .nextDayKeyUpload
+            #endif
         default: fatalError()
         }
     }
-
+    
     var datatypeValue: Int64 {
         switch self {
         case .sync: return 0
         case .open: return 1
-        #if ENABLE_SYNC_LOGGING
-            case .scheduled: return 2
-            case .fakeRequest: return 3
-            case .nextDayKeyUpload: return 4
-        #endif
+            #if ENABLE_SYNC_LOGGING
+        case .scheduled: return 2
+        case .fakeRequest: return 3
+        case .nextDayKeyUpload: return 4
+            #endif
         }
     }
 }
