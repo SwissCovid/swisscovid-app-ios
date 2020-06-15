@@ -843,3 +843,8 @@
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
 "pre_call_dialog_box_number" = "Nummer";
 "tracing_active_tracking_always_info" = "SwissCovid bleibt aktiv, auch wenn die App geschlossen wird.";
+
+/*title in splash screen of onboarding*/
+"oboarding_splashscreen_title" = "SwissCovid stoppt Infektionsketten.";
+"inform_detail_faq3_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+"inform_detail_faq3_title" = "Bleibe ich anonym?";
