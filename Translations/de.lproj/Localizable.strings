@@ -18,13 +18,13 @@
 "inform_continue_button" = "Weiter";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Anonym melden";
+"inform_send_button_title" = "Senden";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Vielen Dank";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Sie haben Ihren positiven Test anonym in der App gemeldet.\n\nDamit helfen Sie mit, die Verbreitung des neuen Coronavirus einzudämmen.";
+"inform_send_thankyou_text" = "Die Zufalls-IDs Ihrer App wurden gesendet.\n\nDamit helfen Sie mit, Infektionsketten zu stoppen.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Schliessen";
@@ -65,9 +65,6 @@
 /*Permission Text für Bluetooth*/
 "NSBluetoothAlwaysUsageDescription" = "Begegnungen werden über Bluetooth energiesparend im Hintergrund erkannt.";
 
-/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
-"android_foreground_service_notification_text" = "Begegnungen werden anonym auf Ihrem Gerät gespeichert.";
-
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Covidcode eingeben";
 
@@ -81,7 +78,7 @@
 "tracing_setting_title" = "Tracing";
 
 /*Text beim Bluetooth Control*/
-"tracing_setting_text" = "Anonymes Tracing erlauben";
+"tracing_setting_text" = "COVID-19 Kontaktprotokoll";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
@@ -105,7 +102,7 @@
 "meldungen_meldung_text" = "Es besteht der Verdacht auf eine mögliche Ansteckung.";
 
 /*Titel ob Tracing aktiv*/
-"tracing_active_title" = "Tracing aktiv";
+"tracing_active_title" = "App aktiv";
 
 /*Text bei Tracing aktiv*/
 "tracing_active_text" = "Begegnungen werden anonym gespeichert";
@@ -192,13 +189,13 @@
 "inform_detail_box_subtitle" = "Mit dem Covidcode...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Anonym melden";
+"inform_detail_box_title" = "Infektionsketten stoppen";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Covidcode eingeben";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Mit dem Ihnen zugestellten Covidcode können Sie den Test anonym in der App melden.";
+"inform_detail_box_text" = "Mit der Eingabe des Covidcodes teilen Sie der App mit, dass sie positiv auf das neue Coronavirus getestet wurden.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Was tun, wenn ich ...";
@@ -207,16 +204,16 @@
 "symptom_detail_title" = "mich krank fühle?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Bei Symptomen...";
+"symptom_detail_box_subtitle" = "Machen Sie den ...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Arzt/Ärztin kontaktieren";
+"symptom_detail_box_title" = "Coronavirus-Check";
 
 /*Symptom Detail Weisse Box Button*/
 "symptom_detail_box_button" = "Zum Coronavirus-Check";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Kontaktieren Sie bei Symptomen, die auf das neue Coronavirus hindeuten, Ihren Arzt / Ihre Ärztin oder den ärztlichen Notfalldienst.";
+"symptom_detail_box_text" = "Bleiben Sie zu Hause, machen Sie den Coronavirus-Check oder rufen Sie Ihre Ärztin oder Ihren Arzt an.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positiv getestet";
@@ -226,10 +223,10 @@
 "tracing_turned_off_title" = "Tracing deaktiviert";
 "tracing_turned_off_text" = "Aktivieren Sie das Tracing, damit die App funktioniert.";
 "bluetooth_turned_off_title" = "Bluetooth Off";
-"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das anonyme Tracing funktioniert.";
+"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das Tracing funktioniert.";
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
 "bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
-"bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das anonyme Tracing funktioniert.";
+"bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das Tracing funktioniert.";
 
 /*URL zum Corona Check*/
 "symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
@@ -257,10 +254,10 @@
 "meldung_detail_positive_test_box_subtitle" = "Was soll ich tun?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Selbst-Isolation";
+"meldung_detail_positive_test_box_title" = "Isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Selbst-Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
@@ -331,22 +328,22 @@
 "onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Die App informiert im Verdachtsfall. So können Infektionsketten unterbrochen werden.";
+"onboarding_prinzip_text2" = "Die App Informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Schutz der Privatsphäre\ngarantiert";
+"onboarding_privacy_title" = "Ihre Privatsphäre bleibt geschützt";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Die Kommunikation zwischen den Geräten findet anonym statt.";
+"onboarding_privacy_text1" = "Zwischen den Geräten werden nur zufällige IDs ausgetauscht. Die App sammelt weder Standortdaten noch Daten über Ihre Identität.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Sämtliche Daten werden verschlüsselt und nur lokal auf dem Smartphone gespeichert.";
+"onboarding_privacy_text2" = "Die gespeicherten IDs bleiben auf Ihrem Gerät und werden nach 14 Tagen gelöscht.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Was macht die App?";
+"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
@@ -364,10 +361,10 @@
 "onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Die App informiert Sie bei einem Verdacht auf eine mögliche Ansteckung.";
+"onboarding_meldung_text1" = "Die App informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Mit dem richtigen Verhalten können Sie sich und andere schützen.";
+"onboarding_meldung_text2" = "Mit dem richtigen Verhalten können Sie Infektionsketten unterbrechen und andere schützen.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Bluetooth erlauben";
@@ -381,15 +378,19 @@
 /*Onboarding: Untetitel unten*/
 "onboarding_good_to_know" = "Gut zu wissen";
 
+/*OBSOLETE?*/
 /*Onboarding Bluetooth: Titel unten*/
 "onboarding_bluetooth_gtk_title1" = "Sie bleiben anonym";
 
+/*OBSOLETE?*/
 /*Onboarding Bluetooth: Text unten*/
 "onboarding_bluetooth_gtk_text1" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
 
+/*OBSOLETE?*/
 /*Onboarding Bluetooth: Titel unten*/
 "onboarding_bluetooth_gtk_title2" = "Leicht erhöhte Batterienutzung";
 
+/*OBSOLETE?*/
 /*Onboarding Bluetooth: Text unten*/
 "onboarding_bluetooth_gtk_text2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
 
@@ -412,13 +413,13 @@
 "inform_send_getwell_title" = "Gute Besserung";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die Anweisungen zur Selbst-Isolation.";
+"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die Anweisungen zur Isolation.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "Die App ist eingerichtet";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Vielen Dank, dass Sie mithelfen, sich und andere zu schützen.";
+"onboarding_go_text" = "Vielen Dank, dass Sie mithelfen, Infektionsketten zu unterbrechen.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Starten";
@@ -560,13 +561,13 @@
 "begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für mehrere Minuten nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
+"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für eine gewisse Zeit nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "Bei einer Begegnung wird nur ein verschlüsselter Code ausgetauscht.\n\nDieser wird lokal auf den Geräten gespeichert und nach 21 Tagen wieder gelöscht.";
+"begegnung_detail_faq2_text" = "Bei einer Begegnung werden nur zufällige IDs ausgetauscht.\n\nDiese werden lokal auf den Geräten gespeichert und nach 14 Tagen wieder gelöscht.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
@@ -617,10 +618,10 @@
 "inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
 
 /*Inform Detail: FAQ Titel*/
-"inform_detail_faq2_title" = "Wie bleibe ich anonym?";
+"inform_detail_faq2_title" = "Was wird gesendet?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die temporären Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit können andere SwissCovid-App Nutzer prüfen, ob sie in den letzten Tagen eine Begegnung mit Ihnen hatten.";
+"inform_detail_faq2_text" = "Es werden nur die Zufalls-IDs Ihrer App gesendet, keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid App Nutzer, dass sie sich möglicherweise angesteckt haben.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -641,7 +642,7 @@
 "symptom_faq1_title" = "Unsicher bei Symptomen?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Coronavirus-Check des BAG für eine Handlungsempfehlung.";
+"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Online-Check des BAG für eine Handlungsempfehlung.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -696,10 +697,10 @@
 "onboarding_gaen_button_activate" = "Aktivieren";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
-"onboarding_gaen_info_title_1" = "Sie bleiben anonym";
+"onboarding_gaen_info_title_1" = "Datenschutz";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Es werden nur anonyme IDs ausgetauscht. Keine Daten zum Standort oder Ihrer Person.";
+"onboarding_gaen_info_text_1" = "Es werden nur zufällige IDs ausgetauscht. Keine Daten zum Standort oder Ihrer Person.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "Leicht erhöhte Batterienutzung";
@@ -748,10 +749,10 @@
 "tracing_permission_error_title" = "COVID-19 Benachrichtigungen deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Aktivieren Sie COVID-19 Benachrichtigungen, damit das anonyme Tracing funktioniert.";
+"tracing_permission_error_text" = "Aktivieren Sie COVID-19 Benachrichtigungen, damit das Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufall-IDs mit der SwissCovid-App.";
+"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufalls-IDs mit der SwissCovid-App.";
 
 /*Button um die Google Play Services zu aktualisieren*/
 "playservices_update" = "Aktualisieren";
@@ -821,7 +822,7 @@
 "synchronizations_view_title" = "Übersicht";
 "synchronizations_view_info_title" = "Synchronisationen";
 "synchronizations_view_info_question" = "Was sind Synchronisationen?";
-"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten Schlüssel.";
+"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten Zufalls-IDs.";
 "synchronizations_view_period_title" = "In den letzten 14 Tagen";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
@@ -841,3 +842,4 @@
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
 "pre_call_dialog_box_number" = "Nummer";
+"tracing_active_tracking_always_info" = "SwissCovid bleibt aktiv, auch wenn die App geschlossen wird.";

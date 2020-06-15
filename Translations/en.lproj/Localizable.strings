@@ -65,9 +65,6 @@
 /*Permission Text für Bluetooth*/
 "NSBluetoothAlwaysUsageDescription" = "Encounters will be recognised in the background via low energy Bluetooth.";
 
-/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
-"android_foreground_service_notification_text" = "Encounters will be registered anonymously on your device.";
-
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Enter the Covidcode";
 
@@ -829,3 +826,4 @@
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
 "pre_call_dialog_box_number" = "Code";
+"tracing_active_tracking_always_info" = "";
