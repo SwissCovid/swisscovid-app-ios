@@ -846,3 +846,5 @@
 
 /*title in splash screen of onboarding*/
 "oboarding_splashscreen_title" = "SwissCovid stoppt Infektionsketten.";
+"inform_detail_faq3_text" = "Es werden nur die Zufalls-IDs Ihrer App gesendet. Keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid-App Nutzer, dass sie sich möglicherweise angesteckt haben.";
+"inform_detail_faq3_title" = "Was wird gesendet?";
