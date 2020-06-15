@@ -142,52 +142,53 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
         
         #if ENABLE_TESTING
-        
-        let previewWarning = NSInfoBoxView(title: viewModel.previewWarningTitle, subText: viewModel.previewWarningSubtext, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
-        stackScrollView.addArrangedView(previewWarning)
-        
-        stackScrollView.addSpacerView(NSPadding.large)
-        
-        let debugScreenContainer = UIView()
-        
+            #if ENABLE_STATUS_OVERRIDE
+                // DEBUG version for testing
         let debugScreenButton = NSButton(title: viewModel.debugScreenButtonTitle, style: .outlineUppercase(.ns_red))
-        
-        if Environment.current != Environment.prod {
-            debugScreenContainer.addSubview(debugScreenButton)
-            debugScreenButton.snp.makeConstraints { make in
+        let previewWarning = NSInfoBoxView(title: viewModel.previewWarningTitle, subText: viewModel.previewWarningSubtext, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
+                stackScrollView.addArrangedView(previewWarning)
+
+                stackScrollView.addSpacerView(NSPadding.large)
+            #endif
+
+            let debugScreenContainer = UIView()
+
+            if Environment.current != Environment.prod {
+                debugScreenContainer.addSubview(debugScreenButton)
+                debugScreenButton.snp.makeConstraints { make in
+                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                    make.top.bottom.centerX.equalToSuperview()
+                }
+
+                debugScreenButton.touchUpCallback = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.presentDebugScreen()
+                }
+
+                stackScrollView.addArrangedView(debugScreenContainer)
+
+                stackScrollView.addSpacerView(NSPadding.large)
+            }
+            debugScreenContainer.alpha = 0
+        #endif
+
+        #if ENABLE_LOGGING
+            let uploadDBContainer = UIView()
+            uploadDBContainer.addSubview(uploadDBButton)
+            uploadDBButton.snp.makeConstraints { make in
                 make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
                 make.top.bottom.centerX.equalToSuperview()
             }
-            
-            debugScreenButton.touchUpCallback = { [weak self] in
+
+            uploadDBButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.presentDebugScreen()
+                strongSelf.uploadDatabaseForDebugPurposes()
             }
-            
-            stackScrollView.addArrangedView(debugScreenContainer)
-            
+
+            stackScrollView.addArrangedView(uploadDBContainer)
+
             stackScrollView.addSpacerView(NSPadding.large)
-        }
-        
-        // DEBUG version for testing
-        let uploadDBContainer = UIView()
-        uploadDBContainer.addSubview(uploadDBButton)
-        uploadDBButton.snp.makeConstraints { make in
-            make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-            make.top.bottom.centerX.equalToSuperview()
-        }
-        
-        uploadDBButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.uploadDatabaseForDebugPurposes()
-        }
-        
-        stackScrollView.addArrangedView(uploadDBContainer)
-        
-        stackScrollView.addSpacerView(NSPadding.large)
-        
-        debugScreenContainer.alpha = 0
-        uploadDBContainer.alpha = 0
+            uploadDBContainer.alpha = 0
         #endif
         // End DEBUG version for testing
         

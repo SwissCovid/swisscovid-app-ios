@@ -39,7 +39,7 @@ class UIStateManager: NSObject {
 
             // don't trigger ui update based on debug values
             // otherwise behaviour in prob build could be different
-            #if ENABLE_TESTING
+            #if ENABLE_STATUS_OVERRIDE
                 var newUIStateWithoutDebug = uiState
                 newUIStateWithoutDebug?.debug = .init()
                 var oldUIStateWithoutDebug = oldValue
@@ -147,7 +147,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    @UBUserDefault(key: "hasTimeInconsistencyError", defaultValue: false)
+    @KeychainPersisted(key: "hasTimeInconsistencyError", defaultValue: false)
     var hasTimeInconsistencyError: Bool
 
     var anyError: CodedError? {
@@ -182,7 +182,7 @@ class UIStateManager: NSObject {
         }
     }
 
-    #if ENABLE_TESTING
+    #if ENABLE_STATUS_OVERRIDE
         var overwrittenInfectionState: UIStateModel.Debug.DebugInfectionStatus? {
             didSet { refresh() }
         }

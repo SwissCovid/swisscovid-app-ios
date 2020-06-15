@@ -53,9 +53,38 @@ class UserStorage {
         return seenMessages.contains("\(identifier.uuidString)")
     }
 
-    @UBUserDefault(key: "lastPhoneCalls", defaultValue: [:])
+    @KeychainPersisted(key: "lastPhoneCalls", defaultValue: [:])
     private var lastPhoneCalls: [String: Date]
 
-    @UBUserDefault(key: "seenMessages", defaultValue: [])
+    @KeychainPersisted(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]
+}
+
+class KeychainMigration {
+    @KeychainPersisted(key: "didMigrateToKeychain", defaultValue: false)
+    static var didMigrateToKeychain: Bool
+
+    static func migrate() {
+        guard !didMigrateToKeychain else { return }
+        defer { didMigrateToKeychain = true }
+
+        let defaults = UserDefaults.standard
+        let keychain = Keychain()
+
+        if let exposureIdentifiers = defaults.value(forKey: "exposureIdentifiers") as? [String] {
+            keychain.set(exposureIdentifiers, for: .init(key: "exposureIdentifiers"))
+        }
+
+        if let tracingIsActivated = defaults.value(forKey: "tracingIsActivated") as? Bool {
+            keychain.set(tracingIsActivated, for: .init(key: "tracingIsActivated"))
+        }
+
+        if let lastPhoneCalls = defaults.value(forKey: "lastPhoneCalls") as? [String: Date] {
+            keychain.set(lastPhoneCalls, for: .init(key: "lastPhoneCalls"))
+        }
+
+        if let seenMessages = defaults.value(forKey: "seenMessages") as? [String] {
+            keychain.set(seenMessages, for: .init(key: "seenMessages"))
+        }
+    }
 }

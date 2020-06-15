@@ -15,11 +15,23 @@ class ConfigLoadOperation: Operation {
     @UBOptionalUserDefault(key: "presentedConfigForVersion")
     static var presentedConfigForVersion: String?
 
+    @UBOptionalUserDefault(key: "lastBackgroundConfigLoad")
+    static var lastBackgroundConfigLoad: Date?
+
+    // 6h
+    static let backgroundInterval: TimeInterval = 60 * 60 * 6
+
     override func main() {
         guard isCancelled == false else { return }
+        // Only load config if last load is older than backgroundInterval
+        guard Self.lastBackgroundConfigLoad == nil || Date().timeIntervalSince(Self.lastBackgroundConfigLoad!) > Self.backgroundInterval else { return }
 
         let semaphore = DispatchSemaphore(value: 0)
         ConfigManager().loadConfig { config in
+            if config != nil {
+                Self.lastBackgroundConfigLoad = Date()
+            }
+
             if let c = config, c.forceUpdate {
                 // only show notification once per app update
                 if ConfigLoadOperation.presentedConfigForVersion != ConfigManager.appVersion {
