@@ -65,9 +65,6 @@
 /*Permission Text für Bluetooth*/
 "NSBluetoothAlwaysUsageDescription" = "Os contactos serão detectados em segundo plano através de Bluetooth de baixo consumo energético.";
 
-/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
-"android_foreground_service_notification_text" = "Os contatos serão registados de forma anónima no seu dispositivo.";
-
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Insira o código COVID";
 
@@ -821,3 +818,7 @@
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
 "pre_call_dialog_box_number" = "Code";
+"tracing_active_tracking_always_info" = "";
+
+/*title in splash screen of onboarding*/
+"oboarding_splashscreen_title" = "";
