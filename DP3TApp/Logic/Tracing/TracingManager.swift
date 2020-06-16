@@ -60,6 +60,12 @@ class TracingManager: NSObject {
                                                        jwtPublicKey: Environment.current.jwtPublicKey)
             #endif
 
+            #if ENABLE_OS_LOG
+            DP3TTracing.loggingEnabled = true
+            #else
+            DP3TTracing.loggingEnabled = false
+            #endif
+
             #if ENABLE_LOGGING
                 // Set logging Storage
                 loggingStorage = try? .init()
