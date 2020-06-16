@@ -35,8 +35,10 @@ class DatabaseSyncer {
         }
     }
 
-    func forceSyncDatabase() {
-        syncDatabase(completionHandler: nil)
+    func forceSyncDatabase(completionHandler: (() -> Void)?) {
+        syncDatabase { _ in
+            completionHandler?()
+        }
     }
 
     @UBOptionalUserDefault(key: "lastDatabaseSync") private var lastDatabaseSync: Date?
