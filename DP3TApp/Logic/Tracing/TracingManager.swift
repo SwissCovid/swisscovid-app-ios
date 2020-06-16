@@ -60,6 +60,12 @@ class TracingManager: NSObject {
                                                        jwtPublicKey: Environment.current.jwtPublicKey)
             #endif
 
+            #if ENABLE_OS_LOG
+            DP3TTracing.loggingEnabled = true
+            #else
+            DP3TTracing.loggingEnabled = false
+            #endif
+
             #if ENABLE_LOGGING
                 // Set logging Storage
                 loggingStorage = try? .init()
@@ -289,22 +295,21 @@ extension TracingManager: ActivityDelegate {
         var numberOfDelayedErrors: Int = 0
 
         for e in errors {
-            if case let DP3TTracingError.networkingError(wrappedError) = e {
-                switch wrappedError {
-                case .timeInconsistency:
-                    UIStateManager.shared.hasTimeInconsistencyError = true
-                default:
-                    break
-                }
+            switch e {
+            case let .networkingError(error: wrappedError):
                 switch wrappedError {
                 case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
                     numberOfDelayedErrors += 1 // If error is certificate
                 case DP3TNetworkingError.networkSessionError:
                     numberOfDelayedErrors += 1 // If error is networking
+                case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
+                    numberOfDelayedErrors += 1 // If error is 502 || 503
                 default:
                     numberOfInstantErrors += 1
                 }
-            } else {
+            case .cancelled:
+                numberOfDelayedErrors += 1
+            default:
                 numberOfInstantErrors += 1
             }
         }
