@@ -106,6 +106,8 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         @objc
         private func openSynchronizationStatusDetails(sender _: UIControl?) {
             let syncViewController = NSSynchronizationStatusDetailController()
+            syncViewController.viewModel = SyncronizationStatusDetailModel(syncronizationServicePersistence: NSSynchronizationPersistence.shared)
+            syncViewController.viewModel.delegate = syncViewController
             navigationController?.pushViewController(syncViewController, animated: true)
         }
     #endif

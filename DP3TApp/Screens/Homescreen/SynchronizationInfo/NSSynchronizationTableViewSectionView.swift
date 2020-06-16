@@ -39,7 +39,6 @@ class NSSynchronizationTableViewSectionView: UITableViewHeaderFooterView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         contentView.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 10)).cgPath

@@ -275,6 +275,8 @@
 		A66D0F62248655BC00462A76 /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */; };
 		A67E25A82497598A00BE6A96 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E25A72497598A00BE6A96 /* UITableViewExtension.swift */; };
 		A67E25A92497598A00BE6A96 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67E25A72497598A00BE6A96 /* UITableViewExtension.swift */; };
+		A686DC5324989B4E003237BB /* SyncronizationStatusDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686DC5224989B4E003237BB /* SyncronizationStatusDetailModel.swift */; };
+		A686DC5424989B4E003237BB /* SyncronizationStatusDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686DC5224989B4E003237BB /* SyncronizationStatusDetailModel.swift */; };
 		A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A693B20E24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A693B21024812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */; };
@@ -493,6 +495,7 @@
 		A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		A67E25A72497598A00BE6A96 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		A686DC5224989B4E003237BB /* SyncronizationStatusDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncronizationStatusDetailModel.swift; sourceTree = "<group>"; };
 		A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailNoMeldungenViewModel.swift; sourceTree = "<group>"; };
 		A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailPositiveTestedViewModel.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
@@ -1065,6 +1068,7 @@
 			isa = PBXGroup;
 			children = (
 				8EF2A6E72490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift */,
+				A686DC5224989B4E003237BB /* SyncronizationStatusDetailModel.swift */,
 				8EF2A6EB249124C4002263C3 /* NSSynchronizationTableViewCell.swift */,
 				8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */,
 				8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */,
@@ -1556,6 +1560,7 @@
 				242D21F8245C4BD8005DAEA8 /* UIStateManager.swift in Sources */,
 				242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
+				A686DC5424989B4E003237BB /* SyncronizationStatusDetailModel.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
@@ -1760,6 +1765,7 @@
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
+				A686DC5324989B4E003237BB /* SyncronizationStatusDetailModel.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
