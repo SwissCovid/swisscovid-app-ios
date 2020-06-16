@@ -83,7 +83,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addArrangedView(symptomView)
 
-        let externalLinkButtonInSymptomView = NSExternalLinkButton(color: .ns_purple)
+        let externalLinkButtonInSymptomView = NSExternalLinkButton(style: .normal(color: .ns_purple))
         externalLinkButtonInSymptomView.title = "symptom_detail_box_button".ub_localized
         symptomView.contentView.addSpacerView(NSPadding.medium)
         symptomView.contentView.addArrangedSubview(externalLinkButtonInSymptomView)
@@ -100,7 +100,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         let buttonView = UIView()
 
-        let externalLinkButton = NSExternalLinkButton(color: .ns_purple)
+        let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
         externalLinkButton.title = viewModel.externalLinkButtonTitle
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
