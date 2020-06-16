@@ -14,7 +14,10 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
     public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
-        didSet { update() }
+        didSet {
+            guard oldValue != meldungen else { return }
+            update()
+        }
     }
 
     // MARK: - Initial Views
@@ -85,7 +88,6 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
         for h in headers {
             h.updateConstraintsForAnimation()
         }
-
         startAnimationNotDone = false
     }
 
