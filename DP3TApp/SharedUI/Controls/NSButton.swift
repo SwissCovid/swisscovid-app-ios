@@ -135,7 +135,9 @@ class NSButton: UBButton {
 
 extension NSButton {
     static func faqButton(color: UIColor) -> UIView {
-        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
+        // let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
+        let faqButton = NSExternalLinkButton(style: .outlined(color: color))
+        faqButton.title = "faq_button_title".ub_localized
 
         faqButton.touchUpCallback = {
             if let url = URL(string: "faq_button_url".ub_localized) {
@@ -149,8 +151,8 @@ extension NSButton {
 
         faqButton.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
+            make.right.equalToSuperview().inset(NSPadding.medium)
+            make.left.equalToSuperview().inset(NSPadding.medium)
         }
 
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
