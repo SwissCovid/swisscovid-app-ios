@@ -849,12 +849,6 @@
 /*Onboarding Disclaimer Screen: Info*/
 "onboarding_disclaimer_info" = "";
 
-/*Onboarding Disclaimer Screen: Privacy link button text*/
-"onboarding_disclaimer_privacy_button" = "";
-
-/*Onboarding Disclaimer Screen: Conditions of use link button text*/
-"onboarding_disclaimer_conditions_of_use_button" = "";
-
 /*Onboarding Disclaimer Screen: Warning Title*/
 "onboarding_disclaimer_warning_title" = "Avertiment: Quest'app n'As protegia betg d'ina infecziun cun COVID-19.";
 
@@ -870,8 +864,8 @@
 /*Onboarding Disclaimer Screen: Release version title*/
 "onboarding_disclaimer_release_version" = "";
 
-/*url for condition of use in onboarding*/
-"onboarding_disclaimer_conditions_of_use_url" = "";
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "";
 
-/*url for privacy pdf in onboarding*/
-"onboarding_disclaimer_privacy_url" = "";
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "";

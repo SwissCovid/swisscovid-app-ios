@@ -869,13 +869,7 @@
 "onboarding_disclaimer_title" = "Hinweise zur Nutzung";
 
 /*Onboarding Disclaimer Screen: Info*/
-"onboarding_disclaimer_info" = "Bitte lesen sie die Datenschutzerklärung und die Nutzungsbestimmungen.";
-
-/*Onboarding Disclaimer Screen: Privacy link button text*/
-"onboarding_disclaimer_privacy_button" = "Datenschutzerklärung";
-
-/*Onboarding Disclaimer Screen: Conditions of use link button text*/
-"onboarding_disclaimer_conditions_of_use_button" = "Nutzungsbestimmungen";
+"onboarding_disclaimer_info" = "Hier finden Sie die Datenschutzerklärung und die Nutzungsbestimmungen.";
 
 /*Onboarding Disclaimer Screen: Warning Title*/
 "onboarding_disclaimer_warning_title" = "Warnung: Diese App schützt Sie nicht vor einer COVID-19-Infektion.";
@@ -892,8 +886,8 @@
 /*Onboarding Disclaimer Screen: Release version title*/
 "onboarding_disclaimer_release_version" = "Release Date:";
 
-/*url for condition of use in onboarding*/
-"onboarding_disclaimer_conditions_of_use_url" = "https://www.bag.admin.ch/dam/bag/de/dokumente/cc/kom/swisscovid-app-nutzungsbedingungen.pdf.download.pdf/DE_Pilotphase_Nutzungsbedingungen_BAG_final_2_Juni_2020.pdf";
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "Datenschutz- & Nutzungsbestimmungen";
 
-/*url for privacy pdf in onboarding*/
-"onboarding_disclaimer_privacy_url" = "https://www.bag.admin.ch/dam/bag/de/dokumente/cc/kom/swisscovid-app-datenschutz.pdf.download.pdf/BAG_SwissCovid_Datenschutzerklaerung_waehrend_Pilotversuch_2_Juni_2020.pdf";
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";

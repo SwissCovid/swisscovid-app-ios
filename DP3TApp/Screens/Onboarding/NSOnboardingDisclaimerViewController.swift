@@ -56,21 +56,17 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.leading.trailing.equalTo(self.stackScrollView.stackView).inset(NSPadding.large)
         }
 
-        let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
-        privacyButton.title = "onboarding_disclaimer_privacy_button".ub_localized
+        let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_lightBlue))
+        privacyButton.title = "onboarding_disclaimer_legal_button".ub_localized
         privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
         }
 
+        privacyButton.titleLabel?.textAlignment = .center
+
+        privacyButton.contentHorizontalAlignment = .center
+
         addArrangedView(privacyButton, spacing: NSPadding.large, insets: sidePadding)
-
-        let conditionOfUseButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
-        conditionOfUseButton.title = "onboarding_disclaimer_conditions_of_use_button".ub_localized
-        conditionOfUseButton.touchUpCallback = { [weak self] in
-            self?.openConditionOfUseLink()
-        }
-
-        addArrangedView(conditionOfUseButton, spacing: NSPadding.large, insets: sidePadding)
 
         let warningStack = UIStackView()
         warningStack.axis = .vertical
@@ -177,16 +173,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningBody.text = "onboarding_disclaimer_warning_body".ub_localized
     }
 
-    private func openConditionOfUseLink() {
-        if let url = URL(string: "onboarding_disclaimer_conditions_of_use_url".ub_localized) {
-            let vc = SFSafariViewController(url: url)
-            vc.modalPresentationStyle = .popover
-            present(vc, animated: true)
-        }
-    }
-
     private func openPrivacyLink() {
-        if let url = URL(string: "onboarding_disclaimer_privacy_url".ub_localized) {
+        if let url = URL(string: "onboarding_disclaimer_legal_button_url".ub_localized) {
             let vc = SFSafariViewController(url: url)
             vc.modalPresentationStyle = .popover
             present(vc, animated: true)
