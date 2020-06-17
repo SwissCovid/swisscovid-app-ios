@@ -85,7 +85,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningContainer.addSubview(warningStack)
         addArrangedView(warningContainer, spacing: NSPadding.large, insets: sidePadding)
 
-        stackScrollView.addSpacerView(40)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         warningStack.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -99,7 +99,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         iconWrapper.addSubview(manufacturerIcon)
 
         let label = NSLabel(.textLight, textColor: .ns_text)
-        label.text = "onboarding_disclaimer_manufacturer"
+        label.text = "onboarding_disclaimer_manufacturer".ub_localized
         label.ub_setContentPriorityRequired()
 
         let labelWrapper = UIView()
