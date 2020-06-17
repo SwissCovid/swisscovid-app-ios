@@ -648,7 +648,7 @@
 /*Meldung Detail: "Noch 1 Tag" Label*/
 "date_in_one_day" = "Mais 1 dia";
 
-/*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
+/*Meldung Detail: Anzeige "Noch x T     age" {COUNT} wird durch Zahl ersetzt*/
 "date_in_days" = "Mais {COUNT} dias";
 
 /*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/

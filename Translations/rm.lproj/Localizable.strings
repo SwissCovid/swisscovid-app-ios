@@ -640,7 +640,7 @@
 "meldungen_positive_tested_faq1_text" = "Suenter in test positiv vegn il tracing en l'app terminà automaticamain.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "rtr.";
+"language_key" = "rm";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Infoline SwissCovid";
