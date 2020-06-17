@@ -131,7 +131,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         versionStack.axis = .vertical
 
         let versionLabel = NSLabel(.textLight, textColor: .ns_text)
-        versionLabel.text = "onboarding_disclaimer_app_version".ub_localized + " " + Bundle.appVersion
+        versionLabel.text = "\("onboarding_disclaimer_app_version".ub_localized) \(Bundle.appVersion)"
 
         versionStack.addArrangedSubview(versionLabel)
         if let buildDate = Bundle.buildDate {
