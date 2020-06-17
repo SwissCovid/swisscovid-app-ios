@@ -14,7 +14,10 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
     public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
-        didSet { update() }
+        didSet {
+            guard oldValue != meldungen else { return }
+            update()
+        }
     }
 
     public var showMeldungWithAnimation: Bool = false
