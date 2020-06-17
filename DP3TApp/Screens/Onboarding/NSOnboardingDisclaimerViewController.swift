@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SafariServices
 import UIKit
 
 class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
@@ -178,17 +179,17 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     private func openConditionOfUseLink() {
         if let url = URL(string: "onboarding_disclaimer_conditions_of_use_url".ub_localized) {
-            let vc = NSWebViewController(mode: .remote(url), closeable: true)
-            vc.title = "onboarding_disclaimer_conditions_of_use_button".ub_localized
-            present(NSNavigationController(rootViewController: vc), animated: true)
+            let vc = SFSafariViewController(url: url)
+            vc.modalPresentationStyle = .popover
+            present(vc, animated: true)
         }
     }
 
     private func openPrivacyLink() {
         if let url = URL(string: "onboarding_disclaimer_privacy_url".ub_localized) {
-            let vc = NSWebViewController(mode: .remote(url), closeable: true)
-            vc.title = "onboarding_disclaimer_privacy_button".ub_localized
-            present(NSNavigationController(rootViewController: vc), animated: true)
+            let vc = SFSafariViewController(url: url)
+            vc.modalPresentationStyle = .popover
+            present(vc, animated: true)
         }
     }
 

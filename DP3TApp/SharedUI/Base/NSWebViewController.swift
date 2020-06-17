@@ -18,11 +18,9 @@ class NSWebViewController: NSViewController {
     private var loadCount: Int = 0
     private let closeable: Bool
     private let mode: Mode
-    private lazy var activityIndicator = UIActivityIndicatorView(style: .medium)
 
     enum Mode {
         case local(String)
-        case remote(URL)
     }
 
     // MARK: - Init
@@ -47,8 +45,6 @@ class NSWebViewController: NSViewController {
             let contentController = WKUserContentController()
             contentController.addUserScript(script)
             config.userContentController = contentController
-        default:
-            break
         }
 
         webView = WKWebView(frame: .zero, configuration: config)
@@ -65,8 +61,6 @@ class NSWebViewController: NSViewController {
         switch mode {
         case let .local(local):
             loadLocal(local)
-        case let .remote(url):
-            webView.load(.init(url: url))
         }
 
         if closeable {
@@ -102,18 +96,6 @@ class NSWebViewController: NSViewController {
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-
-        switch mode {
-        case .remote:
-            view.addSubview(activityIndicator)
-            activityIndicator.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-            }
-            activityIndicator.hidesWhenStopped = true
-            activityIndicator.startAnimating()
-        default:
-            break
         }
 
         view.backgroundColor = UIColor.ns_backgroundSecondary
@@ -165,24 +147,6 @@ extension NSWebViewController: WKNavigationDelegate {
         default:
             decisionHandler(.allow)
             return
-        }
-    }
-
-    func webView(_: WKWebView, didStartProvisionalNavigation _: WKNavigation!) {
-        switch mode {
-        case .remote:
-            activityIndicator.startAnimating()
-        default:
-            break
-        }
-    }
-
-    func webView(_: WKWebView, didFinish _: WKNavigation!) {
-        switch mode {
-        case .remote:
-            activityIndicator.stopAnimating()
-        default:
-            break
         }
     }
 }
