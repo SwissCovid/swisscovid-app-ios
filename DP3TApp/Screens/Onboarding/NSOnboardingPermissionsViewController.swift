@@ -81,7 +81,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         case .gapple:
             foregroundImageView.image = UIImage(named: "onboarding-bt-permission")!
             titleLabel.text = "onboarding_gaen_title".ub_localized
-            textLabel.text = "onboarding_gaen_text".ub_localized
+            textLabel.text = "onboarding_gaen_text_ios".ub_localized
             permissionButton.title = "onboarding_gaen_button_activate".ub_localized
 
             let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "onboarding_gaen_info_text_1".ub_localized, title: "onboarding_gaen_info_title_1".ub_localized)

@@ -21,13 +21,14 @@ class NSOnboardingViewController: NSViewController {
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
     private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
-    private let step4VC = NSOnboardingPermissionsViewController(type: .gapple)
-    private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
-    private let step6VC = NSOnboardingPermissionsViewController(type: .push)
-    private let step7VC = NSOnboardingFinishViewController()
+    private let step4VC = NSOnboardingDisclaimerViewController()
+    private let step5VC = NSOnboardingPermissionsViewController(type: .gapple)
+    private let step6VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step6)
+    private let step7VC = NSOnboardingPermissionsViewController(type: .push)
+    private let step8VC = NSOnboardingFinishViewController()
 
     private var stepViewControllers: [NSOnboardingContentViewController] {
-        [step0VC, step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC]
+        [step0VC, step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC, step8VC]
     }
 
     private var legalStepIndex: Int {
@@ -35,15 +36,15 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private var tracingPermissionStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step4VC)!
+        return stepViewControllers.firstIndex(of: step5VC)!
     }
 
     private var pushPermissionStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step6VC)!
+        return stepViewControllers.firstIndex(of: step7VC)!
     }
 
     private var finalStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step7VC)!
+        return stepViewControllers.firstIndex(of: step8VC)!
     }
 
     private var stepsWithoutContinue: [Int] {
@@ -64,13 +65,13 @@ class NSOnboardingViewController: NSViewController {
 
         setupButtons()
 
-        step4VC.permissionButton.touchUpCallback = { [weak self] in
+        step5VC.permissionButton.touchUpCallback = { [weak self] in
             TracingManager.shared.requestTracingPermission { _ in
                 self?.animateToNextStep()
             }
         }
 
-        step6VC.permissionButton.touchUpCallback = {
+        step7VC.permissionButton.touchUpCallback = {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -79,7 +80,7 @@ class NSOnboardingViewController: NSViewController {
             }
         }
 
-        step7VC.finishButton.touchUpCallback = finishAnimation
+        step8VC.finishButton.touchUpCallback = finishAnimation
 
         setupSwipeRecognizers()
         addStepViewControllers()
@@ -102,7 +103,7 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func startSplashCountDown() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
             UIView.animate(withDuration: 0.5) {
                 self.splashVC.view.alpha = 0
             }
@@ -178,6 +179,7 @@ class NSOnboardingViewController: NSViewController {
     private func showContinueButton() {
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
             self.continueContainer.transform = .identity
+            self.view.bringSubviewToFront(self.continueContainer)
         }, completion: nil)
     }
 
