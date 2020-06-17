@@ -60,27 +60,31 @@ class DatabaseSyncer {
                 // - unexpected errors -> immediately show, backend could  be broken
                 UIStateManager.shared.blockUpdate {
                     UIStateManager.shared.syncError = e
-                    if case let DP3TTracingError.networkingError(wrappedError) = e {
-                        switch wrappedError {
-                        case .timeInconsistency:
-                            UIStateManager.shared.hasTimeInconsistencyError = true
-                        default:
-                            break
-                        }
+                    switch e {
+                    case let .networkingError(error: wrappedError):
                         UIStateManager.shared.lastSyncErrorTime = Date()
                         switch wrappedError {
-                        case let DP3TNetworkingError.networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                        case let .networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
-                        case DP3TNetworkingError.networkSessionError:
+                        case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
+                            // this means the backend is under maintanance
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
+                        case .networkSessionError:
+                            UIStateManager.shared.immediatelyShowSyncError = false
+                            UIStateManager.shared.syncErrorIsNetworkError = true
+                        case .timeInconsistency:
+                            UIStateManager.shared.hasTimeInconsistencyError = true
                         default:
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false
                         }
-
-                    } else {
+                    case .cancelled:
+                        // background task got cancelled, dont show error immediately
+                        UIStateManager.shared.immediatelyShowSyncError = false
+                        UIStateManager.shared.syncErrorIsNetworkError = true
+                    default:
                         UIStateManager.shared.immediatelyShowSyncError = true
                         UIStateManager.shared.syncErrorIsNetworkError = false
                     }
