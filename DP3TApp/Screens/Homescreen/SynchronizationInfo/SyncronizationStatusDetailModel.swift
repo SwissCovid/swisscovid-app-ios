@@ -33,13 +33,21 @@ class SyncronizationStatusDetailModel {
         return "synchronizations_view_title".ub_localized
     }
     
-    init(syncronizationServicePersistence: NSSynchronizationPersistence?) {
-        ({ self.syncronizationServicePersistence = syncronizationServicePersistence })()
+    // Onboarding info view
+    var titleText: String {
+        return "synchronizations_view_info_title".ub_localized
     }
     
-    func fetchDataSource() {
-        dataSource = syncronizationServicePersistence?.fetchAll() ?? []
-        delegate?.didLoadData()
+    var onboardingViewText: String {
+        return "synchronizations_view_info_answer".ub_localized
+    }
+    
+    var onboardingViewTitle: String {
+        return "synchronizations_view_info_question".ub_localized
+    }
+    
+    init(syncronizationServicePersistence: NSSynchronizationPersistence?) {
+        ({ self.syncronizationServicePersistence = syncronizationServicePersistence })()
     }
 }
 
@@ -48,6 +56,11 @@ extension SyncronizationStatusDetailModel {
     
     var isDataSourceEmpty: Bool {
         return dataSource.isEmpty
+    }
+    
+    func fetchDataSource() {
+        dataSource = syncronizationServicePersistence?.fetchAll() ?? []
+        delegate?.didLoadData()
     }
     
     func numberOfRowsInSection() -> Int {

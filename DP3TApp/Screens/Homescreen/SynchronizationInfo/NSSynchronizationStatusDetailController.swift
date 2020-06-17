@@ -82,8 +82,8 @@ class NSSynchronizationStatusDetailController: NSViewController {
         
         let title = NSLabel(.title)
         title.numberOfLines = 0
-        title.text = "synchronizations_view_info_title".ub_localized
-        let infoQuestion = NSOnboardingInfoView(icon: UIImage(named: "ic-sync")!, text: "synchronizations_view_info_answer".ub_localized, title: "synchronizations_view_info_question".ub_localized, leftRightInset: 0)
+        title.text = viewModel.titleText
+        let infoQuestion = NSOnboardingInfoView(icon: UIImage(named: "ic-sync")!, text: viewModel.onboardingViewText, title: viewModel.onboardingViewTitle, leftRightInset: 0)
         
         infoView.addSubview(title)
         infoView.addSubview(infoQuestion)
