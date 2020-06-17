@@ -128,11 +128,13 @@ public enum NSLabelType: UBLabelType {
     }
 
     public var hyphenationFactor: Float {
-        1.0
+        if self == .splashTitle { return 0.0 }
+        return 1.0
     }
 
     public var lineBreakMode: NSLineBreakMode {
-        .byTruncatingTail
+        if self == .splashTitle { return .byWordWrapping }
+        return .byTruncatingTail
     }
 }
 
