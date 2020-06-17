@@ -16,8 +16,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
     private let titleLabel = NSLabel(.title, textAlignment: .center)
 
     private let warningContainer = UIView()
-    private let warningTitle = NSLabel(.textBold, textColor: .ns_text)
-    private let warningBody = NSLabel(.textLight, textColor: .ns_text)
+    private let warningTitle = NSLabel(.smallBold, textColor: .ns_text)
+    private let warningBody = NSLabel(.smallLight, textColor: .ns_text)
     private let warningRow0 = UIStackView()
     private let warningRow1 = UIView()
 
@@ -98,7 +98,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         let manufacturerIcon = UIImageView(image: UIImage(named: "manufacturer-iso-icon")!)
         iconWrapper.addSubview(manufacturerIcon)
 
-        let label = NSLabel(.textLight, textColor: .ns_text)
+        let label = NSLabel(.smallLight, textColor: .ns_text)
         label.text = "onboarding_disclaimer_manufacturer".ub_localized
         label.ub_setContentPriorityRequired()
 
@@ -130,12 +130,12 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         let versionStack = UIStackView()
         versionStack.axis = .vertical
 
-        let versionLabel = NSLabel(.textLight, textColor: .ns_text)
+        let versionLabel = NSLabel(.smallLight, textColor: .ns_text)
         versionLabel.text = "\("onboarding_disclaimer_app_version".ub_localized) \(Bundle.appVersion)"
 
         versionStack.addArrangedSubview(versionLabel)
         if let buildDate = Bundle.buildDate {
-            let releaseDateLabel = NSLabel(.textLight, textColor: .ns_text)
+            let releaseDateLabel = NSLabel(.smallLight, textColor: .ns_text)
             releaseDateLabel.text = "onboarding_disclaimer_release_version".ub_localized + " " + DateFormatter.ub_dayString(from: buildDate)
             versionStack.addArrangedSubview(releaseDateLabel)
         }
