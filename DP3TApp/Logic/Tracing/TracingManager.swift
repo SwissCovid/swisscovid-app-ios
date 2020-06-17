@@ -145,11 +145,6 @@ class TracingManager: NSObject {
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
 
-        // during infection, tracing is diabled
-        // after infection, it works again, but user must manually
-        // enable if desired
-        isActivated = false
-
         UIStateManager.shared.refresh()
     }
 
