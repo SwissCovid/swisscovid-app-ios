@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/it/impressum.html</loc>
+    <loc>/rm/impressum.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -22,8 +22,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="rm"
-                href="/rm/impressum.html"
+                hreflang="it"
+                href="/it/impressum.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -57,13 +57,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="it"
-                href="/it/impressum.html"
+                hreflang="rm"
+                href="/rm/impressum.html"
                 />
   </url>
   
   <url>
-    <loc>/it/licence.html</loc>
+    <loc>/rm/licence.html</loc>
     <priority>0</priority>
     <xhtml:link
                 rel="alternate"
@@ -82,8 +82,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="rm"
-                href="/rm/licence.html"
+                hreflang="it"
+                href="/it/licence.html"
                 />
     <xhtml:link
                 rel="alternate"
@@ -117,13 +117,13 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="it"
-                href="/it/licence.html"
+                hreflang="rm"
+                href="/rm/licence.html"
                 />
   </url>
   
   <url>
-    <loc>/it/</loc>
+    <loc>/rm/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -141,8 +141,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="rm"
-                href="/rm/"
+                hreflang="it"
+                href="/it/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -176,8 +176,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="it"
-                href="/it/"
+                hreflang="rm"
+                href="/rm/"
                 />
   </url>
   
