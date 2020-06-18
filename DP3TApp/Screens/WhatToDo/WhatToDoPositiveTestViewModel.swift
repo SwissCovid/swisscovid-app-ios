@@ -32,13 +32,24 @@ class WhatToDoPositiveTestViewModel {
         return "inform_detail_faq1_title".ub_localized
     }
     
-    // User
-    var userText: String {
+    // Anonymous text
+    
+    var anonymousText: String {
         return "inform_detail_faq2_text".ub_localized
     }
     
-    var userTitle: String {
+    var anonymousTitle: String {
         return "inform_detail_faq2_title".ub_localized
+    }
+
+    
+    // User
+    var userText: String {
+        return "inform_detail_faq3_text".ub_localized
+    }
+    
+    var userTitle: String {
+        return "inform_detail_faq3_title".ub_localized
     }
     
     
