@@ -18,13 +18,13 @@
 "inform_continue_button" = "Vazhdo";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Dërgo raport anonim";
+"inform_send_button_title" = "Dërgo";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Shumë faleminderit";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Keni raportuar në aplikacion në mënyrë anonime testin tuaj pozitiv.\n\nKështu na ndihmoni për të frenuar përhapjen e koronavirusit të ri.";
+"inform_send_thankyou_text" = "ID e rastit të aplikacionit tuaj u dërguan.\n\nNë këtë mënyrë na ndihmoni, për të ndaluar zinxhirin e infeksionit.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Mbyll";
@@ -78,7 +78,8 @@
 "tracing_setting_title" = "Gjurmimi";
 
 /*Text beim Bluetooth Control*/
-"tracing_setting_text" = "Lejo gjurmimin në anonimitet";
+/*Fuzzy*/
+"tracing_setting_text_ios" = "Njoftime rreth ekspozimit";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Gjurmimi i çaktivizuar";
@@ -102,7 +103,7 @@
 "meldungen_meldung_text" = "Ekziston dyshimi i një infeksioni të mundshëm.";
 
 /*Titel ob Tracing aktiv*/
-"tracing_active_title" = "Gjurmimi aktiv";
+"tracing_active_title" = "APP është aktiv";
 
 /*Text bei Tracing aktiv*/
 "tracing_active_text" = "Kontaktet ruhen në mënyrë anonime";
@@ -189,13 +190,13 @@
 "inform_detail_box_subtitle" = "Me kodin Covid...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Dërgo raport anonim";
+"inform_detail_box_title" = "Ndalo zinxhirin e infeksionit";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Fut kodin e Covid";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Me kodin Covid që ju është caktuar mund të njoftoni për testin në aplikacion në mënyrë anonime.";
+"inform_detail_box_text" = "Me futjen e kodit të Covid ju njoftoni aplikacionin që jeni testuar pozitivë me koronavirusin e ri.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Ç’të bëj nëse unë...";
@@ -204,16 +205,16 @@
 "symptom_detail_title" = "ndihem i sëmurë?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Në rast simptomash...";
+"symptom_detail_box_subtitle" = "Bëni...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "kontaktoni mjekun";
+"symptom_detail_box_title" = "Kontrolli i koronavirusit";
 
 /*Symptom Detail Weisse Box Button*/
 "symptom_detail_box_button" = "Për kontrollin e koronavirusit";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Në rastin e simptomave që supozojnë për koronavirusin e ri, kontaktoni mjekun ose shërbimin mjekësor të urgjencës.";
+"symptom_detail_box_text" = "Qëndroni në shtëpi, bëni kontrollin e koronavirusit ose telefononi mjeken ose mjekun tuaj.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Pozitiv në test";
@@ -223,10 +224,10 @@
 "tracing_turned_off_title" = "Gjurmimi i çaktivizuar";
 "tracing_turned_off_text" = "Aktivizoni gjurmimin që aplikacioni të funksionojë.";
 "bluetooth_turned_off_title" = "Bluetooth fikur";
-"bluetooth_turned_off_text" = "Ndizni Bluetooth në pajisje në mënyrë që gjurmimi anonim të funksionojë.";
+"bluetooth_turned_off_text" = "Ndizni Bluetooth në pajisje në mënyrë që gjurmimi të funksionojë.";
 "bluetooth_turn_on_button_title" = "Ndiz Bluetooth";
 "bluetooth_permission_error_title" = "Përdorimi i Bluetooth u refuzua";
-"bluetooth_permission_error_text" = "Lejoni përdorimin e Bluetooth, në mënyrë që gjurmimi anonim të funksionojë.";
+"bluetooth_permission_error_text" = "Lejoni përdorimin e Bluetooth, në mënyrë që gjurmimi të funksionojë.";
 
 /*URL zum Corona Check*/
 "symptom_detail_corona_check_url" = "https://coronavirus.unisante.ch/sq/evaluation";
@@ -254,10 +255,10 @@
 "meldung_detail_positive_test_box_subtitle" = "Çfarë nevojitet të bëj?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Vetë-izolimi";
+"meldung_detail_positive_test_box_title" = "Izolimi";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Ndiqni udhëzimet e qendrës së testimit për vetë-izolimin";
+"meldung_detail_positive_test_box_text" = "Ndiqni udhëzimet e caktuara për izolimin";
 "tracing_ended_title" = "Gjurmimi i përfunduar";
 "tracing_ended_text" = "Nuk ruhet më asnjë kontakt.";
 "exposed_info_contact_hotline" = "Kontaktoni";
@@ -288,7 +289,7 @@
 "meldungen_detail_call" = "Na telefononi";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Linja e informimit për koronavirusin";
+"meldungen_detail_call_text" = "Linja e informimit SwissCovid";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Telefono tani";
@@ -303,7 +304,7 @@
 "meldungen_detail_explanation_text2" = "Mbroni familjen, miqtë dhe mjedisin tuaj. Shmangni kontaktet deri në 10 ditë pas një infeksioni të mundshëm.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "Nëse keni pyetje:\nLinja e informimit për koronavirusin\n+41 58 387 77 78";
+"meldungen_detail_guard_text" = "Nëse keni pyetje:\nLinja e informimit SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
 "meldungen_detail_call_again_button" = "Telefono sërish";
@@ -324,22 +325,22 @@
 "onboarding_prinzip_text1" = "Me aplikacionin Swiss Covid të gjithë ne mund të ndihmojmë për të frenuar përhapjen e koronavirusit të ri.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Aplikacioni informon në rast dyshimi. Kështu mund të ndërprisni zinxhirin e infeksioneve.";
+"onboarding_prinzip_text2" = "Aplikacioni ju informon nëse jeni ekspozuar potencialisht me koronavirusin e ri.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Mbrojtja e privatësisë\ne garantuar";
+"onboarding_privacy_title" = "Mbrojtja e privatësisë";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Komunikimi ndërmjet pajisjeve zhvillohet në mënyrë anonime.";
+"onboarding_privacy_text1" = "Shkëmbeni ndërmjet telefonave celularë vetëm ID e rastit. Aplikacioni nuk mbledh as të dhënat e vendndodhjes as të dhënat e identitetit tuaj.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Të gjitha të dhënat enkriptohen dhe ruhen vetëm lokalisht në smartfon.";
+"onboarding_privacy_text2" = "ID e ruajtura të rastit mbeten në telefonin tuaj celular dhe fshihen pas 14 ditësh.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Çfarë bën aplikacioni?";
+"onboarding_begegnungen_heading" = "Si funksionon aplikacioni?";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Identifikon kontaktet\nfalë Bluetooth";
@@ -348,7 +349,7 @@
 "onboarding_begegnungen_text1" = "Aplikacioni identifikon automatikisht nëse dy përdorues janë pranë njëri-tjetrit për një kohë të përcaktuar.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Për këtë përdoret vetëm Bluetooth Low Energy (BLE). Asnjë e dhënë GPS.";
+"onboarding_begegnungen_text2" = "Për këtë përdoret vetëm Bluetooth Low Energy (BLE). Nuk ka të dhëna GPS, celulare, WiFi ose të dhëna të tjera për vendndodhjen.";
 
 /*Onboarding Meldung: Text oben*/
 "onboarding_meldung_heading" = "Çfarë bën aplikacioni?";
@@ -357,10 +358,10 @@
 "onboarding_meldung_title" = "Njoftim në rastin e një\ninfeksioni të mundshëm";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Aplikacioni ju informon kur ekziston dyshimi për një infeksion të mundshëm.";
+"onboarding_meldung_text1" = "Aplikacioni ju informon nëse jeni ekspozuar potencialisht me koronavirusin e ri.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Me sjelljen e duhur ju mund të mbroni veten dhe të tjerët.";
+"onboarding_meldung_text2" = "Me sjelljen e duhur ju mund të ndërprisni zinxhirin e infeksionit dhe të mbroni të tjerët.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Lejo Bluetooth";
@@ -405,13 +406,13 @@
 "inform_send_getwell_title" = "Të shkuara";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Shërim sa më të shpejtë.\n\nRespektoni udhëzimet për vetë-izolimin.";
+"inform_send_getwell_text" = "Shërim sa më të shpejtë.\n\nRespektoni udhëzimet e caktuara për izolimin.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "Aplikacioni është instaluar";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Shumë faleminderit që ndihmoni për të mbrojtur veten dhe të tjerët.";
+"onboarding_go_text" = "Shumë faleminderit që na ndihmoni për të ndërprerë zinxhirin e infeksionit.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Nis";
@@ -429,16 +430,16 @@
 "inform_code_invalid_title" = "Kodi i pavlefshëm";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Për pyetje: App-Hotline\n+41 58 466 07 99";
+"inform_code_invalid_subtitle" = "Në rastin e problemeve: Telefononi zyrën ku keni marrë kodin e Covid.";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "para 1 dite";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Dyshim i ri";
+"meldung_detail_new_contact_title" = "Infeksion i mundshëm";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Në këtë ditë ishte i mundur gjithashtu një infeksion.";
+"meldung_detail_new_contact_subtitle" = "Ekziston dyshimi i një infeksioni të mundshëm.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Gabim i orës";
@@ -534,10 +535,10 @@
 "accessibility_info_button" = "Informacion";
 
 /*Synchronisations-Fehler Titel*/
-"sync_warning_notification_title" = "Ka ndodhur një gabim";
+"sync_warning_notification_title" = "Sinkronizo aplikacionin";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "Hapni aplikacionin për të eliminuar gabimin.";
+"sync_warning_notification_text" = "Hapni aplikacionin për të krahasuar listën e ID të rastit të regjistruar.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Vazhdo";
@@ -549,13 +550,13 @@
 "begegnung_detail_faq1_title" = "Çfarë do të thotë kontakt?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Nëse telefonat me aplikacionin janë afër njëri-tjetrit për disa minuta, atëherë kjo ruhet si kontakt në pajisje.";
+"begegnung_detail_faq1_text" = "Nëse telefonat celularë me aplikacionin janë afër njëri-tjetrit për disa minuta, atëherë kjo ruhet si kontakt në pajisje.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Janë të sigurta të dhënat e mia?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "Në rastin e një kontakti shkëmbehet vetëm një kod i shifruar.\n\nKy ruhet lokalisht në pajisje dhe fshihet sërish pas 21 ditësh.";
+"begegnung_detail_faq2_text" = "Në rastin e një kontakti shkëmbehen vetëm ID e rastit. \n\nKëto ruhen lokalisht në pajisje dhe fshihen sërish pas 14 ditësh.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "Bluetooth duhet të jetë gjithnjë ndezur?";
@@ -570,22 +571,22 @@
 "meldungen_nomeldungen_faq1_title" = "Çfarë janë mesazhet?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Aplikacioni kontrollon rregullisht nëse kontaktet e ruajtura kanë rezultuar pozitivë në test.\n\nNë rast infeksioni të mundshëm informoheni me një mesazh në ekranin e mbyllur.";
+"meldungen_nomeldungen_faq1_text" = "Aplikacioni kontrollon rregullisht nëse përdoruesit e tjerë që keni takuar kanë rezultuar pozitivë në test.\n\nNë rast infeksioni të mundshëm informoheni me një mesazh në ekranin e mbyllur.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
 "meldungen_nomeldungen_faq2_titel" = "Çfarë do të thotë infeksion i mundshëm?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Aplikacioni nuk kontrollon vetëm nëse ka pasur kontakt me persona të infektuar, por edhe se për sa kohë dhe në çfarë distance.\n\nPërdoruesi informohet vetëm nëse dyshimi për një infeksion të mundshëm është mjaft i madh.";
+"meldungen_nomeldungen_faq2_text" = "Aplikacioni nuk kontrollon vetëm nëse ka pasur kontakt me persona të infektuar, por edhe se për sa kohë dhe në çfarë distance ishin këta persona.\n\nPërdoruesi informohet vetëm nëse dyshimi për një infeksion të mundshëm është mjaft i madh.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "Në rastin e simptomave të para kontaktoni me mjekun tuaj.";
+"meldungen_detail_explanation_text3" = "Infoline SwissCovid ju këshillon për mundësinë e një testi falas.";
 
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "A duhet të telefonoj?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Rekomandohet që ju të telefononi për çdo njoftim të ri.\n\nNë këtë rast mbeteni anonim. Nuk përfshihen të dhënat e personave.";
+"meldungen_meldungen_faq1_text" = "Rekomandohet që ju të telefononi për çdo njoftim të ri.\n\nNë këtë rast mbeteni anonim. Nuk përfshihen të dhënat e personave.\n\nBiseda e konsultës është falas, aplikohen vetëm tarifat e telefonit.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Faleminderit për pjesëmarrjen";
@@ -606,10 +607,10 @@
 "inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.";
 
 /*Inform Detail: FAQ Titel*/
-"inform_detail_faq2_title" = "Si të mbetem anonim?";
+"inform_detail_faq2_title" = "Çfarë dërgohet?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Dërgohen vetëm çelësat e përkohshëm të aplikacionit tuaj. Asnjë e dhënë personale.\n\nKështu mund të kontrolloni përdoruesit e tjerë të aplikacionit Swiss Covid, nëse keni pasur kontakt me ta gjatë ditëve të fundit.";
+"inform_detail_faq2_text" = "Dërgohen vetëm ID e rastit të aplikacionit tuaj, asnjë e dhënë personale.\n\nNë këtë mënyrë mësoni përdoruesit e tjerë të alikacionit SwissCovid, të cilët mundësisht janë infektuar.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -627,10 +628,10 @@
 "inform_code_intro_button" = "Kuptova";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Jeni i pasigurt në rast simptomash?";
+"symptom_faq1_title" = "Çfarë është kontrolli i koronavirusit?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Keni simptoma dhe nuk jeni i sigurt si duhet të silleni? \n\nPërgjigjuni pyetjeve në kontrollin për koronavirusit të BAG për një rekomandim praktik.";
+"symptom_faq1_text" = "Keni simptoma dhe nuk jeni i sigurt se si duhet të silleni? \n\nPërgjigjuni pyetjeve në kontrollin online të BAG për një rekomandim të veprimit.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Përse ka përfunduar gjurmimi?";
@@ -642,7 +643,7 @@
 "language_key" = "sq";
 
 /*Meldungen Homescreen: Name Hotline*/
-"exposed_info_contact_hotline_name" = "Linja e informimit për koronavirusin";
+"exposed_info_contact_hotline_name" = "Linja e informimit SwissCovid";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
 "date_in_one_day" = "Edhe 1 ditë";
@@ -674,17 +675,18 @@
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Aktivizo gjurmimin";
 
-/*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Për të përdorur aplikacionin, funksioni Njoftime rreth COVID-19 duhet të jetë i aktivizuar.";
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
+/*Fuzzy*/
+"onboarding_gaen_text_ios" = "Për të përdorur aplikacionin, funksioni Njoftime rreth COVID-19 duhet të jetë i aktivizuar.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivizo";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
-"onboarding_gaen_info_title_1" = "Ju mbeteni anonim";
+"onboarding_gaen_info_title_1" = "Mbrojtja e të dhënave";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Shkëmbehen vetëm ID anonime. Asnjë e dhënë për vendndodhjen ose personin tuaj.";
+"onboarding_gaen_info_text_1" = "Shkëmbehen vetëm ID e rastit. Asnjë e dhënë për vendndodhjen ose personin tuaj.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "Konsum pak i rritur i baterisë";
@@ -699,7 +701,7 @@
 "delete_reports_button" = "Fshi njoftimin";
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
-"delete_reports_dialog" = "Dëshironi vërtet ta fshini njoftimin? ";
+"delete_reports_dialog" = "Dëshironi vërtet ta fshini njoftimin?";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "Fshi njoftimin";
@@ -723,42 +725,44 @@
 "gaen_not_available_text" = "Përditësoni Google Play Services";
 
 /*Tracing wurde vom System deaktiviert, erneut starten*/
-"gaen_unexpectedly_disabled" = "Tracing is deactivated. Try to start it again.";
+"gaen_unexpectedly_disabled" = "Gjurmimi u çaktivizua. Ju lutemi nisni përsëri.";
 
-/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_title" = "Njoftime rreth COVID-19 i çaktivizuar";
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_title_ios" = "Njoftime rreth ekspozimit ndaj COVID-19 i çaktivizuar";
 
-/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Aktivizoni funksionin Njoftime rreth COVID-19, në mënyrë që gjurmimi anonim të funksionojë.";
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_text_ios" = "Aktivizoni Njoftime rreth ekspozimit ndaj COVID-19, në mënyrë që gjurmimi të funksionojë.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "The message could not be sent. Please allow your random IDs to be shared with the SwissCovid app.";
+"user_cancelled_key_sharing_error" = "Mesazhi nuk u dërgua dot. Ju lutemi lejoni ndarjen e ID të rastit tuaj me aplikacionin SwissCovid.";
 
 /*Button um die Google Play Services zu aktualisieren*/
-"playservices_update" = "Update";
+"playservices_update" = "Përditësimi";
 
 /*Button um die Google Play Services zu installieren*/
-"playservices_install" = "Install";
+"playservices_install" = "Instalimi";
 
 /*Titel für Infos zu den Google Play Services*/
 "playservices_title" = "Google Play Services\n";
 
 /*Meldung, dass die Google Play Services benötigt werden*/
-"playservices_text" = "To activate tracing, an up-to-date version of Google Play Services is required.\n\nIf no update is currently available on your device, please try again later.";
-"android_error_battery_optimization_title" = "Optimisation of battery usage activated";
-"android_error_battery_optimization_button" = "Allow";
+"playservices_text" = "Për të aktivizuar gjurmimin, nevojitet versioni aktual i Google Play Services. \n\nNë rast se në pajisjen tuaj nuk disponohet ndërkohë asnjë Update, ju lutemi provoni edhe njëherë më vonë.";
+"android_error_battery_optimization_title" = "Optimizimi i konsumit të baterisë i aktivizuar";
+"android_error_battery_optimization_button" = "Lejimi";
 
 /*Telefonnummer für Hilfe bei App-Problemen*/
 "app_hotline_tel_number" = "+41 58 466 07 99";
 
 /*text shown in notification when we get an exception from the GAEN api*/
-"sync_api_error" = "An unexpected error has occurred while synchronising reports.";
+"sync_api_error" = "Ka ndodhur një gabim i papritur gjatë sinkronizimit të mesazheve.";
 
 /*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
-"certificate_validation_error" = "A secure connection cannot be made to the server. Please check or deactivate your VPN and/or your proxy or check whether you are connected via a public Wi-Fi network.";
+"certificate_validation_error" = "Nuk është e mundur asnjë lidhje e sigurt me serverin. Ju lutemi verifikoni ose çaktivizoni VPN tuaj ose Proxy tuaj ose verifikoni nëse jeni lidhur nëpërmjet një Public WLAN.";
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
-"android_en_start_failure" = "Failed to enable COVID-19 Notifications";
+"android_en_start_failure" = "Njoftimet e COVID-19 nuk u aktivizuan dot";
 
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
@@ -794,33 +798,87 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "You are not part of an organization participating in the pilot phase. Please install the appropriate update after the official launch of the app and open the app again.";
-"begegnung_detail_last_sync_title" = "Latest successful synchronisation";
-"synchronizations_view_title" = "Overview";
-"synchronizations_view_info_title" = "Synchronizations";
-"synchronizations_view_info_question" = "What are synchronizations?";
-"synchronizations_view_info_answer" = "The app regularly checks the published keys from users that were tested positive.";
-"synchronizations_view_period_title" = "During the last 14 days";
+"begegnung_detail_last_sync_title" = "Sinkronizimi i fundit i suksesshëm";
+"synchronizations_view_title" = "Përmbledhje";
+"synchronizations_view_info_title" = "Sinkronizime";
+"synchronizations_view_info_question" = "Çfarë janë sinkronizimet?";
+"synchronizations_view_info_answer" = "Aplikacioni verifikon rregullisht ID e rastit të publikuara nga përdoruesit e testuar pozitivë.";
+"synchronizations_view_period_title" = "Gjatë 14 ditëve të fundit";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
-"synchronizations_view_empty_list" = "No entries";
+"synchronizations_view_empty_list" = "Asnjë shënim";
 "synchronizations_view_sync_via_scheduled" = "  • Scheduled";
 "synchronizations_view_sync_via_fake_request" = "  • Fake Report";
 "synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
 
 /*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Before you call";
+"pre_call_dialog_before_title" = "Para bisedës";
 
 /*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Please write down the following information";
+"pre_call_dialog_main_title" = "Ju lutemi shënoni të dhënat e mëposhtme";
 
 /*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Date";
+"pre_call_dialog_box_datum" = "Data";
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Code";
-"tracing_active_tracking_always_info" = "";
+"pre_call_dialog_box_number" = "Numri";
+"tracing_active_tracking_always_info" = "SwissCovid mbetet aktiv, edhe nëse aplikacioni mbyllet.";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "";
-"inform_detail_faq3_text" = "";
-"inform_detail_faq3_title" = "";
+"oboarding_splashscreen_title" = "SwissCovid \nndalon zinxhirin \ne infeksionit.";
+"inform_detail_faq3_text" = "Edhe pse nuk dërgohet asnjë e dhënë personale, mund të ndodhë që dikush mund të kujtohet për kontaktin me anë të datës.";
+"inform_detail_faq3_title" = "A mbetem unë anonim?";
+
+/*Meldung Detail Weiss Box unten*/
+"meldungen_detail_explanation_text4" = "Në rastin e simptomave të para bëni kontrollin e koronavirusit ose telefononi mjeken ose mjekun tuaj.";
+
+/*Text beim Bluetooth Control*/
+"tracing_setting_text_android" = "Njoftime rreth ekspozimit ndaj COVID-19";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
+"onboarding_gaen_text_android" = "Për të përdorur aplikacionin, funksioni Njoftime rreth COVID-19 duhet të jetë i aktivizuar.";
+
+/*Onboarding Disclaimer Screen: AppName Title*/
+"onboarding_disclaimer_heading" = "SwissCovid";
+
+/*Onboarding Disclaimer Screen: Title*/
+"onboarding_disclaimer_title" = "Udhëzime për përdorimin";
+
+/*Onboarding Disclaimer Screen: Info*/
+"onboarding_disclaimer_info" = "Lexoni Politikën për privatësinë dhe rregullat e përdorimit.";
+
+/*Onboarding Disclaimer Screen: Warning Title*/
+"onboarding_disclaimer_warning_title" = "Paralajmërim: Ky aplikacion nuk ju mbron nga infektimi me COVID 19.";
+
+/*Onboarding Disclaimer Screen: Warning Text*/
+"onboarding_disclaimer_warning_body" = "Aplikacioni shërben për gjurmimin Proximity dhe për paralajmërimin e përdoruesit nga një infektim i mundshëm pas një kontakti me një person të infektuar me COVID 19. Gjithashtu nuk është mjet diagnostikues. Lexoni me kujdes udhëzimet, të cilat janë në çdo ekran të aplikacionit.";
+
+/*Onboarding Disclaimer Screen: Manufacturer Info*/
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
+
+/*Onboarding Disclaimer Screen: App version title*/
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
+
+/*Onboarding Disclaimer Screen: Release version title*/
+"onboarding_disclaimer_release_version" = "Release Date:";
+
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "Politika për privatësinë & kushtet e përdorimit";
+
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
+
+/*Google Translation*/
+/*Error shown when loading fails because there is not enough free disk space.*/
+"loading_error_no_disk_space" = "Mesazhet nuk mund të kontrollohen sepse telefoni juaj celular nuk ka hapësirë ​​të mjaftueshme falas. Ju lutemi lironi hapësirë.";
+
+/*Onboarding: Akzeptieren Buttton Titel*/
+"onboarding_accept_button" = "Pranoj";
+
+/*Google Translation*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Titel*/
+"ratelimit_error_title" = "Përditësimi aktualisht nuk është i mundur";
+
+/*Google Translation!*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
+"ratelimit_error_text" = "Shumë pyetje tashmë janë realizuar sot. Aplikacioni do të provojë përsëri më vonë.";
