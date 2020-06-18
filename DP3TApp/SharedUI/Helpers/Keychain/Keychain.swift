@@ -70,6 +70,11 @@ protocol KeychainProtocol {
     /// - Returns: a result which either is successful or contains the error
     @discardableResult
     func delete<T>(for key: KeychainKey<T>) -> Result<Void, KeychainError> where T: Decodable, T: Encodable
+
+    /// Deletes all objects from keychain
+    /// - Returns: a result which either is successful or contains the error
+    @discardableResult
+    func deleteAll() -> Result<Void, KeychainError>
 }
 
 /// A wrapper class for the keychain
@@ -153,6 +158,23 @@ class Keychain: KeychainProtocol {
     @discardableResult
     public func delete<T>(for key: KeychainKey<T>) -> Result<Void, KeychainError> {
         let query = self.query(for: key)
+
+        let status: OSStatus = SecItemDelete(query as CFDictionary)
+        switch status {
+        case noErr, errSecItemNotFound:
+            return .success(())
+        default:
+            return .failure(.cannotDelete(status))
+        }
+    }
+
+    /// Deletes all objects from the keychain
+    /// - Returns: a result which either is successful or contains the error
+    @discardableResult
+    public func deleteAll() -> Result<Void, KeychainError> {
+        let query: [CFString: Any] = [
+            kSecClass: kSecClassGenericPassword as String,
+        ]
 
         let status: OSStatus = SecItemDelete(query as CFDictionary)
         switch status {
