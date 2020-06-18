@@ -224,7 +224,7 @@
 "tracing_turned_off_title" = "Tracing deaktiviert";
 "tracing_turned_off_text" = "Aktivieren Sie das Tracing, damit die App funktioniert.";
 "bluetooth_turned_off_title" = "Bluetooth Off";
-"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Gerät ein, damit das Tracing funktioniert.";
+"bluetooth_turned_off_text" = "Schalten Sie Bluetooth auf Ihrem Mobiltelefon ein, damit das Tracing funktioniert.";
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
 "bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
 "bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das Tracing funktioniert.";
@@ -341,7 +341,7 @@
 "onboarding_privacy_text1" = "Zwischen den Mobiltelefonen werden nur zufällige IDs ausgetauscht. Die App sammelt weder Standortdaten noch Daten über Ihre Identität.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Die gespeicherten zufälligen IDs bleiben auf Ihrem Gerät und werden nach 14 Tagen gelöscht.";
+"onboarding_privacy_text2" = "Die gespeicherten zufälligen IDs bleiben auf Ihrem Mobiltelefon und werden nach 14 Tagen gelöscht.";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "Wie funktioniert die App?";
@@ -429,7 +429,7 @@
 "homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Gerät mit dem Internet verbunden ist.";
+"homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Mobiltelefon mit dem Internet verbunden ist.";
 
 /*Homescreen: Button Titel*/
 "homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";
@@ -459,7 +459,7 @@
 "begegnungen_restart_error_title" = "Neustart erforderlich";
 
 /*Begegnungen: Neustart Text*/
-"begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Gerät neu.";
+"begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Mobiltelefon neu.";
 
 /*Fehler Titel für Hintergrund-Fehler*/
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
@@ -568,7 +568,7 @@
 "begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "Bei einer Begegnung werden nur zufällige IDs ausgetauscht.\n\nDiese werden lokal auf den Geräten gespeichert und nach 14 Tagen wieder gelöscht.";
+"begegnung_detail_faq2_text" = "Bei einer Begegnung werden nur zufällige IDs ausgetauscht.\n\nDiese werden lokal auf den Mobiltelefonen gespeichert und nach 14 Tagen wieder gelöscht.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
@@ -767,7 +767,7 @@
 "playservices_title" = "Google Play Services";
 
 /*Meldung, dass die Google Play Services benötigt werden*/
-"playservices_text" = "Um das Tracing aktivieren zu können, wird eine aktuelle Version der Google Play Services benötigt. \n\nFalls auf Ihrem Gerät zurzeit kein Update verfügbar ist, versuchen Sie es bitte später nochmals.";
+"playservices_text" = "Um das Tracing aktivieren zu können, wird eine aktuelle Version der Google Play Services benötigt. \n\nFalls auf Ihrem Mobiltelefon zurzeit kein Update verfügbar ist, versuchen Sie es bitte später nochmals.";
 
 /*Fuzzy*/
 "android_error_battery_optimization_title" = "Optimierung des Akkuverbrauchs aktiviert";
@@ -869,7 +869,7 @@
 "onboarding_disclaimer_title" = "Hinweise zur Nutzung";
 
 /*Onboarding Disclaimer Screen: Info*/
-"onboarding_disclaimer_info" = "Hier finden Sie die Datenschutzerklärung und die Nutzungsbestimmungen.";
+"onboarding_disclaimer_info" = "Hier finden Sie die Datenschutzerklärung und die Nutzungsbedingungen.";
 
 /*Onboarding Disclaimer Screen: Warning Title*/
 "onboarding_disclaimer_warning_title" = "Warnung: Diese App schützt Sie nicht vor einer COVID-19-Infektion.";
@@ -878,7 +878,7 @@
 "onboarding_disclaimer_warning_body" = "Die App dient dem Proximity Tracing und zur Warnung der Benutzer vor einer möglichen Ansteckung nach einer Begegnung mit einer mit COVID-19 infizierten Person. Es ist auch kein diagnostisches Werkzeug. Bitte lesen Sie die Anweisungen, die in jedem App-Screen enthalten sind, sorgfältig durch.";
 
 /*Onboarding Disclaimer Screen: Manufacturer Info*/
-"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Switzerland";
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
 
 /*Onboarding Disclaimer Screen: App version title*/
 "onboarding_disclaimer_app_version" = "SwissCovid App Version";
@@ -887,10 +887,22 @@
 "onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
-"onboarding_disclaimer_legal_button" = "Datenschutz- & Nutzungsbestimmungen";
+"onboarding_disclaimer_legal_button" = "Datenschutzerklärung & Nutzungsbedingungen";
 
 /*onboarding privacy and conditions of use url*/
 "onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
 
+/*Google Translation*/
 /*Error shown when loading fails because there is not enough free disk space.*/
-"loading_error_no_disk_space" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden, da ihr Gerät über zu wenig freien Speicherplatz verfügt. Bittte geben Sie Speicherplatz frei.";
+"loading_error_no_disk_space" = "Meldungen konnten nicht geprüft werden, da ihr Mobiltelefon über zu wenig freien Speicherplatz verfügt. Bitte geben Sie Speicherplatz frei.";
+
+/*Onboarding: Akzeptieren Buttton Titel*/
+"onboarding_accept_button" = "Akzeptieren";
+
+/*Google Translation*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Titel*/
+"ratelimit_error_title" = "Aktualisierung zur Zeit nicht möglich";
+
+/*Google Translation!*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
+"ratelimit_error_text" = "Es wurden heute schon zu viele Abfragen durchgeführt. Die App wird es später erneut probieren.";

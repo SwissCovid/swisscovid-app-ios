@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     internal var window: UIWindow?
     private var lastForegroundActivity: Date?
 
+    @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
+    var isFirstLaunch: Bool
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
+        if UserStorage.shared.hasCompletedOnboarding {
+            isFirstLaunch = false
+        }
+
+        // Reset keychain on first launch
+        if isFirstLaunch {
+            Keychain().deleteAll()
+            isFirstLaunch = false
+        }
+
         // setup sdk
         TracingManager.shared.initialize()
 
@@ -71,7 +85,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func applicationDidBecomeActive(_ application: UIApplication) {
+    func applicationDidBecomeActive(_: UIApplication) {
         // Start sync after app became active
         TracingManager.shared.updateStatus(shouldSync: true, completion: nil)
     }
