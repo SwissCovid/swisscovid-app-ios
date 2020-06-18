@@ -640,7 +640,7 @@
 "meldungen_positive_tested_faq1_text" = "Nakon pozitivnog testa, praćenje u aplikaciji se automatski završava.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "bs";
+"language_key" = "sr";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Info linija SwissCovid";
