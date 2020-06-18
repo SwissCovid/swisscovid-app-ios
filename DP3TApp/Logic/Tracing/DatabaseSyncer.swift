@@ -119,6 +119,7 @@ class DatabaseSyncer {
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)
+                taskIdentifier = .invalid
             }
             self.databaseIsSyncing = false
         }
