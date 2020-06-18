@@ -71,6 +71,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        // Start sync after app became active
+        TracingManager.shared.updateStatus(shouldSync: true, completion: nil)
+    }
+
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
 

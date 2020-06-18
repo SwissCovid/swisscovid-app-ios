@@ -90,7 +90,8 @@ class TracingManager: NSObject {
             }
         }
 
-        updateStatus { _ in
+        // Do not sync because applicationState is still .background 
+        updateStatus(shouldSync: false) { _ in
             self.uiStateManager.refresh()
         }
     }
@@ -100,9 +101,6 @@ class TracingManager: NSObject {
     }
 
     func beginUpdatesAndTracing() {
-        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForegroundNotification), name: UIApplication.willEnterForegroundNotification, object: nil)
-
         if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing()
@@ -119,7 +117,7 @@ class TracingManager: NSObject {
             }
         }
 
-        updateStatus(completion: nil)
+        updateStatus(shouldSync: false, completion: nil)
     }
 
     func endTracing() {
@@ -144,11 +142,6 @@ class TracingManager: NSObject {
         #if ENABLE_STATUS_OVERRIDE
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
-
-        // during infection, tracing is diabled
-        // after infection, it works again, but user must manually
-        // enable if desired
-        isActivated = false
 
         UIStateManager.shared.refresh()
     }
@@ -185,12 +178,7 @@ class TracingManager: NSObject {
         updateStatus(completion: nil)
     }
 
-    @objc
-    func willEnterForegroundNotification() {
-        updateStatus(completion: nil)
-    }
-
-    func updateStatus(completion: ((CodedError?) -> Void)?) {
+    func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
         DP3TTracing.status { result in
             switch result {
             case let .failure(e):
@@ -212,8 +200,9 @@ class TracingManager: NSObject {
             }
             DP3TTracing.delegate = self
         }
-
-        DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        if shouldSync {
+            DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        }
     }
 }
 
