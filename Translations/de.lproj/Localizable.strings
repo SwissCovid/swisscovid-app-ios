@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Vielen Dank";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Die Zufalls-IDs Ihrer App wurden gesendet.\n\nDamit helfen Sie mit, Infektionsketten zu stoppen.";
+"inform_send_thankyou_text" = "Die zufälligen IDs Ihrer App wurden gesendet.\n\nDamit helfen Sie mit, Infektionsketten zu stoppen.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Schliessen";
@@ -69,7 +69,7 @@
 "inform_code_title" = "Covidcode eingeben";
 
 /*Inform: Code eingeben Subtext*/
-"inform_code_text" = "Geben Sie den Ihnen zugestellten Covidcode ein.";
+"inform_code_text" = "Geben Sie den erhaltenen Covidcode ein.";
 
 /*Inform: Code eingeben kein Code Button Text*/
 "inform_code_no_code" = "Benötigen Sie Hilfe?";
@@ -78,7 +78,8 @@
 "tracing_setting_title" = "Tracing";
 
 /*Text beim Bluetooth Control*/
-"tracing_setting_text" = "COVID-19 Kontaktprotokoll";
+/*Fuzzy*/
+"tracing_setting_text_ios" = "COVID-19-Kontaktmitteilungen";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Tracing deaktiviert";
@@ -99,7 +100,7 @@
 "meldungen_meldung_title" = "Mögliche Ansteckung";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Es besteht der Verdacht auf eine mögliche Ansteckung.";
+"meldungen_meldung_text" = "Es besteht die Möglichkeit einer Ansteckung.";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "App aktiv";
@@ -257,7 +258,7 @@
 "meldung_detail_positive_test_box_title" = "Isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Befolgen Sie die Anweisungen zur Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
@@ -274,7 +275,7 @@
 "meldung_homescreen_positiv_title" = "Positiv getestet";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Es besteht der Verdacht auf eine mögliche Ansteckung.";
+"meldung_detail_exposed_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
 "meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
 
 /*Debug Screen: Onboarding Reset Button*/
@@ -290,7 +291,7 @@
 "meldungen_detail_call" = "Rufen Sie uns an";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline Coronavirus";
+"meldungen_detail_call_text" = "Infoline SwissCovid";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Jetzt anrufen";
@@ -306,7 +307,7 @@
 "meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline Coronavirus\n+41 58 387 77 78";
+"meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
 "meldungen_detail_call_again_button" = "Erneut anrufen";
@@ -325,22 +326,22 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der SwissCovid-App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Die App Informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
+"onboarding_prinzip_text2" = "Die App informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Ihre Privatsphäre bleibt geschützt";
+"onboarding_privacy_title" = "Schutz der Privatsphäre";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Zwischen den Geräten werden nur zufällige IDs ausgetauscht. Die App sammelt weder Standortdaten noch Daten über Ihre Identität.";
+"onboarding_privacy_text1" = "Zwischen den Mobiltelefonen werden nur zufällige IDs ausgetauscht. Die App sammelt weder Standortdaten noch Daten über Ihre Identität.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Die gespeicherten IDs bleiben auf Ihrem Gerät und werden nach 14 Tagen gelöscht.";
+"onboarding_privacy_text2" = "Die gespeicherten zufälligen IDs bleiben auf Ihrem Gerät und werden nach 14 Tagen gelöscht.";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "Wie funktioniert die App?";
@@ -352,7 +353,7 @@
 "onboarding_begegnungen_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander sind.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Dafür wird nur Bluetooth Low Energy (BLE) verwendet. Keine GPS-Daten.";
+"onboarding_begegnungen_text2" = "Dafür wird nur Bluetooth Low Energy (BLE) verwendet. Keine GPS-, Mobile-, WiFi- oder andere Standort-Daten.";
 
 /*Onboarding Meldung: Text oben*/
 "onboarding_meldung_heading" = "Was macht die App?";
@@ -413,7 +414,7 @@
 "inform_send_getwell_title" = "Gute Besserung";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die Anweisungen zur Isolation.";
+"inform_send_getwell_text" = "Werden Sie bald wieder gesund.\n\nHalten Sie sich an die erhaltenen Anweisungen zur Isolation.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "Die App ist eingerichtet";
@@ -437,7 +438,7 @@
 "inform_code_invalid_title" = "Code ungültig";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Bei Fragen: App-Hotline\n+41 58 466 07 99";
+"inform_code_invalid_subtitle" = "Bei Problemen: Bitte rufen Sie die Stelle an, von der Sie den Covidcode erhalten haben. ";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "vor 1 Tag";
@@ -446,7 +447,7 @@
 "meldung_detail_new_contact_title" = "Erneuter Verdacht";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "An diesem Tag war eine Ansteckung ebenfalls möglich.";
+"meldung_detail_new_contact_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Uhrzeit Fehler";
@@ -546,10 +547,10 @@
 "accessibility_info_button" = "Information";
 
 /*Synchronisations-Fehler Titel*/
-"sync_warning_notification_title" = "Es ist ein Fehler aufgetreten";
+"sync_warning_notification_title" = "App synchronisieren";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "Öffnen Sie die App, um den Fehler zu beheben.";
+"sync_warning_notification_text" = "Öffnen Sie die App, um die Liste der gemeldeten zufälligen IDs abzugleichen.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Weiter";
@@ -561,7 +562,7 @@
 "begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Wenn sich Telefone mit der App für eine gewisse Zeit nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
+"begegnung_detail_faq1_text" = "Wenn sich Mobiltelefone mit der App für eine gewisse Zeit nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
@@ -582,22 +583,22 @@
 "meldungen_nomeldungen_faq1_title" = "Was sind Meldungen?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Die App kontrolliert regelmässig, ob bei Ihnen gespeicherte Begegnungen positiv getestet wurden.\n\nBei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
+"meldungen_nomeldungen_faq1_text" = "Die App prüft regelmässig, ob andere Nutzer, denen Sie begegnet sind, einen positiven Test gemeldet haben.\n\nBei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
 "meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Die App schaut nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nErst wenn der Verdacht auf eine mögliche Ansteckung genug gross ist, werden Sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "Die App prüft nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nNur wenn die Möglichkeit einer Ansteckung gross genug ist, werden Sie informiert.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "Bei ersten Symptomen kontaktieren Sie Ihren Arzt/Ihre Ärztin.";
+"meldungen_detail_explanation_text3" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Tests.";
 
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.";
+"meldungen_meldungen_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.\n\nDas Beratungsgespräch ist kostenlos; es fallen nur die Telefongebühren an.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
@@ -621,7 +622,7 @@
 "inform_detail_faq2_title" = "Was wird gesendet?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die Zufalls-IDs Ihrer App gesendet, keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid App Nutzer, dass sie sich möglicherweise angesteckt haben.";
+"inform_detail_faq2_text" = "Es werden nur die zufälligen IDs Ihrer App gesendet, keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid App Nutzer, dass die Möglichkeit einer Ansteckung besteht.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -639,7 +640,7 @@
 "inform_code_intro_button" = "Verstanden";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Unsicher bei Symptomen?";
+"symptom_faq1_title" = "Was ist der Coronavirus-Check?";
 
 /*Symptome: FAQ Text*/
 "symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Online-Check des BAG für eine Handlungsempfehlung.";
@@ -655,7 +656,7 @@
 
 /*Meldungen Homescreen: Name Hotline*/
 /*Fuzzy*/
-"exposed_info_contact_hotline_name" = "Infoline Coronavirus";
+"exposed_info_contact_hotline_name" = "Infoline SwissCovid";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
 "date_in_one_day" = "Noch 1 Tag";
@@ -689,9 +690,9 @@
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Tracing aktivieren";
 
-/*Text auf der Onboarding Page für die Permission der Exposure-Library*/
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text" = "Um die App nutzen zu können, müssen COVID-19 Benachrichtigungen aktiviert werden.";
+"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen COVID-19-Kontaktmitteilungen aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
@@ -717,7 +718,7 @@
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
 /*Fuzzy*/
-"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen? Es ist wichtig, dass Sie die Infoline angerufen haben.";
+"delete_reports_dialog" = "Möchten sie die Meldung wirklich löschen?";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 /*Fuzzy*/
@@ -745,14 +746,16 @@
 /*Tracing wurde vom System deaktiviert, erneut starten*/
 "gaen_unexpectedly_disabled" = "Tracing wurde deaktiviert. Bitte starten Sie es erneut.";
 
-/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_title" = "COVID-19 Benachrichtigungen deaktiviert";
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_title_ios" = "COVID-19-Kontaktmitteilungen deaktiviert";
 
-/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Aktivieren Sie COVID-19 Benachrichtigungen, damit das Tracing funktioniert.";
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_text_ios" = "Aktivieren Sie COVID-19-Kontaktmitteilungen, damit das Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer Zufalls-IDs mit der SwissCovid-App.";
+"user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer zufälligen IDs mit der SwissCovid App.";
 
 /*Button um die Google Play Services zu aktualisieren*/
 "playservices_update" = "Aktualisieren";
@@ -822,7 +825,7 @@
 "synchronizations_view_title" = "Übersicht";
 "synchronizations_view_info_title" = "Synchronisationen";
 "synchronizations_view_info_question" = "Was sind Synchronisationen?";
-"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten Zufalls-IDs.";
+"synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten zufälligen IDs.";
 "synchronizations_view_period_title" = "In den letzten 14 Tagen";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
@@ -845,6 +848,49 @@
 "tracing_active_tracking_always_info" = "SwissCovid bleibt aktiv, auch wenn die App geschlossen wird.";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "SwissCovid stoppt Infektionsketten.";
-"inform_detail_faq3_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
+"oboarding_splashscreen_title" = "SwissCovid \nstoppt \nInfektionsketten.";
+"inform_detail_faq3_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden, kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
 "inform_detail_faq3_title" = "Bleibe ich anonym?";
+
+/*Meldung Detail Weiss Box unten*/
+/*Fuzzy*/
+"meldungen_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
+
+/*Text beim Bluetooth Control*/
+"tracing_setting_text_android" = "COVID-19-Benachrichtigungen";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
+"onboarding_gaen_text_android" = "Um die App nutzen zu können, müssen COVID-19 Benachrichtigungen aktiviert werden.";
+
+/*Onboarding Disclaimer Screen: AppName Title*/
+"onboarding_disclaimer_heading" = "SwissCovid";
+
+/*Onboarding Disclaimer Screen: Title*/
+"onboarding_disclaimer_title" = "Hinweise zur Nutzung";
+
+/*Onboarding Disclaimer Screen: Info*/
+"onboarding_disclaimer_info" = "Hier finden Sie die Datenschutzerklärung und die Nutzungsbestimmungen.";
+
+/*Onboarding Disclaimer Screen: Warning Title*/
+"onboarding_disclaimer_warning_title" = "Warnung: Diese App schützt Sie nicht vor einer COVID-19-Infektion.";
+
+/*Onboarding Disclaimer Screen: Warning Text*/
+"onboarding_disclaimer_warning_body" = "Die App dient dem Proximity Tracing und zur Warnung der Benutzer vor einer möglichen Ansteckung nach einer Begegnung mit einer mit COVID-19 infizierten Person. Es ist auch kein diagnostisches Werkzeug. Bitte lesen Sie die Anweisungen, die in jedem App-Screen enthalten sind, sorgfältig durch.";
+
+/*Onboarding Disclaimer Screen: Manufacturer Info*/
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Switzerland";
+
+/*Onboarding Disclaimer Screen: App version title*/
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
+
+/*Onboarding Disclaimer Screen: Release version title*/
+"onboarding_disclaimer_release_version" = "Release Date:";
+
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "Datenschutz- & Nutzungsbestimmungen";
+
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
+
+/*Error shown when loading fails because there is not enough free disk space.*/
+"loading_error_no_disk_space" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden, da ihr Gerät über zu wenig freien Speicherplatz verfügt. Bittte geben Sie Speicherplatz frei.";
