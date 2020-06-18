@@ -79,7 +79,7 @@ class ReportingManager {
                     // enable if desired
                     TracingManager.shared.isActivated = false
 
-                    TracingManager.shared.updateStatus { error in
+                    TracingManager.shared.updateStatus(shouldSync: false) { error in
                         if let error = error {
                             completion(.failure(error: error))
                         } else {
