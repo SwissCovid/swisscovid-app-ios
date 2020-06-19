@@ -310,7 +310,7 @@
 "meldungen_detail_call_again_button" = "Call again";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"meldungen_detail_call_last_call" = "Last call: (DATE)";
+"meldungen_detail_call_last_call" = "Last call: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Subtitle";
@@ -337,7 +337,7 @@
 "onboarding_privacy_text1" = "Devices only exchange random IDs. The app does not gather location data or data on your identity.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "The random IDs are  stored on your device for 14 days and then deleted. ";
+"onboarding_privacy_text2" = "The random IDs are stored on your device for 14 days and then deleted.";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "How does the app work?";
@@ -608,7 +608,7 @@
 "inform_detail_faq1_title" = "What is a Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. This ensures that only confirmed cases are notified via the app. ";
+"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. This ensures that only confirmed cases are notified via the app.";
 
 /*Not translated*/
 /*Inform Detail: FAQ Titel*/
@@ -627,7 +627,7 @@
 "inform_code_intro_title" = "Important information";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date. ";
+"inform_code_intro_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date.";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "OK";
@@ -833,7 +833,7 @@
 
 /*title in splash screen of onboarding*/
 "oboarding_splashscreen_title" = "SwissCovid \nbreaks \nchains of infection.";
-"inform_detail_faq3_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date. ";
+"inform_detail_faq3_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date.";
 "inform_detail_faq3_title" = "Does anyone find out who I am?";
 
 /*Meldung Detail Weiss Box unten*/

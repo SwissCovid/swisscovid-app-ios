@@ -63,7 +63,7 @@
 "NSBluetoothPeripheralUsageDescription" = "Scuntradas vegnan enconuschidas en il fund via bluetooth, economisant l'energia";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothAlwaysUsageDescription" = "Scuntradas vegnan  enconuschidas en il fund  via bluetooth, economisant l'energia";
+"NSBluetoothAlwaysUsageDescription" = "Scuntradas vegnan enconuschidas en il fund via bluetooth, economisant l'energia";
 
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Inditgar il code covid";
@@ -214,7 +214,7 @@
 "symptom_detail_box_button" = "Tar il check coronavirus";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Restai a chasa, faschai  il check coronavirus u telefonai a Vossa media/Voss medi.";
+"symptom_detail_box_text" = "Restai a chasa, faschai il check coronavirus u telefonai a Vossa media/Voss medi.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Testà positiv";
@@ -853,7 +853,7 @@
 "onboarding_disclaimer_warning_title" = "Avertiment: Quest'app n'As protegia betg d'ina infecziun cun COVID-19.";
 
 /*Onboarding Disclaimer Screen: Warning Text*/
-"onboarding_disclaimer_warning_body" = "L'app è concepida per la reconstrucziun dals contacts e per avertir ils utilisaders en cas d'ina exposiziun potenziala ad ina persuna infectada cun COVID-19. Ella n'è betg in instrument diagnostic. Per plaschair legi cun attenziun  las instrucziuns en mintga visur da l'app.";
+"onboarding_disclaimer_warning_body" = "L'app è concepida per la reconstrucziun dals contacts e per avertir ils utilisaders en cas d'ina exposiziun potenziala ad ina persuna infectada cun COVID-19. Ella n'è betg in instrument diagnostic. Per plaschair legi cun attenziun las instrucziuns en mintga visur da l'app.";
 
 /*Onboarding Disclaimer Screen: Manufacturer Info*/
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
