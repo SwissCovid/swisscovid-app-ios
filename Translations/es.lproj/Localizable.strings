@@ -586,7 +586,7 @@
 "meldungen_meldungen_faq1_title" = "¿Debo llamar por teléfono?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Se recomienda llamar por teléfono después de cada notificación. \n\nSu anonimato está garantizado. No se registran datos personales.\n\nLa consulta es gratuita; solo se incurre en los gastos telefónicos. ";
+"meldungen_meldungen_faq1_text" = "Se recomienda llamar por teléfono después de cada notificación. \n\nSu anonimato está garantizado. No se registran datos personales.\n\nLa consulta es gratuita; solo se incurre en los gastos telefónicos.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Gracias por su colaboración.";
@@ -802,7 +802,7 @@
 "synchronizations_view_title" = "Resumen";
 "synchronizations_view_info_title" = "Sincronizaciones";
 "synchronizations_view_info_question" = "¿Qué son las sincronizaciones?";
-"synchronizations_view_info_answer" = "La aplicación comprueba regularmente los identificadores (ID) aleatorios  publicados por  usuarios que han dado positivo.";
+"synchronizations_view_info_answer" = "La aplicación comprueba regularmente los identificadores (ID) aleatorios publicados por usuarios que han dado positivo.";
 "synchronizations_view_period_title" = "En los últimos 14 días";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
@@ -851,7 +851,7 @@
 "onboarding_disclaimer_warning_title" = "Advertencia: Esta aplicación no le protege de una infección con COVID-19.";
 
 /*Onboarding Disclaimer Screen: Warning Text*/
-"onboarding_disclaimer_warning_body" = "La aplicación está pensada para el rastreo de proximidad y para advertir a los usuarios de un posible riesgo de exposición a una persona contagiada con el COVID-19. No se trata de un instrumento de diagnóstico. Lea cuidadosamente las instrucciones dadas en todas las pantallas. ";
+"onboarding_disclaimer_warning_body" = "La aplicación está pensada para el rastreo de proximidad y para advertir a los usuarios de un posible riesgo de exposición a una persona contagiada con el COVID-19. No se trata de un instrumento de diagnóstico. Lea cuidadosamente las instrucciones dadas en todas las pantallas.";
 
 /*Onboarding Disclaimer Screen: Manufacturer Info*/
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
