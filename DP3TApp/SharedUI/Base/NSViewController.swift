@@ -20,7 +20,6 @@ class NSViewController: UIViewController {
     // MARK: - Public API
 
     public func startLoading() {
-
         if loadingView.superview == nil {
             view.addSubview(loadingView)
             loadingView.snp.makeConstraints { make in
@@ -52,7 +51,6 @@ class NSViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ns_background
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -63,5 +61,4 @@ class NSViewController: UIViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
         }
     }
-
 }

@@ -90,7 +90,7 @@ class TracingManager: NSObject {
             }
         }
 
-        // Do not sync because applicationState is still .background 
+        // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in
             self.uiStateManager.refresh()
         }

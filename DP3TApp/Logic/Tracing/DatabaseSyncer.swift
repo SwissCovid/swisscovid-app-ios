@@ -46,10 +46,10 @@ class DatabaseSyncer {
 
     private func syncDatabase(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         databaseIsSyncing = true
-        var taskIdentifier : UIBackgroundTaskIdentifier = .invalid
+        var taskIdentifier: UIBackgroundTaskIdentifier = .invalid
         taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
-            if (taskIdentifier != .invalid) {
+            if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)
             }
             taskIdentifier = .invalid
