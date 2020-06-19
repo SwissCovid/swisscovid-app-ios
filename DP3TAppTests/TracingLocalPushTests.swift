@@ -26,6 +26,8 @@ private class MockNotificationCenter: UserNotificationCenter {
     func removeAllDeliveredNotifications() {
         removeAllDeliveredNotificationsCalled += 1
     }
+
+    func removePendingNotificationRequests(withIdentifiers _: [String]) {}
 }
 
 private class MockIdentifierProvider: ExposureIdentifierProvider {

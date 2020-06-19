@@ -125,6 +125,7 @@ class TracingManager: NSObject {
 
     func endTracing() {
         DP3TTracing.stopTracing()
+        TracingLocalPush.shared.removeSyncWarningTriggers()
     }
 
     func resetSDK() {
