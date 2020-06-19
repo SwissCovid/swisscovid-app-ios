@@ -150,7 +150,7 @@ class ConfigManager: NSObject {
                                               preferredStyle: .alert)
 
                 // TODO: Rename button key to generic update
-                alert.addAction(UIAlertAction(title: "playservices_update".ub_localized, style: .default, handler: { (_) in
+                alert.addAction(UIAlertAction(title: "playservices_update".ub_localized, style: .default, handler: { _ in
                     // Schedule tasks to next run loop
                     DispatchQueue.main.async {
                         // show alert again -> app should always be blocked

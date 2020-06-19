@@ -38,6 +38,10 @@ class NSOnboardingViewController: NSViewController {
         return stepViewControllers.firstIndex(of: step7VC)!
     }
 
+    private var disclaimerStepIndex: Int {
+        return stepViewControllers.firstIndex(of: step4VC)!
+    }
+
     private var finalStepIndex: Int {
         return stepViewControllers.firstIndex(of: step8VC)!
     }
@@ -115,6 +119,8 @@ class NSOnboardingViewController: NSViewController {
         } else {
             showContinueButton()
         }
+
+        continueButton.title = stepViewControllers[step].continueButtonText
 
         if isLast {
             finishButton.alpha = 0
@@ -263,7 +269,8 @@ class NSOnboardingViewController: NSViewController {
 
         switch recognizer.direction {
         case .left:
-            if currentStep == pushPermissionStepIndex || currentStep == tracingPermissionStepIndex { // Disable swipe forward on permission screens
+            if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
+                // Disable swipe forward on permission screens
                 return
             }
             setOnboardingStep(currentStep + 1, animated: true)

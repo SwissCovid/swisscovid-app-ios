@@ -25,6 +25,11 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     private var elements: [Any] = []
 
+    override init() {
+        super.init()
+        continueButtonText = "onboarding_accept_button".ub_localized
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         elements = [titleLabel, warningTitle, warningBody, warningRow0, warningRow1].compactMap { $0 }
