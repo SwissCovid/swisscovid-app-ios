@@ -19,11 +19,11 @@ This is a COVID-19 tracing client using the [DP3T iOS SDK](https://github.com/DP
 
 ## Contribution Guide
 
-The DP3T App is not yet complete. It has not yet been reviewed or audited for security and compatibility. We are both continuing the development and have started a security review. This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
+This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
 
 Bugs or potential problems should be reported using Github issues. We welcome all pull requests that improve the quality the source code. 
 
-Please note that the app will be available with approved translations in English, German, French and Italian. Pull requests for additional translations currently won't be merged.
+Please note that the app will be available with approved translations in English, German, French, Italian, Romansh, Albanian, Bosnian, Croatian, Portuguese, Serbian and Spanish. Pull requests for additional translations currently won't be merged.
 
 Platform independent UX and design discussions should be reported in [dp3t-ux-screenflows-ch](https://github.com/DP-3T/dp3t-ux-screenflows-ch)
 
