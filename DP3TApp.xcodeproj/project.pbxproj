@@ -173,6 +173,8 @@
 		2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1624520A250046906D /* Environment+Endpoints.swift */; };
 		2462BA1924520A480046906D /* Endpoint+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1824520A480046906D /* Endpoint+Request.swift */; };
 		2462BA1B24521CE70046906D /* ReportingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA1A24521CE70046906D /* ReportingManager.swift */; };
+		246FD175249B565400FD36F8 /* environment+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246FD174249B565400FD36F8 /* environment+AppStore.swift */; };
+		246FD176249B568F00FD36F8 /* environment+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246FD174249B565400FD36F8 /* environment+AppStore.swift */; };
 		24780B11242DFD2F003BB26C /* NSMeldungModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* NSMeldungModuleView.swift */; };
 		24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */; };
@@ -319,14 +321,20 @@
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
+		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F84089EC2493695200A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
+		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
+		F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
+		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
+		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -358,6 +366,7 @@
 		2462BA1624520A250046906D /* Environment+Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+Endpoints.swift"; sourceTree = "<group>"; };
 		2462BA1824520A480046906D /* Endpoint+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Endpoint+Request.swift"; sourceTree = "<group>"; };
 		2462BA1A24521CE70046906D /* ReportingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportingManager.swift; sourceTree = "<group>"; };
+		246FD174249B565400FD36F8 /* environment+AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "environment+AppStore.swift"; sourceTree = "<group>"; };
 		247395B4249165B900B30767 /* rm */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = rm; path = rm.lproj/Localizable.strings; sourceTree = "<group>"; };
 		247395B5249165BA00B30767 /* rm */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = rm; path = rm.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
@@ -526,7 +535,10 @@
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
+		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
+		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
+		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -595,6 +607,8 @@
 				8EB23D77245AF2C30073E83A /* RandomGenerators.swift */,
 				242D21D0245C3853005DAEA8 /* Logger.swift */,
 				A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */,
+				F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */,
+				F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -699,6 +713,7 @@
 				DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */,
 				DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */,
 				DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */,
+				F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */,
 				DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */,
 				DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */,
 			);
@@ -748,6 +763,7 @@
 				DC286A25242CE0B9001D5344 /* Environment.swift */,
 				242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */,
 				2462BA1624520A250046906D /* Environment+Endpoints.swift */,
+				246FD174249B565400FD36F8 /* environment+AppStore.swift */,
 				242D227E245D65A3005DAEA8 /* Base */,
 			);
 			path = Networking;
@@ -1392,7 +1408,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif which swiftformat >/dev/null; then\nswiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug-Calibration\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi\n";
 		};
 		242D21D8245C4BD8005DAEA8 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1445,7 +1461,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif which swiftformat >/dev/null; then\nswiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\nelse\n    echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi \n";
 		};
 		8E81CCC1241FD2EE006F2437 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1506,6 +1522,7 @@
 				242D21E6245C4BD8005DAEA8 /* UIStateLogic.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */,
 				242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */,
+				F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */,
 				242D21E9245C4BD8005DAEA8 /* UIColor+HEX.swift in Sources */,
 				242D21EA245C4BD8005DAEA8 /* UBRawRepresentable.swift in Sources */,
 				242D21EB245C4BD8005DAEA8 /* UIScrollView+UBKeyboardObserver.m in Sources */,
@@ -1535,6 +1552,7 @@
 				242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				242D2203245C4BD8005DAEA8 /* NSMeldungDetailMeldungTitleView.swift in Sources */,
 				242D2204245C4BD8005DAEA8 /* NSBegegnungenDetailViewController.swift in Sources */,
+				F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */,
 				242D2205245C4BD8005DAEA8 /* NSOnboardingStepModel.swift in Sources */,
 				242D2206245C4BD8005DAEA8 /* NSWhatToDoSymptomViewController.swift in Sources */,
 				24F4D967246C33610011DC90 /* UIDevice+ScreenType.swift in Sources */,
@@ -1542,6 +1560,7 @@
 				242D2208245C4BD8005DAEA8 /* ConfigLoadOperation.swift in Sources */,
 				242D2209245C4BD8005DAEA8 /* String+NS.swift in Sources */,
 				242D220A245C4BD8005DAEA8 /* UBUserDefaultValue.swift in Sources */,
+				246FD176249B568F00FD36F8 /* environment+AppStore.swift in Sources */,
 				242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */,
@@ -1551,6 +1570,7 @@
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
+				F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */,
 				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
 				F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */,
 				242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */,
@@ -1627,6 +1647,7 @@
 				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
+				246FD175249B565400FD36F8 /* environment+AppStore.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */,
 				24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
@@ -1684,6 +1705,7 @@
 				DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */,
 				8E24DEC124914088002B1F16 /* NSSynchronizationPersistence.swift in Sources */,
 				F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */,
+				F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */,
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
 				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
@@ -1691,10 +1713,12 @@
 				8EF2A6E52490E26F002263C3 /* NSLastSyncronizationControl.swift in Sources */,
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
+				F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */,
 				242D2279245D64BA005DAEA8 /* Environment+PublicKeys.swift in Sources */,
 				8EF2A6E82490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
+				F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */,
 				2485F47E2458AC9000C3D8C3 /* FakePublishManager.swift in Sources */,
 				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				6EC47BD42451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift in Sources */,
@@ -1831,7 +1855,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST_ENTITLEMENT ENABLE_TESTING ENABLE_VERBOSE ENABLE_LOGGING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST_ENTITLEMENT ENABLE_TESTING ENABLE_VERBOSE ENABLE_LOGGING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1857,7 +1881,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_VERBOSE ENABLE_LOGGING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_VERBOSE ENABLE_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1882,7 +1906,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_PROD ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_PROD ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1966,7 +1990,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1989,7 +2013,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2104,7 +2128,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2127,7 +2151,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME TEST_ENTITLEMENT ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME TEST_ENTITLEMENT ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2244,7 +2268,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2365,7 +2389,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "DP3T Debug";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -2597,7 +2621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_TEST ENABLE_TESTING ENABLE_SYNC_LOGGING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_TEST ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -2620,7 +2644,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

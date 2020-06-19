@@ -19,6 +19,7 @@ class NSTracingErrorView: UIView {
     private let textLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
     private let errorCodeLabel = NSLabel(.smallRegular, textAlignment: .center)
     private let actionButton = NSUnderlinedButton()
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
 
     // MARK: - Model
 
@@ -27,7 +28,7 @@ class NSTracingErrorView: UIView {
         var title: String
         var text: String
         var buttonTitle: String?
-        var action: (() -> Void)?
+        var action: ((NSTracingErrorView?) -> Void)?
     }
 
     var model: NSTracingErrorViewModel? {
@@ -75,7 +76,9 @@ class NSTracingErrorView: UIView {
         titleLabel.text = model?.title
         titleLabel.accessibilityLabel = "\("loading_view_error_title".ub_localized): \(titleLabel.text ?? "")"
         textLabel.text = model?.text
-        actionButton.touchUpCallback = model?.action
+        actionButton.touchUpCallback = { [weak self] in
+            self?.model?.action?(self)
+        }
         actionButton.title = model?.buttonTitle
 
         stackView.setNeedsLayout()
@@ -86,6 +89,9 @@ class NSTracingErrorView: UIView {
         stackView.addArrangedView(textLabel)
         if model?.action != nil {
             stackView.addArrangedView(actionButton)
+            stackView.addArrangedView(activityIndicator)
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.stopAnimating()
         }
         if let code = errorCode {
             stackView.addArrangedView(errorCodeLabel)
@@ -96,6 +102,27 @@ class NSTracingErrorView: UIView {
         stackView.layoutIfNeeded()
 
         updateAccessibility()
+    }
+
+    public var isEnabled: Bool {
+        get {
+            actionButton.isEnabled
+        }
+        set {
+            actionButton.isEnabled = newValue
+        }
+    }
+
+    public func startAnimating() {
+        UIView.animate(withDuration: 0.2) {
+            self.activityIndicator.startAnimating()
+        }
+    }
+
+    public func stopAnimating() {
+        UIView.animate(withDuration: 0.2) {
+            self.activityIndicator.stopAnimating()
+        }
     }
 
     // MARK: - Factory
@@ -118,10 +145,10 @@ class NSTracingErrorView: UIView {
                                            action: nil)
         case .tracingPermissionError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                           title: "tracing_permission_error_title".ub_localized,
-                                           text: "tracing_permission_error_text".ub_localized,
+                                           title: "tracing_permission_error_title_ios".ub_localized,
+                                           text: "tracing_permission_error_text_ios".ub_localized,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
-                                           action: {
+                                           action: { _ in
                                                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
                                                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
 

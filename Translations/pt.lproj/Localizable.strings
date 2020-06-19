@@ -18,13 +18,13 @@
 "inform_continue_button" = "Continuar";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Comunicar anonimamente";
+"inform_send_button_title" = "Enviar";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Muito obrigado";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "O seu teste positivo foi comunicado de forma anónima através da aplicação.\n\nObrigado por ajudar a conter a propagação do coronavírus.";
+"inform_send_thankyou_text" = "Foram enviados os IDs aleatórios da sua app.\n\nObrigado por ajudar a travar as cadeias de transmissão.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Fechar";
@@ -65,14 +65,11 @@
 /*Permission Text für Bluetooth*/
 "NSBluetoothAlwaysUsageDescription" = "Os contactos serão detectados em segundo plano através de Bluetooth de baixo consumo energético.";
 
-/*Text der bei Android in der permanenten Notification immer angezeigt wird*/
-"android_foreground_service_notification_text" = "Os contatos serão registados de forma anónima no seu dispositivo.";
-
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Insira o código COVID";
 
 /*Inform: Code eingeben Subtext*/
-"inform_code_text" = "Insira o código COVID que lhe foi enviado.";
+"inform_code_text" = "Insira o código COVID que recebeu.";
 
 /*Inform: Code eingeben kein Code Button Text*/
 "inform_code_no_code" = "Precisa de ajuda?";
@@ -81,7 +78,8 @@
 "tracing_setting_title" = "Rastreamento";
 
 /*Text beim Bluetooth Control*/
-"tracing_setting_text" = "Permitir o rastreamento anónimo";
+/*Fuzzy*/
+"tracing_setting_text_ios" = "Notificações de exposição";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Rastreamento desativado";
@@ -102,10 +100,10 @@
 "meldungen_meldung_title" = "Possível contágio";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Há suspeita de contágio.";
+"meldungen_meldung_text" = "Existe a possibilidade de um contágio.\n";
 
 /*Titel ob Tracing aktiv*/
-"tracing_active_title" = "Rastreamento ativo";
+"tracing_active_title" = "App ativa";
 
 /*Text bei Tracing aktiv*/
 "tracing_active_text" = "Os contatos serão guardados de forma anónima";
@@ -192,13 +190,13 @@
 "inform_detail_box_subtitle" = "Com o código COVID...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Reportar anonimamente";
+"inform_detail_box_title" = "Travar as cadeias de transmissão";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Inserir código COVID";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "O código COVID que lhe foi enviado permite-lhe reportar o teste na app anonimamente.";
+"inform_detail_box_text" = "Ao introduzir o código COVID, notifica a app de que testou positivo para o novo coronavírus.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Que fazer quando...";
@@ -207,16 +205,16 @@
 "symptom_detail_title" = "me sentir doente?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Se tiver sintomas...";
+"symptom_detail_box_subtitle" = "Faça a...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Contacte um médico";
+"symptom_detail_box_title" = "avaliação do risco de infeção com COVID-19";
 
 /*Symptom Detail Weisse Box Button*/
 "symptom_detail_box_button" = "Ir para a avaliação do risco de infeção com COVID-19";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Se tiver sintomas associados ao novo coronavírus, contacte o seu médico ou o serviço de emergência médica.";
+"symptom_detail_box_text" = "Fique em casa, faça avaliação do risco de infeção com COVID-19 ou ligue ao seu médico.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Teste positivo";
@@ -226,10 +224,10 @@
 "tracing_turned_off_title" = "Rastreamento desativado";
 "tracing_turned_off_text" = "Ative o rastreamento para que a app funcione.";
 "bluetooth_turned_off_title" = "Bluetooth desligado";
-"bluetooth_turned_off_text" = "Ligue o Bluetooth no seu dispositivo para que o rastreamento anónimo funcione.";
+"bluetooth_turned_off_text" = "Ligue o Bluetooth no seu dispositivo para que o rastreamento funcione.";
 "bluetooth_turn_on_button_title" = "Ligar o Bluetooth";
 "bluetooth_permission_error_title" = "Utilização de Bluetooth recusada";
-"bluetooth_permission_error_text" = "Permita a utilização do Bluetooth para que o rastreamento anónimo funcione.";
+"bluetooth_permission_error_text" = "Permita a utilização do Bluetooth para que o rastreamento funcione.";
 
 /*URL zum Corona Check*/
 "symptom_detail_corona_check_url" = "https://coronavirus.unisante.ch/pt-pt/evaluation";
@@ -257,10 +255,10 @@
 "meldung_detail_positive_test_box_subtitle" = "Que devo fazer?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Auto-isolamento";
+"meldung_detail_positive_test_box_title" = "Isolamento";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Siga as instruções do centro de teste relativas ao auto-isolamento";
+"meldung_detail_positive_test_box_text" = "Siga as instruções que recebeu relativamente ao isolamento";
 "tracing_ended_title" = "Rastreamento terminado";
 "tracing_ended_text" = "Não serão guardados mais contactos.";
 "exposed_info_contact_hotline" = "Contacte o/a";
@@ -275,7 +273,7 @@
 "meldung_homescreen_positiv_title" = "Teste positivo";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Há suspeita de contágio.";
+"meldung_detail_exposed_subtitle" = "Existe a possibilidade de um contágio.";
 "meldung_homescreen_positiv_text" = "Testou positivo para o novo coronavírus.";
 
 /*Debug Screen: Onboarding Reset Button*/
@@ -291,7 +289,7 @@
 "meldungen_detail_call" = "Ligue-nos";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Linha informativa coronavírus";
+"meldungen_detail_call_text" = "Linha informativa SwissCovid";
 
 /*Meldungen Detail Weisse Box Button*/
 "meldungen_detail_call_button" = "Ligar agora";
@@ -306,7 +304,7 @@
 "meldungen_detail_explanation_text2" = "Proteja a sua família, os seus amigos e quem mais o rodeie, evitando contactos até 10 dias após o possível contágio.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "Se tiver perguntas:\nlinha informativa coronavírus\n+41 58 387 77 78";
+"meldungen_detail_guard_text" = "Se tiver perguntas:\nlinha informativa SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
 "meldungen_detail_call_again_button" = "Ligar novamente";
@@ -327,22 +325,22 @@
 "onboarding_prinzip_text1" = "Com a app Swiss Covid, todos podem ajudar a conter a propagação do novo coronavírus.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "A app assinala possíveis contágios, permitindo interromper as cadeias de transmissão.";
+"onboarding_prinzip_text2" = "A app informa-o, caso possa ter estado exposto ao novo coronavírus.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Privacidade garantida\n";
+"onboarding_privacy_title" = "Protecção da privacidade";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Os dispositivos comunicam anonimamente.";
+"onboarding_privacy_text1" = "Entre os telemóveis, só são transferidos IDs aleatórios. A app não reúne dados da sua identidade ou localização.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Todos os dados são encriptados e guardados apenas localmente no smartphone.";
+"onboarding_privacy_text2" = "Os IDs aleatórios são guardados no seu telemóvel durante 14 dias, apagando-se automaticamente após esse tempo.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "O que faz a app?";
+"onboarding_begegnungen_heading" = "Como funciona a app?";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Deteta contactos através do Bluetooth\n";
@@ -351,7 +349,7 @@
 "onboarding_begegnungen_text1" = "A app deteta automaticamente quando dois utilizadores estão perto um do outro durante um dado período.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Para isso, utiliza Bluetooth de Baixa Energia (BLE) e nenhuns dados de GPS.";
+"onboarding_begegnungen_text2" = "Para isso, utiliza Bluetooth de Baixa Energia (BLE). Nenhuns dados de GPS, móveis, de Wi-Fi ou de localização.";
 
 /*Onboarding Meldung: Text oben*/
 "onboarding_meldung_heading" = "O que faz a app?";
@@ -360,10 +358,10 @@
 "onboarding_meldung_title" = "Notificação de possível contágio\n";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "A app informa-o em caso de suspeita de contágio.";
+"onboarding_meldung_text1" = "A app informa-o, caso possa ter estado exposto ao novo coronavírus.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Se agir da forma correta, estará a proteger a si mesmo e aos outros.";
+"onboarding_meldung_text2" = "Se agir da forma correta, estará a travar as cadeias de transmissão e a proteger os outros.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Permitir o uso do Bluetooth";
@@ -408,13 +406,13 @@
 "inform_send_getwell_title" = "As melhoras";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Esperamos que recupere depressa.\n\nSiga as instruções relativas ao auto-isolamento";
+"inform_send_getwell_text" = "Esperamos que recupere depressa.\n\nSiga as instruções que recebeu relativamente ao isolamento.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "A app está pronta";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Muito obrigado por se proteger e ajudar a proteger os outros.";
+"onboarding_go_text" = "Muito obrigado por ajudar a interromper as cadeias de transmissão.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Iniciar";
@@ -432,16 +430,16 @@
 "inform_code_invalid_title" = "Código inválido";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "Se tiver perguntas: App-Hotline\n+41 58 466 07 99";
+"inform_code_invalid_subtitle" = "Se tiver problemas: contacte a entidade da qual recebeu o código COVID.";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "há 1 dia";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Nova suspeita de contágio";
+"meldung_detail_new_contact_title" = "Possível contágio";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Neste dia, pode também ter ocorrido contágio.";
+"meldung_detail_new_contact_subtitle" = "Há suspeita de contágio.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Erro na hora";
@@ -537,10 +535,10 @@
 "accessibility_info_button" = "Informação";
 
 /*Synchronisations-Fehler Titel*/
-"sync_warning_notification_title" = "Ocorreu um erro";
+"sync_warning_notification_title" = "Sincronizar a app";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "Abra a app para corrigir o erro.";
+"sync_warning_notification_text" = "Abra a app para atualizar a lista dos IDs aleatórios divulgados.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Continuar";
@@ -552,13 +550,13 @@
 "begegnung_detail_faq1_title" = "O que significa um contacto?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Quando dois ou mais smartphones com a app estiverem próximos entre si durante vários minutos, os dispositivos registam a ocorrência como um contacto.";
+"begegnung_detail_faq1_text" = "Quando dois ou mais telemóveis com a app estiverem próximos entre si durante algum tempo, os dispositivos registam a ocorrência como um contacto.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Os meus dados estão seguros?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "Num encontro, só é transferido um código encriptado.\n\nEste código é guardado localmente nos dispositivos durante 21 dias, apagando-se automaticamente após esse tempo.";
+"begegnung_detail_faq2_text" = "Num contacto, só são transferidos dados de IDs aleatórios. \n\nEstes são guardados localmente nos dispositivos durante 14 dias, apagando-se automaticamente após esse tempo.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "O Bluetooth tem de estar sempre ligado?";
@@ -573,22 +571,22 @@
 "meldungen_nomeldungen_faq1_title" = "O que são as notificações?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "A app controla periodicamente se algum dos contactos guardados no seu smartphone testou positivo.\n\nEm caso de possível contágio, receberá uma notificação no ecrã de bloqueio.";
+"meldungen_nomeldungen_faq1_text" = "A app verifica periodicamente se outros utilizadores com quem teve contacto comunicaram um teste positivo.\n\nEm caso de possível contágio, receberá uma notificação no ecrã de bloqueio.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
 "meldungen_nomeldungen_faq2_titel" = "O que significa um possível contágio?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "A app não só verifica se houve contactos com pessoas infetadas, mas também a duração e a proximidade dos mesmos.\n\nSó será notificado se houver uma suspeita razoável de contágio.";
+"meldungen_nomeldungen_faq2_text" = "A app não só verifica se houve contactos com pessoas infetadas, mas também quanto tempo e quão perto esteve dessas pessoas. \n\nSó será notificado se houver uma probabilidade razoável de contágio.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "Contacte o seu médico aos primeiros sintomas.";
+"meldungen_detail_explanation_text3" = "A linha informativa SwissCovid aconselha-o sobre um possível teste gratuito.";
 
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Tenho de ligar?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Recomendamos-lhe que ligue sempre que receber uma notificação.\n\nNão serão registados dados pessoais, assegurando o seu anonimato.";
+"meldungen_meldungen_faq1_text" = "Recomendamos-lhe que ligue sempre que receber uma notificação.\n\nNão serão registados dados pessoais, assegurando o seu anonimato.\n\nA chamada de aconselhamento é gratuita, apenas sujeita à tarifa normal.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Obrigado pela sua participação";
@@ -609,10 +607,10 @@
 "inform_detail_faq1_text" = "As pessoas que testaram positivo para o novo coronavírus recebem um código COVID.\n\nIsto assegura que só os casos confirmados são assinalados na app.";
 
 /*Inform Detail: FAQ Titel*/
-"inform_detail_faq2_title" = "Como posso permanecer anónimo?";
+"inform_detail_faq2_title" = "Que dados são enviados?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Só são enviadas as chaves temporárias da sua app e nunca dados pessoais.\n\nDesta forma, os outros utilizadores da app Swiss Covid poderão verificar se tiveram algum contacto consigo nos últimos dias.";
+"inform_detail_faq2_text" = "Só são enviados os IDs aleatórios da sua app e nunca dados pessoais.\n\nDesta forma, outros utilizadores da app SwissCovid ficam a saber que existe a possibilidade de um contágio.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -630,10 +628,10 @@
 "inform_code_intro_button" = "Entendi";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Tem dúvidas quanto aos sintomas?";
+"symptom_faq1_title" = "O que é a avaliação do risco de infeção com COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Tem sintomas e não está seguro de como deve agir? \n\nResponda às perguntas da avaliação do risco do Serviço Federal da Saúde Pública para receber uma recomendação.";
+"symptom_faq1_text" = "Tem sintomas e não está seguro de como deve agir? \n\nResponda às perguntas da avaliação do risco de infeção com COVID-19 do Serviço Federal da Saúde Pública, disponível online, para receber uma recomendação.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Por que motivo terminou o rastreamento?";
@@ -645,7 +643,7 @@
 "language_key" = "pt";
 
 /*Meldungen Homescreen: Name Hotline*/
-"exposed_info_contact_hotline_name" = "linha informativa coronavírus";
+"exposed_info_contact_hotline_name" = "linha informativa SwissCovid";
 
 /*Meldung Detail: "Noch 1 Tag" Label*/
 "date_in_one_day" = "Mais 1 dia";
@@ -677,17 +675,18 @@
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Ativar o rastreamento";
 
-/*Text auf der Onboarding Page für die Permission der Exposure-Library*/
-"onboarding_gaen_text" = "Para poder usar a app, tem de ativar a função Notificações sobre a COVID-19.";
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
+/*Fuzzy*/
+"onboarding_gaen_text_ios" = "Para poder usar a app, tem de ativar a função Notificações de exposição à COVID-19.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Ativar";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
-"onboarding_gaen_info_title_1" = "O seu anonimato é assegurado";
+"onboarding_gaen_info_title_1" = "Proteção de dados";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "Só são transferidas identificações anónimas e nenhuns dados pessoais ou de localização.";
+"onboarding_gaen_info_text_1" = "Só são transferidos dados de identificação aleatórios e nunca dados pessoais ou de localização.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "Aumento ligeiro do consumo da bateria";
@@ -702,7 +701,7 @@
 "delete_reports_button" = "Apagar notificação";
 
 /*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
-"delete_reports_dialog" = "Pretende apagar a notificação? ";
+"delete_reports_dialog" = "Pretende apagar a notificação?";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "Apagar notificação";
@@ -726,42 +725,44 @@
 "gaen_not_available_text" = "Atualize o seu Google Play Services";
 
 /*Tracing wurde vom System deaktiviert, erneut starten*/
-"gaen_unexpectedly_disabled" = "Tracing is deactivated. Try to start it again.";
+"gaen_unexpectedly_disabled" = "O rastreamento foi desativado. Por favor, reinicie-o.";
 
-/*Fehler-Titel, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_title" = "Notificações sobre a COVID-19 desativada";
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_title_ios" = "Notificações de exposição à COVID-19 desativada";
 
-/*Fehler-Text, wenn Tracing deaktiviert wurde im System*/
-"tracing_permission_error_text" = "Ative a função Notificações sobre a COVID-19 para que o rastreamento anónimo funcione.";
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
+/*Fuzzy*/
+"tracing_permission_error_text_ios" = "Ative a função Notificações de exposição à COVID-19 para que o rastreamento funcione.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "The message could not be sent. Please allow your random IDs to be shared with the SwissCovid app.";
+"user_cancelled_key_sharing_error" = "A mensagem não foi enviada. Por favor, autorize a partilha dos seus dados de IDs aleatórios com a app SwissCovid.";
 
 /*Button um die Google Play Services zu aktualisieren*/
-"playservices_update" = "Update";
+"playservices_update" = "Atualizar";
 
 /*Button um die Google Play Services zu installieren*/
-"playservices_install" = "Install";
+"playservices_install" = "Instalar";
 
 /*Titel für Infos zu den Google Play Services*/
 "playservices_title" = "Google Play Services";
 
 /*Meldung, dass die Google Play Services benötigt werden*/
-"playservices_text" = "To activate tracing, an up-to-date version of Google Play Services is required.\n\nIf no update is currently available on your device, please try again later.";
-"android_error_battery_optimization_title" = "Optimisation of battery usage activated";
-"android_error_battery_optimization_button" = "Allow";
+"playservices_text" = "Para poder ativar o rastreamento, necessita de uma versão atualizada dos serviços Google Play. \n\nSe não houver de momento nenhuma atualização disponível no seu dispositivo, por favor tente mais tarde.";
+"android_error_battery_optimization_title" = "Otimização do consumo da bateria ativado";
+"android_error_battery_optimization_button" = "Permitir";
 
 /*Telefonnummer für Hilfe bei App-Problemen*/
 "app_hotline_tel_number" = "+41 58 466 07 99";
 
 /*text shown in notification when we get an exception from the GAEN api*/
-"sync_api_error" = "An unexpected error has occurred while synchronising reports.";
+"sync_api_error" = "Ocorreu um erro inesperado na sincronização das mensagens.";
 
 /*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
-"certificate_validation_error" = "A secure connection cannot be made to the server. Please check or deactivate your VPN and/or your proxy or check whether you are connected via a public Wi-Fi network.";
+"certificate_validation_error" = "Impossível estabelecer uma ligação segura ao servidor. Verifique ou desative o seu VPN ou proxy, ou verifique se está ligado a uma rede Wi-Fi pública.";
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
-"android_en_start_failure" = "Failed to enable COVID-19 Notifications";
+"android_en_start_failure" = "Não foi possível ativar as notificações da COVID-19";
 
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
@@ -797,27 +798,87 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "You are not part of an organization participating in the pilot phase. Please install the appropriate update after the official launch of the app and open the app again.";
-"begegnung_detail_last_sync_title" = "Latest successful synchronisation";
-"synchronizations_view_title" = "Overview";
-"synchronizations_view_info_title" = "Synchronizations";
-"synchronizations_view_info_question" = "What are synchronizations?";
-"synchronizations_view_info_answer" = "The app regularly checks the published keys from users that were tested positive.";
-"synchronizations_view_period_title" = "During the last 14 days";
+"begegnung_detail_last_sync_title" = "Última sincronização bem sucedida";
+"synchronizations_view_title" = "Resumo";
+"synchronizations_view_info_title" = "Sincronizações";
+"synchronizations_view_info_question" = "O que são sincronizações?";
+"synchronizations_view_info_answer" = "A app verifica periodicamente os IDs aleatórios divulgados por utilizadores que testaram positivo.";
+"synchronizations_view_period_title" = "Nos últimos 14 dias";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
-"synchronizations_view_empty_list" = "No entries";
+"synchronizations_view_empty_list" = "Nenhum registo";
 "synchronizations_view_sync_via_scheduled" = "  • Scheduled";
 "synchronizations_view_sync_via_fake_request" = "  • Fake Report";
 "synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
 
 /*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Before you call";
+"pre_call_dialog_before_title" = "Antes da chamada";
 
 /*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Please write down the following information";
+"pre_call_dialog_main_title" = "Anote as seguintes informações";
 
 /*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Date";
+"pre_call_dialog_box_datum" = "Data";
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Code";
+"pre_call_dialog_box_number" = "Número";
+"tracing_active_tracking_always_info" = "A SwissCovid mantém-se ativa, mesmo quando a app é desligada.";
+
+/*title in splash screen of onboarding*/
+"oboarding_splashscreen_title" = "A SwissCovid \ntrava as \ncadeias de transmissão.";
+"inform_detail_faq3_text" = "Embora não sejam enviados dados pessoais seus, é possível que alguém se recorde de um contacto consigo pela data.";
+"inform_detail_faq3_title" = "Permaneço anónimo?";
+
+/*Meldung Detail Weiss Box unten*/
+"meldungen_detail_explanation_text4" = "Aos primeiros sintomas, faça avaliação do risco de infeção com COVID-19 ou ligue ao seu médico.";
+
+/*Text beim Bluetooth Control*/
+"tracing_setting_text_android" = "Notificações de exposição à COVID-19";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
+"onboarding_gaen_text_android" = "Para poder usar a app, tem de ativar a função Notificações de exposição à COVID-19.";
+
+/*Onboarding Disclaimer Screen: AppName Title*/
+"onboarding_disclaimer_heading" = "SwissCovid";
+
+/*Onboarding Disclaimer Screen: Title*/
+"onboarding_disclaimer_title" = "Instruções de utilização";
+
+/*Onboarding Disclaimer Screen: Info*/
+"onboarding_disclaimer_info" = "Aqui encontrará a política de privacidade e os termos de utilização.";
+
+/*Onboarding Disclaimer Screen: Warning Title*/
+"onboarding_disclaimer_warning_title" = "Aviso: Esta app não o protege de uma infeção com COVID-19.";
+
+/*Onboarding Disclaimer Screen: Warning Text*/
+"onboarding_disclaimer_warning_body" = "A app destina-se a rastrear contactos e advertir os utilizadores de um possível contacto com uma pessoa infetada com COVID-19. Também não se trata de uma ferramenta de diagnóstico. Leia cuidadosamente as instruções apresentadas em todos os ecrãs da app.";
+
+/*Onboarding Disclaimer Screen: Manufacturer Info*/
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
+
+/*Onboarding Disclaimer Screen: App version title*/
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
+
+/*Onboarding Disclaimer Screen: Release version title*/
+"onboarding_disclaimer_release_version" = "Release Date:";
+
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "Política de privacidade & termos de utilização";
+
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
+
+/*Google Translation*/
+/*Error shown when loading fails because there is not enough free disk space.*/
+"loading_error_no_disk_space" = "As mensagens não puderam ser verificadas porque o seu telemóvel não tem espaço de memória livre suficiente. Por favor, liberte espaço na memória.";
+
+/*Onboarding: Akzeptieren Buttton Titel*/
+"onboarding_accept_button" = "Aceitar";
+
+/*Google Translation*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Titel*/
+"ratelimit_error_title" = "Actualização actualmente não possível";
+
+/*Google Translation!*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
+"ratelimit_error_text" = "Já hoje houve demasiadas perguntas. A aplicação irá tentar novamente mais tarde.";

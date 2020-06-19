@@ -36,8 +36,13 @@ class FakePublishManager {
     }
 
     private func syncInterval() -> TimeInterval {
-        // Rate corresponding to 1 dummy per 5 days
-        let randomDay = ExponentialDistribution.sample(rate: 0.2)
+        #if DEBUG || RELEASE_DEV
+            let rate: Double = 1.0
+        #else
+            // Rate corresponding to 1 dummy per 5 days
+            let rate: Double = 0.2
+        #endif
+        let randomDay = ExponentialDistribution.sample(rate: rate)
         let secondsInADay = Double(24 * 60 * 60)
         return randomDay * secondsInADay
     }

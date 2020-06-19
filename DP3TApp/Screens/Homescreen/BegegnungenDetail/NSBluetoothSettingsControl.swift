@@ -25,6 +25,29 @@ class NSBluetoothSettingsControl: UIView {
 
     private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground)
 
+    private let tracingInfoView: UIView = {
+        let view = UIView()
+        let imageView = UIImageView(image: UIImage(named: "ic-info-blue"))
+        let titleLabel = NSLabel(.textLight, textColor: .ns_blue, numberOfLines: 0, textAlignment: .natural)
+        titleLabel.text = "tracing_active_tracking_always_info".ub_localized
+        view.addSubview(imageView)
+        view.addSubview(titleLabel)
+        imageView.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium + 3.0)
+            make.leading.equalTo(imageView.snp.trailing).offset(NSPadding.medium)
+            make.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
+        }
+        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 260), for: .horizontal)
+        imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 760), for: .horizontal)
+        return view
+    }()
+
+    private let tracingActiveWrapper = UIStackView()
+
     private lazy var tracingErrorView = NSTracingErrorView.tracingErrorView(for: state.tracing) ?? NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
 
     var activeViewConstraint: Constraint?
@@ -41,7 +64,7 @@ class NSBluetoothSettingsControl: UIView {
         backgroundColor = .white
 
         titleLabel.text = "tracing_setting_title".ub_localized
-        subtitleLabel.text = "tracing_setting_text".ub_localized
+        subtitleLabel.text = "tracing_setting_text_ios".ub_localized
         switchControl.onTintColor = .ns_blue
 
         setup()
@@ -69,7 +92,11 @@ class NSBluetoothSettingsControl: UIView {
         addSubview(subtitleLabel)
         addSubview(switchControl)
 
-        addSubview(tracingActiveView)
+        tracingActiveWrapper.axis = .vertical
+        tracingActiveWrapper.addArrangedView(tracingActiveView)
+        tracingActiveWrapper.addArrangedView(tracingInfoView)
+
+        addSubview(tracingActiveWrapper)
         addSubview(tracingErrorView)
 
         titleLabel.snp.makeConstraints { make in
@@ -88,7 +115,7 @@ class NSBluetoothSettingsControl: UIView {
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
         }
 
-        tracingActiveView.snp.makeConstraints { make in
+        tracingActiveWrapper.snp.makeConstraints { make in
             make.top.equalTo(self.subtitleLabel.snp.bottom).offset(2.0 * NSPadding.medium)
             make.left.right.equalToSuperview().inset(NSPadding.medium)
             activeViewConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
@@ -137,7 +164,7 @@ class NSBluetoothSettingsControl: UIView {
             activeViewConstraint?.activate()
 
             UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
-                self.tracingActiveView.alpha = 1
+                self.tracingActiveWrapper.alpha = 1
                 self.tracingErrorView.alpha = 0
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
@@ -148,7 +175,7 @@ class NSBluetoothSettingsControl: UIView {
             activeViewConstraint?.deactivate()
 
             UIView.animate(withDuration: 0.2, delay: 0.0, options: [.curveEaseInOut, .beginFromCurrentState], animations: {
-                self.tracingActiveView.alpha = 0
+                self.tracingActiveWrapper.alpha = 0
                 self.tracingErrorView.alpha = 1
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)

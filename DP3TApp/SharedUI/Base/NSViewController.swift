@@ -14,12 +14,19 @@ import UIKit
 class NSViewController: UIViewController {
     // MARK: - Views
 
-    private let loadingView = NSLoadingView()
-    private let swissFlagImage = UIImage(named: "ic_navbar_schweiz_wappen")?.withRenderingMode(.alwaysOriginal)
+    private lazy var loadingView = NSLoadingView()
+    private lazy var swissFlagImage = UIImage(named: "ic_navbar_schweiz_wappen")?.withRenderingMode(.alwaysOriginal)
 
     // MARK: - Public API
 
     public func startLoading() {
+        if loadingView.superview == nil {
+            view.addSubview(loadingView)
+            loadingView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
+        }
+
         view.bringSubviewToFront(loadingView)
         loadingView.startLoading()
     }
@@ -44,8 +51,6 @@ class NSViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.ns_background
-
-        setup()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -54,15 +59,6 @@ class NSViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
         if navigationController?.viewControllers.count == 1 {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
-        }
-    }
-
-    // MARK: - Setup
-
-    private func setup() {
-        view.addSubview(loadingView)
-        loadingView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
         }
     }
 }

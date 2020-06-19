@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     internal var window: UIWindow?
     private var lastForegroundActivity: Date?
 
+    @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
+    var isFirstLaunch: Bool
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
+        if UserStorage.shared.hasCompletedOnboarding {
+            isFirstLaunch = false
+        }
+
+        // Reset keychain on first launch
+        if isFirstLaunch {
+            Keychain().deleteAll()
+            isFirstLaunch = false
+        }
+
         // setup sdk
         TracingManager.shared.initialize()
 
@@ -71,6 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func applicationDidBecomeActive(_: UIApplication) {
+        // Start sync after app became active
+        TracingManager.shared.updateStatus(shouldSync: true, completion: nil)
+    }
+
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
 
@@ -103,8 +122,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shouldJump,
             let navigationController = window?.rootViewController as? NSNavigationController,
             let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
-            navigationController.popToRootViewController(animated: false)
-            homescreenVC.presentMeldungenDetail(animated: false)
+            // no need to present NSMeldungenDetailViewController if its already showing
+            if !(navigationController.viewControllers.last is NSMeldungenDetailViewController) {
+                navigationController.popToRootViewController(animated: false)
+                homescreenVC.presentMeldungenDetail(animated: false)
+            }
             return true
         } else {
             return false

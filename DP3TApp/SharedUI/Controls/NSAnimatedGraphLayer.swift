@@ -193,6 +193,8 @@ private class NSAnimatedGraphNodeLayer: CAShapeLayer {
 }
 
 private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
+    private var oldPath: CGPath?
+
     init(start: CGPoint, end: CGPoint, color: CGColor) {
         super.init()
 
@@ -219,12 +221,16 @@ private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
     func move(from start: CGPoint, to end: CGPoint, duration: TimeInterval) {
         let newPath = makeLine(from: start, to: end)
 
+        path = newPath
+
         let animation = CABasicAnimation(keyPath: "path")
+        animation.fromValue = oldPath
         animation.toValue = newPath
         animation.duration = duration
         animation.fillMode = .both
-        animation.isRemovedOnCompletion = false
         add(animation, forKey: nil)
+
+        oldPath = newPath
     }
 }
 
