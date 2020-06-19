@@ -27,6 +27,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="rm"
+                href="/rm/impressum.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="pt"
                 href="/pt/impressum.html"
                 />
@@ -82,6 +87,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="rm"
+                href="/rm/licence.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="pt"
                 href="/pt/licence.html"
                 />
@@ -133,6 +143,11 @@
                 rel="alternate"
                 hreflang="it"
                 href="/it/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="rm"
+                href="/rm/"
                 />
     <xhtml:link
                 rel="alternate"

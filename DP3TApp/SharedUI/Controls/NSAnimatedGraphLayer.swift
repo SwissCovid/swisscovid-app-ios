@@ -193,7 +193,6 @@ private class NSAnimatedGraphNodeLayer: CAShapeLayer {
 }
 
 private class NSAnimatedGraphEdgeLayer: CAShapeLayer {
-
     private var oldPath: CGPath?
 
     init(start: CGPoint, end: CGPoint, color: CGColor) {

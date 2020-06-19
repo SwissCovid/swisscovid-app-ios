@@ -61,9 +61,9 @@ class TracingManager: NSObject {
             #endif
 
             #if ENABLE_OS_LOG
-            DP3TTracing.loggingEnabled = true
+                DP3TTracing.loggingEnabled = true
             #else
-            DP3TTracing.loggingEnabled = false
+                DP3TTracing.loggingEnabled = false
             #endif
 
             #if ENABLE_LOGGING
@@ -90,7 +90,7 @@ class TracingManager: NSObject {
             }
         }
 
-        // Do not sync because applicationState is still .background 
+        // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in
             self.uiStateManager.refresh()
         }
@@ -103,7 +103,10 @@ class TracingManager: NSObject {
     func beginUpdatesAndTracing() {
         if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
-                try DP3TTracing.startTracing()
+                try DP3TTracing.startTracing(completionHandler: { _ in
+                    // When tracing is enabled trigger sync (for example after ENManager is initialized)
+                    DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
+                })
                 UIStateManager.shared.tracingStartError = nil
             } catch DP3TTracingError.userAlreadyMarkedAsInfected {
                 // Tracing should not start if the user is marked as infected
@@ -216,11 +219,6 @@ extension TracingManager: DP3TTracingDelegate {
             }
             TracingLocalPush.shared.update(provider: state)
             TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
-
-            // When state changes to .active trigger sync (for example after ENManager is initialized)
-            if state.trackingState == .active {
-                DatabaseSyncer.shared.syncDatabaseIfNeeded()
-            }
         }
     }
 }

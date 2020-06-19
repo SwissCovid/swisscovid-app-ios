@@ -46,16 +46,27 @@ class DatabaseSyncer {
 
     private func syncDatabase(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         databaseIsSyncing = true
-        var taskIdentifier : UIBackgroundTaskIdentifier = .invalid
+        var taskIdentifier: UIBackgroundTaskIdentifier = .invalid
         taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
-            if (taskIdentifier != .invalid) {
+            if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)
             }
             taskIdentifier = .invalid
         }
         Logger.log("Start Database Sync", appState: true)
-        DP3TTracing.sync { result in
+
+        let runningInBackground: () -> Bool = {
+            if Thread.isMainThread {
+                return UIApplication.shared.applicationState == .background
+            } else {
+                return DispatchQueue.main.sync {
+                    UIApplication.shared.applicationState == .background
+                }
+            }
+        }
+
+        DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
             switch result {
             case let .failure(e):
 
