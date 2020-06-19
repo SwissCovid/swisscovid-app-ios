@@ -13,6 +13,8 @@ import UIKit
 class NSHeaderActiveView: UIView {
     private let graphView = NSAnimatedGraphView(type: .header)
 
+    private(set) var isAnimating = false
+
     init() {
         super.init(frame: .zero)
 
@@ -42,6 +44,8 @@ class NSHeaderActiveView: UIView {
     }
 
     func startAnimating() {
+        isAnimating = true
+
         graphView.startAnimating()
 
         UIView.animate(withDuration: 0.7, delay: 0, options: .beginFromCurrentState, animations: {
@@ -50,10 +54,13 @@ class NSHeaderActiveView: UIView {
     }
 
     func stopAnimating() {
+        isAnimating = false
         UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: {
             self.alpha = 0
         }) { _ in
-            self.graphView.stopAnimating()
+            if !self.isAnimating {
+                self.graphView.stopAnimating()
+            }
         }
     }
 }
