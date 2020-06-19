@@ -74,10 +74,12 @@ class ReportingManager {
                 self.codeDictionary.removeValue(forKey: covidCode)
                 switch result {
                 case .success:
-                    // during infection, tracing is disabled
-                    // after infection, it works again, but user must manually
-                    // enable if desired
-                    TracingManager.shared.isActivated = false
+                    if !fake {
+                        // during infection, tracing is disabled
+                        // after infection, it works again, but user must manually
+                        // enable if desired
+                        TracingManager.shared.isActivated = false
+                    }
 
                     TracingManager.shared.updateStatus(shouldSync: false) { error in
                         if let error = error {
