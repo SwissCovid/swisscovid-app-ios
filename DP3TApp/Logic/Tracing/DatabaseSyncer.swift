@@ -110,6 +110,8 @@ class DatabaseSyncer {
                 Logger.log("Sync Database failed, \(e)")
 
                 completionHandler?(.failed)
+            case .skipped:
+                completionHandler?(.noData)
             case .success:
 
                 // reset errors in UI
