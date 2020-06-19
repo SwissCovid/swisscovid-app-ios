@@ -219,7 +219,7 @@ extension TracingManager: DP3TTracingDelegate {
 
             // When state changes to .active trigger sync (for example after ENManager is initialized)
             if state.trackingState == .active {
-                DatabaseSyncer.shared.syncDatabaseIfNeeded()
+                DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
             }
         }
     }
