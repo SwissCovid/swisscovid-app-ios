@@ -529,7 +529,7 @@
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
 /*Fuzzy*/
-"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde. ";
+"accessibility_code_button_disabled_hint" = "Drücken nicht möglich, da der Code nicht vollständig eingegeben wurde.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
 /*Fuzzy*/
