@@ -19,15 +19,6 @@ struct NSOnboardingStepModel {
 
     // MARK: - Factory
 
-    static let step0 = NSOnboardingStepModel(heading: "onboarding_legal_heading".ub_localized,
-                                             headingColor: .ns_blue,
-                                             foregroundImage: UIImage(named: "onboarding-outro")!,
-                                             title: "onboarding_legal_title".ub_localized,
-                                             textGroups: [
-                                                 (UIImage(named: "ic-error")!, "onboarding_legal_text1".ub_localized),
-                                                 (UIImage(named: "ic-error")!, "onboarding_legal_text2".ub_localized),
-                                             ])
-
     static let step1 = NSOnboardingStepModel(heading: "onboarding_prinzip_heading".ub_localized,
                                              headingColor: .ns_blue,
                                              foregroundImage: UIImage(named: "onboarding-prinzip")!,
@@ -55,7 +46,7 @@ struct NSOnboardingStepModel {
                                                  (UIImage(named: "ic-bt")!, "onboarding_begegnungen_text2".ub_localized),
                                              ])
 
-    static let step5 = NSOnboardingStepModel(heading: "onboarding_meldung_heading".ub_localized,
+    static let step6 = NSOnboardingStepModel(heading: "onboarding_meldung_heading".ub_localized,
                                              headingColor: .ns_blue,
                                              foregroundImage: UIImage(named: "onboarding-meldung")!,
                                              title: "onboarding_meldung_title".ub_localized,

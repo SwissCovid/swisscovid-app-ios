@@ -18,7 +18,7 @@ class NSSplashViewController: UIViewController {
 
         let title = NSLabel(.splashTitle, textAlignment: .center)
 
-        title.text = "oboarding_splashscreen_title".ub_localized.replacingOccurrences(of: " ", with: "\n")
+        title.text = "oboarding_splashscreen_title".ub_localized
 
         let piktoWrapper = UIView()
         let pikto = UIImageView(image: UIImage(named: "ic-pikto"))

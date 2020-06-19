@@ -61,9 +61,9 @@ class TracingManager: NSObject {
             #endif
 
             #if ENABLE_OS_LOG
-            DP3TTracing.loggingEnabled = true
+                DP3TTracing.loggingEnabled = true
             #else
-            DP3TTracing.loggingEnabled = false
+                DP3TTracing.loggingEnabled = false
             #endif
 
             #if ENABLE_LOGGING
