@@ -90,7 +90,7 @@ class TracingManager: NSObject {
             }
         }
 
-        // Do not sync because applicationState is still .background 
+        // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in
             self.uiStateManager.refresh()
         }
@@ -216,11 +216,6 @@ extension TracingManager: DP3TTracingDelegate {
             }
             TracingLocalPush.shared.update(provider: state)
             TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
-
-            // When state changes to .active trigger sync (for example after ENManager is initialized)
-            if state.trackingState == .active {
-                DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
-            }
         }
     }
 }

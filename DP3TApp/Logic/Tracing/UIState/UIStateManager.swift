@@ -176,6 +176,9 @@ class UIStateManager: NSObject {
                 default:
                     refresh()
                 }
+            case (.stopped, .active):
+                // When state changes from stopped to .active trigger sync (for example after ENManager is initialized)
+                DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
             default:
                 refresh()
             }
