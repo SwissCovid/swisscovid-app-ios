@@ -18,13 +18,13 @@
 "inform_continue_button" = "Dalje";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Pošalji anonimno";
+"inform_send_button_title" = "Slanje";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Hvala";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Anonimno ste prijavili svoj pozitivan test putem aplikacije.\n\nTime nam pomažete u prekidanju lanca širenja infekcije.";
+"inform_send_thankyou_text" = "Poslani su nasumični ID-ovi iz vaše aplikacije.\n\nTime nam pomažete u prekidanju lanca širenja infekcije.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Zatvori";
@@ -79,7 +79,7 @@
 
 /*Text beim Bluetooth Control*/
 /*Fuzzy*/
-"tracing_setting_text_ios" = "Obavijesti o izloženosti bolesti COVID-19";
+"tracing_setting_text_ios" = "Obavijesti o izloženosti";
 
 /*Bluetooth Control: Tracking deaktiviert*/
 "bluetooth_setting_tracking_inactive" = "Praćenje je deaktivirano";
@@ -100,10 +100,10 @@
 "meldungen_meldung_title" = "Moguća infekcija";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Postoji sumnja na moguću infekciju.";
+"meldungen_meldung_text" = "Postoji mogućnost infekcije.";
 
 /*Titel ob Tracing aktiv*/
-"tracing_active_title" = "Praćenje aktivno";
+"tracing_active_title" = "Aplikacija aktivna";
 
 /*Text bei Tracing aktiv*/
 "tracing_active_text" = "Kontakti se anonimno čuvaju";
@@ -190,13 +190,13 @@
 "inform_detail_box_subtitle" = "Sa Covid šifrom...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Anonimno slanje";
+"inform_detail_box_title" = "Zaustavljanje lanca širenja infekcije";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Unos Covid šifre";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Koristite Covid šifru koju ste dobili da anonimno prijavite test u aplikaciji.";
+"inform_detail_box_text" = "Unosom Covid šifre obaveštavate aplikaciju da ste testirani pozitivno na novi virus korona.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Šta da radim ako...";
@@ -258,7 +258,7 @@
 "meldung_detail_positive_test_box_title" = "Izolacija";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Sledite uputstva za izolaciju";
+"meldung_detail_positive_test_box_text" = "Sledite uputstva za izolaciju koja ste dobili";
 "tracing_ended_title" = "Praćenje završeno";
 "tracing_ended_text" = "Dalji kontakti se više ne čuvaju.";
 "exposed_info_contact_hotline" = "Obratite se";
@@ -273,7 +273,7 @@
 "meldung_homescreen_positiv_title" = "Testiran pozitivno";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Postoji sumnja na moguću infekciju.";
+"meldung_detail_exposed_subtitle" = "Postoji mogućnost infekcije.";
 "meldung_homescreen_positiv_text" = "Testirani ste pozitivno na novi virus korona.";
 
 /*Debug Screen: Onboarding Reset Button*/
@@ -331,13 +331,13 @@
 "onboarding_privacy_heading" = "Privacy by Design";
 
 /*Onboarding Privacy: Titel*/
-"onboarding_privacy_title" = "Zaštita vaše privatnosti\nzagarantovana";
+"onboarding_privacy_title" = "Zaštita vaše privatnosti";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "Među uređajima se razmenjuju samo nasumični ID-ovi. Aplikacija ne prikuplja podatke o lokaciji niti podatke o vašem identitetu.";
+"onboarding_privacy_text1" = "Među mobilnim telefonima se razmenjuju samo nasumični ID-ovi. Aplikacija ne prikuplja podatke o lokaciji niti podatke o vašem identitetu.";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "Sačuvani ID-ovi se čuvaju na uređaju i brišu se nakon 14 dana.";
+"onboarding_privacy_text2" = "Sačuvani nasumični ID-ovi se čuvaju na vašem mobilnom telefonu i brišu se nakon 14 dana.";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "Kako funkcioniše aplikacija?";
@@ -349,7 +349,7 @@
 "onboarding_begegnungen_text1" = "Aplikacija automatski prepoznaje kada su dva korisnika određeni vremenski period blizu.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Za to koristi samo tehnologiju Bluetooth Low Energy (BLE). GPS podaci se ne koriste.";
+"onboarding_begegnungen_text2" = "Za to koristi samo tehnologiju Bluetooth Low Energy (BLE). Nema podataka o GPS-u, mobilnih podataka, podataka o WiFi mreži ili nekih drugih podataka o lokaciji.";
 
 /*Onboarding Meldung: Text oben*/
 "onboarding_meldung_heading" = "Šta aplikacija radi?";
@@ -406,7 +406,7 @@
 "inform_send_getwell_title" = "Brz oporavak";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Želimo vam brz oporavak.\n\nPridržavajte se uputstava o izolaciji.";
+"inform_send_getwell_text" = "Želimo vam brz oporavak.\n\nPridržavajte se dobijenih uputstava o izolaciji.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "Aplikacija je spremna";
@@ -430,16 +430,16 @@
 "inform_code_invalid_title" = "Nevažeća šifra";
 
 /*Fehlermeldung Subtitle ungültiger Code*/
-"inform_code_invalid_subtitle" = "U slučaju pitanja: App-Hotline\n+41 58 466 07 99";
+"inform_code_invalid_subtitle" = "U slučaju problema: Pozovite instituciju od koje ste dobili Covid šifru.";
 
 /*Datum: Vor 1 Tag*/
 "date_one_day_ago" = "pre 1 dana";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Nova sumnja na infekciju";
+"meldung_detail_new_contact_title" = "Moguća infekcija";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Infekcija je takođe bila moguća tog dana.";
+"meldung_detail_new_contact_subtitle" = "Postoji sumnja na moguću infekciju.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Vremenska greška";
@@ -538,7 +538,7 @@
 "sync_warning_notification_title" = "Sinhronizovanje aplikacije";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "Otvorite aplikaciju da biste sinhronizovali listu prijavljenih ključeva.";
+"sync_warning_notification_text" = "Otvorite aplikaciju da biste sinhronizovali listu prijavljenih nasumičnih ID-ova.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "Dalje";
@@ -550,7 +550,7 @@
 "begegnung_detail_faq1_title" = "Šta znači kontakt?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Ako su pametni telefoni sa aplikacijom određeno vreme u neposrednoj blizini, to se na vašem uređaju čuva kao kontakt.";
+"begegnung_detail_faq1_text" = "Ako su mobilni telefoni sa aplikacijom određeno vreme u neposrednoj blizini, to se na vašem uređaju čuva kao kontakt.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Da li su moji podaci sigurni?";
@@ -571,22 +571,22 @@
 "meldungen_nomeldungen_faq1_title" = "Šta su poruke?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Aplikacija redovno proverava da li su vaši sačuvani kontakti testirani pozitivno.\n\nU slučaju moguće infekcije, dobićete obaveštenje na zaključanom ekranu.";
+"meldungen_nomeldungen_faq1_text" = "Aplikacija redovno proverava da li su drugi korisnici sa kojima ste bili u kontaktu prijavili pozitivan test.\n\nU slučaju moguće infekcije, dobićete obaveštenje na zaključanom ekranu.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
 "meldungen_nomeldungen_faq2_titel" = "Šta je moguća infekcija?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Aplikacija ne samo da proverava da li ste imali kontakte sa inficiranim osobama, već i koliko dugo su oni trajali i koliko bliski su bili.\n\nBićete obavešteni samo ako postoji dovoljna sumnja na moguću infekciju.";
+"meldungen_nomeldungen_faq2_text" = "Aplikacija ne samo da proverava da li ste imali kontakte sa inficiranim osobama, već i koliko dugo su oni trajali i koliko bliski su bili.\n\nBićete obavešteni samo ako postoji dovoljno velika mogućnost infekcije.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "Ako osetite bilo kakve simptome, obratite se svom lekaru.";
+"meldungen_detail_explanation_text3" = "Preko info linije aplikacije SwissCovid možete da dobijete savete o mogućnosti besplatnog testiranja.";
 
 /*Meldungen: Meldungen FAQ*/
 "meldungen_meldungen_faq1_title" = "Da li moram da pozovem?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Preporučuje se da pozovete svaki put kada dobijete novu poruku.\n\nPritom ostajete anonimni. Lični podaci se ne prikupljaju.";
+"meldungen_meldungen_faq1_text" = "Preporučuje se da pozovete svaki put kada dobijete novu poruku.\n\nPritom ostajete anonimni. Lični podaci se ne prikupljaju.\n\nSavetovanje je besplatno; plaćaju se samo troškovi poziva.";
 
 /*Meldungen Detail: Anruf Titel*/
 "meldungen_detail_call_thankyou_title" = "Hvala na učešću";
@@ -607,10 +607,10 @@
 "inform_detail_faq1_text" = "Ljudi koji su testirani pozitivno na novi virus korona dobijaju Covid šifru.\n\nTime se osigurava da se putem aplikacije prijavljuju samo potvrđeni slučajevi.";
 
 /*Inform Detail: FAQ Titel*/
-"inform_detail_faq2_title" = "Kako da ostanem anoniman?";
+"inform_detail_faq2_title" = "Šta se šalje?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Šalju se samo privremeni ključevi iz vaše aplikacije, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da li su možda zaraženi.";
+"inform_detail_faq2_text" = "Šalju se samo nasumični ID-ovi iz vaše aplikacije, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da postoji mogućnost infekcije.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -628,7 +628,7 @@
 "inform_code_intro_button" = "Shvatam";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Niste sigurni u vezi sa simptomima?";
+"symptom_faq1_title" = "Šta je provera na virus korona?";
 
 /*Symptome: FAQ Text*/
 "symptom_faq1_text" = "Imate simptome, ali niste sigurni šta bi trebalo da uradite?\n\nOdgovorite na pitanja u proveri na mreži BAG-a da biste dobili savet šta treba da uradite.";
@@ -640,7 +640,7 @@
 "meldungen_positive_tested_faq1_text" = "Nakon pozitivnog testa, praćenje u aplikaciji se automatski završava.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "bs";
+"language_key" = "hr";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "Info linija SwissCovid";
@@ -798,15 +798,15 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "You are not part of an organization participating in the pilot phase. Please install the appropriate update after the official launch of the app and open the app again.";
-"begegnung_detail_last_sync_title" = "Latest successful synchronisation";
+"begegnung_detail_last_sync_title" = "Poslednja uspešna sinhronizacija";
 "synchronizations_view_title" = "Pregled";
 "synchronizations_view_info_title" = "Sinhronizacije";
 "synchronizations_view_info_question" = "Šta su sinhronizacije?";
-"synchronizations_view_info_answer" = "Aplikacija redovno proverava otvorene ključeve korisnika koji su pozitivno testirani na virus.";
-"synchronizations_view_period_title" = "During the last 14 days";
+"synchronizations_view_info_answer" = "Aplikacija redovno proverava nasumične ID-ove korisnika koji su pozitivno testirani na virus.";
+"synchronizations_view_period_title" = "U poslednjih 14 dana";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
-"synchronizations_view_empty_list" = "No entries";
+"synchronizations_view_empty_list" = "Nema unosa";
 "synchronizations_view_sync_via_scheduled" = "  • Scheduled";
 "synchronizations_view_sync_via_fake_request" = "  • Fake Report";
 "synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
@@ -822,15 +822,15 @@
 
 /*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
 "pre_call_dialog_box_number" = "Broj";
-"tracing_active_tracking_always_info" = "Praćenje je aktivno čak i dok je aplikacija zatvorena.";
+"tracing_active_tracking_always_info" = "Aplikacija SwissCovid ostaje aktivna čak i kad se zatvori.";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "SwissCovid prekida lanac širenja infekcije.";
+"oboarding_splashscreen_title" = "SwissCovid \nprekida lanac \nširenja infekcije.";
 "inform_detail_faq3_text" = "Iako se lični podaci koji se odnose na vas ne šalju, možda se neko seća svog kontakta sa vama na osnovu datuma.";
-"inform_detail_faq3_title" = "Do I remain anonymous?";
+"inform_detail_faq3_title" = "Da li ostajem anoniman?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "";
+"meldungen_detail_explanation_text4" = "U slučaju pojave prvih simptoma obavite proveru na virus korona ili se obratite svom lekaru.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Obavijesti o izloženosti bolesti COVID-19";
@@ -842,10 +842,10 @@
 "onboarding_disclaimer_heading" = "SwissCovid";
 
 /*Onboarding Disclaimer Screen: Title*/
-"onboarding_disclaimer_title" = "";
+"onboarding_disclaimer_title" = "Napomene za korišćenje";
 
 /*Onboarding Disclaimer Screen: Info*/
-"onboarding_disclaimer_info" = "";
+"onboarding_disclaimer_info" = "Ovde nalazite Izjavu o zaštiti ličnih podataka i uslove korišćenja.";
 
 /*Onboarding Disclaimer Screen: Warning Title*/
 "onboarding_disclaimer_warning_title" = "Upozorenje: Ova aplikacija vas ne štiti od infekcije virusom COVID-19.";
@@ -854,16 +854,31 @@
 "onboarding_disclaimer_warning_body" = "Ova aplikacija je namenjena za praćenje kontakata i za upozoravanje korisnika o mogućem kontaktu sa osobama koje su inficirane virusom COVID-19. Ona nije dijagnostička alatka. Pažljivo pročitajte uputstva na svakom ekranu aplikacije.";
 
 /*Onboarding Disclaimer Screen: Manufacturer Info*/
-"onboarding_disclaimer_manufacturer" = "";
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
 
 /*Onboarding Disclaimer Screen: App version title*/
-"onboarding_disclaimer_app_version" = "";
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
 
 /*Onboarding Disclaimer Screen: Release version title*/
-"onboarding_disclaimer_release_version" = "";
+"onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
-"onboarding_disclaimer_legal_button" = "";
+"onboarding_disclaimer_legal_button" = "Izjava o zaštiti ličnih podataka & uslovi korišćenja";
 
 /*onboarding privacy and conditions of use url*/
-"onboarding_disclaimer_legal_button_url" = "";
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
+
+/*Google Translation*/
+/*Error shown when loading fails because there is not enough free disk space.*/
+"loading_error_no_disk_space" = "Poruke se ne mogu provjeriti jer vaš mobilni telefon nema dovoljno slobodnog prostora. Oslobodite prostor.";
+
+/*Onboarding: Akzeptieren Buttton Titel*/
+"onboarding_accept_button" = "Prihvati";
+
+/*Google Translation*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Titel*/
+"ratelimit_error_title" = "Ažuriranje trenutno nije moguće";
+
+/*Google Translation!*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
+"ratelimit_error_text" = "Danas je već izvršeno previše upita. Aplikacija će pokušati ponovo kasnije.";
