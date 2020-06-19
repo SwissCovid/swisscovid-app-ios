@@ -36,7 +36,7 @@ class NSMeldungView: NSModuleBaseView {
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
-            view?.startAnimating()
+            view?.stopAnimating()
             view?.isEnabled = true
         }
     }))
@@ -45,7 +45,7 @@ class NSMeldungView: NSModuleBaseView {
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
-            view?.startAnimating()
+            view?.stopAnimating()
             view?.isEnabled = true
         }
     }))
