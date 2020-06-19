@@ -16,6 +16,7 @@ protocol UserNotificationCenter {
     var delegate: UNUserNotificationCenterDelegate? { get set }
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
     func removeAllDeliveredNotifications()
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String])
 }
 
 extension UNUserNotificationCenter: UserNotificationCenter {}
@@ -114,9 +115,17 @@ class TracingLocalPush: NSObject {
     private let timeInterval1: TimeInterval = 60 * 60 * 24 * 2 // Two days
     private let timeInterval2: TimeInterval = 60 * 60 * 24 * 7 // Seven days
 
+    func removeSyncWarningTriggers() {
+        center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier1, notificationIdentifier2])
+    }
+
     func resetSyncWarningTriggers(tracingState: TracingState) {
-        if let lastSync = tracingState.lastSync {
-            resetSyncWarningTriggers(lastSuccess: lastSync)
+        if TracingManager.shared.isActivated {
+            if let lastSync = tracingState.lastSync {
+                resetSyncWarningTriggers(lastSuccess: lastSync)
+            }
+        } else {
+            removeSyncWarningTriggers()
         }
     }
 
