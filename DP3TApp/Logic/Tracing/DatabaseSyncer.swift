@@ -46,11 +46,28 @@ class DatabaseSyncer {
 
     private func syncDatabase(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         databaseIsSyncing = true
-        let taskIdentifier = UIApplication.shared.beginBackgroundTask {
+        var taskIdentifier: UIBackgroundTaskIdentifier = .invalid
+        taskIdentifier = UIApplication.shared.beginBackgroundTask {
             // can't stop sync
+            if taskIdentifier != .invalid {
+                UIApplication.shared.endBackgroundTask(taskIdentifier)
+            }
+            taskIdentifier = .invalid
         }
         Logger.log("Start Database Sync", appState: true)
-        DP3TTracing.sync { result in
+
+        let runningInBackground: () -> Bool = {
+            if Thread.isMainThread {
+                return UIApplication.shared.applicationState == .background
+            } else  {
+                return DispatchQueue.main.sync {
+                    UIApplication.shared.applicationState == .background
+                }
+            }
+        }
+
+
+        DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
             switch result {
             case let .failure(e):
 
@@ -65,6 +82,7 @@ class DatabaseSyncer {
                         UIStateManager.shared.lastSyncErrorTime = Date()
                         switch wrappedError {
                         case let .networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                            // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
@@ -75,7 +93,9 @@ class DatabaseSyncer {
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case .timeInconsistency:
+                            UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.hasTimeInconsistencyError = true
+                            UIStateManager.shared.syncErrorIsNetworkError = false
                         default:
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false
@@ -93,6 +113,8 @@ class DatabaseSyncer {
                 Logger.log("Sync Database failed, \(e)")
 
                 completionHandler?(.failed)
+            case .skipped:
+                completionHandler?(.noData)
             case .success:
 
                 // reset errors in UI
@@ -102,6 +124,8 @@ class DatabaseSyncer {
                     UIStateManager.shared.lastSyncErrorTime = nil
                     UIStateManager.shared.hasTimeInconsistencyError = false
                     UIStateManager.shared.immediatelyShowSyncError = false
+                    UIStateManager.shared.syncErrorIsNetworkError = false
+                    UIStateManager.shared.syncError = nil
                 }
 
                 // wait another 2 days befor warning
@@ -114,6 +138,7 @@ class DatabaseSyncer {
             }
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)
+                taskIdentifier = .invalid
             }
             self.databaseIsSyncing = false
         }

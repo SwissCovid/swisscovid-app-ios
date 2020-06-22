@@ -30,6 +30,11 @@ class MockKeychain: KeychainProtocol {
         return .success(())
     }
 
+    func deleteAll() -> Result<Void, KeychainError> {
+        store.removeAll()
+        return .success(())
+    }
+
     func reset() {
         store.removeAll()
     }

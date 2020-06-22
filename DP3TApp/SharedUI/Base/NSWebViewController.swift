@@ -15,28 +15,38 @@ class NSWebViewController: NSViewController {
     // MARK: - Variables
 
     private let webView: WKWebView
-    private let local: String?
     private var loadCount: Int = 0
+    private let closeable: Bool
+    private let mode: Mode
+
+    enum Mode {
+        case local(String)
+    }
 
     // MARK: - Init
 
-    init(local: String) {
-        self.local = local
-
-        // Disable zoom in web view
-        let source: String = "var meta = document.createElement('meta');" +
-            "meta.name = 'viewport';" +
-            "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
-            "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
-        let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd,
-                                                forMainFrameOnly: true)
-
-        let contentController = WKUserContentController()
-        contentController.addUserScript(script)
+    init(mode: Mode, closeable: Bool = false) {
+        self.mode = mode
+        self.closeable = closeable
 
         let config = WKWebViewConfiguration()
         config.dataDetectorTypes = []
-        config.userContentController = contentController
+
+        switch mode {
+        case .local:
+            // Disable zoom in web view
+            let source: String = "var meta = document.createElement('meta');" +
+                "meta.name = 'viewport';" +
+                "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+                "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
+            let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd,
+                                                    forMainFrameOnly: true)
+
+            let contentController = WKUserContentController()
+            contentController.addUserScript(script)
+            config.userContentController = contentController
+        }
+
         webView = WKWebView(frame: .zero, configuration: config)
 
         super.init()
@@ -48,7 +58,18 @@ class NSWebViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        guard let path = Bundle.main.path(forResource: local ?? "index", ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
+        switch mode {
+        case let .local(local):
+            loadLocal(local)
+        }
+
+        if closeable {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
+        }
+    }
+
+    private func loadLocal(_ local: String) {
+        guard let path = Bundle.main.path(forResource: local, ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
         else { return }
 
         let url = URL(fileURLWithPath: path)
@@ -58,6 +79,8 @@ class NSWebViewController: NSViewController {
 
             string = string.replacingOccurrences(of: "{VERSION}", with: Bundle.appVersion)
             string = string.replacingOccurrences(of: "{BUILD}", with: Bundle.buildNumber + Bundle.environment)
+            string = string.replacingOccurrences(of: "{APPVERSION}", with: Bundle.appVersion)
+            string = string.replacingOccurrences(of: "{RELEASEDATE}", with: DateFormatter.ub_dayString(from: Bundle.buildDate ?? Date()))
 
             webView.loadHTMLString(string, baseURL: url.deletingLastPathComponent())
         } catch {}
@@ -82,6 +105,12 @@ class NSWebViewController: NSViewController {
         webView.isOpaque = false
         webView.backgroundColor = UIColor.clear
     }
+
+    // MARK: - Navigation
+
+    @objc private func didPressClose() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension NSWebViewController: WKNavigationDelegate {
@@ -101,14 +130,8 @@ extension NSWebViewController: WKNavigationDelegate {
             }
 
             if scheme == "dp3t" || scheme == "file" {
-                let webVC: NSWebViewController
-//                if url.absoluteString.contains("licence") {
-//                    webVC = NSWebViewController(local: "license-ios")
-//                }
-//                else {
                 let path = (url.host ?? url.lastPathComponent).replacingOccurrences(of: ".html", with: "")
-                webVC = NSWebViewController(local: path)
-//                }
+                let webVC = NSWebViewController(mode: .local(path))
                 webVC.title = title
                 if let navVC = navigationController {
                     navVC.pushViewController(webVC, animated: true)
@@ -131,16 +154,6 @@ extension NSWebViewController: WKNavigationDelegate {
 }
 
 extension Bundle {
-    static var appVersion: String {
-        return Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "0.0"
-    }
-
-    static var buildNumber: String {
-        let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? ""
-
-        return buildNumber
-    }
-
     static var environment: String {
         #if ENABLE_TESTING
             switch Environment.current {

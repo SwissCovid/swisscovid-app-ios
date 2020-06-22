@@ -149,6 +149,20 @@ class ConfigManager: NSObject {
                                               message: "force_update_text".ub_localized,
                                               preferredStyle: .alert)
 
+                // TODO: Rename button key to generic update
+                alert.addAction(UIAlertAction(title: "playservices_update".ub_localized, style: .default, handler: { _ in
+                    // Schedule tasks to next run loop
+                    DispatchQueue.main.async {
+                        // show alert again -> app should always be blocked
+                        Self.configAlert = nil
+                        self.presentAlertIfNeeded(config: config, window: window)
+
+                        // jump to app store
+                        UIApplication.shared.open(Environment.current.appStoreURL, options: [:], completionHandler: nil)
+                    }
+
+                }))
+
                 window?.rootViewController?.topViewController.present(alert, animated: false, completion: nil)
                 Self.configAlert = alert
             }

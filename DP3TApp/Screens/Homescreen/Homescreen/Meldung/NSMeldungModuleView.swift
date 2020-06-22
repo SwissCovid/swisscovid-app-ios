@@ -36,7 +36,7 @@ class NSMeldungView: NSModuleBaseView {
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
-            view?.startAnimating()
+            view?.stopAnimating()
             view?.isEnabled = true
         }
     }))
@@ -45,7 +45,7 @@ class NSMeldungView: NSModuleBaseView {
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
-            view?.startAnimating()
+            view?.stopAnimating()
             view?.isEnabled = true
         }
     }))
@@ -79,6 +79,7 @@ class NSMeldungView: NSModuleBaseView {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
                 if uiState.canRetrySyncError {
+                    unexpectedErrorWithRetryView.model?.title = uiState.errorTitle ?? "unexpected_error_title".ub_localized
                     unexpectedErrorWithRetryView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
                     unexpectedErrorWithRetryView.errorCode = uiState.errorCode
                     views.append(unexpectedErrorWithRetryView)

@@ -175,7 +175,8 @@ extension MeldungDetailMeldungenViewModel {
     }
     var explanationTexts: [String] {
         return ["meldungen_detail_explanation_text1".ub_localized,
-        "meldungen_detail_explanation_text2".ub_localized,
-        "meldungen_detail_explanation_text3".ub_localized]
+                "meldungen_detail_explanation_text2".ub_localized,
+                "meldungen_detail_explanation_text3".ub_localized,
+                "meldungen_detail_explanation_text4".ub_localized]
     }
 }
