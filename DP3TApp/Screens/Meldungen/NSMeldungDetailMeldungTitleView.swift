@@ -147,7 +147,9 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     }
 
     deinit {
-        self.horizontalStackScrollView.scrollView.removeObserver(self, forKeyPath: "contentSize")
+        if horizontalStackScrollView.scrollView.observationInfo != nil {
+            horizontalStackScrollView.scrollView.removeObserver(self, forKeyPath: "contentSize")
+        }
     }
 
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

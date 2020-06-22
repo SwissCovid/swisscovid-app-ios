@@ -12,13 +12,12 @@ import UIKit
 
 class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewController {
     
-    fileprivate var viewModel: MeldungenDetailNoMeldungenViewModel!
+    var viewModel: MeldungenDetailNoMeldungenViewModel!
     
     // MARK: - Init
 
     override init() {
         super.init()
-        viewModel = MeldungenDetailNoMeldungenViewModel()
         titleView = NSMeldungenDetailNoMeldungenTitleView()
     }
 

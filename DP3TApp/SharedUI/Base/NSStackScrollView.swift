@@ -10,7 +10,7 @@
 
 import UIKit
 
-protocol NSHitTestDelegate {
+protocol NSHitTestDelegate: class {
     func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool
 }
 
@@ -19,7 +19,7 @@ class NSStackScrollView: UIView {
     let stackView = UIStackView()
     let scrollView = UIScrollView()
 
-    public var hitTestDelegate: NSHitTestDelegate?
+    weak public var hitTestDelegate: NSHitTestDelegate?
 
     init(axis: NSLayoutConstraint.Axis = .vertical, spacing: CGFloat = 0) {
         super.init(frame: .zero)

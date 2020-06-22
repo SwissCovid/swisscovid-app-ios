@@ -160,7 +160,10 @@ class NSCodeInputViewController: NSInformStepViewController {
     private func changePresentingViewController() {
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
-        nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
+        let meldugenDetailViewController = NSMeldungenDetailViewController()
+        meldugenDetailViewController.viewModel = MeldugenDetailViewModel(stateManager: UIStateManager.shared)
+        meldugenDetailViewController.viewModel.delegate = meldugenDetailViewController
+        nav?.pushViewController(meldugenDetailViewController, animated: false)
     }
 
     private func noCodeButtonPressed() {

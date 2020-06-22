@@ -11,30 +11,30 @@
 import UIKit
 
 class NSMeldungenDetailViewController: NSViewController {
-    private let noMeldungenViewController = NSMeldungenDetailNoMeldungenViewController()
+    
+    var viewModel: MeldugenDetailViewModel!
+    
+    private var noMeldungenViewController: NSMeldungenDetailNoMeldungenViewController = {
+        let noMeldungenViewController = NSMeldungenDetailNoMeldungenViewController()
+        noMeldungenViewController.viewModel = MeldungenDetailNoMeldungenViewModel()
+        return noMeldungenViewController
+    }()
 
-    private let positiveTestedViewController = NSMeldungenDetailPositiveTestedViewController()
+    private var positiveTestedViewController: NSMeldungenDetailPositiveTestedViewController = {
+        let positiveTestedViewController = NSMeldungenDetailPositiveTestedViewController()
+        positiveTestedViewController.viewModel = MeldungenDetailPositiveTestedViewModel()
+        return positiveTestedViewController
+    }()
 
-    private let meldungenViewController = NSMeldungDetailMeldungenViewController()
-
-    // MARK: - Init
-
-    override init() {
-        super.init()
-        title = "reports_title_homescreen".ub_localized
-    }
+    private var meldungenViewController: NSMeldungDetailMeldungenViewController!
 
     // MARK: - View
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ns_backgroundSecondary
-
-        UIStateManager.shared.addObserver(self) { [weak self] state in
-            guard let strongSelf = self else { return }
-            strongSelf.setup(state.meldungenDetail)
-        }
-
+        
+        title = viewModel.screenTitle
         setupViewControllers()
     }
 
@@ -59,6 +59,12 @@ class NSMeldungenDetailViewController: NSViewController {
         }
 
         // Meldungen View Controller
+        
+        let meldungenViewController = NSMeldungDetailMeldungenViewController()
+        meldungenViewController.viewModel = viewModel.meldungenDetailNoMeldungenViewModel
+        meldungenViewController.viewModel.delegate = meldungenViewController
+        self.meldungenViewController = meldungenViewController
+        
         addChild(meldungenViewController)
         view.addSubview(meldungenViewController.view)
         meldungenViewController.didMove(toParent: self)
@@ -66,11 +72,14 @@ class NSMeldungenDetailViewController: NSViewController {
         meldungenViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        setup(viewModel.state)
     }
 
     private func setup(_ state: UIStateModel.MeldungenDetail) {
-        meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
-
+        
+        meldungenViewController.viewModel.showMeldungWithAnimation = viewModel.state.showMeldungWithAnimation
+        
         noMeldungenViewController.view.isHidden = true
         positiveTestedViewController.view.isHidden = true
         meldungenViewController.view.isHidden = true
@@ -78,12 +87,20 @@ class NSMeldungenDetailViewController: NSViewController {
         switch state.meldung {
         case .exposed:
             meldungenViewController.view.isHidden = false
-            meldungenViewController.meldungen = state.meldungen
-            meldungenViewController.phoneCallState = state.phoneCallState
+            meldungenViewController.viewModel.meldungen = viewModel.state.meldungen
+            meldungenViewController.viewModel.phoneCallState = viewModel.state.phoneCallState
         case .infected:
             positiveTestedViewController.view.isHidden = false
         case .noMeldung:
             noMeldungenViewController.view.isHidden = false
         }
+    }
+}
+
+
+extension NSMeldungenDetailViewController: MeldugenDetailViewModelDelegate {
+    
+    func didUpdateStateWith(_ state: UIStateModel.MeldungenDetail) {
+        setup(state)
     }
 }

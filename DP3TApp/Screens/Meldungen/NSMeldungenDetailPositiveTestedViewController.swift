@@ -12,12 +12,11 @@ import UIKit
 
 class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewController {
     
-    fileprivate var viewModel: MeldungenDetailPositiveTestedViewModel!
+    var viewModel: MeldungenDetailPositiveTestedViewModel!
     // MARK: - Init
 
     override init() {
         super.init()
-        viewModel = MeldungenDetailPositiveTestedViewModel()
         titleView = NSMeldungenDetailPositiveTestedTitleView()
     }
 

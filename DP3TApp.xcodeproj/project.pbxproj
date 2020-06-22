@@ -269,6 +269,8 @@
 		A61580AB247E4938000A51EC /* WhatToDoSymptomViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */; };
 		A6256C36247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
 		A6256C37247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */; };
+		A65F0AC9249C9CAF00DBA685 /* MeldugenDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F0AC8249C9CAF00DBA685 /* MeldugenDetailViewModel.swift */; };
+		A65F0ACA249C9CAF00DBA685 /* MeldugenDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A65F0AC8249C9CAF00DBA685 /* MeldugenDetailViewModel.swift */; };
 		A66D0F5E24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */; };
 		A66D0F5F24862ACF00462A76 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */; };
 		A66D0F61248655BC00462A76 /* CodeInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */; };
@@ -281,6 +283,8 @@
 		A693B20E24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */; };
 		A693B21024812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */; };
 		A693B21124812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */; };
+		A69A11C0249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A11BF249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift */; };
+		A69A11C1249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A11BF249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
@@ -492,12 +496,14 @@
 		8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewSectionView.swift; sourceTree = "<group>"; };
 		A61580A9247E4938000A51EC /* WhatToDoSymptomViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoSymptomViewModel.swift; sourceTree = "<group>"; };
 		A6256C35247CF32A005BA07E /* WhatToDoPositiveTestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToDoPositiveTestViewModel.swift; sourceTree = "<group>"; };
+		A65F0AC8249C9CAF00DBA685 /* MeldugenDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldugenDetailViewModel.swift; sourceTree = "<group>"; };
 		A66D0F5D24862ACF00462A76 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		A66D0F60248655BC00462A76 /* CodeInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeInputViewModel.swift; sourceTree = "<group>"; };
 		A67E25A72497598A00BE6A96 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		A686DC5224989B4E003237BB /* SyncronizationStatusDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyncronizationStatusDetailModel.swift; sourceTree = "<group>"; };
 		A693B20C24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailNoMeldungenViewModel.swift; sourceTree = "<group>"; };
 		A693B20F24812A26008CEBD8 /* MeldungenDetailPositiveTestedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenDetailPositiveTestedViewModel.swift; sourceTree = "<group>"; };
+		A69A11BF249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungDetailMeldungenViewModel.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
@@ -928,6 +934,7 @@
 				6E3308742450885300913B0E /* NSMeldungenDetailPositiveTestedTitleView.swift */,
 				6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */,
 				6E33087024507A2D00913B0E /* NSMeldungDetailMeldungenViewController.swift */,
+				A69A11BF249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift */,
 				6E330878245098E900913B0E /* NSMeldungDetailMeldungTitleView.swift */,
 				6EC47BD32451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift */,
 			);
@@ -1006,6 +1013,7 @@
 			isa = PBXGroup;
 			children = (
 				6EFB097D244603560097BD3D /* NSMeldungenDetailViewController.swift */,
+				A65F0AC8249C9CAF00DBA685 /* MeldugenDetailViewModel.swift */,
 			);
 			path = Meldungen;
 			sourceTree = "<group>";
@@ -1540,6 +1548,7 @@
 				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
+				A65F0ACA249C9CAF00DBA685 /* MeldugenDetailViewModel.swift in Sources */,
 				242D21E6245C4BD8005DAEA8 /* UIStateLogic.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */,
 				242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */,
@@ -1555,6 +1564,7 @@
 				242D2277245D62D9005DAEA8 /* UserStorage.swift in Sources */,
 				242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */,
 				242D21F4245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */,
+				A69A11C1249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift in Sources */,
 				242D21F6245C4BD8005DAEA8 /* UIView+NS.swift in Sources */,
 				242D21F7245C4BD8005DAEA8 /* UIImage+UBHelpers.m in Sources */,
 				242D21F8245C4BD8005DAEA8 /* UIStateManager.swift in Sources */,
@@ -1761,12 +1771,14 @@
 				A66D0F61248655BC00462A76 /* CodeInputViewModel.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSMeldungenDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
+				A65F0AC9249C9CAF00DBA685 /* MeldugenDetailViewModel.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */,
 				A686DC5324989B4E003237BB /* SyncronizationStatusDetailModel.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				A69A11C0249B9AB1009DBEBF /* MeldungDetailMeldungenViewModel.swift in Sources */,
 				A693B20D24811420008CEBD8 /* MeldungenDetailNoMeldungenViewModel.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,

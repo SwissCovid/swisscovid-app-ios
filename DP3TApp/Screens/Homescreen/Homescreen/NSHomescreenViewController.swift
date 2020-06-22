@@ -261,7 +261,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
     
     func presentMeldungenDetail(animated: Bool = true) {
-        navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: animated)
+        let meldugenDetailViewController = NSMeldungenDetailViewController()
+        meldugenDetailViewController.viewModel = MeldugenDetailViewModel(stateManager: UIStateManager.shared)
+        meldugenDetailViewController.viewModel.delegate = meldugenDetailViewController
+        navigationController?.pushViewController(meldugenDetailViewController, animated: animated)
     }
     
     private func presentWhatToDoPositiveTest() {
