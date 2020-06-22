@@ -17,33 +17,33 @@ class NSOnboardingViewController: NSViewController {
 
     private let splashVC = NSSplashViewController()
 
-    private let step0VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step0)
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
     private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
-    private let step4VC = NSOnboardingPermissionsViewController(type: .gapple)
-    private let step5VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step5)
-    private let step6VC = NSOnboardingPermissionsViewController(type: .push)
-    private let step7VC = NSOnboardingFinishViewController()
+    private let step4VC = NSOnboardingDisclaimerViewController()
+    private let step5VC = NSOnboardingPermissionsViewController(type: .gapple)
+    private let step6VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step6)
+    private let step7VC = NSOnboardingPermissionsViewController(type: .push)
+    private let step8VC = NSOnboardingFinishViewController()
 
     private var stepViewControllers: [NSOnboardingContentViewController] {
-        [step0VC, step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC]
-    }
-
-    private var legalStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step0VC)!
+        [step1VC, step2VC, step3VC, step4VC, step5VC, step6VC, step7VC, step8VC]
     }
 
     private var tracingPermissionStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step4VC)!
+        return stepViewControllers.firstIndex(of: step5VC)!
     }
 
     private var pushPermissionStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step6VC)!
+        return stepViewControllers.firstIndex(of: step7VC)!
+    }
+
+    private var disclaimerStepIndex: Int {
+        return stepViewControllers.firstIndex(of: step4VC)!
     }
 
     private var finalStepIndex: Int {
-        return stepViewControllers.firstIndex(of: step7VC)!
+        return stepViewControllers.firstIndex(of: step8VC)!
     }
 
     private var stepsWithoutContinue: [Int] {
@@ -56,21 +56,18 @@ class NSOnboardingViewController: NSViewController {
 
     private var currentStep: Int = 0
 
-    @UBOptionalUserDefault(key: "isPilotUser")
-    private(set) var isPilotUser: Bool?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupButtons()
 
-        step4VC.permissionButton.touchUpCallback = { [weak self] in
+        step5VC.permissionButton.touchUpCallback = { [weak self] in
             TracingManager.shared.requestTracingPermission { _ in
                 self?.animateToNextStep()
             }
         }
 
-        step6VC.permissionButton.touchUpCallback = {
+        step7VC.permissionButton.touchUpCallback = {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -79,7 +76,7 @@ class NSOnboardingViewController: NSViewController {
             }
         }
 
-        step7VC.finishButton.touchUpCallback = finishAnimation
+        step8VC.finishButton.touchUpCallback = finishAnimation
 
         setupSwipeRecognizers()
         addStepViewControllers()
@@ -106,8 +103,6 @@ class NSOnboardingViewController: NSViewController {
             UIView.animate(withDuration: 0.5) {
                 self.splashVC.view.alpha = 0
             }
-
-            self.showLegalBlockerIfRequired()
         }
     }
 
@@ -124,6 +119,8 @@ class NSOnboardingViewController: NSViewController {
         } else {
             showContinueButton()
         }
+
+        continueButton.title = stepViewControllers[step].continueButtonText
 
         if isLast {
             finishButton.alpha = 0
@@ -178,6 +175,9 @@ class NSOnboardingViewController: NSViewController {
     private func showContinueButton() {
         UIView.animate(withDuration: 0.5, delay: 0, options: .beginFromCurrentState, animations: {
             self.continueContainer.transform = .identity
+            if self.currentStep != 0 {
+                self.view.bringSubviewToFront(self.continueContainer)
+            }
         }, completion: nil)
     }
 
@@ -218,33 +218,8 @@ class NSOnboardingViewController: NSViewController {
         continueButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: 2 * NSPadding.large, bottom: NSPadding.medium, right: 2 * NSPadding.large)
         continueButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }
-            if self.currentStep == self.legalStepIndex {
-                self.showLegalPopup()
-            } else {
-                self.setOnboardingStep(self.currentStep + 1, animated: true)
-            }
-        }
-    }
-
-    private func showLegalPopup() {
-        let alert = UIAlertController(title: "onboarding_legal_alert_title".ub_localized, message: "onboarding_legal_alert_message".ub_localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "onboarding_legal_alert_no".ub_localized, style: .cancel, handler: { [weak self] _ in
-            guard let self = self else { return }
-            self.isPilotUser = false
-            self.showLegalBlockerIfRequired()
-        }))
-        alert.addAction(UIAlertAction(title: "onboarding_legal_alert_yes".ub_localized, style: .default, handler: { [weak self] _ in
-            guard let self = self else { return }
-            self.isPilotUser = true
             self.setOnboardingStep(self.currentStep + 1, animated: true)
-        }))
-        present(alert, animated: true, completion: nil)
-    }
-
-    private func showLegalBlockerIfRequired() {
-        guard isPilotUser == false else { return }
-        let alert = UIAlertController(title: "onboarding_legal_blocker_title".ub_localized, message: "onboarding_legal_blocker_message".ub_localized, preferredStyle: .alert)
-        present(alert, animated: true, completion: nil)
+        }
     }
 
     override func viewSafeAreaInsetsDidChange() {
@@ -291,21 +266,16 @@ class NSOnboardingViewController: NSViewController {
         if currentStep == finalStepIndex { // Completely disable swipe on last screen
             return
         }
-        if currentStep == legalStepIndex { // Disaple swipe on permission screen
-            return
-        }
 
         switch recognizer.direction {
         case .left:
-            if currentStep == pushPermissionStepIndex || currentStep == tracingPermissionStepIndex { // Disable swipe forward on permission screens
+            if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
+                // Disable swipe forward on permission screens
                 return
             }
             setOnboardingStep(currentStep + 1, animated: true)
         case .right:
             if currentStep == pushPermissionStepIndex + 1 || currentStep == tracingPermissionStepIndex + 1 { // Disable swipe back to permission screens
-                return
-            }
-            if currentStep == legalStepIndex + 1 { // Disable swipe back to legal screen
                 return
             }
             setOnboardingStep(currentStep - 1, animated: true)
