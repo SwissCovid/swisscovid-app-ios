@@ -123,6 +123,8 @@ class DatabaseSyncer {
                     UIStateManager.shared.lastSyncErrorTime = nil
                     UIStateManager.shared.hasTimeInconsistencyError = false
                     UIStateManager.shared.immediatelyShowSyncError = false
+                    UIStateManager.shared.syncErrorIsNetworkError = false
+                    UIStateManager.shared.syncError = nil
                 }
 
                 // wait another 2 days befor warning
