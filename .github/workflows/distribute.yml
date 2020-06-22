@@ -46,6 +46,9 @@ jobs:
         BADGE_TITLE: "DEV"
       run: bundle exec fastlane build_and_sign
 
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
+
     - name: Archive ipa file
       uses: actions/upload-artifact@v2
       with:
@@ -104,6 +107,9 @@ jobs:
         BADGE_TITLE: "TEST"
       run: bundle exec fastlane build_and_sign
 
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
+
     - name: Archive ipa file
       uses: actions/upload-artifact@v2
       with:
@@ -161,6 +167,9 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "ABN"
       run: bundle exec fastlane build_and_sign
+    
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
 
     - name: Archive ipa file
       uses: actions/upload-artifact@v2
@@ -205,6 +214,9 @@ jobs:
         SKIP_ADD_BADGE: true
         BADGE_TITLE: ""
       run: bundle exec fastlane build_and_sign
+
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
 
     - name: Archive ipa file
       uses: actions/upload-artifact@v2
