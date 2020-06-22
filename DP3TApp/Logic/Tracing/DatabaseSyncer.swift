@@ -82,6 +82,7 @@ class DatabaseSyncer {
                         UIStateManager.shared.lastSyncErrorTime = Date()
                         switch wrappedError {
                         case let .networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                            // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
