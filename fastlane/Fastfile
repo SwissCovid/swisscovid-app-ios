@@ -28,8 +28,7 @@ platform :ios do
   )
 
   build_number = getCustomBundleVersion()
-
-  add_badge(shield: ENV["BADGE_TITLE"]+"-blue", no_badge: true) unless ENV["SKIP_ADD_BADGE"]
+  add_badge(shield: ENV["BADGE_TITLE"]+ "-" + ENV['GITHUB_RUN_NUMBER'] + "-167cff", no_badge: true) unless ENV["SKIP_ADD_BADGE"]
 
   build_app(
     scheme: ENV["APP_SCHEME"],
