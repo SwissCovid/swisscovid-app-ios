@@ -9,7 +9,7 @@
  */
 
 import Foundation
-
+import ExposureNotification
 import DP3TSDK
 
 class DatabaseSyncer {
@@ -97,6 +97,9 @@ class DatabaseSyncer {
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false
                         }
+                    case let .exposureNotificationError(error: expError as ENError) where expError.code == ENError.Code.rateLimited:
+                        // never show the ratelimit error to the user
+                        UIStateManager.shared.syncError = nil
                     case .cancelled:
                         // background task got cancelled, dont show error immediately
                         UIStateManager.shared.immediatelyShowSyncError = false
