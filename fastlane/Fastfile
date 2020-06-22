@@ -2,8 +2,8 @@ opt_out_usage
 default_platform(:ios)
 
 platform :ios do
-  desc "Sets up signing"
-  lane :sign_and_build do
+  desc "Build and Sign app"
+  lane :build_and_sign do
 
   create_keychain(
     name: "githubactionci",
@@ -28,40 +28,19 @@ platform :ios do
   )
 
   build_number = getCustomBundleVersion()
-
-  add_badge(shield: ENV["BADGE_TITLE"]+"-blue", no_badge: true) unless ENV["SKIP_ADD_BADGE"]
-
-  increment_build_number(
-    build_number: build_number 
-  )
+  add_badge(shield: ENV["BADGE_TITLE"]+ "-" + ENV['GITHUB_RUN_NUMBER'] + "-167cff", no_badge: true) unless ENV["SKIP_ADD_BADGE"]
 
   build_app(
-    scheme: ENV["APP_SCHEME"]
-  )
-  end
-
-  desc "Push a new build to Testflight"
-  lane :upload_and_distribute do
-
-  gitlog = changelog_from_git_commits(commits_count: 10, pretty: "• %s", merge_commit_filtering: 'exclude_merges')
-  branch_name = ENV["GITHUB_REF"] || "unknown"
-  changelog = "Branch: " + branch_name + "\n" + gitlog
-
-  pilot(
-    ipa: ENV["IPA_OUTPUT_PATH"], 
-    changelog: changelog,
-    groups: ["Ubique Internal"],
-    beta_app_review_info: {
-      contact_email: ENV["REVIEW_CONTACT_EMAIL"],
-      contact_first_name: "Nicolas",
-      contact_last_name: "Maerki",
-      contact_phone: ENV["REVIEW_CONTACT_PHONE"]
-    }
+    scheme: ENV["APP_SCHEME"],
+    output_directory: "build/",
+    output_name: "SwissCovid.ipa",
+    archive_path: "build/SwissCovid.xcarchive",
+    buildlog_path: "build/build.log",
+    xcargs: "BUILD_NUMBER=#{build_number}"
   )
   end
 
   def getCustomBundleVersion()
-    # Produces Unique Build Numbers using current timestamp
     datestring_now = DateTime.now.strftime('%y%m%d.%H%M')
     bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}"
     return bundle_version
