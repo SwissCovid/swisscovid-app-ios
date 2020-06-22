@@ -92,7 +92,9 @@ class DatabaseSyncer {
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case .timeInconsistency:
+                            UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.hasTimeInconsistencyError = true
+                            UIStateManager.shared.syncErrorIsNetworkError = false
                         default:
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false

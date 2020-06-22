@@ -122,6 +122,7 @@ class UIStateLogic {
             }
             if let codedError = UIStateManager.shared.syncError, let errorCode = codedError.errorCodeString {
                 if manager.immediatelyShowSyncError {
+                    newState.homescreen.meldungen.errorTitle = codedError.errorTitle
                     newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
                 } else {
                     newState.homescreen.meldungen.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
@@ -142,6 +143,7 @@ class UIStateLogic {
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
             if let codedError = UIStateManager.shared.syncError {
+                newState.homescreen.meldungen.errorTitle = codedError.errorTitle
                 newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
 
                 #if ENABLE_VERBOSE
