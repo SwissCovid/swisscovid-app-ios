@@ -31,16 +31,12 @@ platform :ios do
 
   add_badge(shield: ENV["BADGE_TITLE"]+"-blue", no_badge: true) unless ENV["SKIP_ADD_BADGE"]
 
-  increment_build_number(
-    build_number: getCustomBundleVersion() 
-  )
-
   build_app(
     scheme: ENV["APP_SCHEME"],
     output_name: "build/SwissCovid.ipa",
     archive_path: "build/SwissCovid.xcarchive",
     buildlog_path: "build/build.log",
-    xcargs: 
+    xcargs: "BUILD_NUMBER=#{build_number}"
   )
   end
 
