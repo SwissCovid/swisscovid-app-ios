@@ -59,13 +59,12 @@ class DatabaseSyncer {
         let runningInBackground: () -> Bool = {
             if Thread.isMainThread {
                 return UIApplication.shared.applicationState == .background
-            } else  {
+            } else {
                 return DispatchQueue.main.sync {
                     UIApplication.shared.applicationState == .background
                 }
             }
         }
-
 
         DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
             switch result {
