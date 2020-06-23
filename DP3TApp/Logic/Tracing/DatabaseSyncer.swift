@@ -8,9 +8,9 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
-import ExposureNotification
 import DP3TSDK
+import ExposureNotification
+import Foundation
 
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
@@ -59,13 +59,12 @@ class DatabaseSyncer {
         let runningInBackground: () -> Bool = {
             if Thread.isMainThread {
                 return UIApplication.shared.applicationState == .background
-            } else  {
+            } else {
                 return DispatchQueue.main.sync {
                     UIApplication.shared.applicationState == .background
                 }
             }
         }
-
 
         DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
             switch result {
