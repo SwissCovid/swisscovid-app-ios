@@ -9,7 +9,7 @@
  */
 
 import Foundation
-
+import ExposureNotification
 import DP3TSDK
 
 class DatabaseSyncer {
@@ -81,6 +81,7 @@ class DatabaseSyncer {
                         UIStateManager.shared.lastSyncErrorTime = Date()
                         switch wrappedError {
                         case let .networkSessionError(netErr as NSError) where netErr.code == -999 && netErr.domain == NSURLErrorDomain:
+                            // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
@@ -91,11 +92,16 @@ class DatabaseSyncer {
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
                         case .timeInconsistency:
+                            UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.hasTimeInconsistencyError = true
+                            UIStateManager.shared.syncErrorIsNetworkError = false
                         default:
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false
                         }
+                    case let .exposureNotificationError(error: expError as ENError) where expError.code == ENError.Code.rateLimited:
+                        // never show the ratelimit error to the user
+                        UIStateManager.shared.syncError = nil
                     case .cancelled:
                         // background task got cancelled, dont show error immediately
                         UIStateManager.shared.immediatelyShowSyncError = false
@@ -120,6 +126,8 @@ class DatabaseSyncer {
                     UIStateManager.shared.lastSyncErrorTime = nil
                     UIStateManager.shared.hasTimeInconsistencyError = false
                     UIStateManager.shared.immediatelyShowSyncError = false
+                    UIStateManager.shared.syncErrorIsNetworkError = false
+                    UIStateManager.shared.syncError = nil
                 }
 
                 // wait another 2 days befor warning
