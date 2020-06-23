@@ -85,8 +85,9 @@ private class FakePublishOperation: Operation {
     override func main() {
         guard isCancelled == false else { return }
 
-        guard let startDate = manager.nextScheduledFakeRequestDate,
-            Date() >= startDate else {
+        let startDate = manager.nextScheduledFakeRequestDate ?? manager.rescheduleFakeRequest()
+
+        guard Date() >= startDate else {
             Logger.log("Too early for fake request")
             return
         }
