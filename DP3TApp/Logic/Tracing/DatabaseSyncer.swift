@@ -101,7 +101,13 @@ class DatabaseSyncer {
                         }
                     case let .exposureNotificationError(error: expError as ENError) where expError.code == ENError.Code.rateLimited:
                         // never show the ratelimit error to the user
+                        // reset all error variables since it could be that we transitioned from another error state to this
                         UIStateManager.shared.syncError = nil
+                        UIStateManager.shared.firstSyncErrorTime = nil
+                        UIStateManager.shared.lastSyncErrorTime = nil
+                        UIStateManager.shared.hasTimeInconsistencyError = false
+                        UIStateManager.shared.immediatelyShowSyncError = false
+                        UIStateManager.shared.syncErrorIsNetworkError = false
                     case .cancelled:
                         // background task got cancelled, dont show error immediately
                         UIStateManager.shared.immediatelyShowSyncError = false
