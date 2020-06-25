@@ -40,6 +40,8 @@ Platform independent UX and design discussions should be reported in [dp3t-ux-sc
 ## Further Documentation
 The full set of documents for DP3T is at https://github.com/DP-3T/documents. Please refer to the technical documents and whitepapers for a description of the implementation.
 
+A description of the usage of the Apple Exposure Notifcation API can be found [here](https://github.com/DP-3T/dp3t-sdk-ios/blob/master/EXPOSURE_NOTIFICATION_API_USAGE.md).
+
 
 ## Installation and Building
 
@@ -50,6 +52,12 @@ The project should be opened with the latest Xcode versions, 11.5. Dependencies 
 The project is configured for a specific provisioning profile. To install the app on your own device, you will have to update the settings using your own provisioning profile.
 
 Apples Exposure Notification Framework requires a  `com.apple.developer.exposure-notification` entitlement that will only be available to government entities. You will find more information in the [Exposure Notification Addendum](https://developer.apple.com/contact/request/download/Exposure_Notification_Addendum.pdf) and you can request the entitlement  [here](https://developer.apple.com/contact/request/exposure-notification-entitlement).
+
+## Known issues
+
+- [iOS 13.5 Background Task not always triggered consistently](https://github.com/DP-3T/dp3t-app-ios-ch/issues/163)
+- [IEN11 and Insufficient Memory popup](https://github.com/DP-3T/dp3t-app-ios-ch/issues/162)
+- [Exposure Notification Region Changed](https://github.com/DP-3T/dp3t-app-ios-ch/issues/127)
 
 
 
