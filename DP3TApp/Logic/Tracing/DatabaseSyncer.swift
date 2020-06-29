@@ -8,9 +8,9 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
-import ExposureNotification
 import DP3TSDK
+import ExposureNotification
+import Foundation
 
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
@@ -84,7 +84,7 @@ class DatabaseSyncer {
                             // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
-                        case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
+                        case let .HTTPFailureResponse(status: status) where (502 ... 504).contains(status):
                             // this means the backend is under maintanance
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
