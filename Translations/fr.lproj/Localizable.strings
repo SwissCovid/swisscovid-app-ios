@@ -18,7 +18,7 @@
 "inform_continue_button" = "Continuer";
 
 /*Informieren: Senden Button*/
-"inform_send_button_title" = "Enviar";
+"inform_send_button_title" = "Envoyer";
 
 /*Informieren: Danke*/
 "inform_send_thankyou" = "Merci beaucoup";
