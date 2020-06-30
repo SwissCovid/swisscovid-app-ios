@@ -25,19 +25,26 @@ class FakePublishManager {
     @UBOptionalUserDefault(key: "nextScheduledFakeRequestDate")
     private var nextScheduledFakeRequestDateStore: Date?
 
-    var nextScheduledFakeRequestDate: Date? {
-        queue.sync {
-            self.nextScheduledFakeRequestDateStore
+    var nextScheduledFakeRequestDate: Date {
+        if let date = queue.sync(execute: { nextScheduledFakeRequestDateStore }) {
+            return date
+        } else {
+            return rescheduleFakeRequest()
         }
     }
 
-    var now: Date {
-        .init()
-    }
+    var now: Date { Date() }
+
+    var delay: TimeInterval { Double.random(in: 20 ... 30) }
 
     private func syncInterval() -> TimeInterval {
-        // Rate corresponding to 1 dummy per 5 days
-        let randomDay = ExponentialDistribution.sample(rate: 0.2)
+        #if DEBUG || RELEASE_DEV
+            let rate: Double = 1.0
+        #else
+            // Rate corresponding to 1 dummy per 5 days
+            let rate: Double = 0.2
+        #endif
+        let randomDay = ExponentialDistribution.sample(rate: rate)
         let secondsInADay = Double(24 * 60 * 60)
         return randomDay * secondsInADay
     }
@@ -61,8 +68,8 @@ class FakePublishManager {
     }
 
     @discardableResult
-    func runTask(completionBlock: (() -> Void)? = nil) -> Operation {
-        let operation = FakePublishOperation(manager: self)
+    func runTask(reportingManager: ReportingManagerProtocol = ReportingManager.shared, completionBlock: (() -> Void)? = nil) -> Operation {
+        let operation = FakePublishOperation(manager: self, reportingManager: reportingManager, now: now, delay: delay)
         operation.completionBlock = completionBlock
         operationQueue.addOperation(operation)
         return operation
@@ -70,29 +77,38 @@ class FakePublishManager {
 }
 
 private class FakePublishOperation: Operation {
-    weak var manager: FakePublishManager!
+    private weak var manager: FakePublishManager!
 
-    init(manager: FakePublishManager) {
+    private weak var reportingManager: ReportingManagerProtocol!
+
+    private var now: Date
+
+    private var delay: TimeInterval
+
+    init(manager: FakePublishManager, reportingManager: ReportingManagerProtocol, now: Date, delay: TimeInterval) {
         self.manager = manager
+        self.reportingManager = reportingManager
+        self.now = now
+        self.delay = delay
         super.init()
     }
 
     override func main() {
         guard isCancelled == false else { return }
 
-        guard let startDate = manager.nextScheduledFakeRequestDate,
-            Date() >= startDate else {
+        let startDate = manager.nextScheduledFakeRequestDate
+
+        guard now >= startDate else {
             Logger.log("Too early for fake request")
             return
         }
 
         // add a delay so its not guessable from http traffic if a report was fake or not
-        let delay = Double.random(in: 20 ... 30)
         let group = DispatchGroup()
         group.enter()
         DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) { [weak self] in
             Logger.log("Start Fake Publish", appState: true)
-            ReportingManager.shared.report(isFakeRequest: true) { [weak self] error in
+            self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
                 guard let self = self else { return }
                 if error != nil {
                     self.cancel()

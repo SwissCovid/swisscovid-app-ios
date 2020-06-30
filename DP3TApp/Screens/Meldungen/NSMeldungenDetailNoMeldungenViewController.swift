@@ -32,7 +32,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         let buttonView = UIView()
 
-        let externalLinkButton = NSExternalLinkButton(color: .ns_green)
+        let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_green))
         externalLinkButton.title = "no_meldungen_box_link".ub_localized
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }

@@ -31,12 +31,17 @@ class NSFontSize {
 
 public enum NSLabelType: UBLabelType {
     case title
+    case splashTitle
     case textLight
+    case smallLight
     case textBold
+    case smallBold
     case button // used for button
     case uppercaseBold
     case date
     case smallRegular
+    case interRegular
+    case interBold
 
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize
@@ -56,18 +61,23 @@ public enum NSLabelType: UBLabelType {
 
         switch self {
         case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
+        case .splashTitle: return UIFont(name: boldFontName, size: bfs + 11.0)!
         case .textLight: return UIFont(name: lightFontName, size: bfs)!
+        case .smallLight: return UIFont(name: lightFontName, size: bfs - 3.0)!
         case .textBold: return UIFont(name: boldFontName, size: bfs)!
+        case .smallBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .button: return UIFont(name: boldFontName, size: bfs)!
         case .uppercaseBold: return UIFont(name: boldFontName, size: bfs)!
         case .date: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
+        case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
+        case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
         }
     }
 
     public var textColor: UIColor {
         switch self {
-        case .button:
+        case .button, .splashTitle:
             return .white
         case .smallRegular:
             return UIColor.black.withAlphaComponent(0.28)
@@ -79,12 +89,17 @@ public enum NSLabelType: UBLabelType {
     public var lineSpacing: CGFloat {
         switch self {
         case .title: return 30.0 / 22.0
+        case .splashTitle: return 30.0 / 22.0
         case .textBold: return 24.0 / 16.0
+        case .smallBold: return 24.0 / 16.0
         case .button: return 1.0
         case .uppercaseBold: return 26.0 / 16.0
         case .textLight: return 24.0 / 16.0
+        case .smallLight: return 24.0 / 16.0
         case .date: return 2.0
         case .smallRegular: return 26.0 / 13.0
+        case .interRegular: return 24.0 / 16.0
+        case .interBold: return 24.0 / 16.0
         }
     }
 
@@ -97,7 +112,7 @@ public enum NSLabelType: UBLabelType {
             return 0.5
         }
 
-        if self == .smallRegular {
+        if self == .smallRegular || self == .smallLight || self == .smallBold {
             return 0.3
         }
 
@@ -113,11 +128,13 @@ public enum NSLabelType: UBLabelType {
     }
 
     public var hyphenationFactor: Float {
-        1.0
+        if self == .splashTitle { return 0.0 }
+        return 1.0
     }
 
     public var lineBreakMode: NSLineBreakMode {
-        .byTruncatingTail
+        if self == .splashTitle { return .byWordWrapping }
+        return .byTruncatingTail
     }
 }
 

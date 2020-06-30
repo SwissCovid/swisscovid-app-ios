@@ -47,7 +47,7 @@ class UIStateLogic {
         //
 
         var infectionStatus = tracingState.infectionStatus
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             setDebugOverwrite(&infectionStatus, &newState)
         #endif
 
@@ -64,9 +64,12 @@ class UIStateLogic {
         }
 
         // Set debug helpers
-        #if ENABLE_TESTING
+        #if ENABLE_STATUS_OVERRIDE
             setDebugMeldungen(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
+        #endif
+
+        #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
             setDebugLog(&newState)
         #endif
 
@@ -119,12 +122,13 @@ class UIStateLogic {
             }
             if let codedError = UIStateManager.shared.syncError, let errorCode = codedError.errorCodeString {
                 if manager.immediatelyShowSyncError {
+                    newState.homescreen.meldungen.errorTitle = codedError.errorTitle
                     newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
                 } else {
                     newState.homescreen.meldungen.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
                 }
 
-                #if ENABLE_TESTING
+                #if ENABLE_VERBOSE
                     newState.homescreen.meldungen.errorCode = "\(errorCode): \(codedError)"
                 #else
                     newState.homescreen.meldungen.errorCode = errorCode
@@ -139,9 +143,10 @@ class UIStateLogic {
             last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.meldungen.syncProblemNetworkingError = true
             if let codedError = UIStateManager.shared.syncError {
+                newState.homescreen.meldungen.errorTitle = codedError.errorTitle
                 newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
 
-                #if ENABLE_TESTING
+                #if ENABLE_VERBOSE
                     newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else
                     newState.homescreen.meldungen.errorCode = codedError.errorCodeString
@@ -151,18 +156,7 @@ class UIStateLogic {
     }
 
     private func setInfoBoxState(_ newState: inout UIStateModel) {
-        if let localizedInfoBox = ConfigManager.currentConfig?.infoBox {
-            let infoBox: ConfigResponseBody.LocalizedInfobox.InfoBox
-            switch Language.current {
-            case .german:
-                infoBox = localizedInfoBox.deInfoBox
-            case .italian:
-                infoBox = localizedInfoBox.itInfoBox
-            case .english:
-                infoBox = localizedInfoBox.enInfoBox
-            case .france:
-                infoBox = localizedInfoBox.frInfoBox
-            }
+        if let infoBox = ConfigManager.currentConfig?.infoBox?.value {
             newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
                                                                           text: infoBox.msg,
                                                                           link: infoBox.urlTitle,
@@ -208,7 +202,7 @@ class UIStateLogic {
         }
     }
 
-    #if ENABLE_TESTING
+    #if ENABLE_STATUS_OVERRIDE
 
         // MARK: - DEBUG Helpers
 
@@ -259,7 +253,9 @@ class UIStateLogic {
                 newState.debug.infectionStatus = .infected
             }
         }
+    #endif
 
+    #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
         private func setDebugLog(_ newState: inout UIStateModel) {
             let logs = Logger.lastLogs
             let df = DateFormatter()

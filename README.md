@@ -19,11 +19,11 @@ This is a COVID-19 tracing client using the [DP3T iOS SDK](https://github.com/DP
 
 ## Contribution Guide
 
-The DP3T App is not yet complete. It has not yet been reviewed or audited for security and compatibility. We are both continuing the development and have started a security review. This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
+This project is truly open-source and we welcome any feedback on the code regarding both the implementation and security aspects.
 
 Bugs or potential problems should be reported using Github issues. We welcome all pull requests that improve the quality the source code. 
 
-Please note that the app will be available with approved translations in English, German, French and Italian. Pull requests for additional translations currently won't be merged.
+Please note that the app will be available with approved translations in English, German, French, Italian, Romansh, Albanian, Bosnian, Croatian, Portuguese, Serbian and Spanish. Pull requests for additional translations currently won't be merged.
 
 Platform independent UX and design discussions should be reported in [dp3t-ux-screenflows-ch](https://github.com/DP-3T/dp3t-ux-screenflows-ch)
 
@@ -40,6 +40,8 @@ Platform independent UX and design discussions should be reported in [dp3t-ux-sc
 ## Further Documentation
 The full set of documents for DP3T is at https://github.com/DP-3T/documents. Please refer to the technical documents and whitepapers for a description of the implementation.
 
+A description of the usage of the Apple Exposure Notifcation API can be found [here](https://github.com/DP-3T/dp3t-sdk-ios/blob/master/EXPOSURE_NOTIFICATION_API_USAGE.md).
+
 
 ## Installation and Building
 
@@ -50,6 +52,12 @@ The project should be opened with the latest Xcode versions, 11.5. Dependencies 
 The project is configured for a specific provisioning profile. To install the app on your own device, you will have to update the settings using your own provisioning profile.
 
 Apples Exposure Notification Framework requires a  `com.apple.developer.exposure-notification` entitlement that will only be available to government entities. You will find more information in the [Exposure Notification Addendum](https://developer.apple.com/contact/request/download/Exposure_Notification_Addendum.pdf) and you can request the entitlement  [here](https://developer.apple.com/contact/request/exposure-notification-entitlement).
+
+## Known issues
+
+- [iOS 13.5 Background Task not always triggered consistently](https://github.com/DP-3T/dp3t-app-ios-ch/issues/163)
+- [IEN11 and Insufficient Memory popup](https://github.com/DP-3T/dp3t-app-ios-ch/issues/162)
+- [Exposure Notification Region Changed](https://github.com/DP-3T/dp3t-app-ios-ch/issues/127)
 
 
 

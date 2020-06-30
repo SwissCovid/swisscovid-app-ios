@@ -10,22 +10,44 @@
 
 import UIKit
 
+struct LocalizedValue<T: UBCodable>: UBCodable {
+    let dic: [String: T]
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        dic = (try container.decode([String: T].self)).reduce(into: [String: T]()) { result, new in
+            result[String(new.key.prefix(2))] = new.value
+        }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(dic)
+    }
+
+    var value: T? {
+        let preferredLanguages = Locale.preferredLanguages
+
+        for preferredLanguage in preferredLanguages {
+            if let code = preferredLanguage.components(separatedBy: "-").first,
+                let val = dic[code] {
+                return val
+            }
+        }
+
+        return dic["en"] ?? nil
+    }
+}
+
 class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
-    public let infoBox: LocalizedInfobox?
+    public let infoBox: LocalizedValue<InfoBox>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
 
-    class LocalizedInfobox: UBCodable {
-        let deInfoBox: InfoBox
-        let frInfoBox: InfoBox
-        let itInfoBox: InfoBox
-        let enInfoBox: InfoBox
-
-        class InfoBox: UBCodable {
-            let title, msg: String
-            let url: URL?
-            let urlTitle: String?
-        }
+    class InfoBox: UBCodable {
+        let title, msg: String
+        let url: URL?
+        let urlTitle: String?
     }
 
     class GAENSDKConfig: Codable {

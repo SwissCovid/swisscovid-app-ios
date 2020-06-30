@@ -18,7 +18,7 @@ struct UIStateModel: Equatable {
     var shouldStartAtMeldungenDetail = false
     var meldungenDetail: MeldungenDetail = MeldungenDetail()
 
-    #if ENABLE_TESTING
+    #if ENABLE_STATUS_OVERRIDE
         var debug: Debug = Debug()
     #endif
 
@@ -48,6 +48,7 @@ struct UIStateModel: Equatable {
             var syncProblemOtherError: Bool = false
             var canRetrySyncError: Bool = true
             var backgroundUpdateProblem: Bool = false
+            var errorTitle: String?
             var errorCode: String?
             var errorMessage: String?
         }
@@ -88,7 +89,7 @@ struct UIStateModel: Equatable {
         }
     }
 
-    #if ENABLE_TESTING
+    #if ENABLE_STATUS_OVERRIDE
         struct Debug: Equatable {
             var lastSync: Date?
             var infectionStatus: DebugInfectionStatus = .healthy

@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     internal var window: UIWindow?
     private var lastForegroundActivity: Date?
 
+    @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
+    var isFirstLaunch: Bool
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
+        if UserStorage.shared.hasCompletedOnboarding {
+            isFirstLaunch = false
+        }
+
+        // Reset keychain on first launch
+        if isFirstLaunch {
+            Keychain().deleteAll()
+            isFirstLaunch = false
+        }
+
         // setup sdk
         TracingManager.shared.initialize()
 
@@ -50,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     private func setupWindow() {
+        KeychainMigration.migrate()
+
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.overrideUserInterfaceStyle = .light
 
@@ -69,6 +85,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+    func applicationDidBecomeActive(_: UIApplication) {
+        // Start sync after app became active
+        TracingManager.shared.updateStatus(shouldSync: true, completion: nil)
+    }
+
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
 
@@ -80,12 +101,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
+            NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
             startForceUpdateCheck()
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
 
         FakePublishManager.shared.runTask()
+
+        NSSynchronizationPersistence.shared?.appendLog(eventType: .open, date: Date(), payload: nil)
     }
 
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
@@ -98,8 +122,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shouldJump,
             let navigationController = window?.rootViewController as? NSNavigationController,
             let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
-            navigationController.popToRootViewController(animated: false)
-            homescreenVC.presentMeldungenDetail(animated: false)
+            // no need to present NSMeldungenDetailViewController if its already showing
+            if !(navigationController.viewControllers.last is NSMeldungenDetailViewController) {
+                navigationController.popToRootViewController(animated: false)
+                homescreenVC.presentMeldungenDetail(animated: false)
+            }
             return true
         } else {
             return false
@@ -112,6 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // App should not have badges
         // Reset to 0 to ensure a unexpected badge doesn't stay forever
         application.applicationIconBadgeNumber = 0
+        TracingLocalPush.shared.clearNotifications()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -124,6 +152,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             let backgroundTime = -(lastForegroundActivity?.timeIntervalSinceNow ?? 0)
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
+            application.applicationIconBadgeNumber = 0
+            TracingLocalPush.shared.clearNotifications()
         }
     }
 

@@ -20,6 +20,27 @@ class NSBegegnungenModuleView: NSModuleBaseView {
 
     private let tracingEndedView = NSInfoBoxView(title: "tracing_ended_title".ub_localized, subText: "tracing_ended_text".ub_localized, image: UIImage(named: "ic-stopp")!, illustration: UIImage(named: "illu-tracing-ended")!, titleColor: .ns_purple, subtextColor: .ns_text, backgroundColor: .ns_purpleBackground)
 
+    private let tracingInfoBox: UIView = {
+        let view = UIView()
+        let imageView = UIImageView(image: UIImage(named: "ic-info-blue"))
+        let titleLabel = NSLabel(.textLight, textColor: .ns_blue, numberOfLines: 0, textAlignment: .natural)
+        titleLabel.text = "tracing_active_tracking_always_info".ub_localized
+        view.addSubview(imageView)
+        view.addSubview(titleLabel)
+        imageView.snp.makeConstraints { make in
+            make.leading.top.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+        }
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium + 3.0)
+            make.leading.equalTo(imageView.snp.trailing).offset(NSPadding.medium)
+            make.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
+        }
+        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 260), for: .horizontal)
+        imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 760), for: .horizontal)
+        return view
+    }()
+
     private var tracingErrorView: NSTracingErrorView? {
         NSTracingErrorView.tracingErrorView(for: uiState)
     }
@@ -44,7 +65,7 @@ class NSBegegnungenModuleView: NSModuleBaseView {
         if let errorView = tracingErrorView {
             return [errorView]
         } else {
-            return [tracingActiveView]
+            return [tracingActiveView, tracingInfoBox]
         }
     }
 

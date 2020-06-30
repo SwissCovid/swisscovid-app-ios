@@ -29,6 +29,10 @@ extension DateFormatter {
         dateFormatter.string(from: date)
     }
 
+    static func ub_dayString(from date: Date) -> String {
+        dayDateFormatter.string(from: date)
+    }
+
     static func ub_daysAgo(from date: Date, addExplicitDate: Bool) -> String {
         let days = date.ns_differenceInDaysWithDate(date: Date())
 

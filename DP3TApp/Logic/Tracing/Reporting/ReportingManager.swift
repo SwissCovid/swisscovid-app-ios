@@ -9,10 +9,30 @@
  */
 
 import DP3TSDK
-
 import Foundation
 
-class ReportingManager {
+enum ReportingProblem {
+    case failure(error: CodedError)
+    case invalidCode
+}
+
+protocol ReportingManagerProtocol: AnyObject {
+    var fakeCode: String { get }
+    func report(covidCode: String, isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void)
+    func report(isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void)
+}
+
+extension ReportingManagerProtocol {
+    var fakeCode: String {
+        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
+    }
+
+    func report(isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void) {
+        report(covidCode: fakeCode, isFakeRequest: fake, completion: completion)
+    }
+}
+
+class ReportingManager: ReportingManagerProtocol {
     // MARK: - Shared
 
     static let shared = ReportingManager()
@@ -23,11 +43,6 @@ class ReportingManager {
 
     // MARK: - Variables
 
-    enum ReportingProblem {
-        case failure(error: CodedError)
-        case invalidCode
-    }
-
     // in memory dictionary for codes we already have a token and date,
     // if only the second request (iWasExposed) fails
     private var codeDictionary: [String: (String, Date)] = [:]
@@ -36,11 +51,7 @@ class ReportingManager {
 
     // MARK: - API
 
-    private static var fakeCode: String {
-        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
-    }
-
-    func report(covidCode: String = ReportingManager.fakeCode, isFakeRequest fake: Bool = false, completion: @escaping (ReportingProblem?) -> Void) {
+    func report(covidCode: String, isFakeRequest fake: Bool = false, completion: @escaping (ReportingProblem?) -> Void) {
         if let tokenDate = codeDictionary[covidCode] {
             // only second part needed
             sendIWasExposed(token: tokenDate.0, date: tokenDate.1, isFakeRequest: fake, covidCode: covidCode, completion: completion)
@@ -74,7 +85,14 @@ class ReportingManager {
                 self.codeDictionary.removeValue(forKey: covidCode)
                 switch result {
                 case .success:
-                    TracingManager.shared.updateStatus { error in
+                    if !fake {
+                        // during infection, tracing is disabled
+                        // after infection, it works again, but user must manually
+                        // enable if desired
+                        TracingManager.shared.isActivated = false
+                    }
+
+                    TracingManager.shared.updateStatus(shouldSync: false) { error in
                         if let error = error {
                             completion(.failure(error: error))
                         } else {
