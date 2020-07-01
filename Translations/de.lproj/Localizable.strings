@@ -39,7 +39,7 @@
 "push_exposed_title" = "Neue Nachricht";
 
 /*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
-"push_exposed_text" = "Öffnen Sie die App um die Nachricht zu lesen.";
+"push_exposed_text" = "Öffnen Sie die App, um die Nachricht zu lesen.";
 
 /*Okay Button Titel*/
 "android_button_ok" = "OK";
@@ -196,7 +196,7 @@
 "inform_detail_box_button" = "Covidcode eingeben";
 
 /*Informieren Detail Weisse Box Text*/
-"inform_detail_box_text" = "Mit der Eingabe des Covidcodes teilen Sie der App mit, dass sie positiv auf das neue Coronavirus getestet wurden.";
+"inform_detail_box_text" = "Mit der Eingabe des Covidcodes teilen Sie der App mit, dass Sie positiv auf das neue Coronavirus getestet wurden.";
 
 /*Symptome Detail Subtitel*/
 "symptom_detail_subtitle" = "Was tun, wenn ich ...";
@@ -326,7 +326,7 @@
 "onboarding_prinzip_title" = "Dem Virus einen\nSchritt voraus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Mit der SwissCovid App können alle dazu beitragen die Verbreitung des neuen Coronavirus einzudämmen.";
+"onboarding_prinzip_text1" = "Mit der SwissCovid App können alle dazu beitragen, die Verbreitung des neuen Coronavirus einzudämmen.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Die App informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
@@ -643,7 +643,7 @@
 "symptom_faq1_title" = "Was ist der Coronavirus-Check?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Online-Check des BAG für eine Handlungsempfehlung.";
+"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Online-Check des BAG, um eine Handlungsempfehlung zu erhalten.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";

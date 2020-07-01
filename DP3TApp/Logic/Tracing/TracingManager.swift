@@ -103,9 +103,9 @@ class TracingManager: NSObject {
     func beginUpdatesAndTracing() {
         if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
-                try DP3TTracing.startTracing(completionHandler: { (_) in
-                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
-                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
+                try DP3TTracing.startTracing(completionHandler: { _ in
+                    // When tracing is enabled trigger sync (for example after ENManager is initialized)
+                    DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
                 })
                 UIStateManager.shared.tracingStartError = nil
             } catch DP3TTracingError.userAlreadyMarkedAsInfected {

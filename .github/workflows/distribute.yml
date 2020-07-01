@@ -1,21 +1,13 @@
-name: testflight
+name: appstore
 
 on:
   push:
-    branches-ignore:
-      - '**'
+    branches: 
+      - master
 
-#on:
-#  push:
-#    branches:
-#      - master
-#      - release
-#  pull_request:
-#    branches:
-#      - master
 
 jobs:
-  testflight_dev:
+  appstore_dev:
     runs-on: macOS-latest
 
     steps:
@@ -30,10 +22,19 @@ jobs:
     - name: Installs magick
       run: brew install imagemagick
 
+    - name: Remove current version of Pango (contains a bug)
+      run: brew unlink pango 
+    
+    - name: Install older version of Pango 
+      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
+
+    - name: Use older version of Pango
+      run: brew switch pango 1.42.4_1
+
     - name: Sets up bundler
       run: bundle update --bundler
       
-    - name: Sign and build
+    - name: Build and Sign
       env:
         MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -43,17 +44,31 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_DEV }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "DEV"
-      run: bundle exec fastlane sign_and_build
-      
-    - name: Upload and distribution
-      env:
-        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
-        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
-      run: bundle exec fastlane upload_and_distribute
+      run: bundle exec fastlane build_and_sign
 
-  testflight_test:
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
+
+    - name: Archive ipa file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_DEV_SwissCovid.ipa
+        path: build/SwissCovid.ipa
+    
+    - name: Archive xcarchive (incl symbols) files
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_DEV_SwissCovid.xcarchive
+        path: "build/SwissCovid.xcarchive"
+    
+    - name: Archive log file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_DEV_Build.log
+        path: "build/build.log"
+
+
+  appstore_test:
     runs-on: macOS-latest
 
     steps:
@@ -68,10 +83,19 @@ jobs:
     - name: Installs magick
       run: brew install imagemagick
 
+    - name: Remove current version of Pango (contains a bug)
+      run: brew unlink pango 
+    
+    - name: Install older version of Pango 
+      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
+
+    - name: Use older version of Pango
+      run: brew switch pango 1.42.4_1
+
     - name: Sets up bundler
       run: bundle update --bundler
       
-    - name: Sign and build
+    - name: Build and Sign
       env:
         MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -80,18 +104,32 @@ jobs:
         APP_SCHEME: "Release-Test"
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_TEST }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
-        BADGE_TITLE: "DEV"
-      run: bundle exec fastlane sign_and_build
-      
-    - name: Upload and distribution
-      env:
-        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
-        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
-      run: bundle exec fastlane upload_and_distribute
+        BADGE_TITLE: "TEST"
+      run: bundle exec fastlane build_and_sign
 
-  testflight_abnahme:
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
+
+    - name: Archive ipa file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_TEST_SwissCovid.ipa
+        path: build/SwissCovid.ipa
+    
+    - name: Archive xcarchive (incl symbols) files
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_TEST_SwissCovid.xcarchive
+        path: "build/SwissCovid.xcarchive"
+    
+    - name: Archive log file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_TEST_Build.log
+        path: "build/build.log"
+
+
+  appstore_abnahme:
     runs-on: macOS-latest
 
     steps:
@@ -106,10 +144,19 @@ jobs:
     - name: Installs magick
       run: brew install imagemagick
 
+    - name: Remove current version of Pango (contains a bug)
+      run: brew unlink pango 
+    
+    - name: Install older version of Pango 
+      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
+
+    - name: Use older version of Pango
+      run: brew switch pango 1.42.4_1
+
     - name: Sets up bundler
       run: bundle update --bundler
       
-    - name: Sign and build
+    - name: Build and Sign
       env:
         MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -119,17 +166,31 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_ABNAHME }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "ABN"
-      run: bundle exec fastlane sign_and_build
-      
-    - name: Upload and distribution
-      env:
-        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
-        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
-        REVIEW_CONTACT_EMAIL: ${{ secrets.REVIEW_CONTACT_EMAIL }}
-        REVIEW_CONTACT_PHONE: ${{ secrets.REVIEW_CONTACT_PHONE }}
-      run: bundle exec fastlane upload_and_distribute
+      run: bundle exec fastlane build_and_sign
+    
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
 
-  testflight_prod:
+    - name: Archive ipa file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_ABNAHME_SwissCovid.ipa
+        path: build/SwissCovid.ipa
+    
+    - name: Archive xcarchive (incl symbols) files
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_ABNAHME_SwissCovid.xcarchive
+        path: "build/SwissCovid.xcarchive"
+    
+    - name: Archive log file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_ABNAHME_Build.log
+        path: "build/build.log"
+
+
+  appstore_prod:
     runs-on: macOS-latest
 
     steps:
@@ -141,7 +202,7 @@ jobs:
     - name: Sets up bundler
       run: bundle update --bundler
     
-    - name: Sign and build
+    - name: Build and Sign
       env:
         MATCH_GIT_URL: ${{ secrets.MATCH_GIT_URL }}
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
@@ -152,16 +213,25 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         SKIP_ADD_BADGE: true
         BADGE_TITLE: ""
-      run: bundle exec fastlane sign_and_build
+      run: bundle exec fastlane build_and_sign
+
+    - name: SHA256
+      run: shasum -a 256 build/SwissCovid.ipa
 
     - name: Archive ipa file
-      uses: actions/upload-artifact@v1
+      uses: actions/upload-artifact@v2
       with:
-        name: dp3t.ipa
-        path: "DP3TApp.ipa"
+        name: AppStore_PROD_SwissCovid.ipa
+        path: build/SwissCovid.ipa
     
-    - name: Archive dSYM files
-      uses: actions/upload-artifact@v1
+    - name: Archive xcarchive (incl symbols) files
+      uses: actions/upload-artifact@v2
       with:
-        name: dp3t_dSYMs.zip
-        path: "DP3TApp.app.dSYM.zip"
+        name: AppStore_PROD_SwissCovid.xcarchive
+        path: "build/SwissCovid.xcarchive"
+    
+    - name: Archive log file
+      uses: actions/upload-artifact@v2
+      with:
+        name: AppStore_PROD_Build.log
+        path: "build/build.log"

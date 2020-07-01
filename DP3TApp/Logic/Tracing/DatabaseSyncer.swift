@@ -8,9 +8,9 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
-
 import DP3TSDK
+import ExposureNotification
+import Foundation
 
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
@@ -59,13 +59,12 @@ class DatabaseSyncer {
         let runningInBackground: () -> Bool = {
             if Thread.isMainThread {
                 return UIApplication.shared.applicationState == .background
-            } else  {
+            } else {
                 return DispatchQueue.main.sync {
                     UIApplication.shared.applicationState == .background
                 }
             }
         }
-
 
         DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
             switch result {
@@ -85,7 +84,7 @@ class DatabaseSyncer {
                             // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
-                        case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
+                        case let .HTTPFailureResponse(status: status) where (502 ... 504).contains(status):
                             // this means the backend is under maintanance
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
@@ -100,6 +99,15 @@ class DatabaseSyncer {
                             UIStateManager.shared.immediatelyShowSyncError = true
                             UIStateManager.shared.syncErrorIsNetworkError = false
                         }
+                    case let .exposureNotificationError(error: expError as ENError) where expError.code == ENError.Code.rateLimited:
+                        // never show the ratelimit error to the user
+                        // reset all error variables since it could be that we transitioned from another error state to this
+                        UIStateManager.shared.syncError = nil
+                        UIStateManager.shared.firstSyncErrorTime = nil
+                        UIStateManager.shared.lastSyncErrorTime = nil
+                        UIStateManager.shared.hasTimeInconsistencyError = false
+                        UIStateManager.shared.immediatelyShowSyncError = false
+                        UIStateManager.shared.syncErrorIsNetworkError = false
                     case .cancelled:
                         // background task got cancelled, dont show error immediately
                         UIStateManager.shared.immediatelyShowSyncError = false
