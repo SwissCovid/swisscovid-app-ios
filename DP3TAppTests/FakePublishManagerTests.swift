@@ -11,10 +11,23 @@
 @testable import DP3TApp
 import XCTest
 
+class MockReportingManager: ReportingManagerProtocol {
+    var reportWasCalled = false
+
+    func report(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (ReportingProblem?) -> Void) {
+        reportWasCalled = true
+        completion(.none)
+    }
+}
+
 class MockFakePublishManager: FakePublishManager {
     var nowStore = Date()
     override var now: Date {
         nowStore
+    }
+
+    override var delay: TimeInterval {
+        0
     }
 }
 
@@ -25,5 +38,46 @@ class FakePublishManagerTests: XCTestCase {
         manager.nowStore = nextRequest
         let nextNextRequest = manager.rescheduleFakeRequest()
         XCTAssertGreaterThan(nextNextRequest, nextRequest)
+    }
+
+    func testInitialSchedule() {
+        let manager = MockFakePublishManager()
+        XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, Date())
+    }
+
+    func testCallingReportWhenScheduledIsNotPast() {
+        let manager = MockFakePublishManager()
+        let reportingManager = MockReportingManager()
+
+        let nextSchedule = manager.nextScheduledFakeRequestDate
+
+        let exp = expectation(description: "taskExpectation")
+        manager.runTask(reportingManager: reportingManager) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+
+        XCTAssertEqual(reportingManager.reportWasCalled, false)
+
+        XCTAssertEqual(manager.nextScheduledFakeRequestDate, nextSchedule)
+    }
+
+    func testCallingReportWhenScheduledIsPast() {
+        let manager = MockFakePublishManager()
+        let reportingManager = MockReportingManager()
+
+        let nextSchedule = manager.nextScheduledFakeRequestDate
+
+        manager.nowStore = nextSchedule
+
+        let exp = expectation(description: "taskExpectation")
+        manager.runTask(reportingManager: reportingManager) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.1)
+
+        XCTAssertEqual(reportingManager.reportWasCalled, true)
+
+        XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
 }
