@@ -327,6 +327,7 @@
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */; };
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
 		F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
@@ -535,6 +536,7 @@
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
+		F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
@@ -1037,6 +1039,7 @@
 		8E81CCAE241FCC7F006F2437 /* DP3TAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */,
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
@@ -1781,6 +1784,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
