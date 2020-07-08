@@ -162,6 +162,8 @@ class TracingLocalPush: NSObject {
         switch state {
         case .active, .stopped:
             resetAllErrorNotifications()
+        case .initialization:
+            break
         case let .inactive(error: error):
             switch error {
             case .bluetoothTurnedOff:
