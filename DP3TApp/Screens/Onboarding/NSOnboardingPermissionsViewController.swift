@@ -37,7 +37,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        elements = [titleLabel, textLabel, goodToKnowLabel].compactMap { $0 }
+        elements = [titleLabel, textLabel, goodToKnowContainer].compactMap { $0 }
         setupViews()
         fillViews()
 
