@@ -258,6 +258,17 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
+        group.enter()
+        DP3TTracing.status { result in
+            switch result {
+            case .failure:
+                break
+            case let .success(state):
+                TracingLocalPush.shared.handleTracingState(state.trackingState)
+            }
+            group.leave()
+        }
+
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 
         queue.addOperation(configOperation)

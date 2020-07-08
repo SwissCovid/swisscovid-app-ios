@@ -11,25 +11,6 @@
 @testable import DP3TApp
 import XCTest
 
-private class MockNotificationCenter: UserNotificationCenter {
-    var delegate: UNUserNotificationCenterDelegate?
-
-    var removeAllDeliveredNotificationsCalled = 0
-
-    var requests: [UNNotificationRequest] = []
-
-    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
-        requests.append(request)
-        completionHandler?(nil)
-    }
-
-    func removeAllDeliveredNotifications() {
-        removeAllDeliveredNotificationsCalled += 1
-    }
-
-    func removePendingNotificationRequests(withIdentifiers _: [String]) {}
-}
-
 private class MockIdentifierProvider: ExposureIdentifierProvider {
     var exposureIdentifiers: [String]?
 }
@@ -71,5 +52,42 @@ class TracingLocalPushTests: XCTestCase {
         XCTAssertEqual(center.requests.count, 2)
         tlp.update(provider: provider)
         XCTAssertEqual(center.requests.count, 2)
+    }
+
+    func testGeneratingBluetoothNotification() {
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.first?.identifier, TracingLocalPush.ErrorIdentifiers.bluetooth.rawValue)
+
+        tlp.handleTracingState(.active)
+        XCTAssertEqual(center.requests.count, 0)
+    }
+
+    func testGeneratingPermissionNotification() {
+        tlp.handleTracingState(.inactive(error: .permissonError))
+        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.first?.identifier, TracingLocalPush.ErrorIdentifiers.permission.rawValue)
+
+        tlp.handleTracingState(.active)
+        XCTAssertEqual(center.requests.count, 0)
+    }
+
+    func testGeneratingNotificationOnlyOnce() {
+        tlp.handleTracingState(.inactive(error: .permissonError))
+        XCTAssertEqual(center.requests.count, 1)
+        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissonError))
+        XCTAssertEqual(center.requests.count, 1)
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        XCTAssertEqual(center.requests.count, 2)
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        XCTAssertEqual(center.requests.count, 2)
+        XCTAssert(center.requests.map(\.identifier).contains(TracingLocalPush.ErrorIdentifiers.permission.rawValue))
+        XCTAssert(center.requests.map(\.identifier).contains(TracingLocalPush.ErrorIdentifiers.bluetooth.rawValue))
+
+        tlp.handleTracingState(.active)
+        XCTAssertEqual(center.requests.count, 0)
     }
 }
