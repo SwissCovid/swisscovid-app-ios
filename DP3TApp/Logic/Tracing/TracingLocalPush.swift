@@ -160,6 +160,8 @@ class TracingLocalPush: NSObject {
 
     func handleTracingState(_ state: DP3TSDK.TrackingState) {
         switch state {
+        case .initialization:
+                break
         case .active, .stopped:
             resetAllErrorNotifications()
         case let .inactive(error: error):
