@@ -142,9 +142,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
         
         #if ENABLE_TESTING
+        let debugScreenButton = NSButton(title: viewModel.debugScreenButtonTitle, style: .outlineUppercase(.ns_red))
             #if ENABLE_STATUS_OVERRIDE
                 // DEBUG version for testing
-        let debugScreenButton = NSButton(title: viewModel.debugScreenButtonTitle, style: .outlineUppercase(.ns_red))
         let previewWarning = NSInfoBoxView(title: viewModel.previewWarningTitle, subText: viewModel.previewWarningSubtext, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray, leadingIconRenderingMode: .alwaysOriginal)
                 stackScrollView.addArrangedView(previewWarning)
 
