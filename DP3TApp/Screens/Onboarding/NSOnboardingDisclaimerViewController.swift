@@ -32,11 +32,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        elements = [titleLabel, warningTitle, warningBody, warningRow0, warningRow1].compactMap { $0 }
         setupViews()
         fillViews()
-
-        accessibilityElements = elements.compactMap { $0 }
     }
 
     deinit {
