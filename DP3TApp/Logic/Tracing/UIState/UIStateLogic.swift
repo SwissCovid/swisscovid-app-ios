@@ -78,6 +78,8 @@ class UIStateLogic {
 
     private func setErrorStates(_: inout UIStateModel, tracing: inout UIStateModel.TracingState) {
         switch manager.trackingState {
+        case .initialization:
+            break
         case let .inactive(error):
             switch error {
             case .bluetoothTurnedOff:
