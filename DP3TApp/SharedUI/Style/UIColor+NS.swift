@@ -15,7 +15,6 @@ extension UIColor {
     public static var ns_text = UIColor(ub_hexString: "#4a4969")!.withHighContrastColor(color: .black)
 
     public static var ns_blue = UIColor(ub_hexString: "#63a0c7")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
-    public static var ns_lightBlue = UIColor(ub_hexString: "#00a7d4")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
     public static var ns_blueBackground = UIColor(ub_hexString: "#eff5f9")!
     public static var ns_green = UIColor(ub_hexString: "#00bfa6")!.withHighContrastColor(color: UIColor(ub_hexString: "#047E74")!)
     public static var ns_greenBackground = UIColor(ub_hexString: "#e5f8f6")!

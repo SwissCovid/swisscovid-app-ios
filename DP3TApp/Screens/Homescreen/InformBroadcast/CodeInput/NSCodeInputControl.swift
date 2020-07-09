@@ -34,7 +34,7 @@ class NSCodeControl: UIView {
     init() {
         super.init(frame: .zero)
         setup()
-        
+
         accessibilityElements = controls.compactMap { $0 }
     }
 

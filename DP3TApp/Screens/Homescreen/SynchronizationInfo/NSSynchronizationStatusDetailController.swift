@@ -80,7 +80,7 @@ import UIKit
             let title = NSLabel(.title)
             title.numberOfLines = 0
             title.text = "synchronizations_view_info_title".ub_localized
-            let infoQuestion = NSOnboardingInfoView(icon: UIImage(named: "ic-sync")!, text: "synchronizations_view_info_answer".ub_localized, title: "synchronizations_view_info_question".ub_localized, leftRightInset: 0)
+            let infoQuestion = NSOnboardingInfoView(icon: UIImage(named: "ic-sync")!, text: "synchronizations_view_info_answer".ub_localized, title: "synchronizations_view_info_question".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
 
             infoView.addSubview(infoQuestion)
             infoView.addSubview(title)

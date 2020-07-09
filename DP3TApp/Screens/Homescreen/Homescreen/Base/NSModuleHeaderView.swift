@@ -13,7 +13,7 @@ import UIKit
 
 class NSModuleHeaderView: UIView {
     private let titleLabel = NSLabel(.title)
-    private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-arrow-forward")?.withRenderingMode(.alwaysTemplate))
+    private var rightCaretImageView = NSImageView(image: UIImage(named: "ic-arrow-forward"), dynamicColor: .ns_text)
 
     var title: String? {
         get { titleLabel.text }
@@ -43,7 +43,6 @@ class NSModuleHeaderView: UIView {
         }
         titleLabel.text = title
 
-        rightCaretImageView.tintColor = .ns_text
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
