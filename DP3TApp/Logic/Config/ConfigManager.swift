@@ -35,7 +35,7 @@ class ConfigManager: NSObject {
     }
 
     @UBOptionalUserDefault(key: "lastBackgroundConfigLoad")
-    static var lastBackgroundConfigLoad: Date?
+    static var lastConfigLoad: Date?
 
     // 12h
     static let configValidityInterval: TimeInterval = 60 * 60 * 12
@@ -77,8 +77,28 @@ class ConfigManager: NSObject {
         }
     }
 
+    private var shouldLoadConfig: Bool {
+        return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configValidityInterval
+    }
+
+    private static func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
+        if #available(iOS 11.0, *) {
+            let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
+                                           jwtTokenHeaderKey: "Signature")
+            do {
+                try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
+            } catch let error as DP3TNetworkingError {
+                Logger.log("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
+                throw error
+            } catch {
+                Logger.log("Failed to verify config signature, error: \(error.localizedDescription)")
+                throw error
+            }
+        }
+    }
+
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-        guard Self.lastBackgroundConfigLoad == nil || Date().timeIntervalSince(Self.lastBackgroundConfigLoad!) > Self.configValidityInterval else {
+        guard shouldLoadConfig else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return
@@ -96,26 +116,16 @@ class ConfigManager: NSObject {
             }
 
             // Validate JWT
-            if #available(iOS 11.0, *) {
-                let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
-                                               jwtTokenHeaderKey: "Signature")
-                do {
-                    try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
-                } catch let error as DP3TNetworkingError {
-                    Logger.log("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
-                    DispatchQueue.main.async { completion(nil) }
-                    return
-                } catch {
-                    Logger.log("Failed to verify config signature, error: \(error.localizedDescription)")
-                    DispatchQueue.main.async { completion(nil) }
-                    return
-                }
+            do {
+                try Self.validateJWT(httpResponse: httpResponse, data: data)
+            } catch {
+                DispatchQueue.main.async { completion(nil) }
             }
 
             DispatchQueue.main.async {
                 if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
-                    Self.lastBackgroundConfigLoad = Date()
+                    Self.lastConfigLoad = Date()
                     completion(config)
                 } else {
                     Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")
