@@ -69,6 +69,9 @@ class NSOnboardingInfoView: UIView {
             make.trailing.equalToSuperview().inset(leftRightInset)
             make.bottom.equalToSuperview().inset(NSPadding.medium)
         }
+
+        isAccessibilityElement = true
+        accessibilityLabel = ( title ?? " ") + text
     }
 
     required init?(coder _: NSCoder) {
