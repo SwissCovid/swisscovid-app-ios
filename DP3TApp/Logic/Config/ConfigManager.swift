@@ -34,6 +34,12 @@ class ConfigManager: NSObject {
         }
     }
 
+    @UBOptionalUserDefault(key: "lastBackgroundConfigLoad")
+    static var lastBackgroundConfigLoad: Date?
+
+    // 12h
+    static let configValidityInterval: TimeInterval = 60 * 60 * 12
+
     static var allowTracing: Bool {
         return true
     }
@@ -72,6 +78,12 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
+        guard Self.lastBackgroundConfigLoad == nil || Date().timeIntervalSince(Self.lastBackgroundConfigLoad!) > Self.configValidityInterval else {
+            Logger.log("Skipping config load request and returning from cache", appState: true)
+            completion(Self.currentConfig)
+            return
+        }
+
         Logger.log("Load Config", appState: true)
 
         dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request(), completionHandler: { data, response, error in
@@ -103,6 +115,7 @@ class ConfigManager: NSObject {
             DispatchQueue.main.async {
                 if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
+                    Self.lastBackgroundConfigLoad = Date()
                     completion(config)
                 } else {
                     Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")
@@ -115,11 +128,6 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-        // immediate alert if old config enforced update
-        if let oldConfig = ConfigManager.currentConfig {
-            presentAlertIfNeeded(config: oldConfig, window: window)
-        }
-
         loadConfig { config in
             // self must be strong
             if let config = config {
@@ -167,7 +175,6 @@ class ConfigManager: NSObject {
                 Self.configAlert = alert
             }
         } else {
-            Logger.log("NO force update alert")
             if Self.configAlert != nil {
                 Self.configAlert?.dismiss(animated: true, completion: nil)
                 Self.configAlert = nil
