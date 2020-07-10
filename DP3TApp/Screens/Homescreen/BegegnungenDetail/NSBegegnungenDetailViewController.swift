@@ -48,11 +48,13 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
         navigationController?.setNavigationBarHidden(false, animated: true)
         updateLastSyncDate()
         NotificationCenter.default.addObserver(self, selector: #selector(updateLastSyncDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLastSyncDate), name: Notification.syncFinishedNotification, object: nil)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.syncFinishedNotification, object: nil)
     }
 
     @objc
