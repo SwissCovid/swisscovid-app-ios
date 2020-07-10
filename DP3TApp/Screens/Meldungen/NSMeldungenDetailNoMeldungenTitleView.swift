@@ -15,7 +15,7 @@ class NSMeldungenDetailNoMeldungenTitleView: NSTitleView {
 
     private let stackView = UIStackView()
 
-    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle")) // TODO: New icon with correct color
+    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle"))
     private let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
