@@ -273,6 +273,7 @@
 		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
+		B67A11AE24B8CB1700B46306 /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		B6AEA30824B74ACA0055B5BB /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
 		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
@@ -1543,6 +1544,7 @@
 				242D21F4245C4BD8005DAEA8 /* NSMeldungenDetailNoMeldungenTitleView.swift in Sources */,
 				242D21F6245C4BD8005DAEA8 /* UIView+NS.swift in Sources */,
 				242D21F7245C4BD8005DAEA8 /* UIImage+UBHelpers.m in Sources */,
+				B67A11AE24B8CB1700B46306 /* NSImageView.swift in Sources */,
 				242D21F8245C4BD8005DAEA8 /* UIStateManager.swift in Sources */,
 				242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
