@@ -82,6 +82,8 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         let externalLinkButtonInSymptomView = NSExternalLinkButton(style: .normal(color: .ns_purple))
         externalLinkButtonInSymptomView.title = "symptom_detail_box_button".ub_localized
+        externalLinkButtonInSymptomView.accessibilityHint = "accessibility_faq_button_hint".ub_localized
+
         symptomView.contentView.addSpacerView(NSPadding.medium)
         symptomView.contentView.addArrangedSubview(externalLinkButtonInSymptomView)
         externalLinkButtonInSymptomView.touchUpCallback = { [weak self] in
