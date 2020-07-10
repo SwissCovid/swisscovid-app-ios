@@ -80,24 +80,25 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addArrangedView(symptomView)
 
+        stackScrollView.addSpacerView(3.0 * NSPadding.large)
+
+        let infoView = NSOnboardingInfoView(icon: UIImage(named: "ic-symptoms")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
+
+        stackScrollView.addArrangedView(infoView)
+
         let externalLinkButtonInSymptomView = NSExternalLinkButton(style: .normal(color: .ns_purple))
         externalLinkButtonInSymptomView.title = "symptom_detail_box_button".ub_localized
-        symptomView.contentView.addSpacerView(NSPadding.medium)
-        symptomView.contentView.addArrangedSubview(externalLinkButtonInSymptomView)
         externalLinkButtonInSymptomView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentCoronaCheck()
         }
-
-        stackScrollView.addSpacerView(3.0 * NSPadding.large)
-
-        let infoView = NSOnboardingInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0)
-
-        stackScrollView.addArrangedView(infoView)
-
-        stackScrollView.addSpacerView(3 * NSPadding.large)
-
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
+        let wrapper = UIView()
+        wrapper.addSubview(externalLinkButtonInSymptomView)
+        stackScrollView.addArrangedView(wrapper)
+        externalLinkButtonInSymptomView.snp.makeConstraints { make in
+            make.trailing.top.bottom.equalToSuperview()
+            make.leading.equalTo(infoView.labelAreaGuide.snp.leading)
+        }
 
         stackScrollView.addSpacerView(NSPadding.large)
     }

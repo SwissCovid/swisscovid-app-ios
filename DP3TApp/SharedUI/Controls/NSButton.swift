@@ -135,7 +135,6 @@ class NSButton: UBButton {
 
 extension NSButton {
     static func faqButton(color: UIColor) -> UIView {
-        // let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
         let faqButton = NSExternalLinkButton(style: .outlined(color: color))
         faqButton.title = "faq_button_title".ub_localized
 
