@@ -83,7 +83,12 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningContainer.addSubview(warningStack)
         addArrangedView(warningContainer, spacing: NSPadding.large, insets: sidePadding)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        let spacerView = UIView()
+        addArrangedView(spacerView)
+
+        spacerView.snp.makeConstraints { make in
+            make.height.equalTo(NSPadding.large)
+        }
 
         warningStack.snp.makeConstraints { make in
             make.edges.equalToSuperview()

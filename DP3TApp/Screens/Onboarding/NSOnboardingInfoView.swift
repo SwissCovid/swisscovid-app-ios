@@ -15,10 +15,15 @@ class NSOnboardingInfoView: UIView {
 
     private let leftRightInset: CGFloat
 
+    let labelAreaGuide = UILayoutGuide()
+
     init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium, dynamicIconTintColor: UIColor? = nil) {
+
         self.leftRightInset = leftRightInset
 
         super.init(frame: .zero)
+
+        addLayoutGuide(labelAreaGuide)
 
         let hasTitle = title != nil
 
@@ -31,6 +36,11 @@ class NSOnboardingInfoView: UIView {
 
         addSubview(imgView)
         addSubview(label)
+
+        labelAreaGuide.snp.makeConstraints { make in
+            make.leading.equalTo(label.snp.leading)
+            make.top.bottom.trailing.equalToSuperview()
+        }
 
         let titleLabel = NSLabel(.textBold)
         if hasTitle {

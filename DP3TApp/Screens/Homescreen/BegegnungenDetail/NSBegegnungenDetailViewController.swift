@@ -13,9 +13,7 @@ import UIKit
 class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
-    #if ENABLE_SYNC_LOGGING
-        private let lastSyncronizationControl: NSLastSyncronizationControl
-    #endif
+    private let lastSyncronizationControl: NSLastSyncronizationControl
 
     private let appTitleView: NSAppTitleView
 
@@ -24,9 +22,8 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     init(initialState: UIStateModel.BegegnungenDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
-        #if ENABLE_SYNC_LOGGING
-            lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)
-        #endif
+        lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)
+
         super.init()
 
         title = "handshakes_title_homescreen".ub_localized
@@ -49,9 +46,20 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        #if ENABLE_SYNC_LOGGING
-            lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
-        #endif
+        updateLastSyncDate()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLastSyncDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLastSyncDate), name: Notification.syncFinishedNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.syncFinishedNotification, object: nil)
+    }
+
+    @objc
+    private func updateLastSyncDate() {
+        lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
     }
 
     // MARK: - Setup
@@ -66,11 +74,8 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(bluetoothControl)
 
-        #if ENABLE_SYNC_LOGGING
-            stackScrollView.addSpacerView(NSPadding.large)
-
-            stackScrollView.addArrangedView(lastSyncronizationControl)
-        #endif
+        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addArrangedView(lastSyncronizationControl)
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -92,13 +97,14 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
         #if ENABLE_SYNC_LOGGING
             lastSyncronizationControl.addTarget(self, action: #selector(openSynchronizationStatusDetails(sender:)), for: .touchUpInside)
+            lastSyncronizationControl.isChevronImageViewHidden = false
+        #else
+            lastSyncronizationControl.isChevronImageViewHidden = true
         #endif
     }
 
     private func updateState(_ state: UIStateModel) {
-        #if ENABLE_SYNC_LOGGING
-            lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
-        #endif
+        updateLastSyncDate()
         appTitleView.uiState = state.homescreen.header
     }
 
