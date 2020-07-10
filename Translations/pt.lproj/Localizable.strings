@@ -882,3 +882,9 @@
 /*Google Translation!*/
 /*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
 "ratelimit_error_text" = "Já hoje houve demasiadas perguntas. A aplicação irá tentar novamente mais tarde.";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "";

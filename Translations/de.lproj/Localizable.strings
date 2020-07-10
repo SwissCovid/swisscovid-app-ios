@@ -205,16 +205,16 @@
 "symptom_detail_title" = "mich krank fühle?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Machen Sie den ...";
+"symptom_detail_box_subtitle" = "Bei COVID-19-Symptomen...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Coronavirus-Check";
+"symptom_detail_box_title" = "Testen lassen";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Zum Coronavirus-Check";
+"symptom_detail_box_button" = "Mehr erfahren";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Bleiben Sie zu Hause, machen Sie den Coronavirus-Check oder rufen Sie Ihre Ärztin oder Ihren Arzt an.";
+"symptom_detail_box_text" = "Das BAG empfiehlt allen Personen mit COVID-19-Symptomen, sich testen zu lassen. Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positiv getestet";
@@ -640,10 +640,10 @@
 "inform_code_intro_button" = "Verstanden";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Was ist der Coronavirus-Check?";
+"symptom_faq1_title" = "Was ist COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Sie haben Symptome und sind unsicher, wie Sie sich verhalten sollen? \n\nBeantworten Sie die Fragen im Online-Check des BAG, um eine Handlungsempfehlung zu erhalten.";
+"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n- Fieber, Fiebergefühl\n- Halsschmerzen\n- Husten (meist trocken)\n- Kurzatmigkeit\n- Muskelschmerzen\n- Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -906,3 +906,9 @@
 /*Google Translation!*/
 /*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
 "ratelimit_error_text" = "Es wurden heute schon zu viele Abfragen durchgeführt. Die App wird es später erneut probieren.";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "Tracing wurde aktiviert";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "Tracing wurde deaktiviert";

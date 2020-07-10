@@ -12,6 +12,10 @@ import DP3TSDK
 import ExposureNotification
 import Foundation
 
+extension Notification {
+    static let syncFinishedNotification = Notification.Name("SyncFinishedNotification")
+}
+
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
         TracingManager.shared.databaseSyncer
@@ -120,8 +124,10 @@ class DatabaseSyncer {
 
                 Logger.log("Sync Database failed, \(e)")
 
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.failed)
             case .skipped:
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.noData)
             case .success:
 
@@ -142,6 +148,7 @@ class DatabaseSyncer {
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
 
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.newData)
             }
             if taskIdentifier != .invalid {
