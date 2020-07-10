@@ -46,6 +46,17 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
+        updateLastSyncDate()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateLastSyncDate), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+
+    @objc
+    private func updateLastSyncDate() {
         lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
     }
 
@@ -91,7 +102,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
     }
 
     private func updateState(_ state: UIStateModel) {
-        lastSyncronizationControl.lastSyncronizationDate = NSSynchronizationPersistence.shared?.fetchLatestSuccessfulSync()?.date
+        updateLastSyncDate()
         appTitleView.uiState = state.homescreen.header
     }
 
