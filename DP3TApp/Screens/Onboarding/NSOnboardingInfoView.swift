@@ -17,7 +17,8 @@ class NSOnboardingInfoView: UIView {
 
     let labelAreaGuide = UILayoutGuide()
 
-    init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium) {
+    init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium, dynamicIconTintColor: UIColor? = nil) {
+
         self.leftRightInset = leftRightInset
 
         super.init(frame: .zero)
@@ -26,7 +27,7 @@ class NSOnboardingInfoView: UIView {
 
         let hasTitle = title != nil
 
-        let imgView = UIImageView(image: icon)
+        let imgView = NSImageView(image: icon, dynamicColor: dynamicIconTintColor)
         imgView.ub_setContentPriorityRequired()
 
         let label = NSLabel(.textLight)
@@ -78,6 +79,9 @@ class NSOnboardingInfoView: UIView {
             make.trailing.equalToSuperview().inset(leftRightInset)
             make.bottom.equalToSuperview().inset(NSPadding.medium)
         }
+
+        isAccessibilityElement = true
+        accessibilityLabel = (title ?? " ") + text
     }
 
     required init?(coder _: NSCoder) {
