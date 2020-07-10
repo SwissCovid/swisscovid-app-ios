@@ -92,7 +92,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         spacerView.snp.makeConstraints { make in
             make.height.equalTo(NSPadding.large)
         }
-        
+
         warningStack.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
