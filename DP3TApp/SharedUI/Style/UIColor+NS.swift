@@ -19,10 +19,10 @@ extension UIColor {
     // MARK: - Text color
 
     public static var ns_text: UIColor {
-        return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#4a4969")!.withHighContrastColor(color: .black), darkColor: UIColor.white.withHighContrastColor(color: .black))
+        return UIColor().setColorsForTheme(lightColor: UIColor.defaultTextColor, darkColor: UIColor.white.withHighContrastColor(color: .black))
     }
     
-    public static var defaultTextColor = UIColor(ub_hexString: "#4a4969")!.withHighContrastColor(color: .black)
+    public static var defaultTextColor = UIColor.ns_darkBlueBackground.withHighContrastColor(color: .black)
     
     public static var ns_blue = UIColor(ub_hexString: "#63a0c7")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
     public static var ns_lightBlue = UIColor(ub_hexString: "#00a7d4")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
@@ -34,7 +34,7 @@ extension UIColor {
     public static var moduleGreenBackground: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: UIColor(ub_hexString: "#16161A")!)
     }
-    
+        
     public static var ns_purpleBackground = UIColor(ub_hexString: "#f3f0f5")!
     public static var ns_darkBlueBackground = UIColor(ub_hexString: "#4a4969")!
     
