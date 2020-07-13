@@ -20,7 +20,7 @@ class NSFontSize {
         let preferredSize: CGFloat = normalBodyFontSize
         let maximum: CGFloat = 1.5 * preferredSize
         let minimum: CGFloat = 0.5 * preferredSize
-        print(bfs)
+
         return min(max(minimum, bfs), maximum)
     }
 
