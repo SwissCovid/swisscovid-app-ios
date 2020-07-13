@@ -173,10 +173,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
     }
 
-    private func noCodeButtonPressed() {
-        navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
-    }
-
     // MARK: - NSCodeControlProtocol
 
     func changeSendPermission(to sendAllowed: Bool) {

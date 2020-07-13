@@ -23,10 +23,6 @@ class DatabaseSyncer {
 
     private var databaseSyncInterval: TimeInterval = 10
 
-    func performFetch(completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        syncDatabaseIfNeeded(completionHandler: completionHandler)
-    }
-
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
         guard !databaseIsSyncing,
             UserStorage.shared.hasCompletedOnboarding else {
