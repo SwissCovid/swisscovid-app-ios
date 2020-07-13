@@ -67,7 +67,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         KeychainMigration.migrate()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.overrideUserInterfaceStyle = .light
 
         TracingManager.shared.beginUpdatesAndTracing()
 
