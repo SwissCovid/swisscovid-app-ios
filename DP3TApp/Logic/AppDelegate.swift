@@ -156,11 +156,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TracingLocalPush.shared.clearNotifications()
         }
     }
-
-    func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        DatabaseSyncer.shared.performFetch(completionHandler: completionHandler)
-    }
-
     // MARK: - Force update
 
     private func startForceUpdateCheck() {
