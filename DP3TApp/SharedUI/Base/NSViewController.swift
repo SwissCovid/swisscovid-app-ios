@@ -61,4 +61,14 @@ class NSViewController: UIViewController {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
         }
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            navigationController?.navigationBar.titleTextAttributes = [
+                .font: NSLabelType.textBold.font,
+                .foregroundColor: UIColor.ns_text,
+            ]
+        }
+    }
 }

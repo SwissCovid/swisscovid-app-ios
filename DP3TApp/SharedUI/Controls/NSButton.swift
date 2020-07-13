@@ -131,6 +131,13 @@ class NSButton: UBButton {
 
         return contentSize
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            titleLabel?.font = NSLabelType.button.font
+        }
+    }
 }
 
 extension NSButton {
