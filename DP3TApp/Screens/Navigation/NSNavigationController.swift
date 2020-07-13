@@ -22,7 +22,7 @@ class NSNavigationController: UINavigationController {
         setup()
 
         navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.navigationBarColor
+        navigationBar.barTintColor = UIColor.ns_background
     }
 
     // MARK: - Setup

@@ -12,7 +12,6 @@ import UIKit
 
 extension UIColor {
     
-    //  Generic app red color
     public static var ns_red: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e20008")!, darkColor: UIColor(ub_hexString: "#FF3B42")!)
     }
@@ -23,31 +22,32 @@ extension UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#4a4969")!.withHighContrastColor(color: .black), darkColor: UIColor.white.withHighContrastColor(color: .black))
     }
     
+    public static var defaultTextColor = UIColor(ub_hexString: "#4a4969")!.withHighContrastColor(color: .black)
     
     public static var ns_blue = UIColor(ub_hexString: "#63a0c7")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
     public static var ns_lightBlue = UIColor(ub_hexString: "#00a7d4")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
     public static var ns_blueBackground = UIColor(ub_hexString: "#eff5f9")!
     public static var ns_green = UIColor(ub_hexString: "#00bfa6")!.withHighContrastColor(color: UIColor(ub_hexString: "#047E74")!)
+    public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
+    public static var ns_greenBackground: UIColor = UIColor(ub_hexString: "#e5f8f6")!
     
-    public static var ns_greenBackground: UIColor {
+    public static var moduleGreenBackground: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: UIColor(ub_hexString: "#16161A")!)
     }
     
-    public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
     public static var ns_purpleBackground = UIColor(ub_hexString: "#f3f0f5")!
-
     public static var ns_darkBlueBackground = UIColor(ub_hexString: "#4a4969")!
-    
-    static var navigationBarColor: UIColor {
-        return UIColor().setColorsForTheme(lightColor: UIColor.white, darkColor: UIColor.black)
-    }
     
     static var ns_background: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor.white, darkColor: UIColor.black)
     }
     
+    static var moduleBackground: UIColor {
+        return UIColor().setColorsForTheme(lightColor: UIColor.white, darkColor: UIColor(ub_hexString: "#1E1E23")!)
+    }
+    
     static var ns_backgroundSecondary: UIColor {
-        return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#f7f7f7")!, darkColor: UIColor(ub_hexString: "#16161A")!)
+        return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#f7f7f7")!, darkColor: UIColor.black)
     }
     
     static var ns_backgroundTertiary: UIColor {
@@ -88,7 +88,9 @@ extension UIColor {
     // MARK: - Deprecated colors
 
     // background of views
-    public static var ns_background_highlighted = UIColor(ub_hexString: "#f9f9f9")!
+    public static var ns_background_highlighted: UIColor {
+        return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#f9f9f9")!, darkColor: UIColor.black)
+    }
     
     public static var ns_text_secondary = UIColor(ub_hexString: "#e6e6e6")!
 }

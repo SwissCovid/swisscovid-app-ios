@@ -69,7 +69,7 @@ class NSHeaderErrorView: UIView {
 
     private func createDot() -> UIView {
         let v = UIView()
-        v.backgroundColor = .ns_background
+        v.backgroundColor = UIColor.white
         v.layer.cornerRadius = 4.5
         v.snp.makeConstraints { make in
             make.size.equalTo(9)

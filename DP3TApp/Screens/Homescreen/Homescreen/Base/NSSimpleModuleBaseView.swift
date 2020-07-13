@@ -63,7 +63,7 @@ class NSSimpleModuleBaseView: UIView {
     // MARK: - Setup
 
     private func setup() {
-        backgroundColor = .ns_background
+        backgroundColor = .moduleBackground
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
 
         addSubview(titleLabel)
