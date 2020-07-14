@@ -93,15 +93,6 @@ class NSWhatToDoSymptomViewController: NSViewController {
         titleContentStackView.isAccessibilityElement = true
         titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
     }
-
-    // MARK: - Detail
-
-    private func presentCoronaCheck() {
-        if let url =
-            URL(string: "symptom_detail_corona_check_url".ub_localized) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-    }
 }
 
 extension String {
