@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
+class NSEncountersDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
     private let lastSyncronizationControl: NSLastSyncronizationControl

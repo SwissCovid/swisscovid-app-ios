@@ -10,14 +10,14 @@
 
 import UIKit
 
-class NSMeldungView: NSModuleBaseView {
+class NSReportsModuleView: NSModuleBaseView {
     var uiState: UIStateModel.Homescreen.Reports
         = .init(report: .noReport, pushProblem: false) {
         didSet { updateLayout() }
     }
 
     // section views
-    private let noMeldungenView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_subtitle".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-no-message")!, titleColor: .ns_green, subtextColor: .ns_text, backgroundColor: .ns_greenBackground, dynamicIconTintColor: .ns_green)
+    private let noReportsView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_subtitle".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-no-message")!, titleColor: .ns_green, subtextColor: .ns_text, backgroundColor: .ns_greenBackground, dynamicIconTintColor: .ns_green)
 
     private let exposedView = NSInfoBoxView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_blue, hasBubble: true, dynamicIconTintColor: .white)
 
@@ -74,7 +74,7 @@ class NSMeldungView: NSModuleBaseView {
 
         switch uiState.report {
         case .noReport:
-            views.append(noMeldungenView)
+            views.append(noReportsView)
             if uiState.pushProblem {
                 views.append(noPushView)
             } else if uiState.syncProblemOtherError {
@@ -122,7 +122,7 @@ class NSMeldungView: NSModuleBaseView {
     override func updateLayout() {
         super.updateLayout()
 
-        setCustomSpacing(NSPadding.medium, after: noMeldungenView)
+        setCustomSpacing(NSPadding.medium, after: noReportsView)
         setCustomSpacing(NSPadding.medium, after: exposedView)
         setCustomSpacing(NSPadding.medium, after: infectedView)
     }

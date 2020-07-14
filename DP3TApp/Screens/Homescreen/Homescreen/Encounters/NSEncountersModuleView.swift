@@ -11,7 +11,7 @@
 import SnapKit
 import UIKit
 
-class NSBegegnungenModuleView: NSModuleBaseView {
+class NSEncountersModuleView: NSModuleBaseView {
     var uiState: UIStateModel.TracingState = .tracingActive {
         didSet { updateUI() }
     }
