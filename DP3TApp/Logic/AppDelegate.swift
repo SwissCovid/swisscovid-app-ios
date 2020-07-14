@@ -93,7 +93,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
 
-        if coldStart {
+        // if app is cold-started or comes from background > 30 minutes,
+        if coldStart || backgroundTime > 30.0 * 60.0 {
             if !jumpToMessageIfRequired(onlyFirst: true) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
