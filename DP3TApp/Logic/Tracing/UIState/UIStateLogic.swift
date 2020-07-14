@@ -60,12 +60,12 @@ class UIStateLogic {
 
         case let .exposed(days):
             setExposedState(&newState, days: days)
-            setLastMeldungState(&newState)
+            setLastReportState(&newState)
         }
 
         // Set debug helpers
         #if ENABLE_STATUS_OVERRIDE
-            setDebugMeldungen(&newState)
+            setDebugReports(&newState)
             setDebugDisplayValues(&newState, tracingState: tracingState)
         #endif
 
@@ -185,7 +185,7 @@ class UIStateLogic {
         })
     }
 
-    private func setLastMeldungState(_ newState: inout UIStateModel) {
+    private func setLastReportState(_ newState: inout UIStateModel) {
         if let report = newState.reportsDetail.reports.last {
             newState.shouldStartAtReportsDetail = UserStorage.shared.lastPhoneCall(for: report.identifier) == nil
             newState.homescreen.reports.lastReport = report.timestamp
@@ -228,9 +228,9 @@ class UIStateLogic {
         static let randDate1 = Date(timeIntervalSinceNow: -10000)
         static let randDate2 = Date(timeIntervalSinceNow: -100_000)
 
-        private func setDebugMeldungen(_ newState: inout UIStateModel) {
+        private func setDebugReports(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
-            // add at least one meldung
+            // add at least one report
             if let os = manager.overwrittenInfectionState, os == .exposed {
                 newState.reportsDetail.reports = [UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
@@ -238,7 +238,7 @@ class UIStateLogic {
                 newState.shouldStartAtReportsDetail = true
                 newState.reportsDetail.showReportWithAnimation = true
 
-                setLastMeldungState(&newState)
+                setLastReportState(&newState)
             }
         }
 
