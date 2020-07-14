@@ -80,8 +80,9 @@ class NSOnboardingInfoView: UIView {
             make.bottom.equalToSuperview().inset(NSPadding.medium)
         }
 
-        isAccessibilityElement = true
         accessibilityLabel = (title ?? " ") + text
+        titleLabel.isAccessibilityElement = true
+        titleLabel.accessibilityTraits = [.header]
     }
 
     required init?(coder _: NSCoder) {

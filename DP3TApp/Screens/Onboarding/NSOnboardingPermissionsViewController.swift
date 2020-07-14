@@ -68,6 +68,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             make.bottom.equalTo(goodToKnowContainer).offset(2000)
             make.leading.trailing.equalToSuperview()
         }
+
+        titleLabel.accessibilityTraits = [.header]
     }
 
     private func fillViews() {

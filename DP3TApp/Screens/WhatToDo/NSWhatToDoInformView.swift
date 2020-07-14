@@ -54,11 +54,4 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         isAccessibilityElement = false
         accessibilityElementsHidden = false
     }
-
-    override func layoutSubviews() {
-        let el = UIAccessibilityElement(accessibilityContainer: self)
-        el.accessibilityLabel = "inform_detail_box_subtitle".ub_localized.deleteSuffix("...") + "inform_detail_box_title".ub_localized + "." + "inform_detail_box_text".ub_localized
-        el.accessibilityFrameInContainerSpace = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
-        accessibilityElements = [el, informButton]
-    }
 }

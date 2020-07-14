@@ -19,7 +19,7 @@ class ConfigLoadOperation: Operation {
         guard isCancelled == false else { return }
 
         let semaphore = DispatchSemaphore(value: 0)
-        ConfigManager().loadConfig { config in
+        ConfigManager().loadConfig(backgroundTask: true) { config in
 
             if let c = config, c.forceUpdate {
                 // only show notification once per app update

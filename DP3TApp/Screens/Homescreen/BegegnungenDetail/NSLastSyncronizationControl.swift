@@ -48,6 +48,8 @@ class NSLastSyncronizationControl: UIControl {
         ub_addShadow(radius: 4.0, opacity: 0.05, xOffset: 0, yOffset: -2)
 
         titleLabel.text = "begegnung_detail_last_sync_title".ub_localized
+        titleLabel.accessibilityTraits = [.header]
+
         subtitleLabel.text = Self.nullDateValueString
 
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: 2.0 * NSPadding.medium, leading: 2.0 * NSPadding.medium, bottom: 2.0 * NSPadding.medium, trailing: 2.0 * NSPadding.medium)

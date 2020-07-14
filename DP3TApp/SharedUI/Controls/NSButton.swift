@@ -131,6 +131,13 @@ class NSButton: UBButton {
 
         return contentSize
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            titleLabel?.font = NSLabelType.button.font
+        }
+    }
 }
 
 extension NSButton {
@@ -155,6 +162,7 @@ extension NSButton {
         }
 
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
+        faqButton.accessibilityTraits = [.button, .header]
         return view
     }
 }
