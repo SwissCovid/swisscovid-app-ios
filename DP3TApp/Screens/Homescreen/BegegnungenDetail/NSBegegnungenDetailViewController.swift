@@ -19,7 +19,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
     // MARK: - Init
 
-    init(initialState: UIStateModel.BegegnungenDetail) {
+    init(initialState: UIStateModel.EncountersDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
         lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)

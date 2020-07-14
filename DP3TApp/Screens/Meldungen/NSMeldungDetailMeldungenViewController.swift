@@ -13,16 +13,16 @@ import UIKit
 class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
-    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
+    public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
         didSet {
-            guard oldValue != meldungen else { return }
+            guard oldValue != reports else { return }
             update()
         }
     }
 
-    public var showMeldungWithAnimation: Bool = false
+    public var showReportWithAnimation: Bool = false
 
-    public var phoneCallState: UIStateModel.MeldungenDetail.PhoneCallState = .notCalled {
+    public var phoneCallState: UIStateModel.ReportsDetail.PhoneCallState = .notCalled {
         didSet { update() }
     }
 
@@ -47,7 +47,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     override var useFullScreenHeaderAnimation: Bool {
-        return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
+        return UIAccessibility.isVoiceOverRunning ? false : showReportWithAnimation
     }
 
     override var titleHeight: CGFloat {
@@ -61,8 +61,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     override func startHeaderAnimation() {
         overrideHitTestAnyway = false
 
-        for m in meldungen {
-            UserStorage.shared.registerSeenMessages(identifier: m.identifier)
+        for report in reports {
+            UserStorage.shared.registerSeenMessages(identifier: report.identifier)
         }
 
         super.startHeaderAnimation()
@@ -104,15 +104,15 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     private func update() {
         if let tv = titleView as? NSMeldungDetailMeldungTitleView {
-            tv.meldungen = meldungen
+            tv.reports = reports
         }
 
         notYetCalledView?.isHidden = phoneCallState != .notCalled
         alreadyCalledView?.isHidden = phoneCallState != .calledAfterLastExposure
         callAgainView?.isHidden = phoneCallState != .multipleExposuresNotCalled
 
-        if let lastMeldungId = meldungen.last?.identifier,
-            let lastCall = UserStorage.shared.lastPhoneCall(for: lastMeldungId) {
+        if let lastReportId = reports.last?.identifier,
+            let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
             callLabels.forEach {
                 $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
@@ -253,12 +253,12 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let last = meldungen.last else { return }
+        guard let lastReport = reports.last else { return }
 
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        UserStorage.shared.registerPhoneCall(identifier: last.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: lastReport.identifier)
         UIStateManager.shared.refresh()
     }
 }

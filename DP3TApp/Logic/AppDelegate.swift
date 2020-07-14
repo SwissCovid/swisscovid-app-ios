@@ -115,9 +115,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func jumpToMessageIfRequired(onlyFirst: Bool) -> Bool {
         let shouldJump: Bool
         if onlyFirst {
-            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail
         } else {
-            shouldJump = UIStateManager.shared.uiState.shouldStartAtMeldungenDetail && UIStateManager.shared.uiState.meldungenDetail.showMeldungWithAnimation
+            shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
         if shouldJump,
             let navigationController = window?.rootViewController as? NSNavigationController,

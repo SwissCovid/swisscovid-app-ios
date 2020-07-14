@@ -11,8 +11,8 @@
 import UIKit
 
 class NSMeldungView: NSModuleBaseView {
-    var uiState: UIStateModel.Homescreen.Meldungen
-        = .init(meldung: .noMeldung, pushProblem: false) {
+    var uiState: UIStateModel.Homescreen.Reports
+        = .init(report: .noReport, pushProblem: false) {
         didSet { updateLayout() }
     }
 
@@ -72,8 +72,8 @@ class NSMeldungView: NSModuleBaseView {
     override func sectionViews() -> [UIView] {
         var views = [UIView]()
 
-        switch uiState.meldung {
-        case .noMeldung:
+        switch uiState.report {
+        case .noReport:
             views.append(noMeldungenView)
             if uiState.pushProblem {
                 views.append(noPushView)
@@ -99,7 +99,7 @@ class NSMeldungView: NSModuleBaseView {
         case .exposed:
             views.append(exposedView)
             views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
-            if let lastMeldung = uiState.lastMeldung {
+            if let lastMeldung = uiState.lastReport {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)
 

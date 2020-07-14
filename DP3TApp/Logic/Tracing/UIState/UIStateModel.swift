@@ -14,9 +14,9 @@ import Foundation
 /// We use a single state model to ensure that all elements have a consistent state
 struct UIStateModel: Equatable {
     var homescreen: Homescreen = Homescreen()
-    var begegnungenDetail: BegegnungenDetail = BegegnungenDetail()
-    var shouldStartAtMeldungenDetail = false
-    var meldungenDetail: MeldungenDetail = MeldungenDetail()
+    var encountersDetail: EncountersDetail = EncountersDetail()
+    var shouldStartAtReportsDetail = false
+    var reportsDetail: ReportsDetail = ReportsDetail()
 
     #if ENABLE_STATUS_OVERRIDE
         var debug: Debug = Debug()
@@ -33,16 +33,16 @@ struct UIStateModel: Equatable {
         case tracingEnded
     }
 
-    enum MeldungState: Equatable {
-        case noMeldung
+    enum ReportState: Equatable {
+        case noReport
         case exposed
         case infected
     }
 
     struct Homescreen: Equatable {
-        struct Meldungen: Equatable {
-            var meldung: MeldungState = .noMeldung
-            var lastMeldung: Date?
+        struct Reports: Equatable {
+            var report: ReportState = .noReport
+            var lastReport: Date?
             var pushProblem: Bool = false
             var syncProblemNetworkingError: Bool = false
             var syncProblemOtherError: Bool = false
@@ -61,23 +61,23 @@ struct UIStateModel: Equatable {
         }
 
         var header: TracingState = .tracingActive
-        var begegnungen: TracingState = .tracingActive
-        var meldungen: Meldungen = Meldungen()
+        var encounters: TracingState = .tracingActive
+        var reports: Reports = Reports()
         var infoBox: InfoBox?
     }
 
-    struct BegegnungenDetail: Equatable {
+    struct EncountersDetail: Equatable {
         var tracingEnabled: Bool = true
         var tracing: TracingState = .tracingActive
     }
 
-    struct MeldungenDetail: Equatable {
-        var meldung: MeldungState = .noMeldung
-        var meldungen: [NSMeldungModel] = []
+    struct ReportsDetail: Equatable {
+        var report: ReportState = .noReport
+        var reports: [NSReportModel] = []
         var phoneCallState: PhoneCallState = .notCalled
-        var showMeldungWithAnimation: Bool = false
+        var showReportWithAnimation: Bool = false
 
-        struct NSMeldungModel: Equatable {
+        struct NSReportModel: Equatable {
             let identifier: UUID
             let timestamp: Date
         }

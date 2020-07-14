@@ -29,8 +29,8 @@ class UIStateLogic {
         setErrorStates(&newState, tracing: &tracing)
 
         // Set tracing active
-        newState.begegnungenDetail.tracingEnabled = TracingManager.shared.isActivated
-        newState.begegnungenDetail.tracing = tracing
+        newState.encountersDetail.tracingEnabled = TracingManager.shared.isActivated
+        newState.encountersDetail.tracing = tracing
 
         // Get state of SDK tracing
         guard let tracingState = manager.tracingState else {
@@ -108,50 +108,50 @@ class UIStateLogic {
 
     private func setHomescreenState(_ newState: inout UIStateModel, tracing: UIStateModel.TracingState) {
         newState.homescreen.header = tracing
-        newState.homescreen.begegnungen = tracing
+        newState.homescreen.encounters = tracing
 
-        newState.homescreen.meldungen.pushProblem = !manager.pushOk
+        newState.homescreen.reports.pushProblem = !manager.pushOk
 
         if let st = manager.tracingState {
-            newState.homescreen.meldungen.backgroundUpdateProblem = st.backgroundRefreshState != .available
+            newState.homescreen.reports.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
 
         if manager.immediatelyShowSyncError {
             if manager.syncErrorIsNetworkError {
-                newState.homescreen.meldungen.syncProblemNetworkingError = true
+                newState.homescreen.reports.syncProblemNetworkingError = true
             } else {
-                newState.homescreen.meldungen.syncProblemOtherError = true
+                newState.homescreen.reports.syncProblemOtherError = true
             }
             if let codedError = UIStateManager.shared.syncError, let errorCode = codedError.errorCodeString {
                 if manager.immediatelyShowSyncError {
-                    newState.homescreen.meldungen.errorTitle = codedError.errorTitle
-                    newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
+                    newState.homescreen.reports.errorTitle = codedError.errorTitle
+                    newState.homescreen.reports.errorMessage = codedError.localizedDescription
                 } else {
-                    newState.homescreen.meldungen.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
+                    newState.homescreen.reports.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
                 }
 
                 #if ENABLE_VERBOSE
-                    newState.homescreen.meldungen.errorCode = "\(errorCode): \(codedError)"
+                    newState.homescreen.reports.errorCode = "\(errorCode): \(codedError)"
                 #else
-                    newState.homescreen.meldungen.errorCode = errorCode
+                    newState.homescreen.reports.errorCode = errorCode
                 #endif
 
-                newState.homescreen.meldungen.canRetrySyncError = !errorCode.contains(DP3TTracingError.nonRecoverableSyncErrorCode)
+                newState.homescreen.reports.canRetrySyncError = !errorCode.contains(DP3TTracingError.nonRecoverableSyncErrorCode)
             }
         }
 
         if let first = manager.firstSyncErrorTime,
             let last = manager.lastSyncErrorTime,
             last.timeIntervalSince(first) > manager.syncProblemInterval {
-            newState.homescreen.meldungen.syncProblemNetworkingError = true
+            newState.homescreen.reports.syncProblemNetworkingError = true
             if let codedError = UIStateManager.shared.syncError {
-                newState.homescreen.meldungen.errorTitle = codedError.errorTitle
-                newState.homescreen.meldungen.errorMessage = codedError.localizedDescription
+                newState.homescreen.reports.errorTitle = codedError.errorTitle
+                newState.homescreen.reports.errorMessage = codedError.localizedDescription
 
                 #if ENABLE_VERBOSE
-                    newState.homescreen.meldungen.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
+                    newState.homescreen.reports.errorCode = "\(codedError.errorCodeString ?? "-"): \(codedError)"
                 #else
-                    newState.homescreen.meldungen.errorCode = codedError.errorCodeString
+                    newState.homescreen.reports.errorCode = codedError.errorCodeString
                 #endif
             }
         }
@@ -169,37 +169,37 @@ class UIStateLogic {
     // MARK: - Set global state to infected or exposed
 
     private func setInfectedState(_ newState: inout UIStateModel) {
-        newState.homescreen.meldungen.meldung = .infected
-        newState.meldungenDetail.meldung = .infected
+        newState.homescreen.reports.report = .infected
+        newState.reportsDetail.report = .infected
         newState.homescreen.header = .tracingEnded
-        newState.homescreen.begegnungen = .tracingEnded
+        newState.homescreen.encounters = .tracingEnded
     }
 
     private func setExposedState(_ newState: inout UIStateModel, days: [ExposureDay]) {
-        newState.homescreen.meldungen.meldung = .exposed
-        newState.meldungenDetail.meldung = .exposed
+        newState.homescreen.reports.report = .exposed
+        newState.reportsDetail.report = .exposed
 
-        newState.meldungenDetail.meldungen = days.map { (mc) -> UIStateModel.MeldungenDetail.NSMeldungModel in UIStateModel.MeldungenDetail.NSMeldungModel(identifier: mc.identifier, timestamp: mc.exposedDate)
+        newState.reportsDetail.reports = days.map { (mc) -> UIStateModel.ReportsDetail.NSReportModel in UIStateModel.ReportsDetail.NSReportModel(identifier: mc.identifier, timestamp: mc.exposedDate)
         }.sorted(by: { (a, b) -> Bool in
             a.timestamp < b.timestamp
         })
     }
 
     private func setLastMeldungState(_ newState: inout UIStateModel) {
-        if let meldung = newState.meldungenDetail.meldungen.last {
-            newState.shouldStartAtMeldungenDetail = UserStorage.shared.lastPhoneCall(for: meldung.identifier) == nil
-            newState.homescreen.meldungen.lastMeldung = meldung.timestamp
-            newState.meldungenDetail.showMeldungWithAnimation = !UserStorage.shared.hasSeenMessage(for: meldung.identifier)
+        if let report = newState.reportsDetail.reports.last {
+            newState.shouldStartAtReportsDetail = UserStorage.shared.lastPhoneCall(for: report.identifier) == nil
+            newState.homescreen.reports.lastReport = report.timestamp
+            newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: report.identifier)
 
             if let lastPhoneCall = UserStorage.shared.lastPhoneCallDate {
-                if lastPhoneCall > meldung.timestamp {
-                    newState.meldungenDetail.phoneCallState = .calledAfterLastExposure
+                if lastPhoneCall > report.timestamp {
+                    newState.reportsDetail.phoneCallState = .calledAfterLastExposure
                 } else {
-                    newState.meldungenDetail.phoneCallState = newState.meldungenDetail.meldungen.count > 1
+                    newState.reportsDetail.phoneCallState = newState.reportsDetail.reports.count > 1
                         ? .multipleExposuresNotCalled : .notCalled
                 }
             } else {
-                newState.meldungenDetail.phoneCallState = .notCalled
+                newState.reportsDetail.phoneCallState = .notCalled
             }
         }
     }
@@ -232,11 +232,11 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one meldung
             if let os = manager.overwrittenInfectionState, os == .exposed {
-                newState.meldungenDetail.meldungen = [UIStateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), UIStateModel.MeldungenDetail.NSMeldungModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
+                newState.reportsDetail.reports = [UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier1, timestamp: Self.randDate1), UIStateModel.ReportsDetail.NSReportModel(identifier: Self.randIdentifier2, timestamp: Self.randDate2)].sorted(by: { (a, b) -> Bool in
                     a.timestamp < b.timestamp
                 })
-                newState.shouldStartAtMeldungenDetail = true
-                newState.meldungenDetail.showMeldungWithAnimation = true
+                newState.shouldStartAtReportsDetail = true
+                newState.reportsDetail.showReportWithAnimation = true
 
                 setLastMeldungState(&newState)
             }

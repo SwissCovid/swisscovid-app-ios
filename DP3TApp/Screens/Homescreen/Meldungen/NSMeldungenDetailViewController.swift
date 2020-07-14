@@ -32,7 +32,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
-            strongSelf.setup(state.meldungenDetail)
+            strongSelf.setup(state.reportsDetail)
         }
 
         setupViewControllers()
@@ -68,21 +68,21 @@ class NSMeldungenDetailViewController: NSViewController {
         }
     }
 
-    private func setup(_ state: UIStateModel.MeldungenDetail) {
-        meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
+    private func setup(_ state: UIStateModel.ReportsDetail) {
+        meldungenViewController.showReportWithAnimation = state.showReportWithAnimation
 
         noMeldungenViewController.view.isHidden = true
         positiveTestedViewController.view.isHidden = true
         meldungenViewController.view.isHidden = true
 
-        switch state.meldung {
+        switch state.report {
         case .exposed:
             meldungenViewController.view.isHidden = false
-            meldungenViewController.meldungen = state.meldungen
+            meldungenViewController.reports = state.reports
             meldungenViewController.phoneCallState = state.phoneCallState
         case .infected:
             positiveTestedViewController.view.isHidden = false
-        case .noMeldung:
+        case .noReport:
             noMeldungenViewController.view.isHidden = false
         }
     }

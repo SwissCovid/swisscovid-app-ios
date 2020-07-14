@@ -13,9 +13,9 @@ import UIKit
 class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
-    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
+    public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
         didSet {
-            guard oldValue != meldungen else { return }
+            guard oldValue != reports else { return }
             update()
         }
     }
@@ -102,19 +102,19 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
         headers.removeAll()
 
         var first = true
-        for m in meldungen {
-            let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
-            v.accessibilityTraits = [.header]
-            v.meldung = m
-            v.headerView = self
+        for report in reports {
+            let titleHeaderView = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
+            titleHeaderView.accessibilityTraits = [.header]
+            titleHeaderView.report = report
+            titleHeaderView.headerView = self
 
-            horizontalStackScrollView.addArrangedView(v)
+            horizontalStackScrollView.addArrangedView(titleHeaderView)
 
-            v.snp.makeConstraints { make in
+            titleHeaderView.snp.makeConstraints { make in
                 make.width.equalTo(self)
             }
-
-            headers.append(v)
+            
+            headers.append(titleHeaderView)
 
             first = false
         }

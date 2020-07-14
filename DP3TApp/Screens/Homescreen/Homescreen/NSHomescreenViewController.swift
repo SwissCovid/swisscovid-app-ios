@@ -230,10 +230,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     func updateState(_ state: UIStateModel) {
         appTitleView.uiState = state.homescreen.header
-        handshakesModuleView.uiState = state.homescreen.begegnungen
-        meldungView.uiState = state.homescreen.meldungen
+        handshakesModuleView.uiState = state.homescreen.encounters
+        meldungView.uiState = state.homescreen.reports
 
-        let isInfected = state.homescreen.meldungen.meldung == .infected
+        let isInfected = state.homescreen.reports.report == .infected
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
@@ -246,7 +246,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Details
 
     private func presentBegegnungenDetail() {
-        navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
+        navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.encountersDetail), animated: true)
     }
 
     func presentMeldungenDetail(animated: Bool = true) {

@@ -14,7 +14,7 @@ import UIKit
 class NSBluetoothSettingsControl: UIView {
     // MARK: - Views
 
-    var state: UIStateModel.BegegnungenDetail
+    var state: UIStateModel.EncountersDetail
 
     public weak var viewToBeLayouted: UIView?
 
@@ -55,7 +55,7 @@ class NSBluetoothSettingsControl: UIView {
 
     // MARK: - Init
 
-    init(initialState: UIStateModel.BegegnungenDetail) {
+    init(initialState: UIStateModel.EncountersDetail) {
         state = initialState
 
         super.init(frame: .zero)
@@ -151,12 +151,12 @@ class NSBluetoothSettingsControl: UIView {
     }
 
     private func updateState(_ state: UIStateModel) {
-        self.state = state.begegnungenDetail
+        self.state = state.encountersDetail
 
-        switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)
-        tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
+        switchControl.setOn(state.encountersDetail.tracingEnabled, animated: false)
+        tracingErrorView.model = NSTracingErrorView.model(for: state.encountersDetail.tracing)
 
-        switch state.begegnungenDetail.tracing {
+        switch state.encountersDetail.tracing {
         case .tracingActive:
 
             inactiveViewConstraint?.deactivate()
