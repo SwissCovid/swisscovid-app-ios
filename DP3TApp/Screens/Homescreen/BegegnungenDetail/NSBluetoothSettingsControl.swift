@@ -68,7 +68,7 @@ class NSBluetoothSettingsControl: UIView {
         switchControl.onTintColor = .ns_blue
 
         setup()
-        updateAccessibility()
+        setupAccessibility()
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
@@ -132,12 +132,8 @@ class NSBluetoothSettingsControl: UIView {
         inactiveViewConstraint?.activate()
     }
 
-    private func updateAccessibility() {
-        isAccessibilityElement = false
-        titleLabel.isAccessibilityElement = false
-        subtitleLabel.isAccessibilityElement = false
-
-        switchControl.accessibilityLabel = [titleLabel.text ?? "", subtitleLabel.text ?? ""].joined(separator: ",")
+    private func setupAccessibility() {
+        titleLabel.accessibilityTraits = [.header]
     }
 
     // MARK: - Switch Logic
@@ -147,9 +143,11 @@ class NSBluetoothSettingsControl: UIView {
         if TracingManager.shared.isActivated != switchControl.isOn {
             TracingManager.shared.isActivated = switchControl.isOn
         }
-        UIAccessibility.post(notification: .announcement, argument: switchControl.isOn ? "accessibility_tracing_has_been_activated".ub_localized : "accessibility_tracing_has_been_deactivated".ub_localized)
-        updateAccessibility()
+
         UIAccessibility.post(notification: .layoutChanged, argument: switchControl)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            UIAccessibility.post(notification: .announcement, argument: self.switchControl.isOn ? "accessibility_tracing_has_been_activated".ub_localized : "accessibility_tracing_has_been_deactivated".ub_localized)
+        }
     }
 
     private func updateState(_ state: UIStateModel) {
@@ -181,7 +179,5 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
         }
-
-        updateAccessibility()
     }
 }

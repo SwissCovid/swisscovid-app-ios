@@ -175,7 +175,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
     private func fillViews() {
         headingLabel.text = "onboarding_disclaimer_heading".ub_localized
         titleLabel.text = "onboarding_disclaimer_title".ub_localized
-
+        titleLabel.accessibilityTraits = [.header]
         warningTitle.text = "onboarding_disclaimer_warning_title".ub_localized
         warningBody.text = "onboarding_disclaimer_warning_body".ub_localized
     }
