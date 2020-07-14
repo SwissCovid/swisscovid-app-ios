@@ -32,8 +32,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "develop",
-          "revision": "c2a807fd368fb945c43c602d9d3797693f679932",
+          "branch": "bugfix/retry-activation-and-enable-on-foreground",
+          "revision": "7deff7e4773263ffcc2a1b8fd5835d5761caccfc",
           "version": null
         }
       },
