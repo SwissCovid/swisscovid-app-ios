@@ -37,8 +37,8 @@ class ConfigManager: NSObject {
     @UBOptionalUserDefault(key: "lastBackgroundConfigLoad")
     static var lastConfigLoad: Date?
 
-    // 12h
-    static let configValidityInterval: TimeInterval = 60 * 60 * 12
+    static let configForegroundValidityInterval: TimeInterval = 60 * 60 * 12 // 12h
+    static let configBackgroundValidityInterval: TimeInterval = 60 * 60 * 6 // 6h
 
     static var allowTracing: Bool {
         return true
@@ -77,8 +77,12 @@ class ConfigManager: NSObject {
         }
     }
 
-    private var shouldLoadConfig: Bool {
-        return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configValidityInterval
+    private func shouldLoadConfig(backgroundTask: Bool) -> Bool {
+        if backgroundTask {
+            return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configBackgroundValidityInterval
+        } else {
+            return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configForegroundValidityInterval
+        }
     }
 
     private static func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
@@ -97,8 +101,8 @@ class ConfigManager: NSObject {
         }
     }
 
-    public func loadConfig(completion: @escaping (ConfigResponseBody?) -> Void) {
-        guard shouldLoadConfig else {
+    public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
+        guard shouldLoadConfig(backgroundTask: backgroundTask) else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return
@@ -138,7 +142,7 @@ class ConfigManager: NSObject {
     }
 
     public func startConfigRequest(window: UIWindow?) {
-        loadConfig { config in
+        loadConfig(backgroundTask: false) { config in
             // self must be strong
             if let config = config {
                 self.presentAlertIfNeeded(config: config, window: window)
