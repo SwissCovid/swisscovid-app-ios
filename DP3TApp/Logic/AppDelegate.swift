@@ -93,19 +93,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
 
-        // if app is cold-started or comes from background > 30 minutes,
-        // do the force update check
-        if coldStart || backgroundTime > 30.0 * 60.0 {
+        if coldStart {
             if !jumpToMessageIfRequired(onlyFirst: true) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                     _ = self.jumpToMessageIfRequired(onlyFirst: true)
                 }
             }
             NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
-            startForceUpdateCheck()
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
+
+        startForceUpdateCheck()
 
         FakePublishManager.shared.runTask()
 
@@ -156,6 +155,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             TracingLocalPush.shared.clearNotifications()
         }
     }
+
     // MARK: - Force update
 
     private func startForceUpdateCheck() {
