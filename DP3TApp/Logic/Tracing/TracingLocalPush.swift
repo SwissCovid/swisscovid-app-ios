@@ -93,7 +93,7 @@ class TracingLocalPush: NSObject {
         center.add(request, withCompletionHandler: nil)
     }
 
-    private func alreadyShowsMeldung() -> Bool {
+    private func alreadyShowsReport() -> Bool {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
             if navigationVC.viewControllers.last is NSMeldungenDetailViewController {
@@ -103,8 +103,8 @@ class TracingLocalPush: NSObject {
         return false
     }
 
-    private func jumpToMeldung() {
-        guard !alreadyShowsMeldung() else {
+    private func jumpToReport() {
+        guard !alreadyShowsReport() else {
             return
         }
 
@@ -230,7 +230,7 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if alreadyShowsMeldung(), exposureIdentifiers.contains(notification.request.identifier) {
+        if alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
             completionHandler([])
         } else {
             completionHandler([.alert, .sound])
@@ -246,6 +246,6 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
             return // cancelled
         }
 
-        jumpToMeldung()
+        jumpToReport()
     }
 }
