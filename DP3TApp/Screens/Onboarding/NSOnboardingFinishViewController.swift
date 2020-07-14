@@ -27,5 +27,7 @@ class NSOnboardingFinishViewController: NSOnboardingContentViewController {
 
         titleLabel.text = "onboarding_go_title".ub_localized
         textLabel.text = "onboarding_go_text".ub_localized
+
+        titleLabel.accessibilityTraits = [.header]
     }
 }

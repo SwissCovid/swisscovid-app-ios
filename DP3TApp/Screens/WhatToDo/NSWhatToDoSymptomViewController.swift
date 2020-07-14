@@ -66,6 +66,8 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         titleContentStackView.addArrangedView(subtitleLabel)
         titleContentStackView.addArrangedView(titleLabel)
+        titleContentStackView.accessibilityTraits = [.header]
+
         titleContentStackView.addSpacerView(3.0)
 
         stackScrollView.addArrangedView(titleContentStackView)

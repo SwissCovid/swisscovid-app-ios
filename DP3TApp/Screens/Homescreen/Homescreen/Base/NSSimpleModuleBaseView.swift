@@ -65,32 +65,29 @@ class NSSimpleModuleBaseView: UIView {
     private func setup() {
         backgroundColor = .ns_background
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
-
-        addSubview(titleLabel)
-        addSubview(contentView)
-
         let topInset = NSPadding.medium + NSPadding.small
 
-        if subtitleLabel.text == nil {
-            titleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().inset(topInset)
-                make.left.right.equalToSuperview().inset(sideInset)
-            }
-        } else {
-            addSubview(subtitleLabel)
+        let titleContentStackView = UIStackView()
+        titleContentStackView.axis = .vertical
+        titleContentStackView.alignment = .leading
+        titleContentStackView.spacing = NSPadding.small
+        titleContentStackView.isAccessibilityElement = true
+        titleContentStackView.accessibilityLabel = (subtitleLabel.text ?? "").deleteSuffix("...") + (titleLabel.text ?? "")
+        addSubview(titleContentStackView)
 
-            subtitleLabel.snp.makeConstraints { make in
-                make.top.equalToSuperview().inset(topInset)
-                make.left.right.equalToSuperview().inset(sideInset)
-            }
+        titleContentStackView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(topInset)
+            make.left.right.equalToSuperview().inset(sideInset)
+        }
+        addSubview(contentView)
 
-            titleLabel.snp.makeConstraints { make in
-                make.top.equalTo(subtitleLabel.snp.bottom).offset(NSPadding.small)
-                make.left.right.equalToSuperview().inset(sideInset)
-            }
+        if subtitleLabel.text != nil {
+            titleContentStackView.addArrangedView(subtitleLabel)
         }
 
-        var lastView: UIView = titleLabel
+        titleContentStackView.addArrangedView(titleLabel)
+
+        var lastView: UIView = titleContentStackView
 
         if textLabel.text != nil {
             let view = UIView()

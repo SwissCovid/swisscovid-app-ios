@@ -63,6 +63,8 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
             make.height.equalTo(40)
         }
         addArrangedView(bottomSpacer)
+
+        headingLabel.accessibilityTraits = [.header]
     }
 
     private func fillViews() {
