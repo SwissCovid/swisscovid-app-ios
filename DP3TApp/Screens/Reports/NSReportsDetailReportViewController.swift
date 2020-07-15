@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
+class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
     public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
@@ -41,7 +41,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSMeldungDetailMeldungTitleView(overlapInset: titleHeight - startPositionScrollView)
+        titleView = NSReportsDetailReportTitleView(overlapInset: titleHeight - startPositionScrollView)
 
         stackScrollView.hitTestDelegate = self
     }
@@ -103,7 +103,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSMeldungDetailMeldungTitleView {
+        if let tv = titleView as? NSReportsDetailReportTitleView {
             tv.reports = reports
         }
 
@@ -263,7 +263,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 }
 
-extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
+extension NSReportsDetailReportViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true

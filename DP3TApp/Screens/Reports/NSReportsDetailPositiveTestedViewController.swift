@@ -10,12 +10,12 @@
 
 import UIKit
 
-class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewController {
+class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewController {
     // MARK: - Init
 
     override init() {
         super.init()
-        titleView = NSMeldungenDetailPositiveTestedTitleView()
+        titleView = NSReportsDetailPositiveTestedTitleView()
     }
 
     // MARK: - View

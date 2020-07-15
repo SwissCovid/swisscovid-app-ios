@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungSingleTitleHeader: UIView {
+class NSReportsDetailReportSingleTitleHeader: UIView {
     // MARK: - API
 
     public weak var headerView: NSTitleView?

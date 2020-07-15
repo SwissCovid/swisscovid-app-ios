@@ -10,12 +10,12 @@
 
 import UIKit
 
-class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewController {
+class NSReportsDetailNoReportsViewController: NSTitleViewScrollViewController {
     // MARK: - Init
 
     override init() {
         super.init()
-        titleView = NSMeldungenDetailNoMeldungenTitleView()
+        titleView = NSReportsDetailNoReportsTitleView()
     }
 
     // MARK: - View

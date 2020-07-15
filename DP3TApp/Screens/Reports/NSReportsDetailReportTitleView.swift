@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
+class NSReportsDetailReportTitleView: NSTitleView, UIScrollViewDelegate {
     // MARK: - API
 
     public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
@@ -22,7 +22,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
 
     // MARK: - Initial Views
 
-    private var headers: [NSMeldungDetailMeldungSingleTitleHeader] = []
+    private var headers: [NSReportsDetailReportSingleTitleHeader] = []
     private var horizontalStackScrollView = NSStackScrollView(axis: .horizontal, spacing: 0)
 
     private let pageControl = UIPageControl()
@@ -103,7 +103,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
 
         var first = true
         for report in reports {
-            let titleHeaderView = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
+            let titleHeaderView = NSReportsDetailReportSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
             titleHeaderView.accessibilityTraits = [.header]
             titleHeaderView.report = report
             titleHeaderView.headerView = self

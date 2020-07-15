@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
+class NSReportsDetailPositiveTestedTitleView: NSTitleView {
     // MARK: - Views
 
     private let stackView = UIStackView()
