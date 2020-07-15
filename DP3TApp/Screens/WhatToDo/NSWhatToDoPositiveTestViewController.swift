@@ -77,7 +77,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.large)
 
-        let imageView = UIImageView(image: UIImage(named: "illu-positiv-title"))
+        let imageView = UIImageView(image: UIImage(named: "illu-positive-title"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 

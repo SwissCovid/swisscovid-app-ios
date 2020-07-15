@@ -37,7 +37,7 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
     // MARK: - Setup
 
     private func setupLayout() {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-selbst-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_positive_test_box_title".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, subview: nil, text: "meldung_detail_positive_test_box_text".ub_localized, image: UIImage(named: "illu-self-isolation"), subtitleColor: .ns_purple, bottomPadding: false)
 
         addDeleteButton(whiteBoxView)
 

@@ -18,9 +18,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
 
-    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))
+    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
-    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
+    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-tested-positive"))
 
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
@@ -39,7 +39,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         tabBarItem.image = UIImage(named: "ic-tracing")
         tabBarItem.title = "tab_tracing_title".ub_localized
 
-        // always load view at init, even if app starts at meldungen detail
+        // always load view at init, even if app starts at reports detail
         loadViewIfNeeded()
     }
 

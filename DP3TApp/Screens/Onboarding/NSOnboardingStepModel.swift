@@ -25,7 +25,7 @@ struct NSOnboardingStepModel {
                                              title: "onboarding_prinzip_title".ub_localized,
                                              textGroups: [
                                                  (UIImage(named: "ic-tracing-onboarding")!, "onboarding_prinzip_text1".ub_localized),
-                                                 (UIImage(named: "ic-meldung")!, "onboarding_prinzip_text2".ub_localized),
+                                                 (UIImage(named: "ic-report")!, "onboarding_prinzip_text2".ub_localized),
                                              ])
 
     static let step2 = NSOnboardingStepModel(heading: "onboarding_privacy_heading".ub_localized,
@@ -48,10 +48,10 @@ struct NSOnboardingStepModel {
 
     static let step6 = NSOnboardingStepModel(heading: "onboarding_meldung_heading".ub_localized,
                                              headingColor: .ns_blue,
-                                             foregroundImage: UIImage(named: "onboarding-meldung")!,
+                                             foregroundImage: UIImage(named: "onboarding-report")!,
                                              title: "onboarding_meldung_title".ub_localized,
                                              textGroups: [
-                                                 (UIImage(named: "ic-meldung")!, "onboarding_meldung_text1".ub_localized),
+                                                 (UIImage(named: "ic-report")!, "onboarding_meldung_text1".ub_localized),
                                                  (UIImage(named: "ic-isolation")!, "onboarding_meldung_text2".ub_localized),
                                              ])
 }

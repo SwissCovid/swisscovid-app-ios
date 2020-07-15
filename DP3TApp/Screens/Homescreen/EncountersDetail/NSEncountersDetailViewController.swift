@@ -83,7 +83,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 

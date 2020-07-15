@@ -125,7 +125,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Detail Views
 
     private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -147,7 +147,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -171,7 +171,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "iillu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 

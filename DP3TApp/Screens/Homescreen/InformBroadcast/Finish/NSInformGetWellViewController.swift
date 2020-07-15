@@ -34,7 +34,7 @@ class NSInformGetWellViewController: NSInformBottomButtonViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        let imageView = UIImageView(image: UIImage(named: "outro-gute-besserung"))
+        let imageView = UIImageView(image: UIImage(named: "outro-get-well-soon"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
