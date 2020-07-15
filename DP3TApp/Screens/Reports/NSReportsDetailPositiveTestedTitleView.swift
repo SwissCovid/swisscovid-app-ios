@@ -24,8 +24,8 @@ class NSReportsDetailPositiveTestedTitleView: NSTitleView {
     init() {
         super.init(frame: .zero)
 
-        titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
-        textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
+        titleLabel.text = "report_detail_positive_tested_title".ub_localized
+        textLabel.text = "report_detail_positive_tested_subtitle".ub_localized
 
         backgroundColor = UIColor.ns_purple
         setup()

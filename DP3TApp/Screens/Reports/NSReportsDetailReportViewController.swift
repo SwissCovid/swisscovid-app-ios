@@ -91,7 +91,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "reports_reports_faq1_text".ub_localized, title: "reports_reports_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -114,7 +114,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         if let lastReportId = reports.last?.identifier,
             let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
             callLabels.forEach {
-                $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
+                $0.text = "reports_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
             daysLeftLabels.forEach {
                 $0.text = DateFormatter.ub_inDays(until: lastCall.addingTimeInterval(60 * 60 * 24 * 10)) // 10 days after last exposure
@@ -125,11 +125,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Detail Views
 
     private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "reports_detail_call".ub_localized, subtitle: "report_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "reports_detail_call_text".ub_localized, image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
+        let callButton = NSButton(title: "reports_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -147,11 +147,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "reports_detail_call_thankyou_title".ub_localized, subtitle: "reports_detail_call_thankyou_subtitle".ub_localized, text: "reports_detail_guard_text".ub_localized, image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
+        let callButton = NSButton(title: "reports_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -171,11 +171,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "iillu-call"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "reports_detail_call_again".ub_localized, subtitle: "report_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "reports_detail_guard_text".ub_localized, image: UIImage(named: "iillu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
+        let callButton = NSButton(title: "reports_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -217,7 +217,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         deleteButton.touchUpCallback = { [weak self] in
             let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
-                TracingManager.shared.deleteMeldungen()
+                TracingManager.shared.deleteReports()
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
@@ -233,7 +233,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func createExplanationView() -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
+        let ev = NSExplanationView(title: "reports_detail_explanation_title".ub_localized, texts: ["reports_detail_explanation_text1".ub_localized, "reports_detail_explanation_text2".ub_localized, "reports_detail_explanation_text3".ub_localized, "reports_detail_explanation_text4".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
         let daysLeftLabel = NSLabel(.textBold)

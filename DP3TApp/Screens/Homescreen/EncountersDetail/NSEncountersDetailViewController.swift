@@ -79,15 +79,15 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "begegnung_detail_faq1_text".ub_localized, title: "begegnung_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "encounter_detail_faq1_text".ub_localized, title: "encounter_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "encounter_detail_faq2_text".ub_localized, title: "encounter_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-bt")!, text: "begegnungen_detail_faq3_text".ub_localized, title: "begegnungen_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-bt")!, text: "encounters_detail_faq3_text".ub_localized, title: "encounters_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

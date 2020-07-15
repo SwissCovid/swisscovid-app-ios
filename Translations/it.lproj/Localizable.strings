@@ -88,7 +88,7 @@
 "reports_title_homescreen" = "Segnalazioni";
 
 /*Keine Meldungen Titel*/
-"meldungen_no_meldungen_title" = "Nessuna segnalazione";
+"reports_no_reports_title" = "Nessuna segnalazione";
 
 /*Push deaktiviert Titel*/
 "push_deactivated_title" = "Segnalazioni disattivate";
@@ -97,10 +97,10 @@
 "push_deactivated_text" = "Modifica le impostazioni per essere informato direttamente di una segnalazione.";
 
 /*Titel im Meldung Detail*/
-"meldungen_meldung_title" = "Possibile contagio";
+"reports_report_title" = "Possibile contagio";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Vi è la possibilità di un contagio.";
+"reports_report_text" = "Vi è la possibilità di un contagio.";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "App attiva";
@@ -234,47 +234,47 @@
 "push_open_settings_button" = "Modifica impostazioni";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
-"meldungen_no_meldungen_subtitle" = "Non è stato segnalato nessun possibile contagio";
+"reports_no_reports_subtitle" = "Non è stato segnalato nessun possibile contagio";
 
 /*Keine Meldungen Weisse Box Titel*/
-"no_meldungen_box_title" = "Proteggiti";
+"no_reports_box_title" = "Proteggiti";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Cosa devo fare?";
+"no_reports_box_subtitle" = "Cosa devo fare?";
 
 /*Keine Meldungen Weisse Box Text*/
-"no_meldungen_box_text" = "Segui le raccomandazioni di igiene e di comportamento vigenti dell'UFSP.";
+"no_reports_box_text" = "Segui le raccomandazioni di igiene e di comportamento vigenti dell'UFSP.";
 
 /*Meldung Detail: Positiv Getestet Titel*/
-"meldung_detail_positive_tested_title" = "Positivo al test";
+"report_detail_positive_tested_title" = "Positivo al test";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Sei risultato positivo al test del nuovo coronavirus.";
+"report_detail_positive_tested_subtitle" = "Sei risultato positivo al test del nuovo coronavirus.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
-"meldung_detail_positive_test_box_subtitle" = "Cosa devo fare?";
+"report_detail_positive_test_box_subtitle" = "Cosa devo fare?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Isolamento";
+"report_detail_positive_test_box_title" = "Isolamento";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Segui le istruzioni sull'isolamento che hai ricevuto.";
+"report_detail_positive_test_box_text" = "Segui le istruzioni sull'isolamento che hai ricevuto.";
 "tracing_ended_title" = "Tracciamento terminato";
 "tracing_ended_text" = "Gli incontri non vengono più salvati.";
 "exposed_info_contact_hotline" = "Contatta la";
-"meldung_homescreen_positive_info_line1" = "Segui le";
-"meldung_homescreen_positive_info_line2" = "istruzioni sull'auto-isolamento";
+"report_homescreen_positive_info_line1" = "Segui le";
+"report_homescreen_positive_info_line2" = "istruzioni sull'auto-isolamento";
 
 /*Meldung Detail Exposed Neue Meldung*/
-"meldung_detail_exposed_new_meldung" = "Nuova segnalazione";
+"report_detail_exposed_new_report" = "Nuova segnalazione";
 
 /*Meldung Detail Exposed Titel*/
-"meldung_detail_exposed_title" = "Possibile contagio";
-"meldung_homescreen_positiv_title" = "Positivo al test";
+"report_detail_exposed_title" = "Possibile contagio";
+"report_homescreen_positiv_title" = "Positivo al test";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Vi è la possibilità di un contagio.";
-"meldung_homescreen_positiv_text" = "Sei risultato positivo al test del nuovo coronavirus.";
+"report_detail_exposed_subtitle" = "Vi è la possibilità di un contagio.";
+"report_homescreen_positiv_text" = "Sei risultato positivo al test del nuovo coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Reimposta onboarding";
@@ -286,31 +286,31 @@
 "date_days_ago" = "{COUNT} giorni fa";
 
 /*Meldungen Detail: Weisse Box Titel*/
-"meldungen_detail_call" = "Telefonaci";
+"reports_detail_call" = "Telefonaci";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline SwissCovid";
+"reports_detail_call_text" = "Infoline SwissCovid";
 
 /*Meldungen Detail Weisse Box Button*/
-"meldungen_detail_call_button" = "Telefona ora";
+"reports_detail_call_button" = "Telefona ora";
 
 /*Meldungen Detail Weisse Box Titel der Erklärungen*/
-"meldungen_detail_explanation_title" = "Attenzione!";
+"reports_detail_explanation_title" = "Attenzione!";
 
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
-"meldungen_detail_explanation_text1" = "Potresti essere contagioso senza rendertene conto.";
+"reports_detail_explanation_text1" = "Potresti essere contagioso senza rendertene conto.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Proteggi la tua famiglia e i tuoi amici e conoscenti. Evita i contatti per un periodo fino a 10 giorni da un possibile contagio.";
+"reports_detail_explanation_text2" = "Proteggi la tua famiglia e i tuoi amici e conoscenti. Evita i contatti per un periodo fino a 10 giorni da un possibile contagio.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "Per domande:\nInfoline SwissCovid\n+41 58 387 77 78";
+"reports_detail_guard_text" = "Per domande:\nInfoline SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
-"meldungen_detail_call_again_button" = "Ritelefona";
+"reports_detail_call_again_button" = "Ritelefona";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"meldungen_detail_call_last_call" = "Ultima telefonata: {DATE}";
+"reports_detail_call_last_call" = "Ultima telefonata: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Subtitle";
@@ -340,28 +340,28 @@
 "onboarding_privacy_text2" = "Gli ID casuali salvati restano sul tuo telefono cellulare e vengono eliminati dopo 14 giorni.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Come funziona l'app?";
+"onboarding_encounters_heading" = "Come funziona l'app?";
 
 /*Onboarding Begegnungen: Titel*/
-"onboarding_begegnungen_title" = "Riconosce gli incontri\ngrazie a Bluetooth";
+"onboarding_encounters_title" = "Riconosce gli incontri\ngrazie a Bluetooth";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text1" = "L'app riconosce automaticamente quando due utenti sono stati uno vicino all'altro per un certo tempo.";
+"onboarding_encounters_text1" = "L'app riconosce automaticamente quando due utenti sono stati uno vicino all'altro per un certo tempo.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "L'app utilizza soltanto Bluetooth Low Energy (BLE). Nessun dato GPS, di telefonia mobile, del Wi-Fi o altri dati sulla posizione.";
+"onboarding_encounters_text2" = "L'app utilizza soltanto Bluetooth Low Energy (BLE). Nessun dato GPS, di telefonia mobile, del Wi-Fi o altri dati sulla posizione.";
 
 /*Onboarding Meldung: Text oben*/
-"onboarding_meldung_heading" = "Cosa fa l'app?";
+"onboarding_report_heading" = "Cosa fa l'app?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_meldung_title" = "Segnalazione in caso di\npossibile contagio";
+"onboarding_report_title" = "Segnalazione in caso di\npossibile contagio";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "L'app ti informa se sei stato potenzialmente esposto al nuovo coronavirus.";
+"onboarding_report_text1" = "L'app ti informa se sei stato potenzialmente esposto al nuovo coronavirus.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Con il comportamento giusto puoi interrompere le catene di infezione e proteggere gli altri.";
+"onboarding_report_text2" = "Con il comportamento giusto puoi interrompere le catene di infezione e proteggere gli altri.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Consenti Bluetooth";
@@ -418,13 +418,13 @@
 "onboarding_go_button" = "Avvia";
 
 /*Homescreen: Titel bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_title" = "Non ci sono dati aggiornati";
+"homescreen_report_data_outdated_title" = "Non ci sono dati aggiornati";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Da qualche tempo non è stato possibile sincronizzare le segnalazioni. Assicurati che il tuo dispositivo sia connesso a Internet.";
+"homescreen_report_data_outdated_text" = "Da qualche tempo non è stato possibile sincronizzare le segnalazioni. Assicurati che il tuo dispositivo sia connesso a Internet.";
 
 /*Homescreen: Button Titel*/
-"homescreen_meldung_data_outdated_retry_button" = "Riprova";
+"homescreen_report_data_outdated_retry_button" = "Riprova";
 
 /*Titel Fehlermeldung für ungültigen Code*/
 "inform_code_invalid_title" = "Codice non valido";
@@ -436,10 +436,10 @@
 "date_one_day_ago" = "1 giorno fa";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Possibile contagio";
+"report_detail_new_contact_title" = "Possibile contagio";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Vi è il sospetto di un possibile contagio.";
+"report_detail_new_contact_subtitle" = "Vi è il sospetto di un possibile contagio.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Errore nell'impostazione dell'ora";
@@ -448,31 +448,31 @@
 "time_inconsistency_text" = "Affinché il tracciamento funzioni l'ora deve essere impostata correttamente.";
 
 /*Begegnungen: Neustart Titel*/
-"begegnungen_restart_error_title" = "Riavvio necessario";
+"encounters_restart_error_title" = "Riavvio necessario";
 
 /*Begegnungen: Neustart Text*/
-"begegnungen_restart_error_text" = "Si è verificato un errore imprevisto. Riavvia il dispositivo.";
+"encounters_restart_error_text" = "Si è verificato un errore imprevisto. Riavvia il dispositivo.";
 
 /*Fehler Titel für Hintergrund-Fehler*/
-"meldungen_background_error_title" = "Aggiornamento in background disattivato";
+"reports_background_error_title" = "Aggiornamento in background disattivato";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Modifica le impostazioni per essere informato anche al di fuori dell'app in caso di nuova segnalazione.";
+"reports_background_error_text" = "Modifica le impostazioni per essere informato anche al di fuori dell'app in caso di nuova segnalazione.";
 
 /*Button Titel für Hintergrundfehler beheben*/
-"meldungen_background_error_button" = "Modifica impostazioni";
+"reports_background_error_button" = "Modifica impostazioni";
 
 /*Default message for force update*/
 "force_update_text" = "Scarica la nuova versione dell'app per permettere il tracciamento.";
 
 /*Ignorieren Button Titel*/
-"meldung_in_app_alert_ignore_button" = "Ignora";
+"report_in_app_alert_ignore_button" = "Ignora";
 
 /*Button Titel*/
-"meldung_in_app_alert_accept_button" = "Alle informazioni";
+"report_in_app_alert_accept_button" = "Alle informazioni";
 
 /*Meldungen Detail: Button Titel*/
-"meldungen_detail_call_again" = "Telefona di nuovo";
+"reports_detail_call_again" = "Telefona di nuovo";
 
 /*Fehlernachricht für Netzwerkfehler*/
 "network_error" = "Verifica la connessione a Internet.";
@@ -545,64 +545,64 @@
 "sync_warning_notification_text" = "Apri l'app per sincronizzare l'elenco degli ID casuali segnalati.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
-"meldung_animation_continue_button" = "Avanti";
+"report_animation_continue_button" = "Avanti";
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq1_title" = "Cosa significa incontro?";
+"encounter_detail_faq1_title" = "Cosa significa incontro?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Se due telefoni cellulari con l'app si trovano uno vicino all'altro per un certo tempo, l'incontro viene salvato nel dispositivo.";
+"encounter_detail_faq1_text" = "Se due telefoni cellulari con l'app si trovano uno vicino all'altro per un certo tempo, l'incontro viene salvato nel dispositivo.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq2_title" = "I miei dati sono sicuri?";
+"encounter_detail_faq2_title" = "I miei dati sono sicuri?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "In caso di incontro vengono scambiati soltanto ID casuali. \n\nQuesti vengono salvati localmente sui dispositivi e nuovamente eliminati dopo 14 giorni.";
+"encounter_detail_faq2_text" = "In caso di incontro vengono scambiati soltanto ID casuali. \n\nQuesti vengono salvati localmente sui dispositivi e nuovamente eliminati dopo 14 giorni.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnungen_detail_faq3_title" = "Bluetooth deve sempre essere attivato?";
+"encounters_detail_faq3_title" = "Bluetooth deve sempre essere attivato?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Per poter riconoscere gli incontri, Bluetooth deve sempre essere attivato.\n\nIl consumo della batteria aumenta soltanto leggermente.";
+"encounters_detail_faq3_text" = "Per poter riconoscere gli incontri, Bluetooth deve sempre essere attivato.\n\nIl consumo della batteria aumenta soltanto leggermente.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Domande frequenti";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq1_title" = "Cosa sono le segnalazioni?";
+"reports_no_reports_faq1_title" = "Cosa sono le segnalazioni?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "L'app controlla regolarmente se altri utenti che hai incontrato hanno segnalato di essere positivi al test.\n\nIn caso di possibile contagio viene visualizzato un messaggio sulla schermata di blocco.";
+"reports_no_reports_faq1_text" = "L'app controlla regolarmente se altri utenti che hai incontrato hanno segnalato di essere positivi al test.\n\nIn caso di possibile contagio viene visualizzato un messaggio sulla schermata di blocco.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Cosa significa possibile contagio?";
+"reports_no_reports_faq2_titel" = "Cosa significa possibile contagio?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "L'app non controlla solo se ci sono stati incontri con persone infette, ma anche a quale distanza e per quanto tempo.\n\nL'utente viene informato soltanto se la possibilità di un contagio è sufficientemente fondata.";
+"reports_no_reports_faq2_text" = "L'app non controlla solo se ci sono stati incontri con persone infette, ma anche a quale distanza e per quanto tempo.\n\nL'utente viene informato soltanto se la possibilità di un contagio è sufficientemente fondata.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "La Infoline SwissCovid ti offre consulenza sulla possibilità di fare un test gratuito.";
+"reports_detail_explanation_text3" = "La Infoline SwissCovid ti offre consulenza sulla possibilità di fare un test gratuito.";
 
 /*Meldungen: Meldungen FAQ*/
-"meldungen_meldungen_faq1_title" = "Devo telefonare?";
+"reports_reports_faq1_title" = "Devo telefonare?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "È importante telefonare a ogni nuova segnalazione.\n\nL'utente resta anonimo. Non vengono registrati dati personali.\n\nIl colloquio di consulenza è gratuito; paghi soltanto il costo della telefonata.";
+"reports_reports_faq1_text" = "È importante telefonare a ogni nuova segnalazione.\n\nL'utente resta anonimo. Non vengono registrati dati personali.\n\nIl colloquio di consulenza è gratuito; paghi soltanto il costo della telefonata.";
 
 /*Meldungen Detail: Anruf Titel*/
-"meldungen_detail_call_thankyou_title" = "Grazie per la tua partecipazione";
+"reports_detail_call_thankyou_title" = "Grazie per la tua partecipazione";
 
 /*Meldungen Detail Anruf Danke Subtitel*/
-"meldungen_detail_call_thankyou_subtitle" = "Proteggi gli altri";
+"reports_detail_call_thankyou_subtitle" = "Proteggi gli altri";
 
 /*Keine Meldungen Link in weisser Box Titel*/
-"no_meldungen_box_link" = "Così ci proteggiamo";
+"no_reports_box_link" = "Così ci proteggiamo";
 
 /*Keine Meldungen Weisse Box Link URL*/
-"no_meldungen_box_url" = "https://www.ufsp-coronavirus.ch";
+"no_reports_box_url" = "https://www.ufsp-coronavirus.ch";
 
 /*Informieren Detail: FAQ Titel*/
 "inform_detail_faq1_title" = "Cos'è un codice Covid?";
@@ -638,10 +638,10 @@
 "symptom_faq1_text" = "Hai  sintomi e non sai bene come comportarti? \n\nRispondi alle domande dell'autovalutazione online dell'UFSP per ricevere una raccomandazione pratica.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
+"reports_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Dopo un test positivo il tracciamento nell'app viene terminato automaticamente.";
+"reports_positive_tested_faq1_text" = "Dopo un test positivo il tracciamento nell'app viene terminato automaticamente.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "it";
@@ -807,7 +807,7 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "Non fate parte di un'organizzazione che partecipa alla fase pilota. Si prega di installare l'aggiornamento appropriato dopo il lancio ufficiale dell'applicazione e di riaprire l'applicazione.";
-"begegnung_detail_last_sync_title" = "Ultima sincronizzazione effettuata";
+"encounter_detail_last_sync_title" = "Ultima sincronizzazione effettuata";
 "synchronizations_view_title" = "Panoramica";
 "synchronizations_view_info_title" = "Sincronizzazioni";
 "synchronizations_view_info_question" = "Cosa sono le sincronizzazioni?";
@@ -839,7 +839,7 @@
 "inform_detail_faq3_title" = "Resto anonimo?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Ai primi sintomi, fai l'autovalutazione del coronavirus o telefona al tuo medico.";
+"reports_detail_explanation_text4" = "Ai primi sintomi, fai l'autovalutazione del coronavirus o telefona al tuo medico.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Notifiche di esposizione al COVID-19";

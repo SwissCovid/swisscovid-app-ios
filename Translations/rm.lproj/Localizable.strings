@@ -88,7 +88,7 @@
 "reports_title_homescreen" = "Communicaziuns";
 
 /*Keine Meldungen Titel*/
-"meldungen_no_meldungen_title" = "Naginas communicaziuns";
+"reports_no_reports_title" = "Naginas communicaziuns";
 
 /*Push deaktiviert Titel*/
 "push_deactivated_title" = "Deactivar las communicaziuns";
@@ -97,10 +97,10 @@
 "push_deactivated_text" = "Midai la configuraziun per pudair vegnir infurmà/infurmada directamain en cas d'ina communicaziun";
 
 /*Titel im Meldung Detail*/
-"meldungen_meldung_title" = "Eventuala infecziun";
+"reports_report_title" = "Eventuala infecziun";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Ina infecziun è pussaivla.";
+"reports_report_text" = "Ina infecziun è pussaivla.";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "App activa";
@@ -234,47 +234,47 @@
 "push_open_settings_button" = "Midar configuraziun";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
-"meldungen_no_meldungen_subtitle" = "Nagin'annunzia d'in'eventuala infecziun";
+"reports_no_reports_subtitle" = "Nagin'annunzia d'in'eventuala infecziun";
 
 /*Keine Meldungen Weisse Box Titel*/
-"no_meldungen_box_title" = "As protegi!";
+"no_reports_box_title" = "As protegi!";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_meldungen_box_subtitle" = "Tge duai jau far?";
+"no_reports_box_subtitle" = "Tge duai jau far?";
 
 /*Keine Meldungen Weisse Box Text*/
-"no_meldungen_box_text" = "Resguardai las recumandaziuns actualas da l'UFSP";
+"no_reports_box_text" = "Resguardai las recumandaziuns actualas da l'UFSP";
 
 /*Meldung Detail: Positiv Getestet Titel*/
-"meldung_detail_positive_tested_title" = "Testà positiv";
+"report_detail_positive_tested_title" = "Testà positiv";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Vus essas testà/testada positiv sin il nov coronavirus.";
+"report_detail_positive_tested_subtitle" = "Vus essas testà/testada positiv sin il nov coronavirus.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
-"meldung_detail_positive_test_box_subtitle" = "Tge stoss jau far?";
+"report_detail_positive_test_box_subtitle" = "Tge stoss jau far?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"meldung_detail_positive_test_box_title" = "Isolaziun";
+"report_detail_positive_test_box_title" = "Isolaziun";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"meldung_detail_positive_test_box_text" = "Observai las directivas retschavidas davart l'isolaziun";
+"report_detail_positive_test_box_text" = "Observai las directivas retschavidas davart l'isolaziun";
 "tracing_ended_title" = "Tracing finì";
 "tracing_ended_text" = "I na vegnan arcunadas pli naginas scuntradas";
 "exposed_info_contact_hotline" = "Contactai la...";
-"meldung_homescreen_positive_info_line1" = "Observai la…";
-"meldung_homescreen_positive_info_line2" = "Directivas davart l'autoisolaziun";
+"report_homescreen_positive_info_line1" = "Observai la…";
+"report_homescreen_positive_info_line2" = "Directivas davart l'autoisolaziun";
 
 /*Meldung Detail Exposed Neue Meldung*/
-"meldung_detail_exposed_new_meldung" = "Nova communicaziun";
+"report_detail_exposed_new_report" = "Nova communicaziun";
 
 /*Meldung Detail Exposed Titel*/
-"meldung_detail_exposed_title" = "Eventuala infecziun";
-"meldung_homescreen_positiv_title" = "Testà positiv";
+"report_detail_exposed_title" = "Eventuala infecziun";
+"report_homescreen_positiv_title" = "Testà positiv";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Ina infecziun è pussaivla.";
-"meldung_homescreen_positiv_text" = "Vus essas testà/testada positiv sin il nov coronavirus.";
+"report_detail_exposed_subtitle" = "Ina infecziun è pussaivla.";
+"report_homescreen_positiv_text" = "Vus essas testà/testada positiv sin il nov coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Redefinir onboarding";
@@ -286,31 +286,31 @@
 "date_days_ago" = "avant {COUNT} dis";
 
 /*Meldungen Detail: Weisse Box Titel*/
-"meldungen_detail_call" = "Telefonai a nus";
+"reports_detail_call" = "Telefonai a nus";
 
 /*Meldungen Detail Text Weisse Box*/
-"meldungen_detail_call_text" = "Infoline coronavirus ";
+"reports_detail_call_text" = "Infoline coronavirus ";
 
 /*Meldungen Detail Weisse Box Button*/
-"meldungen_detail_call_button" = "Telefonar ussa";
+"reports_detail_call_button" = "Telefonar ussa";
 
 /*Meldungen Detail Weisse Box Titel der Erklärungen*/
-"meldungen_detail_explanation_title" = "Attenziun!";
+"reports_detail_explanation_title" = "Attenziun!";
 
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
-"meldungen_detail_explanation_text1" = "Vus pudessas esser contagius/contagiusa senza savair.";
+"reports_detail_explanation_text1" = "Vus pudessas esser contagius/contagiusa senza savair.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Protegi per plaschair Vossa famiglia, Voss amis e Voss ambient. Evitai contacts fin a 10 dis suenter in'eventuala infecziun.";
+"reports_detail_explanation_text2" = "Protegi per plaschair Vossa famiglia, Voss amis e Voss ambient. Evitai contacts fin a 10 dis suenter in'eventuala infecziun.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"meldungen_detail_guard_text" = "En cas da dumondas:\nInfoline SwissCovid\n+41 58 387 77 78";
+"reports_detail_guard_text" = "En cas da dumondas:\nInfoline SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
-"meldungen_detail_call_again_button" = "Telefonar danovamain";
+"reports_detail_call_again_button" = "Telefonar danovamain";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"meldungen_detail_call_last_call" = "Davos telefonat: {DATE}";
+"reports_detail_call_last_call" = "Davos telefonat: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Untertitel";
@@ -340,28 +340,28 @@
 "onboarding_privacy_text2" = "Ils IDs casuals arcunads restan sin Voss telefon mobil e vegnan stizzads suenter 14 dis.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Co funcziuna l'app?";
+"onboarding_encounters_heading" = "Co funcziuna l'app?";
 
 /*Onboarding Begegnungen: Titel*/
-"onboarding_begegnungen_title" = "Enconuscher scuntradas grazia a bluetooth";
+"onboarding_encounters_title" = "Enconuscher scuntradas grazia a bluetooth";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text1" = "L'app enconuscha automaticamain sche dus utilisaders èn damanaivel per in tschert temp.";
+"onboarding_encounters_text1" = "L'app enconuscha automaticamain sche dus utilisaders èn damanaivel per in tschert temp.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_begegnungen_text2" = "Per quest intent vegni duvrà mo Bluetooth Low Energy (BLE). Naginas datas da GPS, telefon mobil, WiFi u autras datas da posiziun.";
+"onboarding_encounters_text2" = "Per quest intent vegni duvrà mo Bluetooth Low Energy (BLE). Naginas datas da GPS, telefon mobil, WiFi u autras datas da posiziun.";
 
 /*Onboarding Meldung: Text oben*/
-"onboarding_meldung_heading" = "Tge fa l'app?";
+"onboarding_report_heading" = "Tge fa l'app?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_meldung_title" = "Annunzia en cas d'in'eventuala infecziun";
+"onboarding_report_title" = "Annunzia en cas d'in'eventuala infecziun";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "L'app As infurmescha, sche Vus essas stà exponì / stada exponida potenzialmain al nov coronavirus.";
+"onboarding_report_text1" = "L'app As infurmescha, sche Vus essas stà exponì / stada exponida potenzialmain al nov coronavirus.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text2" = "Cun il cumportament gist pudais Vus interrumper chadainas d'infecziun e proteger autras persunas.";
+"onboarding_report_text2" = "Cun il cumportament gist pudais Vus interrumper chadainas d'infecziun e proteger autras persunas.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Permetter bluetooth";
@@ -418,13 +418,13 @@
 "onboarding_go_button" = "Cumenzar";
 
 /*Homescreen: Titel bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_title" = "Naginas datas actualas";
+"homescreen_report_data_outdated_title" = "Naginas datas actualas";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Dapi intgin temp n'han las communicaziuns betg pudì vegnir sincronisadas. Verifitgai che Voss apparat saja connectà cun l'internet.";
+"homescreen_report_data_outdated_text" = "Dapi intgin temp n'han las communicaziuns betg pudì vegnir sincronisadas. Verifitgai che Voss apparat saja connectà cun l'internet.";
 
 /*Homescreen: Button Titel*/
-"homescreen_meldung_data_outdated_retry_button" = "Empruvar danovamain";
+"homescreen_report_data_outdated_retry_button" = "Empruvar danovamain";
 
 /*Titel Fehlermeldung für ungültigen Code*/
 "inform_code_invalid_title" = "Code nunvalaivel";
@@ -436,10 +436,10 @@
 "date_one_day_ago" = "avant 1 di";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Eventuala infecziun";
+"report_detail_new_contact_title" = "Eventuala infecziun";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "I vegn suspectà in'eventuala infecziun.";
+"report_detail_new_contact_subtitle" = "I vegn suspectà in'eventuala infecziun.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Ura sbagliada";
@@ -448,31 +448,31 @@
 "time_inconsistency_text" = "L'ura sto esser drizzada en exactamain per ch'il tracing possia funcziunar";
 
 /*Begegnungen: Neustart Titel*/
-"begegnungen_restart_error_title" = "Reinizialisaziun necessaria";
+"encounters_restart_error_title" = "Reinizialisaziun necessaria";
 
 /*Begegnungen: Neustart Text*/
-"begegnungen_restart_error_text" = "Igl è capità in sbagl imprevis. Per plaschair reinizialisar l'apparat";
+"encounters_restart_error_text" = "Igl è capità in sbagl imprevis. Per plaschair reinizialisar l'apparat";
 
 /*Fehler Titel für Hintergrund-Fehler*/
-"meldungen_background_error_title" = "Actualisaziun dal fund messa ord funcziun";
+"reports_background_error_title" = "Actualisaziun dal fund messa ord funcziun";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";
+"reports_background_error_text" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";
 
 /*Button Titel für Hintergrundfehler beheben*/
-"meldungen_background_error_button" = "Midar confguraziun";
+"reports_background_error_button" = "Midar confguraziun";
 
 /*Default message for force update*/
 "force_update_text" = "Chargiai la nova versiun da l'app per ch'il tracing funcziunia.";
 
 /*Ignorieren Button Titel*/
-"meldung_in_app_alert_ignore_button" = "Ignorar";
+"report_in_app_alert_ignore_button" = "Ignorar";
 
 /*Button Titel*/
-"meldung_in_app_alert_accept_button" = "Tar las infurmaziuns";
+"report_in_app_alert_accept_button" = "Tar las infurmaziuns";
 
 /*Meldungen Detail: Button Titel*/
-"meldungen_detail_call_again" = "Telefonai danovamain";
+"reports_detail_call_again" = "Telefonai danovamain";
 
 /*Fehlernachricht für Netzwerkfehler*/
 "network_error" = "Per plaschair examinai Vossa connexiun d'internet";
@@ -541,64 +541,64 @@
 "sync_warning_notification_text" = "Avri l'app per armonisar la glista dals IDs casuals communitgads.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
-"meldung_animation_continue_button" = "Vinavant";
+"report_animation_continue_button" = "Vinavant";
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq1_title" = "Tge vul dir scuntrada?";
+"encounter_detail_faq1_title" = "Tge vul dir scuntrada?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Sche telefons mobils cun l'app sa chattan damanaivel per in tschert temp, vegn quai registrà sin l'apparat sco scuntrada.";
+"encounter_detail_faq1_text" = "Sche telefons mobils cun l'app sa chattan damanaivel per in tschert temp, vegn quai registrà sin l'apparat sco scuntrada.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq2_title" = "Sun mias datas segiras?";
+"encounter_detail_faq2_title" = "Sun mias datas segiras?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "En cas d'ina scuntrada vegnan mo barattads IDs casuals. \n\nQuests vegnan arcunads localmain sin ils apparats e puspè stizzads suenter 14 dis.";
+"encounter_detail_faq2_text" = "En cas d'ina scuntrada vegnan mo barattads IDs casuals. \n\nQuests vegnan arcunads localmain sin ils apparats e puspè stizzads suenter 14 dis.";
 
 /*Begegnungen: FAQ Titel*/
-"begegnungen_detail_faq3_title" = "Sto bluetooth adina esser en funcziun?";
+"encounters_detail_faq3_title" = "Sto bluetooth adina esser en funcziun?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Bluetooth sto adina esser en funcziun per che las scuntradas possian vegnir enconuschidas.\n\nl diever da la battaria s'augmenta qua tras mo levamain.";
+"encounters_detail_faq3_text" = "Bluetooth sto adina esser en funcziun per che las scuntradas possian vegnir enconuschidas.\n\nl diever da la battaria s'augmenta qua tras mo levamain.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Dumondas frequentas";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq1_title" = "Tge èn communicaziuns?";
+"reports_no_reports_faq1_title" = "Tge èn communicaziuns?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "L'app examinescha regularmain, sche auters utilisaders che Vus avais scuntrà han annunzià in test positiv.\n\nEn cas d'in'eventuala infecziun vegnis Vus orientà/orientada cun ina communicaziun sin il visur bloccà.";
+"reports_no_reports_faq1_text" = "L'app examinescha regularmain, sche auters utilisaders che Vus avais scuntrà han annunzià in test positiv.\n\nEn cas d'in'eventuala infecziun vegnis Vus orientà/orientada cun ina communicaziun sin il visur bloccà.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Tge vul dir eventuala infecziun?";
+"reports_no_reports_faq2_titel" = "Tge vul dir eventuala infecziun?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "L'app n'examinescha betg sulettamain, sch'i ha dà scuntradas cun persunas infectadas, mabain er quant ditg ch'ellas han durà e quant damanaivel che Vus essas stà/stada a questas persunas.\n\nVus vegnis infurmà/infurmada mo sche la pussaivladad d'esser infectà/infectada è gronda avunda.";
+"reports_no_reports_faq2_text" = "L'app n'examinescha betg sulettamain, sch'i ha dà scuntradas cun persunas infectadas, mabain er quant ditg ch'ellas han durà e quant damanaivel che Vus essas stà/stada a questas persunas.\n\nVus vegnis infurmà/infurmada mo sche la pussaivladad d'esser infectà/infectada è gronda avunda.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"meldungen_detail_explanation_text3" = "L'infoline SwissCovid As cusseglia davart la pussaivladad d'in test gratuit.";
+"reports_detail_explanation_text3" = "L'infoline SwissCovid As cusseglia davart la pussaivladad d'in test gratuit.";
 
 /*Meldungen: Meldungen FAQ*/
-"meldungen_meldungen_faq1_title" = "Stoss jau telefonar?";
+"reports_reports_faq1_title" = "Stoss jau telefonar?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"meldungen_meldungen_faq1_text" = "Igl è recumandà da telefonar tar mintga nova communicaziun.                                                                          \n\nVus restais anonim. I na vegnan registradas naginas datas persunalas.\n\nIl discurs da cussegliaziun è gratuit; igl è da pajar mo la taxa da telefon.";
+"reports_reports_faq1_text" = "Igl è recumandà da telefonar tar mintga nova communicaziun.                                                                          \n\nVus restais anonim. I na vegnan registradas naginas datas persunalas.\n\nIl discurs da cussegliaziun è gratuit; igl è da pajar mo la taxa da telefon.";
 
 /*Meldungen Detail: Anruf Titel*/
-"meldungen_detail_call_thankyou_title" = "Grazia per Vossa participaziun";
+"reports_detail_call_thankyou_title" = "Grazia per Vossa participaziun";
 
 /*Meldungen Detail Anruf Danke Subtitel*/
-"meldungen_detail_call_thankyou_subtitle" = "Vus protegis auters";
+"reports_detail_call_thankyou_subtitle" = "Vus protegis auters";
 
 /*Keine Meldungen Link in weisser Box Titel*/
-"no_meldungen_box_link" = "Uschia ans protegin nus";
+"no_reports_box_link" = "Uschia ans protegin nus";
 
 /*Keine Meldungen Weisse Box Link URL*/
-"no_meldungen_box_url" = "https://check.bag-coronavirus.ch";
+"no_reports_box_url" = "https://check.bag-coronavirus.ch";
 
 /*Informieren Detail: FAQ Titel*/
 "inform_detail_faq1_title" = "Tge è in code covid?";
@@ -634,10 +634,10 @@
 "symptom_faq1_text" = "Vus avais sintoms ed essas malsegir/malsegira co che Vus As stuais cumportar? \n\nRespundai las dumondas en il check online da l'UFSP per ina recumandaziun da cumportament.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Pertge è il tracing terminà?";
+"reports_positive_tested_faq1_title" = "Pertge è il tracing terminà?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Suenter in test positiv vegn il tracing en l'app terminà automaticamain.";
+"reports_positive_tested_faq1_text" = "Suenter in test positiv vegn il tracing en l'app terminà automaticamain.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "rm";
@@ -800,7 +800,7 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "You are not part of an organization participating in the pilot phase. Please install the appropriate update after the official launch of the app and open the app again.";
-"begegnung_detail_last_sync_title" = "Davosa sincronisaziun reussida";
+"encounter_detail_last_sync_title" = "Davosa sincronisaziun reussida";
 "synchronizations_view_title" = "Survista";
 "synchronizations_view_info_title" = "Sincronisaziuns";
 "synchronizations_view_info_question" = "Tge èn sincronisaziuns?";
@@ -832,7 +832,7 @@
 "inform_detail_faq3_title" = "Rest jau anonim?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Faschai per plaschair il check coronavirus tar ils emprims sintoms u telefonai a Vossa media / Voss medi.";
+"reports_detail_explanation_text4" = "Faschai per plaschair il check coronavirus tar ils emprims sintoms u telefonai a Vossa media / Voss medi.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Communicaziuns COVID-19";

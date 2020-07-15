@@ -127,7 +127,7 @@ class UIStateLogic {
                     newState.homescreen.reports.errorTitle = codedError.errorTitle
                     newState.homescreen.reports.errorMessage = codedError.localizedDescription
                 } else {
-                    newState.homescreen.reports.errorMessage = "homescreen_meldung_data_outdated_text".ub_localized
+                    newState.homescreen.reports.errorMessage = "homescreen_report_data_outdated_text".ub_localized
                 }
 
                 #if ENABLE_VERBOSE
