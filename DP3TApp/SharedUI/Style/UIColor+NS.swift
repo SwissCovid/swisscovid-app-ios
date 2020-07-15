@@ -54,6 +54,14 @@ extension UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#efefef")!, darkColor: UIColor(ub_hexString: "#1E1E23")!)
     }
     
+    static var disabledButtonBackground: UIColor {
+        return UIColor().setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.15), darkColor: UIColor(ub_hexString: "#cdcdd0")!)
+    }
+    
+    static var imageTintColor: UIColor {
+        return UIColor().setColorsForTheme(lightColor: UIColor.black, darkColor: UIColor.white)
+    }
+    
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!.withHighContrastColor(color: .black)
 
 

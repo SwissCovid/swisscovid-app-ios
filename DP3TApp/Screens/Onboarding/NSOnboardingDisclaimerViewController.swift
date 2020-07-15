@@ -101,7 +101,9 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningRow0.axis = .horizontal
         let iconWrapper = UIView()
         iconWrapper.backgroundColor = .ns_backgroundTertiary
-        let manufacturerIcon = UIImageView(image: UIImage(named: "manufacturer-iso-icon")!)
+        let manufacturerImage = UIImage(named: "manufacturer-iso-icon")?.withRenderingMode(.alwaysTemplate)
+        let manufacturerIcon = UIImageView(image: manufacturerImage)
+        manufacturerIcon.tintColor = UIColor.imageTintColor
         iconWrapper.addSubview(manufacturerIcon)
 
         let label = NSLabel(.smallLight, textColor: .ns_text)
@@ -145,8 +147,10 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             releaseDateLabel.text = "onboarding_disclaimer_release_version".ub_localized + " " + DateFormatter.ub_dayString(from: buildDate)
             versionStack.addArrangedSubview(releaseDateLabel)
         }
-
-        let ceIcon = UIImageView(image: UIImage(named: "ce-marking")!)
+        
+        let renderedMarkingImage = UIImage(named: "ce-marking")?.withRenderingMode(.alwaysTemplate)
+        let ceIcon = UIImageView(image: renderedMarkingImage)
+        ceIcon.tintColor = UIColor.imageTintColor
 
         warningRow1.addSubview(versionStack)
         warningRow1.addSubview(ceIcon)
