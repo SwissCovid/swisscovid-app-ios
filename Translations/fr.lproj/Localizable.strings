@@ -682,7 +682,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text_ios" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activée.";
+"onboarding_gaen_text_ios" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activées.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Activer";
@@ -851,7 +851,7 @@
 "tracing_setting_text_android" = "Notifications d'exposition au COVID 19";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
-"onboarding_gaen_text_android" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activée.";
+"onboarding_gaen_text_android" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activées.";
 
 /*Onboarding Disclaimer Screen: AppName Title*/
 "onboarding_disclaimer_heading" = "SwissCovid";
