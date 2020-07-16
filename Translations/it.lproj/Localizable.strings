@@ -635,7 +635,7 @@
 "symptom_faq1_title" = "Cos'è l'autovalutazione sul coronavirus?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Hai  sintomi e non sai bene come comportarti? \n\nRispondi alle domande dell'autovalutazione online dell'UFSP per ricevere una raccomandazione pratica.";
+"symptom_faq1_text" = "Hai sintomi e non sai bene come comportarti? \n\nRispondi alle domande dell'autovalutazione online dell'UFSP per ricevere una raccomandazione pratica.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
@@ -800,7 +800,7 @@
 "onboarding_legal_alert_no" = "No";
 
 /*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Si";
+"onboarding_legal_alert_yes" = "Sì";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
 "onboarding_legal_blocker_title" = "Fase pilota";
