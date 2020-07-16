@@ -6,12 +6,45 @@
       "scale" : "1x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "contrast",
+          "value" : "high"
+        }
+      ],
+      "filename" : "ic-check-circle-high.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
       "filename" : "ic-check-circle@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "appearances" : [
+        {
+          "appearance" : "contrast",
+          "value" : "high"
+        }
+      ],
+      "filename" : "ic-check-circle-high@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
       "filename" : "ic-check-circle@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "contrast",
+          "value" : "high"
+        }
+      ],
+      "filename" : "ic-check-circle-high@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
