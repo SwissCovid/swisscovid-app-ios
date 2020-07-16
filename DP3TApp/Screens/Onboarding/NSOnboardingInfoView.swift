@@ -18,7 +18,6 @@ class NSOnboardingInfoView: UIView {
     let labelAreaGuide = UILayoutGuide()
 
     init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium, dynamicIconTintColor: UIColor? = nil) {
-
         self.leftRightInset = leftRightInset
 
         super.init(frame: .zero)

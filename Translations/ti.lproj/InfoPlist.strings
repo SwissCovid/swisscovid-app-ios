@@ -1,3 +1,3 @@
-"CFBundleDisplayName" = "SwissCovid";
-"NSBluetoothPeripheralUsageDescription" = "Encounters will be recognised in the background via low energy Bluetooth.";
-"NSBluetoothAlwaysUsageDescription" = "Encounters will be recognised in the background via low energy Bluetooth.";
+"CFBundleDisplayName" = "ስዊስኮቪድ";
+"NSBluetoothPeripheralUsageDescription" = "ሓይሊ (ኤነርጂ) ብምቑጣብ ርክባት ኣብ ድሕረባይታ ብብሉቱዝ ይልለዩ ኣለዉ።";
+"NSBluetoothAlwaysUsageDescription" = "ርክባት ሓይሊ (ኤነርጂ) ብምቁጣብ ኣብ ድህረባይታ ብብሉቱዝ ይልለዩ ኣለዉ።";
