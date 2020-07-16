@@ -78,7 +78,6 @@
 "tracing_setting_title" = "Proximity tracing";
 
 /*Text beim Bluetooth Control*/
-/*Fuzzy*/
 "tracing_setting_text_ios" = "COVID-19 Exposure Notifications";
 
 /*Bluetooth Control: Tracking deaktiviert*/
@@ -205,16 +204,16 @@
 "symptom_detail_title" = "I feel ill?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "If you experience COVID-19 symptoms…";
+"symptom_detail_box_subtitle" = "KOVID-19 semptomlarında…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Getting tested";
+"symptom_detail_box_title" = "Test yaptırın";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "More information";
+"symptom_detail_box_button" = "Daha fazla bilgi alın";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "The FOPH recommends that anyone with COVID-19 symptoms should get tested. Call your doctor or your healthcare facility to schedule an appointment.";
+"symptom_detail_box_text" = "BAG, tüm KOVİD-19 semptomları gösteren kişilerin test edilmesini öndermektedir. Lütfen bir doktor ya da sağlık kuruluşu ile iletişime geçin.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Tested positive";
@@ -520,19 +519,15 @@
 "accessibility_12nd" = "Twelfth";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
-/*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Please enter the code in full, then press button.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-/*Fuzzy*/
 "android_foreground_service_notification_error_location_service" = "Enable location information so that the app can use Bluetooth. The app does not recognise your location at any time.";
 
 /*Location Services ausgeschaltet Titel*/
-/*Fuzzy*/
 "android_error_location_services_title" = "Location disabled";
 
 /*Location Services ausgeschaltet Button*/
-/*Fuzzy*/
 "android_error_location_services_button" = "Enable location";
 
 /*Information Button in the navigation bar*/
@@ -610,7 +605,6 @@
 /*Inform Detail: FAQ Text*/
 "inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. This ensures that only confirmed cases are notified via the app.";
 
-/*Not translated*/
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "What information gets sent?";
 
@@ -633,10 +627,10 @@
 "inform_code_intro_button" = "OK";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "What are the symptoms of COVID-19?";
+"symptom_faq1_title" = "KOVİD-19 semptomları nedir?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "These are the most common symptoms of COVID-19:\n\n- Fever, feverish feeling \n- Sore throat\n- Cough (mostly dry)\n- Shortness of breath\n- Body aches\n- Sudden loss of the sense of taste and/or smell";
+"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n- Ateş, ateşlenme\n- Boğaz ağrısı\n- Öksürme (genelde kuru)\n- Nefes darlığı\n- Kas ağrıları\n- Koku ve tad alma yetisinin aniden kaybolması";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Why has proximity tracing ended?";
@@ -681,7 +675,6 @@
 "onboarding_gaen_title" = "Activate proximity tracing";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-/*Fuzzy*/
 "onboarding_gaen_text_ios" = "COVID-19 Exposure Notifications must be activated to use the app.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -733,11 +726,9 @@
 "gaen_unexpectedly_disabled" = "Proximity tracing has been deactivated. Please restart it.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_title_ios" = "COVID-19 Exposure Notifications disabled";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_text_ios" = "Activate COVID-19 Exposure Notifications for proximity tracing to work.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
@@ -771,8 +762,6 @@
 
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
-
-/*Fuzzy*/
 "certificate_pinning_button_disable" = "Disable";
 "certificate_pinning_button_enable" = "Enable";
 
@@ -891,7 +880,7 @@
 "ratelimit_error_text" = "There have already been too many requests today. The app will try again later.";
 
 /*Info to the user that tracing has been switched on*/
-"accessibility_tracing_has_been_activated" = "Tracing has been activated";
+"accessibility_tracing_has_been_activated" = "Takip etkinleştirilmiştir";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "Tracing has been deactivated";
+"accessibility_tracing_has_been_deactivated" = "Takip devre dışı bırakılmıştır";

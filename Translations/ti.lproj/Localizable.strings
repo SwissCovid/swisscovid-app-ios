@@ -78,7 +78,6 @@
 "tracing_setting_title" = "Proximity tracing";
 
 /*Text beim Bluetooth Control*/
-/*Fuzzy*/
 "tracing_setting_text_ios" = "COVID-19 Exposure Notifications";
 
 /*Bluetooth Control: Tracking deaktiviert*/
@@ -520,19 +519,15 @@
 "accessibility_12nd" = "Twelfth";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
-/*Fuzzy*/
 "accessibility_code_button_disabled_hint" = "Please enter the code in full, then press button.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-/*Fuzzy*/
 "android_foreground_service_notification_error_location_service" = "Enable location information so that the app can use Bluetooth. The app does not recognise your location at any time.";
 
 /*Location Services ausgeschaltet Titel*/
-/*Fuzzy*/
 "android_error_location_services_title" = "Location disabled";
 
 /*Location Services ausgeschaltet Button*/
-/*Fuzzy*/
 "android_error_location_services_button" = "Enable location";
 
 /*Information Button in the navigation bar*/
@@ -610,7 +605,6 @@
 /*Inform Detail: FAQ Text*/
 "inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. This ensures that only confirmed cases are notified via the app.";
 
-/*Not translated*/
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "What information gets sent?";
 
@@ -681,7 +675,6 @@
 "onboarding_gaen_title" = "Activate proximity tracing";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-/*Fuzzy*/
 "onboarding_gaen_text_ios" = "COVID-19 Exposure Notifications must be activated to use the app.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -733,11 +726,9 @@
 "gaen_unexpectedly_disabled" = "Proximity tracing has been deactivated. Please restart it.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_title_ios" = "COVID-19 Exposure Notifications disabled";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_text_ios" = "Activate COVID-19 Exposure Notifications for proximity tracing to work.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
@@ -771,8 +762,6 @@
 
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
-
-/*Fuzzy*/
 "certificate_pinning_button_disable" = "Disable";
 "certificate_pinning_button_enable" = "Enable";
 
