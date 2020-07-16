@@ -205,16 +205,16 @@
 "symptom_detail_title" = "se osećam loše?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Obavite…";
+"symptom_detail_box_subtitle" = "U slučaju simptoma COVID-19...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "proveru na virus korona";
+"symptom_detail_box_title" = "Testirajte se";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Na proveru na virus korona";
+"symptom_detail_box_button" = "Saznajte više";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Ostanite kod kuće, obavite proveru na virus korona ili se obratite svom lekaru.";
+"symptom_detail_box_text" = "BAG preporučuje da se sve osobe sa simptomima COVID-19 testiraju. Pozovite lekara ili zdravstvenu ustanovu.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Testiran pozitivno";
@@ -628,10 +628,10 @@
 "inform_code_intro_button" = "Shvatam";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Šta je provera na virus korona?";
+"symptom_faq1_title" = "Koji su simptomi COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Imate simptome, ali niste sigurni šta bi trebalo da uradite?\n\nOdgovorite na pitanja u proveri na mreži BAG-a da biste dobili savet šta treba da uradite.";
+"symptom_faq1_text" = "Ovi simptomi se često javljaju:\n\n- temperatura, osećaj groznice\n- bolovi u grlu\n- kašalj (najčešće suv)\n- kratak dah\n- bolovi u mišićima\n- iznenadni gubitak čula mirisa i/ili ukusa";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Zašto je praćenje završeno?";
@@ -884,7 +884,7 @@
 "ratelimit_error_text" = "Danas je već izvršeno previše upita. Aplikacija će pokušati ponovo kasnije.";
 
 /*Info to the user that tracing has been switched on*/
-"accessibility_tracing_has_been_activated" = "";
+"accessibility_tracing_has_been_activated" = "Praćenje je aktivirano";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "";
+"accessibility_tracing_has_been_deactivated" = "Praćenje je deaktivirano";

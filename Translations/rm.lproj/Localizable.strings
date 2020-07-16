@@ -205,16 +205,16 @@
 "symptom_detail_title" = "ma sent malsaun(a)?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Faschai il…";
+"symptom_detail_box_subtitle" = "En cas da sintoms da COVID-19…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "check coronavirus";
+"symptom_detail_box_title" = "Laschar testar";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Tar il check coronavirus";
+"symptom_detail_box_button" = "Dapli infurmaziuns";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Restai a chasa, faschai il check coronavirus u telefonai a Vossa media/Voss medi.";
+"symptom_detail_box_text" = "IL UFSP recumonda a tut las persunas cun sintoms da COVID-19 da sa laschar testar. Contactai ina media resp. in medi u ina instituziun da sanadad.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Testà positiv";
@@ -628,10 +628,10 @@
 "inform_code_intro_button" = "Chapì";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Tge è il check coronavirus?";
+"symptom_faq1_title" = "Tge èn sintoms da COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Vus avais sintoms ed essas malsegir/malsegira co che Vus As stuais cumportar? \n\nRespundai las dumondas en il check online da l'UFSP per ina recumandaziun da cumportament.";
+"symptom_faq1_text" = "Quests sintoms cumparan savens:\n\n- fevra, sentiment da fevra\n- mal la gula\n- tuss (per il solit tuss sitga)\n- respiraziun asmatica\n- mal ils musculs\n- perdita andetga da l'odurat e/u dal palat";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pertge è il tracing terminà?";
@@ -886,7 +886,7 @@
 "ratelimit_error_text" = "Es wurden heute schon zu viele Abfragen durchgeführt. Die App wird es später erneut probieren.";
 
 /*Info to the user that tracing has been switched on*/
-"accessibility_tracing_has_been_activated" = "";
+"accessibility_tracing_has_been_activated" = "Tracing è vegnì activà";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "";
+"accessibility_tracing_has_been_deactivated" = "Tracing è vegnì deactivà";
