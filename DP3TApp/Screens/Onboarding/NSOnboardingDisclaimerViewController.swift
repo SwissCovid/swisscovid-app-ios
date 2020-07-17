@@ -100,7 +100,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         iconWrapper.backgroundColor = .ns_backgroundTertiary
         let manufacturerImage = UIImage(named: "manufacturer-iso-icon")?.withRenderingMode(.alwaysTemplate)
         let manufacturerIcon = UIImageView(image: manufacturerImage)
-        manufacturerIcon.tintColor = UIColor.imageTintColor
+        manufacturerIcon.tintColor = UIColor.ns_disclaimerIconColor
         iconWrapper.addSubview(manufacturerIcon)
 
         let label = NSLabel(.smallLight, textColor: .ns_text)
@@ -147,7 +147,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         
         let renderedMarkingImage = UIImage(named: "ce-marking")?.withRenderingMode(.alwaysTemplate)
         let ceIcon = UIImageView(image: renderedMarkingImage)
-        ceIcon.tintColor = UIColor.imageTintColor
+        ceIcon.tintColor = UIColor.ns_disclaimerIconColor
 
         warningRow1.addSubview(versionStack)
         warningRow1.addSubview(ceIcon)

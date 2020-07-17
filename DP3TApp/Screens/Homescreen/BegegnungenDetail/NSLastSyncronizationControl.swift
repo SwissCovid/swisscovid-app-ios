@@ -43,7 +43,7 @@ class NSLastSyncronizationControl: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .moduleBackground
+        backgroundColor = .ns_moduleBackground
         layer.cornerRadius = 3.0
         ub_addShadow(radius: 4.0, opacity: 0.05, xOffset: 0, yOffset: -2)
 
@@ -87,7 +87,7 @@ class NSLastSyncronizationControl: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .ns_background_highlighted : .moduleBackground
+            backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_moduleBackground
         }
     }
 }

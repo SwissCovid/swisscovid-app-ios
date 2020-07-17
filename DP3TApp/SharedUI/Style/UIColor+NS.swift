@@ -19,10 +19,10 @@ extension UIColor {
     // MARK: - Text color
 
     public static var ns_text: UIColor {
-        return UIColor().setColorsForTheme(lightColor: UIColor.defaultTextColor, darkColor: UIColor.white.withHighContrastColor(color: .black))
+        return UIColor().setColorsForTheme(lightColor: UIColor.ns_defaultTextColor, darkColor: UIColor.white.withHighContrastColor(color: .black))
     }
     
-    public static var defaultTextColor = UIColor.ns_darkBlueBackground.withHighContrastColor(color: .black)
+    public static var ns_defaultTextColor = UIColor.ns_darkBlueBackground.withHighContrastColor(color: .black)
     
     public static var ns_blue = UIColor(ub_hexString: "#5094bf")!.withHighContrastColor(color: UIColor(ub_hexString: "#2769a3")!)
     public static var ns_lightBlue = UIColor(ub_hexString: "#00a7d4")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
@@ -31,7 +31,7 @@ extension UIColor {
     public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
     public static var ns_greenBackground: UIColor = UIColor(ub_hexString: "#e5f8f6")!
     
-    public static var moduleGreenBackground: UIColor {
+    public static var ns_moduleGreenBackground: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: UIColor(ub_hexString: "#16161A")!)
     }
         
@@ -42,7 +42,7 @@ extension UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor.white, darkColor: UIColor.black)
     }
     
-    static var moduleBackground: UIColor {
+    static var ns_moduleBackground: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor.white, darkColor: UIColor(ub_hexString: "#1E1E23")!)
     }
     
@@ -54,11 +54,11 @@ extension UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#efefef")!, darkColor: UIColor(ub_hexString: "#1E1E23")!)
     }
     
-    static var disabledButtonBackground: UIColor {
+    static var ns_disabledButtonBackground: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.15), darkColor: UIColor(ub_hexString: "#cdcdd0")!)
     }
     
-    static var imageTintColor: UIColor {
+    static var ns_disclaimerIconColor: UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor.black, darkColor: UIColor.white)
     }
     

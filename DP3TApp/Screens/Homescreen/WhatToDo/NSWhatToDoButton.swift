@@ -43,7 +43,7 @@ class NSWhatToDoButton: UBButton {
     // MARK: - Setup
 
     private func setupBackground() {
-        backgroundColor = UIColor.moduleBackground
+        backgroundColor = UIColor.ns_moduleBackground
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
         highlightedBackgroundColor = .ns_background_highlighted
     }
