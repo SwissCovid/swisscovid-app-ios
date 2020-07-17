@@ -158,7 +158,6 @@
 		242D2266245C4BD8005DAEA8 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		242D2268245C4BD8005DAEA8 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
-		242D2269245C4BD8005DAEA8 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7E820245B27E10015A55B /* Impressum */; };
 		242D226A245C4BD8005DAEA8 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2C242D04290017C4F9 /* Inter-Medium.ttf */; };
 		242D2275245C4BE6005DAEA8 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 242D2274245C4BE6005DAEA8 /* DP3TSDK */; };
 		242D2276245D62D8005DAEA8 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* UserStorage.swift */; };
@@ -239,7 +238,6 @@
 		6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
 		6EA49E2B2444410D009EFCAB /* NSNoCodeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */; };
 		6EC47BD42451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift */; };
-		6EC7E821245B27E10015A55B /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7E820245B27E10015A55B /* Impressum */; };
 		6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */; };
 		6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
@@ -268,6 +266,8 @@
 		8EF2A6F0249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */; };
 		8EFBAB2C249145070004138B /* NSSynchronizationPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
+		A6DAF74624C1767E00A9DC80 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = A6DAF74524C1767E00A9DC80 /* Impressum */; };
+		A6DAF74724C1767E00A9DC80 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = A6DAF74524C1767E00A9DC80 /* Impressum */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
 		AAF73666242F2EA00051E34A /* NSBegegnungenModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */; };
@@ -453,7 +453,6 @@
 		6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSimpleTextButton.swift; sourceTree = "<group>"; };
 		6EA49E2A2444410D009EFCAB /* NSNoCodeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNoCodeInformationViewController.swift; sourceTree = "<group>"; };
 		6EC47BD32451C3C2000D7686 /* NSMeldungDetailMeldungSingleTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMeldungDetailMeldungSingleTitleHeader.swift; sourceTree = "<group>"; };
-		6EC7E820245B27E10015A55B /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
 		6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformGetWellViewController.swift; sourceTree = "<group>"; };
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
@@ -483,6 +482,7 @@
 		8EF2A6EB249124C4002263C3 /* NSSynchronizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewCell.swift; sourceTree = "<group>"; };
 		8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewSectionView.swift; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
+		A6DAF74524C1767E00A9DC80 /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
 		AAF73665242F2EA00051E34A /* NSBegegnungenModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBegegnungenModuleView.swift; sourceTree = "<group>"; };
@@ -1119,7 +1119,7 @@
 		DC9A8196242CE44200AD1548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6EC7E820245B27E10015A55B /* Impressum */,
+				A6DAF74524C1767E00A9DC80 /* Impressum */,
 				F80E735C245ADEBC00C934B8 /* Certificates */,
 				6E7C0D23242D01860017C4F9 /* Font */,
 				8E81CCA1241FCC7F006F2437 /* Assets.xcassets */,
@@ -1324,6 +1324,7 @@
 				242D225D245C4BD8005DAEA8 /* QuoVadis.der in Resources */,
 				242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */,
 				242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */,
+				A6DAF74724C1767E00A9DC80 /* Impressum in Resources */,
 				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */,
 				242D2261245C4BD8005DAEA8 /* Assets.xcassets in Resources */,
@@ -1334,7 +1335,6 @@
 				242D2266245C4BD8005DAEA8 /* Inter-Black.ttf in Resources */,
 				242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */,
 				242D2268245C4BD8005DAEA8 /* Inter-Regular.ttf in Resources */,
-				242D2269245C4BD8005DAEA8 /* Impressum in Resources */,
 				242D226A245C4BD8005DAEA8 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1353,6 +1353,7 @@
 				F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
+				A6DAF74624C1767E00A9DC80 /* Impressum in Resources */,
 				48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
@@ -1363,7 +1364,6 @@
 				DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */,
 				DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */,
 				DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */,
-				6EC7E821245B27E10015A55B /* Impressum in Resources */,
 				DCB4430C242DD34700F19AA5 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
