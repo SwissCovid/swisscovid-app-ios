@@ -84,7 +84,7 @@ class DatabaseSyncer {
                             // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
-                        case let .HTTPFailureResponse(status: status) where (502 ... 504).contains(status):
+                        case let .HTTPFailureResponse(status: status, data: _) where (502 ... 504).contains(status):
                             // this means the backend is under maintanance
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true

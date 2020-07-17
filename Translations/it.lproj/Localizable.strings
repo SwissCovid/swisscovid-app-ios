@@ -205,16 +205,16 @@
 "symptom_detail_title" = "mi sento malato?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Fai…";
+"symptom_detail_box_subtitle" = "In caso di sintomi di COVID-19…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "l'autovalutazione sul coronavirus";
+"symptom_detail_box_title" = "fare il test";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "All'autovalutazione sul coronavirus";
+"symptom_detail_box_button" = "Per saperne di più";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Resta a casa, fai l'autovalutazione sul coronavirus o telefona al tuo medico.";
+"symptom_detail_box_text" = "L'UFSP raccomanda a tutte le persone con sintomi di COVID-19 di fare il test. Telefona a un medico o a un'istituzione sanitaria.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Positivo al test";
@@ -632,10 +632,10 @@
 "inform_code_intro_button" = "Capito";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Cos'è l'autovalutazione sul coronavirus?";
+"symptom_faq1_title" = "Quali sono i sintomi della COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Hai  sintomi e non sai bene come comportarti? \n\nRispondi alle domande dell'autovalutazione online dell'UFSP per ricevere una raccomandazione pratica.";
+"symptom_faq1_text" = "Questi sono i sintomi più frequenti:\n\n- febbre, sensazione di febbre\n- mal di gola\n- tosse (perlopiù secca)\n- affanno\n- dolori muscolari\n- perdita improvvisa dell'olfatto e/o del gusto";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "reports_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
@@ -800,7 +800,7 @@
 "onboarding_legal_alert_no" = "No";
 
 /*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Si";
+"onboarding_legal_alert_yes" = "Sì";
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
 "onboarding_legal_blocker_title" = "Fase pilota";
@@ -893,7 +893,7 @@
 "ratelimit_error_text" = "Ci sono già state troppe domande oggi. L'applicazione riproverà più tardi.";
 
 /*Info to the user that tracing has been switched on*/
-"accessibility_tracing_has_been_activated" = "";
+"accessibility_tracing_has_been_activated" = "Tracciamento attivato";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "";
+"accessibility_tracing_has_been_deactivated" = "Tracciamento disattivato";

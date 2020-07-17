@@ -123,7 +123,7 @@ extension NSWebViewController: WKNavigationDelegate {
                 return
             }
 
-            if scheme == "http" || scheme == "https" || scheme == "mailto" {
+            if scheme == "http" || scheme == "https" || scheme == "mailto" || scheme == "tel" {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 decisionHandler(.cancel)
                 return

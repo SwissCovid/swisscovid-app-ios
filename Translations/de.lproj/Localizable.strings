@@ -640,7 +640,7 @@
 "inform_code_intro_button" = "Verstanden";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Was ist COVID-19-Symptome?";
+"symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
 "symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n- Fieber, Fiebergefühl\n- Halsschmerzen\n- Husten (meist trocken)\n- Kurzatmigkeit\n- Muskelschmerzen\n- Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";

@@ -205,16 +205,16 @@
 "symptom_detail_title" = "ndihem i sëmurë?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Bëni...";
+"symptom_detail_box_subtitle" = "Nëse keni simptoma të COVID-19...";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "Kontrolli i koronavirusit";
+"symptom_detail_box_title" = "Kryeni testin";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Për kontrollin e koronavirusit";
+"symptom_detail_box_button" = "Mëso më shumë";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Qëndroni në shtëpi, bëni kontrollin e koronavirusit ose telefononi mjeken ose mjekun tuaj.";
+"symptom_detail_box_text" = "BAG rekomandon që të gjithë personat me simptoma të COVID-19 të kryejnë testimin. Telefononi një mjeke apo një mjek ose një institucion shëndetësor.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Pozitiv në test";
@@ -628,10 +628,10 @@
 "inform_code_intro_button" = "Kuptova";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Çfarë është kontrolli i koronavirusit?";
+"symptom_faq1_title" = "Çfarë simptomash ka COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Keni simptoma dhe nuk jeni i sigurt se si duhet të silleni? \n\nPërgjigjuni pyetjeve në kontrollin online të BAG për një rekomandim të veprimit.";
+"symptom_faq1_text" = "Simptomat më të shpeshta janë:\n\n- Temperaturë, ndjesi ethesh\n- Dhimbje fyti\n- Kollë (zakonisht e thatë)\n- Vështirësi në frymëmarrje\n- Dhimbje muskujsh\n- Humbje e papritur e shqisës së nuhatjes dhe/ose të shijuarit";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "reports_positive_tested_faq1_title" = "Përse ka përfunduar gjurmimi?";
@@ -884,7 +884,7 @@
 "ratelimit_error_text" = "Shumë pyetje tashmë janë realizuar sot. Aplikacioni do të provojë përsëri më vonë.";
 
 /*Info to the user that tracing has been switched on*/
-"accessibility_tracing_has_been_activated" = "";
+"accessibility_tracing_has_been_activated" = "Gjurmimi u aktivizua";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "";
+"accessibility_tracing_has_been_deactivated" = "Gjurmimi u çaktivizua";
