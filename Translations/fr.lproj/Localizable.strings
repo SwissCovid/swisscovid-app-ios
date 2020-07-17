@@ -205,16 +205,16 @@
 "symptom_detail_title" = "je me sens malade ?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Faites…";
+"symptom_detail_box_subtitle" = "En cas de symptômes COVID-19…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "l’auto-évaluation coronavirus";
+"symptom_detail_box_title" = "Se faire tester";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Auto-évaluation coronavirus";
+"symptom_detail_box_button" = "En savoir plus";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Restez à la maison, faites l'auto-évaluation coronavirus ou appelez votre médecin.";
+"symptom_detail_box_text" = "L'OFSP recommande à toutes les personnes qui présentent des symptômes du COVID-19 de se faire tester. Appelez un médecin ou une institution de santé.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Test positif";
@@ -632,10 +632,10 @@
 "inform_code_intro_button" = "Compris";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "Qu'est-ce que l'auto-évaluation coronavirus ?";
+"symptom_faq1_title" = "Quels sont les symptômes du COVID-19 ?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Vous avez des symptômes et ne savez pas quel comportement adopter ? \n\nRépondez aux questions de l’auto-évaluation en ligne de l'OFSP pour obtenir une recommandation.";
+"symptom_faq1_text" = "Ces symptômes sont fréquents :\n\n- Fièvre, sensation de fièvre\n- Mal de gorge\n- Toux (généralement sèche)\n- Difficultés respiratoires\n- Douleurs musculaires\n- Perte soudaine de l’odorat et/ou du goût";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pourquoi le traçage de proximité est-il interrompu ?";
@@ -682,7 +682,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text_ios" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activée.";
+"onboarding_gaen_text_ios" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activées.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Activer";
@@ -851,7 +851,7 @@
 "tracing_setting_text_android" = "Notifications d'exposition au COVID 19";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
-"onboarding_gaen_text_android" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activée.";
+"onboarding_gaen_text_android" = "Pour utiliser l'application, les notifications d'exposition au COVID 19 doivent être activées.";
 
 /*Onboarding Disclaimer Screen: AppName Title*/
 "onboarding_disclaimer_heading" = "SwissCovid";
@@ -897,3 +897,9 @@
 /*Google Translation!*/
 /*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
 "ratelimit_error_text" = "Il y a déjà eu trop de demandes aujourd'hui. L'application essaiera de nouveau plus tard.";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "Traçage activé";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "Traçage désactivé";

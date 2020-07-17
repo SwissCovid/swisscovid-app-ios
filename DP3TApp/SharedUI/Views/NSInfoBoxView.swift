@@ -15,7 +15,7 @@ class NSInfoBoxView: UIView {
 
     private let titleLabel = NSLabel(.uppercaseBold)
     private let subtextLabel = NSLabel(.textLight)
-    private let leadingIconImageView = UIImageView()
+    private let leadingIconImageView: NSImageView
     private let illustrationImageView = UIImageView()
 
     private let additionalLabel = NSLabel(.textBold)
@@ -45,13 +45,13 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, leadingIconRenderingMode: UIImage.RenderingMode = .alwaysTemplate) {
+    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, dynamicIconTintColor: UIColor? = nil) {
+        leadingIconImageView = NSImageView(image: image, dynamicColor: dynamicIconTintColor)
+
         super.init(frame: .zero)
 
         titleLabel.text = title
         subtextLabel.text = subText
-        leadingIconImageView.image = image?.withRenderingMode(leadingIconRenderingMode)
-        leadingIconImageView.tintColor = titleColor
         titleLabel.textColor = titleColor
         subtextLabel.textColor = subtextColor
         additionalLabel.textColor = subtextColor
@@ -84,8 +84,7 @@ class NSInfoBoxView: UIView {
             v.backgroundColor = bgc
 
             if hasBubble {
-                let imageView = UIImageView(image: UIImage(named: "bubble")?.withRenderingMode(.alwaysTemplate))
-                imageView.tintColor = bgc
+                let imageView = NSImageView(image: UIImage(named: "bubble"), dynamicColor: bgc)
                 addSubview(imageView)
 
                 imageView.snp.makeConstraints { make in

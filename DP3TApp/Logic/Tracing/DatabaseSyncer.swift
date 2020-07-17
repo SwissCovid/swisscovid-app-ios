@@ -12,16 +12,16 @@ import DP3TSDK
 import ExposureNotification
 import Foundation
 
+extension Notification {
+    static let syncFinishedNotification = Notification.Name("SyncFinishedNotification")
+}
+
 class DatabaseSyncer {
     static var shared: DatabaseSyncer {
         TracingManager.shared.databaseSyncer
     }
 
     private var databaseSyncInterval: TimeInterval = 10
-
-    func performFetch(completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        syncDatabaseIfNeeded(completionHandler: completionHandler)
-    }
 
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
         guard !databaseIsSyncing,
@@ -84,7 +84,7 @@ class DatabaseSyncer {
                             // Certificate error
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
-                        case let .HTTPFailureResponse(status: status) where (502 ... 504).contains(status):
+                        case let .HTTPFailureResponse(status: status, data: _) where (502 ... 504).contains(status):
                             // this means the backend is under maintanance
                             UIStateManager.shared.immediatelyShowSyncError = false
                             UIStateManager.shared.syncErrorIsNetworkError = true
@@ -120,8 +120,10 @@ class DatabaseSyncer {
 
                 Logger.log("Sync Database failed, \(e)")
 
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.failed)
             case .skipped:
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.noData)
             case .success:
 
@@ -142,6 +144,7 @@ class DatabaseSyncer {
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
 
+                NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.newData)
             }
             if taskIdentifier != .invalid {

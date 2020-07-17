@@ -9,12 +9,14 @@
  */
 
 import DP3TSDK
+import ExposureNotification
 import Foundation
 import UserNotifications
 
 protocol UserNotificationCenter {
     var delegate: UNUserNotificationCenterDelegate? { get set }
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
+    func removeDeliveredNotifications(withIdentifiers identifiers: [String])
     func removeAllDeliveredNotifications()
     func removePendingNotificationRequests(withIdentifiers identifiers: [String])
 }
@@ -47,6 +49,7 @@ class TracingLocalPush: NSObject {
     init(notificationCenter: UserNotificationCenter = UNUserNotificationCenter.current(), keychain: KeychainProtocol = Keychain()) {
         center = notificationCenter
         _exposureIdentifiers.keychain = keychain
+        _scheduledErrorIdentifiers.keychain = keychain
         super.init()
         center.delegate = self
     }
@@ -71,6 +74,14 @@ class TracingLocalPush: NSObject {
                 }
             }
         }
+    }
+
+    @KeychainPersisted(key: "scheduledErrorIdentifiers", defaultValue: [])
+    private var scheduledErrorIdentifiers: [ErrorIdentifiers]
+
+    enum ErrorIdentifiers: String, CaseIterable, Codable {
+        case bluetooth = "ch.admin.bag.notification.bluetooth.warning"
+        case permission = "ch.admin.bag.notification.permission.warning"
     }
 
     private func scheduleNotification(identifier: String) {
@@ -145,6 +156,73 @@ class TracingLocalPush: NSObject {
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
         center.add(request1, withCompletionHandler: nil)
         center.add(request2, withCompletionHandler: nil)
+    }
+
+    func handleTracingState(_ state: DP3TSDK.TrackingState) {
+        switch state {
+        case .initialization:
+            break
+        case .active, .stopped:
+            resetAllErrorNotifications()
+        case let .inactive(error: error):
+            switch error {
+            case .bluetoothTurnedOff:
+                scheduleBluetoothNotification()
+            case let .exposureNotificationError(error: error):
+                if let error = error as? ENError {
+                    handleENError(error)
+                }
+            case .permissonError:
+                schedulePermissonErrorNotification()
+            default:
+                break
+            }
+        }
+    }
+
+    private func scheduleBluetoothNotification() {
+        scheduleErrorNotification(identifier: .bluetooth,
+                                  title: "bluetooth_turned_off_title".ub_localized,
+                                  text: "bluetooth_turned_off_text".ub_localized)
+    }
+
+    private func schedulePermissonErrorNotification() {
+        scheduleErrorNotification(identifier: .permission,
+                                  title: "tracing_permission_error_title_ios".ub_localized,
+                                  text: "tracing_permission_error_text_ios".ub_localized)
+    }
+
+    private func handleENError(_ error: ENError) {
+        switch error.code {
+        case .bluetoothOff:
+            scheduleBluetoothNotification()
+        case .notAuthorized, .notEnabled, .restricted:
+            schedulePermissonErrorNotification()
+        default:
+            break
+        }
+    }
+
+    private func scheduleErrorNotification(identifier: ErrorIdentifiers, title: String, text: String) {
+        guard !scheduledErrorIdentifiers.contains(identifier) else {
+            return
+        }
+        scheduledErrorIdentifiers.append(identifier)
+
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = text
+        content.sound = .default
+        let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: nil)
+        center.add(request, withCompletionHandler: nil)
+    }
+
+    private func resetAllErrorNotifications() {
+        let identifiers = ErrorIdentifiers.allCases.map(\.rawValue)
+        center.removeDeliveredNotifications(withIdentifiers: identifiers)
+        center.removePendingNotificationRequests(withIdentifiers: identifiers)
+
+        scheduledErrorIdentifiers.removeAll()
     }
 }
 

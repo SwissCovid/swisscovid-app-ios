@@ -45,7 +45,7 @@ class NSMeldungenDetailPositiveTestedViewController: NSTitleViewScrollViewContro
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: "meldungen_positive_tested_faq1_text".ub_localized, title: "meldungen_positive_tested_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: "meldungen_positive_tested_faq1_text".ub_localized, title: "meldungen_positive_tested_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

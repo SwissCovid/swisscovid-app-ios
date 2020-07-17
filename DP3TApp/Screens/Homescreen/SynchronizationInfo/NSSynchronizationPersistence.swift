@@ -92,7 +92,8 @@ class NSSynchronizationPersistence {
 
     func fetchLatestSuccessfulSync() -> NSSynchronizationPersistanceLog? {
         do {
-            let query = table.filter(eventTypeColumn == EventType.sync).order(dateColumn.desc)
+            // Filter successful syncs (0 instant errors (A), 0 delayed errors (A), > 0 total requests (^A))
+            let query = table.filter(eventTypeColumn == EventType.sync).filter(payloadColumn.glob("AA[^A]")).order(dateColumn.desc)
             guard let row = try connection.pluck(query) else {
                 return nil
             }

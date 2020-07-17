@@ -20,7 +20,7 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
 
         super.init(title: titleText, subtitle: subtitleText, text: text, image: nil, subtitleColor: .ns_purple)
 
-        isAccessibilityElement = true
+        isAccessibilityElement = false
         accessibilityLabel = subtitleText.deleteSuffix("...") + titleText + "." + text
     }
 

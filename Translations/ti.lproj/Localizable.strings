@@ -1,0 +1,886 @@
+
+/*App Name*/
+"app_name" = "ስዊስኮቪድ";
+
+/*App Name (unter Icon auf iOS)*/
+"CFBundleDisplayName" = "ስዊስኮቪድ";
+
+/*Loading View: Erneut laden*/
+"loading_view_reload" = "ከምብሓድሽ ምውራድ";
+
+/*Fehler Titel in Loading View*/
+"loading_view_error_title" = "ጌጋ";
+
+/*Alert: Titel wenn die App muss geupdatet werden*/
+"force_update_title" = "እዋናዉ ምግባር ኣድላዪ እዩ";
+
+/*Informieren: Weiter Button*/
+"inform_continue_button" = "ቀጽል ";
+
+/*Informieren: Senden Button*/
+"inform_send_button_title" = "ምስዳድ";
+
+/*Informieren: Danke*/
+"inform_send_thankyou" = "የቐንየልና";
+
+/*Informieren: Danke Text*/
+"inform_send_thankyou_text" = "እቶም ኣጋጣሚ አይዲታት (IDs) ናይ ኣፕኩም ተሰዲደን ኣለዋ። ብከምዚ መንገዲ ስንሰለት ለበዳ ሕማም ንኽቋረጽ ትሕግዙ።";
+
+/*Informieren: Button Titel*/
+"inform_fertig_button_title" = "ዕጸው";
+
+/*Titel auf Homescreen für Begegnungen*/
+"handshakes_title_homescreen" = "ርክባት ";
+
+/*Abbrechen*/
+"cancel" = "ኣቋርጽ";
+
+/*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
+"push_exposed_title" = "ሓድሽ መልእኽቲ";
+
+/*Titel für Push-Nachrichten, wenn erkannt wird, dass ein Nutzer exposed war*/
+"push_exposed_text" = "ነቲ መልእኽቲ ንምንባብ ነቲ ኣፕ ክፈትዎ። ";
+
+/*Okay Button Titel*/
+"android_button_ok" = "ሐራይ";
+
+/*Onboarding: Weiter Button Titel*/
+"onboarding_continue_button" = "ቀጽል";
+
+/*Onboarding: Fertig Button*/
+"onboarding_finish_button" = "ተፈጺሙ";
+
+/*Unerwarteter Fehler*/
+"unexpected_error_title" = "ዘይተሓስበ ጌጋ ኣጓኒፉ።";
+
+/*Bluetooth Fehlermeldung*/
+"bluetooth_turned_off" = "ብሉቱዝ ጠፊኡ ስለዘሎ እቲ ኣፕ ኣይሰርሕን ኣሎ።";
+
+/*Bluetooth Permission Fehler*/
+"bluetooth_permission_turned_off" = "ብሉቱዝ ፍቓድ ስለዝይሃበ እቲ ኣፕ ኣይሰርሕን ኣሎ።";
+
+/*Permission Text für Bluetooth*/
+"NSBluetoothPeripheralUsageDescription" = "ሓይሊ (ኤነርጂ) ብምቑጣብ ርክባት ኣብ ድሕረባይታ ብብሉቱዝ ይልለዩ ኣለዉ።";
+
+/*Permission Text für Bluetooth*/
+"NSBluetoothAlwaysUsageDescription" = "ርክባት ሓይሊ (ኤነርጂ) ብምቁጣብ ኣብ ድህረባይታ ብብሉቱዝ ይልለዩ ኣለዉ።";
+
+/*Inform: Titel der Code abschicken Seite*/
+"inform_code_title" = "ኮቪድኮድ ኣእትው";
+
+/*Inform: Code eingeben Subtext*/
+"inform_code_text" = "ነቲ ዝተወሃበኩም ኮቪድኮድ ኣእትዉዎ።";
+
+/*Inform: Code eingeben kein Code Button Text*/
+"inform_code_no_code" = "ሓገዝ የድልየኩም ዶ፧ ";
+
+/*Titel des Bluetooth Control*/
+"tracing_setting_title" = "ምክትታል (Tracing)";
+
+/*Text beim Bluetooth Control*/
+"tracing_setting_text_ios" = "መልእኽትታት ርክባት ኮቪድ-19 ";
+
+/*Bluetooth Control: Tracking deaktiviert*/
+"bluetooth_setting_tracking_inactive" = "ምክትታል ኣይሰርሕን ኣሎ (ጠፊኡ ኣሎ)";
+
+/*Titel auf Homescreen*/
+"reports_title_homescreen" = "ሓበሬታ";
+
+/*Keine Meldungen Titel*/
+"meldungen_no_meldungen_title" = "ሓበሬታ የለን";
+
+/*Push deaktiviert Titel*/
+"push_deactivated_title" = "ኣገልግሎት መልእኽትታት ኣይሰርሕን ኣሎ (ጠፊኡ ኣሎ)";
+
+/*Push deaktiviert Text*/
+"push_deactivated_text" = "መልእኽቲ ምስዝህሉ ብቐጥታ ንኽትሕበር ምእንቲ እቲ ሴቲንግ ቀይሮ።   .";
+
+/*Titel im Meldung Detail*/
+"meldungen_meldung_title" = "ብሕማም  ናይ ምልካፍ ተኽእሎ";
+
+/*Text im Meldung Detail*/
+"meldungen_meldung_text" = "ብሕማም  ናይ ምልካፍ ተኽእሎ ኣሎ።";
+
+/*Titel ob Tracing aktiv*/
+"tracing_active_title" = "ኣፕ ይሰርሕ ኣሎ";
+
+/*Text bei Tracing aktiv*/
+"tracing_active_text" = "ርክባት ብስቱር መንገዲ ክዕቀቡ እዮም";
+
+/*Android: Fehler Text bei Tracing*/
+"android_tracing_error_title" = "ምክትታል ኣይሰርሕን ኣሎ";
+
+/*Fehlertitel mit Foreground Service Notification*/
+"android_foreground_service_notification_errors" = "እቲ ኣፕ ኣብዚ ሕጂ እዋን ብልክዕ ክሰርሕ ኣይክእልን እዩ።";
+
+/*Titel der Nachricht, die auf Beta-Status hinweist*/
+"preview_warning_title" = "ናይ ቅድመ ምርአይ ዓይነት (Version)";
+
+/*Text der Nachricht, die auf Beta-Status hinweist*/
+"preview_warning_text" = "እዚ ኣፕ ከም መርአዩ (መላመዲ) ንምርኣይ ትግባረ ናይ DP-3T የገልግል። ግቡእ ክትጥቀመሉ ትኽእል ናይ ኮቪድ-19 መከታተሊ ኣይኮነን። ";
+
+/*Debug: Label auf dem Button, der zum Debug-Screen führt*/
+"debug_settings_title" = "ናይ ደቡግ (Debug) ሴቲንግ ";
+
+/*Debug: Titel für die Debug-Einstellungen zur Status-Überschreibung*/
+"debug_state_setting_title" = "ኩነታት ኣፕ ብምጽሓፍ ምቕያር ";
+
+/*Debug: Erklärungstext für die Debug-Einstellungen zur Status-Überschreibung*/
+"debug_state_setting_text" = "እዚ ሴቲንግ ነቲ ርኡይ ዝኾነ ኩነታት ናይቲ ኣፕ ብጽሑፍ ይቕይሮ።  እቲ ናይ ምክትታል ኣገልግሎት በዚ አይጽሎን እዩ። ";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Keine*/
+"debug_state_setting_option_none" = "ብምጽሓፍ ኣይቅየርን።";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Gesund*/
+"debug_state_setting_option_ok" = "ጥዑይ (ዘይሕሙም)";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_exposed" = "ውጽትኢ መርመርኡ ፖሲቲቭ ዝኾነ ዝተራኸብካዮ ሰብ";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Selbst positiv getestet*/
+"debug_state_setting_option_infected" = "ውጽትኢ መርመራኻ ፖሲቲቭ ምዃኑ ዝሓበርካ ";
+
+/*Debug: Titel für die Debug-Info zum Tracing-Status*/
+"debug_sdk_state_title" = "ህሉው ኩነታት SDK ";
+
+/*Debug: Erklärungstext für die Debug-Info zum Tracing-Status*/
+"debug_sdk_state_text" = "ህሉው ኩነታት ናይ  DP-3T SDK";
+
+/*Debug: Bezeichnung für den letzen sync-Zeitpunkt*/
+"debug_sdk_state_last_synced" = "መወዳእታ ዝተገበረ ምውህሃድ";
+
+/*Debug: Bezeichnung für den Fall, bei dem der User selber als positiv getestet gemeldet wurde*/
+"debug_sdk_state_self_exposed" = "ባዕልካ ሓበሬታ ዝሃብካ/ዝተመዝገብካ፦";
+
+/*Debug: Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde*/
+"debug_sdk_state_contact_exposed" = "ርካባትካ ዝሓበርካ፦ ";
+
+/*Debug-Status-Bezeichnung für boleschen Wert 'true'*/
+"debug_sdk_state_boolean_true" = "እወ";
+
+/*Debug-Status-Bezeichnung für boleschen Wert 'false'*/
+"debug_sdk_state_boolean_false" = "ኣይፋል";
+
+/*Debug: Button-Text für das Zurücksetzen des lokalen SDK Zustandes*/
+"debug_sdk_button_reset" = "SDK ኣብ ዝነበሮ ምምላስ";
+
+/*Tab-Titel*/
+"tab_tracing_title" = "ምክትታል ";
+
+/*Titel auf Homescreen für Was tun Section*/
+"whattodo_title_symptoms" = "ምልክታት ሕማም";
+
+/*Subtitel auf Homescreen für Was Tun Section*/
+"whattodo_subtitle_symptoms" = "እንታይ ትገብር እንተ…..";
+
+/*Titel auf Homescreen bei Was tun Section*/
+"whattodo_title_positivetest" = "ውጽኢት መርመራ ፖዚቲቭ ምስዝኸውን";
+
+/*Subtitel auf Homescreen bei Was tun Section*/
+"whattodo_subtitle_positivetest" = "እንታይ ትገብር ኣብ እዋን…..";
+
+/*Informieren Detail: Subtitel*/
+"inform_detail_subtitle" = "እንታይ ትገብር ኣብ እዋን…..";
+
+/*Informieren Detail: Titel*/
+"inform_detail_title" = "ፖዚቲቭ ውጽኢት መርመራ፧";
+
+/*Inform Detail: Weisse Box Subtitel*/
+"inform_detail_box_subtitle" = "ብኮቪድኮድ";
+
+/*Inform Detai Weisse Box Titel*/
+"inform_detail_box_title" = "ሰንሰለት ለበዳ ሕማም ምቁራጽ";
+
+/*Inform Detail Weisse Box Button*/
+"inform_detail_box_button" = "ኮቪድኮድ ኣእትው";
+
+/*Informieren Detail Weisse Box Text*/
+"inform_detail_box_text" = "ኮቪድኮድ ብምእታውኩም ነቲ ኣፕ  ውጽኢት መርመራኹም ፖዚቲቭ ንሓድሽ ኮሮናቫይረስ ከምዝኾነ ትሕብሩ።   ";
+
+/*Symptome Detail Subtitel*/
+"symptom_detail_subtitle" = " ኣነ እንተ…..እንታይ ክገብር";
+
+/*Symptom Detail Titel*/
+"symptom_detail_title" = "ሕማም ተሰሚዑኒ/ተጸሊኡኒ፧";
+
+/*Symptom Detail Weisse Box Subtitel*/
+"symptom_detail_box_subtitle" = "ኣብ እዋን ምልክታት ናይ ኮቪድ-19 …. ..";
+
+/*Symptom Detail Weisse Box Titel*/
+"symptom_detail_box_title" = "መርመራ ምግባር ";
+
+/*Symptom Detail Weisse Box Button*/
+"symptom_detail_box_button" = "ዝያዳ ምፍላጥ";
+
+/*Symptom Detail Weisse Box Text*/
+"symptom_detail_box_text" = "ሚኒስትሪ ጥዕና ስዊዘርላንድ (BAG) ዝኾነ ምልክት ናይ ኮቪድ-19 ዘለዎ ሰብ ንኽምርመር ይላቦ።  ንሓኪም ወይ ንትካል ሕክምና ደውሉ። ";
+
+/*Informieren Titel in NavigationBar/Toolbar*/
+"inform_detail_navigation_title" = "ውጽኢት መርመራ ፖዚቲቭ ኮይኑ";
+
+/*Symptome Detail: NavigationBar/Toolbar Titel*/
+"symptom_detail_navigation_title" = "ምልክታት ሕማም";
+"tracing_turned_off_title" = "ኣገልግሎት ምክትታል ኣይሰርሕን ኣሎ (ጠፊኡ ኣሎ)";
+"tracing_turned_off_text" = "እቲ ኣፕ ክሰርሕ ምእንታን ነቲ ኣገልግሎት ምክትታል ከም ዝሰርሕ ግበርዎ (ወልዕዎ)። ";
+"bluetooth_turned_off_title" = "ብሉቱዝ ጠፊኡ ኣሎ";
+"bluetooth_turned_off_text" = "ኣገልግሎት ምክትታል ክስርሕ ምእንታን ኣብ ሞባይልኩም ብሉቱዝ ክፈቱ።";
+"bluetooth_turn_on_button_title" = "ብሉቱዝ ክፈትዎ";
+"bluetooth_permission_error_title" = "ምጥቃም ብሉቱዝ ተነጺጉ";
+"bluetooth_permission_error_text" = "ኣገልግሎት ምክትታል ክስርሕ ምእንታን ብሉቱዝ ምጥቃም ኣፍቅዱ።  ";
+
+/*URL zum Corona Check*/
+"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
+"push_open_settings_button" = "ሴቲንግ ምቕያር ";
+
+/*Meldungen Detail: Subtitel wenn keine Meldungen*/
+"meldungen_no_meldungen_subtitle" = "ዝኾነ ተኽእሎ ናይ ለበዳ ሕማም ኣይተሓበረን";
+
+/*Keine Meldungen Weisse Box Titel*/
+"no_meldungen_box_title" = "ንነብስኹም ተኸላኸሉላ";
+
+/*Keine Meldungen Weisse Box Subtitel*/
+"no_meldungen_box_subtitle" = "እንታይ ክገብር ኣለኒ፧ ";
+
+/*Keine Meldungen Weisse Box Text*/
+"no_meldungen_box_text" = "ኣብ ስራሕ ዘለዉ ለበዋታት ናይ ሚኒስትሪ ጥዕና ስዊዘርላንድ (BAG) ኣተግብርዎም።";
+
+/*Meldung Detail: Positiv Getestet Titel*/
+"meldung_detail_positive_tested_title" = "ውጽኢት መርመራ ፖዚቲቭ ኮይኑ";
+
+/*Meldung Detail: Positiv Getestet Subtitel*/
+"meldung_detail_positive_tested_subtitle" = "ዝገበርካዮ መርመራ ንኮሮናቫይረስ ውጽኢቱ ፖዚቲቭ ኮይኑ ተረኺቡ።";
+
+/*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
+"meldung_detail_positive_test_box_subtitle" = "እንታይ ክገብር ኣለኒ፧ ";
+
+/*Meldung Detail Positiv Getestet Weisse Box Titel*/
+"meldung_detail_positive_test_box_title" = "ምግላል";
+
+/*Meldung Detail Positiv Getestet Weisse Box Text*/
+"meldung_detail_positive_test_box_text" = "ንምግላል ዝምልከት ዝተወሃበኩም መምርሒታት ተኸታተሉ። ";
+"tracing_ended_title" = "ምክትታል ተወዲኡ";
+"tracing_ended_text" = "ካብ ሕጂ ንንዮ ርክባት አይዕቀቡን እዮም። ";
+"exposed_info_contact_hotline" = "ን…..ተወከሱ";
+"meldung_homescreen_positive_info_line1" = "ን……..ተኸታተሉ";
+"meldung_homescreen_positive_info_line2" = "ባዕልኻ ነብስኻ ንምግላል ዝምልከት መምርሒታት ";
+
+/*Meldung Detail Exposed Neue Meldung*/
+"meldung_detail_exposed_new_meldung" = "ሓድሽ ሓበሬታ";
+
+/*Meldung Detail Exposed Titel*/
+"meldung_detail_exposed_title" = "ተኽእሎ ናይ መልከፍቲ ሕማም";
+"meldung_homescreen_positiv_title" = "ውጽኢት መርመራ ፖዚቲቭ ኮይኑ";
+
+/*Meldung Detail Exposed Subtitel*/
+"meldung_detail_exposed_subtitle" = "ተኽእሎ ናይ ለበዳ ሕማም ኣሎ። ";
+"meldung_homescreen_positiv_text" = "ዝገበርካዮ መርመራ ንኮሮናቫይረስ ውጽኢቱ ፖዚቲቭ ኮይኑ ተረኺቡ።";
+
+/*Debug Screen: Onboarding Reset Button*/
+"reset_onboarding" = "Onboarding ናብ ዝነበሮ ምምላስ";
+
+/*Heute*/
+"date_today" = "ሎሚ ";
+
+/*Meldung Detail: Vor wievielen Tagen {COUNT} wird durch Zahl ersetzt*/
+"date_days_ago" = "ቅድሚ {COUNT} መዓልትታት";
+
+/*Meldungen Detail: Weisse Box Titel*/
+"meldungen_detail_call" = "ድውሉልና ";
+
+/*Meldungen Detail Text Weisse Box*/
+"meldungen_detail_call_text" = "መስመር ሓበሬታ ስዊስኮቪድ";
+
+/*Meldungen Detail Weisse Box Button*/
+"meldungen_detail_call_button" = "ሕጂ ደውሉ";
+
+/*Meldungen Detail Weisse Box Titel der Erklärungen*/
+"meldungen_detail_explanation_title" = "ተጠንቀቑ!";
+
+/*Meldungen Detail Weisse Box Erklärungstext 1*/
+"meldungen_detail_explanation_text1" = "ክይተረደኣኩም ኣላባዕቲ ሕማም ክትኮኑ ትኽእሉ ኢኹም።";
+
+/*Meldungen Detail: Weisse Box Erklärtext 2*/
+"meldungen_detail_explanation_text2" = "በጃኹም ንስድራቤትኩም መሓዙትኩምን  ከባቢኹምን ካብ ሕማም  ተኸላኸሉ። ተኽእሎ በቲ ሕማም ናይ ምልካፍ ምስዝህሉ ክሳብ 10 መዓልቲ ካብ ዝኾነ ርክባት ተቖጠቡ።";
+
+/*Meldungen Detail: Weisse Box Text*/
+"meldungen_detail_guard_text" = "ሕቶ ምስዝህልወኩም፦ መስመር ሓበሬታ ስዊስኮቪድ ቁጽሪ +41 58 387 77 78 ተወከሱ።";
+
+/*Meldungen Detail Button Weisse Box*/
+"meldungen_detail_call_again_button" = "ክምብሓድሽ ምድዋል";
+
+/*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
+"meldungen_detail_call_last_call" = "መወዳእታ ዝተደወለሉ መዓልቲ: {DATE}";
+
+/*Subtitel im Onboarding erste Seite*/
+"app_subtitle" = "ንኡስ ኣርእስቲ ";
+
+/*Onboarding: Titel oben*/
+"onboarding_prinzip_heading" = "ዕላማ";
+
+/*Onboarding: Titel*/
+"onboarding_prinzip_title" = "ሓደ ስጉምቲ ቅድሚ እቲ ቫይረስ";
+
+/*Onboarding Prinzip Text*/
+"onboarding_prinzip_text1" = "ብስዊስኮድ ኣፕ ዝርግሐ ናይ ሓድሽ ኮሮናቫይረስ ንኽዕገት እጃምኩም ተበርክቱ።";
+
+/*Onboarding Prinzip Text*/
+"onboarding_prinzip_text2" = "እቲ ኣፕ ንስኹም ንኮሮናቫይረስ ናይ ምቅላዕ ተኽእሎ እንተኔሩኩም ይሕብረኩም። ";
+
+/*Onboarding Privacy: Titel oben*/
+"onboarding_privacy_heading" = "Privacy by Design";
+
+/*Onboarding Privacy: Titel*/
+"onboarding_privacy_title" = "ንውልቅኹም ጥራይ ዝምልከት ነገራት ምክልኻል ";
+
+/*Onboarding Privacy: Text*/
+"onboarding_privacy_text1" = "እተን ሞባይላት ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እየን ዝለዋወጣ።  ዘለኹሞ ቦታ ይኹን ዋላ ካልእ ንመንነትኩም ዝምልከት ሓበሬታ ኣይእክብን እዩ። ";
+
+/*Onboarding Privacy: Text*/
+"onboarding_privacy_text2" = "እቶም ዝተዓቀቡ  ኣጋጣሚ ኣይዲታት (IDs) ኣብ ሞባይልኩም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
+
+/*Onboarding Begegnungen: Titel oben*/
+"onboarding_begegnungen_heading" = "እቲ ኣፕ ከምይ ይሰርሕ፧";
+
+/*Onboarding Begegnungen: Titel*/
+"onboarding_begegnungen_title" = "ሳላ ብሉቱዝ ርክባት ምልላይ ";
+
+/*Onboarding Begegnungen: Text*/
+"onboarding_begegnungen_text1" = "እቲ ኣፕ ክለተ ተጠቀምቲ ንዝተወሰነ እዋን ጥቓ ንጥቓ እንተኔሮም ብቐጥታ የለልይ።";
+
+/*Onboarding Begegnungen: Text*/
+"onboarding_begegnungen_text2" = "ነዚ ንምግባር:  ትሑት ኤነርጂ ብሉቱዝ (Bluetooth Low Energy (BLE)) እዩ ዝዝውተር። ጂፒኤስ ይኹን ስነድ ሞባይል: ዋይፋይ ወይ ካልእ ናይ ዘለኻዮ ቦታ ስነዳት ኣይዝውተርን እዩ።";
+
+/*Onboarding Meldung: Text oben*/
+"onboarding_meldung_heading" = "እቲ ኣፕ እንታይ ይገብር፧ ";
+
+/*Onboarding Meldung: Titel*/
+"onboarding_meldung_title" = "ሓበሬታ ኣብ እዋን ተኽእሎ ናይ ምልካፍ ብሕማም ";
+
+/*Onboarding Meldung: Text*/
+"onboarding_meldung_text1" = "እቲ ኣፕ ንስኹም ንኮሮናቫይረስ ናይ ምቅላዕ ተኽእሎ እንተኔሩኩም ይሕብረኩም። ";
+
+/*Onboarding Meldung: Text*/
+"onboarding_meldung_text2" = "ብትኽክል ዝኾነ ኣካይዳ ሰንሰለት ለበዳ ሕማም ክትዓግቱን ንኻልኦት ሰባት ካብ ሕማም ክትከላኸሉን ትኽእሉ።";
+
+/*Onboarding Bluetooth: Titel*/
+"onboarding_bluetooth_title" = "ብሉቱዝ ንምጥቃም ፍቓድካ ምሃብ";
+
+/*Onboarding Bluetooth: Text*/
+"onboarding_bluetooth_text" = "ኣፕ ክትጥቀሙ ንኽትክእሉ ብሉቱዝ ክተፍቅዱ ኣለኩም።";
+
+/*Onboarding Bluetooth: Button*/
+"onboarding_bluetooth_button" = "ብሉቱዝ ንምጥቃም ፍቓድካ ምሃብ";
+
+/*Onboarding: Untetitel unten*/
+"onboarding_good_to_know" = "ንኽትፈልጦ ጽቡቕ ዝኾነ";
+
+/*Onboarding Bluetooth: Titel unten*/
+"onboarding_bluetooth_gtk_title1" = "ስቱራት ኢኹም ";
+
+/*Onboarding Bluetooth: Text unten*/
+"onboarding_bluetooth_gtk_text1" = "ውልቃዊ ሰነዳት ብብሉቱዝ ኣይርኣዩን እዮም።";
+
+/*Onboarding Bluetooth: Titel unten*/
+"onboarding_bluetooth_gtk_title2" = "ሃልኪ ባትሪ ቁሩብ ይውስኽ ";
+
+/*Onboarding Bluetooth: Text unten*/
+"onboarding_bluetooth_gtk_text2" = "እቲ ኣፕ ብዝተኻእለ መጠን ኤነርጂ ከምዝቑጠብ ጌሩ እዩ ዝትግበር።  ሃልኪ ባትሪ ቁሩብ ጥራይ እዩ ዝውስኽ። ";
+
+/*Onboarding Mitteilungen: Titel*/
+"onboarding_push_title" = "መልእኽትታት ንምጥቃም ፍቓድካ ምሃብ";
+
+/*Onboarding Mitteilungen: Text*/
+"onboarding_push_text" = "ብኣፕ ሓበሬታ ክበጽሓኩም ምእንታን ምጥቃም መልእኽትታት ክተፍቅዱ ኣለኩም።";
+
+/*Onboarding Mitteilungen: Button*/
+"onboarding_push_button" = "መልእኽትታት ንምጥቃም ፍቓድካ ምሃብ";
+
+/*Onboarding Mitteilungen: Titel Unten*/
+"onboarding_push_gtk_title1" = "ብቑልጡፍ ትሕበር";
+
+/*Onboarding Mitteilungen: Text unten*/
+"onboarding_push_gtk_text1" = "ተኽእሎ ናይ መልከፍቲ ብሕማም ምስዝህሉ ብመልእኽቲ ኣብ ዕጹው ስክሪን ሞባይል ትሕበሩ።";
+
+/*Code senden: Abschluss Gute Besserung*/
+"inform_send_getwell_title" = "ምሕረት የውርደልኩም";
+
+/*Code senden: Abschluss Gute Besserung*/
+"inform_send_getwell_text" = "ቀልጢፍኩም ሕወዩ። ዝተወሃበኩም ንምግላል ዝምልከትመምርሒታት ኣኽብሩ።";
+
+/*Titel auf dem letzen Onboarding Screen*/
+"onboarding_go_title" = "እቲ ኣፕ ተዳልዩ ኣሎ።";
+
+/*Text auf dem letzten Onboarding Screen*/
+"onboarding_go_text" = "ሰንሰለት ለበዳ ሕማም ንምቁራጽ ምትሕግጋዝኩም ኣዚና ነመስግነኩም።";
+
+/*Button-Label auf dem letzten Onboarding screen*/
+"onboarding_go_button" = "ምጅማር";
+
+/*Homescreen: Titel bei Fehler mit Daten*/
+"homescreen_meldung_data_outdated_title" = "እዋናዊ ሰነዳት የለን";
+
+/*Homescreen: Text bei Fehler mit Daten*/
+"homescreen_meldung_data_outdated_text" = "ካብ ዝተወሰነ ግዜ ኣትሒዙ ሓበሬታታት ክወሃሃዱ አይከኣሉን።  ሞባይልኩም ምስ ኢንተርነት ከምዝራኸብ ግበሩ። ";
+
+/*Homescreen: Button Titel*/
+"homescreen_meldung_data_outdated_retry_button" = "ከምብሓድሽ ምፍታን";
+
+/*Titel Fehlermeldung für ungültigen Code*/
+"inform_code_invalid_title" = "ዘይሰርሕ ኮድ ";
+
+/*Fehlermeldung Subtitle ungültiger Code*/
+"inform_code_invalid_subtitle" = "ጸገም ምስዝህሉ ነቲ ኮቪድኮድ ዝሃበኩም ትካል ደውሉሉ።  ";
+
+/*Datum: Vor 1 Tag*/
+"date_one_day_ago" = "ቅድሚ 1 መዓልቲ";
+
+/*Meldungen Detail: Titel*/
+"meldung_detail_new_contact_title" = "ከምብሓድሽ ጥርጠራ";
+
+/*Meldungen Detail: Text*/
+"meldung_detail_new_contact_subtitle" = "ተኽእሎ ናይ ምልካፍ ብሕማም ኣሎ።";
+
+/*Fehler mit Uhrzeit Titel*/
+"time_inconsistency_title" = "ናይ ሰዓት ጌጋ";
+
+/*Fehler mit Uhrzeit Text*/
+"time_inconsistency_text" = "ምክትታል ሕማም ክስርሕ ምእንታን: ሰዓት ብግቡእ ኣስተኻኽልዎ።";
+
+/*Begegnungen: Neustart Titel*/
+"begegnungen_restart_error_title" = "ከምብሓድሽ ምጅማር (ምውላዕ) የድሊ";
+
+/*Begegnungen: Neustart Text*/
+"begegnungen_restart_error_text" = "ዘይተሓስበ ጌጋ ኣጓኒፉ። ሞባይል ከምብሓድሽ ጀምርዎ።";
+
+/*Fehler Titel für Hintergrund-Fehler*/
+"meldungen_background_error_title" = "ድሕረባይታ እዋናዊ ንምግባር ኣገልግሎት የለን (ጠፊኡ ኣሎ)።";
+
+/*Text für Hintergrund Fehler*/
+"meldungen_background_error_text" = "ሓድሽ ሓበሬታ ምስዝህሉ: ካብቲ ኣፕ ወጻኢ ውን ንኽትሕበሩ ምእንታን: ነቲ ሴቲንግ ቀይርዎ። ";
+
+/*Button Titel für Hintergrundfehler beheben*/
+"meldungen_background_error_button" = "ሴቲንግ ምቕያር ";
+
+/*Default message for force update*/
+"force_update_text" = "ምክትታል ክሰርሕ ምእንታን እቲ ሓድሽ ዓይነት ናይ ኣፕ ኣውርድዎ።";
+
+/*Ignorieren Button Titel*/
+"meldung_in_app_alert_ignore_button" = "ሽለል ምባል";
+
+/*Button Titel*/
+"meldung_in_app_alert_accept_button" = "ናብ ሓበሬታ ";
+
+/*Meldungen Detail: Button Titel*/
+"meldungen_detail_call_again" = "ከምብሓድሽ ደውሉ";
+
+/*Fehlernachricht für Netzwerkfehler*/
+"network_error" = "ርክብ ኢንተርነትኩም መርምሩ";
+
+/*Unerwarteter Fehler, mit Aufforderung Aktion erneut zu versuchen*/
+"unexpected_error_with_retry" = "ዝይተሓስበ ጌጋ ኣጓኒፉ። ደጊምኩም ፈትኑ።  ";
+
+/*VoiceOver: Datum*/
+"accessibility_date" = "ዕለት";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_1nd" = "ቀዳማይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_2nd" = "ካልኣይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_3nd" = "ሳልሳይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_4nd" = "ራብዓይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_5nd" = "ሓሙሻይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_6nd" = "ሻድሻይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_7nd" = "ሻብዓይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_8nd" = "ሻምናይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_9nd" = "ታሽዓይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_10nd" = "ዓስራይ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_11nd" = "መበል ዓሰርተሓደ";
+
+/*Voiceover Codeeingabe: Nummerierte Textfelder*/
+"accessibility_12nd" = "መበል ዓሰርተኽልተ";
+
+/*Voiceover: Hilfetext bei Codeeingabe*/
+"accessibility_code_button_disabled_hint" = " እቲ ኮድ ብምሉኡ ስለዝይተዋህበ ምጥዋቕ አይክኣልን እዩ። ";
+
+/*Fehler: Standortinformationen / Bluetooth*/
+"android_foreground_service_notification_error_location_service" = "እቲ ኣፕ ብሉቱዝ ክጥቀም ክኸእል ምእንታን: እቲ ዘለኹሞ ቦታ ዝሕብር ኣገልግሎት ወልዕዎ። እቲ ኣፕ ኣብ ዝኾነ እዋን ቦታኹም ኣይፈልጦን እዩ።";
+
+/*Location Services ausgeschaltet Titel*/
+"android_error_location_services_title" = "ሓባሪ ዘለኹሞ ቦታ ጠፊኡ ኣሎ";
+
+/*Location Services ausgeschaltet Button*/
+"android_error_location_services_button" = "ሓባሪ ዘለኹሞ ቦታ ምውላዕ";
+
+/*Information Button in the navigation bar*/
+"accessibility_info_button" = "ሓበሬታ";
+
+/*Synchronisations-Fehler Titel*/
+"sync_warning_notification_title" = "ምውህሃድ ኣፕ";
+
+/*Synchronisations-Fehler Text*/
+"sync_warning_notification_text" = "ዝርዝር ናይ ዝተሓበሩ ኣጋጣሚ ኣይዲታት (IDs) ንኽመዓራረ ነቲ ኣፕ ክፈትዎ።";
+
+/*Meldungen Detail: Button bei Vollansicht*/
+"meldung_animation_continue_button" = "ቀጽል";
+
+/*Titel Impressum Menu*/
+"menu_impressum" = "ኣዳለውቲ";
+
+/*Begegnungen: FAQ Titel*/
+"begegnung_detail_faq1_title" = "ምርኻብ ማለት እንታይ እዩ፧";
+
+/*Begegnungen: FAQ Text*/
+"begegnung_detail_faq1_text" = "ኣፕ ዘለወን ሞባይላት ንዝተወሰነ ግዜ ጥቓ ንጥቓ ምስዝኾና: እዚ ከም ምርኻብ ይምዝገብ።";
+
+/*Begegnungen: FAQ Titel*/
+"begegnung_detail_faq2_title" = "ውልቃዊ ሰነዳተይ ውሑሳት ድዮም፧";
+
+/*Begegnungen: FAQ Text*/
+"begegnung_detail_faq2_text" = "ኣብ እዋን ርክብ እቶም ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝቀያየሩ።  እዚኦም ኣብቲ ሞባይላት ተዓቂቦም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
+
+/*Begegnungen: FAQ Titel*/
+"begegnungen_detail_faq3_title" = "ብሉቱዝ ኩልጊዜ ክፉት ክኸውን ኣለዎ ዶ፧";
+
+/*Begegnungen: FAQ Text*/
+"begegnungen_detail_faq3_text" = "ርክባት ክልለዩ ክኽእሉ ምእንታን ብሉቱዝ ኩልግዜ ክፉት ክኸውን ኣለዎ። ስለዝኾነ ምጥቃም ሓይሊ ባትሪ ብመጠኑ ጥራይ እዩ ይውስኽ።";
+
+/*FAQ Button Titel*/
+"faq_button_title" = "ብዙሕ ግዚ ዝሕተቱ ሕቶታት";
+
+/*Meldungen Keine Meldungen FAQ Titel*/
+"meldungen_nomeldungen_faq1_title" = "ሓበሬታ ክብሃል ከሎ እንታይ ማለት እዩ፧";
+
+/*Meldungen: Keine Meldungen FAQ Text*/
+"meldungen_nomeldungen_faq1_text" = "እቲ ኣፕ ክልኦት ዝተራኸብኩሞም ተጠቀምቲ  ብመርመራ ፖዚቲቭ ከምዝኾኑ ሓቢሮም እንተኾይኖም ቀጻሊ ይምርምር። \nተኽእሎ ምልካፍ ብሕማም ምስዝህሉ ብመነግዲ መልእኽቲ ኣብ ዕጹው ስክሪን ሞባይል ክትሕበሩ ኢኹም።  ";
+
+/*Meldungen: Keine Meldungen FAQ Titel*/
+"meldungen_nomeldungen_faq2_titel" = "ተኽእሎ ምልካፍ ብሕማም እንታይ ማለት እዩ፧";
+
+/*Meldungen: Keine Meldungen FAQ Text*/
+"meldungen_nomeldungen_faq2_text" = "እቲ ኣፕ ርክብ ምስ ዝተለኸፉ ሰባት ኣጓኒፉ እንተኾይኑ ጥራይ ዘይኮነስ ንውሒ ግዜን  ዓቐን ናይቲ ቅርበትን እዩ ዝምርምር።  ቡቑዕ ተኽእሎ ናይ መልከፍቲ ምስዝህሉ ጥራይ ኢኹም ትሕበሩ።";
+
+/*Meldungen Detail Weisse Box Texte Unten*/
+"meldungen_detail_explanation_text3" = "መስመር ሓበሬታ ስዊስኮቪድ ብዛዕባ  ተኽእሎ ካብ ክፍሊት ነጻ ናይ ዝኾነ መርመራ የማኽረኩም።  ";
+
+/*Meldungen: Meldungen FAQ*/
+"meldungen_meldungen_faq1_title" = "ክድውል ኣለኒ ዶ፧";
+
+/*Meldungen: Meldungen FAQ Text*/
+"meldungen_meldungen_faq1_text" = "ሓድሽ ሓበሬታ ኣብ ዘዝመጸሉ እዋን ክትድውሉ ይምከር።  ስቱራት ኢኹም። ናይ መንነት ሰነዳትኩም ኣይምዝገቡን እዮም። እቲ ዝግበር ልዝብ ምኽሪ ብዘይ ክፍሊት እዩ።  ናይ ምድዋል ወጻኢታት ጥራይ እዩ ዝህልው።";
+
+/*Meldungen Detail: Anruf Titel*/
+"meldungen_detail_call_thankyou_title" = "ብምትሕብባርኩም ነመስግን";
+
+/*Meldungen Detail Anruf Danke Subtitel*/
+"meldungen_detail_call_thankyou_subtitle" = "ንኻልኦት ትከላኸሉ";
+
+/*Keine Meldungen Link in weisser Box Titel*/
+"no_meldungen_box_link" = "ብኸምዚ መንገዲ ንነብስና ንከላኸል";
+
+/*Keine Meldungen Weisse Box Link URL*/
+"no_meldungen_box_url" = "https://www.bag-coronavirus.ch";
+
+/*Informieren Detail: FAQ Titel*/
+"inform_detail_faq1_title" = "ኮቪድኮድ እንታይ እዩ፧";
+
+/*Inform Detail: FAQ Text*/
+"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። \n";
+
+/*Inform Detail: FAQ Titel*/
+"inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
+
+/*Inform Detail FAQ Text*/
+"inform_detail_faq2_text" = "እቶም ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝስደዱ ። ውልቃቂ ሰነዳት ኣይስደዱን እዮም።  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
+
+/*Telefonnummer der Infoline*/
+"infoline_tel_number" = "+41 58 387 77 78";
+
+/*URL für Häufige Fragen Button*/
+"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+
+/*Informieren Flow: Titel erster Screen*/
+"inform_code_intro_title" = "ኣገዳሲ ሓበሬታ";
+
+/*Informieren-Flow: Erster Screen Text*/
+"inform_code_intro_text" = "ዝኾነ ሓበሬታ ብዛዕባኹም ዋላኳ እንተዘይተሰደደ: ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ። ";
+
+/*Inform-Flow: Erster Screen Button*/
+"inform_code_intro_button" = "ተረዲኡኒ";
+
+/*Symptome: FAQ Titel*/
+"symptom_faq1_title" = "ምልክታት ኮቪድ-19 እንታይ እዩ፧";
+
+/*Symptome: FAQ Text*/
+"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ, ስምዒት ናይ ረስኒ \n- ቃንዛ ጉሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
+
+/*Meldungen: Positiv getestet FAQ Titel*/
+"meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
+
+/*Meldungen: Positiv getestet FAQ Text*/
+"meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል አብ ኣፕ ብቐጥታ ይውዳእ። ";
+
+/*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
+"language_key" = "de";
+
+/*Meldungen Homescreen: Name Hotline*/
+"exposed_info_contact_hotline_name" = "ናይ ሓበሬታ መስመር ስዊስኮቪድ ";
+
+/*Meldung Detail: "Noch 1 Tag" Label*/
+"date_in_one_day" = "ገና 1 መዓልቲ";
+
+/*Meldung Detail: Anzeige "Noch x Tage" {COUNT} wird durch Zahl ersetzt*/
+"date_in_days" = "ገና {COUNT} መዓልቲ";
+
+/*Datum: Text vor Datum: am 26.2.2020 / {DATE} wird ersetzt durch Datum*/
+"date_text_before_date" = "ዕለት {DATE}";
+
+/*Accessibility Talk back information for android back button in toolbar*/
+"android_accessibility_back_button" = "ተመለስ";
+
+/*VoiceOver: Hilfetext bei Codeeingabe Button*/
+"accessibility_code_button_current_code_hint" = "ዝኣተወ ኮድ";
+
+/*Accessibility: Codeeingabe einer Ziffer*/
+"accessibility_code_input_textfield" = "ናይ መጽሑፊ ቦታ። ናይ ሕጂ እዋን ቁጽሪ፦";
+
+/*Accessibility: Code Input Textfeld wenn leer*/
+"accessibility_code_input_textfield_empty" = "ናይ መጽሑፊ ቦታ። ባዶ።";
+
+/*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
+"accessibility_code_input_hint" = "ንኽትሰርሖ ብዕጽፊ ምህራም (ታይፕ ምግባር) ";
+
+/*Accessibility: FAW Button Titel */
+"accessibility_faq_button_hint" = "እዚ ባተን (Button) ነቲ ኣፕ ገዲፉ  መርበብ ሓበሬታ ናይ ሚንስትሪ ጥዕና ስዊዝርላንድ (B. A. G.) ይኸፍት። ";
+
+/*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_title" = "ኣገልግሎት ምክትታል ከም ዝሰርሕ ግበርዎ (ወልዕዎ)";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
+"onboarding_gaen_text_ios" = "ኣፕ ምጥቃም ንምኽኣል ናይ ኮቪድ-19 መልእኽትታት ናይ ርክባት ከጅመሩ (ከም ዝሰርሑ ክግበሩ) ኣለዎም።";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activate" = "ምውላዕ (ከም ዝሰርሕ ምግባር)";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 1*/
+"onboarding_gaen_info_title_1" = "ውልቃዊ ሰነዳት ምክልኻል";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
+"onboarding_gaen_info_text_1" = "ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝለዋወጡ። ብዛዕባ ዘለኹሞ ቦታ ወይ መንነትክኩም ኣይኮነን። ";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
+"onboarding_gaen_info_title_2" = "ሃልኪ ባትሪ ቁሩብ ይውስኽ ";
+
+/*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
+"onboarding_gaen_info_text_2" = "እቲ ኣፕ ብዝተኻእለ መጠን ኤነርጂ ከምዝቑጠብ ጌሩ እዩ ዝትግበር። ሃልኪ ባትሪ ቁሩብ ጥራይ እዩ ዝውስኽ። ";
+
+/*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
+"onboarding_gaen_button_activated" = "ይሰርሕ ኣሎ";
+
+/*Meldung in der App löschen, wenn möglicherweise angesteckt*/
+"delete_reports_button" = "ሓበሬታ ምድምሳስ";
+
+/*Meldung im Löschen Dialog wenn möglicherweise angesteckt*/
+"delete_reports_dialog" = "ሓበሬታ  ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
+
+/*Code-Eingabe in der App löschen, wenn infiziert*/
+"delete_infection_button" = "ሓበሬታ ምድምሳስ";
+
+/*Meldung im Löschen Dialog nach Code-Einfragen*/
+"delete_infection_dialog" = "ሓበሬታ ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
+"android_onboarding_battery_permission_title" = "ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ) ሸለል ምባል";
+"android_onboarding_battery_permission_text" = "ርክባት ኩልግዚ ምልላይ ንምኽኣል: ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ)ናይዚ ኣፕ ዕጹው ክኸውን ኣለዎ።  ";
+"android_onboarding_battery_permission_button" = "ምፍቃድ (ሐራይ ምባል)";
+"android_onboarding_battery_permission_button_deactivated" = "ሐራይ";
+"android_onboarding_battery_permission_info_1_title" = "ነዚ ኣፕ ጥራይ";
+"android_onboarding_battery_permission_info_1_text" = "እቲ ኣፕ ንኽሰርሕ ኣብ ድሕረባይታ ውን ከምዝህሉ ክግበር ኣለዎ። ነዚ ዕላማ እቲ ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ) ንሓደ ሓደ ኣፓት ክጠፍእ ይኽእል እዩ።  ";
+"android_onboarding_battery_permission_info_2_title" = "ሃልኪ ባትሪ ቁሩብ ይውስኽ ";
+"android_onboarding_battery_permission_info_2_text" = "እቲ ኣፕ ብዝተኻእለ መጠን ኤነርጂ ከምዝቑጠብ ጌሩ እዩ ዝትግበር።  ሃልኪ ባትሪ ቁሩብ ጥራይ እዩ ዝውስኽ። ";
+"android_foreground_service_notification_error_battery_optimization" = "ምክትታል ብልክዕ ክሰርሕ ምእንታን:  እቲ ኣፕ ኣብ ድሕረባይታ ውን ከምዝህሉ ክግበር ኣለዎ። ሃልኪ ባትሪ ቁሩብ ጥራይ እዩ ዝውስኽ። ";
+
+/*Google Play Services nicht aktuell*/
+"gaen_not_aviable" = "Google Play Services እዋናዊ ኣይኮነንll";
+
+/*Google Play Services nicht aktuell text*/
+"gaen_not_available_text" = "Google Play Services ኣሐድስዎ (እዋናዊ ግበርዎ)።";
+
+/*Tracing wurde vom System deaktiviert, erneut starten*/
+"gaen_unexpectedly_disabled" = "ምክትታል ኣይሰርሕን ኣሎ። ከምብሓድሽ ጀምርዎ። ";
+
+/*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
+"tracing_permission_error_title_ios" = "መልእኽትታት ርክባት ኮቪድ-19 ኣይሰርሕን ኣሎ (ዕጹው ኣሎ) ";
+
+/*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
+"tracing_permission_error_text_ios" = "ምክትታል ክሰርሕ ምእንቲ  መልእኽትታት ርክባት ኮቪድ-19 ከምዝሰርሕ ግበርዎ (ወልዕዎ)። ";
+
+/*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
+"user_cancelled_key_sharing_error" = "መልእኽቲ ክስደድ ኣይክኣለን።  ኣጋጣሚ ኣይዲታትቱም (IDs) ብስዊስኮቪድ ኣፕ ንኽከፋፈል ኣፍቅዱ። ";
+
+/*Button um die Google Play Services zu aktualisieren*/
+"playservices_update" = "ምሕዳስ (እዋናዊ ምግባር)";
+
+/*Button um die Google Play Services zu installieren*/
+"playservices_install" = "ምትካል (ምጅማር)";
+
+/*Titel für Infos zu den Google Play Services*/
+"playservices_title" = "Google Play Services";
+
+/*Meldung, dass die Google Play Services benötigt werden*/
+"playservices_text" = "ኣገልግሎት ምክትታል ንኽተጀምር እዋናዊ ዝኾነ  ጉግል ፕለይ ሰርቪስ (Google Play Services) የድሊ። ኣብዚ ሕጂ እዋን ሞባይልኩም እዋናዉ ናይ ምግባር (ኣፕደይተ) ተኽእሎ እንተዘየለ: ጽንሕ ኢልኩም ደጊምኩም ፈትኑ።\n";
+"android_error_battery_optimization_title" = "ምምሕያሽ ናይ ባትሪ (ኣኩ) ምውዳእ ይሰርሕ አሎ";
+"android_error_battery_optimization_button" = "ምፍቃድ (ሐራይ ምባል)";
+
+/*Telefonnummer für Hilfe bei App-Problemen*/
+"app_hotline_tel_number" = "+41 58 466 07 99";
+
+/*text shown in notification when we get an exception from the GAEN api*/
+"sync_api_error" = "ኣብ እዋን ምውህሃድ ናይ ሓበሬታታት ዝይተሓስበ ጌጋ ኣጓኒፉ።";
+
+/*Fehler, der bei ungültigen Zertifikat angezeigt wird. Kann z.B. passieren, wenn man in einem public wlan ist*/
+"certificate_validation_error" = "ውሑስ ዝኾነ መስመር ምስ ሰርቨር ኣይክኣልን እዩ። VPNኩም ወይ Proxyኹም መርምርዎ ወይ ኣጥፍእዎ ወይ Public WLAN ትጥቀሙ እንተለኹም መርምሩ።";
+
+/*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
+"android_en_start_failure" = "መልእኽትታት ኮቪድ-19 ከም ዝሰርሑ ክግበሩ (ክጅመሩ) ኣይከኣሉን።";
+
+/*Certificate pinning Debug screen section title*/
+"certificate_pinning_title" = "Certificate Pinning";
+"certificate_pinning_button_disable" = "ከምዘይሰርሕ ምግባር (ምጥፋእ)";
+"certificate_pinning_button_enable" = "ምሕዳስ (እዋናዊ ምግባር)";
+
+/*Erster Onboarding-Screen für Pilot: Überschrift*/
+"onboarding_legal_heading" = "Preview Version";
+
+/*Erster Onboarding-Screen für Pilot: Titel*/
+"onboarding_legal_title" = "ምጥቃም ጥራይ ንተሳተፍቲ ናይ ልምምድ እዋን ";
+
+/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
+"onboarding_legal_text1" = "ኣብዚ እዋን እዚ ምጥቃም ናይዚ ኣፕ ነዞም ዝስዕቡ ብሚንስትሪ ጥዕና ንምልምማድ ኢሎም ዝተዓደሙ ሰባት ጥራይ እዩ ተመዲቡን ተፈቒዱን ዘሎ፦  ኣብ ትምህርቲ: ኣብ ኣገልግሎት ሓገዝን ወይ ንጡፍ ኣገልግሎትን ዝርከቡ ኣባላት ሰራዊት ስዊዘርላንድ: ሰራሕተኛታት ላዕለዋይ ኣብያተ ትምህርቲ: ሰራሕተኛታት ሕክምናን ክሊኒክን: ሰራሕተኛታት ዞባዊ ምምሕዳራትን ሃገራዊ ምምሕዳራትን ከምኡውን ንምምሕያሽ ዓይነት ናይቲ ሲስተም እጃም ከበርክቱ ዝደልዩ ኣባላት ማሕበራት።";
+
+/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
+"onboarding_legal_text2" = "እቲ ናይ ምልምማድ እዋን ብውጽኢታዊ ዝኾነ ሲስተም ዝትግበር ኮይኑ ትኽክለኛ ሰነዳት ይሕዝ።  ሓኻይም ካንቶን ኣብ እዋን ፖዚቲቭ ውጽኢት መርመራ ናይ ኮቪድ-19: ነቶም ዘይተፈቐደሎም ተጠቀምቲ: ዝኾነ ካብ ኣፕ ንዝስደድ መልእኽቲ ዝምልከት ኮቪድኮድ ክፈጥሩ አይፍቀደሎምን እዩ።  ካብቲ ሕጹር ዝኾነ Public Security Tests ወጻኢ ዝኾነ ምጥቃዕ («Penetration Tests») ናይዚ ሲስተም ማለት ምጥቃዕ ናይዚ  ውጽኢታዊ ሲስተም ማለት እዩ። እዚ ድማ ዘይሕጋዊ እዩ።  ";
+
+/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_title" = "ኣባል ናይ ሓደ ኣብዚ ናይ ምልምማድ እዋን ክሳተፍ ዝፍቀደሉ ትካል ወይ ማሕበር ዲኹም፧ ";
+
+/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_message" = "ኣባል ናይዞም ዝስዕቡ ጉጅለ ዲኹም፧ኣብ ትምህርቲ: ኣብ ኣገልግሎት ሓገዝን ወይ ንጡፍ ኣገልግሎትን ዝርከቡ ኣባላት ሰራዊት ስዊዘርላንድ: ሰራሕተኛታት ላዕለዋይ ኣብያተ ትምህርቲ: ሰራሕተኛታት ሕክምናን ክሊኒክን: ሰራሕተኛታት ዞባዊ ምምህዳራትን ሃገራዊ ምምሕዳራትን ከምኡውን ንምምሕያሽ ዓይነት ናይቲ ሲስተም እጃም ከበርክቱ ዝደልዩ ኣባላት ማሕበራት ";
+
+/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_no" = "ኣይፋል";
+
+/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
+"onboarding_legal_alert_yes" = "እወ";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
+"onboarding_legal_blocker_title" = "ናይ ምልምማድ እዋን ";
+
+/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
+"onboarding_legal_blocker_message" = "ኣባል ናይ ሓደ ኣብ እዋን ምልምማድ ተሳታፊ ትካል ወይ ማሕበር  ኣይኮንኩምን።  ድሕሪ እቲ ወግዓዊ ምጅማር ናይቲ ኣፕ እቲ ምስኡ ዝኸይድ ምሕዳስ (ኣፕደይት) ኣስተኻኺልኩም ነቲ ኣፕ ክፈትዎ።";
+"begegnung_detail_last_sync_title" = "መወዳእታ ዝተገበረ ዕዉት ዝኾነ ምውህ ሃድ/ምስንናይ ";
+"synchronizations_view_title" = "ሓፈሻዊ መእተዊ/መርኣዩ";
+"synchronizations_view_info_title" = "ምውህሃዳት";
+"synchronizations_view_info_question" = "ምውህሃዳት እንታይ እዮም፧";
+"synchronizations_view_info_answer" = "እቲ ኣፕ ተመርሚም ፖዚቲቭ ዝተረኸቡ ሰባት ንዝዘርግሕዎም ኣጋጣሚ (አገዳሲ?፟) ኣይዲታት (IDs) ቀጻሊ ይምርምር።    ";
+"synchronizations_view_period_title" = "ኣብተን ዝሓለፋ 14 መዓልትታት ";
+"synchronizations_view_sync_via_open" = "  • Open";
+"synchronizations_view_sync_via_background" = "  • Sync";
+"synchronizations_view_empty_list" = "ዝተመዝገበ የለን";
+"synchronizations_view_sync_via_scheduled" = "  • ዝተወጠነ";
+"synchronizations_view_sync_via_fake_request" = "  • ዝተሰነዐ ሕቶ";
+"synchronizations_view_sync_via_next_day_key_upload" = "  • ምስቃል";
+
+/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_before_title" = "ቅድሚ ዝርርብ";
+
+/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_main_title" = "እዚ ዝስዕብ ሓበሬታ ጽሓፍዎ ";
+
+/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_box_datum" = "ዕለት";
+
+/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
+"pre_call_dialog_box_number" = "ቁጽሪ";
+"tracing_active_tracking_always_info" = "እቲ ኣፕ ዋላ እንተተዓጽወ ስዊስኮቪድ ይስርሕ እዩ።";
+
+/*title in splash screen of onboarding*/
+"oboarding_splashscreen_title" = "ስዊስኮቪድ ንሰነሰለት ለበዳ ሕማም የቋርጾ";
+"inform_detail_faq3_text" = "ዋላኳ  ዝኾነ ሓበሬታ ብዛዕባኹም እንተዘይተሰደደ ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ። ";
+"inform_detail_faq3_title" = "ስቱር ድዩ፧";
+
+/*Meldung Detail Weiss Box unten*/
+"meldungen_detail_explanation_text4" = "መጀመርታ ምልክታት ናይ ሕማም ኣብ ዝርአዩሉ እዋን  ናይ ኮሮናቫይረስ ጥዕናዊ ሕቶታት ፈትሹ (Coronavirus-Checክ) ወይ ናብ ሓኪምኩም ደውሉ።";
+
+/*Text beim Bluetooth Control*/
+"tracing_setting_text_android" = " መልእኽትታት ኮቪድ-19 ";
+
+/*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
+"onboarding_gaen_text_android" = "ኣፕ ምጥቃም ንኽክኣል መልእኽትታት ናይ ኮቪድ-19 ክኽፈቱ ወይ ከም ዝሰርሑ ክግብሩ ኣለዎም።";
+
+/*Onboarding Disclaimer Screen: AppName Title*/
+"onboarding_disclaimer_heading" = "ስዊዝኮቪድ";
+
+/*Onboarding Disclaimer Screen: Title*/
+"onboarding_disclaimer_title" = "ሓበሬታ ብዛዕባ ኣጠቓቕማ";
+
+/*Onboarding Disclaimer Screen: Info*/
+"onboarding_disclaimer_info" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን አብዚ ትረኽቡ።";
+
+/*Onboarding Disclaimer Screen: Warning Title*/
+"onboarding_disclaimer_warning_title" = "መጠንቀቕታ:-  እዚ ኣፕ ካብ ሕማም ኮቪድ-19 ኣይከላኸለልኩምን እዩ። ";
+
+/*Onboarding Disclaimer Screen: Warning Text*/
+"onboarding_disclaimer_warning_body" = "እቲ ኣፕ ንምክትታል ምቅርራብን የገልግል።  ከምኡውን ንተጠቀምቲ ኣፕ ካብ ተኽእሎ ምልካፍ ብሕማም ድሕሪ ምስ ብኮቪድ-19 ዝሓመመ ሰብ ምርኻቦም  የጠንቅቖም። ናይ ነጸርታ መሳርሒ ውን ኣይኮነን። ኣብ ነፍስወከፍ ስክሪን ናይ ኣፕ ዝርከቡ መምርሒታት ብግቡእ ኣንብቦብዎም።";
+
+/*Onboarding Disclaimer Screen: Manufacturer Info*/
+"onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
+
+/*Onboarding Disclaimer Screen: App version title*/
+"onboarding_disclaimer_app_version" = "ዓይነት ስዊስኮቪድ ኣፕ";
+
+/*Onboarding Disclaimer Screen: Release version title*/
+"onboarding_disclaimer_release_version" = "ዝወጻሉ መዓልቲ፦ Release Date:  ";
+
+/*onboarding privacy and conditions of use button*/
+"onboarding_disclaimer_legal_button" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን";
+
+/*onboarding privacy and conditions of use url*/
+"onboarding_disclaimer_legal_button_url" = "https://www.bag.admin.ch/swisscovid-datenschutzerklaerung-und-nutzungsbedingungen";
+
+/*Google Translation*/
+/*Error shown when loading fails because there is not enough free disk space.*/
+"loading_error_no_disk_space" = "ሞባይልኩም ውሑድ ናይ መዕቆሪ ዓቕሚ ስለ ዘለዎ ሓበሬታታት ክምርመሩ ኣይክእሉን እዮም። ነጻ ናይ መዕቆሩ ቦታ ከምዝህልወኩም ግበሩ።";
+
+/*Onboarding: Akzeptieren Buttton Titel*/
+"onboarding_accept_button" = "ምቕባል ";
+
+/*Google Translation*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Titel*/
+"ratelimit_error_title" = "ምሕዳስ (እዋናዊ ምግባር) ኣብዚ ሕጂ እዋን ኣይክኣልን እዩ";
+
+/*Google Translation!*/
+/*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
+"ratelimit_error_text" = "ሎሚ ድሮ ኣዝዩ ብዙሕ ቃለ መሕተት ተጌሩ ኣሎ። እቲ ኣፕ ጸኒሑ ደጊሙ ክፍትን እዩ።  ";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "ምክትታል ተጀሚሩ (ከም ዝሰርሕ ተጌሩ)";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "ምክትታል ተሪጹ (ከም ዘይሰርሕ ተጌሩ)";

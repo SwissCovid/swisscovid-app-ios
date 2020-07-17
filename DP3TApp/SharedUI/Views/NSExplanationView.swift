@@ -22,6 +22,7 @@ class NSExplanationView: UIView {
         stackView.spacing = 2 * NSPadding.medium
 
         let titleLabel = NSLabel(.textBold)
+        titleLabel.accessibilityTraits = [.header]
         titleLabel.text = title
 
         stackView.addArrangedView(titleLabel)

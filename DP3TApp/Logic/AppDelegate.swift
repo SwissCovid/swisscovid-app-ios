@@ -94,7 +94,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Logic for coldstart / background
 
         // if app is cold-started or comes from background > 30 minutes,
-        // do the force update check
         if coldStart || backgroundTime > 30.0 * 60.0 {
             if !jumpToMessageIfRequired(onlyFirst: true) {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
@@ -102,10 +101,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
-            startForceUpdateCheck()
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
+
+        startForceUpdateCheck()
 
         FakePublishManager.shared.runTask()
 
@@ -155,10 +155,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.applicationIconBadgeNumber = 0
             TracingLocalPush.shared.clearNotifications()
         }
-    }
-
-    func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        DatabaseSyncer.shared.performFetch(completionHandler: completionHandler)
     }
 
     // MARK: - Force update

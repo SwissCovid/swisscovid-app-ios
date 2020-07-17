@@ -51,7 +51,7 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
         addArrangedView(titleContainer, spacing: NSPadding.large + NSPadding.small)
 
         for (icon, text) in model.textGroups {
-            let v = NSOnboardingInfoView(icon: icon, text: text)
+            let v = NSOnboardingInfoView(icon: icon, text: text, dynamicIconTintColor: model.headingColor)
             addArrangedView(v)
             v.snp.makeConstraints { make in
                 make.leading.trailing.equalTo(self.stackScrollView.stackView)
@@ -63,6 +63,8 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
             make.height.equalTo(40)
         }
         addArrangedView(bottomSpacer)
+
+        headingLabel.accessibilityTraits = [.header]
     }
 
     private func fillViews() {

@@ -269,18 +269,44 @@ class NSOnboardingViewController: NSViewController {
 
         switch recognizer.direction {
         case .left:
-            if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
-                // Disable swipe forward on permission screens
-                return
-            }
-            setOnboardingStep(currentStep + 1, animated: true)
+            _ = didSwipeLeft()
         case .right:
-            if currentStep == pushPermissionStepIndex + 1 || currentStep == tracingPermissionStepIndex + 1 { // Disable swipe back to permission screens
-                return
-            }
-            setOnboardingStep(currentStep - 1, animated: true)
+            _ = didSwipeRight()
         default:
             break
         }
+    }
+
+    override func accessibilityScroll(_ direction: UIAccessibilityScrollDirection) -> Bool {
+        if direction == .right {
+            // Previous Page
+            return didSwipeRight()
+        } else if direction == .left {
+            // next page
+            return didSwipeLeft()
+        }
+
+        return true
+    }
+
+    private func didSwipeLeft() -> Bool {
+        if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
+            // Disable swipe forward on permission screens
+            return false
+        }
+        setOnboardingStep(currentStep + 1, animated: true)
+
+        UIAccessibility.post(notification: .pageScrolled, argument: nil)
+        return true
+    }
+
+    private func didSwipeRight() -> Bool {
+        if currentStep == pushPermissionStepIndex + 1 || currentStep == tracingPermissionStepIndex + 1 { // Disable swipe back to permission screens
+            return false
+        }
+        setOnboardingStep(currentStep - 1, animated: true)
+
+        UIAccessibility.post(notification: .pageScrolled, argument: nil)
+        return true
     }
 }

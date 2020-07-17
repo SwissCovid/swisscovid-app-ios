@@ -205,16 +205,16 @@
 "symptom_detail_title" = "I feel ill?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Do the …";
+"symptom_detail_box_subtitle" = "If you experience COVID-19 symptoms…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "coronavirus check";
+"symptom_detail_box_title" = "Getting tested";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "To the coronavirus check";
+"symptom_detail_box_button" = "More information";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Stay at home, do the coronavirus check, or call your doctor.";
+"symptom_detail_box_text" = "The FOPH recommends that anyone with COVID-19 symptoms should get tested. Call your doctor or your healthcare facility to schedule an appointment.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Tested positive";
@@ -633,10 +633,10 @@
 "inform_code_intro_button" = "OK";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "What is the coronavirus check?";
+"symptom_faq1_title" = "What are the symptoms of COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "You have symptoms but are unsure what you should do? Answer the questions in the FOPH online check to receive advice on what to do.";
+"symptom_faq1_text" = "These are the most common symptoms of COVID-19:\n\n- Fever, feverish feeling \n- Sore throat\n- Cough (mostly dry)\n- Shortness of breath\n- Body aches\n- Sudden loss of the sense of taste and/or smell";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Why has proximity tracing ended?";
@@ -889,3 +889,9 @@
 /*Google Translation!*/
 /*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
 "ratelimit_error_text" = "There have already been too many requests today. The app will try again later.";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "Tracing has been activated";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "Tracing has been deactivated";
