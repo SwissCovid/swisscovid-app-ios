@@ -466,6 +466,10 @@
 		6EFF9AE2245AAFC800C98FF3 /* UIImage+UBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UBHelpers.m"; sourceTree = "<group>"; };
 		6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformTracingEndViewController.swift; sourceTree = "<group>"; };
 		8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationPersistence.swift; sourceTree = "<group>"; };
+		8E61227E24C1A3EE007D7822 /* ti */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ti; path = ti.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E61227F24C1A3EE007D7822 /* ti */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ti; path = ti.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E61228024C1A413007D7822 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E61228124C1A413007D7822 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E81CC95241FCC7D006F2437 /* DP3TApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP3TApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CC98241FCC7D006F2437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E81CC9C241FCC7D006F2437 /* NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
@@ -1290,6 +1294,8 @@
 				hr,
 				rm,
 				"sr-Latn-RS",
+				ti,
+				tr,
 			);
 			mainGroup = 8E81CC8C241FCC7D006F2437;
 			packageReferences = (
@@ -1816,6 +1822,8 @@
 				24D33D9F24880F6C0068E509 /* hr */,
 				247395B4249165B900B30767 /* rm */,
 				8E86FDE324936683009B2D90 /* sr-Latn-RS */,
+				8E61227E24C1A3EE007D7822 /* ti */,
+				8E61228024C1A413007D7822 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1834,6 +1842,8 @@
 				24D33DA024880F6C0068E509 /* hr */,
 				247395B5249165BA00B30767 /* rm */,
 				8E86FDE424936683009B2D90 /* sr-Latn-RS */,
+				8E61227F24C1A3EE007D7822 /* ti */,
+				8E61228124C1A413007D7822 /* tr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

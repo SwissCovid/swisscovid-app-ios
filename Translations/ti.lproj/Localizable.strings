@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "የቐንየልና";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "እቶም ኣጋጣሚ አይዲታት (IDs) ናይ ኣፕኩም ተሰዲደን ኣለዋ። ብከምዚ መንገዲ ስንሰለት ለበዳ ሕማም ንኽቋረጽ ትሕግዙ።";
+"inform_send_thankyou_text" = "እቶም ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ናይ ኣፕኩም ተሰዲዶም ኣለዉ። ብኸምዚ መንገዲ ሰንሰለት ለበዳ ሕማም ንኽቋረጽ ትሕግዙ።";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "ዕጸው";
@@ -114,7 +114,7 @@
 "android_foreground_service_notification_errors" = "እቲ ኣፕ ኣብዚ ሕጂ እዋን ብልክዕ ክሰርሕ ኣይክእልን እዩ።";
 
 /*Titel der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_title" = "ናይ ቅድመ ምርአይ ዓይነት (Version)";
+"preview_warning_title" = "ናይ ቅድመ ምርኣይ ዓይነት (Version)";
 
 /*Text der Nachricht, die auf Beta-Status hinweist*/
 "preview_warning_text" = "እዚ ኣፕ ከም መርአዩ (መላመዲ) ንምርኣይ ትግባረ ናይ DP-3T የገልግል። ግቡእ ክትጥቀመሉ ትኽእል ናይ ኮቪድ-19 መከታተሊ ኣይኮነን። ";
@@ -123,13 +123,13 @@
 "debug_settings_title" = "ናይ ደቡግ (Debug) ሴቲንግ ";
 
 /*Debug: Titel für die Debug-Einstellungen zur Status-Überschreibung*/
-"debug_state_setting_title" = "ኩነታት ኣፕ ብምጽሓፍ ምቕያር ";
+"debug_state_setting_title" = "ኩነታት ኣፕ ፍሉጥ/ውሱን ዘይኮነ ";
 
 /*Debug: Erklärungstext für die Debug-Einstellungen zur Status-Überschreibung*/
-"debug_state_setting_text" = "እዚ ሴቲንግ ነቲ ርኡይ ዝኾነ ኩነታት ናይቲ ኣፕ ብጽሑፍ ይቕይሮ።  እቲ ናይ ምክትታል ኣገልግሎት በዚ አይጽሎን እዩ። ";
+"debug_state_setting_text" = "እዚ ሴቲንግ ነቲ ርኡይ ዝኾነ ኩነታት ናይቲ ኣፕ ብጽሑፍ ይቕይሮ።  እቲ ናይ ምክትታል ኣገልግሎት በዚ ኣይጽሎን እዩ። ";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Keine*/
-"debug_state_setting_option_none" = "ብምጽሓፍ ኣይቅየርን።";
+"debug_state_setting_option_none" = "ፍሉጥ/ውሱን ዘይኮነ";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Gesund*/
 "debug_state_setting_option_ok" = "ጥዑይ (ዘይሕሙም)";
@@ -153,7 +153,7 @@
 "debug_sdk_state_self_exposed" = "ባዕልካ ሓበሬታ ዝሃብካ/ዝተመዝገብካ፦";
 
 /*Debug: Bezeichnung für den Fall, bei dem ein Kontakt als positiv getestet gemeldet wurde*/
-"debug_sdk_state_contact_exposed" = "ርካባትካ ዝሓበርካ፦ ";
+"debug_sdk_state_contact_exposed" = "ርካባትካ ዘመዝገብካ፦ ";
 
 /*Debug-Status-Bezeichnung für boleschen Wert 'true'*/
 "debug_sdk_state_boolean_true" = "እወ";
@@ -259,7 +259,7 @@
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "ንምግላል ዝምልከት ዝተወሃበኩም መምርሒታት ተኸታተሉ። ";
 "tracing_ended_title" = "ምክትታል ተወዲኡ";
-"tracing_ended_text" = "ካብ ሕጂ ንንዮ ርክባት አይዕቀቡን እዮም። ";
+"tracing_ended_text" = "ካብ ሕጂ ንንዮ ርክባት ኣይዕቀቡን እዮም። ";
 "exposed_info_contact_hotline" = "ን…..ተወከሱ";
 "meldung_homescreen_positive_info_line1" = "ን……..ተኸታተሉ";
 "meldung_homescreen_positive_info_line2" = "ባዕልኻ ነብስኻ ንምግላል ዝምልከት መምርሒታት ";
@@ -333,10 +333,10 @@
 "onboarding_privacy_title" = "ንውልቅኹም ጥራይ ዝምልከት ነገራት ምክልኻል ";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text1" = "እተን ሞባይላት ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እየን ዝለዋወጣ።  ዘለኹሞ ቦታ ይኹን ዋላ ካልእ ንመንነትኩም ዝምልከት ሓበሬታ ኣይእክብን እዩ። ";
+"onboarding_privacy_text1" = "እተን ሞባይላት  ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ጥራይ እየን ዝለዋወጣ።  ዘለኹሞ ቦታ ይኹን ዋላ ካልእ ንመንነትኩም ዝምልከት ሓበሬታ ኣይእክብን እዩ። ";
 
 /*Onboarding Privacy: Text*/
-"onboarding_privacy_text2" = "እቶም ዝተዓቀቡ  ኣጋጣሚ ኣይዲታት (IDs) ኣብ ሞባይልኩም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
+"onboarding_privacy_text2" = "እቶም ዝተዓቀቡ ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ኣብ ሞባይልኩም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
 
 /*Onboarding Begegnungen: Titel oben*/
 "onboarding_begegnungen_heading" = "እቲ ኣፕ ከምይ ይሰርሕ፧";
@@ -420,7 +420,7 @@
 "homescreen_meldung_data_outdated_title" = "እዋናዊ ሰነዳት የለን";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "ካብ ዝተወሰነ ግዜ ኣትሒዙ ሓበሬታታት ክወሃሃዱ አይከኣሉን።  ሞባይልኩም ምስ ኢንተርነት ከምዝራኸብ ግበሩ። ";
+"homescreen_meldung_data_outdated_text" = "ካብ ዝተወሰነ ግዜ ኣትሒዙ ሓበሬታታት ክወሃሃዱ ኣይከኣሉን።  ሞባይልኩም ምስ ኢንተርነት ከምዝራኸብ ግበሩ። ";
 
 /*Homescreen: Button Titel*/
 "homescreen_meldung_data_outdated_retry_button" = "ከምብሓድሽ ምፍታን";
@@ -519,7 +519,7 @@
 "accessibility_12nd" = "መበል ዓሰርተኽልተ";
 
 /*Voiceover: Hilfetext bei Codeeingabe*/
-"accessibility_code_button_disabled_hint" = " እቲ ኮድ ብምሉኡ ስለዝይተዋህበ ምጥዋቕ አይክኣልን እዩ። ";
+"accessibility_code_button_disabled_hint" = " እቲ ኮድ ብምሉኡ ስለዝይተዋህበ ምጥዋቕ ኣይክኣልን እዩ። ";
 
 /*Fehler: Standortinformationen / Bluetooth*/
 "android_foreground_service_notification_error_location_service" = "እቲ ኣፕ ብሉቱዝ ክጥቀም ክኸእል ምእንታን: እቲ ዘለኹሞ ቦታ ዝሕብር ኣገልግሎት ወልዕዎ። እቲ ኣፕ ኣብ ዝኾነ እዋን ቦታኹም ኣይፈልጦን እዩ።";
@@ -537,7 +537,7 @@
 "sync_warning_notification_title" = "ምውህሃድ ኣፕ";
 
 /*Synchronisations-Fehler Text*/
-"sync_warning_notification_text" = "ዝርዝር ናይ ዝተሓበሩ ኣጋጣሚ ኣይዲታት (IDs) ንኽመዓራረ ነቲ ኣፕ ክፈትዎ።";
+"sync_warning_notification_text" = "ዝርዝር ናይ ዝተሓበሩ ብግምት ዝተሰርዑ መለልዪ ቁጽርታት  ንኽመዓራረ ነቲ ኣፕ ክፈትዎ።";
 
 /*Meldungen Detail: Button bei Vollansicht*/
 "meldung_animation_continue_button" = "ቀጽል";
@@ -555,7 +555,7 @@
 "begegnung_detail_faq2_title" = "ውልቃዊ ሰነዳተይ ውሑሳት ድዮም፧";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "ኣብ እዋን ርክብ እቶም ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝቀያየሩ።  እዚኦም ኣብቲ ሞባይላት ተዓቂቦም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
+"begegnung_detail_faq2_text" = "ኣብ እዋን ርክብ እቶምብግምት ዝተሰርዑ መለልዪ ቁጽርታት ጥራይ እዮም ዝቀያየሩ።  እዚኦም ኣብቲ ሞባይላት ተዓቂቦም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "ብሉቱዝ ኩልጊዜ ክፉት ክኸውን ኣለዎ ዶ፧";
@@ -564,7 +564,7 @@
 "begegnungen_detail_faq3_text" = "ርክባት ክልለዩ ክኽእሉ ምእንታን ብሉቱዝ ኩልግዜ ክፉት ክኸውን ኣለዎ። ስለዝኾነ ምጥቃም ሓይሊ ባትሪ ብመጠኑ ጥራይ እዩ ይውስኽ።";
 
 /*FAQ Button Titel*/
-"faq_button_title" = "ብዙሕ ግዚ ዝሕተቱ ሕቶታት";
+"faq_button_title" = "ብዙሕ ግዜ ዝሕተቱ ሕቶታት";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
 "meldungen_nomeldungen_faq1_title" = "ሓበሬታ ክብሃል ከሎ እንታይ ማለት እዩ፧";
@@ -609,7 +609,7 @@
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "እቶም ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝስደዱ ። ውልቃቂ ሰነዳት ኣይስደዱን እዮም።  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
+"inform_detail_faq2_text" = "እቶምብግምት ዝተሰርዑ መለልዪ ቁጽርታት ጥራይ እዮም ዝስደዱ ። ውልቃቂ ሰነዳት ኣይስደዱን እዮም።  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -636,7 +636,7 @@
 "meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል አብ ኣፕ ብቐጥታ ይውዳእ። ";
+"meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል ኣብ ኣፕ ብቐጥታ ይውዳእ። ";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
@@ -684,7 +684,7 @@
 "onboarding_gaen_info_title_1" = "ውልቃዊ ሰነዳት ምክልኻል";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 1*/
-"onboarding_gaen_info_text_1" = "ኣጋጣሚ ኣይዲታት (IDs) ጥራይ እዮም ዝለዋወጡ። ብዛዕባ ዘለኹሞ ቦታ ወይ መንነትክኩም ኣይኮነን። ";
+"onboarding_gaen_info_text_1" = "ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ጥራይ  ኢኻ ነንሕድሕድካ ትለዋወጥ። ብዛዕባ ዘለኹሞ ቦታ ወይ መንነትክኩም ኣይኮነን። ";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
 "onboarding_gaen_info_title_2" = "ሃልኪ ባትሪ ቁሩብ ይውስኽ ";
@@ -707,7 +707,7 @@
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 "delete_infection_dialog" = "ሓበሬታ ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
 "android_onboarding_battery_permission_title" = "ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ) ሸለል ምባል";
-"android_onboarding_battery_permission_text" = "ርክባት ኩልግዚ ምልላይ ንምኽኣል: ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ)ናይዚ ኣፕ ዕጹው ክኸውን ኣለዎ።  ";
+"android_onboarding_battery_permission_text" = "ርክባት ኩልግዜ ምልላይ ንምኽኣል: ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ)ናይዚ ኣፕ ዕጹው ክኸውን ኣለዎ።  ";
 "android_onboarding_battery_permission_button" = "ምፍቃድ (ሐራይ ምባል)";
 "android_onboarding_battery_permission_button_deactivated" = "ሐራይ";
 "android_onboarding_battery_permission_info_1_title" = "ነዚ ኣፕ ጥራይ";
@@ -732,7 +732,7 @@
 "tracing_permission_error_text_ios" = "ምክትታል ክሰርሕ ምእንቲ  መልእኽትታት ርክባት ኮቪድ-19 ከምዝሰርሕ ግበርዎ (ወልዕዎ)። ";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
-"user_cancelled_key_sharing_error" = "መልእኽቲ ክስደድ ኣይክኣለን።  ኣጋጣሚ ኣይዲታትቱም (IDs) ብስዊስኮቪድ ኣፕ ንኽከፋፈል ኣፍቅዱ። ";
+"user_cancelled_key_sharing_error" = "መልእኽቲ ክስደድ ኣይክኣለን። ብግምት ዝተሰርዑ መለልዪ ቁጽርታትኩም ብስዊስኮቪድ ኣፕ ንኽከፋፈል ኣፍቅዱ። ";
 
 /*Button um die Google Play Services zu aktualisieren*/
 "playservices_update" = "ምሕዳስ (እዋናዊ ምግባር)";
@@ -745,7 +745,7 @@
 
 /*Meldung, dass die Google Play Services benötigt werden*/
 "playservices_text" = "ኣገልግሎት ምክትታል ንኽተጀምር እዋናዊ ዝኾነ  ጉግል ፕለይ ሰርቪስ (Google Play Services) የድሊ። ኣብዚ ሕጂ እዋን ሞባይልኩም እዋናዉ ናይ ምግባር (ኣፕደይተ) ተኽእሎ እንተዘየለ: ጽንሕ ኢልኩም ደጊምኩም ፈትኑ።\n";
-"android_error_battery_optimization_title" = "ምምሕያሽ ናይ ባትሪ (ኣኩ) ምውዳእ ይሰርሕ አሎ";
+"android_error_battery_optimization_title" = "ምምሕያሽ ናይ ባትሪ (ኣኩ) ምውዳእ ይሰርሕ ኣሎ";
 "android_error_battery_optimization_button" = "ምፍቃድ (ሐራይ ምባል)";
 
 /*Telefonnummer für Hilfe bei App-Problemen*/
@@ -775,7 +775,7 @@
 "onboarding_legal_text1" = "ኣብዚ እዋን እዚ ምጥቃም ናይዚ ኣፕ ነዞም ዝስዕቡ ብሚንስትሪ ጥዕና ንምልምማድ ኢሎም ዝተዓደሙ ሰባት ጥራይ እዩ ተመዲቡን ተፈቒዱን ዘሎ፦  ኣብ ትምህርቲ: ኣብ ኣገልግሎት ሓገዝን ወይ ንጡፍ ኣገልግሎትን ዝርከቡ ኣባላት ሰራዊት ስዊዘርላንድ: ሰራሕተኛታት ላዕለዋይ ኣብያተ ትምህርቲ: ሰራሕተኛታት ሕክምናን ክሊኒክን: ሰራሕተኛታት ዞባዊ ምምሕዳራትን ሃገራዊ ምምሕዳራትን ከምኡውን ንምምሕያሽ ዓይነት ናይቲ ሲስተም እጃም ከበርክቱ ዝደልዩ ኣባላት ማሕበራት።";
 
 /*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "እቲ ናይ ምልምማድ እዋን ብውጽኢታዊ ዝኾነ ሲስተም ዝትግበር ኮይኑ ትኽክለኛ ሰነዳት ይሕዝ።  ሓኻይም ካንቶን ኣብ እዋን ፖዚቲቭ ውጽኢት መርመራ ናይ ኮቪድ-19: ነቶም ዘይተፈቐደሎም ተጠቀምቲ: ዝኾነ ካብ ኣፕ ንዝስደድ መልእኽቲ ዝምልከት ኮቪድኮድ ክፈጥሩ አይፍቀደሎምን እዩ።  ካብቲ ሕጹር ዝኾነ Public Security Tests ወጻኢ ዝኾነ ምጥቃዕ («Penetration Tests») ናይዚ ሲስተም ማለት ምጥቃዕ ናይዚ  ውጽኢታዊ ሲስተም ማለት እዩ። እዚ ድማ ዘይሕጋዊ እዩ።  ";
+"onboarding_legal_text2" = "እቲ ናይ ምልምማድ እዋን ብውጽኢታዊ ዝኾነ ሲስተም ዝትግበር ኮይኑ ትኽክለኛ ሰነዳት ይሕዝ።  ሓኻይም ካንቶን ኣብ እዋን ፖዚቲቭ ውጽኢት መርመራ ናይ ኮቪድ-19: ነቶም ዘይተፈቐደሎም ተጠቀምቲ: ዝኾነ ካብ ኣፕ ንዝስደድ መልእኽቲ ዝምልከት ኮቪድኮድ ክፈጥሩ ኣይፍቀደሎምን እዩ።  ካብቲ ሕጹር ዝኾነ Public Security Tests ወጻኢ ዝኾነ ምጥቃዕ («Penetration Tests») ናይዚ ሲስተም ማለት ምጥቃዕ ናይዚ  ውጽኢታዊ ሲስተም ማለት እዩ። እዚ ድማ ዘይሕጋዊ እዩ።  ";
 
 /*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
 "onboarding_legal_alert_title" = "ኣባል ናይ ሓደ ኣብዚ ናይ ምልምማድ እዋን ክሳተፍ ዝፍቀደሉ ትካል ወይ ማሕበር ዲኹም፧ ";
@@ -798,7 +798,7 @@
 "synchronizations_view_title" = "ሓፈሻዊ መእተዊ/መርኣዩ";
 "synchronizations_view_info_title" = "ምውህሃዳት";
 "synchronizations_view_info_question" = "ምውህሃዳት እንታይ እዮም፧";
-"synchronizations_view_info_answer" = "እቲ ኣፕ ተመርሚም ፖዚቲቭ ዝተረኸቡ ሰባት ንዝዘርግሕዎም ኣጋጣሚ (አገዳሲ?፟) ኣይዲታት (IDs) ቀጻሊ ይምርምር።    ";
+"synchronizations_view_info_answer" = "እቲ ኣፕ ተመርሚም ፖዚቲቭ ዝተረኸቡ ሰባት ንዝዘርግሕዎም ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ቀጻሊ ይምርምር።    ";
 "synchronizations_view_period_title" = "ኣብተን ዝሓለፋ 14 መዓልትታት ";
 "synchronizations_view_sync_via_open" = "  • Open";
 "synchronizations_view_sync_via_background" = "  • Sync";
@@ -841,7 +841,7 @@
 "onboarding_disclaimer_title" = "ሓበሬታ ብዛዕባ ኣጠቓቕማ";
 
 /*Onboarding Disclaimer Screen: Info*/
-"onboarding_disclaimer_info" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን አብዚ ትረኽቡ።";
+"onboarding_disclaimer_info" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን ኣብዚ ትረኽቡ።";
 
 /*Onboarding Disclaimer Screen: Warning Title*/
 "onboarding_disclaimer_warning_title" = "መጠንቀቕታ:-  እዚ ኣፕ ካብ ሕማም ኮቪድ-19 ኣይከላኸለልኩምን እዩ። ";
@@ -866,7 +866,7 @@
 
 /*Google Translation*/
 /*Error shown when loading fails because there is not enough free disk space.*/
-"loading_error_no_disk_space" = "ሞባይልኩም ውሑድ ናይ መዕቆሪ ዓቕሚ ስለ ዘለዎ ሓበሬታታት ክምርመሩ ኣይክእሉን እዮም። ነጻ ናይ መዕቆሩ ቦታ ከምዝህልወኩም ግበሩ።";
+"loading_error_no_disk_space" = "ሞባይልኩም ውሑድ ናይ መዕቆሪ ዓቕሚ ስለ ዘለዎ ሓበሬታታት ክምርመሩ ኣይክእሉን እዮም። ነጻ ናይ መዕቆሪ ቦታ ከምዝህልወኩም ግበሩ።";
 
 /*Onboarding: Akzeptieren Buttton Titel*/
 "onboarding_accept_button" = "ምቕባል ";
@@ -883,4 +883,4 @@
 "accessibility_tracing_has_been_activated" = "ምክትታል ተጀሚሩ (ከም ዝሰርሕ ተጌሩ)";
 
 /*Info to the user that tracing has been switched off*/
-"accessibility_tracing_has_been_deactivated" = "ምክትታል ተሪጹ (ከም ዘይሰርሕ ተጌሩ)";
+"accessibility_tracing_has_been_deactivated" = "ምክትታል ተቛሪጹ (ከም ዘይሰርሕ ተጌሩ)";
