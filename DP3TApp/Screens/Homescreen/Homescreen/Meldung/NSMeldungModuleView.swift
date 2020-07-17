@@ -17,11 +17,11 @@ class NSMeldungView: NSModuleBaseView {
     }
 
     // section views
-    private let noMeldungenView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_subtitle".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-no-message")!, titleColor: .ns_green, subtextColor: .ns_text, backgroundColor: .moduleGreenBackground)
+    private let noMeldungenView = NSInfoBoxView(title: "meldungen_no_meldungen_title".ub_localized, subText: "meldungen_no_meldungen_subtitle".ub_localized, image: UIImage(named: "ic-check")!, illustration: UIImage(named: "illu-no-message")!, titleColor: .ns_green, subtextColor: .ns_text, backgroundColor: .moduleGreenBackground, dynamicIconTintColor: .ns_green)
 
-    private let exposedView = NSInfoBoxView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_blue, hasBubble: true)
+    private let exposedView = NSInfoBoxView(title: "meldungen_meldung_title".ub_localized, subText: "meldungen_meldung_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_blue, hasBubble: true, dynamicIconTintColor: .white)
 
-    private let infectedView = NSInfoBoxView(title: "meldung_homescreen_positiv_title".ub_localized, subText: "meldung_homescreen_positiv_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_purple, hasBubble: true)
+    private let infectedView = NSInfoBoxView(title: "meldung_homescreen_positiv_title".ub_localized, subText: "meldung_homescreen_positiv_text".ub_localized, image: UIImage(named: "ic-info")!, titleColor: .white, subtextColor: .white, backgroundColor: .ns_purple, hasBubble: true, dynamicIconTintColor: .white)
 
     private let noPushView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: { _ in
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),

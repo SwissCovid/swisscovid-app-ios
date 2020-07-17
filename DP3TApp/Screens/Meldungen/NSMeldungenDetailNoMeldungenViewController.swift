@@ -34,6 +34,7 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_green))
         externalLinkButton.title = "no_meldungen_box_link".ub_localized
+        externalLinkButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         externalLinkButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.externalLinkPressed()
@@ -52,11 +53,11 @@ class NSMeldungenDetailNoMeldungenViewController: NSTitleViewScrollViewControlle
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

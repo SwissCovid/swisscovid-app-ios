@@ -131,11 +131,17 @@ class NSButton: UBButton {
 
         return contentSize
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            titleLabel?.font = NSLabelType.button.font
+        }
+    }
 }
 
 extension NSButton {
     static func faqButton(color: UIColor) -> UIView {
-        // let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outlineUppercase(color))
         let faqButton = NSExternalLinkButton(style: .outlined(color: color))
         faqButton.title = "faq_button_title".ub_localized
 
@@ -156,6 +162,7 @@ extension NSButton {
         }
 
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
+        faqButton.accessibilityTraits = [.button, .header]
         return view
     }
 }

@@ -23,11 +23,11 @@ class NSBluetoothSettingsControl: UIView {
 
     private let switchControl = UISwitch()
 
-    private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground)
+    private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground, dynamicIconTintColor: .ns_blue)
 
     private let tracingInfoView: UIView = {
         let view = UIView()
-        let imageView = UIImageView(image: UIImage(named: "ic-info-blue"))
+        let imageView = NSImageView(image: UIImage(named: "ic-info-blue"), dynamicColor: .ns_blue)
         let titleLabel = NSLabel(.textLight, textColor: .ns_blue, numberOfLines: 0, textAlignment: .natural)
         titleLabel.text = "tracing_active_tracking_always_info".ub_localized
         view.addSubview(imageView)
@@ -68,7 +68,7 @@ class NSBluetoothSettingsControl: UIView {
         switchControl.onTintColor = .ns_blue
 
         setup()
-        updateAccessibility()
+        setupAccessibility()
 
         switchControl.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
 
@@ -132,12 +132,8 @@ class NSBluetoothSettingsControl: UIView {
         inactiveViewConstraint?.activate()
     }
 
-    private func updateAccessibility() {
-        isAccessibilityElement = false
-        titleLabel.isAccessibilityElement = false
-        subtitleLabel.isAccessibilityElement = false
-
-        switchControl.accessibilityLabel = [titleLabel.text ?? "", subtitleLabel.text ?? ""].joined(separator: ",")
+    private func setupAccessibility() {
+        titleLabel.accessibilityTraits = [.header]
     }
 
     // MARK: - Switch Logic
@@ -148,7 +144,10 @@ class NSBluetoothSettingsControl: UIView {
             TracingManager.shared.isActivated = switchControl.isOn
         }
 
-        updateAccessibility()
+        UIAccessibility.post(notification: .layoutChanged, argument: switchControl)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            UIAccessibility.post(notification: .announcement, argument: self.switchControl.isOn ? "accessibility_tracing_has_been_activated".ub_localized : "accessibility_tracing_has_been_deactivated".ub_localized)
+        }
     }
 
     private func updateState(_ state: UIStateModel) {
@@ -180,7 +179,5 @@ class NSBluetoothSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
         }
-
-        updateAccessibility()
     }
 }

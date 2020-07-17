@@ -29,9 +29,8 @@ class NSMeldungenDetailPositiveTestedTitleView: NSTitleView {
 
         backgroundColor = UIColor.ns_purple
         setup()
-
-        isAccessibilityElement = true
-        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")."
+        accessibilityElements = [titleLabel, textLabel].compactMap { $0 }
+        titleLabel.accessibilityTraits = [.header]
     }
 
     required init?(coder _: NSCoder) {

@@ -34,6 +34,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
         setup()
         updateAccessibilityLabelOfButton(sendAllowed: false)
+
+        accessibilityElements = [codeControl.accessibilityElements ?? [], titleLabel, textLabel].compactMap { $0 }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -169,10 +171,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
         nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
-    }
-
-    private func noCodeButtonPressed() {
-        navigationController?.pushViewController(NSNoCodeInformationViewController(), animated: true)
     }
 
     // MARK: - NSCodeControlProtocol

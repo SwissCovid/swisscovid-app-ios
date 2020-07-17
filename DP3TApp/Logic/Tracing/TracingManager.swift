@@ -306,7 +306,7 @@ extension TracingManager: ActivityDelegate {
                     numberOfDelayedErrors += 1 // If error is certificate
                 case DP3TNetworkingError.networkSessionError:
                     numberOfDelayedErrors += 1 // If error is networking
-                case let .HTTPFailureResponse(status: status) where status == 502 || status == 503:
+                case let .HTTPFailureResponse(status: status, data: _) where status == 502 || status == 503:
                     numberOfDelayedErrors += 1 // If error is 502 || 503
                 default:
                     numberOfInstantErrors += 1

@@ -205,16 +205,16 @@
 "symptom_detail_title" = "me siento enfermo?";
 
 /*Symptom Detail Weisse Box Subtitel*/
-"symptom_detail_box_subtitle" = "Haga la…";
+"symptom_detail_box_subtitle" = "En caso de síntomas de COVID-19…";
 
 /*Symptom Detail Weisse Box Titel*/
-"symptom_detail_box_title" = "autoevaluación del coronavirus";
+"symptom_detail_box_title" = "Hacer el test";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Autoevaluación del coronavirus";
+"symptom_detail_box_button" = "Más información";
 
 /*Symptom Detail Weisse Box Text*/
-"symptom_detail_box_text" = "Quédese en casa, haga la autoevaluación del coronavirus o llame a su médico.";
+"symptom_detail_box_text" = "La OFSP recomienda a todas las personas con síntomas de COVID-19 que se hagan el test. Llame a un médico o a un centro sanitario.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
 "inform_detail_navigation_title" = "Test positivo";
@@ -628,10 +628,10 @@
 "inform_code_intro_button" = "Entendido";
 
 /*Symptome: FAQ Titel*/
-"symptom_faq1_title" = "¿Qué es la autoevaluación del coronavirus?";
+"symptom_faq1_title" = "¿Cuáles son los síntomas de COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "¿Tiene usted síntomas y no sabe cómo comportarse? Responda a las preguntas de la autoevaluación online de la OFSP para recibir una recomendación práctica.";
+"symptom_faq1_text" = "Los síntomas siguientes aparecen con frecuencia:\n\n- fiebre, sensación febril\n- dolor de garganta\n- tos (casi siempre seca)\n- dificultad respiratoria\n- dolores musculares\n- pérdida repentina del sentido del gusto y/o del olfato";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "¿Por qué ha finalizado el rastreo?";
@@ -882,3 +882,9 @@
 /*Google Translation!*/
 /*Meldungen: Fehler Meldung Rate-Limit (error 13) Text*/
 "ratelimit_error_text" = "Ya ha habido demasiadas preguntas hoy. La aplicación lo intentará de nuevo más tarde.";
+
+/*Info to the user that tracing has been switched on*/
+"accessibility_tracing_has_been_activated" = "Se ha activado el rastreo";
+
+/*Info to the user that tracing has been switched off*/
+"accessibility_tracing_has_been_deactivated" = "Se ha desactivado el rastreo";

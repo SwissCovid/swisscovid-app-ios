@@ -104,6 +104,7 @@ class NSMeldungDetailMeldungTitleView: NSTitleView, UIScrollViewDelegate {
         var first = true
         for m in meldungen {
             let v = NSMeldungDetailMeldungSingleTitleHeader(setupOpen: startAnimationNotDone, onceMore: !first)
+            v.accessibilityTraits = [.header]
             v.meldung = m
             v.headerView = self
 

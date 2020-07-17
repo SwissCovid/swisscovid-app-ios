@@ -87,15 +87,15 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -106,6 +106,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
     private func setupAccessibility() {
         titleContentStackView.isAccessibilityElement = true
+        titleContentStackView.accessibilityTraits = [.header]
         titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
     }
 
