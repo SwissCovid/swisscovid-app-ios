@@ -118,7 +118,7 @@ class NSButton: UBButton {
 
     override var isEnabled: Bool {
         didSet {
-            backgroundColor = isEnabled ? style.backgroundColor : UIColor.black.withAlphaComponent(0.15)
+            backgroundColor = isEnabled ? style.backgroundColor : UIColor.ns_disabledButtonBackground
         }
     }
 

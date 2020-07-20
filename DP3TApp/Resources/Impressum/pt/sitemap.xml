@@ -57,6 +57,16 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="ti"
+                href="/ti/impressum.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/impressum.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="pt"
                 href="/pt/impressum.html"
                 />
@@ -117,6 +127,16 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="ti"
+                href="/ti/licence.html"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/licence.html"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="pt"
                 href="/pt/licence.html"
                 />
@@ -173,6 +193,16 @@
                 rel="alternate"
                 hreflang="hr"
                 href="/hr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ti"
+                href="/ti/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="tr"
+                href="/tr/"
                 />
     <xhtml:link
                 rel="alternate"
