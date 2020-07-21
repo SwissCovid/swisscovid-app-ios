@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SnapKit
 import UIKit
 
 class NSInfoBoxView: UIView {
@@ -20,6 +21,9 @@ class NSInfoBoxView: UIView {
 
     private let additionalLabel = NSLabel(.textBold)
     private let externalLinkButton = NSExternalLinkButton()
+
+    private var externalLinkBottomConstraint: Constraint?
+    private var additionalLabelBottomConstraint: Constraint?
 
     // MARK: - Update
 
@@ -36,8 +40,14 @@ class NSInfoBoxView: UIView {
             }
 
             illustrationImageView.isHidden = false
+
+            externalLinkBottomConstraint?.update(inset: NSPadding.large)
         } else {
+            externalLinkButton.title = nil
+
             additionalLabel.text = additionalText
+
+            externalLinkBottomConstraint?.update(inset: 0)
 
             illustrationImageView.isHidden = true
         }
@@ -147,7 +157,7 @@ class NSInfoBoxView: UIView {
                     make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
                     make.leading.equalTo(self.titleLabel)
                     make.trailing.lessThanOrEqualTo(self.titleLabel)
-                    make.bottom.equalToSuperview().inset(NSPadding.large)
+                    self.externalLinkBottomConstraint = make.bottom.equalToSuperview().inset(NSPadding.large).constraint
                 }
             } else {
                 addSubview(additionalLabel)
