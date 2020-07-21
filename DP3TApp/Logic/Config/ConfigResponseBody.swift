@@ -35,7 +35,7 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
             }
         }
 
-        return dic["en"] ?? nil
+        return nil
     }
 }
 
