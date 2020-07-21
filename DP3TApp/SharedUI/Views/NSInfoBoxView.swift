@@ -13,7 +13,7 @@ import UIKit
 class NSInfoBoxView: UIView {
     // MARK: - Views
 
-    private let titleLabel = NSLabel(.uppercaseBold)
+    private let titleLabel: NSLabel
     private let subtextLabel = NSLabel(.textLight)
     private let leadingIconImageView: NSImageView
     private let illustrationImageView = UIImageView()
@@ -45,8 +45,9 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, dynamicIconTintColor: UIColor? = nil) {
+    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, dynamicIconTintColor: UIColor? = nil, titleLabelType: NSLabelType = .uppercaseBold) {
         leadingIconImageView = NSImageView(image: image, dynamicColor: dynamicIconTintColor)
+        titleLabel = NSLabel(titleLabelType)
 
         super.init(frame: .zero)
 
