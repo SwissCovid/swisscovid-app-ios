@@ -912,3 +912,9 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "Tracing wurde deaktiviert";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "Kostenloser Test möglich";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Corona Tests.";

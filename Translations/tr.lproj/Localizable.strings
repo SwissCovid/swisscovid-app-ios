@@ -309,7 +309,7 @@
 "meldungen_detail_call_again_button" = "Yeniden ara";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"meldungen_detail_call_last_call" = "Son arama: {TARİH}";
+"meldungen_detail_call_last_call" = "Son arama: {DATE}";
 
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Alt Başlık";
@@ -884,3 +884,9 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "Takip devre dışı bırakılmıştır";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
