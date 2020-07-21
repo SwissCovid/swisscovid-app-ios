@@ -28,14 +28,11 @@ class NSTracingErrorView: UIView {
         var title: String
         var text: String
         var buttonTitle: String?
+        var errorCode: String?
         var action: ((NSTracingErrorView?) -> Void)?
     }
 
     var model: NSTracingErrorViewModel? {
-        didSet { update() }
-    }
-
-    var errorCode: String? {
         didSet { update() }
     }
 
@@ -93,7 +90,7 @@ class NSTracingErrorView: UIView {
             activityIndicator.hidesWhenStopped = true
             activityIndicator.stopAnimating()
         }
-        if let code = errorCode {
+        if let code = model?.errorCode {
             stackView.addArrangedView(errorCodeLabel)
             errorCodeLabel.text = code
         }
