@@ -31,8 +31,7 @@ class NSInfoBoxView: UIView {
             externalLinkButton.title = additionalText
 
             externalLinkButton.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.openLink(url)
+                self?.openLink(url)
             }
 
             illustrationImageView.isHidden = false
@@ -155,8 +154,7 @@ class NSInfoBoxView: UIView {
                 externalLinkButton.title = adt
 
                 externalLinkButton.touchUpCallback = { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.openLink(url)
+                    self?.openLink(url)
                 }
 
                 externalLinkButton.snp.makeConstraints { make in

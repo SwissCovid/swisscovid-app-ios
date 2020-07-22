@@ -27,6 +27,8 @@ class HomescreenInfoBoxView: UIView {
         var viewModel = NSInfoBoxView.ViewModel(title: "", subText: "", image: UIImage(named: "ic-info"), titleColor: .white, subtextColor: .white)
         viewModel.backgroundColor = .ns_darkBlueBackground
         viewModel.dynamicIconTintColor = .white
+        viewModel.additionalURL = ""
+        viewModel.additionalText = ""
         return .init(viewModel: viewModel)
     }()
 
