@@ -26,16 +26,7 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
     }
 
     var value: T? {
-        let preferredLanguages = Locale.preferredLanguages
-
-        for preferredLanguage in preferredLanguages {
-            if let code = preferredLanguage.components(separatedBy: "-").first,
-                let val = dic[code] {
-                return val
-            }
-        }
-
-        return nil
+        return dic["language_key".ub_localized]
     }
 }
 
