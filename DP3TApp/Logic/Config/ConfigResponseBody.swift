@@ -15,8 +15,9 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        dic = (try container.decode([String: T].self)).reduce(into: [String: T]()) { result, new in
-            result[String(new.key.prefix(2))] = new.value
+        dic = (try container.decode([String: T?].self)).reduce(into: [String: T]()) { result, new in
+            guard let value = new.value else { return }
+            result[String(new.key.prefix(2))] = value
         }
     }
 
