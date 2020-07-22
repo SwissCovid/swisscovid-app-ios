@@ -28,14 +28,11 @@ class NSTracingErrorView: UIView {
         var title: String
         var text: String
         var buttonTitle: String?
+        var errorCode: String?
         var action: ((NSTracingErrorView?) -> Void)?
     }
 
     var model: NSTracingErrorViewModel? {
-        didSet { update() }
-    }
-
-    var errorCode: String? {
         didSet { update() }
     }
 
@@ -93,7 +90,7 @@ class NSTracingErrorView: UIView {
             activityIndicator.hidesWhenStopped = true
             activityIndicator.stopAnimating()
         }
-        if let code = errorCode {
+        if let code = model?.errorCode {
             stackView.addArrangedView(errorCodeLabel)
             errorCodeLabel.text = code
         }
@@ -143,11 +140,12 @@ class NSTracingErrorView: UIView {
                                            text: "tracing_turned_off_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
-        case .tracingPermissionError:
+        case let .tracingPermissionError(code):
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
                                            title: "tracing_permission_error_title_ios".ub_localized,
                                            text: "tracing_permission_error_text_ios".ub_localized,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
+                                           errorCode: code,
                                            action: { _ in
                                                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
                                                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
