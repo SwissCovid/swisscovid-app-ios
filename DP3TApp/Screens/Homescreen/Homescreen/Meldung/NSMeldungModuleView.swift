@@ -81,20 +81,20 @@ class NSMeldungView: NSModuleBaseView {
                 if uiState.canRetrySyncError {
                     unexpectedErrorWithRetryView.model?.title = uiState.errorTitle ?? "unexpected_error_title".ub_localized
                     unexpectedErrorWithRetryView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorWithRetryView.errorCode = uiState.errorCode
+                    unexpectedErrorWithRetryView.model?.errorCode = uiState.errorCode
                     views.append(unexpectedErrorWithRetryView)
                 } else {
                     unexpectedErrorView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorView.errorCode = uiState.errorCode
+                    unexpectedErrorView.model?.errorCode = uiState.errorCode
                     views.append(unexpectedErrorView)
                 }
             } else if uiState.syncProblemNetworkingError {
                 views.append(syncProblemView)
                 syncProblemView.model?.text = uiState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
-                syncProblemView.errorCode = uiState.errorCode
+                syncProblemView.model?.errorCode = uiState.errorCode
             } else if uiState.backgroundUpdateProblem {
                 views.append(backgroundFetchProblemView)
-                backgroundFetchProblemView.errorCode = uiState.errorCode
+                backgroundFetchProblemView.model?.errorCode = uiState.errorCode
             }
         case .exposed:
             views.append(exposedView)
