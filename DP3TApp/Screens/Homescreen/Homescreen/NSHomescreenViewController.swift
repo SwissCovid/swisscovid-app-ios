@@ -141,7 +141,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         #if ENABLE_TESTING
             #if ENABLE_STATUS_OVERRIDE
                 // DEBUG version for testing
-                let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
+                var previewWarningViewModel = NSInfoBoxView.ViewModel(title: "preview_warning_title".ub_localized,
+                                                                      subText: "preview_warning_text".ub_localized,
+                                                                      titleColor: .gray,
+                                                                      subtextColor: .gray)
+                previewWarningViewModel.image = UIImage(named: "ic-error")!
+                let previewWarning = NSInfoBoxView(viewModel: previewWarningViewModel)
                 stackScrollView.addArrangedView(previewWarning)
 
                 stackScrollView.addSpacerView(NSPadding.large)

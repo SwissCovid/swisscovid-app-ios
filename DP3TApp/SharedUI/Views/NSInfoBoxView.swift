@@ -45,21 +45,36 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, dynamicIconTintColor: UIColor? = nil, titleLabelType: NSLabelType = .uppercaseBold) {
-        leadingIconImageView = NSImageView(image: image, dynamicColor: dynamicIconTintColor)
-        titleLabel = NSLabel(titleLabelType)
+    struct ViewModel {
+        var title: String
+        var subText: String
+        var image: UIImage?
+        var illustration: UIImage? = nil
+        var titleColor: UIColor
+        var subtextColor: UIColor
+        var backgroundColor: UIColor? = nil
+        var hasBubble: Bool = false
+        var additionalText: String? = nil
+        var additionalURL: String? = nil
+        var dynamicIconTintColor: UIColor? = nil
+        var titleLabelType: NSLabelType = .uppercaseBold
+    }
+
+    init(viewModel: ViewModel) {
+        leadingIconImageView = NSImageView(image: viewModel.image, dynamicColor: viewModel.dynamicIconTintColor)
+        titleLabel = NSLabel(viewModel.titleLabelType)
 
         super.init(frame: .zero)
 
-        titleLabel.text = title
-        subtextLabel.text = subText
-        titleLabel.textColor = titleColor
-        subtextLabel.textColor = subtextColor
-        additionalLabel.textColor = subtextColor
-        illustrationImageView.image = illustration
+        titleLabel.text = viewModel.title
+        subtextLabel.text = viewModel.subText
+        titleLabel.textColor = viewModel.titleColor
+        subtextLabel.textColor = viewModel.subtextColor
+        additionalLabel.textColor = viewModel.subtextColor
+        illustrationImageView.image = viewModel.illustration
 
-        setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText, additionalURL: additionalURL)
-        setupAccessibility(title: title, subText: subText)
+        setup(viewModel: viewModel)
+        setupAccessibility(viewModel: viewModel)
     }
 
     required init?(coder _: NSCoder) {
@@ -68,12 +83,12 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Setup
 
-    private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil, additionalURL: String? = nil) {
+    private func setup(viewModel: ViewModel) {
         clipsToBounds = false
 
         var topBottomPadding: CGFloat = 0
 
-        if let bgc = backgroundColor {
+        if let bgc = viewModel.backgroundColor {
             let v = UIView()
             v.layer.cornerRadius = 3.0
             addSubview(v)
@@ -84,7 +99,7 @@ class NSInfoBoxView: UIView {
 
             v.backgroundColor = bgc
 
-            if hasBubble {
+            if viewModel.hasBubble {
                 let imageView = NSImageView(image: UIImage(named: "bubble"), dynamicColor: bgc)
                 addSubview(imageView)
 
@@ -97,7 +112,7 @@ class NSInfoBoxView: UIView {
             topBottomPadding = 14
         }
 
-        let hasAdditionalStuff = additionalText != nil
+        let hasAdditionalStuff = viewModel.additionalText != nil
 
         addSubview(titleLabel)
         addSubview(subtextLabel)
@@ -134,8 +149,8 @@ class NSInfoBoxView: UIView {
             }
         }
 
-        if let adt = additionalText {
-            if let url = additionalURL {
+        if let adt = viewModel.additionalText {
+            if let url = viewModel.additionalURL {
                 addSubview(externalLinkButton)
                 externalLinkButton.title = adt
 
@@ -179,8 +194,8 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(title: String, subText: String) {
+    private func setupAccessibility(viewModel: ViewModel) {
         isAccessibilityElement = true
-        accessibilityLabel = "\(title), \(subText)"
+        accessibilityLabel = "\(viewModel.title), \(viewModel.subText)"
     }
 }

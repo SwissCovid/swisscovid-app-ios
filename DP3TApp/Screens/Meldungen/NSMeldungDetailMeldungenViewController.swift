@@ -247,15 +247,17 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         ev.stackView.insertArrangedSubview(wrapper, at: 3)
         ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
 
-        let infoxBoxView = NSInfoBoxView(title: "meldungen_detail_free_tests_title".ub_localized,
-                                         subText: "meldungen_detail_free_tests_text".ub_localized,
-                                         image: UIImage(named: "ic-info-on"),
-                                         titleColor: .ns_text,
-                                         subtextColor: .ns_text,
-                                         backgroundColor: .ns_blueBackground,
-                                         titleLabelType: .textBold)
+        var infoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_tests_title".ub_localized,
+                                                       subText: "meldungen_detail_free_tests_text".ub_localized,
+                                                       titleColor: .ns_text,
+                                                       subtextColor: .ns_text)
+        infoBoxViewModel.image = UIImage(named: "ic-info-on")
+        infoBoxViewModel.backgroundColor = .ns_blueBackground
+        infoBoxViewModel.titleLabelType = .textBold
 
-        ev.stackView.addArrangedSubview(infoxBoxView)
+        let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
+
+        ev.stackView.addArrangedSubview(infoBoxView)
 
         return ev
     }
