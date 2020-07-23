@@ -533,7 +533,7 @@
 
 /*Fehler: Standortinformationen / Bluetooth*/
 /*Fuzzy*/
-"android_foreground_service_notification_error_location_service" = "Schalten Sie die Standortinformation ein, damit die App Bluetooth nützen kann. Die App kennt zu keinem Zeitpunkt Ihren Ort.";
+"android_foreground_service_notification_error_location_service" = "Bei Android-Geräten ist Bluetooth an die Freigabe des Standorts gekoppelt. Deshalb muss die Standort-Funktion aktiviert werden, auch wenn die App zu keinem Zeitpunkt auf Ihren Standort zugreift.";
 
 /*Location Services ausgeschaltet Titel*/
 /*Fuzzy*/
@@ -918,3 +918,21 @@
 
 /*Meldungen Detail Kostenloser Test Box Text*/
 "meldungen_detail_free_test_text" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Corona Tests.";
+
+/*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
+"activate_tracing_button" = "Tracing aktivieren";
+
+/*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
+"tracing_turned_off_detailed_text" = "Aktivieren Sie das Tracing, damit die App Begegnungen speichern und Meldungen empfangen kann.";
+
+/*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
+"meldungen_tracing_not_active_warning" = "Wenn das Tracing deaktiviert ist, können auch keine Meldungen empfangen werden.";
+
+/*Warning title for Meldungen-Card when Tracing is turned off.*/
+"meldungen_tracing_turned_off_title" = "Hinweis";
+
+/*Data Protection Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_data_protection_statement" = "Datenschutzerklärung";
+
+/*Conditions of Use Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_conditions_of_use" = "Nutzungsbedingungen";

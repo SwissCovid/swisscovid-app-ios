@@ -894,3 +894,21 @@
 
 /*Meldungen Detail Kostenloser Test Box Text*/
 "meldungen_detail_free_test_text" = "";
+
+/*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
+"activate_tracing_button" = "Ativar o rastreamento";
+
+/*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
+"tracing_turned_off_detailed_text" = "";
+
+/*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
+"meldungen_tracing_not_active_warning" = "";
+
+/*Warning title for Meldungen-Card when Tracing is turned off.*/
+"meldungen_tracing_turned_off_title" = "";
+
+/*Data Protection Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_data_protection_statement" = "";
+
+/*Conditions of Use Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_conditions_of_use" = "";
