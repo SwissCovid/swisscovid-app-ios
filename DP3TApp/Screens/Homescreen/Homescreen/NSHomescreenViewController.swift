@@ -243,6 +243,17 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoPositiveTestButton.isHidden = isInfected
 
         infoBoxView.uiState = state.homescreen.infoBox
+
+        if let infoId = state.homescreen.infoBox?.infoId,
+            state.homescreen.infoBox?.isDismissible == true {
+            infoBoxView.closeButtonTouched = { [weak infoBoxView] in
+                NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.append(infoId)
+                UIView.animate(withDuration: 0.3) {
+                    infoBoxView?.isHidden = true
+                }
+            }
+        }
+
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
         lastState = state

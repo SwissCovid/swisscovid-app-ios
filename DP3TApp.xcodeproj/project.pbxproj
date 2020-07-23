@@ -357,6 +357,7 @@
 		F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */; };
 		F8A6BE2724C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
 		F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
+		F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -577,6 +578,7 @@
 		F8A6BE1224C9BFA000DE6B44 /* DE_App_Nutzungsbedingungen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DE_App_Nutzungsbedingungen.html; sourceTree = "<group>"; };
 		F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewHeader.swift; sourceTree = "<group>"; };
 		F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewBody.swift; sourceTree = "<group>"; };
+		F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxVisibilityManager.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -893,6 +895,7 @@
 				245626A0245265340058D11F /* ConfigLoadOperation.swift */,
 				6E6E516E242F4FE0006E532E /* ConfigManager.swift */,
 				6E6E5170242F5026006E532E /* ConfigResponseBody.swift */,
+				F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1788,6 +1791,7 @@
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
 				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
+				F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				F8A6BE2724C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */,
 				8EF2A6E52490E26F002263C3 /* NSLastSyncronizationControl.swift in Sources */,
