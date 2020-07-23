@@ -62,7 +62,7 @@ class NSBegegnungenModuleView: NSModuleBaseView {
     }()
 
     private var tracingErrorView: NSTracingErrorView? {
-        NSTracingErrorView.tracingErrorView(for: uiState)
+        NSTracingErrorView.tracingErrorView(for: uiState, isHomeScreen: true)
     }
 
     override init() {
