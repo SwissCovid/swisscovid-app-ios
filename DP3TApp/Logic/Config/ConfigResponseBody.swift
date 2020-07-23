@@ -27,7 +27,11 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
     }
 
     var value: T? {
-        return dic["language_key".ub_localized]
+        return value(for: "language_key".ub_localized)
+    }
+
+    func value(for languageKey: String) -> T? {
+        return dic[languageKey]
     }
 }
 

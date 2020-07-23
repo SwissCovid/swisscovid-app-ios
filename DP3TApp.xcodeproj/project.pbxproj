@@ -336,6 +336,7 @@
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
+		F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -545,6 +546,7 @@
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
+		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1045,6 +1047,7 @@
 				F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */,
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
+				F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 			);
@@ -1792,6 +1795,7 @@
 			files = (
 				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
+				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 			);
