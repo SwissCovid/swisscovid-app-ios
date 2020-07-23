@@ -104,8 +104,8 @@ private class FakePublishOperation: Operation {
             if now.timeIntervalSince(manager.nextScheduledFakeRequestDate) <= 2 * 24 * 60 * 60 {
                 // add a delay on initial fake report so its not guessable from http traffic if a report was fake or not
                 let group = DispatchGroup()
-                group.enter()
-                DispatchQueue.global(qos: .background).asyncAfter(deadline: isFirstReport ? .now() + delay : .now()) { [weak self] in
+
+                let executeReport = { [weak self] in
                     Logger.log("Start Fake Publish #\(numberOfFakeRequestsDone)", appState: true)
                     self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
                         guard let self = self else { return }
@@ -120,11 +120,22 @@ private class FakePublishOperation: Operation {
                         group.leave()
                     }
                 }
+
+                group.enter()
+
+                if isFirstReport {
+                    DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
+                        executeReport()
+                    }
+                } else {
+                    executeReport()
+                }
+
                 group.wait()
             } else {
                 manager.rescheduleFakeRequest()
             }
         }
-        Logger.log("Number of FakeRequest done \(numberOfFakeRequestsDone)")
+        Logger.log("Number of FakeRequest done: \(numberOfFakeRequestsDone)")
     }
 }
