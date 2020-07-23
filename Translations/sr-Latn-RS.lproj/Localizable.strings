@@ -888,3 +888,9 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "Praćenje je deaktivirano";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";

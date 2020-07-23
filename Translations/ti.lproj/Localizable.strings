@@ -856,7 +856,7 @@
 "onboarding_disclaimer_app_version" = "ዓይነት ስዊስኮቪድ ኣፕ";
 
 /*Onboarding Disclaimer Screen: Release version title*/
-"onboarding_disclaimer_release_version" = "ዝወጻሉ መዓልቲ፦ Release Date:  ";
+"onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
 "onboarding_disclaimer_legal_button" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን";
@@ -884,3 +884,9 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "ምክትታል ተቛሪጹ (ከም ዘይሰርሕ ተጌሩ)";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
