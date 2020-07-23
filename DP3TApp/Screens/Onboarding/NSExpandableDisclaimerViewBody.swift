@@ -28,8 +28,8 @@ class NSExpandableDisclaimerViewBody: UIView {
         }
     }
 
-    func stringForContent(content: Content, language _: String) -> String? {
-        if let path = Bundle.main.path(forResource: content.fileName(for: "language_key".ub_localized), ofType: "html"),
+    func stringForContent(content: Content, language: String) -> String? {
+        if let path = Bundle.main.path(forResource: content.fileName(for: language), ofType: "html"),
             let html = try? String(contentsOfFile: path) {
             return html
         }
@@ -40,7 +40,7 @@ class NSExpandableDisclaimerViewBody: UIView {
         super.init(frame: .zero)
 
         textLabel.isHtmlContent = true
-        textLabel.text = stringForContent(content: content, language: "language_key".ub_localized) ?? stringForContent(content: content, language: "de")
+        textLabel.text = stringForContent(content: content, language: .languageKey) ?? stringForContent(content: content, language: .defaultLanguageKey)
 
         backgroundColor = .ns_backgroundSecondary
 

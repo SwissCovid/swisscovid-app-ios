@@ -27,7 +27,7 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
     }
 
     var value: T? {
-        return value(for: "language_key".ub_localized)
+        return value(for: .languageKey)
     }
 
     func value(for languageKey: String) -> T? {

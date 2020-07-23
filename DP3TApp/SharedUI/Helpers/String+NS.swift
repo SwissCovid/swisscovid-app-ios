@@ -14,4 +14,12 @@ extension String {
     var ub_localized: String {
         NSLocalizedString(self, comment: "")
     }
+
+    static var languageKey: String {
+        "language_key".ub_localized
+    }
+
+    static var defaultLanguageKey: String {
+        "de"
+    }
 }
