@@ -113,6 +113,9 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseBody.snp.makeConstraints { make in
             make.width.equalTo(self.stackScrollView.stackView)
         }
+
+        // superview is used here to get a nice stackview animation
+        // since the views get wrapped in a UIView
         conditionOfUseBody.superview?.isHidden = true
         conditionOfUseHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
