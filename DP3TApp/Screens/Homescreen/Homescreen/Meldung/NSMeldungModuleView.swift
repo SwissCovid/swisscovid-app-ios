@@ -11,8 +11,8 @@
 import UIKit
 
 class NSMeldungView: NSModuleBaseView {
-    var uiState: UIStateModel.Homescreen.Meldungen
-        = .init(meldung: .noMeldung, pushProblem: false) {
+    var uiState: UIStateModel.Homescreen
+        = .init() {
         didSet { updateLayout() }
     }
 
@@ -61,6 +61,10 @@ class NSMeldungView: NSModuleBaseView {
         UIApplication.shared.open(settingsUrl)
     }))
 
+    private let tracingDisabledView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "meldungen_tracing_turned_off_title".ub_localized, text: "meldungen_tracing_not_active_warning".ub_localized, buttonTitle: "activate_tracing_button".ub_localized, action: { _ in
+        TracingManager.shared.isActivated = true
+    }))
+
     private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_title".ub_localized, buttonTitle: nil, action: nil))
 
     private let unexpectedErrorWithRetryView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
@@ -103,34 +107,46 @@ class NSMeldungView: NSModuleBaseView {
     override func sectionViews() -> [UIView] {
         var views = [UIView]()
 
-        switch uiState.meldung {
+        let meldungenState = uiState.meldungen
+
+        @discardableResult
+        func showTracingDisabledErrorIfNeeded() -> Bool {
+            if uiState.begegnungen == .tracingDisabled {
+                views.append(tracingDisabledView)
+                return true
+            }
+            return false
+        }
+
+        switch meldungenState.meldung {
         case .noMeldung:
             views.append(noMeldungenView)
-            if uiState.pushProblem {
+            if meldungenState.pushProblem {
                 views.append(noPushView)
-            } else if uiState.syncProblemOtherError {
-                if uiState.canRetrySyncError {
-                    unexpectedErrorWithRetryView.model?.title = uiState.errorTitle ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorWithRetryView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorWithRetryView.model?.errorCode = uiState.errorCode
+            } else if meldungenState.syncProblemOtherError {
+                if meldungenState.canRetrySyncError {
+                    unexpectedErrorWithRetryView.model?.title = meldungenState.errorTitle ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorWithRetryView.model?.text = meldungenState.errorMessage ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorWithRetryView.model?.errorCode = meldungenState.errorCode
                     views.append(unexpectedErrorWithRetryView)
                 } else {
-                    unexpectedErrorView.model?.text = uiState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorView.model?.errorCode = uiState.errorCode
+                    unexpectedErrorView.model?.text = meldungenState.errorMessage ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorView.model?.errorCode = meldungenState.errorCode
                     views.append(unexpectedErrorView)
                 }
-            } else if uiState.syncProblemNetworkingError {
+            } else if showTracingDisabledErrorIfNeeded() {
+            } else if meldungenState.syncProblemNetworkingError {
                 views.append(syncProblemView)
-                syncProblemView.model?.text = uiState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
-                syncProblemView.model?.errorCode = uiState.errorCode
-            } else if uiState.backgroundUpdateProblem {
+                syncProblemView.model?.text = meldungenState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
+                syncProblemView.model?.errorCode = meldungenState.errorCode
+            } else if meldungenState.backgroundUpdateProblem {
                 views.append(backgroundFetchProblemView)
-                backgroundFetchProblemView.model?.errorCode = uiState.errorCode
+                backgroundFetchProblemView.model?.errorCode = meldungenState.errorCode
             }
         case .exposed:
             views.append(exposedView)
             views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
-            if let lastMeldung = uiState.lastMeldung {
+            if let lastMeldung = meldungenState.lastMeldung {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)
 
@@ -142,6 +158,8 @@ class NSMeldungView: NSModuleBaseView {
                 }
                 views.append(container)
             }
+
+            showTracingDisabledErrorIfNeeded()
         case .infected:
             views.append(infectedView)
             views.append(NSMoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))
