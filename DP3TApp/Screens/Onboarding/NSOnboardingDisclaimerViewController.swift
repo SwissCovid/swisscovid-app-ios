@@ -25,6 +25,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     private var elements: [Any] = []
 
+    private let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
+
     private let privacyHeader = NSExpandableDisclaimerViewHeader(title: "onboarding_disclaimer_data_protection_statement".ub_localized)
     private let privacyBody = NSExpandableDisclaimerViewBody(content: .privacy)
 
@@ -64,7 +66,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.leading.trailing.equalTo(self.stackScrollView.stackView).inset(NSPadding.large)
         }
 
-        let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
+
         privacyButton.title = "onboarding_disclaimer_to_online_version_button".ub_localized
         privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
@@ -73,6 +75,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyButton.titleLabel?.textAlignment = .center
 
         privacyButton.contentHorizontalAlignment = .center
+
+
 
         func addSpacer(spacing: CGFloat? = nil) {
             let spacer = UIView()
@@ -96,7 +100,9 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         }
         privacyBody.superview?.isHidden = true
         privacyHeader.didExpand = { [weak self] expanded in
-            self?.privacyBody.superview?.isHidden = !expanded
+            guard let self = self else { return }
+            self.privacyBody.superview?.isHidden = !expanded
+            self.privacyButton.superview?.isHidden = !(self.privacyHeader.isExpanded || self.conditionOfUseHeader.isExpanded)
         }
 
         addSpacer()
@@ -111,12 +117,16 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         }
         conditionOfUseBody.superview?.isHidden = true
         conditionOfUseHeader.didExpand = { [weak self] expanded in
-            self?.conditionOfUseBody.superview?.isHidden = !expanded
+            guard let self = self else { return }
+            self.conditionOfUseBody.superview?.isHidden = !expanded
+            self.privacyButton.superview?.isHidden = !(self.privacyHeader.isExpanded || self.conditionOfUseHeader.isExpanded)
         }
 
-        addSpacer(spacing: NSPadding.large)
-
         addArrangedView(privacyButton, spacing: NSPadding.large, insets: sidePadding)
+        privacyButton.superview?.isHidden = true
+
+        addSpacer()
+
 
         let warningStack = UIStackView()
         warningStack.axis = .vertical
