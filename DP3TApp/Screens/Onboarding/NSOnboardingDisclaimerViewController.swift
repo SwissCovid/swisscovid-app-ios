@@ -76,9 +76,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
         privacyButton.contentHorizontalAlignment = .center
 
-
-
-        func addSpacer(spacing: CGFloat? = nil) {
+        func addDivider(spacing: CGFloat? = nil) {
             let spacer = UIView()
             spacer.backgroundColor = .ns_text_secondary
             addArrangedView(spacer, spacing: spacing)
@@ -88,7 +86,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             }
         }
 
-        addSpacer()
+        addDivider()
 
         addArrangedView(privacyHeader)
         privacyHeader.snp.makeConstraints { make in
@@ -105,7 +103,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             self.privacyButton.superview?.isHidden = !(self.privacyHeader.isExpanded || self.conditionOfUseHeader.isExpanded)
         }
 
-        addSpacer()
+        addDivider()
 
         addArrangedView(conditionOfUseHeader)
         conditionOfUseHeader.snp.makeConstraints { make in
@@ -125,8 +123,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         addArrangedView(privacyButton, spacing: NSPadding.large, insets: sidePadding)
         privacyButton.superview?.isHidden = true
 
-        addSpacer()
-
+        addDivider()
 
         let warningStack = UIStackView()
         warningStack.axis = .vertical
