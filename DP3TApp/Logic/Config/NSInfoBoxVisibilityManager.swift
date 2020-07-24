@@ -8,18 +8,12 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import UIKit
+import Foundation
 
-extension String {
-    var ub_localized: String {
-        NSLocalizedString(self, comment: "")
-    }
+class NSInfoBoxVisibilityManager {
+    static let shared = NSInfoBoxVisibilityManager()
+    private init() {}
 
-    static var languageKey: String {
-        "language_key".ub_localized
-    }
-
-    static var defaultLanguageKey: String {
-        "de"
-    }
+    @KeychainPersisted(key: "dismissedInfoBoxIds", defaultValue: [])
+    var dismissedInfoBoxIds: [String]
 }

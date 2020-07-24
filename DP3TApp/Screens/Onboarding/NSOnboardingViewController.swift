@@ -51,7 +51,7 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private let continueContainer = UIView()
-    private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
+    private let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .normal(.ns_blue))
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
     private var currentStep: Int = 0
@@ -290,6 +290,9 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func didSwipeLeft() -> Bool {
+        guard splashVC.view.alpha == 0 else {
+            return false
+        }
         if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
             // Disable swipe forward on permission screens
             return false
@@ -301,6 +304,9 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func didSwipeRight() -> Bool {
+        guard splashVC.view.alpha == 0 else {
+            return false
+        }
         if currentStep == pushPermissionStepIndex + 1 || currentStep == tracingPermissionStepIndex + 1 { // Disable swipe back to permission screens
             return false
         }

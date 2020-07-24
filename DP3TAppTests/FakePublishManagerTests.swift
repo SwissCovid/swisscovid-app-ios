@@ -12,10 +12,10 @@
 import XCTest
 
 class MockReportingManager: ReportingManagerProtocol {
-    var reportWasCalled = false
+    var callsToReport: Int = 0
 
     func report(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (ReportingProblem?) -> Void) {
-        reportWasCalled = true
+        callsToReport += 1
         completion(.none)
     }
 }
@@ -28,6 +28,16 @@ class MockFakePublishManager: FakePublishManager {
 
     override var delay: TimeInterval {
         0
+    }
+
+    var fixedRescheduleDiff: TimeInterval?
+
+    override func getNewScheduleDate(oldDate: Date) -> Date {
+        if let diff = fixedRescheduleDiff {
+            return oldDate.addingTimeInterval(diff)
+        } else {
+            return super.getNewScheduleDate(oldDate: now)
+        }
     }
 }
 
@@ -57,7 +67,7 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.1)
 
-        XCTAssertEqual(reportingManager.reportWasCalled, false)
+        XCTAssertEqual(reportingManager.callsToReport, 0)
 
         XCTAssertEqual(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -76,7 +86,47 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.5)
 
-        XCTAssertEqual(reportingManager.reportWasCalled, true)
+        XCTAssertEqual(reportingManager.callsToReport, 1)
+
+        XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
+    }
+
+    func testCallingReportWhenScheduledIs2DPast() {
+        let manager = MockFakePublishManager()
+        let reportingManager = MockReportingManager()
+
+        let nextSchedule = manager.nextScheduledFakeRequestDate
+
+        manager.nowStore = nextSchedule.addingTimeInterval(24 * 60 * 60 * 2 + 1)
+
+        let exp = expectation(description: "taskExpectation")
+        manager.runTask(reportingManager: reportingManager) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.5)
+
+        XCTAssertEqual(reportingManager.callsToReport, 0)
+
+        XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
+    }
+
+    func testCallingReportWhenScheduledIs2DPastWithReschedule() {
+        let manager = MockFakePublishManager()
+        let reportingManager = MockReportingManager()
+
+        let nextSchedule = manager.nextScheduledFakeRequestDate
+
+        manager.nowStore = nextSchedule.addingTimeInterval(24 * 60 * 60 * 2 + 1)
+
+        manager.fixedRescheduleDiff = 60 * 60
+
+        let exp = expectation(description: "taskExpectation")
+        manager.runTask(reportingManager: reportingManager) {
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 0.5)
+
+        XCTAssertEqual(reportingManager.callsToReport, 48)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }

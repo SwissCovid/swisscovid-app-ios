@@ -141,7 +141,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         #if ENABLE_TESTING
             #if ENABLE_STATUS_OVERRIDE
                 // DEBUG version for testing
-                let previewWarning = NSInfoBoxView(title: "preview_warning_title".ub_localized, subText: "preview_warning_text".ub_localized, image: UIImage(named: "ic-error")!, titleColor: .gray, subtextColor: .gray)
+                var previewWarningViewModel = NSInfoBoxView.ViewModel(title: "preview_warning_title".ub_localized,
+                                                                      subText: "preview_warning_text".ub_localized,
+                                                                      titleColor: .gray,
+                                                                      subtextColor: .gray)
+                previewWarningViewModel.image = UIImage(named: "ic-error")!
+                let previewWarning = NSInfoBoxView(viewModel: previewWarningViewModel)
                 stackScrollView.addArrangedView(previewWarning)
 
                 stackScrollView.addSpacerView(NSPadding.large)
@@ -231,14 +236,24 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     func updateState(_ state: UIStateModel) {
         appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.begegnungen
-
-        meldungView.uiState = state.homescreen.meldungen
+        meldungView.uiState = state.homescreen
 
         let isInfected = state.homescreen.meldungen.meldung == .infected
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
         infoBoxView.uiState = state.homescreen.infoBox
+
+        if let infoId = state.homescreen.infoBox?.infoId,
+            state.homescreen.infoBox?.isDismissible == true {
+            infoBoxView.closeButtonTouched = { [weak infoBoxView] in
+                NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.append(infoId)
+                UIView.animate(withDuration: 0.3) {
+                    infoBoxView?.isHidden = true
+                }
+            }
+        }
+
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
         lastState = state

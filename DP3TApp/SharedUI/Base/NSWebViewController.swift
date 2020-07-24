@@ -69,7 +69,7 @@ class NSWebViewController: NSViewController {
     }
 
     private func loadLocal(_ local: String) {
-        guard let path = Bundle.main.path(forResource: local, ofType: "html", inDirectory: "Impressum/\("language_key".ub_localized)/")
+        guard let path = Bundle.main.path(forResource: local, ofType: "html", inDirectory: "Impressum/\(String.languageKey)/")
         else { return }
 
         let url = URL(fileURLWithPath: path)

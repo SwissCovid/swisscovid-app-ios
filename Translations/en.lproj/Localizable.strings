@@ -895,3 +895,33 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "Tracing has been deactivated";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
+
+/*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
+"activate_tracing_button" = "Activate proximity tracing";
+
+/*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
+"tracing_turned_off_detailed_text" = "";
+
+/*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
+"meldungen_tracing_not_active_warning" = "";
+
+/*Warning title for Meldungen-Card when Tracing is turned off.*/
+"meldungen_tracing_turned_off_title" = "";
+
+/*Data Protection Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_data_protection_statement" = "";
+
+/*Conditions of Use Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_conditions_of_use" = "";
+
+/*Button title that links to the website with the data protection statement and conditions of use.*/
+"onboarding_disclaimer_to_online_version_button" = "";
+
+/*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
+"meldungen_tracing_turned_off_warning" = "";

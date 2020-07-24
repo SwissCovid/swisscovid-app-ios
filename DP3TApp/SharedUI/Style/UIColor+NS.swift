@@ -40,10 +40,6 @@ extension UIColor {
         return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: .ns_darkModeBackground2)
     }
 
-    public static var ns_moduleGreenBackground: UIColor {
-        return UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: .ns_darkModeBackground2)
-    }
-
     public static var ns_purpleBackground = UIColor().setColorsForTheme(lightColor: UIColor(ub_hexString: "#f3f0f5")!, darkColor: .ns_darkModeBackground2)
     public static var ns_darkBlueBackground = UIColor(ub_hexString: "#4a4969")!
 
