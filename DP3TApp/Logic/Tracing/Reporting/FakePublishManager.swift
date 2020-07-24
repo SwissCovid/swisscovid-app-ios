@@ -49,17 +49,17 @@ class FakePublishManager {
         return randomDay * secondsInADay
     }
 
-    private func getNewScheduleDate() -> Date {
-        Date(timeInterval: syncInterval(), since: now)
+    func getNewScheduleDate(oldDate: Date) -> Date {
+        Date(timeInterval: syncInterval(), since: oldDate)
     }
 
     @discardableResult
     func rescheduleFakeRequest(force: Bool = false) -> Date {
         queue.sync {
-            var nextDate = nextScheduledFakeRequestDateStore ?? getNewScheduleDate()
+            var nextDate = nextScheduledFakeRequestDateStore ?? getNewScheduleDate(oldDate: now)
 
             if nextDate <= now || force {
-                nextDate = getNewScheduleDate()
+                nextDate = getNewScheduleDate(oldDate: nextDate)
             }
 
             nextScheduledFakeRequestDateStore = nextDate
@@ -94,32 +94,48 @@ private class FakePublishOperation: Operation {
     }
 
     override func main() {
-        guard isCancelled == false else { return }
+        var numberOfFakeRequestsDone = 0
 
-        let startDate = manager.nextScheduledFakeRequestDate
+        while isCancelled == false,
+            now >= manager.nextScheduledFakeRequestDate {
+            let isFirstReport = numberOfFakeRequestsDone == 0
 
-        guard now >= startDate else {
-            Logger.log("Too early for fake request")
-            return
-        }
+            // only do request if it was planned to do in the last 48h
+            if now.timeIntervalSince(manager.nextScheduledFakeRequestDate) <= 2 * 24 * 60 * 60 {
+                // add a delay on initial fake report so its not guessable from http traffic if a report was fake or not
+                let group = DispatchGroup()
 
-        // add a delay so its not guessable from http traffic if a report was fake or not
-        let group = DispatchGroup()
-        group.enter()
-        DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) { [weak self] in
-            Logger.log("Start Fake Publish", appState: true)
-            self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
-                guard let self = self else { return }
-                if error != nil {
-                    self.cancel()
-                    Logger.log("Fake request failed")
-                } else {
-                    Logger.log("Fake request success")
-                    self.manager.rescheduleFakeRequest()
+                let executeReport = { [weak self] in
+                    Logger.log("Start Fake Publish #\(numberOfFakeRequestsDone)", appState: true)
+                    self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
+                        guard let self = self else { return }
+                        if error != nil {
+                            self.cancel()
+                            Logger.log("Fake request #\(numberOfFakeRequestsDone) failed")
+                        } else {
+                            Logger.log("Fake request #\(numberOfFakeRequestsDone) success")
+                            numberOfFakeRequestsDone += 1
+                            self.manager.rescheduleFakeRequest()
+                        }
+                        group.leave()
+                    }
                 }
-                group.leave()
+
+                group.enter()
+
+                if isFirstReport {
+                    DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + delay) {
+                        executeReport()
+                    }
+                } else {
+                    executeReport()
+                }
+
+                group.wait()
+            } else {
+                manager.rescheduleFakeRequest()
             }
         }
-        group.wait()
+        Logger.log("Number of FakeRequest done: \(numberOfFakeRequestsDone)")
     }
 }

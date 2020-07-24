@@ -27,7 +27,7 @@ struct UIStateModel: Equatable {
         case tracingDisabled
         case bluetoothTurnedOff
         case bluetoothPermissionError
-        case tracingPermissionError
+        case tracingPermissionError(code: String?)
         case timeInconsistencyError
         case unexpectedError(code: String?)
         case tracingEnded
@@ -58,6 +58,8 @@ struct UIStateModel: Equatable {
             var text: String
             var link: String?
             var url: URL?
+            var isDismissible: Bool?
+            var infoId: String?
         }
 
         var header: TracingState = .tracingActive
