@@ -515,6 +515,7 @@
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
 		B6AEA30724B74ACA0055B5BB /* NSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
+		D5BF76CD24CAE7E3007A3B88 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
 		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -1351,6 +1352,7 @@
 				"sr-Latn-RS",
 				ti,
 				tr,
+				nl,
 			);
 			mainGroup = 8E81CC8C241FCC7D006F2437;
 			packageReferences = (
@@ -1902,6 +1904,7 @@
 				8E86FDE324936683009B2D90 /* sr-Latn-RS */,
 				8E61227E24C1A3EE007D7822 /* ti */,
 				8E61228024C1A413007D7822 /* tr */,
+				D5BF76CD24CAE7E3007A3B88 /* nl */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1922,6 +1925,7 @@
 				8E86FDE424936683009B2D90 /* sr-Latn-RS */,
 				8E61227F24C1A3EE007D7822 /* ti */,
 				8E61228124C1A413007D7822 /* tr */,
+				D5BF76CE24CAE7E3007A3B88 /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
