@@ -211,6 +211,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
         accessibilityTraits = .staticText
         isAccessibilityElement = true
         textField.isAccessibilityElement = false
+        textField.disableEditionInteraction = true
     }
 
     override var accessibilityLabel: String? {
@@ -357,6 +358,8 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
 class NSTextField: UITextField {
     public weak var singleControl: NSCodeSingleControl?
 
+    public var disableEditionInteraction = false
+
     override func paste(_: Any?) {
         let pasteboard = UIPasteboard.general
 
@@ -367,5 +370,12 @@ class NSTextField: UITextField {
 
     override func canPerformAction(_ action: Selector, withSender _: Any?) -> Bool {
         return action == #selector(UIResponderStandardEditActions.paste)
+    }
+
+    override var editingInteractionConfiguration: UIEditingInteractionConfiguration {
+        if disableEditionInteraction {
+            return .none
+        }
+        return super.editingInteractionConfiguration
     }
 }

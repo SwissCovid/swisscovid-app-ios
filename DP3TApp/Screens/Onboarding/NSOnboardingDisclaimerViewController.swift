@@ -66,7 +66,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.leading.trailing.equalTo(self.stackScrollView.stackView).inset(NSPadding.large)
         }
 
-
         privacyButton.title = "onboarding_disclaimer_to_online_version_button".ub_localized
         privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
