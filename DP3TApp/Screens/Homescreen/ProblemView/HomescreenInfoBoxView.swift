@@ -41,7 +41,7 @@ class HomescreenInfoBoxView: UIView {
     let closeButton: UBButton = {
         let button = UBButton()
         button.setImage(UIImage(named: "ic-cross")?.ub_image(with: .white), for: .normal)
-        button.accessibilityLabel = "inform_fertig_button_title".ub_localized
+        button.accessibilityLabel = "infobox_close_button_accessibility".ub_localized
         return button
     }()
 
