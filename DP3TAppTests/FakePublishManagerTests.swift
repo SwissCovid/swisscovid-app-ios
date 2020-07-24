@@ -12,10 +12,10 @@
 import XCTest
 
 class MockReportingManager: ReportingManagerProtocol {
-    var callesToReport: Int = 0
+    var callsToReport: Int = 0
 
     func report(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (ReportingProblem?) -> Void) {
-        callesToReport += 1
+        callsToReport += 1
         completion(.none)
     }
 }
@@ -67,7 +67,7 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.1)
 
-        XCTAssertEqual(reportingManager.callesToReport, 0)
+        XCTAssertEqual(reportingManager.callsToReport, 0)
 
         XCTAssertEqual(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -86,7 +86,7 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.5)
 
-        XCTAssertEqual(reportingManager.callesToReport, 1)
+        XCTAssertEqual(reportingManager.callsToReport, 1)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -105,7 +105,7 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.5)
 
-        XCTAssertEqual(reportingManager.callesToReport, 0)
+        XCTAssertEqual(reportingManager.callsToReport, 0)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -126,7 +126,7 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.5)
 
-        XCTAssertEqual(reportingManager.callesToReport, 48)
+        XCTAssertEqual(reportingManager.callsToReport, 48)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
