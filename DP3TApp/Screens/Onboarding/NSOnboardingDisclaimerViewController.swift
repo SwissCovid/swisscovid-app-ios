@@ -25,8 +25,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     private var elements: [Any] = []
 
-    private let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
-
     private let privacyHeader = NSExpandableDisclaimerViewHeader(title: "onboarding_disclaimer_data_protection_statement".ub_localized)
     private let privacyBody = NSExpandableDisclaimerViewBody(content: .privacy)
 
@@ -60,20 +58,16 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
 
-        let info = NSOnboardingInfoView(icon: UIImage(named: "ic-info-blue")!, text: "onboarding_disclaimer_info".ub_localized, dynamicIconTintColor: UIColor.ns_blue)
+        // let info = NSOnboardingInfoView(icon: UIImage(), text: "onboarding_disclaimer_info".ub_localized, dynamicIconTintColor: UIColor.ns_blue)
+
+        addArrangedView(.init(), spacing: NSPadding.large)
+
+        let info = NSLabel(.textLight)
+        info.text = "onboarding_disclaimer_info".ub_localized
         addArrangedView(info, spacing: NSPadding.large)
         info.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self.stackScrollView.stackView).inset(NSPadding.large)
         }
-
-        privacyButton.title = "onboarding_disclaimer_to_online_version_button".ub_localized
-        privacyButton.touchUpCallback = { [weak self] in
-            self?.openPrivacyLink()
-        }
-
-        privacyButton.titleLabel?.textAlignment = .center
-
-        privacyButton.contentHorizontalAlignment = .center
 
         func addDivider(spacing: CGFloat? = nil) {
             let spacer = UIView()
@@ -91,7 +85,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyHeader.snp.makeConstraints { make in
             make.width.equalTo(self.stackScrollView.stackView)
         }
-        addArrangedView(privacyBody, spacing: NSPadding.large)
+        addArrangedView(privacyBody)
         privacyBody.snp.makeConstraints { make in
             make.width.equalTo(self.stackScrollView.stackView)
         }
@@ -99,7 +93,9 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.privacyBody.superview?.isHidden = !expanded
-            self.privacyButton.superview?.isHidden = !(self.privacyHeader.isExpanded || self.conditionOfUseHeader.isExpanded)
+        }
+        privacyBody.privacyButton.touchUpCallback = { [weak self] in
+            self?.openPrivacyLink()
         }
 
         addDivider()
@@ -108,7 +104,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseHeader.snp.makeConstraints { make in
             make.width.equalTo(self.stackScrollView.stackView)
         }
-        addArrangedView(conditionOfUseBody, spacing: NSPadding.large)
+        addArrangedView(conditionOfUseBody)
         conditionOfUseBody.snp.makeConstraints { make in
             make.width.equalTo(self.stackScrollView.stackView)
         }
@@ -119,11 +115,10 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.conditionOfUseBody.superview?.isHidden = !expanded
-            self.privacyButton.superview?.isHidden = !(self.privacyHeader.isExpanded || self.conditionOfUseHeader.isExpanded)
         }
-
-        addArrangedView(privacyButton, spacing: NSPadding.large, insets: sidePadding)
-        privacyButton.superview?.isHidden = true
+        conditionOfUseBody.privacyButton.touchUpCallback = { [weak self] in
+            self?.openPrivacyLink()
+        }
 
         addDivider()
 
