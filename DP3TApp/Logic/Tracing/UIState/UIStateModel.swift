@@ -58,6 +58,8 @@ struct UIStateModel: Equatable {
             var text: String
             var link: String?
             var url: URL?
+            var isDismissible: Bool?
+            var infoId: String?
         }
 
         var header: TracingState = .tracingActive

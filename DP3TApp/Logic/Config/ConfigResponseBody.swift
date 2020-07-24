@@ -44,6 +44,8 @@ class ConfigResponseBody: UBCodable {
         let title, msg: String
         let url: URL?
         let urlTitle: String?
+        let infoId: String?
+        let isDismissible: Bool?
     }
 
     class GAENSDKConfig: Codable {
