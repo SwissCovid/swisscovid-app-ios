@@ -144,7 +144,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             releaseDateLabel.text = "onboarding_disclaimer_release_version".ub_localized + " " + DateFormatter.ub_dayString(from: buildDate)
             versionStack.addArrangedSubview(releaseDateLabel)
         }
-        
+
         let renderedMarkingImage = UIImage(named: "ce-marking")?.withRenderingMode(.alwaysTemplate)
         let ceIcon = UIImageView(image: renderedMarkingImage)
         ceIcon.tintColor = UIColor.ns_disclaimerIconColor
