@@ -14,6 +14,8 @@ import Foundation
 class NSExpandableDisclaimerViewBody: UIView {
     private let textLabel = NSLabel(.smallLight)
 
+    let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
+
     enum Content {
         case privacy
         case conditionOfUse
@@ -44,10 +46,20 @@ class NSExpandableDisclaimerViewBody: UIView {
 
         backgroundColor = .ns_backgroundSecondary
 
+        privacyButton.title = "onboarding_disclaimer_to_online_version_button".ub_localized
+
         addSubview(textLabel)
+        addSubview(privacyButton)
+
         textLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.top.bottom.equalToSuperview()
+            make.top.equalToSuperview()
+        }
+
+        privacyButton.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.top.equalTo(textLabel.snp.bottom).inset(-NSPadding.medium)
         }
     }
 

@@ -120,8 +120,6 @@ class NSOnboardingViewController: NSViewController {
             showContinueButton()
         }
 
-        continueButton.title = stepViewControllers[step].continueButtonText
-
         if isLast {
             finishButton.alpha = 0
             finishButton.transform = CGAffineTransform(translationX: 300, y: 0)
@@ -153,9 +151,11 @@ class NSOnboardingViewController: NSViewController {
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0, completion: { completed in
                 if completed {
                     vcToHide.view.isHidden = true
+                    self.continueButton.title = self.stepViewControllers[step].continueButtonText
                 }
             })
         } else if step < stepViewControllers.count - 1, !forward {
+            continueButton.title = stepViewControllers[step].continueButtonText
             let vcToHide = stepViewControllers[step + 1]
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: 1, delay: 0.0, completion: { completed in
                 if completed {

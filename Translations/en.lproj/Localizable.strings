@@ -621,7 +621,7 @@
 "infoline_tel_number" = "+41 58 387 77 78";
 
 /*URL für Häufige Fragen Button*/
-"faq_button_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+"faq_button_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/en/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
 "inform_code_intro_title" = "Important information";
@@ -925,3 +925,6 @@
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
 "meldungen_tracing_turned_off_warning" = "";
+
+/*Homescreen infobox close button accessibility handler*/
+"infobox_close_button_accessibility" = "Close";

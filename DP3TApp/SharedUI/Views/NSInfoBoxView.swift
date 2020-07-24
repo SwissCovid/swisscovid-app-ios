@@ -50,6 +50,8 @@ class NSInfoBoxView: UIView {
 
             illustrationImageView.isHidden = true
         }
+
+        setupAccessibility(title: title ?? "", subTitle: subText ?? "")
     }
 
     // MARK: - Init
@@ -83,7 +85,7 @@ class NSInfoBoxView: UIView {
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(viewModel: viewModel)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText)
     }
 
     required init?(coder _: NSCoder) {
@@ -202,8 +204,8 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(viewModel: ViewModel) {
+    private func setupAccessibility(title: String, subTitle: String) {
         isAccessibilityElement = true
-        accessibilityLabel = "\(viewModel.title), \(viewModel.subText)"
+        accessibilityLabel = "\(title), \(subTitle)"
     }
 }
