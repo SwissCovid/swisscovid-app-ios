@@ -83,29 +83,29 @@ class UBLabel<T: UBLabelType>: UILabel {
             textString = NSMutableAttributedString(string: textContent, attributes: [:])
         }
 
-        if isHtmlContent {
-            textString.ub_replaceFonts(with: font)
-        }
-
-        // check paragraph style
         let textRange = NSRange(location: 0, length: textString.length)
 
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = textAlignment
+        if isHtmlContent {
+            textString.ub_replaceFonts(with: font)
+        } else {
+            // check paragraph style
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = textAlignment
 
-        let lineSpacing = numberOfLines == 1 ? 1.0 : type.lineSpacing
+            let lineSpacing = numberOfLines == 1 ? 1.0 : type.lineSpacing
 
-        let lineHeightMultiple = (font.pointSize / font.lineHeight) * lineSpacing
-        paragraphStyle.lineSpacing = lineHeightMultiple * font.lineHeight - font.lineHeight
-        paragraphStyle.lineBreakMode = type.lineBreakMode
+            let lineHeightMultiple = (font.pointSize / font.lineHeight) * lineSpacing
+            paragraphStyle.lineSpacing = lineHeightMultiple * font.lineHeight - font.lineHeight
+            paragraphStyle.lineBreakMode = type.lineBreakMode
 
-        // check hyphenation
-        if numberOfLines != 1 {
-            paragraphStyle.hyphenationFactor = type.hyphenationFactor
+            // check hyphenation
+            if numberOfLines != 1 {
+                paragraphStyle.hyphenationFactor = type.hyphenationFactor
+            }
+
+            // add attribute for paragraph
+            textString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: textRange)
         }
-
-        // add attribute for paragraph
-        textString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: textRange)
 
         // add attribute for kerning
         if let k = type.letterSpacing {

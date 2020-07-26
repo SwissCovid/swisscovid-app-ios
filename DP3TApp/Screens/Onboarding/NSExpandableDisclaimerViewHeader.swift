@@ -53,7 +53,9 @@ class NSExpandableDisclaimerViewHeader: UBButton {
                     self.arrowImageview.transform = .init(rotationAngle: .pi / 2)
                 }
                 self.didExpand?(self.isExpanded)
-            }, completion: nil)
+            }, completion: { _ in
+                UIAccessibility.post(notification: .screenChanged, argument: nil)
+            })
         }
     }
 
