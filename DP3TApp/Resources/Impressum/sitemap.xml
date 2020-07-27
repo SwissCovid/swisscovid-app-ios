@@ -56,4 +56,14 @@
 		
 	</sitemap>
 	
+	<sitemap>
+	   	<loc>ti/sitemap.xml</loc>
+		
+	</sitemap>
+	
+	<sitemap>
+	   	<loc>tr/sitemap.xml</loc>
+		
+	</sitemap>
+	
 </sitemapindex>
