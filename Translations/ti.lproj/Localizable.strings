@@ -522,7 +522,7 @@
 "accessibility_code_button_disabled_hint" = " እቲ ኮድ ብምሉኡ ስለዝይተዋህበ ምጥዋቕ ኣይክኣልን እዩ። ";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "እቲ ኣፕ ብሉቱዝ ክጥቀም ክኸእል ምእንታን: እቲ ዘለኹሞ ቦታ ዝሕብር ኣገልግሎት ወልዕዎ። እቲ ኣፕ ኣብ ዝኾነ እዋን ቦታኹም ኣይፈልጦን እዩ።";
+"android_foreground_service_notification_error_location_service" = "ኣብ Android ዘለዎም መሳርሒታት Bluetooth ካብ መርከቢ ቦታ ኣገባብ (ሎከይሽን) ይምርኮስ። ስለዚ እቲ ናይ መርከቢ ቦታ ኣገባብ ክውላዕ ኣለዎ፣ ሽሕ'ኳ እቲ ኤፕ ንቦታኹም ክረክብ ዘየድሊ።";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "ሓባሪ ዘለኹሞ ቦታ ጠፊኡ ኣሎ";
@@ -886,34 +886,34 @@
 "accessibility_tracing_has_been_deactivated" = "ምክትታል ተቛሪጹ (ከም ዘይሰርሕ ተጌሩ)";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "ነጻ መርመራ ይከኣል'ዩ";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Infoline SwissCovid ብዛዕባ ኣማራጺ ነጻ መርመራ ኮሮና ይመኽረኩም።";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
-"activate_tracing_button" = "ኣገልግሎት ምክትታል ከም ዝሰርሕ ግበርዎ (ወልዕዎ)";
+"activate_tracing_button" = "ንትራይሲንግ(Tracing) ምውላዕ";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "ንትራይሲንግ ወልዕዎ፣ እቲ ኤፕ ዝኾነ ርክብ ክዕቅብ ከምኡ'ውን መልእኽትታት ክቕበል መታን ክኽእል።";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "ትራይሲንግ እንተዘይተወሊዑ መልእኽትታት ውን ክኣትዉ ኣይክእሉን።";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "ምልክታ";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "መግለጺ ውዕል ብሑትነት";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "መዘውተሪ ኩነታት";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "ንኣብ ኦንላይን ዘሎ ክፋል";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "ትራይሲንግ እንተዘይተወሊዑ መልእኽትታት ውን ክኣትዉ ኣይክእሉን።";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "ዕጸው";

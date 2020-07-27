@@ -523,7 +523,7 @@
 "accessibility_code_button_disabled_hint" = "No es posible presionar, código incompleto";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Active las informaciones sobre la geolocalización para que la aplicación pueda usar Bluetooth. La aplicación no conoce su posición en ningún momento.";
+"android_foreground_service_notification_error_location_service" = "En los dispositivos Android, Bluetooth está asociado a la autorización de la geolocalización. Por ello, la geolocalización debe estar activada, aún cuando la aplicación no tiene en ningún momento acceso a su posición.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Geolocalización desactivada";
@@ -890,34 +890,34 @@
 "accessibility_tracing_has_been_deactivated" = "Se ha desactivado el rastreo";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Posibilidad de hacer un test gratuito";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "La Infoline SwissCovid le asesora sobre la posibilidad de hacerse gratuitamente el test del coronavirus.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Activar el rastreo";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Active el rastreo para permitir que la app guarde los contactos y reciba notificaciones.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "No es posible recibir notificaciones si el rastreo está desactivado.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Observación";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Política de privacidad";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Condiciones de uso";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Ir a versión en línea";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "No es posible recibir notificaciones si el rastreo está desactivado.";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Cerrar";

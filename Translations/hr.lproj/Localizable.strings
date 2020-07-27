@@ -78,7 +78,6 @@
 "tracing_setting_title" = "Praćenje";
 
 /*Text beim Bluetooth Control*/
-/*Fuzzy*/
 "tracing_setting_text_ios" = "Obavijesti o izloženosti";
 
 /*Bluetooth Control: Tracking deaktiviert*/
@@ -523,7 +522,7 @@
 "accessibility_code_button_disabled_hint" = "Unesite šifru u potpunosti, a zatim pritisnite.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Uključite informacije o lokaciji, kako bi aplikacija mogla da koristi Bluetooth. Sama aplikacija nikad ne prepoznaje vašu lokaciju.";
+"android_foreground_service_notification_error_location_service" = "Za Android uređaje, Bluetooth je povezan sa omogućavanjem deljenja lokacije. Zbog toga funkcija lokacije mora biti aktivirana, čak i ako aplikacija nikad ne pristupa vašoj lokaciji.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Lokacija isključena";
@@ -676,7 +675,6 @@
 "onboarding_gaen_title" = "Aktiviraj praćenje";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-/*Fuzzy*/
 "onboarding_gaen_text_ios" = "Da biste mogli da koristite aplikaciju, morate da aktivirate obavijesti o izloženosti bolesti COVID-19.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -728,11 +726,9 @@
 "gaen_unexpectedly_disabled" = "Praćenje je deaktivirano. Pokrenite ga ponovo.";
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_title_ios" = "COVID-19: obavještenja deaktivirano";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
 "tracing_permission_error_text_ios" = "Aktivirajte Obavijesti o izloženosti bolesti COVID-19 da bi praćenje radilo.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
@@ -890,34 +886,34 @@
 "accessibility_tracing_has_been_deactivated" = "Praćenje je deaktivirano";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Moguće je besplatno testiranje";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Preko info-linije aplikacije SwissCovid možete da dobijete savete o mogućnosti besplatnog testiranja na virus korona.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktiviraj praćenje";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Aktivirajte praćenje kako bi aplikacija mogla da čuva kontakte i prima poruke.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "Ako je praćenje deaktivirano, ni primanje poruka neće biti moguće.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Napomena";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Izjava o zaštiti ličnih podataka";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Uslovi korišćenja";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Otvori verziju na internetu";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "Ako je praćenje deaktivirano, ni primanje poruka neće biti moguće.";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Zatvori";

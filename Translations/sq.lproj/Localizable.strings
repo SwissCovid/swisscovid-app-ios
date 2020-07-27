@@ -523,7 +523,7 @@
 "accessibility_code_button_disabled_hint" = "Printimi nuk është i mundur, sepse kodi nuk u fut në mënyrë të plotë.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Aktivizoni informacionin e vendndodhjes që aplikacioni të përdorë Bluetooth. Aplikacioni nuk e njeh në asnjë moment vendndodhjen tuaj.";
+"android_foreground_service_notification_error_location_service" = "Te pajisjet Android, Bluetooth është i lidhur me autorizimin e vendndodhjes. Prandaj duhet aktivizuar funksioni i vendndodhjes, edhe nëse aplikacioni nuk akseson kurrë vendndodhjen tuaj.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Vendndodhja e fikur";
@@ -890,34 +890,34 @@
 "accessibility_tracing_has_been_deactivated" = "Gjurmimi u çaktivizua";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Testi pa kosto është i mundur";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Infoline SwissCovid ju këshillon për mundësinë e një testi falas për koronavirusin.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktivizo gjurmimin";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Aktivizoni gjurmimin, në mënyrë që të ruhen përdorimet e aplikacionit dhe të merren njoftimet.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "Nëse gjurmimi është i çaktivizuar, atëherë nuk mund të merret asnjë njoftim.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Këshillë";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Politika për privatësinë";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Kushtet e përdorimit";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Te versioni online";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "Nëse gjurmimi është i çaktivizuar, atëherë nuk mund të merret asnjë njoftim.";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Mbyll";
