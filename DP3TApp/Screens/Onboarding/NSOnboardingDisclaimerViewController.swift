@@ -58,8 +58,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
 
-        // let info = NSOnboardingInfoView(icon: UIImage(), text: "onboarding_disclaimer_info".ub_localized, dynamicIconTintColor: UIColor.ns_blue)
-
         addArrangedView(.init(), spacing: NSPadding.large)
 
         let info = NSLabel(.textLight)
@@ -93,6 +91,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.privacyBody.superview?.isHidden = !expanded
+            UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.privacyBody : self.privacyHeader)
         }
         privacyBody.privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
@@ -115,6 +114,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.conditionOfUseBody.superview?.isHidden = !expanded
+            UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.conditionOfUseBody : self.conditionOfUseHeader)
         }
         conditionOfUseBody.privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
