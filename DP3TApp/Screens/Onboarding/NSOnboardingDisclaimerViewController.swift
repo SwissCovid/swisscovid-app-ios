@@ -135,6 +135,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningContainer.addSubview(warningStack)
         addArrangedView(warningContainer, spacing: NSPadding.large, insets: sidePadding)
 
+        warningTitle.accessibilityTraits = [.header]
+        
         let spacerView = UIView()
         addArrangedView(spacerView)
 
