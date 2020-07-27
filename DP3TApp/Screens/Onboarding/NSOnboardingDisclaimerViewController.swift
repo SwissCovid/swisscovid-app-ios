@@ -212,7 +212,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.height.equalTo(23)
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().inset(NSPadding.large)
-            make.left.equalTo(versionStack.snp.right).inset(NSPadding.large)
+            make.left.equalTo(versionStack.snp.right).inset(-NSPadding.medium)
         }
 
         background.backgroundColor = .ns_backgroundSecondary
