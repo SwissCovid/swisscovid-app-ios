@@ -58,8 +58,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
 
-        // let info = NSOnboardingInfoView(icon: UIImage(), text: "onboarding_disclaimer_info".ub_localized, dynamicIconTintColor: UIColor.ns_blue)
-
         addArrangedView(.init(), spacing: NSPadding.large)
 
         let info = NSLabel(.textLight)
@@ -93,6 +91,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.privacyBody.superview?.isHidden = !expanded
+            UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.privacyBody : self.privacyHeader)
         }
         privacyBody.privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
@@ -115,6 +114,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
             self.conditionOfUseBody.superview?.isHidden = !expanded
+            UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.conditionOfUseBody : self.conditionOfUseHeader)
         }
         conditionOfUseBody.privacyButton.touchUpCallback = { [weak self] in
             self?.openPrivacyLink()
@@ -135,6 +135,8 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         warningContainer.addSubview(warningStack)
         addArrangedView(warningContainer, spacing: NSPadding.large, insets: sidePadding)
 
+        warningTitle.accessibilityTraits = [.header]
+        
         let spacerView = UIView()
         addArrangedView(spacerView)
 
@@ -210,7 +212,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.height.equalTo(23)
             make.centerY.equalToSuperview()
             make.right.equalToSuperview().inset(NSPadding.large)
-            make.left.equalTo(versionStack.snp.right).inset(NSPadding.large)
+            make.left.equalTo(versionStack.snp.right).inset(-NSPadding.medium)
         }
 
         background.backgroundColor = .ns_backgroundSecondary
