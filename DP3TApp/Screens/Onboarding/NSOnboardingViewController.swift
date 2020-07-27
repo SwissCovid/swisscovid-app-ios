@@ -299,7 +299,6 @@ class NSOnboardingViewController: NSViewController {
         }
         setOnboardingStep(currentStep + 1, animated: true)
 
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 
@@ -312,7 +311,6 @@ class NSOnboardingViewController: NSViewController {
         }
         setOnboardingStep(currentStep - 1, animated: true)
 
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 }
