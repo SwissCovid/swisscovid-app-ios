@@ -523,7 +523,7 @@
 "accessibility_code_button_disabled_hint" = "Smatgar nunpussaivel perquai ch'il code n'è betg vegnì inserì cumplettamain.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Mettai en funcziun las infurmaziuns da la posiziun per che l'app possia utilisar bluetooth. L'app na conuscha mai Vossa posiziun.";
+"android_foreground_service_notification_error_location_service" = "Tar apparats d'Android è bluetooth collià cun la posiziun. Perquai ston las infurmaziuns davart la posiziun vegnir activadas, er sche l'app n'acceda mai a Vossa posiziun.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Posiziun messa ord funcziun";
@@ -892,34 +892,34 @@
 "accessibility_tracing_has_been_deactivated" = "Tracing è vegnì deactivà";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Pussaivel da far in test gratuit";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "L'infoline SwissCovid As cusseglia davart la pussaivladad d'As laschar testar gratuitamain sin il coronavirus.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Activar tracing";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Activai il tracing per che l'app possia arcunar scuntradas e retschaiver communicaziuns.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "Sch'il tracing è deactivà, na pon er vegnidas retschavidas naginas communicaziuns.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Infurmaziun";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Decleraziun davart la protecziun da datas";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Cundiziuns d'utilisaziun";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Tar la versiun online";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "Sch'il tracing è deactivà, na pon er vegnidas retschavidas naginas communicaziuns.";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Serrar";

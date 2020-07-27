@@ -522,7 +522,7 @@
 "accessibility_code_button_disabled_hint" = "Kodun tamamı girilmediğinden etkin değildir.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Uygulamanın Bluetooth'u kullanabilmesi için konum bilgilerini açın. Uygulama hiçbir zaman sizin konumunuzu kaydetmeyecektir.";
+"android_foreground_service_notification_error_location_service" = "Android cihazlarda bluetooth, konum paylaşımına bağlıdır. Bu nedenle, uygulama konumunuza asla erişmese dahi, konum özelliği etkinleştirilmelidir.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Konumu kapat";
@@ -886,34 +886,34 @@
 "accessibility_tracing_has_been_deactivated" = "Takip devre dışı bırakılmıştır";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Ücretsiz test olma";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "SwissCovid Danışma Hattı size ücretsiz korona testleri konusunda bilgi vermektedir.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Takibi etkinleştir";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Uygulamanın temasları kaydedebilmesi ve bildirimleri alabilmesi için takibi etkinleştirin.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "Takip devre dışı bırkıldığında bildirimler de alınamaz.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Not";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Gizlilik Politikası";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Kullanım Şartları";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Çevrimiçi Sürüm";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "Takip devre dışı bırakıldığında bildirimler de alınamaz.";
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Kapat";
