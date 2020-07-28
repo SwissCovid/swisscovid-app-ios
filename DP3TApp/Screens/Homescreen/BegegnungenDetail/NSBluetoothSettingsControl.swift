@@ -23,7 +23,16 @@ class NSBluetoothSettingsControl: UIView {
 
     private let switchControl = UISwitch()
 
-    private let tracingActiveView = NSInfoBoxView(title: "tracing_active_title".ub_localized, subText: "tracing_active_text".ub_localized, image: UIImage(named: "ic-check"), titleColor: .ns_blue, subtextColor: UIColor.ns_text, backgroundColor: .ns_blueBackground, dynamicIconTintColor: .ns_blue)
+    let tracingActiveView: NSInfoBoxView = {
+        var viewModel = NSInfoBoxView.ViewModel(title: "tracing_active_title".ub_localized,
+                                                subText: "tracing_active_text".ub_localized,
+                                                image: UIImage(named: "ic-check"),
+                                                titleColor: .ns_blue,
+                                                subtextColor: .ns_text)
+        viewModel.backgroundColor = .ns_blueBackground
+        viewModel.dynamicIconTintColor = .ns_blue
+        return .init(viewModel: viewModel)
+    }()
 
     private let tracingInfoView: UIView = {
         let view = UIView()
@@ -48,7 +57,7 @@ class NSBluetoothSettingsControl: UIView {
 
     private let tracingActiveWrapper = UIStackView()
 
-    private lazy var tracingErrorView = NSTracingErrorView.tracingErrorView(for: state.tracing) ?? NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
+    private lazy var tracingErrorView = NSTracingErrorView.tracingErrorView(for: state.tracing, isHomeScreen: false) ?? NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
 
     var activeViewConstraint: Constraint?
     var inactiveViewConstraint: Constraint?
@@ -154,7 +163,7 @@ class NSBluetoothSettingsControl: UIView {
         self.state = state.begegnungenDetail
 
         switchControl.setOn(state.begegnungenDetail.tracingEnabled, animated: false)
-        tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing)
+        tracingErrorView.model = NSTracingErrorView.model(for: state.begegnungenDetail.tracing, isHomeScreen: false)
 
         switch state.begegnungenDetail.tracing {
         case .tracingActive:

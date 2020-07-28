@@ -174,7 +174,7 @@
 "whattodo_subtitle_symptoms" = "እንታይ ትገብር እንተ…..";
 
 /*Titel auf Homescreen bei Was tun Section*/
-"whattodo_title_positivetest" = "ውጽኢት መርመራ ፖዚቲቭ ምስዝኸውን";
+"whattodo_title_positivetest" = "ውጽኢት መርመራ ፖዚቲቭ/ኣሉታዊ ምስዝኸውን";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
 "whattodo_subtitle_positivetest" = "እንታይ ትገብር ኣብ እዋን…..";
@@ -522,7 +522,7 @@
 "accessibility_code_button_disabled_hint" = " እቲ ኮድ ብምሉኡ ስለዝይተዋህበ ምጥዋቕ ኣይክኣልን እዩ። ";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "እቲ ኣፕ ብሉቱዝ ክጥቀም ክኸእል ምእንታን: እቲ ዘለኹሞ ቦታ ዝሕብር ኣገልግሎት ወልዕዎ። እቲ ኣፕ ኣብ ዝኾነ እዋን ቦታኹም ኣይፈልጦን እዩ።";
+"android_foreground_service_notification_error_location_service" = "ኣብ Android ዘለዎም መሳርሒታት Bluetooth ካብ መርከቢ ቦታ ኣገባብ (ሎከይሽን) ይምርኮስ። ስለዚ እቲ ናይ መርከቢ ቦታ ኣገባብ ክውላዕ ኣለዎ፣ ሽሕ'ኳ እቲ ኤፕ ንቦታኹም ክረክብ ዘየድሊ።";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "ሓባሪ ዘለኹሞ ቦታ ጠፊኡ ኣሎ";
@@ -615,7 +615,7 @@
 "infoline_tel_number" = "+41 58 387 77 78";
 
 /*URL für Häufige Fragen Button*/
-"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
 "inform_code_intro_title" = "ኣገዳሲ ሓበሬታ";
@@ -630,7 +630,7 @@
 "symptom_faq1_title" = "ምልክታት ኮቪድ-19 እንታይ እዩ፧";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ, ስምዒት ናይ ረስኒ \n- ቃንዛ ጉሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
+"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ፣ ስምዒት ናይ ረስኒ\n- ቃንዛ ጎሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
@@ -639,7 +639,7 @@
 "meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል ኣብ ኣፕ ብቐጥታ ይውዳእ። ";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "de";
+"language_key" = "ti";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "ናይ ሓበሬታ መስመር ስዊስኮቪድ ";
@@ -853,10 +853,10 @@
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
 
 /*Onboarding Disclaimer Screen: App version title*/
-"onboarding_disclaimer_app_version" = "ዓይነት ስዊስኮቪድ ኣፕ";
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
 
 /*Onboarding Disclaimer Screen: Release version title*/
-"onboarding_disclaimer_release_version" = "ዝወጻሉ መዓልቲ፦ Release Date:  ";
+"onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
 "onboarding_disclaimer_legal_button" = "መግለጺ ናይ ምክልኻል ውልቃዊ ሰነድን ንምጥቃም ክማልኡ ዘለዎም ነገራትን";
@@ -884,3 +884,36 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "ምክትታል ተቛሪጹ (ከም ዘይሰርሕ ተጌሩ)";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "ነጻ መርመራ ይከኣል'ዩ";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "Infoline SwissCovid ብዛዕባ ኣማራጺ ነጻ መርመራ ኮሮና ይመኽረኩም።";
+
+/*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
+"activate_tracing_button" = "ንትራይሲንግ(Tracing) ምውላዕ";
+
+/*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
+"tracing_turned_off_detailed_text" = "ንትራይሲንግ ወልዕዎ፣ እቲ ኤፕ ዝኾነ ርክብ ክዕቅብ ከምኡ'ውን መልእኽትታት ክቕበል መታን ክኽእል።";
+
+/*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
+"meldungen_tracing_not_active_warning" = "ትራይሲንግ እንተዘይተወሊዑ መልእኽትታት ውን ክኣትዉ ኣይክእሉን።";
+
+/*Warning title for Meldungen-Card when Tracing is turned off.*/
+"meldungen_tracing_turned_off_title" = "ምልክታ";
+
+/*Data Protection Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_data_protection_statement" = "መግለጺ ውዕል ብሑትነት";
+
+/*Conditions of Use Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_conditions_of_use" = "መዘውተሪ ኩነታት";
+
+/*Button title that links to the website with the data protection statement and conditions of use.*/
+"onboarding_disclaimer_to_online_version_button" = "ንኣብ ኦንላይን ዘሎ ክፋል";
+
+/*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
+"meldungen_tracing_turned_off_warning" = "ትራይሲንግ እንተዘይተወሊዑ መልእኽትታት ውን ክኣትዉ ኣይክእሉን።";
+
+/*Homescreen infobox close button accessibility handler*/
+"infobox_close_button_accessibility" = "ዕጸው";

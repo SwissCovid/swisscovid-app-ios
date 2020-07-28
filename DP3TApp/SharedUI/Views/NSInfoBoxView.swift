@@ -8,18 +8,22 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SnapKit
 import UIKit
 
 class NSInfoBoxView: UIView {
     // MARK: - Views
 
-    private let titleLabel = NSLabel(.uppercaseBold)
+    private let titleLabel: NSLabel
     private let subtextLabel = NSLabel(.textLight)
     private let leadingIconImageView: NSImageView
     private let illustrationImageView = UIImageView()
 
     private let additionalLabel = NSLabel(.textBold)
     private let externalLinkButton = NSExternalLinkButton()
+
+    private var externalLinkBottomConstraint: Constraint?
+    private var additionalLabelBottomConstraint: Constraint?
 
     // MARK: - Update
 
@@ -31,34 +35,57 @@ class NSInfoBoxView: UIView {
             externalLinkButton.title = additionalText
 
             externalLinkButton.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.openLink(url)
+                self?.openLink(url)
             }
 
             illustrationImageView.isHidden = false
+
+            externalLinkBottomConstraint?.update(inset: NSPadding.large)
         } else {
+            externalLinkButton.title = nil
+
             additionalLabel.text = additionalText
+
+            externalLinkBottomConstraint?.update(inset: 0)
 
             illustrationImageView.isHidden = true
         }
+
+        setupAccessibility(title: title ?? "", subTitle: subText ?? "")
     }
 
     // MARK: - Init
 
-    init(title: String, subText: String, image: UIImage?, illustration: UIImage? = nil, titleColor: UIColor, subtextColor: UIColor, backgroundColor: UIColor? = nil, hasBubble: Bool = false, additionalText: String? = nil, additionalURL: String? = nil, dynamicIconTintColor: UIColor? = nil) {
-        leadingIconImageView = NSImageView(image: image, dynamicColor: dynamicIconTintColor)
+    struct ViewModel {
+        var title: String
+        var subText: String
+        var image: UIImage?
+        var illustration: UIImage? = nil
+        var titleColor: UIColor
+        var subtextColor: UIColor
+        var backgroundColor: UIColor? = nil
+        var hasBubble: Bool = false
+        var additionalText: String? = nil
+        var additionalURL: String? = nil
+        var dynamicIconTintColor: UIColor? = nil
+        var titleLabelType: NSLabelType = .uppercaseBold
+    }
+
+    init(viewModel: ViewModel) {
+        leadingIconImageView = NSImageView(image: viewModel.image, dynamicColor: viewModel.dynamicIconTintColor)
+        titleLabel = NSLabel(viewModel.titleLabelType)
 
         super.init(frame: .zero)
 
-        titleLabel.text = title
-        subtextLabel.text = subText
-        titleLabel.textColor = titleColor
-        subtextLabel.textColor = subtextColor
-        additionalLabel.textColor = subtextColor
-        illustrationImageView.image = illustration
+        titleLabel.text = viewModel.title
+        subtextLabel.text = viewModel.subText
+        titleLabel.textColor = viewModel.titleColor
+        subtextLabel.textColor = viewModel.subtextColor
+        additionalLabel.textColor = viewModel.subtextColor
+        illustrationImageView.image = viewModel.illustration
 
-        setup(backgroundColor: backgroundColor, hasBubble: hasBubble, additionalText: additionalText, additionalURL: additionalURL)
-        setupAccessibility(title: title, subText: subText)
+        setup(viewModel: viewModel)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText)
     }
 
     required init?(coder _: NSCoder) {
@@ -67,12 +94,12 @@ class NSInfoBoxView: UIView {
 
     // MARK: - Setup
 
-    private func setup(backgroundColor: UIColor?, hasBubble: Bool, additionalText: String? = nil, additionalURL: String? = nil) {
+    private func setup(viewModel: ViewModel) {
         clipsToBounds = false
 
         var topBottomPadding: CGFloat = 0
 
-        if let bgc = backgroundColor {
+        if let bgc = viewModel.backgroundColor {
             let v = UIView()
             v.layer.cornerRadius = 3.0
             addSubview(v)
@@ -83,7 +110,7 @@ class NSInfoBoxView: UIView {
 
             v.backgroundColor = bgc
 
-            if hasBubble {
+            if viewModel.hasBubble {
                 let imageView = NSImageView(image: UIImage(named: "bubble"), dynamicColor: bgc)
                 addSubview(imageView)
 
@@ -96,7 +123,7 @@ class NSInfoBoxView: UIView {
             topBottomPadding = 14
         }
 
-        let hasAdditionalStuff = additionalText != nil
+        let hasAdditionalStuff = viewModel.additionalText != nil
 
         addSubview(titleLabel)
         addSubview(subtextLabel)
@@ -133,21 +160,20 @@ class NSInfoBoxView: UIView {
             }
         }
 
-        if let adt = additionalText {
-            if let url = additionalURL {
+        if let adt = viewModel.additionalText {
+            if let url = viewModel.additionalURL {
                 addSubview(externalLinkButton)
                 externalLinkButton.title = adt
 
                 externalLinkButton.touchUpCallback = { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.openLink(url)
+                    self?.openLink(url)
                 }
 
                 externalLinkButton.snp.makeConstraints { make in
                     make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
                     make.leading.equalTo(self.titleLabel)
                     make.trailing.lessThanOrEqualTo(self.titleLabel)
-                    make.bottom.equalToSuperview().inset(NSPadding.large)
+                    self.externalLinkBottomConstraint = make.bottom.equalToSuperview().inset(NSPadding.large).constraint
                 }
             } else {
                 addSubview(additionalLabel)
@@ -178,8 +204,8 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(title: String, subText: String) {
+    private func setupAccessibility(title: String, subTitle: String) {
         isAccessibilityElement = true
-        accessibilityLabel = "\(title), \(subText)"
+        accessibilityLabel = "\(title), \(subTitle)"
     }
 }

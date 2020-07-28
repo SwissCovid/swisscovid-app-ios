@@ -523,7 +523,7 @@
 "accessibility_code_button_disabled_hint" = "Não é possivel imprimir porque o código inserido não está completo.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Ative o acesso à localização para que a app possa usar o Bluetooth. A app nunca reconhece sozinha a sua localização.";
+"android_foreground_service_notification_error_location_service" = "Nos dispositivos android, o Bluetooth requer o acesso à localização. É por isso que deve ativar a função de localização, mesmo quando a app não está a registar as suas coordenadas.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Localização desativada";
@@ -616,7 +616,7 @@
 "infoline_tel_number" = "+41 58 387 77 78";
 
 /*URL für Häufige Fragen Button*/
-"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
 "inform_code_intro_title" = "Aviso importante";
@@ -888,3 +888,36 @@
 
 /*Info to the user that tracing has been switched off*/
 "accessibility_tracing_has_been_deactivated" = "Foi desativado o rastreamento";
+
+/*Meldungen Detail Kostenloser Test Box Title*/
+"meldungen_detail_free_test_title" = "Possibilidade de teste gratuito";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "A linha informativa SwissCovid aconselha-o sobre um possível teste gratuito ao coronavírus.";
+
+/*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
+"activate_tracing_button" = "Ativar o rastreamento";
+
+/*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
+"tracing_turned_off_detailed_text" = "Ative o rastreamento para que a app possa armazenar contactos e receber notificações.";
+
+/*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
+"meldungen_tracing_not_active_warning" = "Se o rastreamento estiver desativado, a app também não pode receber notificações.";
+
+/*Warning title for Meldungen-Card when Tracing is turned off.*/
+"meldungen_tracing_turned_off_title" = "Aviso";
+
+/*Data Protection Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_data_protection_statement" = "Política de privacidade";
+
+/*Conditions of Use Header String in Onboarding Disclaimer View.*/
+"onboarding_disclaimer_conditions_of_use" = "Termos de utilização";
+
+/*Button title that links to the website with the data protection statement and conditions of use.*/
+"onboarding_disclaimer_to_online_version_button" = "Ir para a versão em linha";
+
+/*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
+"meldungen_tracing_turned_off_warning" = "Se o rastreamento estiver desativado, a app também não pode receber notificações.";
+
+/*Homescreen infobox close button accessibility handler*/
+"infobox_close_button_accessibility" = "Fechar";
