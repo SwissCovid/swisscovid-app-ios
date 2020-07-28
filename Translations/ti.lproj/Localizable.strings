@@ -174,7 +174,7 @@
 "whattodo_subtitle_symptoms" = "እንታይ ትገብር እንተ…..";
 
 /*Titel auf Homescreen bei Was tun Section*/
-"whattodo_title_positivetest" = "ውጽኢት መርመራ ፖዚቲቭ ምስዝኸውን";
+"whattodo_title_positivetest" = "ውጽኢት መርመራ ፖዚቲቭ/ኣሉታዊ ምስዝኸውን";
 
 /*Subtitel auf Homescreen bei Was tun Section*/
 "whattodo_subtitle_positivetest" = "እንታይ ትገብር ኣብ እዋን…..";
@@ -630,7 +630,7 @@
 "symptom_faq1_title" = "ምልክታት ኮቪድ-19 እንታይ እዩ፧";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ, ስምዒት ናይ ረስኒ \n- ቃንዛ ጉሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
+"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ፣ ስምዒት ናይ ረስኒ\n- ቃንዛ ጎሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
@@ -639,7 +639,7 @@
 "meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል ኣብ ኣፕ ብቐጥታ ይውዳእ። ";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
-"language_key" = "de";
+"language_key" = "ti";
 
 /*Meldungen Homescreen: Name Hotline*/
 "exposed_info_contact_hotline_name" = "ናይ ሓበሬታ መስመር ስዊስኮቪድ ";
@@ -853,7 +853,7 @@
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, Schweiz";
 
 /*Onboarding Disclaimer Screen: App version title*/
-"onboarding_disclaimer_app_version" = "ዓይነት ስዊስኮቪድ ኣፕ";
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
 
 /*Onboarding Disclaimer Screen: Release version title*/
 "onboarding_disclaimer_release_version" = "Release Date:";
