@@ -853,10 +853,10 @@
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, İzviçre";
 
 /*Onboarding Disclaimer Screen: App version title*/
-"onboarding_disclaimer_app_version" = "SwissCovid Uygulama Sürümü";
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
 
 /*Onboarding Disclaimer Screen: Release version title*/
-"onboarding_disclaimer_release_version" = "Yayınlanma tarihi:";
+"onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
 "onboarding_disclaimer_legal_button" = "Veri Gizliliği & Kullanım Koşulları";
