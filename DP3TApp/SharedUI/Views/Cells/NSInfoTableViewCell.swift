@@ -10,28 +10,24 @@
 
 import UIKit
 
-class NSTravelAddCountryTableViewCell: UITableViewCell {
-    private let button = NSButton(title: "travel_detail_add_country_button", style: .normal(.ns_blue))
-
-    var touchUpCallback: (() -> Void)? {
-        didSet {
-            button.touchUpCallback = touchUpCallback
-        }
-    }
+class NSInfoTableViewCell: UITableViewCell {
+    private let view = NSInfoView(icon: .init(), text: "", title: "", dynamicIconTintColor: .ns_blue)
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        selectionStyle = .none
-
-        contentView.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.large)
-            make.bottom.equalToSuperview().inset(NSPadding.large * 3)
-            make.centerX.equalToSuperview()
+        contentView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.left.top.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(NSPadding.large)
         }
+        selectionStyle = .none
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func populate(with viewModel: NSInfoView.ViewModel) {
+        view.populate(with: viewModel)
     }
 }

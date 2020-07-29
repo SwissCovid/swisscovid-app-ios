@@ -27,6 +27,7 @@ class NSTravelDetailViewController: NSViewController {
         case header
         case countries
         case addCountry
+        case info
     }
 
     // MARK: - Init
@@ -48,6 +49,7 @@ class NSTravelDetailViewController: NSViewController {
         tableView.register(NSImageInfoTableViewCell.self)
         tableView.register(NSTravelCountryTableViewCell.self)
         tableView.register(NSTravelAddCountryTableViewCell.self)
+        tableView.register(NSInfoTableViewCell.self)
     }
 }
 
@@ -64,6 +66,8 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             return 10
         case .addCountry:
             return 1
+        case .info:
+            return 2
         }
     }
 
@@ -88,6 +92,19 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             cell.touchUpCallback = {
                 print("Add Country")
             }
+            return cell
+        case .info:
+            let cell = tableView.dequeueReusableCell(for: indexPath) as NSInfoTableViewCell
+            let iconName: String
+            if indexPath.row == 0 {
+                iconName = "ic-tracing"
+            } else {
+                iconName = "ic-sync"
+            }
+
+            cell.populate(with: .init(icon: UIImage(named: iconName)!,
+                                      title: "travel_detail_info_\(indexPath.row)_title",
+                                      text: "travel_detail_info_\(indexPath.row)_text"))
             return cell
         }
     }

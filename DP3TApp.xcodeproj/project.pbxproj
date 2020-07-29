@@ -373,6 +373,8 @@
 		F8BE32B624D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B424D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift */; };
 		F8BE32B824D1CA390045AD86 /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B724D1CA390045AD86 /* NSTravelAddCountryTableViewCell.swift */; };
 		F8BE32B924D1CA390045AD86 /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B724D1CA390045AD86 /* NSTravelAddCountryTableViewCell.swift */; };
+		F8BE32BB24D1CC050045AD86 /* NSInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32BA24D1CC050045AD86 /* NSInfoTableViewCell.swift */; };
+		F8BE32BC24D1CC050045AD86 /* NSInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32BA24D1CC050045AD86 /* NSInfoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -602,6 +604,7 @@
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 		F8BE32B424D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelCountryTableViewCell.swift; sourceTree = "<group>"; };
 		F8BE32B724D1CA390045AD86 /* NSTravelAddCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelAddCountryTableViewCell.swift; sourceTree = "<group>"; };
+		F8BE32BA24D1CC050045AD86 /* NSInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSInfoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1270,6 +1273,7 @@
 			isa = PBXGroup;
 			children = (
 				F810555B24D1AA2E003DDE7E /* NSImageInfoTableViewCell.swift */,
+				F8BE32BA24D1CC050045AD86 /* NSInfoTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1662,6 +1666,7 @@
 				242D21ED245C4BD8005DAEA8 /* NSStackScrollView.swift in Sources */,
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
 				242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */,
+				F8BE32BC24D1CC050045AD86 /* NSInfoTableViewCell.swift in Sources */,
 				242D21F0245C4BD8005DAEA8 /* NSViewController.swift in Sources */,
 				242D21F2245C4BD8005DAEA8 /* UBUserDefault.swift in Sources */,
 				242D2277245D62D9005DAEA8 /* UserStorage.swift in Sources */,
@@ -1836,6 +1841,7 @@
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,
 				DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				6E330879245098E900913B0E /* NSReportsDetailReportTitleView.swift in Sources */,
+				F8BE32BB24D1CC050045AD86 /* NSInfoTableViewCell.swift in Sources */,
 				6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */,
 				DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */,
 				6E33086424503D0900913B0E /* NSWhatToDoSymptomViewController.swift in Sources */,

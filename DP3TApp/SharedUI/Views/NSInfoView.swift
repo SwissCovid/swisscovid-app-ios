@@ -17,8 +17,22 @@ class NSInfoView: UIView {
 
     let labelAreaGuide = UILayoutGuide()
 
+    let imgView: NSImageView
+
+    let titleLabel = NSLabel(.textBold)
+
+    let label = NSLabel(.textLight)
+
+    struct ViewModel {
+        let icon: UIImage
+        let title: String
+        let text: String
+    }
+
     init(icon: UIImage, text: String, title: String? = nil, leftRightInset: CGFloat = 2 * NSPadding.medium, dynamicIconTintColor: UIColor? = nil) {
         self.leftRightInset = leftRightInset
+
+        imgView = NSImageView(image: icon, dynamicColor: dynamicIconTintColor)
 
         super.init(frame: .zero)
 
@@ -26,10 +40,8 @@ class NSInfoView: UIView {
 
         let hasTitle = title != nil
 
-        let imgView = NSImageView(image: icon, dynamicColor: dynamicIconTintColor)
         imgView.ub_setContentPriorityRequired()
 
-        let label = NSLabel(.textLight)
         label.text = text
         label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
 
@@ -41,7 +53,6 @@ class NSInfoView: UIView {
             make.top.bottom.trailing.equalToSuperview()
         }
 
-        let titleLabel = NSLabel(.textBold)
         if hasTitle {
             addSubview(titleLabel)
             titleLabel.text = title
@@ -86,5 +97,13 @@ class NSInfoView: UIView {
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func populate(with viewModel: ViewModel) {
+        imgView.setImage(image: viewModel.icon)
+        titleLabel.text = viewModel.title
+        label.text = viewModel.text
+        accessibilityLabel = viewModel.title + viewModel.text
+        label.accessibilityLabel = viewModel.text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
     }
 }
