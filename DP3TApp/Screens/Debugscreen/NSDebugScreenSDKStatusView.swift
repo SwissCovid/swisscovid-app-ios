@@ -27,8 +27,8 @@
 
             #if ENABLE_STATUS_OVERRIDE
                 UIStateManager.shared.addObserver(self) { [weak self] stateModel in
-                    guard let strongSelf = self else { return }
-                    strongSelf.update(stateModel)
+                    guard let self = self else { return }
+                    self.update(stateModel)
                 }
             #endif
         }
@@ -79,16 +79,16 @@
             contentView.addArrangedView(button)
 
             button.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.resetSDK()
+                guard let self = self else { return }
+                self.resetSDK()
             }
 
             let button2 = NSButton(title: "reset_onboarding".ub_localized, style: .uppercase(.ns_purple))
             contentView.addArrangedView(button2)
 
             button2.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.resetOnboarding()
+                guard let self = self else { return }
+                self.resetOnboarding()
             }
         }
 

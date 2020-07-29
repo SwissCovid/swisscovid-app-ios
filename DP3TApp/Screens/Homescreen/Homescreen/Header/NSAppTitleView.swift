@@ -94,22 +94,22 @@ class NSAppTitleView: NSTitleView {
         slowTimer?.invalidate()
 
         timer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true, block: { [weak self] timer in
-            guard let strongSelf = self else {
+            guard let self = self else {
                 timer.invalidate()
                 return
             }
 
-            strongSelf.spawnArcs()
+            self.spawnArcs()
         })
         timer?.tolerance = 2.0
 
         slowTimer = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true, block: { [weak self] timer in
-            guard let strongSelf = self else {
+            guard let self = self else {
                 timer.invalidate()
                 return
             }
 
-            strongSelf.hightlight()
+            self.hightlight()
         })
         slowTimer?.tolerance = 5.0
     }

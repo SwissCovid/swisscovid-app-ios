@@ -39,8 +39,8 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         setupLayout()
 
         informView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentInformViewController()
+            guard let self = self else { return }
+            self.presentInformViewController()
         }
 
         setupAccessibility()

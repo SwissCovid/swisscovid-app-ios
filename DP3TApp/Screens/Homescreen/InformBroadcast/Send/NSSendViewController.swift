@@ -61,8 +61,8 @@ class NSSendViewController: NSInformBottomButtonViewController {
         bottomButtonTitle = "inform_code_intro_button".ub_localized
 
         bottomButtonTouchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.continuePressed()
+            guard let self = self else { return }
+            self.continuePressed()
         }
 
         basicSetup()

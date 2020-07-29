@@ -47,8 +47,8 @@ class NSInformThankYouViewController: NSInformBottomButtonViewController {
 
         bottomButtonTitle = "inform_continue_button".ub_localized
         bottomButtonTouchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.sendPressed()
+            guard let self = self else { return }
+            self.sendPressed()
         }
 
         titleLabel.text = "inform_send_thankyou".ub_localized

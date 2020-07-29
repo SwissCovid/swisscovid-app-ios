@@ -58,15 +58,15 @@ class ReportingManager: ReportingManagerProtocol {
         } else {
             // get token and date first
             codeValidator.sendCodeRequest(code: covidCode, isFakeRequest: fake) { [weak self] result in
-                guard let strongSelf = self else { return }
+                guard let self = self else { return }
 
                 switch result {
                 case let .success(token: token, date: date):
                     // save in code dictionary
-                    strongSelf.codeDictionary[covidCode] = (token, date)
+                    self.codeDictionary[covidCode] = (token, date)
 
                     // second part
-                    strongSelf.sendIWasExposed(token: token, date: date, isFakeRequest: fake, covidCode: covidCode, completion: completion)
+                    self.sendIWasExposed(token: token, date: date, isFakeRequest: fake, covidCode: covidCode, completion: completion)
                 case let .failure(error: error):
                     completion(.failure(error: error))
                 case .invalidTokenError:

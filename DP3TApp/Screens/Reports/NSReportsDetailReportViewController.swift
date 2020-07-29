@@ -132,8 +132,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.call()
+            guard let self = self else { return }
+            self.call()
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
@@ -154,8 +154,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         let callButton = NSButton(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.call()
+            guard let self = self else { return }
+            self.call()
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
@@ -178,8 +178,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.call()
+            guard let self = self else { return }
+            self.call()
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)

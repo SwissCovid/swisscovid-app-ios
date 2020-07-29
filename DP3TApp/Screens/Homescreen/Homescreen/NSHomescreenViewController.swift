@@ -56,8 +56,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         setupLayout()
 
         reportsView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentReportsDetail()
+            guard let self = self else { return }
+            self.presentReportsDetail()
         }
 
         travelView.touchUpCallback = { [weak self] in
@@ -66,23 +66,23 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         }
 
         UIStateManager.shared.addObserver(self, block: { [weak self] state in
-            guard let strongSelf = self else { return }
-            strongSelf.updateState(state)
+            guard let self = self else { return }
+            self.updateState(state)
         })
 
         handshakesModuleView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentEncountersDetail()
+            guard let self = self else { return }
+            self.presentEncountersDetail()
         }
 
         whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoPositiveTest()
+            guard let self = self else { return }
+            self.presentWhatToDoPositiveTest()
         }
 
         whatToDoSymptomsButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoSymptoms()
+            guard let self = self else { return }
+            self.presentWhatToDoSymptoms()
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -174,8 +174,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 }
 
                 debugScreenButton.touchUpCallback = { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.presentDebugScreen()
+                    guard let self = self else { return }
+                    self.presentDebugScreen()
                 }
 
                 stackScrollView.addArrangedView(debugScreenContainer)
@@ -194,8 +194,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }
 
             uploadDBButton.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.uploadDatabaseForDebugPurposes()
+                guard let self = self else { return }
+                self.uploadDatabaseForDebugPurposes()
             }
 
             stackScrollView.addArrangedView(uploadDBContainer)

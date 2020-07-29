@@ -83,8 +83,8 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
         addSubview(continueButton)
 
         continueButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.headerView?.viewController?.startHeaderAnimation()
+            guard let self = self else { return }
+            self.headerView?.viewController?.startHeaderAnimation()
         }
 
         setupOpen()

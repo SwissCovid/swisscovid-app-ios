@@ -25,8 +25,8 @@
             setup()
             #if ENABLE_STATUS_OVERRIDE
                 UIStateManager.shared.addObserver(self) { [weak self] stateModel in
-                    guard let strongSelf = self else { return }
-                    strongSelf.update(stateModel)
+                    guard let self = self else { return }
+                    self.update(stateModel)
                 }
             #endif
         }
@@ -53,8 +53,8 @@
                 checkBoxStackView.addArrangedView(c)
                 c.radioMode = true
                 c.touchUpCallback = { [weak self, weak c] in
-                    guard let strongSelf = self, let strongC = c else { return }
-                    strongSelf.select(strongC)
+                    guard let self = self, let strongC = c else { return }
+                    self.select(strongC)
                 }
             }
 

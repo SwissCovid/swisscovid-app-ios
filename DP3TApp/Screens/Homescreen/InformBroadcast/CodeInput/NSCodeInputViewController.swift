@@ -109,8 +109,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         stackScrollView.addSpacerView(NSPadding.large)
 
         sendButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.sendPressed()
+            guard let self = self else { return }
+            self.sendPressed()
         }
 
         sendButton.isEnabled = false

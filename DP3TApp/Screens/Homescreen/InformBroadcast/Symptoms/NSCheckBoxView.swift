@@ -48,11 +48,11 @@ class NSCheckBoxView: UIView {
 
     private func setup() {
         button.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
+            guard let self = self else { return }
 
-            if strongSelf.radioMode, !strongSelf.isChecked {
-                strongSelf.isChecked = !strongSelf.isChecked
-                strongSelf.touchUpCallback?()
+            if self.radioMode, !self.isChecked {
+                self.isChecked = !self.isChecked
+                self.touchUpCallback?()
             }
         }
 

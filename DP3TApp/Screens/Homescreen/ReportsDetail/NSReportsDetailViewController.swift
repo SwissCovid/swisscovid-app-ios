@@ -31,8 +31,8 @@ class NSReportsDetailViewController: NSViewController {
         view.backgroundColor = .ns_backgroundSecondary
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
-            guard let strongSelf = self else { return }
-            strongSelf.setup(state.reportsDetail)
+            guard let self = self else { return }
+            self.setup(state.reportsDetail)
         }
 
         setupViewControllers()
