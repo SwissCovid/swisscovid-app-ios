@@ -15,8 +15,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()
+
     private let handshakesModuleView = NSEncountersModuleView()
+
     private let reportsView = NSReportsModuleView()
+
+    private let travelView = NSTravelModuleView()
 
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
@@ -54,6 +58,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         reportsView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentReportsDetail()
+        }
+
+        travelView.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            self.presentTravelDetail()
         }
 
         UIStateManager.shared.addObserver(self, block: { [weak self] state in
@@ -131,6 +140,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(reportsView)
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
@@ -268,6 +280,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     func presentReportsDetail(animated: Bool = true) {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
     }
+
+    func presentTravelDetail(animated _: Bool = true) {}
 
     #if ENABLE_TESTING
         private func presentDebugScreen() {

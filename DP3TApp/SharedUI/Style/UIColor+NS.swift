@@ -20,6 +20,7 @@ extension UIColor {
     public static var ns_greenBackground = UIColor(ub_hexString: "#e5f8f6")!
     public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
     public static var ns_purpleBackground = UIColor(ub_hexString: "#f3f0f5")!
+    public static var ns_purpleText = UIColor(ub_hexString: "#4e487b")!
 
     public static var ns_darkBlueBackground = UIColor(ub_hexString: "#4a4969")!
 
