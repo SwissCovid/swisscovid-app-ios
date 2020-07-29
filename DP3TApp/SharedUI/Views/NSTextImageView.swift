@@ -22,11 +22,10 @@ class NSTextImageView: UIView {
     let imageView: NSImageView
     let titleLabel: NSLabel
 
-    init(viewModel: ViewModel) {
-        imageView = NSImageView(image: viewModel.icon, dynamicColor: viewModel.dynamicColor)
-        titleLabel = NSLabel(.textLight, textColor: viewModel.textColor, numberOfLines: 0, textAlignment: .natural)
+    init() {
+        imageView = NSImageView(image: UIImage(), dynamicColor: .ns_text)
+        titleLabel = NSLabel(.textLight, textColor: .ns_text, numberOfLines: 0, textAlignment: .natural)
         super.init(frame: .zero)
-        titleLabel.text = viewModel.text
 
         addSubview(imageView)
         addSubview(titleLabel)
@@ -43,8 +42,28 @@ class NSTextImageView: UIView {
         imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 260), for: .horizontal)
         imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 760), for: .horizontal)
 
-        backgroundColor = viewModel.backgroundColor
         layer.cornerRadius = 3.0
+
+        isAccessibilityElement = true
+        imageView.isAccessibilityElement = false
+        titleLabel.isAccessibilityElement = false
+    }
+
+    convenience init(viewModel: ViewModel) {
+        self.init()
+        populate(with: viewModel)
+    }
+
+    func populate(with viewModel: ViewModel) {
+        titleLabel.textColor = viewModel.textColor
+        titleLabel.text = viewModel.text
+
+        imageView.dynamicColor = viewModel.dynamicColor
+        imageView.setImage(image: viewModel.icon)
+
+        accessibilityLabel = viewModel.text
+
+        backgroundColor = viewModel.backgroundColor
     }
 
     required init?(coder _: NSCoder) {

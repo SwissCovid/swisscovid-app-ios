@@ -209,6 +209,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.alpha = 0
         reportsView.alpha = 0
+        travelView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
 
@@ -226,10 +227,14 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.whatToDoSymptomsButton.alpha = 1
+                self.travelView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                self.whatToDoSymptomsButton.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.75, options: [.allowUserInteraction], animations: {
                 self.whatToDoPositiveTestButton.alpha = 1
             }, completion: nil)
 

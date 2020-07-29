@@ -12,7 +12,11 @@
 import Foundation
 
 class NSImageView: UIImageView {
-    private var dynamicColor: UIColor?
+    var dynamicColor: UIColor? {
+        didSet {
+            updateTintColor()
+        }
+    }
 
     init(image: UIImage?, dynamicColor: UIColor?) {
         self.dynamicColor = dynamicColor
@@ -23,6 +27,11 @@ class NSImageView: UIImageView {
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func setImage(image: UIImage) {
+        self.image = image
+        updateTintColor()
     }
 
     private func updateTintColor() {
