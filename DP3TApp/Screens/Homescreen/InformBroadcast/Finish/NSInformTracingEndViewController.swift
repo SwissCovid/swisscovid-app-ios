@@ -34,7 +34,7 @@ class NSInformTracingEndViewController: NSInformBottomButtonViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        let imageView = UIImageView(image: UIImage(named: "outro-tracing-beenden"))
+        let imageView = UIImageView(image: UIImage(named: "outro-tracing-ended"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 

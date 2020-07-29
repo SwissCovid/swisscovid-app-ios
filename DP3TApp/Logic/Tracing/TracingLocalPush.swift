@@ -93,25 +93,25 @@ class TracingLocalPush: NSObject {
         center.add(request, withCompletionHandler: nil)
     }
 
-    private func alreadyShowsMeldung() -> Bool {
+    private func alreadyShowsReport() -> Bool {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
-            if navigationVC.viewControllers.last is NSMeldungenDetailViewController {
+            if navigationVC.viewControllers.last is NSReportsDetailViewController {
                 return true
             }
         }
         return false
     }
 
-    private func jumpToMeldung() {
-        guard !alreadyShowsMeldung() else {
+    private func jumpToReport() {
+        guard !alreadyShowsReport() else {
             return
         }
 
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
             let navigationVC = appDelegate.window?.rootViewController as? NSNavigationController {
             navigationVC.popToRootViewController(animated: false)
-            (navigationVC.viewControllers.first as? NSHomescreenViewController)?.presentMeldungenDetail()
+            (navigationVC.viewControllers.first as? NSHomescreenViewController)?.presentReportsDetail()
         }
     }
 
@@ -232,7 +232,7 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if alreadyShowsMeldung(), exposureIdentifiers.contains(notification.request.identifier) {
+        if alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
             completionHandler([])
         } else {
             completionHandler([.alert, .sound])
@@ -248,6 +248,6 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
             return // cancelled
         }
 
-        jumpToMeldung()
+        jumpToReport()
     }
 }

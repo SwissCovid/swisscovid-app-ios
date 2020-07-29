@@ -170,7 +170,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     private func changePresentingViewController() {
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
-        nav?.pushViewController(NSMeldungenDetailViewController(), animated: false)
+        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
     }
 
     // MARK: - NSCodeControlProtocol

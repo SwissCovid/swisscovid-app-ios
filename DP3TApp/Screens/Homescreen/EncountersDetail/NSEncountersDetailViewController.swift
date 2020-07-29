@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
+class NSEncountersDetailViewController: NSTitleViewScrollViewController {
     private let bluetoothControl: NSBluetoothSettingsControl
 
     private let lastSyncronizationControl: NSLastSyncronizationControl
@@ -19,7 +19,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
     // MARK: - Init
 
-    init(initialState: UIStateModel.BegegnungenDetail) {
+    init(initialState: UIStateModel.EncountersDetail) {
         bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
         lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)
@@ -83,7 +83,7 @@ class NSBegegnungenDetailViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verschluesselt")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "begegnung_detail_faq2_text".ub_localized, title: "begegnung_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
