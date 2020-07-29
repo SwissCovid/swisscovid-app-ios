@@ -86,8 +86,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             textLabel.text = "onboarding_gaen_text_ios".ub_localized
             permissionButton.title = "onboarding_gaen_button_activate".ub_localized
 
-            let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "onboarding_gaen_info_text_1".ub_localized, title: "onboarding_gaen_info_title_1".ub_localized, dynamicIconTintColor: .ns_blue)
-            let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_gaen_info_text_2".ub_localized, title: "onboarding_gaen_info_title_2".ub_localized, dynamicIconTintColor: .ns_blue)
+            let info1 = NSInfoView(icon: UIImage(named: "ic-encrypted")!, text: "onboarding_gaen_info_text_1".ub_localized, title: "onboarding_gaen_info_title_1".ub_localized, dynamicIconTintColor: .ns_blue)
+            let info2 = NSInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_gaen_info_text_2".ub_localized, title: "onboarding_gaen_info_title_2".ub_localized, dynamicIconTintColor: .ns_blue)
             elements.append(info1)
             elements.append(info2)
 
@@ -109,7 +109,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             textLabel.text = "onboarding_push_text".ub_localized
             permissionButton.title = "onboarding_push_button".ub_localized
 
-            let info = NSOnboardingInfoView(icon: UIImage(named: "ic-report")!, text: "onboarding_push_gtk_text1".ub_localized, title: "onboarding_push_gtk_title1".ub_localized, dynamicIconTintColor: .ns_blue)
+            let info = NSInfoView(icon: UIImage(named: "ic-report")!, text: "onboarding_push_gtk_text1".ub_localized, title: "onboarding_push_gtk_title1".ub_localized, dynamicIconTintColor: .ns_blue)
             elements.append(info)
             goodToKnowContainer.addSubview(info)
             info.snp.makeConstraints { make in

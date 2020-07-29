@@ -25,7 +25,7 @@
 		2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D227A245D6557005DAEA8 /* Backend.swift */; };
 		2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */; };
 		242D21D1245C3853005DAEA8 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242D21D0245C3853005DAEA8 /* Logger.swift */; };
-		242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
+		242D21DA245C4BD8005DAEA8 /* NSInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSInfoView.swift */; };
 		242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
 		242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4772456185000C3D8C3 /* DebugLog.swift */; };
 		242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B572431B5A9003BB26C /* TracingManager.swift */; };
@@ -298,7 +298,7 @@
 		DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */; };
 		DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */; };
 		DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */; };
-		DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */; };
+		DCA3FFBE24518E850003F5AD /* NSInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBD24518E850003F5AD /* NSInfoView.swift */; };
 		DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
 		DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
@@ -560,7 +560,7 @@
 		DCA3FFB724504B190003F5AD /* NSClickthroughStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSClickthroughStackView.swift; sourceTree = "<group>"; };
 		DCA3FFB9245092D50003F5AD /* NSHeaderImageBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderImageBackgroundView.swift; sourceTree = "<group>"; };
 		DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSplashViewController.swift; sourceTree = "<group>"; };
-		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
+		DCA3FFBD24518E850003F5AD /* NSInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
@@ -774,7 +774,6 @@
 				DCA3FFBB2451621D0003F5AD /* NSSplashViewController.swift */,
 				DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */,
 				DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */,
-				DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */,
 				DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */,
 				F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */,
 				DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */,
@@ -1224,6 +1223,7 @@
 			children = (
 				F810556224D1AF8F003DDE7E /* Cells */,
 				DCA3FFB324502D370003F5AD /* NSTracingErrorView.swift */,
+				DCA3FFBD24518E850003F5AD /* NSInfoView.swift */,
 				6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */,
 				6E33086924506E0600913B0E /* NSExplanationView.swift */,
 				B6AEA30724B74ACA0055B5BB /* NSImageView.swift */,
@@ -1638,7 +1638,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */,
+				242D21DA245C4BD8005DAEA8 /* NSInfoView.swift in Sources */,
 				242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */,
 				242D21DC245C4BD8005DAEA8 /* DebugLog.swift in Sources */,
 				242D21DD245C4BD8005DAEA8 /* TracingManager.swift in Sources */,
@@ -1786,7 +1786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
+				DCA3FFBE24518E850003F5AD /* NSInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				F810555C24D1AA2E003DDE7E /* NSImageInfoTableViewCell.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,

@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSOnboardingInfoView: UIView {
+class NSInfoView: UIView {
     public let stackView = UIStackView()
 
     private let leftRightInset: CGFloat
