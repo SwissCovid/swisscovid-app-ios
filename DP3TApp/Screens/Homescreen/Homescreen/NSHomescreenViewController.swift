@@ -142,8 +142,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(reportsView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(travelView)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        #if ENABLE_INTERNATIONALIZATION
+            stackScrollView.addArrangedView(travelView)
+            stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        #endif
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
