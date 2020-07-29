@@ -51,7 +51,7 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private let continueContainer = UIView()
-    private let continueButton = NSSimpleTextButton(title: "onboarding_continue_button".ub_localized, color: .ns_blue)
+    private let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .normal(.ns_blue))
     private let finishButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
     private var currentStep: Int = 0
@@ -120,8 +120,6 @@ class NSOnboardingViewController: NSViewController {
             showContinueButton()
         }
 
-        continueButton.title = stepViewControllers[step].continueButtonText
-
         if isLast {
             finishButton.alpha = 0
             finishButton.transform = CGAffineTransform(translationX: 300, y: 0)
@@ -153,13 +151,17 @@ class NSOnboardingViewController: NSViewController {
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0, completion: { completed in
                 if completed {
                     vcToHide.view.isHidden = true
+                    self.continueButton.title = self.stepViewControllers[step].continueButtonText
+                    UIAccessibility.post(notification: .screenChanged, argument: nil)
                 }
             })
         } else if step < stepViewControllers.count - 1, !forward {
+            continueButton.title = stepViewControllers[step].continueButtonText
             let vcToHide = stepViewControllers[step + 1]
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: 1, delay: 0.0, completion: { completed in
                 if completed {
                     vcToHide.view.isHidden = true
+                    UIAccessibility.post(notification: .screenChanged, argument: nil)
                 }
             })
         }
@@ -168,8 +170,6 @@ class NSOnboardingViewController: NSViewController {
         vcToShow.view.layoutIfNeeded()
 
         currentStep = step
-
-        UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 
     private func showContinueButton() {
@@ -290,23 +290,26 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func didSwipeLeft() -> Bool {
+        guard splashVC.view.alpha == 0 else {
+            return false
+        }
         if [pushPermissionStepIndex, tracingPermissionStepIndex, disclaimerStepIndex].contains(currentStep) {
             // Disable swipe forward on permission screens
             return false
         }
         setOnboardingStep(currentStep + 1, animated: true)
-
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 
     private func didSwipeRight() -> Bool {
+        guard splashVC.view.alpha == 0 else {
+            return false
+        }
         if currentStep == pushPermissionStepIndex + 1 || currentStep == tracingPermissionStepIndex + 1 { // Disable swipe back to permission screens
             return false
         }
         setOnboardingStep(currentStep - 1, animated: true)
 
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 }

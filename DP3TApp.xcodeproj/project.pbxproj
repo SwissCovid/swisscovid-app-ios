@@ -336,6 +336,29 @@
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
+		F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */; };
+		F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
+		F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
+		F8A6BE1524C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */; };
+		F8A6BE1624C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */; };
+		F8A6BE1724C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0D24C9BFA000DE6B44 /* IT_App_Datenschutzerklaerung.html */; };
+		F8A6BE1824C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0D24C9BFA000DE6B44 /* IT_App_Datenschutzerklaerung.html */; };
+		F8A6BE1924C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0E24C9BFA000DE6B44 /* IT_App_Nutzungsbedingungen.html */; };
+		F8A6BE1A24C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0E24C9BFA000DE6B44 /* IT_App_Nutzungsbedingungen.html */; };
+		F8A6BE1B24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0F24C9BFA000DE6B44 /* DE_App_Datenschutzerklaerung.html */; };
+		F8A6BE1C24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0F24C9BFA000DE6B44 /* DE_App_Datenschutzerklaerung.html */; };
+		F8A6BE1D24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1024C9BFA000DE6B44 /* FR_App_Datenschutzerklaerung.html */; };
+		F8A6BE1E24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1024C9BFA000DE6B44 /* FR_App_Datenschutzerklaerung.html */; };
+		F8A6BE1F24C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1124C9BFA000DE6B44 /* EN_App_Nutzungsbedingungen.html */; };
+		F8A6BE2024C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1124C9BFA000DE6B44 /* EN_App_Nutzungsbedingungen.html */; };
+		F8A6BE2124C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1224C9BFA000DE6B44 /* DE_App_Nutzungsbedingungen.html */; };
+		F8A6BE2224C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE1224C9BFA000DE6B44 /* DE_App_Nutzungsbedingungen.html */; };
+		F8A6BE2424C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */; };
+		F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */; };
+		F8A6BE2724C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
+		F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
+		F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
+		F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,6 +489,10 @@
 		6EFF9AE2245AAFC800C98FF3 /* UIImage+UBHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+UBHelpers.m"; sourceTree = "<group>"; };
 		6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformTracingEndViewController.swift; sourceTree = "<group>"; };
 		8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationPersistence.swift; sourceTree = "<group>"; };
+		8E61227E24C1A3EE007D7822 /* ti */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ti; path = ti.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E61227F24C1A3EE007D7822 /* ti */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ti; path = ti.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		8E61228024C1A413007D7822 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8E61228124C1A413007D7822 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E81CC95241FCC7D006F2437 /* DP3TApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP3TApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E81CC98241FCC7D006F2437 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E81CC9C241FCC7D006F2437 /* NSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSViewController.swift; sourceTree = "<group>"; };
@@ -541,6 +568,18 @@
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
+		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
+		F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FR_App_Nutzungsbedingungen.html; sourceTree = "<group>"; };
+		F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EN_App_Datenschutzerklaerung.html; sourceTree = "<group>"; };
+		F8A6BE0D24C9BFA000DE6B44 /* IT_App_Datenschutzerklaerung.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = IT_App_Datenschutzerklaerung.html; sourceTree = "<group>"; };
+		F8A6BE0E24C9BFA000DE6B44 /* IT_App_Nutzungsbedingungen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = IT_App_Nutzungsbedingungen.html; sourceTree = "<group>"; };
+		F8A6BE0F24C9BFA000DE6B44 /* DE_App_Datenschutzerklaerung.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DE_App_Datenschutzerklaerung.html; sourceTree = "<group>"; };
+		F8A6BE1024C9BFA000DE6B44 /* FR_App_Datenschutzerklaerung.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FR_App_Datenschutzerklaerung.html; sourceTree = "<group>"; };
+		F8A6BE1124C9BFA000DE6B44 /* EN_App_Nutzungsbedingungen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = EN_App_Nutzungsbedingungen.html; sourceTree = "<group>"; };
+		F8A6BE1224C9BFA000DE6B44 /* DE_App_Nutzungsbedingungen.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = DE_App_Nutzungsbedingungen.html; sourceTree = "<group>"; };
+		F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewHeader.swift; sourceTree = "<group>"; };
+		F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewBody.swift; sourceTree = "<group>"; };
+		F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxVisibilityManager.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -717,6 +756,8 @@
 				F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */,
 				DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */,
 				DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */,
+				F8A6BE2324C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift */,
+				F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -855,6 +896,7 @@
 				245626A0245265340058D11F /* ConfigLoadOperation.swift */,
 				6E6E516E242F4FE0006E532E /* ConfigManager.swift */,
 				6E6E5170242F5026006E532E /* ConfigResponseBody.swift */,
+				F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -1041,6 +1083,7 @@
 				F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */,
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
+				F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 			);
@@ -1118,6 +1161,7 @@
 		DC9A8196242CE44200AD1548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F8A6BE0A24C9BF8F00DE6B44 /* Disclaimer */,
 				6EC7E820245B27E10015A55B /* Impressum */,
 				F80E735C245ADEBC00C934B8 /* Certificates */,
 				6E7C0D23242D01860017C4F9 /* Font */,
@@ -1176,6 +1220,21 @@
 				F80E7370245AF38E00C934B8 /* QuoVadis.der */,
 			);
 			path = Certificates;
+			sourceTree = "<group>";
+		};
+		F8A6BE0A24C9BF8F00DE6B44 /* Disclaimer */ = {
+			isa = PBXGroup;
+			children = (
+				F8A6BE0F24C9BFA000DE6B44 /* DE_App_Datenschutzerklaerung.html */,
+				F8A6BE1224C9BFA000DE6B44 /* DE_App_Nutzungsbedingungen.html */,
+				F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */,
+				F8A6BE1124C9BFA000DE6B44 /* EN_App_Nutzungsbedingungen.html */,
+				F8A6BE1024C9BFA000DE6B44 /* FR_App_Datenschutzerklaerung.html */,
+				F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */,
+				F8A6BE0D24C9BFA000DE6B44 /* IT_App_Datenschutzerklaerung.html */,
+				F8A6BE0E24C9BFA000DE6B44 /* IT_App_Nutzungsbedingungen.html */,
+			);
+			path = Disclaimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1290,6 +1349,8 @@
 				hr,
 				rm,
 				"sr-Latn-RS",
+				ti,
+				tr,
 			);
 			mainGroup = 8E81CC8C241FCC7D006F2437;
 			packageReferences = (
@@ -1314,6 +1375,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A6BE1E24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */,
 				242D2257245C4BD8005DAEA8 /* codegen-service-a.bag.admin.ch.der in Resources */,
 				242D2258245C4BD8005DAEA8 /* codegen-service-d.bag.admin.ch.der in Resources */,
 				242D2259245C4BD8005DAEA8 /* codegen-service.bag.admin.ch.der in Resources */,
@@ -1322,12 +1384,19 @@
 				242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				242D225D245C4BD8005DAEA8 /* QuoVadis.der in Resources */,
+				F8A6BE2224C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */,
+				F8A6BE1A24C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
 				242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */,
 				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
+				F8A6BE1624C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */,
+				F8A6BE2024C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */,
+				F8A6BE1824C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,
 				242D2261245C4BD8005DAEA8 /* Assets.xcassets in Resources */,
+				F8A6BE1C24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */,
 				242D2262245C4BD8005DAEA8 /* InfoPlist.strings in Resources */,
+				F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				242D2263245C4BD8005DAEA8 /* Inter-ExtraLight.ttf in Resources */,
 				242D2264245C4BD8005DAEA8 /* Launch Screen.storyboard in Resources */,
 				242D2265245C4BD8005DAEA8 /* Inter-ExtraBold.ttf in Resources */,
@@ -1343,6 +1412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8A6BE1D24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */,
 				F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */,
 				F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */,
 				F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */,
@@ -1351,12 +1421,19 @@
 				F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */,
+				F8A6BE2124C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
+				F8A6BE1924C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
 				48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
+				F8A6BE1524C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */,
+				F8A6BE1F24C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
+				F8A6BE1724C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
+				F8A6BE1B24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */,
 				DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */,
+				F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430A242DD34700F19AA5 /* Inter-ExtraLight.ttf in Resources */,
 				24780B34242FDF4C003BB26C /* Launch Screen.storyboard in Resources */,
 				DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */,
@@ -1572,6 +1649,7 @@
 				242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */,
 				242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
+				F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
 				F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */,
@@ -1591,10 +1669,12 @@
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
 				242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */,
 				242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */,
+				F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
 				F830799424929090005D3C65 /* LoggingStorage.swift in Sources */,
 				242D2222245C4BD8005DAEA8 /* NSInformTracingEndViewController.swift in Sources */,
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
+				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
@@ -1713,6 +1793,8 @@
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
 				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
+				F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
+				F8A6BE2724C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */,
 				8EF2A6E52490E26F002263C3 /* NSLastSyncronizationControl.swift in Sources */,
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,
@@ -1743,6 +1825,7 @@
 				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */,
+				F8A6BE2424C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
@@ -1786,6 +1869,7 @@
 			files = (
 				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
+				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 			);
@@ -1816,6 +1900,8 @@
 				24D33D9F24880F6C0068E509 /* hr */,
 				247395B4249165B900B30767 /* rm */,
 				8E86FDE324936683009B2D90 /* sr-Latn-RS */,
+				8E61227E24C1A3EE007D7822 /* ti */,
+				8E61228024C1A413007D7822 /* tr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1834,6 +1920,8 @@
 				24D33DA024880F6C0068E509 /* hr */,
 				247395B5249165BA00B30767 /* rm */,
 				8E86FDE424936683009B2D90 /* sr-Latn-RS */,
+				8E61227F24C1A3EE007D7822 /* ti */,
+				8E61228124C1A413007D7822 /* tr */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

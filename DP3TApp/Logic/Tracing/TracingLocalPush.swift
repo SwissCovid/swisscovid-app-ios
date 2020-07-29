@@ -213,7 +213,9 @@ class TracingLocalPush: NSObject {
         content.title = title
         content.body = text
         content.sound = .default
-        let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: nil)
+        // set the notification to trigger in 1 minute since the state could only be temporäry
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
 

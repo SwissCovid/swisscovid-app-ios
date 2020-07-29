@@ -233,7 +233,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 
     private func createExplanationView() -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
+        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
         let daysLeftLabel = NSLabel(.textBold)
@@ -246,6 +246,18 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         ev.stackView.insertArrangedSubview(wrapper, at: 3)
         ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
+
+        var infoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized,
+                                                       subText: "meldungen_detail_free_test_text".ub_localized,
+                                                       titleColor: .ns_text,
+                                                       subtextColor: .ns_text)
+        infoBoxViewModel.image = UIImage(named: "ic-info-on")
+        infoBoxViewModel.backgroundColor = .ns_blueBackground
+        infoBoxViewModel.titleLabelType = .textBold
+
+        let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
+
+        ev.stackView.addArrangedSubview(infoBoxView)
 
         return ev
     }

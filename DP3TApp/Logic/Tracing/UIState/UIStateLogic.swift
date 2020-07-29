@@ -85,11 +85,11 @@ class UIStateLogic {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
             case .permissonError:
-                tracing = .tracingPermissionError
+                tracing = .tracingPermissionError(code: nil)
             case .databaseError:
                 tracing = .unexpectedError(code: error.errorCodeString)
             case .exposureNotificationError:
-                tracing = .tracingPermissionError
+                tracing = .tracingPermissionError(code: error.errorCodeString)
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
@@ -158,11 +158,14 @@ class UIStateLogic {
     }
 
     private func setInfoBoxState(_ newState: inout UIStateModel) {
-        if let infoBox = ConfigManager.currentConfig?.infoBox?.value {
+        if let infoBox = ConfigManager.currentConfig?.infoBox?.value,
+            infoBox.infoId == nil || !NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.contains(infoBox.infoId!) {
             newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
                                                                           text: infoBox.msg,
                                                                           link: infoBox.urlTitle,
-                                                                          url: infoBox.url)
+                                                                          url: infoBox.url,
+                                                                          isDismissible: infoBox.isDismissible,
+                                                                          infoId: infoBox.infoId)
         }
     }
 
