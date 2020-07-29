@@ -47,7 +47,7 @@ class NSLastSyncronizationControl: UIControl {
         layer.cornerRadius = 3.0
         ub_addShadow(radius: 4.0, opacity: 0.05, xOffset: 0, yOffset: -2)
 
-        titleLabel.text = "encounter_detail_last_sync_title".ub_localized
+        titleLabel.text = "begegnung_detail_last_sync_title".ub_localized
         titleLabel.accessibilityTraits = [.header]
 
         subtitleLabel.text = Self.nullDateValueString

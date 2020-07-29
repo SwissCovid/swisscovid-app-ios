@@ -150,7 +150,7 @@ class TracingManager: NSObject {
         UIStateManager.shared.refresh()
     }
 
-    func deleteReports() {
+    func deleteMeldungen() {
         // delete all visible messages
         try? DP3TTracing.resetExposureDays()
 

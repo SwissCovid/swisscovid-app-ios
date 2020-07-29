@@ -88,7 +88,7 @@
 "reports_title_homescreen" = "Meldungen";
 
 /*Keine Meldungen Titel*/
-"reports_no_reports_title" = "Keine Meldungen";
+"meldungen_no_meldungen_title" = "Keine Meldungen";
 
 /*Push deaktiviert Titel*/
 "push_deactivated_title" = "Mitteilungen deaktiviert";
@@ -97,10 +97,10 @@
 "push_deactivated_text" = "Ändern Sie die Einstellungen, um bei einer Meldung direkt informiert zu werden.";
 
 /*Titel im Meldung Detail*/
-"reports_report_title" = "Mögliche Ansteckung";
+"meldungen_meldung_title" = "Mögliche Ansteckung";
 
 /*Text im Meldung Detail*/
-"reports_report_text" = "Es besteht die Möglichkeit einer Ansteckung.";
+"meldungen_meldung_text" = "Es besteht die Möglichkeit einer Ansteckung.";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "App aktiv";
@@ -234,49 +234,49 @@
 "push_open_settings_button" = "Einstellungen ändern";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
-"reports_no_reports_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet";
+"meldungen_no_meldungen_subtitle" = "Es wurde keine mögliche Ansteckung gemeldet";
 
 /*Keine Meldungen Weisse Box Titel*/
-"no_reports_box_title" = "Schützen Sie sich";
+"no_meldungen_box_title" = "Schützen Sie sich";
 
 /*Keine Meldungen Weisse Box Subtitel*/
-"no_reports_box_subtitle" = "Was soll ich tun?";
+"no_meldungen_box_subtitle" = "Was soll ich tun?";
 
 /*Keine Meldungen Weisse Box Text*/
-"no_reports_box_text" = "Halten Sie sich an die geltenden Empfehlungen des BAG.";
+"no_meldungen_box_text" = "Halten Sie sich an die geltenden Empfehlungen des BAG.";
 
 /*Meldung Detail: Positiv Getestet Titel*/
-"report_detail_positive_tested_title" = "Positiv getestet";
+"meldung_detail_positive_tested_title" = "Positiv getestet";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"report_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_detail_positive_tested_subtitle" = "Sie wurden positiv auf das neue Coronavirus getestet.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
-"report_detail_positive_test_box_subtitle" = "Was soll ich tun?";
+"meldung_detail_positive_test_box_subtitle" = "Was soll ich tun?";
 
 /*Meldung Detail Positiv Getestet Weisse Box Titel*/
-"report_detail_positive_test_box_title" = "Isolation";
+"meldung_detail_positive_test_box_title" = "Isolation";
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
-"report_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
+"meldung_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
 "tracing_ended_title" = "Tracing beendet";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
-"report_homescreen_positive_info_line1" = "Befolgen Sie die";
+"meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
 
 /*CFL: Selbst-Isolation*/
-"report_homescreen_positive_info_line2" = "Anweisungen zur Selbstisolation";
+"meldung_homescreen_positive_info_line2" = "Anweisungen zur Selbstisolation";
 
 /*Meldung Detail Exposed Neue Meldung*/
-"report_detail_exposed_new_report" = "Neue Meldung";
+"meldung_detail_exposed_new_meldung" = "Neue Meldung";
 
 /*Meldung Detail Exposed Titel*/
-"report_detail_exposed_title" = "Mögliche Ansteckung";
-"report_homescreen_positiv_title" = "Positiv getestet";
+"meldung_detail_exposed_title" = "Mögliche Ansteckung";
+"meldung_homescreen_positiv_title" = "Positiv getestet";
 
 /*Meldung Detail Exposed Subtitel*/
-"report_detail_exposed_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
-"report_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
+"meldung_detail_exposed_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
+"meldung_homescreen_positiv_text" = "Sie wurden positiv auf das neue Coronavirus getestet.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Onboarding zurücksetzen";
@@ -288,32 +288,32 @@
 "date_days_ago" = "vor {COUNT} Tagen";
 
 /*Meldungen Detail: Weisse Box Titel*/
-"reports_detail_call" = "Rufen Sie uns an";
+"meldungen_detail_call" = "Rufen Sie uns an";
 
 /*Meldungen Detail Text Weisse Box*/
-"reports_detail_call_text" = "Infoline SwissCovid";
+"meldungen_detail_call_text" = "Infoline SwissCovid";
 
 /*Meldungen Detail Weisse Box Button*/
-"reports_detail_call_button" = "Jetzt anrufen";
+"meldungen_detail_call_button" = "Jetzt anrufen";
 
 /*Meldungen Detail Weisse Box Titel der Erklärungen*/
-"reports_detail_explanation_title" = "Vorsicht!";
+"meldungen_detail_explanation_title" = "Vorsicht!";
 
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
-"reports_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
+"meldungen_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
 
 /*CFL: Hier hats die Latest Version deutsch mit "10 Tage ab Anstechung" nicht mehr reingeschafft. Schauen wir, wenn Übersetzungen da sind.*/
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"reports_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
+"meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
 
 /*Meldungen Detail: Weisse Box Text*/
-"reports_detail_guard_text" = "Bei Rückfragen:\nInfoline SwissCovid\n+41 58 387 77 78";
+"meldungen_detail_guard_text" = "Bei Rückfragen:\nInfoline SwissCovid\n+41 58 387 77 78";
 
 /*Meldungen Detail Button Weisse Box*/
-"reports_detail_call_again_button" = "Erneut anrufen";
+"meldungen_detail_call_again_button" = "Erneut anrufen";
 
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
-"reports_detail_call_last_call" = "Letzter Anruf: {DATE}";
+"meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
 
 /*CFL: Platzhalter-Text Onboarding – ev. später obsolet*/
 /*Subtitel im Onboarding erste Seite*/
@@ -344,28 +344,28 @@
 "onboarding_privacy_text2" = "Die gespeicherten zufälligen IDs bleiben auf Ihrem Mobiltelefon und werden nach 14 Tagen gelöscht.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_encounters_heading" = "Wie funktioniert die App?";
+"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
 
 /*Onboarding Begegnungen: Titel*/
-"onboarding_encounters_title" = "Begegnungen erkennen\ndank Bluetooth";
+"onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_encounters_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander sind.";
+"onboarding_begegnungen_text1" = "Die App erkennt automatisch, wenn zwei Nutzer für eine gewisse Zeit nahe beieinander sind.";
 
 /*Onboarding Begegnungen: Text*/
-"onboarding_encounters_text2" = "Dafür wird nur Bluetooth Low Energy (BLE) verwendet. Keine GPS-, Mobile-, WiFi- oder andere Standort-Daten.";
+"onboarding_begegnungen_text2" = "Dafür wird nur Bluetooth Low Energy (BLE) verwendet. Keine GPS-, Mobile-, WiFi- oder andere Standort-Daten.";
 
 /*Onboarding Meldung: Text oben*/
-"onboarding_report_heading" = "Was macht die App?";
+"onboarding_meldung_heading" = "Was macht die App?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_report_title" = "Meldung bei einer\nmöglichen Ansteckung";
+"onboarding_meldung_title" = "Meldung bei einer\nmöglichen Ansteckung";
 
 /*Onboarding Meldung: Text*/
-"onboarding_report_text1" = "Die App informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
+"onboarding_meldung_text1" = "Die App informiert Sie, wenn Sie potenziell dem neuen Coronavirus ausgesetzt waren.";
 
 /*Onboarding Meldung: Text*/
-"onboarding_report_text2" = "Mit dem richtigen Verhalten können Sie Infektionsketten unterbrechen und andere schützen.";
+"onboarding_meldung_text2" = "Mit dem richtigen Verhalten können Sie Infektionsketten unterbrechen und andere schützen.";
 
 /*Onboarding Bluetooth: Titel*/
 "onboarding_bluetooth_title" = "Bluetooth erlauben";
@@ -426,13 +426,13 @@
 "onboarding_go_button" = "Starten";
 
 /*Homescreen: Titel bei Fehler mit Daten*/
-"homescreen_report_data_outdated_title" = "Keine aktuellen Daten";
+"homescreen_meldung_data_outdated_title" = "Keine aktuellen Daten";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_report_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Mobiltelefon mit dem Internet verbunden ist.";
+"homescreen_meldung_data_outdated_text" = "Seit einiger Zeit konnten die Meldungen nicht synchronisiert werden. Stellen Sie sicher, dass Ihr Mobiltelefon mit dem Internet verbunden ist.";
 
 /*Homescreen: Button Titel*/
-"homescreen_report_data_outdated_retry_button" = "Erneut versuchen";
+"homescreen_meldung_data_outdated_retry_button" = "Erneut versuchen";
 
 /*Titel Fehlermeldung für ungültigen Code*/
 "inform_code_invalid_title" = "Code ungültig";
@@ -444,10 +444,10 @@
 "date_one_day_ago" = "vor 1 Tag";
 
 /*Meldungen Detail: Titel*/
-"report_detail_new_contact_title" = "Erneuter Verdacht";
+"meldung_detail_new_contact_title" = "Erneuter Verdacht";
 
 /*Meldungen Detail: Text*/
-"report_detail_new_contact_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
+"meldung_detail_new_contact_subtitle" = "Es besteht die Möglichkeit einer Ansteckung.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Uhrzeit Fehler";
@@ -456,31 +456,31 @@
 "time_inconsistency_text" = "Die Uhrzeit muss richtig eingestellt sein, damit Tracing funktioniert.";
 
 /*Begegnungen: Neustart Titel*/
-"encounters_restart_error_title" = "Neustart erforderlich";
+"begegnungen_restart_error_title" = "Neustart erforderlich";
 
 /*Begegnungen: Neustart Text*/
-"encounters_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Mobiltelefon neu.";
+"begegnungen_restart_error_text" = "Es ist ein unerwarteter Fehler aufgetreten. Starten Sie das Mobiltelefon neu.";
 
 /*Fehler Titel für Hintergrund-Fehler*/
-"reports_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
+"meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"reports_background_error_text" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+"meldungen_background_error_text" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
 
 /*Button Titel für Hintergrundfehler beheben*/
-"reports_background_error_button" = "Einstellungen ändern";
+"meldungen_background_error_button" = "Einstellungen ändern";
 
 /*Default message for force update*/
 "force_update_text" = "Laden Sie die neue Version der App, damit Tracing funktioniert.";
 
 /*Ignorieren Button Titel*/
-"report_in_app_alert_ignore_button" = "Ignorieren";
+"meldung_in_app_alert_ignore_button" = "Ignorieren";
 
 /*Button Titel*/
-"report_in_app_alert_accept_button" = "Zu den Informationen";
+"meldung_in_app_alert_accept_button" = "Zu den Informationen";
 
 /*Meldungen Detail: Button Titel*/
-"reports_detail_call_again" = "Rufen Sie erneut an";
+"meldungen_detail_call_again" = "Rufen Sie erneut an";
 
 /*Fehlernachricht für Netzwerkfehler*/
 "network_error" = "Bitte überprüfen Sie Ihre Internet Verbindung.";
@@ -553,64 +553,64 @@
 "sync_warning_notification_text" = "Öffnen Sie die App, um die Liste der gemeldeten zufälligen IDs abzugleichen.";
 
 /*Meldungen Detail: Button bei Vollansicht*/
-"report_animation_continue_button" = "Weiter";
+"meldung_animation_continue_button" = "Weiter";
 
 /*Titel Impressum Menu*/
 "menu_impressum" = "Impressum";
 
 /*Begegnungen: FAQ Titel*/
-"encounter_detail_faq1_title" = "Was bedeutet Begegnung?";
+"begegnung_detail_faq1_title" = "Was bedeutet Begegnung?";
 
 /*Begegnungen: FAQ Text*/
-"encounter_detail_faq1_text" = "Wenn sich Mobiltelefone mit der App für eine gewisse Zeit nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
+"begegnung_detail_faq1_text" = "Wenn sich Mobiltelefone mit der App für eine gewisse Zeit nahe beieinander befinden, wird das als Begegnung im Gerät gespeichert.";
 
 /*Begegnungen: FAQ Titel*/
-"encounter_detail_faq2_title" = "Sind meine Daten sicher?";
+"begegnung_detail_faq2_title" = "Sind meine Daten sicher?";
 
 /*Begegnungen: FAQ Text*/
-"encounter_detail_faq2_text" = "Bei einer Begegnung werden nur zufällige IDs ausgetauscht.\n\nDiese werden lokal auf den Mobiltelefonen gespeichert und nach 14 Tagen wieder gelöscht.";
+"begegnung_detail_faq2_text" = "Bei einer Begegnung werden nur zufällige IDs ausgetauscht.\n\nDiese werden lokal auf den Mobiltelefonen gespeichert und nach 14 Tagen wieder gelöscht.";
 
 /*Begegnungen: FAQ Titel*/
-"encounters_detail_faq3_title" = "Muss Bluetooth immer an sein?";
+"begegnungen_detail_faq3_title" = "Muss Bluetooth immer an sein?";
 
 /*Begegnungen: FAQ Text*/
-"encounters_detail_faq3_text" = "Damit Begegnungen erkannt werden können, muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
+"begegnungen_detail_faq3_text" = "Damit Begegnungen erkannt werden können, muss Bluetooth immer eingeschaltet sein.\n\nDie Batterienutzung erhöht sich dadurch nur leicht.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Häufige Fragen";
 
 /*Meldungen Keine Meldungen FAQ Titel*/
-"reports_no_reports_faq1_title" = "Was sind Meldungen?";
+"meldungen_nomeldungen_faq1_title" = "Was sind Meldungen?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"reports_no_reports_faq1_text" = "Die App prüft regelmässig, ob andere Nutzer, denen Sie begegnet sind, einen positiven Test gemeldet haben.\n\nBei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
+"meldungen_nomeldungen_faq1_text" = "Die App prüft regelmässig, ob andere Nutzer, denen Sie begegnet sind, einen positiven Test gemeldet haben.\n\nBei einer möglichen Ansteckung werden Sie mit einer Mitteilung im Sperrbildschirm informiert.";
 
 /*Meldungen: Keine Meldungen FAQ Titel*/
-"reports_no_reports_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
+"meldungen_nomeldungen_faq2_titel" = "Was bedeutet mögliche Ansteckung?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"reports_no_reports_faq2_text" = "Die App prüft nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nNur wenn die Möglichkeit einer Ansteckung gross genug ist, werden Sie informiert.";
+"meldungen_nomeldungen_faq2_text" = "Die App prüft nicht nur, ob Begegnungen mit infizierten Personen stattfanden, sondern auch wie lange und wie nahe diese waren.\n\nNur wenn die Möglichkeit einer Ansteckung gross genug ist, werden Sie informiert.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
-"reports_detail_explanation_text3" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Tests.";
+"meldungen_detail_explanation_text3" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Tests.";
 
 /*Meldungen: Meldungen FAQ*/
-"reports_reports_faq1_title" = "Muss ich anrufen?";
+"meldungen_meldungen_faq1_title" = "Muss ich anrufen?";
 
 /*Meldungen: Meldungen FAQ Text*/
-"reports_reports_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.\n\nDas Beratungsgespräch ist kostenlos; es fallen nur die Telefongebühren an.";
+"meldungen_meldungen_faq1_text" = "Es ist empfohlen, dass Sie bei jeder neuen Meldung anrufen.\n\nSie bleiben dabei anonym. Es werden keine Personendaten erfasst.\n\nDas Beratungsgespräch ist kostenlos; es fallen nur die Telefongebühren an.";
 
 /*Meldungen Detail: Anruf Titel*/
-"reports_detail_call_thankyou_title" = "Danke für das Mitmachen";
+"meldungen_detail_call_thankyou_title" = "Danke für das Mitmachen";
 
 /*Meldungen Detail Anruf Danke Subtitel*/
-"reports_detail_call_thankyou_subtitle" = "Sie schützen andere";
+"meldungen_detail_call_thankyou_subtitle" = "Sie schützen andere";
 
 /*Keine Meldungen Link in weisser Box Titel*/
-"no_reports_box_link" = "So schützen wir uns";
+"no_meldungen_box_link" = "So schützen wir uns";
 
 /*Keine Meldungen Weisse Box Link URL*/
-"no_reports_box_url" = "https://www.bag-coronavirus.ch";
+"no_meldungen_box_url" = "https://www.bag-coronavirus.ch";
 
 /*Informieren Detail: FAQ Titel*/
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";
@@ -646,10 +646,10 @@
 "symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n- Fieber, Fiebergefühl\n- Halsschmerzen\n- Husten (meist trocken)\n- Kurzatmigkeit\n- Muskelschmerzen\n- Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"reports_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
+"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"reports_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
+"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
@@ -821,7 +821,7 @@
 
 /*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
 "onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";
-"encounter_detail_last_sync_title" = "Letzte erfolgreiche Synchronisation";
+"begegnung_detail_last_sync_title" = "Letzte erfolgreiche Synchronisation";
 "synchronizations_view_title" = "Übersicht";
 "synchronizations_view_info_title" = "Synchronisationen";
 "synchronizations_view_info_question" = "Was sind Synchronisationen?";
@@ -854,7 +854,7 @@
 
 /*Meldung Detail Weiss Box unten*/
 /*Fuzzy*/
-"reports_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
+"meldungen_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19-Benachrichtigungen";

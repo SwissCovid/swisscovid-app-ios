@@ -122,7 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shouldJump,
             let navigationController = window?.rootViewController as? NSNavigationController,
             let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
-            // no need to present NSReportsDetailViewController if its already showing
+            // no need to present NSMeldungenDetailViewController if its already showing
             if !(navigationController.viewControllers.last is NSReportsDetailViewController) {
                 navigationController.popToRootViewController(animated: false)
                 homescreenVC.presentReportsDetail(animated: false)

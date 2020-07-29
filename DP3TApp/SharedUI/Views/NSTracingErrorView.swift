@@ -168,8 +168,8 @@ class NSTracingErrorView: UIView {
                                            action: nil)
         case .unexpectedError:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
-                                           title: "encounters_restart_error_title".ub_localized,
-                                           text: "encounters_restart_error_text".ub_localized,
+                                           title: "begegnungen_restart_error_title".ub_localized,
+                                           text: "begegnungen_restart_error_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
         default:

@@ -21,7 +21,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
     // MARK: - Initial Views
 
-    private let newReportInitialView = NSLabel(.textBold, textAlignment: .center)
+    private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
     private let imageInitialView = UIImageView(image: UIImage(named: "illu-exposed-banner"))
 
     // MARK: - Normal Views
@@ -32,7 +32,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
     private let dateLabel = NSLabel(.textBold, textAlignment: .center)
 
-    private let continueButton = NSButton(title: "report_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
+    private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
     private let openSetup: Bool
 
@@ -48,14 +48,14 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
         setupInitialLayout()
 
-        newReportInitialView.text = "report_detail_exposed_new_report".ub_localized
+        newMeldungInitialView.text = "meldung_detail_exposed_new_meldung".ub_localized
 
         if onceMore {
-            titleLabel.text = "report_detail_new_contact_title".ub_localized
-            subtitleLabel.text = "report_detail_new_contact_subtitle".ub_localized
+            titleLabel.text = "meldung_detail_new_contact_title".ub_localized
+            subtitleLabel.text = "meldung_detail_new_contact_subtitle".ub_localized
         } else {
-            titleLabel.text = "report_detail_exposed_title".ub_localized
-            subtitleLabel.text = "report_detail_exposed_subtitle".ub_localized
+            titleLabel.text = "meldung_detail_exposed_title".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
         }
 
         dateLabel.text = ""
@@ -70,7 +70,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
     // MARK: - Setup Layout
 
     private func setupInitialLayout() {
-        addSubview(newReportInitialView)
+        addSubview(newMeldungInitialView)
 
         if NSFontSize.fontSizeMultiplicator <= 1.0 {
             addSubview(imageInitialView)
@@ -96,7 +96,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
     }
 
     private func setupOpen() {
-        newReportInitialView.snp.makeConstraints { make in
+        newMeldungInitialView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(40.0)
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
@@ -105,7 +105,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
         if NSFontSize.fontSizeMultiplicator <= 1.0 {
             imageInitialView.snp.makeConstraints { make in
                 make.centerX.equalToSuperview()
-                make.top.equalTo(self.newReportInitialView.snp.bottom).offset(NSPadding.large)
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
             }
 
             imageInitialView.contentMode = .scaleAspectFit
@@ -118,7 +118,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
             if NSFontSize.fontSizeMultiplicator <= 1.0 {
                 make.top.equalTo(self.imageInitialView.snp.bottom).offset(NSPadding.large)
             } else {
-                make.top.equalTo(self.newReportInitialView.snp.bottom).offset(NSPadding.large)
+                make.top.equalTo(self.newMeldungInitialView.snp.bottom).offset(NSPadding.large)
             }
         }
 
@@ -151,7 +151,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
         if openSetup {
             var i = 0
-            for v in [newReportInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
+            for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
                 v.alpha = 0.0
                 v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large).scaledBy(x: 0.8, y: 0.8)
 
@@ -189,7 +189,7 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
     func startInitialAnimation() {
         imageInitialView.alpha = 0.0
-        newReportInitialView.alpha = 0.0
+        newMeldungInitialView.alpha = 0.0
         infoImageView.alpha = 1.0
         continueButton.alpha = 0.0
     }

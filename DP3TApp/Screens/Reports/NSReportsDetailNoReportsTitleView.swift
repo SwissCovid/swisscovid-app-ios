@@ -24,8 +24,8 @@ class NSReportsDetailNoReportsTitleView: NSTitleView {
     init() {
         super.init(frame: .zero)
 
-        titleLabel.text = "reports_no_reports_title".ub_localized
-        textLabel.text = "reports_no_reports_subtitle".ub_localized
+        titleLabel.text = "meldungen_no_meldungen_title".ub_localized
+        textLabel.text = "meldungen_no_meldungen_subtitle".ub_localized
 
         backgroundColor = UIColor.ns_greenBackground
         setup()
