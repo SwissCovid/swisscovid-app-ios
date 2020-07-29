@@ -12,27 +12,13 @@ import UIKit
 
 class NSTravelModuleView: NSModuleBaseView {
     private let infoView: UIView = {
-        let view = UIView()
-        let imageView = NSImageView(image: UIImage(named: "ic-travel"), dynamicColor: .ns_blue)
-        let titleLabel = NSLabel(.textLight, textColor: .ns_purpleText, numberOfLines: 0, textAlignment: .natural)
-        titleLabel.text = "homescreen_travel_description"
-        view.addSubview(imageView)
-        view.addSubview(titleLabel)
-        imageView.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().inset(NSPadding.medium)
-            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-        }
-        titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium + 3.0)
-            make.leading.equalTo(imageView.snp.trailing).offset(NSPadding.medium)
-            make.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
-        }
-        imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 260), for: .horizontal)
-        imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 760), for: .horizontal)
+        let viewModel = NSTextImageView.ViewModel(text: "homescreen_travel_description",
+                                                  textColor: .ns_blue,
+                                                  icon: UIImage(named: "ic-travel")!,
+                                                  dynamicColor: .ns_blue,
+                                                  backgroundColor: .ns_blueBackground)
 
-        view.backgroundColor = .ns_blueBackground
-        view.layer.cornerRadius = 3.0
-        return view
+        return NSTextImageView(viewModel: viewModel)
     }()
 
     override func sectionViews() -> [UIView] {

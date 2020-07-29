@@ -283,7 +283,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
     }
 
-    func presentTravelDetail(animated _: Bool = true) {}
+    func presentTravelDetail(animated: Bool = true) {
+        navigationController?.pushViewController(NSTravelDetailViewController(), animated: animated)
+    }
 
     #if ENABLE_TESTING
         private func presentDebugScreen() {
