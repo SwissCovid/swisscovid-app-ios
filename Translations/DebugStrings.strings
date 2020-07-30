@@ -1,7 +1,6 @@
 /*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
 
-/*Fuzzy*/
 "certificate_pinning_button_disable" = "Disable";
 "certificate_pinning_button_enable" = "Enable";
 
