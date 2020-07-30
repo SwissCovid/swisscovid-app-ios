@@ -32,7 +32,7 @@ class NSTravelCountryTableViewCell: UITableViewCell {
     var didToggleSwitch: ((Bool) -> Void)?
 
     struct ViewModel {
-        let flag: UIImage
+        let flag: UIImage?
         let countryName: String
         let untilLabel: String?
         let isEnabled: Bool
@@ -77,6 +77,8 @@ class NSTravelCountryTableViewCell: UITableViewCell {
 
         flagView.snp.makeConstraints { make in
             make.top.left.equalToSuperview().inset(NSPadding.large)
+            make.width.equalTo(24)
+            make.height.equalTo(18)
         }
 
         labelStackView.snp.makeConstraints { make in

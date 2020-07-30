@@ -19,6 +19,8 @@ class NSTravelDetailViewController: NSViewController {
 
     private let tableView = UITableView(frame: .zero, style: .plain)
 
+    private let travelManager: TravelManager
+
     override func loadView() {
         view = tableView
     }
@@ -32,7 +34,8 @@ class NSTravelDetailViewController: NSViewController {
 
     // MARK: - Init
 
-    override init() {
+    init(travelManager: TravelManager = .shared) {
+        self.travelManager = travelManager
         super.init()
         title = "travel_detail_title".ub_localized
 
@@ -67,7 +70,7 @@ extension NSTravelDetailViewController: UITableViewDataSource {
         case .header:
             return 1
         case .countries:
-            return 10
+            return travelManager.favoriteCountries.count
         case .addCountry:
             return 1
         case .info:
@@ -85,10 +88,11 @@ extension NSTravelDetailViewController: UITableViewDataSource {
         case .countries:
             let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelCountryTableViewCell
             let isLast = indexPath.row == (tableView.numberOfRows(inSection: indexPath.section) - 1)
-            cell.populate(with: .init(flag: UIImage(named: "de")!,
-                                      countryName: Locale.current.localizedString(forRegionCode: "de")!,
-                                      untilLabel: Bool.random() ? "Meldungen noch bis 23.07.2020" : nil,
-                                      isEnabled: Bool.random(),
+            let country = travelManager.favoriteCountries[indexPath.row]
+            cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
+                                      countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
+                                      untilLabel: "Meldungen noch bis 23.07.2020",
+                                      isEnabled: country.isActivated,
                                       isLast: isLast))
             return cell
         case .addCountry:

@@ -130,6 +130,9 @@ class ConfigManager: NSObject {
                 if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
                     Self.lastConfigLoad = Date()
+                    if let supportedCountries = config.supportedCountries {
+                        TravelManager.shared.setSupportedCountries(supportedCountries)
+                    }
                     completion(config)
                 } else {
                     Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")

@@ -39,6 +39,7 @@ class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
     public let infoBox: LocalizedValue<InfoBox>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
+    public let supportedCountries: [Country]?
 
     class InfoBox: UBCodable {
         let title, msg: String
@@ -54,5 +55,9 @@ class ConfigResponseBody: UBCodable {
         let factorLow: Double
         let factorHigh: Double
         let triggerThreshold: Int
+    }
+
+    class Country: Codable {
+        let isoCountryCode: String
     }
 }
