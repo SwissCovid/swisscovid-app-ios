@@ -228,9 +228,6 @@
 "bluetooth_turn_on_button_title" = "Bluetooth activé.";
 "bluetooth_permission_error_title" = "Bluetooth : utilisation refusée";
 "bluetooth_permission_error_text" = "Pour que le traçage de proximité fonctionne, autorisez l'utilisation de Bluetooth.";
-
-/*URL zum Corona Check*/
-"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Modifier les paramètres";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
@@ -770,73 +767,13 @@
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
 "android_en_start_failure" = "Les notifications COVID-19 n'ont pas pu être activées.";
-
-/*Certificate pinning Debug screen section title*/
-"certificate_pinning_title" = "Certificate Pinning";
-
-/*Fuzzy*/
-"certificate_pinning_button_disable" = "Désactiver";
-"certificate_pinning_button_enable" = "Activer";
-
-/*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Version préliminaire";
-
-/*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "A utiliser uniquement par les participants de la phase pilote";
-
-/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "L'utilisation de cette application est actuellement destinée et autorisée uniquement aux groupes suivants, qui ont été invités par l'OFSP à participer au projet pilote: Membres de l'armée suisse en formation, en assistance et en service actif, personnel des universités, personnel des hôpitaux et des cliniques, personnel des administrations cantonales et de l'administration fédérale, membres d'associations souhaitant contribuer à l'amélioration de la qualité du système.";
-
-/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "La phase pilote est réalisée avec des systèmes productifs et contient des données réelles. En cas de test COVID-19 positif, les médecins cantonaux ne sont pas autorisés à générer un code covid pour la notification à partir de l'application pour les utilisateurs non autorisés. Les attaques (\"tests de pénétration\") sur le système en dehors du test de sécurité publique délimité sont des attaques sur le système productif et sont donc illégales.";
-
-/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Appartenez-vous à une organisation qui est autorisée à participer à la phase pilote ?";
-
-/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Appartenez-vous à l'un des groupes suivants : Les membres de l'armée suisse en formation, en assistance et en service actif, les employés des universités, les employés des hôpitaux et des cliniques, les employés des administrations cantonales et de l'administration fédérale, les membres des associations qui souhaitent contribuer à l'amélioration de la qualité du système?";
-
-/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Non";
-
-/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Oui";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Phase pilote";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Vous ne faites pas partie d'une organisation participant à la phase pilote. Veuillez installer la mise à jour appropriée après le lancement officiel de l'application et ouvrir l'application à nouveau.";
 "begegnung_detail_last_sync_title" = "Dernière synchronisation réussie";
 "synchronizations_view_title" = "Vue d'ensemble";
 "synchronizations_view_info_title" = "Synchronisations";
 "synchronizations_view_info_question" = "Que sont les synchronisations ?";
 "synchronizations_view_info_answer" = "L'application vérifie régulièrement les ID aléatoires publiées par les utilisateurs testés positifs.";
 "synchronizations_view_period_title" = "Ces 14 derniers jours";
-"synchronizations_view_sync_via_open" = "  • Open";
-"synchronizations_view_sync_via_background" = "  • Sync";
 "synchronizations_view_empty_list" = "Aucune entrée";
-
-/*Debug*/
-"synchronizations_view_sync_via_scheduled" = "  • Scheduled";
-
-/*Debug*/
-"synchronizations_view_sync_via_fake_request" = "  • Fake Report";
-
-/*Debug*/
-"synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
-
-/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Avant l'entretien";
-
-/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Veuillez noter les renseignements suivants";
-
-/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Date";
-
-/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Numéro";
 "tracing_active_tracking_always_info" = "SwissCovid reste active, même lorsque l'application est fermée.";
 
 /*title in splash screen of onboarding*/

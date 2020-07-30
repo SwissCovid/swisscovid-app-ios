@@ -12,7 +12,15 @@ import UIKit
 
 extension String {
     var ub_localized: String {
-        NSLocalizedString(self, comment: "")
+        let localized = NSLocalizedString(self, comment: "")
+        if localized == self {
+            return ub_debugLocalized
+        }
+        return localized
+    }
+
+    private var ub_debugLocalized: String {
+        NSLocalizedString(self, tableName: "DebugStrings", comment: "")
     }
 
     static var languageKey: String {
