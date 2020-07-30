@@ -227,9 +227,6 @@
 "bluetooth_turn_on_button_title" = "Bluetooth'u ektinleştirin";
 "bluetooth_permission_error_title" = "Bluetooth kullanımı rededildi";
 "bluetooth_permission_error_text" = "Takibin çalışabilmesi için Bluetooth kullanımına izin verin.";
-
-/*URL zum Corona Check*/
-"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Ayarları değiştirin";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
@@ -759,65 +756,13 @@
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
 "android_en_start_failure" = "KOVİD-19 bildirimleri etkinleştirilemedi.";
-
-/*Certificate pinning Debug screen section title*/
-"certificate_pinning_title" = "Sertifika sabitleme";
-"certificate_pinning_button_disable" = "Devre dışı bırak";
-"certificate_pinning_button_enable" = "Etkinleştir";
-
-/*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Önizleme Sürümü";
-
-/*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "Pilot aşamada katılımcılar için kullanım";
-
-/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "„Bu uygulama şu anda yalnızca BAG tarafından pilot kullanım için davet edilen aşağıdaki grupların kullanımına açıktır: Eğitim, yardım ve aktif hizmette olan İsviçre Ordusu üyeleri, üniversite çalışanları, hastane ve klinik çalışanları, kanton idareleri ve federal idare çalışanları, sistemin kalitesinin iyileştirilmesine katkıda bulunmak isteyen dernek üyeleri.“";
-
-/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "Pilot aşama, üretken sistemlerle gerçekleştirilir ve gerçek verileri içerir. Kanton doktorları, pozitif bir KOVİD-19 testi durumunda yetkisiz uygulama kullanıcılarına bildirim için bir Kovid kodu veremezler. Tanımlanmış Kamu Güvenliği Testi‘nin dışındaki sisteme yapılan saldırılar (\"Penetrasyon testleri\"), üretken sisteme yapılan saldırılardır ve bu nedenle yasa dışıdır.";
-
-/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Pilot aşamaya katılmasına izin verilen bir organizasyonun üyesi misiniz?";
-
-/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Aşağıdakilerin üyesi misiniz: Eğitim, yardım ve aktif hizmette olan İsviçre Ordusu üyeleri, üniversite çalışanları, hastane ve klinik çalışanları, kanton idareleri ve federal idare çalışanları, sistemin kalitesinin iyileştirilmesine katkıda bulunmak isteyen dernek üyeleri?";
-
-/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Hayır";
-
-/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Evet";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Pilot aşama";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Pilot aşamasına katılan organizasyonlardan birine üye değilsiniz. Lütfen resmi başlangıçtan sonra güncellemeyi yükleyin ve uygulamayı yeniden başlatın.";
 "begegnung_detail_last_sync_title" = "Son senktronizasyon";
 "synchronizations_view_title" = "Genel Bakış";
 "synchronizations_view_info_title" = "Senkronizasyonlar";
 "synchronizations_view_info_question" = "Senkronizasyonlar nedir?";
 "synchronizations_view_info_answer" = "Uygulama düzenli olarak pozitif test edilmiş kişilerin yayınladığı rastgele ID'leri kontrol eder.";
 "synchronizations_view_period_title" = "Son 14 gün içerisinde";
-"synchronizations_view_sync_via_open" = "  • Aç";
-"synchronizations_view_sync_via_background" = "  • Senkronize et";
 "synchronizations_view_empty_list" = "Giriş yoktur";
-"synchronizations_view_sync_via_scheduled" = "  • Planlandı";
-"synchronizations_view_sync_via_fake_request" = "  • Hatalı talep";
-"synchronizations_view_sync_via_next_day_key_upload" = "  • Yükle";
-
-/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Görüşmeden önce";
-
-/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Lütfen şu bilgileri not edin";
-
-/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Tarih";
-
-/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Numara";
 "tracing_active_tracking_always_info" = "SwissCovid uygulama kapatıldığında da aktiftir.";
 
 /*title in splash screen of onboarding*/

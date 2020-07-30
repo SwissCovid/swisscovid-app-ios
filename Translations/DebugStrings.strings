@@ -1,0 +1,12 @@
+/*Certificate pinning Debug screen section title*/
+"certificate_pinning_title" = "Certificate Pinning";
+
+"certificate_pinning_button_disable" = "Disable";
+"certificate_pinning_button_enable" = "Enable";
+
+"synchronizations_view_sync_via_open" = "  • Open";
+"synchronizations_view_sync_via_background" = "  • Sync";
+
+"synchronizations_view_sync_via_scheduled" = "  • Scheduled";
+"synchronizations_view_sync_via_fake_request" = "  • Fake Report";
+"synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
