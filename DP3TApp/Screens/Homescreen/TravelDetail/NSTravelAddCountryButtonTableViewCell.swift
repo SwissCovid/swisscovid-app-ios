@@ -10,8 +10,8 @@
 
 import UIKit
 
-class NSTravelAddCountryTableViewCell: UITableViewCell {
-    private let button = NSButton(title: "travel_detail_add_country_button", style: .normal(.ns_blue))
+class NSTravelAddCountryButtonTableViewCell: UITableViewCell {
+    private let button = NSButton(title: "travel_screen_add_countries_button".ub_localized, style: .normal(.ns_blue))
 
     var touchUpCallback: (() -> Void)? {
         didSet {

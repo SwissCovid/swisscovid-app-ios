@@ -20,10 +20,7 @@ class TravelManager {
         let isoCountryCode: String
         var activationDate: Date?
         var isFavorite: Bool
-
-        var isActivated: Bool {
-            activationDate != nil
-        }
+        var isActivated: Bool
     }
 
     @KeychainPersisted(key: "travelmanager.countries", defaultValue: [])
@@ -31,6 +28,10 @@ class TravelManager {
 
     var favoriteCountries: [TravelCountry] {
         countries.filter { $0.isFavorite }
+    }
+
+    var notFavoriteCountries: [TravelCountry] {
+        countries.filter { !$0.isFavorite }
     }
 
     func setSupportedCountries(_ supportedcountries: [ConfigResponseBody.Country]) {
@@ -42,7 +43,8 @@ class TravelManager {
             } else {
                 travelCountries.append(.init(isoCountryCode: c.isoCountryCode,
                                              activationDate: nil,
-                                             isFavorite: defaultFavoriteCountries.contains(c.isoCountryCode)))
+                                             isFavorite: defaultFavoriteCountries.contains(c.isoCountryCode),
+                                             isActivated: false))
             }
         }
         countries = travelCountries

@@ -91,16 +91,6 @@ class NSTravelCountryTableViewCell: UITableViewCell {
             make.left.equalTo(labelStackView.snp.right).inset(NSPadding.medium)
             make.right.top.equalToSuperview().inset(NSPadding.large)
         }
-
-        topSeparator.snp.makeConstraints { make in
-            make.left.top.right.equalToSuperview()
-            make.height.equalTo(1)
-        }
-
-        bottomSeperator.snp.makeConstraints { make in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(1)
-        }
     }
 
     func populate(with viewModel: ViewModel) {
@@ -110,5 +100,11 @@ class NSTravelCountryTableViewCell: UITableViewCell {
         syncSwitch.isOn = viewModel.isEnabled
         untilLabel.isHidden = viewModel.untilLabel == nil
         bottomSeperator.isHidden = !viewModel.isLast
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        topSeparator.frame = CGRect(x: 0, y: 0, width: contentView.bounds.width, height: 1)
+        bottomSeperator.frame = CGRect(x: 0, y: contentView.bounds.height - 1, width: contentView.bounds.width, height: 1)
     }
 }

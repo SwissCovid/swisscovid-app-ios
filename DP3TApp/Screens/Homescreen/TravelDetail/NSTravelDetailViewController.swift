@@ -11,7 +11,7 @@
 import UIKit
 
 class NSTravelDetailViewController: NSViewController {
-    let headerViewModel = NSTextImageView.ViewModel(text: "travel_detail_info",
+    let headerViewModel = NSTextImageView.ViewModel(text: "travel_screen_introduction".ub_localized,
                                                     textColor: .ns_text,
                                                     icon: UIImage(named: "ic-travel")!,
                                                     dynamicColor: .ns_blue,
@@ -37,12 +37,17 @@ class NSTravelDetailViewController: NSViewController {
     init(travelManager: TravelManager = .shared) {
         self.travelManager = travelManager
         super.init()
-        title = "travel_detail_title".ub_localized
+        title = "travel_title".ub_localized
 
         setUpTableView()
     }
 
     // MARK: - View
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     func setUpTableView() {
         tableView.dataSource = self
@@ -51,7 +56,7 @@ class NSTravelDetailViewController: NSViewController {
 
         tableView.register(NSImageInfoTableViewCell.self)
         tableView.register(NSTravelCountryTableViewCell.self)
-        tableView.register(NSTravelAddCountryTableViewCell.self)
+        tableView.register(NSTravelAddCountryButtonTableViewCell.self)
         tableView.register(NSInfoTableViewCell.self)
     }
 
@@ -89,6 +94,16 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelCountryTableViewCell
             let isLast = indexPath.row == (tableView.numberOfRows(inSection: indexPath.section) - 1)
             let country = travelManager.favoriteCountries[indexPath.row]
+            cell.didToggleSwitch = { [weak self] value in
+                guard let self = self else { return }
+                guard let index = self.travelManager.countries.firstIndex(where: { $0.isoCountryCode == country.isoCountryCode }) else { return }
+
+                if value {
+                    self.travelManager.countries[index].activationDate = Date()
+                }
+
+                self.travelManager.countries[index].isActivated = value
+            }
             cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
                                       countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
                                       untilLabel: "Meldungen noch bis 23.07.2020",
@@ -96,7 +111,7 @@ extension NSTravelDetailViewController: UITableViewDataSource {
                                       isLast: isLast))
             return cell
         case .addCountry:
-            let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelAddCountryTableViewCell
+            let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelAddCountryButtonTableViewCell
             cell.touchUpCallback = { [weak self] in
                 self?.presentAddCountryViewController()
             }
@@ -111,8 +126,8 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             }
 
             cell.populate(with: .init(icon: UIImage(named: iconName)!,
-                                      title: "travel_detail_info_\(indexPath.row)_title",
-                                      text: "travel_detail_info_\(indexPath.row)_text"))
+                                      title: "travel_screen_explanation_title_\(indexPath.row + 1)".ub_localized,
+                                      text: "travel_screen_explanation_text_\(indexPath.row + 1)".ub_localized))
             return cell
         }
     }

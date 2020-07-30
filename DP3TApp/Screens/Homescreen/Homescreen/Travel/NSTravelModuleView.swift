@@ -12,7 +12,7 @@ import UIKit
 
 class NSTravelModuleView: NSModuleBaseView {
     private let infoView: UIView = {
-        let viewModel = NSTextImageView.ViewModel(text: "homescreen_travel_description",
+        let viewModel = NSTextImageView.ViewModel(text: "travel_home_description".ub_localized,
                                                   textColor: .ns_blue,
                                                   icon: UIImage(named: "ic-travel")!,
                                                   dynamicColor: .ns_blue,
@@ -28,7 +28,7 @@ class NSTravelModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "homescreen_travel_title".ub_localized
+        headerTitle = "travel_title".ub_localized
 
         updateLayout()
     }
