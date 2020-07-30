@@ -51,6 +51,10 @@ class NSTravelDetailViewController: NSViewController {
         tableView.register(NSTravelAddCountryTableViewCell.self)
         tableView.register(NSInfoTableViewCell.self)
     }
+
+    func presentAddCountryViewController() {
+        navigationController?.pushViewController(NSTravelAddCountryViewController(), animated: true)
+    }
 }
 
 extension NSTravelDetailViewController: UITableViewDataSource {
@@ -89,8 +93,8 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             return cell
         case .addCountry:
             let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelAddCountryTableViewCell
-            cell.touchUpCallback = {
-                print("Add Country")
+            cell.touchUpCallback = { [weak self] in
+                self?.presentAddCountryViewController()
             }
             return cell
         case .info:

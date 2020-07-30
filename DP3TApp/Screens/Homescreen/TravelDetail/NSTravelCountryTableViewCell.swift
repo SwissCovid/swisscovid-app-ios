@@ -29,6 +29,8 @@ class NSTravelCountryTableViewCell: UITableViewCell {
         return view
     }()
 
+    var didToggleSwitch: ((Bool) -> Void)?
+
     struct ViewModel {
         let flag: UIImage
         let countryName: String
@@ -51,11 +53,17 @@ class NSTravelCountryTableViewCell: UITableViewCell {
 
         flagView.ub_setContentPriorityRequired()
 
+        syncSwitch.addTarget(self, action: #selector(switched), for: .valueChanged)
+
         setupLayout()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc func switched() {
+        didToggleSwitch?(syncSwitch.isOn)
     }
 
     // MARK: - Layout
