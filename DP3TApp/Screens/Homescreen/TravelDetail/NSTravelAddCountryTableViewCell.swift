@@ -87,5 +87,7 @@ class NSTravelAddCountryTableViewCell: UITableViewCell {
         if let view = contentView.superview {
             bottomSeparator.frame = CGRect(x: NSPadding.large, y: view.bounds.height - 1, width: view.bounds.width - 2 * NSPadding.large, height: 1)
         }
+
+        contentView.ub_addShadow(radius: 4, opacity: 0.15, xOffset: 0, yOffset: -1)
     }
 }
