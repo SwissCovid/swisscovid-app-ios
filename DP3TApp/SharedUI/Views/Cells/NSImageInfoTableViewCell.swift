@@ -8,10 +8,12 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SnapKit
 import UIKit
 
 class NSImageInfoTableViewCell: UITableViewCell {
     let textView = NSTextImageView()
+    var topPadding: Constraint?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -19,7 +21,7 @@ class NSImageInfoTableViewCell: UITableViewCell {
         contentView.addSubview(textView)
 
         textView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.large * 2)
+            self.topPadding = make.top.equalToSuperview().inset(NSPadding.large * 2).constraint
             make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.large)
         }
 
@@ -30,7 +32,8 @@ class NSImageInfoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func populate(with viewModel: NSTextImageView.ViewModel) {
+    func populate(with viewModel: NSTextImageView.ViewModel, topPadding: CGFloat = 2 * NSPadding.large) {
         textView.populate(with: viewModel)
+        self.topPadding?.update(inset: topPadding)
     }
 }

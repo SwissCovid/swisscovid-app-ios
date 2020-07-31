@@ -16,7 +16,7 @@ class TravelManager {
 
     private init() {}
 
-    struct TravelCountry: Codable {
+    struct Country: Codable {
         let isoCountryCode: String
         var activationDate: Date?
         var isFavorite: Bool
@@ -28,12 +28,16 @@ class TravelManager {
     }
 
     @KeychainPersisted(key: "travelmanager.countries.favorites", defaultValue: [])
-    var favoriteCountries: [TravelCountry]
+    var favoriteCountries: [Country]
 
     @KeychainPersisted(key: "travelmanager.countries.notFavoriteCountries", defaultValue: [])
-    var notFavoriteCountries: [TravelCountry]
+    var notFavoriteCountries: [Country]
 
-    func country(with isoCode: String) -> TravelCountry? {
+    var all: [Country] {
+        favoriteCountries + notFavoriteCountries
+    }
+
+    func country(with isoCode: String) -> Country? {
         favoriteCountries.first(where: { $0.isoCountryCode == isoCode }) ?? notFavoriteCountries.first(where: { $0.isoCountryCode == isoCode })
     }
 
@@ -47,10 +51,10 @@ class TravelManager {
             } else if notFavoriteCountries.first(where: { $0.isoCountryCode == country.isoCountryCode }) != nil {
                 // skip since country exists already
             } else {
-                let model = TravelCountry(isoCountryCode: country.isoCountryCode,
-                                          activationDate: nil,
-                                          isFavorite: favoritesAreEmpty && defaultFavoriteCountries.contains(country.isoCountryCode),
-                                          isActivated: false)
+                let model = Country(isoCountryCode: country.isoCountryCode,
+                                    activationDate: nil,
+                                    isFavorite: favoritesAreEmpty && defaultFavoriteCountries.contains(country.isoCountryCode),
+                                    isActivated: false)
                 if model.isFavorite {
                     favoriteCountries.append(model)
                 } else {

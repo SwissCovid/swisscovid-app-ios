@@ -116,11 +116,11 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
         }
     }
 
-    func toggle(country: TravelManager.TravelCountry, indexPath: IndexPath) {
+    func toggle(country: TravelManager.Country, indexPath: IndexPath) {
         let newIndexPath: IndexPath
         guard let country = travelManager.country(with: country.isoCountryCode) else { return }
 
-        var currentCountry: TravelManager.TravelCountry
+        var currentCountry: TravelManager.Country
 
         if country.isFavorite {
             let index = indexPath.row

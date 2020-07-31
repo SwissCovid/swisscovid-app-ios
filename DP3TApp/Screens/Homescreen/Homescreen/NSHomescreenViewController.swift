@@ -226,9 +226,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 self.reportsView.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.travelView.alpha = 1
+            #if ENABLE_INTERNATIONALIZATION
+                UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
+                    self.travelView.alpha = 1
             }, completion: nil)
+            #endif
 
             UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 self.whatToDoSymptomsButton.alpha = 1

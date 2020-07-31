@@ -374,6 +374,10 @@
 		F8B30B5C24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */; };
 		F8B30B5E24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */; };
 		F8B30B5F24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */; };
+		F8B30B6224D41154006FBBBE /* NSCodeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B6124D41154006FBBBE /* NSCodeTravelViewController.swift */; };
+		F8B30B6324D41154006FBBBE /* NSCodeTravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B6124D41154006FBBBE /* NSCodeTravelViewController.swift */; };
+		F8B30B6624D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B6524D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift */; };
+		F8B30B6724D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B6524D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift */; };
 		F8BE32B524D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B424D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift */; };
 		F8BE32B624D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B424D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift */; };
 		F8BE32B824D1CA390045AD86 /* NSTravelAddCountryButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8BE32B724D1CA390045AD86 /* NSTravelAddCountryButtonTableViewCell.swift */; };
@@ -612,6 +616,8 @@
 		F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelManager.swift; sourceTree = "<group>"; };
 		F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelAddCountryTableViewCell.swift; sourceTree = "<group>"; };
+		F8B30B6124D41154006FBBBE /* NSCodeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeTravelViewController.swift; sourceTree = "<group>"; };
+		F8B30B6524D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformTravelAddCountryTableViewCell.swift; sourceTree = "<group>"; };
 		F8BE32B424D1BDD00045AD86 /* NSTravelCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelCountryTableViewCell.swift; sourceTree = "<group>"; };
 		F8BE32B724D1CA390045AD86 /* NSTravelAddCountryButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelAddCountryButtonTableViewCell.swift; sourceTree = "<group>"; };
 		F8BE32BA24D1CC050045AD86 /* NSInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSInfoTableViewCell.swift; sourceTree = "<group>"; };
@@ -810,6 +816,7 @@
 		24780AF8242DF813003BB26C /* InformBroadcast */ = {
 			isa = PBXGroup;
 			children = (
+				F8B30B6024D41145006FBBBE /* Travel */,
 				2443948424463BCE003ED582 /* Base */,
 				2443948324463BB4003ED582 /* InformFirstStep */,
 				2443948224463B91003ED582 /* Symptoms */,
@@ -1316,6 +1323,15 @@
 			path = Travel;
 			sourceTree = "<group>";
 		};
+		F8B30B6024D41145006FBBBE /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				F8B30B6124D41154006FBBBE /* NSCodeTravelViewController.swift */,
+				F8B30B6524D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1761,6 +1777,7 @@
 				F830799424929090005D3C65 /* LoggingStorage.swift in Sources */,
 				242D2222245C4BD8005DAEA8 /* NSInformTracingEndViewController.swift in Sources */,
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
+				F8B30B6324D41154006FBBBE /* NSCodeTravelViewController.swift in Sources */,
 				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
@@ -1802,6 +1819,7 @@
 				242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */,
+				F8B30B6724D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
@@ -1913,6 +1931,7 @@
 				6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */,
 				6EFF9AE5245AD18D00C98FF3 /* NSInformTracingEndViewController.swift in Sources */,
 				6E6E5171242F5026006E532E /* ConfigResponseBody.swift in Sources */,
+				F8B30B6224D41154006FBBBE /* NSCodeTravelViewController.swift in Sources */,
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
 				F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */,
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
@@ -1954,6 +1973,7 @@
 				6E33087124507A2D00913B0E /* NSReportsDetailReportViewController.swift in Sources */,
 				6E33086D245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
+				F8B30B6624D43A7D006FBBBE /* NSInformTravelAddCountryTableViewCell.swift in Sources */,
 				6E33086F24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
 				F810555024D198F8003DDE7E /* NSTravelModuleView.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,

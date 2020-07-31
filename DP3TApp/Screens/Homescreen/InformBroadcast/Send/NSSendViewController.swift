@@ -71,6 +71,10 @@ class NSSendViewController: NSInformBottomButtonViewController {
     private var rightBarButtonItem: UIBarButtonItem?
 
     private func continuePressed() {
-        navigationController?.pushViewController(NSCodeInputViewController(), animated: true)
+        #if ENABLE_INTERNATIONALIZATION
+            navigationController?.pushViewController(NSCodeTravelViewController(), animated: true)
+        #else
+            navigationController?.pushViewController(NSCodeInputViewController(), animated: true)
+        #endif
     }
 }
