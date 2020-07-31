@@ -369,6 +369,8 @@
 		F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
 		F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
 		F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
+		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
+		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B3F24D2A4FE006FBBBE /* TravelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */; };
 		F8B30B4024D2A4FE006FBBBE /* TravelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */; };
 		F8B30B5C24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */; };
@@ -613,6 +615,7 @@
 		F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewBody.swift; sourceTree = "<group>"; };
 		F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxVisibilityManager.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
+		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
 		F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelManager.swift; sourceTree = "<group>"; };
 		F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelAddCountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -1236,6 +1239,7 @@
 			children = (
 				DC9A81A1242CE5E000AD1548 /* Localizable.strings */,
 				DC9A81A3242CE5E000AD1548 /* InfoPlist.strings */,
+				F8B30B5824D2C728006FBBBE /* DebugStrings.strings */,
 			);
 			path = Translations;
 			sourceTree = SOURCE_ROOT;
@@ -1494,6 +1498,7 @@
 				F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				242D2263245C4BD8005DAEA8 /* Inter-ExtraLight.ttf in Resources */,
 				242D2264245C4BD8005DAEA8 /* Launch Screen.storyboard in Resources */,
+				F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */,
 				242D2265245C4BD8005DAEA8 /* Inter-ExtraBold.ttf in Resources */,
 				242D2266245C4BD8005DAEA8 /* Inter-Black.ttf in Resources */,
 				242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */,
@@ -1531,6 +1536,7 @@
 				F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430A242DD34700F19AA5 /* Inter-ExtraLight.ttf in Resources */,
 				24780B34242FDF4C003BB26C /* Launch Screen.storyboard in Resources */,
+				F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */,
 				DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */,
 				DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */,
 				DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */,
