@@ -102,11 +102,13 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
-        guard shouldLoadConfig(backgroundTask: backgroundTask) else {
-            Logger.log("Skipping config load request and returning from cache", appState: true)
-            completion(Self.currentConfig)
-            return
-        }
+        #if !DEBUG
+            guard shouldLoadConfig(backgroundTask: backgroundTask) else {
+                Logger.log("Skipping config load request and returning from cache", appState: true)
+                completion(Self.currentConfig)
+                return
+            }
+        #endif
 
         Logger.log("Load Config", appState: true)
 

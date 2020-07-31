@@ -21,32 +21,46 @@ class TravelManager {
         var activationDate: Date?
         var isFavorite: Bool
         var isActivated: Bool
+
+        var countryName: String {
+            Locale.current.localizedString(forRegionCode: isoCountryCode) ?? isoCountryCode
+        }
     }
 
-    @KeychainPersisted(key: "travelmanager.countries", defaultValue: [])
-    var countries: [TravelCountry]
+    @KeychainPersisted(key: "travelmanager.countries.favorites", defaultValue: [])
+    var favoriteCountries: [TravelCountry]
 
-    var favoriteCountries: [TravelCountry] {
-        countries.filter { $0.isFavorite }
-    }
+    @KeychainPersisted(key: "travelmanager.countries.notFavoriteCountries", defaultValue: [])
+    var notFavoriteCountries: [TravelCountry]
 
-    var notFavoriteCountries: [TravelCountry] {
-        countries.filter { !$0.isFavorite }
+    func country(with isoCode: String) -> TravelCountry? {
+        favoriteCountries.first(where: { $0.isoCountryCode == isoCode }) ?? notFavoriteCountries.first(where: { $0.isoCountryCode == isoCode })
     }
 
     func setSupportedCountries(_ supportedcountries: [ConfigResponseBody.Country]) {
-        var travelCountries: [TravelCountry] = []
+        // 1. Add countries which are new
         let defaultFavoriteCountries = ["DE", "IT", "AT"]
-        for c in supportedcountries {
-            if let existing = countries.first(where: { $0.isoCountryCode == c.isoCountryCode }) {
-                travelCountries.append(existing)
+        let favoritesAreEmpty = favoriteCountries.isEmpty
+        for country in supportedcountries {
+            if favoriteCountries.first(where: { $0.isoCountryCode == country.isoCountryCode }) != nil {
+                // skip since country exists already
+            } else if notFavoriteCountries.first(where: { $0.isoCountryCode == country.isoCountryCode }) != nil {
+                // skip since country exists already
             } else {
-                travelCountries.append(.init(isoCountryCode: c.isoCountryCode,
-                                             activationDate: nil,
-                                             isFavorite: defaultFavoriteCountries.contains(c.isoCountryCode),
-                                             isActivated: false))
+                let model = TravelCountry(isoCountryCode: country.isoCountryCode,
+                                          activationDate: nil,
+                                          isFavorite: favoritesAreEmpty && defaultFavoriteCountries.contains(country.isoCountryCode),
+                                          isActivated: false)
+                if model.isFavorite {
+                    favoriteCountries.append(model)
+                } else {
+                    notFavoriteCountries.append(model)
+                }
             }
         }
-        countries = travelCountries
+
+        // 2. remove countries which are not supported anymore
+        favoriteCountries = favoriteCountries.filter { supportedcountries.map(\.isoCountryCode).contains($0.isoCountryCode) }
+        notFavoriteCountries = notFavoriteCountries.filter { supportedcountries.map(\.isoCountryCode).contains($0.isoCountryCode) }
     }
 }

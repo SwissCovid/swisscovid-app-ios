@@ -96,16 +96,16 @@ extension NSTravelDetailViewController: UITableViewDataSource {
             let country = travelManager.favoriteCountries[indexPath.row]
             cell.didToggleSwitch = { [weak self] value in
                 guard let self = self else { return }
-                guard let index = self.travelManager.countries.firstIndex(where: { $0.isoCountryCode == country.isoCountryCode }) else { return }
+                guard let index = self.travelManager.favoriteCountries.firstIndex(where: { $0.isoCountryCode == country.isoCountryCode }) else { return }
 
                 if value {
-                    self.travelManager.countries[index].activationDate = Date()
+                    self.travelManager.favoriteCountries[index].activationDate = Date()
                 }
 
-                self.travelManager.countries[index].isActivated = value
+                self.travelManager.favoriteCountries[index].isActivated = value
             }
             cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
-                                      countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
+                                      countryName: country.countryName,
                                       untilLabel: "Meldungen noch bis 23.07.2020",
                                       isEnabled: country.isActivated,
                                       isLast: isLast))

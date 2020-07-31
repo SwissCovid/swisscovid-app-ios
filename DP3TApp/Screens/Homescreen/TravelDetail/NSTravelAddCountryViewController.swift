@@ -82,7 +82,7 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
             let country = travelManager.favoriteCountries[indexPath.row]
             let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelAddCountryTableViewCell
             cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
-                                      countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
+                                      countryName: country.countryName,
                                       isFavorite: true))
             cell.favoriteButtonTouched = { [weak self] in
                 guard let self = self,
@@ -94,7 +94,7 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
             let country = travelManager.notFavoriteCountries[indexPath.row]
             let cell = tableView.dequeueReusableCell(for: indexPath) as NSTravelAddCountryTableViewCell
             cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
-                                      countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
+                                      countryName: country.countryName,
                                       isFavorite: false))
             cell.favoriteButtonTouched = { [weak self] in
                 guard let self = self,
@@ -113,20 +113,29 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
     }
 
     func toggle(country: TravelManager.TravelCountry, indexPath: IndexPath) {
-        guard let index = travelManager.countries.firstIndex(where: { $0.isoCountryCode == country.isoCountryCode }) else { return }
-        let currentCountry = travelManager.countries[index]
         let newIndexPath: IndexPath
-        if currentCountry.isFavorite {
-            newIndexPath = IndexPath(row: travelManager.notFavoriteCountries.count, section: Section.all.rawValue)
+        guard let country = travelManager.country(with: country.isoCountryCode) else { return }
+
+        var currentCountry: TravelManager.TravelCountry
+
+        if country.isFavorite {
+            let index = indexPath.row
+            currentCountry = travelManager.favoriteCountries.remove(at: index)
+            currentCountry.isFavorite = false
+            travelManager.notFavoriteCountries.append(currentCountry)
+            newIndexPath = IndexPath(row: travelManager.notFavoriteCountries.count - 1, section: Section.all.rawValue)
         } else {
-            newIndexPath = IndexPath(row: travelManager.favoriteCountries.count, section: Section.favorites.rawValue)
+            let index = indexPath.row
+            currentCountry = travelManager.notFavoriteCountries.remove(at: index)
+            currentCountry.isFavorite = true
+            travelManager.favoriteCountries.append(currentCountry)
+            newIndexPath = IndexPath(row: travelManager.favoriteCountries.count - 1, section: Section.favorites.rawValue)
         }
-        travelManager.countries[index].isFavorite.toggle()
 
         if let cell = self.tableView.cellForRow(at: indexPath) as? NSTravelAddCountryTableViewCell {
-            cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
-                                      countryName: Locale.current.localizedString(forRegionCode: country.isoCountryCode)!,
-                                      isFavorite: travelManager.countries[index].isFavorite))
+            cell.populate(with: .init(flag: UIImage(named: currentCountry.isoCountryCode.lowercased()),
+                                      countryName: country.countryName,
+                                      isFavorite: currentCountry.isFavorite))
         }
 
         self.tableView.moveRow(at: indexPath, to: newIndexPath)
