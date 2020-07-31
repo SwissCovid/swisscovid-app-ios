@@ -28,10 +28,4 @@ class NSTableViewHeaderFooterView: UITableViewHeaderFooterView {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        contentView.layer.shadowPath = UIBezierPath(rect: CGRect(x: 0, y: contentView.frame.maxY - 5, width: contentView.bounds.width, height: 5)).cgPath
-        contentView.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: 1)
-    }
 }

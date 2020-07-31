@@ -42,7 +42,10 @@ class NSTravelAddCountryViewController: NSViewController {
         self.travelManager = travelManager
         super.init()
         title = "travel_screen_add_countries_button".ub_localized
+    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
         setUpTableView()
     }
 
@@ -53,6 +56,7 @@ class NSTravelAddCountryViewController: NSViewController {
         tableView.delegate = self
         tableView.separatorColor = .clear
         tableView.backgroundColor = .ns_backgroundSecondary
+        tableView.isEditing = true
 
         tableView.register(NSInfoTableViewCell.self)
         tableView.register(NSTravelAddCountryTableViewCell.self)
@@ -157,14 +161,22 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
     }
 
     func tableView(_: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section = Section(rawValue: section)!
-        if section.title != nil {
+        switch Section(rawValue: section)! {
+        case .favorites:
             return UITableView.automaticDimension
-        }
-        if section == .info {
+        case .all:
+            return tableView.numberOfRows(inSection: section) == 0 ? .zero : UITableView.automaticDimension
+        case .info:
             return NSPadding.large * 3
         }
-        return .zero
+    }
+
+    func tableView(_: UITableView, editingStyleForRowAt _: IndexPath) -> UITableViewCell.EditingStyle {
+        .none
+    }
+
+    func tableView(_: UITableView, shouldIndentWhileEditingRowAt _: IndexPath) -> Bool {
+        false
     }
 }
 
@@ -177,84 +189,26 @@ extension NSTravelAddCountryViewController: UITableViewDelegate {
             return false
         }
     }
-}
 
-class NSTravelAddCountryTableViewCell: UITableViewCell {
-    private let favoriteButton = UBButton()
-
-    private let flagView = UIImageView()
-
-    private let countryLabel = NSLabel(.textLight)
-
-    private let bottomSeparator = UIView()
-
-    var favoriteButtonTouched: (() -> Void)? {
-        didSet {
-            favoriteButton.touchUpCallback = favoriteButtonTouched
+    func tableView(_: UITableView, targetIndexPathForMoveFromRowAt sourceIndexPath: IndexPath, toProposedIndexPath proposedDestinationIndexPath: IndexPath) -> IndexPath {
+        switch Section(rawValue: proposedDestinationIndexPath.section)! {
+        case .favorites:
+            return proposedDestinationIndexPath
+        case .all, .info:
+            return sourceIndexPath
         }
     }
 
-    struct ViewModel {
-        let flag: UIImage?
-
-        let countryName: String
-        let isFavorite: Bool
-    }
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        selectionStyle = .none
-
-        flagView.ub_setContentPriorityRequired()
-
-        bottomSeparator.backgroundColor = .ns_backgroundDark
-
-        favoriteButton.highlightCornerRadius = 11
-
-        contentView.addSubview(bottomSeparator)
-
-        contentView.addSubview(favoriteButton)
-        contentView.addSubview(flagView)
-        contentView.addSubview(countryLabel)
-
-        favoriteButton.snp.makeConstraints { make in
-            make.left.equalToSuperview().inset(NSPadding.large)
-            make.top.bottom.equalToSuperview().inset(NSPadding.medium + 3)
-            make.size.equalTo(22)
+    func tableView(_: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        switch Section(rawValue: sourceIndexPath.section)! {
+        case .favorites:
+            let country = travelManager.favoriteCountries.remove(at: sourceIndexPath.row)
+            travelManager.favoriteCountries.insert(country, at: destinationIndexPath.row)
+        case .all:
+            let country = travelManager.notFavoriteCountries.remove(at: sourceIndexPath.row)
+            travelManager.notFavoriteCountries.insert(country, at: destinationIndexPath.row)
+        default:
+            return
         }
-
-        flagView.snp.makeConstraints { make in
-            make.centerY.equalTo(favoriteButton)
-            make.left.equalTo(favoriteButton.snp.right).inset(-NSPadding.large)
-            make.width.equalTo(24)
-            make.height.equalTo(18)
-        }
-
-        countryLabel.snp.makeConstraints { make in
-            make.centerY.equalTo(favoriteButton)
-            make.left.equalTo(flagView.snp.right).inset(-NSPadding.large)
-            make.right.equalToSuperview().inset(NSPadding.large)
-        }
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    func populate(with viewModel: ViewModel) {
-        countryLabel.text = viewModel.countryName
-        flagView.image = viewModel.flag
-        if viewModel.isFavorite {
-            favoriteButton.setImage(UIImage(named: "remove"), for: .normal)
-        } else {
-            favoriteButton.setImage(UIImage(named: "add"), for: .normal)
-        }
-        layoutSubviews()
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        bottomSeparator.frame = CGRect(x: NSPadding.large, y: contentView.bounds.height - 1, width: contentView.bounds.width - 2 * NSPadding.large, height: 1)
     }
 }
