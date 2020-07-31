@@ -329,6 +329,7 @@
 		F810555D24D1AA2E003DDE7E /* NSImageInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810555B24D1AA2E003DDE7E /* NSImageInfoTableViewCell.swift */; };
 		F810556024D1AB11003DDE7E /* NSReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810555F24D1AB11003DDE7E /* NSReusableView.swift */; };
 		F810556124D1AB11003DDE7E /* NSReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810555F24D1AB11003DDE7E /* NSReusableView.swift */; };
+		F8242AA024D43C4400DDB831 /* TravelManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8242A9F24D43C4400DDB831 /* TravelManagerTests.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
 		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
@@ -369,10 +370,10 @@
 		F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */; };
 		F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
 		F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */; };
-		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
-		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B3F24D2A4FE006FBBBE /* TravelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */; };
 		F8B30B4024D2A4FE006FBBBE /* TravelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */; };
+		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
+		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B5C24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */; };
 		F8B30B5E24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */; };
 		F8B30B5F24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */; };
@@ -593,6 +594,7 @@
 		F810555624D1A08E003DDE7E /* NSTextImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTextImageView.swift; sourceTree = "<group>"; };
 		F810555B24D1AA2E003DDE7E /* NSImageInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageInfoTableViewCell.swift; sourceTree = "<group>"; };
 		F810555F24D1AB11003DDE7E /* NSReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReusableView.swift; sourceTree = "<group>"; };
+		F8242A9F24D43C4400DDB831 /* TravelManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelManagerTests.swift; sourceTree = "<group>"; };
 		F830798E24928EC4005D3C65 /* LoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingStorage.swift; sourceTree = "<group>"; };
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
@@ -615,8 +617,8 @@
 		F8A6BE2624C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExpandableDisclaimerViewBody.swift; sourceTree = "<group>"; };
 		F8A6BE2924CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxVisibilityManager.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
-		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
 		F8B30B3E24D2A4FE006FBBBE /* TravelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelManager.swift; sourceTree = "<group>"; };
+		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
 		F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTableViewHeaderFooterView.swift; sourceTree = "<group>"; };
 		F8B30B5D24D3F52F006FBBBE /* NSTravelAddCountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelAddCountryTableViewCell.swift; sourceTree = "<group>"; };
 		F8B30B6124D41154006FBBBE /* NSCodeTravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeTravelViewController.swift; sourceTree = "<group>"; };
@@ -1132,6 +1134,7 @@
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
 				F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */,
+				F8242A9F24D43C4400DDB831 /* TravelManagerTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 			);
@@ -1996,6 +1999,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
+				F8242AA024D43C4400DDB831 /* TravelManagerTests.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
 				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,

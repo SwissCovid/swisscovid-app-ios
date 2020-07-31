@@ -16,6 +16,12 @@ class TravelManager {
 
     private init() {}
 
+    /// This is needed to inject the keychain for unit testing
+    init(keychain: KeychainProtocol) {
+        _favoriteCountries.keychain = keychain
+        _notFavoriteCountries.keychain = keychain
+    }
+
     struct Country: Codable {
         let isoCountryCode: String
         var activationDate: Date?
