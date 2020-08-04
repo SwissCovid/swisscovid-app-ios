@@ -146,6 +146,9 @@ class DatabaseSyncer {
                 NotificationCenter.default.post(name: Notification.syncFinishedNotification, object: nil)
                 completionHandler?(.newData)
             }
+
+            TracingLocalPush.shared.handleSync(result: result)
+
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)
                 taskIdentifier = .invalid
