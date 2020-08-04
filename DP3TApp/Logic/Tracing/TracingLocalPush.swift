@@ -130,27 +130,16 @@ class TracingLocalPush: NSObject {
         center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier1, notificationIdentifier2])
     }
 
-    func resetSyncWarningTriggers(tracingState: TracingState) {
-        if TracingManager.shared.isActivated {
-            if let lastSync = tracingState.lastSync {
-                resetSyncWarningTriggers(lastSuccess: lastSync)
-            }
-        } else {
-            removeSyncWarningTriggers()
-        }
-    }
-
-    func resetSyncWarningTriggers(lastSuccess: Date) {
+    /// This method gets called everytime we get executed in the backgrund or if the app was launched manually
+    func resetBackgroundTaskWarningTriggers() {
         let content = UNMutableNotificationContent()
         content.title = "sync_warning_notification_title".ub_localized
         content.body = "sync_warning_notification_text".ub_localized
 
-        let timePassed = lastSuccess.timeIntervalSinceNow
-
-        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1 - timePassed, repeats: false)
+        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1, repeats: false)
         let request1 = UNNotificationRequest(identifier: notificationIdentifier1, content: content, trigger: trigger1)
 
-        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2 - timePassed, repeats: false)
+        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2, repeats: false)
         let request2 = UNNotificationRequest(identifier: notificationIdentifier2, content: content, trigger: trigger2)
 
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
