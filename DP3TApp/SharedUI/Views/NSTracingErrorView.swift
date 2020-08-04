@@ -161,7 +161,7 @@ class NSTracingErrorView: UIView {
                                                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
                                                UIApplication.shared.open(settingsUrl)
-            })
+                                           })
         case .bluetoothTurnedOff:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,

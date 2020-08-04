@@ -113,7 +113,7 @@ class NSReportsDetailReportTitleView: NSTitleView, UIScrollViewDelegate {
             titleHeaderView.snp.makeConstraints { make in
                 make.width.equalTo(self)
             }
-            
+
             headers.append(titleHeaderView)
 
             first = false

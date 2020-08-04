@@ -58,7 +58,7 @@ class NSExpandableDisclaimerViewHeader: UBButton {
                 UIAccessibility.post(notification: .screenChanged, argument: nil)
             })
         }
-        
+
         accessibilityLabel = headerLabel.text
         accessibilityTraits = [.button, .header]
     }
