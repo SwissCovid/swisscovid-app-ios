@@ -200,7 +200,6 @@ class TracingManager: NSObject {
 
                 // schedule local push if exposed
                 TracingLocalPush.shared.update(provider: st)
-                TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: st)
             }
             DP3TTracing.delegate = self
         }
@@ -218,8 +217,6 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.tracingState = state
                 UIStateManager.shared.trackingState = state.trackingState
             }
-            TracingLocalPush.shared.update(provider: state)
-            TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
         }
     }
 }
@@ -242,6 +239,9 @@ extension TracingManager: DP3TBackgroundHandler {
             let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
             center.add(request)
         #endif
+
+        // wait another 2 days befor warning
+        TracingLocalPush.shared.resetBackgroundTaskWarningTriggers()
 
         let queue = OperationQueue()
 
