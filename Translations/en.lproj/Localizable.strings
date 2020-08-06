@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Background update deactivated.";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Change the settings to receive notification outside the app as well in the event of a report.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Change settings";
