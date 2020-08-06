@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Ažuriranje pozadine isključeno";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Promenite podešavanja da biste dobijali obaveštenja o novoj poruci takođe i izvan aplikacije.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Promeni podešavanja";

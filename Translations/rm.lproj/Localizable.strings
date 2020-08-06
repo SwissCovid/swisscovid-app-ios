@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Actualisaziun dal fund messa ord funcziun";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Midar confguraziun";
