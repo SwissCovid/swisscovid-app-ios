@@ -51,7 +51,7 @@ class NSInfoBoxView: UIView {
             illustrationImageView.isHidden = true
         }
 
-        setupAccessibility(title: title ?? "", subTitle: subText ?? "")
+        setupAccessibility(title: title ?? "", subTitle: subText ?? "", additionalText: additionalText, additionalURL: additionalURL?.absoluteString)
     }
 
     // MARK: - Init
@@ -85,7 +85,7 @@ class NSInfoBoxView: UIView {
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL)
     }
 
     required init?(coder _: NSCoder) {
@@ -204,8 +204,15 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(title: String, subTitle: String) {
+    private func setupAccessibility(title: String, subTitle: String, additionalText: String?, additionalURL: String?) {
+        if let additionalURL = additionalURL {
+            isAccessibilityElement = false
+            
+            externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint_bag".ub_localized : "accessibility_faq_button_hint".ub_localized
+            return
+        }
+        
         isAccessibilityElement = true
-        accessibilityLabel = "\(title), \(subTitle)"
+        accessibilityLabel = "\(title), \(subTitle), \(additionalText ?? "")"
     }
 }
