@@ -667,7 +667,7 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
 /*Fuzzy*/
-"accessibility_faq_button_hint_bag" = "Ovo dugme napušta aplikaciju i otvara web stranicu Saveznog Ministarstva za zdravlje.";
+"accessibility_faq_button_hint" = "Ovo dugme napušta aplikaciju i otvara web stranicu Saveznog Ministarstva za zdravlje.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Aktiviraj praćenje";
@@ -907,4 +907,4 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint" = "";
+"accessibility_faq_button_hint_non_bag" = "";

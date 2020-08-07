@@ -668,7 +668,7 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
 /*Fuzzy*/
-"accessibility_faq_button_hint_bag" = "Quest button banduna l'app ed avra la pagina d'internet da U.F.S.P.";
+"accessibility_faq_button_hint" = "Quest button banduna l'app ed avra la pagina d'internet da U.F.S.P.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Activar tracing";
@@ -911,4 +911,4 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint" = "";
+"accessibility_faq_button_hint_non_bag" = "";

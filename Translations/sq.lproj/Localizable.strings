@@ -668,7 +668,7 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
 /*Fuzzy*/
-"accessibility_faq_button_hint_bag" = "Ky buton lë aplikacionin dhe hap faqen e internetit të B.A.G.";
+"accessibility_faq_button_hint" = "Ky buton lë aplikacionin dhe hap faqen e internetit të B.A.G.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Aktivizo gjurmimin";
@@ -911,4 +911,4 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint" = "";
+"accessibility_faq_button_hint_non_bag" = "";

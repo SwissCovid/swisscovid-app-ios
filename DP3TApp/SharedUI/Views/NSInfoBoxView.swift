@@ -208,7 +208,7 @@ extension NSInfoBoxView {
         if let additionalURL = additionalURL {
             isAccessibilityElement = false
             
-            externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint_bag".ub_localized : "accessibility_faq_button_hint".ub_localized
+            externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint".ub_localized : "accessibility_faq_button_hint_non_bag".ub_localized
             return
         }
         

@@ -683,7 +683,7 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
 /*Fuzzy*/
-"accessibility_faq_button_hint_bag" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
+"accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_title" = "Tracing aktivieren";
@@ -936,4 +936,5 @@
 "travel_report_code_info" = "Waren Sie in den letzten 14 Tagen in einem der aufgeführten Länder?\n\nWählen Sie das entsprechende Land, um auch diese Begegnungen zu informieren.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet eine Website.";
+/*Fuzzy*/
+"accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";

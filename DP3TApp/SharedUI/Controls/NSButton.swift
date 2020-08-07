@@ -161,7 +161,7 @@ extension NSButton {
             make.left.equalToSuperview().inset(NSPadding.medium)
         }
 
-        faqButton.accessibilityHint = "accessibility_faq_button_hint_bag".ub_localized
+        faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         faqButton.accessibilityTraits = [.button, .header]
         return view
     }
