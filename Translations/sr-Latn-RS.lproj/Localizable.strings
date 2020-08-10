@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Ažuriranje pozadine isključeno";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Promenite podešavanja da biste dobijali obaveštenja o novoj poruci takođe i izvan aplikacije.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Promeni podešavanja";
@@ -665,7 +665,8 @@
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Kliknite dvaput za obradu";
 
-/*Accessibility: FAW Button Titel */
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
+/*Fuzzy*/
 "accessibility_faq_button_hint" = "Ovo dugme napušta aplikaciju i otvara web stranicu Saveznog Ministarstva za zdravlje.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -904,3 +905,6 @@
 
 /*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
 "travel_report_code_info" = "";
+
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
+"accessibility_faq_button_hint_non_bag" = "";

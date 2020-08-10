@@ -462,7 +462,7 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Einstellungen ändern";
@@ -681,7 +681,8 @@
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
 
-/*Accessibility: FAW Button Titel */
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
+/*Fuzzy*/
 "accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -933,3 +934,7 @@
 
 /*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
 "travel_report_code_info" = "Waren Sie in den letzten 14 Tagen in einem der aufgeführten Länder?\n\nWählen Sie das entsprechende Land, um auch diese Begegnungen zu informieren.";
+
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
+/*Fuzzy*/
+"accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";

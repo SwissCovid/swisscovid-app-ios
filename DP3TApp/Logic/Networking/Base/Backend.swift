@@ -27,7 +27,10 @@ struct Backend {
                   queryParameters: [String: String]? = nil,
                   headers: [String: String]? = nil, body: Encodable? = nil) -> Endpoint {
         var components = URLComponents(url: versionedURL.appendingPathComponent(path), resolvingAgainstBaseURL: true)!
-        components.queryItems = queryParameters?.map { URLQueryItem(name: $0.key, value: $0.value) }
+        if let queryParameters = queryParameters {
+            let sortedKeys = Array(queryParameters.keys).sorted()
+            components.queryItems = sortedKeys.map { URLQueryItem(name: $0, value: queryParameters[$0]) }
+        }
         let url = components.url!
         let data = body?.jsonData
 

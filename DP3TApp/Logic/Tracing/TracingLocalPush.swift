@@ -117,8 +117,17 @@ class TracingLocalPush: NSObject {
 
     // MARK: - Sync warnings
 
-    // If sync doesnt work for 2 days, we show a notification
-    // User should open app to fix issues
+    // 1: If the background tak doesnt work for 2 days we show a notification
+    //    User should open app to fix issues
+
+    private func scheduleSyncWarningNotification(delay: TimeInterval, identifier: String) {
+        let content = UNMutableNotificationContent()
+        content.title = "sync_warning_notification_title".ub_localized
+        content.body = "sync_warning_notification_text".ub_localized
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
+    }
 
     private let notificationIdentifier1 = "ch.admin.bag.notification.syncWarning1"
     private let notificationIdentifier2 = "ch.admin.bag.notification.syncWarning2"
@@ -127,35 +136,31 @@ class TracingLocalPush: NSObject {
     private let timeInterval2: TimeInterval = 60 * 60 * 24 * 7 // Seven days
 
     func removeSyncWarningTriggers() {
-        center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier1, notificationIdentifier2])
+        center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier1, notificationIdentifier2, syncErrorNotificationIdentifier])
     }
 
-    func resetSyncWarningTriggers(tracingState: TracingState) {
-        if TracingManager.shared.isActivated {
-            if let lastSync = tracingState.lastSync {
-                resetSyncWarningTriggers(lastSuccess: lastSync)
-            }
-        } else {
-            removeSyncWarningTriggers()
-        }
-    }
-
-    func resetSyncWarningTriggers(lastSuccess: Date) {
-        let content = UNMutableNotificationContent()
-        content.title = "sync_warning_notification_title".ub_localized
-        content.body = "sync_warning_notification_text".ub_localized
-
-        let timePassed = lastSuccess.timeIntervalSinceNow
-
-        let trigger1 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval1 - timePassed, repeats: false)
-        let request1 = UNNotificationRequest(identifier: notificationIdentifier1, content: content, trigger: trigger1)
-
-        let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval2 - timePassed, repeats: false)
-        let request2 = UNNotificationRequest(identifier: notificationIdentifier2, content: content, trigger: trigger2)
-
+    // This method gets called everytime we get executed in the backgrund or if the app was launched manually
+    func resetBackgroundTaskWarningTriggers() {
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
-        center.add(request1, withCompletionHandler: nil)
-        center.add(request2, withCompletionHandler: nil)
+        scheduleSyncWarningNotification(delay: timeInterval1, identifier: notificationIdentifier1)
+        scheduleSyncWarningNotification(delay: timeInterval2, identifier: notificationIdentifier2)
+    }
+
+    // 1: If a error happens during sync we show a notification after 1 day
+    //    we cancel the notification if the error was resolved in the meantime
+
+    private let syncErrorNotificationIdentifier = "ch.admin.bag.notification.syncWarning1"
+    private let syncErrorNotificationDelay: TimeInterval = 60 * 60 * 24 * 1 // One days
+
+    func handleSync(result: SyncResult) {
+        switch result {
+        case .failure:
+            scheduleSyncWarningNotification(delay: syncErrorNotificationDelay, identifier: syncErrorNotificationIdentifier)
+        case .success:
+            center.removePendingNotificationRequests(withIdentifiers: [syncErrorNotificationIdentifier])
+        case .skipped:
+            break
+        }
     }
 
     func handleTracingState(_ state: DP3TSDK.TrackingState) {
