@@ -24,7 +24,7 @@ class NSCodeTravelViewController: NSInformBottomButtonViewController {
         countries = travelManager.all
         super.init()
         // Always add Switzerland at first position
-        countries.insert(.init(isoCountryCode: "ch", activationDate: nil, isFavorite: false, isActivated: true), at: 0)
+        countries.insert(.init(isoCountryCode: "ch", deactivationDate: nil, isFavorite: false, isActivated: true), at: 0)
     }
 
     override func viewDidLoad() {

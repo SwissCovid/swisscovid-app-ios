@@ -98,15 +98,26 @@ extension NSTravelDetailViewController: UITableViewDataSource {
                 guard let self = self else { return }
                 guard let index = self.travelManager.favoriteCountries.firstIndex(where: { $0.isoCountryCode == country.isoCountryCode }) else { return }
 
-                if value {
-                    self.travelManager.favoriteCountries[index].activationDate = Date()
+                if !value {
+                    self.travelManager.favoriteCountries[index].deactivationDate = Date()
                 }
 
                 self.travelManager.favoriteCountries[index].isActivated = value
+
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
             }
+
+            var untilLabel: String?
+            if country.isActiveAfterDisactivation,
+                let untilDate = country.activateDateAfterDisactivation {
+                untilLabel = "travel_screen_notifications_activated_until"
+                    .ub_localized
+                    .replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_dayString(from: untilDate))
+            }
+
             cell.populate(with: .init(flag: UIImage(named: country.isoCountryCode.lowercased()),
                                       countryName: country.countryName,
-                                      untilLabel: "Meldungen noch bis 23.07.2020",
+                                      untilLabel: untilLabel,
                                       isEnabled: country.isActivated,
                                       isLast: isLast))
             return cell

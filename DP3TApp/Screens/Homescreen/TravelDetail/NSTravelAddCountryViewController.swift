@@ -126,6 +126,7 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
             let index = indexPath.row
             currentCountry = travelManager.favoriteCountries.remove(at: index)
             currentCountry.isFavorite = false
+            currentCountry.deactivationDate = nil
             travelManager.notFavoriteCountries.append(currentCountry)
             newIndexPath = IndexPath(row: travelManager.notFavoriteCountries.count - 1, section: Section.all.rawValue)
         } else {
@@ -136,13 +137,13 @@ extension NSTravelAddCountryViewController: UITableViewDataSource {
             newIndexPath = IndexPath(row: travelManager.favoriteCountries.count - 1, section: Section.favorites.rawValue)
         }
 
-        if let cell = self.tableView.cellForRow(at: indexPath) as? NSTravelAddCountryTableViewCell {
+        if let cell = tableView.cellForRow(at: indexPath) as? NSTravelAddCountryTableViewCell {
             cell.populate(with: .init(flag: UIImage(named: currentCountry.isoCountryCode.lowercased()),
                                       countryName: country.countryName,
                                       isFavorite: currentCountry.isFavorite))
         }
 
-        self.tableView.moveRow(at: indexPath, to: newIndexPath)
+        tableView.moveRow(at: indexPath, to: newIndexPath)
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

@@ -24,12 +24,22 @@ class TravelManager {
 
     struct Country: Codable {
         let isoCountryCode: String
-        var activationDate: Date?
+        var deactivationDate: Date?
         var isFavorite: Bool
         var isActivated: Bool
 
         var countryName: String {
             Locale.current.localizedString(forRegionCode: isoCountryCode) ?? isoCountryCode
+        }
+
+        var activateDateAfterDisactivation: Date? {
+            deactivationDate?.addingTimeInterval(10 * 24 * 60 * 60)
+        }
+
+        var isActiveAfterDisactivation: Bool {
+            guard !isActivated else { return false }
+            guard let date = activateDateAfterDisactivation else { return false }
+            return date.timeIntervalSinceNow > 0
         }
     }
 
@@ -58,7 +68,7 @@ class TravelManager {
                 // skip since country exists already
             } else {
                 let model = Country(isoCountryCode: country.isoCountryCode,
-                                    activationDate: nil,
+                                    deactivationDate: nil,
                                     isFavorite: favoritesAreEmpty && defaultFavoriteCountries.contains(country.isoCountryCode),
                                     isActivated: false)
                 if model.isFavorite {

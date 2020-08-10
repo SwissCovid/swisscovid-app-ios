@@ -96,7 +96,11 @@ class NSTravelCountryTableViewCell: UITableViewCell {
     func populate(with viewModel: ViewModel) {
         flagView.image = viewModel.flag
         countryLabel.text = viewModel.countryName
-        untilLabel.text = viewModel.untilLabel
+        if viewModel.isEnabled {
+            untilLabel.text = nil
+        } else {
+            untilLabel.text = viewModel.untilLabel
+        }
         syncSwitch.isOn = viewModel.isEnabled
         untilLabel.isHidden = viewModel.untilLabel == nil
         bottomSeperator.isHidden = !viewModel.isLast
