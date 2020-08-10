@@ -227,9 +227,6 @@
 "bluetooth_turn_on_button_title" = "Bluetooth'u ektinleştirin";
 "bluetooth_permission_error_title" = "Bluetooth kullanımı rededildi";
 "bluetooth_permission_error_text" = "Takibin çalışabilmesi için Bluetooth kullanımına izin verin.";
-
-/*URL zum Corona Check*/
-"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Ayarları değiştirin";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
@@ -456,7 +453,7 @@
 "meldungen_background_error_title" = "Arka plan güncellemesi kapatıldı";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Uygulama açık olmadığında da bildirim alabilmek için lütfen ayarları değiştirin.";
+"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Ayarları değiştirin";
@@ -522,7 +519,7 @@
 "accessibility_code_button_disabled_hint" = "Kodun tamamı girilmediğinden etkin değildir.";
 
 /*Fehler: Standortinformationen / Bluetooth*/
-"android_foreground_service_notification_error_location_service" = "Uygulamanın Bluetooth'u kullanabilmesi için konum bilgilerini açın. Uygulama hiçbir zaman sizin konumunuzu kaydetmeyecektir.";
+"android_foreground_service_notification_error_location_service" = "Android cihazlarda bluetooth, konum paylaşımına bağlıdır. Bu nedenle, uygulama konumunuza asla erişmese dahi, konum özelliği etkinleştirilmelidir.";
 
 /*Location Services ausgeschaltet Titel*/
 "android_error_location_services_title" = "Konumu kapat";
@@ -615,7 +612,7 @@
 "infoline_tel_number" = "+41 58 387 77 78";
 
 /*URL für Häufige Fragen Button*/
-"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/haeufig-gestellte-fragen.html";
+"faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
 "inform_code_intro_title" = "Önemli Bilgiler";
@@ -668,7 +665,8 @@
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Düzenlemek için lütfen iki defa tıklayın";
 
-/*Accessibility: FAW Button Titel */
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
+/*Fuzzy*/
 "accessibility_faq_button_hint" = "Bu bağlantı sizi uygulamadan çıkararak B.A.G. web sayfasına ulaştırır.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -759,65 +757,13 @@
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
 "android_en_start_failure" = "KOVİD-19 bildirimleri etkinleştirilemedi.";
-
-/*Certificate pinning Debug screen section title*/
-"certificate_pinning_title" = "Sertifika sabitleme";
-"certificate_pinning_button_disable" = "Devre dışı bırak";
-"certificate_pinning_button_enable" = "Etkinleştir";
-
-/*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Önizleme Sürümü";
-
-/*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "Pilot aşamada katılımcılar için kullanım";
-
-/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "„Bu uygulama şu anda yalnızca BAG tarafından pilot kullanım için davet edilen aşağıdaki grupların kullanımına açıktır: Eğitim, yardım ve aktif hizmette olan İsviçre Ordusu üyeleri, üniversite çalışanları, hastane ve klinik çalışanları, kanton idareleri ve federal idare çalışanları, sistemin kalitesinin iyileştirilmesine katkıda bulunmak isteyen dernek üyeleri.“";
-
-/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "Pilot aşama, üretken sistemlerle gerçekleştirilir ve gerçek verileri içerir. Kanton doktorları, pozitif bir KOVİD-19 testi durumunda yetkisiz uygulama kullanıcılarına bildirim için bir Kovid kodu veremezler. Tanımlanmış Kamu Güvenliği Testi‘nin dışındaki sisteme yapılan saldırılar (\"Penetrasyon testleri\"), üretken sisteme yapılan saldırılardır ve bu nedenle yasa dışıdır.";
-
-/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Pilot aşamaya katılmasına izin verilen bir organizasyonun üyesi misiniz?";
-
-/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Aşağıdakilerin üyesi misiniz: Eğitim, yardım ve aktif hizmette olan İsviçre Ordusu üyeleri, üniversite çalışanları, hastane ve klinik çalışanları, kanton idareleri ve federal idare çalışanları, sistemin kalitesinin iyileştirilmesine katkıda bulunmak isteyen dernek üyeleri?";
-
-/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Hayır";
-
-/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Evet";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Pilot aşama";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Pilot aşamasına katılan organizasyonlardan birine üye değilsiniz. Lütfen resmi başlangıçtan sonra güncellemeyi yükleyin ve uygulamayı yeniden başlatın.";
 "begegnung_detail_last_sync_title" = "Son senktronizasyon";
 "synchronizations_view_title" = "Genel Bakış";
 "synchronizations_view_info_title" = "Senkronizasyonlar";
 "synchronizations_view_info_question" = "Senkronizasyonlar nedir?";
 "synchronizations_view_info_answer" = "Uygulama düzenli olarak pozitif test edilmiş kişilerin yayınladığı rastgele ID'leri kontrol eder.";
 "synchronizations_view_period_title" = "Son 14 gün içerisinde";
-"synchronizations_view_sync_via_open" = "  • Aç";
-"synchronizations_view_sync_via_background" = "  • Senkronize et";
 "synchronizations_view_empty_list" = "Giriş yoktur";
-"synchronizations_view_sync_via_scheduled" = "  • Planlandı";
-"synchronizations_view_sync_via_fake_request" = "  • Hatalı talep";
-"synchronizations_view_sync_via_next_day_key_upload" = "  • Yükle";
-
-/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Görüşmeden önce";
-
-/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Lütfen şu bilgileri not edin";
-
-/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Tarih";
-
-/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Numara";
 "tracing_active_tracking_always_info" = "SwissCovid uygulama kapatıldığında da aktiftir.";
 
 /*title in splash screen of onboarding*/
@@ -853,10 +799,10 @@
 "onboarding_disclaimer_manufacturer" = "Bundesamt für Gesundheit BAG\nSchwarzenburgstrasse 157\n3097 Liebefeld, İzviçre";
 
 /*Onboarding Disclaimer Screen: App version title*/
-"onboarding_disclaimer_app_version" = "SwissCovid Uygulama Sürümü";
+"onboarding_disclaimer_app_version" = "SwissCovid App Version";
 
 /*Onboarding Disclaimer Screen: Release version title*/
-"onboarding_disclaimer_release_version" = "Yayınlanma tarihi:";
+"onboarding_disclaimer_release_version" = "Release Date:";
 
 /*onboarding privacy and conditions of use button*/
 "onboarding_disclaimer_legal_button" = "Veri Gizliliği & Kullanım Koşulları";
@@ -886,31 +832,79 @@
 "accessibility_tracing_has_been_deactivated" = "Takip devre dışı bırakılmıştır";
 
 /*Meldungen Detail Kostenloser Test Box Title*/
-"meldungen_detail_free_test_title" = "";
+"meldungen_detail_free_test_title" = "Ücretsiz test olma";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "SwissCovid Danışma Hattı size ücretsiz korona testleri konusunda bilgi vermektedir.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Takibi etkinleştir";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "";
+"tracing_turned_off_detailed_text" = "Uygulamanın temasları kaydedebilmesi ve bildirimleri alabilmesi için takibi etkinleştirin.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
-"meldungen_tracing_not_active_warning" = "";
+"meldungen_tracing_not_active_warning" = "Takip devre dışı bırkıldığında bildirimler de alınamaz.";
 
 /*Warning title for Meldungen-Card when Tracing is turned off.*/
-"meldungen_tracing_turned_off_title" = "";
+"meldungen_tracing_turned_off_title" = "Not";
 
 /*Data Protection Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_data_protection_statement" = "";
+"onboarding_disclaimer_data_protection_statement" = "Gizlilik Politikası";
 
 /*Conditions of Use Header String in Onboarding Disclaimer View.*/
-"onboarding_disclaimer_conditions_of_use" = "";
+"onboarding_disclaimer_conditions_of_use" = "Kullanım Şartları";
 
 /*Button title that links to the website with the data protection statement and conditions of use.*/
-"onboarding_disclaimer_to_online_version_button" = "";
+"onboarding_disclaimer_to_online_version_button" = "Çevrimiçi Sürüm";
 
 /*Hint that is displayed to the user under the Meldungen-Card when the Tracing is turned off.*/
-"meldungen_tracing_turned_off_warning" = "";
+"meldungen_tracing_turned_off_warning" = "Takip devre dışı bırakıldığında bildirimler de alınamaz.";
+
+/*Homescreen infobox close button accessibility handler*/
+"infobox_close_button_accessibility" = "Kapat";
+
+/*Title for the Home View Travel Card.*/
+"travel_title" = "";
+
+/*Info text that is displayed on the Home Travel Card.*/
+"travel_home_description" = "";
+
+/*Introductory Text that is displayed at the top of the travel settings screen.*/
+"travel_screen_introduction" = "";
+
+/*First title for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_1" = "";
+
+/*First text for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "";
+
+/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "";
+
+/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "";
+
+/*Button title for the Add Countries Button in the travel screen.*/
+"travel_screen_add_countries_button" = "";
+
+/*Text that is displayed under a country name that indicates until what date the user will still receive notifications from this country.*/
+"travel_screen_notifications_activated_until" = "";
+
+/*List Header for the favourites in the "Add countries" Screen of the Travel feature.*/
+"travel_screen_favourites" = "";
+
+/*List header for other countries in the "add countries" screen of the travel feature.*/
+"travel_screen_other_countries" = "";
+
+/*Title for the explanation at the bottom of the "add countries" screen of the travel feature.*/
+"travel_screen_add_countries_explanation_title" = "";
+
+/*Text for the explanation at the bottom of the "add countries" screen of the travel feature.*/
+"travel_screen_add_countries_explanation_text" = "";
+
+/*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
+"travel_report_code_info" = "";
+
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
+"accessibility_faq_button_hint_non_bag" = "";

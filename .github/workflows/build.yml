@@ -13,8 +13,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.5
-      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
+    - name: Switch to Xcode 11.6
+      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
 
     # Compile project and run tests
     - name: Compile and run tests
@@ -26,8 +26,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.5
-      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
+    - name: Switch to Xcode 11.6
+      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
     
     # Compile "Release-Prod" for iOS Simulator (no signing)
     - name: Compile and run tests
@@ -39,8 +39,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.5
-      run: sudo xcode-select --switch /Applications/Xcode_11.5.app
+    - name: Switch to Xcode 11.6
+      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
 
     # Compile "Release-Dev-Calibration" for iOS Simulator (no signing)
     - name: Compile and run tests

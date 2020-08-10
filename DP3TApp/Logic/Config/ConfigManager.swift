@@ -37,6 +37,9 @@ class ConfigManager: NSObject {
     @UBOptionalUserDefault(key: "lastBackgroundConfigLoad")
     static var lastConfigLoad: Date?
 
+    @UBOptionalUserDefault(key: "lastConfigURL")
+    static var lastConfigUrl: String?
+
     static let configForegroundValidityInterval: TimeInterval = 60 * 60 * 12 // 12h
     static let configBackgroundValidityInterval: TimeInterval = 60 * 60 * 6 // 6h
 
@@ -77,7 +80,14 @@ class ConfigManager: NSObject {
         }
     }
 
-    private func shouldLoadConfig(backgroundTask: Bool) -> Bool {
+    private func shouldLoadConfig(backgroundTask: Bool, url: String?) -> Bool {
+        // if the config url was changes (by OS version or app version changing) load config
+        if let lastUrl = Self.lastConfigUrl,
+            let url = url,
+            lastUrl != url {
+            return true
+        }
+
         if backgroundTask {
             return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configBackgroundValidityInterval
         } else {
@@ -102,7 +112,9 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
-        guard shouldLoadConfig(backgroundTask: backgroundTask) else {
+        let request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+
+        guard shouldLoadConfig(backgroundTask: backgroundTask, url: request.url?.absoluteString) else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return
@@ -110,7 +122,7 @@ class ConfigManager: NSObject {
 
         Logger.log("Load Config", appState: true)
 
-        dataTask = session.dataTask(with: Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request(), completionHandler: { data, response, error in
+        dataTask = session.dataTask(with: request, completionHandler: { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse,
                 let data = data else {
@@ -130,6 +142,7 @@ class ConfigManager: NSObject {
                 if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
                     Self.lastConfigLoad = Date()
+                    Self.lastConfigUrl = request.url?.absoluteString
                     completion(config)
                 } else {
                     Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")

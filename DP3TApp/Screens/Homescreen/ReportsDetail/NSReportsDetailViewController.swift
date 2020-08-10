@@ -10,12 +10,12 @@
 
 import UIKit
 
-class NSMeldungenDetailViewController: NSViewController {
-    private let noMeldungenViewController = NSMeldungenDetailNoMeldungenViewController()
+class NSReportsDetailViewController: NSViewController {
+    private let noReportsViewController = NSReportsDetailNoReportsViewController()
 
-    private let positiveTestedViewController = NSMeldungenDetailPositiveTestedViewController()
+    private let positiveTestedViewController = NSReportsDetailPositiveTestedViewController()
 
-    private let meldungenViewController = NSMeldungDetailMeldungenViewController()
+    private let reportsViewController = NSReportsDetailReportViewController()
 
     // MARK: - Init
 
@@ -32,7 +32,7 @@ class NSMeldungenDetailViewController: NSViewController {
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
-            strongSelf.setup(state.meldungenDetail)
+            strongSelf.setup(state.reportsDetail)
         }
 
         setupViewControllers()
@@ -41,12 +41,12 @@ class NSMeldungenDetailViewController: NSViewController {
     // MARK: - Setup
 
     private func setupViewControllers() {
-        // No Meldungen
-        addChild(noMeldungenViewController)
-        view.addSubview(noMeldungenViewController.view)
-        noMeldungenViewController.didMove(toParent: self)
+        // No Reports
+        addChild(noReportsViewController)
+        view.addSubview(noReportsViewController.view)
+        noReportsViewController.didMove(toParent: self)
 
-        noMeldungenViewController.view.snp.makeConstraints { make in
+        noReportsViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
@@ -58,32 +58,32 @@ class NSMeldungenDetailViewController: NSViewController {
             make.edges.equalToSuperview()
         }
 
-        // Meldungen View Controller
-        addChild(meldungenViewController)
-        view.addSubview(meldungenViewController.view)
-        meldungenViewController.didMove(toParent: self)
+        // Reports View Controller
+        addChild(reportsViewController)
+        view.addSubview(reportsViewController.view)
+        reportsViewController.didMove(toParent: self)
 
-        meldungenViewController.view.snp.makeConstraints { make in
+        reportsViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
 
-    private func setup(_ state: UIStateModel.MeldungenDetail) {
-        meldungenViewController.showMeldungWithAnimation = state.showMeldungWithAnimation
+    private func setup(_ state: UIStateModel.ReportsDetail) {
+        reportsViewController.showReportWithAnimation = state.showReportWithAnimation
 
-        noMeldungenViewController.view.isHidden = true
+        noReportsViewController.view.isHidden = true
         positiveTestedViewController.view.isHidden = true
-        meldungenViewController.view.isHidden = true
+        reportsViewController.view.isHidden = true
 
-        switch state.meldung {
+        switch state.report {
         case .exposed:
-            meldungenViewController.view.isHidden = false
-            meldungenViewController.meldungen = state.meldungen
-            meldungenViewController.phoneCallState = state.phoneCallState
+            reportsViewController.view.isHidden = false
+            reportsViewController.reports = state.reports
+            reportsViewController.phoneCallState = state.phoneCallState
         case .infected:
             positiveTestedViewController.view.isHidden = false
-        case .noMeldung:
-            noMeldungenViewController.view.isHidden = false
+        case .noReport:
+            noReportsViewController.view.isHidden = false
         }
     }
 }

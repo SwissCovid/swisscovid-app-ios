@@ -10,27 +10,27 @@
 
 import UIKit
 
-class NSMeldungenDetailNoMeldungenTitleView: NSTitleView {
+class NSReportsDetailPositiveTestedTitleView: NSTitleView {
     // MARK: - Views
 
     private let stackView = UIStackView()
 
-    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle"))
-    private let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textColor: .ns_defaultTextColor, textAlignment: .center)
+    private let imageView = UIImageView(image: UIImage(named: "ic-info-border"))
+    private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
+    private let textLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
 
     // MARK: - Init
 
     init() {
         super.init(frame: .zero)
 
-        titleLabel.text = "meldungen_no_meldungen_title".ub_localized
-        textLabel.text = "meldungen_no_meldungen_subtitle".ub_localized
+        titleLabel.text = "meldung_detail_positive_tested_title".ub_localized
+        textLabel.text = "meldung_detail_positive_tested_subtitle".ub_localized
 
-        backgroundColor = UIColor.ns_greenBackground
+        backgroundColor = UIColor.ns_purple
         setup()
-        isAccessibilityElement = true
-        accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")"
+        accessibilityElements = [titleLabel, textLabel].compactMap { $0 }
+        titleLabel.accessibilityTraits = [.header]
     }
 
     required init?(coder _: NSCoder) {
@@ -60,7 +60,7 @@ class NSMeldungenDetailNoMeldungenTitleView: NSTitleView {
         stackView.addArrangedSubview(v)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addSpacerView(NSPadding.small)
+        stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedSubview(textLabel)
     }
 }

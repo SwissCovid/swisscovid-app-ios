@@ -10,19 +10,19 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
+class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
-    public var meldungen: [UIStateModel.MeldungenDetail.NSMeldungModel] = [] {
+    public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
         didSet {
-            guard oldValue != meldungen else { return }
+            guard oldValue != reports else { return }
             update()
         }
     }
 
-    public var showMeldungWithAnimation: Bool = false
+    public var showReportWithAnimation: Bool = false
 
-    public var phoneCallState: UIStateModel.MeldungenDetail.PhoneCallState = .notCalled {
+    public var phoneCallState: UIStateModel.ReportsDetail.PhoneCallState = .notCalled {
         didSet { update() }
     }
 
@@ -41,13 +41,13 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSMeldungDetailMeldungTitleView(overlapInset: titleHeight - startPositionScrollView)
+        titleView = NSReportsDetailReportTitleView(overlapInset: titleHeight - startPositionScrollView)
 
         stackScrollView.hitTestDelegate = self
     }
 
     override var useFullScreenHeaderAnimation: Bool {
-        return UIAccessibility.isVoiceOverRunning ? false : showMeldungWithAnimation
+        return UIAccessibility.isVoiceOverRunning ? false : showReportWithAnimation
     }
 
     override var titleHeight: CGFloat {
@@ -61,8 +61,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     override func startHeaderAnimation() {
         overrideHitTestAnyway = false
 
-        for m in meldungen {
-            UserStorage.shared.registerSeenMessages(identifier: m.identifier)
+        for report in reports {
+            UserStorage.shared.registerSeenMessages(identifier: report.identifier)
         }
 
         super.startHeaderAnimation()
@@ -103,16 +103,16 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSMeldungDetailMeldungTitleView {
-            tv.meldungen = meldungen
+        if let tv = titleView as? NSReportsDetailReportTitleView {
+            tv.reports = reports
         }
 
         notYetCalledView?.isHidden = phoneCallState != .notCalled
         alreadyCalledView?.isHidden = phoneCallState != .calledAfterLastExposure
         callAgainView?.isHidden = phoneCallState != .multipleExposuresNotCalled
 
-        if let lastMeldungId = meldungen.last?.identifier,
-            let lastCall = UserStorage.shared.lastPhoneCall(for: lastMeldungId) {
+        if let lastReportId = reports.last?.identifier,
+            let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
             callLabels.forEach {
                 $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
@@ -125,7 +125,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Detail Views
 
     private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -147,7 +147,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-verhalten"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -171,7 +171,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-anrufen"), subtitleColor: .ns_blue, bottomPadding: false)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "iillu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
@@ -217,7 +217,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         deleteButton.touchUpCallback = { [weak self] in
             let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
-                TracingManager.shared.deleteMeldungen()
+                TracingManager.shared.deleteReports()
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
@@ -233,7 +233,7 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     }
 
     private func createExplanationView() -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text3".ub_localized], edgeInsets: .zero)
+        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
 
         let wrapper = UIView()
         let daysLeftLabel = NSLabel(.textBold)
@@ -247,8 +247,8 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
         ev.stackView.insertArrangedSubview(wrapper, at: 3)
         ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
 
-        var infoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_tests_title".ub_localized,
-                                                       subText: "meldungen_detail_free_tests_text".ub_localized,
+        var infoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized,
+                                                       subText: "meldungen_detail_free_test_text".ub_localized,
                                                        titleColor: .ns_text,
                                                        subtextColor: .ns_text)
         infoBoxViewModel.image = UIImage(named: "ic-info-on")
@@ -265,17 +265,17 @@ class NSMeldungDetailMeldungenViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let last = meldungen.last else { return }
+        guard let lastReport = reports.last else { return }
 
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        UserStorage.shared.registerPhoneCall(identifier: last.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: lastReport.identifier)
         UIStateManager.shared.refresh()
     }
 }
 
-extension NSMeldungDetailMeldungenViewController: NSHitTestDelegate {
+extension NSReportsDetailReportViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true

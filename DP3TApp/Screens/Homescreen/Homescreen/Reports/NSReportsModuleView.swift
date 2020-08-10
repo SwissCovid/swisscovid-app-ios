@@ -10,14 +10,15 @@
 
 import UIKit
 
-class NSMeldungView: NSModuleBaseView {
+class NSReportsModuleView: NSModuleBaseView {
     var uiState: UIStateModel.Homescreen
         = .init() {
         didSet { updateLayout() }
     }
 
     // section views
-    let noMeldungenView: NSInfoBoxView = {
+
+    let noReportsView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_no_meldungen_title".ub_localized,
                                                 subText: "meldungen_no_meldungen_subtitle".ub_localized,
                                                 image: UIImage(named: "ic-check"),
@@ -84,12 +85,7 @@ class NSMeldungView: NSModuleBaseView {
         }
     }))
 
-    private let backgroundFetchProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-refresh")!, title: "meldungen_background_error_title".ub_localized, text: "meldungen_background_error_text".ub_localized, buttonTitle: "meldungen_background_error_button".ub_localized, action: { _ in
-        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-            UIApplication.shared.canOpenURL(settingsUrl) else { return }
-
-        UIApplication.shared.open(settingsUrl)
-    }))
+    private let backgroundFetchProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-refresh")!, title: "meldungen_background_error_title".ub_localized, text: "meldungen_background_error_text".ub_localized, buttonTitle: nil, action: nil))
 
     override init() {
         super.init()
@@ -106,50 +102,50 @@ class NSMeldungView: NSModuleBaseView {
     override func sectionViews() -> [UIView] {
         var views = [UIView]()
 
-        let meldungenState = uiState.meldungen
+        let reportsState = uiState.reports
 
         @discardableResult
         func showTracingDisabledErrorIfNeeded() -> Bool {
-            if uiState.begegnungen == .tracingDisabled {
+            if uiState.encounters == .tracingDisabled {
                 views.append(tracingDisabledView)
                 return true
             }
             return false
         }
 
-        switch meldungenState.meldung {
-        case .noMeldung:
-            views.append(noMeldungenView)
-            if meldungenState.pushProblem {
+        switch reportsState.report {
+        case .noReport:
+            views.append(noReportsView)
+            if reportsState.pushProblem {
                 views.append(noPushView)
-            } else if meldungenState.syncProblemOtherError {
-                if meldungenState.canRetrySyncError {
-                    unexpectedErrorWithRetryView.model?.title = meldungenState.errorTitle ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorWithRetryView.model?.text = meldungenState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorWithRetryView.model?.errorCode = meldungenState.errorCode
+            } else if reportsState.syncProblemOtherError {
+                if reportsState.canRetrySyncError {
+                    unexpectedErrorWithRetryView.model?.title = reportsState.errorTitle ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorWithRetryView.model?.text = reportsState.errorMessage ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorWithRetryView.model?.errorCode = reportsState.errorCode
                     views.append(unexpectedErrorWithRetryView)
                 } else {
-                    unexpectedErrorView.model?.text = meldungenState.errorMessage ?? "unexpected_error_title".ub_localized
-                    unexpectedErrorView.model?.errorCode = meldungenState.errorCode
+                    unexpectedErrorView.model?.text = reportsState.errorMessage ?? "unexpected_error_title".ub_localized
+                    unexpectedErrorView.model?.errorCode = reportsState.errorCode
                     views.append(unexpectedErrorView)
                 }
             } else if showTracingDisabledErrorIfNeeded() {
-            } else if meldungenState.syncProblemNetworkingError {
+            } else if reportsState.syncProblemNetworkingError {
                 views.append(syncProblemView)
-                syncProblemView.model?.text = meldungenState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
-                syncProblemView.model?.errorCode = meldungenState.errorCode
-            } else if meldungenState.backgroundUpdateProblem {
+                syncProblemView.model?.text = reportsState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
+                syncProblemView.model?.errorCode = reportsState.errorCode
+            } else if reportsState.backgroundUpdateProblem {
                 views.append(backgroundFetchProblemView)
-                backgroundFetchProblemView.model?.errorCode = meldungenState.errorCode
+                backgroundFetchProblemView.model?.errorCode = reportsState.errorCode
             }
         case .exposed:
             views.append(exposedView)
             views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
-            if let lastMeldung = meldungenState.lastMeldung {
+            if let lastReport = reportsState.lastReport {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)
 
-                dateLabel.text = DateFormatter.ub_daysAgo(from: lastMeldung, addExplicitDate: false)
+                dateLabel.text = DateFormatter.ub_daysAgo(from: lastReport, addExplicitDate: false)
 
                 container.addSubview(dateLabel)
                 dateLabel.snp.makeConstraints { make in
@@ -170,7 +166,7 @@ class NSMeldungView: NSModuleBaseView {
     override func updateLayout() {
         super.updateLayout()
 
-        setCustomSpacing(NSPadding.medium, after: noMeldungenView)
+        setCustomSpacing(NSPadding.medium, after: noReportsView)
         setCustomSpacing(NSPadding.medium, after: exposedView)
         setCustomSpacing(NSPadding.medium, after: infectedView)
     }

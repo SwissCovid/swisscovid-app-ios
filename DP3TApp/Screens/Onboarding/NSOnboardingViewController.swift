@@ -120,8 +120,6 @@ class NSOnboardingViewController: NSViewController {
             showContinueButton()
         }
 
-        continueButton.title = stepViewControllers[step].continueButtonText
-
         if isLast {
             finishButton.alpha = 0
             finishButton.transform = CGAffineTransform(translationX: 300, y: 0)
@@ -153,13 +151,17 @@ class NSOnboardingViewController: NSViewController {
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0, completion: { completed in
                 if completed {
                     vcToHide.view.isHidden = true
+                    self.continueButton.title = self.stepViewControllers[step].continueButtonText
+                    UIAccessibility.post(notification: .screenChanged, argument: nil)
                 }
             })
         } else if step < stepViewControllers.count - 1, !forward {
+            continueButton.title = stepViewControllers[step].continueButtonText
             let vcToHide = stepViewControllers[step + 1]
             vcToHide.fadeAnimation(fromFactor: 0, toFactor: 1, delay: 0.0, completion: { completed in
                 if completed {
                     vcToHide.view.isHidden = true
+                    UIAccessibility.post(notification: .screenChanged, argument: nil)
                 }
             })
         }
@@ -168,8 +170,6 @@ class NSOnboardingViewController: NSViewController {
         vcToShow.view.layoutIfNeeded()
 
         currentStep = step
-
-        UIAccessibility.post(notification: .screenChanged, argument: nil)
     }
 
     private func showContinueButton() {
@@ -298,8 +298,6 @@ class NSOnboardingViewController: NSViewController {
             return false
         }
         setOnboardingStep(currentStep + 1, animated: true)
-
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 
@@ -312,7 +310,6 @@ class NSOnboardingViewController: NSViewController {
         }
         setOnboardingStep(currentStep - 1, animated: true)
 
-        UIAccessibility.post(notification: .pageScrolled, argument: nil)
         return true
     }
 }

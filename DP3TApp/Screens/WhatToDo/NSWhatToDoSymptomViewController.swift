@@ -74,7 +74,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.large)
 
-        let imageView = UIImageView(image: UIImage(named: "illu-symptome-title"))
+        let imageView = UIImageView(image: UIImage(named: "illu-symptoms-title"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 

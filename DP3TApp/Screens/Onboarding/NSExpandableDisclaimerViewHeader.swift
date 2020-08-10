@@ -38,7 +38,8 @@ class NSExpandableDisclaimerViewHeader: UBButton {
 
         arrowImageview.snp.makeConstraints { make in
             make.left.greaterThanOrEqualTo(headerLabel.snp.right).inset(-NSPadding.large)
-            make.bottom.top.right.equalToSuperview().inset(NSPadding.large)
+            make.right.equalToSuperview().inset(NSPadding.large)
+            make.centerY.equalToSuperview()
         }
 
         touchUpCallback = { [weak self] in
@@ -53,8 +54,13 @@ class NSExpandableDisclaimerViewHeader: UBButton {
                     self.arrowImageview.transform = .init(rotationAngle: .pi / 2)
                 }
                 self.didExpand?(self.isExpanded)
-            }, completion: nil)
+            }, completion: { _ in
+                UIAccessibility.post(notification: .screenChanged, argument: nil)
+            })
         }
+
+        accessibilityLabel = headerLabel.text
+        accessibilityTraits = [.button, .header]
     }
 
     required init?(coder _: NSCoder) {

@@ -33,7 +33,7 @@ class NSSendViewController: NSInformBottomButtonViewController {
             make.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
         }
 
-        let imageView = UIImageView(image: UIImage(named: "illu-code-wichtiger-hinweis"))
+        let imageView = UIImageView(image: UIImage(named: "illu-code-important-note"))
         imageView.contentMode = .scaleAspectFit
 
         stackScrollView.addSpacerView(NSPadding.large)

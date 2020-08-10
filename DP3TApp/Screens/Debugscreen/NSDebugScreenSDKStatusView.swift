@@ -105,7 +105,7 @@
 
         #if ENABLE_STATUS_OVERRIDE
             private func update(_ state: UIStateModel) {
-                switch state.homescreen.begegnungen {
+                switch state.homescreen.encounters {
                 case .tracingActive:
                     tracingLabel.text = "tracing_active_title".ub_localized
                 case .tracingDisabled, .bluetoothTurnedOff, .bluetoothPermissionError, .tracingEnded, .timeInconsistencyError, .unexpectedError, .tracingPermissionError:

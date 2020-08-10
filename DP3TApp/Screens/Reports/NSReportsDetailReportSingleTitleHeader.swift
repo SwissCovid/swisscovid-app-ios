@@ -10,12 +10,12 @@
 
 import UIKit
 
-class NSMeldungDetailMeldungSingleTitleHeader: UIView {
+class NSReportsDetailReportSingleTitleHeader: UIView {
     // MARK: - API
 
     public weak var headerView: NSTitleView?
 
-    public var meldung: UIStateModel.MeldungenDetail.NSMeldungModel? {
+    public var report: UIStateModel.ReportsDetail.NSReportModel? {
         didSet { update() }
     }
 
@@ -199,9 +199,9 @@ class NSMeldungDetailMeldungSingleTitleHeader: UIView {
     }
 
     private func update() {
-        guard let m = meldung else { return }
+        guard let report = report else { return }
 
-        dateLabel.text = DateFormatter.ub_daysAgo(from: m.timestamp, addExplicitDate: true)
+        dateLabel.text = DateFormatter.ub_daysAgo(from: report.timestamp, addExplicitDate: true)
 
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
     }
