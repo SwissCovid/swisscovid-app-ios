@@ -338,6 +338,7 @@
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F848A55E24E14D24000E8DC7 /* NSTableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B30B5B24D2EE8B006FBBBE /* NSTableViewHeaderFooterView.swift */; };
 		F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */; };
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
@@ -1711,6 +1712,7 @@
 				242D21EA245C4BD8005DAEA8 /* UBRawRepresentable.swift in Sources */,
 				242D21EB245C4BD8005DAEA8 /* UIScrollView+UBKeyboardObserver.m in Sources */,
 				242D21EC245C4BD8005DAEA8 /* NSWhatToDoInformView.swift in Sources */,
+				F848A55E24E14D24000E8DC7 /* NSTableViewHeaderFooterView.swift in Sources */,
 				242D21ED245C4BD8005DAEA8 /* NSStackScrollView.swift in Sources */,
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
 				242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */,
