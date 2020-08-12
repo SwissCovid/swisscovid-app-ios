@@ -207,11 +207,11 @@ extension NSInfoBoxView {
     private func setupAccessibility(title: String, subTitle: String, additionalText: String?, additionalURL: String?) {
         if let additionalURL = additionalURL {
             isAccessibilityElement = false
-            
+
             externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint".ub_localized : "accessibility_faq_button_hint_non_bag".ub_localized
             return
         }
-        
+
         isAccessibilityElement = true
         accessibilityLabel = "\(title), \(subTitle), \(additionalText ?? "")"
     }
