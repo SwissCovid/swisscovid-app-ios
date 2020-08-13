@@ -627,7 +627,7 @@
 "symptom_faq1_title" = "ምልክታት ኮቪድ-19 እንታይ እዩ፧";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n- ረስኒ፣ ስምዒት ናይ ረስኒ\n- ቃንዛ ጎሮሮ\n- ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n- ሕጽረት እስትንፋስ\n- ቃንዛ ጨዋዳታት\n- ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
+"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n– ረስኒ፣ ስምዒት ናይ ረስኒ\n– ቃንዛ ጎሮሮ\n– ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n– ሕጽረት እስትንፋስ\n– ቃንዛ ጨዋዳታት\n– ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
@@ -908,3 +908,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";

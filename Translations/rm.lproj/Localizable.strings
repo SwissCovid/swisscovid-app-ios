@@ -628,7 +628,7 @@
 "symptom_faq1_title" = "Tge èn sintoms da COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Quests sintoms cumparan savens:\n\n- fevra, sentiment da fevra\n- mal la gula\n- tuss (per il solit tuss sitga)\n- respiraziun asmatica\n- mal ils musculs\n- perdita andetga da l'odurat e/u dal palat";
+"symptom_faq1_text" = "Quests sintoms cumparan savens:\n\n– fevra, sentiment da fevra\n– mal la gula\n– tuss (per il solit tuss sitga)\n– respiraziun asmatica\n– mal ils musculs\n– perdita andetga da l'odurat e/u dal palat";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pertge è il tracing terminà?";
@@ -912,3 +912,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";
