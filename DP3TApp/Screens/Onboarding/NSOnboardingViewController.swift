@@ -15,6 +15,8 @@ class NSOnboardingViewController: NSViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
+
     private let splashVC = NSSplashViewController()
 
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
@@ -81,6 +83,8 @@ class NSOnboardingViewController: NSViewController {
         setupSwipeRecognizers()
         addStepViewControllers()
         addSplashViewController()
+
+        addStatusBarBlurView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -102,7 +106,22 @@ class NSOnboardingViewController: NSViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             UIView.animate(withDuration: 0.5) {
                 self.splashVC.view.alpha = 0
+                self.blurView.alpha = 1
             }
+        }
+    }
+
+    fileprivate func addStatusBarBlurView() {
+        blurView.alpha = 0
+
+        view.addSubview(blurView)
+
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+
+        blurView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(statusBarHeight)
         }
     }
 
