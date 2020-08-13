@@ -632,7 +632,7 @@
 "symptom_faq1_title" = "Quels sont les symptômes du COVID-19 ?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Ces symptômes sont fréquents :\n\n- Fièvre, sensation de fièvre\n- Mal de gorge\n- Toux (généralement sèche)\n- Difficultés respiratoires\n- Douleurs musculaires\n- Perte soudaine de l’odorat et/ou du goût";
+"symptom_faq1_text" = "Ces symptômes sont fréquents :\n\n– Fièvre, sensation de fièvre\n– Mal de gorge\n– Toux (généralement sèche)\n– Difficultés respiratoires\n– Douleurs musculaires\n– Perte soudaine de l’odorat et/ou du goût";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pourquoi le traçage de proximité est-il interrompu ?";
@@ -919,3 +919,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";
