@@ -88,7 +88,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addArrangedView(infoView)
 
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(3.0 * NSPadding.large)
     }
 
     private func setupAccessibility() {

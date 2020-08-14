@@ -632,7 +632,7 @@
 "symptom_faq1_title" = "Quali sono i sintomi della COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Questi sono i sintomi più frequenti:\n\n- febbre, sensazione di febbre\n- mal di gola\n- tosse (perlopiù secca)\n- affanno\n- dolori muscolari\n- perdita improvvisa dell'olfatto e/o del gusto";
+"symptom_faq1_text" = "Questi sono i sintomi più frequenti:\n\n– febbre, sensazione di febbre\n– mal di gola\n– tosse (perlopiù secca)\n– affanno\n– dolori muscolari\n– perdita improvvisa dell'olfatto e/o del gusto";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Perché il tracciamento è terminato?";
@@ -919,3 +919,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";

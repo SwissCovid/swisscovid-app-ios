@@ -628,7 +628,7 @@
 "symptom_faq1_title" = "Koji su simptomi COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Ovi simptomi se često javljaju:\n\n- temperatura, osećaj groznice\n- bolovi u grlu\n- kašalj (najčešće suv)\n- kratak dah\n- bolovi u mišićima\n- iznenadni gubitak čula mirisa i/ili ukusa";
+"symptom_faq1_text" = "Ovi simptomi se često javljaju:\n\n– temperatura, osećaj groznice\n– bolovi u grlu\n– kašalj (najčešće suv)\n– kratak dah\n– bolovi u mišićima\n– iznenadni gubitak čula mirisa i/ili ukusa";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Zašto je praćenje završeno?";
@@ -912,3 +912,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";
