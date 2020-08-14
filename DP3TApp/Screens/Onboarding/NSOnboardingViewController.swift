@@ -15,7 +15,7 @@ class NSOnboardingViewController: NSViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
-    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
 
     private let splashVC = NSSplashViewController()
 
