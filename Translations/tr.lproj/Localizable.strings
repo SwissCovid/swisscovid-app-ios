@@ -627,7 +627,7 @@
 "symptom_faq1_title" = "KOVİD-19 semptomları nedir?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n- Ateş, ateşlenme\n- Boğaz ağrısı\n- Öksürme (genelde kuru)\n- Nefes darlığı\n- Kas ağrıları\n- Koku ve tad alma yetisinin aniden kaybolması";
+"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n– Ateş, ateşlenme\n– Boğaz ağrısı\n– Öksürme (genelde kuru)\n– Nefes darlığı\n– Kas ağrıları\n– Koku ve tad alma yetisinin aniden kaybolması";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Takip neden sonlandırıldı?";
@@ -908,3 +908,6 @@
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";

@@ -640,7 +640,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n- Fieber, Fiebergefühl\n- Halsschmerzen\n- Husten (meist trocken)\n- Kurzatmigkeit\n- Muskelschmerzen\n- Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
+"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -938,3 +938,6 @@
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 /*Fuzzy*/
 "accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "";
