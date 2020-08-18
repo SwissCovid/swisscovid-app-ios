@@ -42,10 +42,7 @@ platform :ios do
 
   def getCustomBundleVersion()
     datestring_now = DateTime.now.strftime('%y%m%d.%H%M')
-    bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}"
-    if ENV['BUILD_NUMBER_POSTFIX'] != nil
-      bundle_version = "#{bundle_version}.#{ENV['BUILD_NUMBER_POSTFIX']}"
-    end
+    bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}#{ENV['BUILD_NUMBER_POSTFIX']}"
     return bundle_version
   end
 end
