@@ -47,8 +47,10 @@ class NSLastSyncronizationControl: UIControl {
         layer.cornerRadius = 3.0
         ub_addShadow(radius: 4.0, opacity: 0.05, xOffset: 0, yOffset: -2)
 
-        titleLabel.text = "begegnung_detail_last_sync_title".ub_localized
-        titleLabel.accessibilityTraits = [.header]
+        accessibilityTraits = [.header]
+        isAccessibilityElement = true
+        titleLabel.isAccessibilityElement = false
+        subtitleLabel.isAccessibilityElement = false
 
         subtitleLabel.text = Self.nullDateValueString
 
@@ -89,5 +91,16 @@ class NSLastSyncronizationControl: UIControl {
         didSet {
             backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_background
         }
+    }
+
+    override var accessibilityLabel: String? {
+        get {
+            if let date = lastSyncronizationDate {
+                return "\("begegnung_detail_last_sync_title".ub_localized) \(dateFormatter.string(from: date))"
+            } else {
+                return "begegnung_detail_no_last_sync_accessibility".ub_localized
+            }
+        }
+        set {}
     }
 }
