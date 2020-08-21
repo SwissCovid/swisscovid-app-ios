@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Background update deactivated.";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Change settings";
@@ -781,7 +781,7 @@
 "inform_detail_faq3_title" = "Does anyone find out who I am?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "If you develop any symptoms, do the coronavirus check or call your doctor.";
+"meldungen_detail_explanation_text4" = "Call your doctor or your healthcare facility to schedule an appointment.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19 Exposure Notifications";
@@ -920,3 +920,6 @@
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
 "begegnung_detail_no_last_sync_accessibility" = "";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Change the settings to receive notification outside the app as well in the event of a report.";

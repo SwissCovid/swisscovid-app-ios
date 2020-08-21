@@ -462,7 +462,7 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Einstellungen ändern";
@@ -798,7 +798,7 @@
 
 /*Meldung Detail Weiss Box unten*/
 /*Fuzzy*/
-"meldungen_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
+"meldungen_detail_explanation_text4" = "Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19-Benachrichtigungen";
@@ -940,4 +940,7 @@
 "accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Keine bisherigen Synchronisationen";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
