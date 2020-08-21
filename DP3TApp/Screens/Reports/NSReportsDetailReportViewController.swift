@@ -116,8 +116,14 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             callLabels.forEach {
                 $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
-            daysLeftLabels.forEach {
-                $0.text = DateFormatter.ub_inDays(until: lastCall.addingTimeInterval(60 * 60 * 24 * 10)) // 10 days after last exposure
+            let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
+            if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
+                let endQuarentineDate = latestExposure.addingTimeInterval(quarantinePeriod)
+                if endQuarentineDate.timeIntervalSinceNow > 0 {
+                    daysLeftLabels.forEach {
+                        $0.text = DateFormatter.ub_inDays(until: endQuarentineDate)
+                    }
+                }
             }
         }
     }
