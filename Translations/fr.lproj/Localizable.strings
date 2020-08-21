@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Actualisation de l'arrière-plan désactivée";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Modifier les paramètres";
@@ -783,7 +783,7 @@
 "inform_detail_faq3_title" = "Est-ce que je reste anonyme ?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Faites une auto-évaluation ou appelez votre médecin dès les premiers symptômes.";
+"meldungen_detail_explanation_text4" = "Appelez un médecin ou une institution de santé.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Notifications d'exposition au COVID 19";
@@ -922,3 +922,6 @@
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
 "begegnung_detail_no_last_sync_accessibility" = "";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Veuillez modifier les paramètres pour pouvoir recevoir les nouvelles notifications même en dehors de l'application.";

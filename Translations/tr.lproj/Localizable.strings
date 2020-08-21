@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Arka plan güncellemesi kapatıldı";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Ayarları değiştirin";
@@ -772,7 +772,7 @@
 "inform_detail_faq3_title" = "Bilgilerim anonim mi?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "İlk semptomlarda lütfen Korona virüsü kontrolünü yapın ve doktorunuzu arayın.";
+"meldungen_detail_explanation_text4" = "Lütfen bir doktor ya da sağlık kuruluşu ile iletişime geçin.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "KOVİD-19 Bildirimleri";
@@ -911,3 +911,6 @@
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
 "begegnung_detail_no_last_sync_accessibility" = "";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Uygulama açık olmadığında da bildirim alabilmek için lütfen ayarları değiştirin.";
