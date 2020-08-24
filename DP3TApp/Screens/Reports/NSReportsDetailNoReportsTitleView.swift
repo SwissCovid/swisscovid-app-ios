@@ -17,7 +17,7 @@ class NSReportsDetailNoReportsTitleView: NSTitleView {
 
     private let imageView = UIImageView(image: UIImage(named: "ic-check-circle"))
     private let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let textLabel = NSLabel(.textLight, textColor: .ns_defaultTextColor, textAlignment: .center)
 
     // MARK: - Init
 

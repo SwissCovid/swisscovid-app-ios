@@ -914,3 +914,12 @@
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "ሓድሽ ሓበሬታ ምስዝህሉ: ካብቲ ኣፕ ወጻኢ ውን ንኽትሕበሩ ምእንታን: ነቲ ሴቲንግ ቀይርዎ።";
+
+/*Informieren Detail: FAQ Titel*/
+"inform_detail_faq_nocode_title" = "";
+
+/*Inform Detail: FAQ Text*/
+"inform_detail_faq_nocode_text" = "";
+
+/*Telefonnummer der allgemeinen Infoline Coronavirus*/
+"infoline_coronavirus_number" = "";

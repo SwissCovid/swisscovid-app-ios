@@ -30,7 +30,7 @@ class NSModuleBaseView: UIControl {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
 
-        backgroundColor = .ns_background
+        backgroundColor = .ns_moduleBackground
 
         setupLayout()
         setupAccessibility()
@@ -82,7 +82,7 @@ class NSModuleBaseView: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_background
+            backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_moduleBackground
         }
     }
 }

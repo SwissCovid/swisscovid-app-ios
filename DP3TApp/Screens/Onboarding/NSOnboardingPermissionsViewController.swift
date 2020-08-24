@@ -59,7 +59,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
         addArrangedView(goodToKnowContainer)
 
-        background.backgroundColor = .ns_backgroundSecondary
+        background.backgroundColor = .ns_backgroundTertiary
         background.alpha = 0
 
         view.insertSubview(background, at: 0)
