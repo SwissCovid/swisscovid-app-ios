@@ -110,6 +110,8 @@ private class FakePublishOperation: Operation {
                     self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
                         guard let self = self else { return }
                         if error != nil {
+                            // in case of error, the operation will be tried again later, either at the next startup,
+                            // or when the next background task is executed.
                             self.cancel()
                             Logger.log("Fake request #\(numberOfFakeRequestsDone) failed")
                         } else {
