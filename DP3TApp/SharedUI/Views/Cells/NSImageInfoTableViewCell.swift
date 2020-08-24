@@ -21,7 +21,7 @@ class NSImageInfoTableViewCell: UITableViewCell {
         contentView.addSubview(textView)
 
         textView.snp.makeConstraints { make in
-            self.topPadding = make.top.equalToSuperview().inset(NSPadding.large * 2).constraint
+            self.topPadding = make.top.equalToSuperview().inset(NSPadding.large).constraint
             make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.large)
         }
 
@@ -32,7 +32,7 @@ class NSImageInfoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func populate(with viewModel: NSTextImageView.ViewModel, topPadding: CGFloat = 2 * NSPadding.large) {
+    func populate(with viewModel: NSTextImageView.ViewModel, topPadding: CGFloat = NSPadding.large) {
         textView.populate(with: viewModel)
         self.topPadding?.update(inset: topPadding)
     }
