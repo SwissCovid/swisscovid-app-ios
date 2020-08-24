@@ -772,7 +772,7 @@
 "inform_detail_faq3_title" = "Rest jau anonima/anonim?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Faschai per plaschair il check coronavirus en cas d'emprims sintoms u telefonai a Vossa media / Voss medi.";
+"meldungen_detail_explanation_text4" = "Contactai ina media resp. in medi u ina instituziun da sanadad.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Communicaziuns COVID-19";
@@ -911,3 +911,6 @@
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
 "begegnung_detail_no_last_sync_accessibility" = "";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";

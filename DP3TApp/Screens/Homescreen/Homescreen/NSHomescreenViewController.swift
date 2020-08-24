@@ -154,22 +154,21 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
             let debugScreenContainer = UIView()
 
-            if Environment.current != Environment.prod {
-                debugScreenContainer.addSubview(debugScreenButton)
-                debugScreenButton.snp.makeConstraints { make in
-                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-                    make.top.bottom.centerX.equalToSuperview()
-                }
-
-                debugScreenButton.touchUpCallback = { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.presentDebugScreen()
-                }
-
-                stackScrollView.addArrangedView(debugScreenContainer)
-
-                stackScrollView.addSpacerView(NSPadding.large)
+            debugScreenContainer.addSubview(debugScreenButton)
+            debugScreenButton.snp.makeConstraints { make in
+                make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                make.top.bottom.centerX.equalToSuperview()
             }
+
+            debugScreenButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.presentDebugScreen()
+            }
+
+            stackScrollView.addArrangedView(debugScreenContainer)
+
+            stackScrollView.addSpacerView(NSPadding.large)
+
             debugScreenContainer.alpha = 0
         #endif
 

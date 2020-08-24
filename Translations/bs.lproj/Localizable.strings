@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Ažuriranje pozadine isključeno";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Promeni podešavanja";
@@ -776,7 +776,7 @@
 "inform_detail_faq3_title" = "Da li ostajem anoniman?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "U slučaju pojave prvih simptoma obavite proveru na virus korona ili se obratite svom lekaru.";
+"meldungen_detail_explanation_text4" = "Pozovite lekara ili zdravstvenu ustanovu.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Obavijesti o izloženosti bolesti COVID-19";
@@ -915,3 +915,6 @@
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
 "begegnung_detail_no_last_sync_accessibility" = "";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Promenite podešavanja da biste dobijali obaveštenja o novoj poruci takođe i izvan aplikacije.";
