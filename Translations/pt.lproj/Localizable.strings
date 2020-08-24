@@ -918,3 +918,12 @@
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Altere as definições para receber as notificações também fora da app.";
+
+/*Informieren Detail: FAQ Titel*/
+"inform_detail_faq_nocode_title" = "";
+
+/*Inform Detail: FAQ Text*/
+"inform_detail_faq_nocode_text" = "";
+
+/*Telefonnummer der allgemeinen Infoline Coronavirus*/
+"infoline_coronavirus_number" = "";

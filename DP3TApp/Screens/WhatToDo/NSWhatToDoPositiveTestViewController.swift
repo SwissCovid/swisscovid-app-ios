@@ -91,6 +91,18 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
+        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "inform_detail_faq_nocode_text".ub_localized, title: "inform_detail_faq_nocode_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+        let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
+        callButton.title = "infoline_coronavirus_number".ub_localized
+        callButton.touchUpCallback = { [weak self] in
+            self?.callButtonTouched()
+        }
+        callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
+        stackScrollView.addArrangedView(callButton)
+
+        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
@@ -102,6 +114,11 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
 
         stackScrollView.addSpacerView(NSPadding.large)
+    }
+
+    private func callButtonTouched() {
+        let phoneNumber = "infoline_coronavirus_number".ub_localized
+        PhoneCallHelper.call(phoneNumber)
     }
 
     private func setupAccessibility() {
