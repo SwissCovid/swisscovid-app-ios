@@ -157,7 +157,6 @@
 		242D2266245C4BD8005DAEA8 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D29242D04280017C4F9 /* Inter-Black.ttf */; };
 		242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		242D2268245C4BD8005DAEA8 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
-		242D2269245C4BD8005DAEA8 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7E820245B27E10015A55B /* Impressum */; };
 		242D226A245C4BD8005DAEA8 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2C242D04290017C4F9 /* Inter-Medium.ttf */; };
 		242D2275245C4BE6005DAEA8 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 242D2274245C4BE6005DAEA8 /* DP3TSDK */; };
 		242D2276245D62D8005DAEA8 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B06242DFCD9003BB26C /* UserStorage.swift */; };
@@ -265,6 +264,7 @@
 		8EF2A6EF249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */; };
 		8EF2A6F0249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */; };
 		8EFBAB2C249145070004138B /* NSSynchronizationPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */; };
+		91E1EBA424CB0A7100C5103D /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
@@ -510,6 +510,7 @@
 		8EF2A6E72490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationStatusDetailController.swift; sourceTree = "<group>"; };
 		8EF2A6EB249124C4002263C3 /* NSSynchronizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewCell.swift; sourceTree = "<group>"; };
 		8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewSectionView.swift; sourceTree = "<group>"; };
+		91E1EBA324CB0A7100C5103D /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
@@ -1164,8 +1165,8 @@
 		DC9A8196242CE44200AD1548 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				91E1EBA324CB0A7100C5103D /* Impressum */,
 				F8A6BE0A24C9BF8F00DE6B44 /* Disclaimer */,
-				6EC7E820245B27E10015A55B /* Impressum */,
 				F80E735C245ADEBC00C934B8 /* Certificates */,
 				6E7C0D23242D01860017C4F9 /* Font */,
 				8E81CCA1241FCC7F006F2437 /* Assets.xcassets */,
@@ -1408,7 +1409,6 @@
 				242D2266245C4BD8005DAEA8 /* Inter-Black.ttf in Resources */,
 				242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */,
 				242D2268245C4BD8005DAEA8 /* Inter-Regular.ttf in Resources */,
-				242D2269245C4BD8005DAEA8 /* Impressum in Resources */,
 				242D226A245C4BD8005DAEA8 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1435,6 +1435,7 @@
 				F8A6BE1F24C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
 				F8A6BE1724C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,
+				91E1EBA424CB0A7100C5103D /* Impressum in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
 				F8A6BE1B24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */,
 				DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */,
@@ -1446,7 +1447,6 @@
 				DCB44307242DD34700F19AA5 /* Inter-Black.ttf in Resources */,
 				DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */,
 				DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */,
-				6EC7E821245B27E10015A55B /* Impressum in Resources */,
 				DCB4430C242DD34700F19AA5 /* Inter-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

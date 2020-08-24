@@ -15,7 +15,7 @@ class NSOnboardingViewController: NSViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
-    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialLight))
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
 
     private let splashVC = NSSplashViewController()
 
@@ -220,7 +220,7 @@ class NSOnboardingViewController: NSViewController {
 
     private func setupButtons() {
         continueContainer.backgroundColor = .ns_background
-        continueContainer.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+        continueContainer.ub_addShadow(with: .ns_text, radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
 
         continueContainer.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in
@@ -330,5 +330,12 @@ class NSOnboardingViewController: NSViewController {
         setOnboardingStep(currentStep - 1, animated: true)
 
         return true
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
+            continueContainer.ub_addShadow(with: .ns_text, radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+        }
     }
 }

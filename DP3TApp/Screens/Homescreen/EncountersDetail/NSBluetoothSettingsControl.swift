@@ -70,7 +70,7 @@ class NSBluetoothSettingsControl: UIView {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
 
-        backgroundColor = .white
+        backgroundColor = .ns_moduleBackground
 
         titleLabel.text = "tracing_setting_title".ub_localized
         subtitleLabel.text = "tracing_setting_text_ios".ub_localized

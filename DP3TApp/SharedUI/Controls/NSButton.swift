@@ -91,6 +91,9 @@ class NSButton: UBButton {
         titleLabel?.font = NSLabelType.button.font
         setTitleColor(style.textColor, for: .normal)
 
+        let disabledColor = UIColor.setColorsForTheme(lightColor: style.textColor, darkColor: style.textColor.withAlphaComponent(0.15))
+        setTitleColor(disabledColor, for: .disabled)
+
         if let c = customTextColor {
             setTitleColor(c, for: .normal)
         }
@@ -118,7 +121,7 @@ class NSButton: UBButton {
 
     override var isEnabled: Bool {
         didSet {
-            backgroundColor = isEnabled ? style.backgroundColor : UIColor.black.withAlphaComponent(0.15)
+            backgroundColor = isEnabled ? style.backgroundColor : UIColor.ns_disabledButtonBackground
         }
     }
 
