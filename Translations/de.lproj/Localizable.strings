@@ -462,7 +462,7 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Gehen Sie zu \"Einstellungen > Allgemein > Hintergrundaktualisierung\" und stellen Sie sicher, dass \"WLAN & Mobile Daten\" ausgewählt ist. Background App Refresh kann dann für jede App einzeln aktiviert werden.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Einstellungen ändern";
@@ -613,7 +613,7 @@
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
+"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 2h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Was wird gesendet?";
@@ -944,12 +944,6 @@
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
-
-/*Informieren Detail: FAQ Titel*/
-"inform_detail_faq_nocode_title" = "Wie finde ich den Covidcode?";
-
-/*Inform Detail: FAQ Text*/
-"inform_detail_faq_nocode_text" = "Sie wurden positiv getestet und können Ihren Code nicht finden? Dann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 463 00 00";
