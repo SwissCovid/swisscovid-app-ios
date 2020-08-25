@@ -61,6 +61,8 @@ class NSOnboardingViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_darkModeBackground2)
+
         setupButtons()
 
         step5VC.permissionButton.touchUpCallback = { [weak self] in
@@ -219,8 +221,8 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func setupButtons() {
-        continueContainer.backgroundColor = .ns_background
-        continueContainer.ub_addShadow(with: .ns_text, radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+        continueContainer.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
+        continueContainer.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
 
         continueContainer.addSubview(continueButton)
         continueButton.snp.makeConstraints { make in

@@ -236,7 +236,6 @@
 		6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */; };
 		6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
 		6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */; };
-		6EC7E821245B27E10015A55B /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 6EC7E820245B27E10015A55B /* Impressum */; };
 		6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */; };
 		6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
@@ -331,6 +330,7 @@
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
 		F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
+		F869AED524F54C7D00FC4556 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
@@ -477,7 +477,6 @@
 		6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UBKeyboardObserver.m; sourceTree = "<group>"; };
 		6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSimpleTextButton.swift; sourceTree = "<group>"; };
 		6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailReportSingleTitleHeader.swift; sourceTree = "<group>"; };
-		6EC7E820245B27E10015A55B /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
 		6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformGetWellViewController.swift; sourceTree = "<group>"; };
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
@@ -1395,6 +1394,7 @@
 				242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */,
 				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				F8A6BE1624C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */,
+				F869AED524F54C7D00FC4556 /* Impressum in Resources */,
 				F8A6BE2024C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */,
 				F8A6BE1824C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,

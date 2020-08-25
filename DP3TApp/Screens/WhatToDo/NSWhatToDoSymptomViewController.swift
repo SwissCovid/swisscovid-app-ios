@@ -33,7 +33,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupStackScrollView()
         setupLayout()
