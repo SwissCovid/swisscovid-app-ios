@@ -69,7 +69,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
         func addDivider(spacing: CGFloat? = nil) {
             let spacer = UIView()
-            spacer.backgroundColor = .ns_text_secondary
+            spacer.backgroundColor = .ns_dividerColor
             addArrangedView(spacer, spacing: spacing)
             spacer.snp.makeConstraints { make in
                 make.width.equalTo(self.stackScrollView.stackView)
@@ -219,7 +219,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             make.left.equalTo(versionStack.snp.right).inset(-NSPadding.medium)
         }
 
-        background.backgroundColor = .ns_backgroundSecondary
+        background.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
         background.alpha = 0
 
         view.insertSubview(background, at: 0)

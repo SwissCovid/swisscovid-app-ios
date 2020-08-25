@@ -47,7 +47,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupLayout()
 
