@@ -14,7 +14,7 @@ import Foundation
 class NSExpandableDisclaimerViewHeader: UBButton {
     private let headerLabel = NSLabel(.textBold, textColor: .ns_blue)
 
-    private let arrowImageview = UIImageView(image: UIImage(named: "ic-arrow-forward")?.ub_image(with: .ns_blue))
+    private let arrowImageview = NSImageView(image: UIImage(named: "ic-arrow-forward"), dynamicColor: .ns_blue)
 
     var isExpanded: Bool = false
 
@@ -27,7 +27,6 @@ class NSExpandableDisclaimerViewHeader: UBButton {
         headerLabel.text = title
 
         arrowImageview.transform = .init(rotationAngle: .pi / 2)
-        arrowImageview.tintColor = .ns_blue
         arrowImageview.ub_setContentPriorityRequired()
 
         addSubview(headerLabel)

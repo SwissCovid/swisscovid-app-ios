@@ -23,7 +23,7 @@ class NSLastSyncronizationControl: UIControl {
 
     private let titleLabel = NSLabel(.interBold)
     private let subtitleLabel = NSLabel(.interRegular)
-    private let chevronImageView = NSImageView(image: UIImage(named: "ic-chevron"), dynamicColor: .ns_purple)
+    private let chevronImageView = NSImageView(image: UIImage(named: "ic-chevron"), dynamicColor: .ns_text)
 
     var isChevronImageViewHidden: Bool {
         get { chevronImageView.isHidden }

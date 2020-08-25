@@ -18,7 +18,7 @@ class NSWhatToDoButton: UBButton {
 
     private let leftImageView: UIImageView
 
-    private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-arrow-forward")!.withRenderingMode(.alwaysTemplate))
+    private var rightCaretImageView = NSImageView(image: UIImage(named: "ic-arrow-forward"), dynamicColor: .ns_text)
 
     // MARK: - Init
 
@@ -73,7 +73,6 @@ class NSWhatToDoButton: UBButton {
             make.left.bottom.equalToSuperview().inset(NSPadding.medium)
         }
 
-        rightCaretImageView.tintColor = .ns_text
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
