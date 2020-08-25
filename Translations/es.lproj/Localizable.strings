@@ -919,11 +919,5 @@
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Cambie los ajustes para recibir las notificaciones más actuales también fuera de la aplicación.";
 
-/*Informieren Detail: FAQ Titel*/
-"inform_detail_faq_nocode_title" = "";
-
-/*Inform Detail: FAQ Text*/
-"inform_detail_faq_nocode_text" = "";
-
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "";
+"infoline_coronavirus_number" = "+41 58 463 00 00";

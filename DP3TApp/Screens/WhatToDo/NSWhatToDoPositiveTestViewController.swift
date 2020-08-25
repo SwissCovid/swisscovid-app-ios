@@ -89,10 +89,6 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
-
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "inform_detail_faq_nocode_text".ub_localized, title: "inform_detail_faq_nocode_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
-
         let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
         callButton.title = "infoline_coronavirus_number".ub_localized
         callButton.touchUpCallback = { [weak self] in
