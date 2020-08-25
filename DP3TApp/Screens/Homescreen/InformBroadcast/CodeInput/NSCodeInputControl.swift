@@ -285,7 +285,7 @@ class NSCodeSingleControl: UIView, UITextFieldDelegate {
             layer.borderColor = UIColor.ns_purple.cgColor
         } else {
             layer.borderWidth = 1.0
-            layer.borderColor = UIColor(ub_hexString: "#e5e5e5")?.cgColor
+            layer.borderColor = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5e5e5")!, darkColor: .clear).cgColor
         }
     }
 

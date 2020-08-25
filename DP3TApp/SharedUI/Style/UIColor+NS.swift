@@ -83,6 +83,8 @@ extension UIColor {
 
     public static var ns_line = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#ecebeb")!, darkColor: .ns_darkModeBackground2)
 
+    public static var ns_dividerColor: UIColor = .setColorsForTheme(lightColor: UIColor(ub_hexString: "#e6e6e6")!, darkColor: .black)
+
     // MARK: - Theme colors, self updating
 
     static func setColorsForTheme(lightColor: UIColor, darkColor: UIColor) -> UIColor {

@@ -20,7 +20,7 @@ import UIKit
         override init(reuseIdentifier: String?) {
             super.init(reuseIdentifier: reuseIdentifier)
 
-            separator.backgroundColor = .ns_backgroundDark
+            separator.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundDark, darkColor: .ns_background)
 
             contentView.addSubview(separator)
             contentView.addSubview(label)
@@ -31,7 +31,7 @@ import UIKit
 
             label.text = "synchronizations_view_period_title".ub_localized
 
-            contentView.backgroundColor = .ns_background
+            contentView.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_darkModeBackground2)
         }
 
         required init?(coder _: NSCoder) {
