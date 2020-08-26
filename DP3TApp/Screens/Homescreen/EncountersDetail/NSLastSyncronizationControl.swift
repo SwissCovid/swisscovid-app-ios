@@ -49,6 +49,7 @@ class NSLastSyncronizationControl: UIControl {
 
         accessibilityTraits = [.header]
         isAccessibilityElement = true
+        titleLabel.text = "begegnung_detail_last_sync_title".ub_localized
         titleLabel.isAccessibilityElement = false
         subtitleLabel.isAccessibilityElement = false
 
