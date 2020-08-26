@@ -30,4 +30,21 @@ extension String {
     static var defaultLanguageKey: String {
         "de"
     }
+
+    var replaceSettingsString: String {
+        var version = "14_0"
+
+        switch UIDevice.current.systemVersion {
+        case "13.5", "13.5.1":
+            version = "13_5"
+        case "13.6", "13.6.1":
+            version = "13_6"
+        case "14.0":
+            version = "14_0"
+        default:
+            break
+        }
+
+        return replacingOccurrences(of: "{TRACING_SETTING_TEXT}", with: "tracing_setting_text_ios_\(version)".ub_localized)
+    }
 }
