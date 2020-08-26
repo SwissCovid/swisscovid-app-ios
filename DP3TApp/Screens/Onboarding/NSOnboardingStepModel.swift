@@ -33,8 +33,8 @@ struct NSOnboardingStepModel {
                                              foregroundImage: UIImage(named: "onboarding-privacy")!,
                                              title: "onboarding_privacy_title".ub_localized,
                                              textGroups: [
-                                                 (UIImage(named: "ic-lock")!, "onboarding_privacy_text1".ub_localized),
-                                                 (UIImage(named: "ic-key")!, "onboarding_privacy_text2".ub_localized),
+                                                 (UIImage(named: "ic-key")!, "onboarding_privacy_text1".ub_localized),
+                                                 (UIImage(named: "ic-lock")!, "onboarding_privacy_text2".ub_localized),
                                              ])
 
     static let step3 = NSOnboardingStepModel(heading: "onboarding_begegnungen_heading".ub_localized,
