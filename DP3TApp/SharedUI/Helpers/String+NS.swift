@@ -35,7 +35,7 @@ extension String {
 
         // Try to load version specific translation
         var localized = NSLocalizedString("\(self)_\(version)", value: self, comment: "")
-        if localized == self {
+        if localized == self || localized == "" {
             // Fallback to general translation
             localized = NSLocalizedString(self, comment: "")
             if localized == self {
