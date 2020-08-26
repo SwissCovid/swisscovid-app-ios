@@ -120,7 +120,12 @@ import UIKit
                 cell.set(title: "synchronizations_view_empty_list".ub_localized, date: "")
                 return cell
             }
-            cell.contentView.backgroundColor = index.row % 2 == 1 ? .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary) : .ns_backgroundSecondary
+            if index.row % 2 == 1 {
+                cell.contentView.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundSecondary)
+            } else {
+                cell.contentView.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_backgroundTertiary)
+            }
+
             let log = model[index.row]
             var cellTitle = log.evetType.displayString
             if let payload = log.payload {
