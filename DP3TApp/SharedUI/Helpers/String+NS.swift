@@ -19,19 +19,7 @@ extension String {
         return localized
     }
 
-    private var ub_debugLocalized: String {
-        NSLocalizedString(self, tableName: "DebugStrings", comment: "")
-    }
-
-    static var languageKey: String {
-        "language_key".ub_localized
-    }
-
-    static var defaultLanguageKey: String {
-        "de"
-    }
-
-    var replaceSettingsString: String {
+    var ub_localized_per_version: String {
         var version = "14_0"
 
         switch UIDevice.current.systemVersion {
@@ -45,6 +33,32 @@ extension String {
             break
         }
 
-        return replacingOccurrences(of: "{TRACING_SETTING_TEXT}", with: "tracing_setting_text_ios_\(version)".ub_localized)
+        // Try to load version specific translation
+        var localized = NSLocalizedString("\(self)_\(version)", value: self, comment: "")
+        if localized == self {
+            // Fallback to general translation
+            localized = NSLocalizedString(self, comment: "")
+            if localized == self {
+                // Fallback to debug string
+                localized = ub_debugLocalized
+            }
+        }
+        return localized
+    }
+
+    private var ub_debugLocalized: String {
+        NSLocalizedString(self, tableName: "DebugStrings", comment: "")
+    }
+
+    static var languageKey: String {
+        "language_key".ub_localized
+    }
+
+    static var defaultLanguageKey: String {
+        "de"
+    }
+
+    var replaceSettingsString: String {
+        return replacingOccurrences(of: "{TRACING_SETTING_TEXT}", with: "tracing_setting_text_ios".ub_localized_per_version)
     }
 }
