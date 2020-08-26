@@ -100,6 +100,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             lastSyncronizationControl.isChevronImageViewHidden = false
         #else
             lastSyncronizationControl.isChevronImageViewHidden = true
+            lastSyncronizationControl.isUserInteractionEnabled = false
         #endif
     }
 
