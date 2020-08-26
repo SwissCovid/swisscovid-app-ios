@@ -952,8 +952,8 @@
 "tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
 
 /*Text beim Bluetooth Control iOS 13.6*/
-"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsaufzeichnungen";
+"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsmitteilungen";
 
 /*Text beim Bluetooth Control iOS 14*/
 /*Fuzzy*/
-"tracing_setting_text_ios_14_0" = "COVID-19-Begegnungsmeldungen";
+"tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";
