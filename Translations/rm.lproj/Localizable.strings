@@ -917,3 +917,12 @@
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 463 00 00";
+
+/*Text beim Bluetooth Control iOS 13.5*/
+"tracing_setting_text_ios_13_5" = "";
+
+/*Text beim Bluetooth Control iOS 13.6*/
+"tracing_setting_text_ios_13_6" = "";
+
+/*Text beim Bluetooth Control iOS 14*/
+"tracing_setting_text_ios_14_0" = "";

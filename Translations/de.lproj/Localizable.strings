@@ -640,7 +640,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
+"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -690,7 +690,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen COVID-19-Kontaktmitteilungen aktiviert werden.";
+"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen {TRACING_SETTING_TEXT} aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
@@ -746,11 +746,11 @@
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_title_ios" = "COVID-19-Kontaktmitteilungen deaktiviert";
+"tracing_permission_error_title_ios" = "{TRACING_SETTING_TEXT} deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_text_ios" = "Aktivieren Sie COVID-19-Kontaktmitteilungen, damit das Tracing funktioniert.";
+"tracing_permission_error_text_ios" = "Aktivieren Sie {TRACING_SETTING_TEXT}, damit das Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer zufälligen IDs mit der SwissCovid App.";
@@ -947,3 +947,13 @@
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 463 00 00";
+
+/*Text beim Bluetooth Control iOS 13.5*/
+"tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
+
+/*Text beim Bluetooth Control iOS 13.6*/
+"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsaufzeichnungen";
+
+/*Text beim Bluetooth Control iOS 14*/
+/*Fuzzy*/
+"tracing_setting_text_ios_14_0" = "COVID-19-Begegnungsmeldungen";
