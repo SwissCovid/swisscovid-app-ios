@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Deactivà actualisaziun dal fund ";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Midai la configuraziun per vegnir infurmada/infurmà en cas d’in nov avis er ordaifer l'app.";
+"meldungen_background_error_text" = "Giai a \"Einstellungen > Allgemein > Hintergrundaktualisierung\" e verifitgai che \"WLAN & Moblie Daten\" saja selecziunà. Background App Refresh po alura vegnir activà separadamain per mintga app.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Midar configuraziun";
@@ -600,7 +600,8 @@
 "inform_detail_faq1_title" = "Tge è in code covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.\n\nVus essas vegnida testada resp. vegnì testà en moda positiva sin il coronavirus e n'avais suenter 2 uras anc retschavì nagin code covid? Alura contactai l'infoline coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Tge vegn tramess?";
@@ -907,10 +908,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Quest buttun banduna l'app ad avra ina pagina d'internet. ";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Naginas sincronisaziuns precedentas";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";

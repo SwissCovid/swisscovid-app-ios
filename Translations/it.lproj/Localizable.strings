@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Aggiornamento in background disattivato";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Vai su «Impostazioni > Generali > Aggiorna app in background» e assicurati che sia selezionata l’opzione «WLAN & Dati cellulari».  L’aggiornamento in background può quindi essere attivato singolarmente per ogni app. ";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Modifica impostazioni";
@@ -605,7 +605,8 @@
 "inform_detail_faq1_title" = "Cos'è un codice Covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.\n\nSei risultato positivo al test e dopo due ore non hai ancora ricevuto un codice Covid? Allora contatta la Infoline Coronavirus";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Che cosa viene inviato?";
@@ -918,10 +919,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Questo pulsante permette di lasciare l'app e di aprire un sito Internet.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "La sincronizzazione non è ancora stata effettuata.";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Modifica le impostazioni per essere informato anche al di fuori dell'app in caso di nuova segnalazione.";
