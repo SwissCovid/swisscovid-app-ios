@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Background update deactivated.";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and ensure that \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be activated individually for each app.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Change settings";
@@ -605,7 +605,8 @@
 "inform_detail_faq1_title" = "What is a Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. This ensures that only confirmed cases are notified via the app.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. \n\nThis ensures that only confirmed cases are notified via the app.\n\nYou have tested positive and after 2 hours have not yet received a Covidcode? \nIf this is the case, please contact the Coronavirus Infoline:";
 
 /*Not translated*/
 /*Inform Detail: FAQ Titel*/
@@ -916,10 +917,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "This button leaves the app and opens a website.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "No previous synchronisations";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Change the settings to receive notification outside the app as well in the event of a report.";

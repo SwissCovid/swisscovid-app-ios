@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Përditësimi në sfond i fikur";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Shkoni tek \"Einstellungen (Cilësimet) > Allgemein (Të përgjithshme) > Hintergrundaktualizierung (Përditësimi në sfond)\" dhe sigurohuni që është zgjedhur \"WLAN & Mobile Daten (WLAN dhe të dhënat celulare)\". Më pas \"Background App Refresh\" mund të aktivizohet individualisht për çdo aplikacion.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Ndrysho cilësimet";
@@ -601,7 +601,8 @@
 "inform_detail_faq1_title" = "Çfarë është një kod Covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.\n\nKeni dalë pozitiv dhe pas 2 orësh nuk keni marrë ende asnjë kod Covid?\nAtëherë kontaktoni \"Infoline Coronavirus\":";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Çfarë dërgohet?";
@@ -911,10 +912,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Ky buton ju largon nga aplikacioni dhe hap një faqe interneti.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Nuk ka sinkronizime të deritanishme";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Ndryshoni cilësimet, për t'u informuar për një mesazh të ri edhe jashtë aplikacionit.";

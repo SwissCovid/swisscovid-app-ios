@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Actualisation de l'arrière-plan désactivée";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Allez sous «Réglages > Général >\nActualiser en arrière-plan» et sélectionnez «Wi-Fi & données cellulaires». L'actualisation en arrière-plan peut être activée individuellement pour chaque application.  ";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Modifier les paramètres";
@@ -605,7 +605,8 @@
 "inform_detail_faq1_title" = "Qu'est-ce qu'un code COVID ?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Un code COVID est attribué aux personnes testées positives au nouveau coronavirus.\n\nCela permet d'assurer que seuls les cas confirmés sont signalés via l'application.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Un code COVID est attribué aux personnes testées positives au nouveau coronavirus.\n\nCela permet d'assurer que seuls les cas confirmés sont signalés via l'application.\n\nVous n'avez toujours pas reçu de code COVID 2h après avoir été testé positif?\nVeuillez contacter l'infoline coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Qu'est-ce qui est envoyé ?";
@@ -918,10 +919,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Ce bouton permet de quitter l'application et\nd'ouvrir un site internet.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Les synchronisations n'ont pas été effectuées.";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Veuillez modifier les paramètres pour pouvoir recevoir les nouvelles notifications même en dehors de l'application.";

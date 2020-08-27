@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Arka plan güncellemesi kapatıldı";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "\"Ayarlar > Genel > Arka Planda Uygulama\" ye gidin ve \"WLAN & Mobil veri\" nin seçili olduğundan emin olun. Arka Planda Uygulama Yenileme, daha sonra her uygulama için ayrı ayrı etkinleştirilebilir.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Ayarları değiştirin";
@@ -600,7 +600,8 @@
 "inform_detail_faq1_title" = "Bir Kovid kodu nedir?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.\n\nTest sonucunuz pozitif çıktı ve 2 saat içerisinde henüz Covid kodunu almadınız mı?\nBu durumda, Corona Virüs Bilgi Hattı (Infoline) ile iletişime geçiniz:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Neler iletilir?";
@@ -907,10 +908,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Bu buton, uygulamadan çıkarak bir web sayfası açar.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Şu ana kadar yapılmış senkronizasyon bulunmuyor";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Uygulama açık olmadığında da bildirim alabilmek için lütfen ayarları değiştirin.";

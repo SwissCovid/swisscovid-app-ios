@@ -453,7 +453,7 @@
 "meldungen_background_error_title" = "Ažuriranje pozadine isključeno";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Otvorite stavke Postavke > Opšte > Ažuriranje u pozadini i uverite se da je izabrana opcija „WLAN i mobilni podaci“. Osvežavanje aplikacije u pozadini može posebno da se aktivira za svaku aplikaciju.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Promeni podešavanja";
@@ -600,7 +600,8 @@
 "inform_detail_faq1_title" = "Šta je Covid šifra?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Ljudi koji su testirani pozitivno na novi virus korona dobijaju Covid šifru.\n\nTime se osigurava da se putem aplikacije prijavljuju samo potvrđeni slučajevi.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Ljudi koji su testirani pozitivno na novi virus korona dobijaju Covid šifru.\n\nTime se osigurava da se putem aplikacije prijavljuju samo potvrđeni slučajevi.\n\nRezultat testa je pozitivan, ali niste dobili Covid šifru ni nakon 2 sata?\nU tom slučaju, obratite se info liniji za virus korona.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Šta se šalje?";
@@ -907,10 +908,10 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Ovo dugme napušta aplikaciju i otvara veb stranicu.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Nema prethodnih sinhronizacija";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Promenite podešavanja da biste dobijali obaveštenja o novoj poruci takođe i izvan aplikacije.";
