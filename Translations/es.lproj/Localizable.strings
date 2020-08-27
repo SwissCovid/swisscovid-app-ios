@@ -454,7 +454,7 @@
 "meldungen_background_error_title" = "Actualización de fondo desactivada";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Go to \"Settings > General > Background App Refresh\" and make sure \"Wi-Fi & Mobile Data\" is selected. Background App Refresh can then be disabled for each app individually.";
+"meldungen_background_error_text" = "Vaya a \"Ajustes > General > Actualización en segundo plano\" y asegúrese de que \"Wi-Fi y datos móviles\" esté seleccionado. La actualización de las aplicaciones en segundo plano puede activarse individualmente para cada aplicación.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Cambiar ajustes";
@@ -601,7 +601,8 @@
 "inform_detail_faq1_title" = "¿Qué es el código Covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Las personas que han dado positivo en el test del nuevo coronavirus reciben un código Covid. Así se garantiza que la aplicación solo informe de los casos confirmados.";
+/*Fuzzy*/
+"inform_detail_faq1_text" = "Las personas que han dado positivo en el test del nuevo coronavirus reciben un código Covid. \n\nAsí se garantiza que la aplicación solo informe de los casos confirmados.\n\n¿Ha dado usted positivo en el test y no ha recibido el código Covid después de dos horas?\nEn este caso, póngase en contacto con la Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "¿Qué es lo que se envía?";
@@ -911,13 +912,22 @@
 "travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
-"accessibility_faq_button_hint_non_bag" = "";
+"accessibility_faq_button_hint_non_bag" = "Este botón sale de la aplicación y abre una página web.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "No hay sincronizaciones previas.";
 
 /*Text für Hintergrundfehler auf Android*/
 "meldungen_background_error_text_android" = "Cambie los ajustes para recibir las notificaciones más actuales también fuera de la aplicación.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 463 00 00";
+
+/*Text beim Bluetooth Control iOS 13.5*/
+"tracing_setting_text_ios_13_5" = "";
+
+/*Text beim Bluetooth Control iOS 13.6*/
+"tracing_setting_text_ios_13_6" = "";
+
+/*Text beim Bluetooth Control iOS 14*/
+"tracing_setting_text_ios_14_0" = "Exposure Notifications";
