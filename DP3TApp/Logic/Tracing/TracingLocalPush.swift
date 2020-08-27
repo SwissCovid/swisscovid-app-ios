@@ -193,8 +193,8 @@ class TracingLocalPush: NSObject {
 
     private func schedulePermissonErrorNotification() {
         scheduleErrorNotification(identifier: .permission,
-                                  title: "tracing_permission_error_title_ios".ub_localized,
-                                  text: "tracing_permission_error_text_ios".ub_localized)
+                                  title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
+                                  text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
 
     private func handleENError(_ error: ENError) {
