@@ -11,10 +11,6 @@
 @testable import DP3TApp
 import XCTest
 
-private class MockIdentifierProvider: ExposureIdentifierProvider {
-    var exposureIdentifiers: [String]?
-}
-
 class TracingLocalPushTests: XCTestCase {
     fileprivate var center: MockNotificationCenter!
     fileprivate var tlp: TracingLocalPush!
@@ -68,21 +64,21 @@ class TracingLocalPushTests: XCTestCase {
     func testGeneratingSingleNotification() {
         let provider = MockIdentifierProvider()
         provider.exposureIdentifiers = ["xy"]
-        tlp.update(provider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
         XCTAssertEqual(center.requests.count, 1)
-        tlp.update(provider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
         XCTAssertEqual(center.requests.count, 1)
     }
 
     func testGeneratingUniqueNotification() {
         let provider = MockIdentifierProvider()
         provider.exposureIdentifiers = ["xy"]
-        tlp.update(provider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
         XCTAssertEqual(center.requests.count, 1)
         provider.exposureIdentifiers = ["xy", "aa"]
-        tlp.update(provider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
         XCTAssertEqual(center.requests.count, 2)
-        tlp.update(provider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
         XCTAssertEqual(center.requests.count, 2)
     }
 
