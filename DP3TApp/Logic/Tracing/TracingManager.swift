@@ -199,7 +199,7 @@ class TracingManager: NSObject {
                 completion?(nil)
 
                 // schedule local push if exposed
-                TracingLocalPush.shared.update(provider: st)
+                TracingLocalPush.shared.scheduleExposureNotificationsIfNeeded(identifierProvider: st)
             }
             DP3TTracing.delegate = self
         }

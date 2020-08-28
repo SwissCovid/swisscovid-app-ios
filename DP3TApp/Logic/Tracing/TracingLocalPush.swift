@@ -54,7 +54,7 @@ class TracingLocalPush: NSObject {
         center.delegate = self
     }
 
-    func update(provider: ExposureIdentifierProvider) {
+    func scheduleExposureNotificationsIfNeeded(identifierProvider provider: ExposureIdentifierProvider) {
         if let identifers = provider.exposureIdentifiers {
             exposureIdentifiers = identifers
         }
