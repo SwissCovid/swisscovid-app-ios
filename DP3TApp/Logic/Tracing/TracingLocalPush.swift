@@ -41,7 +41,7 @@ extension TracingState: ExposureIdentifierProvider {
 }
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
-class TracingLocalPush: NSObject {
+class TracingLocalPush: NSObject, LocalPushProtocol {
     static let shared = TracingLocalPush()
 
     private var center: UserNotificationCenter
