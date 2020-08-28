@@ -309,6 +309,10 @@
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
 		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
+		F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
+		F806D33D24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
+		F806D33F24F91D5B00672DFC /* TracingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */; };
+		F806D34124F91DB900672DFC /* MockIdentifierProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */; };
 		F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
 		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
 		F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
@@ -552,6 +556,9 @@
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
+		F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushProtocol.swift; sourceTree = "<group>"; };
+		F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingManagerTests.swift; sourceTree = "<group>"; };
+		F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIdentifierProvider.swift; sourceTree = "<group>"; };
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
 		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
 		F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
@@ -636,6 +643,7 @@
 				24780B572431B5A9003BB26C /* TracingManager.swift */,
 				2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */,
 				24780B592431B5A9003BB26C /* TracingLocalPush.swift */,
+				F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */,
 				2485F4752455E30800C3D8C3 /* UIState */,
 				2462BA112451F0D90046906D /* Reporting */,
 			);
@@ -1086,7 +1094,9 @@
 				F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */,
 				8E81CCAF241FCC7F006F2437 /* FakePublishManagerTests.swift */,
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
+				F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */,
 				F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */,
+				F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 			);
@@ -1668,6 +1678,7 @@
 				242D2218245C4BD8005DAEA8 /* NSLoadingView.swift in Sources */,
 				242D2219245C4BD8005DAEA8 /* NSSendViewController.swift in Sources */,
 				242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */,
+				F806D33D24F91C7800672DFC /* LocalPushProtocol.swift in Sources */,
 				242D221B245C4BD8005DAEA8 /* FakePublishManager.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
@@ -1786,6 +1797,7 @@
 				245626A1245265340058D11F /* ConfigLoadOperation.swift in Sources */,
 				DC702B01243F6F640066C773 /* String+NS.swift in Sources */,
 				242D227B245D6557005DAEA8 /* Backend.swift in Sources */,
+				F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */,
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,
 				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,
 				8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */,
@@ -1873,8 +1885,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F806D33F24F91D5B00672DFC /* TracingManagerTests.swift in Sources */,
 				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
+				F806D34124F91DB900672DFC /* MockIdentifierProvider.swift in Sources */,
 				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
