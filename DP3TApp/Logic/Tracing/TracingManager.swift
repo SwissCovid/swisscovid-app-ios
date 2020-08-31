@@ -25,9 +25,15 @@ class TracingManager: NSObject {
     let uiStateManager = UIStateManager()
     let databaseSyncer = DatabaseSyncer()
 
+    let localPush: LocalPushProtocol
+
     #if ENABLE_LOGGING
         var loggingStorage: LoggingStorage?
     #endif
+
+    init(localPush: LocalPushProtocol = TracingLocalPush.shared) {
+        self.localPush = localPush
+    }
 
     @KeychainPersisted(key: "tracingIsActivated", defaultValue: true)
     public var isActivated: Bool {
@@ -125,7 +131,7 @@ class TracingManager: NSObject {
 
     func endTracing() {
         DP3TTracing.stopTracing()
-        TracingLocalPush.shared.removeSyncWarningTriggers()
+        localPush.removeSyncWarningTriggers()
     }
 
     func resetSDK() {
@@ -150,7 +156,7 @@ class TracingManager: NSObject {
         UIStateManager.shared.refresh()
     }
 
-    func deleteMeldungen() {
+    func deleteReports() {
         // delete all visible messages
         try? DP3TTracing.resetExposureDays()
 
@@ -183,7 +189,8 @@ class TracingManager: NSObject {
     }
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
-        DP3TTracing.status { result in
+        DP3TTracing.status { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .failure(e):
                 UIStateManager.shared.updateError = e
@@ -199,8 +206,7 @@ class TracingManager: NSObject {
                 completion?(nil)
 
                 // schedule local push if exposed
-                TracingLocalPush.shared.update(provider: st)
-                TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: st)
+                self.localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: st)
             }
             DP3TTracing.delegate = self
         }
@@ -218,9 +224,9 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.tracingState = state
                 UIStateManager.shared.trackingState = state.trackingState
             }
-            TracingLocalPush.shared.update(provider: state)
-            TracingLocalPush.shared.resetSyncWarningTriggers(tracingState: state)
         }
+        // schedule local push if exposed
+        localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
     }
 }
 
@@ -243,6 +249,9 @@ extension TracingManager: DP3TBackgroundHandler {
             center.add(request)
         #endif
 
+        // wait another 2 days befor warning
+        localPush.resetBackgroundTaskWarningTriggers()
+
         let queue = OperationQueue()
 
         let group = DispatchGroup()
@@ -259,12 +268,13 @@ extension TracingManager: DP3TBackgroundHandler {
         }
 
         group.enter()
-        DP3TTracing.status { result in
+        DP3TTracing.status { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .failure:
                 break
             case let .success(state):
-                TracingLocalPush.shared.handleTracingState(state.trackingState)
+                self.localPush.handleTracingState(state.trackingState)
             }
             group.leave()
         }

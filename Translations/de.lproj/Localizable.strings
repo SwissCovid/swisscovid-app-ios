@@ -228,9 +228,6 @@
 "bluetooth_turn_on_button_title" = "Bluetooth einschalten";
 "bluetooth_permission_error_title" = "Bluetooth Verwendung abgelehnt";
 "bluetooth_permission_error_text" = "Erlauben Sie die Verwendung von Bluetooth, damit das Tracing funktioniert.";
-
-/*URL zum Corona Check*/
-"symptom_detail_corona_check_url" = "https://check.bag-coronavirus.ch/screening";
 "push_open_settings_button" = "Einstellungen ändern";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
@@ -465,7 +462,7 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+"meldungen_background_error_text" = "Gehen Sie zu \"Einstellungen > Allgemein > Hintergrundaktualisierung\" und stellen Sie sicher, dass \"WLAN & Mobile Daten\" ausgewählt ist. Background App Refresh kann dann für jede App einzeln aktiviert werden.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Einstellungen ändern";
@@ -616,7 +613,7 @@
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
+"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 2h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Was wird gesendet?";
@@ -643,7 +640,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n- Fieber, Fiebergefühl\n- Halsschmerzen\n- Husten (meist trocken)\n- Kurzatmigkeit\n- Muskelschmerzen\n- Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
+"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -684,7 +681,8 @@
 /*Accessibility: Hint zum doppelklicken wenn einzelnes Codefeld angeklickt*/
 "accessibility_code_input_hint" = "Doppeltippen zum bearbeiten";
 
-/*Accessibility: FAW Button Titel */
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine Website des BAG geöffnet wird*/
+/*Fuzzy*/
 "accessibility_faq_button_hint" = "Dieser Button verlässt die App und öffnet die Website vom B. A. G.";
 
 /*Titel auf der Onboarding Page für die Permission der Exposure-Library*/
@@ -692,7 +690,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen COVID-19-Kontaktmitteilungen aktiviert werden.";
+"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen {TRACING_SETTING_TEXT} aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
@@ -748,11 +746,11 @@
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_title_ios" = "COVID-19-Kontaktmitteilungen deaktiviert";
+"tracing_permission_error_title_ios" = "{TRACING_SETTING_TEXT} deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_text_ios" = "Aktivieren Sie COVID-19-Kontaktmitteilungen, damit das Tracing funktioniert.";
+"tracing_permission_error_text_ios" = "Aktivieren Sie {TRACING_SETTING_TEXT}, damit das Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer zufälligen IDs mit der SwissCovid App.";
@@ -784,67 +782,13 @@
 
 /*Fehler-Titel wenn die Exposure Notifications nicht gestartet werden konnten.*/
 "android_en_start_failure" = "COVID-19 Benachrichtigungen konnten nicht aktiviert werden";
-
-/*Certificate pinning Debug screen section title*/
-"certificate_pinning_title" = "Certificate Pinning";
-
-/*Fuzzy*/
-"certificate_pinning_button_disable" = "Deaktivieren";
-"certificate_pinning_button_enable" = "Aktivieren";
-
-/*Erster Onboarding-Screen für Pilot: Überschrift*/
-"onboarding_legal_heading" = "Preview Version";
-
-/*Erster Onboarding-Screen für Pilot: Titel*/
-"onboarding_legal_title" = "Nutzung nur für Teilnehmer der Pilotphase";
-
-/*Erster Onboarding-Screen für Pilot: Erster Abschnitt*/
-"onboarding_legal_text1" = "Die Nutzung dieser App ist zurzeit nur für die folgenden Gruppen, die vom BAG zum Pilot eingeladen wurden, vorgesehen und gestattet: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen.\n";
-
-/*Erster Onboarding-Screen für Pilot: Zweiter Abschnitt*/
-"onboarding_legal_text2" = "Die Pilotphase wird mit produktiven Systemen durchgeführt und beinhaltet echte Daten. Kantonsärzte dürfen im Falle eines positiven COVID-19-Tests den nicht zugelassenen Nutzern keinen CovidCode für die Benachrichtigung aus der App generieren. Angriffe («Penetration Tests») auf das System ausserhalb des abgegrenzten Public Security Tests sind Angriffe auf das produktive System und somit illegal.";
-
-/*Erster Onboarding-Screen für Pilot: Titel von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_title" = "Gehören Sie zu einer Organisation, die an der Pilotphase teilnehmen darf?";
-
-/*Erster Onboarding-Screen für Pilot: Text von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_message" = "Gehören Sie zu einer der folgenden Gruppen: Angehörige der Schweizer Armee im Ausbildungs-, Assistenz- und Aktivdienst, Mitarbeitende von Hochschulen, Mitarbeitende von Spitälern und Kliniken, Mitarbeitende von kantonalen Verwaltungen und der Bundesverwaltung, Mitglieder von Vereinigungen, die Beiträge an die Qualitätsverbesserung des Systems leisten wollen?";
-
-/*Erster Onboarding-Screen für Pilot: NEIN von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_no" = "Nein";
-
-/*Erster Onboarding-Screen für Pilot: JA von Popup in dem Nutzer Pilot bestätigen muss*/
-"onboarding_legal_alert_yes" = "Ja";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Titel*/
-"onboarding_legal_blocker_title" = "Pilotphase";
-
-/*Erster Onboarding-Screen für Pilot: Blockierendes Popup für Nutzer die nicht im Pilot sind, Text*/
-"onboarding_legal_blocker_message" = "Sie gehören nicht zu einer Organisation, die an der Pilotphase teilnimmt. Bitte installieren Sie nach dem offiziellen Start der App das entsprechende Update und öffnen die App erneut.";
 "begegnung_detail_last_sync_title" = "Letzte erfolgreiche Synchronisation";
 "synchronizations_view_title" = "Übersicht";
 "synchronizations_view_info_title" = "Synchronisationen";
 "synchronizations_view_info_question" = "Was sind Synchronisationen?";
 "synchronizations_view_info_answer" = "Die App prüft regelmässig die von positiv getesteten Nutzern veröffentlichten zufälligen IDs.";
 "synchronizations_view_period_title" = "In den letzten 14 Tagen";
-"synchronizations_view_sync_via_open" = "  • Open";
-"synchronizations_view_sync_via_background" = "  • Sync";
 "synchronizations_view_empty_list" = "Keine Einträge";
-"synchronizations_view_sync_via_scheduled" = "  • Geplant";
-"synchronizations_view_sync_via_fake_request" = "  • Gefälschte Anfrage";
-"synchronizations_view_sync_via_next_day_key_upload" = "  • Hochladen";
-
-/*Kleinerer Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_before_title" = "Vor dem Gespräch";
-
-/*Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_main_title" = "Notieren Sie sich bitte folgende Angaben";
-
-/*Datums-Label im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_datum" = "Datum";
-
-/*Code-Label Titel im Dialog mit dem Code, der vor dem Anrufen angezeigt wird, wenn ein Kontakt positiv ist.*/
-"pre_call_dialog_box_number" = "Nummer";
 "tracing_active_tracking_always_info" = "SwissCovid bleibt aktiv, auch wenn die App geschlossen wird.";
 
 /*title in splash screen of onboarding*/
@@ -854,7 +798,7 @@
 
 /*Meldung Detail Weiss Box unten*/
 /*Fuzzy*/
-"meldungen_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
+"meldungen_detail_explanation_text4" = "Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19-Benachrichtigungen";
@@ -945,3 +889,71 @@
 
 /*Homescreen infobox close button accessibility handler*/
 "infobox_close_button_accessibility" = "Schliessen";
+
+/*Title for the Home View Travel Card.*/
+"travel_title" = "Reisen";
+
+/*Info text that is displayed on the Home Travel Card.*/
+"travel_home_description" = "Sie können das Tracing für kompatible Länder aktivieren.";
+
+/*Introductory Text that is displayed at the top of the travel settings screen.*/
+"travel_screen_introduction" = "Unterwegs im Ausland? Während Reisen können Sie das Tracing für folgende Länder aktivieren:";
+
+/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*Fuzzy*/
+"travel_screen_explanation_title_1" = "Was bedeutet das?";
+
+/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*Fuzzy*/
+"travel_screen_explanation_text_1" = "Während Sie das Tracing für ein anderes Land aktiviert haben, überprüft Ihre App auch die in diesem Land veröffentlichten zufälligen IDs.\n\nSo können Sie auch bei einer möglichen Ansteckung im Ausland gewarnt werden.";
+
+/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "Und nach der Rückkehr?";
+
+/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "Sobald Sie zurück sind, können Sie das Land wieder deaktivieren. Meldungen aus dem entsprechenden Land werden noch für 10 Tage empfangen. \n\nSo ist sichergestellt, dass Sie bei einer möglichen Ansteckung im Ausland auch nach Ihrer Rückkehr gewarnt werden.";
+
+/*Button title for the Add Countries Button in the travel screen.*/
+/*Fuzzy*/
+"travel_screen_add_countries_button" = "Länder hinzufügen";
+
+/*Text that is displayed under a country name that indicates until what date the user will still receive notifications from this country.*/
+"travel_screen_notifications_activated_until" = "Meldungen noch bis {DATE}";
+
+/*List Header for the favourites in the "Add countries" Screen of the Travel feature.*/
+"travel_screen_favourites" = "Favoriten";
+
+/*List header for other countries in the "add countries" screen of the travel feature.*/
+"travel_screen_other_countries" = "Weitere Länder";
+
+/*Title for the explanation at the bottom of the "add countries" screen of the travel feature.*/
+"travel_screen_add_countries_explanation_title" = "Was ist mit den anderen Ländern?";
+
+/*Text for the explanation at the bottom of the "add countries" screen of the travel feature.*/
+"travel_screen_add_countries_explanation_text" = "Damit Ihre App auf die Daten aus anderen Ländern zugreifen kann, braucht es bilaterale Abkommen.\n\nWir sind bemüht, die Liste der kompatiblen Länder so schnell wie möglich zu ergänzen.";
+
+/*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
+"travel_report_code_info" = "Waren Sie in den letzten 14 Tagen in einem der aufgeführten Länder?\n\nWählen Sie das entsprechende Land, um auch diese Begegnungen zu informieren.";
+
+/*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
+/*Fuzzy*/
+"accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";
+
+/*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
+"begegnung_detail_no_last_sync_accessibility" = "Keine bisherigen Synchronisationen";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+
+/*Telefonnummer der allgemeinen Infoline Coronavirus*/
+"infoline_coronavirus_number" = "+41 58 463 00 00";
+
+/*Text beim Bluetooth Control iOS 13.5*/
+"tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
+
+/*Text beim Bluetooth Control iOS 13.6*/
+"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsmitteilungen";
+
+/*Text beim Bluetooth Control iOS 14*/
+/*Fuzzy*/
+"tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";

@@ -15,12 +15,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()
-    private let handshakesModuleView = NSBegegnungenModuleView()
-    private let meldungView = NSMeldungView()
+    private let handshakesModuleView = NSEncountersModuleView()
+    private let reportsView = NSReportsModuleView()
 
-    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptome"))
+    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
-    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-positiv-getestet"))
+    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-tested-positive"))
 
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
@@ -39,7 +39,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         tabBarItem.image = UIImage(named: "ic-tracing")
         tabBarItem.title = "tab_tracing_title".ub_localized
 
-        // always load view at init, even if app starts at meldungen detail
+        // always load view at init, even if app starts at reports detail
         loadViewIfNeeded()
     }
 
@@ -47,13 +47,13 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupLayout()
 
-        meldungView.touchUpCallback = { [weak self] in
+        reportsView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presentMeldungenDetail()
+            strongSelf.presentReportsDetail()
         }
 
         UIStateManager.shared.addObserver(self, block: { [weak self] state in
@@ -63,7 +63,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presentBegegnungenDetail()
+            strongSelf.presentEncountersDetail()
         }
 
         whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
@@ -130,7 +130,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(meldungView)
+        stackScrollView.addArrangedView(reportsView)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
@@ -154,22 +154,21 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
             let debugScreenContainer = UIView()
 
-            if Environment.current != Environment.prod {
-                debugScreenContainer.addSubview(debugScreenButton)
-                debugScreenButton.snp.makeConstraints { make in
-                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-                    make.top.bottom.centerX.equalToSuperview()
-                }
-
-                debugScreenButton.touchUpCallback = { [weak self] in
-                    guard let strongSelf = self else { return }
-                    strongSelf.presentDebugScreen()
-                }
-
-                stackScrollView.addArrangedView(debugScreenContainer)
-
-                stackScrollView.addSpacerView(NSPadding.large)
+            debugScreenContainer.addSubview(debugScreenButton)
+            debugScreenButton.snp.makeConstraints { make in
+                make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                make.top.bottom.centerX.equalToSuperview()
             }
+
+            debugScreenButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.presentDebugScreen()
+            }
+
+            stackScrollView.addArrangedView(debugScreenContainer)
+
+            stackScrollView.addSpacerView(NSPadding.large)
+
             debugScreenContainer.alpha = 0
         #endif
 
@@ -194,7 +193,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // End DEBUG version for testing
 
         handshakesModuleView.alpha = 0
-        meldungView.alpha = 0
+        reportsView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
 
@@ -208,7 +207,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
-                self.meldungView.alpha = 1
+                self.reportsView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
@@ -235,10 +234,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     func updateState(_ state: UIStateModel) {
         appTitleView.uiState = state.homescreen.header
-        handshakesModuleView.uiState = state.homescreen.begegnungen
-        meldungView.uiState = state.homescreen
+        handshakesModuleView.uiState = state.homescreen.encounters
+        reportsView.uiState = state.homescreen
 
-        let isInfected = state.homescreen.meldungen.meldung == .infected
+        let isInfected = state.homescreen.reports.report == .infected
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
@@ -261,12 +260,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     // MARK: - Details
 
-    private func presentBegegnungenDetail() {
-        navigationController?.pushViewController(NSBegegnungenDetailViewController(initialState: lastState.begegnungenDetail), animated: true)
+    private func presentEncountersDetail() {
+        navigationController?.pushViewController(NSEncountersDetailViewController(initialState: lastState.encountersDetail), animated: true)
     }
 
-    func presentMeldungenDetail(animated: Bool = true) {
-        navigationController?.pushViewController(NSMeldungenDetailViewController(), animated: animated)
+    func presentReportsDetail(animated: Bool = true) {
+        navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
     }
 
     #if ENABLE_TESTING

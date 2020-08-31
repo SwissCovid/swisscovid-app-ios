@@ -15,6 +15,8 @@ class NSOnboardingViewController: NSViewController {
     private let leftSwipeRecognizer = UISwipeGestureRecognizer()
     private let rightSwipeRecognizer = UISwipeGestureRecognizer()
 
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+
     private let splashVC = NSSplashViewController()
 
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
@@ -59,6 +61,8 @@ class NSOnboardingViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_darkModeBackground2)
+
         setupButtons()
 
         step5VC.permissionButton.touchUpCallback = { [weak self] in
@@ -81,6 +85,8 @@ class NSOnboardingViewController: NSViewController {
         setupSwipeRecognizers()
         addStepViewControllers()
         addSplashViewController()
+
+        addStatusBarBlurView()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -102,7 +108,22 @@ class NSOnboardingViewController: NSViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             UIView.animate(withDuration: 0.5) {
                 self.splashVC.view.alpha = 0
+                self.blurView.alpha = 1
             }
+        }
+    }
+
+    fileprivate func addStatusBarBlurView() {
+        blurView.alpha = 0
+
+        view.addSubview(blurView)
+
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+
+        blurView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(statusBarHeight)
         }
     }
 
@@ -200,7 +221,7 @@ class NSOnboardingViewController: NSViewController {
     }
 
     private func setupButtons() {
-        continueContainer.backgroundColor = .ns_background
+        continueContainer.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
         continueContainer.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
 
         continueContainer.addSubview(continueButton)
@@ -311,5 +332,12 @@ class NSOnboardingViewController: NSViewController {
         setOnboardingStep(currentStep - 1, animated: true)
 
         return true
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        if previousTraitCollection?.userInterfaceStyle != traitCollection.userInterfaceStyle {
+            continueContainer.ub_addShadow(with: .ns_text, radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+        }
     }
 }

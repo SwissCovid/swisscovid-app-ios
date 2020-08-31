@@ -66,6 +66,11 @@ class NSOnboardingContentViewController: NSViewController {
 
             let v = wrapperView.subviews[0]
 
+            // this is needed since the last swipe animation could still be running
+            // if we removeAllAnimations UIView.animate will call the completionhandler
+            // with finished = false
+            v.layer.removeAllAnimations()
+
             setViewState(view: v, factor: fromFactor)
             UIView.animate(withDuration: 0.5, delay: delay + Double(idx) * 0.05, options: [.beginFromCurrentState], animations: {
                 self.setViewState(view: v, factor: toFactor)

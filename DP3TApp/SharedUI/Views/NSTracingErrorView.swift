@@ -152,8 +152,8 @@ class NSTracingErrorView: UIView {
             }
         case let .tracingPermissionError(code):
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                           title: "tracing_permission_error_title_ios".ub_localized,
-                                           text: "tracing_permission_error_text_ios".ub_localized,
+                                           title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
+                                           text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
                                            errorCode: code,
                                            action: { _ in
@@ -161,7 +161,7 @@ class NSTracingErrorView: UIView {
                                                    UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
                                                UIApplication.shared.open(settingsUrl)
-            })
+                                           })
         case .bluetoothTurnedOff:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,

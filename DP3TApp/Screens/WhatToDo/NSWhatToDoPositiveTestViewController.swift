@@ -33,7 +33,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupStackScrollView()
         setupLayout()
@@ -77,7 +77,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.large)
 
-        let imageView = UIImageView(image: UIImage(named: "illu-positiv-title"))
+        let imageView = UIImageView(image: UIImage(named: "illu-positive-title"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
@@ -88,6 +88,14 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+        let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
+        callButton.title = "infoline_coronavirus_number".ub_localized
+        callButton.touchUpCallback = { [weak self] in
+            self?.callButtonTouched()
+        }
+        callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
+        stackScrollView.addArrangedView(callButton)
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
 
@@ -102,6 +110,11 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
 
         stackScrollView.addSpacerView(NSPadding.large)
+    }
+
+    private func callButtonTouched() {
+        let phoneNumber = "infoline_coronavirus_number".ub_localized
+        PhoneCallHelper.call(phoneNumber)
     }
 
     private func setupAccessibility() {
