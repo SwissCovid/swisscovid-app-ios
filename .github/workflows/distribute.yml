@@ -62,6 +62,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_DEV_Build.log
@@ -123,6 +124,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_TEST_Build.log
@@ -184,6 +186,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_ABNAHME_Build.log
@@ -231,6 +234,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_PROD_Build.log
@@ -293,6 +297,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_PROD_logging_Build.log
