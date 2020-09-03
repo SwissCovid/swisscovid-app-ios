@@ -5,9 +5,7 @@ platform :ios do
   desc "Build and Sign app"
   lane :build_and_sign do
 
-  setup_ci(
-    provider: "circleci"
-  )
+  setup_ci
 
   match(
     type: "appstore",
