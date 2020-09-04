@@ -81,10 +81,8 @@ class ConfigManager: NSObject {
     }
 
     private func shouldLoadConfig(backgroundTask: Bool, url: String?) -> Bool {
-        // if the config url was changes (by OS version or app version changing) load config
-        if let lastUrl = Self.lastConfigUrl,
-            let url = url,
-            lastUrl != url {
+        // if the config url was changed (by OS version or app version changing) load config
+        if url != Self.lastConfigUrl {
             return true
         }
 
