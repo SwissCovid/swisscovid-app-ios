@@ -46,7 +46,7 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_DEV }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "DEV"
-      run: bundle exec fastlane build_and_sign --verbose
+      run: bundle exec fastlane build_and_sign
 
     - name: SHA256
       run: shasum -a 256 build/SwissCovid.ipa
@@ -108,7 +108,7 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_TEST }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "TEST"
-      run: bundle exec fastlane build_and_sign --verbose
+      run: bundle exec fastlane build_and_sign
 
     - name: SHA256
       run: shasum -a 256 build/SwissCovid.ipa
@@ -170,7 +170,7 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_ABNAHME }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "ABN"
-      run: bundle exec fastlane build_and_sign --verbose
+      run: bundle exec fastlane build_and_sign
     
     - name: SHA256
       run: shasum -a 256 build/SwissCovid.ipa
@@ -218,7 +218,7 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         SKIP_ADD_BADGE: true
         BADGE_TITLE: ""
-      run: bundle exec fastlane build_and_sign --verbose
+      run: bundle exec fastlane build_and_sign
 
     - name: SHA256
       run: shasum -a 256 build/SwissCovid.ipa
@@ -281,7 +281,7 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "LOG"
         BUILD_NUMBER_POSTFIX: "999"
-      run: bundle exec fastlane build_and_sign 
+      run: bundle exec fastlane build_and_sign
 
     - name: SHA256
       run: shasum -a 256 build/SwissCovid.ipa
