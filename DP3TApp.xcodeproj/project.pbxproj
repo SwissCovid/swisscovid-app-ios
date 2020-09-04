@@ -313,6 +313,7 @@
 		F806D33D24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
 		F806D33F24F91D5B00672DFC /* TracingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */; };
 		F806D34124F91DB900672DFC /* MockIdentifierProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */; };
+		F807812C25022091008986EE /* ConfigManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F807812B25022091008986EE /* ConfigManagerTests.swift */; };
 		F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
 		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
 		F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
@@ -559,6 +560,7 @@
 		F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushProtocol.swift; sourceTree = "<group>"; };
 		F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingManagerTests.swift; sourceTree = "<group>"; };
 		F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIdentifierProvider.swift; sourceTree = "<group>"; };
+		F807812B25022091008986EE /* ConfigManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigManagerTests.swift; sourceTree = "<group>"; };
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
 		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
 		F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
@@ -1096,6 +1098,7 @@
 				F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */,
 				F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */,
 				F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */,
+				F807812B25022091008986EE /* ConfigManagerTests.swift */,
 				F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
@@ -1892,6 +1895,7 @@
 				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
+				F807812C25022091008986EE /* ConfigManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
