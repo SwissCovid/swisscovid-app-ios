@@ -3036,7 +3036,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				branch = "bugfix/ios-13-7-delayed-key-fix";
+				branch = develop;
 				kind = branch;
 			};
 		};

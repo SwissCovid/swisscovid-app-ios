@@ -32,8 +32,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "bugfix/ios-13-7-delayed-key-fix",
-          "revision": "04177f39cb9ac544f92c84ab1fa8aa927f811648",
+          "branch": "develop",
+          "revision": "2845a8b6e060ac0e4fc730ad1fa3edd320be7537",
           "version": null
         }
       },
