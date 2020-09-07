@@ -47,6 +47,8 @@ extension DP3TTracingError: LocalizedError, CodedError {
                 return "user_cancelled_key_sharing_error".ub_localized
             }
             return error.localizedDescription
+        case .infectionStatusNotResettable:
+            return nil
         }
     }
 
@@ -69,6 +71,8 @@ extension DP3TTracingError: LocalizedError, CodedError {
         case let .exposureNotificationError(error: error):
             let nsError = error as NSError
             return "IEN\(nsError.code)" // Should match code below
+        case .infectionStatusNotResettable:
+            return "ISNR"
         }
     }
 
