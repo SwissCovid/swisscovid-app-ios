@@ -144,6 +144,10 @@ class TracingManager: NSObject {
         #endif
     }
 
+    var isPositiveTestDeletable: Bool {
+        DP3TTracing.isInfectionStatusResettable
+    }
+
     func deletePositiveTest() {
         // reset infection status
         try? DP3TTracing.resetInfectionStatus()
