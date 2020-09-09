@@ -13,6 +13,10 @@ import UIKit
 class NSStatisticsViewController: NSTitleViewScrollViewController {
     private let statisticsModule = NSStatisticsModuleView()
 
+    private let statisticsChartView = NSStatisticsChartView()
+
+    private let loader = StatisticsLoader()
+
     override init() {
         super.init()
 
@@ -28,7 +32,22 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         setupLayout()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        loader.get { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(response):
+                self.statisticsChartView.history = response.history
+            case .failure:
+                break
+            }
+        }
+    }
+
     private func setupLayout() {
         stackScrollView.addArrangedView(statisticsModule)
+        stackScrollView.addArrangedView(statisticsChartView)
     }
 }
