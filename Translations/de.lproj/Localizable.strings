@@ -613,6 +613,7 @@
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";
 
 /*Inform Detail: FAQ Text*/
+/*Fuzzy*/
 "inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 2h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
@@ -957,3 +958,16 @@
 /*Text beim Bluetooth Control iOS 14*/
 /*Fuzzy*/
 "tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";
+"bottom_nav_tab_home" = "Home";
+"bottom_nav_tab_stats" = "Zahlen";
+"stats_title" = "haben SwissCovid bereits aktiviert";
+"stats_legend_new_infections" = "Gemeldete Neuinfektionen";
+"stats_legend_new_infections_average" = "7-Tage-Schnitt";
+"stats_legend_entered_covidcodes" = "Eingegebene Covidcodes";
+"share_app_supertitle" = "Gemeinsam...";
+"share_app_title" = "Eine zweite Welle verhindern";
+"share_app_button" = "App teilen";
+
+/*Fuzzy*/
+"share_app_body" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
+"share_app_message" = "Hallo, lad Dir doch auch SwissCovid herunter.\nhttps://bag-coronavirus.ch/swisscovid-app/#download";

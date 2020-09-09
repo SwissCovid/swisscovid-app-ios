@@ -10,9 +10,25 @@
 
 import UIKit
 
-class NSStatisticsViewController: NSViewController {
+class NSStatisticsViewController: NSTitleViewScrollViewController {
+    private let statisticsModule = NSStatisticsModuleView()
+
+    override init() {
+        super.init()
+
+        titleView = NSStatisticsHeaderView()
+        title = "bottom_nav_tab_stats".ub_localized
+
+        tabBarItem.image = nil
+        tabBarItem.title = "bottom_nav_tab_stats".ub_localized
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        setupLayout()
+    }
+
+    private func setupLayout() {
+        stackScrollView.addArrangedView(statisticsModule)
     }
 }
