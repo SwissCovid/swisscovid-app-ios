@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
     var isFirstLaunch: Bool
 
+    var tabBarController: NSTabBarController? {
+        window?.rootViewController as? NSTabBarController
+    }
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
         if UserStorage.shared.hasCompletedOnboarding {
@@ -72,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
-        window?.rootViewController = NSNavigationController(rootViewController: NSHomescreenViewController())
+        window?.rootViewController = NSTabBarController()
 
         setupAppearance()
 
@@ -120,10 +124,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
         if shouldJump,
-            let navigationController = window?.rootViewController as? NSNavigationController,
-            let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
+            let tabBarController = tabBarController {
+            tabBarController.currentTab = .homescreen
+
+            let navigationController = tabBarController.currentNavigationController
+
             // no need to present NSReportsDetailViewController if its already showing
-            if !(navigationController.viewControllers.last is NSReportsDetailViewController) {
+            if let homescreenVC = tabBarController.currentViewController as? NSHomescreenViewController,
+                !(navigationController.viewControllers.last is NSReportsDetailViewController) {
                 navigationController.popToRootViewController(animated: false)
                 homescreenVC.presentReportsDetail(animated: false)
             }
@@ -172,5 +180,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: NSLabelType.textBold.font,
             .foregroundColor: UIColor.ns_text,
         ]
+
+        UITabBarItem.appearance().setTitleTextAttributes([
+            .font: NSLabelType.smallBold.font,
+            .foregroundColor: UIColor.ns_text,
+        ], for: .normal)
     }
 }
