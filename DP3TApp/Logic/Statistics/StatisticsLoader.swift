@@ -44,7 +44,7 @@ class StatisticsLoader {
         // TODO: add JWT Validation
 
         let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(Self.formatter)
+        // decoder.dateDecodingStrategy = .formatted(Self.formatter)
         completionHandler(Result {
             try decoder.decode(StatisticsResponse.self, from: data)
         })
