@@ -17,7 +17,7 @@ class StatisticsResponse: Codable {
     class StatisticEntry: Codable {
         let date: Date
         let newInfections: Int?
-        let newInfectionsSevenDayAverage: Int?
+        let newInfectionsSevenDayAverage: Double?
         let covidcodesEntered: Int?
     }
 }
