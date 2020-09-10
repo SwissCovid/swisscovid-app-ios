@@ -18,6 +18,11 @@ class NSChartLineView: UIView {
         self.configuration = configuration
         super.init(frame: .zero)
         layer.masksToBounds = true
+
+        lineLayer.fillColor = nil
+        lineLayer.strokeColor = lineColor.cgColor
+        lineLayer.lineWidth = 2.0
+        layer.addSublayer(lineLayer)
     }
 
     required init?(coder: NSCoder) {
@@ -27,9 +32,7 @@ class NSChartLineView: UIView {
 
     var lineColor: UIColor = .ns_purple {
         didSet {
-            lines.forEach {
-                $0.strokeColor = lineColor.cgColor
-            }
+            lineLayer.strokeColor = lineColor.cgColor
         }
     }
 
@@ -39,20 +42,10 @@ class NSChartLineView: UIView {
         }
     }
 
-    private var lines: [CAShapeLayer] {
-        layer.sublayers?.compactMap { $0 as? CAShapeLayer } ?? []
-    }
+    private var lineLayer = CAShapeLayer()
 
     private func updateChart() {
-        func getLine(at index: Int) -> CAShapeLayer {
-            guard index < lines.count else {
-                let layer = newLine()
-                self.layer.addSublayer(layer)
-                return layer
-            }
-            return lines[index]
-        }
-
+        guard !values.isEmpty else { return }
         // Split line up into segments without cuts
         var lineSegments: [[CGPoint]] = [[]]
         for (index, value) in values.enumerated() {
@@ -60,12 +53,12 @@ class NSChartLineView: UIView {
                 lineSegments.append([])
                 continue
             }
-            lineSegments[lineSegments.count - 1].append(CGPoint(x: CGFloat(index) * configuration.barWidth,
-                                               y: CGFloat(value) * frame.height))
+            let point = CGPoint(x: CGFloat(index) * (configuration.barWidth + 2 * configuration.barBorderWidth) + configuration.barWidth / 2,
+                                y: CGFloat(1 - value) * frame.height)
+            lineSegments[lineSegments.count - 1].append(point)
         }
 
         let linePath = UIBezierPath()
-        let lineLayer = getLine(at: 0)
 
         for points in lineSegments {
             linePath.addCurvefromPoints(points)
@@ -83,27 +76,18 @@ class NSChartLineView: UIView {
         lineLayer.add(animation, forKey: nil)
 
         lineLayer.strokeEnd = 1
-
-
-        while lines.count > lineSegments.count {
-            _ = self.layer.sublayers?.popLast()
-        }
-    }
-
-    func newLine() -> CAShapeLayer {
-        let layer = CAShapeLayer()
-        layer.fillColor = nil
-        layer.strokeColor = lineColor.cgColor
-        layer.lineWidth = 2.0
-        return layer
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-            lines.forEach({ (layer) in
-                layer.strokeColor = lineColor.cgColor
-            })
+
+            lineLayer.strokeColor = lineColor.cgColor
         }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateChart()
     }
 }
 

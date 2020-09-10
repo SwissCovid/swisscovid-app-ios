@@ -17,6 +17,16 @@ struct RelativeEntry {
     let date: Date
 }
 
+struct ChartYTicks {
+    let maxValue: Double
+    let stepSize: Int
+}
+
+struct ChartData {
+    let data: [RelativeEntry]
+    let yTicks: ChartYTicks
+}
+
 struct ChartConfiguration {
     let barWidth: CGFloat
     let barBorderWidth: CGFloat
@@ -37,9 +47,11 @@ class NSStatisticsChartContentView: UIView {
 
     private let lineView: NSChartLineView
 
+    private let yAchsisLines: NSChartYAchsisLines
+
     private let configuration = ChartConfiguration.default
 
-    var entries: [RelativeEntry] = [] {
+    var data: ChartData? {
         didSet {
             updateChart()
         }
@@ -50,6 +62,7 @@ class NSStatisticsChartContentView: UIView {
         self.codeBarView = .init(configuration: configuration)
         self.dateView = .init(configuration: configuration)
         self.lineView = .init(configuration: configuration)
+        self.yAchsisLines = .init(configuration: configuration)
         super.init(frame: .zero)
 
         infectionBarView.tintColor = UIColor.ns_purple.withAlphaComponent(0.33)
@@ -58,9 +71,10 @@ class NSStatisticsChartContentView: UIView {
         infectionBarView.frame = frame
         codeBarView.frame = frame
 
+
         addSubview(infectionBarView)
         infectionBarView.snp.makeConstraints { (make) in
-            make.leading.top.trailing.equalToSuperview()
+            make.leading.trailing.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(39)
         }
 
@@ -71,6 +85,11 @@ class NSStatisticsChartContentView: UIView {
 
         addSubview(lineView)
         lineView.snp.makeConstraints { (make) in
+            make.edges.equalTo(infectionBarView)
+        }
+
+        addSubview(yAchsisLines)
+        yAchsisLines.snp.makeConstraints { (make) in
             make.edges.equalTo(infectionBarView)
         }
 
@@ -95,16 +114,20 @@ class NSStatisticsChartContentView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        guard entries.isEmpty == false else { return CGSize(width: 0, height: 300) }
-        return CGSize(width: CGFloat(entries.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth,
+        guard let data = data else { return CGSize(width: 0, height: 300) }
+        return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth,
                       height: 300)
     }
 
     private func updateChart() {
-        infectionBarView.values = entries.map(\.infections)
-        codeBarView.values = entries.map(\.codes)
-        dateView.values = entries.map(\.date)
-        lineView.values = entries.map(\.sevenDayAverage)
+        guard let data = data else { return }
+
+        infectionBarView.values = data.data.map(\.infections)
+        codeBarView.values = data.data.map(\.codes)
+        dateView.values = data.data.map(\.date)
+        lineView.values = data.data.map(\.sevenDayAverage)
+
+        yAchsisLines.yTicks = data.yTicks
 
         invalidateIntrinsicContentSize()
     }

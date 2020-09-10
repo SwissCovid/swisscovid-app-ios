@@ -54,6 +54,8 @@ class NSChartDateView: UIView {
     }
 
     private func updateChart() {
+        guard !values.isEmpty else { return }
+        
         func getLineLayer(at index: Int) -> CAShapeLayer {
             guard index < lineLayers.count else {
                 let layer = newLine()
@@ -142,5 +144,10 @@ class NSChartDateView: UIView {
                 layer.foregroundColor = self.textColor.cgColor
             }
         }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateChart()
     }
 }

@@ -40,7 +40,9 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
             switch result {
             case let .success(response):
                 self.statisticsChartView.history = response.history
-            case .failure:
+            case let .failure(error):
+                print(error)
+                //TODO: show error view
                 break
             }
         }

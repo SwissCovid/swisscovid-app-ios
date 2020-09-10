@@ -44,6 +44,8 @@ class NSChartColumnView: UIView {
     }
 
     private func updateChart() {
+        guard !values.isEmpty else { return }
+        
         func getBar(at index: Int) -> CALayer {
             guard index < bars.count else {
                 let layer = newBar()
@@ -60,8 +62,6 @@ class NSChartColumnView: UIView {
                                    y: ceil(frame.height * (1.0 - CGFloat(value))),
                                    width: configuration.barWidth + 2 * configuration.barBorderWidth,
                                    height: ceil(frame.height * CGFloat(value)) + 5) //make sure that the bar always extens to to full height
-
-
 
             let animation = CABasicAnimation(keyPath: "bounds.size.height")
             animation.fromValue = bar.frame.height
@@ -93,5 +93,10 @@ class NSChartColumnView: UIView {
                 layer.backgroundColor = tintColor.cgColor
             })
         }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateChart()
     }
 }
