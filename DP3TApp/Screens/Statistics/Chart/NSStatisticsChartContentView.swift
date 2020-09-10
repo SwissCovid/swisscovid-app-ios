@@ -13,13 +13,14 @@ import UIKit
 struct RelativeEntry {
     let codes: Double
     let infections: Double
+    let date: Date
 }
 
 struct ChartConfiguration {
     let barWidth: CGFloat
     let barBorderWidth: CGFloat
 
-    static let `default` = ChartConfiguration(barWidth: 20,
+    static let `default` = ChartConfiguration(barWidth: 10,
                                               barBorderWidth: 2)
 }
 
@@ -28,6 +29,10 @@ class NSStatisticsChartContentView: UIView {
     private let infectionBarView: NSChartColumnView
 
     private let codeBarView: NSChartColumnView
+
+    private let divider = UIView()
+
+    private let dateView: NSChartDateView
 
     private let configuration = ChartConfiguration.default
 
@@ -40,19 +45,41 @@ class NSStatisticsChartContentView: UIView {
     init() {
         self.infectionBarView = .init(configuration: configuration)
         self.codeBarView = .init(configuration: configuration)
+        self.dateView = .init(configuration: configuration)
         super.init(frame: .zero)
 
-        infectionBarView.tintColor = .ns_red
+        infectionBarView.tintColor = UIColor.ns_purple.withAlphaComponent(0.33)
         codeBarView.tintColor = .ns_blue
 
         infectionBarView.frame = frame
         codeBarView.frame = frame
 
         addSubview(infectionBarView)
-        infectionBarView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        infectionBarView.snp.makeConstraints { (make) in
+            make.leading.top.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(39)
+        }
 
         addSubview(codeBarView)
-        codeBarView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        codeBarView.snp.makeConstraints { (make) in
+            make.leading.top.trailing.equalToSuperview()
+            make.bottom.equalToSuperview().inset(39)
+        }
+
+        divider.backgroundColor = .ns_backgroundDark
+        addSubview(divider)
+        divider.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(codeBarView.snp.bottom).inset(3)
+            make.height.equalTo(2)
+        }
+
+        addSubview(dateView)
+        dateView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(divider.snp.bottom)
+            make.bottom.equalToSuperview()
+        }
     }
 
     required init?(coder _: NSCoder) {
@@ -68,6 +95,7 @@ class NSStatisticsChartContentView: UIView {
     private func updateChart() {
         infectionBarView.values = entries.map(\.infections)
         codeBarView.values = entries.map(\.codes)
+        dateView.values = entries.map(\.date)
 
         invalidateIntrinsicContentSize()
     }

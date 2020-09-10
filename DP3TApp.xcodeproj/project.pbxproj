@@ -351,6 +351,8 @@
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F8512237250A13ED009BE733 /* NSChartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512236250A13ED009BE733 /* NSChartDateView.swift */; };
+		F8512238250A13ED009BE733 /* NSChartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512236250A13ED009BE733 /* NSChartDateView.swift */; };
 		F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */; };
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
@@ -604,6 +606,7 @@
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
+		F8512236250A13ED009BE733 /* NSChartDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartDateView.swift; sourceTree = "<group>"; };
 		F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
@@ -1283,6 +1286,7 @@
 				F80E40722509039400876906 /* NSStatisticsChartView.swift */,
 				F80E407925092B0500876906 /* NSStatisticsChartContentView.swift */,
 				F80E407625092AE100876906 /* NSChartColumnView.swift */,
+				F8512236250A13ED009BE733 /* NSChartDateView.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -1678,6 +1682,7 @@
 				242D21DF245C4BD8005DAEA8 /* UBButton.swift in Sources */,
 				242D21E0245C4BD8005DAEA8 /* UIStackView+NS.swift in Sources */,
 				8EFBAB2C249145070004138B /* NSSynchronizationPersistence.swift in Sources */,
+				F8512238250A13ED009BE733 /* NSChartDateView.swift in Sources */,
 				242D21E1245C4BD8005DAEA8 /* NSTitleViewScrollViewController.swift in Sources */,
 				242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */,
 				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
@@ -1826,6 +1831,7 @@
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
 				246FD175249B565400FD36F8 /* environment+AppStore.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */,
+				F8512237250A13ED009BE733 /* NSChartDateView.swift in Sources */,
 				24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,

@@ -83,4 +83,13 @@ class NSChartColumnView: UIView {
         layer.anchorPoint = CGPoint(x: 0.5, y: 1.0)
         return layer
     }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            layer.sublayers?.forEach({ (layer) in
+                layer.borderColor = borderColor.cgColor
+                layer.backgroundColor = tintColor.cgColor
+            })
+        }
+    }
 }

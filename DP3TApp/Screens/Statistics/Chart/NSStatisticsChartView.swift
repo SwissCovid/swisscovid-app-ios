@@ -45,7 +45,14 @@ class NSStatisticsChartView: UIView {
     }
 
     private func updateChart() {
-        chartContentView.entries = (0...1000).map{ _ in RelativeEntry(codes: Double.random(in: 0...1), infections: Double.random(in: 0...1)) }
+        let startDay = Date()
+        chartContentView.entries = (0...1000).map{ index in
+            let codesValue = Double.random(in: 0...1)
+            let infectionsValue = Double.random(in: 0...1)
+            return RelativeEntry(codes: codesValue,
+                                 infections: infectionsValue,
+                                 date: startDay.addingTimeInterval(Double(index) * 24 * 60 * 60))
+        }
         scrollView.setContentOffset(CGPoint(x: chartContentView.intrinsicContentSize.width, y: 0), animated: false)
     }
 }
