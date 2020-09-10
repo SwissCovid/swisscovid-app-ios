@@ -129,6 +129,7 @@ class NSChartDateView: UIView {
         layer.fontSize = 13
         layer.alignmentMode = .center
         layer.foregroundColor = textColor.cgColor
+        layer.contentsScale = UIScreen.main.scale
         return layer
     }
 

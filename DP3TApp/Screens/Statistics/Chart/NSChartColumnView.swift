@@ -17,6 +17,7 @@ class NSChartColumnView: UIView {
     init(configuration: ChartConfiguration) {
         self.configuration = configuration
         super.init(frame: .zero)
+        layer.masksToBounds = true
     }
 
     required init?(coder: NSCoder) {
@@ -32,7 +33,7 @@ class NSChartColumnView: UIView {
         }
     }
 
-    var values: [Double] = [] {
+    var values: [Double?] = [] {
         didSet {
             updateChart()
         }
@@ -54,10 +55,11 @@ class NSChartColumnView: UIView {
 
         for (index, value) in values.enumerated() {
             let bar = getBar(at: index)
+            let value = value ?? 0
             let endFrame =  CGRect(x: CGFloat(index) * (configuration.barWidth + configuration.barBorderWidth),
-                                   y: floor(frame.height * (1.0 - CGFloat(value))),
+                                   y: ceil(frame.height * (1.0 - CGFloat(value))),
                                    width: configuration.barWidth + 2 * configuration.barBorderWidth,
-                                   height: floor(frame.height * CGFloat(value)))
+                                   height: ceil(frame.height * CGFloat(value)) + 5) //make sure that the bar always extens to to full height
 
 
 

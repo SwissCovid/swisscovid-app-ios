@@ -11,8 +11,9 @@
 import UIKit
 
 struct RelativeEntry {
-    let codes: Double
-    let infections: Double
+    let codes: Double?
+    let infections: Double?
+    let sevenDayAverage: Double?
     let date: Date
 }
 
@@ -34,6 +35,8 @@ class NSStatisticsChartContentView: UIView {
 
     private let dateView: NSChartDateView
 
+    private let lineView: NSChartLineView
+
     private let configuration = ChartConfiguration.default
 
     var entries: [RelativeEntry] = [] {
@@ -46,6 +49,7 @@ class NSStatisticsChartContentView: UIView {
         self.infectionBarView = .init(configuration: configuration)
         self.codeBarView = .init(configuration: configuration)
         self.dateView = .init(configuration: configuration)
+        self.lineView = .init(configuration: configuration)
         super.init(frame: .zero)
 
         infectionBarView.tintColor = UIColor.ns_purple.withAlphaComponent(0.33)
@@ -62,15 +66,19 @@ class NSStatisticsChartContentView: UIView {
 
         addSubview(codeBarView)
         codeBarView.snp.makeConstraints { (make) in
-            make.leading.top.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(39)
+            make.edges.equalTo(infectionBarView)
+        }
+
+        addSubview(lineView)
+        lineView.snp.makeConstraints { (make) in
+            make.edges.equalTo(infectionBarView)
         }
 
         divider.backgroundColor = .ns_backgroundDark
         addSubview(divider)
         divider.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
-            make.top.equalTo(codeBarView.snp.bottom).inset(3)
+            make.top.equalTo(infectionBarView.snp.bottom).inset(0)
             make.height.equalTo(2)
         }
 
@@ -96,6 +104,7 @@ class NSStatisticsChartContentView: UIView {
         infectionBarView.values = entries.map(\.infections)
         codeBarView.values = entries.map(\.codes)
         dateView.values = entries.map(\.date)
+        lineView.values = entries.map(\.sevenDayAverage)
 
         invalidateIntrinsicContentSize()
     }
