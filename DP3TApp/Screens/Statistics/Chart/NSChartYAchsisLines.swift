@@ -43,7 +43,7 @@ class NSChartYAchsisLines: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateLines() {
+    private func updateLines() {
         guard let yTicks = yTicks else {
             lineLayer.path = nil
             return

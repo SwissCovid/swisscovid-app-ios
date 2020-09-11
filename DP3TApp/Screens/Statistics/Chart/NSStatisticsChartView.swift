@@ -12,11 +12,13 @@ import Foundation
 
 class NSStatisticsChartView: UIView {
 
-    let scrollView = UIScrollView()
+    private let scrollView = UIScrollView()
 
-    let chartContentView = NSStatisticsChartContentView()
+    private let chartContentView = NSStatisticsChartContentView()
 
-    let yLenged = NSChartYAchsisLegend()
+    private let yLenged = NSChartYAchsisLegend()
+
+    private var contentSizeObserver: NSKeyValueObservation?
 
     var history: [StatisticsResponse.StatisticEntry] = [] {
         didSet {
@@ -26,6 +28,9 @@ class NSStatisticsChartView: UIView {
 
     init() {
         super.init(frame: .zero)
+
+        layer.cornerRadius = 5
+        layer.masksToBounds = true
 
         addSubview(yLenged)
         yLenged.snp.makeConstraints { (make) in
@@ -43,6 +48,15 @@ class NSStatisticsChartView: UIView {
         scrollView.addSubview(chartContentView)
         chartContentView.snp.makeConstraints { (make) in
             make.edges.height.equalToSuperview()
+        }
+
+        contentSizeObserver = scrollView.observe(\.contentSize, options: [.new]) { (scrollView, kvo) in
+            guard kvo.newValue != kvo.oldValue else { return }
+            let rect = CGRect(x: scrollView.contentSize.width - scrollView.frame.width,
+                              y: 0,
+                              width: scrollView.frame.width,
+                              height: scrollView.frame.height)
+            scrollView.scrollRectToVisible(rect, animated: false)
         }
     }
 
@@ -77,10 +91,9 @@ class NSStatisticsChartView: UIView {
 
         chartContentView.data = ChartData(data: relativeEntries, yTicks: yTicks)
         yLenged.yTicks = yTicks
-        scrollView.setContentOffset(CGPoint(x: chartContentView.intrinsicContentSize.width, y: 0), animated: false)
     }
 
-    func getYTicks(maxValue: Double) -> ChartYTicks {
+    private func getYTicks(maxValue: Double) -> ChartYTicks {
         let tempStep = Double(maxValue) / 4.0
         let mag = floor(log10(tempStep))
         let magPow = pow(10, mag)

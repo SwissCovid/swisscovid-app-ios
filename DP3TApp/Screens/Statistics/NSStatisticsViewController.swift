@@ -13,8 +13,6 @@ import UIKit
 class NSStatisticsViewController: NSTitleViewScrollViewController {
     private let statisticsModule = NSStatisticsModuleView()
 
-    private let statisticsChartView = NSStatisticsChartView()
-
     private let loader = StatisticsLoader()
 
     override init() {
@@ -39,7 +37,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
             guard let self = self else { return }
             switch result {
             case let .success(response):
-                self.statisticsChartView.history = response.history
+                self.statisticsModule.statisticData = response
             case let .failure(error):
                 print(error)
                 //TODO: show error view
@@ -50,6 +48,5 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
     private func setupLayout() {
         stackScrollView.addArrangedView(statisticsModule)
-        stackScrollView.addArrangedView(statisticsChartView)
     }
 }
