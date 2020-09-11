@@ -15,7 +15,7 @@ class NSStatisticsModuleView: UIView {
     private let stackView = UIStackView()
 
     private let header = NSStatsticsModuleHeader()
-    private let statisticsChartView = NSStatisticsChartView()
+    let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
 
     private lazy var sections: [UIView] = [header,
@@ -26,6 +26,7 @@ class NSStatisticsModuleView: UIView {
         didSet {
             guard let data = statisticData else { return }
             statisticsChartView.history = data.history
+            header.setCounter(number: data.totalActiveUsers)
         }
     }
 

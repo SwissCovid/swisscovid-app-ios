@@ -9,11 +9,12 @@
  */
 
 import Foundation
+import DP3TSDK
 
 class StatisticsLoader {
     private let session = URLSession.certificatePinned
 
-    public func get(completionHandler: @escaping (Result<StatisticsResponse, Error>) -> Void) {
+    public func get(completionHandler: @escaping (Result<StatisticsResponse, NetworkError>) -> Void) {
         let json = """
         {
         "totalActiveUsers":1623942,
@@ -601,13 +602,57 @@ class StatisticsLoader {
         let data = json.data(using: .utf8)!
 
         // TODO: add JWT Validation
+        /*do {
+             try Self.validateJWT(httpResponse: httpResponse, data: data)
+         } catch {
+             DispatchQueue.main.async { completion(nil) }
+         }*/
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
             let decoder = JSONDecoder()
             decoder.dateDecodingStrategy = .formatted(Self.formatter)
-            completionHandler(Result {
-                try decoder.decode(StatisticsResponse.self, from: data)
-            })
+            guard let response = try? decoder.decode(StatisticsResponse.self, from: data) else {
+                completionHandler(.failure(.parseError))
+                return
+            }
+
+            Self.counter += 1
+            if Self.counter % 2 == 0 {
+                completionHandler(.success(response))
+            }else {
+                completionHandler(.failure(.parseError))
+            }
+        }
+    }
+    static var counter: Int = 0
+
+    private struct Claims: DP3TClaims {
+        let iss: String
+        let iat: Date
+        let exp: Date
+        let contentHash: String
+        let hashAlg: String
+
+        enum CodingKeys: String, CodingKey {
+            case contentHash = "content-hash"
+            case hashAlg = "hash-alg"
+            case iss, iat, exp
+        }
+    }
+
+    private static func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
+        if #available(iOS 11.0, *) {
+            let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
+                                           jwtTokenHeaderKey: "Signature")
+            do {
+                try verifier.verify(claimType: Claims.self, httpResponse: httpResponse, httpBody: data)
+            } catch let error as DP3TNetworkingError {
+                Logger.log("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
+                throw error
+            } catch {
+                Logger.log("Failed to verify config signature, error: \(error.localizedDescription)")
+                throw error
+            }
         }
     }
 

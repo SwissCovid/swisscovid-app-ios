@@ -42,6 +42,7 @@ public enum NSLabelType: UBLabelType {
     case smallRegular
     case interRegular
     case interBold
+    case statsCounter
 
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize()
@@ -72,6 +73,7 @@ public enum NSLabelType: UBLabelType {
         case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
+        case .statsCounter: return UIFont(name: boldFontName, size: bfs + 23.0)!
         }
     }
 
@@ -100,6 +102,7 @@ public enum NSLabelType: UBLabelType {
         case .smallRegular: return 26.0 / 13.0
         case .interRegular: return 24.0 / 16.0
         case .interBold: return 24.0 / 16.0
+        case .statsCounter: return 30.0 / 22.0
         }
     }
 

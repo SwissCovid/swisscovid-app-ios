@@ -30,9 +30,11 @@ struct ChartData {
 struct ChartConfiguration {
     let barWidth: CGFloat
     let barBorderWidth: CGFloat
+    let chartHeight: CGFloat
 
     static let `default` = ChartConfiguration(barWidth: 10,
-                                              barBorderWidth: 2)
+                                              barBorderWidth: 2,
+                                              chartHeight: 230)
 }
 
 class NSStatisticsChartContentView: UIView {
@@ -114,9 +116,9 @@ class NSStatisticsChartContentView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        guard let data = data else { return CGSize(width: 0, height: 300) }
+        guard let data = data else { return CGSize(width: 0, height: configuration.chartHeight) }
         return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth,
-                      height: 300)
+                      height: configuration.chartHeight)
     }
 
     private func updateChart() {

@@ -32,11 +32,11 @@ class NSTitleViewScrollViewController: NSViewController {
     private let spacerView = UIView()
 
     public var titleHeight: CGFloat {
-        return 150
+        return 153
     }
 
     public var startPositionScrollView: CGFloat {
-        return 115
+        return 118
     }
 
     public var useFullScreenHeaderAnimation: Bool {

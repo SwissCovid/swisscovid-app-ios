@@ -979,3 +979,6 @@
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
+"stats_counter" = "{COUNT} Mio.";
