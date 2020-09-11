@@ -13,7 +13,7 @@ import Foundation
 class StatisticsLoader {
     private let session = URLSession.certificatePinned
 
-    public func get(completionHandler: (Result<StatisticsResponse, Error>) -> Void) {
+    public func get(completionHandler: @escaping (Result<StatisticsResponse, Error>) -> Void) {
         let json = """
         {
         "totalActiveUsers":1623942,
@@ -602,11 +602,13 @@ class StatisticsLoader {
 
         // TODO: add JWT Validation
 
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(Self.formatter)
-        completionHandler(Result {
-            try decoder.decode(StatisticsResponse.self, from: data)
-        })
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            let decoder = JSONDecoder()
+            decoder.dateDecodingStrategy = .formatted(Self.formatter)
+            completionHandler(Result {
+                try decoder.decode(StatisticsResponse.self, from: data)
+            })
+        }
     }
 
     static var formatter: DateFormatter = {

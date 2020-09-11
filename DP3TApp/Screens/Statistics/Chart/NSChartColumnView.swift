@@ -63,13 +63,15 @@ class NSChartColumnView: UIView {
                                    width: configuration.barWidth + 2 * configuration.barBorderWidth,
                                    height: ceil(frame.height * CGFloat(value)) + 5) //make sure that the bar always extens to to full height
 
+
+            bar.frame = endFrame
+
             let animation = CABasicAnimation(keyPath: "bounds.size.height")
-            animation.fromValue = bar.frame.height
+            animation.fromValue = 0
             animation.toValue = endFrame.height
             animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             bar.add(animation, forKey: nil)
 
-            bar.frame = endFrame
         }
 
         while bars.count > values.count {

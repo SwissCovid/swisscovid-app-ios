@@ -45,7 +45,9 @@ class NSChartLineView: UIView {
     private var lineLayer = CAShapeLayer()
 
     private func updateChart() {
-        guard !values.isEmpty else { return }
+        guard !values.isEmpty else {
+            return
+        }
         // Split line up into segments without cuts
         var lineSegments: [[CGPoint]] = [[]]
         for (index, value) in values.enumerated() {
@@ -64,23 +66,19 @@ class NSChartLineView: UIView {
             linePath.addCurvefromPoints(points)
         }
 
-        lineLayer.path = linePath.cgPath
-
-        lineLayer.strokeEnd = 0
-
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = 0.3
-        animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+        let animation = CABasicAnimation(keyPath: "path")
+        animation.fromValue = flatPath(size: bounds.size)
+        animation.toValue = linePath.cgPath
+        animation.duration = 0.4
+        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
         lineLayer.add(animation, forKey: nil)
 
-        lineLayer.strokeEnd = 1
+        lineLayer.path = linePath.cgPath
+
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-
             lineLayer.strokeColor = lineColor.cgColor
         }
     }
@@ -88,6 +86,18 @@ class NSChartLineView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         updateChart()
+    }
+
+    func flatPath(size: CGSize, padding: CGFloat = 2.0, segmentCount: Int = 10) -> CGPath {
+        let bezier = UIBezierPath()
+        bezier.move(to: CGPoint(x: padding, y: size.height - padding))
+
+        assert(segmentCount > 0)
+        let interSpace = (size.width - (2 * padding)) / CGFloat(segmentCount)
+        for index in 1...segmentCount {
+            bezier.addLine(to: CGPoint(x: CGFloat(index) * interSpace + padding , y: size.height - padding))
+        }
+        return bezier.cgPath
     }
 }
 
