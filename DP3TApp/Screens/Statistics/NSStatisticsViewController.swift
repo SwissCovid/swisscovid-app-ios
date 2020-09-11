@@ -48,5 +48,11 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
     private func setupLayout() {
         stackScrollView.addArrangedView(statisticsModule)
+
+        stackScrollView.addSpacerView(NSPadding.medium + NSPadding.small)
+
+        let sourceLabel = NSLabel(.interRegular, textColor: .ns_backgroundDark, textAlignment: .right)
+        sourceLabel.text = "stats_source".ub_localized
+        stackScrollView.addArrangedView(sourceLabel)
     }
 }

@@ -971,3 +971,6 @@
 /*Fuzzy*/
 "share_app_body" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
 "share_app_message" = "Hallo, lad Dir doch auch SwissCovid herunter.\nhttps://bag-coronavirus.ch/swisscovid-app/#download";
+
+/*Gibt Quelle der Statistik an*/
+"stats_source" = "Quelle: BIT / BFS";

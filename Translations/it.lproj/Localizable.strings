@@ -949,3 +949,6 @@
 "share_app_button" = "";
 "share_app_body" = "";
 "share_app_message" = "";
+
+/*Gibt Quelle der Statistik an*/
+"stats_source" = "";

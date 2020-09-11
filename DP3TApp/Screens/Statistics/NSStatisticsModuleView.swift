@@ -16,9 +16,11 @@ class NSStatisticsModuleView: UIView {
 
     private let header = NSStatsticsModuleHeader()
     private let statisticsChartView = NSStatisticsChartView()
+    private let legend = NSStatisticsModuleLegendView()
 
     private lazy var sections: [UIView] = [header,
-                                           statisticsChartView]
+                                           statisticsChartView,
+                                           legend]
 
     var statisticData: StatisticsResponse? {
         didSet {
@@ -37,6 +39,8 @@ class NSStatisticsModuleView: UIView {
         updateLayout()
 
         setCustomSpacing(NSPadding.medium, after: header)
+        setCustomSpacing(NSPadding.medium, after: statisticsChartView)
+        setCustomSpacing(NSPadding.large, after: legend)
     }
 
     required init?(coder _: NSCoder) {
