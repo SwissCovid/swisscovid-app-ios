@@ -64,7 +64,7 @@ class NSStatisticsModuleLegendViewItem: UIView {
             imageView.backgroundColor = .ns_blue
             imageView.image = nil
             label.textColor = .ns_blue
-            label.text = "stats_legend_entered_covidcodes"
+            label.text = "stats_legend_entered_covidcodes".ub_localized
         }
     }
 

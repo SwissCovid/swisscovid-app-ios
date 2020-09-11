@@ -72,6 +72,12 @@ class NSChartColumnView: UIView {
             animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             bar.add(animation, forKey: nil)
 
+            let opacityAnimation = CABasicAnimation(keyPath: "opacity")
+            opacityAnimation.fromValue = 0
+            opacityAnimation.toValue = 1
+            opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
+            bar.add(opacityAnimation, forKey: nil)
+
         }
 
         while bars.count > values.count {

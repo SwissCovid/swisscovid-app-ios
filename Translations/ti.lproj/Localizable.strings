@@ -937,7 +937,12 @@
 "share_app_title" = "";
 "share_app_button" = "";
 "share_app_body" = "";
+
+/*Text der geteilt wird*/
 "share_app_message" = "";
 
 /*Gibt Quelle der Statistik an*/
 "stats_source" = "";
+
+/*URL die geteilt wird*/
+"share_app_url" = "";

@@ -13,6 +13,8 @@ import UIKit
 class NSStatisticsViewController: NSTitleViewScrollViewController {
     private let statisticsModule = NSStatisticsModuleView()
 
+    private let shareModule = NSStatisticsShareModule()
+
     private let loader = StatisticsLoader()
 
     override init() {
@@ -28,10 +30,16 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+
+        shareModule.shareButtonTouched = { [weak self] in
+            self?.share()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        guard self.statisticsModule.statisticData == nil else { return }
 
         loader.get { [weak self] result in
             guard let self = self else { return }
@@ -46,6 +54,12 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
     }
 
+    private func share(){
+        let items: [Any] = ["share_app_message".ub_localized, URL(string: "share_app_url".ub_localized)!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+
     private func setupLayout() {
         stackScrollView.addArrangedView(statisticsModule)
 
@@ -54,5 +68,9 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         let sourceLabel = NSLabel(.interRegular, textColor: .ns_backgroundDark, textAlignment: .right)
         sourceLabel.text = "stats_source".ub_localized
         stackScrollView.addArrangedView(sourceLabel)
+
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(shareModule)
     }
 }

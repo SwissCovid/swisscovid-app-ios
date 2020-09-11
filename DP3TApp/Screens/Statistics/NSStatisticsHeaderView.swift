@@ -12,6 +12,7 @@ import UIKit
 
 class NSStatisticsHeaderView: NSTitleView {
     private let imageView = UIImageView()
+    private let colorView = UIView()
 
     init() {
         super.init(frame: .zero)
@@ -26,11 +27,18 @@ class NSStatisticsHeaderView: NSTitleView {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
 
-        imageView.image = UIImage(named: "header-image-basel")
+        imageView.image = UIImage(named: "header-image-gemeinsam")
 
         addSubview(imageView)
         imageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+
+        addSubview(colorView)
+        colorView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        colorView.backgroundColor = UIColor.ns_blue.withHighContrastColor(color: UIColor(ub_hexString: "#63a0c7")!).withAlphaComponent(0.7)
     }
 }
