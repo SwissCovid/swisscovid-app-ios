@@ -11,9 +11,18 @@
 import UIKit
 
 class NSStatsticsModuleHeader: UIView {
-    let arrowImage = UIImageView(image: UIImage(named: "ic-verified-user-badge"))
-    let counterLabel = NSLabel(.statsCounter, textColor: .ns_darkBlueBackground, textAlignment: .center)
-    let subtitle = NSLabel(.textLight, textColor: .ns_green, textAlignment: .center)
+    private let arrowImage = UIImageView(image: UIImage(named: "ic-verified-user-badge"))
+    private let counterLabel = NSLabel(.statsCounter,
+                                       textColor: UIColor.setColorsForTheme(lightColor: .ns_darkBlueBackground, darkColor: .white),
+                                       textAlignment: .center)
+    private let subtitle = NSLabel(.textLight, textColor: .ns_green, textAlignment: .center)
+    private let formatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.usesSignificantDigits = false
+        formatter.maximumFractionDigits = 2
+        return formatter
+    }()
 
     init() {
         super.init(frame: .zero)
@@ -45,18 +54,49 @@ class NSStatsticsModuleHeader: UIView {
         subtitle.alpha = 0
     }
 
+    fileprivate struct AnimationValues {
+        var displayLink: CADisplayLink
+        var startTime: CFTimeInterval
+        var duration: CFTimeInterval
+        var targetCount: Int
+    }
+
+    fileprivate var animationValues: AnimationValues?
+
     func setCounter(number: Int) {
-        let numberInMillions = Double(number) / 1_000_000
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.usesSignificantDigits = false
-        formatter.maximumFractionDigits = 2
+
+        let displayLink = CADisplayLink(target: self, selector: #selector(updateDisplayLink))
+        displayLink.add(to: .main, forMode: .default)
+
+        animationValues = .init(displayLink: displayLink,
+                                startTime: CACurrentMediaTime(),
+                                duration: 0.6,
+                                targetCount: number)
+
+        UIView.animate(withDuration: 0.1) {
+            self.counterLabel.alpha = 1
+            self.subtitle.alpha = 1
+        }
+    }
+
+    @objc func updateDisplayLink() {
+        guard let animationValues = animationValues else {
+            return
+        }
+        let elapsed = CACurrentMediaTime() - animationValues.startTime
+        let progress = min(elapsed / animationValues.duration, 1.0)
+        // easeOut function
+        var currentNumber = Int(Double(animationValues.targetCount) * sin(progress * Double.pi / 2.0) + 0.01)
+
+        if progress == 1.0 {
+            currentNumber = animationValues.targetCount
+            self.animationValues?.displayLink.invalidate()
+            self.animationValues = nil
+        }
+
+        let numberInMillions = Double(currentNumber) / 1_000_000
         if let formattedNumber = formatter.string(from: numberInMillions as NSNumber) {
             counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: formattedNumber)
-            UIView.animate(withDuration: 0.3) {
-                self.counterLabel.alpha = 1
-                self.subtitle.alpha = 1
-            }
         }
     }
 

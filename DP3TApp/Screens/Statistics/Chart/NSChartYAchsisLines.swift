@@ -14,7 +14,8 @@ class NSChartYAchsisLines: UIView {
 
     private let configuration: ChartConfiguration
 
-    var lineColor: UIColor = UIColor.black.withAlphaComponent(0.1) {
+    var lineColor: UIColor = UIColor.setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.1),
+                                                       darkColor: UIColor.white.withAlphaComponent(0.25)) {
         didSet {
             lineLayer.strokeColor = lineColor.cgColor
         }

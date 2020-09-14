@@ -25,7 +25,7 @@ class NSChartColumnView: UIView {
     }
 
 
-    var borderColor: UIColor = .white {
+    var borderColor: UIColor = UIColor.setColorsForTheme(lightColor: .white , darkColor: .ns_darkModeBackground2) {
         didSet {
             layer.sublayers?.forEach {
                 $0.borderColor = borderColor.cgColor

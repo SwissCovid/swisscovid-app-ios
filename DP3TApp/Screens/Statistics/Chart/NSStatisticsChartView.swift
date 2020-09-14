@@ -75,15 +75,11 @@ class NSStatisticsChartView: UIView {
             guard let value = value else { return nil }
             return Double(value) / Double(maxValue)
         }
-        func normalizeDouble(_ value: Double?) -> Double? {
-            guard let value = value else { return nil }
-            return value / Double(maxValue)
-        }
-
+        
         let relativeEntries = history.map { (element) in
             return RelativeEntry(codes: normalizeInt(element.covidcodesEntered),
                                  infections: normalizeInt(element.newInfections),
-                                 sevenDayAverage: normalizeDouble(element.newInfectionsSevenDayAverage),
+                                 sevenDayAverage: normalizeInt(element.newInfectionsSevenDayAverage),
                                  date: element.date)
         }
 

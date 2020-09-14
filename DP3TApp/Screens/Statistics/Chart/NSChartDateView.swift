@@ -29,7 +29,8 @@ class NSChartDateView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    var strokeColor: UIColor = .ns_backgroundDark {
+    var strokeColor: UIColor = UIColor.setColorsForTheme(lightColor: .red,
+                                                         darkColor: UIColor.white.withAlphaComponent(0.5)) {
         didSet {
             lineLayers.forEach {
                 $0.strokeColor = strokeColor.cgColor
