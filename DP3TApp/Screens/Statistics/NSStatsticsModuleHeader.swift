@@ -38,8 +38,11 @@ class NSStatsticsModuleHeader: UIView {
             make.bottom.equalToSuperview()
         }
 
-        counterLabel.text = "--"
+        counterLabel.text = "-- Mio."
         subtitle.text = "haben SwissCovid bereits aktiviert"
+
+        counterLabel.alpha = 0
+        subtitle.alpha = 0
     }
 
     func setCounter(number: Int) {
@@ -50,6 +53,10 @@ class NSStatsticsModuleHeader: UIView {
         formatter.maximumFractionDigits = 2
         if let formattedNumber = formatter.string(from: numberInMillions as NSNumber) {
             counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: formattedNumber)
+            UIView.animate(withDuration: 0.3) {
+                self.counterLabel.alpha = 1
+                self.subtitle.alpha = 1
+            }
         }
     }
 
