@@ -113,10 +113,10 @@ class NSChartDateView: UIView {
     }
 
     static var formatter: DateFormatter = {
-            let df = DateFormatter()
-            df.dateFormat = "dd.MM"
-            return df
-        }()
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM"
+        return df
+    }()
 
     func newLine() -> CAShapeLayer {
         let layer = CAShapeLayer()

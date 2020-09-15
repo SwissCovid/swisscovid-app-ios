@@ -958,9 +958,9 @@
 /*Text beim Bluetooth Control iOS 14*/
 /*Fuzzy*/
 "tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";
-"bottom_nav_tab_home" = "Home";
+"bottom_nav_tab_home" = "SwissCovid";
 "bottom_nav_tab_stats" = "Zahlen";
-"stats_title" = "haben SwissCovid bereits aktiviert";
+"stats_title" = "nutzen bereits SwissCovid";
 "stats_legend_new_infections" = "Gemeldete Neuinfektionen";
 "stats_legend_new_infections_average" = "7-Tage-Schnitt";
 "stats_legend_entered_covidcodes" = "Eingegebene Covidcodes";
@@ -972,13 +972,19 @@
 "share_app_body" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Hallo, lad Dir doch auch SwissCovid herunter.";
-
-/*Gibt Quelle der Statistik an*/
-"stats_source" = "Quelle: BIT / BFS";
+"share_app_message" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
 "stats_counter" = "{COUNT} Mio.";
+
+/*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
+"stats_source_day" = "Stand der Daten {DAY}";
+
+/*Links zu weiteren Statistiken*/
+"stats_more_statistics_button" = "Weitere Statistiken";
+
+/*URL zu weiteren statistiken*/
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/de/home/innovative-methoden/swisscovid-app-monitoring.html";

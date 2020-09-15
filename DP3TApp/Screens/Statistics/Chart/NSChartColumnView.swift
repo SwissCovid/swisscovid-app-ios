@@ -63,10 +63,11 @@ class NSChartColumnView: UIView {
                                    height: ceil(frame.height * CGFloat(value ?? 0)) + 5) //make sure that the bar always extens to to full height
 
 
+            let oldHeight = bar.frame.height
             bar.frame = endFrame
 
             let animation = CABasicAnimation(keyPath: "bounds.size.height")
-            animation.fromValue = 0
+            animation.fromValue = oldHeight
             animation.toValue = endFrame.height
             animation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             bar.add(animation, forKey: nil)
@@ -102,8 +103,4 @@ class NSChartColumnView: UIView {
         }
     }
 
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        updateChart()
-    }
 }

@@ -35,6 +35,9 @@ class NSViewController: UIViewController {
         loadingView.stopLoading(error: error, reloadHandler: reloadHandler)
     }
 
+    // Utility function to override
+    func wasSelectedInTabbar(){}
+
     // MARK: - Init
 
     init() {

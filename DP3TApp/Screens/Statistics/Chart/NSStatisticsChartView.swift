@@ -22,6 +22,13 @@ class NSStatisticsChartView: UIView {
 
     var history: [StatisticsResponse.StatisticEntry] = [] {
         didSet {
+            guard !history.isEmpty else {
+                chartContentView.alpha = 0
+                yLenged.alpha = 0
+                return
+            }
+            yLenged.alpha = 1
+            chartContentView.alpha = 1
             updateChart()
         }
     }

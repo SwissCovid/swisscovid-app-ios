@@ -17,16 +17,31 @@ class NSStatisticsModuleView: UIView {
     private let header = NSStatsticsModuleHeader()
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
+    private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_backgroundDark, textAlignment: .right)
 
     private lazy var sections: [UIView] = [header,
                                            statisticsChartView,
-                                           legend]
+                                           legend,
+                                           lastUpdatedLabel]
 
+    
+    static var formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM"
+        return df
+    }()
     var statisticData: StatisticsResponse? {
         didSet {
-            guard let data = statisticData else { return }
+            guard let data = statisticData else {
+                statisticsChartView.history = []
+                header.setCounter(number: nil)
+                lastUpdatedLabel.alpha = 0
+                return
+            }
             statisticsChartView.history = data.history
             header.setCounter(number: data.totalActiveUsers)
+            lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
+            lastUpdatedLabel.alpha = 1
         }
     }
 
@@ -41,7 +56,8 @@ class NSStatisticsModuleView: UIView {
 
         setCustomSpacing(NSPadding.medium, after: header)
         setCustomSpacing(NSPadding.medium, after: statisticsChartView)
-        setCustomSpacing(NSPadding.large, after: legend)
+        setCustomSpacing(NSPadding.medium + NSPadding.small, after: legend)
+        lastUpdatedLabel.alpha = 0
     }
 
     required init?(coder _: NSCoder) {

@@ -105,6 +105,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
+
+            // if app was longer than 1h in background make sure to select homescreen in tabbar
+            if backgroundTime > 60.0 * 60.0 {
+                tabBarController?.currentTab = .homescreen
+            }
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }

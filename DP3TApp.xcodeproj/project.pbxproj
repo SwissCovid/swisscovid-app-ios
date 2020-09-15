@@ -1279,8 +1279,8 @@
 			children = (
 				F80E405F2508D4D000876906 /* NSStatisticsViewController.swift */,
 				F80E40622508F83100876906 /* NSStatisticsHeaderView.swift */,
-				F80E40652508FE1600876906 /* NSStatsticsModuleHeader.swift */,
 				F80E40682508FE3000876906 /* NSStatisticsModuleView.swift */,
+				F80E40652508FE1600876906 /* NSStatsticsModuleHeader.swift */,
 				F8089693250B55080023F639 /* NSStatisticsModuleLegendView.swift */,
 				F8089696250B63780023F639 /* NSStatisticsShareModule.swift */,
 				F80E407525092AD800876906 /* Chart */,

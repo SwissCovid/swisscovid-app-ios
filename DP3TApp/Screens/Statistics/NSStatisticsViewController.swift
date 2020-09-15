@@ -45,14 +45,13 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        guard self.statisticsModule.statisticData == nil else { return }
+    //Only load data on userAction
+    override func wasSelectedInTabbar() {
         loadData()
     }
 
     private func loadData(){
+        statisticsModule.statisticData = nil
         loadingView.startLoading()
         loader.get { [weak self] result in
             guard let self = self else { return }
@@ -83,11 +82,28 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(statisticsModule)
 
-        stackScrollView.addSpacerView(NSPadding.medium + NSPadding.small)
+        stackScrollView.addSpacerView(NSPadding.medium)
 
-        let sourceLabel = NSLabel(.interRegular, textColor: .ns_backgroundDark, textAlignment: .right)
-        sourceLabel.text = "stats_source".ub_localized
-        stackScrollView.addArrangedView(sourceLabel)
+        let button = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .small)
+        button.title = "stats_more_statistics_button".ub_localized
+        button.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            self.moreStatisticsTouched()
+        }
+        let wrapper = UIView()
+        wrapper.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.top.bottom.equalToSuperview()
+            make.leading.equalToSuperview().inset(NSPadding.medium)
+            make.trailing.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+        }
+
+        stackScrollView.addArrangedView(wrapper)
+
+
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addSpacerView(1.0, color: UIColor.setColorsForTheme(lightColor: .ns_dividerColor, darkColor: UIColor(ub_hexString: "#1e1e23")!))
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -97,6 +113,12 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         loadingView.backgroundColor = .clear
         loadingView.snp.makeConstraints { (make) in
             make.edges.equalTo(statisticsModule.statisticsChartView)
+        }
+    }
+
+    private func moreStatisticsTouched(){
+        if let url = URL(string: "stats_more_statistics_url".ub_localized) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 

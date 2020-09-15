@@ -59,12 +59,27 @@ class NSStatsticsModuleHeader: UIView {
         var displayLink: CADisplayLink
         var startTime: CFTimeInterval
         var duration: CFTimeInterval
+        var startCount: Int
         var targetCount: Int
     }
 
     fileprivate var animationValues: AnimationValues?
 
-    func setCounter(number: Int) {
+    private var currentNumber: Int = 0
+
+    func setCounter(number: Int?) {
+        guard let number = number else {
+            self.counterLabel.alpha = 0
+            self.subtitle.alpha = 0
+            return
+        }
+
+        UIView.animate(withDuration: 0.1) {
+            self.counterLabel.alpha = 1
+            self.subtitle.alpha = 1
+        }
+        
+        guard currentNumber != number else { return }
 
         let displayLink = CADisplayLink(target: self, selector: #selector(updateDisplayLink))
         displayLink.add(to: .main, forMode: .default)
@@ -72,12 +87,11 @@ class NSStatsticsModuleHeader: UIView {
         animationValues = .init(displayLink: displayLink,
                                 startTime: CACurrentMediaTime(),
                                 duration: 0.6,
+                                startCount: currentNumber,
                                 targetCount: number)
 
-        UIView.animate(withDuration: 0.1) {
-            self.counterLabel.alpha = 1
-            self.subtitle.alpha = 1
-        }
+
+        self.currentNumber = number
     }
 
     @objc func updateDisplayLink() {
@@ -87,7 +101,7 @@ class NSStatsticsModuleHeader: UIView {
         let elapsed = CACurrentMediaTime() - animationValues.startTime
         let progress = min(elapsed / animationValues.duration, 1.0)
         // easeOut function
-        var currentNumber = Int(Double(animationValues.targetCount) * sin(progress * Double.pi / 2.0) + 0.01)
+        var currentNumber = animationValues.startCount + Int(Double(animationValues.targetCount - animationValues.startCount) * sin(progress * Double.pi / 2.0) + 0.01)
 
         if progress == 1.0 {
             currentNumber = animationValues.targetCount

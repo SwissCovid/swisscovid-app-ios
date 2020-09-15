@@ -952,11 +952,17 @@
 /*Text der geteilt wird*/
 "share_app_message" = "";
 
-/*Gibt Quelle der Statistik an*/
-"stats_source" = "";
-
 /*URL die geteilt wird*/
 "share_app_url" = "";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
 "stats_counter" = "{COUNT} Mill.";
+
+/*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
+"stats_source_day" = "";
+
+/*Links zu weiteren Statistiken*/
+"stats_more_statistics_button" = "";
+
+/*URL zu weiteren statistiken*/
+"stats_more_statistics_url" = "";
