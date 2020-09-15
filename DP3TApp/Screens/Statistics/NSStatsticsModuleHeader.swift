@@ -101,15 +101,14 @@ class NSStatsticsModuleHeader: UIView {
         let elapsed = CACurrentMediaTime() - animationValues.startTime
         let progress = min(elapsed / animationValues.duration, 1.0)
         // easeOut function
-        var currentNumber = animationValues.startCount + Int(Double(animationValues.targetCount - animationValues.startCount) * sin(progress * Double.pi / 2.0) + 0.01)
+        let newNumber = animationValues.startCount + Int(Double(animationValues.targetCount - animationValues.startCount) * sin(progress * Double.pi / 2.0) + 0.01)
 
         if progress == 1.0 {
-            currentNumber = animationValues.targetCount
             self.animationValues?.displayLink.invalidate()
             self.animationValues = nil
         }
 
-        let numberInMillions = Double(currentNumber) / 1_000_000
+        let numberInMillions = Double(newNumber) / 1_000_000
         if let formattedNumber = formatter.string(from: numberInMillions as NSNumber) {
             counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: formattedNumber)
         }

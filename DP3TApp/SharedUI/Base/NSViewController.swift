@@ -36,7 +36,9 @@ class NSViewController: UIViewController {
     }
 
     // Utility function to override
-    func wasSelectedInTabbar(){}
+    func wasSelectedInTabbar(){
+        // will be implemented in subclasses
+    }
 
     // MARK: - Init
 

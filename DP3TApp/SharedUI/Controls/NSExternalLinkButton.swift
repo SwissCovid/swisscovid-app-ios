@@ -22,7 +22,7 @@ class NSExternalLinkButton: UBButton {
     }
 
     private let style: Style
-    private let size: Size
+    private let buttonSize: Size
 
     // MARK: - Init
 
@@ -42,7 +42,7 @@ class NSExternalLinkButton: UBButton {
 
     init(style: Style = .normal(color: .white), size: Size = .normal) {
         self.style = style
-        self.size = size
+        self.buttonSize = size
         super.init()
         updateLayout()
     }
@@ -60,7 +60,7 @@ class NSExternalLinkButton: UBButton {
             setTitleColor(color, for: .normal)
 
             let spacing: CGFloat
-            switch size {
+            switch buttonSize {
             case .normal:
                 spacing = 8.0
             case.small:
@@ -88,7 +88,7 @@ class NSExternalLinkButton: UBButton {
             semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
 
             let spacing: CGFloat
-            switch size {
+            switch buttonSize {
             case .normal:
                 spacing = 8.0
             case.small:
@@ -100,7 +100,7 @@ class NSExternalLinkButton: UBButton {
 
         setImage(image, for: .normal)
 
-        switch size {
+        switch buttonSize {
         case .normal:
             titleLabel?.font = NSLabelType.button.font
         case .small:

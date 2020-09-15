@@ -50,8 +50,8 @@ class NSChartLineView: UIView {
         }
         // Split line up into segments without cuts
         var lineSegments: [[CGPoint]] = [[]]
-        for (index, value) in values.enumerated() {
-            guard let value = value else {
+        for (index, optionalValue) in values.enumerated() {
+            guard let value = optionalValue else {
                 lineSegments.append([])
                 continue
             }
