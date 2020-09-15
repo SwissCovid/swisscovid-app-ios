@@ -84,7 +84,7 @@ class NSChartDateView: UIView {
             defer {
                 layerIndex += 1
             }
-            let lineLayer = getLineLayer(at: layerIndex)
+            let newLineLayer = getLineLayer(at: layerIndex)
 
             let linePath = UIBezierPath()
             let xValue = CGFloat(xIndex) * (configuration.barWidth + configuration.barBorderWidth) + (configuration.barWidth) / 2.0 + configuration.barBorderWidth
@@ -92,12 +92,12 @@ class NSChartDateView: UIView {
                                       y: 0))
             linePath.addLine(to: CGPoint(x: xValue,
                                          y: 9))
-            lineLayer.path = linePath.cgPath
+            newLineLayer.path = linePath.cgPath
 
-            let textLayer = getTextLayer(at: layerIndex)
-            textLayer.string = Self.formatter.string(from: value)
+            let newTextLayer = getTextLayer(at: layerIndex)
+            newTextLayer.string = Self.formatter.string(from: value)
 
-            textLayer.frame = CGRect(x: xValue - 35 / 2,
+            newTextLayer.frame = CGRect(x: xValue - 35 / 2,
                                      y: 13,
                                      width: 35,
                                      height: 15)

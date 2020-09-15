@@ -60,12 +60,10 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
             case let .success(response):
                 self.loadingView.stopLoading()
                 self.statisticsModule.statisticData = response
-                break
             case let .failure(error):
                 self.loadingView.stopLoading(error: error) { [weak self] in
                     self?.loadData()
                 }
-                break
             }
         }
     }

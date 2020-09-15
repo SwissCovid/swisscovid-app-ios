@@ -20,7 +20,7 @@ class StatisticsLoader {
 
         let request = Endpoint.statistics().request()
 
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
+        dataTask = session.dataTask(with: request) { (data, response, error) in
 
             if let error = error {
                 Logger.log("Failed to load statistics, error: \(error.localizedDescription)")
@@ -53,7 +53,7 @@ class StatisticsLoader {
 
             DispatchQueue.main.async { completionHandler(.success(response)) }
         }
-        dataTask.resume()
+        dataTask?.resume()
     }
 
     private struct Claims: DP3TClaims {

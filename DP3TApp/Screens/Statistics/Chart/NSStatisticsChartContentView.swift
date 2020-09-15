@@ -32,7 +32,7 @@ struct ChartConfiguration {
     let barBorderWidth: CGFloat
     let chartHeight: CGFloat
 
-    static let `default` = ChartConfiguration(barWidth: 10,
+    static let main = ChartConfiguration(barWidth: 10,
                                               barBorderWidth: 2,
                                               chartHeight: 230)
 }
@@ -51,7 +51,7 @@ class NSStatisticsChartContentView: UIView {
 
     private let yAchsisLines: NSChartYAchsisLines
 
-    private let configuration = ChartConfiguration.default
+    private let configuration = ChartConfiguration.main
 
     var data: ChartData? {
         didSet {

@@ -57,11 +57,10 @@ class NSChartColumnView: UIView {
 
         for (index, value) in values.enumerated() {
             let bar = getBar(at: index)
-            let value = value ?? 0
             let endFrame =  CGRect(x: CGFloat(index) * (configuration.barWidth + configuration.barBorderWidth),
-                                   y: ceil(frame.height * (1.0 - CGFloat(value))),
+                                   y: ceil(frame.height * (1.0 - CGFloat(value ?? 0))),
                                    width: configuration.barWidth + 2 * configuration.barBorderWidth,
-                                   height: ceil(frame.height * CGFloat(value)) + 5) //make sure that the bar always extens to to full height
+                                   height: ceil(frame.height * CGFloat(value ?? 0)) + 5) //make sure that the bar always extens to to full height
 
 
             bar.frame = endFrame
