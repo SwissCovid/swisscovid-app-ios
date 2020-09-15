@@ -55,7 +55,7 @@ class NSChartLineView: UIView {
                 lineSegments.append([])
                 continue
             }
-            let point = CGPoint(x: CGFloat(index) * (configuration.barWidth + 2 * configuration.barBorderWidth) + configuration.barWidth / 2,
+            let point = CGPoint(x: CGFloat(index) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barWidth / 2,
                                 y: CGFloat(1 - value) * frame.height)
             lineSegments[lineSegments.count - 1].append(point)
         }
@@ -63,14 +63,20 @@ class NSChartLineView: UIView {
         let linePath = UIBezierPath()
 
         for points in lineSegments {
-            linePath.addCurvefromPoints(points)
+            for (index, point) in points.enumerated() {
+                if index == 0 {
+                    linePath.move(to: point)
+                } else  {
+                    linePath.addLine(to: point)
+                }
+            }
         }
 
-        let animation = CABasicAnimation(keyPath: "path")
+        /*let animation = CABasicAnimation(keyPath: "path")
         animation.fromValue = flatPath(size: bounds.size)
         animation.toValue = linePath.cgPath
         animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        lineLayer.add(animation, forKey: nil)
+        lineLayer.add(animation, forKey: nil)*/
 
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = 0
@@ -104,27 +110,5 @@ class NSChartLineView: UIView {
             bezier.addLine(to: CGPoint(x: CGFloat(index) * interSpace + padding , y: size.height - padding))
         }
         return bezier.cgPath
-    }
-}
-
-
-fileprivate extension UIBezierPath {
-    func addCurvefromPoints(_ points: [CGPoint]) {
-        if points.count <= 1 {
-            move(to: points[0])
-        } else if points.count == 2 {
-            move(to: points[0])
-            move(to: points[1])
-        } else {
-            move(to: points[0])
-            let successorPairs = zip(points, points.dropFirst())
-            successorPairs.forEach { (p1, p2) in
-                let deltaX = p2.x - p1.x
-                let controlPointX = p1.x + (deltaX / 2)
-                let controlPoint1 = CGPoint(x: controlPointX, y: p1.y)
-                let controlPoint2 = CGPoint(x: controlPointX, y: p2.y)
-                addCurve(to: p2, controlPoint1: controlPoint1, controlPoint2: controlPoint2)
-            }
-        }
     }
 }

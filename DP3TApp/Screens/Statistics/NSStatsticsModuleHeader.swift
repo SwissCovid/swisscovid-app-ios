@@ -21,6 +21,7 @@ class NSStatsticsModuleHeader: UIView {
         formatter.numberStyle = .decimal
         formatter.usesSignificantDigits = false
         formatter.maximumFractionDigits = 2
+        formatter.roundingMode = .halfEven
         return formatter
     }()
 

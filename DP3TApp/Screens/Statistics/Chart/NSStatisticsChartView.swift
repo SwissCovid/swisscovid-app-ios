@@ -48,6 +48,7 @@ class NSStatisticsChartView: UIView {
         scrollView.addSubview(chartContentView)
         chartContentView.snp.makeConstraints { (make) in
             make.edges.height.equalToSuperview()
+            make.width.greaterThanOrEqualTo(scrollView.snp.width)
         }
 
         contentSizeObserver = scrollView.observe(\.contentSize, options: [.new]) { (scrollView, kvo) in
@@ -103,6 +104,6 @@ class NSStatisticsChartView: UIView {
 
 fileprivate extension StatisticsResponse.StatisticEntry {
     var maxValue: Int {
-        return max(covidcodesEntered ?? 0, newInfections ?? 0)
+        return max(max(covidcodesEntered ?? 0, newInfections ?? 0), newInfectionsSevenDayAverage ?? 0)
     }
 }

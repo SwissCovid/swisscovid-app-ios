@@ -95,8 +95,10 @@ class NSStatisticsChartContentView: UIView {
             make.edges.equalTo(infectionBarView)
         }
 
-        divider.backgroundColor = .ns_backgroundDark
+        divider.backgroundColor = UIColor.setColorsForTheme(lightColor: .ns_backgroundDark,
+                                                            darkColor: UIColor.white.withAlphaComponent(0.5))
         addSubview(divider)
+        divider.alpha = 0.0
         divider.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(infectionBarView.snp.bottom).inset(0)
@@ -123,6 +125,10 @@ class NSStatisticsChartContentView: UIView {
 
     private func updateChart() {
         guard let data = data else { return }
+
+        UIView.animate(withDuration: 0.3) {
+            self.divider.alpha = 1.0
+        }
 
         infectionBarView.values = data.data.map(\.infections)
         codeBarView.values = data.data.map(\.codes)

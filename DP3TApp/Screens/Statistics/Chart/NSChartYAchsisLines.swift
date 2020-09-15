@@ -60,6 +60,12 @@ class NSChartYAchsisLines: UIView {
         lineLayer.path = path.cgPath
     }
 
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            lineLayer.strokeColor = lineColor.cgColor
+        }
+    }
+
     
     override func layoutSubviews() {
         super.layoutSubviews()

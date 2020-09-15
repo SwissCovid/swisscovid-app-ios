@@ -77,7 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKey()
         window?.rootViewController = NSTabBarController()
-        tabBarController?.currentTab = .statics
 
         setupAppearance()
 
