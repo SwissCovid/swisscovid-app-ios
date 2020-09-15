@@ -32,7 +32,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
         navigationItem.title = "app_name".ub_localized
 
-        tabBarItem.image = nil
+        tabBarItem.image = UIImage(named: "ic-stats")
         tabBarItem.title = "bottom_nav_tab_stats".ub_localized
     }
 

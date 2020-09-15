@@ -186,5 +186,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: NSLabelType.smallBold.font,
             .foregroundColor: UIColor.ns_text,
         ], for: .normal)
+
+        UITabBarItem.appearance().setTitleTextAttributes([
+            .font: NSLabelType.smallBold.font,
+            .foregroundColor: UIColor.ns_blue,
+        ], for: .selected)
     }
 }
