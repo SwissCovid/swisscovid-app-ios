@@ -231,6 +231,9 @@ extension TracingManager: DP3TTracingDelegate {
         }
         // schedule local push if exposed
         localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
+
+        // update tracing error states if needed
+        localPush.handleTracingState(state.trackingState)
     }
 }
 
