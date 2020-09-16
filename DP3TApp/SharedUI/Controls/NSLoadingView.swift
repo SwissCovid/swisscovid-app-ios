@@ -17,7 +17,7 @@ class NSLoadingView: UIView {
     private let errorImage: UIImage?
     private let errorTitleLabel = NSLabel(.title, textAlignment: .center)
     private let errorTextLabel = NSLabel(.textLight, textAlignment: .center)
-    private let errorCodeLabel = NSLabel(.smallRegular)
+    private let errorCodeLabel = NSLabel(.smallRegular, numberOfLines: 3)
     private let reloadButton: UBButton
 
     // MARK: - Init
