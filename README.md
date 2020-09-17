@@ -1,10 +1,9 @@
 <h1 align="center">SwissCovid for iOS</h1>
 <h4 align="center">DP^3T Exposure Notification App for Switzerland 🇨🇭</h4>
-
 <br />
-
 <div align="center">
   <img width="180" height="180" src="DP3TApp/Resources/Assets.xcassets/AppIcon.appiconset/appicon@180x180.png" />
+  <br />
   <div>
     <!-- App Store -->
     <a href="https://apps.apple.com/ch/app/swisscovid/id1509275381">
@@ -12,7 +11,7 @@
     </a>
   </div>
 </div>
-
+<br />
 <div align="center">
     <!-- SPM -->
     <a href="https://github.com/apple/swift-package-manager">
