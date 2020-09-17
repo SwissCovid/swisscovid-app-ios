@@ -151,7 +151,7 @@ class NSBluetoothSettingsControl: UIView {
         // change tracing manager
         if TracingManager.shared.isActivated != switchControl.isOn {
             if switchControl.isOn {
-                TracingManager.shared.beginUpdatesAndTracing()
+                TracingManager.shared.startTracing()
             } else {
                 TracingManager.shared.endTracing()
             }
