@@ -12,7 +12,7 @@
 import Foundation
 
 class NSExpandableDisclaimerViewBody: UIView {
-    private let textLabel = NSLabel(.smallLight)
+    private let textLabel = NSLabel(.smallLight, textColor: .ns_text)
 
     let privacyButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
 

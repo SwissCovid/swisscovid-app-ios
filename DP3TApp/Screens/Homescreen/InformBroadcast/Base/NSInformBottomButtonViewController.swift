@@ -63,7 +63,7 @@ class NSInformBottomButtonViewController: NSInformStepViewController {
 
         buttonView.ub_addShadow(radius: 8.0, opacity: 0.15, xOffset: 0.0, yOffset: 0.0)
 
-        buttonView.backgroundColor = UIColor.white
+        buttonView.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
 
         buttonView.addSubview(button)
 

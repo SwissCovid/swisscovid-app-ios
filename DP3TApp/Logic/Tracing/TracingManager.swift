@@ -25,18 +25,18 @@ class TracingManager: NSObject {
     let uiStateManager = UIStateManager()
     let databaseSyncer = DatabaseSyncer()
 
+    let localPush: LocalPushProtocol
+
     #if ENABLE_LOGGING
         var loggingStorage: LoggingStorage?
     #endif
 
-    @KeychainPersisted(key: "tracingIsActivated", defaultValue: true)
-    public var isActivated: Bool {
+    init(localPush: LocalPushProtocol = TracingLocalPush.shared) {
+        self.localPush = localPush
+    }
+
+    private(set) var isActivated: Bool = false {
         didSet {
-            if isActivated {
-                beginUpdatesAndTracing()
-            } else {
-                endTracing()
-            }
             UIStateManager.shared.changedTracingActivated()
         }
     }
@@ -101,7 +101,7 @@ class TracingManager: NSObject {
     }
 
     func beginUpdatesAndTracing() {
-        if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
+        if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing(completionHandler: { _ in
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
@@ -125,7 +125,7 @@ class TracingManager: NSObject {
 
     func endTracing() {
         DP3TTracing.stopTracing()
-        TracingLocalPush.shared.removeSyncWarningTriggers()
+        localPush.removeSyncWarningTriggers()
     }
 
     func resetSDK() {
@@ -136,6 +136,10 @@ class TracingManager: NSObject {
         #if ENABLE_STATUS_OVERRIDE
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
+    }
+
+    var isPositiveTestDeletable: Bool {
+        DP3TTracing.isInfectionStatusResettable
     }
 
     func deletePositiveTest() {
@@ -183,7 +187,8 @@ class TracingManager: NSObject {
     }
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
-        DP3TTracing.status { result in
+        DP3TTracing.status { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case let .failure(e):
                 UIStateManager.shared.updateError = e
@@ -199,7 +204,7 @@ class TracingManager: NSObject {
                 completion?(nil)
 
                 // schedule local push if exposed
-                TracingLocalPush.shared.update(provider: st)
+                self.localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: st)
             }
             DP3TTracing.delegate = self
         }
@@ -218,6 +223,10 @@ extension TracingManager: DP3TTracingDelegate {
                 UIStateManager.shared.trackingState = state.trackingState
             }
         }
+        // schedule local push if exposed
+        localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
+
+        isActivated = state.trackingState == .active
     }
 }
 
@@ -241,7 +250,7 @@ extension TracingManager: DP3TBackgroundHandler {
         #endif
 
         // wait another 2 days befor warning
-        TracingLocalPush.shared.resetBackgroundTaskWarningTriggers()
+        localPush.resetBackgroundTaskWarningTriggers()
 
         let queue = OperationQueue()
 
@@ -259,12 +268,13 @@ extension TracingManager: DP3TBackgroundHandler {
         }
 
         group.enter()
-        DP3TTracing.status { result in
+        DP3TTracing.status { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .failure:
                 break
             case let .success(state):
-                TracingLocalPush.shared.handleTracingState(state.trackingState)
+                self.localPush.handleTracingState(state.trackingState)
             }
             group.leave()
         }

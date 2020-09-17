@@ -80,7 +80,7 @@ public enum NSLabelType: UBLabelType {
         case .button, .splashTitle:
             return .white
         case .smallRegular:
-            return UIColor.black.withAlphaComponent(0.28).withHighContrastColor(color: UIColor.black.withAlphaComponent(0.7))
+            return UIColor.ns_text.withAlphaComponent(0.28).withHighContrastColor(color: UIColor.black.withAlphaComponent(0.7))
         default:
             return .ns_text
         }

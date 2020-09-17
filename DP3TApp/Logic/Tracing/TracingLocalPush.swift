@@ -41,7 +41,7 @@ extension TracingState: ExposureIdentifierProvider {
 }
 
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
-class TracingLocalPush: NSObject {
+class TracingLocalPush: NSObject, LocalPushProtocol {
     static let shared = TracingLocalPush()
 
     private var center: UserNotificationCenter
@@ -54,7 +54,7 @@ class TracingLocalPush: NSObject {
         center.delegate = self
     }
 
-    func update(provider: ExposureIdentifierProvider) {
+    func scheduleExposureNotificationsIfNeeded(identifierProvider provider: ExposureIdentifierProvider) {
         if let identifers = provider.exposureIdentifiers {
             exposureIdentifiers = identifers
         }
@@ -193,8 +193,8 @@ class TracingLocalPush: NSObject {
 
     private func schedulePermissonErrorNotification() {
         scheduleErrorNotification(identifier: .permission,
-                                  title: "tracing_permission_error_title_ios".ub_localized,
-                                  text: "tracing_permission_error_text_ios".ub_localized)
+                                  title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
+                                  text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
 
     private func handleENError(_ error: ENError) {

@@ -33,7 +33,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupStackScrollView()
         setupLayout()
@@ -84,7 +84,7 @@ class NSWhatToDoSymptomViewController: NSViewController {
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
-        let infoView = NSInfoView(icon: UIImage(named: "ic-check-round")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple)
+        let infoView = NSInfoView(icon: UIImage(named: "ic-symptoms")!, text: "symptom_faq1_text".ub_localized, title: "symptom_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple)
 
         stackScrollView.addArrangedView(infoView)
 

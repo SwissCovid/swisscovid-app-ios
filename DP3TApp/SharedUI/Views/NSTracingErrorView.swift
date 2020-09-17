@@ -141,7 +141,7 @@ class NSTracingErrorView: UIView {
                                                text: "tracing_turned_off_text".ub_localized,
                                                buttonTitle: "activate_tracing_button".ub_localized,
                                                action: { _ in
-                                                   TracingManager.shared.isActivated = true
+                                                   TracingManager.shared.beginUpdatesAndTracing()
                                                })
             } else {
                 return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
@@ -152,8 +152,8 @@ class NSTracingErrorView: UIView {
             }
         case let .tracingPermissionError(code):
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                           title: "tracing_permission_error_title_ios".ub_localized,
-                                           text: "tracing_permission_error_text_ios".ub_localized,
+                                           title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
+                                           text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
                                            errorCode: code,
                                            action: { _ in

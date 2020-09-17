@@ -82,15 +82,9 @@ class ReportingManager: ReportingManagerProtocol {
         DP3TTracing.iWasExposed(onset: date, authentication: .HTTPAuthorizationBearer(token: token), isFakeRequest: fake) { [weak self] result in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                self.codeDictionary.removeValue(forKey: covidCode)
                 switch result {
                 case .success:
-                    if !fake {
-                        // during infection, tracing is disabled
-                        // after infection, it works again, but user must manually
-                        // enable if desired
-                        TracingManager.shared.isActivated = false
-                    }
+                    self.codeDictionary.removeValue(forKey: covidCode)
 
                     TracingManager.shared.updateStatus(shouldSync: false) { error in
                         if let error = error {

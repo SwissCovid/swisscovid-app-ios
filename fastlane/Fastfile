@@ -5,18 +5,11 @@ platform :ios do
   desc "Build and Sign app"
   lane :build_and_sign do
 
-  create_keychain(
-    name: "githubactionci",
-    password: "githubkeychain",
-    default_keychain: true,
-    unlock: true
-  )
+  setup_ci
 
   match(
     type: "appstore",
     readonly: is_ci,
-    keychain_name: "githubactionci",
-    keychain_password: "githubkeychain"
   )
 
   update_code_signing_settings(
@@ -42,7 +35,7 @@ platform :ios do
 
   def getCustomBundleVersion()
     datestring_now = DateTime.now.strftime('%y%m%d.%H%M')
-    bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}"
+    bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}#{ENV['BUILD_NUMBER_POSTFIX']}"
     return bundle_version
   end
 end

@@ -80,18 +80,16 @@ class ConfigManager: NSObject {
         }
     }
 
-    private func shouldLoadConfig(backgroundTask: Bool, url: String?) -> Bool {
-        // if the config url was changes (by OS version or app version changing) load config
-        if let lastUrl = Self.lastConfigUrl,
-            let url = url,
-            lastUrl != url {
+    static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?) -> Bool {
+        // if the config url was changed (by OS version or app version changing) load config in anycase
+        if url != lastConfigUrl {
             return true
         }
 
         if backgroundTask {
-            return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configBackgroundValidityInterval
+            return lastConfigLoad == nil || Date().timeIntervalSince(lastConfigLoad!) > Self.configBackgroundValidityInterval
         } else {
-            return Self.lastConfigLoad == nil || Date().timeIntervalSince(Self.lastConfigLoad!) > Self.configForegroundValidityInterval
+            return lastConfigLoad == nil || Date().timeIntervalSince(lastConfigLoad!) > Self.configForegroundValidityInterval
         }
     }
 
@@ -114,7 +112,10 @@ class ConfigManager: NSObject {
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
         let request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
 
-        guard shouldLoadConfig(backgroundTask: backgroundTask, url: request.url?.absoluteString) else {
+        guard Self.shouldLoadConfig(backgroundTask: backgroundTask,
+                                    url: request.url?.absoluteString,
+                                    lastConfigUrl: Self.lastConfigUrl,
+                                    lastConfigLoad: Self.lastConfigLoad) else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return

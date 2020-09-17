@@ -23,7 +23,7 @@ class NSLastSyncronizationControl: UIControl {
 
     private let titleLabel = NSLabel(.interBold)
     private let subtitleLabel = NSLabel(.interRegular)
-    private let chevronImageView = NSImageView(image: UIImage(named: "ic-chevron"), dynamicColor: .ns_purple)
+    private let chevronImageView = NSImageView(image: UIImage(named: "ic-chevron"), dynamicColor: .ns_text)
 
     var isChevronImageViewHidden: Bool {
         get { chevronImageView.isHidden }
@@ -43,12 +43,15 @@ class NSLastSyncronizationControl: UIControl {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = .ns_background
+        backgroundColor = .ns_moduleBackground
         layer.cornerRadius = 3.0
         ub_addShadow(radius: 4.0, opacity: 0.05, xOffset: 0, yOffset: -2)
 
+        accessibilityTraits = [.header]
+        isAccessibilityElement = true
         titleLabel.text = "begegnung_detail_last_sync_title".ub_localized
-        titleLabel.accessibilityTraits = [.header]
+        titleLabel.isAccessibilityElement = false
+        subtitleLabel.isAccessibilityElement = false
 
         subtitleLabel.text = Self.nullDateValueString
 
@@ -87,7 +90,18 @@ class NSLastSyncronizationControl: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_background
+            backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_moduleBackground
         }
+    }
+
+    override var accessibilityLabel: String? {
+        get {
+            if let date = lastSyncronizationDate {
+                return "\("begegnung_detail_last_sync_title".ub_localized) \(dateFormatter.string(from: date))"
+            } else {
+                return "begegnung_detail_no_last_sync_accessibility".ub_localized
+            }
+        }
+        set {}
     }
 }

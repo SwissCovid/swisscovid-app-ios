@@ -39,7 +39,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
         setup()
     }
 
@@ -100,6 +100,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             lastSyncronizationControl.isChevronImageViewHidden = false
         #else
             lastSyncronizationControl.isChevronImageViewHidden = true
+            lastSyncronizationControl.isUserInteractionEnabled = false
         #endif
     }
 

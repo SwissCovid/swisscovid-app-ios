@@ -51,7 +51,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         setupLayout()
 
@@ -168,22 +168,21 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
             let debugScreenContainer = UIView()
 
-            if Environment.current != Environment.prod {
-                debugScreenContainer.addSubview(debugScreenButton)
-                debugScreenButton.snp.makeConstraints { make in
-                    make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
-                    make.top.bottom.centerX.equalToSuperview()
-                }
-
-                debugScreenButton.touchUpCallback = { [weak self] in
-                    guard let self = self else { return }
-                    self.presentDebugScreen()
-                }
-
-                stackScrollView.addArrangedView(debugScreenContainer)
-
-                stackScrollView.addSpacerView(NSPadding.large)
+            debugScreenContainer.addSubview(debugScreenButton)
+            debugScreenButton.snp.makeConstraints { make in
+                make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+                make.top.bottom.centerX.equalToSuperview()
             }
+
+            debugScreenButton.touchUpCallback = { [weak self] in
+                guard let self = self else { return }
+                self.presentDebugScreen()
+            }
+
+            stackScrollView.addArrangedView(debugScreenContainer)
+
+            stackScrollView.addSpacerView(NSPadding.large)
+
             debugScreenContainer.alpha = 0
         #endif
 

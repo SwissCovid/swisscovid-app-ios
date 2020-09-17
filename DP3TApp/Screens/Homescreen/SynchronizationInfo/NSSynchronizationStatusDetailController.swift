@@ -22,7 +22,7 @@ import UIKit
 
         private let infoView: UIView = {
             let view = UIView()
-            view.backgroundColor = .ns_backgroundSecondary
+            view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
             return view
         }()
 
@@ -42,7 +42,7 @@ import UIKit
             tableView.register(NSSynchronizationTableViewSectionView.self, forHeaderFooterViewReuseIdentifier: "SectionHeader")
             tableView.separatorStyle = .none
             tableView.separatorInset = .zero
-            tableView.backgroundColor = .ns_backgroundSecondary
+            tableView.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
             view.addSubview(tableView)
 
@@ -120,7 +120,12 @@ import UIKit
                 cell.set(title: "synchronizations_view_empty_list".ub_localized, date: "")
                 return cell
             }
-            cell.contentView.backgroundColor = index.row % 2 == 1 ? .ns_background : .ns_backgroundSecondary
+            if index.row % 2 == 1 {
+                cell.contentView.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundSecondary)
+            } else {
+                cell.contentView.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_backgroundTertiary)
+            }
+
             let log = model[index.row]
             var cellTitle = log.evetType.displayString
             if let payload = log.payload {

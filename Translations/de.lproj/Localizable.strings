@@ -462,7 +462,7 @@
 "meldungen_background_error_title" = "Hintergrundaktualisierung ausgeschaltet";
 
 /*Text für Hintergrund Fehler*/
-"meldungen_background_error_text" = "\"Go to \"Settings -> General > Background App Refresh\" and make sure “Wi-Fi & Mobile Data” is selected. Background App Refresh can then be disabled for each app individually. \"";
+"meldungen_background_error_text" = "Gehen Sie zu \"Einstellungen > Allgemein > Hintergrundaktualisierung\" und stellen Sie sicher, dass \"WLAN & Mobile Daten\" ausgewählt ist. Background App Refresh kann dann für jede App einzeln aktiviert werden.";
 
 /*Button Titel für Hintergrundfehler beheben*/
 "meldungen_background_error_button" = "Einstellungen ändern";
@@ -613,7 +613,7 @@
 "inform_detail_faq1_title" = "Was ist ein Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
+"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 2h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Was wird gesendet?";
@@ -640,7 +640,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und oder Geschmackssinns";
+"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
@@ -690,7 +690,7 @@
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
 /*Fuzzy*/
-"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen COVID-19-Kontaktmitteilungen aktiviert werden.";
+"onboarding_gaen_text_ios" = "Um die App nutzen zu können, müssen {TRACING_SETTING_TEXT} aktiviert werden.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktivieren";
@@ -746,11 +746,11 @@
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_title_ios" = "COVID-19-Kontaktmitteilungen deaktiviert";
+"tracing_permission_error_title_ios" = "{TRACING_SETTING_TEXT} deaktiviert";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_text_ios" = "Aktivieren Sie COVID-19-Kontaktmitteilungen, damit das Tracing funktioniert.";
+"tracing_permission_error_text_ios" = "Aktivieren Sie {TRACING_SETTING_TEXT}, damit das Tracing funktioniert.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Die Meldung konnte nicht gesendet werden. Bitte erlauben Sie das Teilen Ihrer zufälligen IDs mit der SwissCovid App.";
@@ -798,7 +798,7 @@
 
 /*Meldung Detail Weiss Box unten*/
 /*Fuzzy*/
-"meldungen_detail_explanation_text4" = "Bei ersten Symptomen machen Sie bitte den Coronavirus-Check oder rufen Sie Ihre Ärztin / Ihren Arzt an.";
+"meldungen_detail_explanation_text4" = "Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19-Benachrichtigungen";
@@ -940,4 +940,20 @@
 "accessibility_faq_button_hint_non_bag" = "Dieser Button verlässt die App und öffnet eine Website.";
 
 /*voice over string der vorgelesen wird wenn noch kein sync stattgefunden hat*/
-"begegnung_detail_no_last_sync_accessibility" = "";
+"begegnung_detail_no_last_sync_accessibility" = "Keine bisherigen Synchronisationen";
+
+/*Text für Hintergrundfehler auf Android*/
+"meldungen_background_error_text_android" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
+
+/*Telefonnummer der allgemeinen Infoline Coronavirus*/
+"infoline_coronavirus_number" = "+41 58 463 00 00";
+
+/*Text beim Bluetooth Control iOS 13.5*/
+"tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
+
+/*Text beim Bluetooth Control iOS 13.6*/
+"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsmitteilungen";
+
+/*Text beim Bluetooth Control iOS 14*/
+/*Fuzzy*/
+"tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";

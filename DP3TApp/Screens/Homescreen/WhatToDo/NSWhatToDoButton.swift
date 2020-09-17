@@ -18,7 +18,7 @@ class NSWhatToDoButton: UBButton {
 
     private let leftImageView: UIImageView
 
-    private var rightCaretImageView = UIImageView(image: UIImage(named: "ic-arrow-forward")!.withRenderingMode(.alwaysTemplate))
+    private var rightCaretImageView = NSImageView(image: UIImage(named: "ic-arrow-forward"), dynamicColor: .ns_text)
 
     // MARK: - Init
 
@@ -43,7 +43,7 @@ class NSWhatToDoButton: UBButton {
     // MARK: - Setup
 
     private func setupBackground() {
-        backgroundColor = UIColor.ns_background
+        backgroundColor = UIColor.ns_moduleBackground
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
         highlightedBackgroundColor = .ns_background_highlighted
     }
@@ -73,7 +73,6 @@ class NSWhatToDoButton: UBButton {
             make.left.bottom.equalToSuperview().inset(NSPadding.medium)
         }
 
-        rightCaretImageView.tintColor = .ns_text
         rightCaretImageView.ub_setContentPriorityRequired()
         rightCaretImageView.snp.makeConstraints { make in
             make.centerY.equalToSuperview()
