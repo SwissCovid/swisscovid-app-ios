@@ -959,3 +959,6 @@
 
 /*URL zu weiteren statistiken*/
 "stats_more_statistics_url" = "";
+
+/*Body of the error message shown when the statistics data cannot be loaded*/
+"stats_loading_error_text" = "";

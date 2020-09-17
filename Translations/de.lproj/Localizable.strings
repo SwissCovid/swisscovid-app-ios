@@ -988,3 +988,6 @@
 
 /*URL zu weiteren statistiken*/
 "stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/de/home/innovative-methoden/swisscovid-app-monitoring.html";
+
+/*Body of the error message shown when the statistics data cannot be loaded*/
+"stats_loading_error_text" = "Die Daten können im Moment nicht geladen werden";
