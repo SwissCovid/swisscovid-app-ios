@@ -45,8 +45,8 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
     }
 
-    //Only load data on userAction
-    override func wasSelectedInTabbar() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadData()
     }
 

@@ -31,7 +31,6 @@ class NSTabBarController: UITabBarController {
     init() {
         super.init(nibName: nil, bundle: nil)
         style()
-        delegate = self
     }
 
     required init?(coder _: NSCoder) {
@@ -72,11 +71,5 @@ class NSTabBarController: UITabBarController {
     private func style() {
         view.tintColor = UIColor.ns_blue
         tabBar.tintColor = UIColor.ns_blue
-    }
-}
-
-extension NSTabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        currentViewController.wasSelectedInTabbar()
     }
 }
