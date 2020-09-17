@@ -49,7 +49,7 @@ class NSStatsticsModuleHeader: UIView {
         }
 
         counterLabel.text = "-- Mio."
-        subtitle.text = "haben SwissCovid bereits aktiviert"
+        subtitle.text = "stats_title".ub_localized
 
         counterLabel.alpha = 0
         subtitle.alpha = 0
