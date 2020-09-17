@@ -35,8 +35,6 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return error.localizedDescription
         case .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
             return unexpected.ub_localized
-        case let .databaseError(error):
-            return error?.localizedDescription
         case .bluetoothTurnedOff:
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
@@ -58,8 +56,6 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return error.errorCodeString
         case .caseSynchronizationError(errors: _):
             return "ICASYN"
-        case .databaseError(error: _):
-            return "IDBERR"
         case .bluetoothTurnedOff:
             return "IBLOFF"
         case .cancelled:

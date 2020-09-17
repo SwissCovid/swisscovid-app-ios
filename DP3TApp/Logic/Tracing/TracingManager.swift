@@ -100,7 +100,7 @@ class TracingManager: NSObject {
         try? DP3TTracing.startTracing(completionHandler: completion)
     }
 
-    func beginUpdatesAndTracing() {
+    func startTracing() {
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing(completionHandler: { _ in
@@ -226,7 +226,13 @@ extension TracingManager: DP3TTracingDelegate {
         // schedule local push if exposed
         localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
 
-        isActivated = state.trackingState == .active
+        switch state.trackingState {
+        case .active,
+             .inactive(error: .bluetoothTurnedOff(enabled: true)):
+            isActivated = true
+        default:
+            isActivated = false
+        }
 
         // update tracing error states if needed
         localPush.handleTracingState(state.trackingState)
