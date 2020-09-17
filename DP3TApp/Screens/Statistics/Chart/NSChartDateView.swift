@@ -114,7 +114,7 @@ class NSChartDateView: UIView {
 
     static var formatter: DateFormatter = {
         let df = DateFormatter()
-        df.dateFormat = "dd.MM"
+        df.dateFormat = "dd.MM."
         return df
     }()
 
