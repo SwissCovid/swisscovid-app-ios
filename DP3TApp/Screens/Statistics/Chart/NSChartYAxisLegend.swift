@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSChartYAchsisLegend: UIView {
+class NSChartYAxisLegend: UIView {
 
     var yTicks: ChartYTicks? {
         didSet {

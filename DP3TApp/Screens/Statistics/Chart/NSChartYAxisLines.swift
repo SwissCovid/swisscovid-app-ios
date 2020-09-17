@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSChartYAchsisLines: UIView {
+class NSChartYAxisLines: UIView {
 
     private let configuration: ChartConfiguration
 

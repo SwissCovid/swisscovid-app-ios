@@ -16,7 +16,7 @@ class NSStatisticsChartView: UIView {
 
     private let chartContentView = NSStatisticsChartContentView()
 
-    private let yLenged = NSChartYAchsisLegend()
+    private let yLenged = NSChartYAxisLegend()
 
     private var contentSizeObserver: NSKeyValueObservation?
 

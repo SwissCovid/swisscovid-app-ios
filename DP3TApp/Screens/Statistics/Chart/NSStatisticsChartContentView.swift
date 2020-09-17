@@ -49,7 +49,7 @@ class NSStatisticsChartContentView: UIView {
 
     private let lineView: NSChartLineView
 
-    private let yAchsisLines: NSChartYAchsisLines
+    private let yAxisLines: NSChartYAxisLines
 
     private let configuration = ChartConfiguration.main
 
@@ -64,7 +64,7 @@ class NSStatisticsChartContentView: UIView {
         self.codeBarView = .init(configuration: configuration)
         self.dateView = .init(configuration: configuration)
         self.lineView = .init(configuration: configuration)
-        self.yAchsisLines = .init(configuration: configuration)
+        self.yAxisLines = .init(configuration: configuration)
         super.init(frame: .zero)
 
         infectionBarView.tintColor = UIColor.ns_purple.withAlphaComponent(0.33)
@@ -90,8 +90,8 @@ class NSStatisticsChartContentView: UIView {
             make.edges.equalTo(infectionBarView)
         }
 
-        addSubview(yAchsisLines)
-        yAchsisLines.snp.makeConstraints { (make) in
+        addSubview(yAxisLines)
+        yAxisLines.snp.makeConstraints { (make) in
             make.edges.equalTo(infectionBarView)
         }
 
@@ -135,7 +135,7 @@ class NSStatisticsChartContentView: UIView {
         dateView.values = data.data.map(\.date)
         lineView.values = data.data.map(\.sevenDayAverage)
 
-        yAchsisLines.yTicks = data.yTicks
+        yAxisLines.yTicks = data.yTicks
 
         invalidateIntrinsicContentSize()
     }

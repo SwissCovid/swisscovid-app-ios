@@ -359,10 +359,10 @@
 		F8512238250A13ED009BE733 /* NSChartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512236250A13ED009BE733 /* NSChartDateView.swift */; };
 		F851223D250A2676009BE733 /* NSChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851223C250A2676009BE733 /* NSChartLineView.swift */; };
 		F851223E250A2676009BE733 /* NSChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851223C250A2676009BE733 /* NSChartLineView.swift */; };
-		F8512241250A5E2F009BE733 /* NSChartYAchsisLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512240250A5E2F009BE733 /* NSChartYAchsisLines.swift */; };
-		F8512242250A5E2F009BE733 /* NSChartYAchsisLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512240250A5E2F009BE733 /* NSChartYAchsisLines.swift */; };
-		F8512244250A6F8E009BE733 /* NSChartYAchsisLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512243250A6F8E009BE733 /* NSChartYAchsisLegend.swift */; };
-		F8512245250A6F8E009BE733 /* NSChartYAchsisLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512243250A6F8E009BE733 /* NSChartYAchsisLegend.swift */; };
+		F8512241250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */; };
+		F8512242250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */; };
+		F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */; };
+		F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */; };
 		F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */; };
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
@@ -620,8 +620,8 @@
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
 		F8512236250A13ED009BE733 /* NSChartDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartDateView.swift; sourceTree = "<group>"; };
 		F851223C250A2676009BE733 /* NSChartLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartLineView.swift; sourceTree = "<group>"; };
-		F8512240250A5E2F009BE733 /* NSChartYAchsisLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAchsisLines.swift; sourceTree = "<group>"; };
-		F8512243250A6F8E009BE733 /* NSChartYAchsisLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAchsisLegend.swift; sourceTree = "<group>"; };
+		F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAxisLines.swift; sourceTree = "<group>"; };
+		F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAxisLegend.swift; sourceTree = "<group>"; };
 		F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
@@ -1302,11 +1302,11 @@
 			children = (
 				F80E40722509039400876906 /* NSStatisticsChartView.swift */,
 				F80E407925092B0500876906 /* NSStatisticsChartContentView.swift */,
-				F8512240250A5E2F009BE733 /* NSChartYAchsisLines.swift */,
+				F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */,
 				F80E407625092AE100876906 /* NSChartColumnView.swift */,
 				F8512236250A13ED009BE733 /* NSChartDateView.swift */,
 				F851223C250A2676009BE733 /* NSChartLineView.swift */,
-				F8512243250A6F8E009BE733 /* NSChartYAchsisLegend.swift */,
+				F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -1712,7 +1712,7 @@
 				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
 				242D21E6245C4BD8005DAEA8 /* UIStateLogic.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */,
-				F8512242250A5E2F009BE733 /* NSChartYAchsisLines.swift in Sources */,
+				F8512242250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */,
 				242D21E8245C4BD8005DAEA8 /* TracingLocalPush.swift in Sources */,
 				F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */,
 				242D21E9245C4BD8005DAEA8 /* UIColor+HEX.swift in Sources */,
@@ -1783,7 +1783,7 @@
 				242D221B245C4BD8005DAEA8 /* FakePublishManager.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				F80E40642508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
-				F8512245250A6F8E009BE733 /* NSChartYAchsisLegend.swift in Sources */,
+				F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
@@ -1862,7 +1862,7 @@
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
 				F80E406D2509002200876906 /* StatisticsResponse.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
-				F8512244250A6F8E009BE733 /* NSChartYAchsisLegend.swift in Sources */,
+				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
@@ -1935,7 +1935,7 @@
 				242D2279245D64BA005DAEA8 /* Environment+PublicKeys.swift in Sources */,
 				8EF2A6E82490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
 				F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */,
-				F8512241250A5E2F009BE733 /* NSChartYAchsisLines.swift in Sources */,
+				F8512241250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */,
 				2485F47E2458AC9000C3D8C3 /* FakePublishManager.swift in Sources */,
 				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
