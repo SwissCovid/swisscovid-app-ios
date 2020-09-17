@@ -141,7 +141,7 @@ class NSTracingErrorView: UIView {
                                                text: "tracing_turned_off_text".ub_localized,
                                                buttonTitle: "activate_tracing_button".ub_localized,
                                                action: { _ in
-                                                   TracingManager.shared.isActivated = true
+                                                   TracingManager.shared.beginUpdatesAndTracing()
                                                })
             } else {
                 return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
