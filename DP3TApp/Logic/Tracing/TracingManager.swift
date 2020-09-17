@@ -226,13 +226,7 @@ extension TracingManager: DP3TTracingDelegate {
         // schedule local push if exposed
         localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
 
-        switch state.trackingState {
-        case .active,
-             .inactive(error: .bluetoothTurnedOff(enabled: true)):
-            isActivated = true
-        default:
-            isActivated = false
-        }
+        isActivated = state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff)
 
         // update tracing error states if needed
         localPush.handleTracingState(state.trackingState)

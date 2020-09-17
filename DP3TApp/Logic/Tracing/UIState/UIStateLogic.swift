@@ -86,6 +86,8 @@ class UIStateLogic {
                 tracing = .bluetoothTurnedOff
             case .permissonError:
                 tracing = .tracingPermissionError(code: nil)
+            case .databaseError:
+                tracing = .unexpectedError(code: error.errorCodeString)
             case .exposureNotificationError:
                 tracing = .tracingPermissionError(code: error.errorCodeString)
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled, .infectionStatusNotResettable:

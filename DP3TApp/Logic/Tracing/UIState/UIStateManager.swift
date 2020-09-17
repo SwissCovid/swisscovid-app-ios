@@ -168,7 +168,8 @@ class UIStateManager: NSObject {
                 switch (e1, e2) {
                 case (.networkingError(_), .networkingError(_)),
                      (.caseSynchronizationError, .caseSynchronizationError),
-                     (.bluetoothTurnedOff(_), .bluetoothTurnedOff(_)),
+                     (.databaseError(_), .databaseError(_)),
+                     (.bluetoothTurnedOff, .bluetoothTurnedOff),
                      (.permissonError, .permissonError):
                     return
                 // TODO: Long changing list of errors and default value is dangerous
