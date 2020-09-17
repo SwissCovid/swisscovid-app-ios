@@ -35,8 +35,14 @@ class TracingManager: NSObject {
         self.localPush = localPush
     }
 
-    private(set) var isActivated: Bool = false {
+    @KeychainPersisted(key: "tracingIsActivated", defaultValue: true)
+    public var isActivated: Bool {
         didSet {
+            if isActivated {
+                beginUpdatesAndTracing()
+            } else {
+                endTracing()
+            }
             UIStateManager.shared.changedTracingActivated()
         }
     }
@@ -101,7 +107,7 @@ class TracingManager: NSObject {
     }
 
     func beginUpdatesAndTracing() {
-        if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
+        if UserStorage.shared.hasCompletedOnboarding, isActivated, ConfigManager.allowTracing {
             do {
                 try DP3TTracing.startTracing(completionHandler: { _ in
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
@@ -226,10 +232,8 @@ extension TracingManager: DP3TTracingDelegate {
         // schedule local push if exposed
         localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
 
-        isActivated = state.trackingState == .active
-
-        // update tracing error states if needed
         localPush.handleTracingState(state.trackingState)
+        // update tracing error states if needed
     }
 }
 
