@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var isFirstLaunch: Bool
 
     var tabBarController: NSTabBarController? {
-        window?.rootViewController as? NSTabBarController
+        (window?.rootViewController as? NSNavigationController)?.viewControllers.first as? NSTabBarController
     }
 
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
-        window?.rootViewController = NSTabBarController()
+        window?.rootViewController = NSNavigationController(rootViewController: NSTabBarController())
 
         setupAppearance()
 

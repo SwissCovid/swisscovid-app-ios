@@ -42,7 +42,21 @@ class NSTabBarController: UITabBarController {
 
         viewControllers = Tab.allCases
             .map(viewControler(for:))
-            .map(NSNavigationController.init(rootViewController:))
+
+        navigationItem.title = "app_name".ub_localized
+        
+        // navigation bar
+        let image = UIImage(named: "ic-info-outline")
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
+        navigationItem.rightBarButtonItem?.tintColor = .ns_blue
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
+
+        let swissFlagImage = UIImage(named: "ic_navbar_schweiz_wappen")?.withRenderingMode(.alwaysOriginal)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
+    }
+
+    @objc private func infoButtonPressed() {
+        present(NSNavigationController(rootViewController: NSAboutViewController()), animated: true)
     }
 
     var currentTab: Tab {
@@ -62,7 +76,7 @@ class NSTabBarController: UITabBarController {
     }
 
     var currentNavigationController: NSNavigationController {
-        guard let navigationController = viewControllers?[selectedIndex] as? NSNavigationController else {
+        guard let navigationController = navigationController as? NSNavigationController else {
             fatalError()
         }
         return navigationController
