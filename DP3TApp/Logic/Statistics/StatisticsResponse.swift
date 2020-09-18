@@ -11,7 +11,7 @@
 import Foundation
 
 class StatisticsResponse: Codable {
-    let totalActiveUsers: Int
+    let totalActiveUsers: Int?
     let lastUpdated: Date
     let history: [StatisticEntry]
 
