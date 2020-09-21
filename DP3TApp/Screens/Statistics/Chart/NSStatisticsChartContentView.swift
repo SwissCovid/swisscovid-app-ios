@@ -31,10 +31,12 @@ struct ChartConfiguration {
     let barWidth: CGFloat
     let barBorderWidth: CGFloat
     let chartHeight: CGFloat
+    let axisWidth: CGFloat
 
     static let main = ChartConfiguration(barWidth: 10,
                                               barBorderWidth: 1,
-                                              chartHeight: 230)
+                                              chartHeight: 230,
+                                              axisWidth: 1)
 }
 
 class NSStatisticsChartContentView: UIView {
@@ -95,7 +97,6 @@ class NSStatisticsChartContentView: UIView {
             make.edges.equalTo(infectionBarView)
         }
 
-        let XAxisHeight = 1
         divider.backgroundColor = UIColor.setColorsForTheme(lightColor: .ns_backgroundDark,
                                                             darkColor: UIColor.white.withAlphaComponent(0.5))
         addSubview(divider)
@@ -103,7 +104,7 @@ class NSStatisticsChartContentView: UIView {
         divider.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(infectionBarView.snp.bottom).inset(0)
-            make.height.equalTo(XAxisHeight)
+            make.height.equalTo(configuration.axisWidth)
         }
 
         addSubview(dateView)
