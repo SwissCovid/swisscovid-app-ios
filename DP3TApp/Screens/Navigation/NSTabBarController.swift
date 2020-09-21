@@ -86,7 +86,19 @@ class NSTabBarController: UITabBarController {
     }
 
     private func style() {
-        view.tintColor = UIColor.ns_blue
-        tabBar.tintColor = UIColor.ns_blue
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = .ns_background
+        setTabBarItemColors(appearance.stackedLayoutAppearance)
+        setTabBarItemColors(appearance.inlineLayoutAppearance)
+        setTabBarItemColors(appearance.compactInlineLayoutAppearance)
+        tabBar.standardAppearance = appearance
+    }
+
+    private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
+        itemAppearance.normal.iconColor = .ns_darkBlueBackground
+        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_darkBlueBackground]
+
+        itemAppearance.selected.iconColor = .ns_blue
+        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_blue]
     }
 }

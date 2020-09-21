@@ -21,7 +21,7 @@ class NSStatisticsShareModule: UIView {
     private let imageView = UIImageView()
 
     private let shareButton = NSButton(title: "share_app_button".ub_localized,
-                                       style: .normal(.ns_blue))
+                                       style: .uppercase(.ns_blue))
 
     private let text = NSLabel(.textLight)
 
@@ -49,7 +49,7 @@ class NSStatisticsShareModule: UIView {
         stackView.addArrangedView(imageView)
         stackView.addSpacerView(NSPadding.small)
         stackView.addArrangedView(shareButton)
-        stackView.addSpacerView(NSPadding.medium)
+        stackView.addSpacerView(NSPadding.large)
         stackView.addArrangedView(text)
         stackView.addSpacerView(NSPadding.large * 2)
 

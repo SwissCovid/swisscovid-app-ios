@@ -35,8 +35,8 @@ class NSChartYAxisLines: UIView {
 
         lineLayer.fillColor = nil
         lineLayer.strokeColor = lineColor.cgColor
-        lineLayer.lineWidth = 2.0
-        lineLayer.lineDashPattern = [7,3]
+        lineLayer.lineWidth = 1.0
+        lineLayer.lineDashPattern = [2,2]
         layer.addSublayer(lineLayer)
     }
 

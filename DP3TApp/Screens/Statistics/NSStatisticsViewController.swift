@@ -34,6 +34,8 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
         tabBarItem.image = UIImage(named: "ic-stats")
         tabBarItem.title = "bottom_nav_tab_stats".ub_localized
+
+        view.backgroundColor = .ns_backgroundSecondary
     }
 
     override func viewDidLoad() {

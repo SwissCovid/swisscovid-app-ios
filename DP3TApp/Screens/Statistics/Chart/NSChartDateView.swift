@@ -122,7 +122,7 @@ class NSChartDateView: UIView {
         let layer = CAShapeLayer()
         layer.fillColor = nil
         layer.strokeColor = strokeColor.cgColor
-        layer.lineWidth = 2.0
+        layer.lineWidth = 1.0
         return layer
     }
 

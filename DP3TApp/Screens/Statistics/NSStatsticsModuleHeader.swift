@@ -15,7 +15,7 @@ class NSStatsticsModuleHeader: UIView {
     private let counterLabel = NSLabel(.statsCounter,
                                        textColor: UIColor.setColorsForTheme(lightColor: .ns_darkBlueBackground, darkColor: .white),
                                        textAlignment: .center)
-    private let subtitle = NSLabel(.textLight, textColor: .ns_green, textAlignment: .center)
+    private let subtitle = NSLabel(.textLight, textColor: .ns_blue, textAlignment: .center)
     private let formatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
