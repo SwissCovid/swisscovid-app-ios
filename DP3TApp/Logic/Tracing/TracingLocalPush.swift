@@ -94,26 +94,31 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
     }
 
     private func alreadyShowsReport() -> Bool {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let tabBarController = appDelegate.tabBarController,
-            tabBarController.currentTab == .homescreen {
-            if tabBarController.currentNavigationController.viewControllers.last is NSReportsDetailViewController {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.navigationController.viewControllers.last is NSReportsDetailViewController {
                 return true
             }
         }
         return false
     }
 
-    private func jumpToReport() {
+    func jumpToReport(animated: Bool = true) {
         guard !alreadyShowsReport() else {
             return
         }
 
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate,
-            let tabBarController = appDelegate.tabBarController {
-            tabBarController.currentTab = .homescreen
-            tabBarController.currentNavigationController.popToRootViewController(animated: false)
-            (tabBarController.currentViewController as? NSHomescreenViewController)?.presentReportsDetail()
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            // Dismiss any modal views (if even present)
+            appDelegate.navigationController.dismiss(animated: false)
+
+            // Pop to root view controller
+            appDelegate.navigationController.popToRootViewController(animated: false)
+
+            // Reset tab bar back to homescreen tab
+            appDelegate.tabBarController.currentTab = .homescreen
+
+            // Present detail from home screen view controller
+            appDelegate.tabBarController.homescreen.presentReportsDetail(animated: animated)
         }
     }
 

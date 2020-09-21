@@ -18,9 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
     var isFirstLaunch: Bool
 
-    var tabBarController: NSTabBarController? {
-        (window?.rootViewController as? NSNavigationController)?.viewControllers.first as? NSTabBarController
-    }
+    lazy var navigationController: NSNavigationController = NSNavigationController(rootViewController: tabBarController)
+    lazy var tabBarController: NSTabBarController = NSTabBarController()
 
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
@@ -76,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         TracingManager.shared.beginUpdatesAndTracing()
 
         window?.makeKey()
-        window?.rootViewController = NSNavigationController(rootViewController: NSTabBarController())
+        window?.rootViewController = navigationController
 
         setupAppearance()
 
@@ -108,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             // if app was longer than 1h in background make sure to select homescreen in tabbar
             if backgroundTime > 60.0 * 60.0 {
-                tabBarController?.currentTab = .homescreen
+                tabBarController.currentTab = .homescreen
             }
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
@@ -128,18 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
-        if shouldJump,
-            let tabBarController = tabBarController {
-            tabBarController.currentTab = .homescreen
-
-            let navigationController = tabBarController.currentNavigationController
-
-            // no need to present NSReportsDetailViewController if its already showing
-            if let homescreenVC = tabBarController.currentViewController as? NSHomescreenViewController,
-                !(navigationController.viewControllers.last is NSReportsDetailViewController) {
-                navigationController.popToRootViewController(animated: false)
-                homescreenVC.presentReportsDetail(animated: false)
-            }
+        if shouldJump {
+            TracingLocalPush.shared.jumpToReport(animated: false)
             return true
         } else {
             return false
