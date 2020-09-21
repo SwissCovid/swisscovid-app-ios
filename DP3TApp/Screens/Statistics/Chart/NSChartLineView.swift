@@ -72,12 +72,6 @@ class NSChartLineView: UIView {
             }
         }
 
-        /*let animation = CABasicAnimation(keyPath: "path")
-        animation.fromValue = flatPath(size: bounds.size)
-        animation.toValue = linePath.cgPath
-        animation.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-        lineLayer.add(animation, forKey: nil)*/
-
         let opacityAnimation = CABasicAnimation(keyPath: "opacity")
         opacityAnimation.fromValue = 0
         opacityAnimation.toValue = 1
