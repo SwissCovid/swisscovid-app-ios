@@ -53,6 +53,9 @@ class NSTabBarController: UITabBarController {
 
         let swissFlagImage = UIImage(named: "ic_navbar_schweiz_wappen")?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
+
+        // Show back button without text
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
     }
 
     @objc private func infoButtonPressed() {
