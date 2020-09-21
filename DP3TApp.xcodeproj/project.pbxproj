@@ -1648,7 +1648,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\n#if [[ $CONFIGURATION == \"Debug\" ]]; then\n#    if which swiftformat >/dev/null; then\n#        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n#    else\n#        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n#    fi\n#fi \n";
+			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi \n";
 		};
 		8E81CCC1241FD2EE006F2437 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
