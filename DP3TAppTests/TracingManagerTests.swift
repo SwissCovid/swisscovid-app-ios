@@ -27,7 +27,11 @@ class MockLocalPush: LocalPushProtocol {
 
     func handleSync(result _: SyncResult) {}
 
-    func handleTracingState(_: TrackingState) {}
+    var handleTracingStateCalled = false
+
+    func handleTracingState(_: TrackingState) {
+        handleTracingStateCalled = true
+    }
 }
 
 class TracingManagerTests: XCTestCase {
@@ -55,6 +59,8 @@ class TracingManagerTests: XCTestCase {
         wait(for: [ex], timeout: 0.1)
 
         XCTAssert(mockLocalPush.scheduleExposureNotificationsIfNeededWasCalled)
+
+        XCTAssert(mockLocalPush.handleTracingStateCalled)
 
         try! DP3TTracing.reset()
     }

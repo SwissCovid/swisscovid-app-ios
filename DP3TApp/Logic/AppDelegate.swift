@@ -72,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        TracingManager.shared.beginUpdatesAndTracing()
+        DatabaseSyncer.shared.syncDatabaseIfNeeded()
 
         window?.makeKey()
         window?.rootViewController = navigationController

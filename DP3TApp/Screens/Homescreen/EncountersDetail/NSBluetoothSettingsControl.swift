@@ -150,7 +150,11 @@ class NSBluetoothSettingsControl: UIView {
     @objc private func switchChanged() {
         // change tracing manager
         if TracingManager.shared.isActivated != switchControl.isOn {
-            TracingManager.shared.isActivated = switchControl.isOn
+            if switchControl.isOn {
+                TracingManager.shared.startTracing()
+            } else {
+                TracingManager.shared.endTracing()
+            }
         }
 
         UIAccessibility.post(notification: .layoutChanged, argument: switchControl)
