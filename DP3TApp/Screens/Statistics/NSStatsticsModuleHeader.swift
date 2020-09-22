@@ -48,7 +48,7 @@ class NSStatsticsModuleHeader: UIView {
             make.bottom.equalToSuperview()
         }
 
-        counterLabel.text = "-- Mio."
+        counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: "--")
         subtitle.text = "stats_title".ub_localized
 
         counterLabel.alpha = 0
