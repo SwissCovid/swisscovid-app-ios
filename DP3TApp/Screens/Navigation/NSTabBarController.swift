@@ -95,15 +95,21 @@ class NSTabBarController: UITabBarController {
     }
 
     private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
+        let normalAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarNormalBlue,
+                                NSAttributedString.Key.font : NSLabelType.ultraSmallBold.font]
+
         itemAppearance.normal.iconColor = .ns_tabbarNormalBlue
-        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarNormalBlue,
-                                                     NSAttributedString.Key.font : NSLabelType.smallBold.font]
-        itemAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+        itemAppearance.focused.iconColor = .ns_tabbarNormalBlue
+        itemAppearance.disabled.iconColor = .ns_tabbarNormalBlue
+
+        itemAppearance.normal.titleTextAttributes = normalAttributes
+        itemAppearance.focused.titleTextAttributes = normalAttributes
+        itemAppearance.disabled.titleTextAttributes = normalAttributes
 
         itemAppearance.selected.iconColor = .ns_tabbarSelectedBlue
         itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarSelectedBlue,
-                                                       NSAttributedString.Key.font : NSLabelType.smallBold.font]
-        itemAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+                                                       NSAttributedString.Key.font : NSLabelType.ultraSmallBold.font]
+
 
     }
 }

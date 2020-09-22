@@ -175,14 +175,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .foregroundColor: UIColor.ns_text,
         ]
 
+        // This is still necessary because setting a bold font through
+        // UITabBarAppearance() results in truncated text when coming back
+        // from background.
+        //
+        // Also see https://stackoverflow.com/questions/58641202/ios-tabbar-item-title-issue-in-ios13
         UITabBarItem.appearance().setTitleTextAttributes([
-            .font: NSLabelType.smallBold.font,
-            .foregroundColor: UIColor.ns_text,
+            .font: NSLabelType.ultraSmallBold.font,
+            .foregroundColor: UIColor.ns_tabbarNormalBlue,
         ], for: .normal)
 
         UITabBarItem.appearance().setTitleTextAttributes([
-            .font: NSLabelType.smallBold.font,
-            .foregroundColor: UIColor.ns_blue,
+            .font: NSLabelType.ultraSmallBold.font,
+            .foregroundColor: UIColor.ns_tabbarSelectedBlue,
         ], for: .selected)
     }
 }
