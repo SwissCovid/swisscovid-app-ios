@@ -969,10 +969,10 @@
 "share_app_button" = "App teilen";
 
 /*Fuzzy*/
-"share_app_body" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
+"share_app_body" = "Wenn möglichst viele die SwissCovid App nutzen, können wir Infektionsketten frühzeitig unterbrechen.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Wenn möglichst viele die SwissCovid App aktivieren, können wir Infektionsketten frühzeitig unterbrechen.";
+"share_app_message" = "Wenn möglichst viele die SwissCovid App nutzen, können wir Infektionsketten frühzeitig unterbrechen.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";

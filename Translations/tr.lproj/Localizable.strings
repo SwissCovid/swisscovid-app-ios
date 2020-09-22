@@ -927,34 +927,34 @@
 
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Maruz Kalma Bildirimleri";
-"bottom_nav_tab_home" = "";
-"bottom_nav_tab_stats" = "";
-"stats_title" = "";
-"stats_legend_new_infections" = "";
-"stats_legend_new_infections_average" = "";
-"stats_legend_entered_covidcodes" = "";
-"share_app_supertitle" = "";
-"share_app_title" = "";
-"share_app_button" = "";
-"share_app_body" = "";
+"bottom_nav_tab_home" = "SwissCovid";
+"bottom_nav_tab_stats" = "Stats";
+"stats_title" = "already use SwissCovid";
+"stats_legend_new_infections" = "New infections reported";
+"stats_legend_new_infections_average" = "7-day average";
+"stats_legend_entered_covidcodes" = "Covidcodes entered";
+"share_app_supertitle" = "Working together to…";
+"share_app_title" = "Prevent a second wave";
+"share_app_button" = "Share app";
+"share_app_body" = "If as many people as possible activate the SwissCovid app, we can break infection chains early.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "";
+"share_app_message" = "If as many people as possible activate the SwissCovid app, we can break infection chains early.";
 
 /*URL die geteilt wird*/
-"share_app_url" = "";
+"share_app_url" = "https://foph-coronavirus.ch/swisscovid-app/#download";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
-"stats_counter" = "{COUNT} Mill.";
+"stats_counter" = "{COUNT} m";
 
 /*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
-"stats_source_day" = "";
+"stats_source_day" = "Stats as of {DAY}";
 
 /*Links zu weiteren Statistiken*/
-"stats_more_statistics_button" = "";
+"stats_more_statistics_button" = "View more statistics";
 
 /*URL zu weiteren statistiken*/
-"stats_more_statistics_url" = "";
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/en/home/innovative-methods/swisscovid-app-monitoring.html";
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
-"stats_loading_error_text" = "";
+"stats_loading_error_text" = "Currently unable to load stats";
