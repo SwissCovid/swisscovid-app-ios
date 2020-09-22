@@ -25,10 +25,18 @@ class NSChartColumnView: UIView {
     }
 
 
-    var borderColor: UIColor = UIColor.setColorsForTheme(lightColor: .white , darkColor: .ns_darkModeBackground2) {
+    var borderColor: UIColor = .ns_background {
         didSet {
             layer.sublayers?.forEach {
                 $0.borderColor = borderColor.cgColor
+            }
+        }
+    }
+
+    var barBackgroundColor: UIColor = .ns_backgroundSecondary {
+        didSet {
+            layer.sublayers?.forEach {
+                $0.backgroundColor = barBackgroundColor.cgColor
             }
         }
     }
@@ -87,7 +95,7 @@ class NSChartColumnView: UIView {
 
     func newBar() -> CALayer {
         let layer = CALayer()
-        layer.backgroundColor = tintColor.cgColor
+        layer.backgroundColor = barBackgroundColor.cgColor
         layer.borderColor = borderColor.cgColor
         layer.borderWidth = configuration.barBorderWidth
         layer.anchorPoint = CGPoint(x: 0.5, y: 1.0)
@@ -98,7 +106,7 @@ class NSChartColumnView: UIView {
         if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
             layer.sublayers?.forEach({ (layer) in
                 layer.borderColor = borderColor.cgColor
-                layer.backgroundColor = tintColor.cgColor
+                layer.backgroundColor = barBackgroundColor.cgColor
             })
         }
     }

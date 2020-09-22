@@ -24,7 +24,10 @@ extension UIColor {
         darkColor: UIColor.white
     )
 
-    public static var ns_blue = UIColor(ub_hexString: "#5094bf")!.withHighContrastColor(color: UIColor(ub_hexString: "#2769a3")!)
+    static let blueColor = "#5094bf"
+    public static var ns_blue = UIColor(ub_hexString: blueColor)!.withHighContrastColor(color: UIColor(ub_hexString: "#2769a3")!)
+    public static var ns_blueBar = UIColor(ub_hexString: blueColor)!
+
     public static var ns_lightBlue = UIColor(ub_hexString: "#00a7d4")!.withHighContrastColor(color: UIColor(ub_hexString: "#59738A")!)
     public static var ns_blueBackground: UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#eff5f9")!, darkColor: .ns_darkModeBackground2)
@@ -35,8 +38,10 @@ extension UIColor {
         darkColor: UIColor(ub_hexString: "#009e89")!
     )
 
-    public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
-    public static var ns_purpleBar = UIColor.setColorsForTheme(lightColor: ns_purple.withAlphaComponent(0.3), darkColor: ns_purple.withAlphaComponent(0.5))
+    static let purpleColor = "#8d6a9f"
+    public static var ns_purple = UIColor(ub_hexString: purpleColor)!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
+    public static var ns_purpleBar = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: purpleColor)!.withAlphaComponent(0.3),
+                                                               darkColor: UIColor(ub_hexString: purpleColor)!.withAlphaComponent(0.5))
     public static var ns_greenBackground: UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: .ns_darkModeBackground2)
     }
