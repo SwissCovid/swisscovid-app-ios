@@ -87,7 +87,7 @@ class NSTabBarController: UITabBarController {
 
     private func style() {
         let appearance = UITabBarAppearance()
-        appearance.backgroundColor = .ns_background
+        appearance.backgroundColor = .ns_moduleBackground
         setTabBarItemColors(appearance.stackedLayoutAppearance)
         setTabBarItemColors(appearance.inlineLayoutAppearance)
         setTabBarItemColors(appearance.compactInlineLayoutAppearance)
@@ -95,10 +95,15 @@ class NSTabBarController: UITabBarController {
     }
 
     private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
-        itemAppearance.normal.iconColor = .ns_darkBlueBackground
-        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_darkBlueBackground]
+        itemAppearance.normal.iconColor = .ns_tabbarNormalBlue
+        itemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarNormalBlue,
+                                                     NSAttributedString.Key.font : NSLabelType.smallBold.font]
+        itemAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
 
-        itemAppearance.selected.iconColor = .ns_blue
-        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_blue]
+        itemAppearance.selected.iconColor = .ns_tabbarSelectedBlue
+        itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarSelectedBlue,
+                                                       NSAttributedString.Key.font : NSLabelType.smallBold.font]
+        itemAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -2)
+
     }
 }

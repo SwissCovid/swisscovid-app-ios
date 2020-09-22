@@ -35,6 +35,7 @@ extension UIColor {
         darkColor: UIColor(ub_hexString: "#009e89")!
     )
 
+    public static var ns_purpleBar = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#8d6a9f")!.withAlphaComponent(0.3), darkColor: UIColor(ub_hexString: "#8d6a9f")!.withAlphaComponent(0.5))
     public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
     public static var ns_greenBackground: UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: .ns_darkModeBackground2)
@@ -68,6 +69,9 @@ extension UIColor {
     static var ns_disclaimerIconColor: UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor.black, darkColor: UIColor.white)
     }
+
+    public static var ns_tabbarNormalBlue = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#4a4969")!, darkColor: UIColor(ub_hexString: "#cdcdd0")!)
+    public static var ns_tabbarSelectedBlue = ns_blue
 
     public static var ns_backgroundDark = UIColor(ub_hexString: "#cdcdd0")!.withHighContrastColor(color: .black)
 

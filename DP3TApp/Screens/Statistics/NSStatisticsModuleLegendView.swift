@@ -51,7 +51,7 @@ class NSStatisticsModuleLegendViewItem: UIView {
 
         switch type {
         case .newInfections:
-            imageView.backgroundColor = UIColor.ns_purple.withAlphaComponent(0.33)
+            imageView.backgroundColor = UIColor.ns_purpleBar
             imageView.image = nil
             label.textColor = UIColor.ns_purple
             label.text = "stats_legend_new_infections".ub_localized
