@@ -35,8 +35,8 @@ extension UIColor {
         darkColor: UIColor(ub_hexString: "#009e89")!
     )
 
-    public static var ns_purpleBar = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#8d6a9f")!.withAlphaComponent(0.3), darkColor: UIColor(ub_hexString: "#8d6a9f")!.withAlphaComponent(0.5))
     public static var ns_purple = UIColor(ub_hexString: "#8d6a9f")!.withHighContrastColor(color: UIColor(ub_hexString: "#6e3f86")!)
+    public static var ns_purpleBar = UIColor.setColorsForTheme(lightColor: ns_purple.withAlphaComponent(0.3), darkColor: ns_purple.withAlphaComponent(0.5))
     public static var ns_greenBackground: UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#e5f8f6")!, darkColor: .ns_darkModeBackground2)
     }
