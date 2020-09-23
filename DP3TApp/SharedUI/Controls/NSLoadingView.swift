@@ -38,9 +38,12 @@ class NSLoadingView: UIView {
     // MARK: - API
 
     public func startLoading() {
-        alpha = 1.0
         errorStackView.alpha = 0.0
         loadingIndicatorView.alpha = 1.0
+
+        UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+            self.alpha = 1.0
+        }, completion: nil)
 
         loadingIndicatorView.startAnimating()
     }
@@ -64,7 +67,9 @@ class NSLoadingView: UIView {
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0
         } else {
-            alpha = 0.0
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState], animations: {
+                self.alpha = 0.0
+            }, completion: nil)
         }
     }
 
