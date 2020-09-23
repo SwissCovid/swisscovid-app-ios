@@ -39,7 +39,6 @@ class NSStatisticsShareModule: UIView {
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(NSPadding.large)
         }
-        accessibilityTraits = [.header]
 
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedView(superTitle)
@@ -59,6 +58,9 @@ class NSStatisticsShareModule: UIView {
 
         imageView.image = UIImage(named: "illu-gemeinsam")
         imageView.contentMode = .scaleAspectFit
+
+        isAccessibilityElement = false
+        accessibilityElements = [title, shareButton, text]
     }
 
     required init?(coder: NSCoder) {

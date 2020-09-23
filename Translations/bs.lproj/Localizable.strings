@@ -932,33 +932,36 @@
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
 "bottom_nav_tab_home" = "SwissCovid";
-"bottom_nav_tab_stats" = "Stats";
-"stats_title" = "already use SwissCovid";
-"stats_legend_new_infections" = "New infections reported";
-"stats_legend_new_infections_average" = "7-day average";
-"stats_legend_entered_covidcodes" = "Covidcodes entered";
-"share_app_supertitle" = "Working together to…";
-"share_app_title" = "Prevent a second wave";
-"share_app_button" = "Share app";
-"share_app_body" = "If as many people as possible activate the SwissCovid app, we can break infection chains early.";
+"bottom_nav_tab_stats" = "Statistika";
+"stats_title" = "već koristi SwissCovid";
+"stats_legend_new_infections" = "Prijavljene nove infekcije";
+"stats_legend_new_infections_average" = "Presek u periodu od 7 dana";
+"stats_legend_entered_covidcodes" = "Unete Covid šifre";
+"share_app_supertitle" = "Zajedno...";
+"share_app_title" = "sprečimo drugi talas pandemije";
+"share_app_button" = "Deli aplikaciju";
+"share_app_body" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "If as many people as possible activate the SwissCovid app, we can break infection chains early.";
+"share_app_message" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
 
 /*URL die geteilt wird*/
-"share_app_url" = "https://foph-coronavirus.ch/swisscovid-app/#download";
+"share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
-"stats_counter" = "{COUNT} m";
+"stats_counter" = "{COUNT} miliona korisnika";
 
 /*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
-"stats_source_day" = "Stats as of {DAY}";
+"stats_source_day" = "Stanje na dan {DAY}";
 
 /*Links zu weiteren Statistiken*/
-"stats_more_statistics_button" = "View more statistics";
+"stats_more_statistics_button" = "Dodatni statistički podaci";
 
 /*URL zu weiteren statistiken*/
-"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/en/home/innovative-methods/swisscovid-app-monitoring.html";
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/de/home/innovative-methoden/swisscovid-app-monitoring.html";
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
-"stats_loading_error_text" = "Currently unable to load stats";
+"stats_loading_error_text" = "Podaci trenutno ne mogu da se učitaju";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
+"stats_counter_full" = "{COUNT} Million";

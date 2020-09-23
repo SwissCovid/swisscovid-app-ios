@@ -48,7 +48,7 @@ class NSStatsticsModuleHeader: UIView {
             make.bottom.equalToSuperview()
         }
 
-        counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: "--")
+        counterLabel.text = formatNumber(number: nil)
         subtitle.text = "stats_title".ub_localized
 
         counterLabel.alpha = 0
@@ -108,10 +108,31 @@ class NSStatsticsModuleHeader: UIView {
             self.animationValues = nil
         }
 
-        let numberInMillions = Double(newNumber) / 1_000_000
-        if let formattedNumber = formatter.string(from: numberInMillions as NSNumber) {
-            counterLabel.text = "stats_counter".ub_localized.replacingOccurrences(of: "{COUNT}", with: formattedNumber)
+        counterLabel.text = formatNumber(number: newNumber)
+    }
+
+    private func formatNumber(number: Int?, fullText: Bool = false) -> String {
+        let formattedNumber: String?
+
+        if let number = number {
+            let numberInMillions = Double(number) / 1_000_000
+            formattedNumber = formatter.string(from: numberInMillions as NSNumber)
+        } else {
+            formattedNumber = nil
         }
+
+        let base = fullText ? "stats_counter_full" : "stats_counter"
+        return base.ub_localized.replacingOccurrences(of: "{COUNT}", with: formattedNumber ?? "--")
+    }
+
+    override var accessibilityLabel: String? {
+        get {
+            guard let animationValues = animationValues else {
+                return "\(formatNumber(number: currentNumber, fullText: true)) \( subtitle.accessibilityLabel ?? "")"
+            }
+            return "\(formatNumber(number: animationValues.targetCount, fullText: true)) \( subtitle.accessibilityLabel ?? "")"
+        }
+        set {}
     }
 
     required init?(coder _: NSCoder) {

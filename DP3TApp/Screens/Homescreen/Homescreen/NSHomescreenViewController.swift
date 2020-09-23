@@ -104,6 +104,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 }
             }
         }
+
+        if UIAccessibility.isVoiceOverRunning {
+            stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

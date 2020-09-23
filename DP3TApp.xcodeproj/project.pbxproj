@@ -421,7 +421,7 @@
 		242D2280245D7363005DAEA8 /* build.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = build.yml; path = .github/workflows/build.yml; sourceTree = SOURCE_ROOT; };
 		242D2281245D7386005DAEA8 /* Fastfile */ = {isa = PBXFileReference; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		2443947A2445F062003ED582 /* NSHeaderArcView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSHeaderArcView.swift; sourceTree = "<group>"; };
-		2443947C2445F8A1003ED582 /* LICENCE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENCE.md; sourceTree = "<group>"; };
+		2443947C2445F8A1003ED582 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2443947D2445F8A1003ED582 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		245626A0245265340058D11F /* ConfigLoadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigLoadOperation.swift; sourceTree = "<group>"; };
 		2462BA122451F0F60046906D /* CodeValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeValidator.swift; sourceTree = "<group>"; };
@@ -1109,7 +1109,7 @@
 			isa = PBXGroup;
 			children = (
 				2443947D2445F8A1003ED582 /* README.md */,
-				2443947C2445F8A1003ED582 /* LICENCE.md */,
+				2443947C2445F8A1003ED582 /* LICENSE */,
 				8E81CC97241FCC7D006F2437 /* DP3TApp */,
 				8E81CCAE241FCC7F006F2437 /* DP3TAppTests */,
 				8E81CC96241FCC7D006F2437 /* Products */,

@@ -51,13 +51,14 @@ class NSStatisticsModuleView: UIView {
         backgroundColor = .ns_moduleBackground
 
         setupLayout()
-        setupAccessibility()
         updateLayout()
 
         setCustomSpacing(NSPadding.medium, after: header)
         setCustomSpacing(NSPadding.medium, after: statisticsChartView)
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: legend)
         lastUpdatedLabel.alpha = 0
+
+        isAccessibilityElement = true
     }
 
     required init?(coder _: NSCoder) {
@@ -81,23 +82,14 @@ class NSStatisticsModuleView: UIView {
         stackView.clearSubviews()
 
         sections.forEach { stackView.addArrangedView($0) }
-
-        updateAccessibility(with: sections)
     }
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
         stackView.setCustomSpacing(spacing, after: view)
     }
 
-    func setupAccessibility() {
-        isAccessibilityElement = false
-        accessibilityElementsHidden = false
-        stackView.isAccessibilityElement = true
-        stackView.accessibilityTraits = [.button]
-    }
-
-    func updateAccessibility(with sectionViews: [UIView]) {
-        accessibilityElements = [stackView] + sectionViews
-        UIAccessibility.post(notification: .screenChanged, argument: nil)
+    override var accessibilityLabel: String? {
+        get { header.accessibilityLabel }
+        set {}
     }
 }

@@ -50,6 +50,9 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         loadData()
+        if UIAccessibility.isVoiceOverRunning {
+            stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+        }
     }
 
     private func loadData(){

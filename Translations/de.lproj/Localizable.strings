@@ -991,3 +991,6 @@
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
 "stats_loading_error_text" = "Die Daten können im Moment nicht geladen werden";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
+"stats_counter_full" = "{COUNT} Millionen";
