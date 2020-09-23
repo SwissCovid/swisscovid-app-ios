@@ -17,7 +17,7 @@ class NSStatisticsModuleView: UIView {
     private let header = NSStatsticsModuleHeader()
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
-    private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_backgroundDark, textAlignment: .right)
+    private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_gray, textAlignment: .right)
 
     private lazy var sections: [UIView] = [header,
                                            statisticsChartView,

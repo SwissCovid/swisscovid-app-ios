@@ -69,8 +69,8 @@ class NSStatisticsChartContentView: UIView {
         self.yAxisLines = .init(configuration: configuration)
         super.init(frame: .zero)
 
-        infectionBarView.tintColor = UIColor.ns_purpleBar
-        codeBarView.tintColor = .ns_blue
+        infectionBarView.barBackgroundColor = .ns_purpleBar
+        codeBarView.barBackgroundColor = .ns_blueBar
 
         infectionBarView.frame = frame
         codeBarView.frame = frame
