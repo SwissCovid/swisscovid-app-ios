@@ -964,4 +964,4 @@
 "stats_loading_error_text" = "Os dados não podem ser carregados de momento";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
-"stats_counter_full" = "{COUNT} Million";
+"stats_counter_full" = "{COUNT} milhões";

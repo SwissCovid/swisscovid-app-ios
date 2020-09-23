@@ -954,7 +954,7 @@
 "share_app_url" = "https://foph-coronavirus.ch/swisscovid-app/#download";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
-"stats_counter" = "{COUNT} m";
+"stats_counter" = "{COUNT} M";
 
 /*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
 "stats_source_day" = "Stats as of {DAY}";
@@ -969,4 +969,4 @@
 "stats_loading_error_text" = "Currently unable to load stats";
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
-"stats_counter_full" = "{COUNT} Million";
+"stats_counter_full" = "{COUNT} million";
