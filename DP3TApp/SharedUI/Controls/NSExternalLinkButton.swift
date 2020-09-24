@@ -16,7 +16,13 @@ class NSExternalLinkButton: UBButton {
         case outlined(color: UIColor)
     }
 
-    let style: Style
+    enum Size {
+        case normal
+        case small
+    }
+
+    private let style: Style
+    private let buttonSize: Size
 
     // MARK: - Init
 
@@ -34,8 +40,9 @@ class NSExternalLinkButton: UBButton {
         }
     }
 
-    init(style: Style = .normal(color: .white)) {
+    init(style: Style = .normal(color: .white), size: Size = .normal) {
         self.style = style
+        self.buttonSize = size
         super.init()
         updateLayout()
     }
@@ -52,7 +59,13 @@ class NSExternalLinkButton: UBButton {
 
             setTitleColor(color, for: .normal)
 
-            let spacing: CGFloat = 8.0
+            let spacing: CGFloat
+            switch buttonSize {
+            case .normal:
+                spacing = 8.0
+            case.small:
+                spacing = 6.0
+            }
             imageEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: spacing)
             titleEdgeInsets = UIEdgeInsets(top: 4.0, left: spacing, bottom: 4.0, right: 0.0)
 
@@ -74,14 +87,31 @@ class NSExternalLinkButton: UBButton {
             // move image to right side
             semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
 
-            let spacing: CGFloat = 8.0
+            let spacing: CGFloat
+            switch buttonSize {
+            case .normal:
+                spacing = 8.0
+            case.small:
+                spacing = 6.0
+            }
             imageEdgeInsets = UIEdgeInsets(top: 0.0, left: spacing, bottom: 0.0, right: 0.0)
             titleEdgeInsets = UIEdgeInsets(top: spacing, left: 0.0, bottom: spacing, right: spacing)
         }
 
         setImage(image, for: .normal)
 
-        titleLabel?.font = NSLabelType.button.font
+        switch buttonSize {
+        case .normal:
+            titleLabel?.font = NSLabelType.button.font
+        case .small:
+            titleLabel?.font = NSLabelType.smallButton.font
+            if let titleLabel = titleLabel {
+                imageView?.snp.makeConstraints({ (make) in
+                    make.height.width.equalTo(titleLabel.snp.height)
+                })
+            }
+        }
+
 
         highlightXInset = -NSPadding.small
         highlightYInset = -NSPadding.small

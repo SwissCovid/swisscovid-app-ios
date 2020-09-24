@@ -18,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     @UBUserDefault(key: "isFirstLaunch", defaultValue: true)
     var isFirstLaunch: Bool
 
+    lazy var navigationController: NSNavigationController = NSNavigationController(rootViewController: tabBarController)
+    lazy var tabBarController: NSTabBarController = NSTabBarController()
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
         if UserStorage.shared.hasCompletedOnboarding {
@@ -72,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DatabaseSyncer.shared.syncDatabaseIfNeeded()
 
         window?.makeKey()
-        window?.rootViewController = NSNavigationController(rootViewController: NSHomescreenViewController())
+        window?.rootViewController = navigationController
 
         setupAppearance()
 
@@ -101,6 +104,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
             NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
+
+            // if app was longer than 1h in background make sure to select homescreen in tabbar
+            if backgroundTime > 60.0 * 60.0 {
+                tabBarController.currentTab = .homescreen
+            }
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
@@ -119,14 +127,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
-        if shouldJump,
-            let navigationController = window?.rootViewController as? NSNavigationController,
-            let homescreenVC = navigationController.viewControllers.first as? NSHomescreenViewController {
-            // no need to present NSReportsDetailViewController if its already showing
-            if !(navigationController.viewControllers.last is NSReportsDetailViewController) {
-                navigationController.popToRootViewController(animated: false)
-                homescreenVC.presentReportsDetail(animated: false)
-            }
+        if shouldJump {
+            TracingLocalPush.shared.jumpToReport(animated: false)
             return true
         } else {
             return false
@@ -172,5 +174,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: NSLabelType.textBold.font,
             .foregroundColor: UIColor.ns_text,
         ]
+
+        // This is still necessary because setting a bold font through
+        // UITabBarAppearance() results in truncated text when coming back
+        // from background.
+        //
+        // Also see https://stackoverflow.com/questions/58641202/ios-tabbar-item-title-issue-in-ios13
+        UITabBarItem.appearance().setTitleTextAttributes([
+            .font: NSLabelType.ultraSmallBold.font,
+            .foregroundColor: UIColor.ns_tabbarNormalBlue,
+        ], for: .normal)
+
+        UITabBarItem.appearance().setTitleTextAttributes([
+            .font: NSLabelType.ultraSmallBold.font,
+            .foregroundColor: UIColor.ns_tabbarSelectedBlue,
+        ], for: .selected)
     }
 }

@@ -148,6 +148,7 @@ extension NetworkError: LocalizedError, CodedError {
             return "network_error".ub_localized
         case .statusError(code: _): fallthrough
         case .parseError: fallthrough
+        case .jwtError(error: _): fallthrough
         case .unexpected(error: _):
             return "unexpected_error_title".ub_localized
         }
@@ -161,6 +162,12 @@ extension NetworkError: LocalizedError, CodedError {
             return "IBST\(code)"
         case .parseError:
             return "ICPARS"
+        case let .jwtError(error: error):
+            if let error = error as? DP3TNetworkingError {
+                return "IJWTNE\(error.errorCode)"
+            }
+            let nsError = error as NSError
+            return "IJWT\(nsError.code)"
         case let .unexpected(error: error):
             let nsError = error as NSError
             return "IUNXN\(nsError.code)"

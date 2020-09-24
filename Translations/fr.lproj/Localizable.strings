@@ -938,3 +938,37 @@
 
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Notifications d’exposition";
+"bottom_nav_tab_home" = "SwissCovid";
+"bottom_nav_tab_stats" = "Chiffres";
+"stats_title" = "utilisent déjà SwissCovid";
+"stats_legend_new_infections" = "Nouvelles infections déclarées";
+"stats_legend_new_infections_average" = "Vue sur 7 jours";
+"stats_legend_entered_covidcodes" = "Codes COVID saisis";
+"share_app_supertitle" = "Ensemble…";
+"share_app_title" = "éviter une deuxième vague";
+"share_app_button" = "Partager l'application";
+"share_app_body" = "Si un maximum de personnes activent l'application SwissCovid, nous pouvons interrompre rapidement les chaînes d'infection.";
+
+/*Text der geteilt wird*/
+"share_app_message" = "Si un maximum de personnes activent l'application SwissCovid, nous pouvons interrompre rapidement les chaînes d'infection.";
+
+/*URL die geteilt wird*/
+"share_app_url" = "https://ofsp-coronavirus.ch/application-swisscovid/#download";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
+"stats_counter" = "{COUNT} millions";
+
+/*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
+"stats_source_day" = "État des données {DAY}";
+
+/*Links zu weiteren Statistiken*/
+"stats_more_statistics_button" = "Autres statistiques";
+
+/*URL zu weiteren statistiken*/
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/fr/home/methodes-innovation/swisscovid-app-monitoring.html";
+
+/*Body of the error message shown when the statistics data cannot be loaded*/
+"stats_loading_error_text" = "Les données ne peuvent pas être chargées pour l'instant.";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
+"stats_counter_full" = "{COUNT} million";

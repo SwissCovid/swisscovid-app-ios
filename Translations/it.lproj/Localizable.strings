@@ -938,3 +938,37 @@
 
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Notifiche di esposizione";
+"bottom_nav_tab_home" = "SwissCovid";
+"bottom_nav_tab_stats" = "Cifre";
+"stats_title" = "utilizzano già SwissCovid";
+"stats_legend_new_infections" = "Nuove infezioni segnalate";
+"stats_legend_new_infections_average" = "Media su 7 giorni";
+"stats_legend_entered_covidcodes" = "Codici Covid immessi";
+"share_app_supertitle" = "Insieme…";
+"share_app_title" = "possiamo impedire una seconda ondata";
+"share_app_button" = "Condividi l'app";
+"share_app_body" = "Quante più persone attivano l'app SwissCovid, tanto più è possibile interrompere precocemente le catene di infezione.";
+
+/*Text der geteilt wird*/
+"share_app_message" = "Quante più persone attivano l'app SwissCovid, tanto più è possibile interrompere precocemente le catene di infezione.";
+
+/*URL die geteilt wird*/
+"share_app_url" = "https://ufsp-coronavirus.ch/app-swisscovid/#download";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
+"stats_counter" = "{COUNT} mio.";
+
+/*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
+"stats_source_day" = "Stato dei dati {DAY}";
+
+/*Links zu weiteren Statistiken*/
+"stats_more_statistics_button" = "Altre statistiche";
+
+/*URL zu weiteren statistiken*/
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/en/home/innovative-methods/swisscovid-app-monitoring.html";
+
+/*Body of the error message shown when the statistics data cannot be loaded*/
+"stats_loading_error_text" = "Impossibile caricare i dati in questo momento";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
+"stats_counter_full" = "{COUNT} milioni";
