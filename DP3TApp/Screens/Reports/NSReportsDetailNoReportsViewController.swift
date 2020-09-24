@@ -67,7 +67,7 @@ class NSReportsDetailNoReportsViewController: NSTitleViewScrollViewController {
     }
 
     override var titleHeight: CGFloat {
-        return super.titleHeight * NSFontSize.fontSizeMultiplicator
+        return (super.titleHeight + NSPadding.large) * NSFontSize.fontSizeMultiplicator
     }
 
     override var startPositionScrollView: CGFloat {

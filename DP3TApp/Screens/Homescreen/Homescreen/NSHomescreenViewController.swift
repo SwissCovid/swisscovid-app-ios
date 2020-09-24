@@ -37,7 +37,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         title = "app_name".ub_localized
 
         tabBarItem.image = UIImage(named: "ic-tracing")
-        tabBarItem.title = "tab_tracing_title".ub_localized
+        tabBarItem.title = "bottom_nav_tab_home".ub_localized
 
         // always load view at init, even if app starts at reports detail
         loadViewIfNeeded()
@@ -103,6 +103,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                     v.isUserInteractionEnabled = false
                 }
             }
+        }
+
+        if UIAccessibility.isVoiceOverRunning {
+            stackScrollView.scrollView.setContentOffset(.zero, animated: false)
         }
     }
 

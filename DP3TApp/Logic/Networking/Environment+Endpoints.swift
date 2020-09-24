@@ -22,4 +22,9 @@ extension Endpoint {
     static func onset(auth: AuthorizationRequestBody) -> Endpoint {
         return Environment.current.codegenService.endpoint("onset", method: .post, headers: ["accept": "*/*", "Content-Type": "application/json"], body: auth)
     }
+
+    /// Statistics
+    static func statistics() -> Endpoint {
+        return Environment.current.configService.endpoint("statistics")
+    }
 }
