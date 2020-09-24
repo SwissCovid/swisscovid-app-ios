@@ -28,6 +28,7 @@ struct UIStateModel: Equatable {
         case bluetoothTurnedOff
         case bluetoothPermissionError
         case tracingPermissionError(code: String?)
+        case tracingAuthorizationUnknown
         case timeInconsistencyError
         case unexpectedError(code: String?)
         case tracingEnded
