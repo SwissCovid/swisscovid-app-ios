@@ -14,16 +14,18 @@ class NSLoadingView: UIView {
     private let errorStackView = UIStackView()
     private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
 
+    private let errorImage: UIImage?
     private let errorTitleLabel = NSLabel(.title, textAlignment: .center)
     private let errorTextLabel = NSLabel(.textLight, textAlignment: .center)
-    private let errorCodeLabel = NSLabel(.smallRegular)
-    private let reloadButton = NSButton(title: "loading_view_reload".ub_localized)
+    private let errorCodeLabel = NSLabel(.smallRegular, numberOfLines: 3)
+    private let reloadButton: UBButton
 
     // MARK: - Init
 
-    init() {
+    init(reloadButton: UBButton = NSButton(title: "loading_view_reload".ub_localized), errorImage: UIImage? = nil) {
+        self.reloadButton = reloadButton
+        self.errorImage = errorImage
         super.init(frame: .zero)
-
         backgroundColor = .ns_background
         setup()
         accessibilityViewIsModal = true
@@ -36,9 +38,12 @@ class NSLoadingView: UIView {
     // MARK: - API
 
     public func startLoading() {
-        alpha = 1.0
         errorStackView.alpha = 0.0
         loadingIndicatorView.alpha = 1.0
+
+        UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+            self.alpha = 1.0
+        }, completion: nil)
 
         loadingIndicatorView.startAnimating()
     }
@@ -62,7 +67,9 @@ class NSLoadingView: UIView {
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0
         } else {
-            alpha = 0.0
+            UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState], animations: {
+                self.alpha = 0.0
+            }, completion: nil)
         }
     }
 
@@ -88,6 +95,10 @@ class NSLoadingView: UIView {
         errorStackView.spacing = NSPadding.medium
         errorStackView.alignment = .center
 
+        if let errorImage = errorImage {
+            let imageView = NSImageView(image: errorImage, dynamicColor: .ns_text)
+            errorStackView.addArrangedView(imageView)
+        }
         errorStackView.addArrangedSubview(errorTitleLabel)
         errorStackView.addArrangedSubview(errorTextLabel)
         errorStackView.addArrangedView(errorCodeLabel)

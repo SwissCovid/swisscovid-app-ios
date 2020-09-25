@@ -2,8 +2,9 @@ name: appstore
 
 on:
   push:
-    branches: 
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 
 jobs:
@@ -13,23 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.6
-      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
+    - name: Switch to Xcode 11.7
+      run: sudo xcode-select --switch /Applications/Xcode_11.7.app
 
     - name: Installs librsvg
       run: brew install librsvg
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -62,6 +54,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_DEV_Build.log
@@ -74,23 +67,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.6
-      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
+    - name: Switch to Xcode 11.7
+      run: sudo xcode-select --switch /Applications/Xcode_11.7.app
 
     - name: Installs librsvg
       run: brew install librsvg
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -123,6 +107,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_TEST_Build.log
@@ -135,23 +120,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.6
-      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
+    - name: Switch to Xcode 11.7
+      run: sudo xcode-select --switch /Applications/Xcode_11.7.app
 
     - name: Installs librsvg
       run: brew install librsvg
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -184,6 +160,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_ABNAHME_Build.log
@@ -196,8 +173,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.6
-      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
+    - name: Switch to Xcode 11.7
+      run: sudo xcode-select --switch /Applications/Xcode_11.7.app
     
     - name: Sets up bundler
       run: bundle update --bundler
@@ -231,6 +208,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_PROD_Build.log
@@ -243,23 +221,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 11.6
-      run: sudo xcode-select --switch /Applications/Xcode_11.6.app
+    - name: Switch to Xcode 11.7
+      run: sudo xcode-select --switch /Applications/Xcode_11.7.app
 
     - name: Installs librsvg
       run: brew install librsvg
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -293,6 +262,7 @@ jobs:
         path: "build/SwissCovid.xcarchive"
     
     - name: Archive log file
+      if: ${{ always() }}
       uses: actions/upload-artifact@v2
       with:
         name: AppStore_PROD_logging_Build.log

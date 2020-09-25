@@ -41,12 +41,16 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
         case .permissonError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
+        case .authorizationUnknown:
+            return "authorization unknown" // custom UI, this should never be visible
         case let .exposureNotificationError(error: error):
             let nsError = error as NSError
             if nsError.domain == "ENErrorDomain", nsError.code == 4 {
                 return "user_cancelled_key_sharing_error".ub_localized
             }
             return error.localizedDescription
+        case .infectionStatusNotResettable:
+            return nil
         }
     }
 
@@ -64,11 +68,15 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "ICANCU"
         case .permissonError:
             return "IPERME"
+        case .authorizationUnknown:
+            return "IPERMU"
         case .userAlreadyMarkedAsInfected:
             return "IUAMAI"
         case let .exposureNotificationError(error: error):
             let nsError = error as NSError
             return "IEN\(nsError.code)" // Should match code below
+        case .infectionStatusNotResettable:
+            return "ISNR"
         }
     }
 
@@ -144,6 +152,7 @@ extension NetworkError: LocalizedError, CodedError {
             return "network_error".ub_localized
         case .statusError(code: _): fallthrough
         case .parseError: fallthrough
+        case .jwtError(error: _): fallthrough
         case .unexpected(error: _):
             return "unexpected_error_title".ub_localized
         }
@@ -157,6 +166,12 @@ extension NetworkError: LocalizedError, CodedError {
             return "IBST\(code)"
         case .parseError:
             return "ICPARS"
+        case let .jwtError(error: error):
+            if let error = error as? DP3TNetworkingError {
+                return "IJWTNE\(error.errorCode)"
+            }
+            let nsError = error as NSError
+            return "IJWT\(nsError.code)"
         case let .unexpected(error: error):
             let nsError = error as NSError
             return "IUNXN\(nsError.code)"

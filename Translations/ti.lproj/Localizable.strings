@@ -927,3 +927,37 @@
 
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
+"bottom_nav_tab_home" = "SwissCovid";
+"bottom_nav_tab_stats" = "ቁጽርታት";
+"stats_title" = "ድሮ ንSwisCovid ይጥቐሙሉ እዮም";
+"stats_legend_new_infections" = "ዝተሓበሩ ሓድሽቲ ልበዳታት";
+"stats_legend_new_infections_average" = "ናይ 7 መዓልቲ ገምጋም";
+"stats_legend_entered_covidcodes" = "ዝተመዝገቡ ናይ ኮቪድ ኮዳት";
+"share_app_supertitle" = "ብሓባር …";
+"share_app_title" = "ካልኣይ ምዝርጋሕ ምውጋድ";
+"share_app_button" = "ነቲ ኤፕ ምኽፋል";
+"share_app_body" = "ብዝተኻእለ መጠን ብዙሓት ንSwissCovid ኤፕ እንድሕር ወሊዖሞ፣ ናይ ልበዳ ሰንሰለታት ብኣጋኡ ከነቋርጾም ንኽእል ኢና።";
+
+/*Text der geteilt wird*/
+"share_app_message" = "ብዝተኻእለ መጠን ብዙሓት ንSwissCovid ኤፕ እንድሕር ወሊዖሞ፣ ናይ ልበዳ ሰንሰለታት ብኣጋኡ ከነቋርጾም ንኽእል ኢና።";
+
+/*URL die geteilt wird*/
+"share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59"*/
+"stats_counter" = "{COUNT} ሚልዮን";
+
+/*Statistik Tag der Daten "{DAY}" wird mit dem Aktualisierungsdatum ersetzt z.B. "14.9."*/
+"stats_source_day" = "መርገጽ ዳታ {DAY}";
+
+/*Links zu weiteren Statistiken*/
+"stats_more_statistics_button" = "ቀጻሊ ስታቲስቲክስ";
+
+/*URL zu weiteren statistiken*/
+"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/de/home/innovative-methoden/swisscovid-app-monitoring.html";
+
+/*Body of the error message shown when the statistics data cannot be loaded*/
+"stats_loading_error_text" = "እቲ ዳታ ሕጂ ብገለ ክውሰድ ኣይክኣልን‘ዩ";
+
+/*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
+"stats_counter_full" = "{COUNT} ሚልዮን";

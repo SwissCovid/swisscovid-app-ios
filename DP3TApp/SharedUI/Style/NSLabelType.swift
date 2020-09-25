@@ -36,12 +36,15 @@ public enum NSLabelType: UBLabelType {
     case smallLight
     case textBold
     case smallBold
+    case ultraSmallBold
     case button // used for button
+    case smallButton // used for button
     case uppercaseBold
     case date
     case smallRegular
     case interRegular
     case interBold
+    case statsCounter
 
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize()
@@ -66,12 +69,15 @@ public enum NSLabelType: UBLabelType {
         case .smallLight: return UIFont(name: lightFontName, size: bfs - 3.0)!
         case .textBold: return UIFont(name: boldFontName, size: bfs)!
         case .smallBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
+        case .ultraSmallBold: return UIFont(name: boldFontName, size: bfs - 5.0)!
         case .button: return UIFont(name: boldFontName, size: bfs)!
+        case .smallButton: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .uppercaseBold: return UIFont(name: boldFontName, size: bfs)!
         case .date: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .smallRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
+        case .statsCounter: return UIFont(name: boldFontName, size: bfs + 23.0)!
         }
     }
 
@@ -92,7 +98,9 @@ public enum NSLabelType: UBLabelType {
         case .splashTitle: return 30.0 / 22.0
         case .textBold: return 24.0 / 16.0
         case .smallBold: return 24.0 / 16.0
+        case .ultraSmallBold: return 24.0 / 16.0
         case .button: return 1.0
+        case .smallButton: return 24.0 / 16.0
         case .uppercaseBold: return 26.0 / 16.0
         case .textLight: return 24.0 / 16.0
         case .smallLight: return 24.0 / 16.0
@@ -100,6 +108,7 @@ public enum NSLabelType: UBLabelType {
         case .smallRegular: return 26.0 / 13.0
         case .interRegular: return 24.0 / 16.0
         case .interBold: return 24.0 / 16.0
+        case .statsCounter: return 30.0 / 22.0
         }
     }
 

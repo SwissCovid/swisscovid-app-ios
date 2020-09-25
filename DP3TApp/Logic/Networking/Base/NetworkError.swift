@@ -14,5 +14,6 @@ enum NetworkError: Error {
     case networkError
     case statusError(code: Int)
     case parseError
+    case jwtError(error: Error)
     case unexpected(error: Error)
 }
