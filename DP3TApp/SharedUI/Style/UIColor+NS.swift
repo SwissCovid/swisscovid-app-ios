@@ -75,14 +75,15 @@ extension UIColor {
         return UIColor.setColorsForTheme(lightColor: UIColor.black, darkColor: UIColor.white)
     }
 
-    public static var ns_tabbarNormalBlue = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#4a4969")!, darkColor: UIColor(ub_hexString: "#cdcdd0")!)
-    public static var ns_tabbarSelectedBlue = ns_blue
+    public static var ns_tabbarNormalBlue = setColorsForTheme(lightColor: UIColor(ub_hexString: "#9493a6")!, darkColor: UIColor(ub_hexString: "#706f7e")!)
+    public static var ns_tabbarSelectedBlue = setColorsForTheme(lightColor: .ns_darkBlueBackground, darkColor: .white)
 
     static let grayColor = "#cdcdd0"
     public static var ns_backgroundDark = UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .black)
 
     public static var ns_gray = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .black),
                                                           darkColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .white))
+
     // MARK: - Splashscreen
 
     public static var ns_backgroundOnboardingSplashscreen = UIColor(ub_hexString: "#07a0e2")!
