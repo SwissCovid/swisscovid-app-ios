@@ -2,8 +2,9 @@ name: appstore
 
 on:
   push:
-    branches: 
-      - master
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
 
 jobs:
@@ -21,15 +22,6 @@ jobs:
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -84,15 +76,6 @@ jobs:
     - name: Installs magick
       run: brew install imagemagick
 
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
-
     - name: Sets up bundler
       run: bundle update --bundler
       
@@ -145,15 +128,6 @@ jobs:
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
@@ -255,15 +229,6 @@ jobs:
 
     - name: Installs magick
       run: brew install imagemagick
-
-    - name: Remove current version of Pango (contains a bug)
-      run: brew unlink pango 
-    
-    - name: Install older version of Pango 
-      run: brew install https://raw.githubusercontent.com/Homebrew/homebrew-core/7cf3b63be191cb2ce4cd86f4406915128ec97432/Formula/pango.rb
-
-    - name: Use older version of Pango
-      run: brew switch pango 1.42.4_1
 
     - name: Sets up bundler
       run: bundle update --bundler
