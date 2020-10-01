@@ -69,8 +69,8 @@ class NSStatsticsModuleHeader: UIView {
 
     func setCounter(number: Int?) {
         guard let number = number else {
-            self.counterLabel.alpha = 0
-            self.subtitle.alpha = 0
+            counterLabel.alpha = 0
+            subtitle.alpha = 0
             return
         }
 
@@ -78,7 +78,7 @@ class NSStatsticsModuleHeader: UIView {
             self.counterLabel.alpha = 1
             self.subtitle.alpha = 1
         }
-        
+
         guard currentNumber != number else { return }
 
         let displayLink = CADisplayLink(target: self, selector: #selector(updateDisplayLink))
@@ -90,8 +90,7 @@ class NSStatsticsModuleHeader: UIView {
                                 startCount: currentNumber,
                                 targetCount: number)
 
-
-        self.currentNumber = number
+        currentNumber = number
     }
 
     @objc func updateDisplayLink() {
@@ -128,9 +127,9 @@ class NSStatsticsModuleHeader: UIView {
     override var accessibilityLabel: String? {
         get {
             guard let animationValues = animationValues else {
-                return "\(formatNumber(number: currentNumber, fullText: true)) \( subtitle.accessibilityLabel ?? "")"
+                return "\(formatNumber(number: currentNumber, fullText: true)) \(subtitle.accessibilityLabel ?? "")"
             }
-            return "\(formatNumber(number: animationValues.targetCount, fullText: true)) \( subtitle.accessibilityLabel ?? "")"
+            return "\(formatNumber(number: animationValues.targetCount, fullText: true)) \(subtitle.accessibilityLabel ?? "")"
         }
         set {}
     }

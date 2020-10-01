@@ -8,8 +8,8 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
 import DP3TSDK
+import Foundation
 
 class StatisticsLoader {
     private let session = URLSession.certificatePinned
@@ -17,10 +17,9 @@ class StatisticsLoader {
     private var dataTask: URLSessionDataTask?
 
     public func get(completionHandler: @escaping (Result<StatisticsResponse, NetworkError>) -> Void) {
-
         let request = Endpoint.statistics().request()
 
-        dataTask = session.dataTask(with: request) { (data, response, error) in
+        dataTask = session.dataTask(with: request) { data, response, error in
 
             if let error = error {
                 Logger.log("Failed to load statistics, error: \(error.localizedDescription)")

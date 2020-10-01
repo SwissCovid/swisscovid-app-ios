@@ -44,7 +44,7 @@ class NSTabBarController: UITabBarController {
             .map(viewControler(for:))
 
         navigationItem.title = "app_name".ub_localized
-        
+
         // navigation bar
         let image = UIImage(named: "ic-info-outline")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
@@ -96,7 +96,7 @@ class NSTabBarController: UITabBarController {
 
     private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
         let normalAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarNormalBlue,
-                                NSAttributedString.Key.font : NSLabelType.ultraSmallBold.font]
+                                NSAttributedString.Key.font: NSLabelType.ultraSmallBold.font]
 
         itemAppearance.normal.iconColor = .ns_tabbarNormalBlue
         itemAppearance.focused.iconColor = .ns_tabbarNormalBlue
@@ -108,8 +108,6 @@ class NSTabBarController: UITabBarController {
 
         itemAppearance.selected.iconColor = .ns_tabbarSelectedBlue
         itemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarSelectedBlue,
-                                                       NSAttributedString.Key.font : NSLabelType.ultraSmallBold.font]
-
-
+                                                       NSAttributedString.Key.font: NSLabelType.ultraSmallBold.font]
     }
 }

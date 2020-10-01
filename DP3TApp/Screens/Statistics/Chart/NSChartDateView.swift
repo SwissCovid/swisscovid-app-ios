@@ -11,7 +11,6 @@
 import Foundation
 
 class NSChartDateView: UIView {
-
     private let configuration: ChartConfiguration
 
     private let lineLayer = CALayer()
@@ -25,7 +24,7 @@ class NSChartDateView: UIView {
         layer.addSublayer(textLayer)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -56,11 +55,11 @@ class NSChartDateView: UIView {
 
     private func updateChart() {
         guard !values.isEmpty else { return }
-        
+
         func getLineLayer(at index: Int) -> CAShapeLayer {
             guard index < lineLayers.count else {
                 let layer = newLine()
-                self.lineLayer.addSublayer(layer)
+                lineLayer.addSublayer(layer)
                 return layer
             }
             return lineLayers[index]
@@ -69,7 +68,7 @@ class NSChartDateView: UIView {
         func getTextLayer(at index: Int) -> CATextLayer {
             guard index < textLayers.count else {
                 let layer = newText()
-                self.textLayer.addSublayer(layer)
+                textLayer.addSublayer(layer)
                 return layer
             }
             return textLayers[index]
@@ -87,7 +86,7 @@ class NSChartDateView: UIView {
             let newLineLayer = getLineLayer(at: layerIndex)
 
             let linePath = UIBezierPath()
-            let xValue = CGFloat(xIndex) * (configuration.barWidth + configuration.barBorderWidth) + (configuration.barWidth) / 2.0 + configuration.barBorderWidth
+            let xValue = CGFloat(xIndex) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barWidth / 2.0 + configuration.barBorderWidth
             linePath.move(to: CGPoint(x: xValue,
                                       y: 0))
             linePath.addLine(to: CGPoint(x: xValue,
@@ -98,17 +97,16 @@ class NSChartDateView: UIView {
             newTextLayer.string = Self.formatter.string(from: value)
 
             newTextLayer.frame = CGRect(x: xValue - 35 / 2,
-                                     y: 13,
-                                     width: 35,
-                                     height: 15)
-
+                                        y: 13,
+                                        width: 35,
+                                        height: 15)
         }
 
         while lineLayers.count > layerIndex {
-            _ = self.lineLayer.sublayers?.popLast()
+            _ = lineLayer.sublayers?.popLast()
         }
         while textLayers.count > layerIndex {
-            _ = self.textLayer.sublayers?.popLast()
+            _ = textLayer.sublayers?.popLast()
         }
     }
 
@@ -138,10 +136,10 @@ class NSChartDateView: UIView {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-            lineLayers.forEach { (layer) in
+            lineLayers.forEach { layer in
                 layer.strokeColor = self.strokeColor.cgColor
             }
-            textLayers.forEach { (layer) in
+            textLayers.forEach { layer in
                 layer.foregroundColor = self.textColor.cgColor
             }
         }
