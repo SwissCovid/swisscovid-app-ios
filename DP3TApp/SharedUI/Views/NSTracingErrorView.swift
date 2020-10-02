@@ -151,10 +151,13 @@ class NSTracingErrorView: UIView {
                                                action: nil)
             }
         case let .tracingPermissionError(code):
+            let icon = UIImage(named: "ic-bluetooth-disabled")!
+            let title = "tracing_permission_error_title_ios".ub_localized.replaceSettingsString
+            let text = "tracing_permission_error_text_ios".ub_localized.replaceSettingsString
             if #available(iOS 13.7, *) {
-                return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                               title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
-                                               text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
+                return NSTracingErrorViewModel(icon: icon,
+                                               title: title,
+                                               text: text,
                                                buttonTitle: "ios_tracing_permission_error_button".ub_localized,
                                                errorCode: code,
                                                action: { _ in
@@ -162,9 +165,9 @@ class NSTracingErrorView: UIView {
                                                    NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
                                                })
             } else {
-                return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
-                                               title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
-                                               text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
+                return NSTracingErrorViewModel(icon: icon,
+                                               title: title,
+                                               text: text,
                                                buttonTitle: "onboarding_gaen_button_activate".ub_localized,
                                                errorCode: code,
                                                action: { _ in
