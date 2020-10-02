@@ -992,3 +992,6 @@
 
 /*iOS settings tutorial set as aktive region wie in iOS settings*/
 "ios_settings_tutorial_step_4_set_as_aktive_region" = "Set As Active Region";
+
+/*ios tracing permission fehlermeldung button text*/
+"ios_tracing_permission_error_button" = "";
