@@ -10,6 +10,7 @@
 
 import UIKit
 
+@available(iOS 13.7, *)
 class NSSettingsTutorialViewController: NSTutorialViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
