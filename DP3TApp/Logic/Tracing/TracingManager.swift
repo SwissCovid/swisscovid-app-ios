@@ -106,11 +106,10 @@ class TracingManager: NSObject {
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
                 case let .failure(error):
-                    switch error {
-                    case .userAlreadyMarkedAsInfected:
+                    if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
                         // Tracing should not start if the user is marked as infected
                         UIStateManager.shared.tracingStartError = nil
-                    default:
+                    } else {
                         UIStateManager.shared.tracingStartError = error
                     }
                 }
@@ -166,11 +165,10 @@ class TracingManager: NSObject {
                 case .success:
                     UIStateManager.shared.tracingStartError = nil
                 case let .failure(error):
-                    switch error {
-                    case .userAlreadyMarkedAsInfected:
+                    if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
                         // Tracing should not start if the user is marked as infected
                         UIStateManager.shared.tracingStartError = nil
-                    default:
+                    } else {
                         UIStateManager.shared.tracingStartError = error
                     }
                 }
