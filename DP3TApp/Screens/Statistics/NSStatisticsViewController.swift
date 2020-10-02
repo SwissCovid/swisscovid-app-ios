@@ -11,7 +11,6 @@
 import UIKit
 
 class NSStatisticsViewController: NSTitleViewScrollViewController {
-
     private let loadingView: NSLoadingView = {
         let button = NSUnderlinedButton()
         button.title = "loading_view_reload".ub_localized
@@ -55,7 +54,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
     }
 
-    private func loadData(){
+    private func loadData() {
         statisticsModule.statisticData = nil
         loadingView.startLoading()
         loader.get { [weak self] result in
@@ -72,7 +71,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
     }
 
-    private func share(){
+    private func share() {
         let items: [Any] = ["share_app_message".ub_localized, URL(string: "share_app_url".ub_localized)!]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true)
@@ -97,14 +96,13 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         }
         let wrapper = UIView()
         wrapper.addSubview(button)
-        button.snp.makeConstraints { (make) in
+        button.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.equalToSuperview().inset(NSPadding.medium)
             make.trailing.lessThanOrEqualToSuperview().inset(NSPadding.medium)
         }
 
         stackScrollView.addArrangedView(wrapper)
-
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -114,14 +112,14 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(shareModule)
 
-        self.view.addSubview(loadingView)
+        view.addSubview(loadingView)
         loadingView.backgroundColor = .clear
-        loadingView.snp.makeConstraints { (make) in
+        loadingView.snp.makeConstraints { make in
             make.edges.equalTo(statisticsModule.statisticsChartView)
         }
     }
 
-    private func moreStatisticsTouched(){
+    private func moreStatisticsTouched() {
         if let url = URL(string: "stats_more_statistics_url".ub_localized) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

@@ -11,7 +11,6 @@
 import UIKit
 
 class NSChartYAxisLegend: UIView {
-
     var yTicks: ChartYTicks? {
         didSet {
             updateLabels()
@@ -24,7 +23,7 @@ class NSChartYAxisLegend: UIView {
         super.init(frame: .zero)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -50,8 +49,8 @@ class NSChartYAxisLegend: UIView {
         func getLabel(at index: Int) -> NSLabel {
             guard index < labels.count else {
                 let label = NSLabel(.interRegular)
-                self.labels.append(label)
-                self.addSubview(label)
+                labels.append(label)
+                addSubview(label)
                 return label
             }
             return labels[index]
@@ -60,7 +59,7 @@ class NSChartYAxisLegend: UIView {
         let count = Int(ceil(Double(yTicks.maxValue / Double(yTicks.stepSize))))
         let relativeStep = Double(yTicks.stepSize) / yTicks.maxValue
         let chartHeight = frame.height - 39
-        for i in 0..<count {
+        for i in 0 ..< count {
             let label = getLabel(at: i)
             label.text = "\(i * yTicks.stepSize)"
             let size = label.intrinsicContentSize
@@ -71,10 +70,8 @@ class NSChartYAxisLegend: UIView {
         invalidateIntrinsicContentSize()
     }
 
-
     override func layoutSubviews() {
         super.layoutSubviews()
         updateLabels()
     }
-
 }
