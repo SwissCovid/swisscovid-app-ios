@@ -17,8 +17,13 @@ class NSTutorialViewController: NSViewController {
 
     let actionButton = NSButton(title: "onboarding_finish_button".ub_localized, style: .normal(.ns_blue))
 
+    override required init() {
+        super.init()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .ns_backgroundSecondary
         setupButton()
         setupScrollView()
     }
@@ -36,9 +41,17 @@ class NSTutorialViewController: NSViewController {
         // should be overwritten in subclass
     }
 
+    func add(step: NSTutorialListItemView.ViewModel) {
+        stackScrollView.addArrangedView(NSTutorialListItemView(viewModel: step))
+    }
+
     fileprivate func setupNavigationBar() {
         navigationItem.leftBarButtonItem = nil
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(closeButtonTouched))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            .font: NSLabelType.textBold.font,
+            .foregroundColor: UIColor.ns_blue,
+        ], for: .normal)
     }
 
     fileprivate func setupScrollView() {
@@ -82,12 +95,13 @@ class NSTutorialViewController: NSViewController {
         }
     }
 
-    func present(from rootViewController: UIViewController) {
-        let navCon = NSNavigationController(rootViewController: self)
+    static func present(from rootViewController: UIViewController) {
+        let navCon = NSNavigationController(rootViewController: self.init())
         navCon.lineView.isHidden = true
         // remove bottom 1 px line
         navCon.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navCon.navigationBar.shadowImage = UIImage()
+        navCon.navigationBar.barTintColor = .ns_backgroundSecondary
 
         if UIDevice.current.isSmallScreenPhone {
             navCon.modalPresentationStyle = .fullScreen

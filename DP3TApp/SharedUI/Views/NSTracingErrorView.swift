@@ -154,13 +154,11 @@ class NSTracingErrorView: UIView {
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
                                            title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
                                            text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
-                                           buttonTitle: "onboarding_gaen_button_activate".ub_localized,
+                                           buttonTitle: "ios_tracing_permission_error_button".ub_localized,
                                            errorCode: code,
                                            action: { _ in
-                                               guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-                                                   UIApplication.shared.canOpenURL(settingsUrl) else { return }
-
-                                               UIApplication.shared.open(settingsUrl)
+                                               guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                                               NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
                                            })
         case .tracingAuthorizationUnknown:
             return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,

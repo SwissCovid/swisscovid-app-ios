@@ -15,7 +15,7 @@ class NSTutorialListItemView: UIView {
     struct ViewModel {
         let index: Int
         let text: String
-        let image: UIImage?
+        let body: UIView?
     }
 
     init(viewModel: ViewModel) {
@@ -23,33 +23,32 @@ class NSTutorialListItemView: UIView {
 
         let indexLabel = NSLabel(.textBold)
         addSubview(indexLabel)
+        indexLabel.ub_setContentPriorityRequired()
         indexLabel.text = String(viewModel.index) + "."
 
-        let textLabel = NSLabel(.textLight)
+        let textLabel = NSLabel(.textLight, numberOfLines: 0)
         addSubview(textLabel)
         textLabel.text = viewModel.text
 
         indexLabel.snp.makeConstraints { make in
-            make.leading.top.equalToSuperview().inset(NSPadding.medium).priority(.medium)
+            make.leading.top.equalToSuperview().inset(NSPadding.large)
         }
 
         textLabel.snp.makeConstraints { make in
-            make.leading.equalTo(indexLabel.snp.trailing).inset(-NSPadding.medium)
-            make.top.trailing.equalToSuperview().inset(NSPadding.medium)
-            if viewModel.image == nil {
+            make.leading.equalTo(indexLabel.snp.trailing).inset(-NSPadding.small)
+            make.top.trailing.equalToSuperview().inset(NSPadding.large)
+            if viewModel.body == nil {
                 make.bottom.equalToSuperview()
             }
         }
 
-        if let image = viewModel.image {
-            let imageView = UIImageView(image: image)
-            addSubview(imageView)
-            imageView.ub_setContentPriorityRequired()
-            imageView.snp.makeConstraints { make in
-                make.centerX.equalToSuperview()
-
+        if let body = viewModel.body {
+            addSubview(body)
+            body.snp.makeConstraints { make in
+                make.leading.equalTo(indexLabel.snp.trailing).inset(-NSPadding.small)
                 make.bottom.equalToSuperview().inset(NSPadding.medium)
-                make.top.equalTo(textLabel.snp.bottom)
+                make.trailing.equalToSuperview().inset(NSPadding.large)
+                make.top.equalTo(textLabel.snp.bottom).inset(-NSPadding.medium)
             }
         }
     }
