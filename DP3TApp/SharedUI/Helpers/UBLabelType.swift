@@ -88,7 +88,7 @@ class UBLabel<T: UBLabelType>: UILabel {
         if isHtmlContent {
             textString.ub_replaceFonts(with: font)
 
-            textString.addAttribute(NSAttributedString.Key.foregroundColor, value: textColor, range: textRange)
+            textString.addAttribute(NSAttributedString.Key.foregroundColor, value: textColor as Any, range: textRange)
         } else {
             // check paragraph style
             let paragraphStyle = NSMutableParagraphStyle()

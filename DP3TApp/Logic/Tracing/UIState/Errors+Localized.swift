@@ -179,29 +179,6 @@ extension NetworkError: LocalizedError, CodedError {
     }
 }
 
-/// Swift does not (yet) allow to specify what kind off error is thrown
-/// Since we only want to pass CodedErrors through the app
-/// We wrap everything that should not happen
-enum UnexpectedThrownError: LocalizedError, CodedError {
-    var errorTitle: String? {
-        nil
-    }
-
-    case startTracing(error: Error)
-
-    var errorDescription: String? {
-        return "unexpected_error_title".ub_localized
-    }
-
-    var errorCodeString: String? {
-        switch self {
-        case let .startTracing(error):
-            let nsError = error as NSError
-            return "IUSTE\(nsError.code)"
-        }
-    }
-}
-
 extension CertificateValidationError: LocalizedError, CodedError {
     var errorTitle: String? {
         nil

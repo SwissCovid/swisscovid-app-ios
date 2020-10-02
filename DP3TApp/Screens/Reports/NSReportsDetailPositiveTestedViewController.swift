@@ -89,7 +89,5 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
                 self?.present(alert, animated: true, completion: nil)
             }
         }
-
-        container.isHidden = !TracingManager.shared.isPositiveTestDeletable
     }
 }
