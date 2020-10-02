@@ -34,7 +34,7 @@ class NSSettingsTutorialViewController: NSTutorialViewController {
             make.leading.trailing.equalToSuperview().inset(NSPadding.large)
         }
         stackScrollView.addArrangedView(wrapper)
-        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addSpacerView(2 * NSPadding.medium)
 
         add(step: .step1)
         add(step: .step2)
@@ -101,7 +101,6 @@ private extension NSTutorialListItemView.ViewModel {
             make.top.bottom.trailing.equalToSuperview().inset(NSPadding.medium)
         }
 
-        cell.layer.cornerRadius = NSPadding.small
         return cell
     }
 
@@ -120,7 +119,6 @@ private extension NSTutorialListItemView.ViewModel {
             make.top.bottom.equalToSuperview().inset(NSPadding.small)
         }
 
-        cell.layer.cornerRadius = NSPadding.small
         return cell
     }
 }

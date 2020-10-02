@@ -26,6 +26,7 @@ class NSTutorialViewController: NSViewController {
         view.backgroundColor = .ns_backgroundSecondary
         setupButton()
         setupScrollView()
+        view.bringSubviewToFront(buttonContainer)
     }
 
     override func viewWillAppear(_ animated: Bool) {
