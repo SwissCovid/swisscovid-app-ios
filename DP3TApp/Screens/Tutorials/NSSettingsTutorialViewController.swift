@@ -61,7 +61,8 @@ private extension NSTutorialListItemView.ViewModel {
     }
 
     static var step3: Self {
-        let cell = Self.settingsSwitchCellView(text: "ios_settings_tutorial_step_3_share_exposure_information".ub_localized)
+        let cell = Self.settingsTextCellView(image: UIImage(named: "ic-switch"),
+                                             text: "ios_settings_tutorial_step_3_share_exposure_information".ub_localized)
         return Self(index: 3,
                     text: "ios_settings_tutorial_step_3_text".ub_localized,
                     body: cell)
@@ -98,38 +99,6 @@ private extension NSTutorialListItemView.ViewModel {
         label.snp.makeConstraints { make in
             make.leading.equalTo(icon.snp.trailing).inset(-NSPadding.medium)
             make.top.bottom.trailing.equalToSuperview().inset(NSPadding.medium)
-        }
-
-        cell.layer.cornerRadius = NSPadding.small
-        return cell
-    }
-
-    static func settingsSwitchCellView(text: String) -> UIView {
-        let cell = UIView()
-        cell.backgroundColor = .systemBackground
-
-        let label = UILabel()
-        label.numberOfLines = 0
-        label.text = text
-        cell.addSubview(label)
-
-        let switchControl = UISwitch()
-        switchControl.isOn = true
-        switchControl.isUserInteractionEnabled = false
-
-        cell.addSubview(switchControl)
-
-        switchControl.snp.makeConstraints { make in
-            make.trailing.equalToSuperview().inset(NSPadding.medium)
-            make.centerY.equalToSuperview()
-            make.top.bottom.greaterThanOrEqualToSuperview().inset(NSPadding.small)
-        }
-
-        label.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(NSPadding.small)
-            make.trailing.equalTo(switchControl.snp.leading).inset(-NSPadding.medium)
-            make.centerY.equalTo(switchControl)
-            make.top.bottom.greaterThanOrEqualToSuperview().inset(NSPadding.small)
         }
 
         cell.layer.cornerRadius = NSPadding.small
