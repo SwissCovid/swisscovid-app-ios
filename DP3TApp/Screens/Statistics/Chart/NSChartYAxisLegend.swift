@@ -67,6 +67,12 @@ class NSChartYAxisLegend: UIView {
             y -= chartHeight * CGFloat(relativeStep) * CGFloat(i)
             label.frame = CGRect(x: 5, y: y, width: size.width, height: size.height)
         }
+
+        // remove unused labels
+        while labels.count > count {
+            _ = labels.popLast()?.removeFromSuperview()
+        }
+
         invalidateIntrinsicContentSize()
     }
 
