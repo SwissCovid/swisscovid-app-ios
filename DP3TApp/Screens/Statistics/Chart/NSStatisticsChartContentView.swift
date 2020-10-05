@@ -34,13 +34,12 @@ struct ChartConfiguration {
     let axisWidth: CGFloat
 
     static let main = ChartConfiguration(barWidth: 10,
-                                              barBorderWidth: 1,
-                                              chartHeight: 230,
-                                              axisWidth: 1)
+                                         barBorderWidth: 1,
+                                         chartHeight: 230,
+                                         axisWidth: 1)
 }
 
 class NSStatisticsChartContentView: UIView {
-
     private let infectionBarView: NSChartColumnView
 
     private let codeBarView: NSChartColumnView
@@ -62,11 +61,11 @@ class NSStatisticsChartContentView: UIView {
     }
 
     init() {
-        self.infectionBarView = .init(configuration: configuration)
-        self.codeBarView = .init(configuration: configuration)
-        self.dateView = .init(configuration: configuration)
-        self.lineView = .init(configuration: configuration)
-        self.yAxisLines = .init(configuration: configuration)
+        infectionBarView = .init(configuration: configuration)
+        codeBarView = .init(configuration: configuration)
+        dateView = .init(configuration: configuration)
+        lineView = .init(configuration: configuration)
+        yAxisLines = .init(configuration: configuration)
         super.init(frame: .zero)
 
         infectionBarView.barBackgroundColor = .ns_purpleBar
@@ -75,25 +74,24 @@ class NSStatisticsChartContentView: UIView {
         infectionBarView.frame = frame
         codeBarView.frame = frame
 
-
         addSubview(infectionBarView)
-        infectionBarView.snp.makeConstraints { (make) in
+        infectionBarView.snp.makeConstraints { make in
             make.leading.trailing.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(39)
         }
 
         addSubview(codeBarView)
-        codeBarView.snp.makeConstraints { (make) in
+        codeBarView.snp.makeConstraints { make in
             make.edges.equalTo(infectionBarView)
         }
 
         addSubview(lineView)
-        lineView.snp.makeConstraints { (make) in
+        lineView.snp.makeConstraints { make in
             make.edges.equalTo(infectionBarView)
         }
 
         addSubview(yAxisLines)
-        yAxisLines.snp.makeConstraints { (make) in
+        yAxisLines.snp.makeConstraints { make in
             make.edges.equalTo(infectionBarView)
         }
 
@@ -101,14 +99,14 @@ class NSStatisticsChartContentView: UIView {
                                                             darkColor: UIColor.white.withAlphaComponent(0.5))
         addSubview(divider)
         divider.alpha = 0.0
-        divider.snp.makeConstraints { (make) in
+        divider.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(infectionBarView.snp.bottom).inset(0)
             make.height.equalTo(configuration.axisWidth)
         }
 
         addSubview(dateView)
-        dateView.snp.makeConstraints { (make) in
+        dateView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(divider.snp.bottom)
             make.bottom.equalToSuperview()

@@ -11,7 +11,6 @@
 import UIKit
 
 class NSStatisticsShareModule: UIView {
-
     private let stackView = UIStackView()
 
     private let superTitle = NSLabel(.textLight, textColor: .ns_blue, textAlignment: .center)
@@ -25,7 +24,7 @@ class NSStatisticsShareModule: UIView {
 
     private let text = NSLabel(.textLight)
 
-    var shareButtonTouched: (() -> ())?  {
+    var shareButtonTouched: (() -> Void)? {
         didSet {
             shareButton.touchUpCallback = shareButtonTouched
         }
@@ -35,7 +34,7 @@ class NSStatisticsShareModule: UIView {
         super.init(frame: .zero)
         addSubview(stackView)
         stackView.axis = .vertical
-        stackView.snp.makeConstraints { (make) in
+        stackView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(NSPadding.large)
         }
@@ -63,10 +62,7 @@ class NSStatisticsShareModule: UIView {
         accessibilityElements = [title, shareButton, text]
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-
-
 }

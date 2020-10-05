@@ -961,3 +961,33 @@
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
 "stats_counter_full" = "{COUNT} milion";
+
+/*iOS settings tutorial title*/
+"ios_settings_tutorial_title" = "Aktiviraj obaveštenja o kontaktima";
+
+/*iOS settings tutorial open settings button*/
+"ios_settings_tutorial_open_settings_button" = "Otvori podešavanja";
+
+/*iOS settings tutorial schritt 1*/
+"ios_settings_tutorial_step_1_text" = "Otvorite podešavanja sistema preko tipke dole.";
+
+/*iOS settings tutorial schritt 2*/
+"ios_settings_tutorial_step_2_text" = "Odaberite:";
+
+/*ios settings tutorial exposure notification text wie in iOS settings*/
+"ios_settings_tutorial_step_2_exposure_notification" = "Obaveštenja o kontaktima";
+
+/*iOS settings tutorial schritt 3*/
+"ios_settings_tutorial_step_3_text" = "Prvo aktivirajte funkciju...";
+
+/*iOS settings tutorial share exposure notification text wie in iOS settings*/
+"ios_settings_tutorial_step_3_share_exposure_information" = "Podeli informacije o kontaktima";
+
+/*iOS settings tutorial schritt 4*/
+"ios_settings_tutorial_step_4_text" = "Ako to već niste napravili, sada možete definisati SwissCovid kao aktivni region.";
+
+/*iOS settings tutorial set as aktive region wie in iOS settings*/
+"ios_settings_tutorial_step_4_set_as_aktive_region" = "Definiši kao aktivni region";
+
+/*ios tracing permission fehlermeldung button text*/
+"ios_tracing_permission_error_button" = "Tako to funkcioniše";

@@ -11,7 +11,6 @@
 import UIKit
 
 class NSStatisticsModuleView: UIView {
-
     private let stackView = UIStackView()
 
     private let header = NSStatsticsModuleHeader()
@@ -24,12 +23,12 @@ class NSStatisticsModuleView: UIView {
                                            legend,
                                            lastUpdatedLabel]
 
-    
     static var formatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "dd.MM."
         return df
     }()
+
     var statisticData: StatisticsResponse? {
         didSet {
             guard let data = statisticData else {
