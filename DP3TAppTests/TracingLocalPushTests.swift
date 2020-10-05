@@ -11,15 +11,33 @@
 @testable import DP3TApp
 import XCTest
 
+class MockTracingLocalPush: TracingLocalPush {
+    var nowString = "01.09.2020 10:00"
+
+    override var now: Date {
+        date(nowString)
+    }
+
+    func date(_ string: String) -> Date {
+        return Self.formatter.date(from: string)!
+    }
+
+    static var formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yyyy HH:mm"
+        return df
+    }()
+}
+
 class TracingLocalPushTests: XCTestCase {
     fileprivate var center: MockNotificationCenter!
-    fileprivate var tlp: TracingLocalPush!
+    fileprivate var tlp: MockTracingLocalPush!
     fileprivate var keychain: MockKeychain!
 
     override func setUp() {
         keychain = MockKeychain()
         center = MockNotificationCenter()
-        tlp = TracingLocalPush(notificationCenter: center, keychain: keychain)
+        tlp = MockTracingLocalPush(notificationCenter: center, keychain: keychain)
     }
 
     func testBackgroundTaskWarning() {
@@ -88,6 +106,20 @@ class TracingLocalPushTests: XCTestCase {
         XCTAssertEqual(center.requests.first?.identifier, TracingLocalPush.ErrorIdentifiers.bluetooth.rawValue)
 
         tlp.handleTracingState(.active)
+        XCTAssertEqual(center.requests.count, 0)
+    }
+
+    func testDontGenerateBluetoothNotificationDuringNight() {
+        tlp.nowString = "01.09.2020 23:30"
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        XCTAssertEqual(center.requests.count, 0)
+
+        tlp.nowString = "01.09.2020 01:30"
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
+        XCTAssertEqual(center.requests.count, 0)
+
+        tlp.nowString = "01.09.2020 06:30"
+        tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         XCTAssertEqual(center.requests.count, 0)
     }
 

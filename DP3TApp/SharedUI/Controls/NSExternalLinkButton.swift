@@ -42,7 +42,7 @@ class NSExternalLinkButton: UBButton {
 
     init(style: Style = .normal(color: .white), size: Size = .normal) {
         self.style = style
-        self.buttonSize = size
+        buttonSize = size
         super.init()
         updateLayout()
     }
@@ -63,7 +63,7 @@ class NSExternalLinkButton: UBButton {
             switch buttonSize {
             case .normal:
                 spacing = 8.0
-            case.small:
+            case .small:
                 spacing = 6.0
             }
             imageEdgeInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: spacing)
@@ -91,7 +91,7 @@ class NSExternalLinkButton: UBButton {
             switch buttonSize {
             case .normal:
                 spacing = 8.0
-            case.small:
+            case .small:
                 spacing = 6.0
             }
             imageEdgeInsets = UIEdgeInsets(top: 0.0, left: spacing, bottom: 0.0, right: 0.0)
@@ -106,12 +106,11 @@ class NSExternalLinkButton: UBButton {
         case .small:
             titleLabel?.font = NSLabelType.smallButton.font
             if let titleLabel = titleLabel {
-                imageView?.snp.makeConstraints({ (make) in
+                imageView?.snp.makeConstraints { make in
                     make.height.width.equalTo(titleLabel.snp.height)
-                })
+                }
             }
         }
-
 
         highlightXInset = -NSPadding.small
         highlightYInset = -NSPadding.small

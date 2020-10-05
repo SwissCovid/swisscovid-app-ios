@@ -11,7 +11,6 @@
 import UIKit
 
 class NSChartColumnView: UIView {
-
     private let configuration: ChartConfiguration
 
     init(configuration: ChartConfiguration) {
@@ -20,10 +19,9 @@ class NSChartColumnView: UIView {
         layer.masksToBounds = true
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
     var borderColor: UIColor = .ns_background {
         didSet {
@@ -53,7 +51,7 @@ class NSChartColumnView: UIView {
 
     private func updateChart() {
         guard !values.isEmpty else { return }
-        
+
         func getBar(at index: Int) -> CALayer {
             guard index < bars.count else {
                 let layer = newBar()
@@ -65,11 +63,10 @@ class NSChartColumnView: UIView {
 
         for (index, value) in values.enumerated() {
             let bar = getBar(at: index)
-            let endFrame =  CGRect(x: CGFloat(index) * (configuration.barWidth + configuration.barBorderWidth),
-                                   y: ceil(frame.height * (1.0 - CGFloat(value ?? 0))),
-                                   width: configuration.barWidth + 2 * configuration.barBorderWidth,
-                                   height: ceil(frame.height * CGFloat(value ?? 0)) + 5) //make sure that the bar always extens to to full height
-
+            let endFrame = CGRect(x: CGFloat(index) * (configuration.barWidth + configuration.barBorderWidth),
+                                  y: ceil(frame.height * (1.0 - CGFloat(value ?? 0))),
+                                  width: configuration.barWidth + 2 * configuration.barBorderWidth,
+                                  height: ceil(frame.height * CGFloat(value ?? 0)) + 5) // make sure that the bar always extens to to full height
 
             let oldHeight = bar.frame.height
             bar.frame = endFrame
@@ -85,11 +82,10 @@ class NSChartColumnView: UIView {
             opacityAnimation.toValue = 1
             opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
             bar.add(opacityAnimation, forKey: nil)
-
         }
 
         while bars.count > values.count {
-            _ = self.layer.sublayers?.popLast()
+            _ = layer.sublayers?.popLast()
         }
     }
 
@@ -104,11 +100,10 @@ class NSChartColumnView: UIView {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-            layer.sublayers?.forEach({ (layer) in
+            layer.sublayers?.forEach { layer in
                 layer.borderColor = borderColor.cgColor
                 layer.backgroundColor = barBackgroundColor.cgColor
-            })
+            }
         }
     }
-
 }

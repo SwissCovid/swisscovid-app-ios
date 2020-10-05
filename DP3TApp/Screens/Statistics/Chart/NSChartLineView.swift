@@ -11,7 +11,6 @@
 import UIKit
 
 class NSChartLineView: UIView {
-
     private let configuration: ChartConfiguration
 
     init(configuration: ChartConfiguration) {
@@ -25,10 +24,9 @@ class NSChartLineView: UIView {
         layer.addSublayer(lineLayer)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 
     var lineColor: UIColor = .ns_purple {
         didSet {
@@ -66,7 +64,7 @@ class NSChartLineView: UIView {
             for (index, point) in points.enumerated() {
                 if index == 0 {
                     linePath.move(to: point)
-                } else  {
+                } else {
                     linePath.addLine(to: point)
                 }
             }
@@ -78,9 +76,7 @@ class NSChartLineView: UIView {
         opacityAnimation.timingFunction = CAMediaTimingFunction(name: .easeOut)
         lineLayer.add(opacityAnimation, forKey: nil)
 
-
         lineLayer.path = linePath.cgPath
-
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -100,8 +96,8 @@ class NSChartLineView: UIView {
 
         assert(segmentCount > 0)
         let interSpace = (size.width - (2 * padding)) / CGFloat(segmentCount)
-        for index in 1...segmentCount {
-            bezier.addLine(to: CGPoint(x: CGFloat(index) * interSpace + padding , y: size.height - padding))
+        for index in 1 ... segmentCount {
+            bezier.addLine(to: CGPoint(x: CGFloat(index) * interSpace + padding, y: size.height - padding))
         }
         return bezier.cgPath
     }
