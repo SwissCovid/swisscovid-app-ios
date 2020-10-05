@@ -11,7 +11,6 @@
 import UIKit
 
 class NSStatisticsModuleLegendView: UIStackView {
-
     init() {
         super.init(frame: .zero)
         axis = .vertical
@@ -21,7 +20,7 @@ class NSStatisticsModuleLegendView: UIStackView {
         addArrangedSubview(NSStatisticsModuleLegendViewItem(type: .enteredCodes))
     }
 
-    required init(coder: NSCoder) {
+    required init(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -39,12 +38,12 @@ class NSStatisticsModuleLegendViewItem: UIView {
         addSubview(imageView)
         addSubview(label)
 
-        imageView.snp.makeConstraints { (make) in
+        imageView.snp.makeConstraints { make in
             make.size.equalTo(13)
             make.leading.centerY.equalToSuperview()
         }
 
-        label.snp.makeConstraints { (make) in
+        label.snp.makeConstraints { make in
             make.top.bottom.trailing.equalToSuperview()
             make.leading.equalTo(imageView.snp.trailing).inset(-NSPadding.medium)
         }
@@ -68,7 +67,7 @@ class NSStatisticsModuleLegendViewItem: UIView {
         }
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -11,7 +11,6 @@
 import UIKit
 
 class NSChartYAxisLines: UIView {
-
     private let configuration: ChartConfiguration
 
     var lineColor: UIColor = UIColor.setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.1),
@@ -36,11 +35,11 @@ class NSChartYAxisLines: UIView {
         lineLayer.fillColor = nil
         lineLayer.strokeColor = lineColor.cgColor
         lineLayer.lineWidth = 1.0
-        lineLayer.lineDashPattern = [2,2]
+        lineLayer.lineDashPattern = [2, 2]
         layer.addSublayer(lineLayer)
     }
 
-    required init?(coder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
@@ -52,7 +51,7 @@ class NSChartYAxisLines: UIView {
         let count = Int(ceil(Double(yTicks.maxValue / Double(yTicks.stepSize))))
         let path = UIBezierPath()
         let relativeStep = Double(yTicks.stepSize) / yTicks.maxValue
-        for i in 1...count {
+        for i in 1 ... count {
             let y = CGFloat(1 - (Double(i) * relativeStep)) * frame.height
             path.move(to: CGPoint(x: 0, y: y))
             path.addLine(to: CGPoint(x: frame.width, y: y))
@@ -66,7 +65,6 @@ class NSChartYAxisLines: UIView {
         }
     }
 
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         updateLines()

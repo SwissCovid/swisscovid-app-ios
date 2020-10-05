@@ -970,3 +970,33 @@
 
 /*Zahlenformat für die Aktive nutzer nummer {COUNT} wird durch die aktuelle Zahl ersetzt z.b. "1.59". Voll Millionen wort*/
 "stats_counter_full" = "{COUNT} million";
+
+/*iOS settings tutorial title*/
+"ios_settings_tutorial_title" = "Activate encounter notifications";
+
+/*iOS settings tutorial open settings button*/
+"ios_settings_tutorial_open_settings_button" = "Open settings";
+
+/*iOS settings tutorial schritt 1*/
+"ios_settings_tutorial_step_1_text" = "Open the system settings via the button below.";
+
+/*iOS settings tutorial schritt 2*/
+"ios_settings_tutorial_step_2_text" = "Select:";
+
+/*ios settings tutorial exposure notification text wie in iOS settings*/
+"ios_settings_tutorial_step_2_exposure_notification" = "Exposure Notifications";
+
+/*iOS settings tutorial schritt 3*/
+"ios_settings_tutorial_step_3_text" = "First activate the function…";
+
+/*iOS settings tutorial share exposure notification text wie in iOS settings*/
+"ios_settings_tutorial_step_3_share_exposure_information" = "Share Exposure Information";
+
+/*iOS settings tutorial schritt 4*/
+"ios_settings_tutorial_step_4_text" = "If not done already, you can now set SwissCovid as active region.";
+
+/*iOS settings tutorial set as aktive region wie in iOS settings*/
+"ios_settings_tutorial_step_4_set_as_aktive_region" = "Set As Active Region";
+
+/*ios tracing permission fehlermeldung button text*/
+"ios_tracing_permission_error_button" = "How it works";
