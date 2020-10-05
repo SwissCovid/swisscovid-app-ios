@@ -993,7 +993,7 @@
 "ios_settings_tutorial_step_3_share_exposure_information" = "Share Exposure Information";
 
 /*iOS settings tutorial schritt 4*/
-"ios_settings_tutorial_step_4_text" = "If not done already, you can now set SwissCovid as an active region.";
+"ios_settings_tutorial_step_4_text" = "If not done already, you can now set SwissCovid as active region.";
 
 /*iOS settings tutorial set as aktive region wie in iOS settings*/
 "ios_settings_tutorial_step_4_set_as_aktive_region" = "Set As Active Region";
