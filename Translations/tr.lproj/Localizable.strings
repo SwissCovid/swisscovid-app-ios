@@ -966,7 +966,7 @@
 "ios_settings_tutorial_title" = "Temas bildirimlerini aktifleştir";
 
 /*iOS settings tutorial open settings button*/
-"ios_settings_tutorial_open_settings_button" = "ምስትኽኻል ምኽፋት";
+"ios_settings_tutorial_open_settings_button" = "Ayarları aç";
 
 /*iOS settings tutorial schritt 1*/
 "ios_settings_tutorial_step_1_text" = "Aşağıdaki tuşu kullanarak sistem ayarlarını açın.";
