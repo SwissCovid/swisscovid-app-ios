@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import UIKit
 
 @available(iOS 13.7, *)
@@ -16,12 +17,30 @@ class NSSettingsTutorialViewController: NSTutorialViewController {
         super.viewDidLoad()
         setupContent()
         actionButton.title = "ios_settings_tutorial_open_settings_button".ub_localized
+
+        NotificationCenter.default.addObserver(self, selector: #selector(appMovedToForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
     }
 
     override func actionButtonTouched() {
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
             UIApplication.shared.canOpenURL(settingsUrl) else { return }
         UIApplication.shared.open(settingsUrl)
+    }
+
+    @objc func appMovedToForeground() {
+        dismissIfNeeded()
+    }
+
+    func dismissIfNeeded() {
+        DP3TTracing.status { [weak self] result in
+            guard let self = self else { return }
+            // if trackingState is active we can dismiss the tutorial
+            // if only the active app was modified iOS does not kill the app
+            if case let Result.success(state) = result,
+                state.trackingState == .active {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
     }
 
     fileprivate func setupContent() {
