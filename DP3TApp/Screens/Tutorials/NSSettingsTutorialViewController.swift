@@ -126,12 +126,14 @@ private extension NSTutorialListItemView.ViewModel {
     static func settingsButtonView(text: String) -> UIView {
         let cell = UIView()
         cell.backgroundColor = .systemBackground
+        cell.isAccessibilityElement = false
 
         let button = UIButton()
         button.setTitle(text, for: .normal)
         button.contentHorizontalAlignment = .leading
         button.setTitleColor(.systemBlue, for: .normal)
         cell.addSubview(button)
+        button.isAccessibilityElement = false
 
         button.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
