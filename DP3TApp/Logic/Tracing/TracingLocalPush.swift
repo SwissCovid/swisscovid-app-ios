@@ -64,6 +64,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         center.removeAllDeliveredNotifications()
     }
 
+    var now: Date {
+        .init()
+    }
+
     @KeychainPersisted(key: "exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [String] {
         didSet {
@@ -220,6 +224,16 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         guard !scheduledErrorIdentifiers.contains(identifier) else {
             return
         }
+
+        // skip if hour is between 23:00 and 07:00 in order to not schedule notifications during the night
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour], from: now)
+        guard let hour = components.hour,
+            hour > 7,
+            hour < 23 else {
+            return
+        }
+
         scheduledErrorIdentifiers.append(identifier)
 
         let content = UNMutableNotificationContent()
