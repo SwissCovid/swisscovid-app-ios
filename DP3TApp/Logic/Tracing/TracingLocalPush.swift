@@ -88,6 +88,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         let content = UNMutableNotificationContent()
         content.title = "push_exposed_title".ub_localized
         content.body = "push_exposed_text".ub_localized
+        content.sound = .default
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         center.add(request, withCompletionHandler: nil)
@@ -224,8 +225,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = text
-        content.sound = .default
-        // set the notification to trigger in 1 minute since the state could only be temporäry
+        // set the notification to trigger in 1 minute since the state could only be temporary
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
         let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
