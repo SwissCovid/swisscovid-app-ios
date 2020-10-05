@@ -963,31 +963,31 @@
 "stats_counter_full" = "{COUNT} milyon";
 
 /*iOS settings tutorial title*/
-"ios_settings_tutorial_title" = "";
+"ios_settings_tutorial_title" = "Temas bildirimlerini aktifleştir";
 
 /*iOS settings tutorial open settings button*/
-"ios_settings_tutorial_open_settings_button" = "";
+"ios_settings_tutorial_open_settings_button" = "ምስትኽኻል ምኽፋት";
 
 /*iOS settings tutorial schritt 1*/
-"ios_settings_tutorial_step_1_text" = "";
+"ios_settings_tutorial_step_1_text" = "Aşağıdaki tuşu kullanarak sistem ayarlarını açın.";
 
 /*iOS settings tutorial schritt 2*/
-"ios_settings_tutorial_step_2_text" = "";
+"ios_settings_tutorial_step_2_text" = "Seçin:";
 
 /*ios settings tutorial exposure notification text wie in iOS settings*/
-"ios_settings_tutorial_step_2_exposure_notification" = "Exposure Notifications";
+"ios_settings_tutorial_step_2_exposure_notification" = "Temas bildirimleri";
 
 /*iOS settings tutorial schritt 3*/
-"ios_settings_tutorial_step_3_text" = "";
+"ios_settings_tutorial_step_3_text" = "Önce fonksiyonu aktive edin...";
 
 /*iOS settings tutorial share exposure notification text wie in iOS settings*/
-"ios_settings_tutorial_step_3_share_exposure_information" = "Share Exposure Information";
+"ios_settings_tutorial_step_3_share_exposure_information" = "Temas bilgilerini paylaş";
 
 /*iOS settings tutorial schritt 4*/
-"ios_settings_tutorial_step_4_text" = "";
+"ios_settings_tutorial_step_4_text" = "Henüz belirlemediyseniz, SwissCovid'i geçerli bölge olarak tanımlayabilirsiniz.";
 
 /*iOS settings tutorial set as aktive region wie in iOS settings*/
-"ios_settings_tutorial_step_4_set_as_aktive_region" = "Set As Active Region";
+"ios_settings_tutorial_step_4_set_as_aktive_region" = "Geçerli bölge olarak tanımla";
 
 /*ios tracing permission fehlermeldung button text*/
-"ios_tracing_permission_error_button" = "";
+"ios_tracing_permission_error_button" = "Nasıl çalışır";
