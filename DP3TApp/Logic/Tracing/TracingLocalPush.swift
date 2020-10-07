@@ -64,6 +64,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         center.removeAllDeliveredNotifications()
     }
 
+    var now: Date {
+        .init()
+    }
+
     @KeychainPersisted(key: "exposureIdentifiers", defaultValue: [])
     private var exposureIdentifiers: [String] {
         didSet {
@@ -88,6 +92,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         let content = UNMutableNotificationContent()
         content.title = "push_exposed_title".ub_localized
         content.body = "push_exposed_text".ub_localized
+        content.sound = .default
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         center.add(request, withCompletionHandler: nil)
@@ -219,13 +224,22 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         guard !scheduledErrorIdentifiers.contains(identifier) else {
             return
         }
+
+        // skip if hour is between 23:00 and 07:00 in order to not schedule notifications during the night
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour], from: now)
+        guard let hour = components.hour,
+            hour > 7,
+            hour < 23 else {
+            return
+        }
+
         scheduledErrorIdentifiers.append(identifier)
 
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = text
-        content.sound = .default
-        // set the notification to trigger in 1 minute since the state could only be temporäry
+        // set the notification to trigger in 1 minute since the state could only be temporary
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: false)
         let request = UNNotificationRequest(identifier: identifier.rawValue, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
