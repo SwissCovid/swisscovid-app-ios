@@ -193,6 +193,7 @@ import UIKit
                 case .fakeRequest: return "synchronizations_view_sync_via_fake_request".ub_localized
                 case .nextDayKeyUpload: return "synchronizations_view_sync_via_next_day_key_upload".ub_localized
             #endif
+            case .config: return "synchronizations_view_config_request".ub_localized
             }
         }
     }
