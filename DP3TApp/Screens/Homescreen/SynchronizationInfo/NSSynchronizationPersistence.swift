@@ -37,7 +37,6 @@ class NSSynchronizationPersistence {
             case fakeRequest
             case nextDayKeyUpload
         #endif
-        case config
     }
 
     init?() {
@@ -141,7 +140,6 @@ extension NSSynchronizationPersistence.EventType: Value {
             case 3: return .fakeRequest
             case 4: return .nextDayKeyUpload
         #endif
-        case 5: return .config
         default: fatalError()
         }
     }
@@ -155,7 +153,6 @@ extension NSSynchronizationPersistence.EventType: Value {
             case .fakeRequest: return 3
             case .nextDayKeyUpload: return 4
         #endif
-        case .config: return 5
         }
     }
 }

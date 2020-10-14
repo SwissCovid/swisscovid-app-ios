@@ -122,7 +122,6 @@ class ConfigManager: NSObject {
         }
 
         Logger.log("Load Config", appState: true)
-        NSSynchronizationPersistence.shared?.appendLog(eventType: .config, date: Date(), payload: nil)
 
         dataTask = session.dataTask(with: request, completionHandler: { data, response, error in
 
