@@ -5,7 +5,7 @@
 	<key>ENDeveloperRegion</key>
 	<string>$(EN_DEVELOPER_REGION)</string>
 	<key>ENAPIVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>BGTaskSchedulerPermittedIdentifiers</key>
 	<array>
 		<string>org.dpppt.exposure-notification</string>
