@@ -85,10 +85,7 @@ class UBButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
 
-        highlightView.frame = bounds.inset(by: UIEdgeInsets(top: highlightYInset + contentEdgeInsets.top,
-                                                            left: highlightXInset + contentEdgeInsets.left,
-                                                            bottom: highlightYInset + contentEdgeInsets.bottom,
-                                                            right: highlightXInset + contentEdgeInsets.right))
+        highlightView.frame = bounds.inset(by: UIEdgeInsets(top: highlightYInset, left: highlightXInset, bottom: highlightYInset, right: highlightXInset))
     }
 
     func setHighlighted(_ highlighted: Bool, animated: Bool = false) {
