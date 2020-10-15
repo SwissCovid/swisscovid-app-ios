@@ -82,7 +82,15 @@ import UIKit
             title.text = "synchronizations_view_info_title".ub_localized
             let infoQuestion = NSOnboardingInfoView(icon: UIImage(named: "ic-sync")!, text: "synchronizations_view_info_answer".ub_localized, title: "synchronizations_view_info_question".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
 
+            let nextFakeRequest = FakePublishManager.shared.nextScheduledFakeRequestDate
+            let nextFakeInfoView = NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!,
+                                                        text: "synchronizations_next_fake_request".ub_localized + " " + dateFormatter.string(from: nextFakeRequest),
+                                                        title: nil,
+                                                        leftRightInset: 0,
+                                                        dynamicIconTintColor: .ns_blue)
+
             infoView.addSubview(infoQuestion)
+            infoView.addSubview(nextFakeInfoView)
             infoView.addSubview(title)
 
             title.snp.makeConstraints { make in
@@ -91,6 +99,11 @@ import UIKit
 
             infoQuestion.snp.makeConstraints { make in
                 make.top.equalTo(title.snp.bottom).offset(NSPadding.medium)
+                make.leading.trailing.equalTo(infoView.layoutMarginsGuide)
+            }
+
+            nextFakeInfoView.snp.makeConstraints { make in
+                make.top.equalTo(infoQuestion.snp.bottom).offset(NSPadding.medium)
                 make.leading.trailing.bottom.equalTo(infoView.layoutMarginsGuide)
             }
         }
@@ -180,6 +193,7 @@ import UIKit
                 case .fakeRequest: return "synchronizations_view_sync_via_fake_request".ub_localized
                 case .nextDayKeyUpload: return "synchronizations_view_sync_via_next_day_key_upload".ub_localized
             #endif
+            case .config: return "synchronizations_view_config_request".ub_localized
             }
         }
     }
