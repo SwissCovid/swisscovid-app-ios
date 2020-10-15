@@ -114,7 +114,8 @@ class NSExternalLinkButton: UBButton {
 
         highlightXInset = -NSPadding.small
         highlightYInset = -NSPadding.small
-        highlightedBackgroundColor = UIColor.black.withAlphaComponent(0.15)
+        highlightedBackgroundColor = UIColor.setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.15),
+                                                               darkColor: UIColor.ns_darkModeBackground2.withAlphaComponent(0.8))
         highlightCornerRadius = 3.0
     }
 
