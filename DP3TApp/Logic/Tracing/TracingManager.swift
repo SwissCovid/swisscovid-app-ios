@@ -44,7 +44,6 @@ class TracingManager: NSObject {
     func initialize() {
         let bucketBaseUrl = Environment.current.configService.baseURL
         let reportBaseUrl = Environment.current.publishService.baseURL
-        // JWT is not supported for now since the backend keeps rotating the private key
 
         #if TEST_ENTITLEMENT
             let descriptor = ApplicationDescriptor(appId: appId,
