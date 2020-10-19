@@ -95,7 +95,6 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
             self?.callButtonTouched()
         }
         callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
-        callButton.highlightXInset = NSPadding.large + NSPadding.medium
         stackScrollView.addArrangedView(callButton)
 
         stackScrollView.addSpacerView(2.0 * NSPadding.medium)
