@@ -39,7 +39,7 @@ class NSStatsticsModuleHeader: UIView {
 
         counterLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(arrowImage.snp.bottom).inset(12)
+            make.top.equalTo(arrowImage.snp.bottom).inset(8)
         }
 
         subtitle.snp.makeConstraints { make in
