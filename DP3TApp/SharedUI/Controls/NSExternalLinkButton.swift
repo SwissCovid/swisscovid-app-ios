@@ -123,6 +123,15 @@ class NSExternalLinkButton: UBButton {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let frame = CGRect(x: imageView!.frame.minX,
+                           y: imageView!.frame.minY,
+                           width: titleLabel!.frame.maxX - imageView!.frame.minX,
+                           height: titleLabel!.frame.maxY - imageView!.frame.minY)
+        highlightView.frame = frame.inset(by: UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
+    }
+
     // MARK: - Fix content size
 
     override public var intrinsicContentSize: CGSize {
