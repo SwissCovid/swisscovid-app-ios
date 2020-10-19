@@ -92,8 +92,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         if let configTexts = configTexts {
             for faqEntry in configTexts.faqEntries {
-                guard let icon = UIImage(named: faqEntry.iconIos) else { continue }
-                stackScrollView.addArrangedView(NSOnboardingInfoView(icon: icon,
+                stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: faqEntry.iconIos),
                                                                      text: faqEntry.text,
                                                                      title: faqEntry.title,
                                                                      leftRightInset: 0,
