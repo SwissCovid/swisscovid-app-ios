@@ -76,7 +76,8 @@ class NSStatisticsChartContentView: UIView {
 
         addSubview(infectionBarView)
         infectionBarView.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview()
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(39)
         }
 
