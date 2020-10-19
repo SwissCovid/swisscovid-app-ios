@@ -20,7 +20,7 @@ class NSInfoBoxView: UIView {
     private let illustrationImageView = UIImageView()
 
     private let additionalLabel = NSLabel(.textBold)
-    private let externalLinkButton = NSExternalLinkButton()
+    private let externalLinkButton: NSExternalLinkButton
 
     private var externalLinkBottomConstraint: Constraint?
     private var additionalLabelBottomConstraint: Constraint?
@@ -69,11 +69,13 @@ class NSInfoBoxView: UIView {
         var additionalURL: String? = nil
         var dynamicIconTintColor: UIColor? = nil
         var titleLabelType: NSLabelType = .uppercaseBold
+        var externalLinkStyle: NSExternalLinkButton.Style = .normal(color: .white)
     }
 
     init(viewModel: ViewModel) {
         leadingIconImageView = NSImageView(image: viewModel.image, dynamicColor: viewModel.dynamicIconTintColor)
         titleLabel = NSLabel(viewModel.titleLabelType)
+        externalLinkButton = NSExternalLinkButton(style: viewModel.externalLinkStyle)
 
         super.init(frame: .zero)
 

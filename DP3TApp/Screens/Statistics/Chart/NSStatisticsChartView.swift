@@ -40,7 +40,8 @@ class NSStatisticsChartView: UIView {
 
         addSubview(yLenged)
         yLenged.snp.makeConstraints { make in
-            make.top.bottom.trailing.equalToSuperview()
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.trailing.equalToSuperview()
         }
 
         addSubview(scrollView)
