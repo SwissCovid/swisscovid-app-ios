@@ -83,20 +83,17 @@ class NSStatisticsChartContentView: UIView {
 
         addSubview(codeBarView)
         codeBarView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium)
-            make.leading.trailing.bottom.equalTo(infectionBarView)
+            make.edges.equalTo(infectionBarView)
         }
 
         addSubview(lineView)
         lineView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium)
-            make.leading.trailing.bottom.equalTo(infectionBarView)
+            make.edges.equalTo(infectionBarView)
         }
 
         addSubview(yAxisLines)
         yAxisLines.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium)
-            make.leading.trailing.bottom.equalTo(infectionBarView)
+            make.edges.equalTo(infectionBarView)
         }
 
         divider.backgroundColor = UIColor.setColorsForTheme(lightColor: .ns_backgroundDark,
