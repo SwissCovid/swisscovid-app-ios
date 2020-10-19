@@ -59,7 +59,9 @@ class NSOnboardingInfoView: UIView {
                 make.top.equalToSuperview().inset(NSPadding.medium)
             }
             make.leading.equalToSuperview().inset(leftRightInset)
-            make.width.greaterThanOrEqualTo(24)
+            if icon == nil {
+                make.width.equalTo(24)
+            }
         }
 
         label.snp.makeConstraints { make in
