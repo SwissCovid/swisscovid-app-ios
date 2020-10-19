@@ -125,10 +125,12 @@ class NSExternalLinkButton: UBButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        let frame = CGRect(x: imageView!.frame.minX,
-                           y: imageView!.frame.minY,
-                           width: titleLabel!.frame.maxX - imageView!.frame.minX,
-                           height: titleLabel!.frame.maxY - imageView!.frame.minY)
+        guard let imageViewFrame = imageView?.frame,
+            let titleLableFrame = titleLabel?.frame else { return }
+        let frame = CGRect(x: imageViewFrame.minX,
+                           y: imageViewFrame.minY,
+                           width: titleLableFrame.maxX - imageViewFrame.minX,
+                           height: titleLableFrame.maxY - imageViewFrame.minY)
         highlightView.frame = frame.inset(by: UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
     }
 
