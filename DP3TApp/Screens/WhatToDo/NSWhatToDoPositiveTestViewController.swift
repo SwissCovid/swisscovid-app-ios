@@ -21,9 +21,12 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     private var subtitleLabel: NSLabel!
     private var titleLabel: NSLabel!
 
+    private let configTexts: ConfigResponseBody.WhatToDoPositiveTestTexts?
+
     // MARK: - Init
 
     override init() {
+        configTexts = ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value
         super.init()
         title = "inform_detail_navigation_title".ub_localized
     }
@@ -87,25 +90,52 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+        if let configTexts = configTexts {
+            for faqEntry in configTexts.faqEntries {
+                stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: faqEntry.iconIos),
+                                                                     text: faqEntry.text,
+                                                                     title: faqEntry.title,
+                                                                     leftRightInset: 0,
+                                                                     dynamicIconTintColor: .ns_purple))
 
-        let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
-        callButton.title = "infoline_coronavirus_number".ub_localized
-        callButton.touchUpCallback = { [weak self] in
-            self?.callButtonTouched()
+                if let linkUrl = faqEntry.linkUrl,
+                    let linkTitle = faqEntry.linkTitle {
+                    let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
+                    callButton.title = linkTitle
+                    callButton.touchUpCallback = {
+                        UIApplication.shared.open(linkUrl, options: [:], completionHandler: nil)
+                    }
+                    callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
+                    stackScrollView.addArrangedView(callButton)
+                }
+
+                stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+            }
+
+        } else {
+            // fallback if config was not loaded
+            stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user")!, text: "inform_detail_faq1_text".ub_localized, title: "inform_detail_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+            let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
+            callButton.title = "infoline_coronavirus_number".ub_localized
+            callButton.touchUpCallback = { [weak self] in
+                self?.callButtonTouched()
+            }
+            callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
+            stackScrollView.addArrangedView(callButton)
+
+            stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+
+            stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+            stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+
+            stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+            stackScrollView.addSpacerView(2 * NSPadding.large)
         }
-        callButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large + NSPadding.medium, bottom: 0, right: 0)
-        stackScrollView.addArrangedView(callButton)
 
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
-
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-key-purple")!, text: "inform_detail_faq2_text".ub_localized, title: "inform_detail_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
-
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
-
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
-
-        stackScrollView.addSpacerView(3 * NSPadding.large)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_purple))
 
