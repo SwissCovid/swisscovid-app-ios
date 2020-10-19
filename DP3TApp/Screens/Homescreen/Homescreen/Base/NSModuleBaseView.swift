@@ -94,7 +94,7 @@ extension NSModuleBaseView {
         isAccessibilityElement = false
         accessibilityElementsHidden = false
         stackView.isAccessibilityElement = true
-        stackView.accessibilityTraits = [.button]
+        stackView.accessibilityTraits = [.button, .header]
     }
 
     func updateAccessibility(with sectionViews: [UIView]) {
