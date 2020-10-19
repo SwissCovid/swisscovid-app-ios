@@ -50,7 +50,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             infoBoxView = nil
         }
 
-        super.init(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_title".ub_localized,
+        super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
                    subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
                    text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
                    image: nil,
