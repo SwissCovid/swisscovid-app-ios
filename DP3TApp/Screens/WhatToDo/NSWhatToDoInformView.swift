@@ -11,6 +11,8 @@
 import UIKit
 
 class NSWhatToDoInformView: NSSimpleModuleBaseView {
+    private var configTexts: ConfigResponseBody.WhatToDoPositiveTestTexts? = ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value
+
     // MARK: - API
 
     public var touchUpCallback: (() -> Void)? {
@@ -19,12 +21,40 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     // MARK: - Views
 
-    private let informButton = NSButton(title: "inform_detail_box_button".ub_localized, style: .uppercase(.ns_purple))
+    private let informButton: NSButton
+
+    private let infoBoxView: NSInfoBoxView?
 
     // MARK: - Init
 
     init() {
-        super.init(title: "inform_detail_box_title".ub_localized, subtitle: "inform_detail_box_subtitle".ub_localized, text: "inform_detail_box_text".ub_localized, image: nil, subtitleColor: .ns_purple)
+        informButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
+                                style: .uppercase(.ns_purple))
+
+        if let infoBox = configTexts?.infoBox {
+            var infoBoxViewModel = NSInfoBoxView.ViewModel(title: infoBox.title,
+                                                           subText: infoBox.msg,
+                                                           titleColor: .ns_text,
+                                                           subtextColor: .ns_text,
+                                                           additionalText: infoBox.urlTitle,
+                                                           additionalURL: infoBox.url?.absoluteString,
+                                                           externalLinkStyle: .normal(color: .ns_blue))
+
+            infoBoxViewModel.image = UIImage(named: "ic-info-on")
+            infoBoxViewModel.backgroundColor = .ns_blueBackground
+            infoBoxViewModel.titleLabelType = .textBold
+
+            infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
+
+        } else {
+            infoBoxView = nil
+        }
+
+        super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
+                   subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
+                   text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
+                   image: nil,
+                   subtitleColor: .ns_purple)
         setup()
     }
 
@@ -49,6 +79,12 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
         contentView.addArrangedView(view)
         contentView.addSpacerView(NSPadding.small)
+
+        if let infoBoxView = infoBoxView {
+            contentView.addSpacerView(NSPadding.large)
+            contentView.addArrangedView(infoBoxView)
+            contentView.addSpacerView(NSPadding.small)
+        }
 
         informButton.isAccessibilityElement = true
         isAccessibilityElement = false

@@ -1,4 +1,3 @@
-/*Certificate pinning Debug screen section title*/
 "certificate_pinning_title" = "Certificate Pinning";
 
 "certificate_pinning_button_disable" = "Disable";
@@ -10,3 +9,6 @@
 "synchronizations_view_sync_via_scheduled" = "  • Scheduled";
 "synchronizations_view_sync_via_fake_request" = "  • Fake Report";
 "synchronizations_view_sync_via_next_day_key_upload" = "  • Pending Upload";
+
+"synchronizations_next_fake_request" = "Next fake request:";
+"synchronizations_view_config_request" = "  • Config load";

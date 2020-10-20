@@ -97,6 +97,7 @@ class NSWhatToDoButton: UBButton {
 
 extension NSWhatToDoButton {
     func setupAccessibility() {
+        accessibilityTraits = [.button, .header]
         accessibilityLabel = [subtitleLabel, titleTextLabel]
             .compactMap { $0.text }
             .joined(separator: " ")

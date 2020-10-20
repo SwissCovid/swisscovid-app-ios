@@ -38,6 +38,7 @@ struct LocalizedValue<T: UBCodable>: UBCodable {
 class ConfigResponseBody: UBCodable {
     public let forceUpdate: Bool
     public let infoBox: LocalizedValue<InfoBox>?
+    public let whatToDoPositiveTestTexts: LocalizedValue<WhatToDoPositiveTestTexts>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
 
     class InfoBox: UBCodable {
@@ -54,5 +55,23 @@ class ConfigResponseBody: UBCodable {
         let factorLow: Double
         let factorHigh: Double
         let triggerThreshold: Int
+    }
+
+    class WhatToDoPositiveTestTexts: UBCodable {
+        let enterCovidcodeBoxSupertitle: String
+        let enterCovidcodeBoxTitle: String
+        let enterCovidcodeBoxText: String
+        let enterCovidcodeBoxButtonTitle: String
+        let infoBox: InfoBox
+        let faqEntries: [FAQEntry]
+
+        class FAQEntry: UBCodable {
+            let title: String
+            let text: String
+            let iconAndroid: String
+            let iconIos: String
+            let linkTitle: String?
+            let linkUrl: URL?
+        }
     }
 }
