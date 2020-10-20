@@ -51,7 +51,7 @@ class UBButton: UIButton {
         didSet { adjustHighlightView() }
     }
 
-    private let highlightView = UIView()
+    let highlightView = UIView()
 
     init() {
         super.init(frame: .zero)
