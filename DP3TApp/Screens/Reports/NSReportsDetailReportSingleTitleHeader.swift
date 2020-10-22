@@ -208,7 +208,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         dateStackView.snp.makeConstraints { make in
             make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.medium)
-            make.left.right.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
         }
 
         expandButton.snp.makeConstraints { make in
