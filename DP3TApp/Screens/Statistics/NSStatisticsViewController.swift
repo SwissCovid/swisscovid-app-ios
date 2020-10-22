@@ -17,7 +17,9 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         return .init(reloadButton: button, errorImage: UIImage(named: "ic-info-outline"))
     }()
 
-    private let statisticsModule = NSStatisticsModuleView()
+    private let appUsageStatusticsModule = NSAppUsageStatisticsModuleView()
+
+    private let covidStatisticsModule = NSCovidStatisticsModuleView()
 
     private let shareModule = NSStatisticsShareModule()
 
@@ -55,14 +57,16 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     }
 
     private func loadData() {
-        statisticsModule.statisticData = nil
+        covidStatisticsModule.statisticData = nil
+        appUsageStatusticsModule.statisticData = nil
         loadingView.startLoading()
         loader.get { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(response):
                 self.loadingView.stopLoading()
-                self.statisticsModule.statisticData = response
+                self.covidStatisticsModule.statisticData = response
+                self.appUsageStatusticsModule.statisticData = response
             case let .failure(error):
                 self.loadingView.stopLoading(error: error) { [weak self] in
                     self?.loadData()
@@ -84,7 +88,11 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         navigationItem.rightBarButtonItem?.tintColor = .ns_blue
         navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
 
-        stackScrollView.addArrangedView(statisticsModule)
+        stackScrollView.addArrangedView(appUsageStatusticsModule)
+
+        stackScrollView.addSpacerView(NSPadding.medium)
+
+        stackScrollView.addArrangedView(covidStatisticsModule)
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
@@ -115,7 +123,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         view.addSubview(loadingView)
         loadingView.backgroundColor = .clear
         loadingView.snp.makeConstraints { make in
-            make.edges.equalTo(statisticsModule.statisticsChartView)
+            make.edges.equalTo(covidStatisticsModule.statisticsChartView)
         }
     }
 

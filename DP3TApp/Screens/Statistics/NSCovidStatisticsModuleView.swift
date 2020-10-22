@@ -10,16 +10,14 @@
 
 import UIKit
 
-class NSStatisticsModuleView: UIView {
+class NSCovidStatisticsModuleView: UIView {
     private let stackView = UIStackView()
 
-    private let header = NSStatsticsModuleHeader()
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
     private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_gray, textAlignment: .right)
 
-    private lazy var sections: [UIView] = [header,
-                                           statisticsChartView,
+    private lazy var sections: [UIView] = [statisticsChartView,
                                            legend,
                                            lastUpdatedLabel]
 
@@ -33,12 +31,10 @@ class NSStatisticsModuleView: UIView {
         didSet {
             guard let data = statisticData else {
                 statisticsChartView.history = []
-                header.setCounter(number: nil)
                 lastUpdatedLabel.alpha = 0
                 return
             }
             statisticsChartView.history = data.history
-            header.setCounter(number: data.totalActiveUsers)
             lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
             lastUpdatedLabel.alpha = 1
         }
@@ -52,12 +48,9 @@ class NSStatisticsModuleView: UIView {
         setupLayout()
         updateLayout()
 
-        setCustomSpacing(NSPadding.medium, after: header)
         setCustomSpacing(NSPadding.medium, after: statisticsChartView)
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: legend)
         lastUpdatedLabel.alpha = 0
-
-        isAccessibilityElement = true
     }
 
     required init?(coder _: NSCoder) {
@@ -71,7 +64,8 @@ class NSStatisticsModuleView: UIView {
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.bottom.equalToSuperview()
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
@@ -85,10 +79,5 @@ class NSStatisticsModuleView: UIView {
 
     func setCustomSpacing(_ spacing: CGFloat, after view: UIView) {
         stackView.setCustomSpacing(spacing, after: view)
-    }
-
-    override var accessibilityLabel: String? {
-        get { header.accessibilityLabel }
-        set {}
     }
 }
