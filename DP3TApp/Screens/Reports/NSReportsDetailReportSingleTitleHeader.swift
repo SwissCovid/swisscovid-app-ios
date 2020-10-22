@@ -310,7 +310,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         updateExpandButtonConstraints()
 
-        if let latest = reports.last {
+        if let latest = reports.first {
             dateLabel.text = DateFormatter.ub_daysAgo(from: latest.timestamp, addExplicitDate: true)
         }
 
