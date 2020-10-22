@@ -72,7 +72,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     override func viewDidLoad() {
-        let titleHeader = NSReportsDetailReportSingleTitleHeader(setupOpen: showReportWithAnimation)
+        let titleHeader = NSReportsDetailReportSingleTitleHeader(fullscreen: showReportWithAnimation)
         titleHeader.headerView = self
 
         titleView = titleHeader

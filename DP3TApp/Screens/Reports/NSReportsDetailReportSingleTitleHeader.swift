@@ -43,12 +43,12 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
     private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
-    private var openSetup: Bool
+    private var fullscreen: Bool
 
     // MARK: - Init
 
-    init(setupOpen: Bool) {
-        openSetup = setupOpen
+    init(fullscreen: Bool) {
+        self.fullscreen = fullscreen
 
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -63,7 +63,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
 
-        if setupOpen {
+        if fullscreen {
             titleLabel.text = "meldung_detail_new_contact_title".ub_localized
         } else {
             titleLabel.text = "meldung_detail_exposed_title".ub_localized
@@ -112,7 +112,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         setupOpen()
 
-        if !openSetup {
+        if !fullscreen {
             startInitialAnimation()
             setupClosed()
         }
@@ -146,7 +146,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         headerView?.updateHeightConstraints()
         headerView?.startHeaderAnimation()
 
-        openSetup = false
+        fullscreen = false
 
         updateExpandButtonConstraints()
     }
@@ -157,7 +157,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
             expandButton.snp.remakeConstraints { make in
                 make.top.equalTo(self.dateStackView.snp.bottom)
                 make.left.right.equalToSuperview().inset(NSPadding.large)
-                if !openSetup {
+                if !fullscreen {
                     make.bottom.equalToSuperview()
                 }
             }
@@ -166,7 +166,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
             expandButton.snp.remakeConstraints { make in
                 make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
                 make.left.right.equalToSuperview().inset(NSPadding.large)
-                if !openSetup {
+                if !fullscreen {
                     make.bottom.equalToSuperview().inset(NSPadding.large + NSPadding.medium)
                 }
             }
@@ -214,7 +214,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         expandButton.snp.makeConstraints { make in
             make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
             make.left.right.equalToSuperview().inset(NSPadding.large)
-            if !openSetup {
+            if !fullscreen {
                 make.bottom.equalToSuperview().inset(NSPadding.large + NSPadding.medium)
             }
         }
@@ -234,7 +234,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         infoImageView.alpha = 0.0
 
-        if openSetup {
+        if fullscreen {
             var i = 0
             for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel, expandButton, continueButton] {
                 v.alpha = 0.0
@@ -281,7 +281,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         guard !reports.isEmpty else { return }
 
         // update title Label text
-        if openSetup {
+        if fullscreen {
             if reports.count == 1 {
                 titleLabel.text = "meldung_detail_exposed_title".ub_localized
             } else {
