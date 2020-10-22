@@ -601,7 +601,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.\n\nVus essas vegnida testada resp. vegnì testà en moda positiva sin il coronavirus e n'avais suenter 2 uras anc retschavì nagin code covid? Alura contactai l'infoline coronavirus:";
+"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.\n\nVus essas vegnida testada resp. vegnì testà en moda positiva sin il coronavirus e n'avais suenter 4 uras anc retschavì nagin code covid? Alura contactai l'infoline coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Tge vegn tramess?";
@@ -917,7 +917,7 @@
 "meldungen_background_error_text_android" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -933,8 +933,8 @@
 "stats_legend_new_infections" = "infecziuns novas annunziadas";
 "stats_legend_new_infections_average" = "media da 7 dis";
 "stats_legend_entered_covidcodes" = "codes covid endatads";
-"share_app_supertitle" = "Impedir cuminaivlamain";
-"share_app_title" = "ina segunda unda";
+"share_app_supertitle" = "Impedir…";
+"share_app_title" = "cuminaivlamain infecziuns";
 "share_app_button" = "Cundivider l'app";
 "share_app_body" = "Sche uschè bleras persunas sco pussaivel activeschan l'app SwissCovid, pudain nus interrumper ad uras las chadainas d'infecziun.";
 
@@ -991,3 +991,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Uschia funcziuni";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Last encounter";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "All encounters";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Show all";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Show less";

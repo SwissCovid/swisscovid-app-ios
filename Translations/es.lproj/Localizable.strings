@@ -602,7 +602,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Las personas que han dado positivo en el test del nuevo coronavirus reciben un código Covid. \n\nAsí se garantiza que la aplicación solo informe de los casos confirmados.\n\n¿Ha dado usted positivo en el test y no ha recibido el código Covid después de dos horas?\nEn este caso, póngase en contacto con la Infoline Coronavirus:";
+"inform_detail_faq1_text" = "Las personas que han dado positivo en el test del nuevo coronavirus reciben un código Covid. \n\nAsí se garantiza que la aplicación solo informe de los casos confirmados.\n\n¿Ha dado usted positivo en el test y no ha recibido el código Covid después de cuatro horas?\nEn este caso, póngase en contacto con la Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "¿Qué es lo que se envía?";
@@ -921,7 +921,7 @@
 "meldungen_background_error_text_android" = "Cambie los ajustes para recibir las notificaciones más actuales también fuera de la aplicación.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -995,3 +995,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Así funciona";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Last encounter";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "All encounters";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Show all";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Show less";
