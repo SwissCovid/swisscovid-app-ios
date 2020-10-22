@@ -965,7 +965,7 @@
 "stats_legend_new_infections_average" = "7-Tage-Schnitt";
 "stats_legend_entered_covidcodes" = "Eingegebene Covidcodes";
 "share_app_supertitle" = "Gemeinsam...";
-"share_app_title" = "Eine zweite Welle verhindern";
+"share_app_title" = "Ansteckungen verhindern";
 "share_app_button" = "App teilen";
 
 /*Fuzzy*/
@@ -1024,3 +1024,17 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "So funktionierts";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Letzte Begegnung";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Alle Begegnungen";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_show_all_button" = "Alle anzeigen";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Weniger anzeigen";
