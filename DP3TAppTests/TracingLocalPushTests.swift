@@ -81,22 +81,69 @@ class TracingLocalPushTests: XCTestCase {
 
     func testGeneratingSingleNotification() {
         let provider = MockIdentifierProvider()
-        provider.exposureIdentifiers = ["xy"]
-        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
+        provider.exposures = [Exposure(identifier: "xy", date: Date())]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
-        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
     }
 
     func testGeneratingUniqueNotification() {
         let provider = MockIdentifierProvider()
-        provider.exposureIdentifiers = ["xy"]
-        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
+        provider.exposures = [Exposure(identifier: "xy", date: Date())]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
-        provider.exposureIdentifiers = ["xy", "aa"]
-        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
+        provider.exposures = [Exposure(identifier: "xy", date: Date()), Exposure(identifier: "aa", date: Date())]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 2)
-        tlp.scheduleExposureNotificationsIfNeeded(identifierProvider: provider)
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+        XCTAssertEqual(center.requests.count, 2)
+    }
+
+    func testGenerateOnlyNewerNotifications() {
+        let provider = MockIdentifierProvider()
+        let twoDayAgo = Date(timeIntervalSinceNow: -60 * 60 * 24 * 2)
+        provider.exposures = [Exposure(identifier: "xy", date: twoDayAgo)]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+
+        if let date = keychain.store["lastestExposureDate"] as? Date {
+            XCTAssertEqual(date, twoDayAgo)
+        } else {
+            XCTFail("latestExposureDate not stored")
+        }
+
+        XCTAssertEqual(center.requests.count, 1)
+
+        let fiveDaysAgo = Date(timeIntervalSinceNow: -60 * 60 * 24 * 5)
+
+        // no exposure notification should be generated since a newer one was already reported
+        provider.exposures = [Exposure(identifier: "xy", date: twoDayAgo),
+                              Exposure(identifier: "aa", date: fiveDaysAgo)]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+
+        if let date = keychain.store["lastestExposureDate"] as? Date {
+            XCTAssertEqual(date, twoDayAgo)
+        } else {
+            XCTFail("latestExposureDate not stored")
+        }
+
+        XCTAssertEqual(center.requests.count, 1)
+
+        // now a exposure should get generated
+        let today = Date()
+        let oneDayAgo = Date(timeIntervalSinceNow: -60 * 60 * 24 * 1)
+        provider.exposures = [Exposure(identifier: "xy", date: twoDayAgo),
+                              Exposure(identifier: "bb", date: today),
+                              Exposure(identifier: "aa", date: fiveDaysAgo),
+                              Exposure(identifier: "cc", date: oneDayAgo)]
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+
+        if let date = keychain.store["lastestExposureDate"] as? Date {
+            XCTAssertEqual(date, today)
+        } else {
+            XCTFail("latestExposureDate not stored")
+        }
+
         XCTAssertEqual(center.requests.count, 2)
     }
 

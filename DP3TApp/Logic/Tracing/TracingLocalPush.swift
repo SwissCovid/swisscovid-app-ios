@@ -23,15 +23,33 @@ protocol UserNotificationCenter {
 
 extension UNUserNotificationCenter: UserNotificationCenter {}
 
-protocol ExposureIdentifierProvider {
-    var exposureIdentifiers: [String]? { get }
+struct Exposure: Comparable {
+    var identifier: String
+    var date: Date
+
+    init(exposureDay: ExposureDay) {
+        self.init(identifier: exposureDay.identifier.uuidString, date: exposureDay.exposedDate)
+    }
+
+    init(identifier: String, date: Date) {
+        self.identifier = identifier
+        self.date = date
+    }
+
+    static func < (lhs: Exposure, rhs: Exposure) -> Bool {
+        lhs.date < rhs.date
+    }
 }
 
-extension TracingState: ExposureIdentifierProvider {
-    var exposureIdentifiers: [String]? {
+protocol ExposureProvider {
+    var exposures: [Exposure]? { get }
+}
+
+extension TracingState: ExposureProvider {
+    var exposures: [Exposure]? {
         switch infectionStatus {
         case let .exposed(matches):
-            return matches.map { $0.identifier.uuidString }
+            return matches.map(Exposure.init(exposureDay:))
         case .healthy:
             return []
         case .infected:
@@ -50,13 +68,29 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         center = notificationCenter
         _exposureIdentifiers.keychain = keychain
         _scheduledErrorIdentifiers.keychain = keychain
+        _lastestExposureDate.keychain = keychain
         super.init()
         center.delegate = self
     }
 
-    func scheduleExposureNotificationsIfNeeded(identifierProvider provider: ExposureIdentifierProvider) {
-        if let identifers = provider.exposureIdentifiers {
-            exposureIdentifiers = identifers
+    func scheduleExposureNotificationsIfNeeded(provider: ExposureProvider) {
+        // sort the exposures from newset to oldest
+        if let exposures = provider.exposures?.sorted(by: >) {
+            // check if we have a new exposure
+            for exposure in exposures {
+                // check if we the exposure is new and if the latesExposureDate is prior to the new Exposure
+                // we only schedule the notification in these cases
+                if !exposureIdentifiers.contains(exposure.identifier), (lastestExposureDate ?? .distantPast) < exposure.date {
+                    // we schedule the notification
+                    scheduleNotification(identifier: exposure.identifier)
+                    // and update the latestExpsoureDate
+                    lastestExposureDate = exposure.date
+
+                    break
+                }
+            }
+            // store all new identifiers
+            exposureIdentifiers = exposures.map(\.identifier)
         }
     }
 
@@ -68,17 +102,11 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         .init()
     }
 
+    @KeychainPersisted(key: "lastestExposureDate", defaultValue: nil)
+    private var lastestExposureDate: Date?
+
     @KeychainPersisted(key: "exposureIdentifiers", defaultValue: [])
-    private var exposureIdentifiers: [String] {
-        didSet {
-            for identifier in exposureIdentifiers {
-                if !oldValue.contains(identifier) {
-                    scheduleNotification(identifier: identifier)
-                    return
-                }
-            }
-        }
-    }
+    private var exposureIdentifiers: [String]
 
     @KeychainPersisted(key: "scheduledErrorIdentifiers", defaultValue: [])
     private var scheduledErrorIdentifiers: [ErrorIdentifiers]

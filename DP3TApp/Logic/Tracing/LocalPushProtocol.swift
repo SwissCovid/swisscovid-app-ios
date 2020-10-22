@@ -13,7 +13,7 @@ import DP3TSDK
 import Foundation
 
 protocol LocalPushProtocol {
-    func scheduleExposureNotificationsIfNeeded(identifierProvider provider: ExposureIdentifierProvider)
+    func scheduleExposureNotificationsIfNeeded(provider: ExposureProvider)
 
     func clearNotifications()
 

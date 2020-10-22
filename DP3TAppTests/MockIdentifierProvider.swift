@@ -12,6 +12,6 @@
 @testable import DP3TApp
 import XCTest
 
-class MockIdentifierProvider: ExposureIdentifierProvider {
-    var exposureIdentifiers: [String]?
+class MockIdentifierProvider: ExposureProvider {
+    var exposures: [Exposure]?
 }

@@ -186,7 +186,7 @@ class TracingManager: NSObject {
             UIStateManager.shared.trackingState = state.trackingState
         }
 
-        localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
+        localPush.scheduleExposureNotificationsIfNeeded(provider: state)
 
         DP3TTracing.delegate = self
 
@@ -210,7 +210,7 @@ extension TracingManager: DP3TTracingDelegate {
             }
         }
         // schedule local push if exposed
-        localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
+        localPush.scheduleExposureNotificationsIfNeeded(provider: state)
 
         isActivated = state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff)
 
