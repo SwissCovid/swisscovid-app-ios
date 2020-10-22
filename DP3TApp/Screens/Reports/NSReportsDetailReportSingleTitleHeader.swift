@@ -121,14 +121,15 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
     @objc func didTouchExpandButton() {
         isExpanded.toggle()
         dateLabel.isHidden.toggle()
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: .beginFromCurrentState, animations: {
             self.dateStackView.arrangedSubviews.forEach {
                 if $0 is NSReportDetailMoreDaysView {
                     $0.isHidden.toggle()
                     $0.alpha = $0.alpha == 0 ? 1 : 0
                 }
             }
-        }
+        }, completion: nil)
+
         if isExpanded {
             expandButton.title = "meldung_detail_exposed_show_less_button".ub_localized
             subtitleLabel.text = "meldung_detail_exposed_subtitle_all_encounters".ub_localized
@@ -235,7 +236,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         if openSetup {
             var i = 0
-            for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, expandButton, continueButton] {
+            for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel, expandButton, continueButton] {
                 v.alpha = 0.0
                 v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large).scaledBy(x: 0.8, y: 0.8)
 
