@@ -119,8 +119,16 @@ class NSStatisticsChartContentView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        guard let data = data else { return CGSize(width: 0, height: configuration.chartHeight) }
-        return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth,
+        guard let data = data,
+            let lastDate = data.data.last?.date else { return CGSize(width: 0, height: configuration.chartHeight) }
+
+        // Add a small padding if the last day is a monday in order to not cut off the day label
+        var additionalPadding: CGFloat = 0.0
+        if Calendar.current.component(.weekday, from: lastDate) == 2 {
+            additionalPadding = NSPadding.medium
+        }
+
+        return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth + additionalPadding,
                       height: configuration.chartHeight)
     }
 
