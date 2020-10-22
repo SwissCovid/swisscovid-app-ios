@@ -42,53 +42,43 @@ class TracingManager: NSObject {
     }
 
     func initialize() {
-        do {
-            let bucketBaseUrl = Environment.current.configService.baseURL
-            let reportBaseUrl = Environment.current.publishService.baseURL
-            // JWT is not supported for now since the backend keeps rotating the private key
+        let bucketBaseUrl = Environment.current.configService.baseURL
+        let reportBaseUrl = Environment.current.publishService.baseURL
 
-            #if TEST_ENTITLEMENT
-                let descriptor = ApplicationDescriptor(appId: appId,
-                                                       bucketBaseUrl: bucketBaseUrl,
-                                                       reportBaseUrl: reportBaseUrl,
-                                                       jwtPublicKey: Environment.current.jwtPublicKey,
-                                                       mode: .test)
+        #if TEST_ENTITLEMENT
+            let descriptor = ApplicationDescriptor(appId: appId,
+                                                   bucketBaseUrl: bucketBaseUrl,
+                                                   reportBaseUrl: reportBaseUrl,
+                                                   jwtPublicKey: Environment.current.jwtPublicKey,
+                                                   mode: .test)
+        #else
+            let descriptor = ApplicationDescriptor(appId: appId,
+                                                   bucketBaseUrl: bucketBaseUrl,
+                                                   reportBaseUrl: reportBaseUrl,
+                                                   jwtPublicKey: Environment.current.jwtPublicKey)
+        #endif
+
+        #if ENABLE_OS_LOG
+            DP3TTracing.loggingEnabled = true
+        #else
+            DP3TTracing.loggingEnabled = false
+        #endif
+
+        #if ENABLE_LOGGING
+            // Set logging Storage
+            loggingStorage = try? .init()
+            #if DEBUG
+                DP3TTracing.loggingDelegate = self
             #else
-                let descriptor = ApplicationDescriptor(appId: appId,
-                                                       bucketBaseUrl: bucketBaseUrl,
-                                                       reportBaseUrl: reportBaseUrl,
-                                                       jwtPublicKey: Environment.current.jwtPublicKey)
+                DP3TTracing.loggingDelegate = loggingStorage
             #endif
+        #endif
 
-            #if ENABLE_OS_LOG
-                DP3TTracing.loggingEnabled = true
-            #else
-                DP3TTracing.loggingEnabled = false
-            #endif
+        DP3TTracing.activityDelegate = self
 
-            #if ENABLE_LOGGING
-                // Set logging Storage
-                loggingStorage = try? .init()
-                #if DEBUG
-                    DP3TTracing.loggingDelegate = self
-                #else
-                    DP3TTracing.loggingDelegate = loggingStorage
-                #endif
-            #endif
-
-            DP3TTracing.activityDelegate = self
-
-            try DP3TTracing.initialize(with: descriptor,
-                                       urlSession: URLSession.certificatePinned,
-                                       backgroundHandler: self)
-
-        } catch {
-            if let e = error as? DP3TTracingError {
-                UIStateManager.shared.tracingStartError = e
-            } else {
-                UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
-            }
-        }
+        DP3TTracing.initialize(with: descriptor,
+                               urlSession: URLSession.certificatePinned,
+                               backgroundHandler: self)
 
         // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in
@@ -97,27 +87,32 @@ class TracingManager: NSObject {
     }
 
     func requestTracingPermission(completion: @escaping (Error?) -> Void) {
-        try? DP3TTracing.startTracing(completionHandler: completion)
+        DP3TTracing.startTracing { result in
+            switch result {
+            case let .failure(error):
+                completion(error)
+            case .success:
+                completion(nil)
+            }
+        }
     }
 
     func startTracing() {
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
-            do {
-                try DP3TTracing.startTracing(completionHandler: { _ in
+            DP3TTracing.startTracing(completionHandler: { result in
+                switch result {
+                case .success:
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
-                })
-                UIStateManager.shared.tracingStartError = nil
-            } catch DP3TTracingError.userAlreadyMarkedAsInfected {
-                // Tracing should not start if the user is marked as infected
-                UIStateManager.shared.tracingStartError = nil
-            } catch {
-                if let e = error as? DP3TTracingError {
-                    UIStateManager.shared.tracingStartError = e
-                } else {
-                    UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
+                case let .failure(error):
+                    if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
+                        // Tracing should not start if the user is marked as infected
+                        UIStateManager.shared.tracingStartError = nil
+                    } else {
+                        UIStateManager.shared.tracingStartError = error
+                    }
                 }
-            }
+            })
         }
 
         updateStatus(shouldSync: false, completion: nil)
@@ -130,7 +125,7 @@ class TracingManager: NSObject {
 
     func resetSDK() {
         // completely reset SDK
-        try? DP3TTracing.reset()
+        DP3TTracing.reset()
 
         // reset debugi fake data to test UI reset
         #if ENABLE_STATUS_OVERRIDE
@@ -138,13 +133,9 @@ class TracingManager: NSObject {
         #endif
     }
 
-    var isPositiveTestDeletable: Bool {
-        DP3TTracing.isInfectionStatusResettable
-    }
-
     func deletePositiveTest() {
         // reset infection status
-        try? DP3TTracing.resetInfectionStatus()
+        DP3TTracing.resetInfectionStatus()
 
         // reset debug fake data to test UI reset
         #if ENABLE_STATUS_OVERRIDE
@@ -156,7 +147,7 @@ class TracingManager: NSObject {
 
     func deleteReports() {
         // delete all visible messages
-        try? DP3TTracing.resetExposureDays()
+        DP3TTracing.resetExposureDays()
 
         // reset debug fake data to test UI reset
         #if ENABLE_STATUS_OVERRIDE
@@ -167,19 +158,19 @@ class TracingManager: NSObject {
     }
 
     func userHasCompletedOnboarding() {
-        do {
-            if ConfigManager.allowTracing {
-                try DP3TTracing.startTracing()
-            }
-            UIStateManager.shared.tracingStartError = nil
-        } catch DP3TTracingError.userAlreadyMarkedAsInfected {
-            // Tracing should not start if the user is marked as infected
-            UIStateManager.shared.tracingStartError = nil
-        } catch {
-            if let e = error as? DP3TTracingError {
-                UIStateManager.shared.tracingStartError = e
-            } else {
-                UIStateManager.shared.tracingStartError = UnexpectedThrownError.startTracing(error: error)
+        if ConfigManager.allowTracing {
+            DP3TTracing.startTracing { result in
+                switch result {
+                case .success:
+                    UIStateManager.shared.tracingStartError = nil
+                case let .failure(error):
+                    if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
+                        // Tracing should not start if the user is marked as infected
+                        UIStateManager.shared.tracingStartError = nil
+                    } else {
+                        UIStateManager.shared.tracingStartError = error
+                    }
+                }
             }
         }
 
@@ -187,29 +178,24 @@ class TracingManager: NSObject {
     }
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
-        DP3TTracing.status { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case let .failure(e):
-                UIStateManager.shared.updateError = e
-                completion?(e)
-            case let .success(st):
+        let state = DP3TTracing.status
 
-                UIStateManager.shared.blockUpdate {
-                    UIStateManager.shared.updateError = nil
-                    UIStateManager.shared.tracingState = st
-                    UIStateManager.shared.trackingState = st.trackingState
-                }
-
-                completion?(nil)
-
-                // schedule local push if exposed
-                self.localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: st)
-            }
-            DP3TTracing.delegate = self
+        UIStateManager.shared.blockUpdate {
+            UIStateManager.shared.updateError = nil
+            UIStateManager.shared.tracingState = state
+            UIStateManager.shared.trackingState = state.trackingState
         }
+
+        localPush.scheduleExposureNotificationsIfNeeded(identifierProvider: state)
+
+        DP3TTracing.delegate = self
+
         if shouldSync {
-            DatabaseSyncer.shared.syncDatabaseIfNeeded()
+            DatabaseSyncer.shared.syncDatabaseIfNeeded { _ in
+                completion?(nil)
+            }
+        } else {
+            completion?(nil)
         }
     }
 }
@@ -270,17 +256,7 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        group.enter()
-        DP3TTracing.status { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .failure:
-                break
-            case let .success(state):
-                self.localPush.handleTracingState(state.trackingState)
-            }
-            group.leave()
-        }
+        localPush.handleTracingState(DP3TTracing.status.trackingState)
 
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 

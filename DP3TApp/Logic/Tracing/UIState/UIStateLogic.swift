@@ -88,11 +88,9 @@ class UIStateLogic {
                 tracing = .tracingPermissionError(code: nil)
             case .authorizationUnknown:
                 tracing = .tracingAuthorizationUnknown
-            case .databaseError:
-                tracing = .unexpectedError(code: error.errorCodeString)
             case .exposureNotificationError:
                 tracing = .tracingPermissionError(code: error.errorCodeString)
-            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled, .infectionStatusNotResettable:
+            case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
             }

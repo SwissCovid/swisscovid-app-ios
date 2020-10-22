@@ -32,14 +32,10 @@ class NSSettingsTutorialViewController: NSTutorialViewController {
     }
 
     func dismissIfNeeded() {
-        DP3TTracing.status { [weak self] result in
-            guard let self = self else { return }
-            // if trackingState is active we can dismiss the tutorial
-            // if only the active app was modified iOS does not kill the app
-            if case let Result.success(state) = result,
-                state.trackingState == .active {
-                self.dismiss(animated: true, completion: nil)
-            }
+        // if trackingState is active we can dismiss the tutorial
+        // if only the active app was modified iOS does not kill the app
+        if DP3TTracing.status.trackingState == .active {
+            dismiss(animated: true, completion: nil)
         }
     }
 
