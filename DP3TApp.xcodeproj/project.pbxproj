@@ -3208,7 +3208,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				branch = "feature/en-2";
+				branch = develop;
 				kind = branch;
 			};
 		};
