@@ -57,6 +57,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     func updateHeightConstraints() {
         useTitleViewHeight = true
+        view.setNeedsLayout()
     }
 
     override func startHeaderAnimation() {
