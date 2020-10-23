@@ -24,8 +24,8 @@ protocol UserNotificationCenter {
 extension UNUserNotificationCenter: UserNotificationCenter {}
 
 struct Exposure: Comparable {
-    var identifier: String
-    var date: Date
+    let identifier: String
+    let date: Date
 
     init(exposureDay: ExposureDay) {
         self.init(identifier: exposureDay.identifier.uuidString, date: exposureDay.exposedDate)
