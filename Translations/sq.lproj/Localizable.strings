@@ -937,8 +937,8 @@
 "stats_legend_new_infections" = "Infektimet e reja të raportuara";
 "stats_legend_new_infections_average" = "Mesatarja 7-ditore";
 "stats_legend_entered_covidcodes" = "Kodi i futur i Covid";
-"share_app_supertitle" = "Së bashku...";
-"share_app_title" = "Të parandalojmë një valë të dytë";
+"share_app_supertitle" = "Së bashku…";
+"share_app_title" = "të parandalojmë infektimet";
 "share_app_button" = "Shpërndaj aplikacionin";
 "share_app_body" = "Kur aplikacionin \"SwissCovid\" e aktivizojnë sa më shumë persona të jetë e mundur, atëherë ne mund ta ndërpresim më herët zinxhirin e infektimit.";
 

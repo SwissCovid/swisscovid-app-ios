@@ -937,8 +937,8 @@
 "stats_legend_new_infections" = "Prijavljene nove infekcije";
 "stats_legend_new_infections_average" = "Presek u periodu od 7 dana";
 "stats_legend_entered_covidcodes" = "Unete Covid šifre";
-"share_app_supertitle" = "Zajedno...";
-"share_app_title" = "sprečimo drugi talas pandemije";
+"share_app_supertitle" = "Zajedno…";
+"share_app_title" = "Sprečimo širenje infekcije";
 "share_app_button" = "Deli aplikaciju";
 "share_app_body" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
 
