@@ -17,12 +17,6 @@ class NSAppUsageStatisticsModuleView: UIView {
 
     private lazy var sections: [UIView] = [header]
 
-    static var formatter: DateFormatter = {
-        let df = DateFormatter()
-        df.dateFormat = "dd.MM."
-        return df
-    }()
-
     var statisticData: StatisticsResponse? {
         didSet {
             guard let data = statisticData else {

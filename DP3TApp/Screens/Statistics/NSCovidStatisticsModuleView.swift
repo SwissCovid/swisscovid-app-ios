@@ -21,7 +21,7 @@ class NSCovidStatisticsModuleView: UIView {
                                            legend,
                                            lastUpdatedLabel]
 
-    static var formatter: DateFormatter = {
+    private static var formatter: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "dd.MM."
         return df
