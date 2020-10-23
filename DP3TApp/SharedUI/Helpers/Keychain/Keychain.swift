@@ -52,6 +52,10 @@ struct KeychainKey<Object: Codable> {
 }
 
 protocol KeychainProtocol {
+    /// A Identifer which can be used to compare multiple Keychain Instances
+    /// This is useful for creating a mock keychain
+    var identifier: String { get }
+
     /// Get a object from the keychain
     /// - Parameter key: a key object with the type
     /// - Returns: a result which either contain the error or the object
@@ -81,6 +85,8 @@ protocol KeychainProtocol {
 class Keychain: KeychainProtocol {
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
+
+    var identifier: String = "iOS Keychain"
 
     /// Get a object from the keychain
     /// - Parameter key: a key object with the type

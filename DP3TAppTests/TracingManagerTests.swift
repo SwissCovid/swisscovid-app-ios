@@ -15,7 +15,7 @@ import XCTest
 class MockLocalPush: LocalPushProtocol {
     var scheduleExposureNotificationsIfNeededWasCalled: Bool = false
 
-    func scheduleExposureNotificationsIfNeeded(identifierProvider _: ExposureIdentifierProvider) {
+    func scheduleExposureNotificationsIfNeeded(provider _: ExposureProvider) {
         scheduleExposureNotificationsIfNeededWasCalled = true
     }
 

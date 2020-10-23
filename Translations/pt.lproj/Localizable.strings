@@ -995,3 +995,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Funciona assim";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Last encounter";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "All encounters";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Show all";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Show less";
