@@ -56,7 +56,8 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                    subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
                    text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
                    image: nil,
-                   subtitleColor: .ns_purple)
+                   subtitleColor: .ns_purple,
+                   bottomPadding: false)
         setup()
     }
 
@@ -80,12 +81,11 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         }
 
         contentView.addArrangedView(view)
-        contentView.addSpacerView(NSPadding.small)
+        contentView.addSpacerView(NSPadding.large)
 
         if let infoBoxView = infoBoxView {
-            contentView.addSpacerView(NSPadding.large)
             contentView.addArrangedView(infoBoxView)
-            contentView.addSpacerView(NSPadding.small)
+            contentView.addSpacerView(NSPadding.large)
         }
 
         informButton.isAccessibilityElement = true
