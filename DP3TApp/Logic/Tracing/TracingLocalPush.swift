@@ -76,9 +76,8 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
     func scheduleExposureNotificationsIfNeeded(provider: ExposureProvider) {
         // sort the exposures from newset to oldest
         if let exposures = provider.exposures?.sorted(by: >) {
-            // check if we have a new exposure
             for exposure in exposures {
-                // check if we the exposure is new and if the latesExposureDate is prior to the new Exposure
+                // check if the exposure is new and if the latesExposureDate is prior to the new Exposure
                 // we only schedule the notification in these cases
                 if !exposureIdentifiers.contains(exposure.identifier), (lastestExposureDate ?? .distantPast) < exposure.date {
                     // we schedule the notification
