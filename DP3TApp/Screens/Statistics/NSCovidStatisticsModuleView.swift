@@ -27,17 +27,15 @@ class NSCovidStatisticsModuleView: UIView {
         return df
     }()
 
-    var statisticData: StatisticsResponse? {
-        didSet {
-            guard let data = statisticData else {
-                statisticsChartView.history = []
-                lastUpdatedLabel.alpha = 0
-                return
-            }
-            statisticsChartView.history = data.history
-            lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
-            lastUpdatedLabel.alpha = 1
+    func setData(statisticData: StatisticsResponse?) {
+        guard let data = statisticData else {
+            statisticsChartView.history = []
+            lastUpdatedLabel.alpha = 0
+            return
         }
+        statisticsChartView.history = data.history
+        lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
+        lastUpdatedLabel.alpha = 1
     }
 
     init() {

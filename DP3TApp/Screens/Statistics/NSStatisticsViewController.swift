@@ -57,16 +57,16 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     }
 
     private func loadData() {
-        covidStatisticsModule.statisticData = nil
-        appUsageStatusticsModule.statisticData = nil
+        covidStatisticsModule.setData(statisticData: nil)
+        appUsageStatusticsModule.setData(statisticData: nil)
         loadingView.startLoading()
         loader.get { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(response):
                 self.loadingView.stopLoading()
-                self.covidStatisticsModule.statisticData = response
-                self.appUsageStatusticsModule.statisticData = response
+                self.covidStatisticsModule.setData(statisticData: response)
+                self.appUsageStatusticsModule.setData(statisticData: response)
             case let .failure(error):
                 self.loadingView.stopLoading(error: error) { [weak self] in
                     self?.loadData()

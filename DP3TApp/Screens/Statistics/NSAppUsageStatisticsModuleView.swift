@@ -17,14 +17,12 @@ class NSAppUsageStatisticsModuleView: UIView {
 
     private lazy var sections: [UIView] = [header]
 
-    var statisticData: StatisticsResponse? {
-        didSet {
-            guard let data = statisticData else {
-                header.setCounter(number: nil)
-                return
-            }
-            header.setCounter(number: data.totalActiveUsers)
+    func setData(statisticData: StatisticsResponse?) {
+        guard let data = statisticData else {
+            header.setCounter(number: nil)
+            return
         }
+        header.setCounter(number: data.totalActiveUsers)
     }
 
     init() {
