@@ -35,6 +35,8 @@ class NSTitleViewScrollViewController: NSViewController {
         return 153
     }
 
+    public var useTitleViewHeight: Bool = false
+
     public var startPositionScrollView: CGFloat {
         return 118
     }
@@ -82,7 +84,11 @@ class NSTitleViewScrollViewController: NSViewController {
             make.left.right.top.equalToSuperview()
 
             if !useFullScreenHeaderAnimation {
-                make.height.equalTo(self.titleHeight)
+                if self.useTitleViewHeight {
+                    make.height.equalTo(tv)
+                } else {
+                    make.height.equalTo(self.titleHeight)
+                }
             } else {
                 make.height.equalToSuperview()
             }
@@ -109,23 +115,36 @@ class NSTitleViewScrollViewController: NSViewController {
         }
     }
 
-    private func updateClosedConstraints() {
+    func updateClosedConstraints() {
         guard let tv = titleView else { return }
 
         tv.snp.remakeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(self.titleHeight)
+            if self.useTitleViewHeight {
+                make.height.equalTo(tv)
+            } else {
+                make.height.equalTo(self.titleHeight)
+            }
         }
 
         spacerView.snp.remakeConstraints { make in
-            make.height.equalTo(self.startPositionScrollView)
+            if self.useTitleViewHeight {
+                make.height.equalTo(tv).inset(NSPadding.medium)
+            } else {
+                make.height.equalTo(self.startPositionScrollView)
+            }
         }
     }
 }
 
 extension NSTitleViewScrollViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sp = startPositionScrollView
+        let sp: CGFloat
+        if useTitleViewHeight {
+            sp = titleView?.frame.height ?? startPositionScrollView
+        } else {
+            sp = startPositionScrollView
+        }
 
         let v = (sp - scrollView.contentOffset.y) / sp
         let p = max(0.0, min(1.0, v))

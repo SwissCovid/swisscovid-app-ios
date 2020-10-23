@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SnapKit
 import UIKit
 
 struct RelativeEntry {
@@ -54,6 +55,10 @@ class NSStatisticsChartContentView: UIView {
 
     private let configuration = ChartConfiguration.main
 
+    private var infectionBarViewLeadingConstraint: Constraint?
+
+    private var dateViewLeadingConstraint: Constraint?
+
     var data: ChartData? {
         didSet {
             updateChart()
@@ -77,7 +82,8 @@ class NSStatisticsChartContentView: UIView {
         addSubview(infectionBarView)
         infectionBarView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview()
+            infectionBarViewLeadingConstraint = make.leading.equalToSuperview().constraint
+            make.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(39)
         }
 
@@ -108,7 +114,8 @@ class NSStatisticsChartContentView: UIView {
 
         addSubview(dateView)
         dateView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview()
+            dateViewLeadingConstraint = make.leading.equalToSuperview().constraint
+            make.trailing.equalToSuperview()
             make.top.equalTo(divider.snp.bottom)
             make.bottom.equalToSuperview()
         }
@@ -119,8 +126,22 @@ class NSStatisticsChartContentView: UIView {
     }
 
     override var intrinsicContentSize: CGSize {
-        guard let data = data else { return CGSize(width: 0, height: configuration.chartHeight) }
-        return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth,
+        guard let data = data,
+            let lastDate = data.data.last?.date,
+            let firstDate = data.data.first?.date else { return CGSize(width: 0, height: configuration.chartHeight) }
+
+        // Add a small padding if the last day is a monday in order to not cut off the day label
+        var additionalPadding: CGFloat = 0.0
+        if Calendar.current.component(.weekday, from: lastDate) == 2 {
+            additionalPadding += NSPadding.medium
+        }
+
+        // Or if the first one is a monday
+        if Calendar.current.component(.weekday, from: firstDate) == 2 {
+            additionalPadding += NSPadding.large
+        }
+
+        return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth + additionalPadding,
                       height: configuration.chartHeight)
     }
 
@@ -135,6 +156,15 @@ class NSStatisticsChartContentView: UIView {
         codeBarView.values = data.data.map(\.codes)
         dateView.values = data.data.map(\.date)
         lineView.values = data.data.map(\.sevenDayAverage)
+
+        if let firstDate = data.data.first?.date,
+            Calendar.current.component(.weekday, from: firstDate) == 2 {
+            infectionBarViewLeadingConstraint?.update(inset: NSPadding.large)
+            dateViewLeadingConstraint?.update(inset: NSPadding.large)
+        } else {
+            infectionBarViewLeadingConstraint?.update(inset: 0)
+            dateViewLeadingConstraint?.update(inset: 0)
+        }
 
         yAxisLines.yTicks = data.yTicks
 

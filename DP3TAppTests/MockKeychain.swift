@@ -13,6 +13,9 @@ import Foundation
 
 class MockKeychain: KeychainProtocol {
     var store: [String: Any] = [:]
+
+    var identifier: String = "MockKeychain"
+
     func get<T: Codable>(for key: KeychainKey<T>) -> Result<T, KeychainError> {
         if let i = store[key.key] as? T {
             return .success(i)

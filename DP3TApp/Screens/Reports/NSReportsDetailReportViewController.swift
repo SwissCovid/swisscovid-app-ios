@@ -41,9 +41,6 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSReportsDetailReportTitleView(overlapInset: titleHeight - startPositionScrollView)
-
-        stackScrollView.hitTestDelegate = self
     }
 
     override var useFullScreenHeaderAnimation: Bool {
@@ -56,6 +53,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     override var startPositionScrollView: CGFloat {
         return titleHeight - 30
+    }
+
+    func updateHeightConstraints() {
+        useTitleViewHeight = true
+        view.setNeedsLayout()
     }
 
     override func startHeaderAnimation() {
@@ -71,6 +73,16 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     override func viewDidLoad() {
+        let titleHeader = NSReportsDetailReportSingleTitleHeader(fullscreen: showReportWithAnimation)
+        titleHeader.headerView = self
+
+        titleView = titleHeader
+
+        stackScrollView.hitTestDelegate = self
+
+        if !showReportWithAnimation {
+            useTitleViewHeight = true
+        }
         super.viewDidLoad()
 
         setupLayout()
@@ -103,7 +115,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSReportsDetailReportTitleView {
+        if let tv = titleView as? NSReportsDetailReportSingleTitleHeader {
             tv.reports = reports
         }
 
@@ -287,6 +299,6 @@ extension NSReportsDetailReportViewController: NSHitTestDelegate {
             return true
         }
 
-        return point.y + stackScrollView.scrollView.contentOffset.y < startPositionScrollView
+        return point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView)
     }
 }

@@ -25,12 +25,22 @@ extension DateFormatter {
         return dateFormatter
     }()
 
+    private static let dayWithMonthFormatter: DateFormatter = {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd. MMMM YYYY"
+        return dateFormatter
+    }()
+
     static func ub_string(from date: Date) -> String {
         dateFormatter.string(from: date)
     }
 
     static func ub_dayString(from date: Date) -> String {
         dayDateFormatter.string(from: date)
+    }
+
+    static func ub_dayWithMonthString(from date: Date) -> String {
+        dayWithMonthFormatter.string(from: date)
     }
 
     static func ub_daysAgo(from date: Date, addExplicitDate: Bool) -> String {
