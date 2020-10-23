@@ -44,6 +44,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             infoBoxViewModel.image = UIImage(named: "ic-info")
             infoBoxViewModel.backgroundColor = .ns_purpleBackground
             infoBoxViewModel.titleLabelType = .textBold
+            infoBoxViewModel.externalLinkStyle = .normal(color: .ns_purple)
 
             infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
 
