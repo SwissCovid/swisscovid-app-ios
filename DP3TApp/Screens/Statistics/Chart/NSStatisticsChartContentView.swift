@@ -139,11 +139,6 @@ class NSStatisticsChartContentView: UIView {
         // Or if the first one is a monday
         if Calendar.current.component(.weekday, from: firstDate) == 2 {
             additionalPadding += NSPadding.large
-            infectionBarViewLeadingConstraint?.update(inset: NSPadding.large)
-            dateViewLeadingConstraint?.update(inset: NSPadding.large)
-        } else {
-            infectionBarViewLeadingConstraint?.update(inset: 0)
-            dateViewLeadingConstraint?.update(inset: 0)
         }
 
         return CGSize(width: CGFloat(data.data.count) * (configuration.barWidth + configuration.barBorderWidth) + configuration.barBorderWidth + additionalPadding,
@@ -161,6 +156,15 @@ class NSStatisticsChartContentView: UIView {
         codeBarView.values = data.data.map(\.codes)
         dateView.values = data.data.map(\.date)
         lineView.values = data.data.map(\.sevenDayAverage)
+
+        if let firstDate = data.data.first?.date,
+            Calendar.current.component(.weekday, from: firstDate) == 2 {
+            infectionBarViewLeadingConstraint?.update(inset: NSPadding.large)
+            dateViewLeadingConstraint?.update(inset: NSPadding.large)
+        } else {
+            infectionBarViewLeadingConstraint?.update(inset: 0)
+            dateViewLeadingConstraint?.update(inset: 0)
+        }
 
         yAxisLines.yTicks = data.yTicks
 
