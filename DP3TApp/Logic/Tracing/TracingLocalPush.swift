@@ -121,7 +121,20 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         content.body = "push_exposed_text".ub_localized
         content.sound = .default
 
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
+        var trigger: UNNotificationTrigger?
+
+        // delay the notification during the night because the callcenter is closed in this timespan
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour], from: now)
+        if let hour = components.hour,
+            hour >= 22 || hour < 5 {
+            var date = DateComponents()
+            date.hour = 5
+
+            trigger = UNCalendarNotificationTrigger(dateMatching: date, repeats: false)
+        }
+
+        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
 

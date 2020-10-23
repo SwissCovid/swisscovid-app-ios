@@ -84,8 +84,33 @@ class TracingLocalPushTests: XCTestCase {
         provider.exposures = [Exposure(identifier: "xy", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
+        XCTAssertNil(center.requests.first!.trigger)
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
+    }
+
+    func testDelayNotificationAfter22() {
+        let provider = MockIdentifierProvider()
+        provider.exposures = [Exposure(identifier: "xy", date: Date())]
+        tlp.nowString = "01.09.2020 22:00"
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+        XCTAssertEqual(center.requests.count, 1)
+        let request = center.requests.first!
+        XCTAssertNotNil(request.trigger)
+        let trigger = request.trigger as! UNCalendarNotificationTrigger
+        XCTAssertEqual(trigger.dateComponents.hour!, 5)
+    }
+
+    func testDelayNotificationBefore05() {
+        let provider = MockIdentifierProvider()
+        provider.exposures = [Exposure(identifier: "xy", date: Date())]
+        tlp.nowString = "01.09.2020 04:55"
+        tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
+        XCTAssertEqual(center.requests.count, 1)
+        let request = center.requests.first!
+        XCTAssertNotNil(request.trigger)
+        let trigger = request.trigger as! UNCalendarNotificationTrigger
+        XCTAssertEqual(trigger.dateComponents.hour!, 5)
     }
 
     func testGeneratingUniqueNotification() {
@@ -93,6 +118,7 @@ class TracingLocalPushTests: XCTestCase {
         provider.exposures = [Exposure(identifier: "xy", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 1)
+        XCTAssertNil(center.requests.first!.trigger)
         provider.exposures = [Exposure(identifier: "xy", date: Date()), Exposure(identifier: "aa", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
         XCTAssertEqual(center.requests.count, 2)
@@ -113,6 +139,7 @@ class TracingLocalPushTests: XCTestCase {
         }
 
         XCTAssertEqual(center.requests.count, 1)
+        XCTAssertNil(center.requests.first!.trigger)
 
         let fiveDaysAgo = Date(timeIntervalSinceNow: -60 * 60 * 24 * 5)
 
@@ -198,3 +225,4 @@ class TracingLocalPushTests: XCTestCase {
         XCTAssertEqual(center.requests.count, 0)
     }
 }
+
