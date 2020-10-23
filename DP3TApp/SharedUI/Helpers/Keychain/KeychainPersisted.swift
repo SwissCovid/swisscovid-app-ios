@@ -40,11 +40,8 @@ class KeychainPersisted<Value: Codable> {
     }
 
     func reloadValue() {
-        switch keychain.get(for: key) {
-        case let .success(value):
+        if case let Result.success(value) = keychain.get(for: key) {
             wrappedValue = value
-        default:
-            break
         }
     }
 }
