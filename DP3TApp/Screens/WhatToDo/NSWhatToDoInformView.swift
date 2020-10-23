@@ -38,10 +38,11 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                                                            subtextColor: .ns_text,
                                                            additionalText: infoBox.urlTitle,
                                                            additionalURL: infoBox.url?.absoluteString,
+                                                           dynamicIconTintColor: .ns_purple,
                                                            externalLinkStyle: .normal(color: .ns_blue))
 
-            infoBoxViewModel.image = UIImage(named: "ic-info-on")
-            infoBoxViewModel.backgroundColor = .ns_blueBackground
+            infoBoxViewModel.image = UIImage(named: "ic-info")
+            infoBoxViewModel.backgroundColor = .ns_purpleBackground
             infoBoxViewModel.titleLabelType = .textBold
 
             infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
