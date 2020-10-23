@@ -601,7 +601,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.\n\nTest sonucunuz pozitif çıktı ve 2 saat içerisinde henüz Covid kodunu almadınız mı?\nBu durumda, Corona Virüs Bilgi Hattı (Infoline) ile iletişime geçiniz:";
+"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.\n\nTest sonucunuz pozitif çıktı ve 4 saat içerisinde henüz Covid kodunu almadınız mı?\nBu durumda, Corona Virüs Bilgi Hattı (Infoline) ile iletişime geçiniz:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Neler iletilir?";
@@ -917,7 +917,7 @@
 "meldungen_background_error_text_android" = "Uygulama açık olmadığında da bildirim alabilmek için lütfen ayarları değiştirin.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
