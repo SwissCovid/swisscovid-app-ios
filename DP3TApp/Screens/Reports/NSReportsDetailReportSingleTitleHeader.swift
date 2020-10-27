@@ -45,6 +45,8 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
     private var fullscreen: Bool
 
+    private var moreDaysViews: [NSReportDetailMoreDaysView] = []
+
     @UBUserDefault(key: "didShowReportsDetailOnce", defaultValue: false)
     private var didShowOnce: Bool
 
@@ -290,21 +292,28 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
             titleLabel.text = "meldung_detail_exposed_title".ub_localized
         }
 
-        // remove all more days views from stackview
-        dateStackView.arrangedSubviews.forEach {
-            if $0 is NSReportDetailMoreDaysView {
-                dateStackView.removeArrangedSubview($0)
+        for (index, report) in reports.enumerated() {
+            func getLabel(index: Int) -> NSReportDetailMoreDaysView {
+                if moreDaysViews.count < index {
+                    return moreDaysViews[index]
+                }
+                return NSReportDetailMoreDaysView()
             }
-        }
-
-        for report in reports {
-            let label = NSReportDetailMoreDaysView(title: DateFormatter.ub_dayWithMonthString(from: report.timestamp))
+            let label = getLabel(index: index)
+            label.title = DateFormatter.ub_dayWithMonthString(from: report.timestamp)
             label.isHidden = true
             label.alpha = 0
             dateStackView.addArrangedSubview(label)
+            moreDaysViews.append(label)
 
             label.snp.makeConstraints { make in
                 make.width.equalToSuperview()
+            }
+        }
+
+        while moreDaysViews.count > reports.count {
+            if let label = moreDaysViews.popLast() {
+                dateStackView.removeArrangedSubview(label)
             }
         }
 
