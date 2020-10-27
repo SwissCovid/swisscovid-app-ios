@@ -320,4 +320,15 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         headerView?.updateViewConstraints()
     }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let target = super.hitTest(point, with: event)
+
+        if let target = target,
+            target == expandButton || target == continueButton {
+            return target
+        }
+
+        return nil
+    }
 }

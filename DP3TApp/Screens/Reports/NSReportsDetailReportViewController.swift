@@ -294,11 +294,20 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 }
 
 extension NSReportsDetailReportViewController: NSHitTestDelegate {
-    func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
+    func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true
         }
 
-        return point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView)
+        // if point is inside titleView
+        if point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView) {
+            guard let titleView = titleView else {
+                return true
+            }
+            // and the hitTest Succeed we foreward the touch event
+            return titleView.hitTest(point, with: event) != nil
+        }
+
+        return false
     }
 }
