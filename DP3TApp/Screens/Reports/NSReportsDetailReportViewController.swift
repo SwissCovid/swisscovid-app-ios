@@ -283,12 +283,12 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let lastReport = reports.last else { return }
+        guard let newestReport = reports.first else { return }
 
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        UserStorage.shared.registerPhoneCall(identifier: lastReport.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: newestReport.identifier)
         UIStateManager.shared.refresh()
     }
 }
