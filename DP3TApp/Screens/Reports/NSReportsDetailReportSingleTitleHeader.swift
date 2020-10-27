@@ -63,7 +63,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
 
-        subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+        titleLabel.text = "meldung_detail_exposed_title".ub_localized
 
         dateLabel.text = ""
         isAccessibilityElement = true
@@ -136,9 +136,6 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
     }
 
     @objc func didTouchContinueButton() {
-        titleLabel.text = "meldung_detail_exposed_title".ub_localized
-        subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
-
         headerView?.updateHeightConstraints()
         headerView?.startHeaderAnimation()
 
@@ -276,11 +273,10 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
     private func update() {
         guard !reports.isEmpty else { return }
 
-        // update title Label text
-        if fullscreen {
-            titleLabel.text = "meldung_detail_exposed_title".ub_localized
+        if reports.count == 1 {
+            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
         } else {
-            titleLabel.text = "meldung_detail_exposed_title".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
         }
 
         for (index, report) in reports.enumerated() {
