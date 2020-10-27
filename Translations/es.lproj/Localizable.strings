@@ -997,13 +997,13 @@
 "ios_tracing_permission_error_button" = "Así funciona";
 
 /*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
-"meldung_detail_exposed_subtitle_last_encounter" = "Last encounter";
+"meldung_detail_exposed_subtitle_last_encounter" = "Último contacto";
 
 /*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
-"meldung_detail_exposed_subtitle_all_encounters" = "All encounters";
+"meldung_detail_exposed_subtitle_all_encounters" = "Todos los contactos";
 
 /*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
-"meldung_detail_exposed_show_all_button" = "Show all";
+"meldung_detail_exposed_show_all_button" = "Mostrar todos";
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
-"meldung_detail_exposed_show_less_button" = "Show less";
+"meldung_detail_exposed_show_less_button" = "Mostrar menos";
