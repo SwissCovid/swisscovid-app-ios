@@ -47,9 +47,6 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
     private var moreDaysViews: [NSReportDetailMoreDaysView] = []
 
-    @UBUserDefault(key: "didShowReportsDetailOnce", defaultValue: false)
-    private var didShowOnce: Bool
-
     // MARK: - Init
 
     init(fullscreen: Bool) {
@@ -146,8 +143,6 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         headerView?.startHeaderAnimation()
 
         fullscreen = false
-
-        didShowOnce = true
 
         updateExpandButtonConstraints()
     }
@@ -283,11 +278,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         // update title Label text
         if fullscreen {
-            if !didShowOnce {
-                titleLabel.text = "meldung_detail_exposed_title".ub_localized
-            } else {
-                titleLabel.text = "meldung_detail_new_contact_title".ub_localized
-            }
+            titleLabel.text = "meldung_detail_exposed_title".ub_localized
         } else {
             titleLabel.text = "meldung_detail_exposed_title".ub_localized
         }
