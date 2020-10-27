@@ -139,6 +139,8 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         headerView?.updateHeightConstraints()
         headerView?.startHeaderAnimation()
 
+        expandButton.isHidden = false
+
         fullscreen = false
 
         updateExpandButtonConstraints()
@@ -155,7 +157,11 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
                 }
             }
         } else {
-            expandButton.isHidden = false
+            if fullscreen {
+                expandButton.isHidden = true
+            } else {
+                expandButton.isHidden = false
+            }
             expandButton.snp.remakeConstraints { make in
                 make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
                 make.left.right.equalToSuperview().inset(NSPadding.large)
