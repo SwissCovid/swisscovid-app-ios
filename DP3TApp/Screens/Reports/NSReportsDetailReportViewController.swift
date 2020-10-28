@@ -304,8 +304,10 @@ extension NSReportsDetailReportViewController: NSHitTestDelegate {
             guard let titleView = titleView else {
                 return true
             }
+            // translate point into stackview space
+            let translatedPoint = point.applying(.init(translationX: 0, y: stackScrollView.scrollView.contentOffset.y))
             // and the hitTest Succeed we foreward the touch event
-            return titleView.hitTest(point, with: event) != nil
+            return titleView.hitTest(translatedPoint, with: event) != nil
         }
 
         return false
