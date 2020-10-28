@@ -120,7 +120,8 @@
                 let isInfected = state.debug.infectionStatus == .infected
                 texts.append("\("debug_sdk_state_self_exposed".ub_localized)\(yesOrNo(isInfected))")
 
-                let isExposed = state.debug.infectionStatus == .exposed1 || state.debug.infectionStatus == .exposed5 || state.debug.infectionStatus == .exposed10 || state.debug.infectionStatus == .exposed20
+                let isExposed = state.debug.infectionStatus.isExposed
+
                 texts.append("\("debug_sdk_state_contact_exposed".ub_localized)\(yesOrNo(isExposed))")
 
                 commentsLabel.text = texts.joined(separator: "\n")

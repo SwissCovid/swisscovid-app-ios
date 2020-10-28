@@ -106,6 +106,12 @@ struct UIStateModel: Equatable {
                 case exposed10 // exposed with 10 contact
                 case exposed20 // exposed with 20 contact
                 case infected
+
+                static let exposedStates: [Self] = [.exposed1, .exposed5, .exposed10, .exposed20]
+
+                var isExposed: Bool {
+                    Self.exposedStates.contains(self)
+                }
             }
         }
     #endif
