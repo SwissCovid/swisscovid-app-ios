@@ -101,7 +101,10 @@ struct UIStateModel: Equatable {
 
             enum DebugInfectionStatus: Equatable {
                 case healthy
-                case exposed
+                case exposed1
+                case exposed5
+                case exposed10
+                case exposed20
                 case infected
             }
         }

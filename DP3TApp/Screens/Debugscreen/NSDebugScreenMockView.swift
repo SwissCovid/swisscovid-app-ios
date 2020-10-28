@@ -16,7 +16,15 @@
     class NSDebugScreenMockView: NSSimpleModuleBaseView {
         private let stackView = UIStackView()
 
-        private let checkboxes = [NSCheckBoxView(text: "debug_state_setting_option_none".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_ok".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized), NSCheckBoxView(text: "debug_state_setting_option_infected".ub_localized)]
+        private let checkboxes = [
+            NSCheckBoxView(text: "debug_state_setting_option_none".ub_localized),
+            NSCheckBoxView(text: "debug_state_setting_option_ok".ub_localized),
+            NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 1"),
+            NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 5"),
+            NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 10"),
+            NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 20"),
+            NSCheckBoxView(text: "debug_state_setting_option_infected".ub_localized),
+        ]
 
         // MARK: - Init
 
@@ -79,8 +87,14 @@
                     case 1:
                         stateManager.overwrittenInfectionState = .healthy
                     case 2:
-                        stateManager.overwrittenInfectionState = .exposed
+                        stateManager.overwrittenInfectionState = .exposed1
                     case 3:
+                        stateManager.overwrittenInfectionState = .exposed5
+                    case 4:
+                        stateManager.overwrittenInfectionState = .exposed10
+                    case 5:
+                        stateManager.overwrittenInfectionState = .exposed20
+                    case 6:
                         stateManager.overwrittenInfectionState = .infected
                     default:
                         stateManager.overwrittenInfectionState = nil
@@ -95,12 +109,18 @@
 
                 if let s = status {
                     checkboxes[1].isChecked = s == .healthy
-                    checkboxes[2].isChecked = s == .exposed
-                    checkboxes[3].isChecked = s == .infected
+                    checkboxes[2].isChecked = s == .exposed1
+                    checkboxes[3].isChecked = s == .exposed5
+                    checkboxes[4].isChecked = s == .exposed10
+                    checkboxes[5].isChecked = s == .exposed20
+                    checkboxes[6].isChecked = s == .infected
                 } else {
                     checkboxes[1].isChecked = false
                     checkboxes[2].isChecked = false
                     checkboxes[3].isChecked = false
+                    checkboxes[4].isChecked = false
+                    checkboxes[5].isChecked = false
+                    checkboxes[6].isChecked = false
                 }
             }
         #endif

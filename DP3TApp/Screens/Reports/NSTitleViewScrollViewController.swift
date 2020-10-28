@@ -139,19 +139,30 @@ class NSTitleViewScrollViewController: NSViewController {
 
 extension NSTitleViewScrollViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sp: CGFloat
+        let titleHeight: CGFloat
         if useTitleViewHeight {
-            sp = titleView?.frame.height ?? startPositionScrollView
+            titleHeight = titleView?.frame.height ?? startPositionScrollView
         } else {
-            sp = startPositionScrollView
+            titleHeight = startPositionScrollView
         }
 
-        let v = (sp - scrollView.contentOffset.y) / sp
-        let p = max(0.0, min(1.0, v))
+        let coveringScreenPercentage = (titleHeight - scrollView.contentOffset.y) / scrollView.frame.height
 
-        titleView?.transform = CGAffineTransform(translationX: 0, y: min(0.0, -0.4 * scrollView.contentOffset.y))
+        let threshold = min(titleHeight / scrollView.frame.height, 0.5)
 
-        titleView?.alpha = pow(p, 0.8)
+        let maxYLinearOffset = max((titleHeight / scrollView.frame.height) * scrollView.frame.height - scrollView.frame.height / 2, 0)
+
+        var yOffset: CGFloat = min(scrollView.contentOffset.y, maxYLinearOffset)
+
+        if scrollView.contentOffset.y > maxYLinearOffset {
+            yOffset += max((scrollView.contentOffset.y - yOffset) * 0.4, 0)
+        }
+
+        titleView?.transform = CGAffineTransform(translationX: 0, y: -max(yOffset, 0))
+
+        let alpha = max(0.0, min(1.0, coveringScreenPercentage / threshold))
+
+        titleView?.alpha = pow(alpha, 0.8)
 
         titleView?.scrollViewDidScroll(scrollView)
     }

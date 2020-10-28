@@ -132,6 +132,8 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         } else {
             expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
             subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+
+            headerView?.stackScrollView.scrollView.setContentOffset(.zero, animated: false)
         }
     }
 
