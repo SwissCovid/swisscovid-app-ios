@@ -219,7 +219,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         }
 
         continueButton.snp.makeConstraints { make in
-            make.top.equalTo(self.expandButton.snp.bottom).offset(NSPadding.large + NSPadding.medium)
+            make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.large + NSPadding.medium)
             make.centerX.equalToSuperview()
             make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
         }
