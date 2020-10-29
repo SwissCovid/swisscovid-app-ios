@@ -283,22 +283,33 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let lastReport = reports.last else { return }
+        guard let newestReport = reports.first else { return }
 
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        UserStorage.shared.registerPhoneCall(identifier: lastReport.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: newestReport.identifier)
         UIStateManager.shared.refresh()
     }
 }
 
 extension NSReportsDetailReportViewController: NSHitTestDelegate {
-    func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
+    func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true
         }
 
-        return point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView)
+        // if point is inside titleView
+        if point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView) {
+            guard let titleView = titleView else {
+                return true
+            }
+            // translate point into stackview space
+            let translatedPoint = point.applying(.init(translationX: 0, y: stackScrollView.scrollView.contentOffset.y))
+            // and the hitTest Succeed we foreward the touch event
+            return titleView.hitTest(translatedPoint, with: event) != nil
+        }
+
+        return false
     }
 }
