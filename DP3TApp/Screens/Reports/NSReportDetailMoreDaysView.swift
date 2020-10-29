@@ -11,10 +11,17 @@
 import UIKit
 
 class NSReportDetailMoreDaysView: UIView {
-    init(title: String) {
+    private let label = NSLabel(.textBold)
+
+    var title: String? {
+        didSet {
+            label.text = title
+        }
+    }
+
+    init() {
         super.init(frame: .zero)
-        let label = NSLabel(.textBold)
-        label.text = title
+
         label.textAlignment = .center
 
         addSubview(label)

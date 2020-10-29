@@ -45,8 +45,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
     private var fullscreen: Bool
 
-    @UBUserDefault(key: "didShowReportsDetailOnce", defaultValue: false)
-    private var didShowOnce: Bool
+    private var moreDaysViews: [NSReportDetailMoreDaysView] = []
 
     // MARK: - Init
 
@@ -64,7 +63,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
 
         expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
 
-        subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+        titleLabel.text = "meldung_detail_exposed_title".ub_localized
 
         dateLabel.text = ""
         isAccessibilityElement = true
@@ -133,19 +132,18 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         } else {
             expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
             subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+
+            headerView?.stackScrollView.scrollView.setContentOffset(.zero, animated: false)
         }
     }
 
     @objc func didTouchContinueButton() {
-        titleLabel.text = "meldung_detail_exposed_title".ub_localized
-        subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
-
         headerView?.updateHeightConstraints()
         headerView?.startHeaderAnimation()
 
-        fullscreen = false
+        expandButton.isHidden = false
 
-        didShowOnce = true
+        fullscreen = false
 
         updateExpandButtonConstraints()
     }
@@ -161,7 +159,11 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
                 }
             }
         } else {
-            expandButton.isHidden = false
+            if fullscreen {
+                expandButton.isHidden = true
+            } else {
+                expandButton.isHidden = false
+            }
             expandButton.snp.remakeConstraints { make in
                 make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
                 make.left.right.equalToSuperview().inset(NSPadding.large)
@@ -219,7 +221,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         }
 
         continueButton.snp.makeConstraints { make in
-            make.top.equalTo(self.expandButton.snp.bottom).offset(NSPadding.large + NSPadding.medium)
+            make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.large + NSPadding.medium)
             make.centerX.equalToSuperview()
             make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
         }
@@ -279,32 +281,34 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
     private func update() {
         guard !reports.isEmpty else { return }
 
-        // update title Label text
-        if fullscreen {
-            if !didShowOnce {
-                titleLabel.text = "meldung_detail_exposed_title".ub_localized
-            } else {
-                titleLabel.text = "meldung_detail_new_contact_title".ub_localized
-            }
+        if reports.count == 1 {
+            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
         } else {
-            titleLabel.text = "meldung_detail_exposed_title".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
         }
 
-        // remove all more days views from stackview
-        dateStackView.arrangedSubviews.forEach {
-            if $0 is NSReportDetailMoreDaysView {
-                dateStackView.removeArrangedSubview($0)
+        for (index, report) in reports.enumerated() {
+            func getLabel(index: Int) -> NSReportDetailMoreDaysView {
+                if moreDaysViews.count < index {
+                    return moreDaysViews[index]
+                }
+                return NSReportDetailMoreDaysView()
             }
-        }
-
-        for report in reports {
-            let label = NSReportDetailMoreDaysView(title: DateFormatter.ub_dayWithMonthString(from: report.timestamp))
+            let label = getLabel(index: index)
+            label.title = DateFormatter.ub_dayWithMonthString(from: report.timestamp)
             label.isHidden = true
             label.alpha = 0
             dateStackView.addArrangedSubview(label)
+            moreDaysViews.append(label)
 
             label.snp.makeConstraints { make in
                 make.width.equalToSuperview()
+            }
+        }
+
+        while moreDaysViews.count > reports.count {
+            if let label = moreDaysViews.popLast() {
+                dateStackView.removeArrangedSubview(label)
             }
         }
 
@@ -317,5 +321,16 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
 
         headerView?.updateViewConstraints()
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let target = super.hitTest(point, with: event)
+
+        if let target = target,
+            target == expandButton || target == continueButton {
+            return target
+        }
+
+        return nil
     }
 }
