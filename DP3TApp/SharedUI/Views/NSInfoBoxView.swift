@@ -175,7 +175,7 @@ class NSInfoBoxView: UIView {
                     make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
                     make.leading.equalTo(self.titleLabel)
                     make.trailing.lessThanOrEqualTo(self.titleLabel)
-                    self.externalLinkBottomConstraint = make.bottom.equalToSuperview().inset(NSPadding.large).constraint
+                    self.externalLinkBottomConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
                 }
             } else {
                 addSubview(additionalLabel)

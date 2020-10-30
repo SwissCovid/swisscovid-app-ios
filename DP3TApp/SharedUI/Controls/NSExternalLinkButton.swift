@@ -114,12 +114,24 @@ class NSExternalLinkButton: UBButton {
 
         highlightXInset = -NSPadding.small
         highlightYInset = -NSPadding.small
-        highlightedBackgroundColor = UIColor.black.withAlphaComponent(0.15)
+        highlightedBackgroundColor = UIColor.setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.15),
+                                                               darkColor: UIColor.ns_darkModeBackground2.withAlphaComponent(0.8))
         highlightCornerRadius = 3.0
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        guard let imageViewFrame = imageView?.frame,
+            let titleLableFrame = titleLabel?.frame else { return }
+        let frame = CGRect(x: imageViewFrame.minX,
+                           y: imageViewFrame.minY,
+                           width: titleLableFrame.maxX - imageViewFrame.minX,
+                           height: titleLableFrame.maxY - imageViewFrame.minY)
+        highlightView.frame = frame.inset(by: UIEdgeInsets(top: -5, left: -5, bottom: -5, right: -5))
     }
 
     // MARK: - Fix content size

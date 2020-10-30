@@ -56,17 +56,7 @@ class DatabaseSyncer {
         }
         Logger.log("Start Database Sync", appState: true)
 
-        let runningInBackground: () -> Bool = {
-            if Thread.isMainThread {
-                return UIApplication.shared.applicationState == .background
-            } else {
-                return DispatchQueue.main.sync {
-                    UIApplication.shared.applicationState == .background
-                }
-            }
-        }
-
-        DP3TTracing.sync(runningInBackground: runningInBackground()) { result in
+        DP3TTracing.sync { result in
             switch result {
             case let .failure(e):
 

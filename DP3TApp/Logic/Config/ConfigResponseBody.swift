@@ -62,7 +62,7 @@ class ConfigResponseBody: UBCodable {
         let enterCovidcodeBoxTitle: String
         let enterCovidcodeBoxText: String
         let enterCovidcodeBoxButtonTitle: String
-        let infoBox: InfoBox
+        let infoBox: InfoBox?
         let faqEntries: [FAQEntry]
 
         class FAQEntry: UBCodable {

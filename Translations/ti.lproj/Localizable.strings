@@ -601,7 +601,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። \n\nኣወንታ/ፖሲቲቭ ተመርሚርኩም ድሕሪ 2 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩም፧\nሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
+"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። \n\nኣወንታ/ፖሲቲቭ ተመርሚርኩም ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩም፧\nሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
@@ -917,7 +917,7 @@
 "meldungen_background_error_text_android" = "ሓድሽ ሓበሬታ ምስዝህሉ: ካብቲ ኣፕ ወጻኢ ውን ንኽትሕበሩ ምእንታን: ነቲ ሴቲንግ ቀይርዎ።";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -933,8 +933,8 @@
 "stats_legend_new_infections" = "ዝተሓበሩ ሓድሽቲ ልበዳታት";
 "stats_legend_new_infections_average" = "ናይ 7 መዓልቲ ገምጋም";
 "stats_legend_entered_covidcodes" = "ዝተመዝገቡ ናይ ኮቪድ ኮዳት";
-"share_app_supertitle" = "ብሓባር …";
-"share_app_title" = "ካልኣይ ምዝርጋሕ ምውጋድ";
+"share_app_supertitle" = "ብሓባር…";
+"share_app_title" = "ልበዳታት ምውጋድ";
 "share_app_button" = "ነቲ ኤፕ ምኽፋል";
 "share_app_body" = "ብዝተኻእለ መጠን ብዙሓት ንSwissCovid ኤፕ እንድሕር ወሊዖሞ፣ ናይ ልበዳ ሰንሰለታት ብኣጋኡ ከነቋርጾም ንኽእል ኢና።";
 
@@ -991,3 +991,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "ከምዚ እዩ ዝሰርሕ";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "ዝሓለፈ መራኸቢ";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "ኩሎም መራኸቢታት";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "ኩሉ ምርኣይ";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "ዝወሓደ ምርኣይ";

@@ -606,7 +606,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. \n\nThis ensures that only confirmed cases are notified via the app.\n\nYou have tested positive and after 2 hours have not yet received a Covidcode? \nIf this is the case, please contact the Coronavirus Infoline:";
+"inform_detail_faq1_text" = "People who have tested positive for the new coronavirus receive a Covidcode. \n\nThis ensures that only confirmed cases are notified via the app.\n\nYou have tested positive and after 4 hours have not yet received a Covidcode? \nIf this is the case, please contact the Coronavirus Infoline:";
 
 /*Not translated*/
 /*Inform Detail: FAQ Titel*/
@@ -926,7 +926,7 @@
 "meldungen_background_error_text_android" = "Change the settings to receive notification outside the app as well in the event of a report.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -942,8 +942,8 @@
 "stats_legend_new_infections" = "New infections reported";
 "stats_legend_new_infections_average" = "7-day average";
 "stats_legend_entered_covidcodes" = "Covidcodes entered";
-"share_app_supertitle" = "Working together to…";
-"share_app_title" = "Prevent a second wave";
+"share_app_supertitle" = "Together…";
+"share_app_title" = "against the spread of Covid";
 "share_app_button" = "Share app";
 "share_app_body" = "If as many people as possible activate the SwissCovid app, we can break infection chains early.";
 
@@ -1000,3 +1000,17 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "How it works";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Last contact";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "All contacts";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_show_all_button" = "Show all";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Show fewer";

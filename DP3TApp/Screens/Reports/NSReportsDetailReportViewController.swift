@@ -41,9 +41,6 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     override init() {
         super.init()
-        titleView = NSReportsDetailReportTitleView(overlapInset: titleHeight - startPositionScrollView)
-
-        stackScrollView.hitTestDelegate = self
     }
 
     override var useFullScreenHeaderAnimation: Bool {
@@ -56,6 +53,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     override var startPositionScrollView: CGFloat {
         return titleHeight - 30
+    }
+
+    func updateHeightConstraints() {
+        useTitleViewHeight = true
+        view.setNeedsLayout()
     }
 
     override func startHeaderAnimation() {
@@ -71,6 +73,16 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     override func viewDidLoad() {
+        let titleHeader = NSReportsDetailReportSingleTitleHeader(fullscreen: showReportWithAnimation)
+        titleHeader.headerView = self
+
+        titleView = titleHeader
+
+        stackScrollView.hitTestDelegate = self
+
+        if !showReportWithAnimation {
+            useTitleViewHeight = true
+        }
         super.viewDidLoad()
 
         setupLayout()
@@ -103,7 +115,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSReportsDetailReportTitleView {
+        if let tv = titleView as? NSReportsDetailReportSingleTitleHeader {
             tv.reports = reports
         }
 
@@ -271,22 +283,33 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func call() {
-        guard let lastReport = reports.last else { return }
+        guard let newestReport = reports.first else { return }
 
         let phoneNumber = "infoline_tel_number".ub_localized
         PhoneCallHelper.call(phoneNumber)
 
-        UserStorage.shared.registerPhoneCall(identifier: lastReport.identifier)
+        UserStorage.shared.registerPhoneCall(identifier: newestReport.identifier)
         UIStateManager.shared.refresh()
     }
 }
 
 extension NSReportsDetailReportViewController: NSHitTestDelegate {
-    func overrideHitTest(_ point: CGPoint, with _: UIEvent?) -> Bool {
+    func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true
         }
 
-        return point.y + stackScrollView.scrollView.contentOffset.y < startPositionScrollView
+        // if point is inside titleView
+        if point.y + stackScrollView.scrollView.contentOffset.y < (titleView?.frame.height ?? startPositionScrollView) {
+            guard let titleView = titleView else {
+                return true
+            }
+            // translate point into stackview space
+            let translatedPoint = point.applying(.init(translationX: 0, y: stackScrollView.scrollView.contentOffset.y))
+            // and the hitTest Succeed we foreward the touch event
+            return titleView.hitTest(translatedPoint, with: event) != nil
+        }
+
+        return false
     }
 }

@@ -10,36 +10,47 @@
 
 import UIKit
 
-class NSReportsDetailReportSingleTitleHeader: UIView {
+class NSReportsDetailReportSingleTitleHeader: NSTitleView {
     // MARK: - API
 
-    public weak var headerView: NSTitleView?
+    public weak var headerView: NSReportsDetailReportViewController?
 
-    public var report: UIStateModel.ReportsDetail.NSReportModel? {
+    public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
         didSet { update() }
     }
 
     // MARK: - Initial Views
 
     private let newMeldungInitialView = NSLabel(.textBold, textAlignment: .center)
+
     private let imageInitialView = UIImageView(image: UIImage(named: "illu-exposed-banner"))
 
     // MARK: - Normal Views
 
     private let infoImageView = UIImageView(image: UIImage(named: "ic-info-border"))
+
     private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
-    private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
+
+    private let subtitleLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
 
     private let dateLabel = NSLabel(.textBold, textAlignment: .center)
 
+    private let dateStackView: UIStackView = UIStackView()
+
+    private let expandButton: NSUnderlinedButton = NSUnderlinedButton()
+
+    private var isExpanded = false
+
     private let continueButton = NSButton(title: "meldung_animation_continue_button".ub_localized, style: .normal(.white), customTextColor: .ns_blue)
 
-    private let openSetup: Bool
+    private var fullscreen: Bool
+
+    private var moreDaysViews: [NSReportDetailMoreDaysView] = []
 
     // MARK: - Init
 
-    init(setupOpen: Bool, onceMore: Bool) {
-        openSetup = setupOpen
+    init(fullscreen: Bool) {
+        self.fullscreen = fullscreen
 
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -50,13 +61,9 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
         newMeldungInitialView.text = "meldung_detail_exposed_new_meldung".ub_localized
 
-        if onceMore {
-            titleLabel.text = "meldung_detail_new_contact_title".ub_localized
-            subtitleLabel.text = "meldung_detail_new_contact_subtitle".ub_localized
-        } else {
-            titleLabel.text = "meldung_detail_exposed_title".ub_localized
-            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
-        }
+        expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
+
+        titleLabel.text = "meldung_detail_exposed_title".ub_localized
 
         dateLabel.text = ""
         isAccessibilityElement = true
@@ -79,19 +86,91 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
         addSubview(infoImageView)
         addSubview(titleLabel)
         addSubview(subtitleLabel)
-        addSubview(dateLabel)
         addSubview(continueButton)
 
+        addSubview(dateStackView)
+        addSubview(expandButton)
+
+        dateStackView.axis = .vertical
+        dateStackView.spacing = NSPadding.small
+
+        dateStackView.addArrangedView(dateLabel)
+
+        expandButton.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            self.didTouchExpandButton()
+        }
+
         continueButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.headerView?.viewController?.startHeaderAnimation()
+            guard let self = self else { return }
+            self.didTouchContinueButton()
         }
 
         setupOpen()
 
-        if !openSetup {
+        if !fullscreen {
             startInitialAnimation()
             setupClosed()
+        }
+    }
+
+    @objc func didTouchExpandButton() {
+        isExpanded.toggle()
+        dateLabel.isHidden.toggle()
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.99, initialSpringVelocity: 0, options: .beginFromCurrentState, animations: {
+            self.dateStackView.arrangedSubviews.forEach {
+                if $0 is NSReportDetailMoreDaysView {
+                    $0.isHidden.toggle()
+                    $0.alpha = $0.alpha == 0 ? 1 : 0
+                }
+            }
+        }, completion: nil)
+
+        if isExpanded {
+            expandButton.title = "meldung_detail_exposed_show_less_button".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle_all_encounters".ub_localized
+        } else {
+            expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
+            subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+
+            headerView?.stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+        }
+    }
+
+    @objc func didTouchContinueButton() {
+        headerView?.updateHeightConstraints()
+        headerView?.startHeaderAnimation()
+
+        expandButton.isHidden = false
+
+        fullscreen = false
+
+        updateExpandButtonConstraints()
+    }
+
+    private func updateExpandButtonConstraints() {
+        if reports.count == 1 {
+            expandButton.isHidden = true
+            expandButton.snp.remakeConstraints { make in
+                make.top.equalTo(self.dateStackView.snp.bottom)
+                make.left.right.equalToSuperview().inset(NSPadding.large)
+                if !fullscreen {
+                    make.bottom.equalToSuperview()
+                }
+            }
+        } else {
+            if fullscreen {
+                expandButton.isHidden = true
+            } else {
+                expandButton.isHidden = false
+            }
+            expandButton.snp.remakeConstraints { make in
+                make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
+                make.left.right.equalToSuperview().inset(NSPadding.large)
+                if !fullscreen {
+                    make.bottom.equalToSuperview().inset(NSPadding.large + NSPadding.medium)
+                }
+            }
         }
     }
 
@@ -122,20 +201,27 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
             }
         }
 
-        dateLabel.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.small)
-        }
-
         subtitleLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(2.0 * NSPadding.medium)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
+        }
+
+        dateStackView.snp.makeConstraints { make in
+            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.medium)
+            make.left.right.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+        }
+
+        expandButton.snp.makeConstraints { make in
+            make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.medium)
+            make.left.right.equalToSuperview().inset(NSPadding.large)
+            if !fullscreen {
+                make.bottom.equalToSuperview().inset(NSPadding.large + NSPadding.medium)
+            }
         }
 
         continueButton.snp.makeConstraints { make in
-            make.top.equalTo(self.subtitleLabel.snp.bottom).offset(NSPadding.large + NSPadding.medium)
+            make.top.equalTo(self.dateStackView.snp.bottom).offset(NSPadding.large + NSPadding.medium)
             make.centerX.equalToSuperview()
             make.left.right.lessThanOrEqualToSuperview().inset(NSPadding.large).priority(.low)
         }
@@ -149,9 +235,9 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
 
         infoImageView.alpha = 0.0
 
-        if openSetup {
+        if fullscreen {
             var i = 0
-            for v in [newMeldungInitialView, imageInitialView, titleLabel, dateLabel, subtitleLabel, continueButton] {
+            for v in [newMeldungInitialView, imageInitialView, titleLabel, subtitleLabel, dateLabel, expandButton, continueButton] {
                 v.alpha = 0.0
                 v.transform = CGAffineTransform(translationX: 0, y: -NSPadding.large).scaledBy(x: 0.8, y: 0.8)
 
@@ -172,37 +258,79 @@ class NSReportsDetailReportSingleTitleHeader: UIView {
             make.top.equalTo(self.infoImageView.snp.bottom).offset(NSPadding.medium)
         }
 
-        dateLabel.snp.remakeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
-        }
-
         subtitleLabel.snp.remakeConstraints { make in
             make.left.right.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.dateLabel.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium)
         }
     }
 
     // MARK: - Protocol
 
-    func startInitialAnimation() {
+    override func startInitialAnimation() {
         imageInitialView.alpha = 0.0
         newMeldungInitialView.alpha = 0.0
         infoImageView.alpha = 1.0
         continueButton.alpha = 0.0
     }
 
-    func updateConstraintsForAnimation() {
+    override func updateConstraintsForAnimation() {
         setupClosed()
     }
 
     private func update() {
-        guard let report = report else { return }
+        guard !reports.isEmpty else { return }
 
-        dateLabel.text = DateFormatter.ub_daysAgo(from: report.timestamp, addExplicitDate: true)
+        if reports.count == 1 {
+            subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
+        } else {
+            subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
+        }
+
+        for (index, report) in reports.enumerated() {
+            func getLabel(index: Int) -> NSReportDetailMoreDaysView {
+                if moreDaysViews.count < index {
+                    return moreDaysViews[index]
+                }
+                return NSReportDetailMoreDaysView()
+            }
+            let label = getLabel(index: index)
+            label.title = DateFormatter.ub_dayWithMonthString(from: report.timestamp)
+            label.isHidden = true
+            label.alpha = 0
+            dateStackView.addArrangedSubview(label)
+            moreDaysViews.append(label)
+
+            label.snp.makeConstraints { make in
+                make.width.equalToSuperview()
+            }
+        }
+
+        while moreDaysViews.count > reports.count {
+            if let label = moreDaysViews.popLast() {
+                dateStackView.removeArrangedSubview(label)
+            }
+        }
+
+        updateExpandButtonConstraints()
+
+        if let latest = reports.first {
+            dateLabel.text = DateFormatter.ub_daysAgo(from: latest.timestamp, addExplicitDate: true)
+        }
 
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
+
+        headerView?.updateViewConstraints()
+    }
+
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let target = super.hitTest(point, with: event)
+
+        if let target = target,
+            target == expandButton || target == continueButton {
+            return target
+        }
+
+        return nil
     }
 }

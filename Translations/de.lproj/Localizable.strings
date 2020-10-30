@@ -614,7 +614,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 2h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
+"inform_detail_faq1_text" = "Positiv auf das neue Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.\n\nSie wurden positiv getestet und haben nach 4h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Was wird gesendet?";
@@ -947,7 +947,7 @@
 "meldungen_background_error_text_android" = "Ändern Sie die Einstellungen, um bei einer neuen Meldung auch ausserhalb der App informiert zu werden.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
@@ -964,8 +964,8 @@
 "stats_legend_new_infections" = "Gemeldete Neuinfektionen";
 "stats_legend_new_infections_average" = "7-Tage-Schnitt";
 "stats_legend_entered_covidcodes" = "Eingegebene Covidcodes";
-"share_app_supertitle" = "Gemeinsam...";
-"share_app_title" = "Eine zweite Welle verhindern";
+"share_app_supertitle" = "Gemeinsam…";
+"share_app_title" = "Ansteckungen verhindern";
 "share_app_button" = "App teilen";
 
 /*Fuzzy*/
@@ -1024,3 +1024,17 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "So funktionierts";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Letzte Begegnung";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Alle Begegnungen";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+/*Fuzzy*/
+"meldung_detail_exposed_show_all_button" = "Alle anzeigen";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Weniger anzeigen";

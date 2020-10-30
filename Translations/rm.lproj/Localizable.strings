@@ -30,7 +30,7 @@
 "inform_fertig_button_title" = "Serrar";
 
 /*Titel auf Homescreen für Begegnungen*/
-"handshakes_title_homescreen" = "Scuntradas";
+"handshakes_title_homescreen" = "Inscunters";
 
 /*Abbrechen*/
 "cancel" = "Interrumper";
@@ -60,10 +60,10 @@
 "bluetooth_permission_turned_off" = "L'app na funcziuna betg, perquai che Vus n’avais betg dà l'autorisaziun bluetooth.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothPeripheralUsageDescription" = "Scuntradas vegnan identifitgadas via bluetooth, economisant l'energia.";
+"NSBluetoothPeripheralUsageDescription" = "Inscunters vegnan identifitgadas via bluetooth, economisant l'energia.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothAlwaysUsageDescription" = "Scuntradas vegnan identifitgadas via bluetooth, economisant l'energia.";
+"NSBluetoothAlwaysUsageDescription" = "Inscunters vegnan identifitgadas via bluetooth, economisant l'energia.";
 
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Endatar il code covid";
@@ -105,7 +105,7 @@
 "tracing_active_title" = "App activa";
 
 /*Text bei Tracing aktiv*/
-"tracing_active_text" = "Scuntradas vegnan arcunadas en moda anonima";
+"tracing_active_text" = "Inscunters vegnan arcunadas en moda anonima";
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Tracing inactiv";
@@ -256,7 +256,7 @@
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Observai las instrucziuns davart l'isolaziun che Vus avais retschavì";
 "tracing_ended_title" = "Tracing terminà";
-"tracing_ended_text" = "I na vegnan arcunadas pli naginas scuntradas.";
+"tracing_ended_text" = "I na vegnan arcunads pli nagins inscunters.";
 "exposed_info_contact_hotline" = "Contactai la";
 "meldung_homescreen_positive_info_line1" = "Observai la";
 "meldung_homescreen_positive_info_line2" = "Instrucziuns davart l'autoisolaziun";
@@ -339,7 +339,7 @@
 "onboarding_begegnungen_heading" = "Co funcziuna l'app?";
 
 /*Onboarding Begegnungen: Titel*/
-"onboarding_begegnungen_title" = "Identifitgar scuntradas grazia a bluetooth";
+"onboarding_begegnungen_title" = "Identifitgar inscunters grazia a bluetooth";
 
 /*Onboarding Begegnungen: Text*/
 "onboarding_begegnungen_text1" = "L'app percorscha automaticamain, sche dus utilisaders èn damanaivel in da l’auter per in tschert temp.";
@@ -543,16 +543,16 @@
 "menu_impressum" = "Impressum";
 
 /*Begegnungen: FAQ Titel*/
-"begegnung_detail_faq1_title" = "Tge vul dir scuntrada?";
+"begegnung_detail_faq1_title" = "Tge vul dir inscunter?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq1_text" = "Sche telefons mobils cun l'app sa chattan damanaivel in da l'auter per in tschert temp, vegn quai registrà sin l'apparat sco scuntrada.";
+"begegnung_detail_faq1_text" = "Sche telefons mobils cun l'app sa chattan damanaivel in da l'auter per in tschert temp, vegn quai registrà sin l'apparat sco inscunter.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnung_detail_faq2_title" = "Èn mias datas segiras?";
 
 /*Begegnungen: FAQ Text*/
-"begegnung_detail_faq2_text" = "En cas d'ina scuntrada vegnan barattadas mo IDs casualas. \n\nQuellas vegnan arcunadas localmain sin ils apparats e puspè stizzadas suenter 14 dis.";
+"begegnung_detail_faq2_text" = "En cas d'in inscunter vegnan barattadas mo IDs casualas. \n\nQuellas vegnan arcunadas localmain sin ils apparats e puspè stizzadas suenter 14 dis.";
 
 /*Begegnungen: FAQ Titel*/
 "begegnungen_detail_faq3_title" = "Sto bluetooth adina esser activà?";
@@ -573,7 +573,7 @@
 "meldungen_nomeldungen_faq2_titel" = "Tge vul dir eventuala infecziun?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "L'app n'examinescha betg sulettamain, sch'i ha dà scuntradas cun persunas infectadas, mabain er quant ditg ch'ellas han durà e quant damanaivel che Vus essas stada/stà a questas persunas.\n\nVus vegnis infurmada/infurmà mo, sche la pussaivladad d'esser infectada/infectà è gronda avunda.";
+"meldungen_nomeldungen_faq2_text" = "L'app n'examinescha betg sulettamain, sch'i ha dà inscunters cun persunas infectadas, mabain er quant ditg ch'els han durà e quant damanaivel che Vus essas stada/stà a questas persunas.\n\nVus vegnis infurmada/infurmà mo, sche la pussaivladad d'esser infectada/infectà è gronda avunda.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "L'infoline SwissCovid As cusseglia davart la pussaivladad d'in test gratuit.";
@@ -601,7 +601,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.\n\nVus essas vegnida testada resp. vegnì testà en moda positiva sin il coronavirus e n'avais suenter 2 uras anc retschavì nagin code covid? Alura contactai l'infoline coronavirus:";
+"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.\n\nVus essas vegnida testada resp. vegnì testà en moda positiva sin il coronavirus e n'avais suenter 4 uras anc retschavì nagin code covid? Alura contactai l'infoline coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Tge vegn tramess?";
@@ -619,7 +619,7 @@
 "inform_code_intro_title" = "Infurmaziun impurtanta";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Cumbain ch'i na vegnan tramessas naginas datas davart Vossa persuna, èsi pussaivel ch'insatgi sa regorda da la scuntrada a maun da la data.";
+"inform_code_intro_text" = "Cumbain ch'i na vegnan tramessas naginas datas davart Vossa persuna, èsi pussaivel ch'insatgi sa regorda da l'inscunter a maun da la data.";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "Chapì";
@@ -706,7 +706,7 @@
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 "delete_infection_dialog" = "Vulais Vus propi stizzar l’avis?";
 "android_onboarding_battery_permission_title" = "Ignorar l'optimaziun da l'accu";
-"android_onboarding_battery_permission_text" = "Per pudair identifitgar las scuntradas d’in cuntin, sto l'optimaziun da l'accu esser deactivada per questa app.";
+"android_onboarding_battery_permission_text" = "Per pudair identifitgar ils inscunters d’in cuntin, sto l'optimaziun da l'accu esser deactivada per questa app.";
 "android_onboarding_battery_permission_button" = "Permetter";
 "android_onboarding_battery_permission_button_deactivated" = "OK";
 "android_onboarding_battery_permission_info_1_title" = "Mo per questa app";
@@ -769,7 +769,7 @@
 
 /*title in splash screen of onboarding*/
 "oboarding_splashscreen_title" = "SwissCovid \nfraina \nchadainas d'infecziun.\n";
-"inform_detail_faq3_text" = "Cumbain ch'i na vegnan tramessas naginas datas davart Vossa persuna, èsi pussaivel ch'insatgi sa regorda da la scuntrada a maun da la data.";
+"inform_detail_faq3_text" = "Cumbain ch'i na vegnan tramessas naginas datas davart Vossa persuna, èsi pussaivel ch'insatgi sa regorda da l'inscunter a maun da la data.";
 "inform_detail_faq3_title" = "Rest jau anonima/anonim?";
 
 /*Meldung Detail Weiss Box unten*/
@@ -842,7 +842,7 @@
 "activate_tracing_button" = "Activar tracing";
 
 /*Detailed Version of tracing_turned_off_text that is displayed to the user in the Tracing Detail View when the Tracing is deactivated.*/
-"tracing_turned_off_detailed_text" = "Activai il tracing per che l'app possia arcunar scuntradas e retschaiver avis.";
+"tracing_turned_off_detailed_text" = "Activai il tracing per che l'app possia arcunar inscunters e retschaiver avis.";
 
 /*Warning that is displayed to the user in the Home View under the Meldungen-Card.*/
 "meldungen_tracing_not_active_warning" = "Sch'il tracing è deactivà, na pon er vegnidas retschavids nagins avis.";
@@ -917,7 +917,7 @@
 "meldungen_background_error_text_android" = "Midai la configuraziun per esser infurmà/infurmada tar ina nova communicaziun er ordaifer l'app.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -933,8 +933,8 @@
 "stats_legend_new_infections" = "infecziuns novas annunziadas";
 "stats_legend_new_infections_average" = "media da 7 dis";
 "stats_legend_entered_covidcodes" = "codes covid endatads";
-"share_app_supertitle" = "Impedir cuminaivlamain";
-"share_app_title" = "ina segunda unda";
+"share_app_supertitle" = "Impedir…";
+"share_app_title" = "cuminaivlamain infecziuns";
 "share_app_button" = "Cundivider l'app";
 "share_app_body" = "Sche uschè bleras persunas sco pussaivel activeschan l'app SwissCovid, pudain nus interrumper ad uras las chadainas d'infecziun.";
 
@@ -963,7 +963,7 @@
 "stats_counter_full" = "{COUNT} miu.";
 
 /*iOS settings tutorial title*/
-"ios_settings_tutorial_title" = "Activar ils avis da scuntradas";
+"ios_settings_tutorial_title" = "Activar ils avis d'inscunters";
 
 /*iOS settings tutorial open settings button*/
 "ios_settings_tutorial_open_settings_button" = "Avrir ils parameters";
@@ -975,13 +975,13 @@
 "ios_settings_tutorial_step_2_text" = "Selecziunai:";
 
 /*ios settings tutorial exposure notification text wie in iOS settings*/
-"ios_settings_tutorial_step_2_exposure_notification" = "Avis da scuntradas";
+"ios_settings_tutorial_step_2_exposure_notification" = "Avis d'inscunters";
 
 /*iOS settings tutorial schritt 3*/
 "ios_settings_tutorial_step_3_text" = "Activai l'emprim la funcziun…";
 
 /*iOS settings tutorial share exposure notification text wie in iOS settings*/
-"ios_settings_tutorial_step_3_share_exposure_information" = "Parter las infurmaziuns davart scuntradas";
+"ios_settings_tutorial_step_3_share_exposure_information" = "Parter las infurmaziuns davart inscunters";
 
 /*iOS settings tutorial schritt 4*/
 "ios_settings_tutorial_step_4_text" = "Sche quai n'è betg anc betg, pudais Vus fixar ussa SwissCovid sco regiun activa.";
@@ -991,3 +991,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Uschia funcziuni";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Ultim inscunter";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Tut ils inscunters";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Mussar tuts";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Mussar damain";

@@ -606,7 +606,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Un code COVID est attribué aux personnes testées positives au nouveau coronavirus.\n\nCela permet d'assurer que seuls les cas confirmés sont signalés via l'application.\n\nVous n'avez toujours pas reçu de code COVID 2h après avoir été testé positif?\nVeuillez contacter l'infoline coronavirus:";
+"inform_detail_faq1_text" = "Un code COVID est attribué aux personnes testées positives au nouveau coronavirus.\n\nCela permet d'assurer que seuls les cas confirmés sont signalés via l'application.\n\nVous n'avez toujours pas reçu de code COVID 4h après avoir été testé positif?\nVeuillez contacter l'infoline coronavirus:";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Qu'est-ce qui est envoyé ?";
@@ -928,7 +928,7 @@
 "meldungen_background_error_text_android" = "Veuillez modifier les paramètres pour pouvoir recevoir les nouvelles notifications même en dehors de l'application.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -945,7 +945,7 @@
 "stats_legend_new_infections_average" = "Vue sur 7 jours";
 "stats_legend_entered_covidcodes" = "Codes COVID saisis";
 "share_app_supertitle" = "Ensemble…";
-"share_app_title" = "éviter une deuxième vague";
+"share_app_title" = "empêcher les contaminations";
 "share_app_button" = "Partager l'application";
 "share_app_body" = "Si un maximum de personnes activent l'application SwissCovid, nous pouvons interrompre rapidement les chaînes d'infection.";
 
@@ -1002,3 +1002,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Voici comment faire";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Dernière rencontre";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Toutes les rencontres";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Affichage complet";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Affichage réduit";

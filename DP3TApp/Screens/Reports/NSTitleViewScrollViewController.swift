@@ -35,6 +35,8 @@ class NSTitleViewScrollViewController: NSViewController {
         return 153
     }
 
+    public var useTitleViewHeight: Bool = false
+
     public var startPositionScrollView: CGFloat {
         return 118
     }
@@ -82,7 +84,11 @@ class NSTitleViewScrollViewController: NSViewController {
             make.left.right.top.equalToSuperview()
 
             if !useFullScreenHeaderAnimation {
-                make.height.equalTo(self.titleHeight)
+                if self.useTitleViewHeight {
+                    make.height.equalTo(tv)
+                } else {
+                    make.height.equalTo(self.titleHeight)
+                }
             } else {
                 make.height.equalToSuperview()
             }
@@ -109,30 +115,54 @@ class NSTitleViewScrollViewController: NSViewController {
         }
     }
 
-    private func updateClosedConstraints() {
+    func updateClosedConstraints() {
         guard let tv = titleView else { return }
 
         tv.snp.remakeConstraints { make in
             make.left.right.top.equalToSuperview()
-            make.height.equalTo(self.titleHeight)
+            if self.useTitleViewHeight {
+                make.height.equalTo(tv)
+            } else {
+                make.height.equalTo(self.titleHeight)
+            }
         }
 
         spacerView.snp.remakeConstraints { make in
-            make.height.equalTo(self.startPositionScrollView)
+            if self.useTitleViewHeight {
+                make.height.equalTo(tv).inset(NSPadding.medium)
+            } else {
+                make.height.equalTo(self.startPositionScrollView)
+            }
         }
     }
 }
 
 extension NSTitleViewScrollViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let sp = startPositionScrollView
+        let titleHeight: CGFloat
+        if useTitleViewHeight {
+            titleHeight = titleView?.frame.height ?? startPositionScrollView
+        } else {
+            titleHeight = startPositionScrollView
+        }
 
-        let v = (sp - scrollView.contentOffset.y) / sp
-        let p = max(0.0, min(1.0, v))
+        let coveringScreenPercentage = (titleHeight - scrollView.contentOffset.y) / scrollView.frame.height
 
-        titleView?.transform = CGAffineTransform(translationX: 0, y: min(0.0, -0.4 * scrollView.contentOffset.y))
+        let threshold = min(titleHeight / scrollView.frame.height, 0.5)
 
-        titleView?.alpha = pow(p, 0.8)
+        let maxYLinearOffset = max((titleHeight / scrollView.frame.height) * scrollView.frame.height - scrollView.frame.height / 2, 0)
+
+        var yOffset: CGFloat = min(scrollView.contentOffset.y, maxYLinearOffset)
+
+        if scrollView.contentOffset.y > maxYLinearOffset {
+            yOffset += max((scrollView.contentOffset.y - yOffset) * 0.4, 0)
+        }
+
+        titleView?.transform = CGAffineTransform(translationX: 0, y: -max(yOffset, 0))
+
+        let alpha = max(0.0, min(1.0, coveringScreenPercentage / threshold))
+
+        titleView?.alpha = pow(alpha, 0.8)
 
         titleView?.scrollViewDidScroll(scrollView)
     }

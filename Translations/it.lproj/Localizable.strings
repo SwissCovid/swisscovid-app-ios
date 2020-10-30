@@ -606,7 +606,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.\n\nSei risultato positivo al test e dopo due ore non hai ancora ricevuto un codice Covid? Allora contatta la Infoline Coronavirus";
+"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.\n\nSei risultato positivo al test e dopo quattro ore non hai ancora ricevuto un codice Covid? Allora contatta la Infoline Coronavirus";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Che cosa viene inviato?";
@@ -928,7 +928,7 @@
 "meldungen_background_error_text_android" = "Modifica le impostazioni per essere informato anche al di fuori dell'app in caso di nuova segnalazione.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -945,7 +945,7 @@
 "stats_legend_new_infections_average" = "Media su 7 giorni";
 "stats_legend_entered_covidcodes" = "Codici Covid immessi";
 "share_app_supertitle" = "Insieme…";
-"share_app_title" = "possiamo impedire una seconda ondata";
+"share_app_title" = "impediamo i contagi";
 "share_app_button" = "Condividi l'app";
 "share_app_body" = "Quante più persone attivano l'app SwissCovid, tanto più è possibile interrompere precocemente le catene di infezione.";
 
@@ -1002,3 +1002,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Ecco come fare";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Ultimo incontro";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Tutti gli incontri";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Mostra tutte le segnalazioni";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Mostra meno segnalazioni";

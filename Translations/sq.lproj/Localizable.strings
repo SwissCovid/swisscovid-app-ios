@@ -602,7 +602,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.\n\nKeni dalë pozitiv dhe pas 2 orësh nuk keni marrë ende asnjë kod Covid?\nAtëherë kontaktoni \"Infoline Coronavirus\":";
+"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.\n\nKeni dalë pozitiv dhe pas 4 orësh nuk keni marrë ende asnjë kod Covid?\nAtëherë kontaktoni \"Infoline Coronavirus\":";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Çfarë dërgohet?";
@@ -921,7 +921,7 @@
 "meldungen_background_error_text_android" = "Ndryshoni cilësimet, për t'u informuar për një mesazh të ri edhe jashtë aplikacionit.";
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
-"infoline_coronavirus_number" = "+41 58 463 00 00";
+"infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 13.5*/
 "tracing_setting_text_ios_13_5" = "";
@@ -937,8 +937,8 @@
 "stats_legend_new_infections" = "Infektimet e reja të raportuara";
 "stats_legend_new_infections_average" = "Mesatarja 7-ditore";
 "stats_legend_entered_covidcodes" = "Kodi i futur i Covid";
-"share_app_supertitle" = "Së bashku...";
-"share_app_title" = "Të parandalojmë një valë të dytë";
+"share_app_supertitle" = "Së bashku…";
+"share_app_title" = "të parandalojmë infektimet";
 "share_app_button" = "Shpërndaj aplikacionin";
 "share_app_body" = "Kur aplikacionin \"SwissCovid\" e aktivizojnë sa më shumë persona të jetë e mundur, atëherë ne mund ta ndërpresim më herët zinxhirin e infektimit.";
 
@@ -995,3 +995,15 @@
 
 /*ios tracing permission fehlermeldung button text*/
 "ios_tracing_permission_error_button" = "Kështu funksionon";
+
+/*Subtitle für Meldung Detail Screen Header wenn nur eine Begegnung angezeigt wird.*/
+"meldung_detail_exposed_subtitle_last_encounter" = "Takimi i fundit";
+
+/*Subtitle für Meldung Detail Screen Header wenn alle Begegnungen angezeigt werden.*/
+"meldung_detail_exposed_subtitle_all_encounters" = "Të gjitha takimet";
+
+/*Button Titel im Meldung Detail Header, wenn nur eine Meldung angezeigt wird.*/
+"meldung_detail_exposed_show_all_button" = "Shfaq të gjitha";
+
+/*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
+"meldung_detail_exposed_show_less_button" = "Shfaq më pak";
