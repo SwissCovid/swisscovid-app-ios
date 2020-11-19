@@ -60,7 +60,7 @@ class UserStorage {
     private var seenMessages: [String]
 }
 
-class KeychainMigration {
+enum KeychainMigration {
     @KeychainPersisted(key: "didMigrateToKeychain", defaultValue: false)
     static var didMigrateToKeychain: Bool
 

@@ -56,7 +56,7 @@ class NSReportsModuleView: NSModuleBaseView {
 
     private let noPushView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: { _ in
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-            UIApplication.shared.canOpenURL(settingsUrl) else { return }
+              UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
         UIApplication.shared.open(settingsUrl)
     }))

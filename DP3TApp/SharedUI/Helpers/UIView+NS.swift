@@ -10,9 +10,9 @@
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /// Adds shadow to UIView with black color and other parameters
-    public func ub_addShadow(with color: UIColor = UIColor.black, radius: CGFloat, opacity: CGFloat, xOffset: CGFloat, yOffset: CGFloat) {
+    func ub_addShadow(with color: UIColor = UIColor.black, radius: CGFloat, opacity: CGFloat, xOffset: CGFloat, yOffset: CGFloat) {
         layer.shadowColor = color.cgColor
         layer.shadowOpacity = Float(opacity)
         layer.shadowOffset = CGSize(width: xOffset, height: yOffset)
@@ -23,7 +23,7 @@ extension UIView {
     }
 
     /// Sets contentHuggingPriority and contentCompressionResistance to highest priority both vertical and horizontal
-    @objc public func ub_setContentPriorityRequired() {
+    @objc func ub_setContentPriorityRequired() {
         setContentHuggingPriority(.required, for: .horizontal)
         setContentHuggingPriority(.required, for: .vertical)
         setContentCompressionResistancePriority(.required, for: .horizontal)

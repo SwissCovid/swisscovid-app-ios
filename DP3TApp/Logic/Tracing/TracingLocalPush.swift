@@ -256,8 +256,8 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour], from: now)
         guard let hour = components.hour,
-            hour > 7,
-            hour < 23 else {
+              hour > 7,
+              hour < 23 else {
             return
         }
 

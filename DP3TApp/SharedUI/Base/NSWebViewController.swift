@@ -118,7 +118,7 @@ extension NSWebViewController: WKNavigationDelegate {
         switch navigationAction.navigationType {
         case .linkActivated:
             guard let url = navigationAction.request.url,
-                let scheme = url.scheme else {
+                  let scheme = url.scheme else {
                 decisionHandler(.allow)
                 return
             }

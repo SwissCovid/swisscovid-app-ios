@@ -124,7 +124,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         callAgainView?.isHidden = phoneCallState != .multipleExposuresNotCalled
 
         if let lastReportId = reports.last?.identifier,
-            let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
+           let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
             callLabels.forEach {
                 $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
             }
