@@ -140,7 +140,7 @@ class NSReportsModuleView: NSModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
-            views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
+            views.append(NSMoreInfoView(line1: "exposed_info_answer_questions_in_leitfaden".ub_localized, line2: "exposed_info_swisscovid_leitfaden".ub_localized))
             if let lastReport = reportsState.lastReport {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)

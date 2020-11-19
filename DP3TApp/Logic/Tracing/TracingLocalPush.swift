@@ -84,6 +84,8 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
                     scheduleNotification(identifier: exposure.identifier)
                     // and update the latestExpsoureDate
                     lastestExposureDate = exposure.date
+                    // and reset the didOpenLeitfaden flag
+                    UserStorage.shared.didOpenLeitfaden = false
 
                     break
                 }

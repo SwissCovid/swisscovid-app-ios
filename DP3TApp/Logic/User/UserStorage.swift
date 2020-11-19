@@ -20,41 +20,16 @@ class UserStorage {
         }
     }
 
-    func registerPhoneCall(identifier: UUID) {
-        var lastPhoneCalls = self.lastPhoneCalls
-        // we only want the last
-        lastPhoneCalls.removeAll()
-        lastPhoneCalls["\(identifier.uuidString)"] = Date()
-
-        self.lastPhoneCalls = lastPhoneCalls
-
-        UIStateManager.shared.userCalledInfoLine()
-    }
-
     func registerSeenMessages(identifier: UUID) {
         seenMessages.append("\(identifier.uuidString)")
-    }
-
-    var lastPhoneCallDate: Date? {
-        let allDates = lastPhoneCalls.values
-
-        return allDates.sorted().last
-    }
-
-    func lastPhoneCall(for identifier: UUID) -> Date? {
-        if lastPhoneCalls.keys.contains("\(identifier.uuidString)") {
-            return lastPhoneCalls["\(identifier)"]
-        }
-
-        return nil
     }
 
     func hasSeenMessage(for identifier: UUID) -> Bool {
         return seenMessages.contains("\(identifier.uuidString)")
     }
 
-    @KeychainPersisted(key: "lastPhoneCalls", defaultValue: [:])
-    private var lastPhoneCalls: [String: Date]
+    @KeychainPersisted(key: "didOpenLeitfaden", defaultValue: false)
+    var didOpenLeitfaden: Bool
 
     @KeychainPersisted(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]

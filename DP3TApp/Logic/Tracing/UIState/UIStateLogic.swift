@@ -190,15 +190,11 @@ class UIStateLogic {
 
     private func setLastReportState(_ newState: inout UIStateModel) {
         if let report = newState.reportsDetail.reports.first {
-            newState.shouldStartAtReportsDetail = UserStorage.shared.lastPhoneCall(for: report.identifier) == nil
+            newState.shouldStartAtReportsDetail = !UserStorage.shared.didOpenLeitfaden
             newState.homescreen.reports.lastReport = report.timestamp
             newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: report.identifier)
 
-            if UserStorage.shared.lastPhoneCall(for: report.identifier) != nil {
-                newState.reportsDetail.phoneCallState = .calledAfterLastExposure
-            } else {
-                newState.reportsDetail.phoneCallState = .notCalled
-            }
+            newState.reportsDetail.didOpenLeitfaden = UserStorage.shared.didOpenLeitfaden
         }
     }
 

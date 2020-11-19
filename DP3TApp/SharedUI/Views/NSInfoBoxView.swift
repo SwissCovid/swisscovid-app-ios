@@ -70,12 +70,13 @@ class NSInfoBoxView: UIView {
         var dynamicIconTintColor: UIColor? = nil
         var titleLabelType: NSLabelType = .uppercaseBold
         var externalLinkStyle: NSExternalLinkButton.Style = .normal(color: .white)
+        var externalLinkType: NSExternalLinkButton.LinkType = .url
     }
 
     init(viewModel: ViewModel) {
         leadingIconImageView = NSImageView(image: viewModel.image, dynamicColor: viewModel.dynamicIconTintColor)
         titleLabel = NSLabel(viewModel.titleLabelType)
-        externalLinkButton = NSExternalLinkButton(style: viewModel.externalLinkStyle)
+        externalLinkButton = NSExternalLinkButton(style: viewModel.externalLinkStyle, linkType: viewModel.externalLinkType)
 
         super.init(frame: .zero)
 
@@ -168,7 +169,12 @@ class NSInfoBoxView: UIView {
                 externalLinkButton.title = adt
 
                 externalLinkButton.touchUpCallback = { [weak self] in
-                    self?.openLink(url)
+                    switch viewModel.externalLinkType {
+                    case .phone:
+                        PhoneCallHelper.call(url)
+                    case .url:
+                        self?.openLink(url)
+                    }
                 }
 
                 externalLinkButton.snp.makeConstraints { make in

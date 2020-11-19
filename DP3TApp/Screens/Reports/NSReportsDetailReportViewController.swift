@@ -22,16 +22,14 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     public var showReportWithAnimation: Bool = false
 
-    public var phoneCallState: UIStateModel.ReportsDetail.PhoneCallState = .notCalled {
+    public var didOpenLeitfaden: Bool = false {
         didSet { update() }
     }
 
     // MARK: - Views
 
-    private var callLabels = [NSLabel]()
-    private var notYetCalledView: NSSimpleModuleBaseView?
-    private var alreadyCalledView: NSSimpleModuleBaseView?
-    private var callAgainView: NSSimpleModuleBaseView?
+    private var notYetOpendView: NSSimpleModuleBaseView?
+    private var alreadyOpendView: NSSimpleModuleBaseView?
 
     private var daysLeftLabels = [NSLabel]()
 
@@ -91,19 +89,13 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Setup
 
     private func setupLayout() {
-        notYetCalledView = makeNotYetCalledView()
-        alreadyCalledView = makeAlreadyCalledView()
-        callAgainView = makeCallAgainView()
+        notYetOpendView = makeNotYetOpendView()
+        alreadyOpendView = makeAlreadyOpendView()
 
         // !: function have return type UIView
-        stackScrollView.addArrangedView(notYetCalledView!)
-        stackScrollView.addArrangedView(alreadyCalledView!)
-        stackScrollView.addArrangedView(callAgainView!)
+        stackScrollView.addArrangedView(notYetOpendView!)
+        stackScrollView.addArrangedView(alreadyOpendView!)
         stackScrollView.addSpacerView(NSPadding.large)
-
-        stackScrollView.addSpacerView(2 * NSPadding.large)
-
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-call")!, text: "meldungen_meldungen_faq1_text".ub_localized, title: "meldungen_meldungen_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -119,22 +111,15 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             tv.reports = reports
         }
 
-        notYetCalledView?.isHidden = phoneCallState != .notCalled
-        alreadyCalledView?.isHidden = phoneCallState != .calledAfterLastExposure
-        callAgainView?.isHidden = phoneCallState != .multipleExposuresNotCalled
+        notYetOpendView?.isHidden = didOpenLeitfaden
+        alreadyOpendView?.isHidden = !didOpenLeitfaden
 
-        if let lastReportId = reports.last?.identifier,
-           let lastCall = UserStorage.shared.lastPhoneCall(for: lastReportId) {
-            callLabels.forEach {
-                $0.text = "meldungen_detail_call_last_call".ub_localized.replacingOccurrences(of: "{DATE}", with: DateFormatter.ub_string(from: lastCall))
-            }
-            let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
-            if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
-                let endQuarentineDate = latestExposure.addingTimeInterval(quarantinePeriod)
-                if endQuarentineDate.timeIntervalSinceNow > 0 {
-                    daysLeftLabels.forEach {
-                        $0.text = DateFormatter.ub_inDays(until: endQuarentineDate)
-                    }
+        let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
+        if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
+            let endQuarentineDate = latestExposure.addingTimeInterval(quarantinePeriod)
+            if endQuarentineDate.timeIntervalSinceNow > 0 {
+                daysLeftLabels.forEach {
+                    $0.text = DateFormatter.ub_inDays(until: endQuarentineDate)
                 }
             }
         }
@@ -142,16 +127,19 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     // MARK: - Detail Views
 
-    private func makeNotYetCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_call_text".ub_localized, image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
+    private func makeNotYetOpendView() -> NSSimpleModuleBaseView {
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_leitfaden_title".ub_localized,
+                                                  subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized,
+                                                  text: "meldungen_detail_leitfaden_text".ub_localized,
+                                                  image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
+        let callButton = NSButton(title: "meldungen_detail_open_leitfaden_button".ub_localized, style: .uppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.call()
+            strongSelf.openLeitfaden()
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
@@ -164,45 +152,23 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         return whiteBoxView
     }
 
-    private func makeAlreadyCalledView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized, subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
+    private func makeAlreadyOpendView() -> NSSimpleModuleBaseView {
+        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized,
+                                                  subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized,
+                                                  text: "meldungen_detail_leitfaden_again_text".ub_localized,
+                                                  image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_call_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
+        let callButton = NSButton(title: "meldungen_detail_open_leitfaden_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
 
         callButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.call()
+            strongSelf.openLeitfaden()
         }
 
         whiteBoxView.contentView.addArrangedSubview(callButton)
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
-        whiteBoxView.contentView.addArrangedSubview(createCallLabel())
-        whiteBoxView.contentView.addSpacerView(40.0)
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView())
-        whiteBoxView.contentView.addSpacerView(NSPadding.large)
-
-        addDeleteButton(whiteBoxView)
-
-        return whiteBoxView
-    }
-
-    private func makeCallAgainView() -> NSSimpleModuleBaseView {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_again".ub_localized, subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized, boldText: "infoline_tel_number".ub_localized, text: "meldungen_detail_guard_text".ub_localized, image: UIImage(named: "iillu-call"), subtitleColor: .ns_blue, bottomPadding: false)
-
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
-
-        let callButton = NSButton(title: "meldungen_detail_call_button".ub_localized, style: .uppercase(.ns_blue))
-
-        callButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.call()
-        }
-
-        whiteBoxView.contentView.addArrangedSubview(callButton)
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
-        whiteBoxView.contentView.addArrangedSubview(createCallLabel())
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -233,7 +199,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
 
         deleteButton.touchUpCallback = { [weak self] in
-            let alert = UIAlertController(title: nil, message: "delete_reports_dialog".ub_localized, preferredStyle: .actionSheet)
+            let alert = UIAlertController(title: nil, message: "delete_notification_dialog".ub_localized, preferredStyle: .actionSheet)
             alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
                 TracingManager.shared.deleteReports()
             }))
@@ -242,12 +208,6 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             }))
             self?.present(alert, animated: true, completion: nil)
         }
-    }
-
-    private func createCallLabel() -> NSLabel {
-        let label = NSLabel(.smallRegular)
-        callLabels.append(label)
-        return label
     }
 
     private func createExplanationView() -> UIView {
@@ -277,18 +237,31 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         ev.stackView.addArrangedSubview(infoBoxView)
 
+        let callInfoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_tel_information_title".ub_localized,
+                                                           subText: "meldungen_tel_information_text".ub_localized,
+                                                           image: UIImage(named: "ic-infoline"),
+                                                           titleColor: .ns_text,
+                                                           subtextColor: .ns_text,
+                                                           additionalText: "infoline_tel_number".ub_localized,
+                                                           additionalURL: "infoline_tel_number".ub_localized,
+                                                           titleLabelType: .textBold,
+                                                           externalLinkStyle: .normal(color: .ns_blue),
+                                                           externalLinkType: .phone)
+
+        let callInfoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
+        ev.stackView.addArrangedSubview(callInfoBox)
+
         return ev
     }
 
     // MARK: - Logic
 
-    private func call() {
-        guard let newestReport = reports.first else { return }
+    private func openLeitfaden() {
+        if let url = URL(string: "swisscovid_leitfaden_url".ub_localized) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
 
-        let phoneNumber = "infoline_tel_number".ub_localized
-        PhoneCallHelper.call(phoneNumber)
-
-        UserStorage.shared.registerPhoneCall(identifier: newestReport.identifier)
+        UserStorage.shared.didOpenLeitfaden = true
         UIStateManager.shared.refresh()
     }
 }

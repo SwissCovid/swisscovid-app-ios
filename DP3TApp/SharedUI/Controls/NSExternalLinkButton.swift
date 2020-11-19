@@ -11,6 +11,10 @@
 import UIKit
 
 class NSExternalLinkButton: UBButton {
+    enum LinkType {
+        case url, phone
+    }
+
     enum Style {
         case normal(color: UIColor)
         case outlined(color: UIColor)
@@ -23,6 +27,7 @@ class NSExternalLinkButton: UBButton {
 
     private let style: Style
     private let buttonSize: Size
+    private let linkType: LinkType
 
     // MARK: - Init
 
@@ -40,15 +45,22 @@ class NSExternalLinkButton: UBButton {
         }
     }
 
-    init(style: Style = .normal(color: .white), size: Size = .normal) {
+    init(style: Style = .normal(color: .white), size: Size = .normal, linkType: LinkType = .url) {
         self.style = style
+        self.linkType = linkType
         buttonSize = size
         super.init()
         updateLayout()
     }
 
     private func updateLayout() {
-        var image = UIImage(named: "ic-link-external")
+        var image: UIImage?
+        switch linkType {
+        case .url:
+            image = UIImage(named: "ic-link-external")
+        case .phone:
+            image = UIImage(named: "ic-call")
+        }
 
         switch style {
         case let .normal(color: color):

@@ -79,7 +79,7 @@ class NSReportsDetailViewController: NSViewController {
         case .exposed:
             reportsViewController.view.isHidden = false
             reportsViewController.reports = state.reports
-            reportsViewController.phoneCallState = state.phoneCallState
+            reportsViewController.didOpenLeitfaden = state.didOpenLeitfaden
         case .infected:
             positiveTestedViewController.view.isHidden = false
         case .noReport:
