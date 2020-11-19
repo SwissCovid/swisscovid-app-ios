@@ -135,14 +135,16 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_open_leitfaden_button".ub_localized, style: .uppercase(.ns_blue))
+        let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
+        leitfadenButton.title = "meldungen_detail_open_leitfaden_button".ub_localized.uppercased()
+        leitfadenButton.backgroundColor = .ns_blue
 
-        callButton.touchUpCallback = { [weak self] in
+        leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(callButton)
+        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -160,14 +162,15 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
-        let callButton = NSButton(title: "meldungen_detail_open_leitfaden_again_button".ub_localized, style: .outlineUppercase(.ns_blue))
+        let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url)
+        leitfadenButton.title = "meldungen_detail_open_leitfaden_again_button".ub_localized.uppercased()
 
-        callButton.touchUpCallback = { [weak self] in
+        leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(callButton)
+        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())

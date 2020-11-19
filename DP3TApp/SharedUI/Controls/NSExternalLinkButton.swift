@@ -28,6 +28,7 @@ class NSExternalLinkButton: UBButton {
     private let style: Style
     private let buttonSize: Size
     private let linkType: LinkType
+    private let buttonTintColor: UIColor?
 
     // MARK: - Init
 
@@ -45,9 +46,10 @@ class NSExternalLinkButton: UBButton {
         }
     }
 
-    init(style: Style = .normal(color: .white), size: Size = .normal, linkType: LinkType = .url) {
+    init(style: Style = .normal(color: .white), size: Size = .normal, linkType: LinkType = .url, buttonTintColor: UIColor? = nil) {
         self.style = style
         self.linkType = linkType
+        self.buttonTintColor = buttonTintColor
         buttonSize = size
         super.init()
         updateLayout()
@@ -64,12 +66,12 @@ class NSExternalLinkButton: UBButton {
 
         switch style {
         case let .normal(color: color):
-            image = image?.ub_image(with: color)
+            image = image?.ub_image(with: buttonTintColor ?? color)
             titleLabel?.textAlignment = .left
 
             contentHorizontalAlignment = .leading
 
-            setTitleColor(color, for: .normal)
+            setTitleColor(buttonTintColor ?? color, for: .normal)
 
             let spacing: CGFloat
             switch buttonSize {
@@ -82,12 +84,12 @@ class NSExternalLinkButton: UBButton {
             titleEdgeInsets = UIEdgeInsets(top: 4.0, left: spacing, bottom: 4.0, right: 0.0)
 
         case let .outlined(color: color):
-            image = image?.ub_image(with: color)
+            image = image?.ub_image(with: buttonTintColor ?? color)
             titleLabel?.textAlignment = .center
 
             contentHorizontalAlignment = .center
 
-            setTitleColor(color, for: .normal)
+            setTitleColor(buttonTintColor ?? color, for: .normal)
 
             layer.borderColor = color.cgColor
             layer.borderWidth = 2
