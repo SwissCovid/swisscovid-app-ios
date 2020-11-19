@@ -124,7 +124,7 @@ class FakePublishManagerTests: XCTestCase {
         manager.runTask(reportingManager: reportingManager) {
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 0.5)
+        wait(for: [exp], timeout: 1.5)
 
         XCTAssertEqual(reportingManager.callsToReport, 48)
 
