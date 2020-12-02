@@ -1043,7 +1043,7 @@
 "meldungen_detail_leitfaden_title" = "SwissCovid Leitfaden";
 
 /*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_text" = "Beantworten Sie die Fragen im SwissCvoid Leitfaden um zu erfahren, wie Sie richtig reagieren.";
+"meldungen_detail_leitfaden_text" = "Beantworten Sie die Fragen im SwissCovid Leitfaden um zu erfahren, wie Sie richtig reagieren.";
 
 /*Button Text zum Öffnen vom SwissCovid Leitfaden*/
 "meldungen_detail_open_leitfaden_button" = "Jetzt ausfüllen";
@@ -1070,4 +1070,4 @@
 "delete_notification_dialog" = "Die Meldung über eine mögliche Ansteckung dient als Nachweis, den Sie für einen kostenlosen Coronavirus-Test benötigen. Wenn Sie diese Meldung löschen, verlieren Sie diesen Nachweis und den Link für den SwissCovid Leitfaden.";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://proximity-qa.medgate.dev/screening?contactDates={CONTACT_DATES}";

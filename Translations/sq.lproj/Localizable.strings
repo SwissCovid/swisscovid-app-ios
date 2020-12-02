@@ -777,7 +777,7 @@
 "inform_detail_faq3_title" = "A mbetem unë anonim?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Telefononi një mjeke apo një mjek ose një institucion shëndetësor.";
+"meldungen_detail_explanation_text4" = "Në rastin e simptomave të para, telefononi një mjeke, një mjek ose një institucion shëndetësor.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Njoftime rreth ekspozimit ndaj COVID-19";
@@ -840,7 +840,7 @@
 "meldungen_detail_free_test_title" = "Testi pa kosto është i mundur";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Infoline SwissCovid ju këshillon për mundësinë e një testi falas për koronavirusin.";
+"meldungen_detail_free_test_text" = "Udhëzuesi \"SwissCovid\" ju informon për mundësinë e një testi falas të koronavirusit.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktivizo gjurmimin";
@@ -1009,34 +1009,34 @@
 "meldung_detail_exposed_show_less_button" = "Shfaq më pak";
 
 /*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_title" = "";
+"meldungen_detail_leitfaden_title" = "Udhëzuesi \"SwissCovid\"";
 
 /*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_text" = "";
+"meldungen_detail_leitfaden_text" = "Përgjigjuni pyetjeve në udhëzuesin \"SwissCovid\" për të mësuar se si të reagoni siç duhet.";
 
 /*Button Text zum Öffnen vom SwissCovid Leitfaden*/
-"meldungen_detail_open_leitfaden_button" = "";
+"meldungen_detail_open_leitfaden_button" = "Plotëso tani";
 
 /*Title für Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_title" = "";
+"meldungen_tel_information_title" = "Informacion telefonik";
 
 /*Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_text" = "";
+"meldungen_tel_information_text" = "Në rastin e pyetjeve të tjera, linja e informacionit \"SwissCovid\" ju jep informacion edhe me anë të telefonit.";
 
 /*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
-"meldungen_detail_leitfaden_again_text" = "";
+"meldungen_detail_leitfaden_again_text" = "Këtu ju mund ta hapni sërish udhëzuesin \"SwissCovid\" në çdo kohë.";
 
 /*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
-"meldungen_detail_open_leitfaden_again_button" = "";
+"meldungen_detail_open_leitfaden_again_button" = "Shko tek udhëzuesi";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_answer_questions_in_leitfaden" = "";
+"exposed_info_answer_questions_in_leitfaden" = "Përgjigjuni pyetjeve në";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_swisscovid_leitfaden" = "";
+"exposed_info_swisscovid_leitfaden" = "Udhëzuesi \"SwissCovid\"";
 
 /*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
-"delete_notification_dialog" = "";
+"delete_notification_dialog" = "Njoftimi për një infektim të mundshëm shërben si vërtetim që ju keni nevojë për një test falas të koronavirusit. Nëse ju e fshini këtë njoftim, atëherë e humbisni këtë vërtetim dhe lidhjen për udhëzuesin \"SwissCovid\".";
 
 /*URL to the SwissCovid Leitfaden*/
 "swisscovid_leitfaden_url" = "";

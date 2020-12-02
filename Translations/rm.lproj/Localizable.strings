@@ -773,7 +773,7 @@
 "inform_detail_faq3_title" = "Rest jau anonima/anonim?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Contactai ina media resp. in medi u ina instituziun da sanadad.";
+"meldungen_detail_explanation_text4" = "En cas d'emprims sintoms contactai ina media resp. in medi u ina instituziun da sanadad.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Communicaziuns COVID-19";
@@ -836,7 +836,7 @@
 "meldungen_detail_free_test_title" = "Pussaivel da far in test gratuit";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "L'infoline SwissCovid As cusseglia davart la pussaivladad d'As laschar testar gratuitamain sin il coronavirus.";
+"meldungen_detail_free_test_text" = "Il mussavia SwissCovid As infurmescha davart la pussaivladad da far in test dal coronavirus gratuit.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Activar tracing";
@@ -1005,34 +1005,34 @@
 "meldung_detail_exposed_show_less_button" = "Mussar damain";
 
 /*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_title" = "";
+"meldungen_detail_leitfaden_title" = "Mussavia SwissCovid";
 
 /*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_text" = "";
+"meldungen_detail_leitfaden_text" = "Respundi las dumondas en il mussavia SwissCovid per vegnir a savair co reagir endretg. ";
 
 /*Button Text zum Öffnen vom SwissCovid Leitfaden*/
-"meldungen_detail_open_leitfaden_button" = "";
+"meldungen_detail_open_leitfaden_button" = "Emplenir ussa";
 
 /*Title für Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_title" = "";
+"meldungen_tel_information_title" = "Infurmaziuns per telefon";
 
 /*Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_text" = "";
+"meldungen_tel_information_text" = "En cas d'ulteriuras dumondas As dat l'infoline SwissCovid gugent er infurmaziuns per telefon.";
 
 /*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
-"meldungen_detail_leitfaden_again_text" = "";
+"meldungen_detail_leitfaden_again_text" = "Qua pudais Vus da tut temp avrir danovamain il mussavia SwissCovid";
 
 /*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
-"meldungen_detail_open_leitfaden_again_button" = "";
+"meldungen_detail_open_leitfaden_again_button" = "Al mussavia";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_answer_questions_in_leitfaden" = "";
+"exposed_info_answer_questions_in_leitfaden" = "Respundai las dumondas en il ";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_swisscovid_leitfaden" = "";
+"exposed_info_swisscovid_leitfaden" = "Mussavia SwissCovid";
 
 /*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
-"delete_notification_dialog" = "";
+"delete_notification_dialog" = "L'avis davart in'eventuala infecziun serva sco cumprova che Vus druvais per in test dal coronavirus gratuit. Sche Vus stizzais quest avis, perdais Vus la cumprova ed il link per il mussavia SwissCovid.";
 
 /*URL to the SwissCovid Leitfaden*/
 "swisscovid_leitfaden_url" = "";

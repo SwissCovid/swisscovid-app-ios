@@ -777,7 +777,7 @@
 "inform_detail_faq3_title" = "¿Permanezco en el anonimato?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Llame a un médico o a un centro sanitario.";
+"meldungen_detail_explanation_text4" = "En cuanto aparezcan los primeros síntomas, llame a su médico o a un centro de salud.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Notificaciones de exposición a la COVID-19";
@@ -840,7 +840,7 @@
 "meldungen_detail_free_test_title" = "Posibilidad de hacer un test gratuito";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "La Infoline SwissCovid le asesora sobre la posibilidad de hacerse gratuitamente el test del coronavirus.";
+"meldungen_detail_free_test_text" = "La guía SwissCovid le informa sobre la posibilidad de hacer un test de coronavirus gratuito.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Activar el rastreo";
@@ -1009,34 +1009,34 @@
 "meldung_detail_exposed_show_less_button" = "Mostrar menos";
 
 /*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_title" = "";
+"meldungen_detail_leitfaden_title" = "Guía SwissCovid";
 
 /*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
-"meldungen_detail_leitfaden_text" = "";
+"meldungen_detail_leitfaden_text" = "Responda a las preguntas de la guía SwissCovid para determinar cómo actuar correctamente.";
 
 /*Button Text zum Öffnen vom SwissCovid Leitfaden*/
-"meldungen_detail_open_leitfaden_button" = "";
+"meldungen_detail_open_leitfaden_button" = "Responder ahora";
 
 /*Title für Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_title" = "";
+"meldungen_tel_information_title" = "Línea telefónica de Información ";
 
 /*Infotext zu SwissCovid Infoline*/
-"meldungen_tel_information_text" = "";
+"meldungen_tel_information_text" = "La Infoline SwissCovid está a su disposición para responder a todas sus dudas.";
 
 /*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
-"meldungen_detail_leitfaden_again_text" = "";
+"meldungen_detail_leitfaden_again_text" = "Aquí puede usted volver a consultar la guía SwissCovid en cualquier momento.";
 
 /*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
-"meldungen_detail_open_leitfaden_again_button" = "";
+"meldungen_detail_open_leitfaden_again_button" = "Ir a la guía";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_answer_questions_in_leitfaden" = "";
+"exposed_info_answer_questions_in_leitfaden" = "Responda a las preguntas en la";
 
 /*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
-"exposed_info_swisscovid_leitfaden" = "";
+"exposed_info_swisscovid_leitfaden" = "guía SwissCovid";
 
 /*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
-"delete_notification_dialog" = "";
+"delete_notification_dialog" = "La notificación de un posible contagio le sirve de justificante para hacer el test gratuitamente. Si borra la notificación perderá usted el justificante, así como el enlace para la guía SwissCovid.";
 
 /*URL to the SwissCovid Leitfaden*/
 "swisscovid_leitfaden_url" = "";

@@ -260,7 +260,14 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Logic
 
     private func openLeitfaden() {
-        if let url = URL(string: "swisscovid_leitfaden_url".ub_localized) {
+        let timestamps = reports
+            .map { String(Int($0.timestamp.timeIntervalSince1970)) }
+            .joined(separator: ",")
+
+        let urlString = "swisscovid_leitfaden_url".ub_localized
+            .replacingOccurrences(of: "{CONTACT_DATES}", with: timestamps)
+
+        if let url = URL(string: urlString) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
 
