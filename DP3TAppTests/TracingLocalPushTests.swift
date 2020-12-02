@@ -14,6 +14,10 @@ import XCTest
 class MockTracingLocalPush: TracingLocalPush {
     var nowString = "01.09.2020 10:00"
 
+    override var applicationState: UIApplication.State {
+        .background
+    }
+
     override var now: Date {
         date(nowString)
     }
@@ -83,21 +87,21 @@ class TracingLocalPushTests: XCTestCase {
         let provider = MockIdentifierProvider()
         provider.exposures = [Exposure(identifier: "xy", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
-        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.count, 13)
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
-        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.count, 13)
     }
 
     func testGeneratingUniqueNotification() {
         let provider = MockIdentifierProvider()
         provider.exposures = [Exposure(identifier: "xy", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
-        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.count, 13)
         provider.exposures = [Exposure(identifier: "xy", date: Date()), Exposure(identifier: "aa", date: Date())]
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
-        XCTAssertEqual(center.requests.count, 2)
+        XCTAssertEqual(center.requests.count, 26)
         tlp.scheduleExposureNotificationsIfNeeded(provider: provider)
-        XCTAssertEqual(center.requests.count, 2)
+        XCTAssertEqual(center.requests.count, 26)
     }
 
     func testGenerateOnlyNewerNotifications() {
@@ -112,7 +116,7 @@ class TracingLocalPushTests: XCTestCase {
             XCTFail("latestExposureDate not stored")
         }
 
-        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.count, 13)
 
         let fiveDaysAgo = Date(timeIntervalSinceNow: -60 * 60 * 24 * 5)
 
@@ -127,7 +131,7 @@ class TracingLocalPushTests: XCTestCase {
             XCTFail("latestExposureDate not stored")
         }
 
-        XCTAssertEqual(center.requests.count, 1)
+        XCTAssertEqual(center.requests.count, 13)
 
         // now a exposure should get generated
         let today = Date()
@@ -144,7 +148,7 @@ class TracingLocalPushTests: XCTestCase {
             XCTFail("latestExposureDate not stored")
         }
 
-        XCTAssertEqual(center.requests.count, 2)
+        XCTAssertEqual(center.requests.count, 26)
     }
 
     func testGeneratingBluetoothNotification() {
