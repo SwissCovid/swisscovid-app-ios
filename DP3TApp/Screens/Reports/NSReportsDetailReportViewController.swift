@@ -259,9 +259,15 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     // MARK: - Logic
 
+    static var formatter: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd"
+        return df
+    }()
+
     private func openLeitfaden() {
         let timestamps = reports
-            .map { String(Int($0.timestamp.timeIntervalSince1970)) }
+            .map { Self.formatter.string(from: $0.timestamp) }
             .joined(separator: ",")
 
         let urlString = "swisscovid_leitfaden_url".ub_localized
