@@ -1039,4 +1039,4 @@
 "delete_notification_dialog" = "A notificação sobre um possível contágio constitui um comprovativo de que necessitará para fazer um teste gratuito ao coronavírus. Se a apagar, perde o comprovativo e a ligação ao guia da SwissCovid.";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

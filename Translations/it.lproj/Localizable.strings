@@ -1046,4 +1046,4 @@
 "delete_notification_dialog" = "La segnalazione di un possibile contagio è il giustificativo che ti serve per fare il test del coronavirus gratuitamente. Se elimini questa segnalazione perdi il giustificativo e il link alla guida SwissCovid.";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://swisscovid.ufsp-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

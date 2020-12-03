@@ -1046,4 +1046,4 @@
 "delete_notification_dialog" = "The notification of possible infection serves as the proof you need for a free coronavirus test. If you delete this notification you lose this proof and the link to the SwissCovid Guide.";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

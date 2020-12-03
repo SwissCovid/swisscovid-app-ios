@@ -1039,4 +1039,4 @@
 "delete_notification_dialog" = "La notificación de un posible contagio le sirve de justificante para hacer el test gratuitamente. Si borra la notificación perderá usted el justificante, así como el enlace para la guía SwissCovid.";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

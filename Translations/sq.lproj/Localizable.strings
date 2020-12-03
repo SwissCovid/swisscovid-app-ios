@@ -1039,4 +1039,4 @@
 "delete_notification_dialog" = "Njoftimi për një infektim të mundshëm shërben si vërtetim që ju keni nevojë për një test falas të koronavirusit. Nëse ju e fshini këtë njoftim, atëherë e humbisni këtë vërtetim dhe lidhjen për udhëzuesin \"SwissCovid\".";
 
 /*URL to the SwissCovid Leitfaden*/
-"swisscovid_leitfaden_url" = "";
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
