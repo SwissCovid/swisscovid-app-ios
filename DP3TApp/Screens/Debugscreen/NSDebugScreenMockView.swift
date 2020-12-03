@@ -82,6 +82,8 @@
             private func select(_ checkBox: NSCheckBoxView) {
                 let stateManager = UIStateManager.shared
 
+                UserStorage.shared.didOpenLeitfaden = false
+
                 if let index = checkboxes.firstIndex(of: checkBox) {
                     switch index {
                     case 1:

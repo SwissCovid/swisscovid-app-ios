@@ -16,7 +16,7 @@ extension UIImage {
 
         for preferredLanguage in preferredLanguages {
             if let code = preferredLanguage.components(separatedBy: "-").first,
-                let image = UIImage(named: prefix + code) {
+               let image = UIImage(named: prefix + code) {
                 return image
             }
         }

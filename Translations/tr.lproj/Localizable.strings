@@ -773,7 +773,7 @@
 "inform_detail_faq3_title" = "Bilgilerim anonim mi?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Lütfen bir doktor ya da sağlık kuruluşu ile iletişime geçin.";
+"meldungen_detail_explanation_text4" = "Hastalığa ait ilk belirtilerin görülmesi halinde bir doktoru veya bir sağlık kuruluşunu arayın.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "KOVİD-19 Bildirimleri";
@@ -836,7 +836,7 @@
 "meldungen_detail_free_test_title" = "Ücretsiz test olma";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "SwissCovid Danışma Hattı size ücretsiz korona testleri konusunda bilgi vermektedir.";
+"meldungen_detail_free_test_text" = "SwissCovid Kılavuzu, ücretsiz Corona virüs testi imkanları hakkında sizi bilgilendirecektir.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Takibi etkinleştir";
@@ -1003,3 +1003,36 @@
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
 "meldung_detail_exposed_show_less_button" = "Daha azını göster";
+
+/*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_title" = "SwissCovid Kılavuzu";
+
+/*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_text" = "Nasıl doğru şekilde hareket edeceğinizi öğrenmek için SwissCovid Kılavuzu'ndaki soruları yanıtlayın.";
+
+/*Button Text zum Öffnen vom SwissCovid Leitfaden*/
+"meldungen_detail_open_leitfaden_button" = "Şimdi doldurun";
+
+/*Title für Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_title" = "Telefon İle Danışma";
+
+/*Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_text" = "Başka sorularınızın olması halinde, SwissCovid Bilgi hattı (Infoline) size telefon yoluyla da bilgi vermekten memnuniyet duyacaktır.";
+
+/*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
+"meldungen_detail_leitfaden_again_text" = "SwissCovid Kılavuzu'nu dilediğiniz zaman buradan yeniden açabilirsiniz.";
+
+/*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
+"meldungen_detail_open_leitfaden_again_button" = "Kılavuz için";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_answer_questions_in_leitfaden" = "Soruları yanıtlayın";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_swisscovid_leitfaden" = "SwissCovid Kılavuzu";
+
+/*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
+"delete_notification_dialog" = "Muhtemel bir enfeksiyon bildirimi, ücretsiz Corona virüs testi yaptırmanız gerektiğinin kanıtı niteliğindedir. Bu bildirimi silerseniz, bu kanıtı ve SwissCovid Kılavuz bağlantısını kaybetmiş olursunuz.";
+
+/*URL to the SwissCovid Leitfaden*/
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

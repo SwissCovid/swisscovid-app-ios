@@ -77,7 +77,7 @@ struct UIStateModel: Equatable {
     struct ReportsDetail: Equatable {
         var report: ReportState = .noReport
         var reports: [NSReportModel] = []
-        var phoneCallState: PhoneCallState = .notCalled
+        var didOpenLeitfaden: Bool = false
         var showReportWithAnimation: Bool = false
 
         struct NSReportModel: Equatable {

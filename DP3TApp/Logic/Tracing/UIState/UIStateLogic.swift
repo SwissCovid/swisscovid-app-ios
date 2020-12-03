@@ -141,8 +141,8 @@ class UIStateLogic {
         }
 
         if let first = manager.firstSyncErrorTime,
-            let last = manager.lastSyncErrorTime,
-            last.timeIntervalSince(first) > manager.syncProblemInterval {
+           let last = manager.lastSyncErrorTime,
+           last.timeIntervalSince(first) > manager.syncProblemInterval {
             newState.homescreen.reports.syncProblemNetworkingError = true
             if let codedError = UIStateManager.shared.syncError {
                 newState.homescreen.reports.errorTitle = codedError.errorTitle
@@ -159,7 +159,7 @@ class UIStateLogic {
 
     private func setInfoBoxState(_ newState: inout UIStateModel) {
         if let infoBox = ConfigManager.currentConfig?.infoBox?.value,
-            infoBox.infoId == nil || !NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.contains(infoBox.infoId!) {
+           infoBox.infoId == nil || !NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.contains(infoBox.infoId!) {
             newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
                                                                           text: infoBox.msg,
                                                                           link: infoBox.urlTitle,
@@ -190,15 +190,11 @@ class UIStateLogic {
 
     private func setLastReportState(_ newState: inout UIStateModel) {
         if let report = newState.reportsDetail.reports.first {
-            newState.shouldStartAtReportsDetail = UserStorage.shared.lastPhoneCall(for: report.identifier) == nil
+            newState.shouldStartAtReportsDetail = !UserStorage.shared.didOpenLeitfaden
             newState.homescreen.reports.lastReport = report.timestamp
             newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: report.identifier)
 
-            if UserStorage.shared.lastPhoneCall(for: report.identifier) != nil {
-                newState.reportsDetail.phoneCallState = .calledAfterLastExposure
-            } else {
-                newState.reportsDetail.phoneCallState = .notCalled
-            }
+            newState.reportsDetail.didOpenLeitfaden = UserStorage.shared.didOpenLeitfaden
         }
     }
 

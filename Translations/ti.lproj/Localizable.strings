@@ -773,7 +773,7 @@
 "inform_detail_faq3_title" = "ስቱር ድዩ፧";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "ንሓኪም ወይ ንትካል ሕክምና ደውሉ።";
+"meldungen_detail_explanation_text4" = "ኣብ ቀዳሞት ምልክታት ንሓንቲ ወይ ሓደ ሓኪም ወይ ንሓደ ትካል ጥዕና ደውሉ ኢኹም።";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = " መልእኽትታት ኮቪድ-19 ";
@@ -836,7 +836,7 @@
 "meldungen_detail_free_test_title" = "ነጻ መርመራ ይከኣል'ዩ";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Infoline SwissCovid ብዛዕባ ኣማራጺ ነጻ መርመራ ኮሮና ይመኽረኩም።";
+"meldungen_detail_free_test_text" = "መምርሒ SwissCovid ብዛዕባ ኣማራጺ ነጻ ዝኾነ መርመራ ኮሮናቫይረስ ይሕብረኩም።";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "ንትራይሲንግ(Tracing) ምውላዕ";
@@ -1003,3 +1003,36 @@
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
 "meldung_detail_exposed_show_less_button" = "ዝወሓደ ምርኣይ";
+
+/*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_title" = "መምርሒ SwissCovid";
+
+/*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_text" = "ነቶም ኣብ መምርሒ SwissCovid ዘለው ሕቶታት መልሱ ኢኹም፣ ቅኑዕ መልሲ ከመይ ጌርኩም ከምትህቡ መታን ክትፈልጡ።";
+
+/*Button Text zum Öffnen vom SwissCovid Leitfaden*/
+"meldungen_detail_open_leitfaden_button" = "ሕጂ ምምላእ";
+
+/*Title für Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_title" = "ሓበሬታ ብተሌፎን";
+
+/*Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_text" = "ኣብ ቀጸልቲ ሕቶታት ኢንፎላይን SwissCovid ዋላ ብተሌፎን ሓበሬታ ይህበኩም።";
+
+/*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
+"meldungen_detail_leitfaden_again_text" = "ንመምርሒ SwissCovid ኣብዚ ኩሉ ግዜ ብሓድሽ ክትከፍትዎ ትኽእሉ።";
+
+/*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
+"meldungen_detail_open_leitfaden_again_button" = "ናብቲ መምርሒ";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_answer_questions_in_leitfaden" = "ሕቶታት መልሱ ኢኹም ኣብ";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_swisscovid_leitfaden" = "መምርሒ SwissCovid";
+
+/*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
+"delete_notification_dialog" = "መልእኽቲ ብዛዕባ ክፍጸም ዝከኣል ልበዳ ከም መረጋገጺ እዩ ዝኸውን፣ ንሱ ሽዑ ንነጻ ዝኾነ መርመራ ኮሮናቫይረስ ከድልየኩም እዩ። እዚ መልእኽቲ እንድሕር ትድምስስዎ ኮይንኩም፣ እዚ መረጋገጺ ምስቲ ሊንክ/ሓበሬታ መርበብ ንመምርሒ SwissCovid ከተጥፍእዎ ኢኹም።";
+
+/*URL to the SwissCovid Leitfaden*/
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

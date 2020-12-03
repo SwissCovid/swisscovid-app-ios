@@ -777,7 +777,7 @@
 "inform_detail_faq3_title" = "Permaneço anónimo?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Telefone a um médico ou a um estabelecimento de saúde.";
+"meldungen_detail_explanation_text4" = "Aos primeiros sintomas, contacte o seu médico ou uma unidade de saúde.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Notificações de exposição à COVID-19";
@@ -840,7 +840,7 @@
 "meldungen_detail_free_test_title" = "Possibilidade de teste gratuito";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "A linha informativa SwissCovid aconselha-o sobre um possível teste gratuito ao coronavírus.";
+"meldungen_detail_free_test_text" = "O guia da SwissCovid informa-o sobre a possibilidade de um teste gratuito ao coronavírus.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Ativar o rastreamento";
@@ -1007,3 +1007,36 @@
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
 "meldung_detail_exposed_show_less_button" = "Mostrar menos";
+
+/*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_title" = "Guia da SwissCovid";
+
+/*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_text" = "Responda às perguntas no guia da SwissCovid e saiba como proceder corretamente.";
+
+/*Button Text zum Öffnen vom SwissCovid Leitfaden*/
+"meldungen_detail_open_leitfaden_button" = "Preencher agora";
+
+/*Title für Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_title" = "Informações por telefone";
+
+/*Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_text" = "Se tiver perguntas, poderá também obter informações através da linha informativa da SwissCovid.";
+
+/*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
+"meldungen_detail_leitfaden_again_text" = "Abra aqui o guia da SwissCovid sempre que quiser.";
+
+/*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
+"meldungen_detail_open_leitfaden_again_button" = "Abrir o guia da SwissCovid";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_answer_questions_in_leitfaden" = "Responda às perguntas no";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_swisscovid_leitfaden" = "guia da SwissCovid";
+
+/*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
+"delete_notification_dialog" = "A notificação sobre um possível contágio constitui um comprovativo de que necessitará para fazer um teste gratuito ao coronavírus. Se a apagar, perde o comprovativo e a ligação ao guia da SwissCovid.";
+
+/*URL to the SwissCovid Leitfaden*/
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";

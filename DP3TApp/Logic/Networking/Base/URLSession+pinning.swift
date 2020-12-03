@@ -134,7 +134,7 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
         let host = challenge.protectionSpace.host
 
         guard challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust,
-            let trust = challenge.protectionSpace.serverTrust else {
+              let trust = challenge.protectionSpace.serverTrust else {
             return (.cancelAuthenticationChallenge, nil, nil)
         }
 
@@ -156,8 +156,8 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
 extension Bundle {
     func getCertificate(with name: String, fileExtension: String = "der") -> SecCertificate? {
         if let certificateURL = url(forResource: name, withExtension: fileExtension),
-            let certificateData = try? Data(contentsOf: certificateURL),
-            let certificate = SecCertificateCreateWithData(nil, certificateData as CFData) {
+           let certificateData = try? Data(contentsOf: certificateURL),
+           let certificate = SecCertificateCreateWithData(nil, certificateData as CFData) {
             return certificate
         }
         return nil

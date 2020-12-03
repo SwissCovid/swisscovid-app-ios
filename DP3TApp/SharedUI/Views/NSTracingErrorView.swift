@@ -172,7 +172,7 @@ class NSTracingErrorView: UIView {
                                                errorCode: code,
                                                action: { _ in
                                                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-                                                       UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                                                         UIApplication.shared.canOpenURL(settingsUrl) else { return }
                                                    UIApplication.shared.open(settingsUrl)
                                                })
             }

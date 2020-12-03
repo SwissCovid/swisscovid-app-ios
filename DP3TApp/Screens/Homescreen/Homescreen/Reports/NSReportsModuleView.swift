@@ -56,7 +56,7 @@ class NSReportsModuleView: NSModuleBaseView {
 
     private let noPushView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: { _ in
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-            UIApplication.shared.canOpenURL(settingsUrl) else { return }
+              UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
         UIApplication.shared.open(settingsUrl)
     }))
@@ -140,7 +140,7 @@ class NSReportsModuleView: NSModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
-            views.append(NSMoreInfoView(line1: "exposed_info_contact_hotline".ub_localized, line2: "exposed_info_contact_hotline_name".ub_localized))
+            views.append(NSMoreInfoView(line1: "exposed_info_answer_questions_in_leitfaden".ub_localized, line2: "exposed_info_swisscovid_leitfaden".ub_localized))
             if let lastReport = reportsState.lastReport {
                 let container = UIView()
                 let dateLabel = NSLabel(.date, textColor: .ns_blue)

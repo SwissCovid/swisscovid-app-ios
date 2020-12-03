@@ -99,7 +99,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
                                                                      dynamicIconTintColor: .ns_purple))
 
                 if let linkUrl = faqEntry.linkUrl,
-                    let linkTitle = faqEntry.linkTitle {
+                   let linkTitle = faqEntry.linkTitle {
                     let callButton = NSExternalLinkButton(style: .normal(color: .ns_purple))
                     callButton.title = linkTitle
                     callButton.touchUpCallback = {

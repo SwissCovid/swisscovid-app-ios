@@ -248,7 +248,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         infoBoxView.uiState = state.homescreen.infoBox
 
         if let infoId = state.homescreen.infoBox?.infoId,
-            state.homescreen.infoBox?.isDismissible == true {
+           state.homescreen.infoBox?.isDismissible == true {
             infoBoxView.closeButtonTouched = { [weak infoBoxView] in
                 NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.append(infoId)
                 UIView.animate(withDuration: 0.3) {

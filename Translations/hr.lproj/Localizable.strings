@@ -773,7 +773,7 @@
 "inform_detail_faq3_title" = "Da li ostajem anoniman?";
 
 /*Meldung Detail Weiss Box unten*/
-"meldungen_detail_explanation_text4" = "Pozovite lekara ili zdravstvenu ustanovu.";
+"meldungen_detail_explanation_text4" = "Kod prvih simptoma obratite se lekaru ili nekoj zdravstvenoj ustanovi.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "Obavijesti o izloženosti bolesti COVID-19";
@@ -836,7 +836,7 @@
 "meldungen_detail_free_test_title" = "Moguće je besplatno testiranje";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Preko info-linije aplikacije SwissCovid možete da dobijete savete o mogućnosti besplatnog testiranja na virus korona.";
+"meldungen_detail_free_test_text" = "SwissCovid smernice informišu Vas o mogućnosti besplatnog testiranja na virus korona.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktiviraj praćenje";
@@ -1003,3 +1003,36 @@
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
 "meldung_detail_exposed_show_less_button" = "Prikaži manje";
+
+/*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_title" = "SwissCovid smernice";
+
+/*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_text" = "Odgovorite na pitanja u SwissCovid smernicama kako biste saznali kako adekvatno da reagujete.";
+
+/*Button Text zum Öffnen vom SwissCovid Leitfaden*/
+"meldungen_detail_open_leitfaden_button" = "Popuniti";
+
+/*Title für Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_title" = "Telefonske informacije";
+
+/*Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_text" = "Ukoliko imate dodatna pitanja, informacije možete dobiti i telefonskim putem preko info linije aplikacije SwissCovid.";
+
+/*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
+"meldungen_detail_leitfaden_again_text" = "Ovde možete u svako vreme ponovo da otvorite SwissCovid smernice.";
+
+/*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
+"meldungen_detail_open_leitfaden_again_button" = "Idi na SwissCovid smernice";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_answer_questions_in_leitfaden" = "Odgovorite na pitanja u";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_swisscovid_leitfaden" = "SwissCovid smernicama";
+
+/*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
+"delete_notification_dialog" = "Poruka o mogućoj infekciji služi kao dokaz za besplatno testiranje na virus korona. Ako obrišete tu poruku, izgubićete dokaz i link na SwissCovid smernice.";
+
+/*URL to the SwissCovid Leitfaden*/
+"swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
