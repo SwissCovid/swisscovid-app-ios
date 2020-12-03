@@ -33,6 +33,12 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
+
+        bluetoothControl.switchCallback = { [weak self] _, _ in
+            guard let self = self else { return }
+            let vc = NSTracingReminderViewController()
+            self.present(vc, animated: true, completion: nil)
+        }
     }
 
     // MARK: - View
