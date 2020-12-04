@@ -1071,3 +1071,30 @@
 
 /*URL to the SwissCovid Leitfaden*/
 "swisscovid_leitfaden_url" = "https://swisscovid.bag-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
+
+/*Tracing Erinnerung 4 Stunden Radio Button*/
+"tracing_reminder_radio_four_hours" = "4 Stunden";
+
+/*Tracing Erinnerung 8 Stunden Radio Button*/
+"tracing_reminder_radio_eight_hours" = "8 Stunden";
+
+/*Tracing Erinnerung 12 Stunden Radio Button*/
+"tracing_reminder_radio_twelve_hours" = "12 Stunden";
+
+/*Tracing Erinnerung keine Erinngerung Radio Button*/
+"tracing_reminder_radio_no_reminder" = "Keine Erinnerung";
+
+/*Tracing Erinnerung bestätigen Button*/
+"tracing_reminder_confirm_button" = "OK";
+
+/*Tracing Erinnerung abbrechen Button*/
+"tracing_reminder_cancel_button" = "Abbrechen";
+
+/*Tracing Erinnerung Titel*/
+"tracing_reminder_title" = "Erinnerung setzen";
+
+/*Tracing Erinnerung Untertitel*/
+"tracing_reminder_subtitle" = "SwissCovid kann Sie daran erinnern, das Tracing wieder zu aktivieren.";
+
+/*Tracing Erinnerung Warnung*/
+"tracing_reminder_warning" = "Das Tracing wird deaktiviert.";
