@@ -1047,3 +1047,30 @@
 
 /*URL to the SwissCovid Leitfaden*/
 "swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
+
+/*Tracing Erinnerung 4 Stunden Radio Button*/
+"tracing_reminder_radio_four_hours" = "";
+
+/*Tracing Erinnerung 8 Stunden Radio Button*/
+"tracing_reminder_radio_eight_hours" = "";
+
+/*Tracing Erinnerung 12 Stunden Radio Button*/
+"tracing_reminder_radio_twelve_hours" = "";
+
+/*Tracing Erinnerung keine Erinngerung Radio Button*/
+"tracing_reminder_radio_no_reminder" = "";
+
+/*Tracing Erinnerung bestätigen Button*/
+"tracing_reminder_confirm_button" = "";
+
+/*Tracing Erinnerung abbrechen Button*/
+"tracing_reminder_cancel_button" = "";
+
+/*Tracing Erinnerung Titel*/
+"tracing_reminder_title" = "";
+
+/*Tracing Erinnerung Untertitel*/
+"tracing_reminder_subtitle" = "";
+
+/*Tracing Erinnerung Warnung*/
+"tracing_reminder_warning" = "";
