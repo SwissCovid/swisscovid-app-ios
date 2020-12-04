@@ -223,10 +223,13 @@ class UIStateLogic {
             }
         }
 
-        static let randIdentifier1 = UUID()
-        static let randIdentifier2 = UUID()
-        static let randDate1 = Date(timeIntervalSinceNow: -10000)
-        static let randDate2 = Date(timeIntervalSinceNow: -100_000)
+        static var identifiers: [UUID] = {
+            var identifiers = [UUID]()
+            for _ in 0 ... 20 {
+                identifiers.append(.init())
+            }
+            return identifiers
+        }()
 
         private func setDebugReports(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
@@ -249,7 +252,7 @@ class UIStateLogic {
                 newState.reportsDetail.reports = []
 
                 for i in 0 ..< count {
-                    newState.reportsDetail.reports.append(UIStateModel.ReportsDetail.NSReportModel(identifier: UUID(), timestamp: Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))))
+                    newState.reportsDetail.reports.append(UIStateModel.ReportsDetail.NSReportModel(identifier: Self.identifiers[i], timestamp: Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))))
                 }
 
                 newState.shouldStartAtReportsDetail = true
