@@ -27,7 +27,14 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let sendButton = NSButton(title: "inform_send_button_title".ub_localized, style: .normal(.ns_purple))
 
+    private let prefill: String?
+
     // MARK: - View
+
+    init(prefill: String? = nil) {
+        self.prefill = prefill
+        super.init()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +47,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if !UIAccessibility.isVoiceOverRunning {
+
+        if let code = prefill {
+            codeControl.set(code: code)
+        } else if !UIAccessibility.isVoiceOverRunning {
             codeControl.jumpToNextField()
         }
     }

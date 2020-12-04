@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var navigationController: NSNavigationController = NSNavigationController(rootViewController: tabBarController)
     lazy var tabBarController: NSTabBarController = NSTabBarController()
 
+    private var linkHandler = NSLinkHandler()
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
         if UserStorage.shared.hasCompletedOnboarding {
@@ -43,8 +45,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
-
         return true
+    }
+
+    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        linkHandler.handle(url: url)
     }
 
     private func shouldSetupWindow(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {

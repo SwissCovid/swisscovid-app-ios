@@ -44,6 +44,18 @@ class NSCodeControl: UIView {
 
     // MARK: - Public functions
 
+    public func set(code: String) {
+        guard code.count == numberOfInputs, let first = controls.first else { return }
+
+        fill(text: code, startControl: first)
+
+        controls.forEach { c in
+            c.resignFirstResponder()
+        }
+
+        currentControl = nil
+    }
+
     public func code() -> String {
         var code = ""
 
