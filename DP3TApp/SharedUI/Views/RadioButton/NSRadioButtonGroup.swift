@@ -16,8 +16,6 @@ class NSRadioButtonGroup<Data>: UIControl {
         var data: Data
     }
 
-    private var stackView = UIStackView()
-
     private var radioButtons = [NSRadioButtonItem]()
 
     private let selections: [Selection]
@@ -43,6 +41,7 @@ class NSRadioButtonGroup<Data>: UIControl {
 
         super.init(frame: .zero)
 
+        let stackView = UIStackView()
         addSubview(stackView)
         stackView.axis = .vertical
         stackView.snp.makeConstraints { make in

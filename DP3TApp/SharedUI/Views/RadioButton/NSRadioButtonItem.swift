@@ -23,6 +23,7 @@ class NSRadioButtonItem: UIControl {
             UIView.animate(withDuration: 0.25) {
                 self.highlightView.alpha = self.isHighlighted ? 0.6 : 0.0
             }
+            radioButton.isHighlighted = isHighlighted
         }
     }
 

@@ -23,7 +23,7 @@ class NSBluetoothSettingsControl: UIView {
 
     private let switchControl = UISwitch()
 
-    var switchCallback: ((Bool, (Bool) -> Void) -> Void)?
+    var switchCallback: ((Bool, @escaping (Bool) -> Void) -> Void)?
 
     let tracingActiveView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "tracing_active_title".ub_localized,

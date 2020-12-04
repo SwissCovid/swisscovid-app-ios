@@ -19,6 +19,25 @@ class NSRadioButton: UIControl {
         min(frame.width, frame.height)
     }
 
+    override var isHighlighted: Bool {
+        didSet {
+            UIView.animate(withDuration: 0.25) {
+                if self.isHighlighted {
+                    self.selectionCircle.alpha = 0.5
+                    self.selectionCircle.transform = .init(scaleX: 0.5, y: 0.5)
+                } else {
+                    if self.isSelected {
+                        self.selectionCircle.alpha = 1.0
+                        self.selectionCircle.transform = .identity
+                    } else {
+                        self.selectionCircle.alpha = 0.0
+                        self.selectionCircle.transform = .init(scaleX: 0.01, y: 0.01)
+                    }
+                }
+            }
+        }
+    }
+
     init() {
         super.init(frame: .zero)
         clipsToBounds = true
@@ -28,7 +47,7 @@ class NSRadioButton: UIControl {
 
         selectionCircle.isUserInteractionEnabled = false
         addSubview(selectionCircle)
-        selectionCircle.backgroundColor = UIColor(ub_hexString: "#5094BF")
+        selectionCircle.backgroundColor = .ns_blueBar
 
         selectionCircle.snp.makeConstraints { make in
             make.center.equalToSuperview()

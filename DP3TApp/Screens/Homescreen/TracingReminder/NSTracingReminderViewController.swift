@@ -19,10 +19,10 @@ class NSTracingReminderViewController: NSPopupViewController {
 
         var label: String {
             switch self {
-            case .fourHours: return "4 Stunden"
-            case .eightHours: return "8 Stunden"
-            case .twelveHours: return "12 Stunden"
-            case .noReminder: return "Keine Erinnerung"
+            case .fourHours: return "tracing_reminder_radio_four_hours".ub_localized
+            case .eightHours: return "tracing_reminder_radio_eight_hours".ub_localized
+            case .twelveHours: return "tracing_reminder_radio_twelve_hours".ub_localized
+            case .noReminder: return "tracing_reminder_radio_no_reminder".ub_localized
             }
         }
 
@@ -42,11 +42,14 @@ class NSTracingReminderViewController: NSPopupViewController {
         }
     }
 
-    let radioButtons = NSRadioButtonGroup<Reminder>(selections: Reminder.radioButtonSelections)
+    private let radioButtons = NSRadioButtonGroup<Reminder>(selections: Reminder.radioButtonSelections)
 
-    let confirmButton = NSButton(title: "Ok", style: .normal(.ns_blue))
+    private let confirmButton = NSButton(title: "tracing_reminder_confirm_button".ub_localized, style: .normal(.ns_blue))
 
-    let cancelButton = NSSimpleTextButton(title: "Abbrechen", color: .ns_blue)
+    private let cancelButton = NSSimpleTextButton(title: "tracing_reminder_cancel_button".ub_localized, color: .ns_blue)
+
+    /// True if Ok was pressed, False if cancel
+    var dismissCallback: ((Bool) -> Void)?
 
     init() {
         super.init(showCloseButton: false, dismissable: false)
@@ -68,13 +71,13 @@ class NSTracingReminderViewController: NSPopupViewController {
         stackView.addSpacerView(NSPadding.small)
 
         let tileLabel = NSLabel(.title, textAlignment: .center)
-        tileLabel.text = "Erinngerung setzen"
+        tileLabel.text = "tracing_reminder_title".ub_localized
         stackView.addArrangedView(tileLabel)
 
         stackView.addSpacerView(NSPadding.small)
 
         let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
-        subtitleLabel.text = "SwissCovid kann Sie daran erinnern, das Tracing wieder zu aktivieren."
+        subtitleLabel.text = "tracing_reminder_subtitle".ub_localized
         let subtitleWrapper = UIView()
         subtitleWrapper.addSubview(subtitleLabel)
         subtitleLabel.snp.makeConstraints { make in
@@ -98,6 +101,12 @@ class NSTracingReminderViewController: NSPopupViewController {
             make.leading.greaterThanOrEqualToSuperview()
             make.trailing.lessThanOrEqualToSuperview()
         }
+        confirmButton.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            TracingLocalPush.shared.scheduleReminderNotification(reminder: self.radioButtons.selectedData)
+            self.dismissCallback?(true)
+            self.dismiss()
+        }
         stackView.addArrangedView(confirmButtonWrapper)
 
         stackView.addSpacerView(NSPadding.medium)
@@ -113,6 +122,7 @@ class NSTracingReminderViewController: NSPopupViewController {
         cancelButton.contentEdgeInsets = .init(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
         stackView.addArrangedView(cancelButtonWrapper)
         cancelButton.touchUpCallback = { [weak self] in
+            self?.dismissCallback?(false)
             self?.dismiss()
         }
 
@@ -141,7 +151,7 @@ class NSTracingReminderViewController: NSPopupViewController {
             make.trailing.equalToSuperview().inset(NSPadding.medium)
         }
 
-        label.text = "Das Tracing wird deaktiviert."
+        label.text = "tracing_reminder_warning".ub_localized
 
         infoBox.backgroundColor = UIColor.setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_backgroundTertiary)
         infoBox.layer.cornerRadius = 5

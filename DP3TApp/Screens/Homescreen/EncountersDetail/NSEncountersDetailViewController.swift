@@ -34,9 +34,22 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             strongSelf.updateState(state)
         })
 
-        bluetoothControl.switchCallback = { [weak self] _, _ in
+        bluetoothControl.switchCallback = { [weak self] state, confirmCallback in
             guard let self = self else { return }
+            // onyl show popup when switching tracing off
+            guard state == false else {
+                // TODO: cancel notifications
+                confirmCallback(state)
+                return
+            }
             let vc = NSTracingReminderViewController()
+            vc.dismissCallback = { confirmed in
+                if confirmed {
+                    confirmCallback(state)
+                } else {
+                    confirmCallback(!state)
+                }
+            }
             self.present(vc, animated: true, completion: nil)
         }
     }
