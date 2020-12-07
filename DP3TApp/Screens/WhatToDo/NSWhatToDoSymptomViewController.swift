@@ -79,8 +79,11 @@ class NSWhatToDoSymptomViewController: NSViewController {
         stackScrollView.addArrangedView(imageView)
 
         stackScrollView.addSpacerView(NSPadding.large)
-
         stackScrollView.addArrangedView(symptomView)
+        symptomView.moreInformationCallback = { [weak self] in
+            guard let self = self else { return }
+            self.showMoreInformationPopup()
+        }
 
         stackScrollView.addSpacerView(3.0 * NSPadding.large)
 
@@ -94,6 +97,10 @@ class NSWhatToDoSymptomViewController: NSViewController {
     private func setupAccessibility() {
         titleContentStackView.isAccessibilityElement = true
         titleContentStackView.accessibilityLabel = subtitleLabel.text!.deleteSuffix("...") + titleLabel.text!
+    }
+
+    private func showMoreInformationPopup() {
+        present(NSMoreTestInformationPopupViewController(), animated: true, completion: nil)
     }
 }
 

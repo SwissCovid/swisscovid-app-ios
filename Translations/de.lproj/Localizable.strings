@@ -1098,3 +1098,90 @@
 
 /*Tracing Erinnerung Warnung*/
 "tracing_reminder_warning" = "Das Tracing wird deaktiviert.";
+
+/*Kantonname Zürich*/
+"Zürich" = "Zürich";
+
+/*Kantonname Aargau*/
+"Aargau" = "Aargau";
+
+/*Kantonname Appenzell Innerrhoden*/
+"Appenzell Innerrhoden" = "Appenzell Innerrhoden";
+
+/*Kantonname Appenzell Ausserrhoden*/
+"Appenzell Ausserrhoden" = "Appenzell Ausserrhoden";
+
+/*Kantonname Bern*/
+"Bern" = "Bern";
+
+/*Kantonname Basel-Landschaft*/
+"Basel-Landschaft" = "Basel-Landschaft";
+
+/*Kantonname Basel-Stadt*/
+"Basel-Stadt" = "Basel-Stadt";
+
+/*Kantonname Freiburg*/
+"Freiburg" = "Freiburg";
+
+/*Kantonname Genf*/
+"Genf" = "Genf";
+
+/*Kantonname Glarus*/
+"Glarus" = "Glarus";
+
+/*Kantonname Graubünden*/
+"Graubünden" = "Graubünden";
+
+/*Kantonname Jura*/
+"Jura" = "Jura";
+
+/*Kantonname Luzern*/
+"Luzern" = "Luzern";
+
+/*Kantonname Neuenburg*/
+"Neuenburg" = "Neuenburg";
+
+/*Kantonname Nidwalden*/
+"Nidwalden" = "Nidwalden";
+
+/*Kantonname Obwalden*/
+"Obwalden" = "Obwalden";
+
+/*Kantonname St. Gallen*/
+"St. Gallen" = "St. Gallen";
+
+/*Kantonname Schaffhausen*/
+"Schaffhausen" = "Schaffhausen";
+
+/*Kantonname Solothurn*/
+"Solothurn" = "Solothurn";
+
+/*Kantonname Schwyz*/
+"Schwyz" = "Schwyz";
+
+/*Kantonname Thurgau*/
+"Thurgau" = "Thurgau";
+
+/*Kantonname Tessin*/
+"Tessin" = "Tessin";
+
+/*Kantonname Uri*/
+"Uri" = "Uri";
+
+/*Kantonname Waadt*/
+"Waadt" = "Waadt";
+
+/*Kantonname Wallis*/
+"Wallis" = "Wallis";
+
+/*Kantonname Zug*/
+"Zug" = "Zug";
+
+/*Kantonname Fürstentum Liechtenstein*/
+"Fürstentum Liechtenstein" = "Fürstentum Liechtenstein";
+
+/*Test standorte Popup Titel*/
+"test_location_popup_title" = "Wo kann ich einen Test machen?";
+
+/*Test standorte Popup Text*/
+"test_location_popup_text" = "Sie können sich bei verschiedenen Ärztinnen und Ärzten, Testzentren, Spitälern und Apotheken auf das neue Coronavirus testen lassen. Informationen zu den Testangeboten finden Sie auf den kantonalen Webseiten:";

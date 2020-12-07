@@ -11,13 +11,15 @@
 import UIKit
 
 class NSPopupViewController: NSViewController {
-    let scrollView = UIScrollView()
+    private let scrollView = UIScrollView()
 
-    let contentView = UIView()
+    private let contentView = UIView()
 
-    let contentWrapper = UIView()
+    private let contentWrapper = UIView()
 
     let stackView = UIStackView()
+
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
 
     lazy var closeButton: UBButton = {
         let button = UBButton()
@@ -38,7 +40,11 @@ class NSPopupViewController: NSViewController {
     var showCloseButton: Bool
     var dismissable: Bool
 
-    init(showCloseButton: Bool = true, dismissable: Bool = true) {
+    var stackViewInset: UIEdgeInsets
+
+    init(showCloseButton: Bool = true, dismissable: Bool = true, stackViewInset: UIEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)) {
+        self.stackViewInset = stackViewInset
+
         self.showCloseButton = showCloseButton
 
         self.dismissable = dismissable
@@ -54,15 +60,33 @@ class NSPopupViewController: NSViewController {
 
         setupCloseGestureRecognizer()
         setupLayout()
+
+        addStatusBarBlurView()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if animated {
+            UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: [], animations: {
+                self.scrollView.transform = CGAffineTransform.identity
+                self.scrollView.alpha = 1.0
+            }, completion: nil)
+        } else {
+            scrollView.transform = CGAffineTransform.identity
+            scrollView.alpha = 1.0
+        }
     }
 
     private func setupLayout() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 
+        scrollView.delegate = self
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        scrollView.transform = .init(scaleX: 0.01, y: 0.01)
+        scrollView.alpha = 0
 
         scrollView.addSubview(contentView)
         contentView.snp.makeConstraints { make in
@@ -78,10 +102,9 @@ class NSPopupViewController: NSViewController {
             make.leading.trailing.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
             make.centerY.equalToSuperview()
         }
-
         contentWrapper.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(NSPadding.medium)
+            make.edges.equalToSuperview().inset(stackViewInset)
         }
 
         contentWrapper.backgroundColor = UIColor.setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundSecondary)
@@ -103,8 +126,41 @@ class NSPopupViewController: NSViewController {
         }
     }
 
+    private func addStatusBarBlurView() {
+        view.addSubview(blurView)
+
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+
+        blurView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(statusBarHeight)
+        }
+    }
+
+    private func updateBlurViewAlpha() {
+        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        let perc = min(max((scrollView.contentOffset.y + statusBarHeight) / statusBarHeight, 0), 1)
+        blurView.alpha = perc
+    }
+
     func dismiss() {
         dismiss(animated: true, completion: nil)
+    }
+
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        if flag {
+            UIView.animate(withDuration: 0.4, delay: 0.0, options: []) {
+                self.scrollView.transform = .init(scaleX: 0.01, y: 0.01)
+                self.scrollView.alpha = 0.0
+                self.view.alpha = 0.0
+            } completion: { _ in
+                super.dismiss(animated: false, completion: completion)
+            }
+        } else {
+            super.dismiss(animated: false, completion: completion)
+        }
     }
 
     private func setupCloseGestureRecognizer() {
@@ -117,5 +173,11 @@ class NSPopupViewController: NSViewController {
         let location = sender.location(in: view)
         guard !contentView.frame.contains(location) else { return }
         dismiss()
+    }
+}
+
+extension NSPopupViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_: UIScrollView) {
+        updateBlurViewAlpha()
     }
 }

@@ -1074,3 +1074,90 @@
 
 /*Tracing Erinnerung Warnung*/
 "tracing_reminder_warning" = "";
+
+/*Kantonname Zürich*/
+"Zürich" = "Zurigo";
+
+/*Kantonname Aargau*/
+"Aargau" = "Argovia";
+
+/*Kantonname Appenzell Innerrhoden*/
+"Appenzell Innerrhoden" = "Appenzello Interno";
+
+/*Kantonname Appenzell Ausserrhoden*/
+"Appenzell Ausserrhoden" = "Appenzello Esterno";
+
+/*Kantonname Bern*/
+"Bern" = "Berna";
+
+/*Kantonname Basel-Landschaft*/
+"Basel-Landschaft" = "Basilea Campagna";
+
+/*Kantonname Basel-Stadt*/
+"Basel-Stadt" = "Basilea Città";
+
+/*Kantonname Freiburg*/
+"Freiburg" = "Friburgo";
+
+/*Kantonname Genf*/
+"Genf" = "Ginevra";
+
+/*Kantonname Glarus*/
+"Glarus" = "Glarona";
+
+/*Kantonname Graubünden*/
+"Graubünden" = "Grigioni";
+
+/*Kantonname Jura*/
+"Jura" = "Giura";
+
+/*Kantonname Luzern*/
+"Luzern" = "Lucerna";
+
+/*Kantonname Neuenburg*/
+"Neuenburg" = "Neuchâtel";
+
+/*Kantonname Nidwalden*/
+"Nidwalden" = "Nidvaldo";
+
+/*Kantonname Obwalden*/
+"Obwalden" = "Obvaldo";
+
+/*Kantonname St. Gallen*/
+"St. Gallen" = "San Gallo";
+
+/*Kantonname Schaffhausen*/
+"Schaffhausen" = "Sciaffusa";
+
+/*Kantonname Solothurn*/
+"Solothurn" = "Soletta";
+
+/*Kantonname Schwyz*/
+"Schwyz" = "Svitto";
+
+/*Kantonname Thurgau*/
+"Thurgau" = "Turgovia";
+
+/*Kantonname Tessin*/
+"Tessin" = "Ticino";
+
+/*Kantonname Uri*/
+"Uri" = "Uri";
+
+/*Kantonname Waadt*/
+"Waadt" = "Vaud";
+
+/*Kantonname Wallis*/
+"Wallis" = "Vallese";
+
+/*Kantonname Zug*/
+"Zug" = "Zugo";
+
+/*Kantonname Fürstentum Liechtenstein*/
+"Fürstentum Liechtenstein" = "Liechtenstein";
+
+/*Test standorte Popup Titel*/
+"test_location_popup_title" = "";
+
+/*Test standorte Popup Text*/
+"test_location_popup_text" = "";
