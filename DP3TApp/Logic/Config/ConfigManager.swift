@@ -127,7 +127,7 @@ class ConfigManager: NSObject {
         dataTask = session.dataTask(with: request, completionHandler: { data, response, error in
 
             guard let httpResponse = response as? HTTPURLResponse,
-                let data = data else {
+                  let data = data else {
                 Logger.log("Failed to load config, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completion(nil) }
                 return

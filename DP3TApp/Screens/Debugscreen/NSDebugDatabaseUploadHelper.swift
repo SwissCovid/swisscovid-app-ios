@@ -29,7 +29,7 @@ class NSDebugDatabaseUploadHelper {
         let fileUrl = documentsDirectory.appendingPathComponent("DP3T_tracing_db").appendingPathExtension("sqlite")
 
         guard let databaseData = try? Data(contentsOf: fileUrl),
-            let url = URL(string: "https://dp3tdemoupload.azurewebsites.net/upload") else {
+              let url = URL(string: "https://dp3tdemoupload.azurewebsites.net/upload") else {
             completion?(.failure(UploadError(message: "Couldn't read file")))
             return
         }

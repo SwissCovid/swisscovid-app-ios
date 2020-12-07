@@ -84,6 +84,8 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
                     scheduleNotification(identifier: exposure.identifier)
                     // and update the latestExpsoureDate
                     lastestExposureDate = exposure.date
+                    // and reset the didOpenLeitfaden flag
+                    UserStorage.shared.didOpenLeitfaden = false
 
                     break
                 }
@@ -256,8 +258,8 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.hour], from: now)
         guard let hour = components.hour,
-            hour > 7,
-            hour < 23 else {
+              hour > 7,
+              hour < 23 else {
             return
         }
 

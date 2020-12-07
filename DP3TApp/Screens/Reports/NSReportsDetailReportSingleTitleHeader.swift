@@ -327,7 +327,7 @@ class NSReportsDetailReportSingleTitleHeader: NSTitleView {
         let target = super.hitTest(point, with: event)
 
         if let target = target,
-            target == expandButton || target == continueButton {
+           target == expandButton || target == continueButton {
             return target
         }
 

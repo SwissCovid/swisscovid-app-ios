@@ -16,16 +16,16 @@ import Foundation
 /// "UserStorageDefaults stores Property List objects (NSString, NSData, NSNumber, NSDate, NSArray, and NSDictionary) identified by NSString keys"
 public protocol UBPListValue: UBUserDefaultValue {}
 
-extension UBPListValue {
-    public func store(in userDefaults: UserDefaults, key: String) {
+public extension UBPListValue {
+    func store(in userDefaults: UserDefaults, key: String) {
         userDefaults.set(self, forKey: key)
     }
 
-    public static func retrieve(from userDefaults: UserDefaults, key: String, defaultValue: Self) -> Self {
+    static func retrieve(from userDefaults: UserDefaults, key: String, defaultValue: Self) -> Self {
         userDefaults.object(forKey: key) as? Self ?? defaultValue
     }
 
-    public static func retrieveOptional(from userDefaults: UserDefaults, key: String) -> Self? {
+    static func retrieveOptional(from userDefaults: UserDefaults, key: String) -> Self? {
         userDefaults.object(forKey: key) as? Self
     }
 }

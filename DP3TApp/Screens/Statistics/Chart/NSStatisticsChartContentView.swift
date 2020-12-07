@@ -127,8 +127,8 @@ class NSStatisticsChartContentView: UIView {
 
     override var intrinsicContentSize: CGSize {
         guard let data = data,
-            let lastDate = data.data.last?.date,
-            let firstDate = data.data.first?.date else { return CGSize(width: 0, height: configuration.chartHeight) }
+              let lastDate = data.data.last?.date,
+              let firstDate = data.data.first?.date else { return CGSize(width: 0, height: configuration.chartHeight) }
 
         // Add a small padding if the last day is a monday in order to not cut off the day label
         var additionalPadding: CGFloat = 0.0
@@ -158,7 +158,7 @@ class NSStatisticsChartContentView: UIView {
         lineView.values = data.data.map(\.sevenDayAverage)
 
         if let firstDate = data.data.first?.date,
-            Calendar.current.component(.weekday, from: firstDate) == 2 {
+           Calendar.current.component(.weekday, from: firstDate) == 2 {
             infectionBarViewLeadingConstraint?.update(inset: NSPadding.large)
             dateViewLeadingConstraint?.update(inset: NSPadding.large)
         } else {

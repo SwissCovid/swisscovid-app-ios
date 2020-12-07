@@ -25,7 +25,7 @@ class DatabaseSyncer {
 
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
         guard !databaseIsSyncing,
-            UserStorage.shared.hasCompletedOnboarding else {
+              UserStorage.shared.hasCompletedOnboarding else {
             completionHandler?(.noData)
             return
         }

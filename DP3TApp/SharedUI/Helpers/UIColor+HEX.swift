@@ -70,7 +70,7 @@ extension UIColor {
         }
 
         guard hexStringResult.numberOfRanges == 2,
-            let hexCapturedRange = Range(hexStringResult.range(at: 1), in: input) else {
+              let hexCapturedRange = Range(hexStringResult.range(at: 1), in: input) else {
             return nil
         }
 

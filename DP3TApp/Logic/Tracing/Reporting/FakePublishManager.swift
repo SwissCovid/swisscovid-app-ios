@@ -97,7 +97,7 @@ private class FakePublishOperation: Operation {
         var numberOfFakeRequestsDone = 0
 
         while isCancelled == false,
-            now >= manager.nextScheduledFakeRequestDate {
+              now >= manager.nextScheduledFakeRequestDate {
             let isFirstReport = numberOfFakeRequestsDone == 0
 
             // only do request if it was planned to do in the last 48h

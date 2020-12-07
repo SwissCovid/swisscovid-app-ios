@@ -28,7 +28,7 @@ class StatisticsLoader {
             }
 
             guard let httpResponse = response as? HTTPURLResponse,
-                let data = data else {
+                  let data = data else {
                 Logger.log("Failed to load statistics, error: \(error?.localizedDescription ?? "?")")
                 DispatchQueue.main.async { completionHandler(.failure(.networkError)) }
                 return

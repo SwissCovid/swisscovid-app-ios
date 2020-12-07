@@ -14,8 +14,8 @@ public typealias UBCodable = UBDecodable & UBEncodable
 
 public protocol UBEncodable: Encodable, UBUserDefaultsStorable {}
 
-extension UBEncodable {
-    public func store(in userDefaults: UserDefaults, key: String) {
+public extension UBEncodable {
+    func store(in userDefaults: UserDefaults, key: String) {
         let data = try? JSONEncoder().encode(self)
         userDefaults.set(data, forKey: key)
     }
@@ -23,8 +23,8 @@ extension UBEncodable {
 
 public protocol UBDecodable: Decodable, UBUserDefaultsRetrievable {}
 
-extension UBDecodable {
-    public static func retrieve(from userDefaults: UserDefaults, key: String, defaultValue: Self) -> Self {
+public extension UBDecodable {
+    static func retrieve(from userDefaults: UserDefaults, key: String, defaultValue: Self) -> Self {
         guard let data = userDefaults.object(forKey: key) as? Data else {
             return defaultValue
         }
@@ -32,7 +32,7 @@ extension UBDecodable {
         return value ?? defaultValue
     }
 
-    public static func retrieveOptional(from userDefaults: UserDefaults, key: String) -> Self? {
+    static func retrieveOptional(from userDefaults: UserDefaults, key: String) -> Self? {
         guard let data = userDefaults.object(forKey: key) as? Data else {
             return nil
         }

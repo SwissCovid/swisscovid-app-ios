@@ -799,7 +799,7 @@
 
 /*Meldung Detail Weiss Box unten*/
 /*Fuzzy*/
-"meldungen_detail_explanation_text4" = "Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
+"meldungen_detail_explanation_text4" = "Bei ersten Symptomen rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
 
 /*Text beim Bluetooth Control*/
 "tracing_setting_text_android" = "COVID-19-Benachrichtigungen";
@@ -862,7 +862,7 @@
 "meldungen_detail_free_test_title" = "Kostenloser Test möglich";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Die Infoline SwissCovid berät Sie über die Möglichkeit eines kostenlosen Corona Tests.";
+"meldungen_detail_free_test_text" = "Der SwissCovid Leitfaden informiert Sie über die Möglichkeit eines kostenlosen Coronavirus-Tests.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Tracing aktivieren";
@@ -1038,3 +1038,63 @@
 
 /*Button Titel im Meldung Detail Header, wenn alle Meldungen angezeigt werden.*/
 "meldung_detail_exposed_show_less_button" = "Weniger anzeigen";
+
+/*Titel vom SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_title" = "SwissCovid Leitfaden";
+
+/*Text zum SwissCovid Leitfaden bei Kontaktmeldung*/
+"meldungen_detail_leitfaden_text" = "Beantworten Sie die Fragen im SwissCovid Leitfaden um zu erfahren, wie Sie richtig reagieren.";
+
+/*Button Text zum Öffnen vom SwissCovid Leitfaden*/
+"meldungen_detail_open_leitfaden_button" = "Jetzt ausfüllen";
+
+/*Title für Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_title" = "Telefonische Auskunft";
+
+/*Infotext zu SwissCovid Infoline*/
+"meldungen_tel_information_text" = "Bei weiteren Fragen gibt Ihnen die Infoline SwissCovid gerne auch telefonisch Auskunft.";
+
+/*Hinweis Text nach dem Ausfüllen vom SwissCovid Leitfaden, dass man erneut ausfüllen kann*/
+"meldungen_detail_leitfaden_again_text" = "Sie können den SwissCovid Leitfaden hier jederzeit erneut öffnen.";
+
+/*Button Text um SwissCovid Leitfaden erneut zu öffnen*/
+"meldungen_detail_open_leitfaden_again_button" = "Zum Leitfaden";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_answer_questions_in_leitfaden" = "Beantworten Sie die Fragen im";
+
+/*Homescreen Text mit Hinweis zu SwissCovid Leitfaden bei einer Meldung*/
+"exposed_info_swisscovid_leitfaden" = "SwissCovid Leitfaden";
+
+/*Dialog Text beim Löschen einer Meldung über einen möglichen Kontakt*/
+"delete_notification_dialog" = "Die Meldung über eine mögliche Ansteckung dient als Nachweis, den Sie für einen kostenlosen Coronavirus-Test benötigen. Wenn Sie diese Meldung löschen, verlieren Sie diesen Nachweis und den Link für den SwissCovid Leitfaden.";
+
+/*URL to the SwissCovid Leitfaden*/
+"swisscovid_leitfaden_url" = "https://swisscovid.bag-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
+
+/*Tracing Erinnerung 4 Stunden Radio Button*/
+"tracing_reminder_radio_four_hours" = "4 Stunden";
+
+/*Tracing Erinnerung 8 Stunden Radio Button*/
+"tracing_reminder_radio_eight_hours" = "8 Stunden";
+
+/*Tracing Erinnerung 12 Stunden Radio Button*/
+"tracing_reminder_radio_twelve_hours" = "12 Stunden";
+
+/*Tracing Erinnerung keine Erinngerung Radio Button*/
+"tracing_reminder_radio_no_reminder" = "Keine Erinnerung";
+
+/*Tracing Erinnerung bestätigen Button*/
+"tracing_reminder_confirm_button" = "OK";
+
+/*Tracing Erinnerung abbrechen Button*/
+"tracing_reminder_cancel_button" = "Abbrechen";
+
+/*Tracing Erinnerung Titel*/
+"tracing_reminder_title" = "Erinnerung setzen";
+
+/*Tracing Erinnerung Untertitel*/
+"tracing_reminder_subtitle" = "SwissCovid kann Sie daran erinnern, das Tracing wieder zu aktivieren.";
+
+/*Tracing Erinnerung Warnung*/
+"tracing_reminder_warning" = "Das Tracing wird deaktiviert.";
