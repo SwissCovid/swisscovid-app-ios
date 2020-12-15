@@ -19,7 +19,13 @@ class NSTracingErrorView: UIView {
     private let textLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
     private let errorCodeLabel = NSLabel(.smallRegular, textAlignment: .center)
     private let actionButton = NSUnderlinedButton()
-    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    private let activityIndicator: UIActivityIndicatorView = {
+        if #available(iOS 13.0, *) {
+            return UIActivityIndicatorView(style: .medium)
+        } else {
+            return UIActivityIndicatorView(style: .white)
+        }
+    }()
 
     // MARK: - Model
 

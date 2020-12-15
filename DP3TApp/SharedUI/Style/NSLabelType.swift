@@ -53,15 +53,16 @@ public enum NSLabelType: UBLabelType {
         var regularFontName = "Inter-Regular"
         var lightFontName = "Inter-Light"
 
-        switch UITraitCollection.current.legibilityWeight {
-        case .bold:
-            boldFontName = "Inter-ExtraBold"
-            regularFontName = "Inter-Bold"
-            lightFontName = "Inter-Medium"
-        default:
-            break
+        if #available(iOS 13.0, *) {
+            switch UITraitCollection.current.legibilityWeight {
+            case .bold:
+                boldFontName = "Inter-ExtraBold"
+                regularFontName = "Inter-Bold"
+                lightFontName = "Inter-Medium"
+            default:
+                break
+            }
         }
-
         switch self {
         case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
         case .splashTitle: return UIFont(name: boldFontName, size: bfs + 11.0)!

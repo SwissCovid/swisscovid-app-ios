@@ -92,7 +92,9 @@ private extension NSTutorialListItemView.ViewModel {
 
     static func settingsTextCellView(image: UIImage?, text: String) -> UIView {
         let cell = UIView()
-        cell.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            cell.backgroundColor = .systemBackground
+        }
 
         let icon = UIImageView(image: image)
         icon.ub_setContentPriorityRequired()
@@ -121,7 +123,9 @@ private extension NSTutorialListItemView.ViewModel {
 
     static func settingsButtonView(text: String) -> UIView {
         let cell = UIView()
-        cell.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            cell.backgroundColor = .systemBackground
+        }
         cell.isAccessibilityElement = false
 
         let button = UIButton()

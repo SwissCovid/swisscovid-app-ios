@@ -41,6 +41,10 @@ class TracingManager: NSObject {
         }
     }
 
+    var isSupported: Bool {
+        DP3TTracing.isOSCompatible
+    }
+
     func initialize() {
         let bucketBaseUrl = Environment.current.configService.baseURL
         let reportBaseUrl = Environment.current.publishService.baseURL

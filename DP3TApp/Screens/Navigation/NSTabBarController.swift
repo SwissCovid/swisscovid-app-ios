@@ -86,14 +86,17 @@ class NSTabBarController: UITabBarController {
     }
 
     private func style() {
-        let appearance = UITabBarAppearance()
-        appearance.backgroundColor = .ns_moduleBackground
-        setTabBarItemColors(appearance.stackedLayoutAppearance)
-        setTabBarItemColors(appearance.inlineLayoutAppearance)
-        setTabBarItemColors(appearance.compactInlineLayoutAppearance)
-        tabBar.standardAppearance = appearance
+        if #available(iOS 13.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.backgroundColor = .ns_moduleBackground
+            setTabBarItemColors(appearance.stackedLayoutAppearance)
+            setTabBarItemColors(appearance.inlineLayoutAppearance)
+            setTabBarItemColors(appearance.compactInlineLayoutAppearance)
+            tabBar.standardAppearance = appearance
+        }
     }
 
+    @available(iOS 13.0, *)
     private func setTabBarItemColors(_ itemAppearance: UITabBarItemAppearance) {
         let normalAttributes = [NSAttributedString.Key.foregroundColor: UIColor.ns_tabbarNormalBlue,
                                 NSAttributedString.Key.font: NSLabelType.ultraSmallBold.font]

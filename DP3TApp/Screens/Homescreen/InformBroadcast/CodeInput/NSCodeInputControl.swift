@@ -372,6 +372,7 @@ class NSTextField: UITextField {
         return action == #selector(UIResponderStandardEditActions.paste)
     }
 
+    @available(iOS 13.0, *)
     override var editingInteractionConfiguration: UIEditingInteractionConfiguration {
         if disableEditionInteraction {
             return .none
