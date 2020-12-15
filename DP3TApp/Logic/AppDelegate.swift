@@ -75,13 +75,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DatabaseSyncer.shared.syncDatabaseIfNeeded()
 
         window?.makeKey()
-        window?.rootViewController = navigationController
+        if TracingManager.shared.isSupported {
+            window?.rootViewController = navigationController
+        } else {
+            window?.rootViewController = NSUnsupportedOSViewController()
+        }
 
         setupAppearance()
 
         window?.makeKeyAndVisible()
 
-        if !UserStorage.shared.hasCompletedOnboarding {
+        if TracingManager.shared.isSupported,
+           !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
