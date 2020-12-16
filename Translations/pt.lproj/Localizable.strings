@@ -1069,88 +1069,97 @@
 "tracing_reminder_warning" = "";
 
 /*Kantonname Zürich*/
-"Zürich" = "Zürich";
+"canton_zurich" = "Zürich";
 
 /*Kantonname Aargau*/
-"Aargau" = "Aargau";
+"canton_aargau" = "Aargau";
 
 /*Kantonname Appenzell Innerrhoden*/
-"Appenzell Innerrhoden" = "Appenzell Innerrhoden";
+"canton_appenzell_innerrhoden" = "Appenzell Innerrhoden";
 
 /*Kantonname Appenzell Ausserrhoden*/
-"Appenzell Ausserrhoden" = "Appenzell Ausserrhoden";
+"canton_appenzell_ausserrhoden" = "Appenzell Ausserrhoden";
 
 /*Kantonname Bern*/
-"Bern" = "Berne";
+"canton_berne" = "Berne";
 
 /*Kantonname Basel-Landschaft*/
-"Basel-Landschaft" = "Basel-Country";
+"canton_basel_country" = "Basel-Country";
 
 /*Kantonname Basel-Stadt*/
-"Basel-Stadt" = "Basel-City";
+"canton_basel_city" = "Basel-City";
 
 /*Kantonname Freiburg*/
-"Freiburg" = "Fribourg";
+"canton_fribourg" = "Fribourg";
 
 /*Kantonname Genf*/
-"Genf" = "Geneva";
+"canton_geneva" = "Geneva";
 
 /*Kantonname Glarus*/
-"Glarus" = "Glarus";
+"canton_glarus" = "Glarus";
 
 /*Kantonname Graubünden*/
-"Graubünden" = "Graubünden";
+"canton_graubuenden" = "Graubünden";
 
 /*Kantonname Jura*/
-"Jura" = "Jura";
+"canton_jura" = "Jura";
 
 /*Kantonname Luzern*/
-"Luzern" = "Lucerne";
+"canton_lucerne" = "Lucerne";
 
 /*Kantonname Neuenburg*/
-"Neuenburg" = "Neuchâtel";
+"canton_neuchatel" = "Neuchâtel";
 
 /*Kantonname Nidwalden*/
-"Nidwalden" = "Nidwalden";
+"canton_nidwalden" = "Nidwalden";
 
 /*Kantonname Obwalden*/
-"Obwalden" = "Obwalden";
+"canton_obwalden" = "Obwalden";
 
 /*Kantonname St. Gallen*/
-"St. Gallen" = "St. Gallen";
+"canton_st_gallen" = "St. Gallen";
 
 /*Kantonname Schaffhausen*/
-"Schaffhausen" = "Schaffhausen";
+"canton_schaffhausen" = "Schaffhausen";
 
 /*Kantonname Solothurn*/
-"Solothurn" = "Solothurn";
+"canton_solothurn" = "Solothurn";
 
 /*Kantonname Schwyz*/
-"Schwyz" = "Schwyz";
+"canton_schwyz" = "Schwyz";
 
 /*Kantonname Thurgau*/
-"Thurgau" = "Thurgovia";
+"canton_thurgovia" = "Thurgovia";
 
 /*Kantonname Tessin*/
-"Tessin" = "Ticino";
+"canton_ticino" = "Ticino";
 
 /*Kantonname Uri*/
-"Uri" = "Uri";
+"canton_uri" = "Uri";
 
 /*Kantonname Waadt*/
-"Waadt" = "Vaud";
+"canton_vaud" = "Vaud";
 
 /*Kantonname Wallis*/
-"Wallis" = "Valais";
+"canton_valais" = "Valais";
 
 /*Kantonname Zug*/
-"Zug" = "Zug";
+"canton_zug" = "Zug";
 
 /*Kantonname Fürstentum Liechtenstein*/
-"Fürstentum Liechtenstein" = "Liechtenstein";
+"canton_liechtenstein" = "Liechtenstein";
 
 /*Test standorte Popup Titel*/
 "test_location_popup_title" = "";
 
 /*Test standorte Popup Text*/
 "test_location_popup_text" = "";
+
+/*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
+"android_reminder_channel_name" = "";
+
+/*Titel der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_title" = "";
+
+/*Subtitle der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_subtitle" = "";

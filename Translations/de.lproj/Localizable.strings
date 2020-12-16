@@ -1100,88 +1100,124 @@
 "tracing_reminder_warning" = "Das Tracing wird deaktiviert.";
 
 /*Kantonname Zürich*/
-"Zürich" = "Zürich";
+/*Fuzzy*/
+"canton_zurich" = "Zürich";
 
 /*Kantonname Aargau*/
-"Aargau" = "Aargau";
+/*Fuzzy*/
+"canton_aargau" = "Aargau";
 
 /*Kantonname Appenzell Innerrhoden*/
-"Appenzell Innerrhoden" = "Appenzell Innerrhoden";
+/*Fuzzy*/
+"canton_appenzell_innerrhoden" = "Appenzell Innerrhoden";
 
 /*Kantonname Appenzell Ausserrhoden*/
-"Appenzell Ausserrhoden" = "Appenzell Ausserrhoden";
+/*Fuzzy*/
+"canton_appenzell_ausserrhoden" = "Appenzell Ausserrhoden";
 
 /*Kantonname Bern*/
-"Bern" = "Bern";
+/*Fuzzy*/
+"canton_berne" = "Bern";
 
 /*Kantonname Basel-Landschaft*/
-"Basel-Landschaft" = "Basel-Landschaft";
+/*Fuzzy*/
+"canton_basel_country" = "Basel-Landschaft";
 
 /*Kantonname Basel-Stadt*/
-"Basel-Stadt" = "Basel-Stadt";
+/*Fuzzy*/
+"canton_basel_city" = "Basel-Stadt";
 
 /*Kantonname Freiburg*/
-"Freiburg" = "Freiburg";
+/*Fuzzy*/
+"canton_fribourg" = "Freiburg";
 
 /*Kantonname Genf*/
-"Genf" = "Genf";
+/*Fuzzy*/
+"canton_geneva" = "Genf";
 
 /*Kantonname Glarus*/
-"Glarus" = "Glarus";
+/*Fuzzy*/
+"canton_glarus" = "Glarus";
 
 /*Kantonname Graubünden*/
-"Graubünden" = "Graubünden";
+/*Fuzzy*/
+"canton_graubuenden" = "Graubünden";
 
 /*Kantonname Jura*/
-"Jura" = "Jura";
+/*Fuzzy*/
+"canton_jura" = "Jura";
 
 /*Kantonname Luzern*/
-"Luzern" = "Luzern";
+/*Fuzzy*/
+"canton_lucerne" = "Luzern";
 
 /*Kantonname Neuenburg*/
-"Neuenburg" = "Neuenburg";
+/*Fuzzy*/
+"canton_neuchatel" = "Neuenburg";
 
 /*Kantonname Nidwalden*/
-"Nidwalden" = "Nidwalden";
+/*Fuzzy*/
+"canton_nidwalden" = "Nidwalden";
 
 /*Kantonname Obwalden*/
-"Obwalden" = "Obwalden";
+/*Fuzzy*/
+"canton_obwalden" = "Obwalden";
 
 /*Kantonname St. Gallen*/
-"St. Gallen" = "St. Gallen";
+/*Fuzzy*/
+"canton_st_gallen" = "St. Gallen";
 
 /*Kantonname Schaffhausen*/
-"Schaffhausen" = "Schaffhausen";
+/*Fuzzy*/
+"canton_schaffhausen" = "Schaffhausen";
 
 /*Kantonname Solothurn*/
-"Solothurn" = "Solothurn";
+/*Fuzzy*/
+"canton_solothurn" = "Solothurn";
 
 /*Kantonname Schwyz*/
-"Schwyz" = "Schwyz";
+/*Fuzzy*/
+"canton_schwyz" = "Schwyz";
 
 /*Kantonname Thurgau*/
-"Thurgau" = "Thurgau";
+/*Fuzzy*/
+"canton_thurgovia" = "Thurgau";
 
 /*Kantonname Tessin*/
-"Tessin" = "Tessin";
+/*Fuzzy*/
+"canton_ticino" = "Tessin";
 
 /*Kantonname Uri*/
-"Uri" = "Uri";
+/*Fuzzy*/
+"canton_uri" = "Uri";
 
 /*Kantonname Waadt*/
-"Waadt" = "Waadt";
+/*Fuzzy*/
+"canton_vaud" = "Waadt";
 
 /*Kantonname Wallis*/
-"Wallis" = "Wallis";
+/*Fuzzy*/
+"canton_valais" = "Wallis";
 
 /*Kantonname Zug*/
-"Zug" = "Zug";
+/*Fuzzy*/
+"canton_zug" = "Zug";
 
 /*Kantonname Fürstentum Liechtenstein*/
-"Fürstentum Liechtenstein" = "Fürstentum Liechtenstein";
+/*Fuzzy*/
+"canton_liechtenstein" = "Fürstentum Liechtenstein";
 
 /*Test standorte Popup Titel*/
 "test_location_popup_title" = "Wo kann ich einen Test machen?";
 
 /*Test standorte Popup Text*/
 "test_location_popup_text" = "Sie können sich bei verschiedenen Ärztinnen und Ärzten, Testzentren, Spitälern und Apotheken auf das neue Coronavirus testen lassen. Informationen zu den Testangeboten finden Sie auf den kantonalen Webseiten:";
+
+/*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
+"android_reminder_channel_name" = "Tracing-Aktivierungs Erinnerung";
+
+/*Titel der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_title" = "Tracing aktivieren";
+
+/*Subtitle der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_subtitle" = "Aktivieren Sie das Tracing, damit die App Begegnungen speichern und Meldungen empfangen kann.";
