@@ -79,13 +79,21 @@ class ConfigResponseBody: UBCodable {
     class TestLocations: UBCodable {
         let locations: [Location]
 
-        class Location {
+        class Location: Comparable {
             let name: String
             let url: URL
 
             init(name: String, url: URL) {
                 self.name = name
                 self.url = url
+            }
+
+            static func < (lhs: ConfigResponseBody.TestLocations.Location, rhs: ConfigResponseBody.TestLocations.Location) -> Bool {
+                lhs.name < rhs.name
+            }
+
+            static func == (lhs: ConfigResponseBody.TestLocations.Location, rhs: ConfigResponseBody.TestLocations.Location) -> Bool {
+                lhs.name == rhs.name
             }
         }
 

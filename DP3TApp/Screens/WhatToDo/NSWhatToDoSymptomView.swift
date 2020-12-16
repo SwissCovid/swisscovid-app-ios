@@ -22,31 +22,29 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
 
         super.init(title: titleText, subtitle: subtitleText, text: text, image: nil, subtitleColor: .ns_purple)
 
-        if !(ConfigManager.currentConfig?.testLocations?.locations.isEmpty ?? true) {
-            let moreInformationButton = NSButton(title: "Weitere Informationen",
-                                                 style: .uppercase(UIColor.ns_purple))
+        let moreInformationButton = NSButton(title: "Weitere Informationen",
+                                             style: .uppercase(UIColor.ns_purple))
 
-            moreInformationButton.touchUpCallback = { [weak self] in
-                guard let self = self else { return }
-                self.moreInformationCallback?()
-            }
-
-            let view = UIView()
-            view.addSubview(moreInformationButton)
-
-            let inset = NSPadding.small + NSPadding.medium
-
-            moreInformationButton.snp.makeConstraints { make in
-                make.top.bottom.equalToSuperview()
-                make.left.right.equalToSuperview().inset(inset)
-            }
-
-            contentView.addSpacerView(NSPadding.large)
-            contentView.addArrangedView(view)
-            contentView.addSpacerView(NSPadding.small)
-
-            moreInformationButton.isAccessibilityElement = true
+        moreInformationButton.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            self.moreInformationCallback?()
         }
+
+        let view = UIView()
+        view.addSubview(moreInformationButton)
+
+        let inset = NSPadding.small + NSPadding.medium
+
+        moreInformationButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.left.right.equalToSuperview().inset(inset)
+        }
+
+        contentView.addSpacerView(NSPadding.large)
+        contentView.addArrangedView(view)
+        contentView.addSpacerView(NSPadding.small)
+
+        moreInformationButton.isAccessibilityElement = true
 
         isAccessibilityElement = false
         accessibilityLabel = subtitleText.deleteSuffix("...") + titleText + "." + text
