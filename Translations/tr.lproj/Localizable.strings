@@ -1063,3 +1063,135 @@
 
 /*Tracing Erinnerung Warnung*/
 "tracing_reminder_warning" = "";
+
+/*Kantonname Zürich*/
+"canton_zurich" = "Zürich";
+
+/*Kantonname Aargau*/
+"canton_aargau" = "Aargau";
+
+/*Kantonname Appenzell Innerrhoden*/
+"canton_appenzell_innerrhoden" = "Appenzell Innerrhoden";
+
+/*Kantonname Appenzell Ausserrhoden*/
+"canton_appenzell_ausserrhoden" = "Appenzell Ausserrhoden";
+
+/*Kantonname Bern*/
+"canton_berne" = "Berne";
+
+/*Kantonname Basel-Landschaft*/
+"canton_basel_country" = "Basel-Country";
+
+/*Kantonname Basel-Stadt*/
+"canton_basel_city" = "Basel-City";
+
+/*Kantonname Freiburg*/
+"canton_fribourg" = "Fribourg";
+
+/*Kantonname Genf*/
+"canton_geneva" = "Geneva";
+
+/*Kantonname Glarus*/
+"canton_glarus" = "Glarus";
+
+/*Kantonname Graubünden*/
+"canton_graubuenden" = "Graubünden";
+
+/*Kantonname Jura*/
+"canton_jura" = "Jura";
+
+/*Kantonname Luzern*/
+"canton_lucerne" = "Lucerne";
+
+/*Kantonname Neuenburg*/
+"canton_neuchatel" = "Neuchâtel";
+
+/*Kantonname Nidwalden*/
+"canton_nidwalden" = "Nidwalden";
+
+/*Kantonname Obwalden*/
+"canton_obwalden" = "Obwalden";
+
+/*Kantonname St. Gallen*/
+"canton_st_gallen" = "St. Gallen";
+
+/*Kantonname Schaffhausen*/
+"canton_schaffhausen" = "Schaffhausen";
+
+/*Kantonname Solothurn*/
+"canton_solothurn" = "Solothurn";
+
+/*Kantonname Schwyz*/
+"canton_schwyz" = "Schwyz";
+
+/*Kantonname Thurgau*/
+"canton_thurgovia" = "Thurgovia";
+
+/*Kantonname Tessin*/
+"canton_ticino" = "Ticino";
+
+/*Kantonname Uri*/
+"canton_uri" = "Uri";
+
+/*Kantonname Waadt*/
+"canton_vaud" = "Vaud";
+
+/*Kantonname Wallis*/
+"canton_valais" = "Valais";
+
+/*Kantonname Zug*/
+"canton_zug" = "Zug";
+
+/*Kantonname Fürstentum Liechtenstein*/
+"country_liechtenstein" = "Liechtenstein";
+
+/*Test standorte Popup Titel*/
+"test_location_popup_title" = "";
+
+/*Test standorte Popup Text*/
+"test_location_popup_text" = "";
+
+/*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
+"android_reminder_channel_name" = "";
+
+/*Titel der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_title" = "";
+
+/*Subtitle der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_subtitle" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Titel*/
+"ios_software_update_blocking_title" = "";
+
+/*iOS Blockierende View bei benötigten OS update: text*/
+"ios_software_update_blocking_text" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial title*/
+"ios_software_update_blocking_tutorial_title" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial first*/
+"ios_software_update_blocking_tutorial_first" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second*/
+"ios_software_update_blocking_tutorial_second" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second settings general (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_second_settings" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third*/
+"ios_software_update_blocking_tutorial_third" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third software update (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_third_software_update" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth*/
+"ios_software_update_blocking_tutorial_fourth" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth load and install (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_fourth_load_and_install" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple button*/
+"ios_software_update_blocking_tutorial_apple" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
+"ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/tr-tr/HT204204";
