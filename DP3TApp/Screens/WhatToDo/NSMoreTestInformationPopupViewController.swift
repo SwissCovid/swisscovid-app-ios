@@ -94,6 +94,10 @@ extension ConfigResponseBody.TestLocations {
         "canton_zug": "https://www.zg.ch/behoerden/gesundheitsdirektion/amt-fuer-gesundheit/corona"
         }
         """
-        return try! JSONDecoder().decode(Self.self, from: json.data(using: .utf8)!)
+        if let object = try? JSONDecoder().decode(Self.self, from: json.data(using: .utf8)!) {
+            return object
+        } else {
+            fatalError()
+        }
     }
 }
