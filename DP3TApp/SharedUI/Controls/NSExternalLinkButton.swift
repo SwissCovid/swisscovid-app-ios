@@ -167,7 +167,7 @@ class NSExternalLinkButton: UBButton {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if #available(iOS 13.0, *),previousTraitCollection?.accessibilityContrast != traitCollection.accessibilityContrast || previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+        if #available(iOS 13.0, *), previousTraitCollection?.accessibilityContrast != traitCollection.accessibilityContrast || previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
             updateLayout()
         }
     }

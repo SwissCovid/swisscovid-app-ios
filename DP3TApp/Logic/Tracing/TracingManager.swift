@@ -46,6 +46,9 @@ class TracingManager: NSObject {
     }
 
     func initialize() {
+
+        guard isSupported else { return }
+        
         let bucketBaseUrl = Environment.current.configService.baseURL
         let reportBaseUrl = Environment.current.publishService.baseURL
 
@@ -182,6 +185,9 @@ class TracingManager: NSObject {
     }
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
+
+        guard isSupported else { return }
+        
         let state = DP3TTracing.status
 
         UIStateManager.shared.blockUpdate {

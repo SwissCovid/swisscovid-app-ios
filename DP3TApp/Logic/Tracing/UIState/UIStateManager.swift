@@ -59,6 +59,9 @@ class UIStateManager: NSObject {
     }
 
     func refresh() {
+        // don't obtain state if device is not supported
+        guard TracingManager.shared.isSupported else { return }
+
         // disable updates until end of block update
         guard !isPerformingBlockUpdate else {
             return
