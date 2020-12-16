@@ -49,13 +49,13 @@ class NSRadioButtonGroup<Data>: UIControl {
         }
 
         for (index, item) in selections.enumerated() {
-            let item = NSRadioButtonItem(text: item.title)
+            let radioButtonItem = NSRadioButtonItem(text: item.title)
             if index == defaultSelectionIndex {
-                item.setSelected(true, animated: false)
+                radioButtonItem.setSelected(true, animated: false)
             }
-            item.addTarget(self, action: #selector(valueChanged(sender:)), for: .valueChanged)
-            radioButtons.append(item)
-            stackView.addArrangedSubview(item)
+            radioButtonItem.addTarget(self, action: #selector(valueChanged(sender:)), for: .valueChanged)
+            radioButtons.append(radioButtonItem)
+            stackView.addArrangedSubview(radioButtonItem)
         }
     }
 
