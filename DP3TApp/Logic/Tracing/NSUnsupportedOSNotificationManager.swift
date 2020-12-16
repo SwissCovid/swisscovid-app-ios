@@ -26,6 +26,10 @@ class NSUnsupportedOSNotificationManager {
     }
 
     func registerBGHandler() {
+        guard TracingManager.shared.isSupported == false else {
+            assertionFailure()
+            return
+        }
         BGTaskScheduler.shared.register(forTaskWithIdentifier: Self.taskIdentifier, using: .main) { [weak self] task in
             self?.handleExposureNotificationBackgroundTask(task)
         }
