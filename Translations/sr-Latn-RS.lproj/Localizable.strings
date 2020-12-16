@@ -1195,3 +1195,9 @@
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
 "ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/sr-sr/HT204204";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_title" = "";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_text" = "";

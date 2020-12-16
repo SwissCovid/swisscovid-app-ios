@@ -1257,3 +1257,9 @@
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
 "ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/de-de/HT204204";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_title" = "Softwareupdate benötigt";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_text" = "Sie müssen Sie die aktuellste iOS Version installieren, damit SwissCovid funktioniert.";

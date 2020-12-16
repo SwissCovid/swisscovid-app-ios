@@ -46,9 +46,18 @@ class TracingManager: NSObject {
     }
 
     func initialize() {
+        guard isSupported else {
+            // If the current OS is not supported but we are running on iOS 13 we register the BG Task handler in order to schedule notifications.
+            // This is done to notify the user thats his action is required
+            if #available(iOS 13.0, *) {
+                NSUnsupportedOSNotificationManager.shared.registerBGHandler()
+            }
+            return
+        }
+        if #available(iOS 13.0, *) {
+            NSUnsupportedOSNotificationManager.clearAllUpdateNotifications()
+        }
 
-        guard isSupported else { return }
-        
         let bucketBaseUrl = Environment.current.configService.baseURL
         let reportBaseUrl = Environment.current.publishService.baseURL
 
@@ -185,9 +194,8 @@ class TracingManager: NSObject {
     }
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
-
         guard isSupported else { return }
-        
+
         let state = DP3TTracing.status
 
         UIStateManager.shared.blockUpdate {
