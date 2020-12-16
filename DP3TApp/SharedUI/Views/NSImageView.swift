@@ -33,10 +33,8 @@ class NSImageView: UIImageView {
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
-        if #available(iOS 13.0, *) {
-            if previousTraitCollection?.accessibilityContrast != traitCollection.accessibilityContrast || previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-                updateTintColor()
-            }
+        if #available(iOS 13.0, *),previousTraitCollection?.accessibilityContrast != traitCollection.accessibilityContrast || previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            updateTintColor()
         }
     }
 }

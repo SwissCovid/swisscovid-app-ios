@@ -10,6 +10,4 @@
 
 import UIKit
 
-class NSUnsupportedOSViewController: NSViewController {
-
-}
+class NSUnsupportedOSViewController: NSViewController {}

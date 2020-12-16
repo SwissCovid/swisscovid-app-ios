@@ -63,10 +63,9 @@ class NSTutorialListItemView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-                body?.layer.borderColor = UIColor.ns_dividerColor.cgColor
-            }
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            body?.layer.borderColor = UIColor.ns_dividerColor.cgColor
+            
         }
     }
 

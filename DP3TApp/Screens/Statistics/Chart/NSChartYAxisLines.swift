@@ -60,10 +60,8 @@ class NSChartYAxisLines: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if #available(iOS 13.0, *) {
-            if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-                lineLayer.strokeColor = lineColor.cgColor
-            }
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            lineLayer.strokeColor = lineColor.cgColor
         }
     }
 
