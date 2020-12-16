@@ -407,6 +407,7 @@
 		F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
+		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1873,6 +1874,7 @@
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
 				242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */,
+				F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
