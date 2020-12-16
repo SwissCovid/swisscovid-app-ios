@@ -93,6 +93,10 @@ class NSTabBarController: UITabBarController {
             setTabBarItemColors(appearance.inlineLayoutAppearance)
             setTabBarItemColors(appearance.compactInlineLayoutAppearance)
             tabBar.standardAppearance = appearance
+        } else {
+            tabBar.unselectedItemTintColor = .ns_tabbarNormalBlue
+            tabBar.tintColor = .ns_tabbarSelectedBlue
+            view.tintColor = .ns_tabbarNormalBlue
         }
     }
 
