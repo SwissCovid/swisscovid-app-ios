@@ -1205,7 +1205,7 @@
 
 /*Kantonname Fürstentum Liechtenstein*/
 /*Fuzzy*/
-"canton_liechtenstein" = "Fürstentum Liechtenstein";
+"country_liechtenstein" = "Fürstentum Liechtenstein";
 
 /*Test standorte Popup Titel*/
 "test_location_popup_title" = "Wo kann ich einen Test machen?";

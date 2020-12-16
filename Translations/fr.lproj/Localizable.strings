@@ -1181,7 +1181,7 @@
 
 /*Kantonname Fürstentum Liechtenstein*/
 /*Fuzzy*/
-"canton_liechtenstein" = "Liechtenstein";
+"country_liechtenstein" = "Liechtenstein";
 
 /*Test standorte Popup Titel*/
 "test_location_popup_title" = "";
