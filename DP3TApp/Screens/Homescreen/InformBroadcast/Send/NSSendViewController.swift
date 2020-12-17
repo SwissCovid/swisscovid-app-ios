@@ -16,7 +16,10 @@ class NSSendViewController: NSInformBottomButtonViewController {
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
-    override init() {
+    private let prefill: String?
+
+    init(prefill: String? = nil) {
+        self.prefill = prefill
         super.init()
     }
 
@@ -71,6 +74,6 @@ class NSSendViewController: NSInformBottomButtonViewController {
     private var rightBarButtonItem: UIBarButtonItem?
 
     private func continuePressed() {
-        navigationController?.pushViewController(NSCodeInputViewController(), animated: true)
+        navigationController?.pushViewController(NSCodeInputViewController(prefill: prefill), animated: true)
     }
 }

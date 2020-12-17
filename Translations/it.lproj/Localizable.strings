@@ -1239,3 +1239,9 @@
 
 /*iOS Notification Text bei benötigten OS update*/
 "ios_software_update_notification_text" = "";
+
+/*Button Text um die Isolation zu beenden*/
+"delete_infection_dialog_finish_button" = "";
+
+/*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
+"tracing_ended_info" = "";

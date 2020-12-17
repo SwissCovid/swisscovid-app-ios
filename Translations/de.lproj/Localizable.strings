@@ -211,7 +211,7 @@
 "symptom_detail_box_title" = "Testen lassen";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "Mehr erfahren";
+"symptom_detail_box_button" = "Weitere Informationen";
 
 /*Symptom Detail Weisse Box Text*/
 "symptom_detail_box_text" = "Das BAG empfiehlt allen Personen mit COVID-19-Symptomen, sich testen zu lassen. Rufen Sie eine Ärztin bzw. einen Arzt oder eine Gesundheitseinrichtung an.";
@@ -256,7 +256,7 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
-"tracing_ended_title" = "Tracing beendet";
+"tracing_ended_title" = "Tracing deaktiviert";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
@@ -644,10 +644,10 @@
 "symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
+"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing deaktiviert?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
+"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch deaktiviert. Das Tracing kann wieder aktiviert werden, sobald Sie die Isolation beendet haben.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
@@ -721,11 +721,11 @@
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 /*Fuzzy*/
-"delete_infection_button" = "Meldung löschen";
+"delete_infection_button" = "Isolation beenden";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 /*Fuzzy*/
-"delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
+"delete_infection_dialog" = "Möchten Sie die Isolation wirklich beenden?";
 "android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
 "android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
 "android_onboarding_battery_permission_button" = "Zulassen";
@@ -1263,3 +1263,9 @@
 
 /*iOS Notification Text bei benötigten OS update*/
 "ios_software_update_notification_text" = "Sie müssen Sie die aktuellste iOS Version installieren, damit SwissCovid funktioniert.";
+
+/*Button Text um die Isolation zu beenden*/
+"delete_infection_dialog_finish_button" = "Beenden";
+
+/*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
+"tracing_ended_info" = "Es werden keine Begegnungen mehr gespeichert.\n\nDas Tracing kann nach der Isolation wieder aktiviert werden.";
