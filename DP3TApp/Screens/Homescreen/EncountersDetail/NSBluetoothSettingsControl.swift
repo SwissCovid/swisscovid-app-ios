@@ -23,6 +23,8 @@ class NSBluetoothSettingsControl: UIView {
 
     private let switchControl = UISwitch()
 
+    var switchCallback: ((Bool, @escaping (Bool) -> Void) -> Void)?
+
     let tracingActiveView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "tracing_active_title".ub_localized,
                                                 subText: "tracing_active_text".ub_localized,
@@ -148,18 +150,24 @@ class NSBluetoothSettingsControl: UIView {
     // MARK: - Switch Logic
 
     @objc private func switchChanged() {
-        // change tracing manager
-        if TracingManager.shared.isActivated != switchControl.isOn {
-            if switchControl.isOn {
-                TracingManager.shared.startTracing()
-            } else {
-                TracingManager.shared.endTracing()
-            }
-        }
+        switchCallback?(switchControl.isOn) { [weak self] state in
+            guard let self = self else { return }
 
-        UIAccessibility.post(notification: .layoutChanged, argument: switchControl)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            UIAccessibility.post(notification: .announcement, argument: self.switchControl.isOn ? "accessibility_tracing_has_been_activated".ub_localized : "accessibility_tracing_has_been_deactivated".ub_localized)
+            self.switchControl.setOn(state, animated: true)
+
+            // change tracing manager
+            if TracingManager.shared.isActivated != state {
+                if state {
+                    TracingManager.shared.startTracing()
+                } else {
+                    TracingManager.shared.endTracing()
+                }
+            }
+
+            UIAccessibility.post(notification: .layoutChanged, argument: self.switchControl)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                UIAccessibility.post(notification: .announcement, argument: state ? "accessibility_tracing_has_been_activated".ub_localized : "accessibility_tracing_has_been_deactivated".ub_localized)
+            }
         }
     }
 

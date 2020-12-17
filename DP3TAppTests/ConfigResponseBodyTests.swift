@@ -40,4 +40,13 @@ class ConfigResponseBodyTests: XCTestCase {
         XCTAssertEqual(config.iOSGaenSdkConfig?.factorLow, 1)
         XCTAssertEqual(config.iOSGaenSdkConfig?.triggerThreshold, 15)
     }
+
+    func testTestLocationParsing() {
+        let json = "{\"testLocations\":{\"zurich\":\"http:\\/\\/ubique.ch\"},\"forceUpdate\":false}"
+        let config = try! JSONDecoder().decode(ConfigResponseBody.self, from: json.data(using: .utf8)!)
+        XCTAssertEqual(config.testLocations!.locations.first!.name, "zurich")
+        XCTAssertEqual(config.testLocations!.locations.first!.url.absoluteString, "http://ubique.ch")
+        let encodedJson = String(data: try! JSONEncoder().encode(config), encoding: .utf8)
+        XCTAssertEqual(encodedJson, json)
+    }
 }
