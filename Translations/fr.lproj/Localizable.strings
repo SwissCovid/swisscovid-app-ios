@@ -1197,3 +1197,51 @@
 
 /*Subtitle der Tracing-Reaktivierungs-Notification*/
 "tracing_reminder_notification_subtitle" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Titel*/
+"ios_software_update_blocking_title" = "";
+
+/*iOS Blockierende View bei benötigten OS update: text*/
+"ios_software_update_blocking_text" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial title*/
+"ios_software_update_blocking_tutorial_title" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial first*/
+"ios_software_update_blocking_tutorial_first" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second*/
+"ios_software_update_blocking_tutorial_second" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second settings general (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_second_settings" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third*/
+"ios_software_update_blocking_tutorial_third" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third software update (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_third_software_update" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth*/
+"ios_software_update_blocking_tutorial_fourth" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth load and install (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_fourth_load_and_install" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple button*/
+"ios_software_update_blocking_tutorial_apple" = "";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
+"ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/fr-fr/HT204204";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_title" = "";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_text" = "";
+
+/*Button Text um die Isolation zu beenden*/
+"delete_infection_dialog_finish_button" = "";
+
+/*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
+"tracing_ended_info" = "";

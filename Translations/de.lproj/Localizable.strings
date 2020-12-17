@@ -256,7 +256,7 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
-"tracing_ended_title" = "Tracing beendet";
+"tracing_ended_title" = "Tracing deaktiviert";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
@@ -644,10 +644,10 @@
 "symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Muskelschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing beendet?";
+"meldungen_positive_tested_faq1_title" = "Warum ist das Tracing deaktiviert?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch beendet.";
+"meldungen_positive_tested_faq1_text" = "Nach einem positiven Test wird das Tracing in der App automatisch deaktiviert. Das Tracing kann wieder aktiviert werden, sobald Sie die Isolation beendet haben.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "de";
@@ -721,11 +721,11 @@
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 /*Fuzzy*/
-"delete_infection_button" = "Meldung löschen";
+"delete_infection_button" = "Isolation beenden";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 /*Fuzzy*/
-"delete_infection_dialog" = "Möchten sie die Meldung wirklich löschen?";
+"delete_infection_dialog" = "Möchten Sie die Isolation wirklich beenden?";
 "android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
 "android_onboarding_battery_permission_text" = "Um Begegnungen immer erkennen zu können, muss die Akku-Optimierung für diese App ausgeschaltet sein.";
 "android_onboarding_battery_permission_button" = "Zulassen";
@@ -1221,3 +1221,51 @@
 
 /*Subtitle der Tracing-Reaktivierungs-Notification*/
 "tracing_reminder_notification_subtitle" = "Aktivieren Sie das Tracing, damit die App Begegnungen speichern und Meldungen empfangen kann.";
+
+/*iOS Blockierende View bei benötigten OS update: Titel*/
+"ios_software_update_blocking_title" = "Softwareupdate benötigt";
+
+/*iOS Blockierende View bei benötigten OS update: text*/
+"ios_software_update_blocking_text" = "Sie müssen Sie die aktuellste iOS Version installieren, damit SwissCovid funktioniert.";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial title*/
+"ios_software_update_blocking_tutorial_title" = "So funktionierts:";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial first*/
+"ios_software_update_blocking_tutorial_first" = "Öffnen Sie die «Einstellungen» auf dem Homescreen";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second*/
+"ios_software_update_blocking_tutorial_second" = "Gehen Sie zu…";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second settings general (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_second_settings" = "Allgemein";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third*/
+"ios_software_update_blocking_tutorial_third" = "Wählen Sie…";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third software update (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_third_software_update" = "Softwareupdate";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth*/
+"ios_software_update_blocking_tutorial_fourth" = "Tippen Sie auf…";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth load and install (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_fourth_load_and_install" = "Laden und installieren";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple button*/
+"ios_software_update_blocking_tutorial_apple" = "Anleitung von Apple";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
+"ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/de-de/HT204204";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_title" = "Softwareupdate benötigt";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_text" = "Sie müssen Sie die aktuellste iOS Version installieren, damit SwissCovid funktioniert.";
+
+/*Button Text um die Isolation zu beenden*/
+"delete_infection_dialog_finish_button" = "Beenden";
+
+/*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
+"tracing_ended_info" = "Es werden keine Begegnungen mehr gespeichert.\n\nDas Tracing kann nach der Isolation wieder aktiviert werden.";
