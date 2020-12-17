@@ -43,7 +43,7 @@ class NSMoreTestInformationPopupViewController: NSPopupViewController {
 
         let testLocations = ConfigManager.currentConfig?.testLocations ?? .defaultLocations
 
-        for (index, location) in testLocations.locations.sorted().enumerated() {
+        for (index, location) in testLocations.locations.enumerated() {
             let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_purple), size: .normal, linkType: .url)
             externalLinkButton.title = location.name.ub_localized
             externalLinkButton.touchUpCallback = { [weak self] in
