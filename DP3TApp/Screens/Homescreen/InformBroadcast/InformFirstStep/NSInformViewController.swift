@@ -11,10 +11,10 @@
 import UIKit
 
 class NSInformViewController: NSInformStepViewController {
-    static func present(from rootViewController: UIViewController) {
+    static func present(from rootViewController: UIViewController, prefill: String? = nil) {
         let informVC: UIViewController
 
-        informVC = NSSendViewController()
+        informVC = NSSendViewController(prefill: prefill)
 
         let navCon = NSNavigationController(rootViewController: informVC)
 

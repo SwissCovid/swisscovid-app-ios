@@ -139,6 +139,13 @@ class NSExternalLinkButton: UBButton {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        switch style {
+        case .outlined:
+            highlightView.frame = bounds
+            return
+        default:
+            break
+        }
         guard let imageViewFrame = imageView?.frame,
               let titleLableFrame = titleLabel?.frame else { return }
         let frame = CGRect(x: imageViewFrame.minX,
