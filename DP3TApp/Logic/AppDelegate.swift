@@ -46,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
 
+        if let launchOptions = launchOptions,
+           let activityType = launchOptions[UIApplication.LaunchOptionsKey.userActivityType] as? String,
+           activityType == NSUserActivityTypeBrowsingWeb,
+           let url = launchOptions[UIApplication.LaunchOptionsKey.url] as? URL {
+            linkHandler.handle(url: url)
+        }
+
         return true
     }
 

@@ -12,6 +12,7 @@
 import Foundation
 
 class NSLinkHandler {
+    @discardableResult
     func handle(url: URL) -> Bool {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
 

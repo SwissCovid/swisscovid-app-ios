@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:swisscovid.ch</string>
+		<string>applinks:covidcode.ch</string>
 	</array>
 	<key>com.apple.developer.exposure-notification</key>
 	<true/>
