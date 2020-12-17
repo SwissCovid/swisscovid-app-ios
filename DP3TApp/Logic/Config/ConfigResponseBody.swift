@@ -40,6 +40,7 @@ class ConfigResponseBody: UBCodable {
     public let infoBox: LocalizedValue<InfoBox>?
     public let whatToDoPositiveTestTexts: LocalizedValue<WhatToDoPositiveTestTexts>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
+    public let testLocations: TestLocations?
 
     class InfoBox: UBCodable {
         let title, msg: String
@@ -72,6 +73,37 @@ class ConfigResponseBody: UBCodable {
             let iconIos: String
             let linkTitle: String?
             let linkUrl: URL?
+        }
+    }
+
+    class TestLocations: UBCodable {
+        let locations: [Location]
+
+        class Location {
+            let name: String
+            let url: URL
+
+            init(name: String, url: URL) {
+                self.name = name
+                self.url = url
+            }
+        }
+
+        required init(from decoder: Decoder) throws {
+            let container = try decoder.singleValueContainer()
+            locations = (try container.decode([String: URL].self)).reduce(into: [Location]()) { result, new in
+                result.append(Location(name: new.key, url: new.value))
+            }
+        }
+
+        func encode(to encoder: Encoder) throws {
+            var dict = [String: URL]()
+            for location in locations {
+                dict[location.name] = location.url
+            }
+
+            var container = encoder.singleValueContainer()
+            try container.encode(dict)
         }
     }
 }
