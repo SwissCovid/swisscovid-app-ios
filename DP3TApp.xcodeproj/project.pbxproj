@@ -370,6 +370,8 @@
 		F869AED524F54C7D00FC4556 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
+		F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
@@ -637,6 +639,7 @@
 		F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
+		F87C369F258B6652008DCC81 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
 		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
@@ -666,6 +669,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */,
 				F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */,
 				F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */,
 				242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */,
@@ -676,6 +680,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */,
 				F870A5B72492C6D500C34FFA /* SQLite in Frameworks */,
 				242D2275245C4BE6005DAEA8 /* DP3TSDK in Frameworks */,
 				8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */,
@@ -967,6 +972,7 @@
 		24780B3B2430BC00003BB26C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F87C369F258B6652008DCC81 /* ExposureNotification.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
