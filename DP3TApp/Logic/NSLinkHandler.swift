@@ -15,9 +15,6 @@ class NSLinkHandler {
     func handle(url: URL) -> Bool {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
 
-        guard url.scheme == "swisscovid" else {
-            return false
-        }
         guard let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: true) else {
             return false
         }

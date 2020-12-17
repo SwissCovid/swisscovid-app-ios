@@ -45,11 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
+
         return true
     }
 
-    func application(_: UIApplication, open url: URL, options _: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        linkHandler.handle(url: url)
+    func application(_: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler _: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if let url = userActivity.webpageURL {
+            return linkHandler.handle(url: url)
+        }
+        return false
     }
 
     private func shouldSetupWindow(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
