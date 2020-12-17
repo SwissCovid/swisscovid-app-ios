@@ -251,8 +251,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
             case .bluetoothTurnedOff:
                 scheduleBluetoothNotification()
             case let .exposureNotificationError(error: error):
-                if let error = error as? ENError {
-                    handleENError(error)
+                if #available(iOS 12.5, *) {
+                    if let error = error as? ENError {
+                        handleENError(error)
+                    }
                 }
             case .permissonError:
                 schedulePermissonErrorNotification()
@@ -274,6 +276,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
                                   text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
 
+    @available(iOS 12.5, *)
     private func handleENError(_ error: ENError) {
         switch error.code {
         case .bluetoothOff:

@@ -58,6 +58,8 @@ class TracingManager: NSObject {
             NSUnsupportedOSNotificationManager.clearAllUpdateNotifications()
         }
 
+        guard #available(iOS 12.5, *) else { return }
+
         let bucketBaseUrl = Environment.current.configService.baseURL
         let reportBaseUrl = Environment.current.publishService.baseURL
 
@@ -103,6 +105,8 @@ class TracingManager: NSObject {
     }
 
     func requestTracingPermission(completion: @escaping (Error?) -> Void) {
+        guard #available(iOS 12.5, *) else { return }
+
         DP3TTracing.startTracing { result in
             switch result {
             case let .failure(error):
@@ -114,6 +118,7 @@ class TracingManager: NSObject {
     }
 
     func startTracing() {
+        guard #available(iOS 12.5, *) else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
@@ -135,11 +140,13 @@ class TracingManager: NSObject {
     }
 
     func endTracing() {
+        guard #available(iOS 12.5, *) else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
     }
 
     func resetSDK() {
+        guard #available(iOS 12.5, *) else { return }
         // completely reset SDK
         DP3TTracing.reset()
 
@@ -150,6 +157,7 @@ class TracingManager: NSObject {
     }
 
     func deletePositiveTest() {
+        guard #available(iOS 12.5, *) else { return }
         // reset infection status
         DP3TTracing.resetInfectionStatus()
 
@@ -162,6 +170,7 @@ class TracingManager: NSObject {
     }
 
     func deleteReports() {
+        guard #available(iOS 12.5, *) else { return }
         // delete all visible messages
         DP3TTracing.resetExposureDays()
 
@@ -174,6 +183,7 @@ class TracingManager: NSObject {
     }
 
     func userHasCompletedOnboarding() {
+        guard #available(iOS 12.5, *) else { return }
         if ConfigManager.allowTracing {
             DP3TTracing.startTracing { result in
                 switch result {
@@ -195,6 +205,7 @@ class TracingManager: NSObject {
 
     func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
         guard isSupported else { return }
+        guard #available(iOS 12.5, *) else { return }
 
         let state = DP3TTracing.status
 
@@ -274,7 +285,9 @@ extension TracingManager: DP3TBackgroundHandler {
             group.leave()
         }
 
-        localPush.handleTracingState(DP3TTracing.status.trackingState)
+        if #available(iOS 12.5, *) {
+            localPush.handleTracingState(DP3TTracing.status.trackingState)
+        }
 
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 
