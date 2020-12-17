@@ -320,6 +320,29 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
         scheduledErrorIdentifiers.removeAll()
     }
+
+    // MARK: - Reminder Notifications
+
+    private let reminderNotificationIdentifier: String = "ch.admin.bag.notification.tracing.reminder"
+
+    func scheduleReminderNotification(reminder: NSTracingReminderViewController.Reminder) {
+        guard reminder != .noReminder, let timeInterval = reminder.duration else {
+            resetReminderNotification()
+            return
+        }
+
+        let content = UNMutableNotificationContent()
+        content.title = "tracing_reminder_notification_title".ub_localized
+        content.body = "tracing_reminder_notification_text".ub_localized
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        let request = UNNotificationRequest(identifier: reminderNotificationIdentifier, content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
+    }
+
+    func resetReminderNotification() {
+        center.removeDeliveredNotifications(withIdentifiers: [reminderNotificationIdentifier])
+        center.removePendingNotificationRequests(withIdentifiers: [reminderNotificationIdentifier])
+    }
 }
 
 extension TracingLocalPush: UNUserNotificationCenterDelegate {
