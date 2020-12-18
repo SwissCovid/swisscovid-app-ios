@@ -3313,7 +3313,7 @@
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
 				kind = revision;
-				revision = d7185892bee8bc363b056639729841d2c76a7215;
+				revision = a70c27f7a06dd3eaf3fbf74069645a8a7dbcbfbd;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {
