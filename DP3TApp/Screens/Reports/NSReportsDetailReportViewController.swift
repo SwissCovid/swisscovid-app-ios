@@ -247,6 +247,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
                                                            subtextColor: .ns_text,
                                                            additionalText: "infoline_tel_number".ub_localized,
                                                            additionalURL: "infoline_tel_number".ub_localized,
+                                                           dynamicIconTintColor: .ns_blue,
                                                            titleLabelType: .textBold,
                                                            externalLinkStyle: .normal(color: .ns_blue),
                                                            externalLinkType: .phone)
