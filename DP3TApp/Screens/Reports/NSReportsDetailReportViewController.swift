@@ -131,7 +131,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_leitfaden_title".ub_localized,
                                                   subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized,
                                                   text: "meldungen_detail_leitfaden_text".ub_localized,
-                                                  image: UIImage(named: "illu-call"), subtitleColor: .ns_blue, bottomPadding: false)
+                                                  image: UIImage(named: "illu-behaviour"), subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
