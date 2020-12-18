@@ -20,7 +20,7 @@ class NSLinkHandler {
             return false
         }
         switch urlComponents.host {
-        case "covidcode":
+        case "cc.admin.ch":
             guard let covidcode = urlComponents.fragment else {
                 assertionFailure("no covid code found")
                 return false
