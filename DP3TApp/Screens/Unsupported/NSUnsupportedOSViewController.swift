@@ -11,11 +11,16 @@
 import UIKit
 
 class NSUnsupportedOSViewController: NSOnboardingContentViewController {
-    let background = UIView()
+    private let background = UIView()
+
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_background
+
+        addStatusBarBlurView()
+
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_darkModeBackground2)
 
         let headerImage = UIImageView(image: UIImage(named: "onboarding-software-update"))
         headerImage.contentMode = .scaleAspectFit
@@ -103,6 +108,23 @@ class NSUnsupportedOSViewController: NSOnboardingContentViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         fadeAnimation(fromFactor: 1, toFactor: 0, delay: 0, completion: nil)
+    }
+
+    fileprivate func addStatusBarBlurView() {
+        view.addSubview(blurView)
+
+        let statusBarHeight: CGFloat
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusBarHeight = UIApplication.shared.statusBarFrame.height
+        }
+
+        blurView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(statusBarHeight)
+        }
     }
 
     override func fadeAnimation(fromFactor: CGFloat, toFactor: CGFloat, delay: TimeInterval, completion: ((Bool) -> Void)?) {
