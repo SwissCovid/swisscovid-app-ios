@@ -118,8 +118,13 @@ class NSOnboardingViewController: NSViewController {
 
         view.addSubview(blurView)
 
-        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        let statusBarHeight: CGFloat
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusBarHeight = UIApplication.shared.statusBarFrame.height
+        }
 
         blurView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()

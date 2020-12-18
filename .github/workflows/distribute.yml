@@ -14,8 +14,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.2
-      run: sudo xcode-select --switch /Applications/Xcode_12.2.app
+    - name: Switch to Xcode 12.3
+      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -67,8 +67,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.2
-      run: sudo xcode-select --switch /Applications/Xcode_12.2.app
+    - name: Switch to Xcode 12.3
+      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -120,8 +120,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.2
-      run: sudo xcode-select --switch /Applications/Xcode_12.2.app
+    - name: Switch to Xcode 12.3
+      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -173,8 +173,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.2
-      run: sudo xcode-select --switch /Applications/Xcode_12.2.app
+    - name: Switch to Xcode 12.3
+      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
     
     - name: Sets up bundler
       run: bundle update --bundler
@@ -221,8 +221,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.2
-      run: sudo xcode-select --switch /Applications/Xcode_12.2.app
+    - name: Switch to Xcode 12.3
+      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
 
     - name: Installs librsvg
       run: brew install librsvg

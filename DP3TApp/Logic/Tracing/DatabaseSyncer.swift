@@ -45,6 +45,7 @@ class DatabaseSyncer {
     private var databaseIsSyncing = false
 
     private func syncDatabase(completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
+        guard #available(iOS 12.5, *) else { return }
         databaseIsSyncing = true
         var taskIdentifier: UIBackgroundTaskIdentifier = .invalid
         taskIdentifier = UIApplication.shared.beginBackgroundTask {

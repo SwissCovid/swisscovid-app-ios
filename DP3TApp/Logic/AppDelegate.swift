@@ -90,16 +90,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        if TracingManager.shared.isSupported {
+            DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        }
 
         window?.makeKey()
-        window?.rootViewController = navigationController
+        if TracingManager.shared.isSupported {
+            window?.rootViewController = navigationController
+        } else {
+            window?.rootViewController = NSUnsupportedOSViewController()
+        }
 
         setupAppearance()
 
         window?.makeKeyAndVisible()
 
-        if !UserStorage.shared.hasCompletedOnboarding {
+        if TracingManager.shared.isSupported,
+           !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
@@ -113,6 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
+
+        // Nothing to do here if device is not supported
+        guard TracingManager.shared.isSupported else {
+            return
+        }
 
         // if app is cold-started or comes from background > 30 minutes,
         if coldStart || backgroundTime > 30.0 * 60.0 {

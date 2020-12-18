@@ -135,7 +135,9 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
         startLoading()
 
-        navigationController?.isModalInPresentation = true
+        if #available(iOS 13.0, *) {
+            navigationController?.isModalInPresentation = true
+        }
 
         navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false

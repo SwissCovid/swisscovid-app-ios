@@ -251,8 +251,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
             case .bluetoothTurnedOff:
                 scheduleBluetoothNotification()
             case let .exposureNotificationError(error: error):
-                if let error = error as? ENError {
-                    handleENError(error)
+                if #available(iOS 12.5, *) {
+                    if let error = error as? ENError {
+                        handleENError(error)
+                    }
                 }
             case .permissonError:
                 schedulePermissonErrorNotification()
@@ -274,6 +276,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
                                   text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
 
+    @available(iOS 12.5, *)
     private func handleENError(_ error: ENError) {
         switch error.code {
         case .bluetoothOff:
@@ -330,7 +333,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
         let content = UNMutableNotificationContent()
         content.title = "tracing_reminder_notification_title".ub_localized
-        content.body = "tracing_reminder_notification_text".ub_localized
+        content.body = "tracing_reminder_notification_subtitle".ub_localized
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: reminderNotificationIdentifier, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
@@ -346,7 +349,7 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
+        if TracingManager.shared.isSupported, alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
             completionHandler([])
         } else {
             completionHandler([.alert, .sound])

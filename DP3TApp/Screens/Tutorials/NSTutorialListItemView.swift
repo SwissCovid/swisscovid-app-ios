@@ -20,7 +20,7 @@ class NSTutorialListItemView: UIView {
 
     var body: UIView?
 
-    init(viewModel: ViewModel) {
+    init(viewModel: ViewModel, leadingInset: CGFloat = NSPadding.large, trailingInset: CGFloat = NSPadding.large) {
         body = viewModel.body
         super.init(frame: .zero)
 
@@ -34,13 +34,13 @@ class NSTutorialListItemView: UIView {
         textLabel.text = viewModel.text
 
         indexLabel.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(NSPadding.large)
+            make.leading.equalToSuperview().inset(leadingInset)
             make.top.equalToSuperview()
         }
 
         textLabel.snp.makeConstraints { make in
             make.leading.equalTo(indexLabel.snp.trailing).inset(-NSPadding.small)
-            make.trailing.equalToSuperview().inset(NSPadding.large)
+            make.trailing.equalToSuperview().inset(trailingInset)
             make.firstBaseline.equalTo(indexLabel)
             if viewModel.body == nil {
                 make.bottom.equalToSuperview().inset(NSPadding.medium * 2)
@@ -52,7 +52,7 @@ class NSTutorialListItemView: UIView {
             body.snp.makeConstraints { make in
                 make.leading.equalTo(indexLabel.snp.trailing).inset(-NSPadding.small)
                 make.bottom.equalToSuperview().inset(NSPadding.medium * 2)
-                make.trailing.equalToSuperview().inset(NSPadding.large)
+                make.trailing.equalToSuperview().inset(trailingInset)
                 make.top.equalTo(textLabel.snp.bottom).inset(-NSPadding.medium)
             }
 
@@ -63,7 +63,7 @@ class NSTutorialListItemView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
             body?.layer.borderColor = UIColor.ns_dividerColor.cgColor
         }
     }

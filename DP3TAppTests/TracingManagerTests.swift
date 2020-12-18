@@ -35,6 +35,7 @@ class MockLocalPush: LocalPushProtocol {
 }
 
 class TracingManagerTests: XCTestCase {
+    @available(iOS 12.5, *)
     func testNotificationScheduling() {
         // since TracingState has no public availble initializer we need to get the object directly from the SDK
         DP3TTracing.reset()

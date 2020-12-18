@@ -60,7 +60,7 @@ class NSSettingsTutorialViewController: NSTutorialViewController {
     }
 }
 
-private extension NSTutorialListItemView.ViewModel {
+extension NSTutorialListItemView.ViewModel {
     static var step1: Self {
         return NSTutorialListItemView.ViewModel(index: 1,
                                                 text: "ios_settings_tutorial_step_1_text".ub_localized,
@@ -92,27 +92,39 @@ private extension NSTutorialListItemView.ViewModel {
 
     static func settingsTextCellView(image: UIImage?, text: String) -> UIView {
         let cell = UIView()
-        cell.backgroundColor = .systemBackground
-
-        let icon = UIImageView(image: image)
-        icon.ub_setContentPriorityRequired()
-        icon.contentMode = .scaleAspectFit
-        cell.addSubview(icon)
+        if #available(iOS 13.0, *) {
+            cell.backgroundColor = .systemBackground
+        }
+        let icon: UIImageView?
+        if let image = image {
+            icon = UIImageView(image: image)
+            icon?.ub_setContentPriorityRequired()
+            icon?.contentMode = .scaleAspectFit
+            cell.addSubview(icon!)
+        } else {
+            icon = nil
+        }
 
         let label = UILabel()
         label.numberOfLines = 0
         label.text = text
         cell.addSubview(label)
 
-        icon.ub_setContentPriorityRequired()
-        icon.snp.makeConstraints { make in
-            make.leading.equalToSuperview().inset(NSPadding.small)
-            make.centerY.equalToSuperview()
-            make.size.equalTo(30)
+        if let icon = icon {
+            icon.ub_setContentPriorityRequired()
+            icon.snp.makeConstraints { make in
+                make.leading.equalToSuperview().inset(NSPadding.small)
+                make.centerY.equalToSuperview()
+                make.size.equalTo(30)
+            }
         }
 
         label.snp.makeConstraints { make in
-            make.leading.equalTo(icon.snp.trailing).inset(-NSPadding.medium)
+            if let icon = icon {
+                make.leading.equalTo(icon.snp.trailing).inset(-NSPadding.medium)
+            } else {
+                make.leading.equalToSuperview().inset(NSPadding.medium)
+            }
             make.top.bottom.trailing.equalToSuperview().inset(NSPadding.medium)
         }
 
@@ -121,7 +133,9 @@ private extension NSTutorialListItemView.ViewModel {
 
     static func settingsButtonView(text: String) -> UIView {
         let cell = UIView()
-        cell.backgroundColor = .systemBackground
+        if #available(iOS 13.0, *) {
+            cell.backgroundColor = .systemBackground
+        }
         cell.isAccessibilityElement = false
 
         let button = UIButton()

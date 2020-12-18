@@ -135,7 +135,7 @@ class NSChartDateView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
             lineLayers.forEach { layer in
                 layer.strokeColor = self.strokeColor.cgColor
             }
