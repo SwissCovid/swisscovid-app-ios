@@ -93,7 +93,7 @@ extension NSTutorialListItemView.ViewModel {
     static func settingsTextCellView(image: UIImage?, text: String) -> UIView {
         let cell = UIView()
         if #available(iOS 13.0, *) {
-            cell.backgroundColor = .systemBackground
+            cell.backgroundColor = UIColor.setColorsForTheme(lightColor: .systemBackground, darkColor: .secondarySystemBackground)
         }
         let icon: UIImageView?
         if let image = image {
@@ -134,7 +134,7 @@ extension NSTutorialListItemView.ViewModel {
     static func settingsButtonView(text: String) -> UIView {
         let cell = UIView()
         if #available(iOS 13.0, *) {
-            cell.backgroundColor = .systemBackground
+            cell.backgroundColor = UIColor.setColorsForTheme(lightColor: .systemBackground, darkColor: .secondarySystemBackground)
         }
         cell.isAccessibilityElement = false
 
