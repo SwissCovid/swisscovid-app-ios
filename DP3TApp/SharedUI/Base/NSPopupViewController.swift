@@ -19,7 +19,13 @@ class NSPopupViewController: NSViewController {
 
     let stackView = UIStackView()
 
-    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+    private let blurView: UIView = {
+        if #available(iOS 13.0, *) {
+            return UIVisualEffectView(effect: UIBlurEffect(style: .systemUltraThinMaterialDark))
+        } else {
+            return UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        }
+    }()
 
     lazy var closeButton: UBButton = {
         let button = UBButton()
@@ -129,9 +135,13 @@ class NSPopupViewController: NSViewController {
     private func addStatusBarBlurView() {
         view.addSubview(blurView)
 
-        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-
+        let statusBarHeight: CGFloat
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusBarHeight = UIApplication.shared.statusBarFrame.height
+        }
         blurView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(statusBarHeight)
@@ -139,8 +149,13 @@ class NSPopupViewController: NSViewController {
     }
 
     private func updateBlurViewAlpha() {
-        let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-        let statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        let statusBarHeight: CGFloat
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusBarHeight = UIApplication.shared.statusBarFrame.height
+        }
         let perc = min(max((scrollView.contentOffset.y + statusBarHeight) / statusBarHeight, 0), 1)
         blurView.alpha = perc
     }

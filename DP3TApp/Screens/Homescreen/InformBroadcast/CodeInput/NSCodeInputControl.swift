@@ -50,7 +50,7 @@ class NSCodeControl: UIView {
         fill(text: code, startControl: first)
 
         controls.forEach { c in
-            c.resignFirstResponder()
+            _ = c.resignFirstResponder()
         }
 
         currentControl = nil
