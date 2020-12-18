@@ -58,13 +58,17 @@ class NSTutorialListItemView: UIView {
 
             body.layer.cornerRadius = NSPadding.small
             body.layer.borderWidth = 1
-            body.layer.borderColor = UIColor.ns_dividerColor.cgColor
+            if #available(iOS 13.0, *) {
+                body.layer.borderColor = UIColor.setColorsForTheme(lightColor: .ns_dividerColor, darkColor: .systemGray5).cgColor
+            } else {
+                body.layer.borderColor = UIColor.ns_dividerColor.cgColor
+            }
         }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
-            body?.layer.borderColor = UIColor.ns_dividerColor.cgColor
+            body?.layer.borderColor = UIColor.setColorsForTheme(lightColor: .ns_dividerColor, darkColor: .systemGray5).cgColor
         }
     }
 
