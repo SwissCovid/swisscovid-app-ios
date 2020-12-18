@@ -333,7 +333,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
         let content = UNMutableNotificationContent()
         content.title = "tracing_reminder_notification_title".ub_localized
-        content.body = "tracing_reminder_notification_text".ub_localized
+        content.body = "tracing_reminder_notification_subtitle".ub_localized
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         let request = UNNotificationRequest(identifier: reminderNotificationIdentifier, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)

@@ -28,19 +28,19 @@ class NSTracingReminderViewController: NSPopupViewController {
 
         var duration: TimeInterval? {
             #if DEBUG || RELEASE_DEV
-                switch self {
-                case .fourHours: return 4 * 60
-                case .eightHours: return 8 * 60
-                case .twelveHours: return 12 * 60
-                case .noReminder: return nil
-                }
+            switch self {
+            case .fourHours: return 4 * 60
+            case .eightHours: return 8 * 60
+            case .twelveHours: return 12 * 60
+            case .noReminder: return nil
+            }
             #else
-                switch self {
-                case .fourHours: return 4 * 60 * 60
-                case .eightHours: return 8 * 60 * 60
-                case .twelveHours: return 12 * 60 * 60
-                case .noReminder: return nil
-                }
+            switch self {
+            case .fourHours: return 4 * 60 * 60
+            case .eightHours: return 8 * 60 * 60
+            case .twelveHours: return 12 * 60 * 60
+            case .noReminder: return nil
+            }
             #endif
         }
 
