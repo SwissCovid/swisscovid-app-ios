@@ -10,7 +10,7 @@
 
 import UIKit
 
-struct LocalizedValue<T: UBCodable>: UBCodable {
+struct LocalizedValue<T: Codable>: Codable {
     let dic: [String: T]
 
     init(from decoder: Decoder) throws {
@@ -40,7 +40,7 @@ class ConfigResponseBody: UBCodable {
     public let infoBox: LocalizedValue<InfoBox>?
     public let whatToDoPositiveTestTexts: LocalizedValue<WhatToDoPositiveTestTexts>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
-    public let testLocations: TestLocations?
+    public let testLocations: LocalizedValue<[TestLocation]>?
 
     class InfoBox: UBCodable {
         let title, msg: String
@@ -76,34 +76,8 @@ class ConfigResponseBody: UBCodable {
         }
     }
 
-    class TestLocations: UBCodable {
-        let locations: [Location]
-
-        class Location {
-            let name: String
-            let url: URL
-
-            init(name: String, url: URL) {
-                self.name = name
-                self.url = url
-            }
-        }
-
-        required init(from decoder: Decoder) throws {
-            let container = try decoder.singleValueContainer()
-            locations = (try container.decode([String: URL].self)).reduce(into: [Location]()) { result, new in
-                result.append(Location(name: new.key, url: new.value))
-            }
-        }
-
-        func encode(to encoder: Encoder) throws {
-            var dict = [String: URL]()
-            for location in locations {
-                dict[location.name] = location.url
-            }
-
-            var container = encoder.singleValueContainer()
-            try container.encode(dict)
-        }
+    class TestLocation: Codable {
+        let region: String
+        let url: URL
     }
 }
