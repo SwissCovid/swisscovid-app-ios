@@ -77,7 +77,7 @@ class ConfigResponseBody: UBCodable {
     }
 
     class TestLocation: Codable {
-        let name: String
+        let region: String
         let url: URL
     }
 }
