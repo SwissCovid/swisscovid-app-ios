@@ -14,6 +14,8 @@ import Foundation
 class NSLinkHandler {
     @discardableResult
     func handle(url: URL) -> Bool {
+        guard UserStorage.shared.hasCompletedOnboarding else { return false }
+
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return false }
 
         guard let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: true) else {
