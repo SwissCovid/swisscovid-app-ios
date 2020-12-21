@@ -25,6 +25,9 @@ class NSUnsupportedOSNotificationManager {
         center.removePendingNotificationRequests(withIdentifiers: [Self.notificationIdentifier])
     }
 
+    @KeychainPersisted(key: "lastiOSUpdateNotificationTimeStamp", defaultValue: nil)
+    var lastiOSUpdateNotification: Date?
+
     func registerBGHandler() {
         guard TracingManager.shared.isSupported == false else {
             assertionFailure()
@@ -42,6 +45,20 @@ class NSUnsupportedOSNotificationManager {
     }
 
     func handleExposureNotificationBackgroundTask(_ task: BGTask) {
+        // Only schedule notification once per day
+        var timeIntervalSinceLast: TimeInterval = .infinity
+        if let lastiOSUpdateNotification = lastiOSUpdateNotification {
+            timeIntervalSinceLast = abs(lastiOSUpdateNotification.timeIntervalSinceNow)
+        }
+
+        guard timeIntervalSinceLast > 24 * 60 * 60 else {
+            scheduleBackgroundTasks()
+            task.setTaskCompleted(success: true)
+            return
+        }
+
+        lastiOSUpdateNotification = Date()
+
         let center = UNUserNotificationCenter.current()
         let content = UNMutableNotificationContent()
         content.title = "ios_software_update_notification_title".ub_localized
