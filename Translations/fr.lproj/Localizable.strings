@@ -211,7 +211,7 @@
 "symptom_detail_box_title" = "Se faire tester";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "En savoir plus";
+"symptom_detail_box_button" = "Informations supplémentaires";
 
 /*Symptom Detail Weisse Box Text*/
 "symptom_detail_box_text" = "L'OFSP recommande à toutes les personnes qui présentent des symptômes du COVID-19 de se faire tester. Appelez un médecin ou une institution de santé.";
@@ -636,10 +636,10 @@
 "symptom_faq1_text" = "Ces symptômes sont fréquents :\n\n– Fièvre, sensation de fièvre\n– Mal de gorge\n– Toux (généralement sèche)\n– Difficultés respiratoires\n– Douleurs musculaires\n– Perte soudaine de l’odorat et/ou du goût";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "Pourquoi le traçage de proximité est-il interrompu ?";
+"meldungen_positive_tested_faq1_title" = "Pourquoi le traçage est-il désactivé ?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Après un test positif, le traçage de proximité est automatiquement interrompu dans l'application.";
+"meldungen_positive_tested_faq1_text" = "Le traçage est automatiquement désactivé après un test positif. Vous pourrez le réactiver à la fin de votre isolement.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "fr";
@@ -708,7 +708,7 @@
 "delete_reports_dialog" = "Voulez-vous vraiment supprimer la notification ?";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
-"delete_infection_button" = "Supprimer la notification";
+"delete_infection_button" = "Terminer l'isolement";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 "delete_infection_dialog" = "Voulez-vous vraiment supprimer la notification ? ";
@@ -1049,28 +1049,227 @@
 "swisscovid_leitfaden_url" = "https://swisscovid.ofsp-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
 
 /*Tracing Erinnerung 4 Stunden Radio Button*/
-"tracing_reminder_radio_four_hours" = "";
+"tracing_reminder_radio_four_hours" = "4 heures";
 
 /*Tracing Erinnerung 8 Stunden Radio Button*/
-"tracing_reminder_radio_eight_hours" = "";
+"tracing_reminder_radio_eight_hours" = "8 heures";
 
 /*Tracing Erinnerung 12 Stunden Radio Button*/
-"tracing_reminder_radio_twelve_hours" = "";
+"tracing_reminder_radio_twelve_hours" = "12 heures";
 
 /*Tracing Erinnerung keine Erinngerung Radio Button*/
-"tracing_reminder_radio_no_reminder" = "";
+"tracing_reminder_radio_no_reminder" = "Pas de rappel";
 
 /*Tracing Erinnerung bestätigen Button*/
-"tracing_reminder_confirm_button" = "";
+"tracing_reminder_confirm_button" = "OK";
 
 /*Tracing Erinnerung abbrechen Button*/
-"tracing_reminder_cancel_button" = "";
+"tracing_reminder_cancel_button" = "Interrompre";
 
 /*Tracing Erinnerung Titel*/
-"tracing_reminder_title" = "";
+"tracing_reminder_title" = "Mettre un rappel";
 
 /*Tracing Erinnerung Untertitel*/
-"tracing_reminder_subtitle" = "";
+"tracing_reminder_subtitle" = "SwissCovid peut vous rappeler de réactiver le traçage.";
 
 /*Tracing Erinnerung Warnung*/
-"tracing_reminder_warning" = "";
+"tracing_reminder_warning" = "Le traçage est désactivé.";
+
+/*Kantonname Zürich*/
+/*Fuzzy*/
+"canton_zurich" = "Zurich";
+
+/*Kantonname Aargau*/
+/*Fuzzy*/
+"canton_aargau" = "Argovie";
+
+/*Kantonname Appenzell Innerrhoden*/
+/*Fuzzy*/
+"canton_appenzell_innerrhoden" = "Appenzell Rhodes-Intérieures";
+
+/*Kantonname Appenzell Ausserrhoden*/
+/*Fuzzy*/
+"canton_appenzell_ausserrhoden" = "Appenzell Rhodes-Extérieures";
+
+/*Kantonname Bern*/
+/*Fuzzy*/
+"canton_berne" = "Berne";
+
+/*Kantonname Basel-Landschaft*/
+/*Fuzzy*/
+"canton_basel_country" = "Bâle-Campagne";
+
+/*Kantonname Basel-Stadt*/
+/*Fuzzy*/
+"canton_basel_city" = "Bâle-Ville";
+
+/*Kantonname Freiburg*/
+/*Fuzzy*/
+"canton_fribourg" = "Fribourg";
+
+/*Kantonname Genf*/
+/*Fuzzy*/
+"canton_geneva" = "Genève";
+
+/*Kantonname Glarus*/
+/*Fuzzy*/
+"canton_glarus" = "Glaris";
+
+/*Kantonname Graubünden*/
+/*Fuzzy*/
+"canton_graubuenden" = "Grisons";
+
+/*Kantonname Jura*/
+/*Fuzzy*/
+"canton_jura" = "Jura";
+
+/*Kantonname Luzern*/
+/*Fuzzy*/
+"canton_lucerne" = "Lucerne";
+
+/*Kantonname Neuenburg*/
+/*Fuzzy*/
+"canton_neuchatel" = "Neuchâtel";
+
+/*Kantonname Nidwalden*/
+/*Fuzzy*/
+"canton_nidwalden" = "Nidwald";
+
+/*Kantonname Obwalden*/
+/*Fuzzy*/
+"canton_obwalden" = "Obwald";
+
+/*Kantonname St. Gallen*/
+/*Fuzzy*/
+"canton_st_gallen" = "Saint-Gall";
+
+/*Kantonname Schaffhausen*/
+/*Fuzzy*/
+"canton_schaffhausen" = "Schaffhouse";
+
+/*Kantonname Solothurn*/
+/*Fuzzy*/
+"canton_solothurn" = "Soleure";
+
+/*Kantonname Schwyz*/
+/*Fuzzy*/
+"canton_schwyz" = "Schwyz";
+
+/*Kantonname Thurgau*/
+/*Fuzzy*/
+"canton_thurgovia" = "Thurgovie";
+
+/*Kantonname Tessin*/
+/*Fuzzy*/
+"canton_ticino" = "Tessin";
+
+/*Kantonname Uri*/
+/*Fuzzy*/
+"canton_uri" = "Uri";
+
+/*Kantonname Waadt*/
+/*Fuzzy*/
+"canton_vaud" = "Vaud";
+
+/*Kantonname Wallis*/
+/*Fuzzy*/
+"canton_valais" = "Valais";
+
+/*Kantonname Zug*/
+"canton_zug" = "Zug";
+
+/*Kantonname Fürstentum Liechtenstein*/
+/*Fuzzy*/
+"country_liechtenstein" = "Liechtenstein";
+
+/*Test standorte Popup Titel*/
+"test_location_popup_title" = "Où puis-je me faire tester ?";
+
+/*Test standorte Popup Text*/
+"test_location_popup_text" = "Vous pouvez vous faire tester chez un médecin ou dans divers centres de test, hôpitaux et pharmacies. Informations sur les offres de test sur les sites des cantons :";
+
+/*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
+"android_reminder_channel_name" = "Rappel d'activation du traçage";
+
+/*Titel der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_title" = "Traçage activé";
+
+/*Subtitle der Tracing-Reaktivierungs-Notification*/
+"tracing_reminder_notification_subtitle" = "Activez le traçage pour que l'application puisse enregistrer les contacts et recevoir les notifications.";
+
+/*iOS Blockierende View bei benötigten OS update: Titel*/
+"ios_software_update_blocking_title" = "Mise à jour requise";
+
+/*iOS Blockierende View bei benötigten OS update: text*/
+"ios_software_update_blocking_text" = "Vous devez installer la dernière version d'iOS pour que SwissCovid puisse fonctionner.";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial title*/
+"ios_software_update_blocking_tutorial_title" = "Voici comment faire :";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial first*/
+"ios_software_update_blocking_tutorial_first" = "Ouvrez les «Paramètres» sur l'écran d'accueil.";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second*/
+"ios_software_update_blocking_tutorial_second" = "Allez sous …";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial second settings general (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_second_settings" = "Général";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third*/
+"ios_software_update_blocking_tutorial_third" = "Choisissez …";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial third software update (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_third_software_update" = "Mise à jour logicielle";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth*/
+"ios_software_update_blocking_tutorial_fourth" = "Cliquez sur … ";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial fourth load and install (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
+"ios_software_update_blocking_tutorial_fourth_load_and_install" = "Télécharger et installer";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple button*/
+"ios_software_update_blocking_tutorial_apple" = "Instructions fournies par Apple";
+
+/*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
+"ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/fr-fr/HT204204";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_title" = "Mise à jour requise";
+
+/*iOS Notification Text bei benötigten OS update*/
+"ios_software_update_notification_text" = "Vous devez installer la dernière version d'iOS pour que SwissCovid puisse fonctionner.";
+
+/*Button Text um die Isolation zu beenden*/
+"delete_infection_dialog_finish_button" = "Terminer";
+
+/*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
+"tracing_ended_info" = "Aucun contact n'est enregistré. Le traçage peut être réactivé après l'isolement.";
+"testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
+"testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
+"testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
+"testlocation_url_canton_basel_country" = "https://www.baselland.ch/politik-und-behorden/direktionen/volkswirtschafts-und-gesundheitsdirektion/amt-fur-gesundheit/medizinische-dienste/kantonsarztlicher-dienst/aktuelles";
+"testlocation_url_canton_basel_city" = "https://www.coronavirus.bs.ch/";
+"testlocation_url_canton_berne" = "http://www.be.ch/corona";
+"testlocation_url_canton_fribourg" = "https://www.fr.ch/sante/covid-19/coronavirus-informations-actuelles-toutes-les-actualites-liees-au-covid-19-mesures-prises-faq-statistiques";
+"testlocation_url_canton_geneva" = "https://www.ge.ch/covid-19-se-proteger-proteger-autres";
+"testlocation_url_canton_glarus" = "https://www.gl.ch/verwaltung/finanzen-und-gesundheit/gesundheit/coronavirus.html/4817";
+"testlocation_url_canton_graubuenden" = "https://www.gr.ch/DE/institutionen/verwaltung/djsg/ga/coronavirus/info/Seiten/Start.aspx";
+"testlocation_url_canton_jura" = "https://www.jura.ch/fr/Autorites/Coronavirus/Accueil/Coronavirus-Informations-officielles-a-la-population-jurassienne.html";
+"testlocation_url_canton_lucerne" = "https://gesundheit.lu.ch/themen/Humanmedizin/Infektionskrankheiten/Informationen_Coronavirus";
+"testlocation_url_canton_neuchatel" = "https://www.ne.ch/autorites/DFS/SCSP/medecin-cantonal/maladies-vaccinations/Pages/Coronavirus.aspx";
+"testlocation_url_canton_nidwalden" = "https://www.nw.ch/gesundheitsamtdienste/6044";
+"testlocation_url_canton_obwalden" = "https://www.ow.ch/de/verwaltung/dienstleistungen/?dienst_id=5962";
+"testlocation_url_canton_st_gallen" = "https://www.sg.ch/tools/informationen-coronavirus.html";
+"testlocation_url_canton_schaffhausen" = "https://sh.ch/CMS/Webseite/Kanton-Schaffhausen/Beh-rde/Verwaltung/Departement-des-Innern/Gesundheitsamt-2954701-DE.html";
+"testlocation_url_canton_schwyz" = "https://www.sz.ch/behoerden/information-medien/medienmitteilungen/coronavirus.html/72-416-412-1379-6948";
+"testlocation_url_canton_solothurn" = "https://corona.so.ch/";
+"testlocation_url_canton_thurgovia" = "https://www.tg.ch/news/fachdossier-coronavirus.html/10552";
+"testlocation_url_canton_ticino" = "https://www4.ti.ch/dss/dsp/covid19/home/";
+"testlocation_url_canton_uri" = "https://www.ur.ch/themen/2962";
+"testlocation_url_canton_valais" = "https://www.vs.ch/web/coronavirus/";
+"testlocation_url_canton_zug" = "https://www.zg.ch/behoerden/gesundheitsdirektion/amt-fuer-gesundheit/corona";
+"testlocation_url_canton_vaud" = "https://www.vd.ch/toutes-les-actualites/hotline-et-informations-sur-le-coronavirus/";
+
+/*Fuzzy*/
+"testlocation_url_canton_zurich" = "https://www.zh.ch/de/gesundheit/coronavirus.html";
+"testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";

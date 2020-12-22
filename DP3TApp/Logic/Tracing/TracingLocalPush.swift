@@ -64,6 +64,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
     private var center: UserNotificationCenter
 
+    var applicationState: UIApplication.State {
+        UIApplication.shared.applicationState
+    }
+
     init(notificationCenter: UserNotificationCenter = UNUserNotificationCenter.current(), keychain: KeychainProtocol = Keychain()) {
         center = notificationCenter
         _exposureIdentifiers.keychain = keychain
@@ -97,6 +101,15 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
     func clearNotifications() {
         center.removeAllDeliveredNotifications()
+
+        var allIdentifier = [String]()
+        for identifier in exposureIdentifiers {
+            allIdentifier.append(identifier)
+            for delayIndex in 1 ... 12 {
+                allIdentifier.append(identifier + "\(delayIndex)")
+            }
+        }
+        center.removePendingNotificationRequests(withIdentifiers: allIdentifier)
     }
 
     var now: Date {
@@ -122,9 +135,32 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         content.title = "push_exposed_title".ub_localized
         content.body = "push_exposed_text".ub_localized
         content.sound = .default
+        content.threadIdentifier = identifier
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: nil)
         center.add(request, withCompletionHandler: nil)
+
+        // applicationState can only be accessed from the main thread
+        let state: UIApplication.State
+        if Thread.isMainThread {
+            state = applicationState
+        } else {
+            state = DispatchQueue.main.sync {
+                applicationState
+            }
+        }
+
+        // only if the app is in the background
+        if state == .background {
+            // schedule a notification every 4h for the next 2 days
+            // so that the user can not miss the notification
+            for delayIndex in 1 ... 12 {
+                let delay = TimeInterval(delayIndex * 4 * 60 * 60)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: delay, repeats: false)
+                let request = UNNotificationRequest(identifier: identifier + "\(delayIndex)", content: content, trigger: trigger)
+                center.add(request, withCompletionHandler: nil)
+            }
+        }
     }
 
     private func alreadyShowsReport() -> Bool {
@@ -215,8 +251,10 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
             case .bluetoothTurnedOff:
                 scheduleBluetoothNotification()
             case let .exposureNotificationError(error: error):
-                if let error = error as? ENError {
-                    handleENError(error)
+                if #available(iOS 12.5, *) {
+                    if let error = error as? ENError {
+                        handleENError(error)
+                    }
                 }
             case .permissonError:
                 schedulePermissonErrorNotification()
@@ -238,6 +276,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
                                   text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
 
+    @available(iOS 12.5, *)
     private func handleENError(_ error: ENError) {
         switch error.code {
         case .bluetoothOff:
@@ -281,13 +320,36 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
 
         scheduledErrorIdentifiers.removeAll()
     }
+
+    // MARK: - Reminder Notifications
+
+    private let reminderNotificationIdentifier: String = "ch.admin.bag.notification.tracing.reminder"
+
+    func scheduleReminderNotification(reminder: NSTracingReminderViewController.Reminder) {
+        guard reminder != .noReminder, let timeInterval = reminder.duration else {
+            resetReminderNotification()
+            return
+        }
+
+        let content = UNMutableNotificationContent()
+        content.title = "tracing_reminder_notification_title".ub_localized
+        content.body = "tracing_reminder_notification_subtitle".ub_localized
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        let request = UNNotificationRequest(identifier: reminderNotificationIdentifier, content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
+    }
+
+    func resetReminderNotification() {
+        center.removeDeliveredNotifications(withIdentifiers: [reminderNotificationIdentifier])
+        center.removePendingNotificationRequests(withIdentifiers: [reminderNotificationIdentifier])
+    }
 }
 
 extension TracingLocalPush: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
+        if TracingManager.shared.isSupported, alreadyShowsReport(), exposureIdentifiers.contains(notification.request.identifier) {
             completionHandler([])
         } else {
             completionHandler([.alert, .sound])

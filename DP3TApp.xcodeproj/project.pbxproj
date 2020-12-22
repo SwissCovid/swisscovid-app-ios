@@ -345,9 +345,15 @@
 		F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
 		F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
 		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
+		F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
+		F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
 		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
+		F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */; };
+		F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */; };
+		F83ECEEE2578D91600DB18CB /* NSPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEED2578D91600DB18CB /* NSPopupViewController.swift */; };
+		F83ECEEF2578D91600DB18CB /* NSPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEED2578D91600DB18CB /* NSPopupViewController.swift */; };
 		F84089EC2493695200A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
@@ -363,11 +369,23 @@
 		F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */; };
 		F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */; };
 		F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
+		F862124E257A727E0043351E /* NSLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862124D257A727E0043351E /* NSLinkHandler.swift */; };
+		F862124F257A727E0043351E /* NSLinkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862124D257A727E0043351E /* NSLinkHandler.swift */; };
+		F8631136257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */; };
+		F8631137257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */; };
 		F865C8A324990A6800B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
 		F865C8A424990B5700B730BD /* NSOnboardingDisclaimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */; };
 		F869AED524F54C7D00FC4556 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
+		F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370D258C2613008DCC81 /* NSRadioButton.swift */; };
+		F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370D258C2613008DCC81 /* NSRadioButton.swift */; };
+		F87C3712258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */; };
+		F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */; };
+		F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
+		F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
@@ -406,6 +424,8 @@
 		F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
 		F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
+		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
+		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -621,7 +641,10 @@
 		F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-a.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-d.bag.admin.ch.der"; sourceTree = "<group>"; };
+		F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSNotificationManager.swift; sourceTree = "<group>"; };
 		F830798E24928EC4005D3C65 /* LoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingStorage.swift; sourceTree = "<group>"; };
+		F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTracingReminderViewController.swift; sourceTree = "<group>"; };
+		F83ECEED2578D91600DB18CB /* NSPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPopupViewController.swift; sourceTree = "<group>"; };
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
@@ -631,7 +654,13 @@
 		F8512243250A6F8E009BE733 /* NSChartYAxisLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAxisLegend.swift; sourceTree = "<group>"; };
 		F85E4C0B24AC84BF00056864 /* MockNotificationCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNotificationCenter.swift; sourceTree = "<group>"; };
 		F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+BuildInfo.swift"; sourceTree = "<group>"; };
+		F862124D257A727E0043351E /* NSLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLinkHandler.swift; sourceTree = "<group>"; };
+		F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMoreTestInformationPopupViewController.swift; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
+		F87C369F258B6652008DCC81 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
+		F87C370D258C2613008DCC81 /* NSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
+		F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
+		F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonItem.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
 		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
@@ -651,8 +680,12 @@
 		F8ABA2E42526087D00A8D6B5 /* NSTutorialListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTutorialListItemView.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
-		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
 		F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportDetailMoreDaysView.swift; sourceTree = "<group>"; };
+		F8D32BE02579180400ED1657 /* NSRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
+		F8D32BEB2579183000ED1657 /* NSRadioButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonItem.swift; sourceTree = "<group>"; };
+		F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
+		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
+		F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -660,6 +693,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */,
 				F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */,
 				F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */,
 				242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */,
@@ -670,6 +704,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */,
 				F870A5B72492C6D500C34FFA /* SQLite in Frameworks */,
 				242D2275245C4BE6005DAEA8 /* DP3TSDK in Frameworks */,
 				8E81CCCF241FD813006F2437 /* SnapKit in Frameworks */,
@@ -703,6 +738,7 @@
 			isa = PBXGroup;
 			children = (
 				24780B572431B5A9003BB26C /* TracingManager.swift */,
+				F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */,
 				2485F47B2458625F00C3D8C3 /* DatabaseSyncer.swift */,
 				24780B592431B5A9003BB26C /* TracingLocalPush.swift */,
 				F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */,
@@ -730,6 +766,7 @@
 		2443948024463B01003ED582 /* Homescreen */ = {
 			isa = PBXGroup;
 			children = (
+				F83ECEE42577EE8A00DB18CB /* TracingReminder */,
 				8EF2A6EA24912469002263C3 /* SynchronizationInfo */,
 				6EF4D2442458273D005E2A9C /* ProblemView */,
 				6E33085D24502BA200913B0E /* WhatToDo */,
@@ -910,6 +947,7 @@
 				6E7C0D36242E02600017C4F9 /* NSStackScrollView.swift */,
 				6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */,
 				6E6E518F242FCE13006E532E /* NSFancyNumberView.swift */,
+				F83ECEED2578D91600DB18CB /* NSPopupViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -960,6 +998,7 @@
 		24780B3B2430BC00003BB26C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F87C369F258B6652008DCC81 /* ExposureNotification.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1011,6 +1050,7 @@
 			children = (
 				6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */,
 				6E33086324503D0900913B0E /* NSWhatToDoSymptomViewController.swift */,
+				F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */,
 				6E3308652450442D00913B0E /* NSWhatToDoInformView.swift */,
 				6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */,
 			);
@@ -1126,6 +1166,7 @@
 				8E81CCAE241FCC7F006F2437 /* DP3TAppTests */,
 				8E81CC96241FCC7D006F2437 /* Products */,
 				24780B3B2430BC00003BB26C /* Frameworks */,
+				F87C36E1258C24D6008DCC81 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1191,6 +1232,7 @@
 			children = (
 				F80E406B2509001100876906 /* Statistics */,
 				8E81CC98241FCC7D006F2437 /* AppDelegate.swift */,
+				F862124D257A727E0043351E /* NSLinkHandler.swift */,
 				2443947E24463A14003ED582 /* Tracing */,
 				2485F4742455DBB000C3D8C3 /* Config */,
 				24780B00242DF983003BB26C /* User */,
@@ -1203,6 +1245,7 @@
 		DC286A27242CE1D2001D5344 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F8D581242589701C00307C2B /* Unsupported */,
 				F80465142525F58900311802 /* Tutorials */,
 				24780AF9242DF828003BB26C /* Navigation */,
 				2443948024463B01003ED582 /* Homescreen */,
@@ -1283,6 +1326,7 @@
 				6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */,
 				6E33086924506E0600913B0E /* NSExplanationView.swift */,
 				B6AEA30724B74ACA0055B5BB /* NSImageView.swift */,
+				F87C36EA258C25B1008DCC81 /* RadioButton */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1351,6 +1395,34 @@
 			path = Certificates;
 			sourceTree = "<group>";
 		};
+		F83ECEE42577EE8A00DB18CB /* TracingReminder */ = {
+			isa = PBXGroup;
+			children = (
+				F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */,
+			);
+			path = TracingReminder;
+			sourceTree = "<group>";
+		};
+		F87C36E1258C24D6008DCC81 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				F8D32BE02579180400ED1657 /* NSRadioButton.swift */,
+				F8D32BEB2579183000ED1657 /* NSRadioButtonItem.swift */,
+				F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		F87C36EA258C25B1008DCC81 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				F87C370D258C2613008DCC81 /* NSRadioButton.swift */,
+				F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */,
+				F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */,
+			);
+			path = RadioButton;
+			sourceTree = "<group>";
+		};
 		F8A6BE0A24C9BF8F00DE6B44 /* Disclaimer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1364,6 +1436,14 @@
 				F8A6BE0E24C9BFA000DE6B44 /* IT_App_Nutzungsbedingungen.html */,
 			);
 			path = Disclaimer;
+			sourceTree = "<group>";
+		};
+		F8D581242589701C00307C2B /* Unsupported */ = {
+			isa = PBXGroup;
+			children = (
+				F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */,
+			);
+			path = Unsupported;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1758,16 +1838,19 @@
 				242D21F8245C4BD8005DAEA8 /* UIStateManager.swift in Sources */,
 				F8ABA2EB2526089700A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,
 				242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */,
+				F8631137257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
 				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
+				F83ECEEF2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				8EF2A6ED249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
 				242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* NSModuleBaseView.swift in Sources */,
+				F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F8ABA2E62526087D00A8D6B5 /* NSTutorialListItemView.swift in Sources */,
 				F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */,
 				F851223E250A2676009BE733 /* NSChartLineView.swift in Sources */,
@@ -1781,10 +1864,12 @@
 				242D2207245C4BD8005DAEA8 /* Environment.swift in Sources */,
 				242D2208245C4BD8005DAEA8 /* ConfigLoadOperation.swift in Sources */,
 				242D2209245C4BD8005DAEA8 /* String+NS.swift in Sources */,
+				F862124F257A727E0043351E /* NSLinkHandler.swift in Sources */,
 				F8ABA2F02526089E00A8D6B5 /* NSTutorialViewController.swift in Sources */,
 				242D220A245C4BD8005DAEA8 /* UBUserDefaultValue.swift in Sources */,
 				246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */,
 				242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */,
+				F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */,
 				2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */,
@@ -1811,6 +1896,7 @@
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				F80E40642508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
 				F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
+				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
@@ -1827,6 +1913,7 @@
 				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
+				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
 				242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */,
@@ -1862,10 +1949,12 @@
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
 				242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */,
+				F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
+				F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
 				242D224D245C4BD8005DAEA8 /* NSSimpleModuleBaseView.swift in Sources */,
 				242D224F245C4BD8005DAEA8 /* NSDebugScreenMockView.swift in Sources */,
@@ -1881,6 +1970,7 @@
 			files = (
 				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
+				F87C3712258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
 				246FD175249B565400FD36F8 /* Environment+AppStore.swift in Sources */,
 				24780B5C2431B5A9003BB26C /* TracingManager.swift in Sources */,
@@ -1890,6 +1980,7 @@
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
 				F80E406D2509002200876906 /* StatisticsResponse.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
+				F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
@@ -1901,6 +1992,7 @@
 				24780B5E2431B5A9003BB26C /* TracingLocalPush.swift in Sources */,
 				DC702AFF243F6ED90066C773 /* UIColor+HEX.swift in Sources */,
 				DC702B0E243F6FAE0066C773 /* UBRawRepresentable.swift in Sources */,
+				F8631136257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */,
 				6E8FC0FA24518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m in Sources */,
 				B6AEA30824B74ACA0055B5BB /* NSImageView.swift in Sources */,
 				6E3308662450442D00913B0E /* NSWhatToDoInformView.swift in Sources */,
@@ -1909,6 +2001,7 @@
 				DCA3FFB824504B190003F5AD /* NSClickthroughStackView.swift in Sources */,
 				6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */,
 				8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */,
+				F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */,
 				242D2276245D62D8005DAEA8 /* UserStorage.swift in Sources */,
 				AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */,
@@ -1917,6 +2010,7 @@
 				6EFF9AE3245AAFC800C98FF3 /* UIImage+UBHelpers.m in Sources */,
 				24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */,
 				24780B24242DFE6D003BB26C /* NSNavigationController.swift in Sources */,
+				F862124E257A727E0043351E /* NSLinkHandler.swift in Sources */,
 				6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */,
 				DCA3FFB424502D370003F5AD /* NSTracingErrorView.swift in Sources */,
 				6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */,
@@ -1942,6 +2036,7 @@
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,
 				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,
 				8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */,
+				F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,
@@ -2003,6 +2098,7 @@
 				DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */,
 				F8089697250B63780023F639 /* NSStatisticsShareModule.swift in Sources */,
 				DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */,
+				F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F80E40702509011D00876906 /* StatisticsLoader.swift in Sources */,
 				24780B30242F3EAF003BB26C /* NSInformBottomButtonViewController.swift in Sources */,
 				6E3F65F72449B61A00980A4E /* NSDebugscreenViewController.swift in Sources */,
@@ -2013,6 +2109,7 @@
 				F80E407725092AE100876906 /* NSChartColumnView.swift in Sources */,
 				24780B11242DFD2F003BB26C /* NSReportsModuleView.swift in Sources */,
 				F8ABA2D32525FC3600A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,
+				F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				6E6E516F242F4FE0006E532E /* ConfigManager.swift in Sources */,
 				6E6E5184242F9586006E532E /* NSInformThankYouViewController.swift in Sources */,
 				6E33085F24502BBD00913B0E /* NSWhatToDoButton.swift in Sources */,
@@ -2032,6 +2129,7 @@
 				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
 				2485F47624560EDC00C3D8C3 /* UIStateModel.swift in Sources */,
+				F83ECEEE2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
 				F80E405C2508D3E600876906 /* NSTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2231,7 +2329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_DEV";
@@ -2375,7 +2473,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_DEV";
@@ -2519,7 +2617,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_ABNAHME";
@@ -2643,7 +2741,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2752,7 +2850,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_PROD";
@@ -2880,7 +2978,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_TEST";
@@ -3024,7 +3122,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				OTHER_SWIFT_FLAGS = "-D RELEASE_PROD";
@@ -3215,7 +3313,7 @@
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
 				kind = revision;
-				revision = 2dd6f63092599632d31eaaa35664664243e0b809;
+				revision = a70c27f7a06dd3eaf3fbf74069645a8a7dbcbfbd;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {

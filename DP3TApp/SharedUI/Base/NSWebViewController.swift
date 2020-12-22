@@ -64,7 +64,11 @@ class NSWebViewController: NSViewController {
         }
 
         if closeable {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
+            if #available(iOS 13.0, *) {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(didPressClose))
+            } else {
+                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "ic-close"), style: .plain, target: self, action: #selector(didPressClose))
+            }
         }
     }
 

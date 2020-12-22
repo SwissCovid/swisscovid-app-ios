@@ -52,7 +52,7 @@ class NSInformTracingEndViewController: NSInformBottomButtonViewController {
         }
 
         titleLabel.text = "tracing_ended_title".ub_localized
-        textLabel.text = "tracing_ended_text".ub_localized
+        textLabel.text = "tracing_ended_info".ub_localized
 
         enableBottomButton = true
     }

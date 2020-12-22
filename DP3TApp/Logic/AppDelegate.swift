@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var navigationController: NSNavigationController = NSNavigationController(rootViewController: tabBarController)
     lazy var tabBarController: NSTabBarController = NSTabBarController()
 
+    private var linkHandler = NSLinkHandler()
+
     internal func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Pre-populate isFirstLaunch for users which already installed the app before we introduced this flag
         if UserStorage.shared.hasCompletedOnboarding {
@@ -44,7 +46,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
 
+        if let launchOptions = launchOptions,
+           let activityType = launchOptions[UIApplication.LaunchOptionsKey.userActivityType] as? String,
+           activityType == NSUserActivityTypeBrowsingWeb,
+           let url = launchOptions[UIApplication.LaunchOptionsKey.url] as? URL {
+            linkHandler.handle(url: url)
+        }
+
         return true
+    }
+
+    func application(_: UIApplication,
+                     continue userActivity: NSUserActivity,
+                     restorationHandler _: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+        if let url = userActivity.webpageURL {
+            return linkHandler.handle(url: url)
+        }
+        return false
     }
 
     private func shouldSetupWindow(application: UIApplication, launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -72,16 +90,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        if TracingManager.shared.isSupported {
+            DatabaseSyncer.shared.syncDatabaseIfNeeded()
+        }
 
         window?.makeKey()
-        window?.rootViewController = navigationController
+        if TracingManager.shared.isSupported {
+            window?.rootViewController = navigationController
+        } else {
+            window?.rootViewController = NSUnsupportedOSViewController()
+        }
 
         setupAppearance()
 
         window?.makeKeyAndVisible()
 
-        if !UserStorage.shared.hasCompletedOnboarding {
+        if TracingManager.shared.isSupported,
+           !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
@@ -95,6 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
         // Logic for coldstart / background
+
+        // Nothing to do here if device is not supported
+        guard TracingManager.shared.isSupported else {
+            return
+        }
 
         // if app is cold-started or comes from background > 30 minutes,
         if coldStart || backgroundTime > 30.0 * 60.0 {

@@ -91,7 +91,11 @@ public extension UIColor {
     // MARK: - UIAccessibility Contrast extension
 
     internal func withHighContrastColor(color: UIColor) -> UIColor {
-        return UIColor { _ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
+        if #available(iOS 13.0, *) {
+            return UIColor { _ in UIAccessibility.isDarkerSystemColorsEnabled ? color : self }
+        } else {
+            return self
+        }
     }
 
     static var ns_line = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#ecebeb")!, darkColor: .ns_darkModeBackground2)
@@ -101,11 +105,15 @@ public extension UIColor {
     // MARK: - Theme colors, self updating
 
     internal static func setColorsForTheme(lightColor: UIColor, darkColor: UIColor) -> UIColor {
-        return UIColor { (traits) -> UIColor in
-            // Return one of two colors depending on light or dark mode
-            traits.userInterfaceStyle == .dark ?
-                darkColor :
-                lightColor
+        if #available(iOS 13.0, *) {
+            return UIColor { (traits) -> UIColor in
+                // Return one of two colors depending on light or dark mode
+                traits.userInterfaceStyle == .dark ?
+                    darkColor :
+                    lightColor
+            }
+        } else {
+            return lightColor
         }
     }
 

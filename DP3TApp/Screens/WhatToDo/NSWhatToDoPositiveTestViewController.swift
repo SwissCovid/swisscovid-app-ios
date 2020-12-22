@@ -155,7 +155,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
 
     // MARK: - Present
 
-    private func presentInformViewController() {
-        NSInformViewController.present(from: self)
+    func presentInformViewController(prefill: String? = nil) {
+        NSInformViewController.present(from: self, prefill: prefill)
     }
 }

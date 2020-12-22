@@ -99,7 +99,7 @@ class NSChartColumnView: UIView {
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        if previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
             layer.sublayers?.forEach { layer in
                 layer.borderColor = borderColor.cgColor
                 layer.backgroundColor = barBackgroundColor.cgColor
