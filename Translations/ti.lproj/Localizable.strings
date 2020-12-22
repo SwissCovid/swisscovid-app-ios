@@ -210,7 +210,7 @@
 "symptom_detail_box_title" = "መርመራ ምግባር ";
 
 /*Symptom Detail Weisse Box Button*/
-"symptom_detail_box_button" = "ዝያዳ ምፍላጥ";
+"symptom_detail_box_button" = "ተወሰኽቲ ሓበሬታታት";
 
 /*Symptom Detail Weisse Box Text*/
 "symptom_detail_box_text" = "ሚኒስትሪ ጥዕና ስዊዘርላንድ (BAG) ዝኾነ ምልክት ናይ ኮቪድ-19 ዘለዎ ሰብ ንኽምርመር ይላቦ።  ንሓኪም ወይ ንትካል ሕክምና ደውሉ። ";
@@ -631,10 +631,10 @@
 "symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n– ረስኒ፣ ስምዒት ናይ ረስኒ\n– ቃንዛ ጎሮሮ\n– ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n– ሕጽረት እስትንፋስ\n– ቃንዛ ጨዋዳታት\n– ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
-"meldungen_positive_tested_faq1_title" = "ንምንታይ ምክትታል ተወዲኡ፧";
+"meldungen_positive_tested_faq1_title" = "እቲ ምክትታል ስለምንታይ ተዓጽዩ፧";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "ድሕሪ ፖዚቲቭ ውጽኢት መርመራ እቲ ምክትታል ኣብ ኣፕ ብቐጥታ ይውዳእ። ";
+"meldungen_positive_tested_faq1_text" = "ውጽኢት መርመራ መልከፍቲ ቫይረስ ምስዘረጋግጽ እቲ ኣብቲ ኤፕ ዘሎ ምክትታል ብዓሉ ክጠፍእ እዩ። ነቲ ግለላ ወዲእኹሞ እንተኾይንኩም እቲ ምክትታል መሊሱ ክውላዕ ይከኣል።";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "ti";
@@ -701,7 +701,7 @@
 "delete_reports_dialog" = "ሓበሬታ  ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
 
 /*Code-Eingabe in der App löschen, wenn infiziert*/
-"delete_infection_button" = "ሓበሬታ ምድምሳስ";
+"delete_infection_button" = "ግለላ ምዝዛም";
 
 /*Meldung im Löschen Dialog nach Code-Einfragen*/
 "delete_infection_dialog" = "ሓበሬታ ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
@@ -1038,175 +1038,175 @@
 "swisscovid_leitfaden_url" = "https://swisscovid.foph-coronavirus.ch/screening?contactDates={CONTACT_DATES}";
 
 /*Tracing Erinnerung 4 Stunden Radio Button*/
-"tracing_reminder_radio_four_hours" = "4 hours";
+"tracing_reminder_radio_four_hours" = "4 ሰዓታት";
 
 /*Tracing Erinnerung 8 Stunden Radio Button*/
-"tracing_reminder_radio_eight_hours" = "8 hours";
+"tracing_reminder_radio_eight_hours" = "8 ሰዓታት";
 
 /*Tracing Erinnerung 12 Stunden Radio Button*/
-"tracing_reminder_radio_twelve_hours" = "12 hours";
+"tracing_reminder_radio_twelve_hours" = "12 ሰዓታት";
 
 /*Tracing Erinnerung keine Erinngerung Radio Button*/
-"tracing_reminder_radio_no_reminder" = "No reminder";
+"tracing_reminder_radio_no_reminder" = "መዘኻኸሪ የለን";
 
 /*Tracing Erinnerung bestätigen Button*/
-"tracing_reminder_confirm_button" = "OK";
+"tracing_reminder_confirm_button" = "ሕራይ";
 
 /*Tracing Erinnerung abbrechen Button*/
-"tracing_reminder_cancel_button" = "Cancel";
+"tracing_reminder_cancel_button" = "ስረዝ";
 
 /*Tracing Erinnerung Titel*/
-"tracing_reminder_title" = "Set reminder";
+"tracing_reminder_title" = "መዘኻኸሪ ምውላዕ";
 
 /*Tracing Erinnerung Untertitel*/
-"tracing_reminder_subtitle" = "SwissCovid can remind you to reactivate tracing.";
+"tracing_reminder_subtitle" = "SwissCovid እቲ ምክትታል ክውላዕ ከምዘለዎ ከዘክረኩም ይኽእል።";
 
 /*Tracing Erinnerung Warnung*/
-"tracing_reminder_warning" = "Tracing is deactivated.";
+"tracing_reminder_warning" = "እቲ ምክትታል ክጠፍእ እዩ።";
 
 /*Kantonname Zürich*/
-"canton_zurich" = "Zurich";
+"canton_zurich" = "ዙሪኽ (Zürich)";
 
 /*Kantonname Aargau*/
-"canton_aargau" = "Aargau";
+"canton_aargau" = "ኣርጋው (Aargau)";
 
 /*Kantonname Appenzell Innerrhoden*/
-"canton_appenzell_innerrhoden" = "Appenzell Innerrhoden";
+"canton_appenzell_innerrhoden" = "ኣፐንሰል ኢነርሆደን (Appenzell Innerrhoden)";
 
 /*Kantonname Appenzell Ausserrhoden*/
-"canton_appenzell_ausserrhoden" = "Appenzell Ausserrhoden";
+"canton_appenzell_ausserrhoden" = "ኣፐንሰል ኣውሰርሆደን (Appenzell Ausserrhoden)";
 
 /*Kantonname Bern*/
-"canton_berne" = "Bern";
+"canton_berne" = "በርን (Bern)";
 
 /*Kantonname Basel-Landschaft*/
-"canton_basel_country" = "Basel-Landschaft";
+"canton_basel_country" = "ባሰል-ሃገር (Basel-Landschaft)";
 
 /*Kantonname Basel-Stadt*/
-"canton_basel_city" = "Basel-Stadt";
+"canton_basel_city" = "ባሰል-ከተማ (Basel-Stadt)";
 
 /*Kantonname Freiburg*/
-"canton_fribourg" = "Fribourg";
+"canton_fribourg" = "ፍራይቡርግ (Freiburg)";
 
 /*Kantonname Genf*/
-"canton_geneva" = "Geneva";
+"canton_geneva" = "ገንፍ (Genf)";
 
 /*Kantonname Glarus*/
-"canton_glarus" = "Glarus";
+"canton_glarus" = "ግላሩስ (Glarus)";
 
 /*Kantonname Graubünden*/
-"canton_graubuenden" = "Graubünden";
+"canton_graubuenden" = "ግራውቡንደን (Graubünden)";
 
 /*Kantonname Jura*/
-"canton_jura" = "Jura";
+"canton_jura" = "ዩራ (Jura)";
 
 /*Kantonname Luzern*/
-"canton_lucerne" = "Lucerne";
+"canton_lucerne" = "ሉሰርን (Luzern)";
 
 /*Kantonname Neuenburg*/
-"canton_neuchatel" = "Neuchâtel";
+"canton_neuchatel" = "ነየንቡርግ (Neuenburg)";
 
 /*Kantonname Nidwalden*/
-"canton_nidwalden" = "Nidwalden";
+"canton_nidwalden" = "ኒድቫልደን (Nidwalden)";
 
 /*Kantonname Obwalden*/
-"canton_obwalden" = "Obwalden";
+"canton_obwalden" = "ኦብቫልደን (Obwalden)";
 
 /*Kantonname St. Gallen*/
-"canton_st_gallen" = "St. Gallen";
+"canton_st_gallen" = "ቅዱስ/St. ጋለን (St. Gallen)";
 
 /*Kantonname Schaffhausen*/
-"canton_schaffhausen" = "Schaffhausen";
+"canton_schaffhausen" = "ሻፍሃውሰን (Schaffhausen)";
 
 /*Kantonname Solothurn*/
-"canton_solothurn" = "Solothurn";
+"canton_solothurn" = "ሶሎቱርን (Solothurn)";
 
 /*Kantonname Schwyz*/
-"canton_schwyz" = "Schwyz";
+"canton_schwyz" = "ሽቪትስ (Schwyz)";
 
 /*Kantonname Thurgau*/
-"canton_thurgovia" = "Thurgau";
+"canton_thurgovia" = "ቱርጋው (Thurgau)";
 
 /*Kantonname Tessin*/
-"canton_ticino" = "Ticino";
+"canton_ticino" = "ተሲን (Tessin)";
 
 /*Kantonname Uri*/
-"canton_uri" = "Uri";
+"canton_uri" = "ኡሪ (Uri)";
 
 /*Kantonname Waadt*/
-"canton_vaud" = "Vaud";
+"canton_vaud" = "ቫድ (Waadt)";
 
 /*Kantonname Wallis*/
-"canton_valais" = "Valais";
+"canton_valais" = "ቫሊስ (Wallis)";
 
 /*Kantonname Zug*/
-"canton_zug" = "Zug";
+"canton_zug" = "ሱግ (Zug)";
 
 /*Kantonname Fürstentum Liechtenstein*/
-"country_liechtenstein" = "Principality of Liechtenstein";
+"country_liechtenstein" = "ምድረ-ልኡል ሊክተንሽታይን (Fürstentum Liechtenstein)";
 
 /*Test standorte Popup Titel*/
-"test_location_popup_title" = "Where can I get a test?";
+"test_location_popup_title" = "መርመራ ኸ ኣበይ ክገብር እኽእል፧";
 
 /*Test standorte Popup Text*/
-"test_location_popup_text" = "You can be tested for the new coronavirus at various doctors, test centres, hospitals and pharmacies. You will find information on the various testing facilities on the relevant cantonal websites:";
+"test_location_popup_text" = "ኣብ ዝተፈላለዩ ሓኻይም፣ ናይ መርመራ ማእከት፣ ሆስፒታላት ከምኡ'ውን ቤት-መድሃኒታት ናይ ሓድሽ ኮሮናቫይረስ መርመራ ክትገብሩ ትኽእሉ። ሓበሬታ ብዛዕባ ቀረባት መርመራ ኣብዚኦም ክፍለ-ሃገራውያን መርበባት ኢንተርነት ትረኽቡ፥";
 
 /*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
-"android_reminder_channel_name" = "Tracing activation reminder";
+"android_reminder_channel_name" = "ናይ ምክትታል ንጥፈት መዘኻኸሪ";
 
 /*Titel der Tracing-Reaktivierungs-Notification*/
-"tracing_reminder_notification_title" = "Activate tracing";
+"tracing_reminder_notification_title" = "ምክትታል ምውላዕ";
 
 /*Subtitle der Tracing-Reaktivierungs-Notification*/
-"tracing_reminder_notification_subtitle" = "Activate tracing so that the app can save contacts and receive notifications.";
+"tracing_reminder_notification_subtitle" = "እቲ ኤፕ ምርኽኻብ ክዕቅብ ከምኡ'ውን መልእኽትታት ክቕበል መታን ክኽእል እቲ ምክትታል ወልዕዎ ኢኹም።";
 
 /*iOS Blockierende View bei benötigten OS update: Titel*/
-"ios_software_update_blocking_title" = "Software update required";
+"ios_software_update_blocking_title" = "ምምሕዳስ ሶፍትዌር የድሊ'ዩ";
 
 /*iOS Blockierende View bei benötigten OS update: text*/
-"ios_software_update_blocking_text" = "For SwissCovid to work you must install the latest version of iOS.";
+"ios_software_update_blocking_text" = "SwissCovid መታን ክሰርሕ እቲ ዝሓደሸ መርገጽ iOS ክትተኽሉ ኣለኩም።";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial title*/
-"ios_software_update_blocking_tutorial_title" = "How to install it:";
+"ios_software_update_blocking_tutorial_title" = "ከምዚ እዩ ዝሰርሕ፥";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial first*/
-"ios_software_update_blocking_tutorial_first" = "Open Settings on your home screen";
+"ios_software_update_blocking_tutorial_first" = "ኣብ መበገሲ ገጽ (ሆም-ስክሪን) «Einstellungen/ምስትኽኻል» ዝብል ክፈቱ";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial second*/
-"ios_software_update_blocking_tutorial_second" = "Go to...";
+"ios_software_update_blocking_tutorial_second" = "ናብ ... ኪዱ";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial second settings general (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
-"ios_software_update_blocking_tutorial_second_settings" = "General";
+"ios_software_update_blocking_tutorial_second_settings" = "ሓፈሻዊ";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial third*/
-"ios_software_update_blocking_tutorial_third" = "Select...";
+"ios_software_update_blocking_tutorial_third" = "... ምረጹ";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial third software update (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
-"ios_software_update_blocking_tutorial_third_software_update" = "Software Update";
+"ios_software_update_blocking_tutorial_third_software_update" = "ምምሕዳስ ሶፍትዌር";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial fourth*/
-"ios_software_update_blocking_tutorial_fourth" = "Tap...";
+"ios_software_update_blocking_tutorial_fourth" = "ኣብ ... ጠውቑ";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial fourth load and install (Muss mit dem Eintrag in den IOS Einstellungen übereinstimmen!)*/
-"ios_software_update_blocking_tutorial_fourth_load_and_install" = "Download and Install";
+"ios_software_update_blocking_tutorial_fourth_load_and_install" = "ምስብን ምትኻልን";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial apple button*/
-"ios_software_update_blocking_tutorial_apple" = "Apple guide";
+"ios_software_update_blocking_tutorial_apple" = "መምርሒ ካብ ትካል Apple";
 
 /*iOS Blockierende View bei benötigten OS update: Tutorial apple url*/
 "ios_software_update_blocking_tutorial_apple_url" = "https://support.apple.com/ti-ti/HT204204";
 
 /*iOS Notification Text bei benötigten OS update*/
-"ios_software_update_notification_title" = "Software update required";
+"ios_software_update_notification_title" = "ምምሕዳስ ሶፍትዌር የድሊ'ዩ";
 
 /*iOS Notification Text bei benötigten OS update*/
-"ios_software_update_notification_text" = "For SwissCovid to work you must install the latest version of iOS.";
+"ios_software_update_notification_text" = "SwissCovid መታን ክሰርሕ እቲ ዝሓደሸ መርገጽ iOS ክትተኽሉ ኣለኩም።";
 
 /*Button Text um die Isolation zu beenden*/
-"delete_infection_dialog_finish_button" = "End";
+"delete_infection_dialog_finish_button" = "ተዛዘመ";
 
 /*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
-"tracing_ended_info" = "Notifications will no longer be stored.\n\nTracing can be reactivated after isolation.";
+"tracing_ended_info" = "ምዕቃብ ዝኾነ ምርኽኻብ ተገዲፉ።\n\nእቲ ምክትታል ድሕሪ ግለላ ምሊሱ ክውላዕ ይከኣል።";
 "testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
 "testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
 "testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
