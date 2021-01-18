@@ -101,8 +101,8 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
             }
         }
 
-        // for these host we just pin the intermediate certificate of quoVadis
-        if let c = bundle.getCertificate(with: "QuoVadis") {
+        // for these host we just pin the root certificate of quoVadis
+        if let c = bundle.getCertificate(with: "qvrca2g3", fileExtension: "crt") {
             let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [c], validateHost: true)
             evaluators["www.pt-d.bfs.admin.ch"] = evaluator
             evaluators["www.pt-a.bfs.admin.ch"] = evaluator

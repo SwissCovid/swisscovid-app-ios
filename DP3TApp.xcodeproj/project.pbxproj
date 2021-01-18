@@ -144,7 +144,6 @@
 		242D225A245C4BD8005DAEA8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
 		242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
 		242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */; };
-		242D225D245C4BD8005DAEA8 /* QuoVadis.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7370245AF38E00C934B8 /* QuoVadis.der */; };
 		242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
 		242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2A242D04280017C4F9 /* Inter-Light.ttf */; };
@@ -340,7 +339,6 @@
 		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
 		F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
 		F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */; };
-		F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7370245AF38E00C934B8 /* QuoVadis.der */; };
 		F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */; };
 		F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
 		F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
@@ -378,6 +376,8 @@
 		F869AED524F54C7D00FC4556 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
+		F876856625B5A14100538B8B /* qvrca2g3.crt in Resources */ = {isa = PBXBuildFile; fileRef = F876856525B5A14100538B8B /* qvrca2g3.crt */; };
+		F876856725B5A14100538B8B /* qvrca2g3.crt in Resources */ = {isa = PBXBuildFile; fileRef = F876856525B5A14100538B8B /* qvrca2g3.crt */; };
 		F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370D258C2613008DCC81 /* NSRadioButton.swift */; };
@@ -636,7 +636,6 @@
 		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
 		F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F80E7370245AF38E00C934B8 /* QuoVadis.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = QuoVadis.der; sourceTree = "<group>"; };
 		F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBPinnedCertificatesTrustEvaluator.swift; sourceTree = "<group>"; };
 		F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-a.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
@@ -657,6 +656,7 @@
 		F862124D257A727E0043351E /* NSLinkHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLinkHandler.swift; sourceTree = "<group>"; };
 		F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMoreTestInformationPopupViewController.swift; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
+		F876856525B5A14100538B8B /* qvrca2g3.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = qvrca2g3.crt; sourceTree = "<group>"; };
 		F87C369F258B6652008DCC81 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
 		F87C370D258C2613008DCC81 /* NSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
 		F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
@@ -1390,7 +1390,7 @@
 				F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */,
 				F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */,
 				F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */,
-				F80E7370245AF38E00C934B8 /* QuoVadis.der */,
+				F876856525B5A14100538B8B /* qvrca2g3.crt */,
 			);
 			path = Certificates;
 			sourceTree = "<group>";
@@ -1592,7 +1592,6 @@
 				48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
 				242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */,
-				242D225D245C4BD8005DAEA8 /* QuoVadis.der in Resources */,
 				F8A6BE2224C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */,
 				F8A6BE1A24C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
@@ -1615,6 +1614,7 @@
 				242D2267245C4BD8005DAEA8 /* Localizable.strings in Resources */,
 				242D2268245C4BD8005DAEA8 /* Inter-Regular.ttf in Resources */,
 				242D226A245C4BD8005DAEA8 /* Inter-Medium.ttf in Resources */,
+				F876856725B5A14100538B8B /* qvrca2g3.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1630,7 +1630,6 @@
 				48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
 				F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
 				F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */,
-				F80E7374245AF51C00C934B8 /* QuoVadis.der in Resources */,
 				F8A6BE2124C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				F8A6BE1924C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
@@ -1653,6 +1652,7 @@
 				DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */,
 				DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */,
 				DCB4430C242DD34700F19AA5 /* Inter-Medium.ttf in Resources */,
+				F876856625B5A14100538B8B /* qvrca2g3.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
