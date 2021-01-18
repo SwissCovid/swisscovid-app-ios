@@ -91,23 +91,21 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
                      "codegen-service.bag.admin.ch",
                      "codegen-service-d.bag.admin.ch",
                      "codegen-service-a.bag.admin.ch",
-                     "codegen-service-t.bag.admin.ch"]
+                     "codegen-service-t.bag.admin.ch",
+                     "www.pt-d.bfs.admin.ch",
+                     "www.pt-a.bfs.admin.ch",
+                     "www.pt-t.bfs.admin.ch",
+                     "www.pt.bfs.admin.ch"]
         for host in hosts {
             if let certificate = bundle.getCertificate(with: host) {
-                let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [certificate], validateHost: true)
+                let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [certificate],
+                                                                   acceptSelfSignedCertificates: true,
+                                                                   performDefaultValidation: false,
+                                                                   validateHost: true)
                 evaluators[host] = evaluator
             } else {
                 assertionFailure("Could not load certificate for pinned host")
             }
-        }
-
-        // for these host we just pin the intermediate certificate of quoVadis
-        if let c = bundle.getCertificate(with: "QuoVadis") {
-            let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [c], validateHost: true)
-            evaluators["www.pt-d.bfs.admin.ch"] = evaluator
-            evaluators["www.pt-a.bfs.admin.ch"] = evaluator
-            evaluators["www.pt-t.bfs.admin.ch"] = evaluator
-            evaluators["www.pt.bfs.admin.ch"] = evaluator
         }
 
         return UBServerTrustManager(evaluators: evaluators)
