@@ -17,7 +17,9 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         return .init(reloadButton: button, errorImage: UIImage(named: "ic-info-outline"))
     }()
 
-    private let appUsageStatusticsModule = NSAppUsageStatisticsModuleView()
+    private let appUsageStatisticsModule = NSAppUsageStatisticsModuleView()
+
+    private let covidCodesStatisticsModule = NSCovidCodesStatisticsModuleView()
 
     private let covidStatisticsModule = NSCovidStatisticsModuleView()
 
@@ -43,6 +45,13 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         super.viewDidLoad()
         setupLayout()
 
+        covidCodesStatisticsModule.infoButtonCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+
+            let popup = NSStatisticInfoPopupViewController()
+            strongSelf.present(popup, animated: true, completion: nil)
+        }
+
         shareModule.shareButtonTouched = { [weak self] in
             self?.share()
         }
@@ -58,15 +67,16 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
 
     private func loadData() {
         covidStatisticsModule.setData(statisticData: nil)
-        appUsageStatusticsModule.setData(statisticData: nil)
+        appUsageStatisticsModule.setData(statisticData: nil)
         loadingView.startLoading()
         loader.get { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(response):
                 self.loadingView.stopLoading()
+                self.appUsageStatisticsModule.setData(statisticData: response)
+                self.covidCodesStatisticsModule.setData(statisticData: response)
                 self.covidStatisticsModule.setData(statisticData: response)
-                self.appUsageStatusticsModule.setData(statisticData: response)
             case let .failure(error):
                 self.loadingView.stopLoading(error: error) { [weak self] in
                     self?.loadData()
@@ -88,7 +98,11 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         navigationItem.rightBarButtonItem?.tintColor = .ns_blue
         navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
 
-        stackScrollView.addArrangedView(appUsageStatusticsModule)
+        stackScrollView.addArrangedView(appUsageStatisticsModule)
+
+        stackScrollView.addSpacerView(NSPadding.medium)
+
+        stackScrollView.addArrangedView(covidCodesStatisticsModule)
 
         stackScrollView.addSpacerView(NSPadding.medium)
 

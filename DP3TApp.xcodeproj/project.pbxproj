@@ -274,6 +274,9 @@
 		DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
 		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
+		DC17F96125DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */; };
+		DC17F96725DC26AC00C7C706 /* NSSingleStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */; };
+		DC17F97125DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
 		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
 		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
@@ -595,6 +598,9 @@
 		DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHearingImpairedPopupViewController.swift; sourceTree = "<group>"; };
 		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
 		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
+		DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodesStatisticsModuleView.swift; sourceTree = "<group>"; };
+		DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSingleStatisticView.swift; sourceTree = "<group>"; };
+		DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStatisticInfoPopupViewController.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepModel.swift; sourceTree = "<group>"; };
 		DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepViewController.swift; sourceTree = "<group>"; };
@@ -1362,10 +1368,13 @@
 			isa = PBXGroup;
 			children = (
 				F80E405F2508D4D000876906 /* NSStatisticsViewController.swift */,
+				DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */,
 				F80E40622508F83100876906 /* NSStatisticsHeaderView.swift */,
 				F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */,
 				F80E40652508FE1600876906 /* NSStatsticsModuleHeader.swift */,
 				F80E40682508FE3000876906 /* NSCovidStatisticsModuleView.swift */,
+				DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */,
+				DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */,
 				F8089693250B55080023F639 /* NSStatisticsModuleLegendView.swift */,
 				F8089696250B63780023F639 /* NSStatisticsShareModule.swift */,
 				F80E407525092AD800876906 /* Chart */,
@@ -2006,6 +2015,7 @@
 				24780B2C242F3CC2003BB26C /* NSInformStepViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
+				DC17F96125DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift in Sources */,
 				F80E406D2509002200876906 /* StatisticsResponse.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
 				F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
@@ -2071,6 +2081,7 @@
 				DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,
 				DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */,
+				DC17F96725DC26AC00C7C706 /* NSSingleStatisticView.swift in Sources */,
 				8E24DEC124914088002B1F16 /* NSSynchronizationPersistence.swift in Sources */,
 				F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */,
 				F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */,
@@ -2139,6 +2150,7 @@
 				F80E407725092AE100876906 /* NSChartColumnView.swift in Sources */,
 				24780B11242DFD2F003BB26C /* NSReportsModuleView.swift in Sources */,
 				F8ABA2D32525FC3600A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,
+				DC17F97125DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift in Sources */,
 				F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				6E6E516F242F4FE0006E532E /* ConfigManager.swift in Sources */,
 				6E6E5184242F9586006E532E /* NSInformThankYouViewController.swift in Sources */,

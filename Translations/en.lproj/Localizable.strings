@@ -880,9 +880,6 @@
 /*Info text that is displayed on the Home Travel Card.*/
 "travel_home_description" = "";
 
-/*Introductory Text that is displayed at the top of the travel settings screen.*/
-"travel_screen_introduction" = "";
-
 /*First title for the travel feature explanation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "";
 
@@ -894,27 +891,6 @@
 
 /*Second text for the travel feature explanation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "";
-
-/*Button title for the Add Countries Button in the travel screen.*/
-"travel_screen_add_countries_button" = "";
-
-/*Text that is displayed under a country name that indicates until what date the user will still receive notifications from this country.*/
-"travel_screen_notifications_activated_until" = "";
-
-/*List Header for the favourites in the "Add countries" Screen of the Travel feature.*/
-"travel_screen_favourites" = "";
-
-/*List header for other countries in the "add countries" screen of the travel feature.*/
-"travel_screen_other_countries" = "";
-
-/*Title for the explanation at the bottom of the "add countries" screen of the travel feature.*/
-"travel_screen_add_countries_explanation_title" = "";
-
-/*Text for the explanation at the bottom of the "add countries" screen of the travel feature.*/
-"travel_screen_add_countries_explanation_text" = "";
-
-/*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
-"travel_report_code_info" = "";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "This button leaves the app and opens a website.";
@@ -963,7 +939,7 @@
 "stats_more_statistics_button" = "View more statistics";
 
 /*URL zu weiteren statistiken*/
-"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/en/home/innovative-methods/swisscovid-app-monitoring.html";
+"stats_more_statistics_url" = "https://www.covid19.admin.ch/de/overview";
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
 "stats_loading_error_text" = "Currently unable to load stats";
@@ -1275,9 +1251,6 @@
 /*Überschrift des Covidcodes-Statistik-Moduls*/
 "stats_covidcodes_title" = "";
 
-/*Untertitel des Covidcodes-Statistik-Moduls*/
-"stats_covidcodes_subtitle" = "";
-
 /*Überschrift des Fallzahlen-Statistik Moduls*/
 "stats_cases_title" = "";
 
@@ -1324,10 +1297,10 @@
 "stats_cases_current_description" = "";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "You have tested positive and after 4 hours have not yet received a Covidcode? \nIf this is the case, please contact the Coronavirus Infoline:";
+"inform_detail_infobox1_text" = "Have you tested positive and still haven’t received a Covidcode after 4 hours?\nContact the Covidcode Infoline:";
 
 /*Inform Detail: Infobox Title*/
-"inform_detail_infobox1_title" = "";
+"inform_detail_infobox1_title" = "Don’t have a Covidcode yet?";
 
 /*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
 "homescreen_isolation_ended_popup_title" = "";
@@ -1340,3 +1313,21 @@
 
 /*Nein-Antwort*/
 "answer_no" = "";
+
+/*Text in der Infobox auf dem Reisen-Screen*/
+"travel_screen_info" = "";
+
+/*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
+"travel_screen_compatible_countries" = "";
+
+/*Informieren Flow: Erster Screen Reise-Infotext*/
+"inform_code_travel_text" = "";
+
+/*Überschrift der "eingegebene Covidcodes" Statistikbox*/
+"stats_covidcodes_total_header" = "";
+
+/*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_header" = "";
+
+/*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
+"stats_cases_rel_prev_week_popup_header" = "";

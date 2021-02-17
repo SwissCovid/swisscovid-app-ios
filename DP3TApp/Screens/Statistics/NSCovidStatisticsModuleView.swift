@@ -12,12 +12,22 @@ import UIKit
 
 class NSCovidStatisticsModuleView: UIView {
     private let stackView = UIStackView()
+    private let titleLabel = NSLabel(.title, textAlignment: .center)
+    private let subtitleLabel = NSLabel(.textLight, textAlignment: .center)
+    private let infoButton = UBButton()
+
+    private let statsStackView = UIStackView()
+    private let stat1 = NSSingleStatisticView(textColor: .ns_purple)
+    private let stat2 = NSSingleStatisticView(textColor: .ns_purple)
 
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
     private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_gray, textAlignment: .right)
 
-    private lazy var sections: [UIView] = [statisticsChartView,
+    private lazy var sections: [UIView] = [titleLabel,
+                                           subtitleLabel,
+                                           statsStackView,
+                                           statisticsChartView,
                                            legend,
                                            lastUpdatedLabel]
 
@@ -27,12 +37,21 @@ class NSCovidStatisticsModuleView: UIView {
         return df
     }()
 
+    var infoButtonCallback: (() -> Void)? {
+        get { infoButton.touchUpCallback }
+        set { infoButton.touchUpCallback = newValue }
+    }
+
     func setData(statisticData: StatisticsResponse?) {
         guard let data = statisticData else {
             statisticsChartView.history = []
             lastUpdatedLabel.alpha = 0
             return
         }
+
+        stat1.statistic = data.newInfectionsAverage
+        stat2.statistic = data.newInfectionsRelative
+
         statisticsChartView.history = data.history
         lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
         lastUpdatedLabel.alpha = 1
@@ -46,6 +65,8 @@ class NSCovidStatisticsModuleView: UIView {
         setupLayout()
         updateLayout()
 
+        setCustomSpacing(NSPadding.medium, after: subtitleLabel)
+        setCustomSpacing(NSPadding.large, after: statsStackView)
         setCustomSpacing(NSPadding.medium, after: statisticsChartView)
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: legend)
         lastUpdatedLabel.alpha = 0
@@ -64,6 +85,24 @@ class NSCovidStatisticsModuleView: UIView {
         stackView.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(NSPadding.medium)
             make.leading.trailing.bottom.equalToSuperview()
+        }
+
+        // Labels
+        titleLabel.text = "stats_cases_title".ub_localized
+        subtitleLabel.text = "stats_cases_subtitle".ub_localized
+
+        // Stats
+        statsStackView.spacing = NSPadding.small
+        statsStackView.distribution = .fillEqually
+        statsStackView.addArrangedView(stat1)
+        statsStackView.addArrangedView(stat2)
+
+        // Info button (added after stackView so it is on top)
+        infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        infoButton.tintColor = .ns_purple
+        addSubview(infoButton)
+        infoButton.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(NSPadding.medium)
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)

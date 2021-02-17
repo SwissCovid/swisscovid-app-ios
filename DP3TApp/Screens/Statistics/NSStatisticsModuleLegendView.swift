@@ -17,7 +17,6 @@ class NSStatisticsModuleLegendView: UIStackView {
         spacing = NSPadding.medium
         addArrangedSubview(NSStatisticsModuleLegendViewItem(type: .newInfections))
         addArrangedSubview(NSStatisticsModuleLegendViewItem(type: .newInfectionsAverage))
-        addArrangedSubview(NSStatisticsModuleLegendViewItem(type: .enteredCodes))
     }
 
     required init(coder _: NSCoder) {
@@ -27,7 +26,7 @@ class NSStatisticsModuleLegendView: UIStackView {
 
 class NSStatisticsModuleLegendViewItem: UIView {
     enum DataType {
-        case newInfections, newInfectionsAverage, enteredCodes
+        case newInfections, newInfectionsAverage
     }
 
     private let imageView = UIImageView()
@@ -59,11 +58,6 @@ class NSStatisticsModuleLegendViewItem: UIView {
             imageView.image = UIImage(named: "ic-legend-average")
             label.textColor = UIColor.ns_purple
             label.text = "stats_legend_new_infections_average".ub_localized
-        case .enteredCodes:
-            imageView.backgroundColor = .ns_blue
-            imageView.image = nil
-            label.textColor = .ns_blue
-            label.text = "stats_legend_entered_covidcodes".ub_localized
         }
     }
 
