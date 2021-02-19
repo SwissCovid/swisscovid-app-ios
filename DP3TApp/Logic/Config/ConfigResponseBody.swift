@@ -48,6 +48,7 @@ class ConfigResponseBody: UBCodable {
         let urlTitle: String?
         let infoId: String?
         let isDismissible: Bool?
+        let hearingImpairedInfo: String?
     }
 
     class GAENSDKConfig: Codable {
@@ -63,7 +64,7 @@ class ConfigResponseBody: UBCodable {
         let enterCovidcodeBoxTitle: String
         let enterCovidcodeBoxText: String
         let enterCovidcodeBoxButtonTitle: String
-        let infoBox: InfoBox?
+        var infoBox: InfoBox?
         let faqEntries: [FAQEntry]
 
         class FAQEntry: UBCodable {

@@ -61,6 +61,7 @@ struct UIStateModel: Equatable {
             var url: URL?
             var isDismissible: Bool?
             var infoId: String?
+            var hearingImpairedInfo: String?
         }
 
         var header: TracingState = .tracingActive

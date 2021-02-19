@@ -269,6 +269,9 @@
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
 		B67A11AE24B8CB1700B46306 /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		B6AEA30824B74ACA0055B5BB /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
+		DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
+		DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
+		DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
 		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
@@ -587,6 +590,8 @@
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
 		B6AEA30724B74ACA0055B5BB /* NSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
+		DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLinkifiedTextView.swift; sourceTree = "<group>"; };
+		DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHearingImpairedPopupViewController.swift; sourceTree = "<group>"; };
 		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
 		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -1333,8 +1338,10 @@
 			children = (
 				DCA3FFB324502D370003F5AD /* NSTracingErrorView.swift */,
 				6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */,
+				DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */,
 				6E33086924506E0600913B0E /* NSExplanationView.swift */,
 				B6AEA30724B74ACA0055B5BB /* NSImageView.swift */,
+				DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */,
 				F87C36EA258C25B1008DCC81 /* RadioButton */,
 			);
 			path = Views;
@@ -1941,6 +1948,7 @@
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
+				DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */,
 				242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				F80E407825092AE100876906 /* NSChartColumnView.swift in Sources */,
@@ -2043,6 +2051,7 @@
 				6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */,
 				DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */,
 				6E33086424503D0900913B0E /* NSWhatToDoSymptomViewController.swift in Sources */,
+				DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */,
 				DC286A26242CE0B9001D5344 /* Environment.swift in Sources */,
 				F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */,
 				245626A1245265340058D11F /* ConfigLoadOperation.swift in Sources */,
@@ -2057,6 +2066,7 @@
 				F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
+				DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */,
 				6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */,
 				DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */,
 				8E24DEC124914088002B1F16 /* NSSynchronizationPersistence.swift in Sources */,
