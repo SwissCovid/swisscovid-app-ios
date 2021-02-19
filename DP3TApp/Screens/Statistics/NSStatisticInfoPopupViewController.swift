@@ -12,13 +12,40 @@
 import UIKit
 
 class NSStatisticInfoPopupViewController: NSPopupViewController {
+    private let type: StatisticInfoPopupType
+
+    init(type: StatisticInfoPopupType) {
+        self.type = type
+
+        super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.large, bottom: 40, right: NSPadding.large))
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let header = NSLabel(.textBold, textColor: .ns_blue)
-        header.text = "Details zu den Zahlen"
+        tintColor = type.accentColor
+
+        let header = NSLabel(.textBold, textColor: type.accentColor)
+        header.text = "stats_info_popup_title".ub_localized
+
+        let subtitle = NSLabel(.title)
+        subtitle.text = type.subtitle
 
         stackView.addArrangedView(header)
-        stackView.addSpacerView(NSPadding.medium)
+        stackView.addSpacerView(NSPadding.small)
+        stackView.addArrangedView(subtitle)
+        stackView.addSpacerView(NSPadding.large)
+
+        for (label, description) in type.stats {
+            let title = NSLabel(.textBold)
+            title.text = label
+            let desc = NSLabel(.textLight)
+            desc.text = description
+
+            stackView.addArrangedView(title)
+            stackView.addSpacerView(NSPadding.small)
+            stackView.addArrangedView(desc)
+            stackView.addSpacerView(NSPadding.large)
+        }
     }
 }

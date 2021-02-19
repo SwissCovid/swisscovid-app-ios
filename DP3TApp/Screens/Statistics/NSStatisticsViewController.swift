@@ -48,8 +48,15 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         covidCodesStatisticsModule.infoButtonCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            let popup = NSStatisticInfoPopupViewController()
-            strongSelf.present(popup, animated: true, completion: nil)
+            let popup = NSStatisticInfoPopupViewController(type: .covidcodes)
+            strongSelf.present(popup, animated: true)
+        }
+
+        covidStatisticsModule.infoButtonCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+
+            let popup = NSStatisticInfoPopupViewController(type: .cases)
+            strongSelf.present(popup, animated: true)
         }
 
         shareModule.shareButtonTouched = { [weak self] in
