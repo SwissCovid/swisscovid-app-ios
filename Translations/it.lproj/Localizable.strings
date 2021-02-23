@@ -606,7 +606,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.\n\nSei risultato positivo al test e dopo quattro ore non hai ancora ricevuto un codice Covid? Allora contatta la Infoline Coronavirus";
+"inform_detail_faq1_text" = "Le persone che sono risultate positive al test del nuovo coronavirus ricevono un codice Covid.\n\nIn questo modo si garantisce che l'app segnali soltanto i casi confermati.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Che cosa viene inviato?";
@@ -633,7 +633,7 @@
 "symptom_faq1_title" = "Quali sono i sintomi della COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Questi sono i sintomi più frequenti:\n\n– febbre, sensazione di febbre\n– mal di gola\n– tosse (perlopiù secca)\n– affanno\n– dolori muscolari\n– perdita improvvisa dell'olfatto e/o del gusto";
+"symptom_faq1_text" = "Questi sono i sintomi più frequenti:\n\n– febbre, sensazione di febbre\n– mal di gola\n– tosse (perlopiù secca)\n– affanno\n– dolori al petto\n– perdita improvvisa dell'olfatto e/o del gusto\n\nPossono inoltre comparire i seguenti sintomi:\n\n– mal di testa\n– malessere, debolezza generale\n– dolori muscolari\n– raffreddore\n– sintomi gastrointestinali (nausea, vomito, diarrea, mal di pancia)\n– eruzioni cutanee";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Perché il tracciamento è disattivato?";
@@ -1273,3 +1273,75 @@
 /*Fuzzy*/
 "testlocation_url_canton_zurich" = "https://www.zh.ch/de/gesundheit/coronavirus.html";
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
+
+/*text for info box pop up for the hearing impaired*/
+"hearing_impaired_info" = "";
+
+/*Überschrift des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_title" = "";
+
+/*Untertitel des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_subtitle" = "";
+
+/*Überschrift des Fallzahlen-Statistik Moduls*/
+"stats_cases_title" = "";
+
+/*Untertitel des Fallzahlen-Statistik-Moduls*/
+"stats_cases_subtitle" = "";
+
+/*Label der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_label" = "";
+
+/*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_label" = "";
+
+/*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_label" = "";
+
+/*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_label" = "";
+
+/*Überschrift des Info-Popups auf dem Statistik-Screen*/
+"stats_info_popup_title" = "";
+
+/*Untertitel des Infopopups zu Covidcodes-Statistiken*/
+"stats_info_popup_subtitle_covidcodes" = "";
+
+/*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
+"stats_info_popup_subtitle_cases" = "";
+
+/*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_description" = "";
+
+/*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_description" = "";
+
+/*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_description" = "";
+
+/*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_description" = "";
+
+/*Label der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_label" = "";
+
+/*Beschreibung der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_description" = "";
+
+/*Inform Detail: Infobox Text*/
+"inform_detail_infobox1_text" = "Sei risultato positivo al test e dopo quattro ore non hai ancora ricevuto un codice Covid? Allora contatta la Infoline Coronavirus";
+
+/*Inform Detail: Infobox Title*/
+"inform_detail_infobox1_title" = "";
+
+/*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_title" = "";
+
+/*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_text" = "";
+
+/*Ja-Antwort*/
+"answer_yes" = "";
+
+/*Nein-Antwort*/
+"answer_no" = "";

@@ -28,6 +28,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private let appTitleView = NSAppTitleView()
 
+    private var isFirstAppearance: Bool = true
+
     // MARK: - View
 
     override init() {
@@ -115,6 +117,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
+
+        if isFirstAppearance {
+            isFirstAppearance = false
+            showEndIsolationPopupIfNecessary()
+        }
     }
 
     private var finishTransition: (() -> Void)?
@@ -327,4 +334,25 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }
         }
     #endif
+
+    // MARK: - End isolation popup
+
+    private func showEndIsolationPopupIfNecessary() {
+        // If the state is not infected, never show the end isolation popup
+        guard lastState.homescreen.reports.report == .infected else {
+            return
+        }
+
+        if let questionDate = ReportingManager.shared.endIsolationQuestionDate, questionDate < Date() {
+            let alert = UIAlertController(title: "homescreen_isolation_ended_popup_title".ub_localized, message: "homescreen_isolation_ended_popup_text".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "answer_yes".ub_localized, style: .default, handler: { _ in
+                TracingManager.shared.deletePositiveTest()
+            }))
+            alert.addAction(UIAlertAction(title: "answer_no".ub_localized, style: .cancel, handler: { _ in
+                ReportingManager.shared.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24) // Ask again in 1 day
+            }))
+
+            present(alert, animated: true, completion: nil)
+        }
+    }
 }
