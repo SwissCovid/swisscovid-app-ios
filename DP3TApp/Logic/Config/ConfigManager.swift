@@ -143,7 +143,6 @@ class ConfigManager: NSObject {
             DispatchQueue.main.async {
                 if let config = try? JSONDecoder().decode(ConfigResponseBody.self, from: data) {
                     ConfigManager.currentConfig = config
-                    ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value?.infoBox = config.infoBox?.value
                     Self.lastConfigLoad = Date()
                     Self.lastConfigUrl = request.url?.absoluteString
                     completion(config)
