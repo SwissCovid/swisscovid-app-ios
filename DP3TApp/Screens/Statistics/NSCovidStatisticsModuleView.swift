@@ -22,14 +22,12 @@ class NSCovidStatisticsModuleView: UIView {
 
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
-    private let lastUpdatedLabel = NSLabel(.interRegular, textColor: .ns_gray, textAlignment: .right)
 
     private lazy var sections: [UIView] = [titleLabel,
                                            subtitleLabel,
                                            statsStackView,
                                            statisticsChartView,
-                                           legend,
-                                           lastUpdatedLabel]
+                                           legend]
 
     private static var formatter: DateFormatter = {
         let df = DateFormatter()
@@ -45,16 +43,13 @@ class NSCovidStatisticsModuleView: UIView {
     func setData(statisticData: StatisticsResponse?) {
         guard let data = statisticData else {
             statisticsChartView.history = []
-            lastUpdatedLabel.alpha = 0
             return
         }
 
         stat1.statistic = data.newInfectionsAverage
         stat2.statistic = data.newInfectionsRelative
 
-        statisticsChartView.history = data.history
-        lastUpdatedLabel.text = "stats_source_day".ub_localized.replacingOccurrences(of: "{DAY}", with: Self.formatter.string(from: data.lastUpdated))
-        lastUpdatedLabel.alpha = 1
+        statisticsChartView.history = data.history.suffix(28) // Only the last 28 days are shown in the graph. For backend compatibility with previous versions data is truncated in the client
     }
 
     init() {
@@ -69,7 +64,6 @@ class NSCovidStatisticsModuleView: UIView {
         setCustomSpacing(NSPadding.large, after: statsStackView)
         setCustomSpacing(NSPadding.medium, after: statisticsChartView)
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: legend)
-        lastUpdatedLabel.alpha = 0
     }
 
     required init?(coder _: NSCoder) {
