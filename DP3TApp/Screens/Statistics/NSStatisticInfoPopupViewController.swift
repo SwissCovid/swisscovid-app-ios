@@ -23,6 +23,10 @@ class NSStatisticInfoPopupViewController: NSPopupViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        closeButton.snp.updateConstraints { make in
+            make.trailing.equalToSuperview().offset(15)
+        }
+
         tintColor = type.accentColor
 
         let header = NSLabel(.textBold, textColor: type.accentColor)

@@ -49,6 +49,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
 
             let popup = NSStatisticInfoPopupViewController(type: .covidcodes)
+            popup.modalPresentationStyle = .overFullScreen
             strongSelf.present(popup, animated: true)
         }
 
@@ -56,6 +57,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
 
             let popup = NSStatisticInfoPopupViewController(type: .cases)
+            popup.modalPresentationStyle = .overFullScreen
             strongSelf.present(popup, animated: true)
         }
 
