@@ -275,6 +275,7 @@
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
 		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
+		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
 		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
 		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
@@ -1836,6 +1837,7 @@
 				242D21E1245C4BD8005DAEA8 /* NSTitleViewScrollViewController.swift in Sources */,
 				242D21E2245C4BD8005DAEA8 /* UBKeyboardObserver.m in Sources */,
 				242D21E3245C4BD8005DAEA8 /* NSOnboardingStepViewController.swift in Sources */,
+				DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */,
 				242D21E4245C4BD8005DAEA8 /* DatabaseSyncer.swift in Sources */,
 				F80E406A2508FE3000876906 /* NSCovidStatisticsModuleView.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
