@@ -96,7 +96,9 @@ class ReportingManager: ReportingManagerProtocol {
                         if let error = error {
                             completion(.failure(error: error))
                         } else {
-                            self.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24 * 14) // Ask if user wants to end isolation after 14 days
+                            if !fake {
+                                self.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24 * 14) // Ask if user wants to end isolation after 14 days
+                            }
                             completion(nil)
                         }
                     }
