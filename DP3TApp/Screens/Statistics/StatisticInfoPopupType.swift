@@ -33,7 +33,7 @@ enum StatisticInfoPopupType {
         switch self {
         case .covidcodes:
             return [
-                ("stats_covidcodes_total_label".ub_localized, "stats_covidcodes_total_description".ub_localized),
+                ("stats_covidcodes_total_header".ub_localized, "stats_covidcodes_total_description".ub_localized),
                 ("stats_covidcodes_0to2days_label".ub_localized, "stats_covidcodes_0to2days_description".ub_localized),
             ]
         case .cases:

@@ -17,8 +17,8 @@ class NSCovidStatisticsModuleView: UIView {
     private let infoButton = UBButton()
 
     private let statsStackView = UIStackView()
-    private let stat1 = NSSingleStatisticView(textColor: .ns_purple)
-    private let stat2 = NSSingleStatisticView(textColor: .ns_purple)
+    private let stat1 = NSSingleStatisticView(textColor: .ns_purple, description: "stats_cases_7day_average_label".ub_localized)
+    private let stat2 = NSSingleStatisticView(textColor: .ns_purple, description: "stats_cases_rel_prev_week_label".ub_localized)
 
     let statisticsChartView = NSStatisticsChartView()
     private let legend = NSStatisticsModuleLegendView()
@@ -46,8 +46,8 @@ class NSCovidStatisticsModuleView: UIView {
             return
         }
 
-        stat1.statistic = data.newInfectionsAverage
-        stat2.statistic = data.newInfectionsRelative
+        stat1.formattedNumber = data.newInfectionsAverage
+        stat2.formattedNumber = data.newInfectionsRelative
 
         statisticsChartView.history = data.history.suffix(28) // Only the last 28 days are shown in the graph. For backend compatibility with previous versions data is truncated in the client
     }

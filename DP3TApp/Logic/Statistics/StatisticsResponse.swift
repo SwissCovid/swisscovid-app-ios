@@ -16,7 +16,7 @@ class StatisticsResponse: Codable {
     let totalActiveUsers: Int?
 
     let totalCovidcodesEntered: Int?
-    let totalCovidcodesEntered0to2d: Double? // Percentage, range [0, 1]
+    let covidcodesEntered0to2dPrevWeek: Double? // Percentage, range [0, 1]
 
     let newInfectionsSevenDayAvg: Int?
     let newInfectionsSevenDayAvgRelPrevWeek: Double? // Percentage, range [-1, ∞]
@@ -29,23 +29,6 @@ class StatisticsResponse: Codable {
         let newInfectionsSevenDayAverage: Int?
         let covidcodesEntered: Int?
     }
-
-    struct SingleStatistic: SingleStatisticViewModel {
-        let formattedNumber: String?
-        let description: String
-        let missingNumberPlaceholder: String = "–"
-
-        init(formattedNumber: String?, description: String) {
-            self.formattedNumber = formattedNumber
-            self.description = description
-        }
-    }
-}
-
-protocol SingleStatisticViewModel {
-    var formattedNumber: String? { get }
-    var description: String { get }
-    var missingNumberPlaceholder: String { get }
 }
 
 extension StatisticsResponse {
@@ -62,20 +45,20 @@ extension StatisticsResponse {
         return formatter
     }()
 
-    var covidCodes: SingleStatisticViewModel? {
-        return SingleStatistic(formattedNumber: Self.counterFormatter.string(fromOptional: totalCovidcodesEntered), description: "stats_covidcodes_total_label".ub_localized)
+    var covidCodes: String? {
+        Self.counterFormatter.string(fromOptional: totalCovidcodesEntered)
     }
 
-    var covidCodesAfter0to2d: SingleStatisticViewModel? {
-        return SingleStatistic(formattedNumber: Self.percentageFormatter.string(fromOptional: totalCovidcodesEntered0to2d), description: "stats_covidcodes_0to2days_label".ub_localized)
+    var covidCodesAfter0to2d: String? {
+        Self.percentageFormatter.string(fromOptional: covidcodesEntered0to2dPrevWeek)
     }
 
-    var newInfectionsAverage: SingleStatisticViewModel? {
-        return SingleStatistic(formattedNumber: Self.counterFormatter.string(fromOptional: newInfectionsSevenDayAvg), description: "stats_cases_7day_average_label".ub_localized)
+    var newInfectionsAverage: String? {
+        Self.counterFormatter.string(fromOptional: newInfectionsSevenDayAvg)
     }
 
-    var newInfectionsRelative: SingleStatisticViewModel? {
-        return SingleStatistic(formattedNumber: Self.percentageFormatter.string(fromOptional: newInfectionsSevenDayAvgRelPrevWeek), description: "stats_cases_rel_prev_week_label".ub_localized)
+    var newInfectionsRelative: String? {
+        Self.percentageFormatter.string(fromOptional: newInfectionsSevenDayAvgRelPrevWeek)
     }
 }
 

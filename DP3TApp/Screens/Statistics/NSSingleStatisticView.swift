@@ -12,19 +12,26 @@
 import UIKit
 
 class NSSingleStatisticView: UIView {
+    private static let missingNumberPlaceHolder: String = "–"
+
+    private let headerLabel = NSLabel(.smallBold, textAlignment: .center)
     private let numberLabel = NSLabel(.title, textAlignment: .center)
     private let descriptionLabel = NSLabel(.smallLight, textAlignment: .center)
 
-    var statistic: SingleStatisticViewModel? {
+    var formattedNumber: String? {
         didSet { update() }
     }
 
-    init(textColor: UIColor, statistic: SingleStatisticViewModel? = nil) {
-        self.statistic = statistic
+    init(textColor: UIColor, header: String? = nil, description: String, formattedNumber: String? = nil) {
+        self.formattedNumber = formattedNumber
 
         super.init(frame: .zero)
 
-        setupView(textColor: textColor)
+        setupView(hasHeader: header != nil, textColor: textColor)
+
+        headerLabel.text = header
+        descriptionLabel.text = description
+
         update()
     }
 
@@ -32,16 +39,29 @@ class NSSingleStatisticView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func setupView(textColor: UIColor) {
+    private func setupView(hasHeader: Bool, textColor: UIColor) {
         backgroundColor = .ns_backgroundSecondary
         layer.cornerRadius = 5
 
         numberLabel.textColor = textColor
         descriptionLabel.textColor = textColor
 
+        if hasHeader {
+            addSubview(headerLabel)
+            headerLabel.snp.makeConstraints { make in
+                make.top.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+                make.centerX.equalToSuperview()
+            }
+        }
+
         addSubview(numberLabel)
         numberLabel.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+            if hasHeader {
+                make.top.equalTo(headerLabel.snp.bottom).offset(NSPadding.small)
+                make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+            } else {
+                make.top.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+            }
             make.centerX.equalToSuperview()
         }
 
@@ -53,12 +73,6 @@ class NSSingleStatisticView: UIView {
     }
 
     private func update() {
-        if let stat = statistic {
-            numberLabel.text = stat.formattedNumber ?? stat.missingNumberPlaceholder
-            descriptionLabel.text = stat.description
-        } else {
-            numberLabel.text = "–"
-            descriptionLabel.text = "–"
-        }
+        numberLabel.text = formattedNumber ?? Self.missingNumberPlaceHolder
     }
 }

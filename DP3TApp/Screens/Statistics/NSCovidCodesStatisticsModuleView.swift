@@ -14,8 +14,8 @@ import UIKit
 class NSCovidCodesStatisticsModuleView: UIView {
     private let stackView = UIStackView()
     private let infoButton = UBButton()
-    private let stat1 = NSSingleStatisticView(textColor: .ns_blue)
-    private let stat2 = NSSingleStatisticView(textColor: .ns_blue)
+    private let stat1 = NSSingleStatisticView(textColor: .ns_blue, header: "stats_covidcodes_total_header".ub_localized, description: "stats_covidcodes_total_label".ub_localized)
+    private let stat2 = NSSingleStatisticView(textColor: .ns_blue, header: "stats_covidcodes_0to2days_header".ub_localized, description: "stats_covidcodes_0to2days_label".ub_localized)
 
     var infoButtonCallback: (() -> Void)? {
         get { infoButton.touchUpCallback }
@@ -61,11 +61,7 @@ class NSCovidCodesStatisticsModuleView: UIView {
         let title = NSLabel(.title, textAlignment: .center)
         title.text = "stats_covidcodes_title".ub_localized
 
-        let subtitle = NSLabel(.textLight, textAlignment: .center)
-        subtitle.text = "stats_covidcodes_subtitle".ub_localized
-
         stackView.addArrangedView(title)
-        stackView.addArrangedView(subtitle)
         stackView.addSpacerView(NSPadding.medium)
 
         let statsStackView = UIStackView()
@@ -80,11 +76,12 @@ class NSCovidCodesStatisticsModuleView: UIView {
 
     func setData(statisticData: StatisticsResponse?) {
         guard let data = statisticData else {
-            stat1.statistic = nil
-            stat2.statistic = nil
+            stat1.formattedNumber = nil
+            stat2.formattedNumber = nil
             return
         }
-        stat1.statistic = data.covidCodes
-        stat2.statistic = data.covidCodesAfter0to2d
+
+        stat1.formattedNumber = data.covidCodes
+        stat2.formattedNumber = data.covidCodesAfter0to2d
     }
 }

@@ -280,6 +280,10 @@
 		DC17F97125DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
 		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
+		DC3B56C925EE3F8E0075B5CE /* NSCovidCodesStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */; };
+		DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */; };
+		DC3B56D325EE3FA10075B5CE /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
+		DC3B56D825EE3FA90075B5CE /* StatisticInfoPopupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01360825DFE5D6001A33F4 /* StatisticInfoPopupType.swift */; };
 		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
 		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
@@ -1882,6 +1886,7 @@
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
 				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
+				DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */,
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
 				F83ECEEF2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
@@ -1893,6 +1898,7 @@
 				F8ABA2E62526087D00A8D6B5 /* NSTutorialListItemView.swift in Sources */,
 				F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */,
 				F851223E250A2676009BE733 /* NSChartLineView.swift in Sources */,
+				DC3B56C925EE3F8E0075B5CE /* NSCovidCodesStatisticsModuleView.swift in Sources */,
 				242D2202245C4BD8005DAEA8 /* NSOnboardingPermissionsViewController.swift in Sources */,
 				F8089695250B55080023F639 /* NSStatisticsModuleLegendView.swift in Sources */,
 				242D2204245C4BD8005DAEA8 /* NSEncountersDetailViewController.swift in Sources */,
@@ -1925,6 +1931,7 @@
 				F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */,
 				242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */,
 				242D2215245C4BD8005DAEA8 /* NSExplanationView.swift in Sources */,
+				DC3B56D325EE3FA10075B5CE /* NSStatisticInfoPopupViewController.swift in Sources */,
 				242D2216245C4BD8005DAEA8 /* NSCheckboxControl.swift in Sources */,
 				8EF2A6E62490E26F002263C3 /* NSLastSyncronizationControl.swift in Sources */,
 				242D2218245C4BD8005DAEA8 /* NSLoadingView.swift in Sources */,
@@ -1971,6 +1978,7 @@
 				242D2234245C4BD8005DAEA8 /* NSFancyNumberView.swift in Sources */,
 				242D2235245C4BD8005DAEA8 /* Endpoint+Request.swift in Sources */,
 				F80E40712509011D00876906 /* StatisticsLoader.swift in Sources */,
+				DC3B56D825EE3FA90075B5CE /* StatisticInfoPopupType.swift in Sources */,
 				242D2236245C4BD8005DAEA8 /* HomescreenInfoBoxView.swift in Sources */,
 				242D2237245C4BD8005DAEA8 /* UIColor+NS.swift in Sources */,
 				242D2238245C4BD8005DAEA8 /* NSHeaderArcView.swift in Sources */,
