@@ -1257,7 +1257,6 @@
 		DC286A24242CE0AD001D5344 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				F80E406B2509001100876906 /* Statistics */,
 				8E81CC98241FCC7D006F2437 /* AppDelegate.swift */,
 				F862124D257A727E0043351E /* NSLinkHandler.swift */,
 				2443947E24463A14003ED582 /* Tracing */,
@@ -1265,6 +1264,7 @@
 				24780B00242DF983003BB26C /* User */,
 				24780AFF242DF970003BB26C /* Networking */,
 				2443947F24463A46003ED582 /* Helpers */,
+				F80E406B2509001100876906 /* Statistics */,
 			);
 			path = Logic;
 			sourceTree = "<group>";

@@ -14,7 +14,7 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     private let loadingView: NSLoadingView = {
         let button = NSUnderlinedButton()
         button.title = "loading_view_reload".ub_localized
-        return .init(reloadButton: button, errorImage: UIImage(named: "ic-info-outline"))
+        return .init(reloadButton: button, errorImage: UIImage(named: "ic-info-outline"), small: true)
     }()
 
     private let appUsageStatisticsModule = NSAppUsageStatisticsModuleView()
@@ -64,6 +64,10 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         shareModule.shareButtonTouched = { [weak self] in
             self?.share()
         }
+
+        covidCodesStatisticsModule.setData(statisticData: nil)
+        covidStatisticsModule.setData(statisticData: nil)
+        appUsageStatisticsModule.setData(statisticData: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,21 +79,25 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
     }
 
     private func loadData() {
-        covidStatisticsModule.setData(statisticData: nil)
-        appUsageStatisticsModule.setData(statisticData: nil)
-        loadingView.startLoading()
+        appUsageStatisticsModule.startLoading()
         loader.get { [weak self] result in
             guard let self = self else { return }
             switch result {
             case let .success(response):
-                self.loadingView.stopLoading()
-                self.appUsageStatisticsModule.setData(statisticData: response)
-                self.covidCodesStatisticsModule.setData(statisticData: response)
-                self.covidStatisticsModule.setData(statisticData: response)
+                self.appUsageStatisticsModule.stopLoading()
+                UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState], animations: {
+                    self.appUsageStatisticsModule.setData(statisticData: response)
+                    self.covidCodesStatisticsModule.setData(statisticData: response)
+                    self.covidStatisticsModule.setData(statisticData: response)
+                }, completion: { _ in
+                    self.covidStatisticsModule.setData(statisticData: response)
+                })
             case let .failure(error):
-                self.loadingView.stopLoading(error: error) { [weak self] in
+                self.appUsageStatisticsModule.stopLoading(error: error) { [weak self] in
                     self?.loadData()
                 }
+                self.covidCodesStatisticsModule.setData(statisticData: nil)
+                self.covidStatisticsModule.setData(statisticData: nil)
             }
         }
     }
@@ -142,12 +150,6 @@ class NSStatisticsViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(shareModule)
-
-        view.addSubview(loadingView)
-        loadingView.backgroundColor = .clear
-        loadingView.snp.makeConstraints { make in
-            make.edges.equalTo(covidStatisticsModule.statisticsChartView)
-        }
     }
 
     private func moreStatisticsTouched() {

@@ -40,7 +40,7 @@ enum StatisticInfoPopupType {
             return [
                 ("stats_cases_current_label".ub_localized, "stats_cases_current_description".ub_localized),
                 ("stats_cases_7day_average_label".ub_localized, "stats_cases_7day_average_description".ub_localized),
-                ("stats_cases_rel_prev_week_label".ub_localized, "stats_cases_rel_prev_week_description".ub_localized),
+                ("stats_cases_rel_prev_week_popup_header".ub_localized, "stats_cases_rel_prev_week_description".ub_localized),
             ]
         }
     }

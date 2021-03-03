@@ -43,8 +43,12 @@ class NSCovidStatisticsModuleView: UIView {
     func setData(statisticData: StatisticsResponse?) {
         guard let data = statisticData else {
             statisticsChartView.history = []
+            isHidden = true
+            alpha = 0
             return
         }
+        isHidden = false
+        alpha = 1
 
         stat1.formattedNumber = data.newInfectionsAverage
         stat2.formattedNumber = data.newInfectionsRelative
@@ -94,9 +98,11 @@ class NSCovidStatisticsModuleView: UIView {
         // Info button (added after stackView so it is on top)
         infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
         infoButton.tintColor = .ns_purple
+        infoButton.highlightCornerRadius = 20
         addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
-            make.top.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.top.trailing.equalToSuperview()
+            make.size.equalTo(40)
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
