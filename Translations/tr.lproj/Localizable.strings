@@ -601,7 +601,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.\n\nTest sonucunuz pozitif çıktı ve 4 saat içerisinde henüz Covid kodunu almadınız mı?\nBu durumda, Corona Virüs Bilgi Hattı (Infoline) ile iletişime geçiniz:";
+"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Neler iletilir?";
@@ -628,7 +628,7 @@
 "symptom_faq1_title" = "KOVİD-19 semptomları nedir?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n– Ateş, ateşlenme\n– Boğaz ağrısı\n– Öksürme (genelde kuru)\n– Nefes darlığı\n– Kas ağrıları\n– Koku ve tad alma yetisinin aniden kaybolması";
+"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n– Ateş, ateşlenme\n– Boğaz ağrısı\n– Öksürme (genelde kuru)\n– Nefes darlığı\n– Göğüs ağrıları\n– Koku ve tad alma yetisinin aniden kaybolması\n\nAyrıca bu semptomlar görülebilir:\n\n– Başağrıları\n– Genel halsizlik, rahatsızlık\n– Kas ağrıları\n– Nezle\n– Mide-bağırsak semptomları (bulantı, kusma, ishal, mide ağrıları)\n– Deri döküntüleri";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "İzleme neden devre dışı bırakıldı?";
@@ -1236,3 +1236,75 @@
 /*Fuzzy*/
 "testlocation_url_canton_zurich" = "https://www.zh.ch/de/gesundheit/coronavirus.html";
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
+
+/*text for info box pop up for the hearing impaired*/
+"hearing_impaired_info" = "";
+
+/*Überschrift des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_title" = "";
+
+/*Untertitel des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_subtitle" = "";
+
+/*Überschrift des Fallzahlen-Statistik Moduls*/
+"stats_cases_title" = "";
+
+/*Untertitel des Fallzahlen-Statistik-Moduls*/
+"stats_cases_subtitle" = "";
+
+/*Label der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_label" = "";
+
+/*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_label" = "";
+
+/*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_label" = "";
+
+/*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_label" = "";
+
+/*Überschrift des Info-Popups auf dem Statistik-Screen*/
+"stats_info_popup_title" = "";
+
+/*Untertitel des Infopopups zu Covidcodes-Statistiken*/
+"stats_info_popup_subtitle_covidcodes" = "";
+
+/*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
+"stats_info_popup_subtitle_cases" = "";
+
+/*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_description" = "";
+
+/*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_description" = "";
+
+/*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_description" = "";
+
+/*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_description" = "";
+
+/*Label der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_label" = "";
+
+/*Beschreibung der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_description" = "";
+
+/*Inform Detail: Infobox Text*/
+"inform_detail_infobox1_text" = "Test sonucunuz pozitif çıktı ve 4 saat içerisinde henüz Covid kodunu almadınız mı?\nBu durumda, Corona Virüs Bilgi Hattı (Infoline) ile iletişime geçiniz:";
+
+/*Inform Detail: Infobox Title*/
+"inform_detail_infobox1_title" = "";
+
+/*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_title" = "";
+
+/*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_text" = "";
+
+/*Ja-Antwort*/
+"answer_yes" = "";
+
+/*Nein-Antwort*/
+"answer_no" = "";

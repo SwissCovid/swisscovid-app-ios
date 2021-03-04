@@ -602,7 +602,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.\n\nKeni dalë pozitiv dhe pas 4 orësh nuk keni marrë ende asnjë kod Covid?\nAtëherë kontaktoni \"Infoline Coronavirus\":";
+"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin e ri marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Çfarë dërgohet?";
@@ -629,7 +629,7 @@
 "symptom_faq1_title" = "Çfarë simptomash ka COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Simptomat më të shpeshta janë:\n\n– Temperaturë, ndjesi ethesh\n– Dhimbje fyti\n– Kollë (zakonisht e thatë)\n– Vështirësi në frymëmarrje\n– Dhimbje muskujsh\n– Humbje e papritur e shqisës së nuhatjes dhe/ose të shijuarit";
+"symptom_faq1_text" = "Simptomat më të shpeshta janë:\n\n– Temperaturë, ndjesi ethesh\n– Dhimbje fyti\n– Kollë (zakonisht e thatë)\n– Vështirësi në frymëmarrje\n– Dhimbje kraharori\n– Humbje e papritur e shqisës së nuhatjes dhe/ose të shijuarit\n\nJanë gjithashtu të mundshme simptomat e mëposhtme:\n\n– Dhimbje koke\n– Dobësi e përgjithshme, parehati\n– Dhimbje muskulore\n– Nuhat\nSimptoma gastrointestinale (të përziera, të vjella, diarre, dhimbje abdominale)\n– Skuqje e lëkurës";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pse është çaktivizuar gjurmimi?";
@@ -1240,3 +1240,75 @@
 /*Fuzzy*/
 "testlocation_url_canton_zurich" = "https://www.zh.ch/de/gesundheit/coronavirus.html";
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
+
+/*text for info box pop up for the hearing impaired*/
+"hearing_impaired_info" = "";
+
+/*Überschrift des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_title" = "";
+
+/*Untertitel des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_subtitle" = "";
+
+/*Überschrift des Fallzahlen-Statistik Moduls*/
+"stats_cases_title" = "";
+
+/*Untertitel des Fallzahlen-Statistik-Moduls*/
+"stats_cases_subtitle" = "";
+
+/*Label der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_label" = "";
+
+/*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_label" = "";
+
+/*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_label" = "";
+
+/*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_label" = "";
+
+/*Überschrift des Info-Popups auf dem Statistik-Screen*/
+"stats_info_popup_title" = "";
+
+/*Untertitel des Infopopups zu Covidcodes-Statistiken*/
+"stats_info_popup_subtitle_covidcodes" = "";
+
+/*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
+"stats_info_popup_subtitle_cases" = "";
+
+/*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_description" = "";
+
+/*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_description" = "";
+
+/*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_description" = "";
+
+/*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_description" = "";
+
+/*Label der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_label" = "";
+
+/*Beschreibung der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_description" = "";
+
+/*Inform Detail: Infobox Text*/
+"inform_detail_infobox1_text" = "Keni dalë pozitiv dhe pas 4 orësh nuk keni marrë ende asnjë kod Covid?\nAtëherë kontaktoni \"Infoline Coronavirus\":";
+
+/*Inform Detail: Infobox Title*/
+"inform_detail_infobox1_title" = "";
+
+/*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_title" = "";
+
+/*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_text" = "";
+
+/*Ja-Antwort*/
+"answer_yes" = "";
+
+/*Nein-Antwort*/
+"answer_no" = "";
