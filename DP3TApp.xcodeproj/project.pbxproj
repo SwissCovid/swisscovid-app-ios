@@ -290,7 +290,15 @@
 		DC3B569B25ECEE800075B5CE /* NSTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569A25ECEE800075B5CE /* NSTravelDetailViewController.swift */; };
 		DC3B56A125ECEF970075B5CE /* NSTravelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */; };
 		DC3B56A725ECF5B10075B5CE /* NSTravelDetailModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */; };
+		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
 		DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56E725EE96D30075B5CE /* CountryHelper.swift */; };
+		DC3B576225F108C90075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
+		DC3B576725F108D50075B5CE /* CountryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56E725EE96D30075B5CE /* CountryHelper.swift */; };
+		DC3B576C25F1090F0075B5CE /* NSTravelModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */; };
+		DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */; };
+		DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569A25ECEE800075B5CE /* NSTravelDetailViewController.swift */; };
+		DC3B577B25F109320075B5CE /* NSTravelDetailModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */; };
+		DC3B578025F109380075B5CE /* NSTravelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */; };
 		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
 		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
@@ -1912,6 +1920,7 @@
 				242D2277245D62D9005DAEA8 /* UserStorage.swift in Sources */,
 				242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */,
 				242D21F4245C4BD8005DAEA8 /* NSReportsDetailNoReportsTitleView.swift in Sources */,
+				DC3B576C25F1090F0075B5CE /* NSTravelModuleView.swift in Sources */,
 				242D21F6245C4BD8005DAEA8 /* UIView+NS.swift in Sources */,
 				242D21F7245C4BD8005DAEA8 /* UIImage+UBHelpers.m in Sources */,
 				B67A11AE24B8CB1700B46306 /* NSImageView.swift in Sources */,
@@ -1919,6 +1928,7 @@
 				F8ABA2EB2526089700A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,
 				242D21F9245C4BD8005DAEA8 /* NSNavigationController.swift in Sources */,
 				F8631137257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */,
+				DC3B577B25F109320075B5CE /* NSTravelDetailModuleView.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
@@ -1960,6 +1970,7 @@
 				F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
 				F80E40612508D4D000876906 /* NSStatisticsViewController.swift in Sources */,
+				DC3B576725F108D50075B5CE /* CountryHelper.swift in Sources */,
 				F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
@@ -1976,11 +1987,13 @@
 				242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */,
 				F806D33D24F91C7800672DFC /* LocalPushProtocol.swift in Sources */,
 				242D221B245C4BD8005DAEA8 /* FakePublishManager.swift in Sources */,
+				DC3B576225F108C90075B5CE /* NSImageListLabel.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
 				F80E40642508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
 				F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
+				DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
 				F80E40672508FE1600876906 /* NSStatsticsModuleHeader.swift in Sources */,
@@ -2003,6 +2016,7 @@
 				242D222A245C4BD8005DAEA8 /* NSExternalLinkButton.swift in Sources */,
 				242D222B245C4BD8005DAEA8 /* NSReportsDetailViewController.swift in Sources */,
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
+				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
@@ -2046,6 +2060,7 @@
 				242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */,
 				242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */,
 				242D2252245C4BD8005DAEA8 /* UIStateModel.swift in Sources */,
+				DC3B578025F109380075B5CE /* NSTravelTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
