@@ -15,6 +15,7 @@ class NSSendViewController: NSInformBottomButtonViewController {
 
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let flagLabel = NSImageListLabel()
 
     private let prefill: String?
 
@@ -53,13 +54,28 @@ class NSSendViewController: NSInformBottomButtonViewController {
 
         stackScrollView.addArrangedView(container)
         stackScrollView.addSpacerView(NSPadding.large)
+
+        flagLabel.textAlignment = .center
+
+        stackScrollView.addArrangedView(flagLabel)
+        stackScrollView.addSpacerView(NSPadding.large)
+
         UIAccessibility.post(notification: .layoutChanged, argument: container)
         enableBottomButton = true
     }
 
     private func setupTested() {
+        let countries = ConfigManager.currentConfig?.interOpsCountries ?? []
+
         titleLabel.text = "inform_code_intro_title".ub_localized
-        textLabel.text = "inform_code_intro_text".ub_localized
+
+        if countries.isEmpty {
+            textLabel.text = "inform_code_intro_text".ub_localized
+            flagLabel.isHidden = true
+        } else {
+            textLabel.text = "inform_code_intro_text".ub_localized + "\n\n" + "inform_code_travel_text".ub_localized
+            flagLabel.images = countries.compactMap { CountryHelper.flagForCountryCode($0) }
+        }
 
         bottomButtonTitle = "inform_code_intro_button".ub_localized
 

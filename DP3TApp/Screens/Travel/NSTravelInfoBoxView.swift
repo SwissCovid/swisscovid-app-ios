@@ -12,7 +12,13 @@
 import UIKit
 
 class NSTravelInfoBoxView: UIView {
-    private let countries = ["ch", "li", "de"]
+    private let flagLabel = NSImageListLabel()
+
+    private var countries = ConfigManager.currentConfig?.interOpsCountries ?? [] {
+        didSet {
+            flagLabel.images = countries.compactMap { CountryHelper.flagForCountryCode($0) }
+        }
+    }
 
     init() {
         super.init(frame: .zero)
@@ -20,6 +26,10 @@ class NSTravelInfoBoxView: UIView {
         backgroundColor = .ns_backgroundSecondary
 
         setupLayout()
+
+        UIStateManager.shared.addObserver(self) { state in
+            self.countries = state.homescreen.countries
+        }
     }
 
     required init?(coder _: NSCoder) {
@@ -42,7 +52,6 @@ class NSTravelInfoBoxView: UIView {
         let label = NSLabel(.textLight)
         label.text = "travel_home_description".ub_localized
 
-        let flagLabel = NSImageListLabel()
         flagLabel.font = UIFont.systemFont(ofSize: 25)
         flagLabel.images = countries.compactMap { UIImage(named: "flag-\($0)") }
 

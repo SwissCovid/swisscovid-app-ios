@@ -96,7 +96,8 @@ class TracingManager: NSObject {
 
         DP3TTracing.initialize(with: descriptor,
                                urlSession: URLSession.certificatePinned,
-                               backgroundHandler: self)
+                               backgroundHandler: self,
+                               federationGateway: .yes)
 
         // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in

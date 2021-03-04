@@ -152,6 +152,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        travelView.isHidden = true
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
@@ -285,6 +286,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 }
             }
         }
+
+        travelView.isHidden = state.homescreen.countries.isEmpty
 
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 

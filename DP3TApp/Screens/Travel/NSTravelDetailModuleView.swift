@@ -12,14 +12,13 @@
 import UIKit
 
 class NSTravelDetailModuleView: UIView {
+    private let stackView = UIStackView()
     private let titleLabel = NSLabel(.title)
     private let countriesHeader = NSLabel(.smallLight)
 
-    private let countries: [CountryRow.Country] = [
-        (UIImage(named: "flag-ch"), "Schweiz"),
-        (UIImage(named: "flag-li"), "Liechtenstein"),
-        (UIImage(named: "flag-de"), "Deutschland"),
-    ]
+    private var countries: [CountryRow.Country] = [] {
+        didSet { updateCountriesList() }
+    }
 
     init() {
         super.init(frame: .zero)
@@ -27,6 +26,12 @@ class NSTravelDetailModuleView: UIView {
         backgroundColor = .ns_moduleBackground
 
         setupLayout()
+
+        UIStateManager.shared.addObserver(self) { state in
+            self.countries = state.homescreen.countries.map {
+                (CountryHelper.flagForCountryCode($0), CountryHelper.localizedNameForCountryCode($0))
+            }
+        }
     }
 
     required init?(coder _: NSCoder) {
@@ -34,12 +39,12 @@ class NSTravelDetailModuleView: UIView {
     }
 
     private func setupLayout() {
-        let stackView = UIStackView()
         stackView.axis = .vertical
 
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(NSPadding.medium)
+            make.top.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.equalToSuperview().inset(NSPadding.large)
         }
 
         titleLabel.text = "travel_title".ub_localized
@@ -73,7 +78,15 @@ class NSTravelDetailModuleView: UIView {
 
         countriesHeader.text = "travel_screen_compatible_countries".ub_localized
 
-        stackView.addArrangedView(countriesHeader, insets: UIEdgeInsets(top: 0, left: NSPadding.small, bottom: 0, right: 0))
+        stackView.addArrangedView(countriesHeader, insets: UIEdgeInsets(top: 0, left: NSPadding.small, bottom: NSPadding.small, right: 0))
+    }
+
+    private func updateCountriesList() {
+        stackView.arrangedSubviews.forEach {
+            if $0 is CountryRow {
+                $0.removeFromSuperview()
+            }
+        }
 
         for country in countries {
             stackView.addArrangedView(CountryRow(country: country))

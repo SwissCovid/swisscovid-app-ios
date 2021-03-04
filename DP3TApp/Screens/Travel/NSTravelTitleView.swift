@@ -50,9 +50,19 @@ class NSTravelTitleView: NSTitleView {
         addSubview(halo)
         halo.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(30)
-
             make.centerX.equalToSuperview()
             make.size.equalTo(60)
+        }
+
+        let outerHalo = UIView()
+        outerHalo.layer.cornerRadius = 46
+        outerHalo.layer.borderWidth = 20
+        outerHalo.layer.borderColor = UIColor.white.withAlphaComponent(0.08).cgColor
+
+        insertSubview(outerHalo, belowSubview: halo)
+        outerHalo.snp.makeConstraints { make in
+            make.center.equalTo(halo)
+            make.size.equalTo(92)
         }
 
         addSubview(travelIcon)

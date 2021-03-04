@@ -290,6 +290,7 @@
 		DC3B569B25ECEE800075B5CE /* NSTravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569A25ECEE800075B5CE /* NSTravelDetailViewController.swift */; };
 		DC3B56A125ECEF970075B5CE /* NSTravelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */; };
 		DC3B56A725ECF5B10075B5CE /* NSTravelDetailModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */; };
+		DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56E725EE96D30075B5CE /* CountryHelper.swift */; };
 		DC56B8B9242EA7760077B99C /* NSOnboardingStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */; };
 		DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */; };
 		DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
@@ -620,6 +621,7 @@
 		DC3B569A25ECEE800075B5CE /* NSTravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelDetailViewController.swift; sourceTree = "<group>"; };
 		DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelTitleView.swift; sourceTree = "<group>"; };
 		DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelDetailModuleView.swift; sourceTree = "<group>"; };
+		DC3B56E725EE96D30075B5CE /* CountryHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryHelper.swift; sourceTree = "<group>"; };
 		DC56B8B8242EA7760077B99C /* NSOnboardingStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepModel.swift; sourceTree = "<group>"; };
 		DC56B8BA242EACF00077B99C /* NSOnboardingStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingStepViewController.swift; sourceTree = "<group>"; };
 		DC702AFA243F6D870066C773 /* UBLabelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBLabelType.swift; sourceTree = "<group>"; };
@@ -1277,6 +1279,7 @@
 				24780AFF242DF970003BB26C /* Networking */,
 				2443947F24463A46003ED582 /* Helpers */,
 				F80E406B2509001100876906 /* Statistics */,
+				DC3B56E625EE96BC0075B5CE /* Travel */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1307,6 +1310,14 @@
 				DC3B569A25ECEE800075B5CE /* NSTravelDetailViewController.swift */,
 				DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */,
 				DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */,
+			);
+			path = Travel;
+			sourceTree = "<group>";
+		};
+		DC3B56E625EE96BC0075B5CE /* Travel */ = {
+			isa = PBXGroup;
+			children = (
+				DC3B56E725EE96D30075B5CE /* CountryHelper.swift */,
 			);
 			path = Travel;
 			sourceTree = "<group>";
@@ -2181,6 +2192,7 @@
 				F80E40732509039400876906 /* NSStatisticsChartView.swift in Sources */,
 				DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */,
 				F8089697250B63780023F639 /* NSStatisticsShareModule.swift in Sources */,
+				DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */,
 				DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */,
 				F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F80E40702509011D00876906 /* StatisticsLoader.swift in Sources */,
@@ -3399,7 +3411,7 @@
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
 				kind = revision;
-				revision = a70c27f7a06dd3eaf3fbf74069645a8a7dbcbfbd;
+				revision = ccb29b9e5006b1cf8e051f3e0976876a6b19e657;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {
