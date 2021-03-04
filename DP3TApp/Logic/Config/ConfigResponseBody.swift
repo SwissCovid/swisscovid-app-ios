@@ -48,6 +48,7 @@ class ConfigResponseBody: UBCodable {
         let urlTitle: String?
         let infoId: String?
         let isDismissible: Bool?
+        let hearingImpairedInfo: String?
     }
 
     class GAENSDKConfig: Codable {

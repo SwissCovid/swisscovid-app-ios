@@ -252,6 +252,14 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
+        if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
+            infoBoxView.hearingImpairedButtonTouched = { [weak self] in
+                guard let strongSelf = self else { return }
+                let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)
+
+                strongSelf.present(popup, animated: true)
+            }
+        }
         infoBoxView.uiState = state.homescreen.infoBox
 
         if let infoId = state.homescreen.infoBox?.infoId,
