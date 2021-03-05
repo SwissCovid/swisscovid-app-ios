@@ -43,8 +43,6 @@ struct ChartConfiguration {
 class NSStatisticsChartContentView: UIView {
     private let infectionBarView: NSChartColumnView
 
-    private let codeBarView: NSChartColumnView
-
     private let divider = UIView()
 
     private let dateView: NSChartDateView
@@ -67,17 +65,14 @@ class NSStatisticsChartContentView: UIView {
 
     init() {
         infectionBarView = .init(configuration: configuration)
-        codeBarView = .init(configuration: configuration)
         dateView = .init(configuration: configuration)
         lineView = .init(configuration: configuration)
         yAxisLines = .init(configuration: configuration)
         super.init(frame: .zero)
 
         infectionBarView.barBackgroundColor = .ns_purpleBar
-        codeBarView.barBackgroundColor = .ns_blueBar
 
         infectionBarView.frame = frame
-        codeBarView.frame = frame
 
         addSubview(infectionBarView)
         infectionBarView.snp.makeConstraints { make in
@@ -85,11 +80,6 @@ class NSStatisticsChartContentView: UIView {
             infectionBarViewLeadingConstraint = make.leading.equalToSuperview().constraint
             make.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(39)
-        }
-
-        addSubview(codeBarView)
-        codeBarView.snp.makeConstraints { make in
-            make.edges.equalTo(infectionBarView)
         }
 
         addSubview(lineView)
@@ -153,7 +143,6 @@ class NSStatisticsChartContentView: UIView {
         }
 
         infectionBarView.values = data.data.map(\.infections)
-        codeBarView.values = data.data.map(\.codes)
         dateView.values = data.data.map(\.date)
         lineView.values = data.data.map(\.sevenDayAverage)
 

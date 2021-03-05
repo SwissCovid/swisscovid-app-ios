@@ -11,8 +11,16 @@
 import Foundation
 
 class StatisticsResponse: Codable {
-    let totalActiveUsers: Int?
     let lastUpdated: Date
+
+    let totalActiveUsers: Int?
+
+    let totalCovidcodesEntered: Int?
+    let covidcodesEntered0to2dPrevWeek: Double? // Percentage, range [0, 1]
+
+    let newInfectionsSevenDayAvg: Int?
+    let newInfectionsSevenDayAvgRelPrevWeek: Double? // Percentage, range [-1, ∞]
+
     let history: [StatisticEntry]
 
     class StatisticEntry: Codable {
@@ -20,5 +28,52 @@ class StatisticsResponse: Codable {
         let newInfections: Int?
         let newInfectionsSevenDayAverage: Int?
         let covidcodesEntered: Int?
+    }
+}
+
+extension StatisticsResponse {
+    private static let counterFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = " "
+        return formatter
+    }()
+
+    private static let percentageFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        return formatter
+    }()
+
+    var covidCodes: String? {
+        Self.counterFormatter.string(fromOptional: totalCovidcodesEntered)
+    }
+
+    var covidCodesAfter0to2d: String? {
+        Self.percentageFormatter.string(fromOptional: covidcodesEntered0to2dPrevWeek)
+    }
+
+    var newInfectionsAverage: String? {
+        Self.counterFormatter.string(fromOptional: newInfectionsSevenDayAvg)
+    }
+
+    var newInfectionsRelative: String? {
+        Self.percentageFormatter.string(fromOptional: newInfectionsSevenDayAvgRelPrevWeek)
+    }
+}
+
+private extension NumberFormatter {
+    func string(fromOptional number: Int?) -> String? {
+        if let nr = number {
+            return string(from: nr as NSNumber)
+        }
+        return nil
+    }
+
+    func string(fromOptional number: Double?) -> String? {
+        if let nr = number {
+            return string(from: nr as NSNumber)
+        }
+        return nil
     }
 }

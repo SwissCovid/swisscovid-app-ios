@@ -11,11 +11,19 @@
 import UIKit
 
 class NSAppUsageStatisticsModuleView: UIView {
+    private let arrowImage = UIImageView(image: UIImage(named: "ic-verified-user-badge"))
     private let stackView = UIStackView()
+    private let loadingView: NSLoadingView = {
+        let button = NSUnderlinedButton()
+        button.title = "loading_view_reload".ub_localized
+        return .init(reloadButton: button, errorImage: UIImage(named: "ic-info-outline"), small: true)
+    }()
+
+    private var isLoading: Bool = false
 
     private let header = NSStatsticsModuleHeader()
 
-    private lazy var sections: [UIView] = [header]
+    private lazy var sections: [UIView] = [header, loadingView]
 
     func setData(statisticData: StatisticsResponse?) {
         guard let data = statisticData else {
@@ -33,12 +41,37 @@ class NSAppUsageStatisticsModuleView: UIView {
         setupLayout()
         updateLayout()
 
+        loadingView.isHidden = true
+
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: header)
         isAccessibilityElement = true
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    func startLoading() {
+        isLoading = true
+        loadingView.startLoading()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+                guard self.isLoading else { return }
+                self.loadingView.isHidden = false
+                self.header.isHidden = true
+                self.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
+
+    func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
+        isLoading = false
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+            self.loadingView.stopLoading(error: error, reloadHandler: reloadHandler)
+            self.loadingView.isHidden = error == nil
+            self.header.isHidden = error != nil
+            self.layoutIfNeeded()
+        }, completion: nil)
     }
 
     private func setupLayout() {
@@ -49,6 +82,12 @@ class NSAppUsageStatisticsModuleView: UIView {
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+
+        addSubview(arrowImage)
+        arrowImage.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().inset(-(arrowImage.image?.size.height ?? 0) / 2 - 5)
         }
 
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
