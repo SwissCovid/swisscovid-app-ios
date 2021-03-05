@@ -68,6 +68,7 @@ struct UIStateModel: Equatable {
         var encounters: TracingState = .tracingActive
         var reports: Reports = Reports()
         var infoBox: InfoBox?
+        var countries: [String] = []
     }
 
     struct EncountersDetail: Equatable {

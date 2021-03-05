@@ -155,6 +155,8 @@ class UIStateLogic {
                 #endif
             }
         }
+
+        newState.homescreen.countries = ConfigManager.currentConfig?.interOpsCountries ?? []
     }
 
     private func setInfoBoxState(_ newState: inout UIStateModel) {
