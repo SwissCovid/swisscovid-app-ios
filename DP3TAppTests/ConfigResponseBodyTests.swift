@@ -14,7 +14,7 @@ import XCTest
 class ConfigResponseBodyTests: XCTestCase {
     func testParsing() {
         let json = """
-            {"forceUpdate": false,"forceTraceShutdown": false,"infoBox": {"deInfoBox": {"title": "Hinweis","msg": "Info box body","url": "https://www.bag.admin.ch/","urlTitle": "Weitere Informationen"},"frInfoBox": null,"itInfoBox": null,"enInfoBox": null,"ptInfoBox": null,"esInfoBox": null,"sqInfoBox": null,"bsInfoBox": null,"hrInfoBox": null,"srInfoBox": null,"rmInfoBox": null},"sdkConfig": {"numberOfWindowsForExposure": 3,"eventThreshold": 0.8,"badAttenuationThreshold": 73,"contactAttenuationThreshold": 73},"iOSGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15},"androidGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15}}
+            {"forceUpdate": false,"forceTraceShutdown": false,"infoBox": {"deInfoBox": {"title": "Hinweis","msg": "Info box body","url": "https://www.bag.admin.ch/","urlTitle": "Weitere Informationen"},"frInfoBox": null,"itInfoBox": null,"enInfoBox": null,"ptInfoBox": null,"esInfoBox": null,"sqInfoBox": null,"bsInfoBox": null,"hrInfoBox": null,"srInfoBox": null,"rmInfoBox": null},"sdkConfig": {"numberOfWindowsForExposure": 3,"eventThreshold": 0.8,"badAttenuationThreshold": 73,"contactAttenuationThreshold": 73},"iOSGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15},"androidGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15}, "interOpsCountries": ["CH", "LI", "DE"]}
         """
         let config = try! JSONDecoder().decode(ConfigResponseBody.self, from: json.data(using: .utf8)!)
         XCTAssertEqual(config.forceUpdate, false)
@@ -39,5 +39,7 @@ class ConfigResponseBodyTests: XCTestCase {
         XCTAssertEqual(config.iOSGaenSdkConfig?.higherThreshold, 60)
         XCTAssertEqual(config.iOSGaenSdkConfig?.factorLow, 1)
         XCTAssertEqual(config.iOSGaenSdkConfig?.triggerThreshold, 15)
+
+        XCTAssertEqual(config.interOpsCountries, ["CH", "LI", "DE"])
     }
 }
