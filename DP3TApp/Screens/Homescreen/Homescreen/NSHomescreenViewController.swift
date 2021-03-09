@@ -17,6 +17,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let infoBoxView = HomescreenInfoBoxView()
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
+    private let travelView = NSTravelModuleView()
 
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
@@ -27,6 +28,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private var lastState: UIStateModel = .init()
 
     private let appTitleView = NSAppTitleView()
+
+    private var isFirstAppearance: Bool = true
 
     // MARK: - View
 
@@ -76,6 +79,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentWhatToDoSymptoms()
         }
 
+        travelView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentTravelDetail()
+        }
+
         // Ensure that Screen builds without animation if app not started on homescreen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.finishTransition?()
@@ -115,6 +123,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         finishTransition?()
         finishTransition = nil
+
+        if isFirstAppearance {
+            isFirstAppearance = false
+            showEndIsolationPopupIfNecessary()
+        }
     }
 
     private var finishTransition: (() -> Void)?
@@ -135,7 +148,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(reportsView)
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        travelView.isHidden = true
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
@@ -198,6 +215,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.alpha = 0
         reportsView.alpha = 0
+        travelView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
 
@@ -215,21 +233,25 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
+                self.travelView.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.8, options: [.allowUserInteraction], animations: {
                 self.whatToDoSymptomsButton.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                 self.whatToDoPositiveTestButton.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
-                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                     debugScreenContainer.alpha = 1
                 }, completion: nil)
             #endif
 
             #if ENABLE_LOGGING
-                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                     uploadDBContainer.alpha = 1
                 }, completion: nil)
             #endif
@@ -245,6 +267,14 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
+        if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
+            infoBoxView.hearingImpairedButtonTouched = { [weak self] in
+                guard let strongSelf = self else { return }
+                let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)
+
+                strongSelf.present(popup, animated: true)
+            }
+        }
         infoBoxView.uiState = state.homescreen.infoBox
 
         if let infoId = state.homescreen.infoBox?.infoId,
@@ -256,6 +286,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 }
             }
         }
+
+        travelView.isHidden = state.homescreen.countries.isEmpty
 
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
@@ -270,6 +302,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     func presentReportsDetail(animated: Bool = true) {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
+    }
+
+    private func presentTravelDetail() {
+        navigationController?.pushViewController(NSTravelDetailViewController(), animated: true)
     }
 
     #if ENABLE_TESTING
@@ -327,4 +363,25 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }
         }
     #endif
+
+    // MARK: - End isolation popup
+
+    private func showEndIsolationPopupIfNecessary() {
+        // If the state is not infected, never show the end isolation popup
+        guard lastState.homescreen.reports.report == .infected else {
+            return
+        }
+
+        if let questionDate = ReportingManager.shared.endIsolationQuestionDate, questionDate < Date() {
+            let alert = UIAlertController(title: "homescreen_isolation_ended_popup_title".ub_localized, message: "homescreen_isolation_ended_popup_text".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "answer_yes".ub_localized, style: .default, handler: { _ in
+                TracingManager.shared.deletePositiveTest()
+            }))
+            alert.addAction(UIAlertAction(title: "answer_no".ub_localized, style: .cancel, handler: { _ in
+                ReportingManager.shared.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24) // Ask again in 1 day
+            }))
+
+            present(alert, animated: true, completion: nil)
+        }
+    }
 }

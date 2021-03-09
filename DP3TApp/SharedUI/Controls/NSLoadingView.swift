@@ -11,7 +11,7 @@
 import UIKit
 
 class NSLoadingView: UIView {
-    private let errorStackView = UIStackView()
+    let errorStackView = UIStackView()
     private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
 
     private let errorImage: UIImage?
@@ -22,12 +22,12 @@ class NSLoadingView: UIView {
 
     // MARK: - Init
 
-    init(reloadButton: UBButton = NSButton(title: "loading_view_reload".ub_localized), errorImage: UIImage? = nil) {
+    init(reloadButton: UBButton = NSButton(title: "loading_view_reload".ub_localized), errorImage: UIImage? = nil, small: Bool = false) {
         self.reloadButton = reloadButton
         self.errorImage = errorImage
         super.init(frame: .zero)
         backgroundColor = .ns_background
-        setup()
+        setup(small: small)
         accessibilityViewIsModal = true
     }
 
@@ -40,6 +40,8 @@ class NSLoadingView: UIView {
     public func startLoading() {
         errorStackView.alpha = 0.0
         loadingIndicatorView.alpha = 1.0
+        errorTextLabel.text = nil
+        errorCodeLabel.text = nil
 
         UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
             self.alpha = 1.0
@@ -73,12 +75,12 @@ class NSLoadingView: UIView {
         }
     }
 
-    private func setup() {
+    private func setup(small: Bool) {
         addSubview(loadingIndicatorView)
 
         loadingIndicatorView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(100)
+            make.size.equalTo(small ? 50 : 100)
         }
 
         addSubview(errorStackView)

@@ -96,7 +96,8 @@ class TracingManager: NSObject {
 
         DP3TTracing.initialize(with: descriptor,
                                urlSession: URLSession.certificatePinned,
-                               backgroundHandler: self)
+                               backgroundHandler: self,
+                               federationGateway: .yes)
 
         // Do not sync because applicationState is still .background
         updateStatus(shouldSync: false) { _ in
@@ -158,6 +159,10 @@ class TracingManager: NSObject {
 
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
+
+        // reset end isolation question date
+        ReportingManager.shared.endIsolationQuestionDate = nil
+
         // reset infection status
         DP3TTracing.resetInfectionStatus()
 

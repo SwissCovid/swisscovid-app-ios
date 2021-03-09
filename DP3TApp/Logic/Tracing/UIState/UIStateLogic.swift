@@ -155,6 +155,8 @@ class UIStateLogic {
                 #endif
             }
         }
+
+        newState.homescreen.countries = ConfigManager.currentConfig?.interOpsCountries ?? []
     }
 
     private func setInfoBoxState(_ newState: inout UIStateModel) {
@@ -165,7 +167,8 @@ class UIStateLogic {
                                                                           link: infoBox.urlTitle,
                                                                           url: infoBox.url,
                                                                           isDismissible: infoBox.isDismissible,
-                                                                          infoId: infoBox.infoId)
+                                                                          infoId: infoBox.infoId,
+                                                                          hearingImpairedInfo: infoBox.hearingImpairedInfo)
         }
     }
 

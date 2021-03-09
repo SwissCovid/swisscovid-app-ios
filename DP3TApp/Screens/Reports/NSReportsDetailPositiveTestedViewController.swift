@@ -79,7 +79,7 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
         deleteButton.touchUpCallback = { [weak self] in
 
             deleteButton.touchUpCallback = {
-                let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .actionSheet)
+                let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
                     TracingManager.shared.deletePositiveTest()
                 }))
