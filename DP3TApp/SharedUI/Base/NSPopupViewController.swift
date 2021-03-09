@@ -27,6 +27,15 @@ class NSPopupViewController: NSViewController {
         }
     }()
 
+    private var statusBarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            return UIApplication.shared.statusBarFrame.height
+        }
+    }
+
     lazy var closeButton: UBButton = {
         let button = UBButton()
         button.setImage(UIImage(named: "ic-cross")?.ub_image(with: .white), for: .normal)
@@ -87,15 +96,8 @@ class NSPopupViewController: NSViewController {
     var didScrollToTop = false
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        if didScrollToTop == false,
+        if !didScrollToTop,
            scrollView.contentSize.height > view.frame.height {
-            let statusBarHeight: CGFloat
-            if #available(iOS 13.0, *) {
-                let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-                statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-            } else {
-                statusBarHeight = UIApplication.shared.statusBarFrame.height
-            }
             scrollView.setContentOffset(.init(x: 0, y: -statusBarHeight), animated: false)
             didScrollToTop = true
         }
@@ -153,14 +155,6 @@ class NSPopupViewController: NSViewController {
     private func addStatusBarBlurView() {
         blurView.alpha = 0
         view.addSubview(blurView)
-
-        let statusBarHeight: CGFloat
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusBarHeight = UIApplication.shared.statusBarFrame.height
-        }
         blurView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(statusBarHeight)
@@ -168,13 +162,6 @@ class NSPopupViewController: NSViewController {
     }
 
     private func updateBlurViewAlpha() {
-        let statusBarHeight: CGFloat
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusBarHeight = UIApplication.shared.statusBarFrame.height
-        }
         let perc = min(max((scrollView.contentOffset.y + statusBarHeight) / statusBarHeight, 0), 1)
         blurView.alpha = perc
     }
