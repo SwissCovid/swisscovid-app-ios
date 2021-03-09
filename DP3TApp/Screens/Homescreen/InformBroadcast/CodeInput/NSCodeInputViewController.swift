@@ -41,8 +41,6 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
         setup()
         updateAccessibilityLabelOfButton(sendAllowed: false)
-
-        accessibilityElements = [codeControl.accessibilityElements ?? [], titleLabel, textLabel].compactMap { $0 }
     }
 
     override func viewWillAppear(_ animated: Bool) {
