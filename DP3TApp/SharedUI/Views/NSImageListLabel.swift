@@ -30,6 +30,7 @@ class NSImageListLabel: UILabel {
         let string = NSMutableAttributedString()
         for (idx, img) in images.enumerated() {
             let attachment = NSTextAttachment()
+            attachment.accessibilityLabel = img.accessibilityLabel
             attachment.image = img
             string.append(NSAttributedString(attachment: attachment))
             if idx < images.count - 1 {
