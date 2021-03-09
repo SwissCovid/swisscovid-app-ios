@@ -270,7 +270,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Ina infecziun è pussaivla.";
-"meldung_homescreen_positiv_text" = "Vus essas vegnida testada/vegnì testà en moda positiva sin il nov coronavirus.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Vus essas vegnida testada/vegnì testà en moda positiva sin il coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Redefinir onboarding";
@@ -600,7 +602,7 @@
 "inform_detail_faq1_title" = "Tge è in code covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.";
+"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il coronavirus survegnan in code covid.\n \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Tge vegn tramess?";
@@ -867,19 +869,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Viadis";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid funcziuna en ils suandants pajais:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Tge vul quai dir?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Sche Vus essas (en gir) en in pajais cumpatibel, na stuais Vus betg installar in'autra app da corona.\n\nSwissCovid verifitgescha las IDs casualas ch'èn vegnidas publitgadas en ils pajais cumpatibels. Uschia pudais Vus vegnir infurmada resp. infurmà er en cas d'ina eventuala infecziun a l'exteriur.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Tge capita, sche jau endatesch il code covid?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "Sche Vus endatais il code covid vegnan las IDs casualas che Vus avais tramess er cundivididas cun ils pajais cumpatibels.\n\nPer che er las viagiaturas ed ils viagiaturs da l'exteriur possian vegnir infurmads, succeda quai independentamain dal fatg, sche Vus essas sezza stada resp. sez stà a l'exteriur u betg.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/

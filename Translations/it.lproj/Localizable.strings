@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Vi è la possibilità di un contagio.";
-"meldung_homescreen_positiv_text" = "Sei risultato positivo al test del nuovo coronavirus.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Sei risultato positivo al test del coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Reimposta onboarding";
@@ -878,20 +880,20 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Viaggi";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "L'app SwissCovid funziona nei seguenti Paesi:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Cosa significa?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Se vi trovate in un Paese compatibile non dovete installare una nuova app di tracciamento.\n\nL'app SwissCovid verifica gli ID casuali registrati nei Paesi compatibili. In questo modo vi può avvisare anche in caso di possibile contagio all'estero.";
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "Se vi trovate in un Paese compatibile non dovete installare una nuova app di tracciamento.\n\n\nL'app SwissCovid verifica gli ID casuali registrati nei Paesi compatibili. In questo modo vi può avvisare anche in caso di possibile contagio all'estero.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Cosa succede immettendo un codice Covid?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Dopo che il codice Covid è stato inserito, l'app condivide gli ID casuali da voi trasmessi anche con i Paesi compatibili.\n\nAffinché anche i viaggiatori all'estero possano essere avvisati, la condivisione avviene a prescindere dal fatto che voi siate stati all'estero o meno.";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "Dopo che il codice Covid è stato inserito, l'app condivide gli ID casuali da voi trasmessi anche con i Paesi compatibili.\n\n\nAffinché anche i viaggiatori all'estero possano essere avvisati, la condivisione avviene a prescindere dal fatto che voi siate stati all'estero o meno.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Questo pulsante permette di lasciare l'app e di aprire un sito Internet.";

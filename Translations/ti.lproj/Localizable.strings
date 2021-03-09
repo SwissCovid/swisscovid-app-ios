@@ -270,6 +270,8 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "ተኽእሎ ናይ ለበዳ ሕማም ኣሎ። ";
+
+/*Meldung auf Homescreen: Positiv getestet*/
 "meldung_homescreen_positiv_text" = "ዝገበርካዮ መርመራ ንኮሮናቫይረስ ውጽኢቱ ፖዚቲቭ ኮይኑ ተረኺቡ።";
 
 /*Debug Screen: Onboarding Reset Button*/
@@ -868,19 +870,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Travel";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid works in the following countries:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "What does that mean?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "You don’t have to install another app if you’re travelling in one of the compatible countries.\n\nSwissCovid checks random IDs published in the compatible countries. This means that you can also receive alerts of possible infection abroad.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "What happens when the Covidcode is entered?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "When the Covidcode is entered, the random IDs sent by you are also shared with the compatible countries.\n\nTo enable travellers from abroad to also receive alerts, this happens regardless of whether you yourself are travelling abroad or not.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/

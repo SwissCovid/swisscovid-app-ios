@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Il y a un risque d'infection.";
-"meldung_homescreen_positiv_text" = "Vous avez été testé positif au nouveau coronavirus.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Vous avez été testé positif au coronavirus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Réinitialiser l'intégration";
@@ -878,19 +880,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Voyages";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid fonctionne dans les pays suivants :";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Qu'est-ce que cela signifie ?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Si vous voyagez dans un des pays compatibles, vous n'avez pas besoin d'installer une autre application. \n\nSwissCovid vérifie les IDs aléatoires publiées dans les pays compatibles. Ainsi, vous serez averti d'une d'infection possible à l'étranger également.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Que se passe-t-il quand je saisis le code COVID ?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "Lorsque vous saisissez le code COVID, les IDs aléatoires que vous avez envoyées sont partagées avec les pays compatibles également. \n\nCet envoi se produit que vous ayez été à l'étranger ou non afin de pouvoir avertir les voyageurs en provenance d'autres pays.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
@@ -1250,7 +1252,7 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "Vous êtes sourd ou malentendant et vous ne pouvez pas appeler l'infoline dédiée au coronavirus ? // Alors envoyez un message à covid-support@medgate.ch.";
+"hearing_impaired_info" = "Vous êtes sourd ou malentendant et vous ne pouvez pas appeler l'infoline dédiée au coronavirus ? \n\nAlors envoyez un message à covid-support@medgate.ch.";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
 "stats_covidcodes_title" = "Codes COVID";
@@ -1286,7 +1288,7 @@
 "stats_covidcodes_total_description" = "Nombre de codes COVID saisis depuis le lancement de SwissCovid en juin 2020. Voici combien de personnes ont averti leurs contacts d'une éventuelle infection via l'application.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "Proportion de codes COVID saisis au cours des deux premiers jours après l'apparition des symptômes. Ce chiffre couvre les 7 derniers jours. // La vitesse est un facteur décisif dans la lutte contre le coronavirus : moins on perd de temps entre le début des symptômes, le résultat du test et la saisie du code COVID, plus vite les contacts avertis peuvent rester chez eux et protéger les autres.";
+"stats_covidcodes_0to2days_description" = "Proportion de codes COVID saisis au cours des deux premiers jours après l'apparition des symptômes. Ce chiffre couvre les 7 derniers jours. \n\nLa vitesse est un facteur décisif dans la lutte contre le coronavirus : moins on perd de temps entre le début des symptômes, le résultat du test et la saisie du code COVID, plus vite les contacts avertis peuvent rester chez eux et protéger les autres.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
 "stats_cases_7day_average_description" = "Indique la moyenne des nouvelles infections déclarées par jour sur 7 jours.";

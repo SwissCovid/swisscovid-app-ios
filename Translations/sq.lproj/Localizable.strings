@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Ekziston dyshimi i një infeksioni të mundshëm.";
-"meldung_homescreen_positiv_text" = "Ju keni rezultuar pozitiv me koronavirusin e ri.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Ju keni rezultuar pozitiv me koronavirusin.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Rivendos onboarding";
@@ -871,19 +873,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Udhëtimi";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid punon në shtetet më poshtë:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Cfarë do të thotë kjo?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Nëse do të udhëtoni në një nga shtetet e përfshira, nuk keni nevojë të instaloni asnjë aplikacion tjetër për koronavirusin.\n\nSwissCovid kontrollon kartat e identitetit në mënyrë rastësore që janë krijuar në shtetet e përfshira. Në këtë mënyrë, ju mund të paralajmëroheni edhe për një infeksion të mundshëm jashtë vendit.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Çfarë ndodh kur regjistron kodin Covid?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "Kur regjistroni kodin Covid, kartat e identitetit që dërgoni do të shpërndahen gjithashtu me shtetet e përfshira.\n\nNë mënyrë që udhëtarët nga jashtë shtetit të mund të paralajmërohen, kjo bëhet pavarësisht nëse keni qenë vetë jashtë shtetit ose jo.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/

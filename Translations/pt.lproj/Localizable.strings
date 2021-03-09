@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Existe a possibilidade de um contágio.";
-"meldung_homescreen_positiv_text" = "Testou positivo para o novo coronavírus.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Testou positivo para o coronavírus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Repor integração";
@@ -871,19 +873,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Viajar";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "A SwissCovid funciona nos seguintes países:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "O que significa isto?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Se viajar para um dos países compatíveis, não necessita de instalar mais nenhuma app de coronavírus.\n\nA SwissCovid verifica os ID aleatórios divulgados nos países compatíveis para que possa ser alertado de um possível contágio, mesmo no estrangeiro.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "O que acontece quando insiro o código COVID?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "Ao inserir o código COVID, os ID aleatórios que enviou também serão partilhados com os países compatíveis.\n\nIsto acontece independentemente de ter estado no estrangeiro ou não para que os viajantes estrangeiros possam também ser alertados.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/

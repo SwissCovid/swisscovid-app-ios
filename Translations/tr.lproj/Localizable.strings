@@ -270,7 +270,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Enfeksiyon riski bulunmaktadır.";
-"meldung_homescreen_positiv_text" = "Yeni Korona virüsü testiniz pozitiftir.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Korona virüsü testiniz pozitiftir.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Kaydı geri al";
@@ -868,19 +870,19 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Seyahatler";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid şu ülkelerde çalışır:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Bunun anlamı nedir?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Uyumlu ülkelerin birinde seyahat ettiğinizde, başka bir Korona uygulamasını kurmak zorunda kalmazsınız.\n\nSwissCovid uyumlu ülkelerde yayınlanan rastgele kimlikleri kontrol eder. Böylece yurt dışındaki olası bir bulaşı durumunda da uyarılabilirsiniz.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Covid kodu girildiğinde neler olur?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_2" = "Covid kodu girildiğinde tarafınızdan girilen rastgele kimlikler uyumlu olan ülkelerle de paylaşılır.\n\nYurt dışı seyahatlerinden gelen kişilerin de uyarılabilmesi için bu, sizin yurt dışı seyahatinde bulunmuş olup olmamanıza bağlı kalmaksızın uygulanır.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/

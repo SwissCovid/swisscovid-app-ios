@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Existe la posibilidad de un contagio.";
-"meldung_homescreen_positiv_text" = "A dado usted positivo en el test del nuevo coronavirus";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "A dado usted positivo en el test del  coronavirus";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Reiniciar onboarding";
@@ -871,20 +873,20 @@
 /*Title for the Home View Travel Card.*/
 "travel_title" = "Viajar";
 
-/*Info text that is displayed on the Home Travel Card.*/
+/*Info text that is displayed  on the Home Travel Card.*/
 "travel_home_description" = "SwissCovid funciona en los países siguientes:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "¿Y esto qué significa?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_text_1" = "Si está usted de viaje en uno de los países compatibles no es necesario descargar otra aplicación contra el coronavirus.\n\nSwissCovid analiza las ID aleatorias difundidas en los países compatibles. Así, la aplicación le avisa de un posible contagio incluso estando en el extranjero.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "¿Qué ocurre al introducir el código Covid?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Al introducir el código Covid, las ID aleatorias que usted envía se comparten también con los países compatibles.\n\nAl fin de poder alertar también a los viajeros del extranjero, esto ocurre independientemente de que usted haya estado en el extranjero o no.";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "Al introducir el código Covid, las ID aleatorias que usted envía se comparten también con los países compatibles.\n\nAl fin de poder alertar también a los viajeros del extranjero, esto ocurre independientemente de que usted haya estado en el extranjero o no. ";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Este botón sale de la aplicación y abre una página web.";
@@ -1253,7 +1255,7 @@
 "stats_covidcodes_total_description" = "Número de códigos Covid introducidos desde el lanzamiento de la app SwissCovid en junio de 2020. Esta es la cantidad de personas que ha podido informar a sus contactos sobre la posibilidad de un contagio.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "Proporción de códigos Covid introducidos en los dos primeros días tras la aparición de los síntomas. Esta proporción se refiere a los últimos 7 días.      El tiempo es un factor determinante a la hora de luchar contra el coronavirus: cuanto menor tiempo transcurra entre la aparición de síntomas, el resultado del test y la introducción del código Covid, antes podrán quedarse en casa los contactos notificados y proteger así a otros.";
+"stats_covidcodes_0to2days_description" = "Proporción de códigos Covid introducidos en los dos primeros días tras la aparición de los síntomas. Esta proporción se refiere a los últimos 7 días.\n\nEl tiempo es un factor determinante a la hora de luchar contra el coronavirus: cuanto menor tiempo transcurra entre la aparición de síntomas, el resultado del test y la introducción del código Covid, antes podrán quedarse en casa los contactos notificados y proteger así a otros.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
 "stats_cases_7day_average_description" = "Muestra el promedio de nuevos contagios notificados por día en un plazo de 7 días.";
