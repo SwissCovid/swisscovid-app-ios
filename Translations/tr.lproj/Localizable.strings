@@ -245,7 +245,7 @@
 "meldung_detail_positive_tested_title" = "Testiniz pozitif";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Yeni Korona virüsü testiniz pozitiftir.";
+"meldung_detail_positive_tested_subtitle" = "Korona virüsü testiniz pozitiftir.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
 "meldung_detail_positive_test_box_subtitle" = "Ne yapmalıyım?";
@@ -270,7 +270,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Enfeksiyon riski bulunmaktadır.";
-"meldung_homescreen_positiv_text" = "Yeni Korona virüsü testiniz pozitiftir.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Korona virüsü testiniz pozitiftir.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Kaydı geri al";
@@ -318,7 +320,7 @@
 "onboarding_prinzip_title" = "Virüsün bir adım önünde";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "SwissCovid uygulaması ile yeni Korona virüsünün yayılımını sınırlandırmaya yardımcı olabilirsiniz.";
+"onboarding_prinzip_text1" = "SwissCovid uygulaması ile Korona virüsünün yayılımını sınırlandırmaya yardımcı olabilirsiniz.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Korona virüsü ile potansiyel temaslarda uygulama sizi bilgilendirir.";
@@ -354,7 +356,7 @@
 "onboarding_meldung_title" = "Enfeksiyon riskinde dair bildirim";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Uygulama, potansiyel olarak yeni Korona virüsü ile temasınız olduğunda sizi uyarır.";
+"onboarding_meldung_text1" = "Uygulama, potansiyel olarak Korona virüsü ile temasınız olduğunda sizi uyarır.";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text2" = "Doğru davranışlarla enfeksiyon zincirlerini kırabilir ve diğer insanları koruyabilirsiniz.";
@@ -622,7 +624,7 @@
 "inform_code_intro_text" = "Kişisel bilgileriniz iletilmese dahi, bazı kişiler tarihler temelinde sizinle olan teması hatırlayabilirler.";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "Anlaşıldı";
+"inform_code_intro_button" = "Kabul ediyorum";
 
 /*Symptome: FAQ Titel*/
 "symptom_faq1_title" = "KOVİD-19 semptomları nedir?";
@@ -866,22 +868,22 @@
 "infobox_close_button_accessibility" = "Kapat";
 
 /*Title for the Home View Travel Card.*/
-"travel_title" = "";
+"travel_title" = "Seyahatler";
 
-/*Info text that is displayed on the Home Travel Card.*/
-"travel_home_description" = "";
+/*Info text that is displayed  on the Home Travel Card.*/
+"travel_home_description" = "SwissCovid şu ülkelerde çalışır:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_1" = "";
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_1" = "Bunun anlamı nedir?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "";
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "Uyumlu ülkelerin birinde seyahat ettiğinizde, başka bir Korona uygulamasını kurmak zorunda kalmazsınız.\n\nSwissCovid uyumlu ülkelerde yayınlanan rastgele kimlikleri kontrol eder. Böylece yurt dışındaki olası bir bulaşı durumunda da uyarılabilirsiniz.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_2" = "";
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "Covid kodu girildiğinde neler olur?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "Covid kodu girildiğinde tarafınızdan girilen rastgele kimlikler uyumlu olan ülkelerle de paylaşılır.\n\nYurt dışı seyahatlerinden gelen kişilerin de uyarılabilmesi için bu, sizin yurt dışı seyahatinde bulunmuş olup olmamanıza bağlı kalmaksızın uygulanır.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Bu buton, uygulamadan çıkarak bir web sayfası açar.";
@@ -1214,55 +1216,55 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "";
+"hearing_impaired_info" = "İşitmiyor veya işitme özürlü müsünüz ve Koronavirüs bilgi hattını arayamıyor musunuz?\n\nO halde covid-support@medgate.ch adresine bir e-posta gönderiniz";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
-"stats_covidcodes_title" = "";
+"stats_covidcodes_title" = "Covid kodları";
 
 /*Überschrift des Fallzahlen-Statistik Moduls*/
-"stats_cases_title" = "";
+"stats_cases_title" = "Vaka sayıları";
 
 /*Untertitel des Fallzahlen-Statistik-Moduls*/
-"stats_cases_subtitle" = "";
+"stats_cases_subtitle" = "güncel gelişme";
 
 /*Label der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_label" = "";
+"stats_covidcodes_total_label" = "girildi";
 
 /*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_label" = "";
+"stats_covidcodes_0to2days_label" = "0-2 gün içinde";
 
 /*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_label" = "";
+"stats_cases_7day_average_label" = "7 gün ortalaması";
 
 /*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_label" = "";
+"stats_cases_rel_prev_week_label" = "önceki haftaya göre";
 
 /*Überschrift des Info-Popups auf dem Statistik-Screen*/
-"stats_info_popup_title" = "";
+"stats_info_popup_title" = "Rakamlara ilişkin ayrıntılar";
 
 /*Untertitel des Infopopups zu Covidcodes-Statistiken*/
-"stats_info_popup_subtitle_covidcodes" = "";
+"stats_info_popup_subtitle_covidcodes" = "Girilen Covid kodları";
 
 /*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
-"stats_info_popup_subtitle_cases" = "";
+"stats_info_popup_subtitle_cases" = "Vaka sayıları";
 
 /*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_description" = "";
+"stats_covidcodes_total_description" = "SwissCovid uygulaması Haziran 2020'de başladığından beri girilen Covid kodlarının sayısı. Uygulamayı kullanan bu kadar insan, temas ettikleri kişilere olası bir bulaşıyı bildirdi.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "";
+"stats_covidcodes_0to2days_description" = "Semptom başlangıcından sonra ilk iki gün içerisinde girilmiş olan Covid kodlarının oranı. Bu oran son 7 günü kapsar.\n\nZaman, Koronavirüs ile mücadelede en önemli faktördür: Semptom başlangıcı, test sonucu ve Covid kodu girişi arasında geçen süre ne kadar kısa olursa, bildirimde bulunulan temas kişileri o kadar erkenden evde kalabilir ve başkalarını koruyabilir.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_description" = "";
+"stats_cases_7day_average_description" = "7 gün boyunca her gün bildirilen yeni enfeksiyonların ortalamasını gösterir.";
 
 /*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_description" = "";
+"stats_cases_rel_prev_week_description" = "Bir hafta öncesinin durumuna nazaran 7 günlük ortalamanın değişimini gösterir.";
 
 /*Label der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_label" = "";
+"stats_cases_current_label" = "Güncel gelişme";
 
 /*Beschreibung der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_description" = "";
+"stats_cases_current_description" = "Grafik son 28 günde bildirilmiş olan yeni enfeksiyonları gösterir. Bu ise güncel gelişme hakkında genel bir bakış kazandırır.";
 
 /*Inform Detail: Infobox Text*/
 "inform_detail_infobox1_text" = "Test sonucunuz pozitif çıktı ve 4 saat içerisinde henüz Covid kodunu almadınız mı? \nBu durumda, Covid Kodu Bilgi Hattı (Infoline) ile iletişime geçiniz:";
@@ -1271,31 +1273,31 @@
 "inform_detail_infobox1_title" = "Covid kodunu henüz almadınız mı?";
 
 /*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_title" = "";
+"homescreen_isolation_ended_popup_title" = "İzolasyonunuzu sonlandırdınız mı?";
 
 /*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_text" = "";
+"homescreen_isolation_ended_popup_text" = "İzolasyonu sonlandırdığınız anda izleme tekrar etkin hale getirilebilir.";
 
 /*Ja-Antwort*/
-"answer_yes" = "";
+"answer_yes" = "Evet";
 
 /*Nein-Antwort*/
-"answer_no" = "";
+"answer_no" = "Hayır";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "";
+"travel_screen_info" = "Yurt dışı seyahatinde misiniz? SwissCovid bu ülkelerde çalışır.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
-"travel_screen_compatible_countries" = "";
+"travel_screen_compatible_countries" = "Uyumlu ülkeler:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "";
+"inform_code_travel_text" = "Yurt dışı seyahatlerinden dönen kişilere de uyarıda bulunulabilmesi için, rastgele kimlikler uyumlu ülkelerin Korona uygulamalarıyla paylaşılır.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
-"stats_covidcodes_total_header" = "";
+"stats_covidcodes_total_header" = "Toplam";
 
 /*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_header" = "";
+"stats_covidcodes_0to2days_header" = "Güncel";
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
-"stats_cases_rel_prev_week_popup_header" = "";
+"stats_cases_rel_prev_week_popup_header" = "Önceki haftaya göre değişim";

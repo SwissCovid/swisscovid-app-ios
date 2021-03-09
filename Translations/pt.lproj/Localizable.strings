@@ -246,7 +246,7 @@
 "meldung_detail_positive_tested_title" = "Teste positivo";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Testou positivo para o novo coronavírus.";
+"meldung_detail_positive_tested_subtitle" = "Testou positivo para o coronavírus.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
 "meldung_detail_positive_test_box_subtitle" = "Que devo fazer?";
@@ -271,7 +271,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Existe a possibilidade de um contágio.";
-"meldung_homescreen_positiv_text" = "Testou positivo para o novo coronavírus.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Testou positivo para o coronavírus.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Repor integração";
@@ -319,10 +321,10 @@
 "onboarding_prinzip_title" = "Estar um passo à frente do vírus\n";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Com a app Swiss Covid, todos podem ajudar a conter a propagação do novo coronavírus.";
+"onboarding_prinzip_text1" = "Com a app Swiss Covid, todos podem ajudar a conter a propagação do coronavírus.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "A app informa-o, caso possa ter estado exposto ao novo coronavírus.";
+"onboarding_prinzip_text2" = "A app informa-o, caso possa ter estado exposto ao coronavírus.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
@@ -355,7 +357,7 @@
 "onboarding_meldung_title" = "Notificação de possível contágio\n";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "A app informa-o, caso possa ter estado exposto ao novo coronavírus.";
+"onboarding_meldung_text1" = "A app informa-o, caso possa ter estado exposto ao coronavírus.";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text2" = "Se agir da forma correta, estará a travar as cadeias de transmissão e a proteger os outros.";
@@ -601,8 +603,7 @@
 "inform_detail_faq1_title" = "O que é um código COVID?";
 
 /*Inform Detail: FAQ Text*/
-/*Fuzzy*/
-"inform_detail_faq1_text" = "As pessoas que testaram positivo para o novo coronavírus recebem um código COVID.\n\nIsto assegura que só os casos confirmados são assinalados na app.";
+"inform_detail_faq1_text" = "As pessoas que testaram positivo para o coronavírus recebem um código COVID.\n\nIsto assegura que só os casos confirmados são assinalados na app.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Que dados são enviados?";
@@ -870,22 +871,22 @@
 "infobox_close_button_accessibility" = "Fechar";
 
 /*Title for the Home View Travel Card.*/
-"travel_title" = "";
+"travel_title" = "Viajar";
 
-/*Info text that is displayed on the Home Travel Card.*/
-"travel_home_description" = "";
+/*Info text that is displayed  on the Home Travel Card.*/
+"travel_home_description" = "A SwissCovid funciona nos seguintes países:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_1" = "";
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_1" = "O que significa isto?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "";
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "Se viajar para um dos países compatíveis, não necessita de instalar mais nenhuma app de coronavírus.\n\nA SwissCovid verifica os ID aleatórios divulgados nos países compatíveis para que possa ser alertado de um possível contágio, mesmo no estrangeiro.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_2" = "";
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "O que acontece quando insiro o código COVID?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "Ao inserir o código COVID, os ID aleatórios que enviou também serão partilhados com os países compatíveis.\n\nIsto acontece independentemente de ter estado no estrangeiro ou não para que os viajantes estrangeiros possam também ser alertados.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Este botão permite sair da aplicação e abrir uma página de internet.";
@@ -1129,7 +1130,7 @@
 "test_location_popup_title" = "Onde posso fazer um teste?";
 
 /*Test standorte Popup Text*/
-"test_location_popup_text" = "Poderá fazer um teste de despiste do novo coronavírus com diferentes médicos e em vários centros de teste, hospitais e farmácias. Poderá informar-se sobre os locais de teste nas páginas de internet dos cantões:";
+"test_location_popup_text" = "Poderá fazer um teste de despiste do coronavírus com diferentes médicos e em vários centros de teste, hospitais e farmácias. Poderá informar-se sobre os locais de teste nas páginas de internet dos cantões:";
 
 /*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
 "android_reminder_channel_name" = "Lembrete de ativação do rastreamento";
@@ -1218,55 +1219,55 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "";
+"hearing_impaired_info" = "Sofre de surdez ou de insuficiência auditiva e não pode ligar para a linha informativa do coronavírus?\n\nNesse caso, envie um e-mail para covid-support@medgate.ch";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
-"stats_covidcodes_title" = "";
+"stats_covidcodes_title" = "Código COVID";
 
 /*Überschrift des Fallzahlen-Statistik Moduls*/
-"stats_cases_title" = "";
+"stats_cases_title" = "Número de casos";
 
 /*Untertitel des Fallzahlen-Statistik-Moduls*/
-"stats_cases_subtitle" = "";
+"stats_cases_subtitle" = "evolução atual";
 
 /*Label der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_label" = "";
+"stats_covidcodes_total_label" = "inserido";
 
 /*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_label" = "";
+"stats_covidcodes_0to2days_label" = "entre 0 e 2 dias";
 
 /*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_label" = "";
+"stats_cases_7day_average_label" = "média de 7 dias";
 
 /*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_label" = "";
+"stats_cases_rel_prev_week_label" = "em relação à semana anterior";
 
 /*Überschrift des Info-Popups auf dem Statistik-Screen*/
-"stats_info_popup_title" = "";
+"stats_info_popup_title" = "Dados sobre os números";
 
 /*Untertitel des Infopopups zu Covidcodes-Statistiken*/
-"stats_info_popup_subtitle_covidcodes" = "";
+"stats_info_popup_subtitle_covidcodes" = "Códigos COVID inseridos";
 
 /*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
-"stats_info_popup_subtitle_cases" = "";
+"stats_info_popup_subtitle_cases" = "Número de casos";
 
 /*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_description" = "";
+"stats_covidcodes_total_description" = "Número de códigos COVID inseridos desde o lançamento da app SwissCovid em junho de 2020. Através da app, estas pessoas informaram os seus contatos sobre um possível contágio.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "";
+"stats_covidcodes_0to2days_description" = "Percentagem de códigos COVID inseridos nos primeiros dois dias após o surgimento de sintomas. Esta percentagem é relativa aos últimos 7 dias.\n\nNo combate ao coronavírus, o tempo é um fator decisivo: quanto menos tempo passar entre o surgimento dos sintomas, o resultado do teste e a inserção do código COVID, mais cedo os contactos notificados podem isolar-se em casa e proteger os outros.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_description" = "";
+"stats_cases_7day_average_description" = "É o número médio de novas infeções registadas por dia durante 7 dias.";
 
 /*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_description" = "";
+"stats_cases_rel_prev_week_description" = "É a variação da média dos 7 dias em comparação com o estado de há uma semana.";
 
 /*Label der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_label" = "";
+"stats_cases_current_label" = "Evolução atual";
 
 /*Beschreibung der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_description" = "";
+"stats_cases_current_description" = "O gráfico mostra as novas infeções registadas nos últimos 28 dias, dando um panorama da evolução atual.";
 
 /*Inform Detail: Infobox Text*/
 "inform_detail_infobox1_text" = "Você foi testado positivo e ainda não recebeu um código COVID após 4 horas? Nesse caso contacte a linha informativa do código COVID:";
@@ -1275,31 +1276,31 @@
 "inform_detail_infobox1_title" = "Ainda não recebeu um código COVID?";
 
 /*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_title" = "";
+"homescreen_isolation_ended_popup_title" = "Já terminou o isolamento?";
 
 /*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_text" = "";
+"homescreen_isolation_ended_popup_text" = "O rastreamento pode ser reativado logo que termine o isolamento.";
 
 /*Ja-Antwort*/
-"answer_yes" = "";
+"answer_yes" = "Sim";
 
 /*Nein-Antwort*/
-"answer_no" = "";
+"answer_no" = "Não";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "";
+"travel_screen_info" = "Está no estrangeiro? A SwissCovid funciona nestes países.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
-"travel_screen_compatible_countries" = "";
+"travel_screen_compatible_countries" = "Países compatíveis:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "";
+"inform_code_travel_text" = "Para alertar também os viajantes de outros países, os ID aleatórios são partilhados com as apps de coronavírus dos países compatíveis.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
-"stats_covidcodes_total_header" = "";
+"stats_covidcodes_total_header" = "Total";
 
 /*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_header" = "";
+"stats_covidcodes_0to2days_header" = "Atual";
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
-"stats_cases_rel_prev_week_popup_header" = "";
+"stats_cases_rel_prev_week_popup_header" = "Variação em relação à semana anterior";
