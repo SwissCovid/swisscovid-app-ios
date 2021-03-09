@@ -245,7 +245,7 @@
 "meldung_detail_positive_tested_title" = "Testiran pozitivno";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Testirani ste pozitivno na novi virus korona.";
+"meldung_detail_positive_tested_subtitle" = "Testirani ste pozitivno na virus korona.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
 "meldung_detail_positive_test_box_subtitle" = "Šta bi trebalo da uradim?";
@@ -270,7 +270,9 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "Postoji mogućnost infekcije.";
-"meldung_homescreen_positiv_text" = "Testirani ste pozitivno na novi virus korona.";
+
+/*Meldung auf Homescreen: Positiv getestet*/
+"meldung_homescreen_positiv_text" = "Testirani ste pozitivno na virus korona.";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Resetuj onboarding";
@@ -318,10 +320,10 @@
 "onboarding_prinzip_title" = "Budite korak\nispred virusa";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja novog virusa korona.";
+"onboarding_prinzip_text1" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi novim virusom korona.";
+"onboarding_prinzip_text2" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korona.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
@@ -354,7 +356,7 @@
 "onboarding_meldung_title" = "Obaveštavanje u slučaju\nmoguće infekcije";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi novim virusom korona.";
+"onboarding_meldung_text1" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korona.";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text2" = "Ispravnim ponašanjem možete zaštititi sebe i druge.";
@@ -600,8 +602,7 @@
 "inform_detail_faq1_title" = "Šta je Covid šifra?";
 
 /*Inform Detail: FAQ Text*/
-/*Fuzzy*/
-"inform_detail_faq1_text" = "Ljudi koji su testirani pozitivno na novi virus korona dobijaju Covid šifru.\n\nTime se osigurava da se putem aplikacije prijavljuju samo potvrđeni slučajevi.";
+"inform_detail_faq1_text" = "Ljudi koji su testirani pozitivno na virus korona dobijaju Covid šifru.\n\nTime se osigurava da se putem aplikacije prijavljuju samo potvrđeni slučajevi.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Šta se šalje?";
@@ -866,22 +867,22 @@
 "infobox_close_button_accessibility" = "Zatvori";
 
 /*Title for the Home View Travel Card.*/
-"travel_title" = "";
+"travel_title" = "Travel";
 
-/*Info text that is displayed on the Home Travel Card.*/
-"travel_home_description" = "";
+/*Info text that is displayed  on the Home Travel Card.*/
+"travel_home_description" = "SwissCovid works in the following countries:";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_1" = "";
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_1" = "What does that mean?";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "";
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "You don’t have to install another app if you’re travelling in one of the compatible countries.\n\nSwissCovid checks random IDs published in the compatible countries. This means that you can also receive alerts of possible infection abroad.";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_2" = "";
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "What happens when the Covidcode is entered?";
 
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "When the Covidcode is entered, the random IDs sent by you are also shared with the compatible countries.\n\nTo enable travellers from abroad to also receive alerts, this happens regardless of whether you yourself are travelling abroad or not.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Ovo dugme napušta aplikaciju i otvara veb stranicu.";
@@ -1125,7 +1126,7 @@
 "test_location_popup_title" = "Gde mogu da uradim test?";
 
 /*Test standorte Popup Text*/
-"test_location_popup_text" = "Na novi koronavirus možete da se testirate kod raznih lekara, u centrima za testiranje, bolnicama i apotekama. Informacije o ponudama testiranja možete pronaći na  internet stranicama kantona:";
+"test_location_popup_text" = "Na koronavirus možete da se testirate kod raznih lekara, u centrima za testiranje, bolnicama i apotekama. Informacije o ponudama testiranja možete pronaći na  internet stranicama kantona:";
 
 /*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
 "android_reminder_channel_name" = "Podsećanje na aktivaciju praćenja";
@@ -1214,55 +1215,55 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "";
+"hearing_impaired_info" = "Are you deaf or hard of hearing and unable to call the coronavirus infoline on the phone?\n\nSend an email to covid-support@medgate.ch.";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
-"stats_covidcodes_title" = "";
+"stats_covidcodes_title" = "Covidcodes";
 
 /*Überschrift des Fallzahlen-Statistik Moduls*/
-"stats_cases_title" = "";
+"stats_cases_title" = "Numbers of cases";
 
 /*Untertitel des Fallzahlen-Statistik-Moduls*/
-"stats_cases_subtitle" = "";
+"stats_cases_subtitle" = "Current development";
 
 /*Label der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_label" = "";
+"stats_covidcodes_total_label" = "entered";
 
 /*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_label" = "";
+"stats_covidcodes_0to2days_label" = "within 0-2 days";
 
 /*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_label" = "";
+"stats_cases_7day_average_label" = "7-day average";
 
 /*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_label" = "";
+"stats_cases_rel_prev_week_label" = "vs previous week";
 
 /*Überschrift des Info-Popups auf dem Statistik-Screen*/
-"stats_info_popup_title" = "";
+"stats_info_popup_title" = "Details on the figures";
 
 /*Untertitel des Infopopups zu Covidcodes-Statistiken*/
-"stats_info_popup_subtitle_covidcodes" = "";
+"stats_info_popup_subtitle_covidcodes" = "Covidcodes entered";
 
 /*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
-"stats_info_popup_subtitle_cases" = "";
+"stats_info_popup_subtitle_cases" = "Numbers of cases";
 
 /*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_description" = "";
+"stats_covidcodes_total_description" = "Number of Covidcodes entered since the launch of the SwissCovid app in June 2020. This is the number of people who have notified their contacts of possible infection via the app.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "";
+"stats_covidcodes_0to2days_description" = "The percentage of Covidcodes entered already in the first two days after onset of symptoms. This figure is for the last 7 days.\n\nTime is a crucial factor when it comes to combating coronavirus: the shorter the time between the onset of symptoms, the result of the test and entering the Covidcode, the earlier alerted contacts can stay at home and protect other people.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_description" = "";
+"stats_cases_7day_average_description" = "Shows the average number of reported new infections per day over 7 days.";
 
 /*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_description" = "";
+"stats_cases_rel_prev_week_description" = "Shows the change in the 7-day average compared with the situation a week ago.";
 
 /*Label der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_label" = "";
+"stats_cases_current_label" = "Current developments";
 
 /*Beschreibung der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_description" = "";
+"stats_cases_current_description" = "The chart shows new infections reported in the last 28 days. This gives an overview of current developments.";
 
 /*Inform Detail: Infobox Text*/
 "inform_detail_infobox1_text" = "Testirani ste pozitivno i 4 h posle još niste dobili Covid šifru?\nKontaktirajte info-liniju za Covid šifre:";
@@ -1271,31 +1272,31 @@
 "inform_detail_infobox1_title" = "Još niste dobili Covid šifru?";
 
 /*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_title" = "";
+"homescreen_isolation_ended_popup_title" = "Have you come out of isolation?";
 
 /*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_text" = "";
+"homescreen_isolation_ended_popup_text" = "Tracing can be reactivated once you have completed your period of isolation.";
 
 /*Ja-Antwort*/
-"answer_yes" = "";
+"answer_yes" = "Yes";
 
 /*Nein-Antwort*/
-"answer_no" = "";
+"answer_no" = "No";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "";
+"travel_screen_info" = "Travelling abroad? SwissCovid works in these countries.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
-"travel_screen_compatible_countries" = "";
+"travel_screen_compatible_countries" = "Compatible countries:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "";
+"inform_code_travel_text" = "To enable travellers from abroad to receive alerts as well, the random IDs are also shared with the coronavirus apps in compatible countries.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
-"stats_covidcodes_total_header" = "";
+"stats_covidcodes_total_header" = "Total";
 
 /*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_header" = "";
+"stats_covidcodes_0to2days_header" = "Current";
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
-"stats_cases_rel_prev_week_popup_header" = "";
+"stats_cases_rel_prev_week_popup_header" = "Change versus previous week";
