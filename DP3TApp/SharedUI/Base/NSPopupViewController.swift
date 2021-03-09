@@ -83,6 +83,24 @@ class NSPopupViewController: NSViewController {
         }
     }
 
+    // this is needed to scroll below the statusbar when the content does not fit on the screen
+    var didScrollToTop = false
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if didScrollToTop == false,
+           scrollView.contentSize.height > view.frame.height {
+            let statusBarHeight: CGFloat
+            if #available(iOS 13.0, *) {
+                let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+                statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            } else {
+                statusBarHeight = UIApplication.shared.statusBarFrame.height
+            }
+            scrollView.setContentOffset(.init(x: 0, y: -statusBarHeight), animated: false)
+            didScrollToTop = true
+        }
+    }
+
     private func setupLayout() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 
