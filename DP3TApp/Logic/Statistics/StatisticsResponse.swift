@@ -45,6 +45,13 @@ extension StatisticsResponse {
         return formatter
     }()
 
+    private static let positiveNegativePercentageFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .percent
+        formatter.positivePrefix = "+"
+        return formatter
+    }()
+
     var covidCodes: String? {
         Self.counterFormatter.string(fromOptional: totalCovidcodesEntered)
     }
@@ -58,7 +65,7 @@ extension StatisticsResponse {
     }
 
     var newInfectionsRelative: String? {
-        Self.percentageFormatter.string(fromOptional: newInfectionsSevenDayAvgRelPrevWeek)
+        Self.positiveNegativePercentageFormatter.string(fromOptional: newInfectionsSevenDayAvgRelPrevWeek)
     }
 }
 
