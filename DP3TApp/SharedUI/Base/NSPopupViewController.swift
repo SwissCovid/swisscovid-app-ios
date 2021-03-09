@@ -133,6 +133,7 @@ class NSPopupViewController: NSViewController {
     }
 
     private func addStatusBarBlurView() {
+        blurView.alpha = 0
         view.addSubview(blurView)
 
         let statusBarHeight: CGFloat
