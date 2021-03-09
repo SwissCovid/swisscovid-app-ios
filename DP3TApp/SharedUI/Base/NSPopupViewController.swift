@@ -31,7 +31,7 @@ class NSPopupViewController: NSViewController {
         let button = UBButton()
         button.setImage(UIImage(named: "ic-cross")?.ub_image(with: .white), for: .normal)
         button.accessibilityLabel = "infobox_close_button_accessibility".ub_localized
-        button.contentEdgeInsets = .init(top: NSPadding.small, left: NSPadding.small, bottom: NSPadding.small, right: NSPadding.small)
+        button.contentEdgeInsets = .init(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
         return button
     }()
 
@@ -186,7 +186,7 @@ class NSPopupViewController: NSViewController {
 
     @objc private func tapBackgroundDismiss(sender: UITapGestureRecognizer) {
         let location = sender.location(in: view)
-        guard !contentView.frame.contains(location) else { return }
+        guard !contentWrapper.frame.contains(location) else { return }
         dismiss()
     }
 }
