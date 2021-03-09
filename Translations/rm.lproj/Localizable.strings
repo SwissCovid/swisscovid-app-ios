@@ -245,7 +245,7 @@
 "meldung_detail_positive_tested_title" = "Testada/testà en moda positiva";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
-"meldung_detail_positive_tested_subtitle" = "Vus essas vegnida testada/vegnì testà en moda positiva sin il nov coronavirus.";
+"meldung_detail_positive_tested_subtitle" = "Vus essas vegnida testada/vegnì testà en moda positiva sin il coronavirus.";
 
 /*Meldung Detail Positiv Getestet Weisse Box Subtitel*/
 "meldung_detail_positive_test_box_subtitle" = "Tge duai jau far?";
@@ -318,10 +318,10 @@
 "onboarding_prinzip_title" = "In pass ordavant al virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Cun l'app SwissCovid pon tuts gidar da franar la derasaziun dal nov coronavirus.";
+"onboarding_prinzip_text1" = "Cun l'app SwissCovid pon tuts gidar da franar la derasaziun dal coronavirus.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "L'app As infurmescha, sche Vus essas stada exponida/stà exponì al nov coronavirus.";
+"onboarding_prinzip_text2" = "L'app As infurmescha, sche Vus essas stada exponida/stà exponì al coronavirus.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
@@ -354,7 +354,7 @@
 "onboarding_meldung_title" = "Avis en cas d'ina eventuala infecziun";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "L'app As infurmescha, sche Vus essas stada exponida/stà exponì potenzialmain al nov coronavirus.";
+"onboarding_meldung_text1" = "L'app As infurmescha, sche Vus essas stada exponida/stà exponì potenzialmain al coronavirus.";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text2" = "Cun il cumportament gist pudais Vus interrumper chadainas d'infecziun e proteger autras persunas.";
@@ -600,8 +600,7 @@
 "inform_detail_faq1_title" = "Tge è in code covid?";
 
 /*Inform Detail: FAQ Text*/
-/*Fuzzy*/
-"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il nov coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.";
+"inform_detail_faq1_text" = "Persunas ch’èn vegnidas testadas en moda positiva sin il coronavirus survegnan in code covid.\n      \nUschia vegni garantì che mo cas confermads vegnan avisads via l'app.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Tge vegn tramess?";
@@ -622,7 +621,7 @@
 "inform_code_intro_text" = "Cumbain ch'i na vegnan tramessas naginas datas davart Vossa persuna, èsi pussaivel ch'insatgi sa regorda da l'inscunter a maun da la data.";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "Chapì";
+"inform_code_intro_button" = "D'accord";
 
 /*Symptome: FAQ Titel*/
 "symptom_faq1_title" = "Tge èn sintoms da COVID-19?";
@@ -866,22 +865,22 @@
 "infobox_close_button_accessibility" = "Serrar";
 
 /*Title for the Home View Travel Card.*/
-"travel_title" = "";
+"travel_title" = "Viadis";
 
 /*Info text that is displayed on the Home Travel Card.*/
-"travel_home_description" = "";
+"travel_home_description" = "SwissCovid funcziuna en ils suandants pajais:";
 
 /*First title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_1" = "";
+"travel_screen_explanation_title_1" = "Tge vul quai dir?";
 
 /*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "";
+"travel_screen_explanation_text_1" = "Sche Vus essas (en gir) en in pajais cumpatibel, na stuais Vus betg installar in'autra app da corona.\n\nSwissCovid verifitgescha las IDs casualas ch'èn vegnidas publitgadas en ils pajais cumpatibels. Uschia pudais Vus vegnir infurmada resp. infurmà er en cas d'ina eventuala infecziun a l'exteriur.";
 
 /*Second title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_2" = "";
+"travel_screen_explanation_title_2" = "Tge capita, sche jau endatesch il code covid?";
 
 /*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "";
+"travel_screen_explanation_text_2" = "Sche Vus endatais il code covid vegnan las IDs casualas che Vus avais tramess er cundivididas cun ils pajais cumpatibels.\n\nPer che er las viagiaturas ed ils viagiaturs da l'exteriur possian vegnir infurmads, succeda quai independentamain dal fatg, sche Vus essas sezza stada resp. sez stà a l'exteriur u betg.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Quest buttun banduna l'app ad avra ina pagina d'internet. ";
@@ -1125,7 +1124,7 @@
 "test_location_popup_title" = "Nua poss jau far in test?";
 
 /*Test standorte Popup Text*/
-"test_location_popup_text" = "Vus pudais As laschar testar sin il nov coronavirus tar differentas medias e medis, en centers da test, en ospitals ed en apotecas. Infurmaziuns davart las purschidas da test chattais Vus sin las paginas chantunalas:";
+"test_location_popup_text" = "Vus pudais As laschar testar sin il coronavirus tar differentas medias e medis, en centers da test, en ospitals ed en apotecas. Infurmaziuns davart las purschidas da test chattais Vus sin las paginas chantunalas:";
 
 /*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
 "android_reminder_channel_name" = "Regurdientscha d'activar il tracing";
@@ -1214,55 +1213,55 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "";
+"hearing_impaired_info" = "Essas Vus senza udida u avais Vus in impediment d'udida e na pudais betg telefonar a la Infoline coronavirus?\n\nAlura tramettai in e-mail a covid-support@medgate.ch";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
-"stats_covidcodes_title" = "";
+"stats_covidcodes_title" = "Codes covid";
 
 /*Überschrift des Fallzahlen-Statistik Moduls*/
-"stats_cases_title" = "";
+"stats_cases_title" = "Dumber dals cas";
 
 /*Untertitel des Fallzahlen-Statistik-Moduls*/
-"stats_cases_subtitle" = "";
+"stats_cases_subtitle" = "svilup actual";
 
 /*Label der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_label" = "";
+"stats_covidcodes_total_label" = "endatà";
 
 /*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_label" = "";
+"stats_covidcodes_0to2days_label" = "entaifer 0-2 dis";
 
 /*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_label" = "";
+"stats_cases_7day_average_label" = "media da 7 dis";
 
 /*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_label" = "";
+"stats_cases_rel_prev_week_label" = "envers l'emna precedenta";
 
 /*Überschrift des Info-Popups auf dem Statistik-Screen*/
-"stats_info_popup_title" = "";
+"stats_info_popup_title" = "Detagls davart las cifras";
 
 /*Untertitel des Infopopups zu Covidcodes-Statistiken*/
-"stats_info_popup_subtitle_covidcodes" = "";
+"stats_info_popup_subtitle_covidcodes" = "Codes covid endatads";
 
 /*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
-"stats_info_popup_subtitle_cases" = "";
+"stats_info_popup_subtitle_cases" = "Dumber dals cas";
 
 /*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_description" = "";
+"stats_covidcodes_total_description" = "Dumber dals codes covid endatads dapi il cumenzament da l'app SwissCovid il zercladur 2020. Uschè bleras persunas han infurmà tras l'app lur contacts davart ina eventuala infecziun.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "";
+"stats_covidcodes_0to2days_description" = "Quota dals codes covid ch'èn vegnids endatads entaifer ils emprims dus dis suenter il cumenzament dals sintoms. Questa quota sa referescha als ultims 7 dis.\n\nIl temp è in factur decisiv en il cumbat cunter il coronavirus: pli curt ch'il temp tranter il cumenzament dals sintoms, il resultat dal test e l'endataziun dal code covid è, e pli baud ch'ils contacts infurmads pon restar a chasa e proteger autras persunas.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_description" = "";
+"stats_cases_7day_average_description" = "Mussa la media da las infecziuns novas per di sur 7 dis.";
 
 /*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_description" = "";
+"stats_cases_rel_prev_week_description" = "Mussa la midada da la media da 7 dis en cumparegliaziun cun il stadi d'avant in'emna.";
 
 /*Label der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_label" = "";
+"stats_cases_current_label" = "Svilup actual";
 
 /*Beschreibung der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_description" = "";
+"stats_cases_current_description" = "La grafica mussa las infecziuns novas annunziadas dals ultims 28 dis. Quai dat ina survista dal svilup actual.";
 
 /*Inform Detail: Infobox Text*/
 "inform_detail_infobox1_text" = "Voss test è positiv e Vus n'avais suenter 4 uras anc adina betg retschavì in code covid? Alura contactai la infoline code covid:";
@@ -1271,31 +1270,31 @@
 "inform_detail_infobox1_title" = "Anc nagin code covid?";
 
 /*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_title" = "";
+"homescreen_isolation_ended_popup_title" = "Avais Vus terminà Vossa isolaziun?";
 
 /*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
-"homescreen_isolation_ended_popup_text" = "";
+"homescreen_isolation_ended_popup_text" = "Il tracing po puspè vegnir activà, uschespert che Vus avais terminà l'isolaziun.";
 
 /*Ja-Antwort*/
-"answer_yes" = "";
+"answer_yes" = "Gea";
 
 /*Nein-Antwort*/
-"answer_no" = "";
+"answer_no" = "Na";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "";
+"travel_screen_info" = "En gir a l'exteriur? En quests pajais funcziuna SwissCovid.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
-"travel_screen_compatible_countries" = "";
+"travel_screen_compatible_countries" = "Pajais cumpatibels:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "";
+"inform_code_travel_text" = "Per che er las viagiaturas ed ils viagiaturs da l'exteriur possian vegnir infurmads, vegnan cundivididas las IDs casualas cun las apps da corona dals pajais cumpatibels.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
-"stats_covidcodes_total_header" = "";
+"stats_covidcodes_total_header" = "total";
 
 /*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_header" = "";
+"stats_covidcodes_0to2days_header" = "actual";
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
-"stats_cases_rel_prev_week_popup_header" = "";
+"stats_cases_rel_prev_week_popup_header" = "Midada envers l'emna precedenta";
