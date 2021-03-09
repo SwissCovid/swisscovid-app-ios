@@ -1,5 +1,8 @@
 name: build
 
+env:
+  XCODE_VERSION: 'Xcode_12.4'
+
 on:
   push:
     branches: [ master, develop ]
@@ -13,12 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     # Compile project and run tests
     - name: Compile and run tests
-      run: fastlane scan --scheme "Debug"
+      run: fastlane test
 
   build_release_prod:
     runs-on: macOS-latest
@@ -26,8 +29,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
     
     # Compile "Release-Prod" for iOS Simulator (no signing)
     - name: Compile and run tests
@@ -39,8 +42,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     # Compile "Release-Dev-Calibration" for iOS Simulator (no signing)
     - name: Compile and run tests
