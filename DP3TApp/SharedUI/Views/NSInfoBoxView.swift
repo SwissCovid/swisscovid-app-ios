@@ -189,6 +189,7 @@ class NSInfoBoxView: UIView {
         if let callback = viewModel.hearingImpairedButtonCallback {
             hearingImpairedButton.touchUpCallback = callback
 
+            hearingImpairedButton.isAccessibilityElement = false
             hearingImpairedButton.setImage(UIImage(named: "ic-ear")?.withRenderingMode(.alwaysTemplate), for: .normal)
             hearingImpairedButton.tintColor = viewModel.dynamicIconTintColor
             hearingImpairedButton.highlightCornerRadius = 3
