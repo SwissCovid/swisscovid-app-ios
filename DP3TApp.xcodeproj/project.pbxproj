@@ -279,11 +279,6 @@
 		DC17F96725DC26AC00C7C706 /* NSSingleStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */; };
 		DC17F97125DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
-		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
-		DC3B56C925EE3F8E0075B5CE /* NSCovidCodesStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */; };
-		DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */; };
-		DC3B56D325EE3FA10075B5CE /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
-		DC3B56D825EE3FA90075B5CE /* StatisticInfoPopupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01360825DFE5D6001A33F4 /* StatisticInfoPopupType.swift */; };
 		DC3B568825ECCD460075B5CE /* NSTravelModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */; };
 		DC3B568E25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */; };
 		DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
@@ -291,6 +286,10 @@
 		DC3B56A125ECEF970075B5CE /* NSTravelTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A025ECEF970075B5CE /* NSTravelTitleView.swift */; };
 		DC3B56A725ECF5B10075B5CE /* NSTravelDetailModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56A625ECF5B10075B5CE /* NSTravelDetailModuleView.swift */; };
 		DC3B56B825ED3F620075B5CE /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
+		DC3B56C925EE3F8E0075B5CE /* NSCovidCodesStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */; };
+		DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96625DC26AC00C7C706 /* NSSingleStatisticView.swift */; };
+		DC3B56D325EE3FA10075B5CE /* NSStatisticInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */; };
+		DC3B56D825EE3FA90075B5CE /* StatisticInfoPopupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC01360825DFE5D6001A33F4 /* StatisticInfoPopupType.swift */; };
 		DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56E725EE96D30075B5CE /* CountryHelper.swift */; };
 		DC3B576225F108C90075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
 		DC3B576725F108D50075B5CE /* CountryHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B56E725EE96D30075B5CE /* CountryHelper.swift */; };
@@ -3426,7 +3425,7 @@
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
 				kind = revision;
-				revision = ccb29b9e5006b1cf8e051f3e0976876a6b19e657;
+				revision = a9b876ef6ba115130cd9df3b8e249bcd6faed4b3;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {
