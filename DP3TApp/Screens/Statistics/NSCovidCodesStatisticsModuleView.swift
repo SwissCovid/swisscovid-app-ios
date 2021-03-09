@@ -13,6 +13,7 @@ import UIKit
 
 class NSCovidCodesStatisticsModuleView: UIView {
     private let stackView = UIStackView()
+    let title = NSLabel(.title, textAlignment: .center)
     private let infoButton = UBButton()
     private let stat1 = NSSingleStatisticView(textColor: .ns_blue, header: "stats_covidcodes_total_header".ub_localized, description: "stats_covidcodes_total_label".ub_localized)
     private let stat2 = NSSingleStatisticView(textColor: .ns_blue, header: "stats_covidcodes_0to2days_header".ub_localized, description: "stats_covidcodes_0to2days_label".ub_localized)
@@ -26,7 +27,11 @@ class NSCovidCodesStatisticsModuleView: UIView {
         super.init(frame: .zero)
 
         backgroundColor = .ns_moduleBackground
-        isAccessibilityElement = true
+
+        stat1.isAccessibilityElement = true
+        stat2.isAccessibilityElement = true
+
+        accessibilityElements = [title, stat1, stat2, infoButton]
 
         setupLayout()
         addContent()
@@ -50,6 +55,7 @@ class NSCovidCodesStatisticsModuleView: UIView {
         infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
         infoButton.tintColor = .ns_blue
         infoButton.highlightCornerRadius = 20
+        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
         addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()
@@ -60,7 +66,6 @@ class NSCovidCodesStatisticsModuleView: UIView {
     }
 
     private func addContent() {
-        let title = NSLabel(.title, textAlignment: .center)
         title.text = "stats_covidcodes_title".ub_localized
 
         stackView.addArrangedView(title)
@@ -89,5 +94,12 @@ class NSCovidCodesStatisticsModuleView: UIView {
 
         stat1.formattedNumber = data.covidCodes
         stat2.formattedNumber = data.covidCodesAfter0to2d
+
+        if let covidCodes = data.totalCovidcodesEntered {
+            stat1.accessibilityLabel = "\("stats_covidcodes_total_header".ub_localized): \(covidCodes) \("stats_covidcodes_total_label".ub_localized)"
+        }
+        if let covidCodesAfter0to2d = data.covidCodesAfter0to2d {
+            stat2.accessibilityLabel = "\("stats_covidcodes_0to2days_header".ub_localized): \(covidCodesAfter0to2d) \("stats_covidcodes_0to2days_label".ub_localized)"
+        }
     }
 }
