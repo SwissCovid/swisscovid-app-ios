@@ -38,6 +38,15 @@ platform :ios do
     bundle_version = "#{datestring_now}.#{ENV['GITHUB_RUN_NUMBER']}#{ENV['BUILD_NUMBER_POSTFIX']}"
     return bundle_version
   end
+
+   lane :test do
+    multi_scan(
+      scheme: "Debug",
+      try_count: 3,
+      parallel_testrun_count: 1,
+      device: "iPhone 11 Pro"
+    )
+  end
 end
 
 

@@ -18,7 +18,7 @@ jobs:
 
     # Compile project and run tests
     - name: Compile and run tests
-      run: fastlane scan --scheme "Debug"
+      run: fastlane test
 
   build_release_prod:
     runs-on: macOS-latest
