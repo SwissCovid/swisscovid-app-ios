@@ -13,7 +13,9 @@ import UIKit
 
 final class CountryHelper {
     static func flagForCountryCode(_ code: String) -> UIImage? {
-        return UIImage(named: "flag-\(code.lowercased())")
+        let image = UIImage(named: "flag-\(code.lowercased())")
+        image?.accessibilityLabel = Self.localizedNameForCountryCode(code)
+        return image
     }
 
     static func localizedNameForCountryCode(_ code: String) -> String {
