@@ -1267,13 +1267,13 @@
 "stats_covidcodes_total_label" = "saisis";
 
 /*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_label" = "dans les 2 premiers jours";
+"stats_covidcodes_0to2days_label" = "pendant les 2 premiers jours";
 
 /*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_label" = "moyenne sur 7 jours";
+"stats_cases_7day_average_label" = "moyenne de 7 jours";
 
 /*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_label" = "la semaine passée";
+"stats_cases_rel_prev_week_label" = "que la semaine passée";
 
 /*Überschrift des Info-Popups auf dem Statistik-Screen*/
 "stats_info_popup_title" = "Détails sur les chiffres";
@@ -1285,22 +1285,22 @@
 "stats_info_popup_subtitle_cases" = "Nombre de cas";
 
 /*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_total_description" = "Nombre de codes COVID saisis depuis le lancement de SwissCovid en juin 2020. Voici combien de personnes ont averti leurs contacts d'une éventuelle infection via l'application.";
+"stats_covidcodes_total_description" = "Nombre de codes COVID saisis depuis le commencement de SwissCovid en juin 2020. La chiffre répresente le nombre de personnes qui ont averti leurs contacts d'une éventuelle infection via l'application.";
 
 /*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
-"stats_covidcodes_0to2days_description" = "Proportion de codes COVID saisis au cours des deux premiers jours après l'apparition des symptômes. Ce chiffre couvre les 7 derniers jours. \n\nLa vitesse est un facteur décisif dans la lutte contre le coronavirus : moins on perd de temps entre le début des symptômes, le résultat du test et la saisie du code COVID, plus vite les contacts avertis peuvent rester chez eux et protéger les autres.";
+"stats_covidcodes_0to2days_description" = "Proportion de codes COVID saisis au cours des deux premiers jours après l'apparition des symptômes. Ce chiffre couvre les 7 derniers jours. \n\nLa vitesse est un facteur décisif dans la lutte contre le coronavirus : moins on perd de temps entre le début des symptômes, le résultat du test et l'entré du code COVID, le plus vite les contacts avertis peuvent rester chez eux et protéger les autres.";
 
 /*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
-"stats_cases_7day_average_description" = "Indique la moyenne des nouvelles infections déclarées par jour sur 7 jours.";
+"stats_cases_7day_average_description" = "Indique la moyenne des nouvelles infections déclarées par jour et pendant 7 jours.";
 
 /*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
-"stats_cases_rel_prev_week_description" = "Indique la variation de la moyenne sur 7 jours par rapport à la semaine passée.";
+"stats_cases_rel_prev_week_description" = "Indique le changement de la moyenne pendant 7 jours par rapport à la semaine passée.";
 
 /*Label der "Aktuelle Entwicklung" Statistik*/
 "stats_cases_current_label" = "Évolution actuelle";
 
 /*Beschreibung der "Aktuelle Entwicklung" Statistik*/
-"stats_cases_current_description" = "Le graphique indique les nouvelles infections déclarées ces 28 derniers jours, pour donner un aperçu de l'évolution actuelle.";
+"stats_cases_current_description" = "Le graphique indique les nouvelles infections déclarées pendant les 28 derniers jours pour donner un aperçu de l'évolution actuelle.";
 
 /*Inform Detail: Infobox Text*/
 "inform_detail_infobox1_text" = "Vous avez été testé positif mais n'avez pas encore reçu de code COVID 4 heures plus tard ? Contactez l'infoline:";
@@ -1336,4 +1336,4 @@
 "stats_covidcodes_0to2days_header" = "Actuellement";
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
-"stats_cases_rel_prev_week_popup_header" = "Variation depuis la semaine passée";
+"stats_cases_rel_prev_week_popup_header" = "Changemenent depuis la semaine passée";
