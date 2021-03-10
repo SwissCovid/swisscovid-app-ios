@@ -126,6 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return
         }
 
+        showEndIsolationPopupIfNecessary()
+
         // if app is cold-started or comes from background > 30 minutes,
         if coldStart || backgroundTime > 30.0 * 60.0 {
             if !jumpToMessageIfRequired(onlyFirst: true) {
@@ -186,6 +188,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
             application.applicationIconBadgeNumber = 0
             TracingLocalPush.shared.clearNotifications()
+        }
+    }
+
+    // MARK: - End isolation popup
+
+    private func showEndIsolationPopupIfNecessary() {
+        // If the state is not infected, never show the end isolation popup
+        guard let infectionStatus = TracingManager.shared.uiStateManager.tracingState?.infectionStatus, infectionStatus == .infected else {
+            return
+        }
+
+        if let questionDate = ReportingManager.shared.endIsolationQuestionDate, questionDate < Date() {
+            let alert = UIAlertController(title: "homescreen_isolation_ended_popup_title".ub_localized, message: "homescreen_isolation_ended_popup_text".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "answer_yes".ub_localized, style: .default, handler: { _ in
+                TracingManager.shared.deletePositiveTest()
+            }))
+            alert.addAction(UIAlertAction(title: "answer_no".ub_localized, style: .cancel, handler: { _ in
+                ReportingManager.shared.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24) // Ask again in 1 day
+            }))
+
+            tabBarController.currentViewController.present(alert, animated: true, completion: nil)
         }
     }
 
