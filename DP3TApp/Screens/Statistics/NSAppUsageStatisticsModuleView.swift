@@ -42,6 +42,7 @@ class NSAppUsageStatisticsModuleView: UIView {
         updateLayout()
 
         loadingView.isHidden = true
+        loadingView.backgroundColor = .clear
 
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: header)
         isAccessibilityElement = true

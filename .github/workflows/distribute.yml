@@ -1,5 +1,8 @@
 name: appstore
 
+env:
+  XCODE_VERSION: 'Xcode_12.4'
+
 on:
   push:
     branches: [ master ]
@@ -14,8 +17,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -67,8 +70,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -120,8 +123,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     - name: Installs librsvg
       run: brew install librsvg
@@ -173,8 +176,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
     
     - name: Sets up bundler
       run: bundle update --bundler
@@ -221,8 +224,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Switch to Xcode 12.3
-      run: sudo xcode-select --switch /Applications/Xcode_12.3.app
+    - name: Switch to Xcode ${{ env.XCODE_VERSION }}
+      run: sudo xcode-select --switch /Applications/${{ env.XCODE_VERSION }}.app
 
     - name: Installs librsvg
       run: brew install librsvg

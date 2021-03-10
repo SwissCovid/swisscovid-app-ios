@@ -17,15 +17,11 @@ class NSStatisticInfoPopupViewController: NSPopupViewController {
     init(type: StatisticInfoPopupType) {
         self.type = type
 
-        super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.large, bottom: 40, right: NSPadding.large))
+        super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.small, bottom: 40, right: NSPadding.small))
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        closeButton.snp.updateConstraints { make in
-            make.trailing.equalToSuperview().offset(15)
-        }
 
         tintColor = type.accentColor
 
@@ -35,9 +31,11 @@ class NSStatisticInfoPopupViewController: NSPopupViewController {
         let subtitle = NSLabel(.title)
         subtitle.text = type.subtitle
 
-        stackView.addArrangedView(header)
+        let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+
+        stackView.addArrangedView(header, insets: insets)
         stackView.addSpacerView(NSPadding.small)
-        stackView.addArrangedView(subtitle)
+        stackView.addArrangedView(subtitle, insets: insets)
         stackView.addSpacerView(NSPadding.large)
 
         for (label, description) in type.stats {
@@ -46,9 +44,9 @@ class NSStatisticInfoPopupViewController: NSPopupViewController {
             let desc = NSLabel(.textLight)
             desc.text = description
 
-            stackView.addArrangedView(title)
+            stackView.addArrangedView(title, insets: insets)
             stackView.addSpacerView(NSPadding.small)
-            stackView.addArrangedView(desc)
+            stackView.addArrangedView(desc, insets: insets)
             stackView.addSpacerView(NSPadding.large)
         }
     }

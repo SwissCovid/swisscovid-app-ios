@@ -54,12 +54,24 @@ class NSCovidStatisticsModuleView: UIView {
         stat2.formattedNumber = data.newInfectionsRelative
 
         statisticsChartView.history = data.history.suffix(28) // Only the last 28 days are shown in the graph. For backend compatibility with previous versions data is truncated in the client
+
+        if let newInfectionsAverage = data.newInfectionsSevenDayAvg {
+            stat1.accessibilityLabel = "\(newInfectionsAverage) \("stats_cases_7day_average_label".ub_localized)"
+        }
+        if let newInfectionsRelative = data.newInfectionsRelative {
+            stat2.accessibilityLabel = "\(newInfectionsRelative) \("stats_cases_rel_prev_week_label".ub_localized)"
+        }
     }
 
     init() {
         super.init(frame: .zero)
 
         backgroundColor = .ns_moduleBackground
+
+        stat1.isAccessibilityElement = true
+        stat2.isAccessibilityElement = true
+
+        accessibilityElements = [titleLabel, subtitleLabel, stat1, stat2, infoButton]
 
         setupLayout()
         updateLayout()
@@ -99,6 +111,7 @@ class NSCovidStatisticsModuleView: UIView {
         infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
         infoButton.tintColor = .ns_purple
         infoButton.highlightCornerRadius = 20
+        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
         addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()

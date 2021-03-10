@@ -27,11 +27,20 @@ class NSPopupViewController: NSViewController {
         }
     }()
 
+    private var statusBarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            return UIApplication.shared.statusBarFrame.height
+        }
+    }
+
     lazy var closeButton: UBButton = {
         let button = UBButton()
         button.setImage(UIImage(named: "ic-cross")?.ub_image(with: .white), for: .normal)
         button.accessibilityLabel = "infobox_close_button_accessibility".ub_localized
-        button.contentEdgeInsets = .init(top: NSPadding.small, left: NSPadding.small, bottom: NSPadding.small, right: NSPadding.small)
+        button.contentEdgeInsets = .init(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium)
         return button
     }()
 
@@ -83,13 +92,25 @@ class NSPopupViewController: NSViewController {
         }
     }
 
+    // this is needed to scroll below the statusbar when the content does not fit on the screen
+    var didScrollToTop = false
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if !didScrollToTop,
+           scrollView.contentSize.height > view.frame.height {
+            scrollView.setContentOffset(.init(x: 0, y: -statusBarHeight), animated: false)
+            didScrollToTop = true
+        }
+    }
+
     private func setupLayout() {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.8)
 
         scrollView.delegate = self
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         scrollView.transform = .init(scaleX: 0.01, y: 0.01)
         scrollView.alpha = 0
@@ -133,15 +154,8 @@ class NSPopupViewController: NSViewController {
     }
 
     private func addStatusBarBlurView() {
+        blurView.alpha = 0
         view.addSubview(blurView)
-
-        let statusBarHeight: CGFloat
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusBarHeight = UIApplication.shared.statusBarFrame.height
-        }
         blurView.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
             make.height.equalTo(statusBarHeight)
@@ -149,13 +163,6 @@ class NSPopupViewController: NSViewController {
     }
 
     private func updateBlurViewAlpha() {
-        let statusBarHeight: CGFloat
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
-            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            statusBarHeight = UIApplication.shared.statusBarFrame.height
-        }
         let perc = min(max((scrollView.contentOffset.y + statusBarHeight) / statusBarHeight, 0), 1)
         blurView.alpha = perc
     }
@@ -186,7 +193,7 @@ class NSPopupViewController: NSViewController {
 
     @objc private func tapBackgroundDismiss(sender: UITapGestureRecognizer) {
         let location = sender.location(in: view)
-        guard !contentView.frame.contains(location) else { return }
+        guard !contentWrapper.frame.contains(location) else { return }
         dismiss()
     }
 }

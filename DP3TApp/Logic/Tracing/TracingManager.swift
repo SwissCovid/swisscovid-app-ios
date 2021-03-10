@@ -124,6 +124,8 @@ class TracingManager: NSObject {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
                 case .success:
+                    // reset stored error when starting tracing
+                    UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
                 case let .failure(error):
