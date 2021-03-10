@@ -109,7 +109,8 @@ class NSPopupViewController: NSViewController {
         scrollView.delegate = self
         view.addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.trailing.bottom.equalToSuperview()
         }
         scrollView.transform = .init(scaleX: 0.01, y: 0.01)
         scrollView.alpha = 0
