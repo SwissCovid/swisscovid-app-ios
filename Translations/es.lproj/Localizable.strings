@@ -273,7 +273,7 @@
 "meldung_detail_exposed_subtitle" = "Existe la posibilidad de un contagio.";
 
 /*Meldung auf Homescreen: Positiv getestet*/
-"meldung_homescreen_positiv_text" = "A dado usted positivo en el test del  coronavirus";
+"meldung_homescreen_positiv_text" = "A dado usted positivo en el test del coronavirus";
 
 /*Debug Screen: Onboarding Reset Button*/
 "reset_onboarding" = "Reiniciar onboarding";
