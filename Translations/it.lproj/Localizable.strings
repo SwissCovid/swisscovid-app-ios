@@ -942,7 +942,7 @@
 "stats_more_statistics_button" = "Altre statistiche";
 
 /*URL zu weiteren statistiken*/
-"stats_more_statistics_url" = "https://www.covid19.admin.ch/de/overview";
+"stats_more_statistics_url" = "https://www.covid19.admin.ch/it/overview";
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
 "stats_loading_error_text" = "Impossibile caricare i dati in questo momento";

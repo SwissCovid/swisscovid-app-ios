@@ -41,10 +41,10 @@ class NSAppUsageStatisticsModuleView: UIView {
         setupLayout()
         updateLayout()
 
+        loadingView.isHidden = true
         loadingView.backgroundColor = .clear
 
         header.alpha = 0
-        header.isHidden = true
 
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: header)
         isAccessibilityElement = true
@@ -103,7 +103,7 @@ class NSAppUsageStatisticsModuleView: UIView {
 
                 self.header.alpha = 0
             }
-            
+
             self.stackView.layoutIfNeeded()
         }, completion: nil)
     }
