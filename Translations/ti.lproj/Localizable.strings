@@ -907,7 +907,7 @@
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
 "bottom_nav_tab_home" = "SwissCovid";
 "bottom_nav_tab_stats" = "ቁጽርታት";
-"stats_title" = "ድሮ ንSwisCovid ይጥቐሙሉ እዮም";
+"stats_title" = "ድሮ ንSwissCovid ይጥቐሙሉ እዮም";
 "stats_legend_new_infections" = "ዝተሓበሩ ሓድሽቲ ልበዳታት";
 "stats_legend_new_infections_average" = "ናይ 7 መዓልቲ ገምጋም";
 "stats_legend_entered_covidcodes" = "ዝተመዝገቡ ናይ ኮቪድ ኮዳት";

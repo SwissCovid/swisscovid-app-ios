@@ -41,8 +41,10 @@ class NSAppUsageStatisticsModuleView: UIView {
         setupLayout()
         updateLayout()
 
-        loadingView.isHidden = true
         loadingView.backgroundColor = .clear
+
+        header.alpha = 0
+        header.isHidden = true
 
         setCustomSpacing(NSPadding.medium + NSPadding.small, after: header)
         isAccessibilityElement = true
@@ -53,25 +55,56 @@ class NSAppUsageStatisticsModuleView: UIView {
     }
 
     func startLoading() {
+        guard !isLoading else { return }
         isLoading = true
-        loadingView.startLoading()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-            UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
-                guard self.isLoading else { return }
+        perform(#selector(_startLoading), with: nil, afterDelay: 0.35)
+    }
+
+    @objc private func _startLoading() {
+        guard isLoading else { return }
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+            if self.loadingView.isHidden {
                 self.loadingView.isHidden = false
+            }
+            self.loadingView.startLoading(animated: false)
+
+            self.header.alpha = 0
+            if !self.header.isHidden {
                 self.header.isHidden = true
-                self.layoutIfNeeded()
-            }, completion: nil)
-        }
+            }
+
+            self.stackView.layoutIfNeeded()
+        }, completion: nil)
     }
 
     func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
         isLoading = false
-        UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
-            self.loadingView.stopLoading(error: error, reloadHandler: reloadHandler)
-            self.loadingView.isHidden = error == nil
-            self.header.isHidden = error != nil
-            self.layoutIfNeeded()
+
+        UIView.animate(withDuration: 0.3, delay: 0, options: [], animations: {
+            self.loadingView.stopLoading(error: error, animated: false, reloadHandler: reloadHandler)
+            if error == nil {
+                if !self.loadingView.isHidden {
+                    self.loadingView.isHidden = true
+                }
+
+                if self.header.isHidden {
+                    self.header.isHidden = false
+                }
+                self.header.alpha = 1
+            } else {
+                if self.loadingView.isHidden {
+                    self.loadingView.isHidden = false
+                }
+
+                self.loadingView.alpha = 1
+                if !self.header.isHidden {
+                    self.header.isHidden = true
+                }
+
+                self.header.alpha = 0
+            }
+            
+            self.stackView.layoutIfNeeded()
         }, completion: nil)
     }
 
