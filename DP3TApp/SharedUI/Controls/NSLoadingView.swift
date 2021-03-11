@@ -37,20 +37,27 @@ class NSLoadingView: UIView {
 
     // MARK: - API
 
-    public func startLoading() {
+    public func startLoading(animated: Bool = true) {
         errorStackView.alpha = 0.0
         loadingIndicatorView.alpha = 1.0
         errorTextLabel.text = nil
         errorCodeLabel.text = nil
 
-        UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+        let block = {
             self.alpha = 1.0
-        }, completion: nil)
+        }
+        if animated {
+            UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+                block()
+            }, completion: nil)
+        } else {
+            block()
+        }
 
         loadingIndicatorView.startAnimating()
     }
 
-    public func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
+    public func stopLoading(error: CodedError? = nil, animated: Bool = true, reloadHandler: (() -> Void)? = nil) {
         loadingIndicatorView.stopAnimating()
 
         if let err = error {
@@ -69,9 +76,16 @@ class NSLoadingView: UIView {
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0
         } else {
-            UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState], animations: {
+            let block = {
                 self.alpha = 0.0
-            }, completion: nil)
+            }
+            if animated {
+                UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+                    block()
+                }, completion: nil)
+            } else {
+                block()
+            }
         }
     }
 
