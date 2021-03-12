@@ -22,36 +22,23 @@ class NSInfoBoxView: UIView {
     private let additionalLabel = NSLabel(.textBold)
     private let externalLinkButton: NSExternalLinkButton
 
+    private let hearingImpairedButton = UBButton()
+
     private var externalLinkBottomConstraint: Constraint?
     private var additionalLabelBottomConstraint: Constraint?
 
     // MARK: - Update
 
-    public func updateTexts(title: String?, subText: String?, additionalText: String?, additionalURL: URL?) {
-        titleLabel.text = title
-        subtextLabel.text = subText
+    public func update(with viewModel: ViewModel) {
+        titleLabel.text = viewModel.title
+        subtextLabel.text = viewModel.subText
+        titleLabel.textColor = viewModel.titleColor
+        subtextLabel.textColor = viewModel.subtextColor
+        additionalLabel.textColor = viewModel.subtextColor
+        illustrationImageView.image = viewModel.illustration
 
-        if let url = additionalURL {
-            externalLinkButton.title = additionalText
-
-            externalLinkButton.touchUpCallback = { [weak self] in
-                self?.openLink(url)
-            }
-
-            illustrationImageView.isHidden = false
-
-            externalLinkBottomConstraint?.update(inset: NSPadding.large)
-        } else {
-            externalLinkButton.title = nil
-
-            additionalLabel.text = additionalText
-
-            externalLinkBottomConstraint?.update(inset: 0)
-
-            illustrationImageView.isHidden = true
-        }
-
-        setupAccessibility(title: title ?? "", subTitle: subText ?? "", additionalText: additionalText, additionalURL: additionalURL?.absoluteString)
+        setup(viewModel: viewModel)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL)
     }
 
     // MARK: - Init
@@ -71,6 +58,7 @@ class NSInfoBoxView: UIView {
         var titleLabelType: NSLabelType = .uppercaseBold
         var externalLinkStyle: NSExternalLinkButton.Style = .normal(color: .white)
         var externalLinkType: NSExternalLinkButton.LinkType = .url
+        var hearingImpairedButtonCallback: (() -> Void)? = nil
     }
 
     init(viewModel: ViewModel) {
@@ -99,6 +87,7 @@ class NSInfoBoxView: UIView {
 
     private func setup(viewModel: ViewModel) {
         clipsToBounds = false
+        subviews.forEach { $0.removeFromSuperview() }
 
         var topBottomPadding: CGFloat = 0
 
@@ -180,7 +169,9 @@ class NSInfoBoxView: UIView {
                 externalLinkButton.snp.makeConstraints { make in
                     make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
                     make.leading.equalTo(self.titleLabel)
-                    make.trailing.lessThanOrEqualTo(self.titleLabel)
+                    if viewModel.hearingImpairedButtonCallback == nil {
+                        make.trailing.lessThanOrEqualTo(self.titleLabel)
+                    }
                     self.externalLinkBottomConstraint = make.bottom.equalToSuperview().inset(NSPadding.medium).constraint
                 }
             } else {
@@ -191,6 +182,32 @@ class NSInfoBoxView: UIView {
                     make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium)
                     make.leading.trailing.equalTo(self.titleLabel)
                     make.bottom.equalToSuperview().inset(topBottomPadding)
+                }
+            }
+        }
+
+        if let callback = viewModel.hearingImpairedButtonCallback {
+            hearingImpairedButton.touchUpCallback = callback
+
+            hearingImpairedButton.isAccessibilityElement = false
+            hearingImpairedButton.setImage(UIImage(named: "ic-ear")?.withRenderingMode(.alwaysTemplate), for: .normal)
+            hearingImpairedButton.tintColor = viewModel.dynamicIconTintColor
+            hearingImpairedButton.highlightCornerRadius = 3
+
+            addSubview(hearingImpairedButton)
+            hearingImpairedButton.snp.makeConstraints { make in
+                make.size.equalTo(44)
+                make.trailing.equalToSuperview().inset(NSPadding.small)
+                if subviews.contains(externalLinkButton) {
+                    make.centerY.equalTo(externalLinkButton)
+                } else {
+                    make.bottom.equalToSuperview().inset(NSPadding.medium)
+                }
+            }
+
+            if subviews.contains(externalLinkButton) {
+                externalLinkButton.snp.makeConstraints { make in
+                    make.trailing.lessThanOrEqualTo(hearingImpairedButton.snp.leading).offset(-NSPadding.medium)
                 }
             }
         }

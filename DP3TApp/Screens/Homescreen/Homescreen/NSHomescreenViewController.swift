@@ -17,6 +17,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let infoBoxView = HomescreenInfoBoxView()
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
+    private let travelView = NSTravelModuleView()
 
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
@@ -74,6 +75,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentWhatToDoSymptoms()
+        }
+
+        travelView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentTravelDetail()
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -135,7 +141,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(reportsView)
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        travelView.isHidden = true
 
         stackScrollView.addArrangedView(whatToDoSymptomsButton)
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
@@ -198,6 +208,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.alpha = 0
         reportsView.alpha = 0
+        travelView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         whatToDoPositiveTestButton.alpha = 0
 
@@ -215,21 +226,25 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
+                self.travelView.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.8, options: [.allowUserInteraction], animations: {
                 self.whatToDoSymptomsButton.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                 self.whatToDoPositiveTestButton.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
-                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                     debugScreenContainer.alpha = 1
                 }, completion: nil)
             #endif
 
             #if ENABLE_LOGGING
-                UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
                     uploadDBContainer.alpha = 1
                 }, completion: nil)
             #endif
@@ -245,6 +260,13 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
+        if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
+            infoBoxView.hearingImpairedButtonTouched = { [weak self] in
+                guard let strongSelf = self else { return }
+                let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)
+                strongSelf.navigationController?.present(popup, animated: true, completion: nil)
+            }
+        }
         infoBoxView.uiState = state.homescreen.infoBox
 
         if let infoId = state.homescreen.infoBox?.infoId,
@@ -256,6 +278,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
                 }
             }
         }
+
+        travelView.isHidden = state.homescreen.countries.isEmpty
 
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
@@ -270,6 +294,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     func presentReportsDetail(animated: Bool = true) {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
+    }
+
+    private func presentTravelDetail() {
+        navigationController?.pushViewController(NSTravelDetailViewController(), animated: true)
     }
 
     #if ENABLE_TESTING

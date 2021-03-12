@@ -15,7 +15,7 @@ class NSStatisticsChartView: UIView {
 
     private let chartContentView = NSStatisticsChartContentView()
 
-    private let yLenged = NSChartYAxisLegend()
+    private let yLegend = NSChartYAxisLegend()
 
     private var contentSizeObserver: NSKeyValueObservation?
 
@@ -23,10 +23,10 @@ class NSStatisticsChartView: UIView {
         didSet {
             guard !history.isEmpty else {
                 chartContentView.alpha = 0
-                yLenged.alpha = 0
+                yLegend.alpha = 0
                 return
             }
-            yLenged.alpha = 1
+            yLegend.alpha = 1
             chartContentView.alpha = 1
             updateChart()
         }
@@ -38,8 +38,8 @@ class NSStatisticsChartView: UIView {
         layer.cornerRadius = 5
         layer.masksToBounds = true
 
-        addSubview(yLenged)
-        yLenged.snp.makeConstraints { make in
+        addSubview(yLegend)
+        yLegend.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(NSPadding.medium)
             make.bottom.trailing.equalToSuperview()
         }
@@ -47,10 +47,8 @@ class NSStatisticsChartView: UIView {
         addSubview(scrollView)
         scrollView.snp.makeConstraints { make in
             make.leading.top.bottom.equalToSuperview()
-            make.trailing.equalTo(yLenged.snp.leading)
+            make.trailing.equalTo(yLegend.snp.leading)
         }
-        scrollView.backgroundColor = .ns_backgroundSecondary
-        backgroundColor = .ns_backgroundSecondary
 
         scrollView.addSubview(chartContentView)
         chartContentView.snp.makeConstraints { make in
@@ -92,7 +90,7 @@ class NSStatisticsChartView: UIView {
         let yTicks = getYTicks(maxValue: maxValue)
 
         chartContentView.data = ChartData(data: relativeEntries, yTicks: yTicks)
-        yLenged.yTicks = yTicks
+        yLegend.yTicks = yTicks
     }
 
     private func getYTicks(maxValue: Double) -> ChartYTicks {

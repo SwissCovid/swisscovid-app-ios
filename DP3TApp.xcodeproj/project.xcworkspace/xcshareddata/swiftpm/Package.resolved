@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/Kitura/BlueRSA.git",
         "state": {
           "branch": null,
-          "revision": "c885fcdbe1b04718cb46d747387137653c030f6c",
-          "version": "1.0.200"
+          "revision": "440f78db26d8bb073f29590f1c7bd31004da09ae",
+          "version": "1.0.201"
         }
       },
       {
@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
           "branch": null,
-          "revision": "a70c27f7a06dd3eaf3fbf74069645a8a7dbcbfbd",
+          "revision": "a9b876ef6ba115130cd9df3b8e249bcd6faed4b3",
           "version": null
         }
       },
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/apple/swift-log.git",
         "state": {
           "branch": null,
-          "revision": "173f567a2dfec11d74588eea82cecea555bdc0bc",
-          "version": "1.4.0"
+          "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
+          "version": "1.4.2"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/weichsel/ZIPFoundation/",
         "state": {
           "branch": null,
-          "revision": "ec32d62d412578542c0ffb7a6ce34d3e64b43b94",
-          "version": "0.9.11"
+          "revision": "cf10bbff6ac3b873e97b36b9784c79866a051a8e",
+          "version": "0.9.12"
         }
       }
     ]

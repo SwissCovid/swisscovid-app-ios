@@ -61,12 +61,14 @@ struct UIStateModel: Equatable {
             var url: URL?
             var isDismissible: Bool?
             var infoId: String?
+            var hearingImpairedInfo: String?
         }
 
         var header: TracingState = .tracingActive
         var encounters: TracingState = .tracingActive
         var reports: Reports = Reports()
         var infoBox: InfoBox?
+        var countries: [String] = []
     }
 
     struct EncountersDetail: Equatable {

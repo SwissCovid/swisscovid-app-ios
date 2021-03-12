@@ -46,6 +46,14 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
             strongSelf.presentInformViewController()
         }
 
+        if let hearingImpairedText = configTexts?.infoBox?.hearingImpairedInfo {
+            informView.hearingImpairedButtonTouched = { [weak self] in
+                guard let strongSelf = self else { return }
+                let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)
+                strongSelf.navigationController?.present(popup, animated: true)
+            }
+        }
+
         setupAccessibility()
     }
 

@@ -11,7 +11,7 @@
 import UIKit
 
 class NSLoadingView: UIView {
-    private let errorStackView = UIStackView()
+    let errorStackView = UIStackView()
     private let loadingIndicatorView = NSAnimatedGraphView(type: .loading)
 
     private let errorImage: UIImage?
@@ -22,12 +22,12 @@ class NSLoadingView: UIView {
 
     // MARK: - Init
 
-    init(reloadButton: UBButton = NSButton(title: "loading_view_reload".ub_localized), errorImage: UIImage? = nil) {
+    init(reloadButton: UBButton = NSButton(title: "loading_view_reload".ub_localized), errorImage: UIImage? = nil, small: Bool = false) {
         self.reloadButton = reloadButton
         self.errorImage = errorImage
         super.init(frame: .zero)
         backgroundColor = .ns_background
-        setup()
+        setup(small: small)
         accessibilityViewIsModal = true
     }
 
@@ -37,18 +37,27 @@ class NSLoadingView: UIView {
 
     // MARK: - API
 
-    public func startLoading() {
+    public func startLoading(animated: Bool = true) {
         errorStackView.alpha = 0.0
         loadingIndicatorView.alpha = 1.0
+        errorTextLabel.text = nil
+        errorCodeLabel.text = nil
 
-        UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+        let block = {
             self.alpha = 1.0
-        }, completion: nil)
+        }
+        if animated {
+            UIView.animate(withDuration: 0.3, delay: 0.35, options: [.beginFromCurrentState], animations: {
+                block()
+            }, completion: nil)
+        } else {
+            block()
+        }
 
         loadingIndicatorView.startAnimating()
     }
 
-    public func stopLoading(error: CodedError? = nil, reloadHandler: (() -> Void)? = nil) {
+    public func stopLoading(error: CodedError? = nil, animated: Bool = true, reloadHandler: (() -> Void)? = nil) {
         loadingIndicatorView.stopAnimating()
 
         if let err = error {
@@ -67,18 +76,25 @@ class NSLoadingView: UIView {
             loadingIndicatorView.alpha = 0.0
             errorStackView.alpha = 1.0
         } else {
-            UIView.animate(withDuration: 0.3, delay: 0, options: [.beginFromCurrentState], animations: {
+            let block = {
                 self.alpha = 0.0
-            }, completion: nil)
+            }
+            if animated {
+                UIView.animate(withDuration: 0.2, delay: 0, options: [.beginFromCurrentState], animations: {
+                    block()
+                }, completion: nil)
+            } else {
+                block()
+            }
         }
     }
 
-    private func setup() {
+    private func setup(small: Bool) {
         addSubview(loadingIndicatorView)
 
         loadingIndicatorView.snp.makeConstraints { make in
             make.center.equalToSuperview()
-            make.size.equalTo(100)
+            make.size.equalTo(small ? 50 : 100)
         }
 
         addSubview(errorStackView)

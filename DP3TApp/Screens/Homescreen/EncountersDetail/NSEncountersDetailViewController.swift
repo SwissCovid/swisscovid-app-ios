@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import UIKit
 
 class NSEncountersDetailViewController: NSTitleViewScrollViewController {
@@ -36,7 +37,15 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
 
         bluetoothControl.switchCallback = { [weak self] state, confirmCallback in
             guard let self = self else { return }
-            // onyl show popup when switching tracing off
+            // if trackingState is permissonError show tutorial view
+            if case TrackingState.inactive(error: .permissonError) = UIStateManager.shared.trackingState,
+               #available(iOS 13.7, *) {
+                confirmCallback(!state)
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
+                return
+            }
+            // only show popup when switching tracing off
             guard !state else {
                 TracingLocalPush.shared.resetReminderNotification()
                 confirmCallback(state)

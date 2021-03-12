@@ -41,6 +41,7 @@ class ConfigResponseBody: UBCodable {
     public let whatToDoPositiveTestTexts: LocalizedValue<WhatToDoPositiveTestTexts>?
     public let iOSGaenSdkConfig: GAENSDKConfig?
     public let testLocations: LocalizedValue<[TestLocation]>?
+    public let interOpsCountries: [String]
 
     class InfoBox: UBCodable {
         let title, msg: String
@@ -48,6 +49,7 @@ class ConfigResponseBody: UBCodable {
         let urlTitle: String?
         let infoId: String?
         let isDismissible: Bool?
+        let hearingImpairedInfo: String?
     }
 
     class GAENSDKConfig: Codable {

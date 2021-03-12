@@ -270,6 +270,8 @@
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "ተኽእሎ ናይ ለበዳ ሕማም ኣሎ። ";
+
+/*Meldung auf Homescreen: Positiv getestet*/
 "meldung_homescreen_positiv_text" = "ዝገበርካዮ መርመራ ንኮሮናቫይረስ ውጽኢቱ ፖዚቲቭ ኮይኑ ተረኺቡ።";
 
 /*Debug Screen: Onboarding Reset Button*/
@@ -318,7 +320,7 @@
 "onboarding_prinzip_title" = "ሓደ ስጉምቲ ቅድሚ እቲ ቫይረስ";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "ብስዊስኮድ ኣፕ ዝርግሐ ናይ ሓድሽ ኮሮናቫይረስ ንኽዕገት እጃምኩም ተበርክቱ።";
+"onboarding_prinzip_text1" = "ብስዊስኮድ ኣፕ ዝርግሐ ናይ ኮሮናቫይረስ ንኽዕገት እጃምኩም ተበርክቱ።";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "እቲ ኣፕ ንስኹም ንኮሮናቫይረስ ናይ ምቅላዕ ተኽእሎ እንተኔሩኩም ይሕብረኩም። ";
@@ -601,7 +603,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። \n\nኣወንታ/ፖሲቲቭ ተመርሚርኩም ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩም፧\nሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
+"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። ";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
@@ -622,13 +624,13 @@
 "inform_code_intro_text" = "ዝኾነ ሓበሬታ ብዛዕባኹም ዋላኳ እንተዘይተሰደደ: ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ። ";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "ተረዲኡኒ";
+"inform_code_intro_button" = "ተሰማሚዐ";
 
 /*Symptome: FAQ Titel*/
 "symptom_faq1_title" = "ምልክታት ኮቪድ-19 እንታይ እዩ፧";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦ \n– ረስኒ፣ ስምዒት ናይ ረስኒ\n– ቃንዛ ጎሮሮ\n– ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n– ሕጽረት እስትንፋስ\n– ቃንዛ ጨዋዳታት\n– ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ";
+"symptom_faq1_text" = "እዚኦም ምልክታት ብዙሕ ግዜ ይርኣዩ፦\n\n– ረስኒ፣ ስምዒት ናይ ረስኒ\n– ቃንዛ ጎሮሮ\n– ሰዓል (መብዛሕትኡ ግዜ ደረቕ ሰዓል)\n– ሕጽረት እስትንፋስ\n– ቃንዛ ኣፍ-ልቢ\n– ናይ ምሽታትን ናይ ምስትምቓርን ክእለት ብሃንደበት ምጥፋእ\n\n\nካብኡ ንየው ዝስዕቡ ምልክታት ክቕልቀሉ ይኽእሉ፥\n\n– ቃንዛ ርእሲ\n– ሓፈሻዊ ድኻም፣ ስግድግድ\n– ቃንዛ ጭዋዳታት\n– ሰዓል\n– ናይ ከብድን መዓንጣን ጸገማት (ስግድግድ፣ ምትፋእ፣ ውጽኣት፣ ቃንዛ ከብዲ)\n– ነድሪ ቆርበት";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "እቲ ምክትታል ስለምንታይ ተዓጽዩ፧";
@@ -866,46 +868,22 @@
 "infobox_close_button_accessibility" = "ዕጸው";
 
 /*Title for the Home View Travel Card.*/
-"travel_title" = "";
+"travel_title" = "መገሻታት";
 
-/*Info text that is displayed on the Home Travel Card.*/
-"travel_home_description" = "";
+/*Info text that is displayed  on the Home Travel Card.*/
+"travel_home_description" = "SwissCovid ኣብ ዝስዕቡ ሃገራት ይሰርሕ፥";
 
-/*Introductory Text that is displayed at the top of the travel settings screen.*/
-"travel_screen_introduction" = "";
+/*First title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_1" = "እዚ እንታይ ማለት፧";
 
-/*First title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_1" = "";
+/*First text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_1" = "ንስኹም ኣብ ሓደ ካብቶም ተቓደውቲ ሃገራት እንተትግዕዙ ኮይንኩም፣ ካልእ ኮሮና ኤፕ ከተምጽኡ ኣየድልየኩምን።\n\nSwissCovid ነቶም ኣብቶም ተቓደውቲ ሃገራት ዝተዘርገሑ ብሃውሪ ዝተፈጠሩ ኣይ.ዲታት ይቈጻጸር። ንስኹም ዋላ ኣብ ክፍጸም ዝኽእል ልበዳ ኣብ ወጻኢ ክትጥንቐቑ ትኽእሉ ኢኹም።";
 
-/*First text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "";
+/*Second title for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_title_2" = "ኣብ ምእታው ኮቪድኮድ እንታይ ክፍጸም ድዩ፧";
 
-/*Second title for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_title_2" = "";
-
-/*Second text for the travel feature explanation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "";
-
-/*Button title for the Add Countries Button in the travel screen.*/
-"travel_screen_add_countries_button" = "";
-
-/*Text that is displayed under a country name that indicates until what date the user will still receive notifications from this country.*/
-"travel_screen_notifications_activated_until" = "";
-
-/*List Header for the favourites in the "Add countries" Screen of the Travel feature.*/
-"travel_screen_favourites" = "";
-
-/*List header for other countries in the "add countries" screen of the travel feature.*/
-"travel_screen_other_countries" = "";
-
-/*Title for the explanation at the bottom of the "add countries" screen of the travel feature.*/
-"travel_screen_add_countries_explanation_title" = "";
-
-/*Text for the explanation at the bottom of the "add countries" screen of the travel feature.*/
-"travel_screen_add_countries_explanation_text" = "";
-
-/*Information text that asks the user about informing other countries when he enters a covid code into the app.*/
-"travel_report_code_info" = "";
+/*Second text for the travel feauter explenation at the bottom of the travel screen.*/
+"travel_screen_explanation_text_2" = "ኣብ ምእታይ ኮቪድኮድ እቶም ካባኹም ዝተሰደዱ ብሃውሪ ዝተፈጠሩ ኣይ.ዲታት እንተላይ ምስቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።\n\nገየሽቲ ካብ ወጻኢ እንተላይ መታን ክጥንቀቑ፣ ባዕልኹም ኣብ ወጻኢ ትግዕዙ ኔርኩም ወይ ኣይትግዕዙን ኔርኩም ብዘየገድስ እዩ።";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "እዚ መጠውቒ/Button ካብቲ ኤፕ ይወጽእን ሓድሽ ወብሳይት ይኸፍትን።";
@@ -929,7 +907,7 @@
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
 "bottom_nav_tab_home" = "SwissCovid";
 "bottom_nav_tab_stats" = "ቁጽርታት";
-"stats_title" = "ድሮ ንSwisCovid ይጥቐሙሉ እዮም";
+"stats_title" = "ድሮ ንSwissCovid ይጥቐሙሉ እዮም";
 "stats_legend_new_infections" = "ዝተሓበሩ ሓድሽቲ ልበዳታት";
 "stats_legend_new_infections_average" = "ናይ 7 መዓልቲ ገምጋም";
 "stats_legend_entered_covidcodes" = "ዝተመዝገቡ ናይ ኮቪድ ኮዳት";
@@ -954,7 +932,7 @@
 "stats_more_statistics_button" = "ቀጻሊ ስታቲስቲክስ";
 
 /*URL zu weiteren statistiken*/
-"stats_more_statistics_url" = "https://www.experimental.bfs.admin.ch/expstat/de/home/innovative-methoden/swisscovid-app-monitoring.html";
+"stats_more_statistics_url" = "https://www.covid19.admin.ch/de/overview";
 
 /*Body of the error message shown when the statistics data cannot be loaded*/
 "stats_loading_error_text" = "እቲ ዳታ ሕጂ ብገለ ክውሰድ ኣይክኣልን‘ዩ";
@@ -1149,7 +1127,7 @@
 "test_location_popup_title" = "መርመራ ኸ ኣበይ ክገብር እኽእል፧";
 
 /*Test standorte Popup Text*/
-"test_location_popup_text" = "ኣብ ዝተፈላለዩ ሓኻይም፣ ናይ መርመራ ማእከት፣ ሆስፒታላት ከምኡ'ውን ቤት-መድሃኒታት ናይ ሓድሽ ኮሮናቫይረስ መርመራ ክትገብሩ ትኽእሉ። ሓበሬታ ብዛዕባ ቀረባት መርመራ ኣብዚኦም ክፍለ-ሃገራውያን መርበባት ኢንተርነት ትረኽቡ፥";
+"test_location_popup_text" = "ኣብ ዝተፈላለዩ ሓኻይም፣ ናይ መርመራ ማእከት፣ ሆስፒታላት ከምኡ'ውን ቤት-መድሃኒታት ናይ ኮሮናቫይረስ መርመራ ክትገብሩ ትኽእሉ። ሓበሬታ ብዛዕባ ቀረባት መርመራ ኣብዚኦም ክፍለ-ሃገራውያን መርበባት ኢንተርነት ትረኽቡ፥";
 
 /*Notification Channel name for Tracing Reactivation Reminders on Android Devices (Only visible in System Settings)*/
 "android_reminder_channel_name" = "ናይ ምክትታል ንጥፈት መዘኻኸሪ";
@@ -1236,3 +1214,90 @@
 /*Fuzzy*/
 "testlocation_url_canton_zurich" = "https://www.zh.ch/de/gesundheit/coronavirus.html";
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
+
+/*text for info box pop up for the hearing impaired*/
+"hearing_impaired_info" = "ክትሰምዑ ኣይትኽእሉን ወይ ናይ ምስማዕ ስንክልና ስለዘለና ነቲ ሓበሬታ ስልኪ ኮሮናቫይረስ ክትድውሉ ኣይትኽእሉን፧\n\nሽዑ ኢመይል ናብ covid-support@medgate.ch ስደዱ ኢኹም";
+
+/*Überschrift des Covidcodes-Statistik-Moduls*/
+"stats_covidcodes_title" = "ኮቪድ-ኮዳት";
+
+/*Überschrift des Fallzahlen-Statistik Moduls*/
+"stats_cases_title" = "መጠን ልበዳታት";
+
+/*Untertitel des Fallzahlen-Statistik-Moduls*/
+"stats_cases_subtitle" = "ግዝያዊ ምዕባለ";
+
+/*Label der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_label" = "ዝተኣተወ";
+
+/*Label der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_label" = "ኣብ ውሽጢ 0-2 መዓልትታት";
+
+/*Label der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_label" = "ገምጋም 7 መዓልቲ";
+
+/*Label der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_label" = "ናብ ዝሓለፈ ሰሙን";
+
+/*Überschrift des Info-Popups auf dem Statistik-Screen*/
+"stats_info_popup_title" = "ዝርዝራዊ ሓበሬታ ብዛዕባቶም ቁጽርታት";
+
+/*Untertitel des Infopopups zu Covidcodes-Statistiken*/
+"stats_info_popup_subtitle_covidcodes" = "ዝተኣተዉ ኮቪድ-ኮዳት";
+
+/*Untertitel des Infopopups zu Fallzahlen-Statistiken*/
+"stats_info_popup_subtitle_cases" = "መጠን ልበዳታት";
+
+/*Beschreibung der "Total eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_total_description" = "መጠን ናይቶም ዝተኣተዉ ኮቪድ-ኮዳት ካብ መጀመርታ SwissCovid App ኣብ ሰነ 2020። ክንድቲ ብዙሕ ሰባት በቲ ኤፕ ርክቦም ብሓደ ክፍጸም ዝኽእል ልበዳ ሓቢሮም ኔሮም።";
+
+/*Beschreibung der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_description" = "መጠን ኣብ ውሽጢ ቀዳሞት ክልተኦም መዓልትታት ድሕሪ መጀመርታ ምልክታት ድሮ ዝተኣተዉ ዝነበሩ። እዚ መጠን ንዝሓለፉ 7 መዓልትታት ይምልከት።\n\nኣብ ምቕላስ ኮሮናቫይረስ ግዜ ሓደ ወሳኒ ረቋሒ እዩ፥ ኣብ መንጎ መጀመርታ ምልክታት፣ ውጽኢት መርመራ ከምኡ'ውን ምእታው ኮቪድኮድ ሓጺር ግዜ እንተሓለፈ፣ ዝተሓበሩ ርክባት ብዝያዳ ብኣጋኡ ኣብ ገዛ ክተርፉ ከምኡ ድማ ንካልኦት ክከላኸሉ ይኽእሉ።";
+
+/*Beschreibung der "7-Tage-Schnitt Fallzahlen" Statistik*/
+"stats_cases_7day_average_description" = "ገምጋም ናይቶም ዝተሓበሩ ሓድሽቲ ልበዳታት ኣብ መዓልቲ ብ7 መዓልትታት የርኢ።";
+
+/*Beschreibung der "Änderung gegenüber Vorwoche Fallzahlen" Statistik*/
+"stats_cases_rel_prev_week_description" = "ንቅያር ገምጋም 7 መዓልቲ የርኢ ምስቲ ናይ ቅድሚ ሓደ ሰሙን እንተትነጻጸር ኮይንካ።";
+
+/*Label der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_label" = "ግዝያዊ ምዕባለ";
+
+/*Beschreibung der "Aktuelle Entwicklung" Statistik*/
+"stats_cases_current_description" = "እቲ ስእሊ ነቶም ዝተሓበሩ ሓድሽቲ ልበዳታት ኣብ ዝሓለፉ 28 መዓልትታት የርኢ። እዚ ሓፈሻዊ ሓበሬታ ብዛዕባ ግዝያዊ ምዕባለ ይህብ።";
+
+/*Inform Detail: Infobox Text*/
+"inform_detail_infobox1_text" = "ኣወንታዊ ኮቪድ ኣባኹም ተረጋጊጹ፣ ድሕሪ 4 ሰዓት ናይ ኮቪድ ኮድ ገና ኣይተወሃብኩምን፧\nሽዑ ናይ ኮቪድ-ኮድ ሓበሬታ ስልኪ ርኸቡ፥";
+
+/*Inform Detail: Infobox Title*/
+"inform_detail_infobox1_title" = "ናይ ኮቪድ ኮድ ገና የብልኩምን፧";
+
+/*Titel des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_title" = "ግለላኹም ውዲእኹሞ ዶ፧";
+
+/*Text des Popups mit der Frage, ob der User die Isolation beendet hat*/
+"homescreen_isolation_ended_popup_text" = "ነቲ ግለላ ወዲእኹሞ እንተኾይንኩም እቲ ምክትታል መሊሱ ክውላዕ ይከኣል።";
+
+/*Ja-Antwort*/
+"answer_yes" = "እወ";
+
+/*Nein-Antwort*/
+"answer_no" = "ኣይፋል";
+
+/*Text in der Infobox auf dem Reisen-Screen*/
+"travel_screen_info" = "ኣብ ወጻኢ ምግዓዝ፧ ኣብዚኦም ሃገራት SwissCovid ይሰርሕ እዩ።";
+
+/*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
+"travel_screen_compatible_countries" = "ተቓደውቲ ሃገራት፥";
+
+/*Informieren Flow: Erster Screen Reise-Infotext*/
+"inform_code_travel_text" = "ገየሽቲ ካብ ወጻኢ ውን መታን ክጥንቀቑ፣ እቶም ብሃውሪ ዝተገበሩ ኣይ.ዲታት ምስቶም ኮሮና ኤፕስ ናይቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።";
+
+/*Überschrift der "eingegebene Covidcodes" Statistikbox*/
+"stats_covidcodes_total_header" = "ጥቕላላ";
+
+/*Überschrift der "Innert 0-2 Tagen eingegebene Covidcodes" Statistik*/
+"stats_covidcodes_0to2days_header" = "ሓድሽ ሓበሬታ";
+
+/*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
+"stats_cases_rel_prev_week_popup_header" = "ቅያር ካብ ዝሓለፈ ሰሙን";

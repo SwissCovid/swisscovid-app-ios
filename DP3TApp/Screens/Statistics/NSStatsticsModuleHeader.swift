@@ -11,7 +11,6 @@
 import UIKit
 
 class NSStatsticsModuleHeader: UIView {
-    private let arrowImage = UIImageView(image: UIImage(named: "ic-verified-user-badge"))
     private let counterLabel = NSLabel(.statsCounter,
                                        textColor: UIColor.setColorsForTheme(lightColor: .ns_darkBlueBackground, darkColor: .white),
                                        textAlignment: .center)
@@ -21,6 +20,7 @@ class NSStatsticsModuleHeader: UIView {
         formatter.numberStyle = .decimal
         formatter.usesSignificantDigits = false
         formatter.maximumFractionDigits = 2
+        formatter.minimumFractionDigits = 2
         formatter.roundingMode = .halfEven
         return formatter
     }()
@@ -28,18 +28,12 @@ class NSStatsticsModuleHeader: UIView {
     init() {
         super.init(frame: .zero)
 
-        addSubview(arrowImage)
         addSubview(counterLabel)
         addSubview(subtitle)
 
-        arrowImage.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().inset(-(arrowImage.image?.size.height ?? 0) / 2 - 5)
-        }
-
         counterLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(arrowImage.snp.bottom).inset(8)
+            make.top.equalToSuperview().inset(20)
         }
 
         subtitle.snp.makeConstraints { make in

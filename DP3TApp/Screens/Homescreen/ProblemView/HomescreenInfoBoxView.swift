@@ -27,6 +27,8 @@ class HomescreenInfoBoxView: UIView {
         }
     }
 
+    var hearingImpairedButtonTouched: (() -> Void)?
+
     // MARK: - Views
 
     let infoBoxView: NSInfoBoxView = {
@@ -67,8 +69,10 @@ class HomescreenInfoBoxView: UIView {
             make.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
         }
 
+        closeButton.highlightCornerRadius = 3
         closeButton.snp.makeConstraints { make in
-            make.top.right.equalToSuperview().inset(NSPadding.medium)
+            make.size.equalTo(44)
+            make.top.right.equalToSuperview()
         }
 
         layer.cornerRadius = 3.0
@@ -81,6 +85,18 @@ class HomescreenInfoBoxView: UIView {
 
         closeButton.isHidden = !(gp.isDismissible == true)
 
-        infoBoxView.updateTexts(title: gp.title, subText: gp.text, additionalText: gp.link, additionalURL: gp.url)
+        var viewModel = NSInfoBoxView.ViewModel(title: gp.title,
+                                                subText: gp.text,
+                                                titleColor: .white,
+                                                subtextColor: .white)
+        viewModel.backgroundColor = .ns_darkBlueBackground
+        viewModel.dynamicIconTintColor = .white
+        viewModel.additionalURL = gp.url?.absoluteString
+        viewModel.additionalText = gp.link
+        if gp.hearingImpairedInfo != nil {
+            viewModel.hearingImpairedButtonCallback = hearingImpairedButtonTouched
+        }
+
+        infoBoxView.update(with: viewModel)
     }
 }
