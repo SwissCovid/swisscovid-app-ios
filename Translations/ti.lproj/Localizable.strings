@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "የቐንየልና";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "እቶም ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ናይ ኣፕኩም ተሰዲዶም ኣለዉ። ብኸምዚ መንገዲ ሰንሰለት ለበዳ ሕማም ንኽቋረጽ ትሕግዙ።";
+"inform_send_thankyou_text" = "እቶም ግላውያን መፋትሕ ናይ ኤፕኩም ተሰዲዶም ኣለዉ።\n\nብኸምዚ መንገዲ ሰንሰለት ለበዳ ሕማም ንኽቋረጽ ትሕግዙ።";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "ዕጸው";
@@ -609,7 +609,7 @@
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "እቶምብግምት ዝተሰርዑ መለልዪ ቁጽርታት ጥራይ እዮም ዝስደዱ ። ውልቃቂ ሰነዳት ኣይስደዱን እዮም።  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
+"inform_detail_faq2_text" = "ውልቃዊ ሓበሬታ ዘይኮነ፣ ጥራይ እቶም ግላውያን መፋትሕ እዮም ዝስደዱ።\n  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -877,13 +877,13 @@
 "travel_screen_explanation_title_1" = "እዚ እንታይ ማለት፧";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "ንስኹም ኣብ ሓደ ካብቶም ተቓደውቲ ሃገራት እንተትግዕዙ ኮይንኩም፣ ካልእ ኮሮና ኤፕ ከተምጽኡ ኣየድልየኩምን።\n\nSwissCovid ነቶም ኣብቶም ተቓደውቲ ሃገራት ዝተዘርገሑ ብሃውሪ ዝተፈጠሩ ኣይ.ዲታት ይቈጻጸር። ንስኹም ዋላ ኣብ ክፍጸም ዝኽእል ልበዳ ኣብ ወጻኢ ክትጥንቐቑ ትኽእሉ ኢኹም።";
+"travel_screen_explanation_text_1" = "ንስኹም ኣብ ሓደ ካብቶም ተቓደውቲ ሃገራት እንተትግዕዙ ኮይንኩም፣ ካልእ ኮሮና ኤፕ ከተምጽኡ ኣየድልየኩምን።\n\nSwissCovid ነቶም ኣብቶም ተቓደውቲ ሃገራት ዝተዘርገሑ ግላውያን መፋትሕ ይቈጻጸር። ንስኹም ዋላ ኣብ ክፍጸም ዝኽእል ልበዳ ኣብ ወጻኢ ክትጥንቐቑ ትኽእሉ ኢኹም።";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "ኣብ ምእታው ኮቪድኮድ እንታይ ክፍጸም ድዩ፧";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "ኣብ ምእታይ ኮቪድኮድ እቶም ካባኹም ዝተሰደዱ ብሃውሪ ዝተፈጠሩ ኣይ.ዲታት እንተላይ ምስቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።\n\nገየሽቲ ካብ ወጻኢ እንተላይ መታን ክጥንቀቑ፣ ባዕልኹም ኣብ ወጻኢ ትግዕዙ ኔርኩም ወይ ኣይትግዕዙን ኔርኩም ብዘየገድስ እዩ።";
+"travel_screen_explanation_text_2" = "ኣብ ምእታው ኮቪድኮድ እቶም ካባኹም ዝተሰደዱ ግላውያን መፋትሕ እንተላይ ምስቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።\n\nገየሽቲ ካብ ወጻኢ እንተላይ መታን ክጥንቀቑ፣ ባዕልኹም ኣብ ወጻኢ ትግዕዙ ኔርኩም ወይ ኣይትግዕዙን ኔርኩም ብዘየገድስ እዩ።";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "እዚ መጠውቒ/Button ካብቲ ኤፕ ይወጽእን ሓድሽ ወብሳይት ይኸፍትን።";
@@ -1291,7 +1291,7 @@
 "travel_screen_compatible_countries" = "ተቓደውቲ ሃገራት፥";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "ገየሽቲ ካብ ወጻኢ ውን መታን ክጥንቀቑ፣ እቶም ብሃውሪ ዝተገበሩ ኣይ.ዲታት ምስቶም ኮሮና ኤፕስ ናይቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።";
+"inform_code_travel_text" = "ገየሽቲ ካብ ወጻኢ ውን መታን ክጥንቀቑ፣ እቶም ግላውያን መፋትሕ ምስቶም ኮሮና ኤፕስ ናይቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "ጥቕላላ";
