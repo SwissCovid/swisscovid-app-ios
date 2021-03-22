@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Vielen Dank";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Die zufälligen IDs Ihrer App wurden gesendet.\n\nDamit helfen Sie mit, Infektionsketten zu stoppen.";
+"inform_send_thankyou_text" = "Die privaten Schlüssel Ihrer App wurden gesendet.\n\nDamit helfen Sie mit, Infektionsketten zu stoppen.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Schliessen";
@@ -622,7 +622,7 @@
 "inform_detail_faq2_title" = "Was wird gesendet?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Es werden nur die zufälligen IDs Ihrer App gesendet, keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid App Nutzer, dass die Möglichkeit einer Ansteckung besteht.";
+"inform_detail_faq2_text" = "Es werden nur die privaten Schlüssel Ihrer App gesendet, keine persönlichen Daten.\n\nDamit erfahren andere SwissCovid App Nutzer, dass die Möglichkeit einer Ansteckung besteht.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -904,14 +904,13 @@
 "travel_screen_explanation_title_1" = "Was bedeutet das?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-/*Fuzzy*/
-"travel_screen_explanation_text_1" = "Wenn Sie in einem der kompatiblen Länder unterwegs sind, müssen Sie keine andere Corona-App installieren.\n\nSwissCovid überprüft die in den kompatiblen Ländern veröffentlichten zufälligen IDs. So können Sie auch bei einer möglichen Ansteckung im Ausland gewarnt werden.";
+"travel_screen_explanation_text_1" = "Wenn Sie in einem der kompatiblen Länder unterwegs sind, müssen Sie keine andere Corona-App installieren.\n\nSwissCovid überprüft die in den kompatiblen Ländern veröffentlichten privaten Schlüssel. So können Sie auch bei einer möglichen Ansteckung im Ausland gewarnt werden.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Was geschieht bei Eingabe des Covidcodes?";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Bei der Eingabe des Covidcodes werden die von Ihnen gesendeten zufälligen IDs auch mit den kompatiblen Ländern geteilt.\n\nDamit auch Reisende aus dem Ausland gewarnt werden können, geschieht das unabhängig davon, ob Sie selber im Ausland unterwegs waren oder nicht.";
+"travel_screen_explanation_text_2" = "Bei der Eingabe des Covidcodes werden die von Ihnen gesendeten privaten Schlüssel auch mit den kompatiblen Ländern geteilt.\n\nDamit auch Reisende aus dem Ausland gewarnt werden können, geschieht das unabhängig davon, ob Sie selber im Ausland unterwegs waren oder nicht.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 /*Fuzzy*/
@@ -1354,7 +1353,7 @@
 "travel_screen_compatible_countries" = "Kompatible Länder:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Damit auch Reisende aus dem Ausland gewarnt werden können, werden die zufälligen IDs mit den Corona-Apps der kompatiblen Länder geteilt.";
+"inform_code_travel_text" = "Damit auch Reisende aus dem Ausland gewarnt werden können, werden die privaten Schlüssel mit den Corona-Apps der kompatiblen Länder geteilt.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Total";

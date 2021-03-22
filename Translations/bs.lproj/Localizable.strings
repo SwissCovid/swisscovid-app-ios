@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Hvala";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Poslani su nasumični ID-ovi iz vaše aplikacije.\n\nTime nam pomažete u prekidanju lanca širenja infekcije.";
+"inform_send_thankyou_text" = "Poslani su privatni identifikacioni ključevi iz vaše aplikacije.\n\nTime nam pomažete u prekidanju lanca širenja infekcije.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Zatvori";
@@ -609,7 +609,7 @@
 "inform_detail_faq2_title" = "Šta se šalje?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Šalju se samo nasumični ID-ovi iz vaše aplikacije, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da postoji mogućnost infekcije.";
+"inform_detail_faq2_text" = "Šalju se samo privatni identifikacioni ključevi iz vaše aplikacije, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da postoji mogućnost infekcije.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -880,13 +880,13 @@
 "travel_screen_explanation_title_1" = "Šta to znači?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Ukoliko putujete jednom od kompatibilnih država, ne morate instalirati drugu Corona aplikaciju.\n\nSwissCovid proverava slučajne identifikacije u kompatibilnim državama koje su objavljene. Tako možete biti upozoreni u vezi jedne moguće zaraze u inostranstvu.";
+"travel_screen_explanation_text_1" = "Ukoliko putujete jednom od kompatibilnih država, ne morate instalirati drugu Corona aplikaciju.\n\nSwissCovid proverava privatne identifikacione ključeve objavljene u kompatibilnim državama. Tako možete biti upozoreni u vezi jedne moguće zaraze u inostranstvu.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Šta se dešava kada unesete Covid-kod?";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Pri unošenju Covid-koda se sa kompatibilnim državama dele i slučajne identifikacije koje ste poslali.\n\nDa bi putnici u inostranstvu mogli da se upozore, to se dešava nezavisno od toga da li ste vi putovali u inostranstvu ili niste.";
+"travel_screen_explanation_text_2" = "Pri unošenju Covid-koda se sa kompatibilnim državama dele i privatni identifikacioni ključevi koje ste poslali.\n\nDa bi putnici u inostranstvu mogli da se upozore, to se dešava nezavisno od toga da li ste vi putovali u inostranstvu ili niste.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Ovo dugme napušta aplikaciju i otvara veb stranicu.";
@@ -1294,7 +1294,7 @@
 "travel_screen_compatible_countries" = "Kompatibilne države:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Da bi se putnici iz inostranstva mogli upozoriti, slučajne identifikacije sa Corona aplikacijom kompatibilnih država se dele.";
+"inform_code_travel_text" = "Da bi se putnici iz inostranstva mogli upozoriti, dele se privatni identifikacioni ključevi sa Corona aplikacijom kompatibilnih država.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Ukupno";
