@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Merci beaucoup";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Les ID aléatoires de votre application ont été envoyés.\n\nAinsi, vous contribuez à interrompre les chaînes de transmission.";
+"inform_send_thankyou_text" = "Les clés privées de votre application ont été envoyés.\n\nAinsi, vous contribuez à interrompre les chaînes de transmission.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Fermer";
@@ -613,7 +613,7 @@
 "inform_detail_faq2_title" = "Qu'est-ce qui est envoyé ?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Seules les ID aléatoires de votre application sont envoyées, aucune donnée personnelle.\n\nAinsi, d'autres utilisateurs de l'application SwissCovid apprennent qu'ils ont peut-être été infectés.";
+"inform_detail_faq2_text" = "Seules les clés privées de votre application sont envoyées, aucune donnée personnelle.\n\nAinsi, d'autres utilisateurs de l'application SwissCovid apprennent qu'ils ont peut-être été infectés.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -887,13 +887,13 @@
 "travel_screen_explanation_title_1" = "Qu'est-ce que cela signifie ?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Si vous voyagez dans un des pays compatibles, vous n'avez pas besoin d'installer une autre application. \n\nSwissCovid vérifie les IDs aléatoires publiées dans les pays compatibles. Ainsi, vous serez averti d'une d'infection possible à l'étranger également.";
+"travel_screen_explanation_text_1" = "Si vous voyagez dans un des pays compatibles, vous n'avez pas besoin d'installer une autre application. \n\nSwissCovid vérifie les clés privées publiées dans les pays compatibles. Ainsi, vous serez averti d'une infection possible à l'étranger également.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Que se passe-t-il quand je saisis le code COVID ?";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Lorsque vous saisissez le code COVID, les IDs aléatoires que vous avez envoyées sont partagées avec les pays compatibles également. \n\nCet envoi se produit que vous ayez été à l'étranger ou non afin de pouvoir avertir les voyageurs en provenance d'autres pays.";
+"travel_screen_explanation_text_2" = "Lorsque vous saisissez le code COVID, les clés privées que vous avez envoyées sont partagées avec les pays compatibles également.\n\nCet envoi se produit que vous ayez été à l'étranger ou non afin de pouvoir avertir les voyageurs en provenance d'autres pays.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Ce bouton permet de quitter l'application et\nd'ouvrir un site internet.";
@@ -1327,7 +1327,7 @@
 "travel_screen_compatible_countries" = "Pays compatibles :";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Afin que les voyageurs en provenance de l'étranger puissent aussi être avertis, les IDs aléatoires sont partagées avec les applications des pays compatibles.";
+"inform_code_travel_text" = "Afin que les voyageurs en provenance de l'étranger puissent aussi être avertis, les clés privées sont partagées avec les applications des pays compatibles.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Total";

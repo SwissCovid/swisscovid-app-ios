@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Shumë faleminderit";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "ID e rastit të aplikacionit tuaj u dërguan.\n\nNë këtë mënyrë na ndihmoni, për të ndaluar zinxhirin e infeksionit.";
+"inform_send_thankyou_text" = "Kodet e identifikimit të aplikacionit tuaj u dërguan.\n\nNë këtë mënyrë na ndihmoni, për të ndaluar zinxhirin e infeksionit.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Mbyll";
@@ -609,7 +609,7 @@
 "inform_detail_faq2_title" = "Çfarë dërgohet?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Dërgohen vetëm ID e rastit të aplikacionit tuaj, asnjë e dhënë personale.\n\nNë këtë mënyrë mësoni përdoruesit e tjerë të alikacionit SwissCovid, të cilët mundësisht janë infektuar.";
+"inform_detail_faq2_text" = "Dërgohen vetëm kodet e identifikimit të aplikacionit tuaj, asnjë e dhënë personale.\n\nNë këtë mënyrë mësoni përdoruesit e tjerë të alikacionit SwissCovid, të cilët mundësisht janë infektuar.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -880,13 +880,13 @@
 "travel_screen_explanation_title_1" = "Cfarë do të thotë kjo?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Nëse do të udhëtoni në një nga shtetet e përfshira, nuk keni nevojë të instaloni asnjë aplikacion tjetër për koronavirusin.\n\nSwissCovid kontrollon kartat e identitetit në mënyrë rastësore që janë krijuar në shtetet e përfshira. Në këtë mënyrë, ju mund të paralajmëroheni edhe për një infeksion të mundshëm jashtë vendit.";
+"travel_screen_explanation_text_1" = "Nëse do të udhëtoni në një nga shtetet e përfshira, nuk keni nevojë të instaloni asnjë aplikacion tjetër për koronavirusin.\n\nSwissCovid kontrollon kodet e identifikimit në mënyrë rastësore që janë krijuar në shtetet e përfshira. Në këtë mënyrë, ju mund të paralajmëroheni edhe për një infeksion të mundshëm jashtë vendit.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Çfarë ndodh kur regjistron kodin Covid?";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Kur regjistroni kodin Covid, kartat e identitetit që dërgoni do të shpërndahen gjithashtu me shtetet e përfshira.\n\nNë mënyrë që udhëtarët nga jashtë shtetit të mund të paralajmërohen, kjo bëhet pavarësisht nëse keni qenë vetë jashtë shtetit ose jo.";
+"travel_screen_explanation_text_2" = "Kur regjistroni kodin Covid, kodet e identifikimit që dërgoni do të shpërndahen gjithashtu me shtetet e përfshira.\n\nNë mënyrë që udhëtarët nga jashtë shtetit të mund të paralajmërohen, kjo bëhet pavarësisht nëse keni qenë vetë jashtë shtetit ose jo.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Ky buton ju largon nga aplikacioni dhe hap një faqe interneti.";
@@ -1294,7 +1294,7 @@
 "travel_screen_compatible_countries" = "Shtetet e përfshira:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Në mënyrë që udhëtarët nga jashtë shtetit të mund të paralajmërohen, kartat e identitetit shpërndahen me aplikacionet për koronavirusin të vendeve të përfshira.";
+"inform_code_travel_text" = "Në mënyrë që udhëtarët nga jashtë shtetit të mund të paralajmërohen, kodet e identifikimit shpërndahen me aplikacionet për koronavirusin të vendeve të përfshira.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Total";

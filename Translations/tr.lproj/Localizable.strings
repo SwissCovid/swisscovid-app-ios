@@ -24,7 +24,7 @@
 "inform_send_thankyou" = "Teşekkür ederiz";
 
 /*Informieren: Danke Text*/
-"inform_send_thankyou_text" = "Uygulamanızın rastgele belirlenmiş ID'leri gönderilmiştir. Bu şekilde enfeksiyon zincirlerini kırmaya yardımcı olursunuz.";
+"inform_send_thankyou_text" = "Uygulamanızın özel kodları gönderilmiştir. Bu şekilde enfeksiyon zincirlerini kırmaya yardımcı olursunuz.";
 
 /*Informieren: Button Titel*/
 "inform_fertig_button_title" = "Kapat";
@@ -609,7 +609,7 @@
 "inform_detail_faq2_title" = "Neler iletilir?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Şahsi bilgileriniz değil, uygulamanızın yalnızca rastgele ID'leri iletilir. \nBu şekilde diğer SwissCovid uygulaması kullanıcıları yalnızca bir bulaşma riski olabileceğini öğenir.";
+"inform_detail_faq2_text" = "Şahsi bilgileriniz değil, uygulamanızın yalnızca özel kodları iletilir. \nBu şekilde diğer SwissCovid uygulaması kullanıcıları yalnızca bir bulaşma riski olabileceğini öğenir.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -877,13 +877,13 @@
 "travel_screen_explanation_title_1" = "Bunun anlamı nedir?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Uyumlu ülkelerin birinde seyahat ettiğinizde, başka bir Korona uygulamasını kurmak zorunda kalmazsınız.\n\nSwissCovid uyumlu ülkelerde yayınlanan rastgele kimlikleri kontrol eder. Böylece yurt dışındaki olası bir bulaşı durumunda da uyarılabilirsiniz.";
+"travel_screen_explanation_text_1" = "Uyumlu ülkelerin birinde seyahat ettiğinizde, başka bir Korona uygulamasını kurmak zorunda kalmazsınız.\n\nSwissCovid uyumlu ülkelerde yayınlanan özel kodlar kontrol eder. Böylece yurt dışındaki olası bir bulaşı durumunda da uyarılabilirsiniz.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Covid kodu girildiğinde neler olur?";
 
 /*Second text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_2" = "Covid kodu girildiğinde tarafınızdan girilen rastgele kimlikler uyumlu olan ülkelerle de paylaşılır.\n\nYurt dışı seyahatlerinden gelen kişilerin de uyarılabilmesi için bu, sizin yurt dışı seyahatinde bulunmuş olup olmamanıza bağlı kalmaksızın uygulanır.";
+"travel_screen_explanation_text_2" = "Covid kodu girildiğinde tarafınızdan girilen özel kodlar uyumlu olan ülkelerle de paylaşılır.\n\nYurt dışı seyahatlerinden gelen kişilerin de uyarılabilmesi için bu, sizin yurt dışı seyahatinde bulunmuş olup olmamanıza bağlı kalmaksızın uygulanır.";
 
 /*Accessibility: FAQ button hint wenn die app verlassen wird und eine website öffnet*/
 "accessibility_faq_button_hint_non_bag" = "Bu buton, uygulamadan çıkarak bir web sayfası açar.";
@@ -1291,7 +1291,7 @@
 "travel_screen_compatible_countries" = "Uyumlu ülkeler:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Yurt dışı seyahatlerinden dönen kişilere de uyarıda bulunulabilmesi için, rastgele kimlikler uyumlu ülkelerin Korona uygulamalarıyla paylaşılır.";
+"inform_code_travel_text" = "Yurt dışı seyahatlerinden dönen kişilere de uyarıda bulunulabilmesi için, özel kodlar uyumlu ülkelerin Korona uygulamalarıyla paylaşılır.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Toplam";
