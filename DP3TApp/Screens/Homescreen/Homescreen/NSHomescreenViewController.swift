@@ -256,7 +256,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         handshakesModuleView.uiState = state.homescreen.encounters
         reportsView.uiState = state.homescreen
 
-        let isInfected = state.homescreen.reports.report == .infected
+        let isInfected = state.homescreen.reports.report.isInfected
         whatToDoSymptomsButton.isHidden = isInfected
         whatToDoPositiveTestButton.isHidden = isInfected
 
