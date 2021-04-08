@@ -60,10 +60,10 @@
 "bluetooth_permission_turned_off" = "L'app na funcziuna betg, perquai che Vus n’avais betg dà l'autorisaziun bluetooth.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothPeripheralUsageDescription" = "Inscunters vegnan identifitgadas via bluetooth, economisant l'energia.";
+"NSBluetoothPeripheralUsageDescription" = "Inscunters vegnan identifitgads via bluetooth, economisant l'energia.";
 
 /*Permission Text für Bluetooth*/
-"NSBluetoothAlwaysUsageDescription" = "Inscunters vegnan identifitgadas via bluetooth, economisant l'energia.";
+"NSBluetoothAlwaysUsageDescription" = "Inscunters vegnan identifitgads via bluetooth, economisant l'energia.";
 
 /*Inform: Titel der Code abschicken Seite*/
 "inform_code_title" = "Endatar il code covid";
@@ -105,7 +105,7 @@
 "tracing_active_title" = "App activa";
 
 /*Text bei Tracing aktiv*/
-"tracing_active_text" = "Inscunters vegnan arcunadas en moda anonima";
+"tracing_active_text" = "Inscunters vegnan arcunads en moda anonima";
 
 /*Android: Fehler Text bei Tracing*/
 "android_tracing_error_title" = "Tracing inactiv";
@@ -168,7 +168,7 @@
 "tab_tracing_title" = "Tracing";
 
 /*Titel auf Homescreen für Was tun Section*/
-"whattodo_title_symptoms" = "Sintoms da malsogna";
+"whattodo_title_symptoms" = "sintoms da malsogna";
 
 /*Subtitel auf Homescreen für Was Tun Section*/
 "whattodo_subtitle_symptoms" = "Tge far en cas da…";
@@ -1300,3 +1300,27 @@
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
 "stats_cases_rel_prev_week_popup_header" = "Midada envers l'emna precedenta";
+
+/*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_title" = "";
+
+/*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_text" = "";
+
+/*Informieren: Danke Text Onset Date*/
+"inform_send_thankyou_text_onsetdate" = "";
+
+/*Informieren: Danke Text Abschluss*/
+"inform_send_thankyou_text_stop_infection_chains" = "";
+
+/*Informieren: Danke Text Onset Date Einleitung*/
+"inform_send_thankyou_text_onsetdate_info" = "";
+
+/*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
+"android_inform_tracing_enabled_explanation" = "";
+
+/*Leitfaden Info Popup Text*/
+"leitfaden_infopopup_text" = "";
+
+/*Leitfaden InfoPopup Titel*/
+"leitfaden_infopopup_title" = "";

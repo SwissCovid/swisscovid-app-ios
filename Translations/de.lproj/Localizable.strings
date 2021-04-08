@@ -1363,3 +1363,28 @@
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
 "stats_cases_rel_prev_week_popup_header" = "Veränderung zur Vorwoche";
+
+/*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_title" = "Wer wird benachrichtigt?";
+
+/*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_text" = "Es werden alle Kontakte im Zeitraum Ihrer Ansteckungsphase vom {ONSET_DATE} bis zur Eingabe des Covidcodes benachrichtigt, wenn auf Grund der Distanz und der Dauer das Risiko einer Ansteckung bestand.";
+
+/*Informieren: Danke Text Onset Date*/
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – heute";
+
+/*Informieren: Danke Text Abschluss*/
+"inform_send_thankyou_text_stop_infection_chains" = "Damit helfen Sie mit, Infektionsketten zu stoppen.";
+
+/*Informieren: Danke Text Onset Date Einleitung*/
+"inform_send_thankyou_text_onsetdate_info" = "Die privaten Schlüssel Ihrer App wurden für den folgenden Zeitraum gesendet:";
+
+/*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
+"android_inform_tracing_enabled_explanation" = "Beim Eingeben eines Covidcodes muss das Tracing aktiviert sein, damit Ihre privaten Schlüssel geteilt werden können.";
+
+/*Leitfaden Info Popup Text*/
+/*Fuzzy*/
+"leitfaden_infopopup_text" = "Wenn Sie \"Jetzt ausfüllen\" drücken, so verlassen Sie die App und wechseln auf die Website des SwissCovid Leitfaden. Dabei werden die Daten der letzten Begegnungen von möglichen Ansteckungen der Website mitgeschickt.";
+
+/*Leitfaden InfoPopup Titel*/
+"leitfaden_infopopup_title" = "Information SwissCovid Leitfaden";

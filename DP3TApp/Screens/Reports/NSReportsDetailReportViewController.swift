@@ -144,7 +144,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton))
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -170,7 +170,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton))
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
@@ -256,6 +256,37 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         ev.stackView.addArrangedSubview(callInfoBox)
 
         return ev
+    }
+
+    // MARK: - Info
+
+    private func addInfoButton(to button: UIView) -> UIView {
+        let stackView = UIStackView()
+        stackView.spacing = NSPadding.medium
+        stackView.alignment = .center
+
+        stackView.addArrangedSubview(button)
+
+        // Info button (added after stackView so it is on top)
+        let infoButton = UBButton()
+        infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        infoButton.tintColor = .ns_blue
+        infoButton.highlightCornerRadius = 20
+        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
+
+        stackView.addArrangedSubview(infoButton)
+
+        infoButton.snp.makeConstraints { make in
+            make.size.equalTo(40)
+        }
+
+        infoButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            let popup = NSReportsLeitfadenInfoPopupViewController()
+            strongSelf.present(popup, animated: true, completion: nil)
+        }
+
+        return stackView
     }
 
     // MARK: - Logic
