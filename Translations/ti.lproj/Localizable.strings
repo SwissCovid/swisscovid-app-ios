@@ -1301,3 +1301,36 @@
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
 "stats_cases_rel_prev_week_popup_header" = "ቅያር ካብ ዝሓለፈ ሰሙን";
+
+/*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_title" = "";
+
+/*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_text" = "";
+
+/*Informieren: Danke Text Onset Date*/
+"inform_send_thankyou_text_onsetdate" = "";
+
+/*Informieren: Danke Text Abschluss*/
+"inform_send_thankyou_text_stop_infection_chains" = "";
+
+/*Informieren: Danke Text Onset Date Einleitung*/
+"inform_send_thankyou_text_onsetdate_info" = "";
+
+/*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
+"android_inform_tracing_enabled_explanation" = "";
+
+/*Leitfaden Info Popup Text*/
+"leitfaden_infopopup_text" = "";
+
+/*Leitfaden InfoPopup Titel*/
+"leitfaden_infopopup_title" = "";
+
+/*Update Boarding: Titel*/
+"germany_update_boarding_title" = "";
+
+/*Update Boarding: Text*/
+"germany_update_boarding_text" = "";
+
+/*Update Boarding: Heading oben*/
+"germany_update_boarding_heading" = "";
