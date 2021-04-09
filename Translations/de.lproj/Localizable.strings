@@ -1393,7 +1393,7 @@
 "germany_update_boarding_title" = "Kompatibel mit Deutschland";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "Sie werden auch informiert, wenn sie mit einer Person in Kontakt waren, welche die deutsche Corona-Warn-App nutzt und später positiv getestet wurde und umgekehrt. Dazu wurden die Nutzungsbedingungen und Datenschutzerklärung aktualisiert.";
+"germany_update_boarding_text" = "Sie werden auch informiert, wenn Sie mit einer Person in Kontakt waren, welche die deutsche Corona-Warn-App nutzt und später positiv getestet wurde und umgekehrt. Dazu wurden die Nutzungsbedingungen und Datenschutzerklärung aktualisiert.";
 
 /*Update Boarding: Heading oben*/
 "germany_update_boarding_heading" = "SwissCovid Update";
