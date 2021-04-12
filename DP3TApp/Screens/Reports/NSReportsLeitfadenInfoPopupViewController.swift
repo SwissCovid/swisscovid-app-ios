@@ -12,7 +12,10 @@
 import Foundation
 
 class NSReportsLeitfadenInfoPopupViewController: NSPopupViewController {
-    init() {
+    private let buttonText: String
+
+    init(buttonText: String) {
+        self.buttonText = buttonText
         super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.small, bottom: NSPadding.medium, right: NSPadding.small))
     }
 
@@ -23,7 +26,9 @@ class NSReportsLeitfadenInfoPopupViewController: NSPopupViewController {
 
         let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
-        for (label, description) in [("leitfaden_infopopup_title".ub_localized, "leitfaden_infopopup_text".ub_localized)] {
+        let text = "leitfaden_infopopup_text".ub_localized.replacingOccurrences(of: "{BUTTON_TITLE}", with: buttonText)
+
+        for (label, description) in [("leitfaden_infopopup_title".ub_localized, text)] {
             let title = NSLabel(.textBold)
             title.text = label
             let desc = NSLabel(.textLight)

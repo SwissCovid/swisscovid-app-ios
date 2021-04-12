@@ -1361,3 +1361,12 @@
 
 /*Leitfaden InfoPopup Titel*/
 "leitfaden_infopopup_title" = "";
+
+/*Update Boarding: Titel*/
+"germany_update_boarding_title" = "";
+
+/*Update Boarding: Text*/
+"germany_update_boarding_text" = "";
+
+/*Update Boarding: Heading oben*/
+"germany_update_boarding_heading" = "";

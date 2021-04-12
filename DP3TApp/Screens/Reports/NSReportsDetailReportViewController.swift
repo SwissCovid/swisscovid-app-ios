@@ -136,7 +136,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
-        leitfadenButton.title = "meldungen_detail_open_leitfaden_button".ub_localized.uppercased()
+        let text = "meldungen_detail_open_leitfaden_button".ub_localized
+        leitfadenButton.title = text.uppercased()
         leitfadenButton.backgroundColor = .ns_blue
 
         leitfadenButton.touchUpCallback = { [weak self] in
@@ -144,7 +145,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton))
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -163,14 +164,15 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url)
-        leitfadenButton.title = "meldungen_detail_open_leitfaden_again_button".ub_localized.uppercased()
+        let text = "meldungen_detail_open_leitfaden_again_button".ub_localized
+        leitfadenButton.title = text.uppercased()
 
         leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton))
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
@@ -260,7 +262,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
     // MARK: - Info
 
-    private func addInfoButton(to button: UIView) -> UIView {
+    private func addInfoButton(to button: UIView, buttonText: String) -> UIView {
         let stackView = UIStackView()
         stackView.spacing = NSPadding.medium
         stackView.alignment = .center
@@ -282,7 +284,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
 
         infoButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            let popup = NSReportsLeitfadenInfoPopupViewController()
+            let popup = NSReportsLeitfadenInfoPopupViewController(buttonText: buttonText)
             strongSelf.present(popup, animated: true, completion: nil)
         }
 
