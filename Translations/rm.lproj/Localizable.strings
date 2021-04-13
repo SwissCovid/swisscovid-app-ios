@@ -1300,3 +1300,18 @@
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
 "stats_cases_rel_prev_week_popup_header" = "Midada envers l'emna precedenta";
+
+/*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_title" = "";
+
+/*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_text" = "";
+
+/*Informieren: Danke Text Onset Date*/
+"inform_send_thankyou_text_onsetdate" = "";
+
+/*Informieren: Danke Text Abschluss*/
+"inform_send_thankyou_text_stop_infection_chains" = "";
+
+/*Informieren: Danke Text Onset Date Einleitung*/
+"inform_send_thankyou_text_onsetdate_info" = "";

@@ -11,6 +11,17 @@
 import UIKit
 
 class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewController {
+    // MARK: - API
+
+    public var onsetDate: Date? {
+        didSet { update() }
+    }
+
+    // MARK: - Views
+
+    private var faq2InfoView: NSOnboardingInfoView?
+    private var faq2InfoViewWrapper = UIView()
+
     // MARK: - Init
 
     override init() {
@@ -46,6 +57,15 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
         stackScrollView.addSpacerView(2 * NSPadding.large)
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!.ub_image(with: .ns_purple)!, text: "meldungen_positive_tested_faq1_text".ub_localized, title: "meldungen_positive_tested_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
+
+        let faq2InfoView = NSOnboardingInfoView(icon: UIImage(named: "ic-meldung")!.ub_image(with: .ns_purple)!, text: "", title: "meldungen_positive_tested_faq2_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple)
+        self.faq2InfoView = faq2InfoView
+        faq2InfoViewWrapper.addSubview(faq2InfoView)
+        faq2InfoView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        stackScrollView.addArrangedView(faq2InfoViewWrapper)
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
@@ -88,6 +108,22 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
                 }))
                 self?.present(alert, animated: true, completion: nil)
             }
+        }
+    }
+
+    // MARK: - Update
+
+    private func update() {
+        faq2InfoViewWrapper.isHidden = onsetDate == nil
+
+        if let onsetDate = onsetDate {
+            let formattedOnset = DateFormatter.ub_dayWithMonthString(from: onsetDate)
+            let text = "meldungen_positive_tested_faq2_text".ub_localized
+                .replacingOccurrences(of: "{ONSET_DATE}", with: formattedOnset)
+            let attributedText = text.formattingOccurrenceBold(formattedOnset)
+
+            faq2InfoView?.label.attributedText = attributedText
+            faq2InfoView?.label.accessibilityLabel = attributedText.string.replacingOccurrences(of: "BAG", with: "B. A. G.")
         }
     }
 }

@@ -49,6 +49,9 @@ class ReportingManager: ReportingManagerProtocol {
 
     let codeValidator = CodeValidator()
 
+    @KeychainPersisted(key: "onsetDate", defaultValue: nil)
+    var onsetDate: Date?
+
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
@@ -98,6 +101,8 @@ class ReportingManager: ReportingManagerProtocol {
                         } else {
                             if !fake {
                                 self.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24 * 14) // Ask if user wants to end isolation after 14 days
+
+                                self.onsetDate = date
                             }
                             completion(nil)
                         }
