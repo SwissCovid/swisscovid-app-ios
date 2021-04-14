@@ -17,8 +17,12 @@ class UserStorage {
     var hasCompletedOnboarding: Bool {
         didSet {
             TracingManager.shared.userHasCompletedOnboarding()
+            hasCompletedUpdateBoardingGermany = true
         }
     }
+
+    @UBUserDefault(key: "hasCompletedUpdateBoardingGermany", defaultValue: false)
+    var hasCompletedUpdateBoardingGermany: Bool
 
     func registerSeenMessages(identifier: UUID) {
         seenMessages.append("\(identifier.uuidString)")

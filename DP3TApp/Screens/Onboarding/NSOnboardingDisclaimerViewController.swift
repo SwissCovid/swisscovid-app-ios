@@ -14,6 +14,7 @@ import UIKit
 class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
     private let headingLabel = NSLabel(.textLight, textColor: .ns_blue, textAlignment: .center)
     private let titleLabel = NSLabel(.title, textAlignment: .center)
+    private let info = NSLabel(.textLight)
 
     private let warningContainer = UIView()
     private let warningTitle = NSLabel(.smallBold, textColor: .ns_text)
@@ -30,6 +31,22 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
     private let conditionOfUseHeader = NSExpandableDisclaimerViewHeader(title: "onboarding_disclaimer_conditions_of_use".ub_localized)
     private let conditionOfUseBody = NSExpandableDisclaimerViewBody(content: .conditionOfUse)
+
+    internal var headingText: String {
+        "onboarding_disclaimer_heading".ub_localized
+    }
+
+    internal var titleText: String {
+        "onboarding_disclaimer_title".ub_localized
+    }
+
+    internal var infoText: String {
+        "onboarding_disclaimer_info".ub_localized
+    }
+
+    internal var headerImage: UIImage? {
+        return nil
+    }
 
     override init() {
         super.init()
@@ -55,13 +72,15 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         }
         addArrangedView(headingContainer, spacing: NSPadding.medium)
 
+        if let hi = headerImage {
+            addArrangedView(UIImageView(image: hi), spacing: NSPadding.medium)
+        }
+
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
 
         addArrangedView(.init(), spacing: NSPadding.large)
 
-        let info = NSLabel(.textLight)
-        info.text = "onboarding_disclaimer_info".ub_localized
         addArrangedView(info, spacing: NSPadding.large)
         info.snp.makeConstraints { make in
             make.leading.trailing.equalTo(self.stackScrollView.stackView).inset(NSPadding.large)
@@ -231,8 +250,10 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
     }
 
     private func fillViews() {
-        headingLabel.text = "onboarding_disclaimer_heading".ub_localized
-        titleLabel.text = "onboarding_disclaimer_title".ub_localized
+        headingLabel.text = headingText
+        titleLabel.text = titleText
+        info.text = infoText
+
         titleLabel.accessibilityTraits = [.header]
         warningTitle.text = "onboarding_disclaimer_warning_title".ub_localized
         warningBody.text = "onboarding_disclaimer_warning_body".ub_localized
