@@ -117,7 +117,7 @@
                 let date = dateFormatter(state.debug.lastSync)
                 texts.append("\("debug_sdk_state_last_synced".ub_localized)\(date)")
 
-                let isInfected = state.debug.infectionStatus == .infected
+                let isInfected = state.debug.infectionStatus.isInfected
                 texts.append("\("debug_sdk_state_self_exposed".ub_localized)\(yesOrNo(isInfected))")
 
                 let isExposed = state.debug.infectionStatus.isExposed

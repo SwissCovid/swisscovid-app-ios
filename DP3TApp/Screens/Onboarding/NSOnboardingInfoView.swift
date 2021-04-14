@@ -13,6 +13,8 @@ import UIKit
 class NSOnboardingInfoView: UIView {
     public let stackView = UIStackView()
 
+    public let label = NSLabel(.textLight)
+
     private let leftRightInset: CGFloat
 
     let labelAreaGuide = UILayoutGuide()
@@ -29,7 +31,6 @@ class NSOnboardingInfoView: UIView {
         let imgView = NSImageView(image: icon, dynamicColor: dynamicIconTintColor)
         imgView.ub_setContentPriorityRequired()
 
-        let label = NSLabel(.textLight)
         label.text = text
         label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
 
