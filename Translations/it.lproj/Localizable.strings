@@ -1352,3 +1352,21 @@
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "";
+
+/*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
+"android_inform_tracing_enabled_explanation" = "";
+
+/*Leitfaden Info Popup Text*/
+"leitfaden_infopopup_text" = "";
+
+/*Leitfaden InfoPopup Titel*/
+"leitfaden_infopopup_title" = "";
+
+/*Update Boarding: Titel*/
+"germany_update_boarding_title" = "";
+
+/*Update Boarding: Text*/
+"germany_update_boarding_text" = "";
+
+/*Update Boarding: Heading oben*/
+"germany_update_boarding_heading" = "";
