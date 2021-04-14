@@ -61,4 +61,13 @@ extension String {
     var replaceSettingsString: String {
         return replacingOccurrences(of: "{TRACING_SETTING_TEXT}", with: "tracing_setting_text_ios".ub_localized_per_version)
     }
+
+    func formattingOccurrenceBold(_ occurrence: String) -> NSMutableAttributedString {
+        let range = (self as NSString).range(of: occurrence)
+        let attributedText = NSMutableAttributedString(string: self)
+        attributedText.addAttributes([
+            .font: NSLabelType.textBold.font,
+        ], range: range)
+        return attributedText
+    }
 }
