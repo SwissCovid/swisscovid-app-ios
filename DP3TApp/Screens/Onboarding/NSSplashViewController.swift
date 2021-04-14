@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSSplashViewController: UIViewController {
+class NSSplashViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 

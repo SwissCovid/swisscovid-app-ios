@@ -97,7 +97,7 @@
                     case 5:
                         stateManager.overwrittenInfectionState = .exposed20
                     case 6:
-                        stateManager.overwrittenInfectionState = .infected
+                        stateManager.overwrittenInfectionState = .infected(onsetDate: Date())
                     default:
                         stateManager.overwrittenInfectionState = nil
                     }
@@ -115,7 +115,7 @@
                     checkboxes[3].isChecked = s == .exposed5
                     checkboxes[4].isChecked = s == .exposed10
                     checkboxes[5].isChecked = s == .exposed20
-                    checkboxes[6].isChecked = s == .infected
+                    checkboxes[6].isChecked = s.isInfected
                 } else {
                     checkboxes[1].isChecked = false
                     checkboxes[2].isChecked = false

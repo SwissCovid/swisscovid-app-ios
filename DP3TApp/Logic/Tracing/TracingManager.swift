@@ -162,8 +162,9 @@ class TracingManager: NSObject {
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
 
-        // reset end isolation question date
+        // reset end isolation question date and onset date
         ReportingManager.shared.endIsolationQuestionDate = nil
+        ReportingManager.shared.onsetDate = nil
 
         // reset infection status
         DP3TTracing.resetInfectionStatus()

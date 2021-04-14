@@ -84,8 +84,7 @@ class NSLinkifiedTextView: UITextView, UITextViewDelegate {
 
     override var text: String! {
         didSet {
-            if let string = Self.attributedText(text: text, type: labelType, color: textColor ?? labelType.textColor, textAlignment: .center, lineBreakMode: .byWordWrapping)
-            {
+            if let string = Self.attributedText(text: text, type: labelType, color: textColor ?? labelType.textColor, textAlignment: .center, lineBreakMode: .byWordWrapping) {
                 let range = NSRange(location: 0, length: string.length)
 
                 let newString = NSMutableAttributedString(attributedString: string)

@@ -171,7 +171,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                 // success
                 // reschedule next fake request
                 FakePublishManager.shared.rescheduleFakeRequest(force: true)
-                self.navigationController?.pushViewController(NSInformThankYouViewController(), animated: true)
+                self.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.onsetDate), animated: true)
                 self.changePresentingViewController()
             }
         }

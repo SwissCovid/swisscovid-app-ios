@@ -110,6 +110,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
+        } else if TracingManager.shared.isSupported, !UserStorage.shared.hasCompletedUpdateBoardingGermany {
+            let updateBoardingViewController = NSUpdateBoardingViewController()
+            updateBoardingViewController.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(updateBoardingViewController, animated: false)
         }
     }
 
