@@ -12,7 +12,7 @@ import UIKit
 
 class NSExternalLinkButton: UBButton {
     enum LinkType {
-        case url, phone
+        case url, phone, popup
     }
 
     enum Style {
@@ -62,6 +62,8 @@ class NSExternalLinkButton: UBButton {
             image = UIImage(named: "ic-link-external")
         case .phone:
             image = UIImage(named: "ic-call")
+        case .popup:
+            image = UIImage(named: "ic-link-internal")
         }
 
         switch style {

@@ -838,7 +838,8 @@
 "meldungen_detail_free_test_title" = "Ücretsiz test olma";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "SwissCovid Kılavuzu, ücretsiz Corona virüs testi imkanları hakkında sizi bilgilendirecektir.";
+/*Fuzzy*/
+"meldungen_detail_free_test_text_old" = "SwissCovid Kılavuzu, ücretsiz Corona virüs testi imkanları hakkında sizi bilgilendirecektir.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Takibi etkinleştir";
@@ -1334,3 +1335,18 @@
 
 /*Update Boarding: Heading oben*/
 "germany_update_boarding_heading" = "";
+
+/*Debug Screen: Update-Boarding Reset Button*/
+"reset_update_boarding" = "Reset update boarding";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_now" = "Now";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_tomorrow" = "";

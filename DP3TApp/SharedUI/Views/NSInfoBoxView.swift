@@ -16,6 +16,8 @@ class NSInfoBoxView: UIView {
 
     private let titleLabel: NSLabel
     private let subtextLabel = NSLabel(.textLight)
+    private let boldSubtextLabel = NSLabel(.textBold)
+
     private let leadingIconImageView: NSImageView
     private let illustrationImageView = UIImageView()
 
@@ -32,20 +34,25 @@ class NSInfoBoxView: UIView {
     public func update(with viewModel: ViewModel) {
         titleLabel.text = viewModel.title
         subtextLabel.text = viewModel.subText
+        boldSubtextLabel.text = viewModel.boldSubText
+
         titleLabel.textColor = viewModel.titleColor
         subtextLabel.textColor = viewModel.subtextColor
         additionalLabel.textColor = viewModel.subtextColor
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType)
     }
+
+    public var popupCallback: (() -> Void)?
 
     // MARK: - Init
 
     struct ViewModel {
         var title: String
         var subText: String
+        var boldSubText: String? = nil
         var image: UIImage?
         var illustration: UIImage? = nil
         var titleColor: UIColor
@@ -70,13 +77,15 @@ class NSInfoBoxView: UIView {
 
         titleLabel.text = viewModel.title
         subtextLabel.text = viewModel.subText
+        boldSubtextLabel.text = viewModel.boldSubText
         titleLabel.textColor = viewModel.titleColor
         subtextLabel.textColor = viewModel.subtextColor
+        boldSubtextLabel.textColor = viewModel.subtextColor
         additionalLabel.textColor = viewModel.subtextColor
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType)
     }
 
     required init?(coder _: NSCoder) {
@@ -119,6 +128,13 @@ class NSInfoBoxView: UIView {
 
         addSubview(titleLabel)
         addSubview(subtextLabel)
+
+        let hasBoldSubtext = viewModel.boldSubText != nil
+
+        if hasBoldSubtext {
+            addSubview(boldSubtextLabel)
+        }
+
         addSubview(leadingIconImageView)
         addSubview(illustrationImageView)
 
@@ -147,8 +163,18 @@ class NSInfoBoxView: UIView {
         subtextLabel.snp.makeConstraints { make in
             make.top.equalTo(self.titleLabel.snp.bottom).offset(NSPadding.medium - 2.0)
             make.leading.trailing.equalTo(self.titleLabel)
-            if !hasAdditionalStuff {
+            if !hasAdditionalStuff, !hasBoldSubtext {
                 make.bottom.equalToSuperview().inset(topBottomPadding)
+            }
+        }
+
+        if hasBoldSubtext {
+            boldSubtextLabel.snp.makeConstraints { make in
+                make.top.equalTo(self.subtextLabel.snp.bottom).offset(self.subtextLabel.lineDistance)
+                make.leading.trailing.equalTo(self.titleLabel)
+                if !hasAdditionalStuff {
+                    make.bottom.equalToSuperview().inset(topBottomPadding)
+                }
             }
         }
 
@@ -163,11 +189,19 @@ class NSInfoBoxView: UIView {
                         PhoneCallHelper.call(url)
                     case .url:
                         self?.openLink(url)
+                    case .popup:
+                        self?.popupCallback?()
                     }
                 }
 
                 externalLinkButton.snp.makeConstraints { make in
-                    make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                    if hasBoldSubtext {
+                        make.top.equalTo(self.boldSubtextLabel.snp.bottom).offset(NSPadding.large)
+
+                    } else {
+                        make.top.equalTo(self.subtextLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+                    }
+
                     make.leading.equalTo(self.titleLabel)
                     if viewModel.hearingImpairedButtonCallback == nil {
                         make.trailing.lessThanOrEqualTo(self.titleLabel)
@@ -229,15 +263,18 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(title: String, subTitle: String, additionalText: String?, additionalURL: String?) {
+    private func setupAccessibility(title: String, subTitle: String, boldSubText: String?, additionalText: String?, additionalURL: String?, externalLinkType: NSExternalLinkButton.LinkType) {
         if let additionalURL = additionalURL {
             isAccessibilityElement = false
 
-            externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint".ub_localized : "accessibility_faq_button_hint_non_bag".ub_localized
+            if externalLinkType != .popup {
+                externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint".ub_localized : "accessibility_faq_button_hint_non_bag".ub_localized
+            }
+
             return
         }
 
         isAccessibilityElement = true
-        accessibilityLabel = "\(title), \(subTitle), \(additionalText ?? "")"
+        accessibilityLabel = "\(title), \(subTitle), \(boldSubText ?? ""), \(additionalText ?? "")"
     }
 }

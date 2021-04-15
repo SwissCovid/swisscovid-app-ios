@@ -72,7 +72,7 @@
 "inform_code_text" = "Unesite Covid šifru koju ste dobili.";
 
 /*Inform: Code eingeben kein Code Button Text*/
-"inform_code_no_code" = "Treba vam pomoć?";
+"inform_code_no_code" = "Treba vam pomoć?";
 
 /*Titel des Bluetooth Control*/
 "tracing_setting_title" = "Praćenje";
@@ -97,7 +97,7 @@
 "push_deactivated_text" = "Promenite podešavanja da biste direktno dobijali informacije u slučaju poruka.";
 
 /*Titel im Meldung Detail*/
-"meldungen_meldung_title" = "Moguća infekcija";
+"meldungen_meldung_title" = "Moguća infekcija";
 
 /*Text im Meldung Detail*/
 "meldungen_meldung_text" = "Postoji mogućnost infekcije.";
@@ -109,7 +109,7 @@
 "tracing_active_text" = "Kontakti se anonimno čuvaju";
 
 /*Android: Fehler Text bei Tracing*/
-"android_tracing_error_title" = "Praćenje nije aktivno";
+"android_tracing_error_title" = "Praćenje nije aktivno";
 
 /*Fehlertitel mit Foreground Service Notification*/
 "android_foreground_service_notification_errors" = "Aplikacija trenutno ne može pravilno da radi:";
@@ -118,7 +118,7 @@
 "preview_warning_title" = "Pregled verzije";
 
 /*Text der Nachricht, die auf Beta-Status hinweist*/
-"preview_warning_text" = "Ova aplikacija služi za pregled, kako bi se prikazala primena DP-3T. To nije funkcionalna aplikacija za praćenje COVID-19.";
+"preview_warning_text" = "Ova aplikacija služi za pregled, kako bi se prikazala primena DP-3T. To nije funkcionalna aplikacija za praćenje COVID-19.";
 
 /*Debug: Label auf dem Button, der zum Debug-Screen führt*/
 "debug_settings_title" = "Podešavanja otklanjanja grešaka";
@@ -127,7 +127,7 @@
 "debug_state_setting_title" = "Prepiši status aplikacije";
 
 /*Debug: Erklärungstext für die Debug-Einstellungen zur Status-Überschreibung*/
-"debug_state_setting_text" = "Ovo podešavanje prepisuje vizuelni status aplikacije. Ne utiče na funkciju praćenja.";
+"debug_state_setting_text" = "Ovo podešavanje prepisuje vizuelni status aplikacije. Ne utiče na funkciju praćenja.";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Keine*/
 "debug_state_setting_option_none" = "Bez prepisivanja";
@@ -221,13 +221,13 @@
 
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
 "symptom_detail_navigation_title" = "Simptomi";
-"tracing_turned_off_title" = "Praćenje je deaktivirano";
-"tracing_turned_off_text" = "Aktivirajte praćenje da bi aplikacija radila.";
+"tracing_turned_off_title" = "Praćenje je deaktivirano";
+"tracing_turned_off_text" = "Aktivirajte praćenje da bi aplikacija radila.";
 "bluetooth_turned_off_title" = "Bluetooth isključen";
-"bluetooth_turned_off_text" = "Uključite Bluetooth na vašem uređaju da bi praćenje radilo.";
+"bluetooth_turned_off_text" = "Uključite Bluetooth na vašem uređaju da bi praćenje radilo.";
 "bluetooth_turn_on_button_title" = "Uključi Bluetooth";
 "bluetooth_permission_error_title" = "Korišćenje Bluetooth-a odbijeno";
-"bluetooth_permission_error_text" = "Dozvolite korišćenje Bluetooth-a da bi praćenje radilo.";
+"bluetooth_permission_error_text" = "Dozvolite korišćenje Bluetooth-a da bi praćenje radilo.";
 "push_open_settings_button" = "Promeni podešavanja";
 
 /*Meldungen Detail: Subtitel wenn keine Meldungen*/
@@ -256,7 +256,7 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Sledite uputstva za izolaciju koja ste dobili";
-"tracing_ended_title" = "Praćenje završeno";
+"tracing_ended_title" = "Praćenje završeno";
 "tracing_ended_text" = "Dalji kontakti se više ne čuvaju.";
 "exposed_info_contact_hotline" = "Obratite se";
 "meldung_homescreen_positive_info_line1" = "Sledite";
@@ -266,7 +266,7 @@
 "meldung_detail_exposed_new_meldung" = "Nova poruka";
 
 /*Meldung Detail Exposed Titel*/
-"meldung_detail_exposed_title" = "Moguća infekcija";
+"meldung_detail_exposed_title" = "Moguća infekcija";
 "meldung_homescreen_positiv_title" = "Testiran pozitivno";
 
 /*Meldung Detail Exposed Subtitel*/
@@ -300,7 +300,7 @@
 "meldungen_detail_explanation_text1" = "Možete biti zarazni, a da niste ni svesni toga.";
 
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
-"meldungen_detail_explanation_text2" = "Molimo zaštitite svoju porodicu, svoje prijatelje i svoje okruženje. Izbegavajte kontakte tokom 10 dana nakon moguće infekcije.";
+"meldungen_detail_explanation_text2" = "Molimo zaštitite svoju porodicu, svoje prijatelje i svoje okruženje. Izbegavajte kontakte tokom 10 dana nakon moguće infekcije.";
 
 /*Meldungen Detail: Weisse Box Text*/
 "meldungen_detail_guard_text" = "U slučaju dodatnih pitanja:\nInfo linija SwissCovid\n+41 58 387 77 78";
@@ -321,7 +321,7 @@
 "onboarding_prinzip_title" = "Budite korak\nispred virusa";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
+"onboarding_prinzip_text1" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korona.";
@@ -354,7 +354,7 @@
 "onboarding_meldung_heading" = "Šta aplikacija radi?";
 
 /*Onboarding Meldung: Titel*/
-"onboarding_meldung_title" = "Obaveštavanje u slučaju\nmoguće infekcije";
+"onboarding_meldung_title" = "Obaveštavanje u slučaju\nmoguće infekcije";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text1" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korona.";
@@ -381,10 +381,10 @@
 "onboarding_bluetooth_gtk_text1" = "Lični podaci nisu vidljivi preko Bluetooth-a.";
 
 /*Onboarding Bluetooth: Titel unten*/
-"onboarding_bluetooth_gtk_title2" = "Neznatno povećana potrošnja baterije";
+"onboarding_bluetooth_gtk_title2" = "Neznatno povećana potrošnja baterije";
 
 /*Onboarding Bluetooth: Text unten*/
-"onboarding_bluetooth_gtk_text2" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
+"onboarding_bluetooth_gtk_text2" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
 
 /*Onboarding Mitteilungen: Titel*/
 "onboarding_push_title" = "Dozvoli obaveštenja";
@@ -420,7 +420,7 @@
 "homescreen_meldung_data_outdated_title" = "Nema aktuelnih podataka";
 
 /*Homescreen: Text bei Fehler mit Daten*/
-"homescreen_meldung_data_outdated_text" = "Sinhronizacija poruka nije bila moguća neko vreme. Proverite da li je vaš uređaj povezan na internet.";
+"homescreen_meldung_data_outdated_text" = "Sinhronizacija poruka nije bila moguća neko vreme. Proverite da li je vaš uređaj povezan na internet.";
 
 /*Homescreen: Button Titel*/
 "homescreen_meldung_data_outdated_retry_button" = "Pokušaj ponovo";
@@ -435,10 +435,10 @@
 "date_one_day_ago" = "pre 1 dana";
 
 /*Meldungen Detail: Titel*/
-"meldung_detail_new_contact_title" = "Moguća infekcija";
+"meldung_detail_new_contact_title" = "Moguća infekcija";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Postoji sumnja na moguću infekciju.";
+"meldung_detail_new_contact_subtitle" = "Postoji sumnja na moguću infekciju.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Vremenska greška";
@@ -561,7 +561,7 @@
 "begegnungen_detail_faq3_title" = "Da li Bluetooth mora uvek biti uključen?";
 
 /*Begegnungen: FAQ Text*/
-"begegnungen_detail_faq3_text" = "Da bi kontakti mogli da se prepoznaju, Bluetooth mora uvek biti uključen.\n\nTime se potrošnja baterije samo neznatno povećava.";
+"begegnungen_detail_faq3_text" = "Da bi kontakti mogli da se prepoznaju, Bluetooth mora uvek biti uključen.\n\nTime se potrošnja baterije samo neznatno povećava.";
 
 /*FAQ Button Titel*/
 "faq_button_title" = "Često postavljana pitanja";
@@ -588,7 +588,7 @@
 "meldungen_meldungen_faq1_text" = "Preporučuje se da pozovete svaki put kada dobijete novu poruku.\n\nPritom ostajete anonimni. Lični podaci se ne prikupljaju.\n\nSavetovanje je besplatno; plaćaju se samo troškovi poziva.";
 
 /*Meldungen Detail: Anruf Titel*/
-"meldungen_detail_call_thankyou_title" = "Hvala na učešću";
+"meldungen_detail_call_thankyou_title" = "Hvala na učešću";
 
 /*Meldungen Detail Anruf Danke Subtitel*/
 "meldungen_detail_call_thankyou_subtitle" = "Pomažete u zaštiti drugih";
@@ -689,10 +689,10 @@
 "onboarding_gaen_info_text_1" = "Razmenjuju se samo nasumični ID-ovi. Nema podataka o lokaciji niti vaših ličnih podataka.";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Titel 2*/
-"onboarding_gaen_info_title_2" = "Neznatno povećana potrošnja baterije";
+"onboarding_gaen_info_title_2" = "Neznatno povećana potrošnja baterije";
 
 /*Onboarding Page für die Permission der Exposure-Library: Info Text 2*/
-"onboarding_gaen_info_text_2" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
+"onboarding_gaen_info_text_2" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activated" = "Aktivirano";
@@ -713,10 +713,10 @@
 "android_onboarding_battery_permission_button" = "Dozvoli";
 "android_onboarding_battery_permission_button_deactivated" = "OK";
 "android_onboarding_battery_permission_info_1_title" = "Samo za ovu aplikaciju";
-"android_onboarding_battery_permission_info_1_text" = "Da bi aplikacija radila, mora se takođe pokretati u pozadini. Optimizacija baterije može se isključiti za pojedine aplikacije, tako da je to moguće.";
-"android_onboarding_battery_permission_info_2_title" = "Neznatno povećana potrošnja baterije";
-"android_onboarding_battery_permission_info_2_text" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
-"android_foreground_service_notification_error_battery_optimization" = "Da bi praćenje precizno radilo, aplikacija se takođe mora pokretati u pozadini. Potrošnja baterije se samo neznatno povećava.";
+"android_onboarding_battery_permission_info_1_text" = "Da bi aplikacija radila, mora se takođe pokretati u pozadini. Optimizacija baterije može se isključiti za pojedine aplikacije, tako da je to moguće.";
+"android_onboarding_battery_permission_info_2_title" = "Neznatno povećana potrošnja baterije";
+"android_onboarding_battery_permission_info_2_text" = "Aplikacija radi uz najveću moguću uštedu energije. Potrošnja baterije se samo neznatno povećava.";
+"android_foreground_service_notification_error_battery_optimization" = "Da bi praćenje precizno radilo, aplikacija se takođe mora pokretati u pozadini. Potrošnja baterije se samo neznatno povećava.";
 
 /*Google Play Services nicht aktuell*/
 "gaen_not_aviable" = "Google Play usluge su zastarele";
@@ -733,7 +733,7 @@
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_text_ios" = "Aktivirajte Obavijesti o izloženosti bolesti COVID-19 da bi praćenje radilo.";
+"tracing_permission_error_text_ios" = "Aktivirajte Obavijesti o izloženosti bolesti COVID-19 da bi praćenje radilo.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Slanje poruke nije uspelo. Dozvolite deljenje nasumičnog ID-a sa aplikacijom SwissCovid.";
@@ -841,7 +841,8 @@
 "meldungen_detail_free_test_title" = "Moguće je besplatno testiranje";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "SwissCovid smernice informišu Vas o mogućnosti besplatnog testiranja na virus korona.";
+/*Fuzzy*/
+"meldungen_detail_free_test_text_old" = "SwissCovid smernice informišu Vas o mogućnosti besplatnog testiranja na virus korona.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktiviraj praćenje";
@@ -1337,3 +1338,18 @@
 
 /*Update Boarding: Heading oben*/
 "germany_update_boarding_heading" = "";
+
+/*Debug Screen: Update-Boarding Reset Button*/
+"reset_update_boarding" = "Resetuj update boarding";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_now" = "Now";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_tomorrow" = "";
