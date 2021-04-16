@@ -289,11 +289,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     private func createTestView() -> UIView {
         let view = UIView()
 
-        var infoBoxViewModel = createTestViewModel()
-
-        infoBoxViewModel.image = UIImage(named: "ic-info-on")
-        infoBoxViewModel.backgroundColor = .ns_blueBackground
-        infoBoxViewModel.titleLabelType = .textBold
+        let infoBoxViewModel = createTestViewModel()
 
         let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
 
@@ -318,7 +314,10 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     private func createTestViewModel() -> NSInfoBoxView.ViewModel {
         let boldSubtext = calculateTestDay()
 
-        return NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "www.url.ch", externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
+        var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, image: UIImage(named: "ic-info"), titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "", dynamicIconTintColor: UIColor.ns_text, externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
+        viewModel.titleLabelType = .textBold
+
+        return viewModel
     }
 
     // MARK: - Logic
