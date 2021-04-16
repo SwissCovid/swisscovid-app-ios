@@ -841,7 +841,8 @@
 "meldungen_detail_free_test_title" = "Testi pa kosto është i mundur";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Udhëzuesi \"SwissCovid\" ju informon për mundësinë e një testi falas të koronavirusit.";
+/*Fuzzy*/
+"meldungen_detail_free_test_text_old" = "Udhëzuesi \"SwissCovid\" ju informon për mundësinë e një testi falas të koronavirusit.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Aktivizo gjurmimin";
@@ -1337,3 +1338,18 @@
 
 /*Update Boarding: Heading oben*/
 "germany_update_boarding_heading" = "";
+
+/*Debug Screen: Update-Boarding Reset Button*/
+"reset_update_boarding" = "Rivendos update boarding";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_now" = "Now";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_tomorrow" = "";

@@ -616,7 +616,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Positiv auf das Coronavirus getestete Personen erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
+"inform_detail_faq1_text" = "Positiv auf das Coronavirus getestete Personen (PCR-Test oder Antigen-Schnelltest) erhalten einen Covidcode.\n\nDamit wird sichergestellt, dass nur bestätigte Fälle über die App gemeldet werden.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Was wird gesendet?";
@@ -864,7 +864,8 @@
 "meldungen_detail_free_test_title" = "Kostenloser Test möglich";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "Der SwissCovid Leitfaden informiert Sie über die Möglichkeit eines kostenlosen Coronavirus-Tests.";
+/*Fuzzy*/
+"meldungen_detail_free_test_text_old" = "Der SwissCovid Leitfaden informiert Sie über die Möglichkeit eines kostenlosen Coronavirus-Tests.";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "Tracing aktivieren";
@@ -1328,7 +1329,7 @@
 "stats_cases_current_description" = "Die Grafik zeigt die gemeldeten Neuinfektionen der letzten 28 Tage. Dies gibt einen Überblick über die aktuelle Entwicklung.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Sie wurden positiv getestet und haben nach 4h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
+"inform_detail_infobox1_text" = "Sie wurden positiv getestet (PCR-Test oder Antigen-Schnelltest) und haben nach 4h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Noch keinen Covidcode?";
@@ -1397,3 +1398,18 @@
 
 /*Update Boarding: Heading oben*/
 "germany_update_boarding_heading" = "SwissCovid Update";
+
+/*Debug Screen: Update-Boarding Reset Button*/
+"reset_update_boarding" = "Update Boarding zurücksetzen";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "Ein Corona Test ist ab dem 5. Tag nach dem angezeigten Kontaktdatum sinnvoll und empfohlen.";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} Tagen";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_now" = "Jetzt";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_tomorrow" = "In 1 Tag";

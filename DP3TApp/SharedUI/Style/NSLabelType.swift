@@ -165,4 +165,8 @@ class NSLabel: UBLabel<NSLabelType> {
             font = labelType.font
         }
     }
+
+    public var lineDistance: CGFloat {
+        (labelType.lineSpacing - 1.0) * font.lineHeight
+    }
 }
