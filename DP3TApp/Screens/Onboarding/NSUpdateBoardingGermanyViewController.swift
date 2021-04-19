@@ -28,6 +28,10 @@ class NSUpdateBoardingGermanyViewController: NSOnboardingDisclaimerViewControlle
         return UIImage(named: "image-onboarding-update")
     }
 
+    override internal var showMedicalInformation: Bool {
+        return false
+    }
+
     override init() {
         super.init()
         continueButtonText = "android_button_ok".ub_localized
