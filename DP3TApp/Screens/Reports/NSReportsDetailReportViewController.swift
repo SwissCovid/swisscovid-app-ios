@@ -154,6 +154,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedView(createTestView())
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addSpacerView(30.0)
+        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -183,6 +185,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createTestView())
         whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addSpacerView(30.0)
+        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -237,6 +241,10 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         ev.stackView.insertArrangedSubview(wrapper, at: 3)
         ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
 
+        return ev
+    }
+
+    private func createCallInfoBox() -> UIView {
         let callInfoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_tel_information_title".ub_localized,
                                                            subText: "meldungen_tel_information_text".ub_localized,
                                                            image: UIImage(named: "ic-infoline"),
@@ -244,15 +252,20 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
                                                            subtextColor: .ns_text,
                                                            additionalText: "infoline_tel_number".ub_localized,
                                                            additionalURL: "infoline_tel_number".ub_localized,
-                                                           dynamicIconTintColor: .ns_blue,
+                                                           dynamicIconTintColor: .ns_text,
                                                            titleLabelType: .textBold,
                                                            externalLinkStyle: .normal(color: .ns_blue),
                                                            externalLinkType: .phone)
+        let infoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
 
-        let callInfoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
-        ev.stackView.addArrangedSubview(callInfoBox)
+        let container = UIView()
+        container.addSubview(infoBox)
+        infoBox.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-NSPadding.large)
+        }
 
-        return ev
+        return container
     }
 
     // MARK: - Info
@@ -289,11 +302,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     private func createTestView() -> UIView {
         let view = UIView()
 
-        var infoBoxViewModel = createTestViewModel()
-
-        infoBoxViewModel.image = UIImage(named: "ic-info-on")
-        infoBoxViewModel.backgroundColor = .ns_blueBackground
-        infoBoxViewModel.titleLabelType = .textBold
+        let infoBoxViewModel = createTestViewModel()
 
         let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
 
@@ -318,7 +327,10 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     private func createTestViewModel() -> NSInfoBoxView.ViewModel {
         let boldSubtext = calculateTestDay()
 
-        return NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "www.url.ch", externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
+        var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, image: UIImage(named: "ic-info"), titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "", dynamicIconTintColor: UIColor.ns_text, externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
+        viewModel.titleLabelType = .textBold
+
+        return viewModel
     }
 
     // MARK: - Logic
