@@ -3449,8 +3449,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				branch = "feature/expose-oldest-keydate";
-				kind = branch;
+				kind = revision;
+				revision = 73bd75702b724310b091b24fc2603a74d25ed9a8;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {

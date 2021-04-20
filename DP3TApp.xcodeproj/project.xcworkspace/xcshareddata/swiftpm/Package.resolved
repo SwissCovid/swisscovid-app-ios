@@ -32,8 +32,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "feature/expose-oldest-keydate",
-          "revision": "2893d158c47b82dbaf3d4f18da601337471ff419",
+          "branch": null,
+          "revision": "73bd75702b724310b091b24fc2603a74d25ed9a8",
           "version": null
         }
       },
