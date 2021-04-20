@@ -229,15 +229,15 @@
 		6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
 		6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */; };
 		6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
+		6E88973C261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */; };
 		6E889756261F228200508334 /* NSOnboardingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */; };
 		6E88975F261F25A700508334 /* NSOnboardingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */; };
 		6E889765261F27D400508334 /* NSUpdateBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */; };
 		6E88976B261F288300508334 /* NSUpdateBoardingGermanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88976A261F288300508334 /* NSUpdateBoardingGermanyViewController.swift */; };
-		6E9D79182625BF6C005C7B7F /* NSUpdateBoardingGermanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88976A261F288300508334 /* NSUpdateBoardingGermanyViewController.swift */; };
-		6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */; };
-		6E88973C261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */; };
 		6E8FC0FA24518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */; };
 		6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8FC0F924518BF2002AB1E5 /* UBKeyboardObserver.m */; };
+		6E9D79182625BF6C005C7B7F /* NSUpdateBoardingGermanyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88976A261F288300508334 /* NSUpdateBoardingGermanyViewController.swift */; };
+		6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */; };
 		6E9D79262625C02D005C7B7F /* NSReportsLeitfadenInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */; };
 		6EA49E2924443E69009EFCAB /* NSSimpleTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA49E2824443E69009EFCAB /* NSSimpleTextButton.swift */; };
 		6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */; };
@@ -574,10 +574,10 @@
 		6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWebViewController.swift; sourceTree = "<group>"; };
 		6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLoadingView.swift; sourceTree = "<group>"; };
 		6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAboutViewController.swift; sourceTree = "<group>"; };
+		6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsLeitfadenInfoPopupViewController.swift; sourceTree = "<group>"; };
 		6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingBaseViewController.swift; sourceTree = "<group>"; };
 		6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUpdateBoardingViewController.swift; sourceTree = "<group>"; };
 		6E88976A261F288300508334 /* NSUpdateBoardingGermanyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUpdateBoardingGermanyViewController.swift; sourceTree = "<group>"; };
-		6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsLeitfadenInfoPopupViewController.swift; sourceTree = "<group>"; };
 		6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DP3TApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		6E8FC0F624518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+UBKeyboardObserver.h"; sourceTree = "<group>"; };
 		6E8FC0F724518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+UBKeyboardObserver.m"; sourceTree = "<group>"; };
@@ -3449,8 +3449,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				kind = revision;
-				revision = a9b876ef6ba115130cd9df3b8e249bcd6faed4b3;
+				branch = "feature/expose-oldest-keydate";
+				kind = branch;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {
