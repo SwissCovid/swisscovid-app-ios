@@ -49,8 +49,8 @@ class ReportingManager: ReportingManagerProtocol {
 
     let codeValidator = CodeValidator()
 
-    @KeychainPersisted(key: "onsetDate", defaultValue: nil)
-    var onsetDate: Date?
+    @KeychainPersisted(key: "oldestSharedKeyDate", defaultValue: nil)
+    var oldestSharedKeyDate: Date?
 
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
@@ -92,7 +92,7 @@ class ReportingManager: ReportingManagerProtocol {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 switch result {
-                case .success:
+                case let .success(wrapper):
                     self.codeDictionary.removeValue(forKey: covidCode)
 
                     TracingManager.shared.updateStatus(shouldSync: false) { error in
@@ -102,7 +102,9 @@ class ReportingManager: ReportingManagerProtocol {
                             if !fake {
                                 self.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24 * 14) // Ask if user wants to end isolation after 14 days
 
-                                self.onsetDate = date
+                                let oldestSharedKeyDate = wrapper.oldestKeyDate ?? Date()
+                                // keys older than 10 days are never persisted on the server
+                                self.oldestSharedKeyDate = max(oldestSharedKeyDate, Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
                             }
                             completion(nil)
                         }

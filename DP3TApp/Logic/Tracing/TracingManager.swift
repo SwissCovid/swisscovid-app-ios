@@ -166,7 +166,7 @@ class TracingManager: NSObject {
 
         // reset end isolation question date and onset date
         ReportingManager.shared.endIsolationQuestionDate = nil
-        ReportingManager.shared.onsetDate = nil
+        ReportingManager.shared.oldestSharedKeyDate = nil
 
         // reset infection status
         DP3TTracing.resetInfectionStatus()
