@@ -97,7 +97,7 @@
                     case 5:
                         stateManager.overwrittenInfectionState = .exposed20
                     case 6:
-                        stateManager.overwrittenInfectionState = .infected(onsetDate: Date())
+                        stateManager.overwrittenInfectionState = .infected(oldestSharedKeyDate: Date())
                     default:
                         stateManager.overwrittenInfectionState = nil
                     }
