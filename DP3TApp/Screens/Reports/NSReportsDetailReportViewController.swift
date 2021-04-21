@@ -153,7 +153,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedView(createTestView())
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: false))
         whiteBoxView.contentView.addSpacerView(30.0)
         whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -184,7 +184,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
         whiteBoxView.contentView.addArrangedSubview(createTestView())
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: true))
         whiteBoxView.contentView.addSpacerView(30.0)
         whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -226,20 +226,22 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         }
     }
 
-    private func createExplanationView() -> UIView {
+    private func createExplanationView(addDaysLabel: Bool) -> UIView {
         let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
 
-        let wrapper = UIView()
-        let daysLeftLabel = NSLabel(.textBold)
-        daysLeftLabels.append(daysLeftLabel)
-        wrapper.addSubview(daysLeftLabel)
-        daysLeftLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(30)
-        }
+        if addDaysLabel {
+            let wrapper = UIView()
+            let daysLeftLabel = NSLabel(.textBold)
+            daysLeftLabels.append(daysLeftLabel)
+            wrapper.addSubview(daysLeftLabel)
+            daysLeftLabel.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.leading.trailing.equalToSuperview().inset(30)
+            }
 
-        ev.stackView.insertArrangedSubview(wrapper, at: 3)
-        ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
+            ev.stackView.insertArrangedSubview(wrapper, at: 3)
+            ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
+        }
 
         return ev
     }
