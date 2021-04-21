@@ -217,6 +217,11 @@ class NSOnboardingBaseViewController: NSViewController {
                 self.setOnboardingStep(self.currentStep + 1, animated: true)
             }
         }
+
+        // initialize continue button to first text
+        if let cbt = stepViewControllers.first?.continueButtonText {
+            continueButton.title = cbt
+        }
     }
 
     override func viewSafeAreaInsetsDidChange() {
