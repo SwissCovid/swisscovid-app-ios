@@ -157,7 +157,7 @@ class NSTracingErrorView: UIView {
                                                action: nil)
             }
         case let .tracingPermissionError(code):
-            let icon = UIImage(named: "ic-bluetooth-disabled")!
+            let icon = UIImage(named: "ic-en-error")!
             let title = "tracing_permission_error_title_ios".ub_localized.replaceSettingsString
             let text = "tracing_permission_error_text_ios".ub_localized.replaceSettingsString
             if #available(iOS 13.7, *) {
@@ -184,7 +184,7 @@ class NSTracingErrorView: UIView {
             }
 
         case .tracingAuthorizationUnknown:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-disabled")!,
+            return NSTracingErrorViewModel(icon: UIImage(named: "ic-en-error")!,
                                            title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
                                            text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
