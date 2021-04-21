@@ -26,17 +26,15 @@ final class CountryHelper {
             label.backgroundColor = .white
             label.frame = CGRect(x: 0, y: 0, width: 26, height: 20)
             label.clipsToBounds = true
-            
+
             let renderer = UIGraphicsImageRenderer(size: label.bounds.size)
-            let image = renderer.image { ctx in
+            let image = renderer.image { _ in
                 label.drawHierarchy(in: label.bounds, afterScreenUpdates: true)
             }
 
             image.accessibilityLabel = Self.localizedNameForCountryCode(code)
             return image
-
         }
-
     }
 
     static func localizedNameForCountryCode(_ code: String) -> String {

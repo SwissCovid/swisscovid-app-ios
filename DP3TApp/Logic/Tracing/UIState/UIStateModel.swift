@@ -37,7 +37,7 @@ struct UIStateModel: Equatable {
     enum ReportState: Equatable {
         case noReport
         case exposed
-        case infected(onsetDate: Date?)
+        case infected(oldestSharedKeyDate: Date?)
 
         var isInfected: Bool {
             if case .infected = self {
@@ -114,7 +114,7 @@ struct UIStateModel: Equatable {
                 case exposed5 // exposed with 5 contact
                 case exposed10 // exposed with 10 contact
                 case exposed20 // exposed with 20 contact
-                case infected(onsetDate: Date?)
+                case infected(oldestSharedKeyDate: Date?)
 
                 static let exposedStates: [Self] = [.exposed1, .exposed5, .exposed10, .exposed20]
 
