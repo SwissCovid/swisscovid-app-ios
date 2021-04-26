@@ -12,10 +12,26 @@
 import Foundation
 
 class NSCheckInQRCodeGeneratorModuleView: NSModuleBaseView {
+    let explainationLabel = NSLabel(.textLight)
+    let generateButtonWrapper = UIView()
+    let generateButton = NSButton(title: "Generate QR Code")
+
     override init() {
         super.init()
 
-        headerTitle = "G E N E R A T E - Q R  C O D E"
+        headerTitle = "Events"
+        explainationLabel.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
+
+        generateButtonWrapper.addSubview(generateButton)
+        generateButton.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.top.equalToSuperview().inset(NSPadding.medium)
+        }
+
+        generateButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.touchUpCallback?()
+        }
     }
 
     required init?(coder _: NSCoder) {
@@ -23,6 +39,6 @@ class NSCheckInQRCodeGeneratorModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        return []
+        return [explainationLabel, generateButtonWrapper]
     }
 }
