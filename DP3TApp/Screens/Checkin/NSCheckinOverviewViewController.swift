@@ -16,9 +16,9 @@ class NSCheckinOverviewViewController: NSViewController {
 
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let checkinButton = NSButton(title: "Check In", style: .normal(.ns_blue))
-    private let generateQRCodeButton = NSButton(title: "Generate QR Code", style: .normal(.ns_blue))
-    private let diaryButton = NSButton(title: "Open Diary", style: .normal(.ns_blue))
+    private let qrCodeScannerView = NSCheckInQRCodeScannerModuleView()
+    private let qrCodeGeneratorView = NSCheckInQRCodeGeneratorModuleView()
+    private let diaryView = NSCheckInDiaryModuleView()
 
     // MARK: - View setup & lifecycle
 
@@ -34,32 +34,35 @@ class NSCheckinOverviewViewController: NSViewController {
     private func setupView() {
         view.backgroundColor = .ns_background
 
+        stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
+        stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(checkinButton)
+        stackScrollView.addArrangedView(qrCodeScannerView)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(generateQRCodeButton)
+        stackScrollView.addArrangedView(qrCodeGeneratorView)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(diaryButton)
+        stackScrollView.addArrangedView(diaryView)
         stackScrollView.addSpacerView(NSPadding.large)
     }
 
     private func setupButtonCallbacks() {
-        checkinButton.touchUpCallback = { [weak self] in
+        qrCodeScannerView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCheckInViewController(), animated: true)
         }
 
-        generateQRCodeButton.touchUpCallback = { [weak self] in
+        qrCodeGeneratorView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSQRCodeGenerationViewController(), animated: true)
         }
 
-        diaryButton.touchUpCallback = { [weak self] in
+        diaryView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSDiaryViewController(), animated: true)
         }

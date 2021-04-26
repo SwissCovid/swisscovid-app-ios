@@ -18,6 +18,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
     private let travelView = NSTravelModuleView()
+    private let checkInView = NSCheckInHomescreenModuleView()
 
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
@@ -28,8 +29,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private var lastState: UIStateModel = .init()
 
     private let appTitleView = NSAppTitleView()
-
-    private let checkinButton = NSButton(title: "Check-In", style: .normal(.yellow), customTextColor: .black)
 
     // MARK: - View
 
@@ -84,7 +83,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentTravelDetail()
         }
 
-        checkinButton.touchUpCallback = { [weak self] in
+        checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCheckinOverviewViewController(), animated: true)
         }
@@ -144,10 +143,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // other views
         stackScrollView.addArrangedView(infoBoxView)
 
-        stackScrollView.addArrangedView(checkinButton)
+        stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(handshakesModuleView)
+        stackScrollView.addArrangedView(checkInView)
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(reportsView)
@@ -217,6 +216,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // End DEBUG version for testing
 
         handshakesModuleView.alpha = 0
+        checkInView.alpha = 0
         reportsView.alpha = 0
         travelView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
@@ -232,29 +232,33 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
-                self.reportsView.alpha = 1
+                self.checkInView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.travelView.alpha = 1
+                self.reportsView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.8, options: [.allowUserInteraction], animations: {
-                self.whatToDoSymptomsButton.alpha = 1
+                self.travelView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
+                self.whatToDoSymptomsButton.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
                 self.whatToDoPositiveTestButton.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
-                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
                     debugScreenContainer.alpha = 1
                 }, completion: nil)
             #endif
 
             #if ENABLE_LOGGING
-                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
                     uploadDBContainer.alpha = 1
                 }, completion: nil)
             #endif
