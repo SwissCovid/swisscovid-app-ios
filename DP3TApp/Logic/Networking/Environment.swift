@@ -72,4 +72,9 @@ enum Environment {
             return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
         }
     }
+
+    var checkInService: Backend {
+        // TODO: Add correct backend for check in service
+        return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
+    }
 }

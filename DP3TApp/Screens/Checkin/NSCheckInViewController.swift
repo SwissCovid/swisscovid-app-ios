@@ -30,10 +30,6 @@ class NSCheckInViewController: NSViewController {
         qrView = NSQRScannerView(delegate: self)
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - Scanning
 
     public func startScanning() {
