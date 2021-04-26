@@ -71,4 +71,11 @@ class NSViewController: UIViewController {
             ]
         }
     }
+
+    public func addSubviewController(_ vc: UIViewController, constraints: ((_ make: ConstraintMaker) -> Void) = { $0.edges.equalToSuperview() }) {
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.view.snp.makeConstraints(constraints)
+        vc.didMove(toParent: self)
+    }
 }

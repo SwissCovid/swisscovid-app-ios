@@ -51,7 +51,7 @@ class NSCheckinOverviewViewController: NSViewController {
     private func setupButtonCallbacks() {
         checkinButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSCheckinViewController(), animated: true)
+            strongSelf.navigationController?.pushViewController(NSCheckInViewController(), animated: true)
         }
 
         generateQRCodeButton.touchUpCallback = { [weak self] in
