@@ -29,6 +29,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     private let appTitleView = NSAppTitleView()
 
+    private let checkinButton = NSButton(title: "Check-In", style: .normal(.yellow), customTextColor: .black)
+
     // MARK: - View
 
     override init() {
@@ -80,6 +82,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         travelView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentTravelDetail()
+        }
+
+        checkinButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(NSCheckinOverviewViewController(), animated: true)
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -136,6 +143,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         // other views
         stackScrollView.addArrangedView(infoBoxView)
+
+        stackScrollView.addArrangedView(checkinButton)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
