@@ -11,7 +11,7 @@
 
 import UIKit
 
-class NSQRCodeScannerViewController: NSViewController {
+class NSCheckInViewController: NSViewController {
     private var qrView: NSQRScannerView?
     private var qrOverlay = NSQRScannerFullOverlayView()
 
@@ -52,6 +52,9 @@ class NSQRCodeScannerViewController: NSViewController {
         super.viewDidLoad()
         view.backgroundColor = .ns_backgroundDark
         setupQRView()
+
+        startScanning()
+        title = "C H E C K - I N"
 
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             guard let strongSelf = self else { return }
@@ -124,7 +127,7 @@ class NSQRCodeScannerViewController: NSViewController {
     }
 }
 
-extension NSQRCodeScannerViewController: NSQRScannerViewDelegate {
+extension NSCheckInViewController: NSQRScannerViewDelegate {
     func qrScanningDidFail() {
         errorContainer.alpha = 1.0
     }

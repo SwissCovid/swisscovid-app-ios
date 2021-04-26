@@ -332,8 +332,8 @@
 		DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
 		DCAFD59D2636EEE900C74A09 /* CheckinOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD59C2636EEE900C74A09 /* CheckinOverviewViewController.swift */; };
 		DCAFD5A62636EEEC00C74A09 /* CheckinOverviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD59C2636EEE900C74A09 /* CheckinOverviewViewController.swift */; };
-		DCAFD5AC2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5AB2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift */; };
-		DCAFD5B12636F1BC00C74A09 /* NSQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5AB2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift */; };
+		DCAFD5AC2636F1BA00C74A09 /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5AB2636F1BA00C74A09 /* NSCheckInViewController.swift */; };
+		DCAFD5B12636F1BC00C74A09 /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5AB2636F1BA00C74A09 /* NSCheckInViewController.swift */; };
 		DCAFD5B72636F1CF00C74A09 /* NSDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5B62636F1CF00C74A09 /* NSDiaryViewController.swift */; };
 		DCAFD5B82636F1CF00C74A09 /* NSDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5B62636F1CF00C74A09 /* NSDiaryViewController.swift */; };
 		DCAFD5BE2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5BD2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift */; };
@@ -470,8 +470,6 @@
 		F8AEBD1D2636F5C000C07200 /* NSQRScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AEBD1A2636F5C000C07200 /* NSQRScannerOverlay.swift */; };
 		F8AEBD1E2636F5C000C07200 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AEBD1B2636F5C000C07200 /* NSQRScanningView.swift */; };
 		F8AEBD1F2636F5C000C07200 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AEBD1B2636F5C000C07200 /* NSQRScanningView.swift */; };
-		F8AEBD242636FAFB00C07200 /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AEBD232636FAFB00C07200 /* NSCheckInViewController.swift */; };
-		F8AEBD252636FAFB00C07200 /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AEBD232636FAFB00C07200 /* NSCheckInViewController.swift */; };
 		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8C9990B2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
@@ -686,7 +684,7 @@
 		DCA3FFBD24518E850003F5AD /* NSOnboardingInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingInfoView.swift; sourceTree = "<group>"; };
 		DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingFinishViewController.swift; sourceTree = "<group>"; };
 		DCAFD59C2636EEE900C74A09 /* CheckinOverviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinOverviewViewController.swift; sourceTree = "<group>"; };
-		DCAFD5AB2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSQRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		DCAFD5AB2636F1BA00C74A09 /* NSCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInViewController.swift; sourceTree = "<group>"; };
 		DCAFD5B62636F1CF00C74A09 /* NSDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDiaryViewController.swift; sourceTree = "<group>"; };
 		DCAFD5BD2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSQRCodeGenerationViewController.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
@@ -759,7 +757,6 @@
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 		F8AEBD1A2636F5C000C07200 /* NSQRScannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScannerOverlay.swift; sourceTree = "<group>"; };
 		F8AEBD1B2636F5C000C07200 /* NSQRScanningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScanningView.swift; sourceTree = "<group>"; };
-		F8AEBD232636FAFB00C07200 /* NSCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSCheckInViewController.swift; path = ../../../../../../Desktop/NSCheckInViewController.swift; sourceTree = "<group>"; };
 		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
 		F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportDetailMoreDaysView.swift; sourceTree = "<group>"; };
 		F8D32BE02579180400ED1657 /* NSRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
@@ -1447,8 +1444,7 @@
 			isa = PBXGroup;
 			children = (
 				DCAFD59C2636EEE900C74A09 /* CheckinOverviewViewController.swift */,
-				DCAFD5AB2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift */,
-				F8AEBD232636FAFB00C07200 /* NSCheckInViewController.swift */,
+				DCAFD5AB2636F1BA00C74A09 /* NSCheckInViewController.swift */,
 				DCAFD5B62636F1CF00C74A09 /* NSDiaryViewController.swift */,
 				DCAFD5BD2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift */,
 			);
@@ -2002,7 +1998,6 @@
 				F83ECEEF2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				8EF2A6ED249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
-				F8AEBD252636FAFB00C07200 /* NSCheckInViewController.swift in Sources */,
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
 				242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* NSModuleBaseView.swift in Sources */,
@@ -2086,7 +2081,7 @@
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
-				DCAFD5B12636F1BC00C74A09 /* NSQRCodeScannerViewController.swift in Sources */,
+				DCAFD5B12636F1BC00C74A09 /* NSCheckInViewController.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
 				DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */,
@@ -2203,7 +2198,6 @@
 				DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */,
 				DC286A26242CE0B9001D5344 /* Environment.swift in Sources */,
 				F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */,
-				F8AEBD242636FAFB00C07200 /* NSCheckInViewController.swift in Sources */,
 				245626A1245265340058D11F /* ConfigLoadOperation.swift in Sources */,
 				DC702B01243F6F640066C773 /* String+NS.swift in Sources */,
 				DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */,
@@ -2289,7 +2283,7 @@
 				F8089697250B63780023F639 /* NSStatisticsShareModule.swift in Sources */,
 				DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */,
 				DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */,
-				DCAFD5AC2636F1BA00C74A09 /* NSQRCodeScannerViewController.swift in Sources */,
+				DCAFD5AC2636F1BA00C74A09 /* NSCheckInViewController.swift in Sources */,
 				F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F80E40702509011D00876906 /* StatisticsLoader.swift in Sources */,
 				24780B30242F3EAF003BB26C /* NSInformBottomButtonViewController.swift in Sources */,
