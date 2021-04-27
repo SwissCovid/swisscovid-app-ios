@@ -49,7 +49,7 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
         case let .checkIn(checkedIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
-            checkedInView.update(checkin: checkedIn)
+            checkedInView.update(checkIn: checkedIn)
         }
     }
 
@@ -117,9 +117,9 @@ private class NSCheckedInModuleView: UIView {
         }
     }
 
-    func update(checkin: CheckIn) {
-        headerLabel.text = "You are checked in: \(checkin.identifier)"
-        timerLabel.text = checkin.checkInTime.description
+    func update(checkIn: CheckIn) {
+        headerLabel.text = "You are checked in: \(checkIn.identifier)"
+        timerLabel.text = checkIn.checkInTime.description
     }
 
     required init?(coder _: NSCoder) {

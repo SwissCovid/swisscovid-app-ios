@@ -53,7 +53,7 @@ class ProblematicEventsManager {
     }
 
     public func sync(isBackgroundFetch: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
-        // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkin
+        // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkIn
         CheckInManager.shared.checkoutAfter12HoursIfNecessary()
 
         var queryParameters = [String: String]()
@@ -84,11 +84,11 @@ class ProblematicEventsManager {
                     let wrapper = try? ProblematicEventWrapper(serializedData: data)
                     strongSelf.checkForMatches(wrapper: wrapper)
 
-                    // Only if there is a checkin id that has not triggered a notification yet,
+                    // Only if there is a checkIn id that has not triggered a notification yet,
                     // a notification needs to be triggered
-                    let newCheckinIds = strongSelf.exposureEvents.map { $0.checkinId }.filter { !strongSelf.notifiedIds.contains($0) }
-                    strongSelf.notifiedIds.append(contentsOf: newCheckinIds)
-                    let needsNewNotification = !newCheckinIds.isEmpty
+                    let newCheckInIds = strongSelf.exposureEvents.map { $0.checkinId }.filter { !strongSelf.notifiedIds.contains($0) }
+                    strongSelf.notifiedIds.append(contentsOf: newCheckInIds)
+                    let needsNewNotification = !newCheckInIds.isEmpty
                     completion(true, needsNewNotification)
                 } else {
                     completion(false, false)

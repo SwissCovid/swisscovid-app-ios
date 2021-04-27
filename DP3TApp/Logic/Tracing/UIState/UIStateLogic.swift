@@ -83,7 +83,7 @@ class UIStateLogic {
     private func buildCheckInState() -> UIStateModel.CheckInStateModel {
         var model = UIStateModel.CheckInStateModel()
 
-        if let checkIn = CheckInManager.shared.currentCheckin {
+        if let checkIn = CheckInManager.shared.currentCheckIn {
             model.checkInState = .checkIn(checkIn)
         }
 
@@ -109,7 +109,7 @@ class UIStateLogic {
 
         var result: [[CheckInExposure]] = []
         var currentDate: Date?
-        var currentCheckins: [CheckInExposure] = []
+        var currentCheckIns: [CheckInExposure] = []
 
         let calendar = NSCalendar.current
 
@@ -123,18 +123,18 @@ class UIStateLogic {
             guard let cd = currentDate else { continue }
 
             if cd == d {
-                currentCheckins.append(i)
+                currentCheckIns.append(i)
             } else {
-                result.append(currentCheckins)
-                currentCheckins.removeAll()
+                result.append(currentCheckIns)
+                currentCheckIns.removeAll()
 
                 currentDate = d
-                currentCheckins.append(i)
+                currentCheckIns.append(i)
             }
         }
 
-        if currentCheckins.count > 0 {
-            result.append(currentCheckins)
+        if currentCheckIns.count > 0 {
+            result.append(currentCheckIns)
         }
 
         return exposures.count > 0 ? .exposure(exposure: exposures, exposureByDay: result) : .noExposure
@@ -145,7 +145,7 @@ class UIStateLogic {
 
         var result: [[CheckIn]] = []
         var currentDate: Date?
-        var currentCheckins: [CheckIn] = []
+        var currentCheckIns: [CheckIn] = []
 
         let calendar = NSCalendar.current
 
@@ -161,18 +161,18 @@ class UIStateLogic {
             guard let cd = currentDate else { continue }
 
             if cd == d {
-                currentCheckins.append(i)
+                currentCheckIns.append(i)
             } else {
-                result.append(currentCheckins)
-                currentCheckins.removeAll()
+                result.append(currentCheckIns)
+                currentCheckIns.removeAll()
 
                 currentDate = d
-                currentCheckins.append(i)
+                currentCheckIns.append(i)
             }
         }
 
-        if currentCheckins.count > 0 {
-            result.append(currentCheckins)
+        if currentCheckIns.count > 0 {
+            result.append(currentCheckIns)
         }
 
         return result

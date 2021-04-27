@@ -32,9 +32,9 @@ struct CheckIn: UBCodable, Equatable {
     static func == (lhs: CheckIn, rhs: CheckIn) -> Bool {
         let sameId = lhs.identifier == rhs.identifier
         let sameComment = lhs.comment ?? "" == rhs.comment ?? ""
-        let sameCheckinTime = lhs.checkInTime == rhs.checkInTime
-        let sameCheckoutTime = rhs.checkOutTime == lhs.checkOutTime
-        return sameId && sameComment && sameCheckinTime && sameCheckoutTime
+        let sameCheckInTime = lhs.checkInTime == rhs.checkInTime
+        let sameCheckOutTime = rhs.checkOutTime == lhs.checkOutTime
+        return sameId && sameComment && sameCheckInTime && sameCheckOutTime
     }
 
     public func timeSinceCheckIn() -> String {

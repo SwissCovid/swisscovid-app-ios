@@ -187,7 +187,7 @@ extension NSDiaryViewController: UICollectionViewDataSource {
          if let exposure = exposureForDiary(diaryEntry: d) {
              present(NSModalReportViewController(exposure: exposure), animated: true, completion: nil)
          } else {
-             present(NSCheckinEditViewController(checkIn: diary[indexPath.section][indexPath.item]), animated: true, completion: nil)
+             present(NSCheckInEditViewController(checkIn: diary[indexPath.section][indexPath.item]), animated: true, completion: nil)
          }
          */
     }

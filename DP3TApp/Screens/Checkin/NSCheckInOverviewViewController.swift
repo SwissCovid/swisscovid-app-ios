@@ -11,7 +11,7 @@
 
 import UIKit
 
-class NSCheckinOverviewViewController: NSViewController {
+class NSCheckInOverviewViewController: NSViewController {
     // MARK: - Subviews
 
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
@@ -59,7 +59,7 @@ class NSCheckinOverviewViewController: NSViewController {
 
         currentStateView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            //TODO: show checkout vc
+            // TODO: show checkout vc
         }
 
         qrCodeGeneratorView.touchUpCallback = { [weak self] in

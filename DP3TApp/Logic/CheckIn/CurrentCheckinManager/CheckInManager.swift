@@ -13,10 +13,6 @@ import CrowdNotifierSDK
 
 import Foundation
 
-protocol CheckinStateUpdate {
-    func checkinStateDidChange()
-}
-
 class CheckInManager {
     // MARK: - Shared
 
@@ -29,8 +25,8 @@ class CheckInManager {
         didSet { UIStateManager.shared.refresh() }
     }
 
-    @UBOptionalUserDefault(key: "ch.admin.bag.dp3.checkin.key")
-    public var currentCheckin: CheckIn? {
+    @UBOptionalUserDefault(key: "ch.admin.bag.dp3.checkIn.key")
+    public var currentCheckIn: CheckIn? {
         didSet { UIStateManager.shared.refresh() }
     }
 
@@ -56,11 +52,11 @@ class CheckInManager {
     }
 
     public func checkIn(qrCode: String, venueInfo: VenueInfo) {
-        currentCheckin = CheckIn(identifier: "", qrCode: qrCode, checkInTime: Date(), venue: venueInfo)
+        currentCheckIn = CheckIn(identifier: "", qrCode: qrCode, checkInTime: Date(), venue: venueInfo)
     }
 
     public func checkOut() {
-        if var cc = currentCheckin, let outTime = cc.checkOutTime {
+        if var cc = currentCheckIn, let outTime = cc.checkOutTime {
             // This is the last moment we can ask the user for the required notification permission.
             // After the first checkout, it's possible that a background update triggers a match and therefore a notification
             NotificationManager.shared.requestAuthorization { _ in }
@@ -79,7 +75,7 @@ class CheckInManager {
                 break
             }
 
-            currentCheckin = nil
+            currentCheckIn = nil
         }
     }
 
@@ -89,8 +85,8 @@ class CheckInManager {
         #else
             let timeInterval: TimeInterval = .hour * 12
         #endif
-        if let checkin = currentCheckin, checkin.checkInTime.addingTimeInterval(timeInterval) < Date() {
-            currentCheckin?.checkOutTime = checkin.checkInTime.addingTimeInterval(timeInterval)
+        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(timeInterval) < Date() {
+            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(timeInterval)
             checkOut()
         }
     }

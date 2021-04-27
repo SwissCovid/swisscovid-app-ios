@@ -85,7 +85,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSCheckinOverviewViewController(), animated: true)
+            strongSelf.navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
