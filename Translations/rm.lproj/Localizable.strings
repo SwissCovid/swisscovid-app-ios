@@ -1267,7 +1267,7 @@
 "stats_cases_current_description" = "La grafica mussa las infecziuns novas annunziadas dals ultims 28 dis. Quai dat ina survista dal svilup actual.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Vus avais in test positiv (test da PCR u test svelt d'antigens) e n'avais suenter 4 uras anc betg retschavì in code covid? Alura contactai la Infoline coronavirus:";
+"inform_detail_infobox1_text" = "Vus avais in test positiv (test da PCR u test svelt d'antigens) e n'avais suenter 4 uras anc betg retschavì in code covid?\nAlura contactai la Infoline coronavirus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Anc nagin code covid?";

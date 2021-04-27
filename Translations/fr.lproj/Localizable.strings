@@ -1304,7 +1304,7 @@
 "stats_cases_current_description" = "Le graphique indique les nouvelles infections déclarées pendant les 28 derniers jours pour donner un aperçu de l'évolution actuelle.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Vous avez été testé positif (test PCR ou test rapide antigénique) mais vous n'avez pas encore reçu de code COVID après 4 heures ? Contactez l'infoline coronavirus :";
+"inform_detail_infobox1_text" = "Vous avez été testé positif (test PCR ou test rapide antigénique) mais vous n'avez pas encore reçu de code COVID après 4 heures ?\nContactez l'infoline coronavirus :";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Pas encore de code COVID ?";

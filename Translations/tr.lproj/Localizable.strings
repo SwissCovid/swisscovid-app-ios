@@ -1268,7 +1268,7 @@
 "stats_cases_current_description" = "Grafik son 28 günde bildirilmiş olan yeni enfeksiyonları gösterir. Bu ise güncel gelişme hakkında genel bir bakış kazandırır.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Testiniz pozitif çıktı (PCR testi veya hızlı antijen testi) ve 4 saat sonra halen bir Covid kodu almadınız mı? O halde koronavirüz danışma hattıyla iletişim kurun:";
+"inform_detail_infobox1_text" = "Testiniz pozitif çıktı (PCR testi veya hızlı antijen testi) ve 4 saat sonra halen bir Covid kodu almadınız mı?\nO halde koronavirüz danışma hattıyla iletişim kurun:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Covid kodunu henüz almadınız mı?";

@@ -1329,7 +1329,7 @@
 "stats_cases_current_description" = "Die Grafik zeigt die gemeldeten Neuinfektionen der letzten 28 Tage. Dies gibt einen Überblick über die aktuelle Entwicklung.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Sie wurden positiv getestet (PCR-Test oder Antigen-Schnelltest) und haben nach 4h noch keinen Covidcode erhalten? Dann kontaktieren Sie die Infoline Coronavirus:";
+"inform_detail_infobox1_text" = "Sie wurden positiv getestet (PCR-Test oder Antigen-Schnelltest) und haben nach 4h noch keinen Covidcode erhalten?\nDann kontaktieren Sie die Infoline Coronavirus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Noch keinen Covidcode?";

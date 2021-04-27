@@ -1267,7 +1267,7 @@
 "stats_cases_current_description" = "Grafika pokazuje prijavljene nove infekcije poslednjih 28 dana. Time imate pregled o aktuelnom razvoju.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Pozitivno ste testirani (PCR test ili antigen brzi test) i ni posle 4 sata niste dobili kovid šifru? U tom slučaju kontaktirajte Infoline Coronavirus:";
+"inform_detail_infobox1_text" = "Pozitivno ste testirani (PCR test ili antigen brzi test) i ni posle 4 sata niste dobili kovid šifru?\nU tom slučaju kontaktirajte Infoline Coronavirus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Još niste dobili Covid šifru?";

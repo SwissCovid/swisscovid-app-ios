@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "El gráfico muestra los nuevos contagios notificados en los últimos 28 días. Así, se obtiene una panorámica de la evolución actual.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "¿Ha dado usted positivo (test PCR o test rápido de antígenos) y no ha recibido el código Covid después de 4 horas? Contacte con la Infoline del coronavirus:";
+"inform_detail_infobox1_text" = "¿Ha dado usted positivo (test PCR o test rápido de antígenos) y no ha recibido el código Covid después de 4 horas?\nContacte con la Infoline del coronavirus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "¿Aún no ha recibido el código Covid?";

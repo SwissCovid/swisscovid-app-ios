@@ -1299,7 +1299,7 @@
 "stats_cases_current_description" = "The chart shows new infections reported in the last 28 days. This gives an overview of current developments.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Have you tested positive (PCR test or rapid antigen test) and did not receive a Covidcode after 4 hours? If so, contact the Coronavirus Infoline:";
+"inform_detail_infobox1_text" = "Have you tested positive (PCR test or rapid antigen test) and did not receive a Covidcode after 4 hours?\nIf so, contact the Coronavirus Infoline:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Don’t have a Covidcode yet?";

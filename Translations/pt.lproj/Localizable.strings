@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "O gráfico mostra as novas infeções registadas nos últimos 28 dias, dando um panorama da evolução atual.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Foi testado positivo (teste PCR ou teste rápido de antigénio) e ainda não recebeu um código Covid depois de 4 hs? Contacte a linha de informação coronavírus:";
+"inform_detail_infobox1_text" = "Foi testado positivo (teste PCR ou teste rápido de antigénio) e ainda não recebeu um código Covid depois de 4 hs?\nContacte a linha de informação coronavírus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Ainda não recebeu um código COVID?";

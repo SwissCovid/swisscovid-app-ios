@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "Grafiku tregon infeksionet e reja të raportuara gjatë 28 ditëve të fundit. Kjo jep një pasqyrë të rasteve aktuale.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "A keni testuar pozitiv (nga test PCR ose test i shpejtë antigjeni) dhe nuk keni marrë një kod Covid pas 4 orësh? Atëherë kontaktoni qendrën telefonike të koronavirusit:";
+"inform_detail_infobox1_text" = "A keni testuar pozitiv (nga test PCR ose test i shpejtë antigjeni) dhe nuk keni marrë një kod Covid pas 4 orësh? \nAtëherë kontaktoni qendrën telefonike të koronavirusit:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Nuk keni marrë ende asnjë kod Covid?";
