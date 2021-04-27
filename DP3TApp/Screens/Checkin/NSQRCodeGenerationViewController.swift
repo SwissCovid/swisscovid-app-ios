@@ -36,7 +36,16 @@ class NSQRCodeGenerationViewController: NSViewController {
         createButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            let result = CrowdNotifier.generateQRCodeString(baseUrl: Environment.current.qrCodeBaseUrl, masterPublicKey: Bytes(count: 32), description: "Description", address: "Address", startTimestamp: Date().addingTimeInterval(.hour * -2), endTimestamp: Date().addingTimeInterval(.hour * 2), countryData: nil)
+            var countryData = SwissCovidLocationData()
+            countryData.version = 3
+            countryData.room = "Room"
+            countryData.type = .kitchenArea
+
+            guard let data = try? countryData.serializedData() else {
+                return
+            }
+
+            let result = CrowdNotifier.generateQRCodeString(baseUrl: Environment.current.qrCodeBaseUrl, masterPublicKey: Bytes(count: 32), description: "Description", address: "Address", startTimestamp: Date().addingTimeInterval(.hour * -2), endTimestamp: Date().addingTimeInterval(.hour * 2), countryData: data)
             switch result {
             case .success(let (_, qrCodeString)):
                 strongSelf.qrCodeImageView.image = QRCodeUtils.createQrCodeImage(from: qrCodeString)

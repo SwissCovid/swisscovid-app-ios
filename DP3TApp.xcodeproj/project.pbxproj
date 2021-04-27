@@ -387,6 +387,7 @@
 		DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
+		DCE139802637F1560093D8F6 /* SwissCovidLocationData.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1397E2637F1560093D8F6 /* SwissCovidLocationData.pb.swift */; };
 		DCE32DF52637D05F00168693 /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE32DF42637D05F00168693 /* QRCodeTests.swift */; };
 		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
 		F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
@@ -487,6 +488,8 @@
 		F86A6A842637F93D003CAC1B /* UICollection+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A822637F93D003CAC1B /* UICollection+NS.swift */; };
 		F86A6A862637F944003CAC1B /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A852637F944003CAC1B /* ReusableView.swift */; };
 		F86A6A872637F944003CAC1B /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A852637F944003CAC1B /* ReusableView.swift */; };
+		F86A6A8D26380C7E003CAC1B /* SwissCovidLocationData.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A8A26380C7E003CAC1B /* SwissCovidLocationData.pb.swift */; };
+		F86A6A8E26380C7E003CAC1B /* SwissCovidLocationData.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A8A26380C7E003CAC1B /* SwissCovidLocationData.pb.swift */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
 		F87685B525B5F89B00538B8B /* www.pt-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */; };
@@ -771,6 +774,7 @@
 		DCAFD5BD2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSQRCodeGenerationViewController.swift; sourceTree = "<group>"; };
 		DCAFD5E62637054F00C74A09 /* NSTimePickerControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTimePickerControl.swift; sourceTree = "<group>"; };
 		DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHomescreenViewController.swift; sourceTree = "<group>"; };
+		DCE1397E2637F1560093D8F6 /* SwissCovidLocationData.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwissCovidLocationData.pb.swift; sourceTree = "<group>"; };
 		DCE32DF42637D05F00168693 /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
 		F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushProtocol.swift; sourceTree = "<group>"; };
@@ -828,6 +832,8 @@
 		F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInReportWhatTodoView.swift; sourceTree = "<group>"; };
 		F86A6A822637F93D003CAC1B /* UICollection+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollection+NS.swift"; sourceTree = "<group>"; };
 		F86A6A852637F944003CAC1B /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		F86A6A8926380C7E003CAC1B /* SwissCovidLocationData.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = SwissCovidLocationData.proto; sourceTree = "<group>"; };
+		F86A6A8A26380C7E003CAC1B /* SwissCovidLocationData.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwissCovidLocationData.pb.swift; sourceTree = "<group>"; };
 		F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		F87685B225B5F89900538B8B /* www.pt-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		F87685B325B5F89A00538B8B /* www.pt-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
@@ -1303,6 +1309,7 @@
 		6EB1D54D2636F53200981571 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				F86A6A8826380C7E003CAC1B /* SwissCovidLocationData */,
 				6E9A98C32636FF4C00BCBC8A /* Helpers */,
 				6EB1D5542636F65300981571 /* CurrentCheckinManager */,
 				6EB1D5522636F65300981571 /* Notifications */,
@@ -1742,12 +1749,22 @@
 			path = CheckIn;
 			sourceTree = "<group>";
 		};
+		F86A6A8826380C7E003CAC1B /* SwissCovidLocationData */ = {
+			isa = PBXGroup;
+			children = (
+				F86A6A8926380C7E003CAC1B /* SwissCovidLocationData.proto */,
+				F86A6A8A26380C7E003CAC1B /* SwissCovidLocationData.pb.swift */,
+			);
+			path = SwissCovidLocationData;
+			sourceTree = "<group>";
+		};
 		F87C36E1258C24D6008DCC81 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
 				F8D32BE02579180400ED1657 /* NSRadioButton.swift */,
 				F8D32BEB2579183000ED1657 /* NSRadioButtonItem.swift */,
 				F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */,
+				DCE1397E2637F1560093D8F6 /* SwissCovidLocationData.pb.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -2301,6 +2318,7 @@
 				F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
+				DCE139802637F1560093D8F6 /* SwissCovidLocationData.pb.swift in Sources */,
 				DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
@@ -2376,6 +2394,7 @@
 				242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
+				F86A6A8E26380C7E003CAC1B /* SwissCovidLocationData.pb.swift in Sources */,
 				F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
 				242D224D245C4BD8005DAEA8 /* NSSimpleModuleBaseView.swift in Sources */,
@@ -2473,6 +2492,7 @@
 				F86A6A602637F0A3003CAC1B /* NSDiaryCollectionViewFlowLayout.swift in Sources */,
 				F86A6A5C2637F0A3003CAC1B /* NSRemoveFromDiaryWarningViewController.swift in Sources */,
 				F80E40602508D4D000876906 /* NSStatisticsViewController.swift in Sources */,
+				F86A6A8D26380C7E003CAC1B /* SwissCovidLocationData.pb.swift in Sources */,
 				242D227B245D6557005DAEA8 /* Backend.swift in Sources */,
 				F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */,
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,

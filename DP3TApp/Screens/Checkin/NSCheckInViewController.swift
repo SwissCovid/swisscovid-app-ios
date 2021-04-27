@@ -153,7 +153,7 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
 
             navigationController?.pushViewController(vc, animated: true) */
 
-        case let .failure(failure):
+        case .failure:
             break
             /* if let url = URL(string: str), url.host == Environment.current.uploadHost {
                  UIApplication.shared.open(url)
