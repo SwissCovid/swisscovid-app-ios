@@ -18,8 +18,12 @@ class NSModuleBaseView: UIControl {
             headerView.title
         }
         set {
-            headerView.title = newValue
-            stackView.accessibilityLabel = newValue
+            if let headerTitle = newValue {
+                headerView.title = headerTitle
+                stackView.accessibilityLabel = headerTitle
+            } else {
+                headerView.isHidden = true
+            }
         }
     }
 

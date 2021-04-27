@@ -16,7 +16,7 @@ class NSCheckinOverviewViewController: NSViewController {
 
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let qrCodeScannerView = NSCheckInQRCodeScannerModuleView()
+    private let currentStateView = NSCheckInCurrentStateModuleView()
     private let qrCodeGeneratorView = NSCheckInQRCodeGeneratorModuleView()
     private let diaryView = NSCheckInDiaryModuleView()
 
@@ -43,7 +43,7 @@ class NSCheckinOverviewViewController: NSViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(qrCodeScannerView)
+        stackScrollView.addArrangedView(currentStateView)
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(qrCodeGeneratorView)
         stackScrollView.addSpacerView(NSPadding.large)
@@ -52,9 +52,14 @@ class NSCheckinOverviewViewController: NSViewController {
     }
 
     private func setupButtonCallbacks() {
-        qrCodeScannerView.touchUpCallback = { [weak self] in
+        currentStateView.scanQrCodeCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCheckInViewController(), animated: true)
+        }
+
+        currentStateView.checkoutCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            //TODO: show checkout vc
         }
 
         qrCodeGeneratorView.touchUpCallback = { [weak self] in
