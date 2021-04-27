@@ -285,7 +285,9 @@
 		6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFD26370538001C1565 /* NSQRScanningView.swift */; };
 		6EF28D6926383FDF001C1565 /* NSCheckInEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */; };
 		6EF28D6A26383FDF001C1565 /* AddCommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6726383FDF001C1565 /* AddCommentControl.swift */; };
-		6EF28D6B26383FDF001C1565 /* TimePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6826383FDF001C1565 /* TimePickerControl.swift */; };
+		6EF28D782638544C001C1565 /* AddCommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6726383FDF001C1565 /* AddCommentControl.swift */; };
+		6EF28D792638544C001C1565 /* NSTimePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5E62637054F00C74A09 /* NSTimePickerControl.swift */; };
+		6EF28D7E2638544F001C1565 /* NSCheckInEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */; };
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
 		6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */; };
 		6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */; };
@@ -332,7 +334,6 @@
 		DC1ACCC12637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC1ACCC22637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
-		DC32F46F2637C0C20006B0AD /* NSTimePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAFD5E62637054F00C74A09 /* NSTimePickerControl.swift */; };
 		DC3B568825ECCD460075B5CE /* NSTravelModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */; };
 		DC3B568E25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */; };
 		DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
@@ -696,7 +697,6 @@
 		6EF28CFD26370538001C1565 /* NSQRScanningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScanningView.swift; sourceTree = "<group>"; };
 		6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSCheckInEditViewController.swift; path = DP3TApp/Screens/Checkin/NSCheckInEditViewController.swift; sourceTree = SOURCE_ROOT; };
 		6EF28D6726383FDF001C1565 /* AddCommentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentControl.swift; sourceTree = "<group>"; };
-		6EF28D6826383FDF001C1565 /* TimePickerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerControl.swift; sourceTree = "<group>"; };
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
 		6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExternalLinkButton.swift; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersDetailViewController.swift; sourceTree = "<group>"; };
@@ -1416,7 +1416,7 @@
 			isa = PBXGroup;
 			children = (
 				6EF28D6726383FDF001C1565 /* AddCommentControl.swift */,
-				6EF28D6826383FDF001C1565 /* TimePickerControl.swift */,
+				DCAFD5E62637054F00C74A09 /* NSTimePickerControl.swift */,
 			);
 			name = Edit;
 			path = DP3TApp/Screens/Checkin/Edit;
@@ -1674,7 +1674,6 @@
 				6EF28CDC263704BE001C1565 /* NSCheckInHomescreenModuleView.swift */,
 				6EF28CDB263704BE001C1565 /* NSCheckInOverviewViewController.swift */,
 				DCAFD5BD2636F1EC00C74A09 /* NSQRCodeGenerationViewController.swift */,
-				DCAFD5E62637054F00C74A09 /* NSTimePickerControl.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -2269,7 +2268,6 @@
 				242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */,
 				6E88975F261F25A700508334 /* NSOnboardingBaseViewController.swift in Sources */,
 				242D21F4245C4BD8005DAEA8 /* NSReportsDetailNoReportsTitleView.swift in Sources */,
-				DC32F46F2637C0C20006B0AD /* NSTimePickerControl.swift in Sources */,
 				6EF28CF2263704EB001C1565 /* NSCheckInHomescreenModuleView.swift in Sources */,
 				DC3B576C25F1090F0075B5CE /* NSTravelModuleView.swift in Sources */,
 				F86A6A632637F0A3003CAC1B /* NSDiaryEmptyView.swift in Sources */,
@@ -2300,6 +2298,8 @@
 				F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F8ABA2E62526087D00A8D6B5 /* NSTutorialListItemView.swift in Sources */,
 				F86A6A612637F0A3003CAC1B /* NSDiaryCollectionViewFlowLayout.swift in Sources */,
+				6EF28D7E2638544F001C1565 /* NSCheckInEditViewController.swift in Sources */,
+				6EF28D782638544C001C1565 /* AddCommentControl.swift in Sources */,
 				F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */,
 				F86A6A842637F93D003CAC1B /* UICollection+NS.swift in Sources */,
 				F851223E250A2676009BE733 /* NSChartLineView.swift in Sources */,
@@ -2354,6 +2354,7 @@
 				242D221B245C4BD8005DAEA8 /* FakePublishManager.swift in Sources */,
 				DC3B576225F108C90075B5CE /* NSImageListLabel.swift in Sources */,
 				242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */,
+				6EF28D792638544C001C1565 /* NSTimePickerControl.swift in Sources */,
 				F80E40642508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
 				F8512245250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
@@ -2546,7 +2547,6 @@
 				F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				F86A6A5E2637F0A3003CAC1B /* NSDiaryDetailViewController.swift in Sources */,
-				6EF28D6B26383FDF001C1565 /* TimePickerControl.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				F86A6A95263837AD003CAC1B /* NSReminderControl.swift in Sources */,
 				DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */,

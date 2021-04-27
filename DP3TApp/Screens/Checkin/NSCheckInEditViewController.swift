@@ -17,8 +17,8 @@ class NSCheckinEditViewController: NSViewController {
     private let venueView = NSVenueView(icon: true)
     private let startDateLabel = NSLabel(.textBold, textAlignment: .center)
 
-    private let fromTimePickerControl = TimePickerControl(text: "datepicker_from".ub_localized, isStart: true)
-    private let toTimePickerControl = TimePickerControl(text: "datepicker_to".ub_localized, isStart: false)
+    private let fromTimePickerControl = NSTimePickerControl(text: "datepicker_from".ub_localized, isStart: true)
+    private let toTimePickerControl = NSTimePickerControl(text: "datepicker_to".ub_localized, isStart: false)
     private let addCommentControl = AddCommentControl()
 
     private var startDate: Date = Date()
