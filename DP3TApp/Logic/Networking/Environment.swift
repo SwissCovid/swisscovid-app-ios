@@ -77,4 +77,12 @@ enum Environment {
         // TODO: Add correct backend for check in service
         return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
     }
+
+    // TODO: Add correct base URLs for public QR Codes
+    var qrCodeBaseUrl: String {
+        switch self {
+        default:
+            return "https://qr-dev.notify-me.ch"
+        }
+    }
 }

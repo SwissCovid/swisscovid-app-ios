@@ -32,8 +32,8 @@
         "package": "CrowdNotifierSDK",
         "repositoryURL": "https://github.com/CrowdNotifier/crowdnotifier-sdk-ios",
         "state": {
-          "branch": "develop",
-          "revision": "6739d5372c32998c460dea46f6f5c75474061093",
+          "branch": "feature/swisscovid-integration",
+          "revision": "c286aefb79c0382c065c312f579738afc91b2a5d",
           "version": null
         }
       },

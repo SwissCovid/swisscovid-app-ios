@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import UIKit
 
 @UIApplicationMain
@@ -34,6 +35,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Keychain().deleteAll()
             isFirstLaunch = false
         }
+
+        // Initialize CrowdNotifier SDK
+        CrowdNotifier.initialize()
 
         // setup sdk
         TracingManager.shared.initialize()
