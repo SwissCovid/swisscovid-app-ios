@@ -15,7 +15,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "C h e c k - I n"
+        headerTitle = "CheckIn"
     }
 
     required init?(coder _: NSCoder) {

@@ -148,11 +148,9 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
         switch result {
         case let .success(info):
             stopScanning()
-            CheckInManager.shared.checkIn(qrCode: str, venueInfo: info)
-            /* let vc = LargeTitleNavigationController(contentViewController: CheckInConfirmViewController(qrCode: str, venueInfo: info))
 
-            navigationController?.pushViewController(vc, animated: true) */
-
+            let vc = NSCheckInConfirmViewController(qrCode: str, venueInfo: info)
+            navigationController?.pushViewController(vc, animated: true)
         case .failure:
             break
             /* if let url = URL(string: str), url.host == Environment.current.uploadHost {
