@@ -11,7 +11,7 @@
 
 import Foundation
 
-class NSCheckinEditViewController: NSViewController {
+class NSCheckInEditViewController: NSViewController {
     private let checkOutButton = NSButton(title: "checkout_button_title".ub_localized)
 
     private let venueView = NSVenueView(icon: true)
@@ -27,7 +27,7 @@ class NSCheckinEditViewController: NSViewController {
 
     private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized)
 
-    private let isCurrentCheckin: Bool
+    private let isCurrentCheckIn: Bool
 
     private var checkIn: CheckIn?
 
@@ -36,7 +36,7 @@ class NSCheckinEditViewController: NSViewController {
     // MARK: - Init
 
     init(checkIn: CheckIn? = nil) {
-        isCurrentCheckin = false
+        isCurrentCheckIn = false
         self.checkIn = checkIn
         super.init() // horizontalContentInset: NSPadding.large, backgroundColor: .ns_grayBackground)
 
@@ -53,7 +53,7 @@ class NSCheckinEditViewController: NSViewController {
     }
 
     override init() {
-        isCurrentCheckin = true
+        isCurrentCheckIn = true
         super.init() // horizontalContentInset: NSPadding.large, backgroundColor: .ns_grayBackground)
 
         // TODO: fix interaction
@@ -90,7 +90,7 @@ class NSCheckinEditViewController: NSViewController {
 
     // TODO: fix update state
 //    private func update(_ state: UIStateModel) {
-//        if isCurrentCheckin {
+//        if isCurrentCheckIn {
 //            switch state.checkInState {
 //            case .noCheckIn:
 //                checkIn = nil
@@ -141,7 +141,7 @@ class NSCheckinEditViewController: NSViewController {
         checkIn?.comment = comment
 
         // update
-        if isCurrentCheckin {
+        if isCurrentCheckIn {
             CheckInManager.shared.currentCheckIn = checkIn
         } else {
             if let checkIn = self.checkIn {
@@ -157,7 +157,7 @@ class NSCheckinEditViewController: NSViewController {
 //        dismissButton.touchUpCallback = { [weak self] in
 //            guard let strongSelf = self else { return }
 //
-//            if strongSelf.isCurrentCheckin {
+//            if strongSelf.isCurrentCheckIn {
 //                strongSelf.updateCheckIn()
 //
 //                strongSelf.userWillCheckOutCallback?()
@@ -246,7 +246,7 @@ class NSCheckinEditViewController: NSViewController {
 //
 //        contentView.addSpacerView(Padding.large)
 //
-//        if !isCurrentCheckin {
+//        if !isCurrentCheckIn {
 //            let v = UIView()
 //            v.addSubview(removeFromDiaryButton)
 //

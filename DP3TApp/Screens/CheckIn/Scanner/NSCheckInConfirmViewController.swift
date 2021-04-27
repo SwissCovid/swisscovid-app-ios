@@ -36,7 +36,7 @@ class NSCheckInConfirmViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        setupCheckin()
+        setupCheckIn()
 
         reminderControl.changeCallback = { self.reminderOption = $0 }
     }
@@ -71,7 +71,7 @@ class NSCheckInConfirmViewController: NSViewController {
 
     // MARK: - Setup
 
-    private func setupCheckin() {
+    private func setupCheckIn() {
         checkInButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
