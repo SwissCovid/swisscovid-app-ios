@@ -59,7 +59,9 @@ class NSCheckInOverviewViewController: NSViewController {
 
         currentStateView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            // TODO: show checkout vc
+            if let checkIn = CheckInManager.shared.currentCheckIn {
+                strongSelf.present(NSCheckinEditViewController(checkIn: checkIn), animated: true)
+            }
         }
 
         qrCodeGeneratorView.touchUpCallback = { [weak self] in

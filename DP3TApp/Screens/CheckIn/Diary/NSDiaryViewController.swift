@@ -29,10 +29,6 @@ class NSDiaryViewController: NSViewController {
         title = "diary_title".ub_localized
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - View
 
     override func viewDidLoad() {

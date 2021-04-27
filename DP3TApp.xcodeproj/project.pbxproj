@@ -283,6 +283,9 @@
 		6EF28CFF26370538001C1565 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFD26370538001C1565 /* NSQRScanningView.swift */; };
 		6EF28D042637053C001C1565 /* NSQRScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */; };
 		6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFD26370538001C1565 /* NSQRScanningView.swift */; };
+		6EF28D6926383FDF001C1565 /* NSCheckInEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */; };
+		6EF28D6A26383FDF001C1565 /* AddCommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6726383FDF001C1565 /* AddCommentControl.swift */; };
+		6EF28D6B26383FDF001C1565 /* TimePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D6826383FDF001C1565 /* TimePickerControl.swift */; };
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
 		6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */; };
 		6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */; };
@@ -691,6 +694,9 @@
 		6EF28CEA263704E3001C1565 /* NSCheckInCurrentStateModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInCurrentStateModuleView.swift; sourceTree = "<group>"; };
 		6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScannerOverlay.swift; sourceTree = "<group>"; };
 		6EF28CFD26370538001C1565 /* NSQRScanningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScanningView.swift; sourceTree = "<group>"; };
+		6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSCheckInEditViewController.swift; path = DP3TApp/Screens/Checkin/NSCheckInEditViewController.swift; sourceTree = SOURCE_ROOT; };
+		6EF28D6726383FDF001C1565 /* AddCommentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentControl.swift; sourceTree = "<group>"; };
+		6EF28D6826383FDF001C1565 /* TimePickerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerControl.swift; sourceTree = "<group>"; };
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
 		6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExternalLinkButton.swift; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersDetailViewController.swift; sourceTree = "<group>"; };
@@ -1406,6 +1412,16 @@
 			path = QRScanner;
 			sourceTree = "<group>";
 		};
+		6EF28D6626383FDF001C1565 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				6EF28D6726383FDF001C1565 /* AddCommentControl.swift */,
+				6EF28D6826383FDF001C1565 /* TimePickerControl.swift */,
+			);
+			name = Edit;
+			path = DP3TApp/Screens/Checkin/Edit;
+			sourceTree = SOURCE_ROOT;
+		};
 		6EF4D2442458273D005E2A9C /* ProblemView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1650,6 +1666,8 @@
 		DCAFD59B2636EE6800C74A09 /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
+				6EF28D6626383FDF001C1565 /* Edit */,
+				6EF28D6526383FDF001C1565 /* NSCheckInEditViewController.swift */,
 				F86A6A9026383723003CAC1B /* Scanner */,
 				F8AEBD3326370DEE00C07200 /* Diary */,
 				6EF28CE7263704E3001C1565 /* Modules */,
@@ -2448,6 +2466,7 @@
 				F80E406D2509002200876906 /* StatisticsResponse.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
 				F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
+				6EF28D6926383FDF001C1565 /* NSCheckInEditViewController.swift in Sources */,
 				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
@@ -2507,6 +2526,7 @@
 				DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */,
 				DC286A26242CE0B9001D5344 /* Environment.swift in Sources */,
 				F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */,
+				6EF28D6A26383FDF001C1565 /* AddCommentControl.swift in Sources */,
 				245626A1245265340058D11F /* ConfigLoadOperation.swift in Sources */,
 				DC702B01243F6F640066C773 /* String+NS.swift in Sources */,
 				DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */,
@@ -2526,6 +2546,7 @@
 				F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */,
 				F86A6A5E2637F0A3003CAC1B /* NSDiaryDetailViewController.swift in Sources */,
+				6EF28D6B26383FDF001C1565 /* TimePickerControl.swift in Sources */,
 				6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */,
 				F86A6A95263837AD003CAC1B /* NSReminderControl.swift in Sources */,
 				DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */,

@@ -41,10 +41,6 @@ class NSRemoveFromDiaryWarningViewController: NSViewController {
         super.init()
     }
 
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: - View Did Load
 
     override func viewDidLoad() {
