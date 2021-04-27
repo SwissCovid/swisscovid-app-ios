@@ -607,7 +607,7 @@
 "inform_detail_faq1_title" = "What is a Covidcode?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "People who have tested positive for the coronavirus receive a Covidcode. \n\nThis ensures that only confirmed cases are notified via the app.";
+"inform_detail_faq1_text" = "People who test positive for coronavirus (with a PCR test or rapid antigen test) will receive a Covidcode.\n\nThis guarantees that only confirmed cases are reported via the app.";
 
 /*Not translated*/
 /*Inform Detail: FAQ Titel*/
@@ -1299,7 +1299,7 @@
 "stats_cases_current_description" = "The chart shows new infections reported in the last 28 days. This gives an overview of current developments.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Have you tested positive and still haven’t received a Covidcode after 4 hours?\nContact the Covidcode Infoline:";
+"inform_detail_infobox1_text" = "Have you tested positive (PCR test or rapid antigen test) and did not receive a Covidcode after 4 hours? If so, contact the Coronavirus Infoline:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Don’t have a Covidcode yet?";
@@ -1335,43 +1335,43 @@
 "stats_cases_rel_prev_week_popup_header" = "Change versus previous week";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "Who will be notified?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "All the people you came into contact with during the infectious period from {ONSET_DATE} until you entered the Covidcode will be notified, if there is a possibility of infection due to the proximity and duration of the contact.";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – today";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "In this way you are helping break chains of infection.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "Your app's private key was sent for the following period:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "When you enter a Covidcode, tracing needs to be activated so that your private key can be shared.";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "If you press \"{BUTTON_TITLE}\", you leave the app and switch to the SwissCovid Guide website. The data on recent encounters with potentially infected people is sent to the website.";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "SwissCovid Guide information";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "Compatible with Germany";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "You will also be notified if you have been in contact with someone who uses the German Corona-Warn-App and later tests positive, and vice versa. The terms of use and data protection statement have been updated accordingly.";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "SwissCovid update";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Reset update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "A coronavirus test is advisable and recommended from the 5th day after the displayed contact date.";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
 "meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
@@ -1380,4 +1380,4 @@
 "meldungen_detail_free_test_now" = "Now";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "In 1 day";
