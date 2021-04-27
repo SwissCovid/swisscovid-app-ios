@@ -9,6 +9,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import UIKit
 
 class NSCheckInViewController: NSViewController {
@@ -142,7 +143,25 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
         guard let str = str else { return }
         lastQrCode = str
 
-        // TODO: handle qr code
+        let result = CrowdNotifier.getVenueInfo(qrCode: str, baseUrl: Environment.current.qrCodeBaseUrl)
+
+        switch result {
+        case let .success(info):
+            stopScanning()
+            CheckInManager.shared.checkIn(qrCode: str, venueInfo: info)
+            /* let vc = LargeTitleNavigationController(contentViewController: CheckInConfirmViewController(qrCode: str, venueInfo: info))
+
+            navigationController?.pushViewController(vc, animated: true) */
+
+        case let .failure(failure):
+            break
+            /* if let url = URL(string: str), url.host == Environment.current.uploadHost {
+                 UIApplication.shared.open(url)
+                 navigationController?.popViewController(animated: true)
+             } else {
+                 showError(failure.errorViewModel)
+             } */
+        }
     }
 
     func qrScanningDidStop() {

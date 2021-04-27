@@ -9,6 +9,6 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import UIKit
+import Foundation
 
-class NSDiaryViewController: NSViewController {}
+class NSDiaryCollectionViewFlowLayout: UICollectionViewFlowLayout {}

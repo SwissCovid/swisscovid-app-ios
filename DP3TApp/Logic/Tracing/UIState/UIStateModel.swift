@@ -18,6 +18,8 @@ struct UIStateModel: Equatable {
     var shouldStartAtReportsDetail = false
     var reportsDetail: ReportsDetail = ReportsDetail()
 
+    var checkInStateModel: CheckInStateModel = CheckInStateModel()
+
     #if ENABLE_STATUS_OVERRIDE
         var debug: Debug = Debug()
     #endif
@@ -131,4 +133,25 @@ struct UIStateModel: Equatable {
             }
         }
     #endif
+
+    struct CheckInStateModel: Equatable {
+        var checkInState: CheckInState = .noCheckIn
+        var exposureState: ExposureState = .noExposure
+        var diaryState: [[CheckIn]] = []
+        var errorState = ErrorState(error: nil)
+
+        enum CheckInState: Equatable {
+            case noCheckIn
+            case checkIn(CheckIn)
+        }
+
+        enum ExposureState: Equatable {
+            case noExposure
+            case exposure(exposure: [CheckInExposure], exposureByDay: [[CheckInExposure]])
+        }
+
+        struct ErrorState: Equatable {
+            let error: String?
+        }
+    }
 }
