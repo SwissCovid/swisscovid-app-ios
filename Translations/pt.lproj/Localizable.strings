@@ -603,7 +603,7 @@
 "inform_detail_faq1_title" = "O que é um código COVID?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "As pessoas que testaram positivo para o coronavírus recebem um código COVID.\n\nIsto assegura que só os casos confirmados são assinalados na app.";
+"inform_detail_faq1_text" = "Pessoas com teste de coronavírus positivo (teste PCR ou teste rápido de antigénio) recebem um código Covid.\n\nIsso assegura que só casos confirmados sejam comunicados através do aplicativo.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Que dados são enviados?";
@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "O gráfico mostra as novas infeções registadas nos últimos 28 dias, dando um panorama da evolução atual.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Você foi testado positivo e ainda não recebeu um código COVID após 4 horas? Nesse caso contacte a linha informativa do código COVID:";
+"inform_detail_infobox1_text" = "Foi testado positivo (teste PCR ou teste rápido de antigénio) e ainda não recebeu um código Covid depois de 4 hs?\nContacte a linha de informação coronavírus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Ainda não recebeu um código COVID?";
@@ -1307,49 +1307,49 @@
 "stats_cases_rel_prev_week_popup_header" = "Variação em relação à semana anterior";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "Quem vai ser informado?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "No período da sua fase contagiosa de {ONSET_DATE} até à introdução do código Covid, todos os contactos são informados, se houver a possibilidade de infecção devido à distância e à duração.";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – hoje";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "Com isso, você ajuda a parar as cadeias de infecção.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "Os códigos privados do seu aplicativo foram enviados para o seguinte período:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "Ao introduzir um código Covid, o rastreamento deve estar ativado para que seja possível compartilhar os seus códigos privados.";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "Ao premir \"{BUTTON_TITLE}\" você sai do aplicativo e vai para o website do Guia SwissCovid. Nisso, os dados dos últimos encontros com possibilidade de infecção do website também são enviados.";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "Informação Guia SwissCovid";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "Compatível com a Alemanha";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "Você também vai ser informado, se esteve em contacto com uma pessoa que usa o aplicativo de advertência corona alemão e, mais tarde, teve um resultado positivo no teste e vice-versa. Para tal, as condições de utilização e a política de privacidade foram atualizadas.";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "Atualização SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Reset update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Um teste de corona é útil e recomendado a partir de 5 dias após a data de contacto indicada.";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+"meldungen_detail_free_test_in_x_tagen" = "Em {COUNT} dias";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_now" = "Now";
+"meldungen_detail_free_test_now" = "Agora";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "Em 1 dia";
