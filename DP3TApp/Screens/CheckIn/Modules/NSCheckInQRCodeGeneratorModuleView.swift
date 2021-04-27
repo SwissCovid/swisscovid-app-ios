@@ -27,11 +27,6 @@ class NSCheckInQRCodeGeneratorModuleView: NSModuleBaseView {
             make.leading.trailing.bottom.equalToSuperview()
             make.top.equalToSuperview().inset(NSPadding.medium)
         }
-
-        generateButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.touchUpCallback?()
-        }
     }
 
     required init?(coder _: NSCoder) {
