@@ -603,7 +603,7 @@
 "inform_detail_faq1_title" = "Çfarë është një kod Covid?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "Personat që kanë rezultuar pozitivë me koronavirusin marrin një kod Covid.\n\nNë këtë mënyrë sigurohet që nga aplikacioni të sinjalizohen vetëm rastet e konfirmuara.";
+"inform_detail_faq1_text" = "Njerëzit që kanë rezultuar pozitivë për koronavirusin (test PCR ose test i shpejtë i antigjenit) marrin një kod Covid.\n\nKjo siguron se vetëm rastet e konfirmuara raportohen përmes aplikacionit.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Çfarë dërgohet?";
@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "Grafiku tregon infeksionet e reja të raportuara gjatë 28 ditëve të fundit. Kjo jep një pasqyrë të rasteve aktuale.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Keni rezultuar pozitiv në testim dhe pas 4 orësh nuk keni marrë ende asnjë kod Covid? Atëherë kontaktoni linjën e informacionit për kodin Covid:";
+"inform_detail_infobox1_text" = "A keni testuar pozitiv (nga test PCR ose test i shpejtë antigjeni) dhe nuk keni marrë një kod Covid pas 4 orësh? Atëherë kontaktoni qendrën telefonike të koronavirusit:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Nuk keni marrë ende asnjë kod Covid?";
@@ -1307,49 +1307,49 @@
 "stats_cases_rel_prev_week_popup_header" = "Ndryshimi me javën e mëparshme";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "Kush njoftohet?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "Të gjithë kontaktet në periudhën e fazës tuaj të infektimit nga {ONSET_DATE} deri në hyrjen e kodit Covid njoftohen nëse ekziston mundësia e infektimit për shkak të distancës dhe kohëzgjatjes.";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – sot";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "Duke vepruar kështu, ju ndihmoni të ndaloni zinxhirin e infektimit.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "Çelësat privatë të aplikacionit tuaj janë dërguar për periudhën kohore vijuese:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "Kur futni një kod Covid, gjurmimi duhet të aktivizohet në mënyrë që çelësat tuaj privatë të mund të shpërndahen.";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "Nëse shtypni \"{BUTTON_TITLE}\", dilni nga aplikacioni dhe kaloni në faqen e internetit të udhëzuesit SwissCovid. Të dhënat e takimeve të fundit të infektimeve të mundshme dërgohen gjithashtu në faqen e internetit.";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "Informacion për udhëzuesin SwissCovid";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "E pajtueshme me Gjermaninë";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "Ju gjithashtu informoheni nëse keni qenë në kontakt me një person që përdor aplikacionin gjerman Corona-Warn-App dhe më vonë keni rezultuar pozitiv dhe anasjelltas. Për këtë qëllim, kushtet e përdorimit dhe deklarata për mbrojtjen e të dhënave janë aktualizuar.";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "Aktualizimi i SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Rivendos update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Një test i koronavirusit është i dobishëm dhe rekomandohet që nga dita e 5-të pas datës së treguar të kontaktit.";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+"meldungen_detail_free_test_in_x_tagen" = "Në {COUNT} ditë";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_now" = "Now";
+"meldungen_detail_free_test_now" = "Tani";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "Në 1 ditë";

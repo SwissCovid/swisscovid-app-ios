@@ -603,7 +603,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "Korona virüsü testi pozitif olan kişilere Kovid kodu verilir.\n\nBu şekilde yalnızca onaylanmış vakaların uygulama üzerinden bildirilmesi garantilenir.";
+"inform_detail_faq1_text" = "Koronavirüs için testi pozitif çıkan kişiler (PCR testi veya hızlı antijen testi) bir Covid kodu alır.\n\nBöylece uygulama üzerinden yalnızca onaylı vakaların bildirilmesi sağlanır.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Neler iletilir?";
@@ -1268,7 +1268,7 @@
 "stats_cases_current_description" = "Grafik son 28 günde bildirilmiş olan yeni enfeksiyonları gösterir. Bu ise güncel gelişme hakkında genel bir bakış kazandırır.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Test sonucunuz pozitif çıktı ve 4 saat içerisinde henüz Covid kodunu almadınız mı? \nBu durumda, Covid Kodu Bilgi Hattı (Infoline) ile iletişime geçiniz:";
+"inform_detail_infobox1_text" = "Testiniz pozitif çıktı (PCR testi veya hızlı antijen testi) ve 4 saat sonra halen bir Covid kodu almadınız mı? O halde koronavirüz danışma hattıyla iletişim kurun:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Covid kodunu henüz almadınız mı?";
@@ -1304,49 +1304,49 @@
 "stats_cases_rel_prev_week_popup_header" = "Önceki haftaya göre değişim";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "Kimlere haber verilir?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "Mesafe ve süre nedeniyle bir bulaşma olasılığı mevcut ise {ONSET_DATE} gününden başlamak üzere, Covid kodunuzun girilmesine kadar, bulaşma döneminizin aralığındaki tüm temaslılara haber verilir.";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – bugün";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "Bu sayede enfeksiyon zincirlerinin durdurulması için yardımcı olacaksınız.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "Uygulamanızın özel anahtarları şu zaman aralığı için gönderildi:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "Bir Covid kodu girerken, özel anahtarlarınızın paylaşılabilmesi için izleme etkinleştirilmiş olmalıdır.";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "\"{BUTTON_TITLE}\" üzerine basarsanız, uygulamadan çıkıp SwissCovid rehberinin web sitesine gidersiniz. Bu esnada olası bulaşmalara ait son karşılaşmaların verileri de web sitesine gönderilir.";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "SwissCovid rehberi bilgisi";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "Almanya ile uyumlu";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "Almanya'nın korona uyarı uygulamasını kullanan ve sonradan testi pozitif çıkan bir kişiyle temas ettiğinizde ve bunun tersi durumunda da bilgilendirilirsiniz. Bunun için kullanım koşulları ve veri koruma beyanı güncellenmiştir.";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "SwissCovid Güncellemesi ";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Reset update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Gösterilen temas tarihinden sonraki 5. gün itibariyle bir korona testi yapılması uygundur ve tavsiye edilir.";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+"meldungen_detail_free_test_in_x_tagen" = "{COUNT} gün sonra";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_now" = "Now";
+"meldungen_detail_free_test_now" = "Şimdi";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "1 gün sonra";
