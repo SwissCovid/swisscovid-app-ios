@@ -37,7 +37,7 @@ class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
 
         addSubview(inputControl)
         inputControl.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(NSPadding.small)
+            make.top.equalTo(label.snp.bottom).offset(NSPadding.large)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }

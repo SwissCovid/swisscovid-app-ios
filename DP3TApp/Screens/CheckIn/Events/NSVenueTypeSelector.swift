@@ -15,32 +15,32 @@ extension SwissCovidLocationData.VenueType {
     var title: String {
         switch self {
         case .other, .UNRECOGNIZED:
-            return "O T H E R"
+            return "Andere"
         case .meetingRoom:
-            return "M E E T I N G  R O O M"
+            return "Sitzungsraum"
         case .cafeteria:
-            return "C A F E T E R I A"
+            return "Kafeteria"
         case .privateEvent:
-            return "P R I V A T E  E V E N T"
+            return "Privater Event"
         case .canteen:
-            return "C A N T E E N"
+            return "Kantine"
         case .library:
-            return "L I B R A R Y"
+            return "Bibliothek"
         case .lectureRoom:
-            return "L E C T U R E  R O O M"
+            return "Vorlesungssaal"
         case .shop:
-            return "S H O P"
+            return "Laden"
         case .gym:
-            return "G Y M"
+            return "Fitnesscenter"
         case .kitchenArea:
-            return "K I T C H E N  A R E A"
+            return "Küchenbereich"
         case .officeSpace:
-            return "O F F I C E  S P A C E"
+            return "Büroräume"
         }
     }
 
     static var radioButtonSelections: [NSRadioButtonGroup<Self>.Selection] {
-        Self.allCases.map {
+        [.privateEvent, .meetingRoom, .officeSpace, .other].map {
             NSRadioButtonGroup.Selection(title: $0.title, data: $0)
         }
     }
@@ -48,7 +48,7 @@ extension SwissCovidLocationData.VenueType {
 
 class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>, NSFormFieldRepresentable {
     var fieldTitle: String {
-        return "Category"
+        return "Kategorie"
     }
 
     var isValid: Bool {
@@ -56,17 +56,10 @@ class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>,
     }
 
     init() {
-        super.init(selections: SwissCovidLocationData.VenueType.radioButtonSelections)
-
-        setupView()
+        super.init(selections: SwissCovidLocationData.VenueType.radioButtonSelections, leftPadding: 0)
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupView() {
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.ns_blue.cgColor
     }
 }

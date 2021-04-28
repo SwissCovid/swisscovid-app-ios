@@ -23,15 +23,35 @@ class NSBaseTextField: UITextField, NSFormFieldRepresentable {
 
         super.init(frame: .zero)
 
-        font = NSLabelType.textLight.font
-        textColor = NSLabelType.textLight.textColor
-
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.ns_blue.cgColor
-        layer.cornerRadius = 3
+        setupView()
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupView() {
+        backgroundColor = .ns_backgroundSecondary
+        layer.cornerRadius = 3
+
+        autocapitalizationType = .words
+        returnKeyType = .done
+
+        font = NSLabelType.textBold.font
+        textColor = .ns_lightBlue
+        let placeholderString = NSMutableAttributedString(string: "z.B. Raum- oder Eventname")
+        placeholderString.setAttributes([
+            .font: NSLabelType.textLight.font,
+            .foregroundColor: NSLabelType.textLight.textColor,
+        ], range: NSRange(location: 0, length: placeholderString.string.count))
+        attributedPlaceholder = placeholderString
+    }
+
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: NSPadding.medium, dy: NSPadding.medium)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        bounds.insetBy(dx: NSPadding.medium, dy: NSPadding.medium)
     }
 }
