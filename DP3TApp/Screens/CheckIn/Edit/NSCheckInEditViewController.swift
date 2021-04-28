@@ -33,36 +33,21 @@ class NSCheckInEditViewController: NSViewController {
 
     public var userWillCheckOutCallback: (() -> Void)?
 
+    private let stackScrollView = NSStackScrollView(axis: .vertical)
+
     // MARK: - Init
 
     init(checkIn: CheckIn? = nil) {
         isCurrentCheckIn = false
         self.checkIn = checkIn
-        super.init() // horizontalContentInset: NSPadding.large, backgroundColor: .ns_grayBackground)
-
-        // TODO: fix interaction
-//        leftButtonTitle = "cancel".ub_localized
-//        leftButtonTouchCallback = { [weak self] in
-//            guard let strongSelf = self else { return }
-//            strongSelf.dismiss(animated: true, completion: nil)
-//        }
-//
-//        dismissButton.title = "checkout_save_button_title".ub_localized
+        super.init()
 
         title = "edit_controller_title".ub_localized
     }
 
     override init() {
         isCurrentCheckIn = true
-        super.init() // horizontalContentInset: NSPadding.large, backgroundColor: .ns_grayBackground)
-
-        // TODO: fix interaction
-//        leftButtonTitle = "back_button".ub_localized
-//        leftButtonTouchCallback = { [weak self] in
-//            guard let strongSelf = self else { return }
-//            strongSelf.dismiss(animated: true, completion: nil)
-//        }
-
+        super.init()
         title = "checkout_button_title".ub_localized
     }
 
@@ -72,41 +57,39 @@ class NSCheckInEditViewController: NSViewController {
         super.viewDidLoad()
         setup()
 
-        UIStateManager.shared.addObserver(self) { [weak self] _ in
+        UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
-            // TODO: fix update
-            // strongSelf.update(state)
+            strongSelf.update(state)
         }
 
         setupCheckout()
         setupTimeInteraction()
         setupComment()
 
-        // TODO: fix update
-        // update()
+        update()
     }
 
     // MARK: - Update
 
-    // TODO: fix update state
-//    private func update(_ state: UIStateModel) {
-//        if isCurrentCheckIn {
-//            switch state.checkInState {
-//            case .noCheckIn:
-//                checkIn = nil
-//            case let .checkIn(checkIn):
-//                self.checkIn = checkIn
-//            }
-//        }
-//    }
-//
-//    private func update() {
-//        startDate = checkIn?.checkInTime ?? Date()
-//        endDate = checkIn?.checkOutTime ?? Date()
-//        comment = checkIn?.comment
-//
-//        updateUI()
-//    }
+    private func update(_ state: UIStateModel) {
+        // otherwise the user is updating a diary event
+        if isCurrentCheckIn {
+            switch state.checkInStateModel.checkInState {
+            case let .checkIn(ci):
+                checkIn = ci
+            case .noCheckIn:
+                checkIn = nil
+            }
+        }
+    }
+
+    private func update() {
+        startDate = checkIn?.checkInTime ?? Date()
+        endDate = checkIn?.checkOutTime ?? Date()
+        comment = checkIn?.comment
+
+        updateUI()
+    }
 
     private func updateUI() {
         venueView.venue = checkIn?.venue
@@ -152,36 +135,41 @@ class NSCheckInEditViewController: NSViewController {
 
     // MARK: - Setup
 
-    private func setupCheckout() {
-        // TODO: setup dismiss button
-//        dismissButton.touchUpCallback = { [weak self] in
-//            guard let strongSelf = self else { return }
-//
-//            if strongSelf.isCurrentCheckIn {
-//                strongSelf.updateCheckIn()
-//
-//                strongSelf.userWillCheckOutCallback?()
-//                CheckInManager.shared.checkOut()
-//
-//                let presentingVC = strongSelf.presentingViewController
-//                if let nvc = presentingVC as? UINavigationController {
-//                    nvc.popToRootViewController(animated: true)
-//                } else {
-//                    presentingVC?.navigationController?.popToRootViewController(animated: true)
-//                }
-//                strongSelf.dismiss(animated: true, completion: nil)
-//
-//            } else {
-//                strongSelf.updateCheckIn()
-//                strongSelf.dismiss(animated: true, completion: nil)
-//            }
-//        }
+    fileprivate func setupCheckout() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(cancelButtonTouched))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(saveButtonTouched))
 
-        removeFromDiaryButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
+        let attributes = [
+            NSAttributedString.Key.font: NSLabelType.textBold.font,
+            NSAttributedString.Key.foregroundColor: UIColor.ns_blue,
+        ]
 
-            // TODO: warning button
-            // strongSelf.showRemoveWarning()
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes(attributes, for: .normal)
+    }
+
+    @objc private func cancelButtonTouched() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @objc private func saveButtonTouched() {
+        if isCurrentCheckIn {
+            updateCheckIn()
+
+            userWillCheckOutCallback?()
+            CheckInManager.shared.checkOut()
+
+            let presentingVC = presentingViewController
+            if let nvc = presentingVC as? UINavigationController {
+                nvc.popToRootViewController(animated: true)
+            } else {
+                navigationController?.popToRootViewController(animated: true)
+            }
+            dismiss(animated: true, completion: nil)
+
+        } else {
+            updateCheckIn()
+            dismiss(animated: true, completion: nil)
         }
     }
 
@@ -220,44 +208,49 @@ class NSCheckInEditViewController: NSViewController {
     // MARK: - Setup
 
     private func setup() {
-        // TODO: View setup
-//        contentView.addSpacerView(Padding.mediumSmall + Padding.small)
-//
-//        contentView.addArrangedView(venueView)
-//
-//        contentView.addSpacerView(Padding.mediumSmall)
-//
-//        contentView.addArrangedView(startDateLabel)
-//
-//        contentView.addSpacerView(Padding.mediumSmall)
-//
-//        let stackView = UIStackView(arrangedSubviews: [fromTimePickerControl, toTimePickerControl])
-//        stackView.axis = .vertical
-//        stackView.spacing = Padding.mediumSmall
-//        stackView.distribution = .fillEqually
-//
-//        contentView.addArrangedView(stackView)
-//
-//        contentView.addSpacerView(Padding.mediumSmall)
-//        contentView.addArrangedView(addCommentControl)
-//
-//        let diaryLabel = Label(.boldUppercaseSmall, textColor: .ns_text)
-//        diaryLabel.text = "diary_option_title".ub_localized
-//
-//        contentView.addSpacerView(Padding.large)
-//
-//        if !isCurrentCheckIn {
-//            let v = UIView()
-//            v.addSubview(removeFromDiaryButton)
-//
-//            removeFromDiaryButton.snp.makeConstraints { make in
-//                make.top.bottom.centerX.equalToSuperview()
-//            }
-//
-//            contentView.addArrangedView(v)
-//        }
-//
-//        contentView.addSpacerView(Padding.mediumSmall)
+        view.addSubview(stackScrollView)
+
+        stackScrollView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+
+        stackScrollView.addSpacerView(NSPadding.medium + NSPadding.small)
+
+        stackScrollView.addArrangedView(venueView)
+
+        stackScrollView.addSpacerView(NSPadding.medium)
+
+        stackScrollView.addArrangedView(startDateLabel)
+
+        stackScrollView.addSpacerView(NSPadding.medium)
+
+        let stackView = UIStackView(arrangedSubviews: [fromTimePickerControl, toTimePickerControl])
+        stackView.axis = .vertical
+        stackView.spacing = NSPadding.medium
+        stackView.distribution = .fillEqually
+
+        stackScrollView.addArrangedView(stackView)
+
+        stackScrollView.addSpacerView(NSPadding.medium)
+        stackScrollView.addArrangedView(addCommentControl)
+
+        let diaryLabel = NSLabel(.uppercaseBold, textColor: .ns_text)
+        diaryLabel.text = "diary_option_title".ub_localized
+
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        if !isCurrentCheckIn {
+            let v = UIView()
+            v.addSubview(removeFromDiaryButton)
+
+            removeFromDiaryButton.snp.makeConstraints { make in
+                make.top.bottom.centerX.equalToSuperview()
+            }
+
+            stackScrollView.addArrangedView(v)
+        }
+
+        stackScrollView.addSpacerView(NSPadding.medium)
     }
 
     // MARK: - Show remove warning
