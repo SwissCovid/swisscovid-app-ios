@@ -66,12 +66,12 @@ class NSCheckInOverviewViewController: NSViewController {
 
         qrCodeGeneratorView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSCheckInEventsViewController(), animated: true)
+            strongSelf.navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
         }
 
         qrCodeGeneratorView.generateButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSQRCodeGenerationViewController(), animated: true)
+            strongSelf.present(NSNavigationController(rootViewController: NSQRCodeGenerationViewController()), animated: true, completion: nil)
         }
 
         diaryView.touchUpCallback = { [weak self] in

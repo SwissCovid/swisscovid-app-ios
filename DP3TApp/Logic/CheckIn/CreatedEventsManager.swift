@@ -12,25 +12,64 @@
 import CrowdNotifierSDK
 import Foundation
 
+extension Notification.Name {
+    static let createdEventAdded = Notification.Name("CreatedEventAddedNotification")
+    static let createdEventDeleted = Notification.Name("CreatedEventDeletedNotification")
+}
+
 final class CreatedEventsManager {
     static let shared = CreatedEventsManager()
 
     private init() {}
 
-    @UBUserDefault(key: "ch.admin.bag.createdEvents", defaultValue: [])
-    private(set) var createdEvents: [CreatedEvent]
+    @UBUserDefault(key: "ch.admin.bag.createdEvents", defaultValue: CreatedEventsWrapper(events: []))
+    private var createdEventsWrapper: CreatedEventsWrapper
 
-    func createNewEvent(description _: String, venueType _: SwissCovidLocationData.VenueType) {}
+    var createdEvents: [CreatedEvent] {
+        return createdEventsWrapper.events
+    }
+
+    func createNewEvent(description: String, venueType: SwissCovidLocationData.VenueType) -> CreatedEvent? {
+        var locationData = SwissCovidLocationData()
+        locationData.version = 1
+        locationData.room = ""
+        locationData.type = venueType
+
+        guard let countryData = try? locationData.serializedData() else {
+            return nil
+        }
+
+        let result = CrowdNotifier.generateQRCodeString(baseUrl: Environment.current.qrCodeBaseUrl, masterPublicKey: QRCodeGenerationConstants.masterPublicKey, description: description, address: "", startTimestamp: Date(), endTimestamp: Date().addingTimeInterval(.day * 100_000), countryData: countryData)
+
+        switch result {
+        case .success(let (venueInfo, qrCodeString)):
+            let newEvent = CreatedEvent(id: UUID().uuidString, qrCodeString: qrCodeString, venueInfo: venueInfo, creationTimestamp: Date())
+            createdEventsWrapper = CreatedEventsWrapper(events: createdEvents + [newEvent])
+            NotificationCenter.default.post(Notification(name: .createdEventAdded))
+            return newEvent
+        case .failure:
+            return nil
+        }
+    }
+
+    func deleteEvent(with id: String) {
+        createdEventsWrapper = CreatedEventsWrapper(events: createdEvents.filter { $0.id != id })
+        NotificationCenter.default.post(Notification(name: .createdEventDeleted))
+    }
+}
+
+struct CreatedEventsWrapper: UBCodable {
+    let events: [CreatedEvent]
 }
 
 struct CreatedEvent: UBCodable, Equatable {
+    let id: String
     let qrCodeString: String
     let venueInfo: VenueInfo
     let creationTimestamp: Date
 
     static func == (lhs: CreatedEvent, rhs: CreatedEvent) -> Bool {
-        return lhs.qrCodeString == rhs.qrCodeString
-            && lhs.creationTimestamp == rhs.creationTimestamp
+        return lhs.id == rhs.id
     }
 }
 

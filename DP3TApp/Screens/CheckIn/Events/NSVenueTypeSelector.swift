@@ -48,7 +48,7 @@ extension SwissCovidLocationData.VenueType {
 
 class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>, NSFormFieldRepresentable {
     var fieldTitle: String {
-        return "Venue Type"
+        return "Category"
     }
 
     var isValid: Bool {

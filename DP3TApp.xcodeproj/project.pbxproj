@@ -347,8 +347,8 @@
 		DC16179C2638717800B56ADA /* NSFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16176F2638717800B56ADA /* NSFormField.swift */; };
 		DC16179D2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617702638717800B56ADA /* NSQRCodeGenerationViewController.swift */; };
 		DC16179E2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617702638717800B56ADA /* NSQRCodeGenerationViewController.swift */; };
-		DC16179F2638717800B56ADA /* NSCheckInEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617712638717800B56ADA /* NSCheckInEventsViewController.swift */; };
-		DC1617A02638717800B56ADA /* NSCheckInEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617712638717800B56ADA /* NSCheckInEventsViewController.swift */; };
+		DC16179F2638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617712638717800B56ADA /* NSCreatedEventsViewController.swift */; };
+		DC1617A02638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617712638717800B56ADA /* NSCreatedEventsViewController.swift */; };
 		DC1617A12638717800B56ADA /* NSCheckInDiaryModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */; };
 		DC1617A22638717800B56ADA /* NSCheckInDiaryModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */; };
 		DC1617A32638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */; };
@@ -359,6 +359,8 @@
 		DC1617A82638717800B56ADA /* NSCheckInConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */; };
 		DC1617A92638717800B56ADA /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617782638717800B56ADA /* NSCheckInViewController.swift */; };
 		DC1617AA2638717800B56ADA /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617782638717800B56ADA /* NSCheckInViewController.swift */; };
+		DC1617AC2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617AB2638919C00B56ADA /* NSCreatedEventCard.swift */; };
+		DC1617AD2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617AB2638919C00B56ADA /* NSCreatedEventCard.swift */; };
 		DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */; };
 		DC175E422430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */; };
 		DC17F96125DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */; };
@@ -761,12 +763,13 @@
 		DC16176E2638717800B56ADA /* NSVenueTypeSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSVenueTypeSelector.swift; sourceTree = "<group>"; };
 		DC16176F2638717800B56ADA /* NSFormField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSFormField.swift; sourceTree = "<group>"; };
 		DC1617702638717800B56ADA /* NSQRCodeGenerationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRCodeGenerationViewController.swift; sourceTree = "<group>"; };
-		DC1617712638717800B56ADA /* NSCheckInEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInEventsViewController.swift; sourceTree = "<group>"; };
+		DC1617712638717800B56ADA /* NSCreatedEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCreatedEventsViewController.swift; sourceTree = "<group>"; };
 		DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInDiaryModuleView.swift; sourceTree = "<group>"; };
 		DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInCurrentStateModuleView.swift; sourceTree = "<group>"; };
 		DC1617752638717800B56ADA /* NSCheckInQRCodeGeneratorModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInQRCodeGeneratorModuleView.swift; sourceTree = "<group>"; };
 		DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInConfirmViewController.swift; sourceTree = "<group>"; };
 		DC1617782638717800B56ADA /* NSCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInViewController.swift; sourceTree = "<group>"; };
+		DC1617AB2638919C00B56ADA /* NSCreatedEventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCreatedEventCard.swift; sourceTree = "<group>"; };
 		DC175E3F2430C4C700BD2AD6 /* NSOnboardingContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingContentViewController.swift; sourceTree = "<group>"; };
 		DC175E412430C4F900BD2AD6 /* NSOnboardingPermissionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingPermissionsViewController.swift; sourceTree = "<group>"; };
 		DC17F96025DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodesStatisticsModuleView.swift; sourceTree = "<group>"; };
@@ -1584,7 +1587,8 @@
 				DC16176E2638717800B56ADA /* NSVenueTypeSelector.swift */,
 				DC16176F2638717800B56ADA /* NSFormField.swift */,
 				DC1617702638717800B56ADA /* NSQRCodeGenerationViewController.swift */,
-				DC1617712638717800B56ADA /* NSCheckInEventsViewController.swift */,
+				DC1617712638717800B56ADA /* NSCreatedEventsViewController.swift */,
+				DC1617AB2638919C00B56ADA /* NSCreatedEventCard.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -2317,6 +2321,7 @@
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
+				DC1617AD2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */,
 				DC1617942638717800B56ADA /* NSDiaryViewController.swift in Sources */,
 				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
 				DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */,
@@ -2458,7 +2463,7 @@
 				242D2241245C4BD8005DAEA8 /* NSInformThankYouViewController.swift in Sources */,
 				242D2242245C4BD8005DAEA8 /* NSWhatToDoButton.swift in Sources */,
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
-				DC1617A02638717800B56ADA /* NSCheckInEventsViewController.swift in Sources */,
+				DC1617A02638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */,
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
@@ -2531,7 +2536,7 @@
 				6EB1D55C2636F65300981571 /* ProblematicEventsManager.swift in Sources */,
 				8E81CC9D241FCC7D006F2437 /* NSViewController.swift in Sources */,
 				F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */,
-				DC16179F2638717800B56ADA /* NSCheckInEventsViewController.swift in Sources */,
+				DC16179F2638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */,
 				DC702B0C243F6FAE0066C773 /* UBUserDefault.swift in Sources */,
 				242D2276245D62D8005DAEA8 /* UserStorage.swift in Sources */,
 				6EB1D55E2636F65300981571 /* CheckIn.swift in Sources */,
@@ -2574,6 +2579,7 @@
 				242D227B245D6557005DAEA8 /* Backend.swift in Sources */,
 				F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */,
 				DC16177B2638717800B56ADA /* NSTimePickerControl.swift in Sources */,
+				DC1617AC2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */,
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,
 				DC1ACCC12637CCEA0054CBFC /* QRCodeUtils.swift in Sources */,
 				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,

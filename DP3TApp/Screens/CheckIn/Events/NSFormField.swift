@@ -17,7 +17,7 @@ protocol NSFormFieldRepresentable {
 }
 
 class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
-    private let label = NSLabel(.textLight)
+    private let label = NSLabel(.uppercaseBold)
     let inputControl: T
 
     init(inputControl: T) {

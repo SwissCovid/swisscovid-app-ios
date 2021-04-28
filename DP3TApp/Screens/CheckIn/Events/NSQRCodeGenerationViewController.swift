@@ -15,45 +15,25 @@ import UIKit
 class NSQRCodeGenerationViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let titleLabel = NSLabel(.title)
+    private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "Title"))
     private let venueTypeSelector = NSFormField(inputControl: NSVenueTypeSelector())
 
-//    private let subtitleTextField = NSFormField(inputControl: NSBaseTextField(title: "Subtitle"))
-//    private let moreInfoTextField = NSFormField(inputControl: NSBaseTextField(title: "Additional Info"))
-//
-//    private let validFromSelector = NSFormField(inputControl: NSTimePickerControl(text: "Valid From", isStart: true))
-//    private let validToSelector = NSFormField(inputControl: NSTimePickerControl(text: "Valid Until", isStart: false))
-
     private let createButton = NSButton(title: "Create QR Code", style: .normal(.ns_purple))
-
-//    private let qrCodeImageView = UIImageView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissSelf))
 
         setupView()
 
         createButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            var countryData = SwissCovidLocationData()
-            countryData.version = 3
-            countryData.room = "Room"
-            countryData.type = .kitchenArea
+            _ = CreatedEventsManager.shared.createNewEvent(description: strongSelf.titleTextField.inputControl.text ?? "", venueType: strongSelf.venueTypeSelector.inputControl.selectedData)
 
-            guard let data = try? countryData.serializedData() else {
-                return
-            }
-
-            let result = CrowdNotifier.generateQRCodeString(baseUrl: Environment.current.qrCodeBaseUrl, masterPublicKey: Bytes(count: 32), description: "Description", address: "Address", startTimestamp: Date().addingTimeInterval(.hour * -2), endTimestamp: Date().addingTimeInterval(.hour * 2), countryData: data)
-            switch result {
-            case .success(let (_, qrCodeString)):
-                break
-//                strongSelf.qrCodeImageView.image = QRCodeUtils.createQrCodeImage(from: qrCodeString)
-            case .failure:
-                print("Failed to create QR Code")
-            }
+            strongSelf.dismissSelf()
         }
     }
 
@@ -68,7 +48,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
-        titleLabel.text = "Generate QR Code"
+        titleLabel.text = "QR Code erstellen"
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
         stackScrollView.addSpacerView(NSPadding.large)
@@ -76,17 +56,11 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleTextField)
         stackScrollView.addSpacerView(NSPadding.large)
-//        stackScrollView.addArrangedView(subtitleTextField)
-//        stackScrollView.addSpacerView(NSPadding.large)
-//        stackScrollView.addArrangedView(moreInfoTextField)
-//        stackScrollView.addSpacerView(NSPadding.large)
-//        stackScrollView.addArrangedView(venueTypeSelector)
-//        stackScrollView.addSpacerView(NSPadding.large)
-//        stackScrollView.addArrangedView(validFromSelector)
-//        stackScrollView.addSpacerView(NSPadding.large)
-//        stackScrollView.addArrangedView(validToSelector)
-//        stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(createButton)
         stackScrollView.addSpacerView(NSPadding.large)
+    }
+
+    @objc private func dismissSelf() {
+        dismiss(animated: true, completion: nil)
     }
 }

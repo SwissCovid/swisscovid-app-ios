@@ -12,9 +12,13 @@
 import CrowdNotifierSDK
 import Foundation
 
-public extension VenueInfo {
-    internal var locationData: SwissCovidLocationData? {
+extension VenueInfo {
+    var locationData: SwissCovidLocationData? {
         return try? SwissCovidLocationData(serializedData: countryData)
+    }
+
+    var venueType: SwissCovidLocationData.VenueType? {
+        return locationData?.type
     }
 
     // Image for UI
