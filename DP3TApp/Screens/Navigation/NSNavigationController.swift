@@ -14,6 +14,18 @@ class NSNavigationController: UINavigationController {
     // MARK: - Views
 
     let lineView = UIView()
+    let useLine: Bool
+
+    // MARK: - Init
+
+    init(rootViewController: UIViewController, useLine: Bool = true) {
+        self.useLine = useLine
+        super.init(rootViewController: rootViewController)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - View Loading
 
@@ -28,13 +40,20 @@ class NSNavigationController: UINavigationController {
     // MARK: - Setup
 
     private func setup() {
-        lineView.backgroundColor = .ns_red
+        if useLine {
+            lineView.backgroundColor = .ns_red
 
-        navigationBar.addSubview(lineView)
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(3.0)
-            make.top.equalTo(navigationBar.snp.bottom)
-            make.left.right.equalToSuperview()
+            navigationBar.addSubview(lineView)
+            lineView.snp.makeConstraints { make in
+                make.height.equalTo(3.0)
+                make.top.equalTo(navigationBar.snp.bottom)
+                make.left.right.equalToSuperview()
+            }
+        } else {
+            // remove bottom 1 px line
+            navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            navigationBar.shadowImage = UIImage()
+            navigationBar.barTintColor = .ns_backgroundSecondary
         }
     }
 }

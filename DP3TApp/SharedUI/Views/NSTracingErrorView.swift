@@ -168,7 +168,7 @@ class NSTracingErrorView: UIView {
                                                errorCode: code,
                                                action: { _ in
                                                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                                                   NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
+                                                   NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
                                                })
             } else {
                 return NSTracingErrorViewModel(icon: icon,

@@ -183,7 +183,13 @@ extension NSDiaryViewController: UICollectionViewDataSource {
          if let exposure = exposureForDiary(diaryEntry: d) {
              present(NSModalReportViewController(exposure: exposure), animated: true, completion: nil)
          } else {
-             present(NSCheckInEditViewController(checkIn: diary[indexPath.section][indexPath.item]), animated: true, completion: nil)
+             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+
+             if let checkIn = diary[indexPath.section][indexPath.item] {
+                 let vc = NSCheckInEditViewController(checkIn: checkIn)
+                 vc.presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
+                 strongSelf.present(vc, animated: true)
+             }
          }
          */
     }

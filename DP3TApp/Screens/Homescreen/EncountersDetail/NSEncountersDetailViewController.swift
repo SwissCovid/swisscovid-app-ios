@@ -42,7 +42,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
                #available(iOS 13.7, *) {
                 confirmCallback(!state)
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
+                NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
                 return
             }
             // only show popup when switching tracing off

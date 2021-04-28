@@ -46,6 +46,18 @@ class NSViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Present
+
+    func presentInNavigationController(from rootViewController: UIViewController, useLine: Bool) {
+        let navCon = NSNavigationController(rootViewController: self, useLine: useLine)
+
+        if UIDevice.current.isSmallScreenPhone {
+            navCon.modalPresentationStyle = .fullScreen
+        }
+
+        rootViewController.present(navCon, animated: true, completion: nil)
+    }
+
     // MARK: - View
 
     override func viewDidLoad() {
