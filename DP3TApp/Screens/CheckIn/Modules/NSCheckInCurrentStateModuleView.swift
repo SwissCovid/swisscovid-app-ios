@@ -35,15 +35,16 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
-            strongSelf.update(state.checkInStateModel)
+            strongSelf.update(state)
         }
     }
 
-    func update(_ state: UIStateModel.CheckInStateModel) {
-        switch state.checkInState {
+    func update(_ state: UIStateModel) {
+        switch state.checkInStateModel.checkInState {
         case .noCheckIn:
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
+            checkedOutView.scanQrCodeButton.isEnabled = !state.homescreen.reports.report.isInfected
         case let .checkIn(checkedIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true

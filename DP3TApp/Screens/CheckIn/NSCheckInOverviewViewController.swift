@@ -29,15 +29,6 @@ class NSCheckInOverviewViewController: NSViewController {
 
         setupView()
         setupButtonCallbacks()
-
-        UIStateManager.shared.addObserver(self, block: { [weak self] state in
-            guard let strongSelf = self else { return }
-            strongSelf.updateState(state)
-        })
-    }
-
-    private func updateState(_ state: UIStateModel) {
-        currentStateView.update(state.checkInStateModel)
     }
 
     private func setupView() {
