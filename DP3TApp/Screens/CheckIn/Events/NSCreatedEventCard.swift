@@ -12,7 +12,7 @@
 import UIKit
 
 class NSCreatedEventCard: UIView {
-    private let qrCodeImageView = UIImageView(image: UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate))
+    let qrCodeButton = UBButton()
 
     private let categoryLabel = NSLabel(.textLight)
     private let titleLabel = NSLabel(.textBold)
@@ -37,18 +37,19 @@ class NSCreatedEventCard: UIView {
         backgroundColor = .ns_background
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: 0)
 
-        qrCodeImageView.ub_setContentPriorityRequired()
-        qrCodeImageView.tintColor = .ns_text
-        addSubview(qrCodeImageView)
-        qrCodeImageView.snp.makeConstraints { make in
+        qrCodeButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        qrCodeButton.ub_setContentPriorityRequired()
+        qrCodeButton.tintColor = .ns_text
+        addSubview(qrCodeButton)
+        qrCodeButton.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(15)
             make.size.equalTo(40)
         }
 
         addSubview(categoryLabel)
         categoryLabel.snp.makeConstraints { make in
-            make.top.equalTo(qrCodeImageView)
-            make.leading.equalTo(qrCodeImageView.snp.trailing).offset(NSPadding.medium)
+            make.top.equalTo(qrCodeButton)
+            make.leading.equalTo(qrCodeButton.snp.trailing).offset(NSPadding.medium)
         }
 
         addSubview(titleLabel)
@@ -73,7 +74,7 @@ class NSCreatedEventCard: UIView {
 
         addSubview(divider)
         divider.snp.makeConstraints { make in
-            make.top.equalTo(qrCodeImageView.snp.bottom).offset(NSPadding.medium)
+            make.top.equalTo(qrCodeButton.snp.bottom).offset(NSPadding.medium)
             make.leading.trailing.equalToSuperview()
             make.height.equalTo(2)
         }

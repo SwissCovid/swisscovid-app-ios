@@ -59,6 +59,12 @@ class NSCreatedEventsViewController: NSViewController {
                 }
             }
 
+            card.qrCodeButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+
+                strongSelf.present(NSNavigationController(rootViewController: NSCreatedEventDetailViewController(createdEvent: event)), animated: true, completion: nil)
+            }
+
             eventCards.append(card)
             stackScrollView.addArrangedView(card)
         }
