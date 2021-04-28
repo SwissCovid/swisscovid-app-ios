@@ -155,13 +155,13 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // other views
         stackScrollView.addArrangedView(infoBoxView)
 
-        stackScrollView.addArrangedView(handshakesModuleView)
+        stackScrollView.addArrangedView(reportsView)
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(checkInView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(reportsView)
+        stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(travelView)
