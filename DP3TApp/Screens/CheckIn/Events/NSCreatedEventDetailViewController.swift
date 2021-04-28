@@ -20,6 +20,8 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private let createdEvent: CreatedEvent
 
+    private let showPDFButton = NSButton(title: "Druck-PDF anzeigen")
+
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
 
@@ -54,6 +56,8 @@ class NSCreatedEventDetailViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         let container = UIView()
+
+        qrCodeImageView.layer.magnificationFilter = .nearest
         container.addSubview(qrCodeImageView)
         qrCodeImageView.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
@@ -61,6 +65,8 @@ class NSCreatedEventDetailViewController: NSViewController {
         }
 
         stackScrollView.addArrangedView(container)
+        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addArrangedView(showPDFButton)
     }
 
     @objc private func dismissSelf() {

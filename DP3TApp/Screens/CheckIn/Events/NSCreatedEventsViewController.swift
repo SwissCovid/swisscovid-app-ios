@@ -59,6 +59,11 @@ class NSCreatedEventsViewController: NSViewController {
                 }
             }
 
+            card.checkInButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.present(NSCheckInConfirmViewController(qrCode: event.qrCodeString, venueInfo: event.venueInfo), animated: true, completion: nil)
+            }
+
             card.qrCodeButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
 
