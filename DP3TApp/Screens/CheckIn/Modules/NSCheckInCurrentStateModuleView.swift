@@ -12,17 +12,15 @@
 import Foundation
 
 class NSCheckInCurrentStateModuleView: NSModuleBaseView {
-    fileprivate let checkedOutView = NSCheckedOutModuleView()
-
-    fileprivate let checkedInView = NSCheckedInModuleView()
+    // TODO: replace views with custom views for overview
+    fileprivate let checkedOutView = NSCheckInHomescreenModuleCheckedOutView()
+    fileprivate let checkedInView = NSCheckInHomescreenModuleCheckedInView()
 
     var scanQrCodeCallback: (() -> Void)?
     var checkoutCallback: (() -> Void)?
 
     override init() {
         super.init()
-
-        headerTitle = nil
         checkedInView.isHidden = true
         checkedOutView.isHidden = true
 
@@ -59,70 +57,5 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
 
     override func sectionViews() -> [UIView] {
         return [checkedOutView, checkedInView]
-    }
-}
-
-private class NSCheckedOutModuleView: UIView {
-    let illustration = UIView()
-
-    let scanQrCodeButton = NSButton(title: "Scan QR-Code", style: .normal(.ns_blue))
-
-    init() {
-        super.init(frame: .zero)
-
-        addSubview(illustration)
-        addSubview(scanQrCodeButton)
-
-        illustration.backgroundColor = .systemPink
-        illustration.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.medium)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-        }
-        scanQrCodeButton.snp.makeConstraints { make in
-            make.top.equalTo(illustration.snp.bottom).offset(NSPadding.medium)
-            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
-        }
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-private class NSCheckedInModuleView: UIView {
-    let headerLabel = NSLabel(.title)
-
-    let timerLabel = NSLabel(.textBold)
-
-    let checkOutButton = NSButton(title: "CheckOut", style: .normal(.ns_red))
-
-    init() {
-        super.init(frame: .zero)
-
-        addSubview(headerLabel)
-        addSubview(timerLabel)
-        addSubview(checkOutButton)
-
-        headerLabel.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview().inset(NSPadding.medium)
-        }
-        timerLabel.snp.makeConstraints { make in
-            make.top.equalTo(headerLabel.snp.bottom).offset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
-        }
-        checkOutButton.snp.makeConstraints { make in
-            make.top.equalTo(timerLabel.snp.bottom).offset(NSPadding.medium)
-            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
-        }
-    }
-
-    func update(checkIn: CheckIn) {
-        headerLabel.text = "You are checked in: \(checkIn.identifier)"
-        timerLabel.text = checkIn.checkInTime.description
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 }

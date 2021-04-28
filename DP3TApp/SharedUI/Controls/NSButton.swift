@@ -15,6 +15,7 @@ class NSButton: UBButton {
         // bool fo
         case normal(UIColor)
         case uppercase(UIColor)
+        case outline(UIColor)
         case outlineUppercase(UIColor)
         case borderlessUppercase(UIColor)
 
@@ -24,7 +25,7 @@ class NSButton: UBButton {
                 return UIColor.white
             case .uppercase:
                 return UIColor.white
-            case let .outlineUppercase(c):
+            case let .outlineUppercase(c), let .outline(c):
                 return c
             case let .borderlessUppercase(c):
                 return c
@@ -37,7 +38,7 @@ class NSButton: UBButton {
                 return c
             case let .uppercase(c):
                 return c
-            case .outlineUppercase:
+            case .outlineUppercase, .outline:
                 return .clear
             case .borderlessUppercase:
                 return .clear
@@ -46,7 +47,7 @@ class NSButton: UBButton {
 
         var borderColor: UIColor {
             switch self {
-            case let .outlineUppercase(c):
+            case let .outlineUppercase(c), let .outline(c):
                 return c
             default:
                 return .clear

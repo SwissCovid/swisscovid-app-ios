@@ -483,6 +483,8 @@
 		F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EF24936D8700A66CD1 /* MockKeychain.swift */; };
 		F84089F12493A2EC00A66CD1 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089EB2493695200A66CD1 /* Keychain.swift */; };
 		F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84089ED2493696500A66CD1 /* KeychainPersisted.swift */; };
+		F8454AA3263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8454AA2263983B8005CF491 /* NSMutableAttributedString+NS.swift */; };
+		F8454AA4263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8454AA2263983B8005CF491 /* NSMutableAttributedString+NS.swift */; };
 		F8512237250A13ED009BE733 /* NSChartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512236250A13ED009BE733 /* NSChartDateView.swift */; };
 		F8512238250A13ED009BE733 /* NSChartDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8512236250A13ED009BE733 /* NSChartDateView.swift */; };
 		F851223D250A2676009BE733 /* NSChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F851223C250A2676009BE733 /* NSChartLineView.swift */; };
@@ -857,6 +859,7 @@
 		F84089EB2493695200A66CD1 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		F84089ED2493696500A66CD1 /* KeychainPersisted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainPersisted.swift; sourceTree = "<group>"; };
 		F84089EF24936D8700A66CD1 /* MockKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychain.swift; sourceTree = "<group>"; };
+		F8454AA2263983B8005CF491 /* NSMutableAttributedString+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+NS.swift"; sourceTree = "<group>"; };
 		F8512236250A13ED009BE733 /* NSChartDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartDateView.swift; sourceTree = "<group>"; };
 		F851223C250A2676009BE733 /* NSChartLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartLineView.swift; sourceTree = "<group>"; };
 		F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAxisLines.swift; sourceTree = "<group>"; };
@@ -1216,6 +1219,7 @@
 				F86A6A852637F944003CAC1B /* ReusableView.swift */,
 				DC702B00243F6F640066C773 /* String+NS.swift */,
 				F86A6A822637F93D003CAC1B /* UICollection+NS.swift */,
+				F8454AA2263983B8005CF491 /* NSMutableAttributedString+NS.swift */,
 				DC702B11243F6FD90066C773 /* Keychain */,
 				DC702B02243F6FAE0066C773 /* UBUserDefault */,
 				DC702B16243F70060066C773 /* UIView+NS.swift */,
@@ -2406,6 +2410,7 @@
 				DC16177E2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */,
 				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
+				F8454AA4263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */,
 				DCE139802637F1560093D8F6 /* SwissCovidLocationData.pb.swift in Sources */,
 				DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
@@ -2726,6 +2731,7 @@
 				F80E40692508FE3000876906 /* NSCovidStatisticsModuleView.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,
 				F84089EC2493695200A66CD1 /* Keychain.swift in Sources */,
+				F8454AA3263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */,
 				6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */,
 				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
 				DC16177F2638717800B56ADA /* AddCommentControl.swift in Sources */,

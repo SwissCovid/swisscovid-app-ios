@@ -88,6 +88,18 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
         }
 
+        checkInView.scanQrCodeCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.navigationController?.pushViewController(NSCheckInViewController(), animated: true)
+        }
+
+        checkInView.checkoutCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            if let checkIn = CheckInManager.shared.currentCheckIn {
+                strongSelf.present(NSCheckInEditViewController(checkIn: checkIn), animated: true)
+            }
+        }
+
         // Ensure that Screen builds without animation if app not started on homescreen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.finishTransition?()
