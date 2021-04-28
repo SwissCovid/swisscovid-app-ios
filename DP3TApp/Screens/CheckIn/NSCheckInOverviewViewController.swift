@@ -29,6 +29,15 @@ class NSCheckInOverviewViewController: NSViewController {
 
         setupView()
         setupButtonCallbacks()
+
+        UIStateManager.shared.addObserver(self, block: { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.updateState(state)
+        })
+    }
+
+    private func updateState(_ state: UIStateModel) {
+        currentStateView.update(state.checkInStateModel)
     }
 
     private func setupView() {
@@ -60,7 +69,8 @@ class NSCheckInOverviewViewController: NSViewController {
         currentStateView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
             if let checkIn = CheckInManager.shared.currentCheckIn {
-                strongSelf.present(NSCheckInEditViewController(checkIn: checkIn), animated: true)
+                let vc = NSNavigationController(rootViewController: NSCheckInEditViewController(checkIn: checkIn))
+                strongSelf.present(vc, animated: true)
             }
         }
 
