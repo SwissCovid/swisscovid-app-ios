@@ -273,6 +273,8 @@
 		6EF28CFF26370538001C1565 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFD26370538001C1565 /* NSQRScanningView.swift */; };
 		6EF28D042637053C001C1565 /* NSQRScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */; };
 		6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFD26370538001C1565 /* NSQRScanningView.swift */; };
+		6EF28D892639364D001C1565 /* QRCodePDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D882639364D001C1565 /* QRCodePDFGenerator.swift */; };
+		6EF28D9226393878001C1565 /* QRCodePDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28D882639364D001C1565 /* QRCodePDFGenerator.swift */; };
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
 		6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */; };
 		6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */; };
@@ -706,6 +708,7 @@
 		6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformGetWellViewController.swift; sourceTree = "<group>"; };
 		6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScannerOverlay.swift; sourceTree = "<group>"; };
 		6EF28CFD26370538001C1565 /* NSQRScanningView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScanningView.swift; sourceTree = "<group>"; };
+		6EF28D882639364D001C1565 /* QRCodePDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodePDFGenerator.swift; sourceTree = "<group>"; };
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
 		6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExternalLinkButton.swift; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersDetailViewController.swift; sourceTree = "<group>"; };
@@ -1337,6 +1340,7 @@
 		6E9A98C32636FF4C00BCBC8A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6EF28D882639364D001C1565 /* QRCodePDFGenerator.swift */,
 				F86A6A7B2637F305003CAC1B /* Venue+NS.swift */,
 				6E9A98C42637003600BCBC8A /* DateHelpers+NS.swift */,
 				6E9A98B82636FEE400BCBC8A /* Dictionary+CaseInsensitiveKey.swift */,
@@ -2365,6 +2369,7 @@
 				242D220A245C4BD8005DAEA8 /* UBUserDefaultValue.swift in Sources */,
 				246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */,
 				242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */,
+				6EF28D9226393878001C1565 /* QRCodePDFGenerator.swift in Sources */,
 				F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */,
@@ -2559,6 +2564,7 @@
 				F86A6A832637F93D003CAC1B /* UICollection+NS.swift in Sources */,
 				6E7C0D1E242CE02D0017C4F9 /* NSLabelType.swift in Sources */,
 				DC702B0B243F6FAE0066C773 /* UBPListValue.swift in Sources */,
+				6EF28D892639364D001C1565 /* QRCodePDFGenerator.swift in Sources */,
 				8EF2A6EC249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
 				DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */,
 				242D227D245D6581005DAEA8 /* Endpoint.swift in Sources */,
