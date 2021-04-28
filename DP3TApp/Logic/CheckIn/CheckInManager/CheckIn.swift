@@ -13,28 +13,29 @@ import CrowdNotifierSDK
 import Foundation
 
 struct CheckIn: UBCodable, Equatable {
-    init(identifier: String, qrCode: String, checkInTime: Date, venue: VenueInfo, hideFromDiary: Bool = false) {
+    var identifier: String
+    let qrCode: String
+    let venue: VenueInfo
+    var checkInTime: Date
+    var comment: String?
+    var checkOutTime: Date?
+    var createdEventId: String?
+
+    init(identifier: String, qrCode: String, checkInTime: Date, venue: VenueInfo, createdEventId: String? = nil) {
         self.identifier = identifier
+        self.qrCode = qrCode
         self.venue = venue
         self.checkInTime = checkInTime
-        self.hideFromDiary = hideFromDiary
-        self.qrCode = qrCode
+        self.createdEventId = createdEventId
     }
-
-    public var identifier: String
-    public let qrCode: String
-    public var venue: VenueInfo
-    public var checkInTime: Date
-    public var comment: String?
-    public var checkOutTime: Date?
-    public var hideFromDiary: Bool
 
     static func == (lhs: CheckIn, rhs: CheckIn) -> Bool {
         let sameId = lhs.identifier == rhs.identifier
         let sameComment = lhs.comment ?? "" == rhs.comment ?? ""
         let sameCheckInTime = lhs.checkInTime == rhs.checkInTime
         let sameCheckOutTime = rhs.checkOutTime == lhs.checkOutTime
-        return sameId && sameComment && sameCheckInTime && sameCheckOutTime
+        let sameCreatedEventId = lhs.createdEventId == rhs.createdEventId
+        return sameId && sameComment && sameCheckInTime && sameCheckOutTime && sameCreatedEventId
     }
 
     public func timeSinceCheckIn() -> String {

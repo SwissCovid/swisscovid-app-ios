@@ -60,8 +60,8 @@ class NSCheckInOverviewViewController: NSViewController {
         currentStateView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            if let checkIn = CheckInManager.shared.currentCheckIn {
-                let vc = NSCheckInEditViewController(checkIn: checkIn)
+            if let _ = CheckInManager.shared.currentCheckIn {
+                let vc = NSCheckInEditViewController()
                 vc.presentInNavigationController(from: strongSelf, useLine: false)
             }
         }

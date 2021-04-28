@@ -12,29 +12,37 @@
 import UIKit
 
 class NSCreatedEventCard: UIView {
-    enum CheckInState {
+    enum CheckInState: Equatable {
         case canCheckIn
-        case checkedIn
+        case checkedIn(CheckIn)
         case cannotCheckIn
     }
 
     private let stackView = UIStackView()
     private let topContainer = UIView()
+    private let divider = UIView()
     private let canCheckInContainer = UIView()
     private let checkedInContainer = UIView()
 
     private let categoryLabel = NSLabel(.textLight)
-    private let titleLabel = NSLabel(.textBold)
+    private let titleLabel = NSLabel(.title)
+
+    private let checkedInView = NSCheckInHomescreenModuleCheckedInView()
 
     let qrCodeButton = UBButton()
-    let checkInButton = NSButton(title: "Selbst Einchecken")
+    let checkInButton = NSButton(title: "Selbst Einchecken", style: .outlineUppercase(.ns_lightBlue))
     let deleteButton = UBButton()
+
+    var checkoutCallback: (() -> Void)?
+
+    let createdEvent: CreatedEvent
 
     var checkInState: CheckInState {
         didSet { updateLayout() }
     }
 
     init(createdEvent: CreatedEvent, initialCheckInState: CheckInState = .canCheckIn) {
+        self.createdEvent = createdEvent
         checkInState = initialCheckInState
 
         super.init(frame: .zero)
@@ -53,7 +61,7 @@ class NSCreatedEventCard: UIView {
 
     private func setupView() {
         backgroundColor = .ns_background
-        ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: 0)
+        ub_addShadow(radius: 4, opacity: 0.15, xOffset: 0, yOffset: -1)
 
         stackView.axis = .vertical
         addSubview(stackView)
@@ -61,13 +69,12 @@ class NSCreatedEventCard: UIView {
             make.edges.equalToSuperview()
         }
 
-        qrCodeButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        qrCodeButton.setImage(UIImage(named: "ic-qrcode-large")?.withRenderingMode(.alwaysTemplate), for: .normal)
         qrCodeButton.ub_setContentPriorityRequired()
         qrCodeButton.tintColor = .ns_text
         topContainer.addSubview(qrCodeButton)
         qrCodeButton.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(15)
-            make.size.equalTo(40)
+            make.top.leading.equalToSuperview().inset(20)
         }
 
         topContainer.addSubview(categoryLabel)
@@ -83,9 +90,7 @@ class NSCreatedEventCard: UIView {
             make.bottom.equalToSuperview().inset(15)
         }
 
-        if #available(iOS 13.0, *) {
-            deleteButton.setImage(UIImage(systemName: "trash.fill"), for: .normal)
-        }
+        deleteButton.setImage(UIImage(named: "ic-delete"), for: .normal)
         deleteButton.tintColor = .ns_red
         deleteButton.ub_setContentPriorityRequired()
         topContainer.addSubview(deleteButton)
@@ -94,24 +99,24 @@ class NSCreatedEventCard: UIView {
             make.leading.equalTo(categoryLabel.snp.trailing).offset(NSPadding.small)
         }
 
-        let divider = UIView()
         divider.backgroundColor = .ns_line
-
-        canCheckInContainer.addSubview(divider)
         divider.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(2)
+            make.height.equalTo(1)
         }
 
         canCheckInContainer.addSubview(checkInButton)
         checkInButton.snp.makeConstraints { make in
-            make.top.equalTo(divider.snp.bottom).offset(NSPadding.large)
-            make.bottom.equalToSuperview().inset(NSPadding.large)
+            make.top.bottom.equalToSuperview().inset(NSPadding.large)
             make.centerX.equalToSuperview()
         }
 
+        checkedInContainer.addSubview(checkedInView)
+        checkedInView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(NSPadding.medium)
+        }
+
         stackView.addArrangedView(topContainer)
+        stackView.addArrangedView(divider)
         stackView.addArrangedView(canCheckInContainer)
         stackView.addArrangedView(checkedInContainer)
     }
@@ -123,12 +128,23 @@ class NSCreatedEventCard: UIView {
         case .canCheckIn:
             canCheckInContainer.isHidden = false
             checkedInContainer.isHidden = true
-        case .checkedIn:
+            divider.isHidden = false
+            deleteButton.isHidden = false
+        case let .checkedIn(checkIn):
             canCheckInContainer.isHidden = true
             checkedInContainer.isHidden = false
+            checkedInView.update(checkIn: checkIn)
+            checkedInView.checkOutButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.checkoutCallback?()
+            }
+            divider.isHidden = false
+            deleteButton.isHidden = true
         case .cannotCheckIn:
             canCheckInContainer.isHidden = true
             checkedInContainer.isHidden = true
+            divider.isHidden = true
+            deleteButton.isHidden = false
         }
 
         stackView.layoutIfNeeded()

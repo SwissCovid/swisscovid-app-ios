@@ -21,9 +21,12 @@ class NSCreatedEventsViewController: NSViewController {
 
         setupView()
 
-        updateEvents()
+        updateEvents(checkInState: UIStateManager.shared.uiState.checkInStateModel.checkInState)
 
-        NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: .createdEventAdded, object: nil)
+        UIStateManager.shared.addObserver(self, block: { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.updateState(state)
+        })
     }
 
     private func setupView() {
@@ -38,7 +41,11 @@ class NSCreatedEventsViewController: NSViewController {
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
 
-    @objc private func updateEvents() {
+    private func updateState(_ state: UIStateModel) {
+        updateEvents(checkInState: state.checkInStateModel.checkInState)
+    }
+
+    private func updateEvents(checkInState: UIStateModel.CheckInStateModel.CheckInState? = nil) {
         stackScrollView.removeAllViews()
 
         eventCards.removeAll()
@@ -49,11 +56,10 @@ class NSCreatedEventsViewController: NSViewController {
                 guard let strongSelf = self else { return }
 
                 CreatedEventsManager.shared.deleteEvent(with: event.id)
+                strongSelf.eventCards.removeAll { $0.createdEvent.id == event.id }
 
-                strongSelf.stackScrollView.setNeedsLayout()
                 UIView.animate(withDuration: 0.3) {
                     card.isHidden = true
-                    strongSelf.stackScrollView.layoutIfNeeded()
                 } completion: { _ in
                     strongSelf.stackScrollView.removeView(card)
                 }
@@ -61,7 +67,7 @@ class NSCreatedEventsViewController: NSViewController {
 
             card.checkInButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.present(NSCheckInConfirmViewController(qrCode: event.qrCodeString, venueInfo: event.venueInfo), animated: true, completion: nil)
+                strongSelf.present(NSCheckInConfirmViewController(createdEvent: event), animated: true, completion: nil)
             }
 
             card.qrCodeButton.touchUpCallback = { [weak self] in
@@ -72,6 +78,26 @@ class NSCreatedEventsViewController: NSViewController {
 
             eventCards.append(card)
             stackScrollView.addArrangedView(card)
+        }
+
+        if let state = checkInState {
+            switch state {
+            case let .checkIn(checkIn):
+                for card in eventCards {
+                    if checkIn.createdEventId == card.createdEvent.id {
+                        card.checkInState = .checkedIn(checkIn)
+                        card.checkoutCallback = { [weak self] in
+                            guard let strongSelf = self else { return }
+                            let vc = NSCheckInEditViewController()
+                            vc.presentInNavigationController(from: strongSelf, useLine: false)
+                        }
+                    } else {
+                        card.checkInState = .cannotCheckIn
+                    }
+                }
+            default:
+                break
+            }
         }
     }
 }
