@@ -69,7 +69,7 @@ class NSViewController: UIViewController {
         super.viewWillAppear(animated)
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-        if navigationController?.viewControllers.count == 1 {
+        if let nvc = navigationController, nvc.viewControllers.count == 1, !nvc.isBeingPresented {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
         }
     }

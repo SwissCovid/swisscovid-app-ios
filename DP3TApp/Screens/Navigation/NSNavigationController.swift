@@ -32,14 +32,13 @@ class NSNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.ns_background
     }
 
     // MARK: - Setup
 
     private func setup() {
+        navigationBar.isTranslucent = false
+
         if useLine {
             lineView.backgroundColor = .ns_red
 
@@ -49,6 +48,8 @@ class NSNavigationController: UINavigationController {
                 make.top.equalTo(navigationBar.snp.bottom)
                 make.left.right.equalToSuperview()
             }
+
+            navigationBar.barTintColor = .ns_background
         } else {
             // remove bottom 1 px line
             navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

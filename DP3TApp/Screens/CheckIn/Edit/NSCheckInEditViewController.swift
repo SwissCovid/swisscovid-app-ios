@@ -12,8 +12,6 @@
 import Foundation
 
 class NSCheckInEditViewController: NSViewController {
-    private let checkOutButton = NSButton(title: "checkout_button_title".ub_localized)
-
     private let venueView = NSVenueView(icon: true)
     private let startDateLabel = NSLabel(.textBold, textAlignment: .center)
 
