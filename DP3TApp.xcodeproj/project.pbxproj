@@ -126,7 +126,6 @@
 		242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F4722455D00800C3D8C3 /* Errors+Localized.swift */; };
 		242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
-		242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
 		242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift */; };
 		242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSReportsDetailReportViewController.swift */; };
 		242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift */; };
@@ -172,7 +171,6 @@
 		246FD175249B565400FD36F8 /* Environment+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246FD174249B565400FD36F8 /* Environment+AppStore.swift */; };
 		246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246FD174249B565400FD36F8 /* Environment+AppStore.swift */; };
 		24780B11242DFD2F003BB26C /* NSReportsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B10242DFD2F003BB26C /* NSReportsModuleView.swift */; };
-		24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B16242DFD7C003BB26C /* NSInformViewController.swift */; };
 		24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */; };
 		24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		24780B24242DFE6D003BB26C /* NSNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B23242DFE6D003BB26C /* NSNavigationController.swift */; };
@@ -614,7 +612,6 @@
 		247395B5249165BA00B30767 /* rm */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = rm; path = rm.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24780B06242DFCD9003BB26C /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		24780B10242DFD2F003BB26C /* NSReportsModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsModuleView.swift; sourceTree = "<group>"; };
-		24780B16242DFD7C003BB26C /* NSInformViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformViewController.swift; sourceTree = "<group>"; };
 		24780B19242DFDAE003BB26C /* NSModuleBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleBaseView.swift; sourceTree = "<group>"; };
 		24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingViewController.swift; sourceTree = "<group>"; };
 		24780B23242DFE6D003BB26C /* NSNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNavigationController.swift; sourceTree = "<group>"; };
@@ -1032,14 +1029,6 @@
 			path = Symptoms;
 			sourceTree = "<group>";
 		};
-		2443948324463BB4003ED582 /* InformFirstStep */ = {
-			isa = PBXGroup;
-			children = (
-				24780B16242DFD7C003BB26C /* NSInformViewController.swift */,
-			);
-			path = InformFirstStep;
-			sourceTree = "<group>";
-		};
 		2443948424463BCE003ED582 /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,7 +1112,6 @@
 			isa = PBXGroup;
 			children = (
 				2443948424463BCE003ED582 /* Base */,
-				2443948324463BB4003ED582 /* InformFirstStep */,
 				2443948224463B91003ED582 /* Symptoms */,
 				2443948124463B71003ED582 /* CodeInput */,
 				2443948624463BFB003ED582 /* Send */,
@@ -2484,7 +2472,6 @@
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
 				F86A6A812637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */,
 				6EB1D56B2636F76100981571 /* CheckIn.swift in Sources */,
-				242D2247245C4BD8005DAEA8 /* NSInformViewController.swift in Sources */,
 				F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617902638717800B56ADA /* NSDiaryEntryContentView.swift in Sources */,
@@ -2720,7 +2707,6 @@
 				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */,
 				6E889756261F228200508334 /* NSOnboardingBaseViewController.swift in Sources */,
-				24780B17242DFD7C003BB26C /* NSInformViewController.swift in Sources */,
 				DC1617912638717800B56ADA /* NSDiaryEmptyView.swift in Sources */,
 				6E3308752450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617952638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,

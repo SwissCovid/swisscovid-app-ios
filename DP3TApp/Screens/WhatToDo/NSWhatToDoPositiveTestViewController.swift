@@ -164,6 +164,7 @@ class NSWhatToDoPositiveTestViewController: NSViewController {
     // MARK: - Present
 
     func presentInformViewController(prefill: String? = nil) {
-        NSInformViewController.present(from: self, prefill: prefill)
+        let informVC = NSSendViewController(prefill: prefill)
+        informVC.presentInNavigationController(from: self, useLine: false)
     }
 }
