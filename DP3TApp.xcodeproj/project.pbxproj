@@ -536,6 +536,7 @@
 		F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */; };
 		F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
 		F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
+		F87E96B02639967100755AF1 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96AF2639967100755AF1 /* NSInfoViewController.swift */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
@@ -884,6 +885,7 @@
 		F87C370D258C2613008DCC81 /* NSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
 		F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
 		F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonItem.swift; sourceTree = "<group>"; };
+		F87E96AF2639967100755AF1 /* NSInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoViewController.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
 		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
@@ -1632,6 +1634,7 @@
 		DC286A27242CE1D2001D5344 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F87E96AE2639966400755AF1 /* Info */,
 				F8D581242589701C00307C2B /* Unsupported */,
 				F80465142525F58900311802 /* Tutorials */,
 				24780AF9242DF828003BB26C /* Navigation */,
@@ -1863,6 +1866,14 @@
 				F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */,
 			);
 			path = RadioButton;
+			sourceTree = "<group>";
+		};
+		F87E96AE2639966400755AF1 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				F87E96AF2639967100755AF1 /* NSInfoViewController.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		F8A6BE0A24C9BF8F00DE6B44 /* Disclaimer */ = {
@@ -2560,6 +2571,7 @@
 				8EF2A6EC249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
 				DCA3FFB6245048A50003F5AD /* NSUnderlinedButton.swift in Sources */,
 				242D227D245D6581005DAEA8 /* Endpoint.swift in Sources */,
+				F87E96B02639967100755AF1 /* NSInfoViewController.swift in Sources */,
 				2462BA152451FD150046906D /* AuthorizationModels.swift in Sources */,
 				AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */,
 				24780B1A242DFDAE003BB26C /* NSModuleBaseView.swift in Sources */,

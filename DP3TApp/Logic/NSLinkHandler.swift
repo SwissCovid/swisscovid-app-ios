@@ -37,10 +37,7 @@ class NSLinkHandler {
             appDelegate.tabBarController.currentTab = .homescreen
 
             // open WhatToDoPositiveTestVC
-            let reportsDetailVC = appDelegate.tabBarController.homescreen.presentWhatToDoPositiveTest(animated: false)
-
-            // open the informVC and pass the covidcode
-            reportsDetailVC.presentInformViewController(prefill: covidcode)
+            appDelegate.tabBarController.homescreen.presentInformViewController(prefill: covidcode)
             return true
         default:
             break

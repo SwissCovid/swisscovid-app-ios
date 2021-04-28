@@ -17,12 +17,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let infoBoxView = HomescreenInfoBoxView()
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
-    private let travelView = NSTravelModuleView()
     private let checkInView = NSCheckInHomescreenModuleView()
 
-    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
-
-    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-tested-positive"))
+    private let enterCovidCodeButton = NSButton(title: "inform_code_title".ub_localized, style: .outlineUppercase(.ns_purple))
+    private let enterCovidCodeButtonWrapper = UIView()
 
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
@@ -68,21 +66,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentEncountersDetail()
         }
 
-        whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoPositiveTest()
-        }
-
-        whatToDoSymptomsButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoSymptoms()
-        }
-
-        travelView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentTravelDetail()
-        }
-
         checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
@@ -98,6 +81,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             if let checkIn = CheckInManager.shared.currentCheckIn {
                 strongSelf.present(NSCheckInEditViewController(checkIn: checkIn), animated: true)
             }
+        }
+
+        enterCovidCodeButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentInformViewController()
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -164,13 +152,13 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(travelView)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
-        travelView.isHidden = true
+        enterCovidCodeButtonWrapper.addSubview(enterCovidCodeButton)
+        enterCovidCodeButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
+        }
 
-        stackScrollView.addArrangedView(whatToDoSymptomsButton)
-        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
-        stackScrollView.addArrangedView(whatToDoPositiveTestButton)
+        stackScrollView.addArrangedView(enterCovidCodeButtonWrapper)
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         #if ENABLE_TESTING
@@ -230,9 +218,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         handshakesModuleView.alpha = 0
         checkInView.alpha = 0
         reportsView.alpha = 0
-        travelView.alpha = 0
-        whatToDoSymptomsButton.alpha = 0
-        whatToDoPositiveTestButton.alpha = 0
+        enterCovidCodeButtonWrapper.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -240,7 +226,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.35, options: [.allowUserInteraction], animations: {
-                self.handshakesModuleView.alpha = 1
+                self.reportsView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
@@ -248,19 +234,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.reportsView.alpha = 1
-            }, completion: nil)
-
-            UIView.animate(withDuration: 0.3, delay: 0.8, options: [.allowUserInteraction], animations: {
-                self.travelView.alpha = 1
+                self.handshakesModuleView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
-                self.whatToDoSymptomsButton.alpha = 1
-            }, completion: nil)
-
-            UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
-                self.whatToDoPositiveTestButton.alpha = 1
+                self.enterCovidCodeButtonWrapper.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
@@ -282,10 +260,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         handshakesModuleView.uiState = state.homescreen.encounters
         reportsView.uiState = state.homescreen
 
-        let isInfected = state.homescreen.reports.report.isInfected
-        whatToDoSymptomsButton.isHidden = isInfected
-        whatToDoPositiveTestButton.isHidden = isInfected
-
         if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
             infoBoxView.hearingImpairedButtonTouched = { [weak self] in
                 guard let strongSelf = self else { return }
@@ -305,8 +279,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }
         }
 
-        travelView.isHidden = state.homescreen.countries.isEmpty
-
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
         lastState = state
@@ -322,6 +294,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
     }
 
+    func presentInformViewController(prefill: String? = nil) {
+        let informVC = NSSendViewController(prefill: prefill)
+        informVC.presentInNavigationController(from: self, useLine: false)
+    }
+
     private func presentTravelDetail() {
         navigationController?.pushViewController(NSTravelDetailViewController(), animated: true)
     }
@@ -331,13 +308,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             navigationController?.pushViewController(NSDebugscreenViewController(), animated: true)
         }
     #endif
-
-    @discardableResult
-    func presentWhatToDoPositiveTest(animated: Bool = true) -> NSWhatToDoPositiveTestViewController {
-        let vc = NSWhatToDoPositiveTestViewController()
-        navigationController?.pushViewController(vc, animated: animated)
-        return vc
-    }
 
     private func presentWhatToDoSymptoms() {
         navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
