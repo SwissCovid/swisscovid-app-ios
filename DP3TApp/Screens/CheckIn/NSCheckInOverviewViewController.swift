@@ -25,7 +25,7 @@ class NSCheckInOverviewViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "LOCALIZE ME"
+        title = "module_checkins_title".ub_localized
 
         setupView()
         setupButtonCallbacks()

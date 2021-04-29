@@ -15,27 +15,27 @@ extension SwissCovidLocationData.VenueType {
     var title: String {
         switch self {
         case .other, .UNRECOGNIZED:
-            return "Andere"
+            return "web_generator_category_other".ub_localized
         case .meetingRoom:
-            return "Sitzungsraum"
+            return "web_generator_category_room".ub_localized
         case .cafeteria:
-            return "Kafeteria"
+            return "web_generator_category_cafeteria".ub_localized
         case .privateEvent:
-            return "Privater Event"
+            return "web_generator_category_private_event".ub_localized
         case .canteen:
-            return "Kantine"
+            return "web_generator_category_canteen".ub_localized
         case .library:
-            return "Bibliothek"
+            return "web_generator_category_library".ub_localized
         case .lectureRoom:
-            return "Vorlesungssaal"
+            return "web_generator_category_lecture_room".ub_localized
         case .shop:
-            return "Laden"
+            return "web_generator_category_shop".ub_localized
         case .gym:
-            return "Fitnesscenter"
+            return "web_generator_category_gym".ub_localized
         case .kitchenArea:
-            return "Küchenbereich"
+            return "web_generator_category_kitchen_area".ub_localized
         case .officeSpace:
-            return "Büroräume"
+            return "web_generator_category_office_space".ub_localized
         }
     }
 
@@ -48,7 +48,7 @@ extension SwissCovidLocationData.VenueType {
 
 class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>, NSFormFieldRepresentable {
     var fieldTitle: String {
-        return "Kategorie"
+        return "web_generator_category_label".ub_localized
     }
 
     var isValid: Bool {

@@ -15,7 +15,7 @@ class NSCheckInDiaryModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "D I A R Y"
+        headerTitle = "diary_title".ub_localized
     }
 
     required init?(coder _: NSCoder) {

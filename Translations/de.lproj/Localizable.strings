@@ -1369,7 +1369,7 @@
 "meldungen_positive_tested_faq2_title" = "Wer wird benachrichtigt?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "Es werden alle Kontakte im Zeitraum Ihrer Ansteckungsphase vom {ONSET_DATE} bis zur Eingabe des Covidcodes benachrichtigt, wenn auf Grund der Distanz und der Dauer das Risiko einer Ansteckung bestand.";
+"meldungen_positive_tested_faq2_text" = "Es werden alle Kontakte im Zeitraum Ihrer Ansteckungsphase vom {ONSET_DATE} bis zur Eingabe des Covidcodes benachrichtigt, wenn auf Grund der Distanz und der Dauer die Möglichkeit einer Ansteckung bestand. ";
 
 /*Informieren: Danke Text Onset Date*/
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – heute";
@@ -1385,7 +1385,7 @@
 
 /*Leitfaden Info Popup Text*/
 /*Fuzzy*/
-"leitfaden_infopopup_text" = "Wenn Sie \"{BUTTON_TITLE}\" drücken, so verlassen Sie die App und wechseln auf die Website des SwissCovid Leitfaden. Dabei werden die Daten der letzten Begegnungen von möglichen Ansteckungen der Website mitgeschickt.";
+"leitfaden_infopopup_text" = "Wenn Sie \"{BUTTON_TITLE}\" drücken, verlassen Sie die App und wechseln auf die Website des SwissCovid Leitfadens. Dabei werden die Daten der letzten Begegnungen von möglichen Ansteckungen der Website mitgeschickt.";
 
 /*Leitfaden InfoPopup Titel*/
 "leitfaden_infopopup_title" = "Information SwissCovid Leitfaden";
@@ -1413,3 +1413,160 @@
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
 "meldungen_detail_free_test_tomorrow" = "In 1 Tag";
+
+/*Check-Ins: Titel vom Reminder Push*/
+"checkout_reminder_title" = "Check-out Erinnerung";
+
+/*Check-Ins: Check-out Reminder Push Text*/
+"checkout_reminder_text" = "Möchten Sie auschecken?";
+
+/*Check-Ins: Auto-Checkout Push Titel*/
+"auto_checkout_title" = "Automatischer Checkout";
+
+/*Check-Ins: Auto-checkout Push Text*/
+"auto_checkout_body" = "Sie wurden automatisch ausgecheckt.";
+
+/*Check-Ins: Qr-Scanner Text*/
+"qrscanner_scan_qr_text" = "QR-Code scannen und einchecken";
+
+/*Check-Ins: Fehler beim QR-Code scannen*/
+"qrscanner_error" = "Kein gültiger QR-Code!";
+
+/*Check-Ins: Anpassung Check-In Datumwahl von*/
+"datepicker_from" = "Von";
+
+/*Check-Ins: Datumsauswahl bis*/
+"datepicker_to" = "Bis";
+
+/*Check-Ins: Notiz hinzufügen zu Check-In*/
+"edit_mode_addcomment" = "Notiz hinzufügen";
+
+/*Check-Ins: Notiz zu Check-In Placeholder Text*/
+"edit_mode_comment_placeholder" = "zb. Mit wem waren Sie da?";
+
+/*Fertig Button Text*/
+"done_button" = "Fertig";
+
+/*Check-Ins: Titel für Erinnerung*/
+"checkin_set_reminder" = "Check-out Erinnerung";
+
+/*Check-Ins: Erinnerung Option Aus*/
+"reminder_option_off" = "Aus";
+
+/*Check-Ins: Tagebuch Zugriff Text*/
+"authenticate_for_diary" = "Authentifizieren Sie sich für den Zugriff auf das Tagebuch";
+
+/*Check-Ins: Android Notification Channel Name (nur sichtbar in System Settings)*/
+"android_reminder_channel_name" = "Check-out Erinnerungen";
+
+/*Check-Ins: Errinnerungsoption Stunden*/
+"reminder_option_hours" = "{HOURS} h";
+
+/*Check-Ins: Errinnerungsoption Minuten*/
+"reminder_option_minutes" = "{MINUTES}'";
+
+/*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
+"qr_scanner_no_camera_permission" = "Die App benötigt Zugriff auf die Kamera, um den QR-Code scannen zu können.";
+
+/*Check-Ins: Tagebuch Titel*/
+"diary_title" = "Tagebuch";
+
+/*Check-Ins: Button Titel zum Einchecken*/
+"checkin_button_title" = "Check-in";
+
+/*Check-Ins: iOS Kamera Erlaubnis Text*/
+"NSCameraUsageDescription" = "Die Kamera wird benötigt, um den QR-Code zu scannen.";
+
+/*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
+"NSFaceIDUsageDescription" = "Erlauben Sie Face-ID, um sicher auf Ihr Tagebuch zuzugreifen.";
+
+/*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
+"face_id_reason_text" = "Authentifizieren Sie sich für den Zugriff auf das Tagebuch";
+
+/*Check-Ins: Check-Out Button Title*/
+"checkout_button_title" = "Check-out";
+
+/*Check-Ins: Titel Modul auf Homescreen*/
+"module_checkins_title" = "Check-Ins";
+
+/*Check-Ins: Titel vom Check-In Screen*/
+"checkin_title" = "Check-In";
+
+/*Check-Ins: QR-Code erstellen Titel*/
+"checkins_create_qr_code" = "QR-Code erstellen";
+
+/*Check-Ins: Veranstaltungen Titel*/
+"events_title" = "Veranstaltungen";
+
+/*Check-Ins: Jetzt einchecken Button Titel*/
+"check_in_now_button_title" = "Jetzt einchecken";
+
+/*Check-Ins: Reminder Fehlermeldung Titel*/
+"checkin_reminder_settings_alert_title" = "Die Erinnerung konnte nicht gesetzt werden";
+
+/*Check-Ins: Erinnerungen Fehlermeldung Text*/
+"checkin_reminder_settings_alert_message" = "Damit Sie Check-out Erinnerungen erhalten, müssen Sie \\\"Mitteilungen\\\" in den App-Einstellungen erlauben.";
+
+/*Check-Ins: Reminder Popup Anpassen*/
+"checkin_reminder_option_open_settings" = "Anpassen";
+
+/*Check-Ins: Bearbeiten von Check-Ins Titel*/
+"edit_controller_title" = "Bearbeiten";
+
+/*Check-Ins: Tagebuch leeres Tagbuch Titel*/
+"empty_diary_title" = "Noch keine Tagebucheinträge vorhanden";
+
+/*Check-Ins: Tagebuch leer, Text*/
+"empty_diary_text" = "Die Veranstaltungen, die besucht wurden, erscheinen im Tagebuch nach dem Check-out.";
+
+/*Check-Ins: Kamera Erlaubnis Text*/
+"camera_permission_dialog_text" = "SwissCovid benötigt Zugriff auf die Kamera Ihres Gerätes. Die Kamera wird nur verwendet, um QR Codes zu scannen.";
+
+/*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
+"camera_permission_dialog_action" = "Kamera-Zugriff erlauben";
+
+/*Check-Ins: Veranstaltung Titel Placeholder*/
+/*Fuzzy*/
+"web_generator_title_placeholder" = "z.B. Raum- oder Eventname";
+
+/*Check-Ins: Veranstaltungen Titel Kategorie*/
+"web_generator_category_label" = "Kategorie";
+
+/*Check-Ins: Kategorie Andere*/
+"web_generator_category_other" = "Andere";
+
+/*Check-Ins: Kategorie Sitzungsraum*/
+"web_generator_category_meeting_room" = "Sitzungsraum";
+
+/*Check-Ins: Kategorie Kafeteria*/
+"web_generator_category_cafeteria" = "Kafeteria";
+
+/*Check-Ins: Kategorie Privater Event*/
+"web_generator_category_private_event" = "Privater Event";
+
+/*Check-Ins: Veranstaltungen Titel Titel*/
+"web_generator_title_label" = "Titel";
+
+/*Check-Ins: Veranstaltungen Detail PDF Button*/
+"show_pdf_button" = "Druck-PDF anzeigen";
+
+/*Check-Ins: Kategorie Kantine*/
+"web_generator_category_canteen" = "Kantine";
+
+/*Check-Ins: Kategorie Bibliothek*/
+"web_generator_category_library" = "Bibliothek";
+
+/*Check-Ins: Kategorie Vorlesungssaal*/
+"web_generator_category_lecture_room" = "Vorlesungssaal";
+
+/*Check-Ins: Kategorie Laden*/
+"web_generator_category_shop" = "Laden";
+
+/*Check-Ins: Kategorie Fitnesscenter*/
+"web_generator_category_gym" = "Fitnesscenter";
+
+/*Check-Ins: Kategorie Küchenbereich*/
+"web_generator_category_kitchen_area" = "Küchenbereich";
+
+/*Check-Ins: Kategorie Büroräume*/
+"web_generator_category_office_space" = "Büroräume";

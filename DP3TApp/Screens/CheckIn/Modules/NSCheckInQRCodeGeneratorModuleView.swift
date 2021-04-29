@@ -14,12 +14,14 @@ import Foundation
 class NSCheckInQRCodeGeneratorModuleView: NSModuleBaseView {
     let explainationLabel = NSLabel(.textLight)
     let generateButtonWrapper = UIView()
-    let generateButton = NSButton(title: "Generate QR Code")
+    let generateButton = NSButton(title: "checkins_create_qr_code".ub_localized)
 
     override init() {
         super.init()
 
-        headerTitle = "Events"
+        headerTitle = "events_title".ub_localized
+
+        // TODO: Localization
         explainationLabel.text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam"
 
         generateButtonWrapper.addSubview(generateButton)

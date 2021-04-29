@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Los contactos son detectados en segundo plano por Bluetooth con bajo consumo de energía";
 "NSBluetoothAlwaysUsageDescription" = "Los contactos son detectados en segundo plano por Bluetooth con bajo consumo de energía";
+"NSCameraUsageDescription" = "";
+"NSFaceIDUsageDescription" = "";

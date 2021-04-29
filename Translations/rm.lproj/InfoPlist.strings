@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Inscunters vegnan identifitgads via bluetooth, economisant l'energia.";
 "NSBluetoothAlwaysUsageDescription" = "Inscunters vegnan identifitgads via bluetooth, economisant l'energia.";
+"NSCameraUsageDescription" = "";
+"NSFaceIDUsageDescription" = "";

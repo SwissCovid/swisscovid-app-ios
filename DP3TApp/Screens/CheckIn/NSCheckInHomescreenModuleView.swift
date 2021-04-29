@@ -21,7 +21,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "Check-in"
+        headerTitle = "module_checkins_title".ub_localized
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }

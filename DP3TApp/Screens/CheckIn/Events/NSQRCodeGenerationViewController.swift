@@ -16,10 +16,10 @@ class NSQRCodeGenerationViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, textAlignment: .center)
-    private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "Titel"))
+    private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "web_generator_title_label".ub_localized))
     private let venueTypeSelector = NSFormField(inputControl: NSVenueTypeSelector())
 
-    private let createButton = NSButton(title: "QR-Code erstellen", style: .uppercase(.ns_lightBlue))
+    private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_lightBlue))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +51,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
-        titleLabel.text = "QR-Code erstellen"
+        titleLabel.text = "checkins_create_qr_code".ub_localized
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
         stackScrollView.addSpacerView(NSPadding.large)

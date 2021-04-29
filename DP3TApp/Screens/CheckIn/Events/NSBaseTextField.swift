@@ -39,7 +39,7 @@ class NSBaseTextField: UITextField, NSFormFieldRepresentable {
 
         font = NSLabelType.textBold.font
         textColor = .ns_lightBlue
-        let placeholderString = NSMutableAttributedString(string: "z.B. Raum- oder Eventname")
+        let placeholderString = NSMutableAttributedString(string: "web_generator_title_placeholder".ub_localized)
         placeholderString.setAttributes([
             .font: NSLabelType.textLight.font,
             .foregroundColor: NSLabelType.textLight.textColor,

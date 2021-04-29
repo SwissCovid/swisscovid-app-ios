@@ -603,7 +603,7 @@
 "inform_detail_faq1_title" = "O que é um código COVID?";
 
 /*Inform Detail: FAQ Text*/
-"inform_detail_faq1_text" = "As pessoas que testaram positivo para o coronavírus recebem um código COVID.\n\nIsto assegura que só os casos confirmados são assinalados na app.";
+"inform_detail_faq1_text" = "Pessoas com teste de coronavírus positivo (teste PCR ou teste rápido de antigénio) recebem um código Covid.\n\nIsso assegura que só casos confirmados sejam comunicados através do aplicativo.";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "Que dados são enviados?";
@@ -1271,7 +1271,7 @@
 "stats_cases_current_description" = "O gráfico mostra as novas infeções registadas nos últimos 28 dias, dando um panorama da evolução atual.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Você foi testado positivo e ainda não recebeu um código COVID após 4 horas? Nesse caso contacte a linha informativa do código COVID:";
+"inform_detail_infobox1_text" = "Foi testado positivo (teste PCR ou teste rápido de antigénio) e ainda não recebeu um código Covid depois de 4 hs?\nContacte a linha de informação coronavírus:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Ainda não recebeu um código COVID?";
@@ -1307,49 +1307,205 @@
 "stats_cases_rel_prev_week_popup_header" = "Variação em relação à semana anterior";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "Quem vai ser informado?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "No período da sua fase contagiosa de {ONSET_DATE} até à introdução do código Covid, todos os contactos são informados, se houver a possibilidade de infecção devido à distância e à duração.";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – hoje";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "Com isso, você ajuda a parar as cadeias de infecção.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "Os códigos privados do seu aplicativo foram enviados para o seguinte período:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "Ao introduzir um código Covid, o rastreamento deve estar ativado para que seja possível compartilhar os seus códigos privados.";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "Ao premir \"{BUTTON_TITLE}\" você sai do aplicativo e vai para o website do Guia SwissCovid. Nisso, os dados dos últimos encontros com possibilidade de infecção do website também são enviados.";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "Informação Guia SwissCovid";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "Compatível com a Alemanha";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "Você também vai ser informado, se esteve em contacto com uma pessoa que usa o aplicativo de advertência corona alemão e, mais tarde, teve um resultado positivo no teste e vice-versa. Para tal, as condições de utilização e a política de privacidade foram atualizadas.";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "Atualização SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Reset update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "Um teste de corona é útil e recomendado a partir de 5 dias após a data de contacto indicada.";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+"meldungen_detail_free_test_in_x_tagen" = "Em {COUNT} dias";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_now" = "Now";
+"meldungen_detail_free_test_now" = "Agora";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "Em 1 dia";
+
+/*Check-Ins: Titel vom Reminder Push*/
+"checkout_reminder_title" = "";
+
+/*Check-Ins: Check-out Reminder Push Text*/
+"checkout_reminder_text" = "";
+
+/*Check-Ins: Auto-Checkout Push Titel*/
+"auto_checkout_title" = "";
+
+/*Check-Ins: Auto-checkout Push Text*/
+"auto_checkout_body" = "";
+
+/*Check-Ins: Qr-Scanner Text*/
+"qrscanner_scan_qr_text" = "";
+
+/*Check-Ins: Fehler beim QR-Code scannen*/
+"qrscanner_error" = "";
+
+/*Check-Ins: Anpassung Check-In Datumwahl von*/
+"datepicker_from" = "";
+
+/*Check-Ins: Datumsauswahl bis*/
+"datepicker_to" = "";
+
+/*Check-Ins: Notiz hinzufügen zu Check-In*/
+"edit_mode_addcomment" = "";
+
+/*Check-Ins: Notiz zu Check-In Placeholder Text*/
+"edit_mode_comment_placeholder" = "";
+
+/*Fertig Button Text*/
+"done_button" = "";
+
+/*Check-Ins: Titel für Erinnerung*/
+"checkin_set_reminder" = "";
+
+/*Check-Ins: Erinnerung Option Aus*/
+"reminder_option_off" = "";
+
+/*Check-Ins: Tagebuch Zugriff Text*/
+"authenticate_for_diary" = "";
+
+/*Check-Ins: Android Notification Channel Name (nur sichtbar in System Settings)*/
+"android_reminder_channel_name" = "";
+
+/*Check-Ins: Errinnerungsoption Stunden*/
+"reminder_option_hours" = "";
+
+/*Check-Ins: Errinnerungsoption Minuten*/
+"reminder_option_minutes" = "";
+
+/*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
+"qr_scanner_no_camera_permission" = "";
+
+/*Check-Ins: Tagebuch Titel*/
+"diary_title" = "";
+
+/*Check-Ins: Button Titel zum Einchecken*/
+"checkin_button_title" = "";
+
+/*Check-Ins: iOS Kamera Erlaubnis Text*/
+"NSCameraUsageDescription" = "";
+
+/*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
+"NSFaceIDUsageDescription" = "";
+
+/*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
+"face_id_reason_text" = "";
+
+/*Check-Ins: Check-Out Button Title*/
+"checkout_button_title" = "";
+
+/*Check-Ins: Titel Modul auf Homescreen*/
+"module_checkins_title" = "";
+
+/*Check-Ins: Titel vom Check-In Screen*/
+"checkin_title" = "";
+
+/*Check-Ins: QR-Code erstellen Titel*/
+"checkins_create_qr_code" = "";
+
+/*Check-Ins: Veranstaltungen Titel*/
+"events_title" = "";
+
+/*Check-Ins: Jetzt einchecken Button Titel*/
+"check_in_now_button_title" = "";
+
+/*Check-Ins: Reminder Fehlermeldung Titel*/
+"checkin_reminder_settings_alert_title" = "";
+
+/*Check-Ins: Erinnerungen Fehlermeldung Text*/
+"checkin_reminder_settings_alert_message" = "";
+
+/*Check-Ins: Reminder Popup Anpassen*/
+"checkin_reminder_option_open_settings" = "";
+
+/*Check-Ins: Bearbeiten von Check-Ins Titel*/
+"edit_controller_title" = "";
+
+/*Check-Ins: Tagebuch leeres Tagbuch Titel*/
+"empty_diary_title" = "";
+
+/*Check-Ins: Tagebuch leer, Text*/
+"empty_diary_text" = "";
+
+/*Check-Ins: Kamera Erlaubnis Text*/
+"camera_permission_dialog_text" = "";
+
+/*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
+"camera_permission_dialog_action" = "";
+
+/*Check-Ins: Veranstaltung Titel Placeholder*/
+"web_generator_title_placeholder" = "";
+
+/*Check-Ins: Veranstaltungen Titel Kategorie*/
+"web_generator_category_label" = "";
+
+/*Check-Ins: Kategorie Andere*/
+"web_generator_category_other" = "";
+
+/*Check-Ins: Kategorie Sitzungsraum*/
+"web_generator_category_meeting_room" = "";
+
+/*Check-Ins: Kategorie Kafeteria*/
+"web_generator_category_cafeteria" = "";
+
+/*Check-Ins: Kategorie Privater Event*/
+"web_generator_category_private_event" = "";
+
+/*Check-Ins: Veranstaltungen Titel Titel*/
+"web_generator_title_label" = "";
+
+/*Check-Ins: Veranstaltungen Detail PDF Button*/
+"show_pdf_button" = "";
+
+/*Check-Ins: Kategorie Kantine*/
+"web_generator_category_canteen" = "";
+
+/*Check-Ins: Kategorie Bibliothek*/
+"web_generator_category_library" = "";
+
+/*Check-Ins: Kategorie Vorlesungssaal*/
+"web_generator_category_lecture_room" = "";
+
+/*Check-Ins: Kategorie Laden*/
+"web_generator_category_shop" = "";
+
+/*Check-Ins: Kategorie Fitnesscenter*/
+"web_generator_category_gym" = "";
+
+/*Check-Ins: Kategorie Küchenbereich*/
+"web_generator_category_kitchen_area" = "";
+
+/*Check-Ins: Kategorie Büroräume*/
+"web_generator_category_office_space" = "";

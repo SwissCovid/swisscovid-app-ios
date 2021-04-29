@@ -603,7 +603,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። ";
+"inform_detail_faq1_text" = "ሰባት ኮሮናቫይረስ ከምዘለዎም ምስዝረጋግጽ / ፖዚቲቭ ምስኮኑ (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ሓደ ኮቪድ-ኮድ ክወሃቡ እዮም።\n\nሽዑ ጥራይ ዝተረጋገጹ ጉዳያት በቲ ኤፕ ክሕበሩ ከምዝኾኑ ተረጋጊጹ።";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
@@ -1268,7 +1268,7 @@
 "stats_cases_current_description" = "እቲ ስእሊ ነቶም ዝተሓበሩ ሓድሽቲ ልበዳታት ኣብ ዝሓለፉ 28 መዓልትታት የርኢ። እዚ ሓፈሻዊ ሓበሬታ ብዛዕባ ግዝያዊ ምዕባለ ይህብ።";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "ኣወንታዊ ኮቪድ ኣባኹም ተረጋጊጹ፣ ድሕሪ 4 ሰዓት ናይ ኮቪድ ኮድ ገና ኣይተወሃብኩምን፧\nሽዑ ናይ ኮቪድ-ኮድ ሓበሬታ ስልኪ ርኸቡ፥";
+"inform_detail_infobox1_text" = "ፖዚቲቭ ተመርሚርኩም (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ከምኡ'ውን ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩምን፧ ሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "ናይ ኮቪድ ኮድ ገና የብልኩምን፧";
@@ -1304,49 +1304,205 @@
 "stats_cases_rel_prev_week_popup_header" = "ቅያር ካብ ዝሓለፈ ሰሙን";
 
 /*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_title" = "";
+"meldungen_positive_tested_faq2_title" = "መን ክሕበር እዩ፧";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "";
+"meldungen_positive_tested_faq2_text" = "ኩሎም ኣብ እዋንኩም መልከፍቲ ካብ {ONSET_DATE} ክሳብ ምእታው ኮቪድ-ኮድ ዝነበረኩም ርክባት ክሕበሩ እዮም፣ ብምኽንያት ርሕቐትን እዋንን ኣማራጺ ልበዳ እንድሕር ኔሩ።";
 
 /*Informieren: Danke Text Onset Date*/
-"inform_send_thankyou_text_onsetdate" = "";
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – ሎሚ";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "";
+"inform_send_thankyou_text_stop_infection_chains" = "ሽዑ ናይ ልበዳ ሰንሰለታት ንክቋረጹ ትሐባበሩ ኢኹም።";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
-"inform_send_thankyou_text_onsetdate_info" = "";
+"inform_send_thankyou_text_onsetdate_info" = "ግላውያን መፋትሕ ናይ ኤፕኩም ንዝስዕብ እዋን ተሰዲዶም ኔሮም፥";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "";
+"android_inform_tracing_enabled_explanation" = "ኣብ ምእታው ኮቪድ-ኮድ እቲ ምክትታል ክውላዕ ኣለዎ፣ ግላዊ መፍትሕኩም ክካፈል መታን ክከኣል።";
 
 /*Leitfaden Info Popup Text*/
-"leitfaden_infopopup_text" = "";
+"leitfaden_infopopup_text" = "መጠወቒ \"{BUTTON_TITLE}\" ትጥውቕዎ እንተኾይንኩም፣ ካብቲ ኤፕ ትወጽኡ ከምኡ'ውን ናብቲ መርበብ ኢንተርነት መምርሒ SwissCovid ክትቕይሩ። ሽዑ ሓበሬታ/ዳታ ናይ ተፈጺሞም ዝኾኑ ልበዳታት ናይቲ ዝሓለፈ ምርኽኻብ ካብቲ መርበብ ኢንተርነት እንተላይ ይስደዱ።";
 
 /*Leitfaden InfoPopup Titel*/
-"leitfaden_infopopup_title" = "";
+"leitfaden_infopopup_title" = "ሓበሬታ መምርሒ SwissCovid";
 
 /*Update Boarding: Titel*/
-"germany_update_boarding_title" = "";
+"germany_update_boarding_title" = "ምስ ጀርመን ዝሰማማዕ ";
 
 /*Update Boarding: Text*/
-"germany_update_boarding_text" = "";
+"germany_update_boarding_text" = "ዋላ ምስ ናይ መጠንቀቕታ ኮሮና ኤፕ ዝጥቐምን ድሓር ፖዚቲቭ ዝተመርመረን ሰብ ምርኽኻብ እንተነበረኩም ንስኹም ዋላ ክትሕበሩ ኢኹም። ሽዑ እቶም ናይ ኣጠቓቕማ ኩነታት ከምኡ'ውን ስምምዕ ምክልኻል ዳታ ክሕደሱ እዮም።";
 
 /*Update Boarding: Heading oben*/
-"germany_update_boarding_heading" = "";
+"germany_update_boarding_heading" = "ምምሕዳስ SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
 "reset_update_boarding" = "Reset update boarding";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "";
+"meldungen_detail_free_test_text" = "መርመራ ኮሮና ካብ 5ይ መዓልቲ ድሕሪ ዝተረኣየ ዕለት ርክብ ጠቓሚ እዩ ከምኡ'ውን ክግበር ይመርጽ።";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_in_x_tagen" = "In {COUNT} days";
+"meldungen_detail_free_test_in_x_tagen" = "ኣብ {COUNT} መዓልትታት";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_now" = "Now";
+"meldungen_detail_free_test_now" = "ሕጂ";
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
-"meldungen_detail_free_test_tomorrow" = "";
+"meldungen_detail_free_test_tomorrow" = "ኣብ 1 መዓልቲ";
+
+/*Check-Ins: Titel vom Reminder Push*/
+"checkout_reminder_title" = "";
+
+/*Check-Ins: Check-out Reminder Push Text*/
+"checkout_reminder_text" = "";
+
+/*Check-Ins: Auto-Checkout Push Titel*/
+"auto_checkout_title" = "";
+
+/*Check-Ins: Auto-checkout Push Text*/
+"auto_checkout_body" = "";
+
+/*Check-Ins: Qr-Scanner Text*/
+"qrscanner_scan_qr_text" = "";
+
+/*Check-Ins: Fehler beim QR-Code scannen*/
+"qrscanner_error" = "";
+
+/*Check-Ins: Anpassung Check-In Datumwahl von*/
+"datepicker_from" = "";
+
+/*Check-Ins: Datumsauswahl bis*/
+"datepicker_to" = "";
+
+/*Check-Ins: Notiz hinzufügen zu Check-In*/
+"edit_mode_addcomment" = "";
+
+/*Check-Ins: Notiz zu Check-In Placeholder Text*/
+"edit_mode_comment_placeholder" = "";
+
+/*Fertig Button Text*/
+"done_button" = "";
+
+/*Check-Ins: Titel für Erinnerung*/
+"checkin_set_reminder" = "";
+
+/*Check-Ins: Erinnerung Option Aus*/
+"reminder_option_off" = "";
+
+/*Check-Ins: Tagebuch Zugriff Text*/
+"authenticate_for_diary" = "";
+
+/*Check-Ins: Android Notification Channel Name (nur sichtbar in System Settings)*/
+"android_reminder_channel_name" = "";
+
+/*Check-Ins: Errinnerungsoption Stunden*/
+"reminder_option_hours" = "";
+
+/*Check-Ins: Errinnerungsoption Minuten*/
+"reminder_option_minutes" = "";
+
+/*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
+"qr_scanner_no_camera_permission" = "";
+
+/*Check-Ins: Tagebuch Titel*/
+"diary_title" = "";
+
+/*Check-Ins: Button Titel zum Einchecken*/
+"checkin_button_title" = "";
+
+/*Check-Ins: iOS Kamera Erlaubnis Text*/
+"NSCameraUsageDescription" = "";
+
+/*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
+"NSFaceIDUsageDescription" = "";
+
+/*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
+"face_id_reason_text" = "";
+
+/*Check-Ins: Check-Out Button Title*/
+"checkout_button_title" = "";
+
+/*Check-Ins: Titel Modul auf Homescreen*/
+"module_checkins_title" = "";
+
+/*Check-Ins: Titel vom Check-In Screen*/
+"checkin_title" = "";
+
+/*Check-Ins: QR-Code erstellen Titel*/
+"checkins_create_qr_code" = "";
+
+/*Check-Ins: Veranstaltungen Titel*/
+"events_title" = "";
+
+/*Check-Ins: Jetzt einchecken Button Titel*/
+"check_in_now_button_title" = "";
+
+/*Check-Ins: Reminder Fehlermeldung Titel*/
+"checkin_reminder_settings_alert_title" = "";
+
+/*Check-Ins: Erinnerungen Fehlermeldung Text*/
+"checkin_reminder_settings_alert_message" = "";
+
+/*Check-Ins: Reminder Popup Anpassen*/
+"checkin_reminder_option_open_settings" = "";
+
+/*Check-Ins: Bearbeiten von Check-Ins Titel*/
+"edit_controller_title" = "";
+
+/*Check-Ins: Tagebuch leeres Tagbuch Titel*/
+"empty_diary_title" = "";
+
+/*Check-Ins: Tagebuch leer, Text*/
+"empty_diary_text" = "";
+
+/*Check-Ins: Kamera Erlaubnis Text*/
+"camera_permission_dialog_text" = "";
+
+/*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
+"camera_permission_dialog_action" = "";
+
+/*Check-Ins: Veranstaltung Titel Placeholder*/
+"web_generator_title_placeholder" = "";
+
+/*Check-Ins: Veranstaltungen Titel Kategorie*/
+"web_generator_category_label" = "";
+
+/*Check-Ins: Kategorie Andere*/
+"web_generator_category_other" = "";
+
+/*Check-Ins: Kategorie Sitzungsraum*/
+"web_generator_category_meeting_room" = "";
+
+/*Check-Ins: Kategorie Kafeteria*/
+"web_generator_category_cafeteria" = "";
+
+/*Check-Ins: Kategorie Privater Event*/
+"web_generator_category_private_event" = "";
+
+/*Check-Ins: Veranstaltungen Titel Titel*/
+"web_generator_title_label" = "";
+
+/*Check-Ins: Veranstaltungen Detail PDF Button*/
+"show_pdf_button" = "";
+
+/*Check-Ins: Kategorie Kantine*/
+"web_generator_category_canteen" = "";
+
+/*Check-Ins: Kategorie Bibliothek*/
+"web_generator_category_library" = "";
+
+/*Check-Ins: Kategorie Vorlesungssaal*/
+"web_generator_category_lecture_room" = "";
+
+/*Check-Ins: Kategorie Laden*/
+"web_generator_category_shop" = "";
+
+/*Check-Ins: Kategorie Fitnesscenter*/
+"web_generator_category_gym" = "";
+
+/*Check-Ins: Kategorie Küchenbereich*/
+"web_generator_category_kitchen_area" = "";
+
+/*Check-Ins: Kategorie Büroräume*/
+"web_generator_category_office_space" = "";

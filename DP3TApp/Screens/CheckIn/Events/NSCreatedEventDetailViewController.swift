@@ -20,7 +20,7 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private let createdEvent: CreatedEvent
 
-    private let showPDFButton = NSButton(title: "Druck-PDF anzeigen")
+    private let showPDFButton = NSButton(title: "show_pdf_button".ub_localized)
 
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
@@ -28,6 +28,11 @@ class NSCreatedEventDetailViewController: NSViewController {
         super.init()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissSelf))
+
+        showPDFButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.sharePDF()
+        }
     }
 
     override func viewDidLoad() {
@@ -71,5 +76,33 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     @objc private func dismissSelf() {
         dismiss(animated: true, completion: nil)
+    }
+
+    private func sharePDF() {
+        let data = QRCodePDFGenerator.generate(from: createdEvent.qrCodeString)
+
+        let fileManager = FileManager.default
+
+        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let docURL = documentDirectory.appendingPathComponent("Scanned-Docs.pdf")
+        do {
+            try data?.write(to: docURL)
+        } catch {
+            print("error is \(error.localizedDescription)")
+        }
+
+        let fileName = "qrcode.pdf"
+        let documentDirURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let fileURL = documentDirURL?.appendingPathComponent(fileName)
+
+        if let path = fileURL?.path {
+            fileManager.createFile(atPath: path, contents: data, attributes: nil)
+            if fileManager.fileExists(atPath: path),
+               let pdf = NSData(contentsOfFile: path) {
+                let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [pdf], applicationActivities: nil)
+                activityViewController.popoverPresentationController?.sourceView = view
+                present(activityViewController, animated: true, completion: nil)
+            }
+        }
     }
 }

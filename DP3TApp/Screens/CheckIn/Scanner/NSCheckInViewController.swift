@@ -51,7 +51,7 @@ class NSCheckInViewController: NSViewController {
         setupQRView()
 
         startScanning()
-        title = "C H E C K - I N"
+        title = "checkin_title".ub_localized
 
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             guard let strongSelf = self else { return }
@@ -107,6 +107,7 @@ class NSCheckInViewController: NSViewController {
             make.top.equalToSuperview().inset(NSPadding.large * 2)
             make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
         }
+
         errorView.text = "ERROR"
     }
 
