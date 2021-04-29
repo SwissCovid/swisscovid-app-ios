@@ -12,20 +12,20 @@
 import Foundation
 
 class QRCodePDFGenerator {
-    static func generate(from url: String) -> Data? {
+    static func generate(from urlString: String) -> Data? {
+        guard let url = URL(string: urlString) else { return nil }
+
         // A4 size
         let pageRect = CGRect(x: 0, y: 0, width: 595.2, height: 841.8)
 
         let renderer = UIGraphicsPDFRenderer(bounds: pageRect)
 
-        let qrCodeImage = QRCodeUtils.createQrCodeImage(from: url)
+        let qrCodeImage = QRCodeUtils.createQrCodeImage(from: urlString)
 
-        let pixelSize: CGFloat = 3.0
+        let pixelSize: CGFloat = 2.0
 
         let data = renderer.pdfData { ctx in
             ctx.beginPage()
-
-            ctx.cgContext.setStrokeColor(UIColor.clear.cgColor)
 
             // draw color matrix as pixel images
             if let image = qrCodeImage {
@@ -41,6 +41,8 @@ class QRCodePDFGenerator {
                     }
                 }
             }
+
+            ctx.setURL(url, for: pageRect)
         }
 
         return data

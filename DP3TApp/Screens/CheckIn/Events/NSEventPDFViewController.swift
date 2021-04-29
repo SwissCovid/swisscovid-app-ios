@@ -35,6 +35,8 @@ class NSEventPDFViewController: NSViewController {
     // MARK: - Setup
 
     private func setupView() {
+        webView.navigationDelegate = self
+
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -104,5 +106,20 @@ class NSEventPDFViewController: NSViewController {
         let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = view
         present(activityViewController, animated: true, completion: nil)
+    }
+}
+
+extension NSEventPDFViewController: WKNavigationDelegate {
+    func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        switch navigationAction.navigationType {
+        case .other:
+            decisionHandler(.allow)
+            return
+
+        default:
+            break
+        }
+
+        decisionHandler(.cancel)
     }
 }
