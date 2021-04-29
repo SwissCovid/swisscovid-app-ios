@@ -1563,3 +1563,12 @@
 
 /*Check-Ins: Sichern Button bei Check-out*/
 "checkout_save_button_title" = "";
+
+/*Check-Ins: QR-Code scannen Button*/
+"scan_qr_code_button_title" = "";
+
+/*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_title" = "";
+
+/*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text" = "";
