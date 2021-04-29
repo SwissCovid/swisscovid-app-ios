@@ -1456,9 +1456,6 @@
 /*Check-Ins: Tagebuch Zugriff Text*/
 "authenticate_for_diary" = "Authentifizieren Sie sich für den Zugriff auf das Tagebuch";
 
-/*Check-Ins: Android Notification Channel Name (nur sichtbar in System Settings)*/
-"android_reminder_channel_name" = "Check-out Erinnerungen";
-
 /*Check-Ins: Errinnerungsoption Stunden*/
 "reminder_option_hours" = "{HOURS} h";
 
@@ -1530,6 +1527,7 @@
 "web_generator_title_placeholder" = "z.B. Raum- oder Eventname";
 
 /*Check-Ins: Veranstaltungen Titel Kategorie*/
+/*Fuzzy*/
 "web_generator_category_label" = "Kategorie";
 
 /*Check-Ins: Kategorie Andere*/
@@ -1570,3 +1568,4 @@
 
 /*Check-Ins: Kategorie Büroräume*/
 "web_generator_category_office_space" = "Büroräume";
+"bottom_nav_tab_info" = "Info";

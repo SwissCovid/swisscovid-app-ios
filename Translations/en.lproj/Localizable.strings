@@ -1424,9 +1424,6 @@
 /*Check-Ins: Tagebuch Zugriff Text*/
 "authenticate_for_diary" = "";
 
-/*Check-Ins: Android Notification Channel Name (nur sichtbar in System Settings)*/
-"android_reminder_channel_name" = "";
-
 /*Check-Ins: Errinnerungsoption Stunden*/
 "reminder_option_hours" = "";
 
@@ -1537,3 +1534,4 @@
 
 /*Check-Ins: Kategorie Büroräume*/
 "web_generator_category_office_space" = "";
+"bottom_nav_tab_info" = "";
