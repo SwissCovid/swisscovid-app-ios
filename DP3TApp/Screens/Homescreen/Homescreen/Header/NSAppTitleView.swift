@@ -132,7 +132,7 @@ class NSAppTitleView: NSTitleView {
 
     @objc
     private func hightlight() {
-        if uiState != .tracingActive {
+        if uiState != .tracingActive, uiState != .tracingDisabled {
             return // no highlight in error state
         }
 
@@ -147,7 +147,7 @@ class NSAppTitleView: NSTitleView {
 
     @objc
     private func spawnArcs(force: Bool = false) {
-        if uiState != .tracingActive {
+        if uiState != .tracingActive && uiState != .tracingDisabled {
             return // no arcs in error state
         }
 
@@ -192,7 +192,7 @@ class NSAppTitleView: NSTitleView {
             return
         }
 
-        uiState == .tracingActive ? activeView.startAnimating() : activeView.stopAnimating()
+        (uiState == .tracingActive || uiState == .tracingDisabled) ? activeView.startAnimating() : activeView.stopAnimating()
 
         backgroundView.state = uiState
         errorView.state = uiState

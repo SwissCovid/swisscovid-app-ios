@@ -61,10 +61,6 @@ class NSReportsModuleView: NSModuleBaseView {
         UIApplication.shared.open(settingsUrl)
     }))
 
-    private let tracingDisabledView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "meldungen_tracing_turned_off_title".ub_localized, text: "meldungen_tracing_not_active_warning".ub_localized, buttonTitle: "activate_tracing_button".ub_localized, action: { _ in
-        TracingManager.shared.startTracing()
-    }))
-
     private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_title".ub_localized, buttonTitle: nil, action: nil))
 
     private let unexpectedErrorWithRetryView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
@@ -104,15 +100,6 @@ class NSReportsModuleView: NSModuleBaseView {
 
         let reportsState = uiState.reports
 
-        @discardableResult
-        func showTracingDisabledErrorIfNeeded() -> Bool {
-            if uiState.encounters == .tracingDisabled {
-                views.append(tracingDisabledView)
-                return true
-            }
-            return false
-        }
-
         switch reportsState.report {
         case .noReport:
             views.append(noReportsView)
@@ -129,7 +116,6 @@ class NSReportsModuleView: NSModuleBaseView {
                     unexpectedErrorView.model?.errorCode = reportsState.errorCode
                     views.append(unexpectedErrorView)
                 }
-            } else if showTracingDisabledErrorIfNeeded() {
             } else if reportsState.syncProblemNetworkingError {
                 views.append(syncProblemView)
                 syncProblemView.model?.text = reportsState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
@@ -154,7 +140,6 @@ class NSReportsModuleView: NSModuleBaseView {
                 views.append(container)
             }
 
-            showTracingDisabledErrorIfNeeded()
         case .infected:
             views.append(infectedView)
             views.append(NSMoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))

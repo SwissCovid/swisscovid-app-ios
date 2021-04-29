@@ -37,6 +37,9 @@ class UserStorage {
 
     @KeychainPersisted(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]
+
+    @UBUserDefault(key: "hasStoppedTracingOnce", defaultValue: false)
+    var hasStoppedTracingOnce: Bool
 }
 
 enum KeychainMigration {

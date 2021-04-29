@@ -148,6 +148,7 @@ class TracingManager: NSObject {
         guard #available(iOS 12.5, *) else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
+        UserStorage.shared.hasStoppedTracingOnce = true
     }
 
     func resetSDK() {

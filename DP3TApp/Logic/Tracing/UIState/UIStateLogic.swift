@@ -187,11 +187,19 @@ class UIStateLogic {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
             case .permissonError:
-                tracing = .tracingPermissionError(code: nil)
+                if UserStorage.shared.hasStoppedTracingOnce {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingPermissionError(code: nil)
+                }
             case .authorizationUnknown:
                 tracing = .tracingAuthorizationUnknown
             case .exposureNotificationError:
-                tracing = .tracingPermissionError(code: error.errorCodeString)
+                if UserStorage.shared.hasStoppedTracingOnce {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingPermissionError(code: error.errorCodeString)
+                }
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now

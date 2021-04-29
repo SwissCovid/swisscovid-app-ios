@@ -36,6 +36,7 @@ class NSTracingErrorView: UIView {
         var buttonTitle: String?
         var errorCode: String?
         var action: ((NSTracingErrorView?) -> Void)?
+        var customColor: UIColor? = nil
     }
 
     var model: NSTracingErrorViewModel? {
@@ -102,6 +103,12 @@ class NSTracingErrorView: UIView {
         }
         stackView.addSpacerView(20)
 
+        if let color = model?.customColor {
+            imageView.image = imageView.image?.withRenderingMode(.alwaysTemplate)
+            imageView.tintColor = color
+            titleLabel.textColor = color
+        }
+
         stackView.layoutIfNeeded()
 
         updateAccessibility()
@@ -138,23 +145,46 @@ class NSTracingErrorView: UIView {
         return nil
     }
 
+    static var tracingDisabledInfoView: NSTracingErrorView {
+        let model = NSTracingErrorViewModel(icon: UIImage(named: "ic-info")!,
+                                            title: "tracing_turned_off_title".ub_localized,
+                                            text: "tracing_turned_off_text".ub_localized,
+                                            buttonTitle: "activate_tracing_button".ub_localized,
+                                            action: { _ in
+                                                TracingManager.shared.startTracing()
+                                            })
+        return NSTracingErrorView(model: model)
+    }
+
     static func model(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSTracingErrorViewModel? {
         switch state {
         case .tracingDisabled:
+            let icon: UIImage
+            let customColor: UIColor?
+            if UserStorage.shared.hasStoppedTracingOnce {
+                icon = UIImage(named: "ic-info")!
+                customColor = .ns_text
+            } else {
+                icon = UIImage(named: "ic-error")!
+                customColor = nil
+            }
+
             if isHomeScreen {
-                return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+                return NSTracingErrorViewModel(icon: icon,
                                                title: "tracing_turned_off_title".ub_localized,
                                                text: "tracing_turned_off_text".ub_localized,
                                                buttonTitle: "activate_tracing_button".ub_localized,
                                                action: { _ in
                                                    TracingManager.shared.startTracing()
-                                               })
+                                               },
+                                               customColor: customColor)
             } else {
-                return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+                return NSTracingErrorViewModel(icon: icon,
                                                title: "tracing_turned_off_title".ub_localized,
                                                text: "tracing_turned_off_detailed_text".ub_localized,
                                                buttonTitle: nil,
-                                               action: nil)
+                                               action: nil,
+                                               customColor: customColor)
             }
         case let .tracingPermissionError(code):
             let icon = UIImage(named: "ic-en-error")!

@@ -17,7 +17,7 @@ extension SwissCovidLocationData.VenueType {
         case .other, .UNRECOGNIZED:
             return "web_generator_category_other".ub_localized
         case .meetingRoom:
-            return "web_generator_category_room".ub_localized
+            return "web_generator_category_meeting_room".ub_localized
         case .cafeteria:
             return "web_generator_category_cafeteria".ub_localized
         case .privateEvent:
