@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSTracingErrorView: UIView {
+class NSErrorView: UIView {
     // MARK: - Views
 
     private let stackView = UIStackView()
@@ -29,21 +29,21 @@ class NSTracingErrorView: UIView {
 
     // MARK: - Model
 
-    struct NSTracingErrorViewModel {
+    struct NSErrorViewModel {
         var icon: UIImage
         var title: String
         var text: String
         var buttonTitle: String?
         var errorCode: String?
-        var action: ((NSTracingErrorView?) -> Void)?
+        var action: ((NSErrorView?) -> Void)?
         var customColor: UIColor? = nil
     }
 
-    var model: NSTracingErrorViewModel? {
+    var model: NSErrorViewModel? {
         didSet { update() }
     }
 
-    init(model: NSTracingErrorViewModel) {
+    init(model: NSErrorViewModel) {
         self.model = model
 
         super.init(frame: .zero)
@@ -137,26 +137,26 @@ class NSTracingErrorView: UIView {
 
     // MARK: - Factory
 
-    static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSTracingErrorView? {
+    static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSErrorView? {
         if let model = self.model(for: state, isHomeScreen: isHomeScreen) {
-            return NSTracingErrorView(model: model)
+            return NSErrorView(model: model)
         }
 
         return nil
     }
 
-    static var tracingDisabledInfoView: NSTracingErrorView {
-        let model = NSTracingErrorViewModel(icon: UIImage(named: "ic-info")!,
+    static var tracingDisabledInfoView: NSErrorView {
+        let model = NSErrorViewModel(icon: UIImage(named: "ic-info")!,
                                             title: "tracing_turned_off_title".ub_localized,
                                             text: "tracing_turned_off_text".ub_localized,
                                             buttonTitle: "activate_tracing_button".ub_localized,
                                             action: { _ in
                                                 TracingManager.shared.startTracing()
                                             })
-        return NSTracingErrorView(model: model)
+        return NSErrorView(model: model)
     }
 
-    static func model(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSTracingErrorViewModel? {
+    static func model(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSErrorViewModel? {
         switch state {
         case .tracingDisabled:
             let icon: UIImage
@@ -170,7 +170,7 @@ class NSTracingErrorView: UIView {
             }
 
             if isHomeScreen {
-                return NSTracingErrorViewModel(icon: icon,
+                return NSErrorViewModel(icon: icon,
                                                title: "tracing_turned_off_title".ub_localized,
                                                text: "tracing_turned_off_text".ub_localized,
                                                buttonTitle: "activate_tracing_button".ub_localized,
@@ -179,7 +179,7 @@ class NSTracingErrorView: UIView {
                                                },
                                                customColor: customColor)
             } else {
-                return NSTracingErrorViewModel(icon: icon,
+                return NSErrorViewModel(icon: icon,
                                                title: "tracing_turned_off_title".ub_localized,
                                                text: "tracing_turned_off_detailed_text".ub_localized,
                                                buttonTitle: nil,
@@ -191,7 +191,7 @@ class NSTracingErrorView: UIView {
             let title = "tracing_permission_error_title_ios".ub_localized.replaceSettingsString
             let text = "tracing_permission_error_text_ios".ub_localized.replaceSettingsString
             if #available(iOS 13.7, *) {
-                return NSTracingErrorViewModel(icon: icon,
+                return NSErrorViewModel(icon: icon,
                                                title: title,
                                                text: text,
                                                buttonTitle: "ios_tracing_permission_error_button".ub_localized,
@@ -201,7 +201,7 @@ class NSTracingErrorView: UIView {
                                                    NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
                                                })
             } else {
-                return NSTracingErrorViewModel(icon: icon,
+                return NSErrorViewModel(icon: icon,
                                                title: title,
                                                text: text,
                                                buttonTitle: "onboarding_gaen_button_activate".ub_localized,
@@ -214,7 +214,7 @@ class NSTracingErrorView: UIView {
             }
 
         case .tracingAuthorizationUnknown:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-en-error")!,
+            return NSErrorViewModel(icon: UIImage(named: "ic-en-error")!,
                                            title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
                                            text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
                                            buttonTitle: "onboarding_gaen_button_activate".ub_localized,
@@ -222,19 +222,19 @@ class NSTracingErrorView: UIView {
                                                TracingManager.shared.startTracing()
                                            })
         case .bluetoothTurnedOff:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
+            return NSErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
                                            title: "bluetooth_turned_off_title".ub_localized,
                                            text: "bluetooth_turned_off_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
         case .timeInconsistencyError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+            return NSErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "time_inconsistency_title".ub_localized,
                                            text: "time_inconsistency_text".ub_localized,
                                            buttonTitle: nil,
                                            action: nil)
         case .unexpectedError:
-            return NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!,
+            return NSErrorViewModel(icon: UIImage(named: "ic-error")!,
                                            title: "begegnungen_restart_error_title".ub_localized,
                                            text: "begegnungen_restart_error_text".ub_localized,
                                            buttonTitle: nil,
@@ -247,7 +247,7 @@ class NSTracingErrorView: UIView {
 
 // MARK: - Accessibility
 
-extension NSTracingErrorView {
+extension NSErrorView {
     func setupAccessibility() {
         isAccessibilityElement = false
         accessibilityElementsHidden = false

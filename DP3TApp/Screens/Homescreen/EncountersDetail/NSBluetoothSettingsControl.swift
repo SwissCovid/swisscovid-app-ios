@@ -59,7 +59,7 @@ class NSBluetoothSettingsControl: UIView {
 
     private let tracingActiveWrapper = UIStackView()
 
-    private lazy var tracingErrorView = NSTracingErrorView.tracingErrorView(for: state.tracing, isHomeScreen: false) ?? NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
+    private lazy var tracingErrorView = NSErrorView.tracingErrorView(for: state.tracing, isHomeScreen: false) ?? NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(), title: "", text: "", buttonTitle: nil, action: nil))
 
     var activeViewConstraint: Constraint?
     var inactiveViewConstraint: Constraint?
@@ -175,7 +175,7 @@ class NSBluetoothSettingsControl: UIView {
         self.state = state.encountersDetail
 
         switchControl.setOn(state.encountersDetail.tracingEnabled, animated: false)
-        tracingErrorView.model = NSTracingErrorView.model(for: state.encountersDetail.tracing, isHomeScreen: false)
+        tracingErrorView.model = NSErrorView.model(for: state.encountersDetail.tracing, isHomeScreen: false)
 
         switch state.encountersDetail.tracing {
         case .tracingActive:
