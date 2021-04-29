@@ -299,6 +299,20 @@ extension TracingManager: DP3TBackgroundHandler {
             localPush.handleTracingState(DP3TTracing.status.trackingState)
         }
 
+        group.enter()
+        queue.addOperation {
+            ProblematicEventsManager.shared.sync(isInBackground: UIApplication.shared.applicationState != .active) { _, needsNotification in
+                if needsNotification {
+                    NotificationManager.shared.showExposureNotification()
+                }
+
+                // data are updated -> reschedule background task warning triggers
+                NotificationManager.shared.resetBackgroundTaskWarningTriggers()
+
+                group.leave()
+            }
+        }
+
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 
         queue.addOperation(configOperation)

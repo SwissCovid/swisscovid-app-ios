@@ -52,7 +52,7 @@ class ProblematicEventsManager {
         exposureEvents = CrowdNotifier.getExposureEvents()
     }
 
-    public func sync(isBackgroundFetch: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
+    public func sync(isInBackground: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
         // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkIn
         CheckInManager.shared.checkoutAfter12HoursIfNecessary()
 
@@ -95,7 +95,7 @@ class ProblematicEventsManager {
                 }
             }
 
-            if isBackgroundFetch {
+            if isInBackground {
                 block()
             } else {
                 DispatchQueue.main.async(execute: block)
