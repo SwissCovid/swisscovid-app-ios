@@ -39,8 +39,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize CrowdNotifier SDK
         CrowdNotifier.initialize()
 
-        // setup sdk
+        // Initialize DP3TSDK
         TracingManager.shared.initialize()
+
+        // Initialize push manager
+        setupPushManager(launchOptions: launchOptions)
 
         // defer window initialization if app was launched in
         // background because of location change
@@ -254,6 +257,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ], for: .selected)
     }
 
+    // MARK: - Notifications
+
+    private func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        UNUserNotificationCenter.current().setNotificationCategories(NotificationManager.shared.notificationCategories)
+        UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
+    }
+
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+    }
+
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
+    }
+
     func handleNotification(type: NotificationType) {
         switch type {
         case .exposure:
@@ -267,7 +285,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     setupWindow()
                 }
 
-                // TODO: show exposure vc
+                // TODO: show exposure vc with newest
 
             case .noExposure:
                 break
@@ -278,7 +296,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 setupWindow()
             }
 
-            (window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: false)
+            tabBarController.currentNavigationController.popToRootViewController(animated: false)
 
             // TODO: show checkout vc
 
@@ -286,7 +304,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if window == nil {
                 setupWindow()
             } else {
-                (window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: false)
+                tabBarController.currentNavigationController.popToRootViewController(animated: false)
             }
         default:
             break

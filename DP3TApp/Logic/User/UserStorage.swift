@@ -17,6 +17,7 @@ class UserStorage {
     var hasCompletedOnboarding: Bool {
         didSet {
             TracingManager.shared.userHasCompletedOnboarding()
+            ProblematicEventsManager.shared.sync { _, _ in }
             hasCompletedUpdateBoardingGermany = true
         }
     }

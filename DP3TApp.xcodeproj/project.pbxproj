@@ -539,12 +539,12 @@
 		F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
 		F87E96B02639967100755AF1 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96AF2639967100755AF1 /* NSInfoViewController.swift */; };
 		F87E96B5263AA6A600755AF1 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96AF2639967100755AF1 /* NSInfoViewController.swift */; };
-		F87E96C1263ADA4800755AF1 /* PushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B7263ADA4800755AF1 /* PushRegistrationManager.swift */; };
-		F87E96C2263ADA4800755AF1 /* PushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B7263ADA4800755AF1 /* PushRegistrationManager.swift */; };
-		F87E96C3263ADA4800755AF1 /* PushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B8263ADA4800755AF1 /* PushHandler.swift */; };
-		F87E96C4263ADA4800755AF1 /* PushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B8263ADA4800755AF1 /* PushHandler.swift */; };
-		F87E96C5263ADA4800755AF1 /* PushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B9263ADA4800755AF1 /* PushRegistration.pb.swift */; };
-		F87E96C6263ADA4800755AF1 /* PushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B9263ADA4800755AF1 /* PushRegistration.pb.swift */; };
+		F87E96C1263ADA4800755AF1 /* NSPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B7263ADA4800755AF1 /* NSPushRegistrationManager.swift */; };
+		F87E96C2263ADA4800755AF1 /* NSPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B7263ADA4800755AF1 /* NSPushRegistrationManager.swift */; };
+		F87E96C3263ADA4800755AF1 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B8263ADA4800755AF1 /* NSPushHandler.swift */; };
+		F87E96C4263ADA4800755AF1 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B8263ADA4800755AF1 /* NSPushHandler.swift */; };
+		F87E96C5263ADA4800755AF1 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B9263ADA4800755AF1 /* NSPushRegistration.pb.swift */; };
+		F87E96C6263ADA4800755AF1 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96B9263ADA4800755AF1 /* NSPushRegistration.pb.swift */; };
 		F87E96C7263ADA4800755AF1 /* UBPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BB263ADA4800755AF1 /* UBPushManager.swift */; };
 		F87E96C8263ADA4800755AF1 /* UBPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BB263ADA4800755AF1 /* UBPushManager.swift */; };
 		F87E96C9263ADA4800755AF1 /* UBPushLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BC263ADA4800755AF1 /* UBPushLocalStorage.swift */; };
@@ -555,8 +555,8 @@
 		F87E96CE263ADA4800755AF1 /* UBPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BE263ADA4800755AF1 /* UBPushHandler.swift */; };
 		F87E96CF263ADA4800755AF1 /* UBPushManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BF263ADA4800755AF1 /* UBPushManagerError.swift */; };
 		F87E96D0263ADA4800755AF1 /* UBPushManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96BF263ADA4800755AF1 /* UBPushManagerError.swift */; };
-		F87E96D1263ADA4800755AF1 /* PushRegistration.proto in Sources */ = {isa = PBXBuildFile; fileRef = F87E96C0263ADA4800755AF1 /* PushRegistration.proto */; };
-		F87E96D2263ADA4800755AF1 /* PushRegistration.proto in Sources */ = {isa = PBXBuildFile; fileRef = F87E96C0263ADA4800755AF1 /* PushRegistration.proto */; };
+		F87E96D7263AEA9100755AF1 /* OSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96D6263AEA9100755AF1 /* OSLogger.swift */; };
+		F87E96D8263AEA9100755AF1 /* OSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96D6263AEA9100755AF1 /* OSLogger.swift */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
@@ -907,15 +907,16 @@
 		F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
 		F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonItem.swift; sourceTree = "<group>"; };
 		F87E96AF2639967100755AF1 /* NSInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoViewController.swift; sourceTree = "<group>"; };
-		F87E96B7263ADA4800755AF1 /* PushRegistrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushRegistrationManager.swift; sourceTree = "<group>"; };
-		F87E96B8263ADA4800755AF1 /* PushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushHandler.swift; sourceTree = "<group>"; };
-		F87E96B9263ADA4800755AF1 /* PushRegistration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushRegistration.pb.swift; sourceTree = "<group>"; };
+		F87E96B7263ADA4800755AF1 /* NSPushRegistrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushRegistrationManager.swift; sourceTree = "<group>"; };
+		F87E96B8263ADA4800755AF1 /* NSPushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushHandler.swift; sourceTree = "<group>"; };
+		F87E96B9263ADA4800755AF1 /* NSPushRegistration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushRegistration.pb.swift; sourceTree = "<group>"; };
 		F87E96BB263ADA4800755AF1 /* UBPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushManager.swift; sourceTree = "<group>"; };
 		F87E96BC263ADA4800755AF1 /* UBPushLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushLocalStorage.swift; sourceTree = "<group>"; };
 		F87E96BD263ADA4800755AF1 /* UBPushRegistrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushRegistrationManager.swift; sourceTree = "<group>"; };
 		F87E96BE263ADA4800755AF1 /* UBPushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushHandler.swift; sourceTree = "<group>"; };
 		F87E96BF263ADA4800755AF1 /* UBPushManagerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushManagerError.swift; sourceTree = "<group>"; };
 		F87E96C0263ADA4800755AF1 /* PushRegistration.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = PushRegistration.proto; sourceTree = "<group>"; };
+		F87E96D6263AEA9100755AF1 /* OSLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSLogger.swift; sourceTree = "<group>"; };
 		F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TracingLocalPushTests.swift; sourceTree = "<group>"; };
 		F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+localizedImage.swift"; sourceTree = "<group>"; };
 		F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigResponseBodyTests.swift; sourceTree = "<group>"; };
@@ -1021,6 +1022,7 @@
 				F830798E24928EC4005D3C65 /* LoggingStorage.swift */,
 				8EB23D77245AF2C30073E83A /* RandomGenerators.swift */,
 				242D21D0245C3853005DAEA8 /* Logger.swift */,
+				F87E96D6263AEA9100755AF1 /* OSLogger.swift */,
 				A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */,
 				F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */,
 				F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */,
@@ -1911,9 +1913,9 @@
 		F87E96B6263ADA4800755AF1 /* Push */ = {
 			isa = PBXGroup;
 			children = (
-				F87E96B7263ADA4800755AF1 /* PushRegistrationManager.swift */,
-				F87E96B8263ADA4800755AF1 /* PushHandler.swift */,
-				F87E96B9263ADA4800755AF1 /* PushRegistration.pb.swift */,
+				F87E96B7263ADA4800755AF1 /* NSPushRegistrationManager.swift */,
+				F87E96B8263ADA4800755AF1 /* NSPushHandler.swift */,
+				F87E96B9263ADA4800755AF1 /* NSPushRegistration.pb.swift */,
 				F87E96BA263ADA4800755AF1 /* UBPush */,
 				F87E96C0263ADA4800755AF1 /* PushRegistration.proto */,
 			);
@@ -2412,7 +2414,7 @@
 				F86A6A842637F93D003CAC1B /* UICollection+NS.swift in Sources */,
 				F851223E250A2676009BE733 /* NSChartLineView.swift in Sources */,
 				DC1617842638717800B56ADA /* NSRemoveFromDiaryWarningViewController.swift in Sources */,
-				F87E96C2263ADA4800755AF1 /* PushRegistrationManager.swift in Sources */,
+				F87E96C2263ADA4800755AF1 /* NSPushRegistrationManager.swift in Sources */,
 				6E9D79262625C02D005C7B7F /* NSReportsLeitfadenInfoPopupViewController.swift in Sources */,
 				DC3B56C925EE3F8E0075B5CE /* NSCovidCodesStatisticsModuleView.swift in Sources */,
 				DCE139832638092D0093D8F6 /* QRCodeGenerationConstants.swift in Sources */,
@@ -2454,6 +2456,7 @@
 				F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */,
 				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
 				6EB1D56A2636F76100981571 /* ProblematicEvents.pb.swift in Sources */,
+				F87E96D8263AEA9100755AF1 /* OSLogger.swift in Sources */,
 				F84089F22493A2EF00A66CD1 /* KeychainPersisted.swift in Sources */,
 				242D2214245C4BD8005DAEA8 /* NSDebugScreenSDKStatusView.swift in Sources */,
 				242D2215245C4BD8005DAEA8 /* NSExplanationView.swift in Sources */,
@@ -2482,7 +2485,7 @@
 				F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */,
 				F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				F80E40742509039400876906 /* NSStatisticsChartView.swift in Sources */,
-				F87E96C4263ADA4800755AF1 /* PushHandler.swift in Sources */,
+				F87E96C4263ADA4800755AF1 /* NSPushHandler.swift in Sources */,
 				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
 				DCE1398E26382B5E0093D8F6 /* CreatedEventsManager.swift in Sources */,
 				F830799424929090005D3C65 /* LoggingStorage.swift in Sources */,
@@ -2492,7 +2495,7 @@
 				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
-				F87E96C6263ADA4800755AF1 /* PushRegistration.pb.swift in Sources */,
+				F87E96C6263ADA4800755AF1 /* NSPushRegistration.pb.swift in Sources */,
 				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
@@ -2540,7 +2543,6 @@
 				242D2241245C4BD8005DAEA8 /* NSInformThankYouViewController.swift in Sources */,
 				242D2242245C4BD8005DAEA8 /* NSWhatToDoButton.swift in Sources */,
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
-				F87E96D2263ADA4800755AF1 /* PushRegistration.proto in Sources */,
 				DC1617A02638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */,
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */,
@@ -2624,13 +2626,13 @@
 				AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */,
 				6E9A98C52637003600BCBC8A /* DateHelpers+NS.swift in Sources */,
 				6E33087324507B6A00913B0E /* NSReportsDetailNoReportsTitleView.swift in Sources */,
-				F87E96D1263ADA4800755AF1 /* PushRegistration.proto in Sources */,
 				6EB1D55D2636F65300981571 /* NotificationManager.swift in Sources */,
 				DC702B17243F70060066C773 /* UIView+NS.swift in Sources */,
 				6EFF9AE3245AAFC800C98FF3 /* UIImage+UBHelpers.m in Sources */,
 				24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */,
+				F87E96D7263AEA9100755AF1 /* OSLogger.swift in Sources */,
 				F87E96C9263ADA4800755AF1 /* UBPushLocalStorage.swift in Sources */,
-				F87E96C1263ADA4800755AF1 /* PushRegistrationManager.swift in Sources */,
+				F87E96C1263ADA4800755AF1 /* NSPushRegistrationManager.swift in Sources */,
 				24780B24242DFE6D003BB26C /* NSNavigationController.swift in Sources */,
 				F862124E257A727E0043351E /* NSLinkHandler.swift in Sources */,
 				6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */,
@@ -2726,7 +2728,7 @@
 				6E6E5186242F9586006E532E /* NSCheckBoxView.swift in Sources */,
 				DC1617892638717800B56ADA /* NSDiaryCollectionView.swift in Sources */,
 				F86A6A762637F226003CAC1B /* CheckInExposure.swift in Sources */,
-				F87E96C5263ADA4800755AF1 /* PushRegistration.pb.swift in Sources */,
+				F87E96C5263ADA4800755AF1 /* NSPushRegistration.pb.swift in Sources */,
 				6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */,
 				6EFF9AE5245AD18D00C98FF3 /* NSInformTracingEndViewController.swift in Sources */,
 				6E6E5171242F5026006E532E /* ConfigResponseBody.swift in Sources */,
@@ -2811,7 +2813,7 @@
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
 				2485F47624560EDC00C3D8C3 /* UIStateModel.swift in Sources */,
 				F83ECEEE2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
-				F87E96C3263ADA4800755AF1 /* PushHandler.swift in Sources */,
+				F87E96C3263ADA4800755AF1 /* NSPushHandler.swift in Sources */,
 				F80E405C2508D3E600876906 /* NSTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

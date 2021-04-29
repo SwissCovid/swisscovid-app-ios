@@ -35,6 +35,8 @@ class ProblematicEventsManager {
     @UBUserDefault(key: "ch.admin.bag.dp3t.exposure.notifiedIds", defaultValue: [])
     private(set) var notifiedIds: [String]
 
+    private let logger = OSLogger(ProblematicEventsManager.self, category: "ProblematicEventsManager")
+
     private var exposureEvents: [ExposureEvent] {
         didSet { UIStateManager.shared.refresh() }
     }
@@ -53,6 +55,7 @@ class ProblematicEventsManager {
     }
 
     public func sync(isInBackground: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
+        logger.trace()
         // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkIn
         CheckInManager.shared.checkoutAfter12HoursIfNecessary()
 
@@ -76,6 +79,7 @@ class ProblematicEventsManager {
 
             if let bundleTagString = (response as? HTTPURLResponse)?.allHeaderFields.getCaseInsensitiveValue(key: "x-key-bundle-tag") as? String,
                let bundleTag = Int(bundleTagString) {
+                strongSelf.logger.debug("received new lastKeyBundleTag: %{public}d", bundleTag)
                 strongSelf.lastKeyBundleTag = bundleTag
             }
 
@@ -89,8 +93,10 @@ class ProblematicEventsManager {
                     let newCheckInIds = strongSelf.exposureEvents.map { $0.checkinId }.filter { !strongSelf.notifiedIds.contains($0) }
                     strongSelf.notifiedIds.append(contentsOf: newCheckInIds)
                     let needsNewNotification = !newCheckInIds.isEmpty
+                    strongSelf.logger.error("needsNewNotification: %{public}@", needsNewNotification ? "true" : "false")
                     completion(true, needsNewNotification)
                 } else {
+                    strongSelf.logger.error("no data returned from backend")
                     completion(false, false)
                 }
             }

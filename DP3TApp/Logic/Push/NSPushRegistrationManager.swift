@@ -11,9 +11,9 @@
 
 import UIKit
 
-class PushRegistrationManager: UBPushRegistrationManager {
+class NSPushRegistrationManager: UBPushRegistrationManager {
     override var pushRegistrationRequest: URLRequest? {
-        var pushRegistration = PushRegistration()
+        var pushRegistration = NSPushRegistration()
         pushRegistration.version = 1
         pushRegistration.deviceID = Device.deviceID
         pushRegistration.pushToken = pushToken ?? ""

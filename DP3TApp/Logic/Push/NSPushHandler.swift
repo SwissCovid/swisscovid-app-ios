@@ -12,7 +12,7 @@
 import Foundation
 import UIKit
 
-class PushHandler: UBPushHandler {
+class NSPushHandler: UBPushHandler {
     override func showInAppPushDetails(for notification: UBPushNotification) {
         guard let identifier = notification.categoryIdentifier, let category = NotificationType(rawValue: identifier) else { return }
         (UIApplication.shared.delegate as? AppDelegate)?.handleNotification(type: category)

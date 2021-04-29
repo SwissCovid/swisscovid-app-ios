@@ -63,7 +63,7 @@ enum PushType: SwiftProtobuf.Enum {
 
 #endif // swift(>=4.2)
 
-struct PushRegistration {
+struct NSPushRegistration {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -91,7 +91,7 @@ extension PushType: SwiftProtobuf._ProtoNameProviding {
     ]
 }
 
-extension PushRegistration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension NSPushRegistration: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
     static let protoMessageName: String = "PushRegistration"
     static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
         1: .same(proto: "version"),
@@ -131,7 +131,7 @@ extension PushRegistration: SwiftProtobuf.Message, SwiftProtobuf._MessageImpleme
         try unknownFields.traverse(visitor: &visitor)
     }
 
-    static func == (lhs: PushRegistration, rhs: PushRegistration) -> Bool {
+    static func == (lhs: NSPushRegistration, rhs: NSPushRegistration) -> Bool {
         if lhs.version != rhs.version { return false }
         if lhs.pushToken != rhs.pushToken { return false }
         if lhs.pushType != rhs.pushType { return false }

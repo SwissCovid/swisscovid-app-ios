@@ -30,6 +30,8 @@ class CheckInManager {
         didSet { UIStateManager.shared.refresh() }
     }
 
+    private let logger = OSLogger(CheckInManager.self, category: "CheckInManager")
+
     // MARK: - Public API
 
     public func getDiary() -> [CheckIn] {
@@ -37,6 +39,7 @@ class CheckInManager {
     }
 
     public func cleanUpOldData(maxDaysToKeep: Int) {
+        logger.trace()
         guard maxDaysToKeep > 0 else {
             diary = []
             return
@@ -52,10 +55,12 @@ class CheckInManager {
     }
 
     public func checkIn(qrCode: String, venueInfo: VenueInfo, createdEventId: String? = nil) {
+        logger.trace()
         currentCheckIn = CheckIn(identifier: "", qrCode: qrCode, checkInTime: Date(), venue: venueInfo, createdEventId: createdEventId)
     }
 
     public func checkOut() {
+        logger.trace()
         if var cc = currentCheckIn, let outTime = cc.checkOutTime {
             // This is the last moment we can ask the user for the required notification permission.
             // After the first checkout, it's possible that a background update triggers a match and therefore a notification
@@ -80,6 +85,7 @@ class CheckInManager {
     }
 
     public func checkoutAfter12HoursIfNecessary() {
+        logger.trace()
         #if DEBUG
             let timeInterval: TimeInterval = .minute * 12
         #else
