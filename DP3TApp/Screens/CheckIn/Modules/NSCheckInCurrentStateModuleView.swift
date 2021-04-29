@@ -21,6 +21,8 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
 
     override init() {
         super.init()
+
+        headerTitle = "module_checkins_title".ub_localized
         checkedInView.isHidden = true
         checkedOutView.isHidden = true
 

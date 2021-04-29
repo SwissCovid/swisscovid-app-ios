@@ -19,7 +19,6 @@ class NSCheckInViewController: NSViewController {
     private let errorContainer = UIView()
     private let errorView = NSLabel(.title)
 
-    private let requestLabel = NSLabel(.textLight, textAlignment: .center)
     private let qrErrorLabel = NSLabel(.textBold, textColor: UIColor.ns_red, textAlignment: .center)
 
     private var lastQrCode: String?
@@ -53,13 +52,17 @@ class NSCheckInViewController: NSViewController {
         view.backgroundColor = .ns_backgroundDark
         setupQRView()
 
-        startScanning()
         title = "checkin_title".ub_localized
 
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.startScanning()
         }
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        startScanning()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -82,14 +85,6 @@ class NSCheckInViewController: NSViewController {
 
         qrOverlay.snp.makeConstraints { make in
             make.edges.equalToSuperview()
-        }
-
-        view.addSubview(requestLabel)
-        requestLabel.text = "qrscanner_scan_qr_text".ub_localized
-
-        requestLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(NSPadding.large)
-            make.left.right.equalToSuperview().inset(NSPadding.medium)
         }
 
         view.addSubview(qrErrorLabel)
@@ -143,7 +138,7 @@ class NSCheckInViewController: NSViewController {
         errorContainer.alpha = 0.0
         qrView?.startScanning()
         qrErrorLabel.alpha = 0.0
-        qrOverlay.scannerOverlay.lineColor = .ns_red
+        qrOverlay.scannerOverlay.lineColor = .ns_darkBlueBackground
     }
 
     deinit {

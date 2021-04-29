@@ -1503,3 +1503,26 @@
 /*Check-Ins: Kategorie Büroräume*/
 "web_generator_category_office_space" = "";
 "bottom_nav_tab_info" = "";
+"error_network_title" = "";
+"error_network_text" = "";
+"error_action_retry" = "";
+"error_notification_deactivated_title" = "";
+"error_notification_deactivated_text" = "";
+"error_action_change_settings" = "";
+"error_camera_permission_title" = "";
+"error_camera_permission_text" = "";
+"error_title" = "";
+"qr_scanner_error_code_not_yet_valid" = "";
+"qr_scanner_error_code_not_valid_anymore" = "";
+"error_already_checked_in" = "";
+"error_update_text" = "";
+"error_update_title" = "";
+"error_action_update" = "";
+"android_crowdnotifier_notification_channel_name" = "";
+"ongoing_notification_checkout_quick_action" = "";
+"reminder_notification_snooze_action" = "";
+"android_ongoing_checkin_notification_channel_name" = "";
+"ongoing_notification_title" = "";
+
+/*Check-Ins: Sichern Button bei Check-out*/
+"checkout_save_button_title" = "";

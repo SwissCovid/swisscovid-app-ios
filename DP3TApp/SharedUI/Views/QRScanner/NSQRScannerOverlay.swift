@@ -15,6 +15,8 @@ class NSQRScannerFullOverlayView: UIView {
     public let scannerOverlay = NSQRScannerOverlay()
     private let fillLayer = CAShapeLayer()
 
+    private let requestLabel = NSLabel(.textLight, textAlignment: .center)
+
     init() {
         super.init(frame: .zero)
         setup()
@@ -31,8 +33,16 @@ class NSQRScannerFullOverlayView: UIView {
 
         scannerOverlay.snp.makeConstraints { make in
             make.height.equalTo(self.scannerOverlay.snp.width)
-            make.top.equalToSuperview().inset(3.0 * NSPadding.large)
-            make.left.right.equalToSuperview().inset(NSPadding.large + NSPadding.small - scannerOverlay.lineWidth * 1.5)
+            make.centerY.equalToSuperview().offset(-NSPadding.medium - NSPadding.large)
+            make.left.right.equalToSuperview().inset(2.0 * NSPadding.medium + scannerOverlay.lineWidth * 1.5)
+        }
+
+        addSubview(requestLabel)
+        requestLabel.text = "qrscanner_scan_qr_text".ub_localized
+
+        requestLabel.snp.makeConstraints { make in
+            make.bottom.equalTo(scannerOverlay.snp.top).inset(-2.0 * NSPadding.large)
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
         }
     }
 

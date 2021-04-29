@@ -79,7 +79,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         checkInView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
             if let checkIn = CheckInManager.shared.currentCheckIn {
-                strongSelf.present(NSCheckInEditViewController(checkIn: checkIn), animated: true)
+                let checkoutVC = NSCheckInEditViewController()
+                checkoutVC.presentInNavigationController(from: strongSelf, useLine: false)
             }
         }
 

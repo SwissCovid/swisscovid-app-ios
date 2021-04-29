@@ -39,7 +39,6 @@ class NSCheckInEditViewController: NSViewController {
         isCurrentCheckIn = false
         self.checkIn = checkIn
         super.init()
-
         title = "edit_controller_title".ub_localized
     }
 

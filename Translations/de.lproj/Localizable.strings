@@ -1569,3 +1569,26 @@
 /*Check-Ins: Kategorie Büroräume*/
 "web_generator_category_office_space" = "Büroräume";
 "bottom_nav_tab_info" = "Info";
+"error_network_title" = "Netzwerk Fehler";
+"error_network_text" = "Überprüfen Sie Ihre Internet Verbindung.";
+"error_action_retry" = "Erneut versuchen";
+"error_notification_deactivated_title" = "Mitteilungen deaktiviert";
+"error_notification_deactivated_text" = "Ändern Sie die Einstellungen, um bei einer Meldung direkt informiert zu werden.";
+"error_action_change_settings" = "Einstellungen ändern";
+"error_camera_permission_title" = "Kein Zugriff auf Kamera";
+"error_camera_permission_text" = "Die App benötigt Zugriff auf die Kamera, um den QR-Code scannen zu können.";
+"error_title" = "Fehler";
+"qr_scanner_error_code_not_yet_valid" = "QR-Code noch nicht gültig";
+"qr_scanner_error_code_not_valid_anymore" = "QR-Code nicht mehr gültig";
+"error_already_checked_in" = "Sie sind bereits eingecheckt.";
+"error_update_text" = "Dieser QR Code ist nicht kompatibel mit der installierten App Version. Führen Sie ein Update der App durch, um den QR Code zu scannen.";
+"error_update_title" = "Update benötigt";
+"error_action_update" = "Jetzt updaten";
+"android_crowdnotifier_notification_channel_name" = "CrowdNotifier Meldungen";
+"ongoing_notification_checkout_quick_action" = "Check out";
+"reminder_notification_snooze_action" = "Snooze";
+"android_ongoing_checkin_notification_channel_name" = "Permanente Checkin Meldung";
+"ongoing_notification_title" = "Sie sind eingecheckt seit {TIME} Uhr.";
+
+/*Check-Ins: Sichern Button bei Check-out*/
+"checkout_save_button_title" = "Sichern";

@@ -33,6 +33,8 @@ class NSCheckInConfirmViewController: NSViewController {
         createdEventId = nil
 
         super.init()
+
+        title = "checkin_title".ub_localized
     }
 
     init(createdEvent: CreatedEvent) {
@@ -41,6 +43,8 @@ class NSCheckInConfirmViewController: NSViewController {
         createdEventId = createdEvent.id
 
         super.init()
+
+        title = "checkin_title".ub_localized
     }
 
     // MARK: - View
@@ -100,13 +104,7 @@ class NSCheckInConfirmViewController: NSViewController {
             }
 
             if let navVC = strongSelf.navigationController {
-                if let viewControllers = strongSelf.navigationController?.viewControllers,
-                   viewControllers[viewControllers.count - 2] is NSCheckInViewController {
-                    let newVCs = Array(viewControllers.prefix(viewControllers.count - 2))
-                    navVC.setViewControllers(newVCs, animated: true)
-                } else {
-                    navVC.popToRootViewController(animated: true)
-                }
+                navVC.popToRootViewController(animated: true)
             } else {
                 strongSelf.dismiss(animated: true, completion: nil)
             }
@@ -131,20 +129,28 @@ class NSCheckInConfirmViewController: NSViewController {
             make.bottom.equalTo(checkInButton.snp.top)
         }
 
+        let imageView = UIImageView(image: UIImage(named: "illu-check-in"))
+        imageView.ub_setContentPriorityRequired()
+        view.addSubview(imageView)
+
         let venueView = NSVenueView(venue: venueInfo)
         reminderLabel.text = "checkin_set_reminder".ub_localized
 
         let stackView = UIStackView()
         stackView.axis = .vertical
+        stackView.addSpacerView(2.0 * NSPadding.large)
+        stackView.addArrangedView(imageView)
+        stackView.addSpacerView(NSPadding.large + NSPadding.medium)
         stackView.addArrangedView(venueView)
-        stackView.addSpacerView(50)
+        stackView.addSpacerView(2.0 * NSPadding.large)
         stackView.addArrangedView(reminderLabel)
-        stackView.addSpacerView(NSPadding.small)
+        stackView.addSpacerView(2.0 * NSPadding.medium)
         stackView.addArrangedView(reminderControl)
 
         container.addSubview(stackView)
         stackView.snp.makeConstraints { make in
-            make.leading.trailing.centerY.equalToSuperview()
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(2.0 * NSPadding.medium)
         }
     }
 }
