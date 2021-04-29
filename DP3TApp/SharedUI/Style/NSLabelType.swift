@@ -45,6 +45,7 @@ public enum NSLabelType: UBLabelType {
     case interRegular
     case interBold
     case statsCounter
+    case timerLarge
 
     public var font: UIFont {
         let bfs = NSFontSize.bodyFontSize()
@@ -79,6 +80,7 @@ public enum NSLabelType: UBLabelType {
         case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .statsCounter: return UIFont(name: boldFontName, size: bfs + 23.0)!
+        case .timerLarge: return NSLabelType.monospacedDigitFont(fontName: boldFontName, size: bfs + 6.0)
         }
     }
 
@@ -95,7 +97,7 @@ public enum NSLabelType: UBLabelType {
 
     public var lineSpacing: CGFloat {
         switch self {
-        case .title: return 30.0 / 22.0
+        case .title, .timerLarge: return 30.0 / 22.0
         case .splashTitle: return 30.0 / 22.0
         case .textBold: return 24.0 / 16.0
         case .smallBold: return 24.0 / 16.0
@@ -144,6 +146,19 @@ public enum NSLabelType: UBLabelType {
     public var lineBreakMode: NSLineBreakMode {
         if self == .splashTitle { return .byWordWrapping }
         return .byTruncatingTail
+    }
+
+    /// Returns a font with monospaced digits of the given size
+    private static func monospacedDigitFont(fontName: String, size: CGFloat) -> UIFont {
+        let originalDescriptor = UIFont(name: fontName, size: size)!.fontDescriptor
+        let featureArray: [[UIFontDescriptor.FeatureKey: Any]] = [
+            [
+                .featureIdentifier: kNumberSpacingType,
+                .typeIdentifier: kMonospacedNumbersSelector,
+            ],
+        ]
+        let descriptor = originalDescriptor.addingAttributes([.featureSettings: featureArray])
+        return UIFont(descriptor: descriptor, size: 0)
     }
 }
 

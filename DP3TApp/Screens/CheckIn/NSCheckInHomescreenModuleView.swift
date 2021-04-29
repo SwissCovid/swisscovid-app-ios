@@ -93,7 +93,7 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
 
 class NSCheckInHomescreenModuleCheckedInView: UIView {
     private let label = NSLabel(.textLight)
-    private let timerLabel = NSLabel(.title)
+    private let timerLabel = NSLabel(.timerLarge)
     let checkOutButton = NSButton(title: "Check out", style: .outline(.ns_darkBlueBackground))
 
     private var checkIn: CheckIn?
