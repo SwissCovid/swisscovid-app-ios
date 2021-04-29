@@ -24,6 +24,9 @@ class NSCheckInViewController: NSViewController {
 
     private var lastQrCode: String?
 
+    private let lampButton = NSRoundImageButton(icon: UIImage(named: "ic-flash-on"))
+    private var lampIsOn = false
+
     // MARK: - Init
 
     override init() {
@@ -109,6 +112,29 @@ class NSCheckInViewController: NSViewController {
         }
 
         errorView.text = "ERROR"
+
+        view.addSubview(lampButton)
+        lampButton.snp.makeConstraints { make in
+            if #available(iOS 11.0, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-NSPadding.medium)
+            } else {
+                make.bottom.equalToSuperview().offset(-NSPadding.medium)
+            }
+
+            make.right.equalToSuperview().offset(-NSPadding.large)
+        }
+
+        lampButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.toggleCamera()
+        }
+    }
+
+    private func toggleCamera() {
+        lampIsOn = !lampIsOn
+
+        qrView?.setCameraLight(on: lampIsOn)
+        lampButton.setImage(UIImage(named: lampIsOn ? "ic-flash-off" : "ic-flash-on"), for: .normal)
     }
 
     // MARK: - Start scanning

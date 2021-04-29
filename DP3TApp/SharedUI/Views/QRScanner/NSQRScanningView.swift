@@ -26,7 +26,10 @@ class NSQRScannerView: UIView {
     /// capture settion which allows us to start and stop scanning.
     var captureSession: AVCaptureSession?
 
+    private var lampOn: Bool
+
     init(delegate: NSQRScannerViewDelegate) {
+        lampOn = false
         super.init(frame: .zero)
         self.delegate = delegate
     }
@@ -56,9 +59,17 @@ extension NSQRScannerView {
         captureSession?.startRunning()
     }
 
+    public func setCameraLight(on: Bool) {
+        lampOn = on
+        guard let camera = AVCaptureDevice.default(for: .video) else { return }
+        try? camera.setLight(on: lampOn)
+    }
+
     func stopScanning() {
         captureSession?.stopRunning()
         delegate?.qrScanningDidStop()
+
+        setCameraLight(on: false)
     }
 
     /// Does the initial setup for captureSession
@@ -119,5 +130,17 @@ extension NSQRScannerView: AVCaptureMetadataOutputObjectsDelegate {
             guard let stringValue = readableObject.stringValue else { return }
             found(code: stringValue)
         }
+    }
+}
+
+private extension AVCaptureDevice {
+    func setLight(on: Bool) throws {
+        try lockForConfiguration()
+        if on {
+            try setTorchModeOn(level: 1)
+        } else {
+            torchMode = .off
+        }
+        unlockForConfiguration()
     }
 }
