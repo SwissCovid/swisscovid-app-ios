@@ -20,10 +20,12 @@ class QRCodePDFGenerator {
 
         let qrCodeImage = QRCodeUtils.createQrCodeImage(from: url)
 
-        let pixelSize: CGFloat = 5.0
+        let pixelSize: CGFloat = 3.0
 
         let data = renderer.pdfData { ctx in
             ctx.beginPage()
+
+            ctx.cgContext.setStrokeColor(UIColor.clear.cgColor)
 
             // draw color matrix as pixel images
             if let image = qrCodeImage {
@@ -34,8 +36,8 @@ class QRCodePDFGenerator {
 
                 for (y, values) in matrix.enumerated() {
                     for (x, value) in values.enumerated() {
-                        let pixel = QRCodePDFGenerator.resizeImage(image: UIImage.ub_image(with: value), targetSize: CGSize(width: pixelSize, height: pixelSize))
-                        pixel.draw(at: CGPoint(x: xOffset + CGFloat(x) * pixelSize, y: yOffset + CGFloat(y) * pixelSize))
+                        ctx.cgContext.setFillColor(value.cgColor)
+                        ctx.cgContext.fill(CGRect(x: xOffset + CGFloat(x) * pixelSize, y: yOffset + CGFloat(y) * pixelSize, width: pixelSize, height: pixelSize))
                     }
                 }
             }
