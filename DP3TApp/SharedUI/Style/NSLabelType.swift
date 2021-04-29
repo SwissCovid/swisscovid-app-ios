@@ -80,7 +80,7 @@ public enum NSLabelType: UBLabelType {
         case .interRegular: return UIFont(name: regularFontName, size: bfs - 3.0)!
         case .interBold: return UIFont(name: boldFontName, size: bfs - 3.0)!
         case .statsCounter: return UIFont(name: boldFontName, size: bfs + 23.0)!
-        case .timerLarge: return NSLabelType.monospacedDigitFont(fontName: boldFontName, size: bfs + 6.0)
+        case .timerLarge: return NSLabelType.monospacedDigitFont(fontName: boldFontName, size: bfs + 12.0)
         }
     }
 
@@ -97,7 +97,7 @@ public enum NSLabelType: UBLabelType {
 
     public var lineSpacing: CGFloat {
         switch self {
-        case .title, .timerLarge: return 30.0 / 22.0
+        case .title: return 30.0 / 22.0
         case .splashTitle: return 30.0 / 22.0
         case .textBold: return 24.0 / 16.0
         case .smallBold: return 24.0 / 16.0
@@ -112,6 +112,7 @@ public enum NSLabelType: UBLabelType {
         case .interRegular: return 24.0 / 16.0
         case .interBold: return 24.0 / 16.0
         case .statsCounter: return 30.0 / 22.0
+        case .timerLarge: return 34.0 / 28.0
         }
     }
 

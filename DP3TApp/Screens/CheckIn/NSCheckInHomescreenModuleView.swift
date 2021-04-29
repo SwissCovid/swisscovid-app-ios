@@ -62,7 +62,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
 
 class NSCheckInHomescreenModuleCheckedOutView: UIView {
     let explainationLabel = NSLabel(.textLight)
-    let scanQrCodeButton = NSButton(title: "Scan QR code", style: .normal(.ns_darkBlueBackground))
+    let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_darkBlueBackground))
 
     init() {
         super.init(frame: .zero)
@@ -70,6 +70,7 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
         addSubview(explainationLabel)
         addSubview(scanQrCodeButton)
 
+        // TODO: Unlocalized text
         explainationLabel.text = "Manage your check-ins or generate QR codes for your events."
 
         scanQrCodeButton.setImage(UIImage(named: "ic-qrcode"), for: .normal)
@@ -80,7 +81,7 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
         }
 
         scanQrCodeButton.snp.makeConstraints { make in
-            make.top.equalTo(explainationLabel.snp.bottom).inset(-NSPadding.medium)
+            make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.small)
         }
@@ -94,7 +95,7 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
 class NSCheckInHomescreenModuleCheckedInView: UIView {
     private let label = NSLabel(.textLight)
     private let timerLabel = NSLabel(.timerLarge)
-    let checkOutButton = NSButton(title: "Check out", style: .outline(.ns_darkBlueBackground))
+    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_darkBlueBackground))
 
     private var checkIn: CheckIn?
     private var titleTimer: Timer?
@@ -121,7 +122,7 @@ class NSCheckInHomescreenModuleCheckedInView: UIView {
         }
 
         checkOutButton.snp.makeConstraints { make in
-            make.top.equalTo(timerLabel.snp.bottom).inset(-NSPadding.medium)
+            make.top.equalTo(timerLabel.snp.bottom).offset(NSPadding.medium + 3.0)
             make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.small)
         }
