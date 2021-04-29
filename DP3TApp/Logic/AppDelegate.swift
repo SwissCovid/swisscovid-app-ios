@@ -276,16 +276,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         switch type {
         case .exposure:
             switch UIStateManager.shared.uiState.checkInStateModel.exposureState {
-            case let .exposure(exposures, _):
-                guard let newest = exposures.first else {
-                    return
-                }
+            case .exposure:
 
                 if window == nil {
                     setupWindow()
                 }
 
-                // TODO: show exposure vc with newest
+                // pop to current root view controller
+                tabBarController.currentNavigationController.popToRootViewController(animated: false)
+
+                // select home tab
+                tabBarController.currentTab = .homescreen
+
+                // show checkout viewcontroller
+                tabBarController.homescreen.presentReportsDetail()
 
             case .noExposure:
                 break
@@ -296,9 +300,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 setupWindow()
             }
 
+            // pop to current root view controller
             tabBarController.currentNavigationController.popToRootViewController(animated: false)
 
-            // TODO: show checkout vc
+            // select home tab
+            tabBarController.currentTab = .homescreen
+
+            // show checkout viewcontroller
+            tabBarController.homescreen.presentCheckOutViewController()
 
         case .automaticCheckout:
             if window == nil {

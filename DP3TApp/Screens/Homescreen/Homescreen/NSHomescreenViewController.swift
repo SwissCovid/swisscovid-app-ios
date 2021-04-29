@@ -68,7 +68,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
+            strongSelf.presentCheckInOverviewController()
         }
 
         checkInView.scanQrCodeCallback = { [weak self] in
@@ -78,10 +78,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         checkInView.checkoutCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            if let checkIn = CheckInManager.shared.currentCheckIn {
-                let checkoutVC = NSCheckInEditViewController()
-                checkoutVC.presentInNavigationController(from: strongSelf, useLine: false)
-            }
+            strongSelf.presentCheckOutViewController()
         }
 
         enterCovidCodeButton.touchUpCallback = { [weak self] in
@@ -298,6 +295,17 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     func presentInformViewController(prefill: String? = nil) {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
+    }
+
+    func presentCheckInOverviewController() {
+        navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
+    }
+
+    func presentCheckOutViewController() {
+        if CheckInManager.shared.currentCheckIn != nil {
+            let checkoutVC = NSCheckInEditViewController()
+            checkoutVC.presentInNavigationController(from: self, useLine: false)
+        }
     }
 
     private func presentTravelDetail() {
