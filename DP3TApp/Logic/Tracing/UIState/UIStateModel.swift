@@ -143,6 +143,7 @@ struct UIStateModel: Equatable {
         enum CheckInState: Equatable {
             case noCheckIn
             case checkIn(CheckIn)
+            case checkinEnded
         }
 
         enum ExposureState: Equatable {

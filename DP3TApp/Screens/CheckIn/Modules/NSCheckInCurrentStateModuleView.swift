@@ -51,6 +51,8 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
             checkedInView.update(checkIn: checkedIn)
+        case .checkinEnded:
+            break
         }
     }
 

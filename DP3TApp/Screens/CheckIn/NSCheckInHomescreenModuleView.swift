@@ -15,6 +15,18 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
     private let checkedOutView = NSCheckInHomescreenModuleCheckedOutView()
     private let checkedInView = NSCheckInHomescreenModuleCheckedInView()
 
+    private let checkinEndedView: NSInfoBoxView = {
+        var viewModel = NSInfoBoxView.ViewModel(title: "checkin_ended_title".ub_localized,
+                                                subText: "checkin_ended_text".ub_localized,
+                                                image: UIImage(named: "ic-stopp"),
+                                                titleColor: .ns_purple,
+                                                subtextColor: .ns_text)
+        viewModel.illustration = UIImage(named: "illu-checkin-ended")!
+        viewModel.backgroundColor = .ns_purpleBackground
+        viewModel.dynamicIconTintColor = .ns_purple
+        return .init(viewModel: viewModel)
+    }()
+
     var scanQrCodeCallback: (() -> Void)?
     var checkoutCallback: (() -> Void)?
 
@@ -43,11 +55,17 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
         case .noCheckIn:
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
+            checkinEndedView.isHidden = true
             checkedOutView.scanQrCodeButton.isEnabled = !state.homescreen.reports.report.isInfected
         case let .checkIn(checkedIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
+            checkinEndedView.isHidden = true
             checkedInView.update(checkIn: checkedIn)
+        case .checkinEnded:
+            checkedInView.isHidden = true
+            checkedOutView.isHidden = true
+            checkinEndedView.isHidden = false
         }
     }
 
@@ -56,7 +74,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        return [checkedOutView, checkedInView]
+        return [checkedOutView, checkedInView, checkinEndedView]
     }
 }
 

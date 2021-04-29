@@ -46,6 +46,8 @@ class UIStateLogic {
         // Detect exposure, infection
         //
 
+        newState.checkInStateModel = buildCheckInState()
+
         var infectionStatus = tracingState.infectionStatus
         var oldestSharedKeyDate = ReportingManager.shared.oldestSharedKeyDate
         #if ENABLE_STATUS_OVERRIDE
@@ -74,8 +76,6 @@ class UIStateLogic {
         #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
             setDebugLog(&newState)
         #endif
-
-        newState.checkInStateModel = buildCheckInState()
 
         return newState
     }
@@ -289,6 +289,7 @@ class UIStateLogic {
         newState.reportsDetail.report = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
         newState.homescreen.header = .tracingEnded
         newState.homescreen.encounters = .tracingEnded
+        newState.checkInStateModel.checkInState = .checkinEnded
     }
 
     private func setExposedState(_ newState: inout UIStateModel, days: [ExposureDay]) {

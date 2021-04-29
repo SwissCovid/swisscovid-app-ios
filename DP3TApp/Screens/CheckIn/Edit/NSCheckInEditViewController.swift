@@ -76,6 +76,8 @@ class NSCheckInEditViewController: NSViewController {
                 checkIn = ci
             case .noCheckIn:
                 checkIn = nil
+            case .checkinEnded:
+                break
             }
         }
     }
