@@ -14,12 +14,22 @@ import Foundation
 class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
     private let label = NSLabel(.textBold, textColor: .ns_text)
 
+    static var dayStringFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter
+    }()
+
+    static var dayNumberFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM"
+        return formatter
+    }()
+
     public var date: Date? {
         didSet {
             if let d = date {
-                let formatter = DateFormatter()
-                formatter.dateFormat = "EEEE, MMM d"
-                label.text = formatter.string(from: d)
+                label.text = Self.dayStringFormatter.string(from: d).localizedUppercase + ", " + Self.dayNumberFormatter.string(from: d)
             }
         }
     }
@@ -45,7 +55,7 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
         addSubview(label)
 
         label.snp.makeConstraints { make in
-            make.bottom.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: NSPadding.small, right: NSPadding.small))
+            make.bottom.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: NSPadding.medium, right: NSPadding.small))
         }
     }
 }

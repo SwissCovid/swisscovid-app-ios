@@ -53,10 +53,9 @@ class NSVenueView: UIView {
     private func update() {
         imageContentView.isHidden = true
 
-        if let image = venue?.image(large: true), icon {
-            venueImageView.image = image
-            imageContentView.isHidden = false
-        }
+        // TODO: set default image
+        // venueImageView.image = image
+        // imageContentView.isHidden = false
 
         titleLabel.text = venue?.description
         textLabel.text = venue?.subtitle

@@ -17,7 +17,8 @@ class NSDiaryEntryContentView: UIView {
 
     private let checkImageView = UIImageView()
 
-    private let imageTextView = NSImageTextView()
+    private let titleLabel = NSLabel(.textBold)
+    private let subtitleLabel = NSLabel(.textLight)
 
     private let bottomView = UIView()
     private let whatToDoView = NSCheckInReportWhatTodoView()
@@ -61,22 +62,22 @@ class NSDiaryEntryContentView: UIView {
 
         let topView = UIView()
 
+        checkImageView.image = UIImage(named: "ic-check-round")?.withRenderingMode(.alwaysTemplate)
         topView.addSubview(checkImageView)
         checkImageView.snp.makeConstraints { make in
-            make.right.top.equalToSuperview().inset(NSPadding.small)
+            make.right.top.equalToSuperview().inset(NSPadding.medium)
         }
 
-        topView.addSubview(imageTextView)
-        imageTextView.snp.makeConstraints { make in
+        let textStackView = UIStackView(arrangedSubviews: [titleLabel, subtitleLabel])
+        textStackView.axis = .vertical
+        textStackView.spacing = 2.0
+
+        topView.addSubview(textStackView)
+        textStackView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(NSPadding.medium)
-            make.top.equalToSuperview().inset(NSPadding.small + 3.0)
-            make.bottom.equalToSuperview().inset(NSPadding.small)
+            make.top.equalToSuperview().inset(NSPadding.medium + 3.0)
+            make.bottom.equalToSuperview().inset(NSPadding.medium)
             make.right.lessThanOrEqualTo(self.checkImageView.snp.left).offset(-5.0)
-        }
-
-        topView.addSubview(checkImageView)
-        checkImageView.snp.makeConstraints { make in
-            make.right.top.equalToSuperview().inset(NSPadding.small)
         }
 
         stackView.addArrangedView(topView)
@@ -100,24 +101,23 @@ class NSDiaryEntryContentView: UIView {
             formatter.dateFormat = "HH:mm"
 
             if let e = exposure?.exposureEvent {
-                imageTextView.title = [e.arrivalTime, e.departureTime].compactMap { (date) -> String? in
+                titleLabel.text = [e.arrivalTime, e.departureTime].compactMap { (date) -> String? in
                     formatter.string(from: date)
                 }.joined(separator: " – ")
-                imageTextView.text = ""
+                subtitleLabel.text = ""
             }
         }
 
-        checkImageView.image = UIImage(named: "icons-ic-red-info")
+        checkImageView.tintColor = .ns_red
 
         whatToDoView.message = exposure?.exposureEvent.message
         bottomView.isHidden = exposure?.exposureEvent.message.isEmpty ?? true
     }
 
     private func update() {
-        checkImageView.image = UIImage(named: "icons-ic-check-filled")
+        checkImageView.tintColor = .ns_blue
 
-        imageTextView.title = checkIn?.venue.description
-        imageTextView.image = checkIn?.venue.image(large: false)
+        titleLabel.text = checkIn?.venue.description
 
         var texts: [String?] = []
         texts.append(checkIn?.venue.subtitle)
@@ -133,14 +133,13 @@ class NSDiaryEntryContentView: UIView {
 
         texts.append(timeText)
 
-        imageTextView.text = texts.compactMap { $0 }.joined(separator: "\n")
+        subtitleLabel.text = texts.compactMap { $0 }.joined(separator: "\n")
 
         bottomView.isHidden = true
     }
 
     private func reset() {
-        imageTextView.image = nil
-        imageTextView.title = nil
-        imageTextView.text = nil
+        titleLabel.text = nil
+        subtitleLabel.text = nil
     }
 }
