@@ -79,30 +79,7 @@ class NSCreatedEventDetailViewController: NSViewController {
     }
 
     private func sharePDF() {
-        let data = QRCodePDFGenerator.generate(from: createdEvent.qrCodeString)
-
-        let fileManager = FileManager.default
-
-        let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let docURL = documentDirectory.appendingPathComponent("Scanned-Docs.pdf")
-        do {
-            try data?.write(to: docURL)
-        } catch {
-            print("error is \(error.localizedDescription)")
-        }
-
-        let fileName = "qrcode.pdf"
-        let documentDirURL = try? FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let fileURL = documentDirURL?.appendingPathComponent(fileName)
-
-        if let path = fileURL?.path {
-            fileManager.createFile(atPath: path, contents: data, attributes: nil)
-            if fileManager.fileExists(atPath: path),
-               let pdf = NSData(contentsOfFile: path) {
-                let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: [pdf], applicationActivities: nil)
-                activityViewController.popoverPresentationController?.sourceView = view
-                present(activityViewController, animated: true, completion: nil)
-            }
-        }
+        let vc = NSEventPDFViewController(event: createdEvent)
+        vc.presentInNavigationController(from: self, useLine: false)
     }
 }
