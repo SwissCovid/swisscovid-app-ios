@@ -425,7 +425,6 @@
 		DCB4430D242DD34700F19AA5 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2B242D04290017C4F9 /* Inter-Regular.ttf */; };
 		DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		DCB44315242DFF8000F19AA5 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
-		DCE139802637F1560093D8F6 /* SwissCovidLocationData.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1397E2637F1560093D8F6 /* SwissCovidLocationData.pb.swift */; };
 		DCE139822638092D0093D8F6 /* QRCodeGenerationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE139812638092D0093D8F6 /* QRCodeGenerationConstants.swift */; };
 		DCE139832638092D0093D8F6 /* QRCodeGenerationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE139812638092D0093D8F6 /* QRCodeGenerationConstants.swift */; };
 		DCE1398D26382B5E0093D8F6 /* CreatedEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1398C26382B5E0093D8F6 /* CreatedEventsManager.swift */; };
@@ -537,6 +536,7 @@
 		F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
 		F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370F258C2613008DCC81 /* NSRadioButtonItem.swift */; };
 		F87E96B02639967100755AF1 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96AF2639967100755AF1 /* NSInfoViewController.swift */; };
+		F87E96B5263AA6A600755AF1 /* NSInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87E96AF2639967100755AF1 /* NSInfoViewController.swift */; };
 		F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88585ED249272EE00018AEA /* TracingLocalPushTests.swift */; };
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
@@ -2333,6 +2333,7 @@
 				242D21FB245C4BD8005DAEA8 /* NSTracingErrorView.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
 				DC1617AD2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */,
+				F87E96B5263AA6A600755AF1 /* NSInfoViewController.swift in Sources */,
 				DC1617942638717800B56ADA /* NSDiaryViewController.swift in Sources */,
 				242D21FC245C4BD8005DAEA8 /* NSLabelType.swift in Sources */,
 				DC3B56CE25EE3F9A0075B5CE /* NSSingleStatisticView.swift in Sources */,
@@ -2411,7 +2412,6 @@
 				F87C3711258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
 				F8454AA4263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */,
-				DCE139802637F1560093D8F6 /* SwissCovidLocationData.pb.swift in Sources */,
 				DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */,
 				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
