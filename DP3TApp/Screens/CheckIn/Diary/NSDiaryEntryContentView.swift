@@ -120,6 +120,7 @@ class NSDiaryEntryContentView: UIView {
         titleLabel.text = checkIn?.venue.description
 
         var texts: [String?] = []
+        texts.append(checkIn?.venue.venueType?.title)
         texts.append(checkIn?.venue.subtitle)
 
         let formatter = DateFormatter()

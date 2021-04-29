@@ -26,6 +26,10 @@ extension VenueInfo {
     }
 
     var subtitle: String? {
-        return [address, locationData?.room ?? ""].compactMap { $0.isEmpty ? nil : $0 }.joined(separator: ", ")
+        let elements: [String] = [address, locationData?.room ?? ""].compactMap { $0.isEmpty ? nil : $0 }
+        if elements.isEmpty {
+            return nil
+        }
+        return elements.joined(separator: ", ")
     }
 }
