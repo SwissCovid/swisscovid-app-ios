@@ -75,7 +75,7 @@ enum Environment {
 
     var checkInService: Backend {
         // TODO: Add correct backend for check in service
-        return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
+        return Backend("https://app-dev-ws.notify-me.ch", version: "v3")
     }
 
     // TODO: Add correct base URLs for public QR Codes

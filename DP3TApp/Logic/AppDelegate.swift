@@ -253,4 +253,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .foregroundColor: UIColor.ns_tabbarSelectedBlue,
         ], for: .selected)
     }
+
+    func handleNotification(type: NotificationType) {
+        switch type {
+        case .exposure:
+            switch UIStateManager.shared.uiState.checkInStateModel.exposureState {
+            case let .exposure(exposures, _):
+                guard let newest = exposures.first else {
+                    return
+                }
+
+                if window == nil {
+                    setupWindow()
+                }
+
+                // TODO: show exposure vc
+
+            case .noExposure:
+                break
+            }
+
+        case .reminder, .automaticReminder:
+            if window == nil {
+                setupWindow()
+            }
+
+            (window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: false)
+
+            // TODO: show checkout vc
+
+        case .automaticCheckout:
+            if window == nil {
+                setupWindow()
+            } else {
+                (window?.rootViewController as? UINavigationController)?.popToRootViewController(animated: false)
+            }
+        default:
+            break
+        }
+    }
 }
