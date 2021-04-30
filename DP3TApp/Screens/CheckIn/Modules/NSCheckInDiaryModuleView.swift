@@ -12,6 +12,8 @@
 import Foundation
 
 class NSCheckInDiaryModuleView: NSModuleBaseView {
+    private let diaryInfoView = NSDiaryInfoView()
+
     override init() {
         super.init()
 
@@ -23,6 +25,38 @@ class NSCheckInDiaryModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        return []
+        return [diaryInfoView]
+    }
+}
+
+private class NSDiaryInfoView: UIView {
+    private let label = NSLabel(.textLight)
+    private let illuView = UIImageView(image: UIImage(named: "illu-diary"))
+
+    init() {
+        super.init(frame: .zero)
+
+        setupView()
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupView() {
+        label.text = "checkin_detail_diary_text".ub_localized
+        addSubview(label)
+        label.snp.makeConstraints { make in
+            make.top.leading.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+        }
+
+        illuView.ub_setContentPriorityRequired()
+        addSubview(illuView)
+        illuView.snp.makeConstraints { make in
+            make.leading.equalTo(label.snp.trailing).offset(NSPadding.small)
+            make.top.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
+        }
     }
 }

@@ -12,9 +12,29 @@
 import Foundation
 
 class NSCheckInCurrentStateModuleView: NSModuleBaseView {
-    // TODO: replace views with custom views for overview
-    fileprivate let checkedOutView = NSCheckInHomescreenModuleCheckedOutView()
-    fileprivate let checkedInView = NSCheckInHomescreenModuleCheckedInView()
+    private let checkedOutView = NSCheckInDetailCheckedOutView()
+    private let checkedInView = NSCheckInDetailCheckedInView()
+
+    private let checkinEndedView: UIView = {
+        var viewModel = NSInfoBoxView.ViewModel(title: "checkin_ended_title".ub_localized,
+                                                subText: "checkin_ended_text".ub_localized,
+                                                image: UIImage(named: "ic-stopp"),
+                                                titleColor: .ns_purple,
+                                                subtextColor: .ns_text)
+        viewModel.illustration = UIImage(named: "illu-checkin-ended")!
+        viewModel.backgroundColor = .ns_purpleBackground
+        viewModel.dynamicIconTintColor = .ns_purple
+        let infobox = NSInfoBoxView(viewModel: viewModel)
+
+        // Since there's no title in this NSModuleBaseView, we need a 10px padding at the top
+        let container = UIView()
+        container.addSubview(infobox)
+        infobox.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        return container
+    }()
 
     var scanQrCodeCallback: (() -> Void)?
     var checkoutCallback: (() -> Void)?
@@ -22,7 +42,7 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "module_checkins_title".ub_localized
+        headerTitle = nil
         checkedInView.isHidden = true
         checkedOutView.isHidden = true
 
@@ -46,13 +66,16 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
         case .noCheckIn:
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
-            checkedOutView.scanQrCodeButton.isEnabled = !state.homescreen.reports.report.isInfected
-        case let .checkIn(checkedIn):
+            checkinEndedView.isHidden = true
+        case let .checkIn(checkIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
-            checkedInView.update(checkIn: checkedIn)
+            checkinEndedView.isHidden = true
+            checkedInView.update(with: checkIn)
         case .checkinEnded:
-            break
+            checkedInView.isHidden = true
+            checkedOutView.isHidden = true
+            checkinEndedView.isHidden = false
         }
     }
 
@@ -61,6 +84,6 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        return [checkedOutView, checkedInView]
+        return [checkedOutView, checkedInView, checkinEndedView]
     }
 }
