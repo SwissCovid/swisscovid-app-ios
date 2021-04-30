@@ -105,7 +105,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         contentView.addSpacerView(NSPadding.large)
 
         let covidCodeInfo = NSUnderlinedButton()
-        covidCodeInfo.title = "Mehr zum Covidcode"
+        covidCodeInfo.title = "inform_detail_covidcode_info_button".ub_localized
         covidCodeInfo.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.covidCodeInfoCallback?()

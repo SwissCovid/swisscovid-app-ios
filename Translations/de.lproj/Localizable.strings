@@ -1613,3 +1613,4 @@
 /*Fuzzy*/
 "checkin_checked_in" = "Sie sind eingecheckt";
 "checkout_from_to_date" = "{DATE1} bis {DATE2}";
+"inform_detail_covidcode_info_button" = "Mehr zum Covidcode";

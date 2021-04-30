@@ -1546,3 +1546,4 @@
 /*Label im Checkin-Modul im eingecheckten Zustand*/
 "checkin_checked_in" = "";
 "checkout_from_to_date" = "";
+"inform_detail_covidcode_info_button" = "";
