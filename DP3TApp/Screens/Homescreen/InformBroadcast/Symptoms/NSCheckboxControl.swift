@@ -27,7 +27,7 @@ public class NSCheckBoxControl: UIControl {
     private var inactiveColor: UIColor
     private var inactiveBackground: UIColor
 
-    init(isChecked: Bool, noBorder: Bool = false) {
+    init(isChecked: Bool, noBorder: Bool = false, tintColor: UIColor = .ns_green) {
         self.isChecked = isChecked
 
         if noBorder { // no nations
@@ -35,7 +35,7 @@ public class NSCheckBoxControl: UIControl {
             inactiveColor = .clear
             inactiveBackground = .clear
         } else {
-            activeColor = .ns_green
+            activeColor = tintColor
             inactiveColor = .ns_text_secondary
             inactiveBackground = .white
         }

@@ -59,7 +59,6 @@
 
             for c in checkboxes {
                 checkBoxStackView.addArrangedView(c)
-                c.radioMode = true
                 c.touchUpCallback = { [weak self, weak c] in
                     guard let strongSelf = self, let strongC = c else { return }
                     strongSelf.select(strongC)

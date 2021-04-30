@@ -142,37 +142,36 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
 
-        ReportingManager.shared.report(covidCode: codeControl.code()) { [weak self] error in
+        ReportingManager.shared.getJWTTokens(covidCode: codeControl.code()) { [weak self] result in
             guard let self = self else { return }
-
-            if let error = error {
-                switch error {
-                case let .failure(error: error):
-                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
-
-                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-
-                case .invalidCode:
-                    self.codeControl.clearAndRestart()
-                    self.errorView.isHidden = false
-                    self.textLabel.isHidden = true
-
-                    self.stopLoading()
-                    if UIAccessibility.isVoiceOverRunning {
-                        UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
+            switch result {
+            case let .success(tokens):
+                ReportingManager.shared.sendENKeys(tokens: tokens) { result in
+                    switch result {
+                    case .success:
+                        FakePublishManager.shared.rescheduleFakeRequest(force: true)
+                        CheckInSelectionViewController.presentIfNeeded(tokens: tokens, from: self)
+                    case let .failure(error):
+                        self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                        self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
                     }
+                }
+            case .failure(.invalidToken):
+                self.codeControl.clearAndRestart()
+                self.errorView.isHidden = false
+                self.textLabel.isHidden = true
 
-                    self.navigationItem.hidesBackButton = false
-                    self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
+                self.stopLoading()
+                if UIAccessibility.isVoiceOverRunning {
+                    UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
                 }
 
-            } else {
-                // success
-                // reschedule next fake request
-                FakePublishManager.shared.rescheduleFakeRequest(force: true)
-                self.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-                self.changePresentingViewController()
+                self.navigationItem.hidesBackButton = false
+                self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
+            case let .failure(.networkError(error)):
+                self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             }
         }
     }

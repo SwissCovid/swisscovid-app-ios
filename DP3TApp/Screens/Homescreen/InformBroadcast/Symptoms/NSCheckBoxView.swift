@@ -11,10 +11,10 @@
 import UIKit
 
 class NSCheckBoxView: UIView {
-    private let textLabel = NSLabel(.textLight)
-    private let checkBox = NSCheckBoxControl(isChecked: false)
+    private let textLabel: NSLabel
+    private let checkBox: NSCheckBoxControl
 
-    private let button = NSButton(title: "")
+    let button = NSButton(title: "")
 
     public var isChecked: Bool = false {
         didSet {
@@ -25,11 +25,14 @@ class NSCheckBoxView: UIView {
 
     public var touchUpCallback: (() -> Void)?
 
-    public var radioMode: Bool = false
+    private var insets: UIEdgeInsets
 
     // MARK: - Init
 
-    init(text: String) {
+    init(text: String, labelType: NSLabelType = .textLight, insets: UIEdgeInsets = .zero, tintColor: UIColor = .ns_green) {
+        textLabel = NSLabel(labelType)
+        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor)
+        self.insets = insets
         super.init(frame: .zero)
         setup()
 
@@ -37,6 +40,20 @@ class NSCheckBoxView: UIView {
 
         isAccessibilityElement = true
         accessibilityLabel = text
+        accessibilityTraits = isChecked ? [.selected, .button] : [.button]
+    }
+
+    init(attributedText: NSAttributedString, labelType: NSLabelType = .textLight, insets: UIEdgeInsets = .zero, tintColor: UIColor = .ns_green) {
+        textLabel = NSLabel(labelType, numberOfLines: 0)
+        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor)
+        self.insets = insets
+        super.init(frame: .zero)
+        setup()
+
+        textLabel.attributedText = attributedText
+
+        isAccessibilityElement = true
+        accessibilityLabel = attributedText.string
         accessibilityTraits = isChecked ? [.selected, .button] : [.button]
     }
 
@@ -50,10 +67,9 @@ class NSCheckBoxView: UIView {
         button.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            if strongSelf.radioMode, !strongSelf.isChecked {
-                strongSelf.isChecked = !strongSelf.isChecked
-                strongSelf.touchUpCallback?()
-            }
+            strongSelf.isChecked = !strongSelf.isChecked
+
+            strongSelf.touchUpCallback?()
         }
 
         button.backgroundColor = .clear
@@ -65,21 +81,20 @@ class NSCheckBoxView: UIView {
             make.edges.equalToSuperview()
         }
 
+        addSubview(textLabel)
+        textLabel.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(insets)
+            make.top.equalToSuperview().offset(2.0).inset(insets)
+            make.bottom.lessThanOrEqualToSuperview().inset(insets)
+        }
+
         addSubview(checkBox)
         checkBox.snp.makeConstraints { make in
-            make.left.equalToSuperview()
+            make.left.equalTo(textLabel.snp.right).offset(NSPadding.medium + NSPadding.small).inset(insets)
             make.centerY.equalToSuperview()
-            make.bottom.lessThanOrEqualToSuperview()
+            make.right.equalToSuperview().inset(NSPadding.small).inset(insets)
         }
 
         checkBox.isUserInteractionEnabled = false
-
-        addSubview(textLabel)
-
-        textLabel.snp.makeConstraints { make in
-            make.left.equalTo(checkBox.snp.right).offset(NSPadding.medium + NSPadding.small)
-            make.top.equalToSuperview().offset(2.0)
-            make.bottom.right.equalToSuperview().inset(NSPadding.small)
-        }
     }
 }

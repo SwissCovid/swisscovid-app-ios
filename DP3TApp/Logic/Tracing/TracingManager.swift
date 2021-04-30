@@ -100,7 +100,7 @@ class TracingManager: NSObject {
                                federationGateway: .yes)
 
         // Do not sync because applicationState is still .background
-        updateStatus(shouldSync: false) { _ in
+        updateStatus(shouldSync: false) {
             self.uiStateManager.refresh()
         }
     }
@@ -213,7 +213,7 @@ class TracingManager: NSObject {
         updateStatus(completion: nil)
     }
 
-    func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
+    func updateStatus(shouldSync: Bool = true, completion: (() -> Void)?) {
         guard isSupported else { return }
         guard #available(iOS 12.5, *) else { return }
 
@@ -231,10 +231,10 @@ class TracingManager: NSObject {
 
         if shouldSync {
             DatabaseSyncer.shared.syncDatabaseIfNeeded { _ in
-                completion?(nil)
+                completion?()
             }
         } else {
-            completion?(nil)
+            completion?()
         }
     }
 }
