@@ -37,7 +37,7 @@ class QRCodePDFGenerator {
                 for (y, values) in matrix.enumerated() {
                     for (x, value) in values.enumerated() {
                         ctx.cgContext.setFillColor(value.cgColor)
-                        ctx.cgContext.fill(CGRect(x: xOffset + CGFloat(x) * pixelSize, y: yOffset + CGFloat(y) * pixelSize, width: pixelSize, height: pixelSize))
+                        ctx.cgContext.fill(CGRect(x: xOffset + CGFloat(x) * pixelSize, y: yOffset + CGFloat(y) * pixelSize, width: pixelSize + 0.05, height: pixelSize + 0.05))
                     }
                 }
             }
