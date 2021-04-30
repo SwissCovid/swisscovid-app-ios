@@ -14,13 +14,16 @@ import UIKit
 class NSCreatedEventDetailViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let categoryLabel = NSLabel(.textLight)
-    private let titleLabel = NSLabel(.textBold)
     private let qrCodeImageView = UIImageView()
+
+    private let venueView = NSVenueView(large: true, showCategory: true)
 
     private let createdEvent: CreatedEvent
 
-    private let showPDFButton = NSButton(title: "show_pdf_button".ub_localized)
+    private let showPDFButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-document")), buttonTintColor: .ns_blue)
+    private let shareButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-share-ios")), buttonTintColor: .ns_blue)
+    private let checkInButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-check-in")), buttonTintColor: .ns_blue)
+    private let deleteButton = NSExternalLinkButton(style: .outlined(color: .clear), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
 
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
@@ -28,6 +31,11 @@ class NSCreatedEventDetailViewController: NSViewController {
         super.init()
 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissSelf))
+
+        showPDFButton.title = "show_pdf_button".ub_localized
+        checkInButton.title = "checkin_button_title".ub_localized
+        deleteButton.title = "delete_button_title".ub_localized
+        shareButton.title = "share_button_title".ub_localized
 
         showPDFButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -40,9 +48,25 @@ class NSCreatedEventDetailViewController: NSViewController {
 
         setupView()
 
-        categoryLabel.text = createdEvent.venueInfo.venueType?.title
-        titleLabel.text = createdEvent.venueInfo.description
+        venueView.venue = createdEvent.venueInfo
+
         qrCodeImageView.image = QRCodeUtils.createQrCodeImage(from: createdEvent.qrCodeString)
+
+        UIStateManager.shared.addObserver(self) { state in
+            self.update(state.checkInStateModel)
+        }
+    }
+
+    private func update(_ state: UIStateModel.CheckInStateModel) {
+        switch state.checkInState {
+        case let .checkIn(checkIn):
+            let isHidden = checkIn.createdEventId == createdEvent.id
+            checkInButton.isHidden = isHidden
+            deleteButton.isHidden = isHidden
+        default:
+            checkInButton.isHidden = false
+            deleteButton.isHidden = false
+        }
     }
 
     private func setupView() {
@@ -54,24 +78,45 @@ class NSCreatedEventDetailViewController: NSViewController {
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
 
-        stackScrollView.addSpacerView(50)
-        stackScrollView.addArrangedView(categoryLabel)
-        stackScrollView.addSpacerView(NSPadding.medium)
-        stackScrollView.addArrangedView(titleLabel)
+        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
+        stackScrollView.addArrangedView(venueView)
         stackScrollView.addSpacerView(NSPadding.large)
 
         let container = UIView()
+        stackScrollView.addArrangedView(container)
 
         qrCodeImageView.layer.magnificationFilter = .nearest
         container.addSubview(qrCodeImageView)
         qrCodeImageView.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
-            make.size.equalTo(250)
+            make.size.equalTo(self.view.snp.width).offset(-3 * NSPadding.large)
         }
 
-        stackScrollView.addArrangedView(container)
-        stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(showPDFButton)
+        stackScrollView.addSpacerView(NSPadding.large + NSPadding.small)
+
+        let contentView = UIView()
+
+        let buttonStackView = UIStackView()
+        buttonStackView.axis = .vertical
+
+        contentView.addSubview(buttonStackView)
+
+        buttonStackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0.0, left: 2.0 * NSPadding.large, bottom: 0.0, right: 2.0 * NSPadding.large))
+        }
+
+        buttonStackView.addArrangedView(checkInButton)
+
+        buttonStackView.addSpacerView(2.0 * NSPadding.large)
+
+        let padding = 3.0 * NSPadding.medium
+
+        for b in [showPDFButton, shareButton, deleteButton] {
+            buttonStackView.addArrangedView(b)
+            buttonStackView.addSpacerView(padding)
+        }
+
+        stackScrollView.addArrangedView(contentView)
     }
 
     @objc private func dismissSelf() {

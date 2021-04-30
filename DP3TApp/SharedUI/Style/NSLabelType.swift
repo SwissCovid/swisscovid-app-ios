@@ -31,6 +31,7 @@ class NSFontSize {
 
 public enum NSLabelType: UBLabelType {
     case title
+    case titleLarge
     case splashTitle
     case textLight
     case smallLight
@@ -66,6 +67,7 @@ public enum NSLabelType: UBLabelType {
         }
         switch self {
         case .title: return UIFont(name: boldFontName, size: bfs + 6.0)!
+        case .titleLarge: return UIFont(name: boldFontName, size: bfs + 12.0)!
         case .splashTitle: return UIFont(name: boldFontName, size: bfs + 11.0)!
         case .textLight: return UIFont(name: lightFontName, size: bfs)!
         case .smallLight: return UIFont(name: lightFontName, size: bfs - 3.0)!
@@ -113,6 +115,7 @@ public enum NSLabelType: UBLabelType {
         case .interBold: return 24.0 / 16.0
         case .statsCounter: return 30.0 / 22.0
         case .timerLarge: return 34.0 / 28.0
+        case .titleLarge: return 34.0 / 28.0
         }
     }
 

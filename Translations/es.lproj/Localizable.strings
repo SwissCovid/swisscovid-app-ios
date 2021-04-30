@@ -1553,3 +1553,9 @@
 
 /*Check-Ins: Button Entfernen um Check-In zu löschen*/
 "remove_from_diary_button" = "";
+
+/*Check-Ins: QR-Code löschen Titel Button*/
+"delete_button_title" = "";
+
+/*Check-Ins: Teile QR-Code Button Titel*/
+"share_button_title" = "";

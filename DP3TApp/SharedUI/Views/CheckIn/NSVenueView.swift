@@ -17,10 +17,13 @@ class NSVenueView: UIView {
 
     private let stackView = UIStackView()
 
-    private let titleLabel = NSLabel(.title, textAlignment: .center)
+    private let titleLabel: NSLabel
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
     private let imageContentView = UIView()
+
+    private let large: Bool
+    private let showCategory: Bool
 
     // MARK: - Properties
 
@@ -32,8 +35,11 @@ class NSVenueView: UIView {
 
     // MARK: - Init
 
-    init(venue: VenueInfo? = nil) {
+    init(venue: VenueInfo? = nil, large: Bool = false, showCategory: Bool = false) {
+        titleLabel = NSLabel(large ? .titleLarge : .title, textAlignment: .center)
         self.venue = venue
+        self.large = large
+        self.showCategory = showCategory
 
         super.init(frame: .zero)
         setup()
@@ -48,7 +54,7 @@ class NSVenueView: UIView {
 
     private func update() {
         titleLabel.text = venue?.description
-        textLabel.text = venue?.subtitle
+        textLabel.text = showCategory ? venue?.venueType?.title : venue?.subtitle
     }
 
     // MARK: - Setup

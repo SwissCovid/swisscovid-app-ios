@@ -191,6 +191,8 @@ class NSInfoBoxView: UIView {
                         self?.openLink(url)
                     case .popup:
                         self?.popupCallback?()
+                    case .other:
+                        break
                     }
                 }
 

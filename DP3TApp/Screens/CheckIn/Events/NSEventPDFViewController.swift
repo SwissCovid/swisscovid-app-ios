@@ -28,7 +28,6 @@ class NSEventPDFViewController: NSViewController {
         super.viewDidLoad()
 
         setupView()
-        setupButtons()
         loadPdf()
     }
 
@@ -41,15 +40,6 @@ class NSEventPDFViewController: NSViewController {
         webView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-    }
-
-    private func setupButtons() {
-        let printButton = UIBarButtonItem(image: UIImage(named: "icon-print"), style: .plain, target: self, action: #selector(printPressed))
-        let shareButton = UIBarButtonItem(image: UIImage(named: "icon-share"), style: .plain, target: self, action: #selector(sharePressed))
-
-        printButton.isEnabled = false
-        shareButton.isEnabled = false
-        navigationItem.rightBarButtonItems = [shareButton, printButton]
     }
 
     // MARK: - PDF generation and loading
@@ -92,20 +82,6 @@ class NSEventPDFViewController: NSViewController {
         printController.printInfo = printInfo
 
         printController.present(animated: true, completionHandler: nil)
-    }
-
-    @objc private func sharePressed() {
-        var items: [Any] = []
-
-        if let pdf = pdf {
-            items.append(pdf)
-        } else {
-            items.append(event.qrCodeString)
-        }
-
-        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = view
-        present(activityViewController, animated: true, completion: nil)
     }
 }
 

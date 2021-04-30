@@ -1546,7 +1546,7 @@
 "web_generator_title_label" = "Titel";
 
 /*Check-Ins: Veranstaltungen Detail PDF Button*/
-"show_pdf_button" = "Druck-PDF anzeigen";
+"show_pdf_button" = "PDF drucken";
 
 /*Check-Ins: Kategorie Kantine*/
 "web_generator_category_canteen" = "Kantine";
@@ -1617,3 +1617,10 @@
 
 /*Check-Ins: Button Entfernen um Check-In zu löschen*/
 "remove_from_diary_button" = "Entfernen";
+
+/*Check-Ins: QR-Code löschen Titel Button*/
+"delete_button_title" = "Löschen";
+
+/*Check-Ins: Teile QR-Code Button Titel*/
+/*Fuzzy*/
+"share_button_title" = "Teilen";
