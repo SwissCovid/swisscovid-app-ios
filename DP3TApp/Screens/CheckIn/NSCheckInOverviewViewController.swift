@@ -17,7 +17,6 @@ class NSCheckInOverviewViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let currentStateView = NSCheckInCurrentStateModuleView()
-    private let qrCodeGeneratorView = NSCheckInQRCodeGeneratorModuleView()
     private let diaryView = NSCheckInDiaryModuleView()
 
     // MARK: - View setup & lifecycle
@@ -45,8 +44,6 @@ class NSCheckInOverviewViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(currentStateView)
         stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(qrCodeGeneratorView)
-        stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(diaryView)
         stackScrollView.addSpacerView(NSPadding.large)
     }
@@ -64,17 +61,6 @@ class NSCheckInOverviewViewController: NSViewController {
                 let vc = NSCheckInEditViewController()
                 vc.presentInNavigationController(from: strongSelf, useLine: false)
             }
-        }
-
-        qrCodeGeneratorView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
-        }
-
-        qrCodeGeneratorView.generateButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            let vc = NSQRCodeGenerationViewController()
-            vc.presentInNavigationController(from: strongSelf, useLine: false)
         }
 
         diaryView.touchUpCallback = { [weak self] in

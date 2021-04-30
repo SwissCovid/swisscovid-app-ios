@@ -147,12 +147,12 @@ class NSErrorView: UIView {
 
     static var tracingDisabledInfoView: NSErrorView {
         let model = NSErrorViewModel(icon: UIImage(named: "ic-info")!,
-                                            title: "tracing_turned_off_title".ub_localized,
-                                            text: "tracing_turned_off_text".ub_localized,
-                                            buttonTitle: "activate_tracing_button".ub_localized,
-                                            action: { _ in
-                                                TracingManager.shared.startTracing()
-                                            })
+                                     title: "tracing_turned_off_title".ub_localized,
+                                     text: "tracing_turned_off_text".ub_localized,
+                                     buttonTitle: "activate_tracing_button".ub_localized,
+                                     action: { _ in
+                                         TracingManager.shared.startTracing()
+                                     })
         return NSErrorView(model: model)
     }
 
@@ -171,20 +171,20 @@ class NSErrorView: UIView {
 
             if isHomeScreen {
                 return NSErrorViewModel(icon: icon,
-                                               title: "tracing_turned_off_title".ub_localized,
-                                               text: "tracing_turned_off_text".ub_localized,
-                                               buttonTitle: "activate_tracing_button".ub_localized,
-                                               action: { _ in
-                                                   TracingManager.shared.startTracing()
-                                               },
-                                               customColor: customColor)
+                                        title: "tracing_turned_off_title".ub_localized,
+                                        text: "tracing_turned_off_text".ub_localized,
+                                        buttonTitle: "activate_tracing_button".ub_localized,
+                                        action: { _ in
+                                            TracingManager.shared.startTracing()
+                                        },
+                                        customColor: customColor)
             } else {
                 return NSErrorViewModel(icon: icon,
-                                               title: "tracing_turned_off_title".ub_localized,
-                                               text: "tracing_turned_off_detailed_text".ub_localized,
-                                               buttonTitle: nil,
-                                               action: nil,
-                                               customColor: customColor)
+                                        title: "tracing_turned_off_title".ub_localized,
+                                        text: "tracing_turned_off_detailed_text".ub_localized,
+                                        buttonTitle: nil,
+                                        action: nil,
+                                        customColor: customColor)
             }
         case let .tracingPermissionError(code):
             let icon = UIImage(named: "ic-en-error")!
@@ -192,53 +192,53 @@ class NSErrorView: UIView {
             let text = "tracing_permission_error_text_ios".ub_localized.replaceSettingsString
             if #available(iOS 13.7, *) {
                 return NSErrorViewModel(icon: icon,
-                                               title: title,
-                                               text: text,
-                                               buttonTitle: "ios_tracing_permission_error_button".ub_localized,
-                                               errorCode: code,
-                                               action: { _ in
-                                                   guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                                                   NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
-                                               })
+                                        title: title,
+                                        text: text,
+                                        buttonTitle: "ios_tracing_permission_error_button".ub_localized,
+                                        errorCode: code,
+                                        action: { _ in
+                                            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                                            NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
+                                        })
             } else {
                 return NSErrorViewModel(icon: icon,
-                                               title: title,
-                                               text: text,
-                                               buttonTitle: "onboarding_gaen_button_activate".ub_localized,
-                                               errorCode: code,
-                                               action: { _ in
-                                                   guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
-                                                         UIApplication.shared.canOpenURL(settingsUrl) else { return }
-                                                   UIApplication.shared.open(settingsUrl)
-                                               })
+                                        title: title,
+                                        text: text,
+                                        buttonTitle: "onboarding_gaen_button_activate".ub_localized,
+                                        errorCode: code,
+                                        action: { _ in
+                                            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                                                  UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                                            UIApplication.shared.open(settingsUrl)
+                                        })
             }
 
         case .tracingAuthorizationUnknown:
             return NSErrorViewModel(icon: UIImage(named: "ic-en-error")!,
-                                           title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
-                                           text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
-                                           buttonTitle: "onboarding_gaen_button_activate".ub_localized,
-                                           action: { _ in
-                                               TracingManager.shared.startTracing()
-                                           })
+                                    title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
+                                    text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString,
+                                    buttonTitle: "onboarding_gaen_button_activate".ub_localized,
+                                    action: { _ in
+                                        TracingManager.shared.startTracing()
+                                    })
         case .bluetoothTurnedOff:
             return NSErrorViewModel(icon: UIImage(named: "ic-bluetooth-off")!,
-                                           title: "bluetooth_turned_off_title".ub_localized,
-                                           text: "bluetooth_turned_off_text".ub_localized,
-                                           buttonTitle: nil,
-                                           action: nil)
+                                    title: "bluetooth_turned_off_title".ub_localized,
+                                    text: "bluetooth_turned_off_text".ub_localized,
+                                    buttonTitle: nil,
+                                    action: nil)
         case .timeInconsistencyError:
             return NSErrorViewModel(icon: UIImage(named: "ic-error")!,
-                                           title: "time_inconsistency_title".ub_localized,
-                                           text: "time_inconsistency_text".ub_localized,
-                                           buttonTitle: nil,
-                                           action: nil)
+                                    title: "time_inconsistency_title".ub_localized,
+                                    text: "time_inconsistency_text".ub_localized,
+                                    buttonTitle: nil,
+                                    action: nil)
         case .unexpectedError:
             return NSErrorViewModel(icon: UIImage(named: "ic-error")!,
-                                           title: "begegnungen_restart_error_title".ub_localized,
-                                           text: "begegnungen_restart_error_text".ub_localized,
-                                           buttonTitle: nil,
-                                           action: nil)
+                                    title: "begegnungen_restart_error_title".ub_localized,
+                                    text: "begegnungen_restart_error_text".ub_localized,
+                                    buttonTitle: nil,
+                                    action: nil)
         default:
             return nil
         }

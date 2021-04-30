@@ -17,7 +17,7 @@ class OSLogger {
 
     var logger: OSLog {
         #if ENABLE_OS_LOG
-            osLog
+            return osLog
         #else
             OSLog.disabled
         #endif

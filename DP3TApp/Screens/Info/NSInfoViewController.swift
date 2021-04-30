@@ -21,6 +21,8 @@ class NSInfoViewController: NSViewController {
 
     private let travelView = NSTravelModuleView()
 
+    private let qrCodeGeneratorView = NSCheckInQRCodeGeneratorModuleView()
+
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
     private let faqButton = NSButton.faqButton(color: .ns_purple)
@@ -77,6 +79,22 @@ class NSInfoViewController: NSViewController {
             strongSelf.presentTravelDetail()
         }
 
+        qrCodeGeneratorView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentQrCodeGenerator()
+        }
+
+        qrCodeGeneratorView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentEventsViewController()
+        }
+
+        qrCodeGeneratorView.generateButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            let vc = NSQRCodeGenerationViewController()
+            vc.presentInNavigationController(from: strongSelf, useLine: false)
+        }
+
         // Ensure that Screen builds without animation if app not started on homescreen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.finishTransition?()
@@ -118,6 +136,10 @@ class NSInfoViewController: NSViewController {
         travelView.isHidden = true
 
         stackScrollView.addArrangedView(travelView)
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(qrCodeGeneratorView)
+
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
 
         stackScrollView.addArrangedView(faqButton)
@@ -182,5 +204,14 @@ class NSInfoViewController: NSViewController {
     func presentInformViewController(prefill: String? = nil) {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
+    }
+
+    private func presentQrCodeGenerator() {
+        let vc = NSQRCodeGenerationViewController()
+        vc.presentInNavigationController(from: self, useLine: false)
+    }
+
+    private func presentEventsViewController() {
+        navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
     }
 }
