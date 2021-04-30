@@ -269,7 +269,7 @@ extension NSInfoBoxView {
         if let additionalURL = additionalURL {
             isAccessibilityElement = false
 
-            if externalLinkType != .popup {
+            if externalLinkType == .phone, externalLinkType == .url {
                 externalLinkButton.accessibilityHint = additionalURL.contains("bag.admin.ch") ? "accessibility_faq_button_hint".ub_localized : "accessibility_faq_button_hint_non_bag".ub_localized
             }
 
