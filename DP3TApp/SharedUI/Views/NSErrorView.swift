@@ -151,6 +151,26 @@ class NSErrorView: UIView {
                                      text: "tracing_turned_off_text".ub_localized,
                                      buttonTitle: "activate_tracing_button".ub_localized,
                                      action: { _ in
+                                         switch UIStateManager.shared.trackingState {
+                                         case let .inactive(e):
+                                             switch e {
+                                             case .permissonError, .exposureNotificationError:
+                                                 if #available(iOS 13.7, *) {
+                                                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                                                     NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
+                                                 } else {
+                                                     guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                                                           UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                                                     UIApplication.shared.open(settingsUrl)
+                                                 }
+                                                 return
+                                             default:
+                                                 break
+                                             }
+                                         default:
+                                             break
+                                         }
+
                                          TracingManager.shared.startTracing()
                                      })
         return NSErrorView(model: model)
@@ -161,7 +181,7 @@ class NSErrorView: UIView {
         case .tracingDisabled:
             let icon: UIImage
             let customColor: UIColor?
-            if UserStorage.shared.hasStoppedTracingOnce {
+            if !UserStorage.shared.tracingSettingEnabled {
                 icon = UIImage(named: "ic-info")!
                 customColor = .ns_text
             } else {
@@ -175,6 +195,26 @@ class NSErrorView: UIView {
                                         text: "tracing_turned_off_text".ub_localized,
                                         buttonTitle: "activate_tracing_button".ub_localized,
                                         action: { _ in
+                                            switch UIStateManager.shared.trackingState {
+                                            case let .inactive(e):
+                                                switch e {
+                                                case .permissonError, .exposureNotificationError:
+                                                    if #available(iOS 13.7, *) {
+                                                        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                                                        NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
+                                                    } else {
+                                                        guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                                                              UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                                                        UIApplication.shared.open(settingsUrl)
+                                                    }
+                                                    return
+                                                default:
+                                                    break
+                                                }
+                                            default:
+                                                break
+                                            }
+
                                             TracingManager.shared.startTracing()
                                         },
                                         customColor: customColor)

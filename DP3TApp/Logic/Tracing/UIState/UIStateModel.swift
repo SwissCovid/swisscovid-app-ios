@@ -82,6 +82,7 @@ struct UIStateModel: Equatable {
 
     struct EncountersDetail: Equatable {
         var tracingEnabled: Bool = true
+        var tracingSettingEnabled: Bool = true
         var tracing: TracingState = .tracingActive
     }
 

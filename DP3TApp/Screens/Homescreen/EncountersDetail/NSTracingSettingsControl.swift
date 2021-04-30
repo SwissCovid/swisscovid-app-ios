@@ -11,7 +11,7 @@
 import SnapKit
 import UIKit
 
-class NSBluetoothSettingsControl: UIView {
+class NSTracingSettingsControl: UIView {
     // MARK: - Views
 
     var state: UIStateModel.EncountersDetail
@@ -150,10 +150,12 @@ class NSBluetoothSettingsControl: UIView {
     // MARK: - Switch Logic
 
     @objc private func switchChanged() {
+        UserStorage.shared.tracingSettingEnabled = switchControl.isOn
         switchCallback?(switchControl.isOn) { [weak self] state in
             guard let self = self else { return }
 
             self.switchControl.setOn(state, animated: true)
+            UserStorage.shared.tracingSettingEnabled = state
 
             // change tracing manager
             if TracingManager.shared.isActivated != state {
@@ -162,6 +164,8 @@ class NSBluetoothSettingsControl: UIView {
                 } else {
                     TracingManager.shared.endTracing()
                 }
+            } else {
+                UIStateManager.shared.refresh()
             }
 
             UIAccessibility.post(notification: .layoutChanged, argument: self.switchControl)
@@ -174,7 +178,7 @@ class NSBluetoothSettingsControl: UIView {
     private func updateState(_ state: UIStateModel) {
         self.state = state.encountersDetail
 
-        switchControl.setOn(state.encountersDetail.tracingEnabled, animated: false)
+        switchControl.setOn(state.encountersDetail.tracingSettingEnabled, animated: false)
         tracingErrorView.model = NSErrorView.model(for: state.encountersDetail.tracing, isHomeScreen: false)
 
         switch state.encountersDetail.tracing {

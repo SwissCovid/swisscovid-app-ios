@@ -148,7 +148,6 @@ class TracingManager: NSObject {
         guard #available(iOS 12.5, *) else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
-        UserStorage.shared.hasStoppedTracingOnce = true
     }
 
     func resetSDK() {
@@ -242,6 +241,9 @@ class TracingManager: NSObject {
 
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
+        if state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff) {
+            UserStorage.shared.tracingSettingEnabled = true
+        }
         DispatchQueue.main.async {
             UIStateManager.shared.blockUpdate {
                 UIStateManager.shared.updateError = nil

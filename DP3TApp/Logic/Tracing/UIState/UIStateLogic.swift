@@ -30,6 +30,7 @@ class UIStateLogic {
 
         // Set tracing active
         newState.encountersDetail.tracingEnabled = TracingManager.shared.isActivated
+        newState.encountersDetail.tracingSettingEnabled = UserStorage.shared.tracingSettingEnabled
         newState.encountersDetail.tracing = tracing
 
         // Get state of SDK tracing
@@ -187,7 +188,7 @@ class UIStateLogic {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
             case .permissonError:
-                if UserStorage.shared.hasStoppedTracingOnce {
+                if !UserStorage.shared.tracingSettingEnabled {
                     tracing = .tracingDisabled
                 } else {
                     tracing = .tracingPermissionError(code: nil)
@@ -195,7 +196,7 @@ class UIStateLogic {
             case .authorizationUnknown:
                 tracing = .tracingAuthorizationUnknown
             case .exposureNotificationError:
-                if UserStorage.shared.hasStoppedTracingOnce {
+                if !UserStorage.shared.tracingSettingEnabled {
                     tracing = .tracingDisabled
                 } else {
                     tracing = .tracingPermissionError(code: error.errorCodeString)

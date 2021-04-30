@@ -102,7 +102,7 @@
 		242D222B245C4BD8005DAEA8 /* NSReportsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097D244603560097BD3D /* NSReportsDetailViewController.swift */; };
 		242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E518D242FB9A8006E532E /* NSAppTitleView.swift */; };
 		242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
-		242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */; };
+		242D222E245C4BD8005DAEA8 /* NSTracingSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSTracingSettingsControl.swift */; };
 		242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702AFA243F6D870066C773 /* UBLabelType.swift */; };
 		242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSEncountersModuleView.swift */; };
 		242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */; };
@@ -278,7 +278,7 @@
 		6EF4D2462458274D005E2A9C /* HomescreenInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */; };
 		6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */; };
 		6EFB097524459B870097BD3D /* NSEncountersDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */; };
-		6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */; };
+		6EFB09772445B1940097BD3D /* NSTracingSettingsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09762445B1940097BD3D /* NSTracingSettingsControl.swift */; };
 		6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */; };
 		6EFB097B2445C2210097BD3D /* NSPointTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097A2445C2210097BD3D /* NSPointTextView.swift */; };
 		6EFB097E244603560097BD3D /* NSReportsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EFB097D244603560097BD3D /* NSReportsDetailViewController.swift */; };
@@ -721,7 +721,7 @@
 		6EF4D2452458274D005E2A9C /* HomescreenInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomescreenInfoBoxView.swift; sourceTree = "<group>"; };
 		6EF4D24724582BBB005E2A9C /* NSExternalLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExternalLinkButton.swift; sourceTree = "<group>"; };
 		6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersDetailViewController.swift; sourceTree = "<group>"; };
-		6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSBluetoothSettingsControl.swift; sourceTree = "<group>"; };
+		6EFB09762445B1940097BD3D /* NSTracingSettingsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTracingSettingsControl.swift; sourceTree = "<group>"; };
 		6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInfoBoxView.swift; sourceTree = "<group>"; };
 		6EFB097A2445C2210097BD3D /* NSPointTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPointTextView.swift; sourceTree = "<group>"; };
 		6EFB097D244603560097BD3D /* NSReportsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailViewController.swift; sourceTree = "<group>"; };
@@ -1444,7 +1444,7 @@
 			children = (
 				6EFB097424459B870097BD3D /* NSEncountersDetailViewController.swift */,
 				8EF2A6E42490E26F002263C3 /* NSLastSyncronizationControl.swift */,
-				6EFB09762445B1940097BD3D /* NSBluetoothSettingsControl.swift */,
+				6EFB09762445B1940097BD3D /* NSTracingSettingsControl.swift */,
 				6EFB097A2445C2210097BD3D /* NSPointTextView.swift */,
 			);
 			path = EncountersDetail;
@@ -2449,7 +2449,7 @@
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
-				242D222E245C4BD8005DAEA8 /* NSBluetoothSettingsControl.swift in Sources */,
+				242D222E245C4BD8005DAEA8 /* NSTracingSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
 				6EB1D56D2636F76100981571 /* CheckInManager.swift in Sources */,
 				DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */,
@@ -2687,7 +2687,7 @@
 				6EFB097E244603560097BD3D /* NSReportsDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
-				6EFB09772445B1940097BD3D /* NSBluetoothSettingsControl.swift in Sources */,
+				6EFB09772445B1940097BD3D /* NSTracingSettingsControl.swift in Sources */,
 				DC702AFB243F6D870066C773 /* UBLabelType.swift in Sources */,
 				AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */,
 				F80E407A25092B0500876906 /* NSStatisticsChartContentView.swift in Sources */,
