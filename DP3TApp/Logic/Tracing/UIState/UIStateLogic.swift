@@ -47,8 +47,10 @@ class UIStateLogic {
         //
 
         var infectionStatus = tracingState.infectionStatus
+        var oldestSharedKeyDate = ReportingManager.shared.oldestSharedKeyDate
         #if ENABLE_STATUS_OVERRIDE
             setDebugOverwrite(&infectionStatus, &newState)
+            setDebugSharedKeyDate(&oldestSharedKeyDate)
         #endif
 
         switch infectionStatus {
@@ -56,7 +58,7 @@ class UIStateLogic {
             break
 
         case .infected:
-            setInfectedState(&newState)
+            setInfectedState(&newState, oldestSharedKeyDate: oldestSharedKeyDate)
 
         case let .exposed(days):
             setExposedState(&newState, days: days)
@@ -66,7 +68,7 @@ class UIStateLogic {
         // Set debug helpers
         #if ENABLE_STATUS_OVERRIDE
             setDebugReports(&newState)
-            setDebugDisplayValues(&newState, tracingState: tracingState)
+            setDebugDisplayValues(&newState, tracingState: tracingState, oldestSharedKeyDate: oldestSharedKeyDate)
         #endif
 
         #if ENABLE_LOGGING && ENABLE_STATUS_OVERRIDE
@@ -174,9 +176,9 @@ class UIStateLogic {
 
     // MARK: - Set global state to infected or exposed
 
-    private func setInfectedState(_ newState: inout UIStateModel) {
-        newState.homescreen.reports.report = .infected
-        newState.reportsDetail.report = .infected
+    private func setInfectedState(_ newState: inout UIStateModel, oldestSharedKeyDate: Date?) {
+        newState.homescreen.reports.report = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
+        newState.reportsDetail.report = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
         newState.homescreen.header = .tracingEnded
         newState.homescreen.encounters = .tracingEnded
     }
@@ -265,7 +267,7 @@ class UIStateLogic {
             }
         }
 
-        private func setDebugDisplayValues(_ newState: inout UIStateModel, tracingState: TracingState) {
+        private func setDebugDisplayValues(_ newState: inout UIStateModel, tracingState: TracingState, oldestSharedKeyDate: Date?) {
             newState.debug.lastSync = tracingState.lastSync
 
             // add real tracing state of sdk and overwritten state
@@ -275,7 +277,15 @@ class UIStateLogic {
             case .exposed:
                 newState.debug.infectionStatus = .exposed1
             case .infected:
-                newState.debug.infectionStatus = .infected
+                newState.debug.infectionStatus = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
+            }
+        }
+
+        private func setDebugSharedKeyDate(_ newDate: inout Date?) {
+            if
+                let os = manager.overwrittenInfectionState,
+                case let .infected(oldestSharedKeyDate) = os {
+                newDate = oldestSharedKeyDate
             }
         }
     #endif

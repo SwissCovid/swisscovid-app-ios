@@ -80,8 +80,9 @@ class NSReportsDetailViewController: NSViewController {
             reportsViewController.view.isHidden = false
             reportsViewController.reports = state.reports
             reportsViewController.didOpenLeitfaden = state.didOpenLeitfaden
-        case .infected:
+        case let .infected(onsetDate):
             positiveTestedViewController.view.isHidden = false
+            positiveTestedViewController.onsetDate = onsetDate
         case .noReport:
             noReportsViewController.view.isHidden = false
         }

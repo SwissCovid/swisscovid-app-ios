@@ -603,7 +603,7 @@
 
 /*Inform Detail: FAQ Text*/
 /*Fuzzy*/
-"inform_detail_faq1_text" = "ውጽኢት መርመርኦም ፖዚቲቭ ዝኾኑ ሰባት ኮቪድኮድ ይውሃቦም። ብኸምዚ መንገዲ እቶም ሕማም ዝተረጋገጸሎም ሰባት ጥራይ በቲ ኣፕ ከምዝምዝገቡ ይረጋገጽ። ";
+"inform_detail_faq1_text" = "ሰባት ኮሮናቫይረስ ከምዘለዎም ምስዝረጋግጽ / ፖዚቲቭ ምስኮኑ (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ሓደ ኮቪድ-ኮድ ክወሃቡ እዮም።\n\nሽዑ ጥራይ ዝተረጋገጹ ጉዳያት በቲ ኤፕ ክሕበሩ ከምዝኾኑ ተረጋጊጹ።";
 
 /*Inform Detail: FAQ Titel*/
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
@@ -838,7 +838,8 @@
 "meldungen_detail_free_test_title" = "ነጻ መርመራ ይከኣል'ዩ";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
-"meldungen_detail_free_test_text" = "መምርሒ SwissCovid ብዛዕባ ኣማራጺ ነጻ ዝኾነ መርመራ ኮሮናቫይረስ ይሕብረኩም።";
+/*Fuzzy*/
+"meldungen_detail_free_test_text_old" = "መምርሒ SwissCovid ብዛዕባ ኣማራጺ ነጻ ዝኾነ መርመራ ኮሮናቫይረስ ይሕብረኩም።";
 
 /*Button title on the Home Screen when the Tracing is deactivated to directly activate it.*/
 "activate_tracing_button" = "ንትራይሲንግ(Tracing) ምውላዕ";
@@ -1267,7 +1268,7 @@
 "stats_cases_current_description" = "እቲ ስእሊ ነቶም ዝተሓበሩ ሓድሽቲ ልበዳታት ኣብ ዝሓለፉ 28 መዓልትታት የርኢ። እዚ ሓፈሻዊ ሓበሬታ ብዛዕባ ግዝያዊ ምዕባለ ይህብ።";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "ኣወንታዊ ኮቪድ ኣባኹም ተረጋጊጹ፣ ድሕሪ 4 ሰዓት ናይ ኮቪድ ኮድ ገና ኣይተወሃብኩምን፧\nሽዑ ናይ ኮቪድ-ኮድ ሓበሬታ ስልኪ ርኸቡ፥";
+"inform_detail_infobox1_text" = "ፖዚቲቭ ተመርሚርኩም (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ከምኡ'ውን ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩምን፧ ሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "ናይ ኮቪድ ኮድ ገና የብልኩምን፧";
@@ -1301,3 +1302,51 @@
 
 /*Überschrift im Popup für die "Veränderung zur Vorwoche" Statistik*/
 "stats_cases_rel_prev_week_popup_header" = "ቅያር ካብ ዝሓለፈ ሰሙን";
+
+/*Meldungen: Positiv getestet FAQ 2 Titel (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_title" = "መን ክሕበር እዩ፧";
+
+/*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
+"meldungen_positive_tested_faq2_text" = "ኩሎም ኣብ እዋንኩም መልከፍቲ ካብ {ONSET_DATE} ክሳብ ምእታው ኮቪድ-ኮድ ዝነበረኩም ርክባት ክሕበሩ እዮም፣ ብምኽንያት ርሕቐትን እዋንን ኣማራጺ ልበዳ እንድሕር ኔሩ።";
+
+/*Informieren: Danke Text Onset Date*/
+"inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – ሎሚ";
+
+/*Informieren: Danke Text Abschluss*/
+"inform_send_thankyou_text_stop_infection_chains" = "ሽዑ ናይ ልበዳ ሰንሰለታት ንክቋረጹ ትሐባበሩ ኢኹም።";
+
+/*Informieren: Danke Text Onset Date Einleitung*/
+"inform_send_thankyou_text_onsetdate_info" = "ግላውያን መፋትሕ ናይ ኤፕኩም ንዝስዕብ እዋን ተሰዲዶም ኔሮም፥";
+
+/*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
+"android_inform_tracing_enabled_explanation" = "ኣብ ምእታው ኮቪድ-ኮድ እቲ ምክትታል ክውላዕ ኣለዎ፣ ግላዊ መፍትሕኩም ክካፈል መታን ክከኣል።";
+
+/*Leitfaden Info Popup Text*/
+"leitfaden_infopopup_text" = "መጠወቒ \"{BUTTON_TITLE}\" ትጥውቕዎ እንተኾይንኩም፣ ካብቲ ኤፕ ትወጽኡ ከምኡ'ውን ናብቲ መርበብ ኢንተርነት መምርሒ SwissCovid ክትቕይሩ። ሽዑ ሓበሬታ/ዳታ ናይ ተፈጺሞም ዝኾኑ ልበዳታት ናይቲ ዝሓለፈ ምርኽኻብ ካብቲ መርበብ ኢንተርነት እንተላይ ይስደዱ።";
+
+/*Leitfaden InfoPopup Titel*/
+"leitfaden_infopopup_title" = "ሓበሬታ መምርሒ SwissCovid";
+
+/*Update Boarding: Titel*/
+"germany_update_boarding_title" = "ምስ ጀርመን ዝሰማማዕ ";
+
+/*Update Boarding: Text*/
+"germany_update_boarding_text" = "ዋላ ምስ ናይ መጠንቀቕታ ኮሮና ኤፕ ዝጥቐምን ድሓር ፖዚቲቭ ዝተመርመረን ሰብ ምርኽኻብ እንተነበረኩም ንስኹም ዋላ ክትሕበሩ ኢኹም። ሽዑ እቶም ናይ ኣጠቓቕማ ኩነታት ከምኡ'ውን ስምምዕ ምክልኻል ዳታ ክሕደሱ እዮም።";
+
+/*Update Boarding: Heading oben*/
+"germany_update_boarding_heading" = "ምምሕዳስ SwissCovid";
+
+/*Debug Screen: Update-Boarding Reset Button*/
+"reset_update_boarding" = "Reset update boarding";
+
+/*Meldungen Detail Kostenloser Test Box Text*/
+"meldungen_detail_free_test_text" = "መርመራ ኮሮና ካብ 5ይ መዓልቲ ድሕሪ ዝተረኣየ ዕለት ርክብ ጠቓሚ እዩ ከምኡ'ውን ክግበር ይመርጽ።";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt in wievielen Tagen ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_in_x_tagen" = "ኣብ {COUNT} መዓልትታት";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass jetzt ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_now" = "ሕጂ";
+
+/*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
+"meldungen_detail_free_test_tomorrow" = "ኣብ 1 መዓልቲ";

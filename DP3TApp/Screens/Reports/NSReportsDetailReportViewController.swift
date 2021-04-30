@@ -32,6 +32,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     private var alreadyOpendView: NSSimpleModuleBaseView?
 
     private var daysLeftLabels = [NSLabel]()
+    private var testViews = [NSInfoBoxView]()
 
     private var overrideHitTestAnyway: Bool = true
 
@@ -114,6 +115,10 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         notYetOpendView?.isHidden = didOpenLeitfaden
         alreadyOpendView?.isHidden = !didOpenLeitfaden
 
+        for l in testViews {
+            l.update(with: createTestViewModel())
+        }
+
         let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
         if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
             let endQuarentineDate = latestExposure.addingTimeInterval(quarantinePeriod)
@@ -136,7 +141,8 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
-        leitfadenButton.title = "meldungen_detail_open_leitfaden_button".ub_localized.uppercased()
+        let text = "meldungen_detail_open_leitfaden_button".ub_localized
+        leitfadenButton.title = text.uppercased()
         leitfadenButton.backgroundColor = .ns_blue
 
         leitfadenButton.touchUpCallback = { [weak self] in
@@ -144,9 +150,12 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(40.0)
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addArrangedView(createTestView())
+        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: false))
+        whiteBoxView.contentView.addSpacerView(30.0)
+        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -163,17 +172,21 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url)
-        leitfadenButton.title = "meldungen_detail_open_leitfaden_again_button".ub_localized.uppercased()
+        let text = "meldungen_detail_open_leitfaden_again_button".ub_localized
+        leitfadenButton.title = text.uppercased()
 
         leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(leitfadenButton)
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView())
+        whiteBoxView.contentView.addArrangedSubview(createTestView())
+        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: true))
+        whiteBoxView.contentView.addSpacerView(30.0)
+        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -213,33 +226,27 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         }
     }
 
-    private func createExplanationView() -> UIView {
+    private func createExplanationView(addDaysLabel: Bool) -> UIView {
         let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
 
-        let wrapper = UIView()
-        let daysLeftLabel = NSLabel(.textBold)
-        daysLeftLabels.append(daysLeftLabel)
-        wrapper.addSubview(daysLeftLabel)
-        daysLeftLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(30)
+        if addDaysLabel {
+            let wrapper = UIView()
+            let daysLeftLabel = NSLabel(.textBold)
+            daysLeftLabels.append(daysLeftLabel)
+            wrapper.addSubview(daysLeftLabel)
+            daysLeftLabel.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.leading.trailing.equalToSuperview().inset(30)
+            }
+
+            ev.stackView.insertArrangedSubview(wrapper, at: 3)
+            ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
         }
 
-        ev.stackView.insertArrangedSubview(wrapper, at: 3)
-        ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
+        return ev
+    }
 
-        var infoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized,
-                                                       subText: "meldungen_detail_free_test_text".ub_localized,
-                                                       titleColor: .ns_text,
-                                                       subtextColor: .ns_text)
-        infoBoxViewModel.image = UIImage(named: "ic-info-on")
-        infoBoxViewModel.backgroundColor = .ns_blueBackground
-        infoBoxViewModel.titleLabelType = .textBold
-
-        let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
-
-        ev.stackView.addArrangedSubview(infoBoxView)
-
+    private func createCallInfoBox() -> UIView {
         let callInfoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_tel_information_title".ub_localized,
                                                            subText: "meldungen_tel_information_text".ub_localized,
                                                            image: UIImage(named: "ic-infoline"),
@@ -247,15 +254,85 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
                                                            subtextColor: .ns_text,
                                                            additionalText: "infoline_tel_number".ub_localized,
                                                            additionalURL: "infoline_tel_number".ub_localized,
-                                                           dynamicIconTintColor: .ns_blue,
+                                                           dynamicIconTintColor: .ns_text,
                                                            titleLabelType: .textBold,
                                                            externalLinkStyle: .normal(color: .ns_blue),
                                                            externalLinkType: .phone)
+        let infoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
 
-        let callInfoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
-        ev.stackView.addArrangedSubview(callInfoBox)
+        let container = UIView()
+        container.addSubview(infoBox)
+        infoBox.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-NSPadding.large)
+        }
 
-        return ev
+        return container
+    }
+
+    // MARK: - Info
+
+    private func addInfoButton(to button: UIView, buttonText: String) -> UIView {
+        let stackView = UIStackView()
+        stackView.spacing = NSPadding.medium
+        stackView.alignment = .center
+
+        stackView.addArrangedSubview(button)
+
+        // Info button (added after stackView so it is on top)
+        let infoButton = UBButton()
+        infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        infoButton.tintColor = .ns_blue
+        infoButton.highlightCornerRadius = 20
+        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
+
+        stackView.addArrangedSubview(infoButton)
+
+        infoButton.snp.makeConstraints { make in
+            make.size.equalTo(40)
+        }
+
+        infoButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            let popup = NSReportsLeitfadenInfoPopupViewController(buttonText: buttonText)
+            strongSelf.present(popup, animated: true, completion: nil)
+        }
+
+        return stackView
+    }
+
+    private func createTestView() -> UIView {
+        let view = UIView()
+
+        let infoBoxViewModel = createTestViewModel()
+
+        let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
+
+        infoBoxView.popupCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.openTestCenterPopup()
+        }
+
+        view.addSubview(infoBoxView)
+
+        infoBoxView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview().inset(2.0 * NSPadding.medium)
+            make.left.right.equalToSuperview().inset(NSPadding.medium - NSPadding.large)
+        }
+
+        testViews.append(infoBoxView)
+
+        return view
+    }
+
+    private func createTestViewModel() -> NSInfoBoxView.ViewModel {
+        let boldSubtext = calculateTestDay()
+
+        var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, image: UIImage(named: "ic-info"), titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "", dynamicIconTintColor: UIColor.ns_text, externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
+        viewModel.titleLabelType = .textBold
+
+        return viewModel
     }
 
     // MARK: - Logic
@@ -281,6 +358,11 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         UserStorage.shared.didOpenLeitfaden = true
         UIStateManager.shared.refresh()
     }
+
+    private func openTestCenterPopup() {
+        let vc = NSMoreTestInformationPopupViewController()
+        present(vc, animated: true, completion: nil)
+    }
 }
 
 extension NSReportsDetailReportViewController: NSHitTestDelegate {
@@ -301,5 +383,43 @@ extension NSReportsDetailReportViewController: NSHitTestDelegate {
         }
 
         return false
+    }
+
+    private func calculateTestDay() -> String? {
+        // constants
+        let minExposureAgeToDoATest: Int = 5
+        let maxExposureAgeToDoATest: Int = 10
+
+        let today = Date()
+        var oldestExposure: Date? // only exposures that are newer than minExposureAgeToDoATest
+
+        for r in reports {
+            if let inMinDays = Calendar.current.date(byAdding: .day, value: minExposureAgeToDoATest, to: r.timestamp),
+               let inMaxDays = Calendar.current.date(byAdding: .day, value: maxExposureAgeToDoATest, to: r.timestamp),
+               inMinDays <= today, inMaxDays > today {
+                return "meldungen_detail_free_test_now".ub_localized
+            }
+
+            if let inMinDays = Calendar.current.date(byAdding: .day, value: minExposureAgeToDoATest, to: r.timestamp),
+               inMinDays > today, r.timestamp < today {
+                // save oldest
+                if let oe = oldestExposure {
+                    if r.timestamp < oe {
+                        oldestExposure = r.timestamp
+                    }
+                } else {
+                    oldestExposure = r.timestamp
+                }
+            }
+        }
+
+        if let oldest = oldestExposure {
+            let daysSinceFirstExposure = oldest.ns_differenceInDaysWithDate(date: today)
+            let daysUntilTest = minExposureAgeToDoATest - daysSinceFirstExposure
+
+            return daysUntilTest == 1 ? "meldungen_detail_free_test_tomorrow".ub_localized : "meldungen_detail_free_test_in_x_tagen".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(daysUntilTest)")
+        }
+
+        return nil
     }
 }

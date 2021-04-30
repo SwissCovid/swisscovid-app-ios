@@ -124,6 +124,8 @@ class TracingManager: NSObject {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
                 case .success:
+                    // reset reminder Notifications
+                    TracingLocalPush.shared.resetReminderNotification()
                     // reset stored error when starting tracing
                     UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
@@ -162,8 +164,9 @@ class TracingManager: NSObject {
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
 
-        // reset end isolation question date
+        // reset end isolation question date and onset date
         ReportingManager.shared.endIsolationQuestionDate = nil
+        ReportingManager.shared.oldestSharedKeyDate = nil
 
         // reset infection status
         DP3TTracing.resetInfectionStatus()
