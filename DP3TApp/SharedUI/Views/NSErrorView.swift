@@ -137,6 +137,19 @@ class NSErrorView: UIView {
 
     // MARK: - Factory
 
+    static var cameraPermissionErrorView: NSErrorView {
+        return NSErrorView(model: .init(icon: UIImage(named: "icons-ic-cam-off")!,
+                                        title: "error_camera_permission_title".ub_localized,
+                                        text: "error_camera_permission_text".ub_localized,
+                                        buttonTitle: "error_action_change_settings".ub_localized,
+                                        errorCode: "CPE",
+                                        action: { _ in
+                                            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
+                                                  UIApplication.shared.canOpenURL(settingsUrl) else { return }
+                                            UIApplication.shared.open(settingsUrl)
+                                        }))
+    }
+
     static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSErrorView? {
         if let model = self.model(for: state, isHomeScreen: isHomeScreen) {
             return NSErrorView(model: model)

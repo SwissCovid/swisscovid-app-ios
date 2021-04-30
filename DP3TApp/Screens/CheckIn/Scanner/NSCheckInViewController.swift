@@ -17,7 +17,7 @@ class NSCheckInViewController: NSViewController {
     private var qrOverlay = NSQRScannerFullOverlayView()
 
     private let errorContainer = UIView()
-    private let errorView = NSLabel(.title)
+    private let errorView = NSErrorView.cameraPermissionErrorView
 
     private let qrErrorLabel = NSLabel(.textBold, textColor: UIColor.ns_red, textAlignment: .center)
 
@@ -94,7 +94,7 @@ class NSCheckInViewController: NSViewController {
             make.left.right.equalToSuperview().inset(NSPadding.medium)
         }
 
-        errorContainer.backgroundColor = .ns_backgroundDark
+        errorContainer.backgroundColor = .ns_backgroundSecondary
         view.addSubview(errorContainer)
         errorContainer.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -102,11 +102,9 @@ class NSCheckInViewController: NSViewController {
 
         errorContainer.addSubview(errorView)
         errorView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(NSPadding.large * 2)
+            make.centerY.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
         }
-
-        errorView.text = "ERROR"
 
         view.addSubview(lampButton)
         lampButton.snp.makeConstraints { make in
@@ -136,6 +134,7 @@ class NSCheckInViewController: NSViewController {
 
     private func startScanningProcess() {
         errorContainer.alpha = 0.0
+        lampButton.alpha = 1.0
         qrView?.startScanning()
         qrErrorLabel.alpha = 0.0
         qrOverlay.scannerOverlay.lineColor = .ns_darkBlueBackground
@@ -149,6 +148,7 @@ class NSCheckInViewController: NSViewController {
 extension NSCheckInViewController: NSQRScannerViewDelegate {
     func qrScanningDidFail() {
         errorContainer.alpha = 1.0
+        lampButton.alpha = 0.0
     }
 
     func qrScanningSucceededWithCode(_ str: String?) {
