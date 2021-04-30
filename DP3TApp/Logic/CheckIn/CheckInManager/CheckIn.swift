@@ -19,14 +19,12 @@ struct CheckIn: UBCodable, Equatable {
     var checkInTime: Date
     var comment: String?
     var checkOutTime: Date?
-    var createdEventId: String?
 
-    init(identifier: String, qrCode: String, checkInTime: Date, venue: VenueInfo, createdEventId: String? = nil) {
+    init(identifier: String, qrCode: String, checkInTime: Date, venue: VenueInfo) {
         self.identifier = identifier
         self.qrCode = qrCode
         self.venue = venue
         self.checkInTime = checkInTime
-        self.createdEventId = createdEventId
     }
 
     static func == (lhs: CheckIn, rhs: CheckIn) -> Bool {
@@ -34,8 +32,8 @@ struct CheckIn: UBCodable, Equatable {
         let sameComment = lhs.comment ?? "" == rhs.comment ?? ""
         let sameCheckInTime = lhs.checkInTime == rhs.checkInTime
         let sameCheckOutTime = rhs.checkOutTime == lhs.checkOutTime
-        let sameCreatedEventId = lhs.createdEventId == rhs.createdEventId
-        return sameId && sameComment && sameCheckInTime && sameCheckOutTime && sameCreatedEventId
+        let sameQrCode = lhs.qrCode == rhs.qrCode
+        return sameId && sameComment && sameCheckInTime && sameCheckOutTime && sameQrCode
     }
 
     public func timeSinceCheckIn() -> String {

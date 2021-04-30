@@ -1624,3 +1624,6 @@
 /*Check-Ins: Teile QR-Code Button Titel*/
 /*Fuzzy*/
 "share_button_title" = "Teilen";
+
+/*Check-Ins: Drucken Button auf PDF-Detailseite*/
+"print_button_title" = "Drucken";

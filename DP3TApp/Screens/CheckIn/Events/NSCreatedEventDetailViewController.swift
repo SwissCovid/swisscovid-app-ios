@@ -41,6 +41,16 @@ class NSCreatedEventDetailViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.sharePDF()
         }
+
+        shareButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.sharePressed()
+        }
+
+        deleteButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.deletePressed()
+        }
     }
 
     override func viewDidLoad() {
@@ -60,7 +70,7 @@ class NSCreatedEventDetailViewController: NSViewController {
     private func update(_ state: UIStateModel.CheckInStateModel) {
         switch state.checkInState {
         case let .checkIn(checkIn):
-            let isHidden = checkIn.createdEventId == createdEvent.id
+            let isHidden = checkIn.qrCode == createdEvent.qrCodeString
             checkInButton.isHidden = isHidden
             deleteButton.isHidden = isHidden
         default:
@@ -126,5 +136,25 @@ class NSCreatedEventDetailViewController: NSViewController {
     private func sharePDF() {
         let vc = NSEventPDFViewController(event: createdEvent)
         vc.presentInNavigationController(from: self, useLine: false)
+    }
+
+    private func sharePressed() {
+        var items: [Any] = []
+
+        if let pdf = QRCodePDFGenerator.generate(from: createdEvent.qrCodeString) {
+            items.append(pdf)
+        } else {
+            items.append(createdEvent.qrCodeString)
+        }
+
+        let activityViewController: UIActivityViewController = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        activityViewController.title = "app_name".ub_localized
+        activityViewController.popoverPresentationController?.sourceView = view
+        present(activityViewController, animated: true, completion: nil)
+    }
+
+    private func deletePressed() {
+        CreatedEventsManager.shared.deleteEvent(with: createdEvent.id)
+        navigationController?.popViewController(animated: true)
     }
 }

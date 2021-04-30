@@ -23,14 +23,11 @@ class NSCheckInConfirmViewController: NSViewController {
 
     private var reminderOption: ReminderOption?
 
-    private let createdEventId: String?
-
     // MARK: - Init
 
     init(qrCode: String, venueInfo: VenueInfo) {
         self.qrCode = qrCode
         self.venueInfo = venueInfo
-        createdEventId = nil
 
         super.init()
 
@@ -40,7 +37,6 @@ class NSCheckInConfirmViewController: NSViewController {
     init(createdEvent: CreatedEvent) {
         qrCode = createdEvent.qrCodeString
         venueInfo = createdEvent.venueInfo
-        createdEventId = createdEvent.id
 
         super.init()
 
@@ -91,7 +87,7 @@ class NSCheckInConfirmViewController: NSViewController {
         checkInButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            CheckInManager.shared.checkIn(qrCode: strongSelf.qrCode, venueInfo: strongSelf.venueInfo, createdEventId: strongSelf.createdEventId)
+            CheckInManager.shared.checkIn(qrCode: strongSelf.qrCode, venueInfo: strongSelf.venueInfo)
 
             NSLocalPush.shared.scheduleAutomaticReminderAndCheckoutNotifications()
 

@@ -13,7 +13,9 @@ import Foundation
 import WebKit
 
 class NSEventPDFViewController: NSViewController {
-    let webView = WKWebView()
+    private let webView = WKWebView()
+
+    private let printButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-print")), buttonTintColor: .ns_blue)
 
     let event: CreatedEvent
 
@@ -22,23 +24,47 @@ class NSEventPDFViewController: NSViewController {
     init(event: CreatedEvent) {
         self.event = event
         super.init()
+
+        printButton.title = "print_button_title".ub_localized
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+        setupButton()
         loadPdf()
     }
 
     // MARK: - Setup
 
-    private func setupView() {
-        webView.navigationDelegate = self
+    private func setupButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(closeButtonTouched))
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([
+            .font: NSLabelType.textBold.font,
+            .foregroundColor: UIColor.ns_blue,
+        ], for: .normal)
+    }
 
+    private func setupView() {
         view.addSubview(webView)
         webView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.left.right.equalToSuperview().inset(NSPadding.medium * 3.0)
+            make.height.equalTo(webView.snp.width).multipliedBy(29.7 / 21.0)
+        }
+
+        view.addSubview(printButton)
+
+        printButton.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(3.0 * NSPadding.large)
+            make.top.equalTo(webView.snp.bottom).offset(2.0 * NSPadding.large)
+        }
+
+        webView.isUserInteractionEnabled = false
+
+        printButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.printPressed()
         }
     }
 
@@ -58,11 +84,6 @@ class NSEventPDFViewController: NSViewController {
             fileManager.createFile(atPath: path, contents: data, attributes: nil)
             if let pdf = try? Data(contentsOf: fileURL) {
                 self.pdf = pdf
-
-                for b in navigationItem.rightBarButtonItems ?? [] {
-                    b.isEnabled = true
-                }
-
                 webView.loadFileURL(fileURL, allowingReadAccessTo: fileURL)
             }
         }
@@ -70,7 +91,7 @@ class NSEventPDFViewController: NSViewController {
 
     // MARK: - Actions
 
-    @objc private func printPressed() {
+    private func printPressed() {
         guard let pdfData = pdf else { return }
 
         let printController = UIPrintInteractionController.shared
@@ -83,19 +104,8 @@ class NSEventPDFViewController: NSViewController {
 
         printController.present(animated: true, completionHandler: nil)
     }
-}
 
-extension NSEventPDFViewController: WKNavigationDelegate {
-    func webView(_: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        switch navigationAction.navigationType {
-        case .other:
-            decisionHandler(.allow)
-            return
-
-        default:
-            break
-        }
-
-        decisionHandler(.cancel)
+    @objc private func closeButtonTouched() {
+        dismiss(animated: true, completion: nil)
     }
 }

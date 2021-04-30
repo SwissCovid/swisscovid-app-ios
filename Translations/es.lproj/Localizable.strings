@@ -1559,3 +1559,6 @@
 
 /*Check-Ins: Teile QR-Code Button Titel*/
 "share_button_title" = "";
+
+/*Check-Ins: Drucken Button auf PDF-Detailseite*/
+"print_button_title" = "";

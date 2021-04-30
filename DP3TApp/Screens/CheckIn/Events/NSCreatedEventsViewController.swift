@@ -13,8 +13,7 @@ import UIKit
 
 class NSCreatedEventsViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: NSPadding.small)
-
-    private var eventCards: [NSCreatedEventCard] = []
+    private let generateButton = NSButton(title: "checkins_create_qr_code".ub_localized)
 
     override init() {
         super.init()
@@ -25,13 +24,16 @@ class NSCreatedEventsViewController: NSViewController {
         super.viewDidLoad()
 
         setupView()
+        updateEvents()
 
-        updateEvents(checkInState: UIStateManager.shared.uiState.checkInStateModel.checkInState)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: .createdEventAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateEvents), name: .createdEventDeleted, object: nil)
 
-        UIStateManager.shared.addObserver(self, block: { [weak self] state in
+        generateButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.updateState(state)
-        })
+            let vc = NSQRCodeGenerationViewController()
+            vc.presentInNavigationController(from: strongSelf, useLine: false)
+        }
     }
 
     private func setupView() {
@@ -46,14 +48,20 @@ class NSCreatedEventsViewController: NSViewController {
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
     }
 
-    private func updateState(_ state: UIStateModel) {
-        updateEvents(checkInState: state.checkInStateModel.checkInState)
-    }
-
-    private func updateEvents(checkInState _: UIStateModel.CheckInStateModel.CheckInState? = nil) {
+    @objc private func updateEvents() {
         stackScrollView.removeAllViews()
 
-        eventCards.removeAll()
+        let contentView = UIView()
+
+        contentView.addSubview(generateButton)
+
+        generateButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.large)
+            make.centerX.equalToSuperview()
+        }
+
+        stackScrollView.addArrangedView(contentView)
 
         for event in CreatedEventsManager.shared.createdEvents {
             let card = NSCreatedEventCard(createdEvent: event)
@@ -64,8 +72,11 @@ class NSCreatedEventsViewController: NSViewController {
                 strongSelf.navigationController?.pushViewController(NSCreatedEventDetailViewController(createdEvent: event), animated: true)
             }
 
-            eventCards.append(card)
             stackScrollView.addArrangedView(card)
         }
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
