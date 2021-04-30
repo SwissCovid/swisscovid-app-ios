@@ -149,6 +149,7 @@ class NSInfoViewController: NSViewController {
         travelView.alpha = 0
         whatToDoSymptomsButton.alpha = 0
         faqButton.alpha = 0
+        qrCodeGeneratorView.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -168,6 +169,10 @@ class NSInfoViewController: NSViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.55, options: [.allowUserInteraction], animations: {
+                self.qrCodeGeneratorView.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 self.faqButton.alpha = 1
             }, completion: nil)
         }

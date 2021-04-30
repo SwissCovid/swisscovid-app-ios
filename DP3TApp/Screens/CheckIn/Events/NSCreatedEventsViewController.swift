@@ -16,6 +16,11 @@ class NSCreatedEventsViewController: NSViewController {
 
     private var eventCards: [NSCreatedEventCard] = []
 
+    override init() {
+        super.init()
+        title = "events_title".ub_localized
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -45,59 +50,22 @@ class NSCreatedEventsViewController: NSViewController {
         updateEvents(checkInState: state.checkInStateModel.checkInState)
     }
 
-    private func updateEvents(checkInState: UIStateModel.CheckInStateModel.CheckInState? = nil) {
+    private func updateEvents(checkInState _: UIStateModel.CheckInStateModel.CheckInState? = nil) {
         stackScrollView.removeAllViews()
 
         eventCards.removeAll()
 
         for event in CreatedEventsManager.shared.createdEvents {
             let card = NSCreatedEventCard(createdEvent: event)
-            card.deleteButton.touchUpCallback = { [weak self] in
+
+            card.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
 
-                CreatedEventsManager.shared.deleteEvent(with: event.id)
-                strongSelf.eventCards.removeAll { $0.createdEvent.id == event.id }
-
-                UIView.animate(withDuration: 0.3) {
-                    card.isHidden = true
-                } completion: { _ in
-                    strongSelf.stackScrollView.removeView(card)
-                }
-            }
-
-            card.checkInButton.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-                strongSelf.present(NSCheckInConfirmViewController(createdEvent: event), animated: true, completion: nil)
-            }
-
-            card.qrCodeButton.touchUpCallback = { [weak self] in
-                guard let strongSelf = self else { return }
-
-                strongSelf.present(NSNavigationController(rootViewController: NSCreatedEventDetailViewController(createdEvent: event)), animated: true, completion: nil)
+                strongSelf.navigationController?.pushViewController(NSCreatedEventDetailViewController(createdEvent: event), animated: true)
             }
 
             eventCards.append(card)
             stackScrollView.addArrangedView(card)
-        }
-
-        if let state = checkInState {
-            switch state {
-            case let .checkIn(checkIn):
-                for card in eventCards {
-                    if checkIn.createdEventId == card.createdEvent.id {
-                        card.checkInState = .checkedIn(checkIn)
-                        card.checkoutCallback = { [weak self] in
-                            guard let strongSelf = self else { return }
-                            let vc = NSCheckInEditViewController()
-                            vc.presentInNavigationController(from: strongSelf, useLine: false)
-                        }
-                    } else {
-                        card.checkInState = .cannotCheckIn
-                    }
-                }
-            default:
-                break
-            }
         }
     }
 }
