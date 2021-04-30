@@ -55,6 +55,8 @@ class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>,
         return true
     }
 
+    var titlePadding: CGFloat { NSPadding.large }
+
     init() {
         super.init(selections: SwissCovidLocationData.VenueType.radioButtonSelections, leftPadding: 0)
     }

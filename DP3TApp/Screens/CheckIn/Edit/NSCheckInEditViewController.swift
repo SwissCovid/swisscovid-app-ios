@@ -12,18 +12,18 @@
 import Foundation
 
 class NSCheckInEditViewController: NSViewController {
-    private let venueView = NSVenueView(icon: true)
+    private let venueView = NSVenueView()
     private let startDateLabel = NSLabel(.textBold, textAlignment: .center)
 
-    private let fromTimePickerControl = NSTimePickerControl(text: "datepicker_from".ub_localized, isStart: true)
-    private let toTimePickerControl = NSTimePickerControl(text: "datepicker_to".ub_localized, isStart: false)
-    private let addCommentControl = AddCommentControl()
+    private let fromTimePickerControl = NSFormField(inputControl: NSTimePickerControl(text: "datepicker_from".ub_localized, isStart: true))
+    private let toTimePickerControl = NSFormField(inputControl: NSTimePickerControl(text: "datepicker_to".ub_localized, isStart: false))
+    private let addCommentControl = NSFormField(inputControl: AddCommentControl())
 
     private var startDate: Date = Date()
     private var endDate: Date = Date()
     private var comment: String?
 
-    private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized)
+    private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized, style: .normal(.ns_blue))
 
     private let isCurrentCheckIn: Bool
 
@@ -110,10 +110,10 @@ class NSCheckInEditViewController: NSViewController {
 
         startDateLabel.text = dates.joined(separator: " – ")
 
-        fromTimePickerControl.setDate(currentStart: startDate, currentEnd: endDate)
-        toTimePickerControl.setDate(currentStart: startDate, currentEnd: endDate)
+        fromTimePickerControl.inputControl.setDate(currentStart: startDate, currentEnd: endDate)
+        toTimePickerControl.inputControl.setDate(currentStart: startDate, currentEnd: endDate)
 
-        addCommentControl.setComment(text: comment)
+        addCommentControl.inputControl.setComment(text: comment)
     }
 
     private func updateCheckIn() {
@@ -173,7 +173,7 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     private func setupTimeInteraction() {
-        fromTimePickerControl.timeChangedCallback = { [weak self] date in
+        fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.startDate = date
 
@@ -188,17 +188,17 @@ class NSCheckInEditViewController: NSViewController {
                 strongSelf.endDate = calendar.date(byAdding: minusDateComponent, to: strongSelf.endDate)!
             }
 
-            strongSelf.toTimePickerControl.setDate(currentStart: date, currentEnd: strongSelf.endDate)
+            strongSelf.toTimePickerControl.inputControl.setDate(currentStart: date, currentEnd: strongSelf.endDate)
         }
 
-        toTimePickerControl.timeChangedCallback = { [weak self] date in
+        toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.endDate = date
         }
     }
 
     private func setupComment() {
-        addCommentControl.commentChangedCallback = { [weak self] comment in
+        addCommentControl.inputControl.commentChangedCallback = { [weak self] comment in
             guard let strongSelf = self else { return }
             strongSelf.comment = comment
         }
@@ -213,30 +213,30 @@ class NSCheckInEditViewController: NSViewController {
             make.edges.equalToSuperview()
         }
 
-        stackScrollView.addSpacerView(NSPadding.medium + NSPadding.small)
+        stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
+        let inset = NSPadding.large + NSPadding.medium
+        stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: inset)
+
+        stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         stackScrollView.addArrangedView(venueView)
 
-        stackScrollView.addSpacerView(NSPadding.medium)
+        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
 
         stackScrollView.addArrangedView(startDateLabel)
 
-        stackScrollView.addSpacerView(NSPadding.medium)
+        stackScrollView.addSpacerView(NSPadding.large)
 
-        let stackView = UIStackView(arrangedSubviews: [fromTimePickerControl, toTimePickerControl])
-        stackView.axis = .vertical
-        stackView.spacing = NSPadding.medium
-        stackView.distribution = .fillEqually
-
-        stackScrollView.addArrangedView(stackView)
-
-        stackScrollView.addSpacerView(NSPadding.medium)
-        stackScrollView.addArrangedView(addCommentControl)
-
-        let diaryLabel = NSLabel(.uppercaseBold, textColor: .ns_text)
-        diaryLabel.text = "diary_option_title".ub_localized
+        stackScrollView.addArrangedView(fromTimePickerControl)
 
         stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(toTimePickerControl)
+
+        stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addArrangedView(addCommentControl)
+
+        stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         if !isCurrentCheckIn {
             let v = UIView()

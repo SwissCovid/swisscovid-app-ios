@@ -20,12 +20,9 @@ class NSVenueView: UIView {
     private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
-    private let venueImageView = UIImageView()
     private let imageContentView = UIView()
 
     // MARK: - Properties
-
-    private let icon: Bool
 
     public var venue: VenueInfo? {
         didSet {
@@ -35,9 +32,8 @@ class NSVenueView: UIView {
 
     // MARK: - Init
 
-    init(venue: VenueInfo? = nil, icon: Bool = true) {
+    init(venue: VenueInfo? = nil) {
         self.venue = venue
-        self.icon = icon
 
         super.init(frame: .zero)
         setup()
@@ -51,12 +47,6 @@ class NSVenueView: UIView {
     // MARK: - Update
 
     private func update() {
-        imageContentView.isHidden = true
-
-        // TODO: set default image
-        // venueImageView.image = image
-        // imageContentView.isHidden = false
-
         titleLabel.text = venue?.description
         textLabel.text = venue?.subtitle
     }
@@ -70,17 +60,6 @@ class NSVenueView: UIView {
         stackView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
-        venueImageView.ub_setContentPriorityRequired()
-        imageContentView.addSubview(venueImageView)
-
-        venueImageView.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(NSPadding.medium)
-        }
-
-        stackView.addArrangedSubview(imageContentView)
-        imageContentView.isHidden = true
 
         stackView.addArrangedSubview(titleLabel)
         stackView.addSpacerView(NSPadding.small)

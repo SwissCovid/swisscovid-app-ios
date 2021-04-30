@@ -14,6 +14,8 @@ import UIKit
 protocol NSFormFieldRepresentable {
     var fieldTitle: String { get }
     var isValid: Bool { get }
+
+    var titlePadding: CGFloat { get }
 }
 
 class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
@@ -37,7 +39,7 @@ class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
 
         addSubview(inputControl)
         inputControl.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(NSPadding.large)
+            make.top.equalTo(label.snp.bottom).offset(inputControl.titlePadding)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }

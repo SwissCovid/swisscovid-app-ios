@@ -176,7 +176,12 @@ extension NSDiaryViewController: UICollectionViewDataSource {
         return NSDiaryCollectionView.diaryCellSize(width: width, checkIn: entry)
     }
 
-    func collectionView(_: UICollectionView, didSelectItemAt _: IndexPath) {
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let d = diary[indexPath.section][indexPath.item]
+
+        let vc = NSCheckInEditViewController(checkIn: d)
+        vc.presentInNavigationController(from: self, useLine: false)
+
         /*
          let d = diary[indexPath.section][indexPath.item]
 

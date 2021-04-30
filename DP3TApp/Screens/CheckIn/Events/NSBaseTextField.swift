@@ -18,6 +18,8 @@ class NSBaseTextField: UITextField, NSFormFieldRepresentable {
         return true
     }
 
+    var titlePadding: CGFloat { NSPadding.large }
+
     init(title: String) {
         fieldTitle = title
 

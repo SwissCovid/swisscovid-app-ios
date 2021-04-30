@@ -24,6 +24,8 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
         return true
     }
 
+    var titlePadding: CGFloat { NSPadding.small }
+
     // MARK: - Init
 
     init(text: String, isStart: Bool) {
@@ -64,7 +66,8 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
     private func setup() {
         datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
 
-        datePicker.backgroundColor = .ns_background
+        backgroundColor = .ns_backgroundSecondary
+
         datePicker.datePickerMode = .dateAndTime
         datePicker.minuteInterval = 5
         if #available(iOS 13.4, *) {
@@ -78,8 +81,6 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
             make.height.equalTo(104.0)
         }
 
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.ns_blue.cgColor
         layer.cornerRadius = 3
     }
 

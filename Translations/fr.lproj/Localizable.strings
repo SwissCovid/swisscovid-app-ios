@@ -1583,3 +1583,6 @@
 "checkin_checked_in" = "";
 "checkout_from_to_date" = "";
 "inform_detail_covidcode_info_button" = "";
+
+/*Check-Ins: Button Entfernen um Check-In zu löschen*/
+"remove_from_diary_button" = "";

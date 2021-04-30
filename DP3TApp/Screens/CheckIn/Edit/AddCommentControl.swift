@@ -11,9 +11,20 @@
 
 import Foundation
 
-class AddCommentControl: UIView {
-    private let label = NSLabel(.uppercaseBold, textColor: .ns_text)
-    private let textField = UITextField()
+class AddCommentControl: UIControl, NSFormFieldRepresentable {
+    // MARK: - NSFormFieldRepresentable
+
+    var fieldTitle: String { textField.fieldTitle }
+
+    var isValid: Bool { true }
+
+    var titlePadding: CGFloat {
+        NSPadding.medium
+    }
+
+    // MARK: - Subviews
+
+    private let textField = NSBaseTextField(title: "edit_mode_addcomment".ub_localized)
 
     public var commentChangedCallback: ((String) -> Void)?
 
@@ -21,7 +32,6 @@ class AddCommentControl: UIView {
 
     init() {
         super.init(frame: .zero)
-        label.text = "edit_mode_addcomment".ub_localized
         setup()
     }
 
@@ -38,34 +48,15 @@ class AddCommentControl: UIView {
     // MARK: - Setup
 
     private func setup() {
-        let v = UIView()
-        v.backgroundColor = UIColor.ns_gray
-        v.layer.cornerRadius = 3.0
-        addSubview(v)
-
-        let stackView = UIStackView(arrangedSubviews: [label, v])
-        stackView.axis = .vertical
-        stackView.spacing = 5.0
-        stackView.distribution = .fill
-
-        addSubview(stackView)
-        stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
-        v.addSubview(textField)
-        textField.font = NSLabelType.textLight.font
+        addSubview(textField)
         textField.placeholder = "edit_mode_comment_placeholder".ub_localized
 
         textField.snp.makeConstraints { make in
-            make.center.equalToSuperview()
-            make.top.bottom.greaterThanOrEqualToSuperview()
-            make.left.right.equalToSuperview().inset(NSPadding.small)
+            make.edges.equalToSuperview()
             make.height.equalTo(50.0)
         }
 
         textField.delegate = self
-        textField.returnKeyType = .done
     }
 }
 
