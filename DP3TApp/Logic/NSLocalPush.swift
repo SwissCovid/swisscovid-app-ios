@@ -23,46 +23,40 @@ protocol UserNotificationCenter {
 
 extension UNUserNotificationCenter: UserNotificationCenter {}
 
-struct Exposure: Comparable {
-    let identifier: String
-    let date: Date
-
-    init(exposureDay: ExposureDay) {
-        self.init(identifier: exposureDay.identifier.uuidString, date: exposureDay.exposedDate)
-    }
-
-    init(identifier: String, date: Date) {
-        self.identifier = identifier
-        self.date = date
-    }
-
-    static func < (lhs: Exposure, rhs: Exposure) -> Bool {
-        lhs.date < rhs.date
-    }
-}
-
-protocol ExposureProvider {
-    var exposures: [Exposure]? { get }
-}
-
-extension TracingState: ExposureProvider {
-    var exposures: [Exposure]? {
-        switch infectionStatus {
-        case let .exposed(matches):
-            return matches.map(Exposure.init(exposureDay:))
-        case .healthy:
-            return []
-        case .infected:
-            return nil
-        }
-    }
-}
-
 /// Helper to show a local push notification when the state of the user changes from not-exposed to exposed
-class TracingLocalPush: NSObject, LocalPushProtocol {
-    static let shared = TracingLocalPush()
+class NSLocalPush: NSObject, LocalPushProtocol {
+    static let shared = NSLocalPush()
 
     private var center: UserNotificationCenter
+
+    enum Identifiers: String, CaseIterable, Codable {
+        // Exposure Notifications
+        case bluetoothError = "ch.admin.bag.notification.bluetooth.warning"
+        case permissionError = "ch.admin.bag.notification.permission.warning"
+
+        case syncWarning1 = "ch.admin.bag.notification.syncWarning1"
+        case syncWarning2 = "ch.admin.bag.notification.syncWarning2"
+
+        case syncError = "ch.admin.bag.notification.syncError"
+
+        case tracingReminder = "ch.admin.bag.notification.tracing.reminder"
+
+        // CheckIn
+        case checkInReminder = "ch.admin.bag.dp3t.notificationtype.reminder"
+        case checkInautomaticReminder = "ch.admin.bag.dp3t.notificationtype.automaticReminder"
+        case checkInautomaticCheckout = "ch.admin.bag.dp3t.notificationtype.automaticCheckout"
+        case checkInExposure = "ch.admin.bag.dp3t.notificationtype.exposure"
+        case checkInbackgroundTaskWarningTrigger = "ch.admin.bag.dp3t.notificationtype.backgroundtaskwarning"
+
+        var isErrorNotification: Bool {
+            switch self {
+            case .bluetoothError, .permissionError:
+                return true
+            default:
+                return false
+            }
+        }
+    }
 
     var applicationState: UIApplication.State {
         UIApplication.shared.applicationState
@@ -123,12 +117,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
     private var exposureIdentifiers: [String]
 
     @KeychainPersisted(key: "scheduledErrorIdentifiers", defaultValue: [])
-    private var scheduledErrorIdentifiers: [ErrorIdentifiers]
-
-    enum ErrorIdentifiers: String, CaseIterable, Codable {
-        case bluetooth = "ch.admin.bag.notification.bluetooth.warning"
-        case permission = "ch.admin.bag.notification.permission.warning"
-    }
+    private var scheduledErrorIdentifiers: [Identifiers]
 
     private func scheduleNotification(identifier: String) {
         let content = UNMutableNotificationContent()
@@ -206,35 +195,33 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         center.add(request, withCompletionHandler: nil)
     }
 
-    private let notificationIdentifier1 = "ch.admin.bag.notification.syncWarning1"
-    private let notificationIdentifier2 = "ch.admin.bag.notification.syncWarning2"
-
     private let timeInterval1: TimeInterval = 60 * 60 * 24 * 2 // Two days
     private let timeInterval2: TimeInterval = 60 * 60 * 24 * 7 // Seven days
 
     func removeSyncWarningTriggers() {
-        center.removePendingNotificationRequests(withIdentifiers: [notificationIdentifier1, notificationIdentifier2, syncErrorNotificationIdentifier])
+        center.removePendingNotificationRequests(withIdentifiers: [Identifiers.syncWarning1.rawValue,
+                                                                   Identifiers.syncWarning2.rawValue,
+                                                                   Identifiers.syncError.rawValue])
     }
 
     // This method gets called everytime we get executed in the backgrund or if the app was launched manually
     func resetBackgroundTaskWarningTriggers() {
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
-        scheduleSyncWarningNotification(delay: timeInterval1, identifier: notificationIdentifier1)
-        scheduleSyncWarningNotification(delay: timeInterval2, identifier: notificationIdentifier2)
+        scheduleSyncWarningNotification(delay: timeInterval1, identifier: Identifiers.syncWarning1.rawValue)
+        scheduleSyncWarningNotification(delay: timeInterval2, identifier: Identifiers.syncWarning2.rawValue)
     }
 
     // 1: If a error happens during sync we show a notification after 1 day
     //    we cancel the notification if the error was resolved in the meantime
 
-    private let syncErrorNotificationIdentifier = "ch.admin.bag.notification.syncWarning1"
     private let syncErrorNotificationDelay: TimeInterval = 60 * 60 * 24 * 1 // One days
 
     func handleSync(result: SyncResult) {
         switch result {
         case .failure:
-            scheduleSyncWarningNotification(delay: syncErrorNotificationDelay, identifier: syncErrorNotificationIdentifier)
+            scheduleSyncWarningNotification(delay: syncErrorNotificationDelay, identifier: Identifiers.syncError.rawValue)
         case .success:
-            center.removePendingNotificationRequests(withIdentifiers: [syncErrorNotificationIdentifier])
+            center.removePendingNotificationRequests(withIdentifiers: [Identifiers.syncError.rawValue])
         case .skipped:
             break
         }
@@ -265,13 +252,13 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
     }
 
     private func scheduleBluetoothNotification() {
-        scheduleErrorNotification(identifier: .bluetooth,
+        scheduleErrorNotification(identifier: .bluetoothError,
                                   title: "bluetooth_turned_off_title".ub_localized,
                                   text: "bluetooth_turned_off_text".ub_localized)
     }
 
     private func schedulePermissonErrorNotification() {
-        scheduleErrorNotification(identifier: .permission,
+        scheduleErrorNotification(identifier: .permissionError,
                                   title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
                                   text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
     }
@@ -288,7 +275,7 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         }
     }
 
-    private func scheduleErrorNotification(identifier: ErrorIdentifiers, title: String, text: String) {
+    private func scheduleErrorNotification(identifier: Identifiers, title: String, text: String) {
         guard !scheduledErrorIdentifiers.contains(identifier) else {
             return
         }
@@ -314,16 +301,15 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
     }
 
     private func resetAllErrorNotifications() {
-        let identifiers = ErrorIdentifiers.allCases.map(\.rawValue)
+        let identifiers = Identifiers.allCases
+            .filter { $0.isErrorNotification }
+            .map(\.rawValue)
         center.removeDeliveredNotifications(withIdentifiers: identifiers)
         center.removePendingNotificationRequests(withIdentifiers: identifiers)
-
         scheduledErrorIdentifiers.removeAll()
     }
 
-    // MARK: - Reminder Notifications
-
-    private let reminderNotificationIdentifier: String = "ch.admin.bag.notification.tracing.reminder"
+    // MARK: - Tracing Reminder Notifications
 
     func scheduleReminderNotification(reminder: NSTracingReminderViewController.Reminder) {
         guard reminder != .noReminder, let timeInterval = reminder.duration else {
@@ -335,17 +321,76 @@ class TracingLocalPush: NSObject, LocalPushProtocol {
         content.title = "tracing_reminder_notification_title".ub_localized
         content.body = "tracing_reminder_notification_subtitle".ub_localized
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
-        let request = UNNotificationRequest(identifier: reminderNotificationIdentifier, content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: Identifiers.tracingReminder.rawValue, content: content, trigger: trigger)
         center.add(request, withCompletionHandler: nil)
     }
 
     func resetReminderNotification() {
-        center.removeDeliveredNotifications(withIdentifiers: [reminderNotificationIdentifier])
-        center.removePendingNotificationRequests(withIdentifiers: [reminderNotificationIdentifier])
+        center.removeDeliveredNotifications(withIdentifiers: [Identifiers.tracingReminder.rawValue])
+        center.removePendingNotificationRequests(withIdentifiers: [Identifiers.tracingReminder.rawValue])
+    }
+
+    // MARK: - CheckIn Reminder Notifications
+
+    func removeAllCheckInReminders() {
+        center.removePendingNotificationRequests(withIdentifiers: [Identifiers.checkInReminder.rawValue,
+                                                                   Identifiers.checkInautomaticReminder.rawValue,
+                                                                   Identifiers.checkInautomaticCheckout.rawValue])
+    }
+
+    func scheduleCheckInReminderNotification(after timeInterval: TimeInterval) {
+        let notification = UNMutableNotificationContent()
+        notification.categoryIdentifier = Identifiers.checkInReminder.rawValue
+        notification.title = "checkout_reminder_title".ub_localized
+        notification.body = "checkout_reminder_text".ub_localized
+        notification.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        center.add(UNNotificationRequest(identifier: Identifiers.checkInReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
+    }
+
+    func scheduleAutomaticReminderAndCheckoutNotifications() {
+        // Reminder after 8 hours
+        let notification = UNMutableNotificationContent()
+        notification.categoryIdentifier = Identifiers.checkInautomaticReminder.rawValue
+        notification.title = "checkout_reminder_title".ub_localized
+        notification.body = "checkout_reminder_text".ub_localized
+        notification.sound = .default
+
+        #if DEBUG
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 8, repeats: false)
+        #else
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .hour * 8, repeats: false)
+        #endif
+        center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
+
+        // Reminder after 12 hours
+        let notification2 = UNMutableNotificationContent()
+        notification2.categoryIdentifier = Identifiers.checkInautomaticCheckout.rawValue
+        notification2.title = "auto_checkout_title".ub_localized
+        notification2.body = "auto_checkout_body".ub_localized
+        notification2.sound = .default
+
+        #if DEBUG
+            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 12, repeats: false)
+        #else
+            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: .hour * 12, repeats: false)
+        #endif
+        center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticCheckout.rawValue, content: notification2, trigger: trigger2), withCompletionHandler: nil)
+    }
+
+    func showCheckInExposureNotification() {
+        let notification = UNMutableNotificationContent()
+        notification.categoryIdentifier = Identifiers.checkInExposure.rawValue
+        notification.title = "exposure_notification_title".ub_localized
+        notification.body = "exposure_notification_body".ub_localized
+        notification.sound = .default
+
+        center.add(UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil), withCompletionHandler: nil)
     }
 }
 
-extension TracingLocalPush: UNUserNotificationCenterDelegate {
+extension NSLocalPush: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -357,14 +402,10 @@ extension TracingLocalPush: UNUserNotificationCenterDelegate {
     }
 
     func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler _: @escaping () -> Void) {
-        guard exposureIdentifiers.contains(response.notification.request.identifier) else {
-            return // not a exposure notification
+        if exposureIdentifiers.contains(response.notification.request.identifier),
+           response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            jumpToReport()
+            return
         }
-
-        guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else {
-            return // cancelled
-        }
-
-        jumpToReport()
     }
 }

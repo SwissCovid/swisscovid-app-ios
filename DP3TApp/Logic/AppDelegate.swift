@@ -42,13 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize DP3TSDK
         TracingManager.shared.initialize()
 
-        // Initialize push manager
-        setupPushManager(launchOptions: launchOptions)
-
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
-            TracingLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
@@ -173,7 +170,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
         if shouldJump {
-            TracingLocalPush.shared.jumpToReport(animated: false)
+            NSLocalPush.shared.jumpToReport(animated: false)
             return true
         } else {
             return false
@@ -186,7 +183,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // App should not have badges
         // Reset to 0 to ensure a unexpected badge doesn't stay forever
         application.applicationIconBadgeNumber = 0
-        TracingLocalPush.shared.clearNotifications()
+        NSLocalPush.shared.clearNotifications()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -200,7 +197,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let backgroundTime = -(lastForegroundActivity?.timeIntervalSinceNow ?? 0)
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
             application.applicationIconBadgeNumber = 0
-            TracingLocalPush.shared.clearNotifications()
+            NSLocalPush.shared.clearNotifications()
         }
     }
 
@@ -255,68 +252,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .font: NSLabelType.ultraSmallBold.font,
             .foregroundColor: UIColor.ns_tabbarSelectedBlue,
         ], for: .selected)
-    }
-
-    // MARK: - Notifications
-
-    private func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        UNUserNotificationCenter.current().setNotificationCategories(NotificationManager.shared.notificationCategories)
-        UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
-    }
-
-    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
-    }
-
-    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
-    }
-
-    func handleNotification(type: NotificationType) {
-        switch type {
-        case .exposure:
-            switch UIStateManager.shared.uiState.checkInStateModel.exposureState {
-            case .exposure:
-
-                if window == nil {
-                    setupWindow()
-                }
-
-                // pop to current root view controller
-                tabBarController.currentNavigationController.popToRootViewController(animated: false)
-
-                // select home tab
-                tabBarController.currentTab = .homescreen
-
-                // show checkout viewcontroller
-                tabBarController.homescreen.presentReportsDetail()
-
-            case .noExposure:
-                break
-            }
-
-        case .reminder, .automaticReminder:
-            if window == nil {
-                setupWindow()
-            }
-
-            // pop to current root view controller
-            tabBarController.currentNavigationController.popToRootViewController(animated: false)
-
-            // select home tab
-            tabBarController.currentTab = .homescreen
-
-            // show checkout viewcontroller
-            tabBarController.homescreen.presentCheckOutViewController()
-
-        case .automaticCheckout:
-            if window == nil {
-                setupWindow()
-            } else {
-                tabBarController.currentNavigationController.popToRootViewController(animated: false)
-            }
-        default:
-            break
-        }
     }
 }

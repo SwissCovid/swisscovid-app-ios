@@ -30,6 +30,9 @@ class CheckInManager {
         didSet { UIStateManager.shared.refresh() }
     }
 
+    @KeychainPersisted(key: "ch.admin.bag.dp3t.hasCheckedOutOnce", defaultValue: false)
+    var hasCheckedOutOnce: Bool
+
     private let logger = OSLogger(CheckInManager.self, category: "CheckInManager")
 
     // MARK: - Public API
@@ -62,18 +65,14 @@ class CheckInManager {
     public func checkOut() {
         logger.trace()
         if var cc = currentCheckIn, let outTime = cc.checkOutTime {
-            // This is the last moment we can ask the user for the required notification permission.
-            // After the first checkout, it's possible that a background update triggers a match and therefore a notification
-            NotificationManager.shared.requestAuthorization { _ in }
-
             ReminderManager.shared.removeAllReminders()
 
             let result = CrowdNotifier.addCheckin(venueInfo: cc.venue, arrivalTime: cc.checkInTime, departureTime: outTime)
 
             switch result {
             case let .success(id):
-                NotificationManager.shared.hasCheckedOutOnce = true
-                NotificationManager.shared.resetBackgroundTaskWarningTriggers()
+                hasCheckedOutOnce = true
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
                 cc.identifier = id
                 saveAdditionalInfo(checkIn: cc)
             case .failure:

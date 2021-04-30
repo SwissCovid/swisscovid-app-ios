@@ -47,7 +47,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             }
             // only show popup when switching tracing off
             guard !state else {
-                TracingLocalPush.shared.resetReminderNotification()
+                NSLocalPush.shared.resetReminderNotification()
                 confirmCallback(state)
                 return
             }

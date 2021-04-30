@@ -31,7 +31,7 @@ class TracingManager: NSObject {
         var loggingStorage: LoggingStorage?
     #endif
 
-    init(localPush: LocalPushProtocol = TracingLocalPush.shared) {
+    init(localPush: LocalPushProtocol = NSLocalPush.shared) {
         self.localPush = localPush
     }
 
@@ -125,7 +125,7 @@ class TracingManager: NSObject {
                 switch result {
                 case .success:
                     // reset reminder Notifications
-                    TracingLocalPush.shared.resetReminderNotification()
+                    NSLocalPush.shared.resetReminderNotification()
                     // reset stored error when starting tracing
                     UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
@@ -302,13 +302,22 @@ extension TracingManager: DP3TBackgroundHandler {
 
         group.enter()
         queue.addOperation {
-            ProblematicEventsManager.shared.sync(isInBackground: UIApplication.shared.applicationState != .active) { _, needsNotification in
+            let state: UIApplication.State
+            if Thread.isMainThread {
+                state = UIApplication.shared.applicationState
+            } else {
+                state = DispatchQueue.main.sync {
+                    UIApplication.shared.applicationState
+                }
+            }
+            let isInBackground = state != .active
+            ProblematicEventsManager.shared.sync(isInBackground: isInBackground) { _, needsNotification in
                 if needsNotification {
-                    NotificationManager.shared.showExposureNotification()
+                    NSLocalPush.shared.showCheckInExposureNotification()
                 }
 
                 // data are updated -> reschedule background task warning triggers
-                NotificationManager.shared.resetBackgroundTaskWarningTriggers()
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
 
                 group.leave()
             }
