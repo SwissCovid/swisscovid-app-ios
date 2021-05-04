@@ -19,11 +19,15 @@ class UserStorage {
             TracingManager.shared.userHasCompletedOnboarding()
             ProblematicEventsManager.shared.sync { _, _ in }
             hasCompletedUpdateBoardingGermany = true
+            hasCompletedUpdateBoardingCheckIn = true
         }
     }
 
     @UBUserDefault(key: "hasCompletedUpdateBoardingGermany", defaultValue: false)
     var hasCompletedUpdateBoardingGermany: Bool
+
+    @UBUserDefault(key: "hasCompletedUpdateBoardingCheckIn", defaultValue: false)
+    var hasCompletedUpdateBoardingCheckIn: Bool
 
     func registerSeenMessages(identifier: UUID) {
         seenMessages.append("\(identifier.uuidString)")
@@ -40,7 +44,14 @@ class UserStorage {
     private var seenMessages: [String]
 
     @UBUserDefault(key: "tracingSettingEnabled", defaultValue: true)
-    var tracingSettingEnabled: Bool
+    var tracingSettingEnabled: Bool {
+        didSet {
+            lastTracingDisabledDate = tracingSettingEnabled ? nil : Date()
+        }
+    }
+
+    @UBOptionalUserDefault(key: "lastTracingDisabledDate")
+    var lastTracingDisabledDate: Date?
 }
 
 enum KeychainMigration {

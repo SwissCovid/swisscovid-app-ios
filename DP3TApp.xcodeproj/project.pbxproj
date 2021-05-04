@@ -266,6 +266,8 @@
 		6EB1D5782636F7C000981571 /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D5772636F7C000981571 /* Clibsodium */; };
 		6EB1D57A2636F7C000981571 /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D5792636F7C000981571 /* CrowdNotifierSDK */; };
 		6EB1D57C2636F7C000981571 /* libmcl in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D57B2636F7C000981571 /* libmcl */; };
+		6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
+		6EC172CF26411C0F002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
 		6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */; };
 		6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */; };
 		6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
@@ -714,6 +716,7 @@
 		6EB1D5552636F65300981571 /* CheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckIn.swift; sourceTree = "<group>"; };
 		6EB1D5572636F65300981571 /* CheckInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInManager.swift; sourceTree = "<group>"; };
 		6EB1D5592636F65300981571 /* ReminderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderManager.swift; sourceTree = "<group>"; };
+		6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUpdateBoardingCheckInViewController.swift; sourceTree = "<group>"; };
 		6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailReportSingleTitleHeader.swift; sourceTree = "<group>"; };
 		6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformGetWellViewController.swift; sourceTree = "<group>"; };
@@ -1114,6 +1117,7 @@
 				6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */,
 				6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */,
 				6E88976A261F288300508334 /* NSUpdateBoardingGermanyViewController.swift */,
+				6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -2404,6 +2408,7 @@
 				242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */,
 				F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
+				6EC172CF26411C0F002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */,
 				F80E40612508D4D000876906 /* NSStatisticsViewController.swift in Sources */,
 				DC16178A2638717800B56ADA /* NSDiaryCollectionView.swift in Sources */,
 				DC3B576725F108D50075B5CE /* CountryHelper.swift in Sources */,
@@ -2752,6 +2757,7 @@
 				DC1617912638717800B56ADA /* NSDiaryEmptyView.swift in Sources */,
 				6E3308752450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617952638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
+				6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */,
 				6E33087124507A2D00913B0E /* NSReportsDetailReportViewController.swift in Sources */,
 				6E33086D245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,

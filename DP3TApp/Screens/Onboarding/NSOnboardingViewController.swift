@@ -63,7 +63,8 @@ class NSOnboardingViewController: NSOnboardingBaseViewController {
         super.viewDidLoad()
 
         step5VC.permissionButton.touchUpCallback = { [weak self] in
-            TracingManager.shared.requestTracingPermission { _ in
+            TracingManager.shared.requestTracingPermission { error in
+                UserStorage.shared.tracingSettingEnabled = error == nil
                 self?.animateToNextStep()
             }
         }
