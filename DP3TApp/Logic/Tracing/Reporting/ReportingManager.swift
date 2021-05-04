@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import DP3TSDK
 import Foundation
 
@@ -55,6 +56,9 @@ class ReportingManager: ReportingManagerProtocol {
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
+    private let backend = Environment.current.checkInService
+    private var task: URLSessionDataTask?
+
     // MARK: - API
 
     func getJWTTokens(covidCode: String,
@@ -81,7 +85,7 @@ class ReportingManager: ReportingManagerProtocol {
                     isFakeRequest fake: Bool = false,
                     completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
-        DP3TTracing.iWasExposed(onset: tokens.onset,
+        DP3TTracing.iWasExposed(onset: tokens.enOnset,
                                 authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken)"),
                                 isFakeRequest: fake) { [weak self] result in
             DispatchQueue.main.async { [weak self] in
@@ -110,11 +114,51 @@ class ReportingManager: ReportingManagerProtocol {
         }
     }
 
-    func sendCheckIns(tokens _: CodeValidator.TokenWrapper,
-                      selectedCheckIns _: [CheckIn],
+    func sendCheckIns(tokens: CodeValidator.TokenWrapper,
+                      selectedCheckIns: [CheckIn],
                       isFakeRequest _: Bool = false,
                       completion: @escaping (Result<Void, Error>) -> Void) {
-        completion(.success(()))
+        task?.cancel()
+
+        var payload = UserUploadPayload()
+        payload.version = 3
+
+        var uploadInfos = [UploadVenueInfo]()
+
+        for checkIn in selectedCheckIns {
+            guard let checkOutTime = checkIn.checkOutTime else {
+                continue
+            }
+            let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue, arrivalTime: checkIn.checkInTime, departureTime: checkOutTime)
+
+            uploadInfos.append(contentsOf: infos.map {
+                var info = UploadVenueInfo()
+                info.preID = $0.preId.data
+                info.timeKey = $0.timeKey.data
+                info.notificationKey = $0.notificationKey.data
+                info.intervalStartMs = Int64($0.intervalStartMs)
+                info.intervalEndMs = Int64($0.intervalEndMs)
+                info.fake = false
+                return info
+            })
+        }
+        payload.venueInfos = uploadInfos
+
+        let payloadData = (try? payload.serializedData()) ?? Data()
+
+        var request = backend.endpoint("userupload", method: .post, headers: ["Content-Type": "application/x-protobuf"], body: payloadData).request()
+
+        request.addValue("Bearer \(tokens.checkInToken)", forHTTPHeaderField: "Authorization")
+
+        task = URLSession.shared.dataTask(with: request) { _, _, error in
+            if let e = error {
+                completion(.failure(e))
+            } else {
+                completion(.success(()))
+            }
+        }
+
+        task?.resume()
     }
 
     func report(covidCode _: String, isFakeRequest _: Bool = false, completion _: @escaping (ReportingProblem?) -> Void) {

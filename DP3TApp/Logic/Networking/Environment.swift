@@ -37,13 +37,13 @@ enum Environment {
     var codegenService: Backend {
         switch self {
         case .dev:
-            return Backend("https://codegen-service-d.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service-d.bag.admin.ch", version: "v2")
         case .test:
-            return Backend("https://codegen-service-t.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service-t.bag.admin.ch", version: "v2")
         case .abnahme:
-            return Backend("https://codegen-service-a.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service-a.bag.admin.ch", version: "v2")
         case .prod:
-            return Backend("https://codegen-service.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service.bag.admin.ch", version: "v2")
         }
     }
 

@@ -11,7 +11,7 @@
 
 import UIKit
 
-extension SwissCovidLocationData.VenueType {
+extension VenueType {
     var title: String {
         switch self {
         case .other, .UNRECOGNIZED:
@@ -46,7 +46,7 @@ extension SwissCovidLocationData.VenueType {
     }
 }
 
-class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>, NSFormFieldRepresentable {
+class NSVenueTypeSelector: NSRadioButtonGroup<VenueType>, NSFormFieldRepresentable {
     var fieldTitle: String {
         return "web_generator_category_label".ub_localized
     }
@@ -58,7 +58,7 @@ class NSVenueTypeSelector: NSRadioButtonGroup<SwissCovidLocationData.VenueType>,
     var titlePadding: CGFloat { NSPadding.large }
 
     init() {
-        super.init(selections: SwissCovidLocationData.VenueType.radioButtonSelections, leftPadding: 0)
+        super.init(selections: VenueType.radioButtonSelections, leftPadding: 0)
     }
 
     required init?(coder _: NSCoder) {

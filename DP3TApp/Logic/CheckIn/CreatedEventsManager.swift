@@ -29,11 +29,19 @@ final class CreatedEventsManager {
         return createdEventsWrapper.events
     }
 
-    func createNewEvent(description: String, venueType: SwissCovidLocationData.VenueType) -> CreatedEvent? {
+    func createNewEvent(description: String, venueType: VenueType) -> CreatedEvent? {
         var locationData = SwissCovidLocationData()
         locationData.version = 1
         locationData.room = ""
         locationData.type = venueType
+        locationData.checkoutWarningDelayMs = 1000 * 60 * 60 * 8 // 8 hours
+        locationData.automaticCheckoutDelaylMs = 1000 * 60 * 60 * 12 // 12 hours
+        locationData.reminderDelayOptionsMs = [
+            Int64(1000 * 60 * 30), // 30 minutes
+            Int64(1000 * 60 * 60), // 1 hour
+            Int64(1000 * 60 * 60 * 2), // 2 hours
+            Int64(1000 * 60 * 60 * 4), // 4 hours
+        ]
 
         guard let countryData = try? locationData.serializedData() else {
             return nil

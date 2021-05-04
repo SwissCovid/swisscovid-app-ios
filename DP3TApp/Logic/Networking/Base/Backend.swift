@@ -32,7 +32,13 @@ struct Backend {
             components.queryItems = sortedKeys.map { URLQueryItem(name: $0, value: queryParameters[$0]) }
         }
         let url = components.url!
-        let data = body?.jsonData
+        let data: Data?
+        // If the body is already of type `Data`, we don't want to encode it again
+        if body is Data {
+            data = body as? Data
+        } else {
+            data = body?.jsonData
+        }
 
         return Endpoint(method: method, url: url, headers: headers, body: data)
     }

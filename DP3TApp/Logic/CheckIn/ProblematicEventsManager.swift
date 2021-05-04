@@ -125,15 +125,9 @@ class ProblematicEventsManager {
         var problematicEvents: [ProblematicEventInfo] = []
 
         for i in wrapper.events {
-            let identity = i.identity.bytes
-            let sk = i.secretKeyForIdentity.bytes
-            let startTime = Date(millisecondsSince1970: Int(i.startTime))
-            let endTime = Date(millisecondsSince1970: Int(i.endTime))
-
-            let info = ProblematicEventInfo(identity: identity,
-                                            secretKeyForIdentity: sk,
-                                            startTimestamp: startTime,
-                                            endTimestamp: endTime,
+            let info = ProblematicEventInfo(identity: i.identity.bytes,
+                                            secretKeyForIdentity: i.secretKeyForIdentity.bytes,
+                                            day: Int(i.day),
                                             encryptedAssociatedData: i.encryptedAssociatedData.bytes,
                                             cipherTextNonce: i.cipherTextNonce.bytes)
             problematicEvents.append(info)

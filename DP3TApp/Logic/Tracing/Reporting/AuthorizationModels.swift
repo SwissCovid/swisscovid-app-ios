@@ -16,6 +16,11 @@ struct AuthorizationRequestBody: Codable {
 }
 
 struct AuthorizationResponseBody: Codable {
+    let checkInAccessToken: AccessToken
+    let dp3TAccessToken: AccessToken
+}
+
+struct AccessToken: Codable {
     let accessToken: JWTToken
 }
 

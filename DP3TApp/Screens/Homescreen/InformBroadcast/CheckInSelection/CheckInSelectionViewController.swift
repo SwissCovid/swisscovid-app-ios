@@ -25,9 +25,25 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     private var checkInSelections: [NSCheckBoxView] = []
 
     private let tokens: CodeValidator.TokenWrapper
+    private let checkIns: [CheckIn]
 
-    init(tokens: CodeValidator.TokenWrapper) {
+    private var selectedCheckIns: [CheckIn] {
+        guard checkInSelections.count == checkIns.count else {
+            return []
+        }
+
+        var selected = [CheckIn]()
+        for (i, checkbox) in checkInSelections.enumerated() {
+            if checkbox.isChecked {
+                selected.append(checkIns[i])
+            }
+        }
+        return selected
+    }
+
+    init(tokens: CodeValidator.TokenWrapper, checkIns: [CheckIn]) {
         self.tokens = tokens
+        self.checkIns = checkIns
         super.init()
     }
 
@@ -45,7 +61,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.mm.YYYY"
 
-        checkInSelections = CheckInManager.shared.getDiary().compactMap { [weak self] checkIn in
+        checkInSelections = checkIns.compactMap { [weak self] checkIn in
             guard let self = self else { return nil }
             var texts: [String?] = []
             texts.append(checkIn.venue.venueType?.title)
@@ -111,25 +127,34 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     }
 
     @objc func sendPressed() {
-        // TODO: share checkins
-        // ReportingManager.shared.sendCheckIns(tokens: tokens, selectedCheckIns: , completion: )
+        ReportingManager.shared.sendCheckIns(tokens: tokens, selectedCheckIns: selectedCheckIns, isFakeRequest: false) { [weak self] result in
+            guard let strongSelf = self else { return }
 
-        navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-        let nav = presentingViewController as? NSNavigationController
-        nav?.popToRootViewController(animated: true)
-        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+            switch result {
+            case let .failure(error):
+                print(error.localizedDescription)
+            case .success:
+                print("Success")
+            }
+
+            DispatchQueue.main.async {
+                strongSelf.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
+                let nav = strongSelf.presentingViewController as? NSNavigationController
+                nav?.popToRootViewController(animated: true)
+                nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+            }
+        }
     }
 
     static func presentIfNeeded(tokens: CodeValidator.TokenWrapper, from: UIViewController) {
-        // TODO: check for overlapping checkIns
-        let needed = true
-        if needed {
-            from.navigationController?.pushViewController(CheckInSelectionViewController(tokens: tokens), animated: true)
-        } else {
+        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInOnset }
+        if checkInsInRelevantPeriod.isEmpty {
             from.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
             let nav = from.presentingViewController as? NSNavigationController
             nav?.popToRootViewController(animated: true)
             nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+        } else {
+            from.navigationController?.pushViewController(CheckInSelectionViewController(tokens: tokens, checkIns: checkInsInRelevantPeriod), animated: true)
         }
     }
 }

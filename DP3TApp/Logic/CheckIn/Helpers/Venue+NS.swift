@@ -17,7 +17,7 @@ extension VenueInfo {
         return try? SwissCovidLocationData(serializedData: countryData)
     }
 
-    var venueType: SwissCovidLocationData.VenueType? {
+    var venueType: VenueType? {
         return locationData?.type
     }
 

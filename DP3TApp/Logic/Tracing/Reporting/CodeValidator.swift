@@ -15,8 +15,9 @@ class CodeValidator {
 
     public struct TokenWrapper {
         let code: String
-        let onset: Date
+        let enOnset: Date
         let enToken: String
+        let checkInOnset: Date
         let checkInToken: String
     }
 
@@ -61,12 +62,14 @@ class CodeValidator {
                     return
                 }
 
-                guard let jwtBody = result.accessToken.body else {
+                guard let enJwtBody = result.dp3TAccessToken.accessToken.body,
+                      let checkInJwtBody = result.checkInAccessToken.accessToken.body else {
                     completion(.failure(.networkError(NetworkError.parseError)))
                     return
                 }
 
-                guard let dateString = jwtBody.keydate ?? jwtBody.onset else {
+                guard let enDateString = enJwtBody.keydate ?? enJwtBody.onset,
+                      let checkInDateString = checkInJwtBody.keydate ?? checkInJwtBody.onset else {
                     completion(.failure(.networkError(NetworkError.parseError)))
                     return
                 }
@@ -74,14 +77,16 @@ class CodeValidator {
                 let formatter = DateFormatter()
                 formatter.dateFormat = "yyyy-MM-dd"
                 formatter.locale = Locale(identifier: "en_US_POSIX")
-                guard let date = formatter.date(from: dateString) else {
+                guard let enDate = formatter.date(from: enDateString),
+                      let checkInDate = formatter.date(from: checkInDateString) else {
                     completion(.failure(.networkError(NetworkError.parseError)))
                     return
                 }
 
-                let enToken = result.accessToken
+                let enToken = result.dp3TAccessToken.accessToken
+                let checkInToken = result.checkInAccessToken.accessToken
 
-                completion(.success(.init(code: code, onset: date, enToken: enToken, checkInToken: "N/A")))
+                completion(.success(.init(code: code, enOnset: enDate, enToken: enToken, checkInOnset: checkInDate, checkInToken: checkInToken)))
             }
         })
 
