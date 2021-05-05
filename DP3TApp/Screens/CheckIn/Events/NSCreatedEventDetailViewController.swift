@@ -30,8 +30,6 @@ class NSCreatedEventDetailViewController: NSViewController {
 
         super.init()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissSelf))
-
         showPDFButton.title = "show_pdf_button".ub_localized
         checkInButton.title = "checkin_button_title".ub_localized
         deleteButton.title = "delete_button_title".ub_localized
@@ -132,10 +130,6 @@ class NSCreatedEventDetailViewController: NSViewController {
         }
 
         stackScrollView.addArrangedView(contentView)
-    }
-
-    @objc private func dismissSelf() {
-        dismiss(animated: true, completion: nil)
     }
 
     private func sharePDF() {
