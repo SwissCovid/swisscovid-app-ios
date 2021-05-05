@@ -17,11 +17,9 @@ class NSCheckInEditViewController: NSViewController {
 
     private let fromTimePickerControl = NSFormField(inputControl: NSTimePickerControl(text: "datepicker_from".ub_localized, isStart: true))
     private let toTimePickerControl = NSFormField(inputControl: NSTimePickerControl(text: "datepicker_to".ub_localized, isStart: false))
-    private let addCommentControl = NSFormField(inputControl: AddCommentControl())
 
     private var startDate: Date = Date()
     private var endDate: Date = Date()
-    private var comment: String?
 
     private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized, style: .normal(.ns_blue))
 
@@ -61,7 +59,6 @@ class NSCheckInEditViewController: NSViewController {
 
         setupCheckout()
         setupTimeInteraction()
-        setupComment()
 
         update()
     }
@@ -85,7 +82,6 @@ class NSCheckInEditViewController: NSViewController {
     private func update() {
         startDate = checkIn?.checkInTime ?? Date()
         endDate = checkIn?.checkOutTime ?? Date()
-        comment = checkIn?.comment
 
         updateUI()
     }
@@ -112,15 +108,12 @@ class NSCheckInEditViewController: NSViewController {
 
         fromTimePickerControl.inputControl.setDate(currentStart: startDate, currentEnd: endDate)
         toTimePickerControl.inputControl.setDate(currentStart: startDate, currentEnd: endDate)
-
-        addCommentControl.inputControl.setComment(text: comment)
     }
 
     private func updateCheckIn() {
         // update checkin before checkout
         checkIn?.checkInTime = startDate
         checkIn?.checkOutTime = endDate
-        checkIn?.comment = comment
 
         // update
         if isCurrentCheckIn {
@@ -197,13 +190,6 @@ class NSCheckInEditViewController: NSViewController {
         }
     }
 
-    private func setupComment() {
-        addCommentControl.inputControl.commentChangedCallback = { [weak self] comment in
-            guard let strongSelf = self else { return }
-            strongSelf.comment = comment
-        }
-    }
-
     // MARK: - Setup
 
     private func setup() {
@@ -232,9 +218,6 @@ class NSCheckInEditViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(toTimePickerControl)
-
-        stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(addCommentControl)
 
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
