@@ -214,7 +214,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
     // 1: If a error happens during sync we show a notification after 1 day
     //    we cancel the notification if the error was resolved in the meantime
 
-    private let syncErrorNotificationDelay: TimeInterval = 60 * 60 * 24 * 1 // One days
+    private let syncErrorNotificationDelay: TimeInterval = 60 * 60 * 24 * 1 // One day
 
     func handleSync(result: SyncResult) {
         switch result {
@@ -349,7 +349,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         center.add(UNNotificationRequest(identifier: Identifiers.checkInReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
     }
 
-    func scheduleAutomaticReminderAndCheckoutNotifications() {
+    func scheduleAutomaticReminderAndCheckoutNotifications(reminderTimeInterval: TimeInterval? = nil, checkoutTimeInterval: TimeInterval? = nil) {
         // Reminder after 8 hours
         let notification = UNMutableNotificationContent()
         notification.categoryIdentifier = Identifiers.checkInautomaticReminder.rawValue
@@ -360,7 +360,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         #if DEBUG
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 8, repeats: false)
         #else
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .hour * 8, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: reminderTimeInterval ?? .hour * 8, repeats: false)
         #endif
         center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
 
@@ -374,7 +374,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         #if DEBUG
             let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 12, repeats: false)
         #else
-            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: .hour * 12, repeats: false)
+            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: checkoutTimeInterval ?? .hour * 12, repeats: false)
         #endif
         center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticCheckout.rawValue, content: notification2, trigger: trigger2), withCompletionHandler: nil)
     }

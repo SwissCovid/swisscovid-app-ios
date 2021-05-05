@@ -18,7 +18,7 @@ class NSCheckInConfirmViewController: NSViewController {
     private let venueInfo: VenueInfo
 
     private let reminderLabel = NSLabel(.uppercaseBold, textColor: .ns_purple, textAlignment: .center)
-    private let reminderControl = NSReminderControl()
+    private let reminderControl: NSReminderControl
     private let checkInButton = NSButton(title: "check_in_now_button_title".ub_localized, style: .normal(.ns_blue))
 
     private var reminderOption: ReminderOption?
@@ -28,6 +28,7 @@ class NSCheckInConfirmViewController: NSViewController {
     init(qrCode: String, venueInfo: VenueInfo) {
         self.qrCode = qrCode
         self.venueInfo = venueInfo
+        reminderControl = NSReminderControl(options: venueInfo.reminderOptions ?? ReminderOption.fallbackOptions)
 
         super.init()
 
@@ -37,6 +38,7 @@ class NSCheckInConfirmViewController: NSViewController {
     init(createdEvent: CreatedEvent) {
         qrCode = createdEvent.qrCodeString
         venueInfo = createdEvent.venueInfo
+        reminderControl = NSReminderControl(options: venueInfo.reminderOptions ?? ReminderOption.fallbackOptions)
 
         super.init()
 
@@ -89,7 +91,7 @@ class NSCheckInConfirmViewController: NSViewController {
 
             CheckInManager.shared.checkIn(qrCode: strongSelf.qrCode, venueInfo: strongSelf.venueInfo)
 
-            NSLocalPush.shared.scheduleAutomaticReminderAndCheckoutNotifications()
+            NSLocalPush.shared.scheduleAutomaticReminderAndCheckoutNotifications(reminderTimeInterval: strongSelf.venueInfo.automaticReminderTimeInterval, checkoutTimeInterval: strongSelf.venueInfo.automaticCheckoutTimeInterval)
 
             if let option = strongSelf.reminderOption {
                 strongSelf.scheduleReminder(option: option)

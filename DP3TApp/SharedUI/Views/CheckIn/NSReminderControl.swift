@@ -14,23 +14,18 @@ import Foundation
 class NSReminderControl: UIView {
     // MARK: - Views
 
-    private let options = ReminderOption.allCases
+    private let options: [ReminderOption]
     private let segmentedControl: UISegmentedControl
 
     // MARK: - Callbacks
 
     public var changeCallback: ((ReminderOption) -> Void)?
 
-    public func setOption(_ reminder: ReminderOption) {
-        if let firstIndex = options.firstIndex(of: reminder) {
-            segmentedControl.selectedSegmentIndex = firstIndex
-        }
-    }
-
     // MARK: - Init
 
-    init() {
-        segmentedControl = UISegmentedControl(items: options.map { $0.title })
+    init(options: [ReminderOption]) {
+        self.options = Array(options.prefix(5)) // Never show more than 5 options as this would lead to layout problems
+        segmentedControl = UISegmentedControl(items: self.options.map { $0.title })
 
         super.init(frame: .zero)
         setup()

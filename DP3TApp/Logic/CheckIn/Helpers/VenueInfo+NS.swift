@@ -21,6 +21,28 @@ extension VenueInfo {
         return locationData?.type
     }
 
+    var reminderOptions: [ReminderOption]? {
+        guard let optionsMs = locationData?.reminderDelayOptionsMs else {
+            return nil
+        }
+        // the off option should always be available and always at the beginning
+        return [.off] + (optionsMs.map { .custom(milliseconds: Int($0)) }.filter { $0 != .off })
+    }
+
+    var automaticReminderTimeInterval: TimeInterval? {
+        guard let ms = locationData?.checkoutWarningDelayMs else {
+            return nil
+        }
+        return Int(ms).timeInterval
+    }
+
+    var automaticCheckoutTimeInterval: TimeInterval? {
+        guard let ms = locationData?.automaticCheckoutDelaylMs else {
+            return nil
+        }
+        return Int(ms).timeInterval
+    }
+
     static func defaultImage(large: Bool) -> UIImage {
         return UIImage(named: large ? "illus-other" : "illus-other-small")!
     }

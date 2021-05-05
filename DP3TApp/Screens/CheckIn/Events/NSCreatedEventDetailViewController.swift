@@ -42,6 +42,11 @@ class NSCreatedEventDetailViewController: NSViewController {
             strongSelf.sharePDF()
         }
 
+        checkInButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.checkInPressed()
+        }
+
         shareButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.sharePressed()
@@ -135,6 +140,11 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private func sharePDF() {
         let vc = NSEventPDFViewController(event: createdEvent)
+        vc.presentInNavigationController(from: self, useLine: false)
+    }
+
+    private func checkInPressed() {
+        let vc = NSCheckInConfirmViewController(createdEvent: createdEvent)
         vc.presentInNavigationController(from: self, useLine: false)
     }
 

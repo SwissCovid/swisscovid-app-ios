@@ -311,6 +311,8 @@
 		B6AEA30824B74ACA0055B5BB /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		DC003DD326413E3A0027F379 /* UserUploadPayload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */; };
 		DC003DD426413E3A0027F379 /* UserUploadPayload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */; };
+		DC003DDC2642A7280027F379 /* Milliseconds+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */; };
+		DC003DDD2642A7280027F379 /* Milliseconds+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */; };
 		DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
 		DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
 		DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
@@ -511,8 +513,8 @@
 		F869AED524F54C7D00FC4556 /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		F86A6A762637F226003CAC1B /* CheckInExposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A752637F226003CAC1B /* CheckInExposure.swift */; };
 		F86A6A772637F226003CAC1B /* CheckInExposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A752637F226003CAC1B /* CheckInExposure.swift */; };
-		F86A6A7C2637F305003CAC1B /* Venue+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* Venue+NS.swift */; };
-		F86A6A7D2637F305003CAC1B /* Venue+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* Venue+NS.swift */; };
+		F86A6A7C2637F305003CAC1B /* VenueInfo+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */; };
+		F86A6A7D2637F305003CAC1B /* VenueInfo+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */; };
 		F86A6A802637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */; };
 		F86A6A812637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */; };
 		F86A6A832637F93D003CAC1B /* UICollection+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A822637F93D003CAC1B /* UICollection+NS.swift */; };
@@ -761,6 +763,7 @@
 		B6AEA30724B74ACA0055B5BB /* NSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
 		DC003DD126413DE30027F379 /* UserUploadPayload.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = UserUploadPayload.proto; sourceTree = "<group>"; };
 		DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUploadPayload.pb.swift; sourceTree = "<group>"; };
+		DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milliseconds+NS.swift"; sourceTree = "<group>"; };
 		DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLinkifiedTextView.swift; sourceTree = "<group>"; };
 		DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHearingImpairedPopupViewController.swift; sourceTree = "<group>"; };
 		DC01360825DFE5D6001A33F4 /* StatisticInfoPopupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticInfoPopupType.swift; sourceTree = "<group>"; };
@@ -885,7 +888,7 @@
 		F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMoreTestInformationPopupViewController.swift; sourceTree = "<group>"; };
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F86A6A752637F226003CAC1B /* CheckInExposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInExposure.swift; sourceTree = "<group>"; };
-		F86A6A7B2637F305003CAC1B /* Venue+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Venue+NS.swift"; sourceTree = "<group>"; };
+		F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueInfo+NS.swift"; sourceTree = "<group>"; };
 		F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInReportWhatTodoView.swift; sourceTree = "<group>"; };
 		F86A6A822637F93D003CAC1B /* UICollection+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollection+NS.swift"; sourceTree = "<group>"; };
 		F86A6A852637F944003CAC1B /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -1357,10 +1360,11 @@
 			isa = PBXGroup;
 			children = (
 				6EF28D882639364D001C1565 /* QRCodePDFGenerator.swift */,
-				F86A6A7B2637F305003CAC1B /* Venue+NS.swift */,
+				F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */,
 				6E9A98C42637003600BCBC8A /* DateHelpers+NS.swift */,
 				6E9A98B82636FEE400BCBC8A /* Dictionary+CaseInsensitiveKey.swift */,
 				DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */,
+				DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2477,6 +2481,7 @@
 				242D222E245C4BD8005DAEA8 /* NSTracingSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
 				6EB1D56D2636F76100981571 /* CheckInManager.swift in Sources */,
+				DC003DDD2642A7280027F379 /* Milliseconds+NS.swift in Sources */,
 				DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */,
 				242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
@@ -2495,7 +2500,7 @@
 				DC3B56D825EE3FA90075B5CE /* StatisticInfoPopupType.swift in Sources */,
 				DC1617B32639407F00B56ADA /* NSCreatedEventDetailViewController.swift in Sources */,
 				242D2236245C4BD8005DAEA8 /* HomescreenInfoBoxView.swift in Sources */,
-				F86A6A7D2637F305003CAC1B /* Venue+NS.swift in Sources */,
+				F86A6A7D2637F305003CAC1B /* VenueInfo+NS.swift in Sources */,
 				242D2237245C4BD8005DAEA8 /* UIColor+NS.swift in Sources */,
 				DC16179C2638717800B56ADA /* NSFormField.swift in Sources */,
 				242D2238245C4BD8005DAEA8 /* NSHeaderArcView.swift in Sources */,
@@ -2698,7 +2703,7 @@
 				F86A6A862637F944003CAC1B /* ReusableView.swift in Sources */,
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
 				F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */,
-				F86A6A7C2637F305003CAC1B /* Venue+NS.swift in Sources */,
+				F86A6A7C2637F305003CAC1B /* VenueInfo+NS.swift in Sources */,
 				F86A6A802637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */,
 				DC16177D2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */,
 				F86A6A9826383803003CAC1B /* NSVenueView.swift in Sources */,
@@ -2754,6 +2759,7 @@
 				DC17F97125DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift in Sources */,
 				F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */,
 				6E6E516F242F4FE0006E532E /* ConfigManager.swift in Sources */,
+				DC003DDC2642A7280027F379 /* Milliseconds+NS.swift in Sources */,
 				6E6E5184242F9586006E532E /* NSInformThankYouViewController.swift in Sources */,
 				6E33085F24502BBD00913B0E /* NSWhatToDoButton.swift in Sources */,
 				2485F4732455D00800C3D8C3 /* Errors+Localized.swift in Sources */,
