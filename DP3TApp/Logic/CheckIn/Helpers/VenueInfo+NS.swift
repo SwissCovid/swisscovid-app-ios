@@ -26,18 +26,19 @@ extension VenueInfo {
             return nil
         }
         // the off option should always be available and always at the beginning
-        return [.off] + (optionsMs.map { .custom(milliseconds: Int($0)) }.filter { $0 != .off })
+        // options < 0 (and 0 itself, which corresponds to the .off option) are ignored
+        return [.off] + optionsMs.filter { $0 > 0 }.map { .init(with: Int($0)) }
     }
 
     var automaticReminderTimeInterval: TimeInterval? {
-        guard let ms = locationData?.checkoutWarningDelayMs else {
+        guard let ms = locationData?.checkoutWarningDelayMs, ms > 0 else {
             return nil
         }
         return Int(ms).timeInterval
     }
 
     var automaticCheckoutTimeInterval: TimeInterval? {
-        guard let ms = locationData?.automaticCheckoutDelaylMs else {
+        guard let ms = locationData?.automaticCheckoutDelaylMs, ms > 0 else {
             return nil
         }
         return Int(ms).timeInterval
