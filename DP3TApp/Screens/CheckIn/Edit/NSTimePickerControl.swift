@@ -69,7 +69,6 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
         backgroundColor = .ns_backgroundSecondary
 
         datePicker.datePickerMode = .dateAndTime
-        datePicker.minuteInterval = 5
         if #available(iOS 13.4, *) {
             datePicker.preferredDatePickerStyle = .wheels
         }
