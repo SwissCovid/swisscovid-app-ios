@@ -313,6 +313,9 @@
 		DC003DD426413E3A0027F379 /* UserUploadPayload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */; };
 		DC003DDC2642A7280027F379 /* Milliseconds+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */; };
 		DC003DDD2642A7280027F379 /* Milliseconds+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */; };
+		DC003DDF2642C4070027F379 /* ReminderManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DDE2642C4070027F379 /* ReminderManagerTests.swift */; };
+		DC003DE22642E98A0027F379 /* NSCheckInErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DE12642E98A0027F379 /* NSCheckInErrorViewModel.swift */; };
+		DC003DE32642E98A0027F379 /* NSCheckInErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DE12642E98A0027F379 /* NSCheckInErrorViewModel.swift */; };
 		DC0135E425DFB34C001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
 		DC0135ED25DFB7E5001A33F4 /* NSLinkifiedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */; };
 		DC0135F325DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */; };
@@ -764,6 +767,8 @@
 		DC003DD126413DE30027F379 /* UserUploadPayload.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = UserUploadPayload.proto; sourceTree = "<group>"; };
 		DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUploadPayload.pb.swift; sourceTree = "<group>"; };
 		DC003DDB2642A7280027F379 /* Milliseconds+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Milliseconds+NS.swift"; sourceTree = "<group>"; };
+		DC003DDE2642C4070027F379 /* ReminderManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderManagerTests.swift; sourceTree = "<group>"; };
+		DC003DE12642E98A0027F379 /* NSCheckInErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInErrorViewModel.swift; sourceTree = "<group>"; };
 		DC0135E325DFB34C001A33F4 /* NSLinkifiedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLinkifiedTextView.swift; sourceTree = "<group>"; };
 		DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHearingImpairedPopupViewController.swift; sourceTree = "<group>"; };
 		DC01360825DFE5D6001A33F4 /* StatisticInfoPopupType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticInfoPopupType.swift; sourceTree = "<group>"; };
@@ -1517,6 +1522,7 @@
 				F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */,
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
+				DC003DDE2642C4070027F379 /* ReminderManagerTests.swift */,
 			);
 			path = DP3TAppTests;
 			sourceTree = "<group>";
@@ -1637,6 +1643,7 @@
 			children = (
 				DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */,
 				DC1617782638717800B56ADA /* NSCheckInViewController.swift */,
+				DC003DE12642E98A0027F379 /* NSCheckInErrorViewModel.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -2378,6 +2385,7 @@
 				DC16177A2638717800B56ADA /* NSCheckInOverviewViewController.swift in Sources */,
 				242D21FD245C4BD8005DAEA8 /* UBPListValue.swift in Sources */,
 				F83ECEEF2578D91600DB18CB /* NSPopupViewController.swift in Sources */,
+				DC003DE32642E98A0027F379 /* NSCheckInErrorViewModel.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				8EF2A6ED249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
 				DC1617802638717800B56ADA /* AddCommentControl.swift in Sources */,
@@ -2678,6 +2686,7 @@
 				DC1617812638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
 				F85ED9A32499EF93007EBC49 /* Bundle+BuildInfo.swift in Sources */,
+				DC003DE22642E98A0027F379 /* NSCheckInErrorViewModel.swift in Sources */,
 				DCE1398D26382B5E0093D8F6 /* CreatedEventsManager.swift in Sources */,
 				6E6E5188242F9586006E532E /* NSSendViewController.swift in Sources */,
 				DC3B568E25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift in Sources */,
@@ -2795,6 +2804,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F806D33F24F91D5B00672DFC /* TracingManagerTests.swift in Sources */,
+				DC003DDF2642C4070027F379 /* ReminderManagerTests.swift in Sources */,
 				F85E4C0C24AC84BF00056864 /* MockNotificationCenter.swift in Sources */,
 				F88585EE249272EE00018AEA /* TracingLocalPushTests.swift in Sources */,
 				DCE32DF52637D05F00168693 /* QRCodeTests.swift in Sources */,

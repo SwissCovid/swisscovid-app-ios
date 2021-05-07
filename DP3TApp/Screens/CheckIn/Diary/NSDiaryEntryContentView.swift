@@ -101,7 +101,7 @@ class NSDiaryEntryContentView: UIView {
             formatter.dateFormat = "HH:mm"
 
             if let e = exposure?.exposureEvent {
-                titleLabel.text = [e.arrivalTime, e.departureTime].compactMap { (date) -> String? in
+                titleLabel.text = [e.arrivalTime, e.departureTime].compactMap { date -> String? in
                     formatter.string(from: date)
                 }.joined(separator: " – ")
                 subtitleLabel.text = ""
@@ -126,7 +126,7 @@ class NSDiaryEntryContentView: UIView {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
 
-        let timeText = [checkIn?.checkInTime, checkIn?.checkOutTime].compactMap { (date) -> String? in
+        let timeText = [checkIn?.checkInTime, checkIn?.checkOutTime].compactMap { date -> String? in
             if let d = date {
                 return formatter.string(from: d)
             } else { return nil }

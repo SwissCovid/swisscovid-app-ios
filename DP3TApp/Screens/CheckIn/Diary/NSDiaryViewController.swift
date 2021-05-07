@@ -200,7 +200,7 @@ extension NSDiaryViewController: UICollectionViewDataSource {
     }
 
     private func exposureForDiary(diaryEntry: CheckIn) -> CheckInExposure? {
-        return exposures.first { (e) -> Bool in
+        return exposures.first { e -> Bool in
             if let d = e.diaryEntry {
                 return d.identifier == diaryEntry.identifier
             }

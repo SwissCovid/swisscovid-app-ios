@@ -30,13 +30,13 @@ class MockNotificationCenter: UserNotificationCenter {
     }
 
     func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
-        requests.removeAll { (req) -> Bool in
+        requests.removeAll { req -> Bool in
             identifiers.contains(req.identifier)
         }
     }
 
     func removeDeliveredNotifications(withIdentifiers identifiers: [String]) {
-        requests.removeAll { (req) -> Bool in
+        requests.removeAll { req -> Bool in
             identifiers.contains(req.identifier)
         }
     }

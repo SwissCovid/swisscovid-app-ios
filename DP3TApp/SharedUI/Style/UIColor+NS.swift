@@ -106,7 +106,7 @@ public extension UIColor {
 
     internal static func setColorsForTheme(lightColor: UIColor, darkColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor { (traits) -> UIColor in
+            return UIColor { traits -> UIColor in
                 // Return one of two colors depending on light or dark mode
                 traits.userInterfaceStyle == .dark ?
                     darkColor :

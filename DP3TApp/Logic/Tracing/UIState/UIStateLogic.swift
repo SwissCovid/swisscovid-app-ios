@@ -68,6 +68,17 @@ class UIStateLogic {
             setLastReportState(&newState)
         }
 
+        if !ProblematicEventsManager.shared.getExposureEvents().isEmpty {
+            if newState.homescreen.reports.report == .noReport {
+                newState.homescreen.reports.report = .exposed
+            }
+            if newState.reportsDetail.report == .noReport {
+                newState.reportsDetail.report = .exposed
+            }
+
+            newState.reportsDetail.reports.append(contentsOf: ProblematicEventsManager.shared.getExposureEvents().map { .init(identifier: UUID(), timestamp: $0.arrivalTime) })
+        }
+
         // Set debug helpers
         #if ENABLE_STATUS_OVERRIDE
             setDebugReports(&newState)
@@ -150,7 +161,7 @@ class UIStateLogic {
 
         let calendar = NSCalendar.current
 
-        for i in diary.sorted(by: { (a, b) -> Bool in
+        for i in diary.sorted(by: { a, b -> Bool in
             a.checkInTime > b.checkInTime
         }) {
             let d = calendar.startOfDay(for: i.checkInTime)
@@ -297,8 +308,8 @@ class UIStateLogic {
         newState.homescreen.reports.report = .exposed
         newState.reportsDetail.report = .exposed
 
-        newState.reportsDetail.reports = days.map { (mc) -> UIStateModel.ReportsDetail.NSReportModel in UIStateModel.ReportsDetail.NSReportModel(identifier: mc.identifier, timestamp: mc.exposedDate)
-        }.sorted(by: { (a, b) -> Bool in
+        newState.reportsDetail.reports = days.map { mc -> UIStateModel.ReportsDetail.NSReportModel in UIStateModel.ReportsDetail.NSReportModel(identifier: mc.identifier, timestamp: mc.exposedDate)
+        }.sorted(by: { a, b -> Bool in
             a.timestamp > b.timestamp
         })
     }

@@ -26,6 +26,8 @@ class NSCheckInViewController: NSViewController {
     private let lampButton = NSRoundImageButton(icon: UIImage(named: "ic-flash-on"))
     private var lampIsOn = false
 
+    private var timer: Timer?
+
     // MARK: - Init
 
     override init() {
@@ -43,6 +45,8 @@ class NSCheckInViewController: NSViewController {
     public func stopScanning() {
         lastQrCode = nil
         qrView?.stopScanning()
+        timer?.invalidate()
+        timer = nil
     }
 
     // MARK: - View
@@ -148,6 +152,7 @@ class NSCheckInViewController: NSViewController {
 extension NSCheckInViewController: NSQRScannerViewDelegate {
     func qrScanningDidFail() {
         errorContainer.alpha = 1.0
+        qrErrorLabel.alpha = 1.0
         lampButton.alpha = 0.0
     }
 
@@ -173,14 +178,19 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
 
             let vc = NSCheckInConfirmViewController(qrCode: str, venueInfo: info)
             navigationController?.pushViewController(vc, animated: true)
-        case .failure:
-            break
-            /* if let url = URL(string: str), url.host == Environment.current.uploadHost {
-                 UIApplication.shared.open(url)
-                 navigationController?.popViewController(animated: true)
-             } else {
-                 showError(failure.errorViewModel)
-             } */
+        case let .failure(error):
+            qrErrorLabel.alpha = 1.0
+            qrErrorLabel.text = error.errorViewModel?.text
+            qrOverlay.scannerOverlay.lineColor = .ns_red
+
+            timer?.invalidate()
+            timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false, block: { [weak self] _ in
+                guard let strongSelf = self else { return }
+                UIView.animate(withDuration: 0.2) {
+                    strongSelf.qrErrorLabel.alpha = 0.0
+                    strongSelf.qrOverlay.scannerOverlay.lineColor = .ns_darkBlueBackground
+                }
+            })
         }
     }
 
