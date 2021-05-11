@@ -44,7 +44,7 @@ enum ReminderOption: Equatable {
                 let minutes = Int((timeInterval / 60).rounded())
                 let hour = "\(minutes / 60)"
                 let minute = "\(minutes % 60)"
-                return "{HOURS} h {MINUTES}'".replacingOccurrences(of: "{HOURS}", with: hour).replacingOccurrences(of: "{MINUTES}", with: minute)
+                return "reminder_options_hours_minutes".ub_localized.replacingOccurrences(of: "{HOURS}", with: hour).replacingOccurrences(of: "{MINUTES}", with: minute)
             }
         }
     }

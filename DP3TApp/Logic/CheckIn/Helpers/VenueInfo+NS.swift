@@ -27,7 +27,12 @@ extension VenueInfo {
         }
         // the off option should always be available and always at the beginning
         // options < 0 (and 0 itself, which corresponds to the .off option) are ignored
-        return [.off] + optionsMs.filter { $0 > 0 }.map { .init(with: Int($0)) }
+        let filteredAndSorted: [ReminderOption] = optionsMs.filter { $0 > 0 }.sorted().map { .init(with: Int($0)) }
+        guard !filteredAndSorted.isEmpty else {
+            return nil
+        }
+
+        return [.off] + filteredAndSorted
     }
 
     var automaticReminderTimeInterval: TimeInterval? {

@@ -1558,3 +1558,41 @@
 
 /*Check-Ins: Drucken Button auf PDF-Detailseite*/
 "print_button_title" = "";
+
+/*Check-Ins: Beschreibung Modul auf Homescreen*/
+"module_checkins_description" = "Check into various events and see your previous check-ins in your diary.";
+
+/*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_title" = "";
+
+/*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_subtitle" = "You can choose to share your check-ins to warn others who were with you at the same events.";
+
+/*Button text, um alle Checkins zu selektieren*/
+"inform_share_checkins_select_all" = "";
+"inform_dont_send_button_title" = "";
+"inform_try_again_button_title" = "";
+"inform_dont_share_button_title" = "";
+"inform_really_not_share_title" = "";
+"inform_really_not_share_subtitle" = "";
+
+/*Remove from Diary Warning view title*/
+"remove_diary_warning_title" = "";
+
+/*Remove from diary warning view explanation text*/
+"remove_diary_warning_text" = "";
+
+/*Remove from diary warning view remove button title*/
+"remove_diary_remove_now_button" = "";
+
+/*Remove from diary warning start text*/
+"remove_diary_warning_star_text" = "";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "Tested positive? Please enter your CovidCode to warn others.";
+
+/*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "You are in isolation mode because you tested positive to the virus.";
+
+/*Check-Ins: Erinnerungsoption Stunden & Minuten*/
+"reminder_option_hours_minutes" = "";
