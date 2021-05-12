@@ -12,25 +12,21 @@ import CrowdNotifierSDK
 import DP3TSDK
 import Foundation
 
-enum ReportingProblem: Error {
-    case failure(error: CodedError)
-    case invalidCode
-}
-
 protocol ReportingManagerProtocol: AnyObject {
-    var fakeCode: String { get }
-    func report(covidCode: String, isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void)
-    func report(isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void)
-}
+    func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
 
-extension ReportingManagerProtocol {
-    var fakeCode: String {
-        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
-    }
+    func getJWTTokens(covidCode: String,
+                      isFakeRequest fake: Bool,
+                      completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
 
-    func report(isFakeRequest fake: Bool, completion: @escaping (ReportingProblem?) -> Void) {
-        report(covidCode: fakeCode, isFakeRequest: fake, completion: completion)
-    }
+    func sendENKeys(tokens: CodeValidator.TokenWrapper,
+                    isFakeRequest fake: Bool,
+                    completion: @escaping (Result<Void, DP3TTracingError>) -> Void)
+
+    func sendCheckIns(tokens: CodeValidator.TokenWrapper,
+                      selectedCheckIns: [CheckIn],
+                      isFakeRequest _: Bool,
+                      completion: @escaping (Result<Void, Error>) -> Void)
 }
 
 class ReportingManager: ReportingManagerProtocol {
@@ -56,10 +52,18 @@ class ReportingManager: ReportingManagerProtocol {
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
-    private let backend = Environment.current.checkInService
+    private let backend = Environment.current.publishService
     private var task: URLSessionDataTask?
 
+    private var fakeCode: String {
+        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
+    }
+
     // MARK: - API
+
+    func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
+        getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+    }
 
     func getJWTTokens(covidCode: String,
                       isFakeRequest fake: Bool = false,
@@ -85,8 +89,8 @@ class ReportingManager: ReportingManagerProtocol {
                     isFakeRequest fake: Bool = false,
                     completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
-        DP3TTracing.iWasExposed(onset: tokens.enOnset,
-                                authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken)"),
+        DP3TTracing.iWasExposed(onset: tokens.enToken.onset,
+                                authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken.token)"),
                                 isFakeRequest: fake) { [weak self] result in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
@@ -159,64 +163,5 @@ class ReportingManager: ReportingManagerProtocol {
         }
 
         task?.resume()
-    }
-
-    func report(covidCode _: String, isFakeRequest _: Bool = false, completion _: @escaping (ReportingProblem?) -> Void) {
-        /* if let tokenDate = codeDictionary[covidCode] {
-             // only second part needed
-             sendIWasExposed(token: tokenDate.0, date: tokenDate.1, isFakeRequest: fake, covidCode: covidCode, completion: completion)
-         } else {
-             // get token and date first
-             codeValidator.sendCodeRequest(code: covidCode, isFakeRequest: fake) { [weak self] result in
-                 guard let strongSelf = self else { return }
-
-                 switch result {
-                 case let .success(token: token, date: date):
-                     // save in code dictionary
-                     strongSelf.codeDictionary[covidCode] = (token, date)
-
-                     // second part
-                     strongSelf.sendIWasExposed(token: token, date: date, isFakeRequest: fake, covidCode: covidCode, completion: completion)
-                 case let .failure(error: error):
-                     completion(.failure(error: error))
-                 case .invalidTokenError:
-                     completion(.invalidCode)
-                 }
-             }
-         } */
-    }
-
-    // MARK: - Second part: I was exposed
-
-    private func sendIWasExposed(token _: String, date _: Date, isFakeRequest _: Bool, covidCode _: String, completion _: @escaping (ReportingProblem?) -> Void) {
-        guard #available(iOS 12.5, *) else { return }
-        /* DP3TTracing.iWasExposed(onset: date,
-                                 authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(token)"),
-                                 isFakeRequest: fake) { [weak self] result in
-             DispatchQueue.main.async { [weak self] in
-                 guard let self = self else { return }
-                 switch result {
-                 case let .success(wrapper):
-                     self.codeDictionary.removeValue(forKey: covidCode)
-
-                     TracingManager.shared.updateStatus(shouldSync: false) { error in
-                         if let error = error {
-                             completion(.failure(error: error))
-                         } else {
-                             if !fake {
-                                 self.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24 * 14) // Ask if user wants to end isolation after 14 days
-
-                                 let oldestKeyDate = wrapper.oldestKeyDate ?? Date()
-                                 // keys older than 10 days are never persisted on the server
-                                 self.oldestSharedKeyDate = max(oldestKeyDate, Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
-                             }
-                             completion(nil)
-                         }
-                     }
-                 case let .failure(error):
-                     completion(.failure(error: error))
-                 }
-             }
-         } */
     }
 }

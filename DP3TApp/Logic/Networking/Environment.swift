@@ -81,8 +81,14 @@ enum Environment {
     // TODO: Add correct base URLs for public QR Codes
     var qrCodeBaseUrl: String {
         switch self {
-        default:
-            return "https://qr-dev.notify-me.ch"
+        case .dev:
+            return "https://qr-d.swisscovid.ch"
+        case .test:
+            return "https://qr-t.swisscovid.ch"
+        case .abnahme:
+            return "https://qr-a.swisscovid.ch"
+        case .prod:
+            return "https://qr.swisscovid.ch"
         }
     }
 }

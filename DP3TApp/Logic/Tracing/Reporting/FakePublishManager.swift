@@ -107,20 +107,44 @@ private class FakePublishOperation: Operation {
 
                 let executeReport = { [weak self] in
                     Logger.log("Start Fake Publish #\(numberOfFakeRequestsDone)", appState: true)
-                    self?.reportingManager.report(isFakeRequest: true) { [weak self] error in
+                    self?.reportingManager.getFakeJWTTokens(completion: { [weak self] result in
                         guard let self = self else { return }
-                        if error != nil {
+                        switch result {
+                        case let .success(tokens):
+                            Logger.log("Fake request (getFakeJWTTokens) #\(numberOfFakeRequestsDone) success")
+                            self.reportingManager.sendENKeys(tokens: tokens, isFakeRequest: true) { [weak self] result in
+                                guard let self = self else { return }
+                                switch result {
+                                case .success:
+                                    Logger.log("Fake request (sendENKeys) #\(numberOfFakeRequestsDone) success")
+                                    self.reportingManager.sendCheckIns(tokens: tokens, selectedCheckIns: [], isFakeRequest: true) { [weak self] result in
+                                        guard let self = self else { return }
+                                        switch result {
+                                        case .success:
+                                            Logger.log("Fake request (sendCheckIns) #\(numberOfFakeRequestsDone) success")
+                                            numberOfFakeRequestsDone += 1
+                                            self.manager.rescheduleFakeRequest()
+                                            group.leave()
+                                        case .failure:
+                                            self.cancel()
+                                            Logger.log("Fake request (sendCheckIns) #\(numberOfFakeRequestsDone) failed")
+                                            group.leave()
+                                        }
+                                    }
+                                case .failure:
+                                    self.cancel()
+                                    Logger.log("Fake request (sendENKeys) #\(numberOfFakeRequestsDone) failed")
+                                    group.leave()
+                                }
+                            }
+                        case .failure:
                             // in case of error, the operation will be tried again later, either at the next startup,
                             // or when the next background task is executed.
                             self.cancel()
                             Logger.log("Fake request #\(numberOfFakeRequestsDone) failed")
-                        } else {
-                            Logger.log("Fake request #\(numberOfFakeRequestsDone) success")
-                            numberOfFakeRequestsDone += 1
-                            self.manager.rescheduleFakeRequest()
+                            group.leave()
                         }
-                        group.leave()
-                    }
+                    })
                 }
 
                 group.enter()

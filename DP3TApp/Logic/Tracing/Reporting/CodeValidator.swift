@@ -13,12 +13,15 @@ import Foundation
 class CodeValidator {
     private let session = URLSession.certificatePinned
 
+    public struct Token {
+        let onset: Date
+        let token: String
+    }
+
     public struct TokenWrapper {
         let code: String
-        let enOnset: Date
-        let enToken: String
-        let checkInOnset: Date
-        let checkInToken: String
+        let enToken: Token
+        let checkInToken: Token
     }
 
     enum ValidationError: Error {
@@ -86,7 +89,11 @@ class CodeValidator {
                 let enToken = result.dp3TAccessToken.accessToken
                 let checkInToken = result.checkInAccessToken.accessToken
 
-                completion(.success(.init(code: code, enOnset: enDate, enToken: enToken, checkInOnset: checkInDate, checkInToken: checkInToken)))
+                let token = TokenWrapper(code: code,
+                                         enToken: Token(onset: enDate, token: enToken),
+                                         checkInToken: Token(onset: checkInDate, token: checkInToken))
+
+                completion(.success(token))
             }
         })
 

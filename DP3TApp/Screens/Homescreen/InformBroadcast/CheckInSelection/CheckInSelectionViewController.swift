@@ -147,7 +147,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     }
 
     static func presentIfNeeded(tokens: CodeValidator.TokenWrapper, from: UIViewController) {
-        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInOnset }
+        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInToken.onset }
         if checkInsInRelevantPeriod.isEmpty {
             from.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
             let nav = from.presentingViewController as? NSNavigationController
