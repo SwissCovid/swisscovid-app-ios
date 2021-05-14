@@ -1465,7 +1465,7 @@
 /*Check-Ins: QR-Code erstellen Titel*/
 "checkins_create_qr_code" = "";
 
-/*Check-Ins: Veranstaltungen Titel*/
+/*Veranstaltungen-Card Titel im Infotab*/
 "events_title" = "";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
@@ -1633,3 +1633,15 @@
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
 "reminder_option_hours_minutes" = "";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
+"checkin_overview_isolation_text" = "You can no longer check-in when you tested positive. More text more text more text more text more text more text more";
+
+/*Veranstaltungen-Card Text im Infotab*/
+"events_subtitle" = "Protect yourself and others by generating QR codes for working spaces, meeting rooms or other private events.";
+
+/*Dialog Text beim Löschen eines erstellten QR Codes.*/
+"delete_qr_code_dialog" = "";
+
+/*Self-Check-In Button Titel im QR-Code Screen*/
+"self_checkin_button_title" = "";

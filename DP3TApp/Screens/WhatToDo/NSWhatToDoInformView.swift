@@ -21,7 +21,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     public var covidCodeInfoCallback: (() -> Void)?
 
-    /* public var hearingImpairedButtonTouched: (() -> Void)? {
+    public var hearingImpairedButtonTouched: (() -> Void)? {
          didSet {
              if var model = infoBoxViewModel {
                  model.hearingImpairedButtonCallback = hearingImpairedButtonTouched
@@ -29,14 +29,14 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                  infoBoxViewModel = model
              }
          }
-     } */
+     }
 
     // MARK: - Views
 
     private let informButton: NSButton
 
-    // private let infoBoxView: NSInfoBoxView?
-    // private var infoBoxViewModel: NSInfoBoxView.ViewModel?
+    private let infoBoxView: NSInfoBoxView?
+    private var infoBoxViewModel: NSInfoBoxView.ViewModel?
 
     // MARK: - Init
 
@@ -44,11 +44,11 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         informButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
                                 style: .uppercase(.ns_purple))
 
-        /* if let infoBox = configTexts?.infoBox {
+        if let infoBox = configTexts?.infoBox {
              var hearingImpairedCallback: (() -> Void)?
              if let hearingImpairedText = infoBox.hearingImpairedInfo {
                  hearingImpairedCallback = {
-                     print(hearingImpairedText)
+                    print(hearingImpairedText)
                  }
              }
              var model = NSInfoBoxView.ViewModel(title: infoBox.title,
@@ -71,14 +71,14 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
          } else {
              infoBoxView = nil
              infoBoxViewModel = nil
-         } */
+         }
 
         super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
                    subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
                    text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
-                   image: nil,
+                   image: UIImage(named: "illu-covidcode"),
                    subtitleColor: .ns_purple,
-                   bottomPadding: false)
+                   bottomPadding: true)
         setup()
     }
 
@@ -89,32 +89,56 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        contentView.addSpacerView(NSPadding.large)
+        setupCovidCodeInfo()
+        setupInformButton()
+        setupInfoBoxView()
 
+        informButton.isAccessibilityElement = true
+        isAccessibilityElement = false
+        accessibilityElementsHidden = false
+    }
+    
+    private func setupCovidCodeInfo() {
         let view = UIView()
-        view.addSubview(informButton)
-
-        let inset = NSPadding.small + NSPadding.medium
-
-        informButton.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(inset)
-        }
-
-        contentView.addArrangedView(view)
-        contentView.addSpacerView(NSPadding.large)
-
+        
         let covidCodeInfo = NSUnderlinedButton()
+        view.addSubview(covidCodeInfo)
+
         covidCodeInfo.title = "inform_detail_covidcode_info_button".ub_localized
         covidCodeInfo.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.covidCodeInfoCallback?()
         }
-        contentView.addArrangedView(covidCodeInfo)
+        
+        covidCodeInfo.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.left.equalToSuperview().inset(NSPadding.small)
+        }
+        
+        contentView.addArrangedView(view)
         contentView.addSpacerView(NSPadding.large)
+    }
+    
+    private func setupInformButton() {
+        //let view = UIView()
+        //view.addSubview(informButton)
+        contentView.addArrangedView(informButton)
 
-        informButton.isAccessibilityElement = true
-        isAccessibilityElement = false
-        accessibilityElementsHidden = false
+        informButton.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(-(NSPadding.medium+NSPadding.small))
+        }
+
+        contentView.addSpacerView(NSPadding.large)
+    }
+    
+    private func setupInfoBoxView() {
+        if let infoBoxView = infoBoxView {
+            contentView.addArrangedView(infoBoxView)
+            
+            infoBoxView.snp.makeConstraints { make in
+                make.left.right.equalToSuperview().inset(-(NSPadding.medium+NSPadding.small))
+            }
+            
+        }
     }
 }
