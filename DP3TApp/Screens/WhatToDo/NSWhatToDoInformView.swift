@@ -120,8 +120,6 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     }
     
     private func setupInformButton() {
-        //let view = UIView()
-        //view.addSubview(informButton)
         contentView.addArrangedView(informButton)
 
         informButton.snp.makeConstraints { make in
@@ -137,8 +135,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             
             infoBoxView.snp.makeConstraints { make in
                 make.left.right.equalToSuperview().inset(-(NSPadding.medium+NSPadding.small))
-            }
-            
+            }   
         }
     }
 }
