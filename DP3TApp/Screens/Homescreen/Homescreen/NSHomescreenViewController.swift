@@ -18,9 +18,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
     private let checkInView = NSCheckInHomescreenModuleView()
-
-    private let enterCovidCodeButton = NSButton(title: "inform_code_title".ub_localized, style: .outlineUppercase(.ns_purple))
-    private let enterCovidCodeButtonWrapper = UIView()
+    private let covidCodeView = NSCovidCodeModuleView()
 
     private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
 
@@ -80,10 +78,15 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
             strongSelf.presentCheckOutViewController()
         }
-
-        enterCovidCodeButton.touchUpCallback = { [weak self] in
+        
+        covidCodeView.enterCovidCodeCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentInformViewController()
+        }
+        
+        covidCodeView.endIsolationModeCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.showEndIsolationAlert()
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -150,14 +153,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        enterCovidCodeButtonWrapper.addSubview(enterCovidCodeButton)
-        enterCovidCodeButton.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
-        }
-
-        stackScrollView.addArrangedView(enterCovidCodeButtonWrapper)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        stackScrollView.addArrangedView(covidCodeView)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         #if ENABLE_TESTING
             #if ENABLE_STATUS_OVERRIDE
@@ -216,7 +213,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         handshakesModuleView.alpha = 0
         checkInView.alpha = 0
         reportsView.alpha = 0
-        enterCovidCodeButtonWrapper.alpha = 0
+        covidCodeView.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -236,7 +233,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
-                self.enterCovidCodeButtonWrapper.alpha = 1
+                self.covidCodeView.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
@@ -295,6 +292,17 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     func presentInformViewController(prefill: String? = nil) {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
+    }
+    
+    func showEndIsolationAlert() {
+        let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
+            TracingManager.shared.deletePositiveTest()
+        }))
+        alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
     func presentCheckInOverviewController() {

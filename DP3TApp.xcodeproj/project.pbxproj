@@ -189,6 +189,7 @@
 		2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF672448CAB900C197D6 /* UIStateManager.swift */; };
 		24F4D967246C33610011DC90 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
+		3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
 		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
 		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
 		48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */; };
@@ -657,6 +658,7 @@
 		24D33DA024880F6C0068E509 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* UIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateManager.swift; sourceTree = "<group>"; };
 		24D5EF692448CAE800C197D6 /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
+		3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodeModuleView.swift; sourceTree = "<group>"; };
 		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.der"; sourceTree = "<group>"; };
 		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		6E0D1226263A92050014CF7C /* NSRoundImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRoundImageButton.swift; sourceTree = "<group>"; };
@@ -1104,6 +1106,7 @@
 				24780B18242DFD98003BB26C /* Base */,
 				24780AFE242DF8AA003BB26C /* Reports */,
 				AAF73664242F2E300051E34A /* Encounters */,
+				3DCE4F49264C1F3D000115C8 /* CovidCode */,
 			);
 			path = Homescreen;
 			sourceTree = "<group>";
@@ -1297,6 +1300,14 @@
 				2443947A2445F062003ED582 /* NSHeaderArcView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		3DCE4F49264C1F3D000115C8 /* CovidCode */ = {
+			isa = PBXGroup;
+			children = (
+				3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */,
+			);
+			path = CovidCode;
 			sourceTree = "<group>";
 		};
 		6E33085D24502BA200913B0E /* WhatToDo */ = {
@@ -2761,6 +2772,7 @@
 				DC16178F2638717800B56ADA /* NSDiaryEntryContentView.swift in Sources */,
 				F80E40662508FE1600876906 /* NSStatsticsModuleHeader.swift in Sources */,
 				8EF2A6EF249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */,
+				3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */,
 				F80E407725092AE100876906 /* NSChartColumnView.swift in Sources */,
 				24780B11242DFD2F003BB26C /* NSReportsModuleView.swift in Sources */,
 				F8ABA2D32525FC3600A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,
