@@ -81,11 +81,6 @@ class NSInfoViewController: NSViewController {
 
         premisesAndEventsView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presentQrCodeGenerator()
-        }
-
-        premisesAndEventsView.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
             strongSelf.presentEventsViewController()
         }
 
@@ -211,11 +206,6 @@ class NSInfoViewController: NSViewController {
     func presentInformViewController(prefill: String? = nil) {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
-    }
-
-    private func presentQrCodeGenerator() {
-        let vc = NSQRCodeGenerationViewController()
-        vc.presentInNavigationController(from: self, useLine: false)
     }
 
     private func presentEventsViewController() {
