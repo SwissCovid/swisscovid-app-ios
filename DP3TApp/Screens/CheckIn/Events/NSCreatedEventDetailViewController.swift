@@ -23,7 +23,7 @@ class NSCreatedEventDetailViewController: NSViewController {
     private let showPDFButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-document")), buttonTintColor: .ns_blue)
     private let shareButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-share-ios")), buttonTintColor: .ns_blue)
     private let checkInButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-check-in")), buttonTintColor: .ns_blue)
-    private let deleteButton = NSExternalLinkButton(style: .outlined(color: .clear), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
+    private let deleteButton = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
 
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
@@ -158,7 +158,15 @@ class NSCreatedEventDetailViewController: NSViewController {
     }
 
     private func deletePressed() {
-        CreatedEventsManager.shared.deleteEvent(with: createdEvent.id)
-        navigationController?.popViewController(animated: true)
+        let alert = UIAlertController(title: "delete_qr_code_dialog".ub_localized, message: nil, preferredStyle: .actionSheet)
+        
+        alert.addAction(UIAlertAction(title: "delete_button_title".ub_localized, style: .default , handler: { [weak self] _ in
+            guard let strongSelf = self else { return }
+            CreatedEventsManager.shared.deleteEvent(with: strongSelf.createdEvent.id)
+            strongSelf.navigationController?.popViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in }))
+
+        present(alert, animated: true, completion: nil)
     }
 }
