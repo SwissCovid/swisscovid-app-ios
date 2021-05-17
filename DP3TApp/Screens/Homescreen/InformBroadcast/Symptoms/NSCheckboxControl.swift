@@ -27,8 +27,15 @@ public class NSCheckBoxControl: UIControl {
     private var inactiveColor: UIColor
     private var inactiveBackground: UIColor
 
-    init(isChecked: Bool, noBorder: Bool = false, tintColor: UIColor = .ns_green) {
+    enum Mode {
+        case checkMark, dash
+    }
+
+    private let mode: Mode
+
+    init(isChecked: Bool, noBorder: Bool = false, tintColor: UIColor = .ns_green, mode: Mode = .checkMark) {
         self.isChecked = isChecked
+        self.mode = mode
 
         if noBorder { // no nations
             activeColor = .clear
@@ -78,26 +85,35 @@ public class NSCheckBoxControl: UIControl {
             make.edges.equalToSuperview()
             make.center.equalTo(self)
             make.height.equalTo(2)
-            make.width.equalTo(6)
+            if mode == .checkMark {
+                make.width.equalTo(6)
+            } else {
+                make.width.equalTo(12)
+            }
         }
-        checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
 
-        let checkmarkLongContainerView = UIView()
-        checkmarkLongContainerView.translatesAutoresizingMaskIntoConstraints = false
-        checkmarkContainer.addSubview(checkmarkLongContainerView)
-        checkmarkLongContainerView.addSubview(checkmarkLongLineView)
-        checkmarkLongLineView.backgroundColor = .white
-        checkmarkLongLineView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.center.equalTo(self)
-            make.height.equalTo(2)
-            make.width.equalTo(12)
+        if mode == .checkMark {
+            checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
         }
-        checkmarkLongLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkLongContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkLongContainerView.transform = CGAffineTransform(rotationAngle: -.pi * 0.25).translatedBy(x: -11, y: 1)
+
+        if mode == .checkMark {
+            let checkmarkLongContainerView = UIView()
+            checkmarkLongContainerView.translatesAutoresizingMaskIntoConstraints = false
+            checkmarkContainer.addSubview(checkmarkLongContainerView)
+            checkmarkLongContainerView.addSubview(checkmarkLongLineView)
+            checkmarkLongLineView.backgroundColor = .white
+            checkmarkLongLineView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+                make.center.equalTo(self)
+                make.height.equalTo(2)
+                make.width.equalTo(12)
+            }
+            checkmarkLongLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkLongContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkLongContainerView.transform = CGAffineTransform(rotationAngle: -.pi * 0.25).translatedBy(x: -11, y: 1)
+        }
     }
 
     private func update(animated: Bool) {

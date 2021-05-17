@@ -159,8 +159,8 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private func deletePressed() {
         let alert = UIAlertController(title: "delete_qr_code_dialog".ub_localized, message: nil, preferredStyle: .actionSheet)
-        
-        alert.addAction(UIAlertAction(title: "delete_button_title".ub_localized, style: .default , handler: { [weak self] _ in
+
+        alert.addAction(UIAlertAction(title: "delete_button_title".ub_localized, style: .default, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
             CreatedEventsManager.shared.deleteEvent(with: strongSelf.createdEvent.id)
             strongSelf.navigationController?.popViewController(animated: true)

@@ -20,7 +20,8 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     private let selectAll = NSCheckBoxView(text: "Select all",
                                            labelType: .textBold,
                                            insets: UIEdgeInsets(top: NSPadding.large, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large),
-                                           tintColor: .ns_purple)
+                                           tintColor: .ns_purple,
+                                           mode: .dash)
 
     private var checkInSelections: [NSCheckBoxView] = []
 
@@ -75,7 +76,13 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
             let view = NSCheckBoxView(attributedText: text,
                                       labelType: .textBold,
                                       insets: UIEdgeInsets(top: NSPadding.large, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large),
-                                      tintColor: .ns_purple)
+                                      tintColor: .ns_purple,
+                                      selectedBorderColor: .ns_purple)
+
+            view.touchUpCallback = { [weak self] in
+                guard let self = self else { return }
+                self.selectAll.isChecked = self.checkInSelections.allSatisfy(\.isChecked)
+            }
 
             view.backgroundColor = .ns_background
             view.layer.cornerRadius = 3.0
@@ -92,6 +99,14 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         bottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.sendPressed()
+        }
+
+        secondaryBottomButtonHidden = false
+        secondaryBottomButtonTitle = "Don't send"
+        enableSecondaryBottomButton = true
+        secondaryBottomButtonTouchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.dontSendPressed()
         }
     }
 
@@ -126,7 +141,14 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         stackScrollView.addSpacerView(NSPadding.medium)
     }
 
-    @objc func sendPressed() {
+    func dontSendPressed() {
+        navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
+        let nav = presentingViewController as? NSNavigationController
+        nav?.popToRootViewController(animated: true)
+        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+    }
+
+    func sendPressed() {
         ReportingManager.shared.sendCheckIns(tokens: tokens, selectedCheckIns: selectedCheckIns, isFakeRequest: false) { [weak self] result in
             guard let strongSelf = self else { return }
 
@@ -147,7 +169,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     }
 
     static func presentIfNeeded(tokens: CodeValidator.TokenWrapper, from: UIViewController) {
-        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInToken.onset }
+        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary() // .filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInToken.onset }
         if checkInsInRelevantPeriod.isEmpty {
             from.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
             let nav = from.presentingViewController as? NSNavigationController

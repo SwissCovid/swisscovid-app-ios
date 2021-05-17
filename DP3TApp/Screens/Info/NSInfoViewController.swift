@@ -172,7 +172,7 @@ class NSInfoViewController: NSViewController {
         whatToDoSymptomsButton.isHidden = isInfected
 
         travelView.isHidden = state.homescreen.countries.isEmpty
-        
+
         if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
             informView.hearingImpairedButtonTouched = { [weak self] in
                 guard let strongSelf = self else { return }

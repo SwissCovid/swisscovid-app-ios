@@ -78,12 +78,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
             strongSelf.presentCheckOutViewController()
         }
-        
+
         covidCodeView.enterCovidCodeCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentInformViewController()
         }
-        
+
         covidCodeView.endIsolationModeCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.showEndIsolationAlert()
@@ -293,7 +293,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
     }
-    
+
     func showEndIsolationAlert() {
         let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
@@ -302,7 +302,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
         }))
-        self.present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
 
     func presentCheckInOverviewController() {

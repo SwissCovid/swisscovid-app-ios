@@ -124,12 +124,12 @@ class NSCheckInEditViewController: NSViewController {
             }
         }
     }
-    
+
     private func selectedDatesAreOverlapping() -> Bool {
         var diary = CheckInManager.shared.getDiary()
         diary = diary.filter { $0 != checkIn }
         let selectedTimeRange = startDate ... endDate
-        
+
         for savedCheckIn in diary {
             if let checkOutTime = savedCheckIn.checkOutTime { // diary entries should always have checkOutTime
                 let savedTimeRange = savedCheckIn.checkInTime ... checkOutTime
@@ -140,15 +140,14 @@ class NSCheckInEditViewController: NSViewController {
         }
         return false
     }
-    
+
     private func showOverlappingDatesAlert() {
         let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default)) // TODO: - Localization
-        
+
         present(alert, animated: true, completion: nil)
     }
 
-    
     // MARK: - Setup
 
     fileprivate func setupCheckout() {
@@ -173,7 +172,7 @@ class NSCheckInEditViewController: NSViewController {
             showOverlappingDatesAlert()
             return
         }
-        
+
         if isCurrentCheckIn {
             updateCheckIn()
 

@@ -18,8 +18,11 @@ class NSCheckBoxView: UIView {
 
     public var isChecked: Bool = false {
         didSet {
+            guard oldValue != isChecked else { return }
             checkBox.setChecked(checked: isChecked, animated: true)
             accessibilityTraits = isChecked ? [.selected, .button] : [.button]
+            layer.borderWidth = isChecked ? 2 : 0
+            layer.borderColor = selectedBorderColor.cgColor
         }
     }
 
@@ -27,11 +30,19 @@ class NSCheckBoxView: UIView {
 
     private var insets: UIEdgeInsets
 
+    private let selectedBorderColor: UIColor
+
     // MARK: - Init
 
-    init(text: String, labelType: NSLabelType = .textLight, insets: UIEdgeInsets = .zero, tintColor: UIColor = .ns_green) {
+    init(text: String,
+         labelType: NSLabelType = .textLight,
+         insets: UIEdgeInsets = .zero,
+         tintColor: UIColor = .ns_green,
+         mode: NSCheckBoxControl.Mode = .checkMark,
+         selectedBorderColor: UIColor = .clear) {
         textLabel = NSLabel(labelType)
-        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor)
+        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor, mode: mode)
+        self.selectedBorderColor = selectedBorderColor
         self.insets = insets
         super.init(frame: .zero)
         setup()
@@ -43,9 +54,14 @@ class NSCheckBoxView: UIView {
         accessibilityTraits = isChecked ? [.selected, .button] : [.button]
     }
 
-    init(attributedText: NSAttributedString, labelType: NSLabelType = .textLight, insets: UIEdgeInsets = .zero, tintColor: UIColor = .ns_green) {
+    init(attributedText: NSAttributedString,
+         labelType: NSLabelType = .textLight,
+         insets: UIEdgeInsets = .zero,
+         tintColor: UIColor = .ns_green,
+         selectedBorderColor: UIColor = .clear) {
         textLabel = NSLabel(labelType, numberOfLines: 0)
         checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor)
+        self.selectedBorderColor = selectedBorderColor
         self.insets = insets
         super.init(frame: .zero)
         setup()
@@ -73,7 +89,7 @@ class NSCheckBoxView: UIView {
         }
 
         button.backgroundColor = .clear
-        button.highlightedBackgroundColor = .clear
+        button.highlightedBackgroundColor = .ns_background_highlighted
 
         addSubview(button)
 

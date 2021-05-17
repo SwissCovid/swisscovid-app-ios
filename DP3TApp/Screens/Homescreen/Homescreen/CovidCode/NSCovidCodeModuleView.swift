@@ -13,62 +13,60 @@ import SnapKit
 import UIKit
 
 class NSCovidCodeModuleView: UIStackView {
-    
     private let notInfectedView = NSCovidCodeModuleNotInfectedView()
     private let infectedView = NSCovidCodeModuleInfectedView()
-    
+
     var enterCovidCodeCallback: (() -> Void)?
     var endIsolationModeCallback: (() -> Void)?
-    
+
     init() {
         super.init(frame: .zero)
-        
+
         setup()
-        
+
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.update(state)
         }
-        
+
         notInfectedView.enterCovidCodeButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.enterCovidCodeCallback?()
         }
-        
+
         infectedView.endIsolationModeButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.endIsolationModeCallback?()
         }
     }
-    
-    required init(coder: NSCoder) {
+
+    required init(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func setup() {
         backgroundColor = .ns_moduleBackground
-        
+
         axis = .vertical
         addArrangedSubview(notInfectedView)
         addArrangedSubview(infectedView)
-        
+
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
     }
-    
+
     func update(_ state: UIStateModel) {
         switch state.homescreen.reports.report {
         case .noReport, .exposed:
             notInfectedView.isHidden = false
             infectedView.isHidden = true
-        case .infected(_):
+        case .infected:
             notInfectedView.isHidden = true
             infectedView.isHidden = false
         }
     }
 }
 
-fileprivate class NSCovidCodeModuleNotInfectedView: UIView {
-
+private class NSCovidCodeModuleNotInfectedView: UIView {
     private let explainationLabel = NSLabel(.textLight)
     let enterCovidCodeButton = NSButton(title: "inform_code_title".ub_localized, style: .outlineUppercase(.ns_purple))
 
@@ -96,8 +94,7 @@ fileprivate class NSCovidCodeModuleNotInfectedView: UIView {
     }
 }
 
-fileprivate class NSCovidCodeModuleInfectedView: UIView {
-    
+private class NSCovidCodeModuleInfectedView: UIView {
     private let explainationLabel = NSLabel(.textLight)
     let endIsolationModeButton = NSButton(title: "delete_infection_button".ub_localized, style: .outlineUppercase(.ns_purple))
 

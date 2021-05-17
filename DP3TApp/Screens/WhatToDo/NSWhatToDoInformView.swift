@@ -22,14 +22,14 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     public var covidCodeInfoCallback: (() -> Void)?
 
     public var hearingImpairedButtonTouched: (() -> Void)? {
-         didSet {
-             if var model = infoBoxViewModel {
-                 model.hearingImpairedButtonCallback = hearingImpairedButtonTouched
-                 infoBoxView?.update(with: model)
-                 infoBoxViewModel = model
-             }
-         }
-     }
+        didSet {
+            if var model = infoBoxViewModel {
+                model.hearingImpairedButtonCallback = hearingImpairedButtonTouched
+                infoBoxView?.update(with: model)
+                infoBoxViewModel = model
+            }
+        }
+    }
 
     // MARK: - Views
 
@@ -45,33 +45,33 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                                 style: .uppercase(.ns_purple))
 
         if let infoBox = configTexts?.infoBox {
-             var hearingImpairedCallback: (() -> Void)?
-             if let hearingImpairedText = infoBox.hearingImpairedInfo {
-                 hearingImpairedCallback = {
+            var hearingImpairedCallback: (() -> Void)?
+            if let hearingImpairedText = infoBox.hearingImpairedInfo {
+                hearingImpairedCallback = {
                     print(hearingImpairedText)
-                 }
-             }
-             var model = NSInfoBoxView.ViewModel(title: infoBox.title,
-                                                 subText: infoBox.msg,
-                                                 titleColor: .ns_text,
-                                                 subtextColor: .ns_text,
-                                                 additionalText: infoBox.urlTitle,
-                                                 additionalURL: infoBox.url?.absoluteString,
-                                                 dynamicIconTintColor: .ns_purple,
-                                                 externalLinkStyle: .normal(color: .ns_purple),
-                                                 hearingImpairedButtonCallback: hearingImpairedCallback)
+                }
+            }
+            var model = NSInfoBoxView.ViewModel(title: infoBox.title,
+                                                subText: infoBox.msg,
+                                                titleColor: .ns_text,
+                                                subtextColor: .ns_text,
+                                                additionalText: infoBox.urlTitle,
+                                                additionalURL: infoBox.url?.absoluteString,
+                                                dynamicIconTintColor: .ns_purple,
+                                                externalLinkStyle: .normal(color: .ns_purple),
+                                                hearingImpairedButtonCallback: hearingImpairedCallback)
 
-             model.image = UIImage(named: "ic-info")
-             model.backgroundColor = .ns_purpleBackground
-             model.titleLabelType = .textBold
+            model.image = UIImage(named: "ic-info")
+            model.backgroundColor = .ns_purpleBackground
+            model.titleLabelType = .textBold
 
-             infoBoxView = NSInfoBoxView(viewModel: model)
-             infoBoxViewModel = model
+            infoBoxView = NSInfoBoxView(viewModel: model)
+            infoBoxViewModel = model
 
-         } else {
-             infoBoxView = nil
-             infoBoxViewModel = nil
-         }
+        } else {
+            infoBoxView = nil
+            infoBoxViewModel = nil
+        }
 
         super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
                    subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
@@ -97,10 +97,10 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         isAccessibilityElement = false
         accessibilityElementsHidden = false
     }
-    
+
     private func setupCovidCodeInfo() {
         let view = UIView()
-        
+
         let covidCodeInfo = NSUnderlinedButton()
         view.addSubview(covidCodeInfo)
 
@@ -109,33 +109,33 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             guard let strongSelf = self else { return }
             strongSelf.covidCodeInfoCallback?()
         }
-        
+
         covidCodeInfo.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.left.equalToSuperview().inset(NSPadding.small)
         }
-        
+
         contentView.addArrangedView(view)
         contentView.addSpacerView(NSPadding.large)
     }
-    
+
     private func setupInformButton() {
         contentView.addArrangedView(informButton)
 
         informButton.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(-(NSPadding.medium+NSPadding.small))
+            make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
 
         contentView.addSpacerView(NSPadding.large)
     }
-    
+
     private func setupInfoBoxView() {
         if let infoBoxView = infoBoxView {
             contentView.addArrangedView(infoBoxView)
-            
+
             infoBoxView.snp.makeConstraints { make in
-                make.left.right.equalToSuperview().inset(-(NSPadding.medium+NSPadding.small))
-            }   
+                make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
+            }
         }
     }
 }
