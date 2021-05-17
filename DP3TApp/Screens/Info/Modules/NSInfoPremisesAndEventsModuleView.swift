@@ -44,7 +44,6 @@ private class NSInfoPremisesAndEventsInfoView: UIView {
     }
 
     private func setupView() {
-        // TODO: - Localization
         explainationLabel.text = "events_subtitle".ub_localized
         addSubview(explainationLabel)
         explainationLabel.snp.makeConstraints { make in

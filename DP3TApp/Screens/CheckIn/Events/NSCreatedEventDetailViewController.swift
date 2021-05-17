@@ -165,7 +165,7 @@ class NSCreatedEventDetailViewController: NSViewController {
             CreatedEventsManager.shared.deleteEvent(with: strongSelf.createdEvent.id)
             strongSelf.navigationController?.popViewController(animated: true)
         }))
-        alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in }))
+        alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel))
 
         present(alert, animated: true, completion: nil)
     }

@@ -1677,3 +1677,12 @@
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Selbst einchecken";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer nicht eingecheckt ist.*/
+"checkin_overview_checkins_explanation" = "Schützen Sie sich und andere indem Sie bei Events ein- und auschecken.";
+
+/*Popup Titel wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_title" = "Sichern nicht möglich";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_description" = "Ihre gewählten Zeiten überschneiden sich mit anderen Check-Ins aus ihrem Tagebuch. Bitte überprüfen Sie nochmals Ihre Angabe.";
