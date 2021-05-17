@@ -16,7 +16,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     // MARK: - API
 
     public var touchUpCallback: (() -> Void)? {
-        didSet { informButton.touchUpCallback = touchUpCallback }
+        didSet { enterCovidCodeButton.touchUpCallback = touchUpCallback }
     }
 
     public var covidCodeInfoCallback: (() -> Void)?
@@ -33,7 +33,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     // MARK: - Views
 
-    private let informButton: NSButton
+    private let enterCovidCodeButton: NSButton
 
     private let infoBoxView: NSInfoBoxView?
     private var infoBoxViewModel: NSInfoBoxView.ViewModel?
@@ -41,7 +41,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     // MARK: - Init
 
     init() {
-        informButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
+        enterCovidCodeButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
                                 style: .uppercase(.ns_purple))
 
         if let infoBox = configTexts?.infoBox {
@@ -79,6 +79,12 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                    image: UIImage(named: "illu-covidcode"),
                    subtitleColor: .ns_purple,
                    bottomPadding: true)
+        
+        UIStateManager.shared.addObserver(self) { [weak self] state in
+            guard let strongSelf = self else { return }
+            strongSelf.update(state)
+        }
+        
         setup()
     }
 
@@ -90,10 +96,10 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     private func setup() {
         setupCovidCodeInfo()
-        setupInformButton()
+        setupEnterCovidButton()
         setupInfoBoxView()
 
-        informButton.isAccessibilityElement = true
+        enterCovidCodeButton.isAccessibilityElement = true
         isAccessibilityElement = false
         accessibilityElementsHidden = false
     }
@@ -119,13 +125,13 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         contentView.addSpacerView(NSPadding.large)
     }
 
-    private func setupInformButton() {
-        contentView.addArrangedView(informButton)
+    private func setupEnterCovidButton() {
+        contentView.addArrangedView(enterCovidCodeButton)
 
-        informButton.snp.makeConstraints { make in
+        enterCovidCodeButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
-
+        
         contentView.addSpacerView(NSPadding.large)
     }
 
@@ -137,5 +143,10 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                 make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
             }
         }
+    }
+    
+    func update(_ state: UIStateModel) {
+        let isInfected = state.homescreen.reports.report.isInfected
+        enterCovidCodeButton.isHidden = isInfected
     }
 }

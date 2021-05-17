@@ -12,15 +12,16 @@
 import CrowdNotifierSDK
 import Foundation
 
-class NSRemoveFromDiaryWarningViewController: NSViewController {
-    private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
-
-    private let titleLabel = NSLabel(.title)
-    private let textLabel = NSLabel(.textLight)
-    private let explanationLabel = NSLabel(.textLight)
-
-    private let removeNowButton = NSButton(title: "remove_diary_remove_now_button".ub_localized, style: .normal(.ns_blue))
-
+ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
+    private let removeNowButton: NSExternalLinkButton = {
+        let button = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
+        button.title = "remove_diary_remove_now_button".ub_localized
+        return button
+    }()
+     
+    private let venue: VenueInfo
+    private let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+    
     public var removeCallback: (() -> Void)? {
         didSet {
             removeNowButton.touchUpCallback = { [weak self] in
@@ -31,62 +32,65 @@ class NSRemoveFromDiaryWarningViewController: NSViewController {
             }
         }
     }
-
-    private let venueInfo: VenueInfo
-
-    // MARK: - Init
-
+     
     init(venueInfo: VenueInfo) {
-        self.venueInfo = venueInfo
-        super.init()
+        self.venue = venueInfo
+        super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium))
     }
-
-    // MARK: - View Did Load
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+
+        tintColor = .ns_blue
+ 
+        setupLabels()
+        setupRemoveNowButton()
     }
+     
+    private func setupLabels() {
+        let title = NSLabel(.title)
+        title.text = "remove_diary_warning_title".ub_localized
 
-    // MARK: - Setup
+        stackView.addArrangedView(title, insets: insets)
+        stackView.addSpacerView(NSPadding.large)
 
-    private func setup() {
-        titleLabel.text = "remove_diary_warning_title".ub_localized
+        let bodyLabel = NSLabel(.textLight)
+        bodyLabel.text = "remove_diary_warning_text".ub_localized.replacingOccurrences(of: "{LOCATION_INFO}", with: venue.description)
 
-        let text = [venueInfo.description, venueInfo.address]
+        stackView.addArrangedView(bodyLabel, insets: insets)
+        stackView.addSpacerView(NSPadding.large + NSPadding.medium)
 
-        textLabel.text = "remove_diary_warning_text".ub_localized.replacingOccurrences(of: "{LOCATION_INFO}", with: text.joined(separator: ", "))
-
-        explanationLabel.text = "remove_diary_warning_star_text".ub_localized
-
-        stackScrollView.addArrangedView(titleLabel)
-        stackScrollView.addSpacerView(NSPadding.medium)
-        stackScrollView.addArrangedView(textLabel)
-        stackScrollView.addSpacerView(NSPadding.medium)
-
-        let v = UIStackView()
-        v.spacing = NSPadding.small
-        v.alignment = .firstBaseline
+        let hStackView = UIStackView()
+        hStackView.axis = .horizontal
+        hStackView.alignment = .firstBaseline
+        hStackView.spacing = NSPadding.small
 
         let starLabel = NSLabel(.textLight)
         starLabel.text = "*"
         starLabel.ub_setContentPriorityRequired()
 
-        v.addArrangedView(starLabel)
-        v.addArrangedView(explanationLabel)
+        let remarkLabel = NSLabel(.textLight)
+        remarkLabel.text = "remove_diary_warning_star_text".ub_localized
 
-        stackScrollView.addArrangedView(v)
-        stackScrollView.addSpacerView(NSPadding.medium)
+        hStackView.addArrangedView(starLabel)
+        hStackView.addArrangedView(remarkLabel)
 
-        let v2 = UIView()
-        v2.addSubview(removeNowButton)
-
+        stackView.addArrangedView(hStackView, insets: insets)
+        stackView.addSpacerView(2*NSPadding.large)
+    }
+    
+    private func setupRemoveNowButton() {
+        let buttonWrapper = UIView()
+        buttonWrapper.addSubview(removeNowButton)
+        
         removeNowButton.snp.makeConstraints { make in
-            make.top.bottom.centerX.equalToSuperview()
-            make.right.lessThanOrEqualToSuperview()
-            make.left.greaterThanOrEqualToSuperview()
+            make.left.right.equalToSuperview().inset(2*NSPadding.large)
+            make.top.bottom.equalToSuperview()
         }
-
-        stackScrollView.addArrangedView(v2)
+        
+        stackView.addArrangedView(buttonWrapper, insets: insets)
+        stackView.addSpacerView(NSPadding.large + NSPadding.medium)
     }
 }
+
+ 
