@@ -589,6 +589,7 @@
 		F8ABA2F02526089E00A8D6B5 /* NSTutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8ABA2CC2525FAD700A8D6B5 /* NSTutorialViewController.swift */; };
 		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
+		F8B44ED826528579009F0ED0 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
 		F8C9990B2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
 		F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
 		F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
@@ -2547,6 +2548,7 @@
 				242D2241245C4BD8005DAEA8 /* NSInformThankYouViewController.swift in Sources */,
 				242D2242245C4BD8005DAEA8 /* NSWhatToDoButton.swift in Sources */,
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
+				F8B44ED826528579009F0ED0 /* NSCovidCodeModuleView.swift in Sources */,
 				DC1617A02638717800B56ADA /* NSCreatedEventsViewController.swift in Sources */,
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */,
@@ -2907,7 +2909,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "dep-3t DEV Deveopment";
+				PROVISIONING_PROFILE_SPECIFIER = "dep-3t DEV Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG TEST_ENTITLEMENT ENABLE_TESTING ENABLE_VERBOSE ENABLE_LOGGING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
