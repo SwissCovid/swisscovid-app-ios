@@ -10,7 +10,6 @@
  */
 
 import Foundation
-#warning("Hier")
 
 class NSCheckInEditViewController: NSViewController {
     private let venueView = NSVenueView(large: true, showCategory: true)
@@ -132,7 +131,7 @@ class NSCheckInEditViewController: NSViewController {
         let selectedTimeRange = startDate ... endDate
         
         for savedCheckIn in diary {
-            if let checkOutTime = savedCheckIn.checkOutTime { // diary entries should always have checkOut
+            if let checkOutTime = savedCheckIn.checkOutTime { // diary entries should always have checkOutTime
                 let savedTimeRange = savedCheckIn.checkInTime ... checkOutTime
                 if savedTimeRange.overlaps(selectedTimeRange) {
                     return true
