@@ -19,7 +19,7 @@ class OSLogger {
         #if ENABLE_OS_LOG
             return osLog
         #else
-            OSLog.disabled
+            return OSLog.disabled
         #endif
     }
 
