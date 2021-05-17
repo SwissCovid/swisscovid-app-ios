@@ -1654,3 +1654,6 @@
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
 "checkout_overlapping_alert_description" = "";
+
+/*Informieren: Danke Text Checkins Teil*/
+"inform_send_thankyou_text_checkins" = "Your selected check-in entries were sent. Other people who checked into the same  events and during the same period of time will be notified.";

@@ -21,7 +21,11 @@ class NSCheckInEditViewController: NSViewController {
     private var startDate: Date = Date()
     private var endDate: Date = Date()
 
-    private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized, style: .normal(.ns_blue))
+    private let removeFromDiaryButton: NSExternalLinkButton = {
+        let button = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
+        button.title = "delete_button_title".ub_localized
+        return button
+    }()
 
     private let isCurrentCheckIn: Bool
 
@@ -250,14 +254,20 @@ class NSCheckInEditViewController: NSViewController {
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
         if !isCurrentCheckIn {
-            let v = UIView()
-            v.addSubview(removeFromDiaryButton)
+            let view = UIView()
+            view.addSubview(removeFromDiaryButton)
 
             removeFromDiaryButton.snp.makeConstraints { make in
-                make.top.bottom.centerX.equalToSuperview()
+                make.left.right.equalToSuperview().inset(2*NSPadding.large)
+                make.top.bottom.equalToSuperview()
+            }
+            
+            removeFromDiaryButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.showRemoveWarning()
             }
 
-            stackScrollView.addArrangedView(v)
+            stackScrollView.addArrangedView(view)
         }
 
         stackScrollView.addSpacerView(NSPadding.medium)
@@ -265,18 +275,18 @@ class NSCheckInEditViewController: NSViewController {
 
     // MARK: - Show remove warning
 
-    // TODO: remove warning functionality
-//    private func showRemoveWarning() {
-//        guard let checkIn = self.checkIn else { return }
-//
-//        let vc = RemoveFromDiaryWarningViewController(venueInfo: checkIn.venue)
-//        vc.removeCallback = { [weak self] in
-//            guard let strongSelf = self else { return }
-//
-//            CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
-//            strongSelf.dismiss(animated: true, completion: nil)
-//        }
-//
-//        present(vc, animated: true, completion: nil)
-//    }
+    private func showRemoveWarning() {
+        guard let checkIn = self.checkIn else { return }
+        
+        let controller = NSRemoveFromDiaryWarningViewController(venueInfo: checkIn.venue)
+        controller.removeCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+
+            CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
+            strongSelf.dismiss(animated: true, completion: nil)
+        }
+
+        present(controller, animated: true, completion: nil)
+    }
 }
+
