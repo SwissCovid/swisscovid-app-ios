@@ -1689,3 +1689,30 @@
 
 /*Informieren: Danke Text Checkins Teil*/
 "inform_send_thankyou_text_checkins" = "Ihre ausgewählten Check-Ins wurden gesendet. Andere Leute, welche zur gleichen Zeit an den selben Events eingecheckt waren werden benachrichtigt.";
+
+/*Covidcode eingabe, are your sure not to share, titel*/
+"inform_are_you_sure_title" = "Are you sure?";
+
+/*Covidcode eingabe, are your sure not to share, text*/
+"inform_are_you_sure_text" = "Sharing your random IDs helps “SwissCovid” to notify other potential infected people and avoid the further spreading of the pandemic. If you don’t share your random IDs no automatically recognized encounters can be notified. ";
+
+/*Covidcode eingabe, are your sure not to share, try agan button*/
+"inform_are_you_sure_try_again_button" = "Try again";
+
+/*Covidcode eingabe, are your sure not to share, dont send button*/
+"inform_are_you_sure_dont_send_button" = "Don't share";
+
+/*SwissCovid QR Code PDF: Headline über dem Slogan*/
+"pdf_headline" = "SwissCovid Check-Ins";
+
+/*SwissCovid QR Code PDF: Slogan*/
+"pdf_slogan" = "Einchecken ohne Daten zu hinterlassen";
+
+/*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
+"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
+
+/*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
+"pdf_swisscovid_app" = "SwissCovid App";
+
+/*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
+"pdf_download_app" = "Jetzt downloaden";

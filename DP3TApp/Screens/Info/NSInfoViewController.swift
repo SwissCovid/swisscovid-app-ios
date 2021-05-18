@@ -23,6 +23,7 @@ class NSInfoViewController: NSViewController {
 
     private let premisesAndEventsView = NSInfoPremisesAndEventsModuleView()
 
+    private let whatToDoSymptomsButtonWrapper = UIView()
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
     private let faqButton = NSButton.faqButton(color: .ns_purple)
@@ -118,12 +119,17 @@ class NSInfoViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(informView)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
-
-        stackScrollView.addArrangedView(whatToDoSymptomsButton)
         stackScrollView.addSpacerView(NSPadding.large)
-        travelView.isHidden = true
 
+        whatToDoSymptomsButtonWrapper.addSubview(whatToDoSymptomsButton)
+        whatToDoSymptomsButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.large)
+            make.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(NSPadding.large)
+        }
+        stackScrollView.addArrangedView(whatToDoSymptomsButtonWrapper)
+        
+        travelView.isHidden = true
         stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -136,7 +142,7 @@ class NSInfoViewController: NSViewController {
 
         informView.alpha = 0
         travelView.alpha = 0
-        whatToDoSymptomsButton.alpha = 0
+        whatToDoSymptomsButtonWrapper.alpha = 0
         faqButton.alpha = 0
         premisesAndEventsView.alpha = 0
 
@@ -150,7 +156,7 @@ class NSInfoViewController: NSViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.25, options: [.allowUserInteraction], animations: {
-                self.whatToDoSymptomsButton.alpha = 1
+                self.whatToDoSymptomsButtonWrapper.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.4, options: [.allowUserInteraction], animations: {
@@ -169,7 +175,7 @@ class NSInfoViewController: NSViewController {
 
     func updateState(_ state: UIStateModel) {
         let isInfected = state.homescreen.reports.report.isInfected
-        whatToDoSymptomsButton.isHidden = isInfected
+        whatToDoSymptomsButtonWrapper.isHidden = isInfected
 
         travelView.isHidden = state.homescreen.countries.isEmpty
 
