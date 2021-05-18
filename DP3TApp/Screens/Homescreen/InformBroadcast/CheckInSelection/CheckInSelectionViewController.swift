@@ -25,7 +25,6 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
 
     private var checkInSelections: [NSCheckBoxView] = []
 
-    private let tokens: CodeValidator.TokenWrapper
     private let checkIns: [CheckIn]
 
     private var selectedCheckIns: [CheckIn] {
@@ -42,8 +41,10 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         return selected
     }
 
-    init(tokens: CodeValidator.TokenWrapper, checkIns: [CheckIn]) {
-        self.tokens = tokens
+    private let covidCode: String
+
+    init(covidCode: String, checkIns: [CheckIn]) {
+        self.covidCode = covidCode
         self.checkIns = checkIns
         super.init()
     }
@@ -58,6 +59,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
                 guard let self = self else { return }
                 $0.isChecked = self.selectAll.isChecked
             }
+            self.enableBottomButton = self.checkInSelections.contains(where: \.isChecked)
         }
         let formatter = DateFormatter()
         formatter.dateFormat = "dd.mm.YYYY"
@@ -82,6 +84,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
             view.touchUpCallback = { [weak self] in
                 guard let self = self else { return }
                 self.selectAll.isChecked = self.checkInSelections.allSatisfy(\.isChecked)
+                self.enableBottomButton = self.checkInSelections.contains(where: \.isChecked)
             }
 
             view.backgroundColor = .ns_background
@@ -94,15 +97,15 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        bottomButtonTitle = "Send"
-        enableBottomButton = true
+        bottomButtonTitle = "inform_send_button_title".ub_localized
+        enableBottomButton = false
         bottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.sendPressed()
         }
 
         secondaryBottomButtonHidden = false
-        secondaryBottomButtonTitle = "Don't send"
+        secondaryBottomButtonTitle = "inform_dont_share_button_title".ub_localized
         enableSecondaryBottomButton = true
         secondaryBottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -142,41 +145,27 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     }
 
     func dontSendPressed() {
-        navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-        let nav = presentingViewController as? NSNavigationController
-        nav?.popToRootViewController(animated: true)
-        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+        let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
+        navigationController?.pushViewController(vc, animated: false)
     }
 
     func sendPressed() {
-        ReportingManager.shared.sendCheckIns(tokens: tokens, selectedCheckIns: selectedCheckIns, isFakeRequest: false) { [weak self] result in
-            guard let strongSelf = self else { return }
-
-            switch result {
-            case let .failure(error):
-                print(error.localizedDescription)
-            case .success:
-                print("Success")
-            }
-
-            DispatchQueue.main.async {
-                strongSelf.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-                let nav = strongSelf.presentingViewController as? NSNavigationController
-                nav?.popToRootViewController(animated: true)
-                nav?.pushViewController(NSReportsDetailViewController(), animated: false)
-            }
-        }
+        let vc = NSInformSendViewController(covidCode: covidCode, checkIns: selectedCheckIns)
+        navigationController?.pushViewController(vc, animated: false)
     }
 
-    static func presentIfNeeded(tokens: CodeValidator.TokenWrapper, from: UIViewController) {
+    static func presentIfNeeded(covidCode: String, checkIns: [CheckIn]?, from: UIViewController) {
+        if let checkIns = checkIns {
+            let vc = NSInformSendViewController(covidCode: covidCode, checkIns: checkIns)
+            from.navigationController?.pushViewController(vc, animated: false)
+            return
+        }
         let checkInsInRelevantPeriod = CheckInManager.shared.getDiary() // .filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInToken.onset }
         if checkInsInRelevantPeriod.isEmpty {
-            from.navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-            let nav = from.presentingViewController as? NSNavigationController
-            nav?.popToRootViewController(animated: true)
-            nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+            let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
+            from.navigationController?.pushViewController(vc, animated: false)
         } else {
-            from.navigationController?.pushViewController(CheckInSelectionViewController(tokens: tokens, checkIns: checkInsInRelevantPeriod), animated: true)
+            from.navigationController?.pushViewController(CheckInSelectionViewController(covidCode: covidCode, checkIns: checkInsInRelevantPeriod), animated: true)
         }
     }
 }

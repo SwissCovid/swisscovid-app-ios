@@ -12,16 +12,16 @@
 import CrowdNotifierSDK
 import Foundation
 
- class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
+class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
     private let removeNowButton: NSExternalLinkButton = {
         let button = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
         button.title = "remove_diary_remove_now_button".ub_localized
         return button
     }()
-     
+
     private let venue: VenueInfo
     private let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
-    
+
     public var removeCallback: (() -> Void)? {
         didSet {
             removeNowButton.touchUpCallback = { [weak self] in
@@ -32,9 +32,9 @@ import Foundation
             }
         }
     }
-     
+
     init(venueInfo: VenueInfo) {
-        self.venue = venueInfo
+        venue = venueInfo
         super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium))
     }
 
@@ -42,11 +42,11 @@ import Foundation
         super.viewDidLoad()
 
         tintColor = .ns_blue
- 
+
         setupLabels()
         setupRemoveNowButton()
     }
-     
+
     private func setupLabels() {
         let title = NSLabel(.title)
         title.text = "remove_diary_warning_title".ub_localized
@@ -76,21 +76,19 @@ import Foundation
         hStackView.addArrangedView(remarkLabel)
 
         stackView.addArrangedView(hStackView, insets: insets)
-        stackView.addSpacerView(2*NSPadding.large)
+        stackView.addSpacerView(2 * NSPadding.large)
     }
-    
+
     private func setupRemoveNowButton() {
         let buttonWrapper = UIView()
         buttonWrapper.addSubview(removeNowButton)
-        
+
         removeNowButton.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(2*NSPadding.large)
+            make.left.right.equalToSuperview().inset(2 * NSPadding.large)
             make.top.bottom.equalToSuperview()
         }
-        
+
         stackView.addArrangedView(buttonWrapper, insets: insets)
         stackView.addSpacerView(NSPadding.large + NSPadding.medium)
     }
 }
-
- 

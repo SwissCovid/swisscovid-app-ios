@@ -13,6 +13,8 @@ import DP3TSDK
 import XCTest
 
 class MockReportingManager: ReportingManagerProtocol {
+    var hasUserConsent: Bool = true
+
     private var fakeCode: String {
         String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
     }
@@ -27,15 +29,21 @@ class MockReportingManager: ReportingManagerProtocol {
         completion(.success(.init(code: covidCode, enToken: .init(onset: Date(), token: ""), checkInToken: .init(onset: Date(), token: ""))))
     }
 
-    var callsToSendEnKeys = 0
-    func sendENKeys(tokens _: CodeValidator.TokenWrapper, isFakeRequest _: Bool, completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
-        callsToSendEnKeys += 1
+    var callsToGetUserConsent = 0
+    func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void) {
+        callsToGetUserConsent += 1
+        callback(.success(()))
+    }
+
+    var callsToSendCheckIns = 0
+    func sendCheckIns(tokens _: CodeValidator.TokenWrapper, selectedCheckIns _: [CheckIn], isFakeRequest _: Bool, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        callsToSendCheckIns += 1
         completion(.success(()))
     }
 
-    var callsToSendCheckInsKeys = 0
-    func sendCheckIns(tokens _: CodeValidator.TokenWrapper, selectedCheckIns _: [CheckIn], isFakeRequest _: Bool, completion: @escaping (Result<Void, Error>) -> Void) {
-        callsToSendCheckInsKeys += 1
+    var callsToSendEnKeys = 0
+    func sendENKeys(tokens _: CodeValidator.TokenWrapper, isFakeRequest _: Bool, completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
+        callsToSendEnKeys += 1
         completion(.success(()))
     }
 }
@@ -89,7 +97,7 @@ class FakePublishManagerTests: XCTestCase {
 
         XCTAssertEqual(reportingManager.callsToGetJwtTokens, 0)
         XCTAssertEqual(reportingManager.callsToSendEnKeys, 0)
-        XCTAssertEqual(reportingManager.callsToSendCheckInsKeys, 0)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 0)
 
         XCTAssertEqual(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -110,7 +118,7 @@ class FakePublishManagerTests: XCTestCase {
 
         XCTAssertEqual(reportingManager.callsToGetJwtTokens, 1)
         XCTAssertEqual(reportingManager.callsToSendEnKeys, 1)
-        XCTAssertEqual(reportingManager.callsToSendCheckInsKeys, 1)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 1)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -131,7 +139,7 @@ class FakePublishManagerTests: XCTestCase {
 
         XCTAssertEqual(reportingManager.callsToGetJwtTokens, 0)
         XCTAssertEqual(reportingManager.callsToSendEnKeys, 0)
-        XCTAssertEqual(reportingManager.callsToSendCheckInsKeys, 0)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 0)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -154,7 +162,7 @@ class FakePublishManagerTests: XCTestCase {
 
         XCTAssertEqual(reportingManager.callsToGetJwtTokens, 48)
         XCTAssertEqual(reportingManager.callsToSendEnKeys, 48)
-        XCTAssertEqual(reportingManager.callsToSendCheckInsKeys, 48)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 48)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }

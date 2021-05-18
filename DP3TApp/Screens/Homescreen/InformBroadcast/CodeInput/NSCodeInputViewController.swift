@@ -29,6 +29,10 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
     private let prefill: String?
 
+    private var viewDidAppearOnce = false
+
+    var checkIns: [CheckIn]?
+
     // MARK: - View
 
     init(prefill: String? = nil) {
@@ -46,11 +50,15 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        if let code = prefill {
-            codeControl.set(code: code)
-        } else if !UIAccessibility.isVoiceOverRunning {
-            codeControl.jumpToNextField()
+        if !viewDidAppearOnce {
+            if let code = prefill {
+                codeControl.set(code: code)
+            } else if !UIAccessibility.isVoiceOverRunning {
+                codeControl.jumpToNextField()
+            }
         }
+
+        viewDidAppearOnce = true
     }
 
     // MARK: - Setup
@@ -142,37 +150,19 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
 
-        ReportingManager.shared.getJWTTokens(covidCode: codeControl.code()) { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case let .success(tokens):
-                ReportingManager.shared.sendENKeys(tokens: tokens) { result in
-                    switch result {
-                    case .success:
-                        FakePublishManager.shared.rescheduleFakeRequest(force: true)
-                        CheckInSelectionViewController.presentIfNeeded(tokens: tokens, from: self)
-                    case let .failure(error):
-                        self.stopLoading(error: error, reloadHandler: self.sendPressed)
-                        self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-                    }
+        if !ReportingManager.shared.hasUserConsent {
+            ReportingManager.shared.getUserConsent { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success:
+                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: nil, from: self)
+                case .failure:
+                    let vc = NSAreYouSureViewController(covidCode: self.codeControl.code())
+                    self.navigationController?.pushViewController(vc, animated: true)
                 }
-            case .failure(.invalidToken):
-                self.codeControl.clearAndRestart()
-                self.errorView.isHidden = false
-                self.textLabel.isHidden = true
-
-                self.stopLoading()
-                if UIAccessibility.isVoiceOverRunning {
-                    UIAccessibility.post(notification: .screenChanged, argument: self.errorTitleLabel)
-                }
-
-                self.navigationItem.hidesBackButton = false
-                self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
-            case let .failure(.networkError(error)):
-                self.stopLoading(error: error, reloadHandler: self.sendPressed)
-                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             }
+        } else {
+            CheckInSelectionViewController.presentIfNeeded(covidCode: codeControl.code(), checkIns: checkIns, from: self)
         }
     }
 
@@ -180,6 +170,21 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
         nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+    }
+
+    public func invalidTokenError() {
+        codeControl.clearAndRestart()
+        errorView.isHidden = false
+        textLabel.isHidden = true
+
+        stopLoading()
+        if UIAccessibility.isVoiceOverRunning {
+            UIAccessibility.post(notification: .screenChanged, argument: errorTitleLabel)
+        }
+
+        navigationItem.hidesBackButton = false
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
 
     // MARK: - NSCodeControlProtocol

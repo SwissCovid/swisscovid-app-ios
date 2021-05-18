@@ -15,6 +15,10 @@ import Foundation
 protocol ReportingManagerProtocol: AnyObject {
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
 
+    var hasUserConsent: Bool { get }
+
+    func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void)
+
     func getJWTTokens(covidCode: String,
                       isFakeRequest fake: Bool,
                       completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
@@ -26,7 +30,7 @@ protocol ReportingManagerProtocol: AnyObject {
     func sendCheckIns(tokens: CodeValidator.TokenWrapper,
                       selectedCheckIns: [CheckIn],
                       isFakeRequest _: Bool,
-                      completion: @escaping (Result<Void, Error>) -> Void)
+                      completion: @escaping (Result<Void, NetworkError>) -> Void)
 }
 
 class ReportingManager: ReportingManagerProtocol {
@@ -59,7 +63,25 @@ class ReportingManager: ReportingManagerProtocol {
         String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
     }
 
+    private var state: IWasExposedState?
+
     // MARK: - API
+
+    var hasUserConsent: Bool { state != nil }
+
+    func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void) {
+        guard #available(iOS 12.5, *) else { return }
+        DP3TTracing.requestTEKPermission { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(state):
+                self.state = state
+                callback(.success(()))
+            case let .failure(error):
+                callback(.failure(error))
+            }
+        }
+    }
 
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
         getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
@@ -89,9 +111,14 @@ class ReportingManager: ReportingManagerProtocol {
                     isFakeRequest fake: Bool = false,
                     completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
-        DP3TTracing.iWasExposed(onset: tokens.enToken.onset,
-                                authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken.token)"),
-                                isFakeRequest: fake) { [weak self] result in
+
+        guard let state = self.state else {
+            completion(.failure(.permissonError))
+            return
+        }
+        DP3TTracing.sendTEKs(onset: tokens.enToken.onset,
+                             iWasExposedState: state,
+                             authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken.token)")) { [weak self] result in
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 switch result {
@@ -121,7 +148,7 @@ class ReportingManager: ReportingManagerProtocol {
     func sendCheckIns(tokens: CodeValidator.TokenWrapper,
                       selectedCheckIns: [CheckIn],
                       isFakeRequest _: Bool = false,
-                      completion: @escaping (Result<Void, Error>) -> Void) {
+                      completion: @escaping (Result<Void, NetworkError>) -> Void) {
         task?.cancel()
 
         var payload = UserUploadPayload()
@@ -154,9 +181,14 @@ class ReportingManager: ReportingManagerProtocol {
 
         request.addValue("Bearer \(tokens.checkInToken)", forHTTPHeaderField: "Authorization")
 
-        task = URLSession.shared.dataTask(with: request) { _, _, error in
+        task = URLSession.shared.dataTask(with: request) { _, response, error in
             if let e = error {
-                completion(.failure(e))
+                if let response = response as? HTTPURLResponse,
+                   response.statusCode != 200 {
+                    completion(.failure(.statusError(code: response.statusCode)))
+                } else {
+                    completion(.failure(.unexpected(error: e)))
+                }
             } else {
                 completion(.success(()))
             }
