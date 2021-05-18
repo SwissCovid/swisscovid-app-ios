@@ -22,6 +22,8 @@ class NSCovidCodeModuleView: NSModuleBaseView {
     override init() {
         super.init()
 
+        enableHighlightBackground = false
+
         headerView.showCaret = false
 
         UIStateManager.shared.addObserver(self) { [weak self] state in

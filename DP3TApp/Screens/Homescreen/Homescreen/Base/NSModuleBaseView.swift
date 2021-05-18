@@ -30,6 +30,8 @@ class NSModuleBaseView: UIControl {
     let headerView = NSModuleHeaderView()
     internal let stackView = NSClickthroughStackView()
 
+    var enableHighlightBackground = true
+
     init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -86,6 +88,7 @@ class NSModuleBaseView: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
+            guard enableHighlightBackground else { return }
             backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_moduleBackground
         }
     }
