@@ -1564,7 +1564,7 @@
 "print_button_title" = "";
 
 /*Check-Ins: Beschreibung Modul auf Homescreen*/
-"module_checkins_description" = "Check into various events and see your previous check-ins in your diary.";
+"module_checkins_description" = "";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
 "inform_share_checkins_title" = "";
@@ -1592,11 +1592,11 @@
 /*Remove from diary warning start text*/
 "remove_diary_warning_star_text" = "";
 
-/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "Tested positive? Please enter your CovidCode to warn others.";
+/*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_title" = "You are in isolation mode because you tested positive to the virus.";
+"home_end_isolation_card_text" = "";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
 "reminder_option_hours_minutes" = "";
@@ -1636,3 +1636,27 @@
 
 /*Covidcode eingabe, are your sure not to share, dont send button*/
 "inform_are_you_sure_dont_send_button" = "Don't share";
+
+/*SwissCovid QR Code PDF: Headline über dem Slogan*/
+"pdf_headline" = "";
+
+/*SwissCovid QR Code PDF: Slogan*/
+"pdf_slogan" = "";
+
+/*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
+"pdf_explanation" = "";
+
+/*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
+"pdf_swisscovid_app" = "";
+
+/*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
+"pdf_download_app" = "";
+
+/*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_title" = "";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_text" = "";
+
+/*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "";

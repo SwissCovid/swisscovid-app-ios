@@ -47,7 +47,7 @@ private class NSDiaryInfoView: UIView {
         label.text = "checkin_detail_diary_text".ub_localized
         addSubview(label)
         label.snp.makeConstraints { make in
-            make.top.leading.equalToSuperview().inset(NSPadding.medium)
+            make.top.leading.equalToSuperview().inset(NSPadding.small)
             make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.medium)
         }
 

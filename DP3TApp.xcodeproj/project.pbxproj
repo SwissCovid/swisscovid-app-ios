@@ -1594,8 +1594,8 @@
 		DC1617592638717800B56ADA /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
-				DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */,
 				DC16176B2638717800B56ADA /* NSCheckInHomescreenModuleView.swift */,
+				DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */,
 				DC1617722638717800B56ADA /* Modules */,
 				DC1617762638717800B56ADA /* Scanner */,
 				DC16175B2638717800B56ADA /* Edit */,

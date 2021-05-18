@@ -12,17 +12,17 @@
 import SnapKit
 import UIKit
 
-class NSCovidCodeModuleView: UIStackView {
+class NSCovidCodeModuleView: NSModuleBaseView {
     private let notInfectedView = NSCovidCodeModuleNotInfectedView()
     private let infectedView = NSCovidCodeModuleInfectedView()
 
     var enterCovidCodeCallback: (() -> Void)?
     var endIsolationModeCallback: (() -> Void)?
 
-    init() {
-        super.init(frame: .zero)
+    override init() {
+        super.init()
 
-        setup()
+        headerView.showCaret = false
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
@@ -44,14 +44,8 @@ class NSCovidCodeModuleView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setup() {
-        backgroundColor = .ns_moduleBackground
-
-        axis = .vertical
-        addArrangedSubview(notInfectedView)
-        addArrangedSubview(infectedView)
-
-        ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+    override func sectionViews() -> [UIView] {
+        [notInfectedView, infectedView]
     }
 
     func update(_ state: UIStateModel) {
@@ -59,9 +53,11 @@ class NSCovidCodeModuleView: UIStackView {
         case .noReport, .exposed:
             notInfectedView.isHidden = false
             infectedView.isHidden = true
+            headerTitle = "home_covidcode_card_title".ub_localized
         case .infected:
             notInfectedView.isHidden = true
             infectedView.isHidden = false
+            headerTitle = "home_end_isolation_card_title".ub_localized
         }
     }
 }
@@ -76,16 +72,17 @@ private class NSCovidCodeModuleNotInfectedView: UIView {
         addSubview(explainationLabel)
         addSubview(enterCovidCodeButton)
 
-        explainationLabel.text = "home_covidcode_card_title".ub_localized
+        explainationLabel.text = "home_covidcode_card_text".ub_localized
 
         explainationLabel.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
         }
 
         enterCovidCodeButton.snp.makeConstraints { make in
-            make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
-            make.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+            make.bottom.equalToSuperview().inset(NSPadding.small)
         }
     }
 
@@ -104,16 +101,17 @@ private class NSCovidCodeModuleInfectedView: UIView {
         addSubview(explainationLabel)
         addSubview(endIsolationModeButton)
 
-        explainationLabel.text = "home_end_isolation_card_title".ub_localized
+        explainationLabel.text = "home_end_isolation_card_text".ub_localized
 
         explainationLabel.snp.makeConstraints { make in
-            make.leading.trailing.top.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
         }
 
         endIsolationModeButton.snp.makeConstraints { make in
-            make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.medium)
-            make.bottom.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+            make.bottom.equalToSuperview().inset(NSPadding.small)
         }
     }
 

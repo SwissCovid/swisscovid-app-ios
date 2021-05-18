@@ -1466,7 +1466,7 @@
 "qr_scanner_no_camera_permission" = "Die App benötigt Zugriff auf die Kamera, um den QR-Code scannen zu können.";
 
 /*Check-Ins: Tagebuch Titel*/
-"diary_title" = "Tagebuch";
+"diary_title" = "Meine Check-ins";
 
 /*Check-Ins: Button Titel zum Einchecken*/
 "checkin_button_title" = "Check-in";
@@ -1481,10 +1481,10 @@
 "face_id_reason_text" = "Authentifizieren Sie sich für den Zugriff auf das Tagebuch";
 
 /*Check-Ins: Check-Out Button Title*/
-"checkout_button_title" = "Check-out";
+"checkout_button_title" = "Check out";
 
 /*Check-Ins: Titel Modul auf Homescreen*/
-"module_checkins_title" = "Check-Ins";
+"module_checkins_title" = "Check-ins";
 
 /*Check-Ins: Titel vom Check-In Screen*/
 "checkin_title" = "Check-In";
@@ -1514,7 +1514,7 @@
 "empty_diary_title" = "Noch keine Tagebucheinträge vorhanden";
 
 /*Check-Ins: Tagebuch leer, Text*/
-"empty_diary_text" = "Die Veranstaltungen, die besucht wurden, erscheinen im Tagebuch nach dem Check-out.";
+"empty_diary_text" = "Wenn Sie einen Swiss-Covid-QR-Code scannen, um sich vor Ort einzuchecken, wird hier automatisch ein Eintrag angelegt.";
 
 /*Check-Ins: Kamera Erlaubnis Text*/
 "camera_permission_dialog_text" = "SwissCovid benötigt Zugriff auf die Kamera Ihres Gerätes. Die Kamera wird nur verwendet, um QR Codes zu scannen.";
@@ -1604,10 +1604,10 @@
 "checkin_ended_text" = "Neue Check-Ins sind nicht möglich.";
 
 /*Text im Check-Ins-Screen im nicht eingecheckten Zustand*/
-"checkin_detail_checked_out_text" = "Schützen Sie sich und andere, indem Sie sich bei Events einchecken. Hier kommt wahrscheinlich noch mehr Text, der im Moment noch unklar ist.";
+"checkin_detail_checked_out_text" = "Scannen Sie einen SwissCovid-QR-Code, um sich vor Ort einzuchecken.";
 
 /*Text im Check-Ins-Screen, im Tagebuch-Modul*/
-"checkin_detail_diary_text" = "Im Tagebuch werden all Ihre Check-Ins gespeichert. Sie können diese freiwillig teilen, falls Sie positiv getestet werden.";
+"checkin_detail_diary_text" = "Wenn Sie einen Swiss-Covid-QR-Code scannen, um sich vor Ort einzuchecken, wird hier automatisch ein Eintrag angelegt.";
 
 /*Label im Checkin-Modul im eingecheckten Zustand*/
 /*Fuzzy*/
@@ -1629,7 +1629,7 @@
 "print_button_title" = "Drucken";
 
 /*Check-Ins: Beschreibung Modul auf Homescreen*/
-"module_checkins_description" = "Checken Sie bei Events ein und sehen Sie ihre vergangenen Check-Ins.";
+"module_checkins_description" = "Scannen Sie einen SwissCovid-QR-Code, um sich vor Ort einzuchecken.";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
 "inform_share_checkins_title" = "Check-Ins teilen";
@@ -1657,11 +1657,12 @@
 /*Remove from diary warning start text*/
 "remove_diary_warning_star_text" = "Die App speichert diesen Eintrag noch für 14 Tage verschlüsselt im Hintergrund, damit Sie bei einer möglichen Ansteckung trotzdem gewarnt werden können.";
 
-/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "Positiv getestet? Bitte geben Sie Ihren CovidCode ein um andere zu warnen.";
+/*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "Positiv getestet?";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_title" = "Sie sind im Isolations-Modus weil Sie positiv getestet wurden.";
+/*Fuzzy*/
+"home_end_isolation_card_text" = "Begegnungen und Check-ins wieder aktivieren.";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
 "reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
@@ -1701,3 +1702,27 @@
 
 /*Covidcode eingabe, are your sure not to share, dont send button*/
 "inform_are_you_sure_dont_send_button" = "Don't share";
+
+/*SwissCovid QR Code PDF: Headline über dem Slogan*/
+"pdf_headline" = "SwissCovid Check-Ins";
+
+/*SwissCovid QR Code PDF: Slogan*/
+"pdf_slogan" = "Einchecken ohne Daten zu hinterlassen";
+
+/*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
+"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
+
+/*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
+"pdf_swisscovid_app" = "SwissCovid App";
+
+/*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
+"pdf_download_app" = "Jetzt downloaden";
+
+/*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_title" = "Einchecken ohne Daten \nzu hinterlassen";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_text" = "Geben Sie hier ihren CovidCode ein";
+
+/*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "Isolation beenden?";
