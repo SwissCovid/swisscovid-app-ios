@@ -21,12 +21,12 @@ class NSReportsModuleView: NSModuleBaseView {
     let noReportsView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_no_meldungen_title".ub_localized,
                                                 subText: "meldungen_no_meldungen_subtitle".ub_localized,
-                                                image: UIImage(named: "ic-check"),
-                                                titleColor: .ns_green,
+                                                image: UIImage(named: "ic-check-round"),
+                                                titleColor: .ns_blue,
                                                 subtextColor: .ns_text)
         viewModel.illustration = UIImage(named: "illu-no-message")!
-        viewModel.backgroundColor = .ns_greenBackground
-        viewModel.dynamicIconTintColor = .ns_green
+        viewModel.backgroundColor = .ns_blueBackground
+        viewModel.dynamicIconTintColor = .ns_blue
         return .init(viewModel: viewModel)
     }()
 

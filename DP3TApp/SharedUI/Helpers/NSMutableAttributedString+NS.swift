@@ -11,8 +11,9 @@
 import UIKit
 
 extension NSMutableAttributedString {
-    func ns_add(_ value: String, labelType: NSLabelType) -> NSMutableAttributedString {
+    func ns_add(_ value: String, labelType: NSLabelType, alignment: NSTextAlignment = .natural) -> NSMutableAttributedString {
         let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = alignment
         let lineHeightMultiple = (labelType.font.pointSize / labelType.font.lineHeight) * labelType.lineSpacing
         paragraphStyle.lineSpacing = lineHeightMultiple * labelType.font.lineHeight - labelType.font.lineHeight
         paragraphStyle.lineBreakMode = labelType.lineBreakMode

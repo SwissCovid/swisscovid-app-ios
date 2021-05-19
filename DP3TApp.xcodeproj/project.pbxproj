@@ -596,6 +596,10 @@
 		F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8B30B5824D2C728006FBBBE /* DebugStrings.strings */; };
 		F8B44ED826528579009F0ED0 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
+		F8B44EEC2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B44EEB2653BCBD009F0ED0 /* NSAreYouSureViewController.swift */; };
+		F8B44EED2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B44EEB2653BCBD009F0ED0 /* NSAreYouSureViewController.swift */; };
+		F8B44EF02653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B44EEF2653E8DA009F0ED0 /* NSInformSendViewController.swift */; };
+		F8B44EF12653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B44EEF2653E8DA009F0ED0 /* NSInformSendViewController.swift */; };
 		F8C9990B2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
 		F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */; };
 		F8D3526E2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
@@ -943,6 +947,8 @@
 		F8ABA2E42526087D00A8D6B5 /* NSTutorialListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTutorialListItemView.swift; sourceTree = "<group>"; };
 		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
 		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
+		F8B44EEB2653BCBD009F0ED0 /* NSAreYouSureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSAreYouSureViewController.swift; path = DP3TApp/Screens/Homescreen/InformBroadcast/NSAreYouSureViewController.swift; sourceTree = SOURCE_ROOT; };
+		F8B44EEF2653E8DA009F0ED0 /* NSInformSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformSendViewController.swift; sourceTree = "<group>"; };
 		F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportDetailMoreDaysView.swift; sourceTree = "<group>"; };
 		F8D32BE02579180400ED1657 /* NSRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
 		F8D32BEB2579183000ED1657 /* NSRadioButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonItem.swift; sourceTree = "<group>"; };
@@ -1154,12 +1160,14 @@
 		24780AF8242DF813003BB26C /* InformBroadcast */ = {
 			isa = PBXGroup;
 			children = (
+				F8B44EEB2653BCBD009F0ED0 /* NSAreYouSureViewController.swift */,
 				F87E96DC263C31FE00755AF1 /* CheckInSelection */,
 				2443948424463BCE003ED582 /* Base */,
 				2443948224463B91003ED582 /* Symptoms */,
 				2443948124463B71003ED582 /* CodeInput */,
 				2443948624463BFB003ED582 /* Send */,
 				2443948724463C04003ED582 /* Finish */,
+				F8B44EEF2653E8DA009F0ED0 /* NSInformSendViewController.swift */,
 			);
 			path = InformBroadcast;
 			sourceTree = "<group>";
@@ -1606,8 +1614,8 @@
 		DC1617592638717800B56ADA /* CheckIn */ = {
 			isa = PBXGroup;
 			children = (
-				DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */,
 				DC16176B2638717800B56ADA /* NSCheckInHomescreenModuleView.swift */,
+				DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */,
 				DC1617722638717800B56ADA /* Modules */,
 				DC1617762638717800B56ADA /* Scanner */,
 				DC16175B2638717800B56ADA /* Edit */,
@@ -2390,6 +2398,7 @@
 				242D21ED245C4BD8005DAEA8 /* NSStackScrollView.swift in Sources */,
 				DC16178C2638717800B56ADA /* NSDiaryDateSectionHeaderSupplementaryView.swift in Sources */,
 				DC1617A22638717800B56ADA /* NSCheckInDiaryModuleView.swift in Sources */,
+				F8B44EF12653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */,
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
 				F80E406E2509002200876906 /* StatisticsResponse.swift in Sources */,
 				DC1617A42638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */,
@@ -2558,6 +2567,7 @@
 				242D2239245C4BD8005DAEA8 /* ReportingManager.swift in Sources */,
 				F87E96DB263B066900755AF1 /* Exposure.swift in Sources */,
 				242D223A245C4BD8005DAEA8 /* NSOnboardingContentViewController.swift in Sources */,
+				F8B44EED2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */,
 				242D223B245C4BD8005DAEA8 /* NSHeaderErrorView.swift in Sources */,
 				242D223C245C4BD8005DAEA8 /* NSInformBottomButtonViewController.swift in Sources */,
 				242D223D245C4BD8005DAEA8 /* NSDebugscreenViewController.swift in Sources */,
@@ -2795,6 +2805,7 @@
 				DC175E402430C4C700BD2AD6 /* NSOnboardingContentViewController.swift in Sources */,
 				F8089697250B63780023F639 /* NSStatisticsShareModule.swift in Sources */,
 				DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */,
+				F8B44EEC2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */,
 				DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */,
 				F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F80E40702509011D00876906 /* StatisticsLoader.swift in Sources */,
@@ -2824,6 +2835,7 @@
 				24780B20242DFE33003BB26C /* NSOnboardingViewController.swift in Sources */,
 				24780B5B2431B5A9003BB26C /* DateFormatter.swift in Sources */,
 				6E889756261F228200508334 /* NSOnboardingBaseViewController.swift in Sources */,
+				F8B44EF02653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */,
 				DC1617912638717800B56ADA /* NSDiaryEmptyView.swift in Sources */,
 				6E3308752450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617952638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
@@ -4043,8 +4055,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				kind = revision;
-				revision = 73bd75702b724310b091b24fc2603a74d25ed9a8;
+				branch = "feature/split-permission-and-backend-request";
+				kind = branch;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {

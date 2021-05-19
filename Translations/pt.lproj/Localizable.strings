@@ -1432,7 +1432,7 @@
 /*Check-Ins: QR-Code erstellen Titel*/
 "checkins_create_qr_code" = "";
 
-/*Veranstaltungen-Screen Titel*/
+/*Veranstaltungen-Card Titel im Infotab*/
 "events_title" = "";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
@@ -1605,7 +1605,7 @@
 "checkin_overview_isolation_text" = "You can no longer check-in when you tested positive. More text more text more text more text more text more text more";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "";
+"events_subtitle" = "Protect yourself and others by generating QR codes for working spaces, meeting rooms or other private events.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
 "delete_qr_code_dialog" = "";
@@ -1660,38 +1660,3 @@
 
 /*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
 "home_end_isolation_card_title" = "";
-
-/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "";
-"checkin_footer_title1" = "";
-"checkin_footer_subtitle1" = "";
-"checkin_footer_title2" = "";
-"checkin_footer_subtitle2" = "";
-"events_empty_state_title" = "";
-"events_empty_state_subtitle" = "";
-"events_info_box_title" = "";
-"events_info_box_text" = "";
-"events_footer_title1" = "";
-"events_footer_title2" = "";
-"events_footer_title3" = "";
-"events_footer_subtitle1" = "";
-"events_footer_subtitle2" = "";
-"events_footer_subtitle3" = "";
-
-/*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
-"meldung_detail_exposed_list_card_subtitle" = "";
-
-/*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_encounters" = "";
-
-/*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_checkin" = "";
-
-/*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_whattodo_button" = "";
-
-/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_checkin_exposed" = "";
-
-/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_mutiple_exposed" = "";

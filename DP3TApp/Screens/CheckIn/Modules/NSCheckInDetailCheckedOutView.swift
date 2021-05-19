@@ -13,7 +13,9 @@ import UIKit
 
 class NSCheckInDetailCheckedOutView: UIView {
     private let imageView = UIImageView(image: UIImage(named: "illu-checked-in"))
-    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+    private let superTitleLabel = NSLabel(.textBold, textColor: .ns_blue)
+    private let titleLabel = NSLabel(.title)
+    private let textLabel = NSLabel(.textLight)
 
     let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_lightBlue))
 
@@ -35,11 +37,25 @@ class NSCheckInDetailCheckedOutView: UIView {
             make.centerX.equalToSuperview()
         }
 
+        superTitleLabel.text = "module_checkins_title".ub_localized
+        addSubview(superTitleLabel)
+        superTitleLabel.snp.makeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+        }
+
+        titleLabel.text = "checkin_detail_checked_out_title".ub_localized
+        addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(superTitleLabel.snp.bottom).offset(NSPadding.small)
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+        }
+
         textLabel.text = "checkin_detail_checked_out_text".ub_localized
         addSubview(textLabel)
         textLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(20)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.large)
+            make.top.equalTo(titleLabel.snp.bottom).offset(NSPadding.small)
+            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
         }
 
         scanQrCodeButton.setImage(UIImage(named: "ic-qrcode"), for: .normal)

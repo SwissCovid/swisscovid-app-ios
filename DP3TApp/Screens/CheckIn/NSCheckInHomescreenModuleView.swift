@@ -80,7 +80,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
 
 class NSCheckInHomescreenModuleCheckedOutView: UIView {
     let explainationLabel = NSLabel(.textLight)
-    let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_darkBlueBackground))
+    let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_blue))
 
     init() {
         super.init(frame: .zero)
@@ -88,8 +88,7 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
         addSubview(explainationLabel)
         addSubview(scanQrCodeButton)
 
-        // TODO: Unlocalized text
-        explainationLabel.text = "Manage your check-ins or generate QR codes for your events."
+        explainationLabel.text = "module_checkins_description".ub_localized
 
         scanQrCodeButton.setImage(UIImage(named: "ic-qrcode"), for: .normal)
         scanQrCodeButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: NSPadding.large)
@@ -111,9 +110,9 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
 }
 
 class NSCheckInHomescreenModuleCheckedInView: UIView {
-    private let label = NSLabel(.textLight)
-    private let timerLabel = NSLabel(.timerLarge)
-    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_darkBlueBackground))
+    private let label = NSLabel(.textLight, numberOfLines: 0)
+    private let timerLabel = NSLabel(.timerLarge, textAlignment: .center)
+    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_blue))
 
     private var checkIn: CheckIn?
     private var titleTimer: Timer?
@@ -125,15 +124,10 @@ class NSCheckInHomescreenModuleCheckedInView: UIView {
         addSubview(timerLabel)
         addSubview(checkOutButton)
 
-        checkOutButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        checkOutButton.tintColor = .ns_darkBlueBackground
-        checkOutButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: NSPadding.large)
-
         label.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview().inset(NSPadding.small)
         }
 
-        timerLabel.textAlignment = .center
         timerLabel.snp.makeConstraints { make in
             make.top.equalTo(label.snp.bottom).inset(-NSPadding.medium)
             make.leading.trailing.equalToSuperview().inset(NSPadding.small)
@@ -149,10 +143,10 @@ class NSCheckInHomescreenModuleCheckedInView: UIView {
     func update(checkIn: CheckIn) {
         self.checkIn = checkIn
 
-        label.numberOfLines = 1
         label.attributedText = NSMutableAttributedString()
-            .ns_add("You are checked in at ", labelType: .textLight)
-            .ns_add(checkIn.venue.description, labelType: .textBold)
+            .ns_add("checkin_checked_in".ub_localized, labelType: .textLight, alignment: .center)
+            .ns_add("\n", labelType: .textLight)
+            .ns_add(checkIn.venue.description, labelType: .textBold, alignment: .center)
 
         timerLabel.text = ""
         startTitleTimer()

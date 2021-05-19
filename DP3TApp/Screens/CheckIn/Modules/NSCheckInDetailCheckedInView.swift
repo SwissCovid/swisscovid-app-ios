@@ -46,7 +46,7 @@ class NSCheckInDetailCheckedInView: UIView {
         addSubview(checkOutButton)
         checkOutButton.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(NSPadding.large)
-            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.small)
         }
 
         imageView.ub_setContentPriorityRequired()
