@@ -21,6 +21,8 @@ class NSInfoViewController: NSViewController {
 
     private let travelView = NSTravelModuleView()
 
+    private let premisesAndEventsView = NSInfoPremisesAndEventsModuleView()
+
     private let whatToDoSymptomsButtonWrapper = UIView()
     private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
 
@@ -78,6 +80,11 @@ class NSInfoViewController: NSViewController {
             strongSelf.presentTravelDetail()
         }
 
+        premisesAndEventsView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentEventsViewController()
+        }
+
         // Ensure that Screen builds without animation if app not started on homescreen
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             self.finishTransition?()
@@ -126,6 +133,10 @@ class NSInfoViewController: NSViewController {
         stackScrollView.addArrangedView(travelView)
         stackScrollView.addSpacerView(NSPadding.large)
 
+        stackScrollView.addArrangedView(premisesAndEventsView)
+
+        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
+
         stackScrollView.addArrangedView(faqButton)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -133,6 +144,7 @@ class NSInfoViewController: NSViewController {
         travelView.alpha = 0
         whatToDoSymptomsButtonWrapper.alpha = 0
         faqButton.alpha = 0
+        premisesAndEventsView.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -152,6 +164,10 @@ class NSInfoViewController: NSViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.55, options: [.allowUserInteraction], animations: {
+                self.premisesAndEventsView.alpha = 1
+            }, completion: nil)
+
+            UIView.animate(withDuration: 0.3, delay: 0.7, options: [.allowUserInteraction], animations: {
                 self.faqButton.alpha = 1
             }, completion: nil)
         }
@@ -196,5 +212,9 @@ class NSInfoViewController: NSViewController {
     func presentInformViewController(prefill: String? = nil) {
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
+    }
+
+    private func presentEventsViewController() {
+        navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
     }
 }

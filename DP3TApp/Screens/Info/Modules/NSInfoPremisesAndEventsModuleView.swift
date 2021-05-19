@@ -11,13 +11,13 @@
 
 import Foundation
 
-class NSCheckInCreateCheckInsView: NSModuleBaseView {
-    private let infoView = NSCheckInCreateCheckInsInfoView()
+class NSInfoPremisesAndEventsModuleView: NSModuleBaseView {
+    private let infoView = NSInfoPremisesAndEventsInfoView()
 
     override init() {
         super.init()
 
-        headerTitle = "events_card_title".ub_localized
+        headerTitle = "events_title".ub_localized
     }
 
     required init?(coder _: NSCoder) {
@@ -29,7 +29,7 @@ class NSCheckInCreateCheckInsView: NSModuleBaseView {
     }
 }
 
-private class NSCheckInCreateCheckInsInfoView: UIView {
+private class NSInfoPremisesAndEventsInfoView: UIView {
     private let explainationLabel = NSLabel(.textLight)
     private let illuView = UIImageView(image: UIImage(named: "illu-veranstaltungen"))
 
@@ -44,7 +44,7 @@ private class NSCheckInCreateCheckInsInfoView: UIView {
     }
 
     private func setupView() {
-        explainationLabel.text = "events_card_subtitle".ub_localized
+        explainationLabel.text = "events_subtitle".ub_localized
         addSubview(explainationLabel)
         explainationLabel.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(NSPadding.medium)

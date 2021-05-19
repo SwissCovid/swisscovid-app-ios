@@ -301,7 +301,7 @@ class UIStateLogic {
         newState.reportsDetail.report = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
         newState.homescreen.header = .tracingEnded
         newState.homescreen.encounters = .tracingEnded
-        newState.checkInStateModel.checkInState = .checkInEnded
+        newState.checkInStateModel.checkInState = .checkinEnded
     }
 
     private func setExposedState(_ newState: inout UIStateModel, days: [ExposureDay]) {

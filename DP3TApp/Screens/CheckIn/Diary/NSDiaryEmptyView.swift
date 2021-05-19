@@ -13,7 +13,7 @@ import Foundation
 
 class NSDiaryEmptyView: UIView {
     private let stackView = UIStackView()
-    private let imageView = UIImageView(image: UIImage(named: "illu-empty-diary"))
+    private let imageView = UIImageView(image: UIImage(named: "illus-empty-diary"))
     private let titleLabel = NSLabel(.textBold, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
@@ -33,7 +33,7 @@ class NSDiaryEmptyView: UIView {
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
-            make.centerY.equalToSuperview().offset(-NSPadding.large)
+            make.top.equalToSuperview().offset(3.0 * NSPadding.large)
             make.right.left.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
         }
 

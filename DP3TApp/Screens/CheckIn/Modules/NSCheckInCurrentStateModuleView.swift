@@ -14,7 +14,27 @@ import Foundation
 class NSCheckInCurrentStateModuleView: NSModuleBaseView {
     private let checkedOutView = NSCheckInDetailCheckedOutView()
     private let checkedInView = NSCheckInDetailCheckedInView()
-    private let checkInEndedView = NSCheckInDetailCheckInEndedView()
+
+    private let checkinEndedView: UIView = {
+        var viewModel = NSInfoBoxView.ViewModel(title: "checkin_ended_title".ub_localized,
+                                                subText: "checkin_ended_text".ub_localized,
+                                                image: UIImage(named: "ic-stopp"),
+                                                titleColor: .ns_purple,
+                                                subtextColor: .ns_text)
+        viewModel.illustration = UIImage(named: "illu-checkin-ended")!
+        viewModel.backgroundColor = .ns_purpleBackground
+        viewModel.dynamicIconTintColor = .ns_purple
+        let infobox = NSInfoBoxView(viewModel: viewModel)
+
+        // Since there's no title in this NSModuleBaseView, we need a 10px padding at the top
+        let container = UIView()
+        container.addSubview(infobox)
+        infobox.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.medium)
+            make.leading.trailing.bottom.equalToSuperview()
+        }
+        return container
+    }()
 
     var scanQrCodeCallback: (() -> Void)?
     var checkoutCallback: (() -> Void)?
@@ -46,16 +66,16 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
         case .noCheckIn:
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
-            checkInEndedView.isHidden = true
+            checkinEndedView.isHidden = true
         case let .checkIn(checkIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
-            checkInEndedView.isHidden = true
+            checkinEndedView.isHidden = true
             checkedInView.update(with: checkIn)
-        case .checkInEnded:
+        case .checkinEnded:
             checkedInView.isHidden = true
             checkedOutView.isHidden = true
-            checkInEndedView.isHidden = false
+            checkinEndedView.isHidden = false
         }
     }
 
@@ -64,6 +84,6 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
     }
 
     override func sectionViews() -> [UIView] {
-        return [checkedOutView, checkedInView, checkInEndedView]
+        return [checkedOutView, checkedInView, checkinEndedView]
     }
 }
