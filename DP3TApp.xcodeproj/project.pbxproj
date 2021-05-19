@@ -195,6 +195,8 @@
 		3DCD3E112654F6C00050945D /* NSReportsDetailExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */; };
 		3DCD3E122654F6C30050945D /* NSReportsDetailExposedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */; };
 		3DCD3E132654F6C70050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */; };
+		3DCD3E152655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */; };
+		3DCD3E162655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */; };
 		3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
 		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
 		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
@@ -369,8 +371,8 @@
 		DC1617A22638717800B56ADA /* NSCheckInDiaryModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */; };
 		DC1617A32638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */; };
 		DC1617A42638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */; };
-		DC1617A52638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617752638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift */; };
-		DC1617A62638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617752638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift */; };
+		DC1617A52638717800B56ADA /* NSCheckInCreateCheckInsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617752638717800B56ADA /* NSCheckInCreateCheckInsView.swift */; };
+		DC1617A62638717800B56ADA /* NSCheckInCreateCheckInsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617752638717800B56ADA /* NSCheckInCreateCheckInsView.swift */; };
 		DC1617A72638717800B56ADA /* NSCheckInConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */; };
 		DC1617A82638717800B56ADA /* NSCheckInConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */; };
 		DC1617A92638717800B56ADA /* NSCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617782638717800B56ADA /* NSCheckInViewController.swift */; };
@@ -672,6 +674,7 @@
 		3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedViewController.swift; sourceTree = "<group>"; };
 		3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedCard.swift; sourceTree = "<group>"; };
 		3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedCheckInViewController.swift; sourceTree = "<group>"; };
+		3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckInEndedView.swift; sourceTree = "<group>"; };
 		3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodeModuleView.swift; sourceTree = "<group>"; };
 		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.der"; sourceTree = "<group>"; };
 		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
@@ -809,7 +812,7 @@
 		DC1617712638717800B56ADA /* NSCreatedEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCreatedEventsViewController.swift; sourceTree = "<group>"; };
 		DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInDiaryModuleView.swift; sourceTree = "<group>"; };
 		DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInCurrentStateModuleView.swift; sourceTree = "<group>"; };
-		DC1617752638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSInfoPremisesAndEventsModuleView.swift; sourceTree = "<group>"; };
+		DC1617752638717800B56ADA /* NSCheckInCreateCheckInsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInCreateCheckInsView.swift; sourceTree = "<group>"; };
 		DC1617772638717800B56ADA /* NSCheckInConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInConfirmViewController.swift; sourceTree = "<group>"; };
 		DC1617782638717800B56ADA /* NSCheckInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInViewController.swift; sourceTree = "<group>"; };
 		DC1617AB2638919C00B56ADA /* NSCreatedEventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCreatedEventCard.swift; sourceTree = "<group>"; };
@@ -1340,14 +1343,6 @@
 			path = CovidCode;
 			sourceTree = "<group>";
 		};
-		3DD9FD32264E8543004BAAC8 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				DC1617752638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
 		6E33085D24502BA200913B0E /* WhatToDo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1681,6 +1676,8 @@
 				DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */,
 				DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */,
 				DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */,
+				3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */,
+				DC1617752638717800B56ADA /* NSCheckInCreateCheckInsView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1954,7 +1951,6 @@
 			isa = PBXGroup;
 			children = (
 				F87E96AF2639967100755AF1 /* NSInfoViewController.swift */,
-				3DD9FD32264E8543004BAAC8 /* Modules */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -2262,7 +2258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug-Calibration\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi\n";
+			shellScript = "PATH=${PATH}:/usr/local/bin:/opt/homebrew/bin: # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug-Calibration\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi\n";
 		};
 		242D21D8245C4BD8005DAEA8 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2315,7 +2311,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PATH=${PATH}:/usr/local/bin: # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi \n";
+			shellScript = "PATH=${PATH}:/usr/local/bin:/opt/homebrew/bin: # Pick up SwiftFormat from Homebrew\n\nif [[ $CONFIGURATION == \"Debug\" ]]; then\n    if which swiftformat >/dev/null; then\n        swiftformat --swiftversion ${SWIFT_VERSION} ${SRCROOT}\n    else\n        echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\n    fi\nfi \n";
 		};
 		8E81CCC1241FD2EE006F2437 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2487,6 +2483,7 @@
 				F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
 				242D2212245C4BD8005DAEA8 /* Environment+Endpoints.swift in Sources */,
+				3DCD3E162655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */,
 				F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */,
 				242D2213245C4BD8005DAEA8 /* NSHeaderImageBackgroundView.swift in Sources */,
 				F87E96D8263AEA9100755AF1 /* OSLogger.swift in Sources */,
@@ -2594,7 +2591,7 @@
 				242D2249245C4BD8005DAEA8 /* NSReportsDetailExposedEncountersViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
-				DC1617A62638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift in Sources */,
+				DC1617A62638717800B56ADA /* NSCheckInCreateCheckInsView.swift in Sources */,
 				DC57D09F263C24950016BFDB /* SwissCovid.pb.swift in Sources */,
 				F87C3715258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				242D224C245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
@@ -2624,7 +2621,7 @@
 				DC1617832638717800B56ADA /* NSRemoveFromDiaryWarningViewController.swift in Sources */,
 				DC702AFD243F6E410066C773 /* UBButton.swift in Sources */,
 				AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */,
-				DC1617A52638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift in Sources */,
+				DC1617A52638717800B56ADA /* NSCheckInCreateCheckInsView.swift in Sources */,
 				6E0D1232263AA26C0014CF7C /* NSEventPDFViewController.swift in Sources */,
 				DC17F96125DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift in Sources */,
 				DC85DF00263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */,
@@ -2639,6 +2636,7 @@
 				6E7C0D22242CE2100017C4F9 /* NSButton.swift in Sources */,
 				2485F4712455C5AE00C3D8C3 /* UIStateLogic.swift in Sources */,
 				DC1617A72638717800B56ADA /* NSCheckInConfirmViewController.swift in Sources */,
+				3DCD3E152655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */,
 				6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */,
 				3DCD3E0D26541E150050945D /* NSReportsDetailExposedCard.swift in Sources */,
 				24780B5E2431B5A9003BB26C /* NSLocalPush.swift in Sources */,

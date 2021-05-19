@@ -33,7 +33,7 @@ class NSDiaryEmptyView: UIView {
         addSubview(stackView)
 
         stackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(3.0 * NSPadding.large)
+            make.centerY.equalToSuperview().offset(-NSPadding.large)
             make.right.left.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
         }
 

@@ -15,10 +15,9 @@ class NSCreatedEventsViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: NSPadding.small)
 
     private let generateButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
-    private let generateButtonWrapper = UIView()
 
     private let eventsInfoBox: NSInfoBoxView = {
-        let model = NSInfoBoxView.ViewModel(title: "Lorem ipsum", subText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam lobortis sed urna sed pulvinar.", image: UIImage(named: "ic-info"), titleColor: .ns_blue, subtextColor: .ns_blue, backgroundColor: .ns_blueBackground, dynamicIconTintColor: .ns_blue)
+        let model = NSInfoBoxView.ViewModel(title: "events_info_box_title".ub_localized, subText: "events_info_box_text".ub_localized, image: UIImage(named: "ic-info"), titleColor: .ns_blue, subtextColor: .ns_blue, backgroundColor: .ns_blueBackground, dynamicIconTintColor: .ns_blue, titleLabelType: .textBold)
         return NSInfoBoxView(viewModel: model)
     }()
 
@@ -53,12 +52,6 @@ class NSCreatedEventsViewController: NSViewController {
 
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
-
-        generateButtonWrapper.addSubview(generateButton)
-        generateButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.bottom.top.equalToSuperview()
-        }
     }
 
     @objc private func updateEvents() {
@@ -82,7 +75,7 @@ class NSCreatedEventsViewController: NSViewController {
         stackScrollView.addArrangedView(eventsImage)
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        let eventsModule = NSSimpleModuleBaseView(title: "Increased safety", subtitle: "events_title".ub_localized, text: "events_subtitle".ub_localized, subtitleColor: .ns_blue, bottomPadding: true)
+        let eventsModule = NSSimpleModuleBaseView(title: "events_empty_state_title".ub_localized, subtitle: "events_title".ub_localized, text: "events_empty_state_subtitle".ub_localized, subtitleColor: .ns_blue, bottomPadding: true)
 
         eventsModule.contentView.addSpacerView(NSPadding.medium + NSPadding.small)
         eventsModule.contentView.addArrangedView(eventsInfoBox)
@@ -92,8 +85,12 @@ class NSCreatedEventsViewController: NSViewController {
         }
         eventsModule.contentView.addSpacerView(NSPadding.large)
 
-        eventsModule.contentView.addArrangedView(generateButtonWrapper)
+        eventsModule.contentView.addArrangedView(generateButton)
+        generateButton.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
+        }
         eventsModule.contentView.addSpacerView(NSPadding.large)
+
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(eventsModule)
@@ -101,7 +98,7 @@ class NSCreatedEventsViewController: NSViewController {
     }
 
     private func setupEventsView(with events: [CreatedEvent]) {
-        stackScrollView.addArrangedView(generateButtonWrapper)
+        stackScrollView.addArrangedView(generateButton)
         stackScrollView.addSpacerView(NSPadding.large)
 
         for event in events {
@@ -130,15 +127,16 @@ class NSCreatedEventsViewController: NSViewController {
     }
 
     private func setupInfoViews() {
-        let infoViewOne = NSOnboardingInfoView(icon: nil, text: "Lorem ipsum dolor sit amet", title: "Lorem ipsum", leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let icon = UIImage(named: "ic-verified-user")
+        let infoViewOne = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle1".ub_localized, title: "events_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewOne)
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        let infoViewTwo = NSOnboardingInfoView(icon: nil, text: "Lorem ipsum dolor sit amet", title: "Lorem ipsum", leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewTwo = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle2".ub_localized, title: "events_footer_title2".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewTwo)
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        let infoViewThree = NSOnboardingInfoView(icon: nil, text: "Lorem ipsum dolor sit amet", title: "Lorem ipsum", leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewThree = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle3".ub_localized, title: "events_footer_title3".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewThree)
         stackScrollView.addSpacerView(NSPadding.large)
 
