@@ -1769,3 +1769,12 @@
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
 "debug_state_setting_option_mutiple_exposed" = "Positive Check-ins / Kontakte";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_user_qr_code" = "User QR Code";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_contact_tracing_qr_code" = "Contact Tracing QR Code";
+
+/*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text_detailed" = "Nach einem positiven Test sind die Check-ins automatisch deaktiviert. Sie können nach Beendigung Ihrer Isolation wieder aktiviert werden.";

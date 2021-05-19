@@ -62,7 +62,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
             checkedOutView.isHidden = true
             checkinEndedView.isHidden = true
             checkedInView.update(checkIn: checkedIn)
-        case .checkinEnded:
+        case .checkInEnded:
             checkedInView.isHidden = true
             checkedOutView.isHidden = true
             checkinEndedView.isHidden = false
