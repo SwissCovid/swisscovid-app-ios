@@ -70,12 +70,12 @@ class NSReportsDetailViewController: NSViewController {
 
     private func update(_ state: UIStateModel) {
         let reportDetail = state.reportsDetail
-        
+
         exposedViewController.showReportWithAnimation = reportDetail.showReportWithAnimation
         exposedViewController.reports = reportDetail.reports
         exposedViewController.checkInReports = reportDetail.checkInReports
         exposedViewController.encountersDidOpenLeitfaden = reportDetail.didOpenLeitfaden
-        
+
         noReportsViewController.view.isHidden = true
         positiveTestedViewController.view.isHidden = true
         exposedViewController.view.isHidden = true

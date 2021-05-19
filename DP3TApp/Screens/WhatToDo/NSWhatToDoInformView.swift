@@ -43,7 +43,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     init() {
         enterCovidCodeButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
-                                style: .uppercase(.ns_purple))
+                                        style: .uppercase(.ns_purple))
 
         if let infoBox = configTexts?.infoBox {
             var hearingImpairedCallback: (() -> Void)?
@@ -80,12 +80,12 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
                    image: UIImage(named: "illu-covidcode"),
                    subtitleColor: .ns_purple,
                    bottomPadding: true)
-        
+
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.update(state)
         }
-        
+
         setup()
     }
 
@@ -148,7 +148,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             }
         }
     }
-    
+
     func update(_ state: UIStateModel) {
         let isInfected = state.homescreen.reports.report.isInfected
         enterCovidCodeButtonWrapper.isHidden = isInfected

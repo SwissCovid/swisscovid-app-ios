@@ -96,7 +96,7 @@ class NSCheckInConfirmViewController: NSViewController {
             if let option = strongSelf.reminderOption {
                 strongSelf.scheduleReminder(option: option)
             }
-            
+
             if let navVC = strongSelf.navigationController, navVC.viewControllers.count > 1 {
                 navVC.popToRootViewController(animated: true)
             } else {

@@ -13,7 +13,7 @@ import Foundation
 
 class NSReportsDetailExposedCard: NSModuleBaseView {
     private var titleText: String
-    
+
     public let entriesContentStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -22,22 +22,21 @@ class NSReportsDetailExposedCard: NSModuleBaseView {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    
+
     private let whatToDoButton: NSExternalLinkButton = {
         let button = NSExternalLinkButton(style: .normal(color: .ns_blue), linkType: .other(image: UIImage(named: "ic-link-internal")), buttonTintColor: .ns_blue)
         button.title = "meldung_detail_exposed_list_card_whattodo_button".ub_localized
         return button
     }()
-    
+
     init(titleText: String) {
         self.titleText = titleText
         super.init()
-        
+
         setupLayout()
-                
+
         whatToDoButton.touchUpCallback = { [weak self] in
             guard let _ = self else { return }
-            
         }
     }
 
@@ -48,29 +47,28 @@ class NSReportsDetailExposedCard: NSModuleBaseView {
     private func setupLayout() {
         headerView.showCaret = false
         stackView.layoutMargins = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large)
-        
+
         let subTitleLabel = NSLabel(.textBold)
         subTitleLabel.text = "meldung_detail_exposed_list_card_subtitle".ub_localized
         subTitleLabel.textColor = .ns_blue
         stackView.addArrangedView(subTitleLabel)
         stackView.addSpacerView(NSPadding.small)
-        
+
         let titleLabel = NSLabel(.title)
         titleLabel.text = titleText
         stackView.addArrangedView(titleLabel)
         stackView.addSpacerView(NSPadding.medium)
-        
+
         stackView.addArrangedView(entriesContentStackView)
         stackView.addSpacerView(NSPadding.medium)
-        
+
         let buttonWrapper = UIView()
-        
+
         buttonWrapper.addSubview(whatToDoButton)
         whatToDoButton.snp.makeConstraints { make in
             make.top.bottom.left.equalToSuperview()
         }
-        
+
         stackView.addArrangedView(buttonWrapper)
     }
 }
-

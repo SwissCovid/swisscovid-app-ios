@@ -58,7 +58,7 @@ extension DateFormatter {
 
         if addExplicitDate {
             let dateText: String
-            
+
             if withLabel {
                 dateText = "date_text_before_date".ub_localized.replacingOccurrences(of: "{DATE}", with: dayDateFormatter.string(from: date))
             } else {
@@ -88,7 +88,7 @@ extension DateFormatter {
         formatter.dateFormat = "HH:mm"
         return formatter
     }()
-    
+
     static func ub_fromTimeToTime(from: Date?, to: Date?) -> String? {
         let timeText = [from, to].compactMap { date -> String? in
             if let d = date {

@@ -97,7 +97,7 @@ struct UIStateModel: Equatable {
             let identifier: UUID
             let timestamp: Date
         }
-        
+
         struct NSCheckInReportModel: Equatable {
             let checkInIdentifier: String
             let arrivalTime: Date

@@ -258,10 +258,10 @@ class NSCheckInEditViewController: NSViewController {
             view.addSubview(removeFromDiaryButton)
 
             removeFromDiaryButton.snp.makeConstraints { make in
-                make.left.right.equalToSuperview().inset(2*NSPadding.large)
+                make.left.right.equalToSuperview().inset(2 * NSPadding.large)
                 make.top.bottom.equalToSuperview()
             }
-            
+
             removeFromDiaryButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.showRemoveWarning()
@@ -277,7 +277,7 @@ class NSCheckInEditViewController: NSViewController {
 
     private func showRemoveWarning() {
         guard let checkIn = self.checkIn else { return }
-        
+
         let controller = NSRemoveFromDiaryWarningViewController(venueInfo: checkIn.venue)
         controller.removeCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -289,4 +289,3 @@ class NSCheckInEditViewController: NSViewController {
         present(controller, animated: true, completion: nil)
     }
 }
-

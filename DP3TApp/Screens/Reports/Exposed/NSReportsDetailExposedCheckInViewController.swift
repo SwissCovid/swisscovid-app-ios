@@ -13,17 +13,14 @@ import UIKit
 
 class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewController {
     public var checkInReport: UIStateModel.ReportsDetail.NSCheckInReportModel
-    
+
     public var showReportWithAnimation: Bool = false
-    
+
     init(report: UIStateModel.ReportsDetail.NSCheckInReportModel) {
-        self.checkInReport = report
+        checkInReport = report
     }
-    
-    
+
     // MARK: - UPDATE
-    
-    private func update() {
-        
-    }
+
+    private func update() {}
 }
