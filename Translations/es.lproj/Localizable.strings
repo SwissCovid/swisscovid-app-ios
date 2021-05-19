@@ -1695,3 +1695,12 @@
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
 "debug_state_setting_option_mutiple_exposed" = "";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_user_qr_code" = "";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_contact_tracing_qr_code" = "";
+
+/*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text_detailed" = "";

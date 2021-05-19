@@ -17,9 +17,9 @@ extension VenueType {
         case .UNRECOGNIZED:
             return "web_generator_category_other".ub_localized
         case .userQrCode:
-            return "user_qr_code".ub_localized
+            return "venue_type_user_qr_code".ub_localized
         case .contactTracingQrCode:
-            return "contact_tracing_qr_code".ub_localized
+            return "venue_type_contact_tracing_qr_code".ub_localized
         }
     }
 }
