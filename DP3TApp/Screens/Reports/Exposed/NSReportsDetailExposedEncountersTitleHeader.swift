@@ -10,10 +10,10 @@
 
 import UIKit
 
-class NSReportsDetailReportSingleTitleHeader: NSTitleView {
+class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
     // MARK: - API
 
-    public weak var headerView: NSReportsDetailReportViewController?
+    public weak var headerView: NSReportsDetailExposedEncountersViewController?
 
     public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
         didSet { update() }

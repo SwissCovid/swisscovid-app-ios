@@ -89,12 +89,20 @@ struct UIStateModel: Equatable {
     struct ReportsDetail: Equatable {
         var report: ReportState = .noReport
         var reports: [NSReportModel] = []
+        var checkInReports: [NSCheckInReportModel] = []
         var didOpenLeitfaden: Bool = false
         var showReportWithAnimation: Bool = false
 
         struct NSReportModel: Equatable {
             let identifier: UUID
             let timestamp: Date
+        }
+
+        struct NSCheckInReportModel: Equatable {
+            let checkInIdentifier: String
+            let arrivalTime: Date
+            let departureTime: Date
+            let venueDescription: String?
         }
 
         enum PhoneCallState: Equatable {
@@ -117,6 +125,9 @@ struct UIStateModel: Equatable {
                 case exposed5 // exposed with 5 contact
                 case exposed10 // exposed with 10 contact
                 case exposed20 // exposed with 20 contact
+                case checkInExposed1
+                case checkInExposed5
+                case checkInAndEncounterExposed
                 case infected(oldestSharedKeyDate: Date?)
 
                 static let exposedStates: [Self] = [.exposed1, .exposed5, .exposed10, .exposed20]

@@ -8,9 +8,9 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
-
+import CrowdNotifierSDK
 import DP3TSDK
+import Foundation
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
 class UIStateLogic {
@@ -68,7 +68,7 @@ class UIStateLogic {
             setLastReportState(&newState)
         }
 
-        if !ProblematicEventsManager.shared.getExposureEvents().isEmpty {
+        if case UIStateModel.CheckInStateModel.ExposureState.exposure(exposure: let exposure, exposureByDay: _) = newState.checkInStateModel.exposureState {
             if newState.homescreen.reports.report == .noReport {
                 newState.homescreen.reports.report = .exposed
             }
@@ -76,7 +76,7 @@ class UIStateLogic {
                 newState.reportsDetail.report = .exposed
             }
 
-            newState.reportsDetail.reports.append(contentsOf: ProblematicEventsManager.shared.getExposureEvents().map { .init(identifier: UUID(), timestamp: $0.arrivalTime) })
+            newState.reportsDetail.checkInReports.append(contentsOf: exposure.map { .init(checkInIdentifier: $0.exposureEvent.checkinId, arrivalTime: $0.exposureEvent.arrivalTime, departureTime: $0.exposureEvent.departureTime, venueDescription: $0.diaryEntry?.venue.description) })
         }
 
         // Set debug helpers
@@ -341,6 +341,12 @@ class UIStateLogic {
                     infectionStatus = .exposed(days: [])
                 case .exposed20:
                     infectionStatus = .exposed(days: [])
+                case .checkInExposed1:
+                    infectionStatus = .exposed(days: [])
+                case .checkInExposed5:
+                    infectionStatus = .exposed(days: [])
+                case .checkInAndEncounterExposed:
+                    infectionStatus = .exposed(days: [])
                 case .healthy:
                     infectionStatus = .healthy
                 }
@@ -361,7 +367,9 @@ class UIStateLogic {
             // in case the infection state is overwritten, we need to
             // add at least one report
             if let os = manager.overwrittenInfectionState {
-                var count = 1
+                var count = 0
+                var checkInCount = 0
+
                 switch os {
                 case .exposed1:
                     count = 1
@@ -371,11 +379,25 @@ class UIStateLogic {
                     count = 10
                 case .exposed20:
                     count = 20
+                case .checkInExposed1:
+                    checkInCount = 1
+                case .checkInExposed5:
+                    checkInCount = 5
+                case .checkInAndEncounterExposed:
+                    count = 5
+                    checkInCount = 3
                 default:
                     return
                 }
 
                 newState.reportsDetail.reports = []
+                newState.reportsDetail.checkInReports = []
+
+                for i in 0 ..< checkInCount {
+                    let date = Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))
+
+                    newState.reportsDetail.checkInReports.append(UIStateModel.ReportsDetail.NSCheckInReportModel(checkInIdentifier: UUID().uuidString, arrivalTime: date, departureTime: date.addingTimeInterval(60 * 60 * 5), venueDescription: "Venue \(i + 1)"))
+                }
 
                 for i in 0 ..< count {
                     newState.reportsDetail.reports.append(UIStateModel.ReportsDetail.NSReportModel(identifier: Self.identifiers[i], timestamp: Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))))

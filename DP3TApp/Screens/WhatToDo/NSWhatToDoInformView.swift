@@ -33,6 +33,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     // MARK: - Views
 
+    private let enterCovidCodeButtonWrapper = UIView()
     private let enterCovidCodeButton: NSButton
 
     private let infoBoxView: NSInfoBoxView?
@@ -126,13 +127,16 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     }
 
     private func setupEnterCovidButton() {
-        contentView.addArrangedView(enterCovidCodeButton)
+        enterCovidCodeButtonWrapper.addSubview(enterCovidCodeButton)
+        contentView.addArrangedView(enterCovidCodeButtonWrapper)
 
-        enterCovidCodeButton.snp.makeConstraints { make in
+        enterCovidCodeButtonWrapper.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
-
-        contentView.addSpacerView(NSPadding.large)
+        enterCovidCodeButton.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(NSPadding.large)
+        }
     }
 
     private func setupInfoBoxView() {
@@ -147,6 +151,6 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
 
     func update(_ state: UIStateModel) {
         let isInfected = state.homescreen.reports.report.isInfected
-        enterCovidCodeButton.isHidden = isInfected
+        enterCovidCodeButtonWrapper.isHidden = isInfected
     }
 }

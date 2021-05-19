@@ -123,15 +123,7 @@ class NSDiaryEntryContentView: UIView {
         texts.append(checkIn?.venue.venueType?.title)
         texts.append(checkIn?.venue.subtitle)
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-
-        let timeText = [checkIn?.checkInTime, checkIn?.checkOutTime].compactMap { date -> String? in
-            if let d = date {
-                return formatter.string(from: d)
-            } else { return nil }
-        }.joined(separator: " – ")
-
+        let timeText = DateFormatter.ub_fromTimeToTime(from: checkIn?.checkInTime, to: checkIn?.checkOutTime)
         texts.append(timeText)
 
         subtitleLabel.text = texts.compactMap { $0 }.joined(separator: "\n")

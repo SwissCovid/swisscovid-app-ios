@@ -1492,8 +1492,8 @@
 /*Check-Ins: QR-Code erstellen Titel*/
 "checkins_create_qr_code" = "QR-Code erstellen";
 
-/*Veranstaltungen-Card Titel im Infotab*/
-"events_title" = "Veranstaltungen";
+/*Veranstaltungen-Screen Titel*/
+"events_title" = "Check-ins anbieten?";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Jetzt einchecken";
@@ -1524,7 +1524,7 @@
 
 /*Check-Ins: Veranstaltung Titel Placeholder*/
 /*Fuzzy*/
-"web_generator_title_placeholder" = "z.B. Raum- oder Eventname";
+"web_generator_title_placeholder" = "z.B. Raum oder Anlassname";
 
 /*Check-Ins: Veranstaltungen Titel Kategorie*/
 /*Fuzzy*/
@@ -1671,7 +1671,7 @@
 "checkin_overview_isolation_text" = "Sie können nicht mehr einchecken, wenn Sie positiv getestet wurden.";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_subtitle" = "Schützen Sie sich selber und andere indem Sie QR Codes für Arbeitsplätze, Konferenzräume oder andere private Events erstellen.";
+"events_card_subtitle" = "Erstellen Sie einen QR-Code, mit dem sich Personen vor Ort einchecken können.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
 "delete_qr_code_dialog" = "Möchten Sie den QR Code wirklich löschen?";
@@ -1726,3 +1726,46 @@
 
 /*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
 "home_end_isolation_card_title" = "Isolation beenden?";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
+"events_card_title" = "Sie möchten Check-ins anbieten?";
+
+/*Fuzzy*/
+"checkin_footer_title1" = "Warum eine Check-in-Funktion?";
+
+/*Fuzzy*/
+"checkin_footer_subtitle1" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand.";
+
+/*Fuzzy*/
+"checkin_footer_title2" = "Keine zentrale Datenspeicherung";
+
+/*Fuzzy*/
+"checkin_footer_subtitle2" = "Für die SwissCovid-Check-ins müssen keine persönlichen Daten wie Name, Adresse oder Telefonnummer angegeben werden und es werden auch keine GPS-Standortdaten erfasst. Die Liste der Check-ins ist nur lokal auf Ihrem Smartphone gespeichert und wird an keinen zentralen Server gesendet. Nach 14 Tagen werden die lokalen Daten wieder gelöscht.";
+"events_empty_state_title" = "Erstellen Sie einen QR-Code";
+"events_empty_state_subtitle" = "Mit einem SwissCovid-QR-Code, können sich Personen vor Ort einchecken, ohne Ihre Daten zu hinterlassen.";
+"events_info_box_title" = "Kein Ersatz für die obligatorische Kontaktdatenerfassung";
+"events_info_box_text" = "SwissCovid-Check-ins sind kein Ersatz für die in der Covid-19-Verordnung vorgeschriebene Kontaktdatenerfassungspflicht.";
+"events_footer_title1" = "Wo können Check-ins eingesetzt werden?";
+"events_footer_title2" = "Warum eine Check-in-Funktion?";
+"events_footer_title3" = "Ersetzen SwissCovid-Check-ins die Pflicht zur Kontaktdatenerfassung?";
+"events_footer_subtitle1" = "SwissCovid-Check-ins können dort eingesetzt werden, wo Menschen \nsich treffen aber keine Pflicht zur Kontaktdatenerfassung besteht. \n\nMögliche Einsatzorte:\n– Private Anlässe\n– Vereinsanlässe \n– Zusammenkünfte im professionellen Umfeld wie z.B. Sitzungszimmer, Büroräume, Kantinen, etc.";
+"events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand.";
+"events_footer_subtitle3" = "Nein, SwissCovid-Check-ins ersetzen die Pflicht zur Kontaktdatenerfassung, wie sie in der Covid-19-Verordnung festgehalten ist, nicht. Sie dienen lediglich als Ergänzung, um Teilnehmende rasch über eine mögliche Ansteckung zu informieren.";
+
+/*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
+"meldung_detail_exposed_list_card_subtitle" = "Mögliche Risikosituation:";
+
+/*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_encounters" = "Begegnungen";
+
+/*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_checkin" = "Check-in";
+
+/*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_whattodo_button" = "Was soll ich tun?";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_checkin_exposed" = "Positiver Check-in";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_mutiple_exposed" = "Positive Check-ins / Kontakte";
