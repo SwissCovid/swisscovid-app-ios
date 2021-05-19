@@ -50,7 +50,8 @@ class NSCheckInDetailCheckedInView: UIView {
         }
 
         imageView.ub_setContentPriorityRequired()
-        checkOutButton.setImage(UIImage(named: "ic-qrcode"), for: .normal)
+        checkOutButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        checkOutButton.tintColor = .ns_lightBlue
         checkOutButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: NSPadding.large)
         checkedInLabel.text = "checkin_checked_in".ub_localized
 

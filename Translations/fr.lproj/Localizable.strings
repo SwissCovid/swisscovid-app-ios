@@ -1465,7 +1465,7 @@
 /*Check-Ins: QR-Code erstellen Titel*/
 "checkins_create_qr_code" = "";
 
-/*Veranstaltungen-Card Titel im Infotab*/
+/*Veranstaltungen-Screen Titel*/
 "events_title" = "";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
@@ -1597,7 +1597,7 @@
 "print_button_title" = "";
 
 /*Check-Ins: Beschreibung Modul auf Homescreen*/
-"module_checkins_description" = "Check into various events and see your previous check-ins in your diary.";
+"module_checkins_description" = "";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
 "inform_share_checkins_title" = "";
@@ -1625,11 +1625,11 @@
 /*Remove from diary warning start text*/
 "remove_diary_warning_star_text" = "";
 
-/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "Tested positive? Please enter your CovidCode to warn others.";
+/*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_title" = "You are in isolation mode because you tested positive to the virus.";
+"home_end_isolation_card_text" = "";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
 "reminder_option_hours_minutes" = "";
@@ -1638,7 +1638,7 @@
 "checkin_overview_isolation_text" = "You can no longer check-in when you tested positive. More text more text more text more text more text more text more";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_subtitle" = "Protect yourself and others by generating QR codes for working spaces, meeting rooms or other private events.";
+"events_card_subtitle" = "";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
 "delete_qr_code_dialog" = "";
@@ -1684,3 +1684,29 @@
 
 /*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
 "pdf_download_app" = "";
+
+/*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_title" = "";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_text" = "";
+
+/*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
+"events_card_title" = "";
+"checkin_footer_title1" = "";
+"checkin_footer_subtitle1" = "";
+"checkin_footer_title2" = "";
+"checkin_footer_subtitle2" = "";
+"events_empty_state_title" = "";
+"events_empty_state_subtitle" = "";
+"events_info_box_title" = "";
+"events_info_box_text" = "";
+"events_footer_title1" = "";
+"events_footer_title2" = "";
+"events_footer_title3" = "";
+"events_footer_subtitle1" = "";
+"events_footer_subtitle2" = "";
+"events_footer_subtitle3" = "";

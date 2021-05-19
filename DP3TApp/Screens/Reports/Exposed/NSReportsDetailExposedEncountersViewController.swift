@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
+class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewController {
     // MARK: - API
 
     public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
@@ -72,7 +72,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     override func viewDidLoad() {
-        let titleHeader = NSReportsDetailReportSingleTitleHeader(fullscreen: showReportWithAnimation)
+        let titleHeader = NSReportsDetailExposedEncountersTitleHeader(fullscreen: showReportWithAnimation)
         titleHeader.headerView = self
 
         titleView = titleHeader
@@ -85,6 +85,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
         super.viewDidLoad()
 
         setupLayout()
+        update()
     }
 
     // MARK: - Setup
@@ -108,7 +109,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     // MARK: - Update
 
     private func update() {
-        if let tv = titleView as? NSReportsDetailReportSingleTitleHeader {
+        if let tv = titleView as? NSReportsDetailExposedEncountersTitleHeader {
             tv.reports = reports
         }
 
@@ -365,7 +366,7 @@ class NSReportsDetailReportViewController: NSTitleViewScrollViewController {
     }
 }
 
-extension NSReportsDetailReportViewController: NSHitTestDelegate {
+extension NSReportsDetailExposedEncountersViewController: NSHitTestDelegate {
     func overrideHitTest(_ point: CGPoint, with event: UIEvent?) -> Bool {
         if overrideHitTestAnyway, useFullScreenHeaderAnimation {
             return true

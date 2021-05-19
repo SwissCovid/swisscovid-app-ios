@@ -88,7 +88,7 @@
 		242D221A245C4BD8005DAEA8 /* NSHomescreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB44314242DFF8000F19AA5 /* NSHomescreenViewController.swift */; };
 		242D221B245C4BD8005DAEA8 /* FakePublishManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47D2458AC9000C3D8C3 /* FakePublishManager.swift */; };
 		242D221C245C4BD8005DAEA8 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
-		242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */; };
+		242D221D245C4BD8005DAEA8 /* NSReportsDetailExposedEncountersTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift */; };
 		242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFBF2451975F0003F5AD /* NSOnboardingFinishViewController.swift */; };
 		242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6E5180242F9586006E532E /* NSCheckBoxView.swift */; };
 		242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
@@ -127,7 +127,7 @@
 		242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B1F242DFE33003BB26C /* NSOnboardingViewController.swift */; };
 		242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24780B562431B5A9003BB26C /* DateFormatter.swift */; };
 		242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift */; };
-		242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSReportsDetailReportViewController.swift */; };
+		242D2249245C4BD8005DAEA8 /* NSReportsDetailExposedEncountersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift */; };
 		242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift */; };
 		242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B03243F6FAE0066C773 /* UBOptionalUserDefault.swift */; };
 		242D224C245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift */; };
@@ -189,6 +189,12 @@
 		2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2485F47F2459631A00C3D8C3 /* NetworkError.swift */; };
 		24D5EF682448CAB900C197D6 /* UIStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF672448CAB900C197D6 /* UIStateManager.swift */; };
 		24F4D967246C33610011DC90 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
+		3DCD3E0B2653FDAE0050945D /* NSReportsDetailExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */; };
+		3DCD3E0D26541E150050945D /* NSReportsDetailExposedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */; };
+		3DCD3E102654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */; };
+		3DCD3E112654F6C00050945D /* NSReportsDetailExposedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */; };
+		3DCD3E122654F6C30050945D /* NSReportsDetailExposedCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */; };
+		3DCD3E132654F6C70050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */; };
 		3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
 		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
 		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
@@ -208,7 +214,7 @@
 		6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086924506E0600913B0E /* NSExplanationView.swift */; };
 		6E33086D245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086C245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift */; };
 		6E33086F24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086E24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift */; };
-		6E33087124507A2D00913B0E /* NSReportsDetailReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSReportsDetailReportViewController.swift */; };
+		6E33087124507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087024507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift */; };
 		6E33087324507B6A00913B0E /* NSReportsDetailNoReportsTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087224507B6A00913B0E /* NSReportsDetailNoReportsTitleView.swift */; };
 		6E3308752450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308742450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift */; };
 		6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */; };
@@ -267,7 +273,7 @@
 		6EB1D57C2636F7C000981571 /* libmcl in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D57B2636F7C000981571 /* libmcl */; };
 		6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
 		6EC172CF26411C0F002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
-		6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */; };
+		6EC47BD42451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift */; };
 		6EE81DEB245163C400FC7218 /* PhoneCallHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */; };
 		6EED5DAC24518DB400AD42D9 /* NSInformGetWellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */; };
 		6EF28CFE26370538001C1565 /* NSQRScannerOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */; };
@@ -659,6 +665,9 @@
 		24D33DA024880F6C0068E509 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		24D5EF672448CAB900C197D6 /* UIStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateManager.swift; sourceTree = "<group>"; };
 		24D5EF692448CAE800C197D6 /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
+		3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedViewController.swift; sourceTree = "<group>"; };
+		3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedCard.swift; sourceTree = "<group>"; };
+		3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedCheckInViewController.swift; sourceTree = "<group>"; };
 		3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodeModuleView.swift; sourceTree = "<group>"; };
 		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.der"; sourceTree = "<group>"; };
 		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
@@ -674,7 +683,7 @@
 		6E33086924506E0600913B0E /* NSExplanationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSExplanationView.swift; sourceTree = "<group>"; };
 		6E33086C245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailNoReportsViewController.swift; sourceTree = "<group>"; };
 		6E33086E24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailPositiveTestedViewController.swift; sourceTree = "<group>"; };
-		6E33087024507A2D00913B0E /* NSReportsDetailReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailReportViewController.swift; sourceTree = "<group>"; };
+		6E33087024507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedEncountersViewController.swift; sourceTree = "<group>"; };
 		6E33087224507B6A00913B0E /* NSReportsDetailNoReportsTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailNoReportsTitleView.swift; sourceTree = "<group>"; };
 		6E3308742450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailPositiveTestedTitleView.swift; sourceTree = "<group>"; };
 		6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTitleViewScrollViewController.swift; sourceTree = "<group>"; };
@@ -723,7 +732,7 @@
 		6EB1D5572636F65300981571 /* CheckInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckInManager.swift; sourceTree = "<group>"; };
 		6EB1D5592636F65300981571 /* ReminderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderManager.swift; sourceTree = "<group>"; };
 		6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUpdateBoardingCheckInViewController.swift; sourceTree = "<group>"; };
-		6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailReportSingleTitleHeader.swift; sourceTree = "<group>"; };
+		6EC47BD32451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedEncountersTitleHeader.swift; sourceTree = "<group>"; };
 		6EE81DEA245163C400FC7218 /* PhoneCallHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneCallHelper.swift; sourceTree = "<group>"; };
 		6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformGetWellViewController.swift; sourceTree = "<group>"; };
 		6EF28CFC26370538001C1565 /* NSQRScannerOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSQRScannerOverlay.swift; sourceTree = "<group>"; };
@@ -1303,6 +1312,18 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		3D7B4BCE2653FBFA00DB2A3D /* Exposed */ = {
+			isa = PBXGroup;
+			children = (
+				3DCD3E0A2653FDAE0050945D /* NSReportsDetailExposedViewController.swift */,
+				3DCD3E0C26541E150050945D /* NSReportsDetailExposedCard.swift */,
+				6EC47BD32451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift */,
+				6E33087024507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift */,
+				3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */,
+			);
+			path = Exposed;
+			sourceTree = "<group>";
+		};
 		3DCE4F49264C1F3D000115C8 /* CovidCode */ = {
 			isa = PBXGroup;
 			children = (
@@ -1346,9 +1367,8 @@
 				6E33087224507B6A00913B0E /* NSReportsDetailNoReportsTitleView.swift */,
 				6E33086E24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift */,
 				6E3308742450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift */,
+				3D7B4BCE2653FBFA00DB2A3D /* Exposed */,
 				6E33087624508CFF00913B0E /* NSTitleViewScrollViewController.swift */,
-				6E33087024507A2D00913B0E /* NSReportsDetailReportViewController.swift */,
-				6EC47BD32451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift */,
 				F8C9990A2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift */,
 				6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */,
 			);
@@ -2381,6 +2401,7 @@
 				242D21F3245C4BD8005DAEA8 /* NSAnimatedGraphLayer.swift in Sources */,
 				6E88975F261F25A700508334 /* NSOnboardingBaseViewController.swift in Sources */,
 				DC16177C2638717800B56ADA /* NSTimePickerControl.swift in Sources */,
+				3DCD3E112654F6C00050945D /* NSReportsDetailExposedViewController.swift in Sources */,
 				242D21F4245C4BD8005DAEA8 /* NSReportsDetailNoReportsTitleView.swift in Sources */,
 				DC3B576C25F1090F0075B5CE /* NSTravelModuleView.swift in Sources */,
 				242D21F6245C4BD8005DAEA8 /* UIView+NS.swift in Sources */,
@@ -2395,6 +2416,7 @@
 				DC3B577B25F109320075B5CE /* NSTravelDetailModuleView.swift in Sources */,
 				242D21FA245C4BD8005DAEA8 /* PhoneCallHelper.swift in Sources */,
 				242D21FB245C4BD8005DAEA8 /* NSErrorView.swift in Sources */,
+				3DCD3E122654F6C30050945D /* NSReportsDetailExposedCard.swift in Sources */,
 				F80E405D2508D3EA00876906 /* NSTabBarController.swift in Sources */,
 				DC1617AD2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */,
 				F87E96B5263AA6A600755AF1 /* NSInfoViewController.swift in Sources */,
@@ -2479,7 +2501,7 @@
 				8EF2A6E92490F1B6002263C3 /* NSSynchronizationStatusDetailController.swift in Sources */,
 				F8454AA4263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */,
 				DC3B577125F109190075B5CE /* NSTravelInfoBoxView.swift in Sources */,
-				242D221D245C4BD8005DAEA8 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
+				242D221D245C4BD8005DAEA8 /* NSReportsDetailExposedEncountersTitleHeader.swift in Sources */,
 				242D221E245C4BD8005DAEA8 /* NSOnboardingFinishViewController.swift in Sources */,
 				F80E40672508FE1600876906 /* NSStatsticsModuleHeader.swift in Sources */,
 				242D221F245C4BD8005DAEA8 /* NSCheckBoxView.swift in Sources */,
@@ -2506,6 +2528,7 @@
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
+				3DCD3E132654F6C70050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSTracingSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
 				6EB1D56D2636F76100981571 /* CheckInManager.swift in Sources */,
@@ -2558,7 +2581,7 @@
 				F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617902638717800B56ADA /* NSDiaryEntryContentView.swift in Sources */,
-				242D2249245C4BD8005DAEA8 /* NSReportsDetailReportViewController.swift in Sources */,
+				242D2249245C4BD8005DAEA8 /* NSReportsDetailExposedEncountersViewController.swift in Sources */,
 				242D224A245C4BD8005DAEA8 /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				242D224B245C4BD8005DAEA8 /* UBOptionalUserDefault.swift in Sources */,
 				DC1617A62638717800B56ADA /* NSInfoPremisesAndEventsModuleView.swift in Sources */,
@@ -2607,9 +2630,11 @@
 				2485F4712455C5AE00C3D8C3 /* UIStateLogic.swift in Sources */,
 				DC1617A72638717800B56ADA /* NSCheckInConfirmViewController.swift in Sources */,
 				6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */,
+				3DCD3E0D26541E150050945D /* NSReportsDetailExposedCard.swift in Sources */,
 				24780B5E2431B5A9003BB26C /* NSLocalPush.swift in Sources */,
 				DC702AFF243F6ED90066C773 /* UIColor+HEX.swift in Sources */,
 				6EF28CFE26370538001C1565 /* NSQRScannerOverlay.swift in Sources */,
+				3DCD3E0B2653FDAE0050945D /* NSReportsDetailExposedViewController.swift in Sources */,
 				DC702B0E243F6FAE0066C773 /* UBRawRepresentable.swift in Sources */,
 				F8631136257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift in Sources */,
 				6E8FC0FA24518BF2002AB1E5 /* UIScrollView+UBKeyboardObserver.m in Sources */,
@@ -2718,7 +2743,7 @@
 				F8512241250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */,
 				2485F47E2458AC9000C3D8C3 /* FakePublishManager.swift in Sources */,
 				DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */,
-				6EC47BD42451C3C2000D7686 /* NSReportsDetailReportSingleTitleHeader.swift in Sources */,
+				6EC47BD42451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift in Sources */,
 				DC1617932638717800B56ADA /* NSDiaryViewController.swift in Sources */,
 				DCA3FFC02451975F0003F5AD /* NSOnboardingFinishViewController.swift in Sources */,
 				DC1617A92638717800B56ADA /* NSCheckInViewController.swift in Sources */,
@@ -2752,6 +2777,7 @@
 				AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */,
 				F80E407A25092B0500876906 /* NSStatisticsChartContentView.swift in Sources */,
 				F8A6BE2424C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
+				3DCD3E102654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,
 				8E81CC99241FCC7D006F2437 /* AppDelegate.swift in Sources */,
@@ -2803,7 +2829,7 @@
 				DC1617952638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
 				6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */,
 				DC57D09E263C24950016BFDB /* SwissCovid.pb.swift in Sources */,
-				6E33087124507A2D00913B0E /* NSReportsDetailReportViewController.swift in Sources */,
+				6E33087124507A2D00913B0E /* NSReportsDetailExposedEncountersViewController.swift in Sources */,
 				6E33086D245079FF00913B0E /* NSReportsDetailNoReportsViewController.swift in Sources */,
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
 				6E33086F24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
