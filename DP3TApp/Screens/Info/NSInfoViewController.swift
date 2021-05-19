@@ -179,7 +179,7 @@ class NSInfoViewController: NSViewController {
 
         travelView.isHidden = state.homescreen.countries.isEmpty
 
-        if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
+        if let hearingImpairedText = ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value?.infoBox?.hearingImpairedInfo {
             informView.hearingImpairedButtonTouched = { [weak self] in
                 guard let strongSelf = self else { return }
                 let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)

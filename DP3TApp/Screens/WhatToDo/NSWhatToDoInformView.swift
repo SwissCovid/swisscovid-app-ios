@@ -36,7 +36,7 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     private let enterCovidCodeButtonWrapper = UIView()
     private let enterCovidCodeButton: NSButton
 
-    private let infoBoxView: NSInfoBoxView?
+    private var infoBoxView: NSInfoBoxView!
     private var infoBoxViewModel: NSInfoBoxView.ViewModel?
 
     // MARK: - Init
@@ -45,11 +45,19 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         enterCovidCodeButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
                                         style: .uppercase(.ns_purple))
 
+        super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
+                   subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
+                   text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
+                   image: UIImage(named: "illu-covidcode"),
+                   subtitleColor: .ns_purple,
+                   bottomPadding: true)
+
         if let infoBox = configTexts?.infoBox {
             var hearingImpairedCallback: (() -> Void)?
-            if let hearingImpairedText = infoBox.hearingImpairedInfo {
-                hearingImpairedCallback = {
-                    print(hearingImpairedText)
+            if infoBox.hearingImpairedInfo != nil {
+                hearingImpairedCallback = { [weak self] in
+                    guard let self = self else { return }
+                    self.hearingImpairedButtonTouched?()
                 }
             }
             var model = NSInfoBoxView.ViewModel(title: infoBox.title,
@@ -73,13 +81,6 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
             infoBoxView = nil
             infoBoxViewModel = nil
         }
-
-        super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
-                   subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_box_subtitle".ub_localized,
-                   text: configTexts?.enterCovidcodeBoxText ?? "inform_detail_box_text".ub_localized,
-                   image: UIImage(named: "illu-covidcode"),
-                   subtitleColor: .ns_purple,
-                   bottomPadding: true)
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
