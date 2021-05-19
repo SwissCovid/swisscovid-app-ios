@@ -90,7 +90,7 @@ class NSCreatedEventsViewController: NSViewController {
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
         eventsModule.contentView.addSpacerView(NSPadding.large)
-        
+
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(eventsModule)

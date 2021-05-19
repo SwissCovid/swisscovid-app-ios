@@ -42,7 +42,7 @@ class NSDiaryViewController: NSViewController {
 
     private func setup() {
         view.backgroundColor = .ns_backgroundSecondary
-        
+
         view.addSubview(collectionView)
 
         collectionView.snp.makeConstraints { make in

@@ -24,13 +24,13 @@ class NSCheckInOverviewViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "module_checkins_title".ub_localized
 
         setupView()
         setupInfoViews()
         setupCallbacks()
-        
+
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
             strongSelf.update(state)
@@ -49,17 +49,17 @@ class NSCheckInOverviewViewController: NSViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        
+
         stackScrollView.addArrangedView(currentStateView)
         stackScrollView.addSpacerView(NSPadding.large)
-        
+
         stackScrollView.addArrangedView(diaryView)
         stackScrollView.addSpacerView(NSPadding.large)
-        
+
         stackScrollView.addArrangedView(createCheckInsView)
         stackScrollView.addSpacerView(NSPadding.large)
     }
-    
+
     private func setupInfoViews() {
         let infoViewOne = NSOnboardingInfoView(icon: UIImage(named: "ic-verified-user"), text: "checkin_footer_subtitle1".ub_localized, title: "checkin_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewOne)
@@ -89,13 +89,13 @@ class NSCheckInOverviewViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSDiaryViewController(), animated: true)
         }
-        
+
         createCheckInsView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
         }
     }
-    
+
     func update(_ state: UIStateModel) {
         let checkInState = state.checkInStateModel.checkInState
         createCheckInsView.isHidden = checkInState == .checkInEnded
