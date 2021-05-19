@@ -102,7 +102,7 @@ class NSReportsDetailExposedViewController: NSViewController {
     }
     
     private func configureEncountersCard() {
-        let card = NSReportsDetailExposedCard(titleText: "Begegnungen")
+        let card = NSReportsDetailExposedCard(titleText: "meldung_detail_exposed_list_card_title_encounters".ub_localized)
 
         for report in reports {
             let dateLabel = NSLabel(.textBold)
@@ -121,7 +121,7 @@ class NSReportsDetailExposedViewController: NSViewController {
     }
     
     private func configureCheckInCard(with checkInReport: UIStateModel.ReportsDetail.NSCheckInReportModel) {
-        let card = NSReportsDetailExposedCard(titleText: "Check-In")
+        let card = NSReportsDetailExposedCard(titleText: "meldung_detail_exposed_list_card_title_checkin".ub_localized)
         
         let dateLabel = NSLabel(.textBold)
         dateLabel.text = DateFormatter.ub_daysAgo(from: checkInReport.arrivalTime, addExplicitDate: true, withLabel: false)

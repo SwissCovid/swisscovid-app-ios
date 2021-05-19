@@ -1751,3 +1751,21 @@
 "events_footer_subtitle1" = "SwissCovid-Check-ins können dort eingesetzt werden, wo Menschen \nsich treffen aber keine Pflicht zur Kontaktdatenerfassung besteht. \n\nMögliche Einsatzorte:\n– Private Anlässe\n– Vereinsanlässe \n– Zusammenkünfte im professionellen Umfeld wie z.B. Sitzungszimmer, Büroräume, Kantinen, etc.";
 "events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand.";
 "events_footer_subtitle3" = "Nein, SwissCovid-Check-ins ersetzen die Pflicht zur Kontaktdatenerfassung, wie sie in der Covid-19-Verordnung festgehalten ist, nicht. Sie dienen lediglich als Ergänzung, um Teilnehmende rasch über eine mögliche Ansteckung zu informieren.";
+
+/*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
+"meldung_detail_exposed_list_card_subtitle" = "Mögliche Risikosituation:";
+
+/*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_encounters" = "Begegnungen";
+
+/*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_checkin" = "Check-in";
+
+/*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_whattodo_button" = "Was soll ich tun?";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_checkin_exposed" = "Positiver Check-in";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_mutiple_exposed" = "Positive Check-ins / Kontakte";

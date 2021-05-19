@@ -100,8 +100,7 @@ class NSCheckBoxView: UIView {
         addSubview(textLabel)
         textLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(insets)
-            make.top.equalToSuperview().offset(2.0).inset(insets)
-            make.bottom.lessThanOrEqualToSuperview().inset(insets)
+            make.centerY.equalToSuperview()
         }
 
         addSubview(checkBox)

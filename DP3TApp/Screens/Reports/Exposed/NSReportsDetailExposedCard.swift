@@ -18,14 +18,14 @@ class NSReportsDetailExposedCard: NSModuleBaseView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.spacing = NSPadding.medium
+        stackView.spacing = NSPadding.small
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private let whatToDoButton: NSExternalLinkButton = {
         let button = NSExternalLinkButton(style: .normal(color: .ns_blue), linkType: .other(image: UIImage(named: "ic-link-internal")), buttonTintColor: .ns_blue)
-        button.title = "Was soll ich tun?"
+        button.title = "meldung_detail_exposed_list_card_whattodo_button".ub_localized
         return button
     }()
     
@@ -50,17 +50,18 @@ class NSReportsDetailExposedCard: NSModuleBaseView {
         stackView.layoutMargins = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large)
         
         let subTitleLabel = NSLabel(.textBold)
-        subTitleLabel.text = "Mögliche Risikosituation:"
+        subTitleLabel.text = "meldung_detail_exposed_list_card_subtitle".ub_localized
         subTitleLabel.textColor = .ns_blue
         stackView.addArrangedView(subTitleLabel)
+        stackView.addSpacerView(NSPadding.small)
         
         let titleLabel = NSLabel(.title)
         titleLabel.text = titleText
         stackView.addArrangedView(titleLabel)
-        stackView.addSpacerView(NSPadding.small)
+        stackView.addSpacerView(NSPadding.medium)
         
         stackView.addArrangedView(entriesContentStackView)
-        stackView.addSpacerView(NSPadding.small)
+        stackView.addSpacerView(NSPadding.medium)
         
         let buttonWrapper = UIView()
         

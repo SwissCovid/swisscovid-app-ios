@@ -23,9 +23,9 @@
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 5"),
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 10"),
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 20"),
-            NSCheckBoxView(text: "CheckIn exposure 1"),
-            NSCheckBoxView(text: "CheckIn exposure 5"),
-            NSCheckBoxView(text: "Multiple exposure"),
+            NSCheckBoxView(text: "debug_state_setting_option_checkin_exposed".ub_localized + " 1"),
+            NSCheckBoxView(text: "debug_state_setting_option_checkin_exposed".ub_localized + " 5"),
+            NSCheckBoxView(text: "debug_state_setting_option_mutiple_exposed".ub_localized),
             NSCheckBoxView(text: "debug_state_setting_option_infected".ub_localized),
         ]
 
