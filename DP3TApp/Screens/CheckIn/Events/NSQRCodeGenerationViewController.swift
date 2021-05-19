@@ -17,7 +17,6 @@ class NSQRCodeGenerationViewController: NSViewController {
 
     private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "web_generator_title_label".ub_localized))
-    private let venueTypeSelector = NSFormField(inputControl: NSVenueTypeSelector())
 
     private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_lightBlue))
 
@@ -34,7 +33,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         createButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            _ = CreatedEventsManager.shared.createNewEvent(description: strongSelf.titleTextField.inputControl.text ?? "", venueType: strongSelf.venueTypeSelector.inputControl.selectedData)
+            _ = CreatedEventsManager.shared.createNewEvent(description: strongSelf.titleTextField.inputControl.text ?? "", venueType: .userQrCode)
 
             strongSelf.dismissSelf()
         }
@@ -54,8 +53,6 @@ class NSQRCodeGenerationViewController: NSViewController {
         titleLabel.text = "checkins_create_qr_code".ub_localized
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
-        stackScrollView.addSpacerView(NSPadding.large)
-        stackScrollView.addArrangedView(venueTypeSelector)
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleTextField)
         stackScrollView.addSpacerView(NSPadding.large)

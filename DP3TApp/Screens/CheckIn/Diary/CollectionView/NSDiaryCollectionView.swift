@@ -30,7 +30,7 @@ class NSDiaryCollectionView: UICollectionView {
     public func setup() {
         alwaysBounceVertical = true
         backgroundColor = UIColor.clear
-        contentInset = UIEdgeInsets(top: 0.0, left: NSPadding.medium, bottom: 0.0, right: NSPadding.medium)
+        contentInset = UIEdgeInsets(top: 0.0, left: NSPadding.large, bottom: 0.0, right: NSPadding.large)
 
         register(NSDiaryEntryCollectionViewCell.self)
         register(NSDiaryDateSectionHeaderSupplementaryView.self,

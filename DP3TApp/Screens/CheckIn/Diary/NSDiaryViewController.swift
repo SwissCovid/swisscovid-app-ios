@@ -168,7 +168,7 @@ extension NSDiaryViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = view.frame.size.width - 2.0 * NSPadding.medium
+        let width = view.frame.size.width - 2.0 * NSPadding.large
 
         let entry = diary[indexPath.section][indexPath.item]
         if let exposure = exposureForDiary(diaryEntry: entry) {

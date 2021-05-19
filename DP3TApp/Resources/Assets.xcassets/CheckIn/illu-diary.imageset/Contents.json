@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "icons-ic-flash-off.png",
+      "filename" : "illu-diary.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "icons-ic-flash-off@2x.png",
+      "filename" : "illu-diary@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons-ic-flash-off@3x.png",
+      "filename" : "illu-diary@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

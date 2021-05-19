@@ -56,7 +56,7 @@ class ReportingManager: ReportingManagerProtocol {
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
-    private let backend = Environment.current.publishService
+    private let backend = Environment.current.checkInService
     private var task: URLSessionDataTask?
 
     private var fakeCode: String {
@@ -179,18 +179,19 @@ class ReportingManager: ReportingManagerProtocol {
 
         var request = backend.endpoint("userupload", method: .post, headers: ["Content-Type": "application/x-protobuf"], body: payloadData).request()
 
-        request.addValue("Bearer \(tokens.checkInToken)", forHTTPHeaderField: "Authorization")
+        request.addValue("Bearer \(tokens.checkInToken.token)", forHTTPHeaderField: "Authorization")
 
         task = URLSession.shared.dataTask(with: request) { _, response, error in
-            if let e = error {
+            DispatchQueue.main.async {
                 if let response = response as? HTTPURLResponse,
                    response.statusCode != 200 {
                     completion(.failure(.statusError(code: response.statusCode)))
-                } else {
+
+                } else if let e = error {
                     completion(.failure(.unexpected(error: e)))
+                } else {
+                    completion(.success(()))
                 }
-            } else {
-                completion(.success(()))
             }
         }
 

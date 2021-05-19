@@ -22,53 +22,26 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 enum VenueType: SwiftProtobuf.Enum {
   typealias RawValue = Int
-  case other // = 0
-  case meetingRoom // = 1
-  case cafeteria // = 2
-  case privateEvent // = 3
-  case canteen // = 4
-  case library // = 5
-  case lectureRoom // = 6
-  case shop // = 7
-  case gym // = 8
-  case kitchenArea // = 9
-  case officeSpace // = 10
+  case userQrCode // = 0
+  case contactTracingQrCode // = 1
   case UNRECOGNIZED(Int)
 
   init() {
-    self = .other
+    self = .userQrCode
   }
 
   init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .other
-    case 1: self = .meetingRoom
-    case 2: self = .cafeteria
-    case 3: self = .privateEvent
-    case 4: self = .canteen
-    case 5: self = .library
-    case 6: self = .lectureRoom
-    case 7: self = .shop
-    case 8: self = .gym
-    case 9: self = .kitchenArea
-    case 10: self = .officeSpace
+    case 0: self = .userQrCode
+    case 1: self = .contactTracingQrCode
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   var rawValue: Int {
     switch self {
-    case .other: return 0
-    case .meetingRoom: return 1
-    case .cafeteria: return 2
-    case .privateEvent: return 3
-    case .canteen: return 4
-    case .library: return 5
-    case .lectureRoom: return 6
-    case .shop: return 7
-    case .gym: return 8
-    case .kitchenArea: return 9
-    case .officeSpace: return 10
+    case .userQrCode: return 0
+    case .contactTracingQrCode: return 1
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -80,17 +53,8 @@ enum VenueType: SwiftProtobuf.Enum {
 extension VenueType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   static var allCases: [VenueType] = [
-    .other,
-    .meetingRoom,
-    .cafeteria,
-    .privateEvent,
-    .canteen,
-    .library,
-    .lectureRoom,
-    .shop,
-    .gym,
-    .kitchenArea,
-    .officeSpace,
+    .userQrCode,
+    .contactTracingQrCode,
   ]
 }
 
@@ -143,7 +107,7 @@ struct SwissCovidLocationData {
 
   var version: UInt32 = 0
 
-  var type: VenueType = .other
+  var type: VenueType = .userQrCode
 
   var room: String = String()
 
@@ -178,17 +142,8 @@ struct SwissCovidAssociatedData {
 
 extension VenueType: SwiftProtobuf._ProtoNameProviding {
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "OTHER"),
-    1: .same(proto: "MEETING_ROOM"),
-    2: .same(proto: "CAFETERIA"),
-    3: .same(proto: "PRIVATE_EVENT"),
-    4: .same(proto: "CANTEEN"),
-    5: .same(proto: "LIBRARY"),
-    6: .same(proto: "LECTURE_ROOM"),
-    7: .same(proto: "SHOP"),
-    8: .same(proto: "GYM"),
-    9: .same(proto: "KITCHEN_AREA"),
-    10: .same(proto: "OFFICE_SPACE"),
+    0: .same(proto: "USER_QR_CODE"),
+    1: .same(proto: "CONTACT_TRACING_QR_CODE"),
   ]
 }
 
@@ -231,7 +186,7 @@ extension SwissCovidLocationData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if self.version != 0 {
       try visitor.visitSingularUInt32Field(value: self.version, fieldNumber: 1)
     }
-    if self.type != .other {
+    if self.type != .userQrCode {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 2)
     }
     if !self.room.isEmpty {

@@ -63,13 +63,13 @@ enum Environment {
     var publishService: Backend {
         switch self {
         case .dev:
-            return Backend("https://www.pt1-d.bfs.admin.ch", version: "v1")
+            return Backend("https://www.pt1-d.bfs.admin.ch", version: "v2")
         case .test:
-            return Backend("https://www.pt1-t.bfs.admin.ch", version: "v1")
+            return Backend("https://www.pt1-t.bfs.admin.ch", version: "v2")
         case .abnahme:
-            return Backend("https://www.pt1-a.bfs.admin.ch", version: "v1")
+            return Backend("https://www.pt1-a.bfs.admin.ch", version: "v2")
         case .prod:
-            return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
+            return Backend("https://www.pt1.bfs.admin.ch", version: "v2")
         }
     }
 

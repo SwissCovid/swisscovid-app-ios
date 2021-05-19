@@ -41,8 +41,8 @@
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "feature/split-permission-and-backend-request",
-          "revision": "db241518de287f986dcb58d2b991692cb20419b8",
+          "branch": "develop",
+          "revision": "d1b0e8efa614edde58e9c0d0722c0377f4551fd2",
           "version": null
         }
       },

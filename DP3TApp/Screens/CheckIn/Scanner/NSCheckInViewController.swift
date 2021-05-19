@@ -23,7 +23,7 @@ class NSCheckInViewController: NSViewController {
 
     private var lastQrCode: String?
 
-    private let lampButton = NSRoundImageButton(icon: UIImage(named: "ic-flash-on"))
+    private let lampButton = NSRoundImageButton(icon: UIImage(named: "ic-light-off"))
     private var lampIsOn = false
 
     private var timer: Timer?
@@ -131,7 +131,7 @@ class NSCheckInViewController: NSViewController {
         lampIsOn = !lampIsOn
 
         qrView?.setCameraLight(on: lampIsOn)
-        lampButton.setImage(UIImage(named: lampIsOn ? "ic-flash-off" : "ic-flash-on"), for: .normal)
+        lampButton.setImage(UIImage(named: lampIsOn ? "ic-light-on" : "ic-light-off"), for: .normal)
     }
 
     // MARK: - Start scanning
