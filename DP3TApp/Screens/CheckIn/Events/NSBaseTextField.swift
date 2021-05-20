@@ -12,17 +12,13 @@
 import UIKit
 
 class NSBaseTextField: UITextField, NSFormFieldRepresentable {
-    let fieldTitle: String
-
     var isValid: Bool {
         return true
     }
 
     var titlePadding: CGFloat { NSPadding.large }
 
-    init(title: String) {
-        fieldTitle = title
-
+    init() {
         super.init(frame: .zero)
 
         setupView()

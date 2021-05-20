@@ -1701,3 +1701,6 @@
 
 /*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
 "checkin_ended_text_detailed" = "";
+
+/*Check-Ins: QR-Code erstellen subtitel*/
+"checkins_create_qr_code_subtitle" = "";

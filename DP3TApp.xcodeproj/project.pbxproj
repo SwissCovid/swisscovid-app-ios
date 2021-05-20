@@ -335,8 +335,6 @@
 		DC16177C2638717800B56ADA /* NSTimePickerControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16175C2638717800B56ADA /* NSTimePickerControl.swift */; };
 		DC16177D2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */; };
 		DC16177E2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */; };
-		DC16177F2638717800B56ADA /* AddCommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16175E2638717800B56ADA /* AddCommentControl.swift */; };
-		DC1617802638717800B56ADA /* AddCommentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC16175E2638717800B56ADA /* AddCommentControl.swift */; };
 		DC1617812638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617602638717800B56ADA /* NSDiaryDetailViewController.swift */; };
 		DC1617822638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617602638717800B56ADA /* NSDiaryDetailViewController.swift */; };
 		DC1617832638717800B56ADA /* NSRemoveFromDiaryWarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1617612638717800B56ADA /* NSRemoveFromDiaryWarningViewController.swift */; };
@@ -794,7 +792,6 @@
 		DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInOverviewViewController.swift; sourceTree = "<group>"; };
 		DC16175C2638717800B56ADA /* NSTimePickerControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSTimePickerControl.swift; sourceTree = "<group>"; };
 		DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInEditViewController.swift; sourceTree = "<group>"; };
-		DC16175E2638717800B56ADA /* AddCommentControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCommentControl.swift; sourceTree = "<group>"; };
 		DC1617602638717800B56ADA /* NSDiaryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDiaryDetailViewController.swift; sourceTree = "<group>"; };
 		DC1617612638717800B56ADA /* NSRemoveFromDiaryWarningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRemoveFromDiaryWarningViewController.swift; sourceTree = "<group>"; };
 		DC1617632638717800B56ADA /* NSDiaryEntryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDiaryEntryCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1626,7 +1623,6 @@
 			children = (
 				DC16175C2638717800B56ADA /* NSTimePickerControl.swift */,
 				DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */,
-				DC16175E2638717800B56ADA /* AddCommentControl.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2435,7 +2431,6 @@
 				DC003DE32642E98A0027F379 /* NSCheckInErrorViewModel.swift in Sources */,
 				242D21FE245C4BD8005DAEA8 /* NSUnderlinedButton.swift in Sources */,
 				8EF2A6ED249124C4002263C3 /* NSSynchronizationTableViewCell.swift in Sources */,
-				DC1617802638717800B56ADA /* AddCommentControl.swift in Sources */,
 				242D21FF245C4BD8005DAEA8 /* AuthorizationModels.swift in Sources */,
 				242D2200245C4BD8005DAEA8 /* NSModuleHeaderView.swift in Sources */,
 				242D2201245C4BD8005DAEA8 /* NSModuleBaseView.swift in Sources */,
@@ -2849,7 +2844,6 @@
 				F8454AA3263983B8005CF491 /* NSMutableAttributedString+NS.swift in Sources */,
 				6E3F65F92449CC9F00980A4E /* NSDebugScreenMockView.swift in Sources */,
 				2485F4802459631A00C3D8C3 /* NetworkError.swift in Sources */,
-				DC16177F2638717800B56ADA /* AddCommentControl.swift in Sources */,
 				2462BA132451F0F60046906D /* CodeValidator.swift in Sources */,
 				2485F47624560EDC00C3D8C3 /* UIStateModel.swift in Sources */,
 				F83ECEEE2578D91600DB18CB /* NSPopupViewController.swift in Sources */,

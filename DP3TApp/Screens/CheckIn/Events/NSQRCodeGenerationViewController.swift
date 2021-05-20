@@ -16,7 +16,8 @@ class NSQRCodeGenerationViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let titleLabel = NSLabel(.title, textAlignment: .center)
-    private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "web_generator_title_label".ub_localized))
+    private let subttitleLabel = NSLabel(.textLight, textAlignment: .center)
+    private let titleTextField = NSFormField(inputControl: NSBaseTextField())
 
     private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
 
@@ -53,7 +54,10 @@ class NSQRCodeGenerationViewController: NSViewController {
         titleLabel.text = "checkins_create_qr_code".ub_localized
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
+        subttitleLabel.text = "checkins_create_qr_code_subtitle".ub_localized
         stackScrollView.addSpacerView(NSPadding.large)
+        stackScrollView.addArrangedView(subttitleLabel)
+        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
         stackScrollView.addArrangedView(titleTextField)
         stackScrollView.addSpacerView(NSPadding.large)
 

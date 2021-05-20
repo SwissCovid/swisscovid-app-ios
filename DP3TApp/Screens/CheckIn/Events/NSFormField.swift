@@ -12,14 +12,12 @@
 import UIKit
 
 protocol NSFormFieldRepresentable {
-    var fieldTitle: String { get }
     var isValid: Bool { get }
 
     var titlePadding: CGFloat { get }
 }
 
 class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
-    private let label = NSLabel(.uppercaseBold)
     let inputControl: T
 
     init(inputControl: T) {
@@ -31,16 +29,9 @@ class NSFormField<T>: UIView where T: UIControl & NSFormFieldRepresentable {
     }
 
     private func setupView() {
-        label.text = inputControl.fieldTitle
-        addSubview(label)
-        label.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-        }
-
         addSubview(inputControl)
         inputControl.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).offset(inputControl.titlePadding)
-            make.leading.trailing.bottom.equalToSuperview()
+            make.top.leading.trailing.bottom.equalToSuperview()
         }
     }
 
