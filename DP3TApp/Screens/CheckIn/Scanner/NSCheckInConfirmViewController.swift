@@ -23,6 +23,8 @@ class NSCheckInConfirmViewController: NSViewController {
 
     private var reminderOption: ReminderOption?
 
+    var checkInCallback: (() -> Void)?
+
     // MARK: - Init
 
     init(qrCode: String, venueInfo: VenueInfo) {
@@ -97,11 +99,7 @@ class NSCheckInConfirmViewController: NSViewController {
                 strongSelf.scheduleReminder(option: option)
             }
 
-            if let navVC = strongSelf.navigationController, navVC.viewControllers.count > 1 {
-                navVC.popToRootViewController(animated: true)
-            } else {
-                strongSelf.dismiss(animated: true, completion: nil)
-            }
+            strongSelf.checkInCallback?()
         }
     }
 

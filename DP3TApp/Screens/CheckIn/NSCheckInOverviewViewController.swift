@@ -101,4 +101,8 @@ class NSCheckInOverviewViewController: NSViewController {
         let checkInState = state.checkInStateModel.checkInState
         createCheckInsView.isHidden = checkInState == .checkInEnded
     }
+
+    func scrollToTop(animated: Bool = true) {
+        stackScrollView.scrollView.setContentOffset(.zero, animated: animated)
+    }
 }

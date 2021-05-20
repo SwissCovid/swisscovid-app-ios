@@ -18,7 +18,7 @@ class NSQRCodeGenerationViewController: NSViewController {
     private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let titleTextField = NSFormField(inputControl: NSBaseTextField(title: "web_generator_title_label".ub_localized))
 
-    private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_lightBlue))
+    private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
 
     override func viewDidLoad() {
         super.viewDidLoad()

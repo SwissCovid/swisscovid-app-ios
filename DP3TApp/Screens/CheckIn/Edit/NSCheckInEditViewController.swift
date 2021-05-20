@@ -183,12 +183,6 @@ class NSCheckInEditViewController: NSViewController {
             userWillCheckOutCallback?()
             CheckInManager.shared.checkOut()
 
-            let presentingVC = presentingViewController
-            if let nvc = presentingVC as? UINavigationController {
-                nvc.popToRootViewController(animated: true)
-            } else {
-                navigationController?.popToRootViewController(animated: true)
-            }
             dismiss(animated: true, completion: nil)
 
         } else {

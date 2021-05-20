@@ -17,7 +17,7 @@ class NSCheckInDetailCheckedOutView: UIView {
     private let titleLabel = NSLabel(.title)
     private let textLabel = NSLabel(.textLight)
 
-    let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_lightBlue))
+    let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_blue))
 
     init() {
         super.init(frame: .zero)

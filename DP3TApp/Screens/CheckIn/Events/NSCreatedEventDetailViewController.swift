@@ -139,6 +139,13 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private func checkInPressed() {
         let vc = NSCheckInConfirmViewController(createdEvent: createdEvent)
+        vc.checkInCallback = { [weak self] in
+            guard let self = self else { return }
+            if let viewcontroller = self.navigationController?.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
+                viewcontroller.scrollToTop()
+                self.navigationController?.popToViewController(viewcontroller, animated: false)
+            }
+        }
         vc.presentInNavigationController(from: self, useLine: false)
     }
 

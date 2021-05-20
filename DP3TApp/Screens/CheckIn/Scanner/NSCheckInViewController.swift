@@ -177,6 +177,15 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
             stopScanning()
 
             let vc = NSCheckInConfirmViewController(qrCode: str, venueInfo: info)
+            vc.checkInCallback = { [weak self] in
+                guard let self = self else { return }
+                if let viewcontroller = self.navigationController?.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
+                    viewcontroller.scrollToTop()
+                    self.navigationController?.popToViewController(viewcontroller, animated: false)
+                } else {
+                    self.navigationController?.popToRootViewController(animated: false)
+                }
+            }
             navigationController?.pushViewController(vc, animated: true)
         case let .failure(error):
             qrErrorLabel.alpha = 1.0

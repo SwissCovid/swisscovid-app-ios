@@ -20,7 +20,7 @@ class NSCheckInDetailCheckedInView: UIView {
     private let eventTitleLabel = NSLabel(.textBold, textAlignment: .center)
     private let eventCategoryLabel = NSLabel(.textLight, textAlignment: .center)
 
-    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_lightBlue))
+    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_blue))
 
     private var checkIn: CheckIn?
     private var titleTimer: Timer?
@@ -51,7 +51,7 @@ class NSCheckInDetailCheckedInView: UIView {
 
         imageView.ub_setContentPriorityRequired()
         checkOutButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        checkOutButton.tintColor = .ns_lightBlue
+        checkOutButton.tintColor = .ns_blue
         checkOutButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: NSPadding.large)
         checkedInLabel.text = "checkin_checked_in".ub_localized
 
