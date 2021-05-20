@@ -13,8 +13,6 @@ import Foundation
 
 class QRCodePDFGenerator {
     static func generate(from urlString: String) -> Data? {
-        guard let url = URL(string: urlString) else { return nil }
-
         // A4 size
         let pageRect = CGRect(x: 0, y: 0, width: 595.2, height: 841.8)
 
@@ -41,8 +39,6 @@ class QRCodePDFGenerator {
                     }
                 }
             }
-
-            ctx.setURL(url, for: pageRect)
         }
 
         return data
