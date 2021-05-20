@@ -38,6 +38,15 @@ class NSCreatedEventsViewController: NSViewController {
         generateButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             let vc = NSQRCodeGenerationViewController()
+            vc.codeCreatedCallback = { [weak self] event in
+                guard let self = self else { return }
+                let eventView = self.stackScrollView.stackView.arrangedSubviews
+                    .compactMap { $0 as? NSCreatedEventCard }
+                    .first { $0.createdEvent == event }
+                if let eventView = eventView {
+                    self.stackScrollView.scrollView.scrollRectToVisible(eventView.bounds, animated: false)
+                }
+            }
             vc.presentInNavigationController(from: strongSelf, useLine: false)
         }
     }

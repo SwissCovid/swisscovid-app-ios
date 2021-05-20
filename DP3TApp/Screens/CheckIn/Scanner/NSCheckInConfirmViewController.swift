@@ -99,6 +99,8 @@ class NSCheckInConfirmViewController: NSViewController {
                 strongSelf.scheduleReminder(option: option)
             }
 
+            strongSelf.dismiss(animated: true, completion: nil)
+
             strongSelf.checkInCallback?()
         }
     }

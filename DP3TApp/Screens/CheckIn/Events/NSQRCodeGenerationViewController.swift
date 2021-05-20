@@ -21,6 +21,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
     private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
 
+    var codeCreatedCallback: ((CreatedEvent) -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,11 @@ class NSQRCodeGenerationViewController: NSViewController {
         createButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            _ = CreatedEventsManager.shared.createNewEvent(description: strongSelf.titleTextField.inputControl.text ?? "", venueType: .userQrCode)
+            if let event = CreatedEventsManager.shared.createNewEvent(description: strongSelf.titleTextField.inputControl.text ?? "", venueType: .userQrCode) {
+                DispatchQueue.main.async {
+                    strongSelf.codeCreatedCallback?(event)
+                }
+            }
 
             strongSelf.dismissSelf()
         }
