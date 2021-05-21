@@ -10,6 +10,7 @@
  */
 
 import Foundation
+import CrowdNotifierSDK
 
 class NSCheckInEditViewController: NSViewController {
     private let venueView = NSVenueView(large: true, showCategory: true)
@@ -284,7 +285,7 @@ class NSCheckInEditViewController: NSViewController {
             guard let strongSelf = self else { return }
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
-            // TODO: delete checkin
+            CrowdNotifier.removeCheckin(with: checkIn.identifier)
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
