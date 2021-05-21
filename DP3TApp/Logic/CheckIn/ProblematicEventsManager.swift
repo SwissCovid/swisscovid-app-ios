@@ -75,9 +75,35 @@ class ProblematicEventsManager {
                 return
             }
 
+            UIStateManager.shared.checkInError = nil
+
             strongSelf.lastSyncFailed = error != nil
 
-            if let bundleTagString = (response as? HTTPURLResponse)?.allHeaderFields.getCaseInsensitiveValue(key: "x-key-bundle-tag") as? String,
+            if let error = error {
+                UIStateManager.shared.checkInError = CheckInError.networkError(error: .unexpected(error: error))
+                if UIStateManager.shared.lastCheckInSyncErrorTime == nil {
+                    UIStateManager.shared.lastCheckInSyncErrorTime = Date()
+                }
+            }
+
+            guard let response = response as? HTTPURLResponse else {
+                return
+            }
+            switch response.statusCode {
+            case 200, 204, 304:
+                break
+            default:
+                UIStateManager.shared.checkInError = CheckInError.networkError(error: .statusError(code: response.statusCode))
+                if UIStateManager.shared.lastCheckInSyncErrorTime == nil {
+                    UIStateManager.shared.lastCheckInSyncErrorTime = Date()
+                }
+            }
+
+            if UIStateManager.shared.checkInError == nil {
+                UIStateManager.shared.lastCheckInSyncErrorTime = nil
+            }
+
+            if let bundleTagString = response.allHeaderFields.getCaseInsensitiveValue(key: "x-key-bundle-tag") as? String,
                let bundleTag = Int(bundleTagString) {
                 strongSelf.logger.debug("received new lastKeyBundleTag: %{public}d", bundleTag)
                 strongSelf.lastKeyBundleTag = bundleTag

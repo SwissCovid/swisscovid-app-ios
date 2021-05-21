@@ -264,6 +264,20 @@ class UIStateLogic {
             }
         }
 
+        if let error = manager.checkInError,
+           abs(manager.lastCheckInSyncErrorTime?.timeIntervalSinceNow ?? 0) >= 60 * 60 * 24,
+           newState.homescreen.reports.errorTitle == nil {
+            newState.homescreen.reports.syncProblemNetworkingError = true
+            newState.homescreen.reports.errorTitle = error.errorTitle
+            newState.homescreen.reports.errorMessage = error.localizedDescription
+            #if ENABLE_VERBOSE
+                newState.homescreen.reports.errorCode = "\(error.errorCodeString): \(error)"
+            #else
+                newState.homescreen.reports.errorCode = error.errorCodeString
+            #endif
+            newState.homescreen.reports.canRetrySyncError = true
+        }
+
         if let first = manager.firstSyncErrorTime,
            let last = manager.lastSyncErrorTime,
            last.timeIntervalSince(first) > manager.syncProblemInterval {

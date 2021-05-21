@@ -150,6 +150,23 @@ class UIStateManager: NSObject {
         }
     }
 
+    var lastCheckInSyncErrorTime: Date? {
+        didSet {
+            if let time = lastSyncErrorTime, firstSyncErrorTime == nil {
+                firstSyncErrorTime = time
+            }
+            refresh()
+        }
+    }
+
+    var checkInError: CodedError? {
+        didSet {
+            if (syncError == nil) != (oldValue == nil) {
+                refresh()
+            }
+        }
+    }
+
     @KeychainPersisted(key: "hasTimeInconsistencyError", defaultValue: false)
     var hasTimeInconsistencyError: Bool
 
