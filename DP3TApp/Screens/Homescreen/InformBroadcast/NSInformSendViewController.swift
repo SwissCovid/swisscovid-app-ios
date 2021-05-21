@@ -9,6 +9,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import Foundation
 
 class NSInformSendViewController: NSViewController {
@@ -58,12 +59,7 @@ class NSInformSendViewController: NSViewController {
     }
 
     private func sendENKeys(tokens: CodeValidator.TokenWrapper) {
-        guard ReportingManager.shared.hasUserConsent else {
-            sendCheckIns(tokens: tokens)
-            return
-        }
-
-        ReportingManager.shared.sendENKeys(tokens: tokens) { [weak self] result in
+        let completionHandler: (Result<Void, DP3TTracingError>) -> Void = { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .success:
@@ -76,16 +72,17 @@ class NSInformSendViewController: NSViewController {
                 self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             }
         }
+
+        guard ReportingManager.shared.hasUserConsent else {
+            ReportingManager.shared.sendENKeys(tokens: tokens, isFakeRequest: true, completion: completionHandler)
+            return
+        }
+
+        ReportingManager.shared.sendENKeys(tokens: tokens, completion: completionHandler)
     }
 
     private func sendCheckIns(tokens: CodeValidator.TokenWrapper) {
-        guard let checkIns = self.checkIns,
-              !checkIns.isEmpty else {
-            DispatchQueue.main.async {
-                self.finish()
-            }
-            return
-        }
+        let checkIns = self.checkIns ?? []
         ReportingManager.shared.sendCheckIns(tokens: tokens, selectedCheckIns: checkIns, isFakeRequest: false) { [weak self] result in
             guard let self = self else { return }
             switch result {

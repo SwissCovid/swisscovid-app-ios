@@ -173,6 +173,20 @@ class ReportingManager: ReportingManagerProtocol {
                 return info
             })
         }
+
+        let fakeCount = 1024 - uploadInfos.count
+        let fakeCheckins: [UploadVenueInfo] = (0 ..< fakeCount).map { _ in
+            var info = UploadVenueInfo()
+            info.preID = .randomBytes(32)
+            info.timeKey = .randomBytes(32)
+            info.notificationKey = .randomBytes(32)
+            info.intervalStartMs = Int64.random(in: 0 ... Int64.max)
+            info.intervalEndMs = Int64.random(in: 0 ... Int64.max)
+            info.fake = true
+            return info
+        }
+        uploadInfos.append(contentsOf: fakeCheckins)
+
         payload.venueInfos = uploadInfos
 
         let payloadData = (try? payload.serializedData()) ?? Data()
@@ -196,5 +210,15 @@ class ReportingManager: ReportingManagerProtocol {
         }
 
         task?.resume()
+    }
+}
+
+extension Data {
+    static func randomBytes(_ count: Int) -> Data {
+        var keyData = Data(count: count)
+        _ = keyData.withUnsafeMutableBytes {
+            SecRandomCopyBytes(kSecRandomDefault, 32, $0.baseAddress!)
+        }
+        return keyData
     }
 }
