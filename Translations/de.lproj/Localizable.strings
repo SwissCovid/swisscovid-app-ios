@@ -1795,3 +1795,12 @@
 
 /*SubTitel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_subtitle" = "";
+"not_thank_you_screen_title" = "Keine Daten gesendet";
+
+/*Fuzzy*/
+"not_thank_you_screen_text1" = "Es wurden keine privaten Schlüssel gesendet.";
+"not_thank_you_screen_back_button" = "Zurück";
+"not_thank_you_screen_dont_send_button" = "Keine Daten senden";
+
+/*Fuzzy*/
+"not_thank_you_screen_text2" = "Es wurden keine Check-In-Einträge gesendet. Es wird niemand benachrichtigt.";

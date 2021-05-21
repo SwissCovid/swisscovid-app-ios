@@ -213,6 +213,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let alert = UIAlertController(title: "homescreen_isolation_ended_popup_title".ub_localized, message: "homescreen_isolation_ended_popup_text".ub_localized, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "answer_yes".ub_localized, style: .default, handler: { _ in
                 TracingManager.shared.deletePositiveTest()
+                UserStorage.shared.didMarkAsInfected = false
             }))
             alert.addAction(UIAlertAction(title: "answer_no".ub_localized, style: .cancel, handler: { _ in
                 ReportingManager.shared.endIsolationQuestionDate = Date().addingTimeInterval(60 * 60 * 24) // Ask again in 1 day

@@ -58,7 +58,9 @@ class UIStateLogic {
 
         switch infectionStatus {
         case .healthy:
-            break
+            if UserStorage.shared.didMarkAsInfected {
+                setInfectedState(&newState, oldestSharedKeyDate: oldestSharedKeyDate)
+            }
 
         case .infected:
             setInfectedState(&newState, oldestSharedKeyDate: oldestSharedKeyDate)

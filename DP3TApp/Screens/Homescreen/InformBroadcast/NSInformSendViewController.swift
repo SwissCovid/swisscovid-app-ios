@@ -104,6 +104,7 @@ class NSInformSendViewController: NSViewController {
     }
 
     private func finish() {
+        UserStorage.shared.didMarkAsInfected = true
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
 
         navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)

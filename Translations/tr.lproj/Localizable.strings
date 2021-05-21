@@ -1717,3 +1717,8 @@
 
 /*SubTitel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_subtitle" = "";
+"not_thank_you_screen_title" = "";
+"not_thank_you_screen_text1" = "";
+"not_thank_you_screen_back_button" = "";
+"not_thank_you_screen_dont_send_button" = "";
+"not_thank_you_screen_text2" = "";

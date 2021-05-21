@@ -51,6 +51,9 @@ class UserStorage {
     @KeychainPersisted(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]
 
+    @KeychainPersisted(key: "didMarkAsInfected", defaultValue: false)
+    public var didMarkAsInfected: Bool
+
     @UBUserDefault(key: "tracingSettingEnabled", defaultValue: true)
     var tracingSettingEnabled: Bool {
         didSet {

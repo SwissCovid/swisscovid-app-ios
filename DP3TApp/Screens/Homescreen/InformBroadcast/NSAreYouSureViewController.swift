@@ -42,13 +42,19 @@ class NSAreYouSureViewController: NSViewController {
     }
 
     private func tryAgainButtonTouched() {
-        ReportingManager.shared.getUserConsent { [weak self] result in
-            guard let self = self else { return }
-            switch result {
-            case .success:
-                CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: nil, from: self)
-            case .failure:
-                break
+        if #available(iOS 13.7, *),
+           !TracingManager.shared.isActivated {
+            guard let navigationController = self.navigationController else { return }
+            NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
+        } else {
+            ReportingManager.shared.getUserConsent { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success:
+                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: nil, from: self)
+                case .failure:
+                    break
+                }
             }
         }
     }
