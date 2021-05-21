@@ -33,8 +33,16 @@ class UserStorage {
         seenMessages.append("\(identifier.uuidString)")
     }
 
+    func registerSeenMessages(identifier: String) {
+        seenMessages.append(identifier)
+    }
+
     func hasSeenMessage(for identifier: UUID) -> Bool {
         return seenMessages.contains("\(identifier.uuidString)")
+    }
+
+    func hasSeenMessage(for identifier: String) -> Bool {
+        return seenMessages.contains(identifier)
     }
 
     @KeychainPersisted(key: "didOpenLeitfaden", defaultValue: false)

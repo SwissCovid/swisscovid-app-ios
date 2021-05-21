@@ -1781,3 +1781,17 @@
 
 /*Check-Ins: QR-Code erstellen subtitel*/
 "checkins_create_qr_code_subtitle" = "Vergeben Sie einen Titel, der den Ort \noder Ihren Anlass näher beschreibt.";
+"checkin_report_heading" = "Was können Sie tun?";
+"checkin_report_title1" = "Kontakte schützen";
+"checkin_report_title2" = "Auf Symptome achten";
+"checkin_report_title3" = "Testen lassen";
+"checkin_report_subtitle1" = "Sie könnten bereits ansteckend sein, ohne es zu merken. Beachten Sie die geltenden Hygiene- und Schutz-massnahmen und schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld.";
+"checkin_report_subtitle2" = "Überwachen Sie Ihren Gesundheitszustand und lassen Sie sich beim Auftreten von Symptomen sofort testen.";
+"checkin_report_subtitle3" = "Auch wenn keine Symptome auftreten, ist ein Corona-Test sinnvoll und empfohlen (ab dem 5. Tag nach dem angezeigten Kontaktdatum).";
+
+/*Titel von CheckIn Meldungen Screen.*/
+/*Fuzzy*/
+"meldung_detail_checkin_title" = "Check-In";
+
+/*SubTitel von CheckIn Meldungen Screen.*/
+"meldung_detail_checkin_subtitle" = "";

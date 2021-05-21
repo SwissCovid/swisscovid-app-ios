@@ -322,6 +322,12 @@ class UIStateLogic {
 
             newState.reportsDetail.didOpenLeitfaden = UserStorage.shared.didOpenLeitfaden
         }
+
+        if let lastExposure = newState.reportsDetail.checkInReports.first,
+           lastExposure.arrivalTime > (newState.homescreen.reports.lastReport ?? .distantPast) {
+            newState.homescreen.reports.lastReport = lastExposure.arrivalTime
+            newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: lastExposure.checkInIdentifier)
+        }
     }
 
     #if ENABLE_STATUS_OVERRIDE
@@ -363,6 +369,14 @@ class UIStateLogic {
             return identifiers
         }()
 
+        static var checkInidentifiers: [UUID] = {
+            var identifiers = [UUID]()
+            for _ in 0 ... 20 {
+                identifiers.append(.init())
+            }
+            return identifiers
+        }()
+
         private func setDebugReports(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
             // add at least one report
@@ -396,7 +410,7 @@ class UIStateLogic {
                 for i in 0 ..< checkInCount {
                     let date = Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))
 
-                    newState.reportsDetail.checkInReports.append(UIStateModel.ReportsDetail.NSCheckInReportModel(checkInIdentifier: UUID().uuidString, arrivalTime: date, departureTime: date.addingTimeInterval(60 * 60 * 5), venueDescription: "Venue \(i + 1)"))
+                    newState.reportsDetail.checkInReports.append(UIStateModel.ReportsDetail.NSCheckInReportModel(checkInIdentifier: Self.checkInidentifiers[i].uuidString, arrivalTime: date, departureTime: date.addingTimeInterval(60 * 60 * 5), venueDescription: "Venue \(i + 1)"))
                 }
 
                 for i in 0 ..< count {

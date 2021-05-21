@@ -13,9 +13,11 @@ import UIKit
 class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
     // MARK: - API
 
-    public weak var headerView: NSReportsDetailExposedEncountersViewController?
-
     public var reports: [UIStateModel.ReportsDetail.NSReportModel] = [] {
+        didSet { update() }
+    }
+
+    public var checkInReport: UIStateModel.ReportsDetail.NSCheckInReportModel? {
         didSet { update() }
     }
 
@@ -46,6 +48,10 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
     private var fullscreen: Bool
 
     private var moreDaysViews: [NSReportDetailMoreDaysView] = []
+
+    var updateConstraintCallback: (() -> Void)?
+    var startHeaderAnimationCallback: (() -> Void)?
+    var scrollToTopCallback: (() -> Void)?
 
     // MARK: - Init
 
@@ -132,15 +138,13 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
         } else {
             expandButton.title = "meldung_detail_exposed_show_all_button".ub_localized
             subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
-
-            headerView?.stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+            scrollToTopCallback?()
         }
     }
 
     @objc func didTouchContinueButton() {
-        headerView?.updateHeightConstraints()
-        headerView?.startHeaderAnimation()
-
+        updateConstraintCallback?()
+        startHeaderAnimationCallback?()
         expandButton.isHidden = false
 
         fullscreen = false
@@ -149,7 +153,7 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
     }
 
     private func updateExpandButtonConstraints() {
-        if reports.count == 1 {
+        if reports.count == 1 || checkInReport != nil {
             expandButton.isHidden = true
             expandButton.snp.remakeConstraints { make in
                 make.top.equalTo(self.dateStackView.snp.bottom)
@@ -279,9 +283,9 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
     }
 
     private func update() {
-        guard !reports.isEmpty else { return }
+        guard !(reports.isEmpty && checkInReport == nil) else { return }
 
-        if reports.count == 1 {
+        if reports.count == 1 || checkInReport != nil {
             subtitleLabel.text = "meldung_detail_exposed_subtitle".ub_localized
         } else {
             subtitleLabel.text = "meldung_detail_exposed_subtitle_last_encounter".ub_localized
@@ -320,7 +324,7 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
 
         accessibilityLabel = "\(titleLabel.text ?? ""). \(subtitleLabel.text ?? ""). \(dateLabel.text ?? "")"
 
-        headerView?.updateViewConstraints()
+        updateConstraintCallback?()
     }
 
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

@@ -1703,3 +1703,16 @@
 
 /*Check-Ins: QR-Code erstellen subtitel*/
 "checkins_create_qr_code_subtitle" = "";
+"checkin_report_heading" = "";
+"checkin_report_title1" = "";
+"checkin_report_title2" = "";
+"checkin_report_title3" = "";
+"checkin_report_subtitle1" = "";
+"checkin_report_subtitle2" = "";
+"checkin_report_subtitle3" = "";
+
+/*Titel von CheckIn Meldungen Screen.*/
+"meldung_detail_checkin_title" = "";
+
+/*SubTitel von CheckIn Meldungen Screen.*/
+"meldung_detail_checkin_subtitle" = "";

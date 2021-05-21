@@ -54,11 +54,6 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         return titleHeight - 30
     }
 
-    func updateHeightConstraints() {
-        useTitleViewHeight = true
-        view.setNeedsLayout()
-    }
-
     override func startHeaderAnimation() {
         overrideHitTestAnyway = false
 
@@ -73,7 +68,19 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
     override func viewDidLoad() {
         let titleHeader = NSReportsDetailExposedEncountersTitleHeader(fullscreen: showReportWithAnimation)
-        titleHeader.headerView = self
+        titleHeader.updateConstraintCallback = { [weak self] in
+            guard let self = self else { return }
+            self.useTitleViewHeight = true
+            self.view.setNeedsLayout()
+        }
+        titleHeader.startHeaderAnimationCallback = { [weak self] in
+            guard let self = self else { return }
+            self.startHeaderAnimation()
+        }
+        titleHeader.scrollToTopCallback = { [weak self] in
+            guard let self = self else { return }
+            self.stackScrollView.scrollView.setContentOffset(.zero, animated: false)
+        }
 
         titleView = titleHeader
 
