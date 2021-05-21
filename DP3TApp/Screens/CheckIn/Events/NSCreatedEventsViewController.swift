@@ -46,6 +46,7 @@ class NSCreatedEventsViewController: NSViewController {
                 if let eventView = eventView {
                     self.stackScrollView.scrollView.scrollRectToVisible(eventView.bounds, animated: false)
                 }
+                self.navigationController?.pushViewController(NSCreatedEventDetailViewController(createdEvent: event), animated: true)
             }
             vc.presentInNavigationController(from: strongSelf, useLine: false)
         }
