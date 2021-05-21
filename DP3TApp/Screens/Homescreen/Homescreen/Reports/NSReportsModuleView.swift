@@ -126,18 +126,20 @@ class NSReportsModuleView: NSModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
+            var dateText = ""
             if let lastReport = reportsState.lastReport {
-                let container = UIView()
-                let dateLabel = NSLabel(.date, textColor: .ns_blue)
-
-                dateLabel.text = DateFormatter.ub_daysAgo(from: lastReport, addExplicitDate: false)
-
-                container.addSubview(dateLabel)
-                dateLabel.snp.makeConstraints { make in
-                    make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
-                }
-                views.append(container)
+                dateText = DateFormatter.ub_daysAgo(from: lastReport, addExplicitDate: false)
             }
+            let container = UIView()
+            let dateLabel = NSLabel(.date, textColor: .ns_blue)
+
+            dateLabel.text = dateText
+
+            container.addSubview(dateLabel)
+            dateLabel.snp.makeConstraints { make in
+                make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+            }
+            views.append(container)
 
         case .infected:
             views.append(infectedView)
