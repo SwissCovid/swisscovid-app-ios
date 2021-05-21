@@ -13,9 +13,11 @@ import CrowdNotifierSDK
 import Foundation
 
 class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
-    private let removeNowButton: NSExternalLinkButton = {
-        let button = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
-        button.title = "remove_diary_remove_now_button".ub_localized
+    private let removeButton = NSUnderlinedButton()
+
+    private let hideButton: NSExternalLinkButton = {
+        let button = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-visibility-off")), buttonTintColor: .white)
+        button.title = "remove_diary_warning_hide_button".ub_localized
         return button
     }()
 
@@ -24,10 +26,21 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
     public var removeCallback: (() -> Void)? {
         didSet {
-            removeNowButton.touchUpCallback = { [weak self] in
+            removeButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.dismiss(animated: true) {
                     strongSelf.removeCallback?()
+                }
+            }
+        }
+    }
+
+    public var hideCallback: (() -> Void)? {
+        didSet {
+            hideButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.dismiss(animated: true) {
+                    strongSelf.hideCallback?()
                 }
             }
         }
@@ -44,7 +57,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         tintColor = .ns_blue
 
         setupLabels()
-        setupRemoveNowButton()
+        setupRemoveButtons()
     }
 
     private func setupLabels() {
@@ -60,35 +73,33 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         stackView.addArrangedView(bodyLabel, insets: insets)
         stackView.addSpacerView(NSPadding.large + NSPadding.medium)
 
-        let hStackView = UIStackView()
-        hStackView.axis = .horizontal
-        hStackView.alignment = .firstBaseline
-        hStackView.spacing = NSPadding.small
+        let hideTitle = NSLabel(.textBold, textColor: .ns_blue)
+        hideTitle.text = "remove_diary_warning_hide_title".ub_localized
+        stackView.addArrangedView(hideTitle)
 
-        let starLabel = NSLabel(.textLight)
-        starLabel.text = "*"
-        starLabel.ub_setContentPriorityRequired()
+        stackView.addSpacerView(NSPadding.medium)
 
-        let remarkLabel = NSLabel(.textLight)
-        remarkLabel.text = "remove_diary_warning_star_text".ub_localized
+        let hideText = NSLabel(.textLight)
+        hideText.text = "remove_diary_warning_hide_text".ub_localized
+        stackView.addArrangedView(hideText)
 
-        hStackView.addArrangedView(starLabel)
-        hStackView.addArrangedView(remarkLabel)
-
-        stackView.addArrangedView(hStackView, insets: insets)
         stackView.addSpacerView(2 * NSPadding.large)
     }
 
-    private func setupRemoveNowButton() {
+    private func setupRemoveButtons() {
         let buttonWrapper = UIView()
-        buttonWrapper.addSubview(removeNowButton)
+        buttonWrapper.addSubview(hideButton)
 
-        removeNowButton.snp.makeConstraints { make in
+        hideButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(2 * NSPadding.large)
             make.top.bottom.equalToSuperview()
         }
 
+        removeButton.title = "remove_diary_remove_now_button".ub_localized
+
         stackView.addArrangedView(buttonWrapper, insets: insets)
+        stackView.addSpacerView(NSPadding.large)
+        stackView.addArrangedView(removeButton, insets: insets)
         stackView.addSpacerView(NSPadding.large + NSPadding.medium)
     }
 }

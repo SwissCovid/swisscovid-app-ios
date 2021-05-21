@@ -256,7 +256,7 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Befolgen Sie die erhaltenen Anweisungen zur Isolation";
-"tracing_ended_title" = "Tracing deaktiviert";
+"tracing_ended_title" = "Tracing und Check-ins deaktiviert";
 "tracing_ended_text" = "Es werden keine Begegnungen mehr gespeichert.";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
@@ -343,7 +343,7 @@
 "onboarding_privacy_text2" = "Die gespeicherten zufälligen IDs bleiben auf Ihrem Mobiltelefon und werden nach 14 Tagen gelöscht.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Wie funktioniert die App?";
+"onboarding_begegnungen_heading" = "Begegnungen";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Begegnungen erkennen\ndank Bluetooth";
@@ -631,7 +631,7 @@
 "faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
-"inform_code_intro_title" = "Wichtiger Hinweis";
+"inform_code_intro_title" = "Information zur Eingabe";
 
 /*Informieren-Flow: Erster Screen Text*/
 "inform_code_intro_text" = "Obwohl keine Daten zu Ihrer Person gesendet werden, kann es sein, dass sich jemand anhand des Datums an die Begegnung erinnern kann.";
@@ -1245,7 +1245,7 @@
 "delete_infection_dialog_finish_button" = "Beenden";
 
 /*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
-"tracing_ended_info" = "Es werden keine Begegnungen mehr gespeichert.\n\nDas Tracing kann nach der Isolation wieder aktiviert werden.";
+"tracing_ended_info" = "Es werden keine neuen Begegnungen mehr gespeichert und neue Check-ins sind derzeit nicht möglich.\n\nBeide Funktionen können nach der Isolation wieder aktiviert werden.";
 "testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
 "testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
 "testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
@@ -1375,7 +1375,7 @@
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – heute";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "Damit helfen Sie mit, Infektionsketten zu stoppen.";
+"inform_send_thankyou_text_stop_infection_chains" = "Auf diese Weise helfen Sie, Infektionsketten zu durchbrechen.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "Die privaten Schlüssel Ihrer App wurden für den folgenden Zeitraum gesendet:";
@@ -1632,30 +1632,31 @@
 "module_checkins_description" = "Scannen Sie einen SwissCovid-QR-Code, um sich vor Ort einzuchecken.";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_title" = "Check-Ins teilen";
+"inform_share_checkins_title" = "Check-in-Einträge teilen";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "Sie können Events teilen um andere zu warnen, welche mit Ihnen am selben Event waren.";
+"inform_share_checkins_subtitle" = "Wenn Sie Ihre Check-in-Einträge teilen, kann die App Personen benachrichtigen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben.";
 
 /*Button text, um alle Checkins zu selektieren*/
 "inform_share_checkins_select_all" = "Alle wählen";
 "inform_dont_send_button_title" = "Nicht senden";
 "inform_try_again_button_title" = "Erneut versuchen";
 "inform_dont_share_button_title" = "Nicht teilen";
-"inform_really_not_share_title" = "Sind Sie sicher?";
-"inform_really_not_share_subtitle" = "[TBT] Sharing your random IDs helps “SwissCovid” to notify other potential infected people and avoid the further spreading of the pandemic. If you don’t share your random IDs no automatically recognized encounters can be notified.";
+"inform_really_not_share_title" = "Wirklich nicht teilen?";
+"inform_really_not_share_subtitle" = "Das Teilen Ihrer privaten Schlüssel hilft «SwissCovid», andere potenziell infizierte Personen zu benachrichtigen und die weitere Ausbreitung des Virus zu verhindern. Wenn Sie Ihre privaten Schlüssel nicht teilen, werden keine potenziell infizierten Personen benachrichtigt.";
 
 /*Remove from Diary Warning view title*/
-"remove_diary_warning_title" = "Achtung";
+"remove_diary_warning_title" = "Eintrag entfernen";
 
 /*Remove from diary warning view explanation text*/
-"remove_diary_warning_text" = "Sind Sie sicher, dass Sie “{LOCATION_INFO}” in Ihrem Tagebuch nicht mehr anzeigen möchten? Diese Aktion kann nicht rückgängig gemacht werden.";
+"remove_diary_warning_text" = "Ihr Eintrag wird unwiderruflich aus der Liste entfernt.";
 
 /*Remove from diary warning view remove button title*/
-"remove_diary_remove_now_button" = "Nicht mehr anzeigen";
+"remove_diary_remove_now_button" = "Vollständig entfernen";
 
-/*Remove from diary warning start text*/
-"remove_diary_warning_star_text" = "Die App speichert diesen Eintrag noch für 14 Tage verschlüsselt im Hintergrund, damit Sie bei einer möglichen Ansteckung trotzdem gewarnt werden können.";
+/*Hide from diary warning title*/
+/*Fuzzy*/
+"remove_diary_warning_hide_title" = "Ausblenden und weiterhin benachrichtigt werden?";
 
 /*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
 "home_covidcode_card_title" = "Positiv getestet?";
@@ -1689,7 +1690,7 @@
 "checkout_overlapping_alert_description" = "Ihre gewählten Zeiten überschneiden sich mit anderen Check-Ins aus ihrem Tagebuch. Bitte überprüfen Sie nochmals Ihre Angabe.";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "Ihre ausgewählten Check-Ins wurden gesendet. Andere Leute, welche zur gleichen Zeit an den selben Events eingecheckt waren werden benachrichtigt.";
+"inform_send_thankyou_text_checkins" = "Ihre ausgewählten Check-In-Einträge wurden gesendet. Alle Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, werden benachrichtigt.";
 
 /*Covidcode eingabe, are your sure not to share, titel*/
 "inform_are_you_sure_title" = "Are you sure?";
@@ -1804,3 +1805,19 @@
 
 /*Fuzzy*/
 "not_thank_you_screen_text2" = "Es wurden keine Check-In-Einträge gesendet. Es wird niemand benachrichtigt.";
+
+/*Button text, um ausgewählte Checkins zu senden*/
+"inform_share_checkins_send_button_title" = "Auswahl teilen";
+"inform_share_checkins_not_send_button" = "Nichts teilen";
+"onboarding_checkin_title" = "Einchecken ohne Daten zu hinterlassen";
+"onboarding_checkin_heading" = "Check-ins";
+"onboarding_checkin_text1" = "Mit SwissCovid-Check-ins können Sie sich mit der App an einem Ort oder bei einem Treffen einchecken.";
+"onboarding_checkin_text2" = "Ihre Anwesenheit wird nur in der App gespeichert. Sie müssen keine persönlichen Daten in der App hinterlassen.";
+"checkin_updateboarding_text" = "Mit SwissCovid-Check-ins können Sie sich mit der App vor Ort einchecken. Ihre Anwesenheit wird nur in der App gespeichert. Sie müssen keine persönlichen Daten in der App hinterlassen. Dazu wurden die Nutzungsbedingungen und Datenschutzerklärung aktualisiert.";
+"onboarding_gaen_button_dont_activate" = "Überspringen";
+
+/*Hide from diary warning text*/
+"remove_diary_warning_hide_text" = "Der Eintrag wird 14 Tage verschlüsselt im Hintergrund der App gespeichert. Bei einer möglichen Ansteckung können Sie so trotzdem benachrichtigt werden.";
+
+/*CheckIn ausblenden*/
+"remove_diary_warning_hide_button" = "Ausblenden";

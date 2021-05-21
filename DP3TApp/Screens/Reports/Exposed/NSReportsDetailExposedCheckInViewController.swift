@@ -180,6 +180,7 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
                 guard let self = self else { return }
                 if let exposure = ProblematicEventsManager.shared.getExposureEvents().first(where: { $0.checkinId == self.checkInReport.checkInIdentifier
                 }) {
+                    CheckInManager.shared.hideFromDiary(identifier: exposure.checkinId)
                     ProblematicEventsManager.shared.removeExposure(exposure)
                 }
                 TracingManager.shared.deleteReports()

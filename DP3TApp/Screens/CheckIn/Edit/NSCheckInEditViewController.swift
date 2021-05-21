@@ -273,10 +273,18 @@ class NSCheckInEditViewController: NSViewController {
         guard let checkIn = self.checkIn else { return }
 
         let controller = NSRemoveFromDiaryWarningViewController(venueInfo: checkIn.venue)
+        controller.hideCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+
+            CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
+            strongSelf.dismiss(animated: true, completion: nil)
+        }
+
         controller.removeCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
+            // TODO: delete checkin
             strongSelf.dismiss(animated: true, completion: nil)
         }
 

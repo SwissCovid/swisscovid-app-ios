@@ -1567,7 +1567,7 @@
 "inform_share_checkins_title" = "";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "You can choose to share your check-ins to warn others who were with you at the same events.";
+"inform_share_checkins_subtitle" = "";
 
 /*Button text, um alle Checkins zu selektieren*/
 "inform_share_checkins_select_all" = "";
@@ -1586,8 +1586,8 @@
 /*Remove from diary warning view remove button title*/
 "remove_diary_remove_now_button" = "";
 
-/*Remove from diary warning start text*/
-"remove_diary_warning_star_text" = "";
+/*Hide from diary warning title*/
+"remove_diary_warning_hide_title" = "";
 
 /*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
 "home_covidcode_card_title" = "";
@@ -1620,7 +1620,7 @@
 "checkout_overlapping_alert_description" = "";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "Your selected check-in entries were sent. Other people who checked into the same  events and during the same period of time will be notified.";
+"inform_send_thankyou_text_checkins" = "";
 
 /*Covidcode eingabe, are your sure not to share, titel*/
 "inform_are_you_sure_title" = "Are you sure?";
@@ -1722,3 +1722,19 @@
 "not_thank_you_screen_back_button" = "";
 "not_thank_you_screen_dont_send_button" = "";
 "not_thank_you_screen_text2" = "";
+
+/*Button text, um ausgewählte Checkins zu senden*/
+"inform_share_checkins_send_button_title" = "";
+"inform_share_checkins_not_send_button" = "";
+"onboarding_checkin_title" = "";
+"onboarding_checkin_heading" = "";
+"onboarding_checkin_text1" = "";
+"onboarding_checkin_text2" = "";
+"checkin_updateboarding_text" = "";
+"onboarding_gaen_button_dont_activate" = "";
+
+/*Hide from diary warning text*/
+"remove_diary_warning_hide_text" = "";
+
+/*CheckIn ausblenden*/
+"remove_diary_warning_hide_button" = "";
