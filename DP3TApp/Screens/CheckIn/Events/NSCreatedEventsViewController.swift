@@ -53,7 +53,7 @@ class NSCreatedEventsViewController: NSViewController {
     }
 
     private func setupView() {
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in

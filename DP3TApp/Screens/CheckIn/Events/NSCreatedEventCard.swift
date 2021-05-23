@@ -45,7 +45,7 @@ class NSCreatedEventCard: UBButton {
     }
 
     private func setupView() {
-        backgroundColor = .ns_background
+        backgroundColor = .ns_moduleBackground
         ub_addShadow(radius: 4, opacity: 0.15, xOffset: 0, yOffset: -1)
 
         topContainer.isUserInteractionEnabled = false

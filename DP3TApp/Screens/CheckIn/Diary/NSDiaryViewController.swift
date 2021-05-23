@@ -41,7 +41,7 @@ class NSDiaryViewController: NSViewController {
     // MARK: - Collection View
 
     private func setup() {
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         view.addSubview(collectionView)
 

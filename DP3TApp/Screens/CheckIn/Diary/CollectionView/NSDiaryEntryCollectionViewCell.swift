@@ -29,7 +29,7 @@ class NSDiaryEntryCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        backgroundColor = UIColor.white
+        backgroundColor = .ns_moduleBackground
 
         layer.cornerRadius = 5.0
         contentView.layer.cornerRadius = 5.0

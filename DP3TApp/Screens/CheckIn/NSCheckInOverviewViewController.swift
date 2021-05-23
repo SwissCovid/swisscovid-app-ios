@@ -38,7 +38,7 @@ class NSCheckInOverviewViewController: NSViewController {
     }
 
     private func setupView() {
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
