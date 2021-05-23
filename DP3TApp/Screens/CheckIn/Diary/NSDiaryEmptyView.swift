@@ -13,7 +13,7 @@ import Foundation
 
 class NSDiaryEmptyView: UIView {
     private let stackView = UIStackView()
-    private let imageView = UIImageView(image: UIImage(named: "illu-diary"))
+    private let imageView = UIImageView(image: UIImage(named: "illu-empty-diary"))
     private let titleLabel = NSLabel(.textBold, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 

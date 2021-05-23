@@ -8,7 +8,6 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import CrowdNotifierSDK
 import DP3TSDK
 import Foundation
 

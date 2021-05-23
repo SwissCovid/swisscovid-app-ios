@@ -48,6 +48,8 @@ class NSReportsDetailExposedViewController: NSViewController {
     // MARK: - SETUP
 
     private func configure() {
+        view.backgroundColor = .ns_backgroundSecondary
+
         if checkInReports.isEmpty {
             configureEncountersViewController()
         } else {

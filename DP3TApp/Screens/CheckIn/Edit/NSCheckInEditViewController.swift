@@ -9,8 +9,8 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
 import CrowdNotifierSDK
+import Foundation
 
 class NSCheckInEditViewController: NSViewController {
     private let venueView = NSVenueView(large: true, showCategory: true)

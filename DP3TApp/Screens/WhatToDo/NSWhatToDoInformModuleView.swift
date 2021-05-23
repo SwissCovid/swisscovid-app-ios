@@ -10,7 +10,7 @@
 
 import UIKit
 
-class NSWhatToDoInformView: NSSimpleModuleBaseView {
+class NSWhatToDoInformModuleView: NSSimpleModuleBaseView {
     private var configTexts: ConfigResponseBody.WhatToDoPositiveTestTexts? = ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value
 
     // MARK: - API
@@ -107,23 +107,23 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
     }
 
     private func setupCovidCodeInfo() {
-        let view = UIView()
+        let wrapper = UIView()
+        let covidCodeInfoButton = NSUnderlinedButton()
+        wrapper.addSubview(covidCodeInfoButton)
 
-        let covidCodeInfo = NSUnderlinedButton()
-        view.addSubview(covidCodeInfo)
-
-        covidCodeInfo.title = "inform_detail_covidcode_info_button".ub_localized
-        covidCodeInfo.touchUpCallback = { [weak self] in
+        covidCodeInfoButton.title = "inform_detail_covidcode_info_button".ub_localized
+        covidCodeInfoButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.covidCodeInfoCallback?()
         }
 
-        covidCodeInfo.snp.makeConstraints { make in
+        covidCodeInfoButton.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.equalToSuperview().inset(NSPadding.small)
+            make.left.equalToSuperview().inset(-NSPadding.medium)
+            make.right.lessThanOrEqualToSuperview()
         }
 
-        contentView.addArrangedView(view)
+        contentView.addArrangedView(wrapper)
         contentView.addSpacerView(NSPadding.large)
     }
 
@@ -132,19 +132,28 @@ class NSWhatToDoInformView: NSSimpleModuleBaseView {
         contentView.addArrangedView(enterCovidCodeButtonWrapper)
 
         enterCovidCodeButtonWrapper.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
+            make.left.right.equalToSuperview()
         }
+
         enterCovidCodeButton.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.left.right.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
+            make.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.large)
         }
     }
 
     private func setupInfoBoxView() {
         if let infoBoxView = infoBoxView {
-            contentView.addArrangedView(infoBoxView)
+            let wrapper = UIView()
+            wrapper.addSubview(infoBoxView)
+            contentView.addArrangedView(wrapper)
+
+            wrapper.snp.makeConstraints { make in
+                make.left.right.equalToSuperview()
+            }
 
             infoBoxView.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
                 make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
             }
         }

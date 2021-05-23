@@ -17,7 +17,7 @@ class NSInfoViewController: NSViewController {
 
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private let informView = NSWhatToDoInformView()
+    private let informView = NSWhatToDoInformModuleView()
 
     private let travelView = NSTravelModuleView()
 

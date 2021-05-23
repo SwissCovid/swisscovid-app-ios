@@ -81,7 +81,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
         let hideText = NSLabel(.textLight)
         hideText.text = "remove_diary_warning_hide_text".ub_localized
-        stackView.addArrangedView(hideText)
+        stackView.addArrangedView(hideText, insets: insets)
 
         stackView.addSpacerView(2 * NSPadding.large)
     }
@@ -91,7 +91,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         buttonWrapper.addSubview(hideButton)
 
         hideButton.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(2 * NSPadding.large)
+            make.left.right.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
             make.top.bottom.equalToSuperview()
         }
 

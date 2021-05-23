@@ -83,7 +83,7 @@ private class NSCovidCodeModuleNotInfectedView: UIView {
 
         enterCovidCodeButton.snp.makeConstraints { make in
             make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.small)
         }
     }
@@ -112,7 +112,7 @@ private class NSCovidCodeModuleInfectedView: UIView {
 
         endIsolationModeButton.snp.makeConstraints { make in
             make.top.equalTo(explainationLabel.snp.bottom).offset(NSPadding.medium + NSPadding.small)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
+            make.leading.trailing.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.small)
         }
     }
