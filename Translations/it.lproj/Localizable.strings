@@ -576,12 +576,6 @@
 /*Meldungen: Keine Meldungen FAQ Text*/
 "meldungen_nomeldungen_faq1_text" = "L'app controlla regolarmente se altri utenti che hai incontrato hanno segnalato di essere positivi al test.\n\nIn caso di possibile contagio viene visualizzato un messaggio sulla schermata di blocco.";
 
-/*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Cosa significa possibile contagio?";
-
-/*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "L'app non controlla solo se ci sono stati incontri con persone infette, ma anche a quale distanza e per quanto tempo.\n\nL'utente viene informato soltanto se la possibilità di un contagio è sufficientemente fondata.";
-
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "La Infoline SwissCovid ti offre consulenza sulla possibilità di fare un test gratuito.";
 
@@ -1498,47 +1492,8 @@
 /*Check-Ins: Veranstaltung Titel Placeholder*/
 "web_generator_title_placeholder" = "";
 
-/*Check-Ins: Veranstaltungen Titel Kategorie*/
-"web_generator_category_label" = "";
-
-/*Check-Ins: Kategorie Andere*/
-"web_generator_category_other" = "";
-
-/*Check-Ins: Kategorie Sitzungsraum*/
-"web_generator_category_meeting_room" = "";
-
-/*Check-Ins: Kategorie Kafeteria*/
-"web_generator_category_cafeteria" = "";
-
-/*Check-Ins: Kategorie Privater Event*/
-"web_generator_category_private_event" = "";
-
-/*Check-Ins: Veranstaltungen Titel Titel*/
-"web_generator_title_label" = "";
-
 /*Check-Ins: Veranstaltungen Detail PDF Button*/
 "show_pdf_button" = "";
-
-/*Check-Ins: Kategorie Kantine*/
-"web_generator_category_canteen" = "";
-
-/*Check-Ins: Kategorie Bibliothek*/
-"web_generator_category_library" = "";
-
-/*Check-Ins: Kategorie Vorlesungssaal*/
-"web_generator_category_lecture_room" = "";
-
-/*Check-Ins: Kategorie Laden*/
-"web_generator_category_shop" = "";
-
-/*Check-Ins: Kategorie Fitnesscenter*/
-"web_generator_category_gym" = "";
-
-/*Check-Ins: Kategorie Küchenbereich*/
-"web_generator_category_kitchen_area" = "";
-
-/*Check-Ins: Kategorie Büroräume*/
-"web_generator_category_office_space" = "";
 "bottom_nav_tab_info" = "";
 "error_network_title" = "";
 "error_network_text" = "";
@@ -1555,7 +1510,6 @@
 "error_update_text" = "";
 "error_update_title" = "";
 "error_action_update" = "";
-"android_crowdnotifier_notification_channel_name" = "";
 "ongoing_notification_checkout_quick_action" = "";
 "reminder_notification_snooze_action" = "";
 "android_ongoing_checkin_notification_channel_name" = "";
@@ -1706,10 +1660,8 @@
 "events_info_box_text" = "";
 "events_footer_title1" = "";
 "events_footer_title2" = "";
-"events_footer_title3" = "";
 "events_footer_subtitle1" = "";
 "events_footer_subtitle2" = "";
-"events_footer_subtitle3" = "";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
 "meldung_detail_exposed_list_card_subtitle" = "";
@@ -1774,3 +1726,19 @@
 
 /*CheckIn ausblenden*/
 "remove_diary_warning_hide_button" = "";
+"checkin_set_reminder_explanation" = "";
+
+/*Remove from diary warning title*/
+"remove_diary_remove_now_title" = "";
+
+/*Remove from diary warning text*/
+"remove_diary_remove_now_text" = "";
+"not_thank_you_screen_text3" = "";
+
+/*Link Text zu Informationen übers Testen*/
+"checkin_report_link" = "";
+"instant_app_install_action" = "";
+"partial_onboarding_box_text" = "";
+"partial_onboarding_box_action" = "";
+"partial_onboarding_done_title" = "";
+"partial_onboarding_done_text" = "";
