@@ -193,7 +193,7 @@ class NSTracingSettingsControl: UIView {
                 self.viewToBeLayouted?.layoutIfNeeded()
             }, completion: nil)
 
-        case .tracingDisabled, .tracingEnded: fallthrough
+        case .tracingDisabled, .tracingEnded, .onboarding: fallthrough
         case .bluetoothTurnedOff, .bluetoothPermissionError, .timeInconsistencyError, .unexpectedError, .tracingPermissionError, .tracingAuthorizationUnknown:
             inactiveViewConstraint?.activate()
             activeViewConstraint?.deactivate()

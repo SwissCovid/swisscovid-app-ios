@@ -64,6 +64,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentEncountersDetail()
         }
 
+        handshakesModuleView.onboardingTouchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            // TODO: launch tracing onboarding
+        }
+
         checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.presentCheckInOverviewController()

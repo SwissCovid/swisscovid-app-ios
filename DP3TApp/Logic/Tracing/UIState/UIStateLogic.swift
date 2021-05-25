@@ -27,6 +27,12 @@ class UIStateLogic {
         // Check errors
         setErrorStates(&newState, tracing: &tracing)
 
+        // if user has not touched tracing onboarding yet,
+        // show onboarding
+        if !UserStorage.shared.hasCompletedTracingOnboarding {
+            tracing = .onboarding
+        }
+
         // Set tracing active
         newState.encountersDetail.tracingEnabled = TracingManager.shared.isActivated
         newState.encountersDetail.tracingSettingEnabled = UserStorage.shared.tracingSettingEnabled

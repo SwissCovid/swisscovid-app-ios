@@ -31,3 +31,25 @@ class NSOnboardingFinishViewController: NSOnboardingContentViewController {
         titleLabel.accessibilityTraits = [.header]
     }
 }
+
+class NSTracingOnboardingFinishViewController: NSOnboardingContentViewController {
+    private let foregroundImageView = UIImageView(image: UIImage(named: "onboarding-outro")!)
+    private let titleLabel = NSLabel(.title, textAlignment: .center)
+    private let textLabel = NSLabel(.textLight, textAlignment: .center)
+
+    let finishButton = NSButton(title: "partial_onboarding_box_action".ub_localized, style: .normal(.ns_blue))
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        addArrangedView(foregroundImageView, spacing: NSPadding.medium)
+        addArrangedView(titleLabel, spacing: NSPadding.medium, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+        addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+        addArrangedView(finishButton)
+
+        titleLabel.text = "partial_onboarding_done_title".ub_localized
+        textLabel.text = "partial_onboarding_done_text".ub_localized
+
+        titleLabel.accessibilityTraits = [.header]
+    }
+}

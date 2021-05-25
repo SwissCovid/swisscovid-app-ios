@@ -34,6 +34,7 @@ struct UIStateModel: Equatable {
         case timeInconsistencyError
         case unexpectedError(code: String?)
         case tracingEnded
+        case onboarding
     }
 
     enum ReportState: Equatable {

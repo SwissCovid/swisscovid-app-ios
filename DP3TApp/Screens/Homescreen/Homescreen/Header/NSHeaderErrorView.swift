@@ -84,7 +84,7 @@ class NSHeaderErrorView: UIView {
 
         UIView.transition(with: imageView, duration: 0.3, options: [.beginFromCurrentState, .transitionCrossDissolve], animations: {
             switch self.state {
-            case .tracingActive, .tracingDisabled, .tracingEnded:
+            case .tracingActive, .tracingDisabled, .tracingEnded, .onboarding:
                 self.imageView.image = nil
             case .timeInconsistencyError, .unexpectedError:
                 self.imageView.image = UIImage(named: "ic-header-error")!

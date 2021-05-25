@@ -12,6 +12,25 @@ import SnapKit
 import UIKit
 
 class NSEncountersModuleView: NSModuleBaseView {
+    public var onboardingTouchUpCallback: (() -> Void)?
+
+    private var callback: (() -> Void)?
+
+    override var touchUpCallback: (() -> Void)? {
+        set(value) {
+            callback = value
+            super.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                if strongSelf.uiState == .onboarding {
+                    strongSelf.onboardingTouchUpCallback?()
+                } else {
+                    strongSelf.callback?()
+                }
+            }
+        }
+        get { super.touchUpCallback }
+    }
+
     var uiState: UIStateModel.TracingState = .tracingActive {
         didSet { updateUI() }
     }
@@ -62,7 +81,16 @@ class NSEncountersModuleView: NSModuleBaseView {
     }()
 
     private var tracingErrorView: NSErrorView? {
-        NSErrorView.tracingErrorView(for: uiState, isHomeScreen: true)
+        var action: ((NSErrorView?) -> Void)?
+
+        if uiState == .onboarding {
+            action = { [weak self] _ in
+                guard let strongSelf = self else { return }
+                strongSelf.onboardingTouchUpCallback?()
+            }
+        }
+
+        return NSErrorView.tracingErrorView(for: uiState, isHomeScreen: true, action: action)
     }
 
     override init() {
@@ -92,8 +120,10 @@ class NSEncountersModuleView: NSModuleBaseView {
     private func updateUI() {
         stackView.setNeedsLayout()
         updateLayout()
-        headerView.showCaret = uiState != .tracingEnded
+
+        headerView.showCaret = uiState != .tracingEnded && uiState != .onboarding
         isEnabled = uiState != .tracingEnded
+
         stackView.layoutIfNeeded()
     }
 }

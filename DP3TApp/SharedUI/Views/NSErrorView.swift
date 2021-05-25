@@ -37,6 +37,7 @@ class NSErrorView: UIView {
         var errorCode: String?
         var action: ((NSErrorView?) -> Void)?
         var customColor: UIColor? = nil
+        var customBackgroundColor: UIColor? = nil
     }
 
     var model: NSErrorViewModel? {
@@ -109,6 +110,15 @@ class NSErrorView: UIView {
             titleLabel.textColor = color
         }
 
+        if let cbc = model?.customBackgroundColor {
+            backgroundColor = cbc
+
+            if let c = model?.customColor {
+                actionButton.textColor = c
+                textLabel.textColor = c
+            }
+        }
+
         stackView.layoutIfNeeded()
 
         updateAccessibility()
@@ -150,8 +160,8 @@ class NSErrorView: UIView {
                                         }))
     }
 
-    static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSErrorView? {
-        if let model = self.model(for: state, isHomeScreen: isHomeScreen) {
+    static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool, action: ((NSErrorView?) -> Void)? = nil) -> NSErrorView? {
+        if let model = self.model(for: state, isHomeScreen: isHomeScreen, action: action) {
             return NSErrorView(model: model)
         }
 
@@ -189,8 +199,11 @@ class NSErrorView: UIView {
         return NSErrorView(model: model)
     }
 
-    static func model(for state: UIStateModel.TracingState, isHomeScreen: Bool) -> NSErrorViewModel? {
+    static func model(for state: UIStateModel.TracingState, isHomeScreen: Bool, action: ((NSErrorView?) -> Void)? = nil) -> NSErrorViewModel? {
         switch state {
+        case .onboarding:
+            return NSErrorViewModel(icon: UIImage(named: "ic-info")!, title: "tracing_turned_off_title".ub_localized, text: "partial_onboarding_box_text".ub_localized, buttonTitle: "partial_onboarding_box_action".ub_localized, errorCode: nil, action: action, customColor: UIColor.white, customBackgroundColor: UIColor.ns_darkBlueBackground)
+
         case .tracingDisabled:
             let icon: UIImage
             let customColor: UIColor?
