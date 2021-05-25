@@ -20,6 +20,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
 
     let permissionButton = NSButton(title: "", style: .normal(.ns_blue))
+    let passButton = NSUnderlinedButton()
 
     private let goodToKnowContainer = UIView()
     private let goodToKnowLabel = NSLabel(.textLight, textColor: .ns_blue)
@@ -55,7 +56,15 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         let sidePadding = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
         addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
-        addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+
+        switch type {
+        case .gapple:
+            let padding = NSPadding.small + NSPadding.medium
+            addArrangedView(permissionButton, spacing: padding, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+            addArrangedView(passButton, spacing: padding)
+        case .push:
+            addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
+        }
 
         addArrangedView(goodToKnowContainer)
 
@@ -102,6 +111,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
                 make.leading.trailing.equalToSuperview()
                 make.bottom.equalToSuperview().inset(2 * NSPadding.medium)
             }
+
+            passButton.title = "onboarding_gaen_button_dont_activate".ub_localized
 
         case .push:
             foregroundImageView.image = UIImage(named: "onboarding-report-permission")!

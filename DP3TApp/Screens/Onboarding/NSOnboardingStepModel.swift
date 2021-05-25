@@ -28,15 +28,6 @@ struct NSOnboardingStepModel {
                                                  (UIImage(named: "ic-report")!, "onboarding_prinzip_text2".ub_localized),
                                              ])
 
-    static let step2 = NSOnboardingStepModel(heading: "onboarding_privacy_heading".ub_localized,
-                                             headingColor: .ns_green,
-                                             foregroundImage: UIImage(named: "onboarding-privacy")!,
-                                             title: "onboarding_privacy_title".ub_localized,
-                                             textGroups: [
-                                                 (UIImage(named: "ic-key")!, "onboarding_privacy_text1".ub_localized),
-                                                 (UIImage(named: "ic-lock")!, "onboarding_privacy_text2".ub_localized),
-                                             ])
-
     static let step3 = NSOnboardingStepModel(heading: "onboarding_begegnungen_heading".ub_localized,
                                              headingColor: .ns_blue,
                                              foregroundImage: UIImage(named: "onboarding-bluetooth")!,
@@ -44,6 +35,7 @@ struct NSOnboardingStepModel {
                                              textGroups: [
                                                  (UIImage(named: "ic-tracing-onboarding")!, "onboarding_begegnungen_text1".ub_localized),
                                                  (UIImage(named: "ic-bt")!, "onboarding_begegnungen_text2".ub_localized),
+                                                 (UIImage(named: "ic-key")!, "onboarding_privacy_text1".ub_localized),
                                              ])
 
     static let step6 = NSOnboardingStepModel(heading: "onboarding_meldung_heading".ub_localized,
@@ -54,4 +46,13 @@ struct NSOnboardingStepModel {
                                                  (UIImage(named: "ic-report")!, "onboarding_meldung_text1".ub_localized),
                                                  (UIImage(named: "ic-isolation")!, "onboarding_meldung_text2".ub_localized),
                                              ])
+
+    static let checkIns = NSOnboardingStepModel(heading: "onboarding_checkin_heading".ub_localized,
+                                                headingColor: .ns_blue,
+                                                foregroundImage: UIImage(named: "onboarding-checkin")!,
+                                                title: "onboarding_checkin_title".ub_localized,
+                                                textGroups: [
+                                                    (UIImage(named: "ic-qrcode")!, "onboarding_checkin_text1".ub_localized),
+                                                    (UIImage(named: "ic-info")!, "onboarding_checkin_text2".ub_localized),
+                                                ])
 }
