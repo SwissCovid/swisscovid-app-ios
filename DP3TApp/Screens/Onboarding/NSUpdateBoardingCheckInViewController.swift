@@ -13,19 +13,19 @@ import Foundation
 
 class NSUpdateBoardingCheckInViewController: NSOnboardingDisclaimerViewController {
     override internal var headingText: String {
-        "TODO: Update Boarding CheckIn".ub_localized
+        "germany_update_boarding_heading".ub_localized
     }
 
     override internal var titleText: String {
-        "TODO: Update Boarding CheckIn".ub_localized
+        "onboarding_checkin_title".ub_localized
     }
 
     override internal var infoText: String {
-        "TODO: Update Boarding CheckIn".ub_localized
+        "checkin_updateboarding_text".ub_localized
     }
 
     override internal var headerImage: UIImage? {
-        return UIImage(named: "image-onboarding-update")
+        return UIImage(named: "onboarding-checkin")
     }
 
     override internal var showMedicalInformation: Bool {
