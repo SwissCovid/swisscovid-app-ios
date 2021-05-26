@@ -189,3 +189,92 @@ class NSLabel: UBLabel<NSLabelType> {
         (labelType.lineSpacing - 1.0) * font.lineHeight
     }
 }
+
+public enum NSPDFLabelType: UBLabelType {
+    case title
+    case textRegular
+    case textLight
+    case titleLarge
+    case textBold
+    case textBoldLarger
+    case textSmallLight
+
+    public var font: UIFont {
+        let boldFontName = "Inter-Bold"
+        let regularFontName = "Inter-Regular"
+        let lightFontName = "Inter-Light"
+
+        switch self {
+        case .title:
+            return UIFont(name: boldFontName, size: 22.0)!
+        case .textRegular:
+            return UIFont(name: regularFontName, size: 13.0)!
+        case .textLight:
+            return UIFont(name: lightFontName, size: 13.0)!
+        case .titleLarge:
+            return UIFont(name: boldFontName, size: 28.0)!
+        case .textBold:
+            return UIFont(name: boldFontName, size: 13.0)!
+        case .textBoldLarger:
+            return UIFont(name: boldFontName, size: 14.0)!
+        case .textSmallLight:
+            return UIFont(name: lightFontName, size: 10.0)!
+        }
+    }
+
+    public var textColor: UIColor {
+        if self == .textRegular || self == .textSmallLight {
+            return UIColor(ub_hexString: "#63a0c7")!
+        }
+
+        return .black
+    }
+
+    public var lineSpacing: CGFloat {
+        switch self {
+        case .title:
+            return 26.1 / 22.0
+        case .textRegular:
+            return 14.0 / 13.0
+        case .textLight:
+            return 19.0 / 13.0
+        case .titleLarge:
+            return 30.5 / 28.0
+        case .textBold:
+            return 14.0 / 13.0
+        case .textBoldLarger:
+            return 14.0 / 14.0
+        case .textSmallLight:
+            return 16.0 / 10.0
+        }
+    }
+
+    public var letterSpacing: CGFloat? {
+        return nil
+    }
+
+    public var isUppercased: Bool {
+        return false
+    }
+
+    public var hyphenationFactor: Float {
+        return 0.0
+    }
+
+    public var lineBreakMode: NSLineBreakMode {
+        return .byTruncatingTail
+    }
+}
+
+class PDFLabel: UBLabel<NSPDFLabelType> {
+    private var labelType: NSPDFLabelType
+
+    override init(_ type: NSPDFLabelType, textColor: UIColor? = nil, numberOfLines: Int = 0, textAlignment: NSTextAlignment = .left) {
+        labelType = type
+        super.init(type, textColor: textColor, numberOfLines: numberOfLines, textAlignment: textAlignment)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}

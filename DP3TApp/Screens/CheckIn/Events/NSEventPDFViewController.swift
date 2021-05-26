@@ -71,7 +71,7 @@ class NSEventPDFViewController: NSViewController {
     // MARK: - PDF generation and loading
 
     private func loadPdf() {
-        let data = QRCodePDFGenerator.generate(from: event.qrCodeString)
+        let data = QRCodePDFGenerator.generate(from: event.qrCodeString, venue: event.venueInfo.description)
 
         let fileManager = FileManager.default
 

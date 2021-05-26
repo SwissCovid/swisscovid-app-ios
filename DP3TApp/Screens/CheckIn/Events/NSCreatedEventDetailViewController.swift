@@ -152,7 +152,7 @@ class NSCreatedEventDetailViewController: NSViewController {
     private func sharePressed() {
         var items: [Any] = []
 
-        if let pdf = QRCodePDFGenerator.generate(from: createdEvent.qrCodeString) {
+        if let pdf = QRCodePDFGenerator.generate(from: createdEvent.qrCodeString, venue: createdEvent.venueInfo.description) {
             items.append(pdf)
         } else {
             items.append(createdEvent.qrCodeString)
