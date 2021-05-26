@@ -42,6 +42,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize DP3TSDK
         TracingManager.shared.initialize()
 
+        // Initialize PushManager
+        setupPushManager(launchOptions: launchOptions)
+
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
@@ -203,6 +206,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application.applicationIconBadgeNumber = 0
             NSLocalPush.shared.clearNotifications()
         }
+    }
+
+    private func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
     }
 
     // MARK: - End isolation popup

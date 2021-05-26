@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+enum NSPushType {
+  IOS = 0;
+  AND = 1;
+  IOD = 2;
+}
+
+message NSPushRegistration {
+  int32 version = 1;
+  string pushToken = 2;
+  NSPushType pushType = 3;
+  string deviceId = 4;
+}
