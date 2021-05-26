@@ -42,6 +42,7 @@ class ConfigResponseBody: UBCodable {
     public let iOSGaenSdkConfig: GAENSDKConfig?
     public let testLocations: LocalizedValue<[TestLocation]>?
     public let interOpsCountries: [String]
+    public let testInformationUrls: LocalizedValue<String>?
 
     class InfoBox: UBCodable {
         let title, msg: String
