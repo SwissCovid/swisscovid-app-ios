@@ -66,7 +66,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
         handshakesModuleView.onboardingTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            // TODO: launch tracing onboarding
+
+            let window = UIApplication.shared.keyWindow
+            let onboardingViewController = NSTracingOnboardingViewController()
+            onboardingViewController.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(onboardingViewController, animated: true)
         }
 
         checkInView.touchUpCallback = { [weak self] in

@@ -24,7 +24,11 @@ class UserStorage {
     }
 
     @UBUserDefault(key: "hasCompletedTracingOnboarding", defaultValue: true)
-    var hasCompletedTracingOnboarding: Bool
+    var hasCompletedTracingOnboarding: Bool {
+        didSet {
+            UIStateManager.shared.refresh()
+        }
+    }
 
     @UBUserDefault(key: "hasCompletedUpdateBoardingGermany", defaultValue: false)
     var hasCompletedUpdateBoardingGermany: Bool

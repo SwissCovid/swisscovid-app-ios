@@ -15,10 +15,8 @@ import SnapKit
 import UIKit
 
 class NSTracingOnboardingViewController: NSOnboardingBaseViewController {
-    private let splashVC = NSSplashViewController()
-
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
-    private let step5VC = NSOnboardingPermissionsViewController(type: .gapple)
+    private let step5VC = NSOnboardingPermissionsViewController(type: .gapple, showSkip: false)
     private let step8VC = NSTracingOnboardingFinishViewController()
 
     override internal var stepViewControllers: [NSOnboardingContentViewController] {
@@ -38,7 +36,7 @@ class NSTracingOnboardingViewController: NSOnboardingBaseViewController {
     }
 
     override internal var splashViewController: NSViewController? {
-        splashVC
+        nil
     }
 
     override internal var disableSwipeForwardScreens: [Int] {

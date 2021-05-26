@@ -28,10 +28,12 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let background = UIView()
 
     private let type: NSOnboardingPermissionType
+    private let showSkip: Bool
 
     private var elements: [Any] = []
-    init(type: NSOnboardingPermissionType) {
+    init(type: NSOnboardingPermissionType, showSkip: Bool = true) {
         self.type = type
+        self.showSkip = showSkip
 
         super.init()
     }
@@ -57,12 +59,11 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         addArrangedView(titleLabel, spacing: NSPadding.medium, insets: sidePadding)
         addArrangedView(textLabel, spacing: NSPadding.large + NSPadding.medium, insets: sidePadding)
 
-        switch type {
-        case .gapple:
+        if type == .gapple, showSkip {
             let padding = NSPadding.small + NSPadding.medium
             addArrangedView(permissionButton, spacing: padding, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
             addArrangedView(passButton, spacing: padding)
-        case .push:
+        } else {
             addArrangedView(permissionButton, spacing: 2 * NSPadding.large, insets: UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large))
         }
 
