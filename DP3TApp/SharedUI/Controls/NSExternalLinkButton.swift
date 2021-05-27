@@ -9,6 +9,7 @@
  */
 
 import UIKit
+import SnapKit
 
 class NSExternalLinkButton: UBButton {
     enum LinkType: Equatable {

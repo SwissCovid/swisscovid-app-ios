@@ -47,6 +47,7 @@ struct NSOnboardingStepModel {
                                                  (UIImage(named: "ic-isolation")!, "onboarding_meldung_text2".ub_localized),
                                              ])
 
+    // this model is used also in the AppClip, images must be also present in the app clip Assets file
     static let checkIns = NSOnboardingStepModel(heading: "onboarding_checkin_heading".ub_localized,
                                                 headingColor: .ns_blue,
                                                 foregroundImage: UIImage(named: "onboarding-checkin")!,

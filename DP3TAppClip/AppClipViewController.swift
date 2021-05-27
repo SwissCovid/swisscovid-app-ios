@@ -18,16 +18,21 @@ import CrowdNotifierBaseSDK
 class AppClipViewController: UIViewController {
     // MARK: - Views
 
-  //  private let installButton = BigButton(style: .small, text: "onboarding_install_app_button".ub_localized, colorStyle: .purple)
+    private let headingContainer = UIView()
+    private let heroVenueLabel = NSLabel(.titleLarge, textColor: UIColor.ns_darkBlueBackground, textAlignment: .center)
+    private let venueDescriptionLabel = NSLabel(.textLight, textColor: UIColor.ns_darkBlueBackground, textAlignment: .center)
 
-    //private let stackView = StackScrollView(axis: .vertical, spacing: 0.0, stackViewHorizontalInset: Padding.large)
-    //private let titleLabel = Label(.title, textColor: .purple, textAlignment: .center)
+    private let foregroundImageView = UIImageView()
+    private let titleLabel = NSLabel(.title, textAlignment: .center)
 
-   // private let explanationLabel = Label(.text, textAlignment: .center)
+    private let continueContainer = UIView()
+    private let continueButton = NSButton(title: "onboarding_continue_button".ub_localized, style: .normal(.ns_blue))
 
-  //  private let explanationLabelInstall = Label(.text, textAlignment: .center)
+    private let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
 
-  //  private let venueInfoView = VenueView(venue: nil)
+    internal let stackScrollView = NSStackScrollView()
+
+    private let checkInViewModel = NSOnboardingStepModel.checkIns
 
     // MARK: - URL
 
@@ -50,68 +55,146 @@ class AppClipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = .ns_background
+
         prepareVenueInfo()
 
+        setupButtons()
+        setupStackView()
         setup()
-        setupButton()
+        addStatusBarBlurView()
     }
 
     // MARK: - Setup
 
-    private func setup() {
-//        view.addSubview(installButton)
-//        installButton.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            if #available(iOS 11.0, *) {
-//                make.bottom.equalTo(view.safeAreaLayoutGuide).inset(Padding.medium)
-//            } else {
-//                make.bottom.equalToSuperview().offset(-Padding.medium)
-//            }
-//
-//            make.right.lessThanOrEqualToSuperview().inset(Padding.medium)
-//            make.left.greaterThanOrEqualToSuperview().inset(Padding.medium)
-//        }
-//
-//        view.addSubview(explanationLabelInstall)
-//
-//        explanationLabelInstall.text = "onboarding_install_app_explanation".ub_localized
-//
-//        explanationLabelInstall.snp.makeConstraints { make in
-//            make.right.lessThanOrEqualToSuperview().inset(Padding.medium)
-//            make.left.greaterThanOrEqualToSuperview().inset(Padding.medium)
-//            make.bottom.equalTo(installButton.snp.top).offset(-Padding.medium)
-//        }
-//
-//        stackView.scrollView.alwaysBounceVertical = false
-//        view.addSubview(stackView)
-//
-//        stackView.snp.makeConstraints { make in
-//            make.left.right.equalToSuperview().inset(Padding.medium)
-//            make.top.equalToSuperview().inset(3 * Padding.large)
-//            make.bottom.equalTo(self.explanationLabelInstall.snp.top).inset(Padding.mediumSmall)
-//        }
-//
-//        stackView.addSpacerView(Padding.small + Padding.medium)
-//
-//        titleLabel.text = "appclip_welcome".ub_localized
-//        explanationLabel.text = "appclip_welcome_text".ub_localized
-//
-//        stackView.addArrangedView(explanationLabel)
-//
-//        stackView.addSpacerView(Padding.mediumSmall)
-//
-//        stackView.addArrangedView(titleLabel)
-//
-//        stackView.addSpacerView(Padding.large)
-//
-//        stackView.addArrangedView(venueInfoView)
+    private func setupStackView() {
+        stackScrollView.stackView.alignment = .center
+
+        view.insertSubview(stackScrollView, at: 0)
+        stackScrollView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalTo(continueContainer.snp.top)
+        }
+
+        stackScrollView.addSpacerView(NSPadding.large)
     }
 
-    private func setupButton() {
-//        installButton.touchUpCallback = { [weak self] in
-//            guard let strongSelf = self else { return }
-//            strongSelf.startInstall()
-//        }
+    private func setupButtons() {
+        continueContainer.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
+        continueContainer.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
+
+        continueContainer.addSubview(continueButton)
+        continueButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview().offset(-self.view.safeAreaInsets.bottom)
+        }
+
+        view.addSubview(continueContainer)
+        continueContainer.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview()
+            make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
+        }
+
+        continueButton.contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: 2 * NSPadding.large, bottom: NSPadding.medium, right: 2 * NSPadding.large)
+        continueButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.startInstall()
+        }
+
+        continueButton.title = "instant_app_install_action".ub_localized
+    }
+
+    override func viewSafeAreaInsetsDidChange() {
+        continueButton.snp.updateConstraints { make in
+            make.centerY.equalToSuperview().offset(-self.view.safeAreaInsets.bottom / 2.0)
+        }
+
+        continueContainer.snp.updateConstraints { make in
+            make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
+        }
+    }
+
+    fileprivate func addStatusBarBlurView() {
+        blurView.alpha = 0
+
+        view.addSubview(blurView)
+
+        let statusBarHeight: CGFloat
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter { $0.isKeyWindow }.first
+            statusBarHeight = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            statusBarHeight = UIApplication.shared.statusBarFrame.height
+        }
+
+        blurView.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(statusBarHeight)
+        }
+    }
+
+    private func setup() {
+        headingContainer.addSubview(heroVenueLabel)
+        heroVenueLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            make.top.equalToSuperview()
+        }
+
+        headingContainer.addSubview(venueDescriptionLabel)
+        venueDescriptionLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.equalToSuperview()
+            make.top.equalTo(heroVenueLabel.snp.bottom).offset(1.0)
+        }
+
+        addArrangedView(headingContainer, spacing: 2.0 * NSPadding.large)
+
+        let foregroundImageView = UIImageView(image: self.checkInViewModel.foregroundImage)
+        addArrangedView(foregroundImageView, spacing: 3.0 * NSPadding.large)
+
+        let titleContainer = UIView()
+        titleContainer.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
+            make.top.bottom.equalToSuperview()
+        }
+        addArrangedView(titleContainer, spacing: NSPadding.large + NSPadding.small)
+
+        titleLabel.text = self.checkInViewModel.title
+
+        for (icon, text) in self.checkInViewModel.textGroups {
+            let v = NSOnboardingInfoView(icon: icon, text: text, dynamicIconTintColor: .ns_blue)
+            addArrangedView(v)
+            v.snp.makeConstraints { make in
+                make.leading.trailing.equalTo(self.stackScrollView.stackView)
+            }
+        }
+
+        let bottomSpacer = UIView()
+        bottomSpacer.snp.makeConstraints { make in
+            make.height.equalTo(40)
+        }
+        addArrangedView(bottomSpacer)
+
+        heroVenueLabel.accessibilityTraits = [.header]
+    }
+
+    internal func addArrangedView(_ view: UIView, spacing: CGFloat? = nil, index: Int? = nil, insets: UIEdgeInsets = .zero) {
+        let wrapperView = UIView()
+        wrapperView.ub_setContentPriorityRequired()
+        wrapperView.addSubview(view)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(insets)
+        }
+
+        if let idx = index {
+            stackScrollView.stackView.insertArrangedSubview(wrapperView, at: idx)
+        } else {
+            stackScrollView.stackView.addArrangedSubview(wrapperView)
+        }
+        if let s = spacing {
+            stackScrollView.stackView.setCustomSpacing(s, after: wrapperView)
+        }
     }
 
     // MARK: Install
@@ -142,20 +225,14 @@ class AppClipViewController: UIViewController {
 
         switch result {
         case let .success(info):
-            // TODO
+            // TODO: description text
+            heroVenueLabel.text = info.description
+            venueDescriptionLabel.text = ""
             break
-            //venueInfoView.venue = info
-            //venueInfoView.isHidden = false
         case let .failure(failure):
-            // TODO
+            // TODO: show error viewe
+            headingContainer.isHidden = true
             break
-            //venueInfoView.isHidden = true
-
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-//                let vc = ErrorViewController(errorModel: failure.errorViewModel)
-//                self.present(vc, animated: true, completion: nil)
-//            }
         }
     }
 }
-
