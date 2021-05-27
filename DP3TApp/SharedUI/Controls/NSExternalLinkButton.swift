@@ -8,8 +8,8 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import UIKit
 import SnapKit
+import UIKit
 
 class NSExternalLinkButton: UBButton {
     enum LinkType: Equatable {

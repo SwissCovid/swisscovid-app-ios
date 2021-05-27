@@ -55,7 +55,7 @@ class AppClipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = .ns_background
+        view.backgroundColor = .ns_background
 
         prepareVenueInfo()
 
@@ -149,7 +149,7 @@ class AppClipViewController: UIViewController {
 
         addArrangedView(headingContainer, spacing: 2.0 * NSPadding.large)
 
-        let foregroundImageView = UIImageView(image: self.checkInViewModel.foregroundImage)
+        let foregroundImageView = UIImageView(image: checkInViewModel.foregroundImage)
         addArrangedView(foregroundImageView, spacing: 3.0 * NSPadding.large)
 
         let titleContainer = UIView()
@@ -160,9 +160,9 @@ class AppClipViewController: UIViewController {
         }
         addArrangedView(titleContainer, spacing: NSPadding.large + NSPadding.small)
 
-        titleLabel.text = self.checkInViewModel.title
+        titleLabel.text = checkInViewModel.title
 
-        for (icon, text) in self.checkInViewModel.textGroups {
+        for (icon, text) in checkInViewModel.textGroups {
             let v = NSOnboardingInfoView(icon: icon, text: text, dynamicIconTintColor: .ns_blue)
             addArrangedView(v)
             v.snp.makeConstraints { make in
@@ -228,11 +228,9 @@ class AppClipViewController: UIViewController {
             // TODO: description text
             heroVenueLabel.text = info.description
             venueDescriptionLabel.text = ""
-            break
         case let .failure(failure):
             // TODO: show error viewe
             headingContainer.isHidden = true
-            break
         }
     }
 }
