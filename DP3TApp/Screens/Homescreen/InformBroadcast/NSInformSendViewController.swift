@@ -15,12 +15,14 @@ import Foundation
 class NSInformSendViewController: NSViewController {
     private let covidCode: String
     private let checkIns: [CheckIn]?
+    private let skipThankYou: Bool
 
     private var rightBarButtonItem: UIBarButtonItem?
 
-    init(covidCode: String, checkIns: [CheckIn]?) {
+    init(covidCode: String, checkIns: [CheckIn]?, skipThankYou: Bool = false) {
         self.covidCode = covidCode
         self.checkIns = checkIns
+        self.skipThankYou = skipThankYou
         super.init()
     }
 
@@ -109,15 +111,17 @@ class NSInformSendViewController: NSViewController {
 
     private func finish() {
         UserStorage.shared.didMarkAsInfected = true
+        UserStorage.shared.tracingSettingEnabled = false
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
+        UIStateManager.shared.refresh()
 
-        if !ReportingManager.shared.hasUserConsent, checkIns == nil {
-            navigationController?.pushViewController(NSInformNotThankYouViewController(), animated: true)
+        if skipThankYou {
+            navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
         } else {
-            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-            let nav = presentingViewController as? NSNavigationController
-            nav?.popToRootViewController(animated: true)
-            nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate, hasSentCheckIns: checkIns != nil), animated: true)
         }
+        let nav = presentingViewController as? NSNavigationController
+        nav?.popToRootViewController(animated: true)
+        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
     }
 }

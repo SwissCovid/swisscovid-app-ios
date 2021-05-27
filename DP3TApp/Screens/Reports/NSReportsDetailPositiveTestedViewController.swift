@@ -103,8 +103,9 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
             alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
                 TracingManager.shared.deletePositiveTest()
             }))
-            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
+            }))
             self.present(alert, animated: true, completion: nil)
         }
     }

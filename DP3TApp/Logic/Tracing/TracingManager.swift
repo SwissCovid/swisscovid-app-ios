@@ -176,6 +176,8 @@ class TracingManager: NSObject {
             UIStateManager.shared.overwrittenInfectionState = nil
         #endif
 
+        UserStorage.shared.didMarkAsInfected = false
+
         UIStateManager.shared.refresh()
     }
 

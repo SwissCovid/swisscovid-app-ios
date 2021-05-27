@@ -130,14 +130,17 @@ class ReportingManager: ReportingManagerProtocol {
                     completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
 
+        let state: IWasExposedState
         if fake {
             state = .fake
+        } else {
+            guard self.state != nil else {
+                completion(.failure(.permissonError))
+                return
+            }
+            state = self.state!
         }
 
-        guard let state = self.state else {
-            completion(.failure(.permissonError))
-            return
-        }
         DP3TTracing.sendTEKs(onset: tokens.enToken.onset,
                              iWasExposedState: state,
                              authentication: .HTTPAuthorizationHeader(header: "Authorization", value: "Bearer \(tokens.enToken.token)")) { [weak self] result in

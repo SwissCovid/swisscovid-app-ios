@@ -16,7 +16,7 @@ class NSAreYouSureViewController: NSViewController {
 
     private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, numberOfLines: 0, textAlignment: .center)
-    private let tryAgainButton = NSButton(title: "inform_are_you_sure_try_again_button".ub_localized)
+    private let tryAgainButton = NSButton(title: "share_button_title".ub_localized)
     private let dontShareButton = NSUnderlinedButton()
 
     private let covidCode: String
@@ -96,12 +96,12 @@ class NSAreYouSureViewController: NSViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        titleLabel.text = "inform_are_you_sure_title".ub_localized
+        titleLabel.text = "inform_really_not_share_title".ub_localized
         stackScrollView.addArrangedView(titleLabel)
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        textLabel.text = "inform_are_you_sure_text".ub_localized
+        textLabel.text = "inform_really_not_share_subtitle".ub_localized
         stackScrollView.addArrangedView(textLabel)
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
@@ -110,7 +110,7 @@ class NSAreYouSureViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        dontShareButton.title = "inform_are_you_sure_dont_send_button".ub_localized
+        dontShareButton.title = "inform_dont_share_button_title".ub_localized
         stackScrollView.addArrangedView(dontShareButton)
     }
 }

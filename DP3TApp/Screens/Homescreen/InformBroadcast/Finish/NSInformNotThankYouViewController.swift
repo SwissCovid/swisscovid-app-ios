@@ -14,6 +14,14 @@ import UIKit
 class NSInformNotThankYouViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
+    private let covidCode: String
+
+    init(covidCode: String) {
+        self.covidCode = covidCode
+
+        super.init()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +40,7 @@ class NSInformNotThankYouViewController: NSInformBottomButtonViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        let imageView = UIImageView(image: UIImage(named: "outro-thank-you"))
+        let imageView = UIImageView(image: UIImage(named: "outro-keine-daten"))
         imageView.contentMode = .scaleAspectFit
         stackScrollView.addArrangedView(imageView)
 
@@ -59,22 +67,22 @@ class NSInformNotThankYouViewController: NSInformBottomButtonViewController {
         enableBottomButton = true
         bottomButtonTitle = "not_thank_you_screen_back_button".ub_localized
         bottomButtonTouchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.sendPressed()
+            guard let self = self else { return }
+            if let areYouSureVC = self.navigationController?.viewControllers.first(where: { $0 is NSAreYouSureViewController }) {
+                self.navigationController?.popToViewController(areYouSureVC, animated: true)
+            }
         }
 
         enableSecondaryBottomButton = true
+        secondaryBottomButtonHidden = false
         secondaryBottomButtonTitle = "not_thank_you_screen_dont_send_button".ub_localized
         secondaryBottomButtonTouchUpCallback = { [weak self] in
             guard let self = self else { return }
-            self.navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
-            let nav = self.presentingViewController as? NSNavigationController
-            nav?.popToRootViewController(animated: true)
-            nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+            self.sendPressed()
         }
     }
 
     private func sendPressed() {
-        navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
+        navigationController?.pushViewController(NSInformSendViewController(covidCode: covidCode, checkIns: nil, skipThankYou: true), animated: true)
     }
 }

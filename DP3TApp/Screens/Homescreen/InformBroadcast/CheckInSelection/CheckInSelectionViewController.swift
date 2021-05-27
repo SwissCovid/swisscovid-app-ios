@@ -151,8 +151,13 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
     }
 
     func dontSendPressed() {
-        let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
-        navigationController?.pushViewController(vc, animated: false)
+        if ReportingManager.shared.hasUserConsent {
+            let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
+            navigationController?.pushViewController(vc, animated: false)
+        } else {
+            let vc = NSInformNotThankYouViewController(covidCode: covidCode)
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     func sendPressed() {
