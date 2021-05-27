@@ -87,11 +87,13 @@ class NSInformSendViewController: NSViewController {
             guard let self = self else { return }
             switch result {
             case let .failure(error):
-                self.stopLoading(error: error) { [weak self] in
-                    guard let self = self else { return }
-                    self.sendCheckIns(tokens: tokens)
+                DispatchQueue.main.async {
+                    self.stopLoading(error: error) { [weak self] in
+                        guard let self = self else { return }
+                        self.sendCheckIns(tokens: tokens)
+                    }
+                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
                 }
-                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             case .success:
                 DispatchQueue.main.async {
                     self.finish()

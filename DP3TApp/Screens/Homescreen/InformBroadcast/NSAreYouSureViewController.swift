@@ -20,9 +20,12 @@ class NSAreYouSureViewController: NSViewController {
     private let dontShareButton = NSUnderlinedButton()
 
     private let covidCode: String
+    private let relevantCheckIns: [CheckIn]
 
-    init(covidCode: String) {
+    init(covidCode: String, relevantCheckIns: [CheckIn]) {
         self.covidCode = covidCode
+        self.relevantCheckIns = relevantCheckIns
+
         super.init()
     }
 
@@ -42,25 +45,38 @@ class NSAreYouSureViewController: NSViewController {
     }
 
     private func tryAgainButtonTouched() {
-        if #available(iOS 13.7, *),
-           !TracingManager.shared.isActivated {
-            guard let navigationController = self.navigationController else { return }
-            NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
-        } else {
+        let getKeys = {
             ReportingManager.shared.getUserConsent { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success:
-                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: nil, from: self)
+                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: self.relevantCheckIns, from: self)
                 case .failure:
                     break
                 }
             }
         }
+
+        if #available(iOS 13.7, *) {
+            switch UIStateManager.shared.trackingState {
+            case let .inactive(error):
+                switch error {
+                case .permissonError:
+                    guard let navigationController = self.navigationController else { return }
+                    NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
+                default:
+                    getKeys()
+                }
+            default:
+                getKeys()
+            }
+        } else {
+            getKeys()
+        }
     }
 
     private func dontShareButtonTouched() {
-        CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: nil, from: self)
+        CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: relevantCheckIns, from: self)
     }
 
     func setupLayout() {

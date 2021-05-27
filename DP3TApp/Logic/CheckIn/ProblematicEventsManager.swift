@@ -26,7 +26,7 @@ class ProblematicEventsManager {
     public static let shared = ProblematicEventsManager()
 
     // Add correct backend endpoint.
-    private let backend = Environment.current.checkInService
+    private let backend = Environment.current.traceKeysService
     private var task: URLSessionDataTask?
 
     @UBOptionalUserDefault(key: "ch.admin.bag.dp3t.exposure.lastKeyBundleTag")

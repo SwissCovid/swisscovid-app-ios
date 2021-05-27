@@ -16,10 +16,17 @@ class NSCheckBoxView: UIView {
 
     let button = NSButton(title: "")
 
-    public var isChecked: Bool = false {
+    public var isChecked: Bool {
+        get { isCheckedAndMode.0 }
+        set { isCheckedAndMode = (newValue, .checkMark) }
+    }
+
+    public var isCheckedAndMode: (Bool, NSCheckBoxControl.Mode) = (false, .checkMark) {
         didSet {
-            guard oldValue != isChecked else { return }
-            checkBox.setChecked(checked: isChecked, animated: true)
+            guard oldValue != isCheckedAndMode else { return }
+            let isChecked = isCheckedAndMode.0
+            let mode = isCheckedAndMode.1
+            checkBox.setChecked(isChecked, mode: mode, animated: true)
             accessibilityTraits = isChecked ? [.selected, .button] : [.button]
             layer.borderWidth = isChecked ? 2 : 0
             layer.borderColor = selectedBorderColor.cgColor
@@ -51,7 +58,7 @@ class NSCheckBoxView: UIView {
 
         isAccessibilityElement = true
         accessibilityLabel = text
-        accessibilityTraits = isChecked ? [.selected, .button] : [.button]
+        accessibilityTraits = isCheckedAndMode.0 ? [.selected, .button] : [.button]
     }
 
     init(attributedText: NSAttributedString,
@@ -70,7 +77,7 @@ class NSCheckBoxView: UIView {
 
         isAccessibilityElement = true
         accessibilityLabel = attributedText.string
-        accessibilityTraits = isChecked ? [.selected, .button] : [.button]
+        accessibilityTraits = isCheckedAndMode.0 ? [.selected, .button] : [.button]
     }
 
     required init?(coder _: NSCoder) {
@@ -83,7 +90,7 @@ class NSCheckBoxView: UIView {
         button.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            strongSelf.isChecked = !strongSelf.isChecked
+            strongSelf.isCheckedAndMode = (!strongSelf.isCheckedAndMode.0, .checkMark)
 
             strongSelf.touchUpCallback?()
         }

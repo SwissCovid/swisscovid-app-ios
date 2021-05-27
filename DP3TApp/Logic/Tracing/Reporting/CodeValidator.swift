@@ -29,6 +29,61 @@ class CodeValidator {
         case invalidToken
     }
 
+    public struct OnsetDateWrapper {
+        let onset: Date
+    }
+
+    func sendOnsetDateRequest(code: String, isFakeRequest fake: Bool, completion: @escaping (Result<OnsetDateWrapper, ValidationError>) -> Void) {
+        let auth = AuthorizationRequestBody(authorizationCode: code, fake: fake ? 1 : 0)
+
+        let dataTask = session.dataTask(with: Endpoint.onsetDate(auth: auth).request()) { data, response, error in
+
+            DispatchQueue.main.async {
+                if let response = response as? HTTPURLResponse {
+                    if response.statusCode == 404 {
+                        completion(.failure(.invalidToken))
+                        return
+                    } else if response.statusCode >= 400 {
+                        completion(.failure(.networkError(NetworkError.statusError(code: response.statusCode))))
+                        return
+                    }
+                }
+
+                if let error = error {
+                    let nsError = error as NSError
+                    if let e = error as? CodedError {
+                        completion(.failure(.networkError(e)))
+                    } else if nsError.domain == NSURLErrorDomain, nsError.code == -999 {
+                        completion(.failure(.networkError(CertificateValidationError.validationFailed)))
+                    } else {
+                        completion(.failure(.networkError(NetworkError.unexpected(error: error))))
+                    }
+                    return
+                } else if response == nil {
+                    completion(.failure(.networkError(NetworkError.networkError)))
+                    return
+                }
+
+                guard let d = data, let result = try? JSONDecoder().decode(OnsetDateResponseBody.self, from: d) else {
+                    completion(.failure(.networkError(NetworkError.parseError)))
+                    return
+                }
+
+                let formatter = DateFormatter()
+                formatter.dateFormat = "yyyy-MM-dd"
+                formatter.locale = Locale(identifier: "en_US_POSIX")
+                guard let date = formatter.date(from: result.onset) else {
+                    completion(.failure(.networkError(NetworkError.parseError)))
+                    return
+                }
+
+                completion(.success(OnsetDateWrapper(onset: date)))
+            }
+        }
+
+        dataTask.resume()
+    }
+
     func sendCodeRequest(code: String, isFakeRequest fake: Bool, completion: @escaping (Result<TokenWrapper, ValidationError>) -> Void) {
         let auth = AuthorizationRequestBody(authorizationCode: code, fake: fake ? 1 : 0)
 

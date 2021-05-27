@@ -10,16 +10,19 @@
 
 import UIKit
 
-public class NSCheckBoxControl: UIControl {
+class NSCheckBoxControl: UIControl {
+    private let checkmarkShortContainerView = UIView()
     private let checkmarkShortLineView = UIView()
+    private let checkmarkLongContainerView = UIView()
     private let checkmarkLongLineView = UIView()
 
     private let checkmarkContainer = UIView()
 
     private var isChecked: Bool
 
-    public func setChecked(checked: Bool, animated: Bool) {
+    func setChecked(_ checked: Bool, mode: Mode = .checkMark, animated: Bool) {
         isChecked = checked
+        self.mode = mode
         update(animated: animated)
     }
 
@@ -31,7 +34,7 @@ public class NSCheckBoxControl: UIControl {
         case checkMark, dash
     }
 
-    private let mode: Mode
+    private var mode: Mode
 
     init(isChecked: Bool, noBorder: Bool = false, tintColor: UIColor = .ns_green, mode: Mode = .checkMark) {
         self.isChecked = isChecked
@@ -76,7 +79,6 @@ public class NSCheckBoxControl: UIControl {
         checkmarkContainer.layer.borderWidth = 2
         checkmarkContainer.layer.borderColor = isChecked ? activeColor.cgColor : UIColor.ns_text_secondary.cgColor
 
-        let checkmarkShortContainerView = UIView()
         checkmarkShortContainerView.translatesAutoresizingMaskIntoConstraints = false
         checkmarkContainer.addSubview(checkmarkShortContainerView)
         checkmarkShortContainerView.addSubview(checkmarkShortLineView)
@@ -98,22 +100,19 @@ public class NSCheckBoxControl: UIControl {
             checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
         }
 
-        if mode == .checkMark {
-            let checkmarkLongContainerView = UIView()
-            checkmarkLongContainerView.translatesAutoresizingMaskIntoConstraints = false
-            checkmarkContainer.addSubview(checkmarkLongContainerView)
-            checkmarkLongContainerView.addSubview(checkmarkLongLineView)
-            checkmarkLongLineView.backgroundColor = .white
-            checkmarkLongLineView.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-                make.center.equalTo(self)
-                make.height.equalTo(2)
-                make.width.equalTo(12)
-            }
-            checkmarkLongLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-            checkmarkLongContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-            checkmarkLongContainerView.transform = CGAffineTransform(rotationAngle: -.pi * 0.25).translatedBy(x: -11, y: 1)
+        checkmarkLongContainerView.translatesAutoresizingMaskIntoConstraints = false
+        checkmarkContainer.addSubview(checkmarkLongContainerView)
+        checkmarkLongContainerView.addSubview(checkmarkLongLineView)
+        checkmarkLongLineView.backgroundColor = .white
+        checkmarkLongLineView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+            make.center.equalTo(self)
+            make.height.equalTo(2)
+            make.width.equalTo(12)
         }
+        checkmarkLongLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+        checkmarkLongContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+        checkmarkLongContainerView.transform = CGAffineTransform(rotationAngle: -.pi * 0.25).translatedBy(x: -11, y: 1)
     }
 
     private func update(animated: Bool) {
@@ -122,6 +121,23 @@ public class NSCheckBoxControl: UIControl {
             checkmarkContainer.backgroundColor = isChecked ? activeColor : inactiveBackground
             checkmarkContainer.layer.borderColor = isChecked ? activeColor.cgColor : inactiveColor.cgColor
             layer.borderColor = isChecked ? UIColor.clear.cgColor : inactiveColor.cgColor
+            checkmarkShortLineView.snp.updateConstraints { make in
+                if mode == .checkMark {
+                    make.width.equalTo(6)
+                } else {
+                    make.width.equalTo(12)
+                }
+            }
+            if mode == .checkMark {
+                checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
+            } else {
+                checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                checkmarkShortContainerView.transform = .identity
+            }
+            checkmarkLongContainerView.alpha = mode == .checkMark ? 1 : 0
         } else {
             if isChecked {
                 checkmarkContainer.transform = .identity
@@ -131,6 +147,23 @@ public class NSCheckBoxControl: UIControl {
 
                 UIView.animate(withDuration: 0.075, delay: 0.0, options: [.beginFromCurrentState, .curveEaseIn], animations: {
                     self.checkmarkShortLineView.transform = .identity
+                    self.checkmarkShortLineView.snp.updateConstraints { make in
+                        if self.mode == .checkMark {
+                            make.width.equalTo(6)
+                        } else {
+                            make.width.equalTo(12)
+                        }
+                    }
+                    if self.mode == .checkMark {
+                        self.checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                        self.checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                        self.checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
+                    } else {
+                        self.checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        self.checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        self.checkmarkShortContainerView.transform = .identity
+                    }
+                    self.checkmarkLongContainerView.alpha = self.mode == .checkMark ? 1 : 0
                     self.checkmarkContainer.backgroundColor = self.activeColor
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.15, delay: 0.0, options: [.beginFromCurrentState, .curveEaseOut], animations: {

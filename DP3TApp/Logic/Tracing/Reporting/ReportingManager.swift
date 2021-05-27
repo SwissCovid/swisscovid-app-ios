@@ -13,6 +13,10 @@ import DP3TSDK
 import Foundation
 
 protocol ReportingManagerProtocol: AnyObject {
+    func getOnsetDate(covidCode: String,
+                      isFakeRequest fake: Bool,
+                      completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void)
+
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
 
     var hasUserConsent: Bool { get }
@@ -56,7 +60,7 @@ class ReportingManager: ReportingManagerProtocol {
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
-    private let backend = Environment.current.checkInService
+    private let backend = Environment.current.userUploadService
     private var task: URLSessionDataTask?
 
     private var fakeCode: String {
@@ -65,9 +69,23 @@ class ReportingManager: ReportingManagerProtocol {
 
     private var state: IWasExposedState?
 
+    private(set) var onsetDate: Date?
+
     // MARK: - API
 
     var hasUserConsent: Bool { state != nil }
+
+    func getOnsetDate(covidCode: String, isFakeRequest fake: Bool, completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        codeValidator.sendOnsetDateRequest(code: covidCode, isFakeRequest: fake) { result in
+            switch result {
+            case let .success(onset):
+                self.onsetDate = onset.onset
+                completion(.success(onset))
+            case let .failure(error):
+                completion(.failure(error))
+            }
+        }
+    }
 
     func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
@@ -111,6 +129,10 @@ class ReportingManager: ReportingManagerProtocol {
                     isFakeRequest fake: Bool = false,
                     completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
         guard #available(iOS 12.5, *) else { return }
+
+        if fake {
+            state = .fake
+        }
 
         guard let state = self.state else {
             completion(.failure(.permissonError))
@@ -200,7 +222,6 @@ class ReportingManager: ReportingManagerProtocol {
                 if let response = response as? HTTPURLResponse,
                    response.statusCode != 200 {
                     completion(.failure(.statusError(code: response.statusCode)))
-
                 } else if let e = error {
                     completion(.failure(.unexpected(error: e)))
                 } else {

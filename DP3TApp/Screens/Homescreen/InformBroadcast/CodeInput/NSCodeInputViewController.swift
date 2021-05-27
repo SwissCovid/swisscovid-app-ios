@@ -150,20 +150,48 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
         rightBarButtonItem = navigationItem.rightBarButtonItem
         navigationItem.rightBarButtonItem = nil
 
-        if !ReportingManager.shared.hasUserConsent {
-            ReportingManager.shared.getUserConsent { [weak self] result in
-                guard let self = self else { return }
-                switch result {
-                case .success:
-                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: nil, from: self)
-                case .failure:
-                    let vc = NSAreYouSureViewController(covidCode: self.codeControl.code())
-                    self.navigationController?.pushViewController(vc, animated: true)
+        ReportingManager.shared.getOnsetDate(covidCode: codeControl.code(), isFakeRequest: false) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
+            case let .success(onset):
+                let relevantCheckIns = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= onset.onset }
+                if !ReportingManager.shared.hasUserConsent {
+                    ReportingManager.shared.getUserConsent { [weak self] result in
+                        guard let self = self else { return }
+                        switch result {
+                        case .success:
+                            CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
+                        case .failure:
+                            let vc = NSAreYouSureViewController(covidCode: self.codeControl.code(), relevantCheckIns: relevantCheckIns)
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                } else {
+                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
                 }
+            case .failure:
+                self.invalidTokenError()
+                // TODO: What to do for network error?
+//                switch error {
+//                case .invalidToken:
+//                case .networkError:
+//                }
             }
-        } else {
-            CheckInSelectionViewController.presentIfNeeded(covidCode: codeControl.code(), checkIns: checkIns, from: self)
         }
+//        if !ReportingManager.shared.hasUserConsent {
+//            ReportingManager.shared.getUserConsent { [weak self] result in
+//                guard let self = self else { return }
+//                switch result {
+//                case .success:
+//                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: nil, from: self)
+//                case .failure:
+//                    let vc = NSAreYouSureViewController(covidCode: self.codeControl.code())
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//            }
+//        } else {
+//            CheckInSelectionViewController.presentIfNeeded(covidCode: codeControl.code(), checkIns: checkIns, from: self)
+//        }
     }
 
     private func changePresentingViewController() {
