@@ -65,20 +65,23 @@ class NSCreatedEventDetailViewController: NSViewController {
 
         qrCodeImageView.image = QRCodeUtils.createQrCodeImage(from: createdEvent.qrCodeString)
 
-        UIStateManager.shared.addObserver(self) { state in
-            self.update(state.checkInStateModel)
+        UIStateManager.shared.addObserver(self) { [weak self] state in
+            guard let self = self else { return }
+            self.update(state)
         }
     }
 
-    private func update(_ state: UIStateModel.CheckInStateModel) {
-        switch state.checkInState {
+    private func update(_ state: UIStateModel) {
+        switch state.checkInStateModel.checkInState {
         case let .checkIn(checkIn):
-            let isHidden = checkIn.qrCode == createdEvent.qrCodeString
-            checkInButton.isHidden = isHidden
-            deleteButton.isHidden = isHidden
-        default:
-            checkInButton.isHidden = false
+            deleteButton.isHidden = checkIn.qrCode == createdEvent.qrCodeString
+            checkInButton.isHidden = true
+        case .checkInEnded:
             deleteButton.isHidden = false
+            checkInButton.isHidden = true
+        default:
+            deleteButton.isHidden = false
+            checkInButton.isHidden = false
         }
     }
 
@@ -119,6 +122,7 @@ class NSCreatedEventDetailViewController: NSViewController {
         }
 
         buttonStackView.addArrangedView(checkInButton)
+        checkInButton.isHidden = true
 
         buttonStackView.addSpacerView(2.0 * NSPadding.large)
 
@@ -139,6 +143,7 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private func checkInPressed() {
         let vc = NSCheckInConfirmViewController(createdEvent: createdEvent)
+        vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissPresented))
         vc.checkInCallback = { [weak self] in
             guard let self = self else { return }
             if let viewcontroller = self.navigationController?.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
@@ -147,6 +152,10 @@ class NSCreatedEventDetailViewController: NSViewController {
             }
         }
         vc.presentInNavigationController(from: self, useLine: false)
+    }
+
+    @objc private func dismissPresented() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func sharePressed() {

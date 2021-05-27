@@ -30,11 +30,6 @@ class NSCheckInOverviewViewController: NSViewController {
         setupView()
         setupInfoViews()
         setupCallbacks()
-
-        UIStateManager.shared.addObserver(self) { [weak self] state in
-            guard let strongSelf = self else { return }
-            strongSelf.update(state)
-        }
     }
 
     private func setupView() {
@@ -95,11 +90,6 @@ class NSCheckInOverviewViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.navigationController?.pushViewController(NSCreatedEventsViewController(), animated: true)
         }
-    }
-
-    func update(_ state: UIStateModel) {
-        let checkInState = state.checkInStateModel.checkInState
-        createCheckInsView.isHidden = checkInState == .checkInEnded
     }
 
     func scrollToTop(animated: Bool = true) {
