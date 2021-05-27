@@ -35,6 +35,10 @@ class NSPushHandler: UBPushHandler {
             }
         }
 
+        #if DEBUG || RELEASE_DEV
+            NSLocalPush.shared.showDebugNotification(title: "Debug", body: "Silent Push triggered sync at \(Date().description)")
+        #endif
+
         ProblematicEventsManager.shared.sync(isInBackground: UIApplication.shared.applicationState != .active) { newData, needsNotification in
             if newData {
                 if needsNotification {
