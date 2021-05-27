@@ -33,7 +33,7 @@ class NSReportsModuleView: NSModuleBaseView {
     let exposedView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_meldung_title".ub_localized,
                                                 subText: "meldungen_meldung_text".ub_localized,
-                                                image: UIImage(named: "ic-info"),
+                                                image: UIImage(named: "ic-warning"),
                                                 titleColor: .white,
                                                 subtextColor: .white)
         viewModel.hasBubble = true
