@@ -55,7 +55,7 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
         addSubview(label)
 
         label.snp.makeConstraints { make in
-            make.bottom.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 0, bottom: NSPadding.medium, right: NSPadding.small))
+            make.bottom.left.right.equalToSuperview().inset(UIEdgeInsets(top: 0, left: -NSPadding.small, bottom: NSPadding.medium, right: NSPadding.small))
         }
     }
 }
