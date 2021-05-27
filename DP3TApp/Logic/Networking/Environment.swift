@@ -91,4 +91,6 @@ enum Environment {
             return "https://qr.swisscovid.ch"
         }
     }
+
+    static let shareURLKey: String = "ch.admin.bag.swisscovid.appclip.url.key"
 }
