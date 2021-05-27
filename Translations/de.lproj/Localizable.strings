@@ -1658,13 +1658,13 @@
 "inform_are_you_sure_dont_send_button" = "Don't share";
 
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
-"pdf_headline" = "SwissCovid Check-Ins";
+"pdf_headline" = "SwissCovid-Check-in";
 
 /*SwissCovid QR Code PDF: Slogan*/
 "pdf_slogan" = "Einchecken ohne Daten zu hinterlassen";
 
 /*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
-"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
+"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken, ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
 
 /*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
 "pdf_swisscovid_app" = "SwissCovid App";
@@ -1688,7 +1688,7 @@
 "checkin_footer_title1" = "Warum eine Check-in-Funktion?";
 
 /*Fuzzy*/
-"checkin_footer_subtitle1" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand.";
+"checkin_footer_subtitle1" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Mit dieser Funktion können Sie im Falle eines positiven Tests nicht nur enge Kontakte, sondern auch Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, warnen.";
 
 /*Fuzzy*/
 "checkin_footer_title2" = "Keine zentrale Datenspeicherung";
@@ -1702,7 +1702,7 @@
 "events_footer_title1" = "Wo können Check-ins eingesetzt werden?";
 "events_footer_title2" = "Warum eine Check-in-Funktion?";
 "events_footer_subtitle1" = "SwissCovid-Check-ins können dort eingesetzt werden, wo sich Menschen treffen, aber keine Pflicht zur Kontaktdatenerfassung besteht.\n\nMögliche Einsatzorte:\n– Private Anlässe\n– Vereinsanlässe\n– Zusammenkünfte im professionellen Umfeld wie z.B. Sitzungszimmer, Büroräume, Kantinen, etc.";
-"events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand. ";
+"events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Mit dieser Funktion können Sie im Falle eines positiven Tests nicht nur enge Kontakte, sondern auch Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, warnen.";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
 "meldung_detail_exposed_list_card_subtitle" = "Risikosituation";
@@ -1788,3 +1788,8 @@
 "partial_onboarding_box_action" = "Jetzt abschliessen";
 "partial_onboarding_done_title" = "Konfiguration abgeschlossen";
 "partial_onboarding_done_text" = "Vielen Dank, dass Sie mithelfen, die Verbreitung des Coronavirus einzudämmen.";
+"web_slogan" = "Bei einem Ansteckungsrisiko schnell informiert.";
+
+/*Info URL for testing*/
+/*Fuzzy*/
+"test_info_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";

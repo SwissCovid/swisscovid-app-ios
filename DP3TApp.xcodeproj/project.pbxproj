@@ -432,6 +432,8 @@
 		DC1ACCC12637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC1ACCC22637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
+		DC32EDDE265F6BA7003A4C53 /* NSInformNotThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDDD265F6BA6003A4C53 /* NSInformNotThankYouViewController.swift */; };
+		DC32EDDF265F6BAC003A4C53 /* NSInformNotThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDDD265F6BA6003A4C53 /* NSInformNotThankYouViewController.swift */; };
 		DC3B568825ECCD460075B5CE /* NSTravelModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */; };
 		DC3B568E25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */; };
 		DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
@@ -899,6 +901,7 @@
 		DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStatisticInfoPopupViewController.swift; sourceTree = "<group>"; };
 		DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeUtils.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DC32EDDD265F6BA6003A4C53 /* NSInformNotThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformNotThankYouViewController.swift; sourceTree = "<group>"; };
 		DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelModuleView.swift; sourceTree = "<group>"; };
 		DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelInfoBoxView.swift; sourceTree = "<group>"; };
 		DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageListLabel.swift; sourceTree = "<group>"; };
@@ -1186,6 +1189,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6E517E242F9586006E532E /* NSInformThankYouViewController.swift */,
+				DC32EDDD265F6BA6003A4C53 /* NSInformNotThankYouViewController.swift */,
 				6EED5DAB24518DB400AD42D9 /* NSInformGetWellViewController.swift */,
 				6EFF9AE4245AD18D00C98FF3 /* NSInformTracingEndViewController.swift */,
 			);
@@ -2703,6 +2707,7 @@
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
+				DC32EDDF265F6BAC003A4C53 /* NSInformNotThankYouViewController.swift in Sources */,
 				3DCD3E132654F6C70050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */,
 				242D222E245C4BD8005DAEA8 /* NSTracingSettingsControl.swift in Sources */,
 				242D222F245C4BD8005DAEA8 /* UBLabelType.swift in Sources */,
@@ -2987,6 +2992,7 @@
 				AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */,
 				F80E407A25092B0500876906 /* NSStatisticsChartContentView.swift in Sources */,
 				F8A6BE2424C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
+				DC32EDDE265F6BA7003A4C53 /* NSInformNotThankYouViewController.swift in Sources */,
 				3DCD3E102654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */,
 				F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
 				DC702B0D243F6FAE0066C773 /* UBCodable.swift in Sources */,

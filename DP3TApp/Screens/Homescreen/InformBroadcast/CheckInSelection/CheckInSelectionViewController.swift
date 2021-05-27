@@ -160,24 +160,15 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         navigationController?.pushViewController(vc, animated: false)
     }
 
-    static func presentIfNeeded(covidCode: String, checkIns: [CheckIn]?, from: UIViewController) {
-        if let checkIns = checkIns {
-            if !checkIns.isEmpty {
-                let vc = CheckInSelectionViewController(covidCode: covidCode, checkIns: checkIns)
-                from.navigationController?.pushViewController(vc, animated: true)
-                return
-            } else {
-                let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
-                from.navigationController?.pushViewController(vc, animated: false)
-                return
-            }
-        }
-        let checkInsInRelevantPeriod = CheckInManager.shared.getDiary() // .filter { $0.checkOutTime != nil && $0.checkOutTime! >= tokens.checkInToken.onset }
-        if checkInsInRelevantPeriod.isEmpty {
+    static func presentIfNeeded(covidCode: String, checkIns: [CheckIn], from: UIViewController) {
+        if !checkIns.isEmpty {
+            let vc = CheckInSelectionViewController(covidCode: covidCode, checkIns: checkIns)
+            from.navigationController?.pushViewController(vc, animated: true)
+            return
+        } else {
             let vc = NSInformSendViewController(covidCode: covidCode, checkIns: nil)
             from.navigationController?.pushViewController(vc, animated: false)
-        } else {
-            from.navigationController?.pushViewController(CheckInSelectionViewController(covidCode: covidCode, checkIns: checkInsInRelevantPeriod), animated: true)
+            return
         }
     }
 }

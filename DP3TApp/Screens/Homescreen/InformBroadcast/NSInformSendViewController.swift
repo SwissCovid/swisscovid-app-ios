@@ -27,6 +27,7 @@ class NSInformSendViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(closeButtonTouched))
         navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         rightBarButtonItem = navigationItem.rightBarButtonItem
@@ -37,6 +38,10 @@ class NSInformSendViewController: NSViewController {
 
         startLoading()
         getTokens()
+    }
+
+    @objc private func closeButtonTouched() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func getTokens() {
@@ -106,9 +111,13 @@ class NSInformSendViewController: NSViewController {
         UserStorage.shared.didMarkAsInfected = true
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
 
-        navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
-        let nav = presentingViewController as? NSNavigationController
-        nav?.popToRootViewController(animated: true)
-        nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+        if !ReportingManager.shared.hasUserConsent, checkIns == nil {
+            navigationController?.pushViewController(NSInformNotThankYouViewController(), animated: true)
+        } else {
+            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
+            let nav = presentingViewController as? NSNavigationController
+            nav?.popToRootViewController(animated: true)
+            nav?.pushViewController(NSReportsDetailViewController(), animated: false)
+        }
     }
 }

@@ -169,29 +169,15 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                 } else {
                     CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
                 }
-            case .failure:
-                self.invalidTokenError()
-                // TODO: What to do for network error?
-//                switch error {
-//                case .invalidToken:
-//                case .networkError:
-//                }
+            case let .failure(error):
+                switch error {
+                case .invalidToken:
+                    self.invalidTokenError()
+                case let .networkError(error):
+                    self.stopLoading(error: error, reloadHandler: self.sendPressed)
+                }
             }
         }
-//        if !ReportingManager.shared.hasUserConsent {
-//            ReportingManager.shared.getUserConsent { [weak self] result in
-//                guard let self = self else { return }
-//                switch result {
-//                case .success:
-//                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: nil, from: self)
-//                case .failure:
-//                    let vc = NSAreYouSureViewController(covidCode: self.codeControl.code())
-//                    self.navigationController?.pushViewController(vc, animated: true)
-//                }
-//            }
-//        } else {
-//            CheckInSelectionViewController.presentIfNeeded(covidCode: codeControl.code(), checkIns: checkIns, from: self)
-//        }
     }
 
     private func changePresentingViewController() {

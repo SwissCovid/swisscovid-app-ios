@@ -1737,3 +1737,8 @@
 "partial_onboarding_box_action" = "";
 "partial_onboarding_done_title" = "";
 "partial_onboarding_done_text" = "";
+"web_slogan" = "";
+
+/*Info URL for testing*/
+/*Fuzzy*/
+"test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
