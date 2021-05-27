@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import DP3TSDK
 import Foundation
 import UIKit
@@ -130,6 +131,8 @@ class TracingManager: NSObject {
                     UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
+
+                    UBPushManager.shared.setActive(false)
                 case let .failure(error):
                     if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
                         // Tracing should not start if the user is marked as infected
@@ -148,6 +151,9 @@ class TracingManager: NSObject {
         guard #available(iOS 12.5, *) else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
+        if CrowdNotifier.hasCheckins() {
+            UBPushManager.shared.setActive(true)
+        }
     }
 
     func resetSDK() {

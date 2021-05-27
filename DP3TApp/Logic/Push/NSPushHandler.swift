@@ -13,17 +13,9 @@ import Foundation
 import UIKit
 
 class NSPushHandler: UBPushHandler {
-    override func showInAppPushDetails(for _: UBPushNotification) {
-//        guard let identifier = notification.categoryIdentifier, let category = NotificationType(rawValue: identifier) else { return }
+    override func showInAppPushDetails(for _: UBPushNotification) {}
 
-//        (UIApplication.shared.delegate as? AppDelegate)?.handleNotification(type: category)
-    }
-
-    override func showInAppPushAlert(withTitle _: String, proposedMessage _: String, notification _: UBPushNotification) {
-//        guard let identifier = notification.categoryIdentifier, let category = NotificationType(rawValue: identifier) else { return }
-
-//        (UIApplication.shared.delegate as? AppDelegate)?.handleNotification(type: category)
-    }
+    override func showInAppPushAlert(withTitle _: String, proposedMessage _: String, notification _: UBPushNotification) {}
 
     private var backgroundTask = UIBackgroundTaskIdentifier.invalid
 
@@ -43,20 +35,14 @@ class NSPushHandler: UBPushHandler {
             }
         }
 
-        #if DEBUG || RELEASE_DEV
-//            NotificationManager.shared.showDebugNotification(title: "[PushHandler] Background fetch started", body: "Time: \(Date())")
-        #endif
         ProblematicEventsManager.shared.sync(isInBackground: UIApplication.shared.applicationState != .active) { newData, needsNotification in
-            #if DEBUG || RELEASE_DEV
-//                NotificationManager.shared.showDebugNotification(title: "[PushHandler] Sync completed", body: "Time: \(Date()), newData: \(newData), needsNotification: \(needsNotification)")
-            #endif
             if newData {
                 if needsNotification {
-//                    NotificationManager.shared.showExposureNotification()
+                    NSLocalPush.shared.showCheckInExposureNotification()
                 }
 
                 // data are updated -> reschedule background task warning triggers
-//                NotificationManager.shared.resetBackgroundTaskWarningTriggers()
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
             }
 
             if self.backgroundTask != .invalid {

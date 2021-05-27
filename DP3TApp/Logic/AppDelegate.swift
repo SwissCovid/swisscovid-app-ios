@@ -42,9 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialize DP3TSDK
         TracingManager.shared.initialize()
 
-        // Initialize PushManager
-        setupPushManager(launchOptions: launchOptions)
-
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
@@ -59,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            let url = launchOptions[UIApplication.LaunchOptionsKey.url] as? URL {
             linkHandler.handle(url: url)
         }
+
+        // Setup push manager
+        setupPushManager(launchOptions: launchOptions)
 
         return true
     }
@@ -208,8 +208,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    private func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+    // MARK: - Push
+
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+    }
+
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
+    }
+
+    func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
+    }
+
+    func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        UBPushManager.shared.pushHandler.handleDidReceiveResponse(userInfo) {
+            completionHandler(.newData)
+        }
     }
 
     // MARK: - End isolation popup

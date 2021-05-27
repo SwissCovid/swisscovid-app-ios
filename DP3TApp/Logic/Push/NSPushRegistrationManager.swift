@@ -23,7 +23,7 @@ class NSPushRegistrationManager: UBPushRegistrationManager {
             pushRegistration.pushType = .ios
         #endif
         if let body = try? pushRegistration.serializedData() {
-            let endpoint = Environment.current.configService.endpoint(
+            let endpoint = Environment.current.userUploadService.endpoint(
                 "register",
                 method: .post,
                 headers: ["Content-Type": "application/x-protobuf"],

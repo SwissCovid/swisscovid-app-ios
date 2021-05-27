@@ -56,7 +56,7 @@ class ReportingManager: ReportingManagerProtocol {
     @UBOptionalUserDefault(key: "endIsolationQuestionDate")
     var endIsolationQuestionDate: Date?
 
-    private let backend = Environment.current.checkInService
+    private let backend = Environment.current.userUploadService
     private var task: URLSessionDataTask?
 
     private var fakeCode: String {

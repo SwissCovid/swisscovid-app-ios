@@ -1,44 +1,16 @@
-//
-//  UBPushManager.swift
-//  UBFoundation iOS
-//
-//  Created by Zeno Koller on 23.03.20.
-//
+/*
+ * Copyright (c) 2021 Ubique Innovation AG <https://www.ubique.ch>
+ *
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ *
+ * SPDX-License-Identifier: MPL-2.0
+ */
 
 import UIKit
 import UserNotifications
 
-/// Handles requesting push permissions. Clients should customize the following components specific to the client application:
-///
-/// - `pushRegistrationManager`, which handles registration of push tokens on our server
-/// - `pushHandler`, which handles incoming pushes
-///
-/// The following calls need to be added to the app delegate:
-///
-///     import UBFoundationPush
-///
-///     @UIApplicationMain
-///     class AppDelegate: UIResponder, UIApplicationDelegate, UBPushRegistrationAppDelegate {
-///
-///         func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-///             let pushHandler = SubclassedPushHandler()
-///             // Only use this initializer if using default registration API, otherwise
-///             // also subclass UBPushRegistrationManager
-///             let registrationManager = UBPushRegistrationManager(registrationURL: someUrl)
-///             UBPushManager.shared.application(application,
-///                                              didFinishLaunchingWithOptions: launchOptions,
-///                                              pushHandler: pushHandler,
-///                                              pushRegistrationManager: pushRegistrationManager)
-///         }
-///
-///    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-///        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
-///    }
-///
-///    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-///        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
-///    }
-///
 open class UBPushManager: NSObject {
     /// Closure to handle the permission request result
     public typealias PermissionRequestCallback = (PermissionRequestResult) -> Void
@@ -79,13 +51,14 @@ open class UBPushManager: NSObject {
     /// Counter to identify the latest push request
     private var latestPushRequest = 0
 
+    @KeychainPersisted(key: "UBPushManager.isActive", defaultValue: false)
+    private var isActive: Bool
+
     // MARK: - Initialization
 
     /// :nodoc:
     override private init() {
         super.init()
-
-        UNUserNotificationCenter.current().delegate = self
 
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
@@ -101,13 +74,26 @@ open class UBPushManager: NSObject {
         self.pushRegistrationManager.sendPushRegistrationIfOutdated()
         self.pushHandler.handleLaunchOptions(launchOptions)
 
-        // Request APNS token on startup
-        registerForPushNotification()
+        if isActive {
+            // Request APNS token on startup
+            registerForPushNotification()
+        }
+    }
+
+    func setActive(_ active: Bool) {
+        if !isActive, active {
+            registerForPushNotification()
+        } else if isActive, !active {
+            pushRegistrationManager.setPushToken(nil)
+        }
+
+        isActive = active
     }
 
     /// Needs to be called upon `applicationDidBecomeActiveNotification`
     @objc
     private func applicationDidBecomeActive() {
+        guard isActive else { return }
         pushRegistrationManager.sendPushRegistrationIfOutdated()
     }
 
