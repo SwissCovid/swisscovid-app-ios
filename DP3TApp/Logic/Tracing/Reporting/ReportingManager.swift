@@ -152,7 +152,7 @@ class ReportingManager: ReportingManagerProtocol {
         task?.cancel()
 
         var payload = UserUploadPayload()
-        payload.version = 3
+        payload.version = 4
 
         var uploadInfos = [UploadVenueInfo]()
 
