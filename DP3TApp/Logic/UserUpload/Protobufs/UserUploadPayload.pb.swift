@@ -29,6 +29,8 @@ struct UserUploadPayload {
 
   var venueInfos: [UploadVenueInfo] = []
 
+  var userInteractionDurationMs: UInt32 = 0
+
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
   init() {}
@@ -63,6 +65,7 @@ extension UserUploadPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
     2: .same(proto: "venueInfos"),
+    3: .same(proto: "userInteractionDurationMs"),
   ]
 
   mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +76,7 @@ extension UserUploadPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt32Field(value: &self.version) }()
       case 2: try { try decoder.decodeRepeatedMessageField(value: &self.venueInfos) }()
+      case 3: try { try decoder.decodeSingularFixed32Field(value: &self.userInteractionDurationMs) }()
       default: break
       }
     }
@@ -85,12 +89,16 @@ extension UserUploadPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     if !self.venueInfos.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.venueInfos, fieldNumber: 2)
     }
+    if self.userInteractionDurationMs != 0 {
+      try visitor.visitSingularFixed32Field(value: self.userInteractionDurationMs, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   static func ==(lhs: UserUploadPayload, rhs: UserUploadPayload) -> Bool {
     if lhs.version != rhs.version {return false}
     if lhs.venueInfos != rhs.venueInfos {return false}
+    if lhs.userInteractionDurationMs != rhs.userInteractionDurationMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -19,6 +19,16 @@ class MockReportingManager: ReportingManagerProtocol {
         String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
     }
 
+    func getFakeOnsetDate(completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        getOnsetDate(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+    }
+
+    var callsToGetOnsetDate = 0
+    func getOnsetDate(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        callsToGetOnsetDate += 1
+        completion(.success(.init(onset: Date())))
+    }
+
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
         getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
     }

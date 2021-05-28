@@ -13,6 +13,8 @@ import DP3TSDK
 import Foundation
 
 protocol ReportingManagerProtocol: AnyObject {
+    func getFakeOnsetDate(completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void)
+
     func getOnsetDate(covidCode: String,
                       isFakeRequest fake: Bool,
                       completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void)
@@ -71,14 +73,22 @@ class ReportingManager: ReportingManagerProtocol {
 
     private(set) var onsetDate: Date?
 
+    private var onsetResponseDate: Date?
+    private var userInteractionDuration: TimeInterval = 0
+
     // MARK: - API
 
     var hasUserConsent: Bool { state != nil }
+
+    func getFakeOnsetDate(completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        getOnsetDate(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+    }
 
     func getOnsetDate(covidCode: String, isFakeRequest fake: Bool, completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
         codeValidator.sendOnsetDateRequest(code: covidCode, isFakeRequest: fake) { result in
             switch result {
             case let .success(onset):
+                self.onsetResponseDate = Date()
                 self.onsetDate = onset.onset
                 completion(.success(onset))
             case let .failure(error):
@@ -111,15 +121,23 @@ class ReportingManager: ReportingManagerProtocol {
         if let tokens = tokenCache[covidCode] {
             completion(.success(tokens))
         } else {
-            codeValidator.sendCodeRequest(code: covidCode, isFakeRequest: fake) { [weak self] result in
-                guard let strongSelf = self else { return }
+            var delay: TimeInterval = 0
+            if let start = onsetResponseDate {
+                userInteractionDuration = Date().timeIntervalSince(start)
+                delay = start.sendPadding
+            }
 
-                switch result {
-                case let .success(tokens):
-                    strongSelf.tokenCache[covidCode] = tokens
-                    completion(.success(tokens))
-                case let .failure(error):
-                    completion(.failure(error))
+            DispatchQueue.global().asyncAfter(deadline: .now() + delay) {
+                self.codeValidator.sendCodeRequest(code: covidCode, isFakeRequest: fake) { [weak self] result in
+                    guard let strongSelf = self else { return }
+
+                    switch result {
+                    case let .success(tokens):
+                        strongSelf.tokenCache[covidCode] = tokens
+                        completion(.success(tokens))
+                    case let .failure(error):
+                        completion(.failure(error))
+                    }
                 }
             }
         }
@@ -178,6 +196,7 @@ class ReportingManager: ReportingManagerProtocol {
 
         var payload = UserUploadPayload()
         payload.version = 4
+        payload.userInteractionDurationMs = UInt32(userInteractionDuration * 1000)
 
         var uploadInfos = [UploadVenueInfo]()
 
@@ -244,5 +263,20 @@ extension Data {
             SecRandomCopyBytes(kSecRandomDefault, 32, $0.baseAddress!)
         }
         return keyData
+    }
+}
+
+private extension Date {
+    var sendPadding: TimeInterval {
+        let now = Date()
+        guard now > self else { return 0 }
+
+        var padding: TimeInterval = .second * 5
+
+        while addingTimeInterval(padding) < now {
+            padding += .second * 5
+        }
+
+        return addingTimeInterval(padding).timeIntervalSince(now)
     }
 }
