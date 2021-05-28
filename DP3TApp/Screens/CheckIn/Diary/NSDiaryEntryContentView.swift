@@ -15,13 +15,10 @@ import Foundation
 class NSDiaryEntryContentView: UIView {
     // MARK: - Subviews
 
-    private let checkImageView = UIImageView()
+    private let warningImageView = UIImageView(image: UIImage(named: "ic-warning")?.withRenderingMode(.alwaysTemplate))
 
     private let titleLabel = NSLabel(.textBold)
     private let subtitleLabel = NSLabel(.textLight)
-
-    private let bottomView = UIView()
-    private let whatToDoView = NSCheckInReportWhatTodoView()
 
     public var checkIn: CheckIn? {
         didSet {
@@ -62,9 +59,10 @@ class NSDiaryEntryContentView: UIView {
 
         let topView = UIView()
 
-        checkImageView.image = UIImage(named: "ic-check-round")?.withRenderingMode(.alwaysTemplate)
-        topView.addSubview(checkImageView)
-        checkImageView.snp.makeConstraints { make in
+        warningImageView.isHidden = true
+        warningImageView.tintColor = .ns_blue
+        topView.addSubview(warningImageView)
+        warningImageView.snp.makeConstraints { make in
             make.right.top.equalToSuperview().inset(NSPadding.medium)
         }
 
@@ -77,18 +75,10 @@ class NSDiaryEntryContentView: UIView {
             make.left.equalToSuperview().inset(NSPadding.medium)
             make.top.equalToSuperview().inset(NSPadding.medium + 3.0)
             make.bottom.equalToSuperview().inset(NSPadding.medium)
-            make.right.lessThanOrEqualTo(self.checkImageView.snp.left).offset(-5.0)
+            make.right.lessThanOrEqualTo(self.warningImageView.snp.left).offset(-5.0)
         }
 
         stackView.addArrangedView(topView)
-
-        bottomView.addSubview(whatToDoView)
-
-        whatToDoView.snp.makeConstraints { make in
-            make.top.left.right.bottom.equalToSuperview().inset(NSPadding.small)
-        }
-
-        stackView.addArrangedView(bottomView)
     }
 
     // MARK: - Update
@@ -108,15 +98,10 @@ class NSDiaryEntryContentView: UIView {
             }
         }
 
-        checkImageView.tintColor = .ns_red
-
-        whatToDoView.message = exposure?.exposureEvent.message
-        bottomView.isHidden = exposure?.exposureEvent.message.isEmpty ?? true
+        warningImageView.isHidden = false
     }
 
     private func update() {
-        checkImageView.tintColor = .ns_blue
-
         titleLabel.text = checkIn?.venue.description
 
         var texts: [String?] = []
@@ -127,12 +112,11 @@ class NSDiaryEntryContentView: UIView {
         texts.append(timeText)
 
         subtitleLabel.text = texts.compactMap { $0 }.joined(separator: "\n")
-
-        bottomView.isHidden = true
     }
 
     private func reset() {
         titleLabel.text = nil
         subtitleLabel.text = nil
+        warningImageView.isHidden = true
     }
 }

@@ -56,12 +56,11 @@ class NSCheckInOverviewViewController: NSViewController {
     }
 
     private func setupInfoViews() {
-        let icon = UIImage(named: "ic-verified-user")
-        let infoViewOne = NSOnboardingInfoView(icon: icon, text: "checkin_footer_subtitle1".ub_localized, title: "checkin_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewOne = NSOnboardingInfoView(icon: UIImage(named: "ic-stopwatch"), text: "checkin_footer_subtitle1".ub_localized, title: "checkin_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewOne)
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        let infoViewTwo = NSOnboardingInfoView(icon: icon, text: "checkin_footer_subtitle2".ub_localized, title: "checkin_footer_title2".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewTwo = NSOnboardingInfoView(icon: UIImage(named: "ic-smartphone"), text: "checkin_footer_subtitle2".ub_localized, title: "checkin_footer_title2".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewTwo)
         stackScrollView.addSpacerView(NSPadding.large)
     }

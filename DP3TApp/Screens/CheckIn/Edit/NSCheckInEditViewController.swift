@@ -22,11 +22,7 @@ class NSCheckInEditViewController: NSViewController {
     private var startDate: Date = Date()
     private var endDate: Date = Date()
 
-    private let removeFromDiaryButton: NSExternalLinkButton = {
-        let button = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
-        button.title = "delete_button_title".ub_localized
-        return button
-    }()
+    private let removeFromDiaryButton = NSButton(title: "remove_from_diary_button".ub_localized, style: .normal(.ns_blue))
 
     private let isCurrentCheckIn: Bool
 

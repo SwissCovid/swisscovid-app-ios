@@ -570,8 +570,6 @@
 		F86A6A772637F226003CAC1B /* CheckInExposure.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A752637F226003CAC1B /* CheckInExposure.swift */; };
 		F86A6A7C2637F305003CAC1B /* VenueInfo+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */; };
 		F86A6A7D2637F305003CAC1B /* VenueInfo+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */; };
-		F86A6A802637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */; };
-		F86A6A812637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */; };
 		F86A6A832637F93D003CAC1B /* UICollection+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A822637F93D003CAC1B /* UICollection+NS.swift */; };
 		F86A6A842637F93D003CAC1B /* UICollection+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A822637F93D003CAC1B /* UICollection+NS.swift */; };
 		F86A6A862637F944003CAC1B /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A852637F944003CAC1B /* ReusableView.swift */; };
@@ -990,7 +988,6 @@
 		F865C8A224990A6800B730BD /* NSOnboardingDisclaimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSOnboardingDisclaimerViewController.swift; sourceTree = "<group>"; };
 		F86A6A752637F226003CAC1B /* CheckInExposure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInExposure.swift; sourceTree = "<group>"; };
 		F86A6A7B2637F305003CAC1B /* VenueInfo+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VenueInfo+NS.swift"; sourceTree = "<group>"; };
-		F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSCheckInReportWhatTodoView.swift; sourceTree = "<group>"; };
 		F86A6A822637F93D003CAC1B /* UICollection+NS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollection+NS.swift"; sourceTree = "<group>"; };
 		F86A6A852637F944003CAC1B /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		F86A6A8926380C7E003CAC1B /* SwissCovid.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = SwissCovid.proto; sourceTree = "<group>"; };
@@ -2036,7 +2033,6 @@
 			children = (
 				F86A6A9726383803003CAC1B /* NSVenueView.swift */,
 				F86A6A94263837AC003CAC1B /* NSReminderControl.swift */,
-				F86A6A7F2637F377003CAC1B /* NSCheckInReportWhatTodoView.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -2757,7 +2753,6 @@
 				242D2244245C4BD8005DAEA8 /* NSOnboardingViewController.swift in Sources */,
 				6E9D791D2625BF77005C7B7F /* NSUpdateBoardingViewController.swift in Sources */,
 				242D2245245C4BD8005DAEA8 /* DateFormatter.swift in Sources */,
-				F86A6A812637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */,
 				6EB1D56B2636F76100981571 /* CheckIn.swift in Sources */,
 				F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */,
 				242D2248245C4BD8005DAEA8 /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
@@ -2975,7 +2970,6 @@
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
 				F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */,
 				F86A6A7C2637F305003CAC1B /* VenueInfo+NS.swift in Sources */,
-				F86A6A802637F377003CAC1B /* NSCheckInReportWhatTodoView.swift in Sources */,
 				DC16177D2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */,
 				F86A6A9826383803003CAC1B /* NSVenueView.swift in Sources */,
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,

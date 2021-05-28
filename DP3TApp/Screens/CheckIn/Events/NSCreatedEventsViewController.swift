@@ -99,7 +99,7 @@ class NSCreatedEventsViewController: NSViewController {
         generateButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
-        eventsModule.contentView.addSpacerView(NSPadding.large)
+        eventsModule.contentView.addSpacerView(10)
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -137,17 +137,12 @@ class NSCreatedEventsViewController: NSViewController {
     }
 
     private func setupInfoViews() {
-        let icon = UIImage(named: "ic-verified-user")
-        let infoViewOne = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle1".ub_localized, title: "events_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewOne = NSOnboardingInfoView(icon: UIImage(named: "ic-location-pin"), text: "events_footer_subtitle1".ub_localized, title: "events_footer_title1".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewOne)
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        let infoViewTwo = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle2".ub_localized, title: "events_footer_title2".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
+        let infoViewTwo = NSOnboardingInfoView(icon: UIImage(named: "ic-stopwatch"), text: "events_footer_subtitle2".ub_localized, title: "events_footer_title2".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
         stackScrollView.addArrangedView(infoViewTwo)
-        stackScrollView.addSpacerView(NSPadding.medium)
-
-        let infoViewThree = NSOnboardingInfoView(icon: icon, text: "events_footer_subtitle3".ub_localized, title: "events_footer_title3".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue)
-        stackScrollView.addArrangedView(infoViewThree)
         stackScrollView.addSpacerView(NSPadding.large)
 
         let faqButton = NSButton.faqButton(color: .ns_blue)

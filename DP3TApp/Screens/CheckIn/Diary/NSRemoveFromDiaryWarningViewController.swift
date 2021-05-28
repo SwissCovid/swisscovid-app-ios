@@ -15,11 +15,7 @@ import Foundation
 class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
     private let removeButton = NSUnderlinedButton()
 
-    private let hideButton: NSExternalLinkButton = {
-        let button = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-visibility-off")), buttonTintColor: .white)
-        button.title = "remove_diary_warning_hide_button".ub_localized
-        return button
-    }()
+    private let hideButton = NSButton(title: "remove_diary_warning_hide_button".ub_localized, style: .normal(.ns_blue))
 
     private let venue: VenueInfo
     private let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -48,7 +44,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
     init(venueInfo: VenueInfo) {
         venue = venueInfo
-        super.init(stackViewInset: UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: NSPadding.medium, right: NSPadding.medium))
+        super.init()
     }
 
     override func viewDidLoad() {
@@ -56,50 +52,43 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
         tintColor = .ns_blue
 
-        setupLabels()
-        setupRemoveButtons()
+        setupContent()
     }
 
-    private func setupLabels() {
+    private func setupContent() {
         let title = NSLabel(.title)
         title.text = "remove_diary_warning_title".ub_localized
 
         stackView.addArrangedView(title, insets: insets)
-        stackView.addSpacerView(NSPadding.large)
-
-        let bodyLabel = NSLabel(.textLight)
-        bodyLabel.text = "remove_diary_warning_text".ub_localized.replacingOccurrences(of: "{LOCATION_INFO}", with: venue.description)
-
-        stackView.addArrangedView(bodyLabel, insets: insets)
-        stackView.addSpacerView(NSPadding.large + NSPadding.medium)
+        stackView.addSpacerView(4 * NSPadding.medium)
 
         let hideTitle = NSLabel(.textBold, textColor: .ns_blue)
         hideTitle.text = "remove_diary_warning_hide_title".ub_localized
-        stackView.addArrangedView(hideTitle)
-
+        stackView.addArrangedView(hideTitle, insets: insets)
         stackView.addSpacerView(NSPadding.medium)
 
         let hideText = NSLabel(.textLight)
         hideText.text = "remove_diary_warning_hide_text".ub_localized
         stackView.addArrangedView(hideText, insets: insets)
+        stackView.addSpacerView(3 * NSPadding.medium)
 
-        stackView.addSpacerView(2 * NSPadding.large)
-    }
+        hideButton.setImage(UIImage(named: "ic-visibility-off"), for: .normal)
+        stackView.addArrangedView(hideButton, insets: insets)
+        stackView.addSpacerView(4 * NSPadding.medium)
 
-    private func setupRemoveButtons() {
-        let buttonWrapper = UIView()
-        buttonWrapper.addSubview(hideButton)
+        let removeTitle = NSLabel(.textBold)
+        removeTitle.text = "remove_diary_remove_now_title".ub_localized
+        stackView.addArrangedView(removeTitle, insets: insets)
+        stackView.addSpacerView(NSPadding.medium + NSPadding.small)
 
-        hideButton.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(NSPadding.medium + NSPadding.small)
-            make.top.bottom.equalToSuperview()
-        }
+        let removeLabel = NSLabel(.textLight)
+        removeLabel.text = "remove_diary_remove_now_text".ub_localized
+
+        stackView.addArrangedView(removeLabel, insets: insets)
+        stackView.addSpacerView(NSPadding.large)
 
         removeButton.title = "remove_diary_remove_now_button".ub_localized
-
-        stackView.addArrangedView(buttonWrapper, insets: insets)
-        stackView.addSpacerView(NSPadding.large)
         stackView.addArrangedView(removeButton, insets: insets)
-        stackView.addSpacerView(NSPadding.large + NSPadding.medium)
+        stackView.addSpacerView(NSPadding.large)
     }
 }

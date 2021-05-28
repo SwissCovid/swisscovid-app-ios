@@ -31,7 +31,7 @@ class NSCreatedEventDetailViewController: NSViewController {
         super.init()
 
         showPDFButton.title = "show_pdf_button".ub_localized
-        checkInButton.title = "checkin_button_title".ub_localized
+        checkInButton.title = "self_checkin_button_title".ub_localized
         deleteButton.title = "delete_button_title".ub_localized
         shareButton.title = "share_button_title".ub_localized
 
