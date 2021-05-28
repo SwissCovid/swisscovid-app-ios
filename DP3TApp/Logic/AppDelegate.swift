@@ -109,8 +109,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        if TracingManager.shared.isSupported,
-           !UserStorage.shared.hasCompletedOnboarding {
+        if UserStorage.shared.appClipCheckinUrl() != nil {
+            let checkinOnboardingVC = NSCheckinOnboardingViewController()
+            checkinOnboardingVC.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(checkinOnboardingVC, animated: false)
+        } else if TracingManager.shared.isSupported,
+                  !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)

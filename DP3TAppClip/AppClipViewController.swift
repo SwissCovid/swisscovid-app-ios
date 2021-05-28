@@ -215,10 +215,7 @@ class AppClipViewController: UIViewController {
         }
 
         // set url for after installation
-        let bi = (Bundle.main.bundleIdentifier ?? "").replacingOccurrences(of: ".Clip", with: "")
-        let defaults = UserDefaults(suiteName: "group." + bi)
-        defaults?.setValue(urlString, forKey: Environment.shareURLKey)
-        defaults?.synchronize()
+        setAppClipCheckInUrl(url: urlString)
 
         // get venue info from crowdnotifier
         let result = CrowdNotifierBase.getVenueInfo(qrCode: urlString, baseUrl: Environment.current.qrCodeBaseUrl)
@@ -232,5 +229,12 @@ class AppClipViewController: UIViewController {
             // TODO: show error viewe
             headingContainer.isHidden = true
         }
+    }
+
+    private func setAppClipCheckInUrl(url: String) {
+        let bi = (Bundle.main.bundleIdentifier ?? "").replacingOccurrences(of: ".Clip", with: "")
+        let defaults = UserDefaults(suiteName: "group." + bi)
+        defaults?.setValue(url, forKey: Environment.shareURLKey)
+        defaults?.synchronize()
     }
 }

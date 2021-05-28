@@ -70,6 +70,23 @@ class UserStorage {
 
     @UBOptionalUserDefault(key: "lastTracingDisabledDate")
     var lastTracingDisabledDate: Date?
+
+    // method to get AppClip url in Main App
+    public func appClipCheckinUrl() -> String? {
+        let bi = (Bundle.main.bundleIdentifier ?? "")
+        let defaults = UserDefaults(suiteName: "group." + bi)
+        if let url = defaults?.value(forKey: Environment.shareURLKey) as? String {
+            return url
+        }
+
+        return nil
+    }
+
+    public func removeAppClipCheckinUrl() {
+        let bi = (Bundle.main.bundleIdentifier ?? "")
+        let defaults = UserDefaults(suiteName: "group." + bi)
+        defaults?.removeObject(forKey: Environment.shareURLKey)
+    }
 }
 
 enum KeychainMigration {
