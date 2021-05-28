@@ -97,18 +97,15 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
         deleteButton.setContentHuggingPriority(.required, for: .vertical)
 
         deleteButton.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
 
-            deleteButton.touchUpCallback = {
-                let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
-                    TracingManager.shared.deletePositiveTest()
-                    UserStorage.shared.didMarkAsInfected = false
-                }))
-                alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+            let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
+                TracingManager.shared.deletePositiveTest()
+            }))
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: nil))
 
-                }))
-                self?.present(alert, animated: true, completion: nil)
-            }
+            self.present(alert, animated: true, completion: nil)
         }
     }
 
