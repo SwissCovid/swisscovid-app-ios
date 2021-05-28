@@ -45,7 +45,6 @@ class NSReportsDetailViewController: NSViewController {
         addChild(noReportsViewController)
         view.addSubview(noReportsViewController.view)
         noReportsViewController.didMove(toParent: self)
-
         noReportsViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -62,7 +61,6 @@ class NSReportsDetailViewController: NSViewController {
         addChild(exposedViewController)
         view.addSubview(exposedViewController.view)
         exposedViewController.didMove(toParent: self)
-
         exposedViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

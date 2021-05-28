@@ -15,7 +15,7 @@ class NSReportsDetailNoReportsTitleView: NSTitleView {
 
     private let stackView = UIStackView()
 
-    private let imageView = NSImageView(image: UIImage(named: "ic-check-round"), dynamicColor: .ns_blue)
+    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle-blue"))
     private let titleLabel = NSLabel(.title, textColor: .ns_blue, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textColor: .ns_defaultTextColor, textAlignment: .center)
 
