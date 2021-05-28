@@ -29,15 +29,17 @@ class NSReportsDetailExposedCard: NSModuleBaseView {
         return button
     }()
 
+    override var touchUpCallback: (() -> Void)? {
+        didSet {
+            whatToDoButton.touchUpCallback = touchUpCallback
+        }
+    }
+
     init(titleText: String) {
         self.titleText = titleText
         super.init()
 
         setupLayout()
-
-        whatToDoButton.touchUpCallback = { [weak self] in
-            guard let _ = self else { return }
-        }
     }
 
     required init?(coder _: NSCoder) {

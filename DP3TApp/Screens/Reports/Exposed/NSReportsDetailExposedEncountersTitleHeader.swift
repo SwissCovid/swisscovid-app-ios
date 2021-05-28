@@ -29,11 +29,11 @@ class NSReportsDetailExposedEncountersTitleHeader: NSTitleView {
 
     // MARK: - Normal Views
 
-    private let infoImageView = UIImageView(image: UIImage(named: "ic-info-border"))
+    private let infoImageView = UIImageView(image: UIImage(named: "ic-warning-border"))
 
     private let titleLabel = NSLabel(.title, textColor: .white, textAlignment: .center)
 
-    private let subtitleLabel = NSLabel(.textLight, textColor: .ns_text, textAlignment: .center)
+    private let subtitleLabel = NSLabel(.textLight, textColor: .white, textAlignment: .center)
 
     private let dateLabel = NSLabel(.textBold, textAlignment: .center)
 

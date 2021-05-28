@@ -90,23 +90,23 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
 
     private func makeModuleView() -> NSSimpleModuleBaseView {
         var dateString = DateFormatter.ub_daysAgo(from: checkInReport.arrivalTime, addExplicitDate: true, withLabel: false)
-        dateString += ",\n"
+        dateString += "\n"
         dateString += DateFormatter.ub_fromTimeToTime(from: checkInReport.arrivalTime, to: checkInReport.departureTime) ?? ""
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_checkin_title".ub_localized,
-                                                  subtitle: "meldung_detail_checkin_subtitle".ub_localized,
+                                                  subtitle: "meldung_detail_exposed_list_card_subtitle".ub_localized,
                                                   boldText: dateString,
                                                   text: checkInReport.venueDescription?.description,
                                                   image: nil, subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
-        whiteBoxView.contentView.addSpacerView(1, color: .ns_dividerColor, insets: .zero)
+        whiteBoxView.contentView.addSpacerView(1, color: .ns_dividerColor)
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         let whatCanYouDoTitle = NSLabel(.textBold, textColor: .ns_blue)
         whatCanYouDoTitle.text = "checkin_report_heading".ub_localized
         whiteBoxView.contentView.addArrangedView(whatCanYouDoTitle)
 
-        whiteBoxView.contentView.addSpacerView(NSPadding.small)
+        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         addWhatToDoSection(title: "checkin_report_title1".ub_localized,
                            text: "checkin_report_subtitle1".ub_localized,
@@ -144,10 +144,10 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
     }
 
     private func addWhatToDoSection(title: String, text: String, view: UIStackView) {
-        let titleLabel = NSLabel(.title)
+        let titleLabel = NSLabel(.textBold)
         titleLabel.text = title
         view.addArrangedView(titleLabel)
-        view.addSpacerView(NSPadding.small)
+        view.addSpacerView(2 * NSPadding.small)
 
         let textLabel = NSLabel(.textLight)
         textLabel.text = text
