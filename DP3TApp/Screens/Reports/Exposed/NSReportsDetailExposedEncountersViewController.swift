@@ -28,8 +28,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
     // MARK: - Views
 
-    private var notYetOpendView: NSSimpleModuleBaseView?
-    private var alreadyOpendView: NSSimpleModuleBaseView?
+    private var notYetOpenedView: NSSimpleModuleBaseView?
+    private var alreadyOpenedView: NSSimpleModuleBaseView?
 
     private var daysLeftLabels = [NSLabel]()
     private var testViews = [NSInfoBoxView]()
@@ -40,6 +40,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
     override init() {
         super.init()
+
+        title = "reports_title_homescreen".ub_localized
     }
 
     override var useFullScreenHeaderAnimation: Bool {
@@ -98,12 +100,12 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
     // MARK: - Setup
 
     private func setupLayout() {
-        notYetOpendView = makeNotYetOpendView()
-        alreadyOpendView = makeAlreadyOpendView()
+        notYetOpenedView = makeNotYetOpenedView()
+        alreadyOpenedView = makeAlreadyOpenedView()
 
         // !: function have return type UIView
-        stackScrollView.addArrangedView(notYetOpendView!)
-        stackScrollView.addArrangedView(alreadyOpendView!)
+        stackScrollView.addArrangedView(notYetOpenedView!)
+        stackScrollView.addArrangedView(alreadyOpenedView!)
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
@@ -120,12 +122,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             tv.reports = reports
         }
 
-        notYetOpendView?.isHidden = didOpenLeitfaden
-        alreadyOpendView?.isHidden = !didOpenLeitfaden
-
-        for l in testViews {
-            l.update(with: createTestViewModel())
-        }
+        notYetOpenedView?.isHidden = didOpenLeitfaden
+        alreadyOpenedView?.isHidden = !didOpenLeitfaden
 
         let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
         if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
@@ -140,7 +138,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
     // MARK: - Detail Views
 
-    private func makeNotYetOpendView() -> NSSimpleModuleBaseView {
+    private func makeNotYetOpenedView() -> NSSimpleModuleBaseView {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_leitfaden_title".ub_localized,
                                                   subtitle: "meldung_detail_positive_test_box_subtitle".ub_localized,
                                                   text: "meldungen_detail_leitfaden_text".ub_localized,
@@ -160,10 +158,10 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(40.0)
-        whiteBoxView.contentView.addArrangedView(createTestView())
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: false))
-        whiteBoxView.contentView.addSpacerView(30.0)
-        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
+        addTextContentSection(to: whiteBoxView)
+        addTestInfo(to: whiteBoxView)
+        whiteBoxView.contentView.addSpacerView(20)
+        addCallInfo(to: whiteBoxView)
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -171,7 +169,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         return whiteBoxView
     }
 
-    private func makeAlreadyOpendView() -> NSSimpleModuleBaseView {
+    private func makeAlreadyOpenedView() -> NSSimpleModuleBaseView {
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldungen_detail_call_thankyou_title".ub_localized,
                                                   subtitle: "meldungen_detail_call_thankyou_subtitle".ub_localized,
                                                   text: "meldungen_detail_leitfaden_again_text".ub_localized,
@@ -189,12 +187,11 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         }
 
         whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
-        whiteBoxView.contentView.addSpacerView(NSPadding.medium)
         whiteBoxView.contentView.addSpacerView(40.0)
-        whiteBoxView.contentView.addArrangedSubview(createTestView())
-        whiteBoxView.contentView.addArrangedSubview(createExplanationView(addDaysLabel: true))
-        whiteBoxView.contentView.addSpacerView(30.0)
-        whiteBoxView.contentView.addArrangedSubview(createCallInfoBox())
+        addTextContentSection(to: whiteBoxView)
+        addTestInfo(to: whiteBoxView)
+        whiteBoxView.contentView.addSpacerView(20)
+        addCallInfo(to: whiteBoxView)
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
         addDeleteButton(whiteBoxView)
@@ -234,48 +231,66 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         }
     }
 
-    private func createExplanationView(addDaysLabel: Bool) -> UIView {
-        let ev = NSExplanationView(title: "meldungen_detail_explanation_title".ub_localized, texts: ["meldungen_detail_explanation_text1".ub_localized, "meldungen_detail_explanation_text2".ub_localized, "meldungen_detail_explanation_text4".ub_localized], edgeInsets: .zero)
+    private func addTextContentSection(to moduleView: NSSimpleModuleBaseView) {
+        addWhatToDoSection(title: "checkin_report_title1".ub_localized,
+                           text: "checkin_report_subtitle1".ub_localized,
+                           view: moduleView.contentView)
 
-        if addDaysLabel {
-            let wrapper = UIView()
-            let daysLeftLabel = NSLabel(.textBold)
-            daysLeftLabels.append(daysLeftLabel)
-            wrapper.addSubview(daysLeftLabel)
-            daysLeftLabel.snp.makeConstraints { make in
-                make.top.bottom.equalToSuperview()
-                make.leading.trailing.equalToSuperview().inset(30)
-            }
+        moduleView.contentView.addSpacerView(NSPadding.large)
 
-            ev.stackView.insertArrangedSubview(wrapper, at: 3)
-            ev.stackView.setCustomSpacing(NSPadding.small, after: ev.stackView.arrangedSubviews[2])
-        }
+        addWhatToDoSection(title: "checkin_report_title2".ub_localized,
+                           text: "checkin_report_subtitle2".ub_localized,
+                           view: moduleView.contentView)
 
-        return ev
+        moduleView.contentView.addSpacerView(NSPadding.large)
+
+        addWhatToDoSection(title: "checkin_report_title3".ub_localized,
+                           text: "checkin_report_subtitle3".ub_localized,
+                           view: moduleView.contentView)
+
+        moduleView.contentView.addSpacerView(NSPadding.large)
     }
 
-    private func createCallInfoBox() -> UIView {
-        let callInfoBoxViewModel = NSInfoBoxView.ViewModel(title: "meldungen_tel_information_title".ub_localized,
-                                                           subText: "meldungen_tel_information_text".ub_localized,
-                                                           image: UIImage(named: "ic-infoline"),
-                                                           titleColor: .ns_text,
-                                                           subtextColor: .ns_text,
-                                                           additionalText: "infoline_tel_number".ub_localized,
-                                                           additionalURL: "infoline_tel_number".ub_localized,
-                                                           dynamicIconTintColor: .ns_text,
-                                                           titleLabelType: .textBold,
-                                                           externalLinkStyle: .normal(color: .ns_blue),
-                                                           externalLinkType: .phone)
-        let infoBox = NSInfoBoxView(viewModel: callInfoBoxViewModel)
+    private func addTestInfo(to moduleView: NSSimpleModuleBaseView) {
+        let popupButton = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .ns_blue)
+        popupButton.title = "checkin_report_link".ub_localized
+        popupButton.touchUpCallback = {
+            guard let urlString = ConfigManager.currentConfig?.testInformationUrls?.value,
+                  let url = URL(string: urlString) else {
+                return
+            }
 
-        let container = UIView()
-        container.addSubview(infoBox)
-        infoBox.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(-NSPadding.large)
+            UIApplication.shared.open(url)
         }
 
-        return container
+        moduleView.contentView.addArrangedView(popupButton)
+        moduleView.contentView.addSpacerView(NSPadding.large)
+    }
+
+    private func addCallInfo(to moduleView: NSSimpleModuleBaseView) {
+        addWhatToDoSection(title: "meldungen_tel_information_title".ub_localized,
+                           text: "meldungen_tel_information_text".ub_localized,
+                           view: moduleView.contentView)
+
+        let phoneButton = NSExternalLinkButton(linkType: .phone, buttonTintColor: .ns_blue)
+        phoneButton.title = "infoline_tel_number".ub_localized
+        phoneButton.touchUpCallback = {
+            PhoneCallHelper.call("infoline_tel_number".ub_localized)
+        }
+
+        moduleView.contentView.addSpacerView(2 * NSPadding.medium)
+        moduleView.contentView.addArrangedView(phoneButton)
+    }
+
+    private func addWhatToDoSection(title: String, text: String, view: UIStackView) {
+        let titleLabel = NSLabel(.textBold)
+        titleLabel.text = title
+        view.addArrangedView(titleLabel)
+        view.addSpacerView(2 * NSPadding.small)
+
+        let textLabel = NSLabel(.textLight)
+        textLabel.text = text
+        view.addArrangedView(textLabel)
     }
 
     // MARK: - Info
@@ -307,40 +322,6 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         }
 
         return stackView
-    }
-
-    private func createTestView() -> UIView {
-        let view = UIView()
-
-        let infoBoxViewModel = createTestViewModel()
-
-        let infoBoxView = NSInfoBoxView(viewModel: infoBoxViewModel)
-
-        infoBoxView.popupCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.openTestCenterPopup()
-        }
-
-        view.addSubview(infoBoxView)
-
-        infoBoxView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.bottom.equalToSuperview().inset(2.0 * NSPadding.medium)
-            make.left.right.equalToSuperview().inset(NSPadding.medium - NSPadding.large)
-        }
-
-        testViews.append(infoBoxView)
-
-        return view
-    }
-
-    private func createTestViewModel() -> NSInfoBoxView.ViewModel {
-        let boldSubtext = calculateTestDay()
-
-        var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_detail_free_test_title".ub_localized, subText: "meldungen_detail_free_test_text".ub_localized, boldSubText: boldSubtext, image: UIImage(named: "ic-info"), titleColor: .ns_text, subtextColor: .ns_text, backgroundColor: .ns_blueBackground, additionalText: "test_location_popup_title".ub_localized, additionalURL: "", dynamicIconTintColor: UIColor.ns_text, externalLinkStyle: .normal(color: .ns_blue), externalLinkType: .popup)
-        viewModel.titleLabelType = .textBold
-
-        return viewModel
     }
 
     // MARK: - Logic

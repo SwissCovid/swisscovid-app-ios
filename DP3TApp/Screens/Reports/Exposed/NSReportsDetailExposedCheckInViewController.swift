@@ -22,6 +22,9 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
 
     init(report: UIStateModel.ReportsDetail.NSCheckInReportModel) {
         checkInReport = report
+
+        super.init()
+        title = "reports_title_homescreen".ub_localized
     }
 
     override var useFullScreenHeaderAnimation: Bool {
@@ -126,12 +129,15 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
 
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
-        let popupButton = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .popup, buttonTintColor: .ns_blue)
-        popupButton.title = "test_location_popup_title".ub_localized
-        popupButton.touchUpCallback = { [weak self] in
-            guard let self = self else { return }
-            let vc = NSMoreTestInformationPopupViewController()
-            self.present(vc, animated: true, completion: nil)
+        let popupButton = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .ns_blue)
+        popupButton.title = "checkin_report_link".ub_localized
+        popupButton.touchUpCallback = {
+            guard let urlString = ConfigManager.currentConfig?.testInformationUrls?.value,
+                  let url = URL(string: urlString) else {
+                return
+            }
+
+            UIApplication.shared.open(url)
         }
 
         whiteBoxView.contentView.addArrangedView(popupButton)

@@ -51,7 +51,7 @@ class NSReportsDetailNoReportsViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(whiteBoxView)
 
-        stackScrollView.addSpacerView(3.0 * NSPadding.large)
+        stackScrollView.addSpacerView(2 * NSPadding.large)
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-report")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
