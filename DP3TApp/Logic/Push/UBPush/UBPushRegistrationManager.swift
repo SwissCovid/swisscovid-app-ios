@@ -25,7 +25,7 @@ open class UBPushRegistrationManager {
 
     // The URL session to use, can be overwritten by the app
     open var session: URLSession {
-        URLSession.shared
+        URLSession.certificatePinned
     }
 
     /// The url needed for the registration request

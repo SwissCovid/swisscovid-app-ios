@@ -81,7 +81,7 @@ class ProblematicEventsManager {
         lastSyncFailed = false
 
         task?.cancel()
-        task = URLSession.shared.dataTask(with: endpoint.request()) { [weak self] data, response, error in
+        task = URLSession.certificatePinned.dataTask(with: endpoint.request()) { [weak self] data, response, error in
             guard let strongSelf = self else {
                 completion(false, false)
                 return

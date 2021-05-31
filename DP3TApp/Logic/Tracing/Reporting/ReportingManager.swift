@@ -239,7 +239,7 @@ class ReportingManager: ReportingManagerProtocol {
 
         request.addValue("Bearer \(tokens.checkInToken.token)", forHTTPHeaderField: "Authorization")
 
-        task = URLSession.shared.dataTask(with: request) { _, response, error in
+        task = URLSession.certificatePinned.dataTask(with: request) { _, response, error in
             DispatchQueue.main.async {
                 if let response = response as? HTTPURLResponse,
                    response.statusCode != 200 {
