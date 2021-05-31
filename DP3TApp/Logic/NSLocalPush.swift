@@ -388,6 +388,15 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
         center.add(UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil), withCompletionHandler: nil)
     }
+
+    func showDebugNotification(title: String, body: String) {
+        let notification = UNMutableNotificationContent()
+        notification.title = title
+        notification.body = body
+        notification.sound = .default
+
+        center.add(UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil), withCompletionHandler: nil)
+    }
 }
 
 extension NSLocalPush: UNUserNotificationCenterDelegate {

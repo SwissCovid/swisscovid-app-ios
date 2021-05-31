@@ -432,6 +432,24 @@
 		DC1ACCC12637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC1ACCC22637CCEA0054CBFC /* QRCodeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */; };
 		DC286A26242CE0B9001D5344 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC286A25242CE0B9001D5344 /* Environment.swift */; };
+		DC32EDC5265E1F97003A4C53 /* UBPushLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC0265E1F96003A4C53 /* UBPushLocalStorage.swift */; };
+		DC32EDC6265E1F97003A4C53 /* UBPushLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC0265E1F96003A4C53 /* UBPushLocalStorage.swift */; };
+		DC32EDC7265E1F97003A4C53 /* UBPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC1265E1F96003A4C53 /* UBPushHandler.swift */; };
+		DC32EDC8265E1F97003A4C53 /* UBPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC1265E1F96003A4C53 /* UBPushHandler.swift */; };
+		DC32EDC9265E1F97003A4C53 /* UBPushManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC2265E1F96003A4C53 /* UBPushManagerError.swift */; };
+		DC32EDCA265E1F97003A4C53 /* UBPushManagerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC2265E1F96003A4C53 /* UBPushManagerError.swift */; };
+		DC32EDCB265E1F97003A4C53 /* UBPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC3265E1F97003A4C53 /* UBPushManager.swift */; };
+		DC32EDCC265E1F97003A4C53 /* UBPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC3265E1F97003A4C53 /* UBPushManager.swift */; };
+		DC32EDCD265E1F97003A4C53 /* UBPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC4265E1F97003A4C53 /* UBPushRegistrationManager.swift */; };
+		DC32EDCE265E1F97003A4C53 /* UBPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDC4265E1F97003A4C53 /* UBPushRegistrationManager.swift */; };
+		DC32EDD0265E1FC6003A4C53 /* NSPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDCF265E1FC6003A4C53 /* NSPushRegistrationManager.swift */; };
+		DC32EDD1265E1FC6003A4C53 /* NSPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDCF265E1FC6003A4C53 /* NSPushRegistrationManager.swift */; };
+		DC32EDD4265E2135003A4C53 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD3265E2134003A4C53 /* NSPushRegistration.pb.swift */; };
+		DC32EDD5265E2135003A4C53 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD3265E2134003A4C53 /* NSPushRegistration.pb.swift */; };
+		DC32EDD7265E22BF003A4C53 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD6265E22BF003A4C53 /* NSPushHandler.swift */; };
+		DC32EDD8265E22BF003A4C53 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD6265E22BF003A4C53 /* NSPushHandler.swift */; };
+		DC32EDDA265E2D05003A4C53 /* NSSilentPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD9265E2D05003A4C53 /* NSSilentPushManager.swift */; };
+		DC32EDDB265E2D05003A4C53 /* NSSilentPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC32EDD9265E2D05003A4C53 /* NSSilentPushManager.swift */; };
 		DC3B568825ECCD460075B5CE /* NSTravelModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */; };
 		DC3B568E25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */; };
 		DC3B569525ECEC930075B5CE /* NSImageListLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */; };
@@ -899,6 +917,16 @@
 		DC17F97025DCF00200C7C706 /* NSStatisticInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStatisticInfoPopupViewController.swift; sourceTree = "<group>"; };
 		DC1ACCC02637CCEA0054CBFC /* QRCodeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeUtils.swift; sourceTree = "<group>"; };
 		DC286A25242CE0B9001D5344 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DC32EDC0265E1F96003A4C53 /* UBPushLocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushLocalStorage.swift; sourceTree = "<group>"; };
+		DC32EDC1265E1F96003A4C53 /* UBPushHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushHandler.swift; sourceTree = "<group>"; };
+		DC32EDC2265E1F96003A4C53 /* UBPushManagerError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushManagerError.swift; sourceTree = "<group>"; };
+		DC32EDC3265E1F97003A4C53 /* UBPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushManager.swift; sourceTree = "<group>"; };
+		DC32EDC4265E1F97003A4C53 /* UBPushRegistrationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UBPushRegistrationManager.swift; sourceTree = "<group>"; };
+		DC32EDCF265E1FC6003A4C53 /* NSPushRegistrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPushRegistrationManager.swift; sourceTree = "<group>"; };
+		DC32EDD2265E20F4003A4C53 /* NSPushRegistration.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = NSPushRegistration.proto; sourceTree = "<group>"; };
+		DC32EDD3265E2134003A4C53 /* NSPushRegistration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushRegistration.pb.swift; sourceTree = "<group>"; };
+		DC32EDD6265E22BF003A4C53 /* NSPushHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSPushHandler.swift; sourceTree = "<group>"; };
+		DC32EDD9265E2D05003A4C53 /* NSSilentPushManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSilentPushManager.swift; sourceTree = "<group>"; };
 		DC3B568725ECCD460075B5CE /* NSTravelModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelModuleView.swift; sourceTree = "<group>"; };
 		DC3B568D25ECCDCD0075B5CE /* NSTravelInfoBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTravelInfoBoxView.swift; sourceTree = "<group>"; };
 		DC3B569425ECEC930075B5CE /* NSImageListLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageListLabel.swift; sourceTree = "<group>"; };
@@ -1828,6 +1856,7 @@
 				DC3B56E625EE96BC0075B5CE /* Travel */,
 				6EB1D54D2636F53200981571 /* CheckIn */,
 				DC003DD026413DB20027F379 /* UserUpload */,
+				DC32EDBE265E1F64003A4C53 /* Push */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -1850,6 +1879,31 @@
 				6E3F65F52449B5F000980A4E /* Debugscreen */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		DC32EDBE265E1F64003A4C53 /* Push */ = {
+			isa = PBXGroup;
+			children = (
+				DC32EDCF265E1FC6003A4C53 /* NSPushRegistrationManager.swift */,
+				DC32EDD6265E22BF003A4C53 /* NSPushHandler.swift */,
+				DC32EDD3265E2134003A4C53 /* NSPushRegistration.pb.swift */,
+				DC32EDD2265E20F4003A4C53 /* NSPushRegistration.proto */,
+				DC32EDBF265E1F70003A4C53 /* UBPush */,
+				DC32EDD9265E2D05003A4C53 /* NSSilentPushManager.swift */,
+			);
+			path = Push;
+			sourceTree = "<group>";
+		};
+		DC32EDBF265E1F70003A4C53 /* UBPush */ = {
+			isa = PBXGroup;
+			children = (
+				DC32EDC1265E1F96003A4C53 /* UBPushHandler.swift */,
+				DC32EDC0265E1F96003A4C53 /* UBPushLocalStorage.swift */,
+				DC32EDC3265E1F97003A4C53 /* UBPushManager.swift */,
+				DC32EDC2265E1F96003A4C53 /* UBPushManagerError.swift */,
+				DC32EDC4265E1F97003A4C53 /* UBPushRegistrationManager.swift */,
+			);
+			path = UBPush;
 			sourceTree = "<group>";
 		};
 		DC39305225EAA7D100761613 /* Travel */ = {
@@ -2526,6 +2580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1617AA2638717800B56ADA /* NSCheckInViewController.swift in Sources */,
+				DC32EDDB265E2D05003A4C53 /* NSSilentPushManager.swift in Sources */,
 				242D21DA245C4BD8005DAEA8 /* NSOnboardingInfoView.swift in Sources */,
 				DC1617922638717800B56ADA /* NSDiaryEmptyView.swift in Sources */,
 				242D21DB245C4BD8005DAEA8 /* NSAboutViewController.swift in Sources */,
@@ -2547,6 +2602,7 @@
 				F80E406A2508FE3000876906 /* NSCovidStatisticsModuleView.swift in Sources */,
 				242D21E5245C4BD8005DAEA8 /* NSButton.swift in Sources */,
 				242D21E6245C4BD8005DAEA8 /* UIStateLogic.swift in Sources */,
+				DC32EDD5265E2135003A4C53 /* NSPushRegistration.pb.swift in Sources */,
 				242D21E7245C4BD8005DAEA8 /* NSWhatToDoSymptomView.swift in Sources */,
 				DC16178E2638717800B56ADA /* NSDiaryCollectionViewFlowLayout.swift in Sources */,
 				F8512242250A5E2F009BE733 /* NSChartYAxisLines.swift in Sources */,
@@ -2643,11 +2699,13 @@
 				2411CA9C245F106C002FB5A9 /* Backend.swift in Sources */,
 				242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */,
 				242D220F245C4BD8005DAEA8 /* NSPointTextView.swift in Sources */,
+				DC32EDCC265E1F97003A4C53 /* UBPushManager.swift in Sources */,
 				F8C9990C2541C99300CF36F5 /* NSReportDetailMoreDaysView.swift in Sources */,
 				242D2210245C4BD8005DAEA8 /* NSHeaderActiveView.swift in Sources */,
 				6EC172CF26411C0F002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */,
 				F80E40612508D4D000876906 /* NSStatisticsViewController.swift in Sources */,
 				DC16178A2638717800B56ADA /* NSDiaryCollectionView.swift in Sources */,
+				DC32EDCA265E1F97003A4C53 /* UBPushManagerError.swift in Sources */,
 				DC3B576725F108D50075B5CE /* CountryHelper.swift in Sources */,
 				F8A6BE2524C9C74A00DE6B44 /* NSExpandableDisclaimerViewHeader.swift in Sources */,
 				242D2211245C4BD8005DAEA8 /* URLSession+pinning.swift in Sources */,
@@ -2683,6 +2741,7 @@
 				242D2220245C4BD8005DAEA8 /* NSInformGetWellViewController.swift in Sources */,
 				DC85DEFE263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */,
 				F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */,
+				DC32EDC6265E1F97003A4C53 /* UBPushLocalStorage.swift in Sources */,
 				F8A6BE2824C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				F80E40742509039400876906 /* NSStatisticsChartView.swift in Sources */,
 				2411CA9B245F105C002FB5A9 /* Endpoint.swift in Sources */,
@@ -2695,6 +2754,8 @@
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
+				DC32EDC8265E1F97003A4C53 /* UBPushHandler.swift in Sources */,
+				DC32EDD8265E22BF003A4C53 /* NSPushHandler.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
 				242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */,
@@ -2730,12 +2791,14 @@
 				242D2237245C4BD8005DAEA8 /* UIColor+NS.swift in Sources */,
 				DC16179C2638717800B56ADA /* NSFormField.swift in Sources */,
 				242D2238245C4BD8005DAEA8 /* NSHeaderArcView.swift in Sources */,
+				DC32EDD1265E1FC6003A4C53 /* NSPushRegistrationManager.swift in Sources */,
 				242D2239245C4BD8005DAEA8 /* ReportingManager.swift in Sources */,
 				F87E96DB263B066900755AF1 /* Exposure.swift in Sources */,
 				242D223A245C4BD8005DAEA8 /* NSOnboardingContentViewController.swift in Sources */,
 				F8B44EED2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */,
 				242D223B245C4BD8005DAEA8 /* NSHeaderErrorView.swift in Sources */,
 				242D223C245C4BD8005DAEA8 /* NSInformBottomButtonViewController.swift in Sources */,
+				DC32EDCE265E1F97003A4C53 /* UBPushRegistrationManager.swift in Sources */,
 				242D223D245C4BD8005DAEA8 /* NSDebugscreenViewController.swift in Sources */,
 				242D223E245C4BD8005DAEA8 /* NSSplashViewController.swift in Sources */,
 				6E5B69DD2660C3A400EB0C56 /* NSTracingOnboardingViewController.swift in Sources */,
@@ -2810,6 +2873,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
+				DC32EDDA265E2D05003A4C53 /* NSSilentPushManager.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				F87C3712258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				2485F4782456185100C3D8C3 /* DebugLog.swift in Sources */,
@@ -2832,6 +2896,7 @@
 				F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
+				DC32EDD4265E2135003A4C53 /* NSPushRegistration.pb.swift in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
 				F8089694250B55080023F639 /* NSStatisticsModuleLegendView.swift in Sources */,
@@ -2928,11 +2993,13 @@
 				6E88976B261F288300508334 /* NSUpdateBoardingGermanyViewController.swift in Sources */,
 				DC16178B2638717800B56ADA /* NSDiaryDateSectionHeaderSupplementaryView.swift in Sources */,
 				F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */,
+				DC32EDCB265E1F97003A4C53 /* UBPushManager.swift in Sources */,
 				2462BA1724520A260046906D /* Environment+Endpoints.swift in Sources */,
 				DCA3FFBA245092D50003F5AD /* NSHeaderImageBackgroundView.swift in Sources */,
 				6E3F65FD2449F31D00980A4E /* NSDebugScreenSDKStatusView.swift in Sources */,
 				F8ABA2CD2525FAD700A8D6B5 /* NSTutorialViewController.swift in Sources */,
 				DC16179D2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */,
+				DC32EDC9265E1F97003A4C53 /* UBPushManagerError.swift in Sources */,
 				F8A6BE2A24CAB95000DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
 				F8A6BE2724C9C76F00DE6B44 /* NSExpandableDisclaimerViewBody.swift in Sources */,
 				6E33086A24506E0600913B0E /* NSExplanationView.swift in Sources */,
@@ -2968,6 +3035,7 @@
 				6E6E5171242F5026006E532E /* ConfigResponseBody.swift in Sources */,
 				F86A6A862637F944003CAC1B /* ReusableView.swift in Sources */,
 				6E7C0D39242E02A20017C4F9 /* NSLayoutConstants.swift in Sources */,
+				DC32EDC5265E1F97003A4C53 /* UBPushLocalStorage.swift in Sources */,
 				F84089EE2493696500A66CD1 /* KeychainPersisted.swift in Sources */,
 				F86A6A7C2637F305003CAC1B /* VenueInfo+NS.swift in Sources */,
 				DC16177D2638717800B56ADA /* NSCheckInEditViewController.swift in Sources */,
@@ -2979,6 +3047,8 @@
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */,
 				F87E96DA263B066900755AF1 /* Exposure.swift in Sources */,
+				DC32EDC7265E1F97003A4C53 /* UBPushHandler.swift in Sources */,
+				DC32EDD7265E22BF003A4C53 /* NSPushHandler.swift in Sources */,
 				6EFB097E244603560097BD3D /* NSReportsDetailViewController.swift in Sources */,
 				6E6E518E242FB9A8006E532E /* NSAppTitleView.swift in Sources */,
 				AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */,
@@ -3014,12 +3084,14 @@
 				24780B30242F3EAF003BB26C /* NSInformBottomButtonViewController.swift in Sources */,
 				6E3F65F72449B61A00980A4E /* NSDebugscreenViewController.swift in Sources */,
 				F80E40632508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
+				DC32EDD0265E1FC6003A4C53 /* NSPushRegistrationManager.swift in Sources */,
 				DC1617A32638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */,
 				DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */,
 				DC16178F2638717800B56ADA /* NSDiaryEntryContentView.swift in Sources */,
 				F80E40662508FE1600876906 /* NSStatsticsModuleHeader.swift in Sources */,
 				8EF2A6EF249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */,
 				3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */,
+				DC32EDCD265E1F97003A4C53 /* UBPushRegistrationManager.swift in Sources */,
 				F80E407725092AE100876906 /* NSChartColumnView.swift in Sources */,
 				24780B11242DFD2F003BB26C /* NSReportsModuleView.swift in Sources */,
 				F8ABA2D32525FC3600A8D6B5 /* NSSettingsTutorialViewController.swift in Sources */,

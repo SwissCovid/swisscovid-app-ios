@@ -26,7 +26,7 @@ class ProblematicEventsManager {
     public static let shared = ProblematicEventsManager()
 
     // Add correct backend endpoint.
-    private let backend = Environment.current.checkInService
+    private let backend = Environment.current.traceKeysService
     private var task: URLSessionDataTask?
 
     @UBOptionalUserDefault(key: "ch.admin.bag.dp3t.exposure.lastKeyBundleTag")
@@ -58,6 +58,18 @@ class ProblematicEventsManager {
         logger.trace()
         // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkIn
         CheckInManager.shared.checkoutAfter12HoursIfNecessary()
+
+        // If there are not checkins, there's no need to sync
+        guard CrowdNotifier.hasCheckins() else {
+            completion(false, false)
+            return
+        }
+
+        // If the user is in isolation, there's no need to sync
+        guard !UserStorage.shared.didMarkAsInfected else {
+            completion(false, false)
+            return
+        }
 
         var queryParameters = [String: String]()
         if let tag = lastKeyBundleTag {

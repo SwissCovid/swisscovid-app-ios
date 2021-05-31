@@ -57,6 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             linkHandler.handle(url: url)
         }
 
+        // Setup push manager
+        setupPushManager(launchOptions: launchOptions)
+
         return true
     }
 
@@ -202,6 +205,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
             application.applicationIconBadgeNumber = 0
             NSLocalPush.shared.clearNotifications()
+        }
+    }
+
+    // MARK: - Push
+
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+    }
+
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
+    }
+
+    func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
+    }
+
+    func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        UBPushManager.shared.pushHandler.handleDidReceiveResponse(userInfo) {
+            completionHandler(.newData)
         }
     }
 

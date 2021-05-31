@@ -48,34 +48,45 @@ enum Environment {
     }
 
     var configService: Backend {
-        switch self {
-        case .dev:
-            return Backend("https://www.pt-d.bfs.admin.ch", version: "v1")
-        case .test:
-            return Backend("https://www.pt-t.bfs.admin.ch", version: "v1")
-        case .abnahme:
-            return Backend("https://www.pt-a.bfs.admin.ch", version: "v1")
-        case .prod:
-            return Backend("https://www.pt.bfs.admin.ch", version: "v1")
-        }
+        return Backend(ptBaseUrl, version: "v1")
     }
 
     var publishService: Backend {
+        return Backend(pt1BaseUrl, version: "v2")
+    }
+
+    var traceKeysService: Backend {
+        return Backend(ptBaseUrl, version: "v3")
+    }
+
+    var userUploadService: Backend {
+        return Backend(pt1BaseUrl, version: "v3")
+    }
+
+    private var ptBaseUrl: String {
         switch self {
         case .dev:
-            return Backend("https://www.pt1-d.bfs.admin.ch", version: "v2")
+            return "https://www.pt-d.bfs.admin.ch"
         case .test:
-            return Backend("https://www.pt1-t.bfs.admin.ch", version: "v2")
+            return "https://www.pt-t.bfs.admin.ch"
         case .abnahme:
-            return Backend("https://www.pt1-a.bfs.admin.ch", version: "v2")
+            return "https://www.pt-a.bfs.admin.ch"
         case .prod:
-            return Backend("https://www.pt1.bfs.admin.ch", version: "v2")
+            return "https://www.pt.bfs.admin.ch"
         }
     }
 
-    var checkInService: Backend {
-        // TODO: Add correct backend for check in service
-        return Backend("https://app-dev-ws.notify-me.ch", version: "v3")
+    private var pt1BaseUrl: String {
+        switch self {
+        case .dev:
+            return "https://www.pt1-d.bfs.admin.ch"
+        case .test:
+            return "https://www.pt1-t.bfs.admin.ch"
+        case .abnahme:
+            return "https://www.pt1-a.bfs.admin.ch"
+        case .prod:
+            return "https://www.pt1.bfs.admin.ch"
+        }
     }
 
     // TODO: Add correct base URLs for public QR Codes

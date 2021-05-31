@@ -67,6 +67,10 @@ class CheckInManager {
         if var cc = currentCheckIn, let outTime = cc.checkOutTime {
             ReminderManager.shared.removeAllReminders()
 
+            if !TracingManager.shared.isActivated {
+                UBPushManager.shared.setActive(true)
+            }
+
             let result = CrowdNotifier.addCheckin(venueInfo: cc.venue, arrivalTime: cc.checkInTime, departureTime: outTime)
 
             switch result {
