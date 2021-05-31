@@ -26,6 +26,8 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
         checkedInView.isHidden = true
         checkedOutView.isHidden = true
 
+        enableHighlightBackground = false
+
         checkedInView.checkOutButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.checkoutCallback?()
