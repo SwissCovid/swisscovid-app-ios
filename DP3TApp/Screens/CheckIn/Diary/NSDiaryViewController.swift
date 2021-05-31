@@ -181,24 +181,16 @@ extension NSDiaryViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let d = diary[indexPath.section][indexPath.item]
 
-        let vc = NSCheckInEditViewController(checkIn: d)
-        vc.presentInNavigationController(from: self, useLine: false)
-
-        /*
-         let d = diary[indexPath.section][indexPath.item]
-
-         if let exposure = exposureForDiary(diaryEntry: d) {
-             present(NSModalReportViewController(exposure: exposure), animated: true, completion: nil)
-         } else {
-             guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-
-             if let checkIn = diary[indexPath.section][indexPath.item] {
-                 let vc = NSCheckInEditViewController(checkIn: checkIn)
-                 vc.presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
-                 strongSelf.present(vc, animated: true)
-             }
-         }
-         */
+        if let exposure = exposureForDiary(diaryEntry: d) {
+            let vc = NSReportsDetailExposedCheckInViewController(report: .init(checkInIdentifier: exposure.exposureEvent.checkinId,
+                                                                               arrivalTime: exposure.exposureEvent.arrivalTime,
+                                                                               departureTime: exposure.exposureEvent.departureTime,
+                                                                               venueDescription: exposure.diaryEntry?.venue.description))
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            let vc = NSCheckInEditViewController(checkIn: d)
+            vc.presentInNavigationController(from: self, useLine: false)
+        }
     }
 
     private func exposureForDiary(diaryEntry: CheckIn) -> CheckInExposure? {

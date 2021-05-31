@@ -186,10 +186,10 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
                 guard let self = self else { return }
                 if let exposure = ProblematicEventsManager.shared.getExposureEvents().first(where: { $0.checkinId == self.checkInReport.checkInIdentifier
                 }) {
-                    CheckInManager.shared.hideFromDiary(identifier: exposure.checkinId)
                     ProblematicEventsManager.shared.removeExposure(exposure)
                 }
-                TracingManager.shared.deleteReports()
+                CheckInManager.shared.hideFromDiary(identifier: self.checkInReport.checkInIdentifier)
+                self.navigationController?.popViewController(animated: true)
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
