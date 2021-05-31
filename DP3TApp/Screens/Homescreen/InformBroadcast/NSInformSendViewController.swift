@@ -113,6 +113,7 @@ class NSInformSendViewController: NSViewController {
         UserStorage.shared.didMarkAsInfected = true
         UserStorage.shared.tracingSettingEnabled = false
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
+        UBPushManager.shared.setActive(false)
         UIStateManager.shared.refresh()
 
         if skipThankYou {
