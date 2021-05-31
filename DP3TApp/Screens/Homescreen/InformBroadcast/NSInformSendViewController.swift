@@ -15,18 +15,21 @@ import Foundation
 class NSInformSendViewController: NSViewController {
     private let covidCode: String
     private let checkIns: [CheckIn]?
+    private let skipThankYou: Bool
 
     private var rightBarButtonItem: UIBarButtonItem?
 
-    init(covidCode: String, checkIns: [CheckIn]?) {
+    init(covidCode: String, checkIns: [CheckIn]?, skipThankYou: Bool = false) {
         self.covidCode = covidCode
         self.checkIns = checkIns
+        self.skipThankYou = skipThankYou
         super.init()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(closeButtonTouched))
         navigationItem.hidesBackButton = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         rightBarButtonItem = navigationItem.rightBarButtonItem
@@ -37,6 +40,10 @@ class NSInformSendViewController: NSViewController {
 
         startLoading()
         getTokens()
+    }
+
+    @objc private func closeButtonTouched() {
+        dismiss(animated: true, completion: nil)
     }
 
     private func getTokens() {
@@ -87,11 +94,13 @@ class NSInformSendViewController: NSViewController {
             guard let self = self else { return }
             switch result {
             case let .failure(error):
-                self.stopLoading(error: error) { [weak self] in
-                    guard let self = self else { return }
-                    self.sendCheckIns(tokens: tokens)
+                DispatchQueue.main.async {
+                    self.stopLoading(error: error) { [weak self] in
+                        guard let self = self else { return }
+                        self.sendCheckIns(tokens: tokens)
+                    }
+                    self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
                 }
-                self.navigationItem.rightBarButtonItem = self.rightBarButtonItem
             case .success:
                 DispatchQueue.main.async {
                     self.finish()
@@ -102,10 +111,16 @@ class NSInformSendViewController: NSViewController {
 
     private func finish() {
         UserStorage.shared.didMarkAsInfected = true
+        UserStorage.shared.tracingSettingEnabled = false
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
         UBPushManager.shared.setActive(false)
+        UIStateManager.shared.refresh()
 
-        navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate), animated: true)
+        if skipThankYou {
+            navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
+        } else {
+            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate, hasSentCheckIns: checkIns != nil), animated: true)
+        }
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
         nav?.pushViewController(NSReportsDetailViewController(), animated: false)

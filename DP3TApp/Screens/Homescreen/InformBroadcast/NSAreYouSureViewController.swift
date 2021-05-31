@@ -16,13 +16,16 @@ class NSAreYouSureViewController: NSViewController {
 
     private let titleLabel = NSLabel(.title, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, numberOfLines: 0, textAlignment: .center)
-    private let tryAgainButton = NSButton(title: "inform_are_you_sure_try_again_button".ub_localized)
+    private let tryAgainButton = NSButton(title: "share_button_title".ub_localized)
     private let dontShareButton = NSUnderlinedButton()
 
     private let covidCode: String
+    private let relevantCheckIns: [CheckIn]
 
-    init(covidCode: String) {
+    init(covidCode: String, relevantCheckIns: [CheckIn]) {
         self.covidCode = covidCode
+        self.relevantCheckIns = relevantCheckIns
+
         super.init()
     }
 
@@ -42,25 +45,38 @@ class NSAreYouSureViewController: NSViewController {
     }
 
     private func tryAgainButtonTouched() {
-        if #available(iOS 13.7, *),
-           !TracingManager.shared.isActivated {
-            guard let navigationController = self.navigationController else { return }
-            NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
-        } else {
+        let getKeys = {
             ReportingManager.shared.getUserConsent { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success:
-                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: nil, from: self)
+                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.covidCode, checkIns: self.relevantCheckIns, from: self)
                 case .failure:
                     break
                 }
             }
         }
+
+        if #available(iOS 13.7, *) {
+            switch UIStateManager.shared.trackingState {
+            case let .inactive(error):
+                switch error {
+                case .permissonError:
+                    guard let navigationController = self.navigationController else { return }
+                    NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
+                default:
+                    getKeys()
+                }
+            default:
+                getKeys()
+            }
+        } else {
+            getKeys()
+        }
     }
 
     private func dontShareButtonTouched() {
-        CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: nil, from: self)
+        CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: relevantCheckIns, from: self)
     }
 
     func setupLayout() {
@@ -80,12 +96,12 @@ class NSAreYouSureViewController: NSViewController {
         }
 
         stackScrollView.addSpacerView(NSPadding.large)
-        titleLabel.text = "inform_are_you_sure_title".ub_localized
+        titleLabel.text = "inform_really_not_share_title".ub_localized
         stackScrollView.addArrangedView(titleLabel)
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        textLabel.text = "inform_are_you_sure_text".ub_localized
+        textLabel.text = "inform_really_not_share_subtitle".ub_localized
         stackScrollView.addArrangedView(textLabel)
 
         stackScrollView.addSpacerView(2 * NSPadding.large)
@@ -94,7 +110,7 @@ class NSAreYouSureViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        dontShareButton.title = "inform_are_you_sure_dont_send_button".ub_localized
+        dontShareButton.title = "inform_dont_share_button_title".ub_localized
         stackScrollView.addArrangedView(dontShareButton)
     }
 }

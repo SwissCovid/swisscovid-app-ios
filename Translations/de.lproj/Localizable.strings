@@ -1593,7 +1593,6 @@
 /*Button text, um alle Checkins zu selektieren*/
 "inform_share_checkins_select_all" = "Alle auswählen";
 "inform_dont_send_button_title" = "Nicht senden";
-"inform_try_again_button_title" = "Erneut versuchen";
 "inform_dont_share_button_title" = "Nicht teilen";
 "inform_really_not_share_title" = "Wirklich nicht teilen?";
 "inform_really_not_share_subtitle" = "Das Teilen Ihrer privaten Schlüssel hilft «SwissCovid», andere potenziell infizierte Personen zu benachrichtigen und die weitere Ausbreitung des Virus zu verhindern. Wenn Sie Ihre privaten Schlüssel nicht teilen, werden keine potenziell infizierten Personen benachrichtigt.";
@@ -1645,26 +1644,14 @@
 /*Informieren: Danke Text Checkins Teil*/
 "inform_send_thankyou_text_checkins" = "Ihre ausgewählten Check-In-Einträge wurden gesendet. Alle Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, werden benachrichtigt.";
 
-/*Covidcode eingabe, are your sure not to share, titel*/
-"inform_are_you_sure_title" = "Are you sure?";
-
-/*Covidcode eingabe, are your sure not to share, text*/
-"inform_are_you_sure_text" = "Sharing your random IDs helps “SwissCovid” to notify other potential infected people and avoid the further spreading of the pandemic. If you don’t share your random IDs no automatically recognized encounters can be notified. ";
-
-/*Covidcode eingabe, are your sure not to share, try agan button*/
-"inform_are_you_sure_try_again_button" = "Try again";
-
-/*Covidcode eingabe, are your sure not to share, dont send button*/
-"inform_are_you_sure_dont_send_button" = "Don't share";
-
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
-"pdf_headline" = "SwissCovid Check-Ins";
+"pdf_headline" = "SwissCovid-Check-in";
 
 /*SwissCovid QR Code PDF: Slogan*/
 "pdf_slogan" = "Einchecken ohne Daten zu hinterlassen";
 
 /*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
-"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
+"pdf_explanation" = "Mit der SwissCovid App können Sie sich bei uns einfach einchecken, ohne Ihre Daten zu hinterlassen. Bei einer Risikosituation werden Sie in der App schnell informiert.";
 
 /*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
 "pdf_swisscovid_app" = "SwissCovid App";
@@ -1688,7 +1675,7 @@
 "checkin_footer_title1" = "Warum eine Check-in-Funktion?";
 
 /*Fuzzy*/
-"checkin_footer_subtitle1" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand.";
+"checkin_footer_subtitle1" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Mit dieser Funktion können Sie im Falle eines positiven Tests nicht nur enge Kontakte, sondern auch Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, warnen.";
 
 /*Fuzzy*/
 "checkin_footer_title2" = "Keine zentrale Datenspeicherung";
@@ -1702,7 +1689,7 @@
 "events_footer_title1" = "Wo können Check-ins eingesetzt werden?";
 "events_footer_title2" = "Warum eine Check-in-Funktion?";
 "events_footer_subtitle1" = "SwissCovid-Check-ins können dort eingesetzt werden, wo sich Menschen treffen, aber keine Pflicht zur Kontaktdatenerfassung besteht.\n\nMögliche Einsatzorte:\n– Private Anlässe\n– Vereinsanlässe\n– Zusammenkünfte im professionellen Umfeld wie z.B. Sitzungszimmer, Büroräume, Kantinen, etc.";
-"events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Sie berücksichtigt nicht nur enge Kontakte, sondern auch solche, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben – unabhängig vom Abstand. ";
+"events_footer_subtitle2" = "Die Check-in-Funktion ohne Erfassung der Kontaktdaten erweitert die SwissCovid App. Mit dieser Funktion können Sie im Falle eines positiven Tests nicht nur enge Kontakte, sondern auch Personen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben, warnen.";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
 "meldung_detail_exposed_list_card_subtitle" = "Risikosituation";
@@ -1788,3 +1775,8 @@
 "partial_onboarding_box_action" = "Jetzt abschliessen";
 "partial_onboarding_done_title" = "Konfiguration abgeschlossen";
 "partial_onboarding_done_text" = "Vielen Dank, dass Sie mithelfen, die Verbreitung des Coronavirus einzudämmen.";
+"web_slogan" = "Bei einem Ansteckungsrisiko schnell informiert.";
+
+/*Info URL for testing*/
+/*Fuzzy*/
+"test_info_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";

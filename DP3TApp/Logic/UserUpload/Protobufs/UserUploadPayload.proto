@@ -3,6 +3,7 @@ syntax = "proto3";
 message UserUploadPayload {
   int32 version = 1;
   repeated UploadVenueInfo venueInfos = 2;
+  fixed32 userInteractionDurationMs = 3;
 }
 
 message UploadVenueInfo {

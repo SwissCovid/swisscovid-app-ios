@@ -305,7 +305,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
             TracingManager.shared.deletePositiveTest()
-            UserStorage.shared.didMarkAsInfected = false
         }))
         alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 
