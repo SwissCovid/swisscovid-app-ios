@@ -565,8 +565,6 @@
 		F84BC8AB2664FBBF00678456 /* NSPushRegistrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89B2664FBBE00678456 /* NSPushRegistrationManager.swift */; };
 		F84BC8AC2664FBBF00678456 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89C2664FBBF00678456 /* NSPushHandler.swift */; };
 		F84BC8AD2664FBBF00678456 /* NSPushHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89C2664FBBF00678456 /* NSPushHandler.swift */; };
-		F84BC8AE2664FBBF00678456 /* NSPushRegistration.proto in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89D2664FBBF00678456 /* NSPushRegistration.proto */; };
-		F84BC8AF2664FBBF00678456 /* NSPushRegistration.proto in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89D2664FBBF00678456 /* NSPushRegistration.proto */; };
 		F84BC8B02664FBBF00678456 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89E2664FBBF00678456 /* NSPushRegistration.pb.swift */; };
 		F84BC8B12664FBBF00678456 /* NSPushRegistration.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89E2664FBBF00678456 /* NSPushRegistration.pb.swift */; };
 		F84BC8B22664FBBF00678456 /* NSSilentPushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84BC89F2664FBBF00678456 /* NSSilentPushManager.swift */; };
@@ -2768,7 +2766,6 @@
 				242D222B245C4BD8005DAEA8 /* NSReportsDetailViewController.swift in Sources */,
 				242D222C245C4BD8005DAEA8 /* NSAppTitleView.swift in Sources */,
 				DC3B577625F109230075B5CE /* NSTravelDetailViewController.swift in Sources */,
-				F84BC8AF2664FBBF00678456 /* NSPushRegistration.proto in Sources */,
 				242D222D245C4BD8005DAEA8 /* NSAnimatedGraphView.swift in Sources */,
 				DC32EDDF265F6BAC003A4C53 /* NSInformNotThankYouViewController.swift in Sources */,
 				3DCD3E132654F6C70050945D /* NSReportsDetailExposedCheckInViewController.swift in Sources */,
@@ -3086,7 +3083,6 @@
 				DC3B56E825EE96D30075B5CE /* CountryHelper.swift in Sources */,
 				F8B44EEC2653BCBD009F0ED0 /* NSAreYouSureViewController.swift in Sources */,
 				DC746D582451D50B009426B1 /* NSHeaderErrorView.swift in Sources */,
-				F84BC8AE2664FBBF00678456 /* NSPushRegistration.proto in Sources */,
 				F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */,
 				F80E40702509011D00876906 /* StatisticsLoader.swift in Sources */,
 				6E9A98B92636FEE400BCBC8A /* Dictionary+CaseInsensitiveKey.swift in Sources */,
