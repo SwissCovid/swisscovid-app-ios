@@ -88,7 +88,7 @@ class ReportingManager: ReportingManagerProtocol {
         codeValidator.sendOnsetDateRequest(code: covidCode, isFakeRequest: fake) { result in
             switch result {
             case let .success(onset):
-                self.onsetResponseDate = Date()
+                self.onsetResponseDate = Date().addingTimeInterval(-ExponentialDistribution.sample(rate: 0.2))
                 self.onsetDate = onset.onset
                 completion(.success(onset))
             case let .failure(error):
