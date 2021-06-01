@@ -342,7 +342,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     #if ENABLE_LOGGING
-        private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
+        private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outline(.ns_red))
         private let uploadHelper = NSDebugDatabaseUploadHelper()
         private func uploadDatabaseForDebugPurposes() {
             let alert = UIAlertController(title: "Username", message: nil, preferredStyle: .alert)
