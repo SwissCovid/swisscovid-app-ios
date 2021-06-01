@@ -30,6 +30,8 @@ class NSCheckInEditViewController: NSViewController {
 
     public var userWillCheckOutCallback: (() -> Void)?
 
+    private let checkoutButton = NSButton(title: "checkout_button_title".ub_localized, style: .normal(.ns_blue))
+
     private let stackScrollView = NSStackScrollView(axis: .vertical)
 
     // MARK: - Init
@@ -268,7 +270,22 @@ class NSCheckInEditViewController: NSViewController {
 
         stackScrollView.addSpacerView(2.0 * NSPadding.large)
 
-        if !isCurrentCheckIn {
+        if isCurrentCheckIn {
+            let view = UIView()
+            view.addSubview(checkoutButton)
+
+            checkoutButton.snp.makeConstraints { make in
+                make.left.right.equalToSuperview().inset(2 * NSPadding.large)
+                make.top.bottom.equalToSuperview()
+            }
+
+            checkoutButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.saveButtonTouched()
+            }
+
+            stackScrollView.addArrangedView(view)
+        } else {
             let view = UIView()
             view.addSubview(removeFromDiaryButton)
 

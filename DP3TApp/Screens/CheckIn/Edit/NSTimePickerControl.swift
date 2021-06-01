@@ -13,6 +13,7 @@ import UIKit
 
 class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
     private let datePicker = UIDatePicker()
+    private let backgroundView = UIView()
 
     var timeChangedCallback: ((Date) -> Void)?
 
@@ -60,7 +61,17 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
     private func setup() {
         datePicker.addTarget(self, action: #selector(handleDatePicker), for: .valueChanged)
 
-        backgroundColor = .ns_backgroundSecondary
+        backgroundView.layer.cornerRadius = 3
+        backgroundView.backgroundColor = .ns_backgroundSecondary
+        addSubview(backgroundView)
+
+        let label = NSLabel(.uppercaseBold)
+        label.text = fieldTitle
+
+        addSubview(label)
+        label.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
 
         datePicker.datePickerMode = .dateAndTime
         if #available(iOS 13.4, *) {
@@ -68,13 +79,15 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
         }
 
         addSubview(datePicker)
-
         datePicker.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(label.snp.bottom).offset(NSPadding.small)
+            make.leading.trailing.bottom.equalToSuperview()
             make.height.equalTo(104.0)
         }
 
-        layer.cornerRadius = 3
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalTo(datePicker)
+        }
     }
 
     @objc private func handleDatePicker() {
