@@ -148,7 +148,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
         let text = "meldungen_detail_open_leitfaden_button".ub_localized
-        leitfadenButton.title = text.uppercased()
+        leitfadenButton.title = text
         leitfadenButton.backgroundColor = .ns_blue
 
         leitfadenButton.touchUpCallback = { [weak self] in

@@ -43,7 +43,7 @@ class NSWhatToDoInformModuleView: NSSimpleModuleBaseView {
 
     init() {
         enterCovidCodeButton = NSButton(title: configTexts?.enterCovidcodeBoxButtonTitle ?? "inform_detail_box_button".ub_localized,
-                                        style: .uppercase(.ns_purple))
+                                        style: .normal(.ns_purple))
 
         super.init(title: configTexts?.enterCovidcodeBoxTitle ?? "inform_detail_box_title".ub_localized,
                    subtitle: configTexts?.enterCovidcodeBoxSupertitle ?? "inform_detail_navigation_title".ub_localized,

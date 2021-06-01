@@ -15,7 +15,7 @@ import WebKit
 class NSEventPDFViewController: NSViewController {
     private let webView = WKWebView()
 
-    private let printButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-print")), buttonTintColor: .ns_blue)
+    private let printButton = NSButton(title: "show_pdf_button".ub_localized, style: .outline(.ns_blue))
 
     let event: CreatedEvent
 
@@ -25,7 +25,7 @@ class NSEventPDFViewController: NSViewController {
         self.event = event
         super.init()
 
-        printButton.title = "print_button_title".ub_localized
+        printButton.setImage(UIImage(named: "ic-print")?.ub_image(with: .ns_blue), for: .normal)
     }
 
     override func viewDidLoad() {

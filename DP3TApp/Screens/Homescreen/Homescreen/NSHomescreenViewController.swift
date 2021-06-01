@@ -20,7 +20,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let checkInView = NSCheckInHomescreenModuleView()
     private let covidCodeView = NSCovidCodeModuleView()
 
-    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
+    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_red))
 
     private var lastState: UIStateModel = .init()
 

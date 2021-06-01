@@ -20,20 +20,20 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private let createdEvent: CreatedEvent
 
-    private let showPDFButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-document")), buttonTintColor: .ns_blue)
-    private let shareButton = NSExternalLinkButton(style: .fill(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-share-ios")), buttonTintColor: .ns_blue)
-    private let checkInButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .other(image: UIImage(named: "ic-check-in")), buttonTintColor: .ns_blue)
-    private let deleteButton = NSExternalLinkButton(style: .outlined(color: .ns_red), size: .normal, linkType: .other(image: UIImage(named: "ic-delete")), buttonTintColor: .ns_red)
+    private let checkInButton = NSButton(title: "self_checkin_button_title".ub_localized, style: .outline(.ns_blue))
+    private let shareButton = NSButton(title: "share_button_title".ub_localized, style: .normal(.ns_blue))
+    private let showPDFButton = NSButton(title: "print_button_title".ub_localized, style: .normal(.ns_blue))
+    private let deleteButton = NSButton(title: "delete_button_title".ub_localized, style: .outline(.ns_red))
 
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
 
         super.init()
 
-        showPDFButton.title = "show_pdf_button".ub_localized
-        checkInButton.title = "self_checkin_button_title".ub_localized
-        deleteButton.title = "delete_button_title".ub_localized
-        shareButton.title = "share_button_title".ub_localized
+        checkInButton.setImage(UIImage(named: "ic-check-in"), for: .normal)
+        shareButton.setImage(UIImage(named: "ic-share-ios"), for: .normal)
+        showPDFButton.setImage(UIImage(named: "ic-print"), for: .normal)
+        deleteButton.setImage(UIImage(named: "ic-delete"), for: .normal)
 
         showPDFButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -128,7 +128,7 @@ class NSCreatedEventDetailViewController: NSViewController {
 
         let padding = 3.0 * NSPadding.medium
 
-        for b in [showPDFButton, shareButton, deleteButton] {
+        for b in [shareButton, showPDFButton, deleteButton] {
             buttonStackView.addArrangedView(b)
             buttonStackView.addSpacerView(padding)
         }

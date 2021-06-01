@@ -14,18 +14,14 @@ class NSButton: UBButton {
     enum Style {
         // bool fo
         case normal(UIColor)
-        case uppercase(UIColor)
         case outline(UIColor)
-        case outlineUppercase(UIColor)
         case borderlessUppercase(UIColor)
 
         var textColor: UIColor {
             switch self {
             case .normal:
                 return UIColor.white
-            case .uppercase:
-                return UIColor.white
-            case let .outlineUppercase(c), let .outline(c):
+            case let .outline(c):
                 return c
             case let .borderlessUppercase(c):
                 return c
@@ -36,9 +32,7 @@ class NSButton: UBButton {
             switch self {
             case let .normal(c):
                 return c
-            case let .uppercase(c):
-                return c
-            case .outlineUppercase, .outline:
+            case .outline:
                 return .clear
             case .borderlessUppercase:
                 return .clear
@@ -47,7 +41,7 @@ class NSButton: UBButton {
 
         var borderColor: UIColor {
             switch self {
-            case let .outlineUppercase(c), let .outline(c):
+            case let .outline(c):
                 return c
             default:
                 return .clear
@@ -60,10 +54,6 @@ class NSButton: UBButton {
 
         var isUppercase: Bool {
             switch self {
-            case .uppercase:
-                return true
-            case .outlineUppercase:
-                return true
             case .borderlessUppercase:
                 return true
             default:
@@ -126,14 +116,32 @@ class NSButton: UBButton {
         }
     }
 
+    override func setImage(_ image: UIImage?, for state: UIControl.State) {
+        super.setImage(image, for: state)
+        invalidateIntrinsicContentSize()
+    }
+
     override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
 
         if contentSize.height > 44.0 {
-            contentSize.height = contentSize.height + NSPadding.medium
+            contentSize.height += NSPadding.medium
+        }
+
+        if let img = imageView?.image {
+            contentSize.width += 2 * (img.size.width + 12)
         }
 
         return contentSize
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        if let img = imageView?.image {
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: bounds.width - 12 - img.size.width, bottom: 0, right: 12)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: img.size.width / 2, bottom: 0, right: -img.size.width / 2)
+        }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -146,8 +154,8 @@ class NSButton: UBButton {
 
 extension NSButton {
     static func faqButton(color: UIColor) -> UIView {
-        let faqButton = NSExternalLinkButton(style: .outlined(color: color))
-        faqButton.title = "faq_button_title".ub_localized
+        let faqButton = NSButton(title: "faq_button_title".ub_localized, style: .outline(color))
+        faqButton.setImage(UIImage(named: "ic-link-external")?.ub_image(with: color), for: .normal)
 
         faqButton.touchUpCallback = {
             if let url = URL(string: "faq_button_url".ub_localized) {

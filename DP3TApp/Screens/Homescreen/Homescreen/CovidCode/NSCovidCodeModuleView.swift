@@ -66,7 +66,7 @@ class NSCovidCodeModuleView: NSModuleBaseView {
 
 private class NSCovidCodeModuleNotInfectedView: UIView {
     private let explainationLabel = NSLabel(.textLight)
-    let enterCovidCodeButton = NSButton(title: "inform_code_title".ub_localized, style: .outlineUppercase(.ns_purple))
+    let enterCovidCodeButton = NSButton(title: "inform_code_title".ub_localized, style: .outline(.ns_purple))
 
     init() {
         super.init(frame: .zero)
@@ -95,7 +95,7 @@ private class NSCovidCodeModuleNotInfectedView: UIView {
 
 private class NSCovidCodeModuleInfectedView: UIView {
     private let explainationLabel = NSLabel(.textLight)
-    let endIsolationModeButton = NSButton(title: "delete_infection_button".ub_localized, style: .outlineUppercase(.ns_purple))
+    let endIsolationModeButton = NSButton(title: "delete_infection_button".ub_localized, style: .outline(.ns_purple))
 
     init() {
         super.init(frame: .zero)

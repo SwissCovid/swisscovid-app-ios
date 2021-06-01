@@ -24,7 +24,7 @@
             private let mockModuleView = NSDebugScreenMockView()
         #endif
 
-        private let certificatePinningButton = NSButton(title: "", style: .uppercase(.ns_purple))
+        private let certificatePinningButton = NSButton(title: "", style: .normal(.ns_purple))
         private let certificatePinningView = NSSimpleModuleBaseView(title: "")
 
         #if ENABLE_LOGGING

@@ -40,9 +40,9 @@ class NSExternalLinkButton: UBButton {
             case .normal(color: _):
                 super.title = newValue
             case .outlined(color: _):
-                super.title = newValue?.uppercased()
+                super.title = newValue
             case .fill(color: _):
-                super.title = newValue?.uppercased()
+                super.title = newValue
             }
         }
         get {

@@ -19,7 +19,7 @@ class NSQRCodeGenerationViewController: NSViewController {
     private let subttitleLabel = NSLabel(.textLight, textAlignment: .center)
     private let titleTextField = NSFormField(inputControl: NSBaseTextField())
 
-    private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
+    private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .normal(.ns_blue))
 
     var codeCreatedCallback: ((CreatedEvent) -> Void)?
 

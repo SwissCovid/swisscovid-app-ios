@@ -14,7 +14,7 @@ import UIKit
 class NSCreatedEventsViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: NSPadding.small)
 
-    private let generateButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .uppercase(.ns_blue))
+    private let generateButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .normal(.ns_blue))
 
     private let eventsInfoBox: NSInfoBoxView = {
         let model = NSInfoBoxView.ViewModel(title: "events_info_box_title".ub_localized, subText: "events_info_box_text".ub_localized, image: UIImage(named: "ic-info"), titleColor: .ns_blue, subtextColor: .ns_blue, backgroundColor: .ns_blueBackground, dynamicIconTintColor: .ns_blue, titleLabelType: .textBold)
