@@ -214,7 +214,11 @@ class UIStateLogic {
                     tracing = .tracingPermissionError(code: nil)
                 }
             case .authorizationUnknown:
-                tracing = .tracingAuthorizationUnknown
+                if !UserStorage.shared.tracingSettingEnabled {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingAuthorizationUnknown
+                }
             case .exposureNotificationError:
                 if !UserStorage.shared.tracingSettingEnabled {
                     tracing = .tracingDisabled
