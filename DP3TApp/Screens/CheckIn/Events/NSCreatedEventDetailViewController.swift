@@ -118,7 +118,7 @@ class NSCreatedEventDetailViewController: NSViewController {
         contentView.addSubview(buttonStackView)
 
         buttonStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0.0, left: 2.0 * NSPadding.large, bottom: 0.0, right: 2.0 * NSPadding.large))
+            make.edges.equalToSuperview().inset(UIEdgeInsets(top: 0.0, left: NSPadding.large, bottom: 0.0, right: NSPadding.large))
         }
 
         buttonStackView.addArrangedView(checkInButton)

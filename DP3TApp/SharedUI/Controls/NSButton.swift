@@ -49,7 +49,13 @@ class NSButton: UBButton {
         }
 
         var highlightedColor: UIColor {
-            return UIColor.black.withAlphaComponent(0.15)
+            switch self {
+            case .normal:
+                return UIColor.black.withAlphaComponent(0.15)
+            case .outline, .borderlessUppercase:
+                return UIColor.setColorsForTheme(lightColor: UIColor.black.withAlphaComponent(0.15),
+                                                 darkColor: UIColor.ns_darkModeBackground2.withAlphaComponent(0.8))
+            }
         }
 
         var isUppercase: Bool {

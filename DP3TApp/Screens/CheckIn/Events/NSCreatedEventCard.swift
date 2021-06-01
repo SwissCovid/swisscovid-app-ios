@@ -20,7 +20,6 @@ class NSCreatedEventCard: UBButton {
 
     private let topContainer = UIView()
 
-    private let categoryLabel = NSLabel(.textLight)
     private let eventTitleLabel = NSLabel(.title)
 
     let qrCodeImageView = UIImageView(image: UIImage(named: "ic-qrcode-large")?.withRenderingMode(.alwaysTemplate))
@@ -34,7 +33,6 @@ class NSCreatedEventCard: UBButton {
 
         setupView()
 
-        categoryLabel.text = createdEvent.venueInfo.venueType?.title
         eventTitleLabel.text = createdEvent.venueInfo.description
 
         highlightedBackgroundColor = .ns_background_highlighted
@@ -59,20 +57,16 @@ class NSCreatedEventCard: UBButton {
         topContainer.addSubview(qrCodeImageView)
         qrCodeImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().inset(20)
-        }
-
-        topContainer.addSubview(categoryLabel)
-        categoryLabel.snp.makeConstraints { make in
-            make.top.equalTo(qrCodeImageView)
-            make.leading.equalTo(qrCodeImageView.snp.trailing).offset(NSPadding.medium)
-            make.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(20)
         }
 
         topContainer.addSubview(eventTitleLabel)
         eventTitleLabel.snp.makeConstraints { make in
-            make.top.equalTo(categoryLabel.snp.bottom).offset(NSPadding.small)
-            make.leading.trailing.equalTo(categoryLabel)
-            make.bottom.equalToSuperview().inset(15)
+            make.centerY.equalToSuperview()
+            make.top.greaterThanOrEqualToSuperview().offset(15)
+            make.leading.equalTo(qrCodeImageView.snp.trailing).offset(NSPadding.medium)
+            make.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.bottom.lessThanOrEqualToSuperview().inset(15)
         }
     }
 }
