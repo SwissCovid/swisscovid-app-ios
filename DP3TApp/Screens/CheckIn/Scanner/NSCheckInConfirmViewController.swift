@@ -17,7 +17,8 @@ class NSCheckInConfirmViewController: NSViewController {
     private let qrCode: String
     private let venueInfo: VenueInfo
 
-    private let reminderLabel = NSLabel(.uppercaseBold, textColor: .ns_purple, textAlignment: .center)
+    private let reminderLabel = NSLabel(.uppercaseBold, textAlignment: .center)
+    private let reminderSubtitleLabel = NSLabel(.textLight, textAlignment: .center)
     private let reminderControl: NSReminderControl
     private let checkInButton = NSButton(title: "check_in_now_button_title".ub_localized, style: .normal(.ns_blue))
 
@@ -129,6 +130,7 @@ class NSCheckInConfirmViewController: NSViewController {
 
         let venueView = NSVenueView(venue: venueInfo)
         reminderLabel.text = "checkin_set_reminder".ub_localized
+        reminderSubtitleLabel.text = "checkin_set_reminder_explanation".ub_localized
 
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -138,6 +140,8 @@ class NSCheckInConfirmViewController: NSViewController {
         stackView.addArrangedView(venueView)
         stackView.addSpacerView(2.0 * NSPadding.large)
         stackView.addArrangedView(reminderLabel)
+        stackView.addSpacerView(NSPadding.medium)
+        stackView.addArrangedView(reminderSubtitleLabel)
         stackView.addSpacerView(2.0 * NSPadding.medium)
         stackView.addArrangedView(reminderControl)
 
