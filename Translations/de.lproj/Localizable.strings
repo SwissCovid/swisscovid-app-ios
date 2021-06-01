@@ -920,12 +920,6 @@
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 387 77 80";
 
-/*Text beim Bluetooth Control iOS 13.5*/
-"tracing_setting_text_ios_13_5" = "COVID-19-Kontaktmitteilungen";
-
-/*Text beim Bluetooth Control iOS 13.6*/
-"tracing_setting_text_ios_13_6" = "COVID-19-Begegnungsmitteilungen";
-
 /*Text beim Bluetooth Control iOS 14*/
 /*Fuzzy*/
 "tracing_setting_text_ios_14_0" = "Begegnungsmitteilungen";

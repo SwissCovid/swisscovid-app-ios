@@ -893,12 +893,6 @@
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 387 77 80";
 
-/*Text beim Bluetooth Control iOS 13.5*/
-"tracing_setting_text_ios_13_5" = "";
-
-/*Text beim Bluetooth Control iOS 13.6*/
-"tracing_setting_text_ios_13_6" = "";
-
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
 "bottom_nav_tab_home" = "SwissCovid";
@@ -1696,4 +1690,4 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "";
+"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
