@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "rm -rf &quot;${TARGET_BUILD_DIR}/${TARGET_NAME}.app&quot;/Frameworks/*.a&#10;">
+               scriptText = "rm -rf &quot;${TARGET_BUILD_DIR}/${TARGET_NAME}.app&quot;/Frameworks/*.a&#10;rm -rf &quot;${TARGET_BUILD_DIR}/${TARGET_NAME}.app&quot;/AppClips/*.a&#10;rm -rf &quot;${TARGET_BUILD_DIR}/${TARGET_NAME}.app&quot;/AppClips/DP3TAppClip.app/Frameworks/*.a&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"

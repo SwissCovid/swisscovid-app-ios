@@ -474,6 +474,7 @@
 		DC85DEFE263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */; };
 		DC85DF00263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
 		DC85DF01263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
+		DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A3242CE5E000AD1548 /* InfoPlist.strings */; };
 		DCA3FFB424502D370003F5AD /* NSErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* NSErrorView.swift */; };
@@ -688,6 +689,13 @@
 			remoteGlobalIDString = 8E81CC94241FCC7D006F2437;
 			remoteInfo = IVC;
 		};
+		DC8CAEEE266666CB002D78EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E81CC8D241FCC7D006F2437 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6E5B696F265F6A0400EB0C56;
+			remoteInfo = DP3TAppClip;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -698,6 +706,17 @@
 			dstSubfolderSpec = 16;
 			files = (
 				6E5B6984265F6A0500EB0C56 /* DP3TAppClip.app in Embed App Clips */,
+			);
+			name = "Embed App Clips";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC8CAEF0266666CB002D78EF /* Embed App Clips */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
+			dstSubfolderSpec = 16;
+			files = (
+				DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */,
 			);
 			name = "Embed App Clips";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2177,10 +2196,12 @@
 				242D2253245C4BD8005DAEA8 /* Frameworks */,
 				242D2256245C4BD8005DAEA8 /* Resources */,
 				242D226B245C4BD8005DAEA8 /* ShellScript */,
+				DC8CAEF0266666CB002D78EF /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DC8CAEEF266666CB002D78EF /* PBXTargetDependency */,
 			);
 			name = DP3TAppCalibration;
 			packageProductDependencies = (
@@ -3165,6 +3186,11 @@
 			isa = PBXTargetDependency;
 			target = 8E81CC94241FCC7D006F2437 /* DP3TApp */;
 			targetProxy = 8E81CCAC241FCC7F006F2437 /* PBXContainerItemProxy */;
+		};
+		DC8CAEEF266666CB002D78EF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6E5B696F265F6A0400EB0C56 /* DP3TAppClip */;
+			targetProxy = DC8CAEEE266666CB002D78EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
