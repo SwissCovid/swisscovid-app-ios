@@ -154,7 +154,9 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
             guard let self = self else { return }
             switch result {
             case let .success(onset):
-                let relevantCheckIns = CheckInManager.shared.getDiary().filter { $0.checkOutTime != nil && $0.checkOutTime! >= onset.onset }
+                let relevantCheckIns = CheckInManager.shared.getDiary()
+                    .filter { $0.checkOutTime != nil && $0.checkOutTime! >= onset.onset }
+                    .filter { $0.venue.venueType != .contactTracingQrCode }
                 if !ReportingManager.shared.hasUserConsent {
                     ReportingManager.shared.getUserConsent { [weak self] result in
                         guard let self = self else { return }
