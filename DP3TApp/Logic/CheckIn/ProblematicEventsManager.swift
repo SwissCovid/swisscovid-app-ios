@@ -101,6 +101,22 @@ class ProblematicEventsManager {
             guard let response = response as? HTTPURLResponse else {
                 return
             }
+
+            do {
+                try ConfigManager.validateJWT(httpResponse: response, data: data ?? Data())
+            } catch {
+                UIStateManager.shared.checkInError = CheckInError.networkError(error: .jwtError(error: error))
+
+                if UIStateManager.shared.lastCheckInSyncErrorTime == nil {
+                    UIStateManager.shared.lastCheckInSyncErrorTime = Date()
+                }
+
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
+                return
+            }
+
             switch response.statusCode {
             case 200, 204, 304:
                 break
