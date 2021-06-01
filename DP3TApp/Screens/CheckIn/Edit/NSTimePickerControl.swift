@@ -43,21 +43,15 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
 
     func setDate(currentStart: Date, currentEnd: Date) {
         let calendar = Calendar.current
-        let startTime = calendar.startOfDay(for: currentStart)
-
-        var dayComponent = DateComponents()
-        dayComponent.day = 1 // For removing one day (yesterday): -1
-        let nextDate = calendar.date(byAdding: dayComponent, to: currentStart)
-        let startEnd = calendar.date(byAdding: dayComponent, to: startTime)
 
         if isStart {
-            datePicker.minimumDate = startTime
-            datePicker.maximumDate = startEnd! > Date() ? Date() : startEnd!
             datePicker.date = currentStart
+            datePicker.minimumDate = nil
+            datePicker.maximumDate = calendar.date(byAdding: DateComponents(minute: -1), to: currentEnd)
         } else {
-            datePicker.minimumDate = currentStart
-            datePicker.maximumDate = nextDate
             datePicker.date = currentEnd
+            datePicker.minimumDate = calendar.date(byAdding: DateComponents(minute: 1), to: currentStart)
+            datePicker.maximumDate = nil
         }
     }
 
