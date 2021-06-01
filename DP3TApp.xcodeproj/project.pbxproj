@@ -71,7 +71,7 @@
 		242D2208245C4BD8005DAEA8 /* ConfigLoadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245626A0245265340058D11F /* ConfigLoadOperation.swift */; };
 		242D2209245C4BD8005DAEA8 /* String+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B00243F6F640066C773 /* String+NS.swift */; };
 		242D220A245C4BD8005DAEA8 /* UBUserDefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC702B09243F6FAE0066C773 /* UBUserDefaultValue.swift */; };
-		242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */; };
+		242D220B245C4BD8005DAEA8 /* NSCovidCodeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSCovidCodeInfoViewController.swift */; };
 		242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB23D77245AF2C30073E83A /* RandomGenerators.swift */; };
 		242D220D245C4BD8005DAEA8 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
 		242D220E245C4BD8005DAEA8 /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
@@ -209,7 +209,7 @@
 		6E1771542440B09A0008D73D /* NSCodeInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */; };
 		6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1771552440B5140008D73D /* NSCodeInputControl.swift */; };
 		6E33085F24502BBD00913B0E /* NSWhatToDoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33085E24502BBD00913B0E /* NSWhatToDoButton.swift */; };
-		6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */; };
+		6E33086224503CFC00913B0E /* NSCovidCodeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086124503CFC00913B0E /* NSCovidCodeInfoViewController.swift */; };
 		6E33086424503D0900913B0E /* NSWhatToDoSymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086324503D0900913B0E /* NSWhatToDoSymptomViewController.swift */; };
 		6E3308662450442D00913B0E /* NSWhatToDoInformModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E3308652450442D00913B0E /* NSWhatToDoInformModuleView.swift */; };
 		6E33086824504BF400913B0E /* NSWhatToDoSymptomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */; };
@@ -786,7 +786,7 @@
 		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
 		6E1771552440B5140008D73D /* NSCodeInputControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputControl.swift; sourceTree = "<group>"; };
 		6E33085E24502BBD00913B0E /* NSWhatToDoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoButton.swift; sourceTree = "<group>"; };
-		6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoPositiveTestViewController.swift; sourceTree = "<group>"; };
+		6E33086124503CFC00913B0E /* NSCovidCodeInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodeInfoViewController.swift; sourceTree = "<group>"; };
 		6E33086324503D0900913B0E /* NSWhatToDoSymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoSymptomViewController.swift; sourceTree = "<group>"; };
 		6E3308652450442D00913B0E /* NSWhatToDoInformModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoInformModuleView.swift; sourceTree = "<group>"; };
 		6E33086724504BF400913B0E /* NSWhatToDoSymptomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWhatToDoSymptomView.swift; sourceTree = "<group>"; };
@@ -1493,7 +1493,7 @@
 		6E33086024503CE700913B0E /* WhatToDo */ = {
 			isa = PBXGroup;
 			children = (
-				6E33086124503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift */,
+				6E33086124503CFC00913B0E /* NSCovidCodeInfoViewController.swift */,
 				6E33086324503D0900913B0E /* NSWhatToDoSymptomViewController.swift */,
 				F8631135257E2D5F0092AB97 /* NSMoreTestInformationPopupViewController.swift */,
 				6E3308652450442D00913B0E /* NSWhatToDoInformModuleView.swift */,
@@ -2714,7 +2714,7 @@
 				F8ABA2F02526089E00A8D6B5 /* NSTutorialViewController.swift in Sources */,
 				242D220A245C4BD8005DAEA8 /* UBUserDefaultValue.swift in Sources */,
 				246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */,
-				242D220B245C4BD8005DAEA8 /* NSWhatToDoPositiveTestViewController.swift in Sources */,
+				242D220B245C4BD8005DAEA8 /* NSCovidCodeInfoViewController.swift in Sources */,
 				6EF28D9226393878001C1565 /* QRCodePDFGenerator.swift in Sources */,
 				F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
@@ -2999,7 +2999,7 @@
 				DC1617AC2638919C00B56ADA /* NSCreatedEventCard.swift in Sources */,
 				DC702B10243F6FAE0066C773 /* UBUserDefaultValue.swift in Sources */,
 				DC1ACCC12637CCEA0054CBFC /* QRCodeUtils.swift in Sources */,
-				6E33086224503CFC00913B0E /* NSWhatToDoPositiveTestViewController.swift in Sources */,
+				6E33086224503CFC00913B0E /* NSCovidCodeInfoViewController.swift in Sources */,
 				8EB23D78245AF2C30073E83A /* RandomGenerators.swift in Sources */,
 				F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
 				F84BC8A62664FBBF00678456 /* UBPushHandler.swift in Sources */,

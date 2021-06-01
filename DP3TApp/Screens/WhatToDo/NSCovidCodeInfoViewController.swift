@@ -15,18 +15,7 @@ class NSCovidCodeInfoViewController: NSViewController {
 
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
-    private var infoBoxView: NSInfoBoxView?
-    private var infoBoxViewModel: NSInfoBoxView.ViewModel?
-
-    public var hearingImpairedButtonTouched: (() -> Void)? {
-        didSet {
-            if var model = infoBoxViewModel {
-                model.hearingImpairedButtonCallback = hearingImpairedButtonTouched
-                infoBoxView?.update(with: model)
-                infoBoxViewModel = model
-            }
-        }
-    }
+    private let faqButton = NSButton.faqButton(color: .ns_purple)
 
     private let configTexts: ConfigResponseBody.WhatToDoPositiveTestTexts?
 
@@ -47,43 +36,6 @@ class NSCovidCodeInfoViewController: NSViewController {
 
         setupStackScrollView()
 
-        if let infoBox = configTexts?.infoBox {
-            var hearingImpairedCallback: (() -> Void)?
-            if let hearingImpairedText = infoBox.hearingImpairedInfo {
-                hearingImpairedCallback = {
-                    print(hearingImpairedText)
-                }
-            }
-            var model = NSInfoBoxView.ViewModel(title: infoBox.title,
-                                                subText: infoBox.msg,
-                                                titleColor: .ns_text,
-                                                subtextColor: .ns_text,
-                                                additionalText: infoBox.urlTitle,
-                                                additionalURL: infoBox.url?.absoluteString,
-                                                dynamicIconTintColor: .ns_purple,
-                                                externalLinkStyle: .normal(color: .ns_purple),
-                                                hearingImpairedButtonCallback: hearingImpairedCallback)
-
-            model.image = UIImage(named: "ic-info")
-            model.backgroundColor = .ns_purpleBackground
-            model.titleLabelType = .textBold
-
-            infoBoxView = NSInfoBoxView(viewModel: model)
-            infoBoxViewModel = model
-
-        } else {
-            infoBoxView = nil
-            infoBoxViewModel = nil
-        }
-
-        if let hearingImpairedText = configTexts?.infoBox?.hearingImpairedInfo {
-            hearingImpairedButtonTouched = { [weak self] in
-                guard let strongSelf = self else { return }
-                let popup = NSHearingImpairedPopupViewController(infoText: hearingImpairedText, accentColor: .ns_purple)
-                strongSelf.navigationController?.present(popup, animated: true)
-            }
-        }
-
         setupLayout()
 
         setupAccessibility()
@@ -102,21 +54,7 @@ class NSCovidCodeInfoViewController: NSViewController {
     }
 
     private func setupLayout() {
-        stackScrollView.addSpacerView(NSPadding.medium)
-
-        if let infoBoxView = infoBoxView {
-            let infoBoxWrapper = UIView()
-            infoBoxWrapper.addSubview(infoBoxView)
-            infoBoxWrapper.backgroundColor = .ns_background
-            infoBoxWrapper.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
-            infoBoxView.snp.makeConstraints { make in
-                make.edges.equalToSuperview().inset(NSPadding.small)
-            }
-            stackScrollView.addSpacerView(NSPadding.large)
-            stackScrollView.addArrangedView(infoBoxWrapper)
-
-            stackScrollView.addSpacerView(NSPadding.large)
-        }
+        stackScrollView.addSpacerView(NSPadding.large)
 
         if let configTexts = configTexts {
             for faqEntry in configTexts.faqEntries {
@@ -160,8 +98,10 @@ class NSCovidCodeInfoViewController: NSViewController {
 
             stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-user")!, text: "inform_detail_faq3_text".ub_localized, title: "inform_detail_faq3_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_purple))
 
-            stackScrollView.addSpacerView(2 * NSPadding.large)
+            stackScrollView.addSpacerView(2 * NSPadding.medium)
         }
+
+        stackScrollView.addArrangedView(faqButton)
 
         stackScrollView.addSpacerView(NSPadding.large)
     }
