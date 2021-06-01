@@ -1689,3 +1689,9 @@
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
 "checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+
+/*turn camera light on*/
+"accessibility_camera_light_on" = "turn light on";
+
+/*turn camera light off*/
+"accessibility_camera_light_off" = "turn light off";

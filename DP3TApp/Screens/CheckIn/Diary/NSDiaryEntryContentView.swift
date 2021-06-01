@@ -39,6 +39,9 @@ class NSDiaryEntryContentView: UIView {
     init() {
         super.init(frame: .zero)
         setup()
+
+        isAccessibilityElement = true
+        accessibilityElements = []
     }
 
     required init?(coder _: NSCoder) {
@@ -87,13 +90,9 @@ class NSDiaryEntryContentView: UIView {
         if let d = exposure?.diaryEntry {
             checkIn = d
         } else {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "HH:mm"
-
             if let e = exposure?.exposureEvent {
-                titleLabel.text = [e.arrivalTime, e.departureTime].compactMap { date -> String? in
-                    formatter.string(from: date)
-                }.joined(separator: " – ")
+                titleLabel.text = DateFormatter.ub_fromTimeToTime(from: e.arrivalTime, to: e.departureTime)
+                titleLabel.accessibilityLabel = DateFormatter.ub_accessibilityFromTimeToTime(from: e.arrivalTime, to: e.departureTime)
                 subtitleLabel.text = ""
             }
         }
@@ -118,5 +117,20 @@ class NSDiaryEntryContentView: UIView {
         titleLabel.text = nil
         subtitleLabel.text = nil
         warningImageView.isHidden = true
+    }
+
+    override var accessibilityLabel: String? {
+        set {}
+        get {
+            guard let checkIn = checkIn else { return nil }
+            var texts: [String?] = []
+            texts.append(checkIn.venue.description)
+            texts.append(checkIn.venue.venueType?.title)
+            texts.append(checkIn.venue.subtitle)
+            if let checkOutTime = checkIn.checkOutTime {
+                texts.append(DateFormatter.ub_accessibilityFromTimeToTime(from: checkIn.checkInTime, to: checkOutTime))
+            }
+            return texts.compactMap { $0 }.joined(separator: "\n")
+        }
     }
 }

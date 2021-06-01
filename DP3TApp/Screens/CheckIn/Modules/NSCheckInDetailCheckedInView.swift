@@ -86,6 +86,10 @@ class NSCheckInDetailCheckedInView: UIView {
         titleTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.timerLabel.text = strongSelf.checkIn?.timeSinceCheckIn() ?? ""
+            if let checkInTime = strongSelf.checkIn?.checkInTime {
+                let timeInterval = Date().timeIntervalSince(checkInTime)
+                strongSelf.timerLabel.accessibilityLabel = DateComponentsFormatter.localizedString(from: DateComponents(hour: timeInterval.ub_hours, minute: timeInterval.ub_minutes, second: timeInterval.ub_seconds), unitsStyle: .spellOut)
+            }
         })
         titleTimer?.fire()
     }

@@ -58,6 +58,8 @@ class NSCheckInViewController: NSViewController {
 
         title = "checkin_title".ub_localized
 
+        lampButton.accessibilityLabel = lampIsOn ? "accessibility_camera_light_on".ub_localized : "accessibility_camera_light_off".ub_localized
+
         NotificationCenter.default.addObserver(forName: UIApplication.didBecomeActiveNotification, object: nil, queue: nil) { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.startScanning()
@@ -132,6 +134,7 @@ class NSCheckInViewController: NSViewController {
 
         qrView?.setCameraLight(on: lampIsOn)
         lampButton.setImage(UIImage(named: lampIsOn ? "ic-light-on" : "ic-light-off"), for: .normal)
+        lampButton.accessibilityLabel = lampIsOn ? "accessibility_camera_light_on".ub_localized : "accessibility_camera_light_off".ub_localized
     }
 
     // MARK: - Start scanning

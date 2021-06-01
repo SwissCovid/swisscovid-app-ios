@@ -40,3 +40,17 @@ extension TimeInterval {
         return Milliseconds((self * 1000).rounded())
     }
 }
+
+extension TimeInterval {
+    var ub_seconds: Int {
+        Int(self) % 60
+    }
+
+    var ub_minutes: Int {
+        (Int(self) / 60) % 60
+    }
+
+    var ub_hours: Int {
+        Int(self) / 3600
+    }
+}
