@@ -14,17 +14,21 @@ class NSNavigationController: UINavigationController {
     // MARK: - Views
 
     let lineView = UIView()
-    let useLine: Bool
+    var useLine: Bool = true
 
     // MARK: - Init
 
     init(rootViewController: UIViewController, useLine: Bool = true) {
-        self.useLine = useLine
         super.init(rootViewController: rootViewController)
+        self.useLine = useLine
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
     // MARK: - View Loading
