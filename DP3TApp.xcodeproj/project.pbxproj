@@ -705,7 +705,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2411CA9E2462ADBE002FB5A9 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
+		2411CA9E2462ADBE002FB5A9 /* Entitlements_PROD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements_PROD.entitlements; sourceTree = "<group>"; };
 		242D21D0245C3853005DAEA8 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		242D2272245C4BD8005DAEA8 /* DP3TAppCalibration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DP3TAppCalibration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		242D2278245D64BA005DAEA8 /* Environment+PublicKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Environment+PublicKeys.swift"; sourceTree = "<group>"; };
@@ -1008,6 +1008,10 @@
 		F84BC89D2664FBBF00678456 /* NSPushRegistration.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = NSPushRegistration.proto; sourceTree = "<group>"; };
 		F84BC89E2664FBBF00678456 /* NSPushRegistration.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSPushRegistration.pb.swift; sourceTree = "<group>"; };
 		F84BC89F2664FBBF00678456 /* NSSilentPushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSSilentPushManager.swift; sourceTree = "<group>"; };
+		F84BC8B82666566700678456 /* Entitlements_DEV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_DEV.entitlements; sourceTree = "<group>"; };
+		F84BC8B92666566D00678456 /* Entitlements_ABN.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_ABN.entitlements; sourceTree = "<group>"; };
+		F84BC8BA2666567300678456 /* Entitlements_Calibration_DEV.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration_DEV.entitlements; sourceTree = "<group>"; };
+		F84BC8BB2666567800678456 /* Entitlements_Calibration_ABN.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration_ABN.entitlements; sourceTree = "<group>"; };
 		F8512236250A13ED009BE733 /* NSChartDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartDateView.swift; sourceTree = "<group>"; };
 		F851223C250A2676009BE733 /* NSChartLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartLineView.swift; sourceTree = "<group>"; };
 		F8512240250A5E2F009BE733 /* NSChartYAxisLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartYAxisLines.swift; sourceTree = "<group>"; };
@@ -1053,7 +1057,7 @@
 		F8ABA2CC2525FAD700A8D6B5 /* NSTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTutorialViewController.swift; sourceTree = "<group>"; };
 		F8ABA2D22525FC3600A8D6B5 /* NSSettingsTutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSettingsTutorialViewController.swift; sourceTree = "<group>"; };
 		F8ABA2E42526087D00A8D6B5 /* NSTutorialListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTutorialListItemView.swift; sourceTree = "<group>"; };
-		F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration.entitlements; sourceTree = "<group>"; };
+		F8ABFC712474337000D621FF /* Entitlements_Calibration_PROD.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Entitlements_Calibration_PROD.entitlements; sourceTree = "<group>"; };
 		F8B30B5824D2C728006FBBBE /* DebugStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = DebugStrings.strings; sourceTree = "<group>"; };
 		F8B44EEB2653BCBD009F0ED0 /* NSAreYouSureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSAreYouSureViewController.swift; path = DP3TApp/Screens/Homescreen/InformBroadcast/NSAreYouSureViewController.swift; sourceTree = SOURCE_ROOT; };
 		F8B44EEF2653E8DA009F0ED0 /* NSInformSendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSInformSendViewController.swift; sourceTree = "<group>"; };
@@ -1957,8 +1961,12 @@
 		DC9A8197242CE46F00AD1548 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2411CA9E2462ADBE002FB5A9 /* Entitlements.entitlements */,
-				F8ABFC712474337000D621FF /* Entitlements_Calibration.entitlements */,
+				2411CA9E2462ADBE002FB5A9 /* Entitlements_PROD.entitlements */,
+				F84BC8B82666566700678456 /* Entitlements_DEV.entitlements */,
+				F84BC8B92666566D00678456 /* Entitlements_ABN.entitlements */,
+				F8ABFC712474337000D621FF /* Entitlements_Calibration_PROD.entitlements */,
+				F84BC8BB2666567800678456 /* Entitlements_Calibration_ABN.entitlements */,
+				F84BC8BA2666567300678456 /* Entitlements_Calibration_DEV.entitlements */,
 				6E8FC0F524518BF1002AB1E5 /* DP3TApp-Bridging-Header.h */,
 				8E81CCA6241FCC7F006F2437 /* Info.plist */,
 				242D2280245D7363005DAEA8 /* build.yml */,
@@ -3225,7 +3233,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3251,7 +3259,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_ABN.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3276,7 +3284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_PROD.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3365,7 +3373,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3377,7 +3385,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SwissCovid DEV Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_STATUS_OVERRIDE ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -3390,7 +3398,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3510,7 +3518,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3522,7 +3530,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SwissCovid DEV Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_DEV ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -3535,7 +3543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -3686,80 +3694,6 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Release-Abnahme";
-		};
-		6E5B6988265F6A0500EB0C56 /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = DP3TAppClip/DP3TAppClip.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"DP3TAppClip/Preview Content\"";
-				DEVELOPMENT_TEAM = XPL89PTG92;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = DP3TAppClip/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}.Clip";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3TAppClip/Supporting Files/DP3TAppClip-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Release-Test";
 		};
 		6E5B6989265F6A0500EB0C56 /* Release-Dev */ = {
 			isa = XCBuildConfiguration;
@@ -4126,7 +4060,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_ABN.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -4138,7 +4072,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SwissCovid DEV Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -4250,7 +4184,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_DEV.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -4361,7 +4295,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_PROD.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -4373,7 +4307,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SwissCovid DEV Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -4420,151 +4354,6 @@
 				SDKROOT = macosx;
 			};
 			name = "Release-Prod";
-		};
-		DF051C252472B96B00F99FFA /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				BUILD_NUMBER = 20200000.0.0;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_BITCODE = NO;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				EN_DEVELOPER_REGION = TEST_CH_0;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE_TEST=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				OTHER_SWIFT_FLAGS = "-D RELEASE_TEST";
-				PRIMARY_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.dev;
-				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = RELEASE_TEST;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = "Release-Test";
-		};
-		DF051C262472B96B00F99FFA /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEVELOPMENT_TEAM = XPL89PTG92;
-				INFOPLIST_FILE = "DP3TApp/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_TEST ENABLE_TESTING ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Release-Test";
-		};
-		DF051C272472B96B00F99FFA /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
-				DEVELOPMENT_TEAM = XPL89PTG92;
-				INFOPLIST_FILE = "DP3TApp/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_ABNAHME ENABLE_TESTING ENABLE_LOGGING ENABLE_VERBOSE ENABLE_SYNC_LOGGING ENABLE_OS_LOG";
-				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = "Release-Test";
-		};
-		DF051C282472B96B00F99FFA /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				INFOPLIST_FILE = DP3TAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = ch.admin.bag.dp3t.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DP3TApp.app/DP3TApp";
-			};
-			name = "Release-Test";
-		};
-		DF051C292472B96B00F99FFA /* Release-Test */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JH7CQD4MLU;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-			};
-			name = "Release-Test";
 		};
 		F84D5D0C24E6AC86007587B1 /* Release-Prod-Logging */ = {
 			isa = XCBuildConfiguration;
@@ -4635,7 +4424,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_PROD.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -4647,7 +4436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "${PRIMARY_BUNDLE_IDENTIFIER}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "SwissCovid DEV Development";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "RELEASE_PROD ENABLE_SYNC_LOGGING ENABLE_TESTING ENABLE_OS_LOG";
 				SWIFT_OBJC_BRIDGING_HEADER = "DP3TApp/Supporting Files/DP3TApp-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -4660,7 +4449,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "DP3TApp/Supporting Files/Entitlements_Calibration_PROD.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "${BUILD_NUMBER}";
@@ -4719,7 +4508,6 @@
 			buildConfigurations = (
 				242D226D245C4BD8005DAEA8 /* Debug */,
 				242D226F245C4BD8005DAEA8 /* Release-Abnahme */,
-				DF051C272472B96B00F99FFA /* Release-Test */,
 				486EAFC7247492A500D686BE /* Release-Dev */,
 				486EAFCC2475346700D686BE /* Release-Dev-Calibration */,
 				242D2271245C4BD8005DAEA8 /* Release-Prod */,
@@ -4733,7 +4521,6 @@
 			buildConfigurations = (
 				6E5B6986265F6A0500EB0C56 /* Debug */,
 				6E5B6987265F6A0500EB0C56 /* Release-Abnahme */,
-				6E5B6988265F6A0500EB0C56 /* Release-Test */,
 				6E5B6989265F6A0500EB0C56 /* Release-Dev */,
 				6E5B698A265F6A0500EB0C56 /* Release-Dev-Calibration */,
 				6E5B698B265F6A0500EB0C56 /* Release-Prod */,
@@ -4747,7 +4534,6 @@
 			buildConfigurations = (
 				8E81CCB2241FCC7F006F2437 /* Debug */,
 				8E3016962459D0D2002A3970 /* Release-Abnahme */,
-				DF051C252472B96B00F99FFA /* Release-Test */,
 				486EAFC5247492A500D686BE /* Release-Dev */,
 				486EAFCA2475346700D686BE /* Release-Dev-Calibration */,
 				8E81CCBB241FCE08006F2437 /* Release-Prod */,
@@ -4761,7 +4547,6 @@
 			buildConfigurations = (
 				8E81CCB5241FCC7F006F2437 /* Debug */,
 				8E3016972459D0D2002A3970 /* Release-Abnahme */,
-				DF051C262472B96B00F99FFA /* Release-Test */,
 				486EAFC6247492A500D686BE /* Release-Dev */,
 				486EAFCB2475346700D686BE /* Release-Dev-Calibration */,
 				8E81CCBC241FCE08006F2437 /* Release-Prod */,
@@ -4775,7 +4560,6 @@
 			buildConfigurations = (
 				8E81CCB8241FCC7F006F2437 /* Debug */,
 				8E3016982459D0D2002A3970 /* Release-Abnahme */,
-				DF051C282472B96B00F99FFA /* Release-Test */,
 				486EAFC8247492A500D686BE /* Release-Dev */,
 				486EAFCD2475346700D686BE /* Release-Dev-Calibration */,
 				8E81CCBD241FCE08006F2437 /* Release-Prod */,
@@ -4789,7 +4573,6 @@
 			buildConfigurations = (
 				8E81CCC4241FD475006F2437 /* Debug */,
 				8E3016992459D0D2002A3970 /* Release-Abnahme */,
-				DF051C292472B96B00F99FFA /* Release-Test */,
 				486EAFC9247492A500D686BE /* Release-Dev */,
 				486EAFCE2475346700D686BE /* Release-Dev-Calibration */,
 				8E81CCC6241FD475006F2437 /* Release-Prod */,
