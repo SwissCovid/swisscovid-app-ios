@@ -29,7 +29,13 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
     public var date: Date? {
         didSet {
             if let d = date {
-                label.text = Self.dayStringFormatter.string(from: d).localizedUppercase + ", " + Self.dayNumberFormatter.string(from: d)
+                if d.ns_differenceInDaysWithDate(date: Date()) == 0 {
+                    label.text = "date_today".ub_localized
+                } else {
+                    label.text = Self.dayStringFormatter.string(from: d).localizedUppercase + ", " + Self.dayNumberFormatter.string(from: d)
+                }
+            } else {
+                label.text = nil
             }
         }
     }
