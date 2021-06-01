@@ -1,17 +1,50 @@
 {
   "images" : [
     {
-      "filename" : "illu-check-in.png",
+      "filename" : "illu_checking in screen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "illu-check-in@2x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_checking in screen-1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "illu_checking in screen@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illu-check-in@3x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_checking in screen@2x-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "illu_checking in screen@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_checking in screen@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

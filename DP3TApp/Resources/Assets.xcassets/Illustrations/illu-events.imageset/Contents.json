@@ -1,17 +1,50 @@
 {
   "images" : [
     {
-      "filename" : "illu-illu-events.png",
+      "filename" : "illu_events.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "illu-illu-events@2x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_events copy.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "illu_events@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illu-illu-events@3x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_events copy@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "illu_events@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_events copy@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

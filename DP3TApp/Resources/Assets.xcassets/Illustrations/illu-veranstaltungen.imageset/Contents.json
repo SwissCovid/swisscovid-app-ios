@@ -1,17 +1,50 @@
 {
   "images" : [
     {
-      "filename" : "illu-illu-veranstaltungen.png",
+      "filename" : "illu_veranstaltungen.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "illu-illu-veranstaltungen@2x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_veranstaltungen-1.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "illu_veranstaltungen@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "illu-illu-veranstaltungen@3x.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_veranstaltungen@2x-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "illu_veranstaltungen@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "illu_veranstaltungen@3x-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
