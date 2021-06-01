@@ -78,8 +78,8 @@ class NSDiaryViewController: NSViewController {
         let context = LAContext()
         var error: NSError?
 
-        // check whether biometric authentication is possible
-        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+        // check whether device owner authentication is possible
+        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
             context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "face_id_reason_text".ub_localized) { success, authenticationError in
                 DispatchQueue.main.async {
                     if success {
@@ -94,7 +94,7 @@ class NSDiaryViewController: NSViewController {
                 }
             }
         } else {
-            // no biometrics
+            // no authentication possible
             showDiary()
         }
     }
