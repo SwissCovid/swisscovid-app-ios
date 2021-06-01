@@ -84,6 +84,8 @@ class UIStateLogic {
             }
 
             newState.reportsDetail.checkInReports.append(contentsOf: exposure.map { .init(checkInIdentifier: $0.exposureEvent.checkinId, arrivalTime: $0.exposureEvent.arrivalTime, departureTime: $0.exposureEvent.departureTime, venueDescription: $0.diaryEntry?.venue.description) })
+
+            setLastReportState(&newState)
         }
 
         // Set debug helpers
