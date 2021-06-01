@@ -13,7 +13,6 @@ import Foundation
 /// The backend environment under which the application runs.
 enum Environment {
     case dev
-    case test
     case abnahme
     case prod
 
@@ -23,8 +22,6 @@ enum Environment {
             return .dev
         #elseif RELEASE_DEV
             return .dev
-        #elseif RELEASE_TEST
-            return .test
         #elseif RELEASE_ABNAHME
             return .abnahme
         #elseif RELEASE_PROD
@@ -38,8 +35,6 @@ enum Environment {
         switch self {
         case .dev:
             return Backend("https://codegen-service-d.bag.admin.ch", version: "v2")
-        case .test:
-            return Backend("https://codegen-service-t.bag.admin.ch", version: "v2")
         case .abnahme:
             return Backend("https://codegen-service-a.bag.admin.ch", version: "v2")
         case .prod:
@@ -67,8 +62,6 @@ enum Environment {
         switch self {
         case .dev:
             return "https://www.pt-d.bfs.admin.ch"
-        case .test:
-            return "https://www.pt-t.bfs.admin.ch"
         case .abnahme:
             return "https://www.pt-a.bfs.admin.ch"
         case .prod:
@@ -80,8 +73,6 @@ enum Environment {
         switch self {
         case .dev:
             return "https://www.pt1-d.bfs.admin.ch"
-        case .test:
-            return "https://www.pt1-t.bfs.admin.ch"
         case .abnahme:
             return "https://www.pt1-a.bfs.admin.ch"
         case .prod:
@@ -94,8 +85,6 @@ enum Environment {
         switch self {
         case .dev:
             return "https://qr-d.swisscovid.ch"
-        case .test:
-            return "https://qr-t.swisscovid.ch"
         case .abnahme:
             return "https://qr-a.swisscovid.ch"
         case .prod:
