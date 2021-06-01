@@ -51,7 +51,7 @@ class NSTimePickerControl: UIControl, NSFormFieldRepresentable {
         } else {
             datePicker.date = currentEnd
             datePicker.minimumDate = calendar.date(byAdding: DateComponents(minute: 1), to: currentStart)
-            datePicker.maximumDate = nil
+            datePicker.maximumDate = Date()
         }
     }
 
