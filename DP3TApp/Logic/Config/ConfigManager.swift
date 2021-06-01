@@ -93,7 +93,7 @@ class ConfigManager: NSObject {
         }
     }
 
-    static func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
+    private static func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
         if #available(iOS 11.0, *) {
             let verifier = DP3TJWTVerifier(publicKey: Environment.current.configJwtPublicKey,
                                            jwtTokenHeaderKey: "Signature")

@@ -10,6 +10,7 @@
  */
 
 import CrowdNotifierSDK
+import DP3TSDK
 import Foundation
 import SwiftProtobuf
 
@@ -111,7 +112,7 @@ class ProblematicEventsManager {
             }
 
             do {
-                try ConfigManager.validateJWT(httpResponse: response, data: data ?? Data())
+                try strongSelf.validateJWT(httpResponse: response, data: data ?? Data())
             } catch {
                 UIStateManager.shared.checkInError = CheckInError.networkError(error: .jwtError(error: error))
 
@@ -171,6 +172,36 @@ class ProblematicEventsManager {
         }
 
         task?.resume()
+    }
+
+    private struct ConfigClaims: DP3TClaims {
+        let iss: String
+        let iat: Date
+        let exp: Date
+        let contentHash: String
+        let hashAlg: String
+
+        enum CodingKeys: String, CodingKey {
+            case contentHash = "content-hash"
+            case hashAlg = "hash-alg"
+            case iss, iat, exp
+        }
+    }
+
+    private func validateJWT(httpResponse: HTTPURLResponse, data: Data) throws {
+        if #available(iOS 11.0, *) {
+            let verifier = DP3TJWTVerifier(publicKey: Environment.current.jwtPublicKey,
+                                           jwtTokenHeaderKey: "Signature")
+            do {
+                try verifier.verify(claimType: ConfigClaims.self, httpResponse: httpResponse, httpBody: data)
+            } catch let error as DP3TNetworkingError {
+                Logger.log("Failed to verify config signature, error: \(error.errorCodeString ?? error.localizedDescription)")
+                throw error
+            } catch {
+                Logger.log("Failed to verify config signature, error: \(error.localizedDescription)")
+                throw error
+            }
+        }
     }
 
     // MARK: - Init
