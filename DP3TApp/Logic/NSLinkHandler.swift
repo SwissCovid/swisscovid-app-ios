@@ -9,6 +9,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import Foundation
 
 class NSLinkHandler {
@@ -39,6 +40,29 @@ class NSLinkHandler {
             // open WhatToDoPositiveTestVC
             appDelegate.tabBarController.homescreen.presentInformViewController(prefill: covidcode)
             return true
+        case URL(string: Environment.current.qrCodeBaseUrl)?.host:
+            let result = CrowdNotifier.getVenueInfo(qrCode: url.absoluteString, baseUrl: Environment.current.qrCodeBaseUrl)
+
+            switch result {
+            case let .success(venueInfo):
+                // Dismiss any modal views (if even present)
+                appDelegate.navigationController.dismiss(animated: false)
+
+                // Pop to root view controller
+                appDelegate.navigationController.popToRootViewController(animated: false)
+
+                // make sure to select homescreen
+                appDelegate.tabBarController.currentTab = .homescreen
+
+                let vc = NSCheckInConfirmViewController(qrCode: url.absoluteString, venueInfo: venueInfo)
+                vc.checkInCallback = {
+                    appDelegate.navigationController.popToRootViewController(animated: false)
+                }
+                appDelegate.navigationController.pushViewController(vc, animated: true)
+                return true
+            default:
+                assertionFailure("qrCode not valid")
+            }
         default:
             break
         }
