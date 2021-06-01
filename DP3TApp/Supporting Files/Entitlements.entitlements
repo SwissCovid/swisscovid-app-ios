@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>applinks:qr-d.swisscovid.ch</string>
+		<string>applinks:$(QR_CODE_URL)</string>
 		<string>applinks:cc.admin.ch</string>
 	</array>
 	<key>com.apple.developer.exposure-notification</key>
