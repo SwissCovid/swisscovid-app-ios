@@ -202,7 +202,7 @@ class TracingManager: NSObject {
 
     func userHasCompletedOnboarding() {
         guard #available(iOS 12.5, *) else { return }
-        if ConfigManager.allowTracing {
+        if ConfigManager.allowTracing, UserStorage.shared.tracingSettingEnabled {
             DP3TTracing.startTracing { result in
                 switch result {
                 case .success:
