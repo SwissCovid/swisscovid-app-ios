@@ -96,9 +96,17 @@ class ProblematicEventsManager {
                 if UIStateManager.shared.lastCheckInSyncErrorTime == nil {
                     UIStateManager.shared.lastCheckInSyncErrorTime = Date()
                 }
+
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
+                return
             }
 
             guard let response = response as? HTTPURLResponse else {
+                DispatchQueue.main.async {
+                    completion(false, false)
+                }
                 return
             }
 
