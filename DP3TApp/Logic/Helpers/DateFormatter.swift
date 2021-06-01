@@ -43,6 +43,10 @@ extension DateFormatter {
         dayWithMonthFormatter.string(from: date)
     }
 
+    static func ub_accessibilityDate(from date: Date) -> String {
+        DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+    }
+
     static func ub_daysAgo(from date: Date, addExplicitDate: Bool, withLabel: Bool = true) -> String {
         let days = date.ns_differenceInDaysWithDate(date: Date())
 

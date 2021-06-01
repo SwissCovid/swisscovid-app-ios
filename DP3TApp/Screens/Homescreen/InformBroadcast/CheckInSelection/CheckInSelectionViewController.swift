@@ -81,7 +81,15 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
                 .ns_add(checkIn.venue.description, labelType: .textBold)
                 .ns_add("\n", labelType: .textLight)
                 .ns_add(texts.compactMap { $0 }.joined(separator: "\n"), labelType: .textLight)
+
+            var accessibilityTexts: [String?] = []
+            accessibilityTexts.append(checkIn.venue.description)
+            accessibilityTexts.append(checkIn.venue.venueType?.title)
+            accessibilityTexts.append(checkIn.venue.subtitle)
+            accessibilityTexts.append(DateFormatter.ub_accessibilityDate(from: checkIn.checkInTime))
+
             let view = NSCheckBoxView(attributedText: text,
+                                      accessiblityLabel: accessibilityTexts.compactMap { $0 }.joined(separator: "\n"),
                                       labelType: .textBold,
                                       insets: UIEdgeInsets(top: NSPadding.large, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large),
                                       tintColor: .ns_purple,

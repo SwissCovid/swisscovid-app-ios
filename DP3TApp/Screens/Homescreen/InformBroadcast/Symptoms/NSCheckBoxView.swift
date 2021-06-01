@@ -62,6 +62,7 @@ class NSCheckBoxView: UIView {
     }
 
     init(attributedText: NSAttributedString,
+         accessiblityLabel: String,
          labelType: NSLabelType = .textLight,
          insets: UIEdgeInsets = .zero,
          tintColor: UIColor = .ns_green,
@@ -76,7 +77,7 @@ class NSCheckBoxView: UIView {
         textLabel.attributedText = attributedText
 
         isAccessibilityElement = true
-        accessibilityLabel = attributedText.string
+        accessibilityLabel = accessiblityLabel
         accessibilityTraits = isCheckedAndMode.0 ? [.selected, .button] : [.button]
     }
 
