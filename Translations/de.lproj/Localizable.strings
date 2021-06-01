@@ -719,7 +719,7 @@
 /*Fuzzy*/
 "delete_infection_button" = "Isolation beenden";
 
-/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Meldung im Löschen Dialog nach Isolation-Beenden, kommt auch auf Homescreen-Popup*/
 /*Fuzzy*/
 "delete_infection_dialog" = "Möchten Sie die Isolation wirklich beenden?";
 "android_onboarding_battery_permission_title" = "Akku-Optimierung ignorieren";
@@ -1731,9 +1731,6 @@
 /*Titel von CheckIn Meldungen Screen.*/
 /*Fuzzy*/
 "meldung_detail_checkin_title" = "Check-In";
-
-/*SubTitel von CheckIn Meldungen Screen.*/
-"meldung_detail_checkin_subtitle" = "";
 "not_thank_you_screen_title" = "Keine Daten gesendet";
 
 /*Fuzzy*/
@@ -1780,3 +1777,4 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
+"checkout_too_long_alert_text" = "Für diesen Check-In gilt eine maximale Check-in Dauer von {DURATION}. Bitte überprüfen Sie nochmals Ihre Angabe.";

@@ -699,7 +699,7 @@
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "İzolasyonu sona erdir";
 
-/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Meldung im Löschen Dialog nach Isolation-Beenden, kommt auch auf Homescreen-Popup*/
 "delete_infection_dialog" = "Bildirimi gerçekten silmek mi istiyorsunuz?";
 "android_onboarding_battery_permission_title" = "Pil optimizasyonunu yoksay";
 "android_onboarding_battery_permission_text" = "Temasların her zaman takip edebilebilmesi için pil optimizasyonunun bu uygulama için devre dışı bırakılması gerekmektedir.";
@@ -1346,355 +1346,353 @@
 "meldungen_detail_free_test_tomorrow" = "1 gün sonra";
 
 /*Check-Ins: Titel vom Reminder Push*/
-"checkout_reminder_title" = "";
+"checkout_reminder_title" = "Check-out reminder";
 
 /*Check-Ins: Check-out Reminder Push Text*/
-"checkout_reminder_text" = "";
+"checkout_reminder_text" = "Do you want to check out?";
 
 /*Check-Ins: Auto-Checkout Push Titel*/
-"auto_checkout_title" = "";
+"auto_checkout_title" = "Automatic check-out";
 
 /*Check-Ins: Auto-checkout Push Text*/
-"auto_checkout_body" = "";
+"auto_checkout_body" = "You were checked out automatically.";
 
 /*Check-Ins: Qr-Scanner Text*/
-"qrscanner_scan_qr_text" = "";
+"qrscanner_scan_qr_text" = "Scan QR code and check in";
 
 /*Check-Ins: Fehler beim QR-Code scannen*/
-"qrscanner_error" = "";
+"qrscanner_error" = "No valid QR code!";
 
 /*Check-Ins: Anpassung Check-In Datumwahl von*/
-"datepicker_from" = "";
+"datepicker_from" = "From";
 
 /*Check-Ins: Datumsauswahl bis*/
-"datepicker_to" = "";
+"datepicker_to" = "To";
 
 /*Check-Ins: Notiz hinzufügen zu Check-In*/
-"edit_mode_addcomment" = "";
+"edit_mode_addcomment" = "Add note";
 
 /*Check-Ins: Notiz zu Check-In Placeholder Text*/
-"edit_mode_comment_placeholder" = "";
+"edit_mode_comment_placeholder" = "e.g. who were you with?";
 
 /*Fertig Button Text*/
-"done_button" = "";
+"done_button" = "Done";
 
 /*Check-Ins: Titel für Erinnerung*/
-"checkin_set_reminder" = "";
+"checkin_set_reminder" = "Check-out reminder";
 
 /*Check-Ins: Erinnerung Option Aus*/
-"reminder_option_off" = "";
+"reminder_option_off" = "Off";
 
 /*Check-Ins: Tagebuch Zugriff Text*/
-"authenticate_for_diary" = "";
+"authenticate_for_diary" = "Authentication needed to access the diary";
 
 /*Check-Ins: Errinnerungsoption Stunden*/
-"reminder_option_hours" = "";
+"reminder_option_hours" = "{HOURS} h";
 
 /*Check-Ins: Errinnerungsoption Minuten*/
-"reminder_option_minutes" = "";
+"reminder_option_minutes" = "{MINUTES}'";
 
 /*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
-"qr_scanner_no_camera_permission" = "";
+"qr_scanner_no_camera_permission" = "The app needs to access the camera to be able to scan the QR code.";
 
 /*Check-Ins: Tagebuch Titel*/
-"diary_title" = "";
+"diary_title" = "My check-ins";
 
 /*Check-Ins: Button Titel zum Einchecken*/
-"checkin_button_title" = "";
+"checkin_button_title" = "Check-in";
 
 /*Check-Ins: iOS Kamera Erlaubnis Text*/
-"NSCameraUsageDescription" = "";
+"NSCameraUsageDescription" = "The camera is needed to scan the QR code.";
 
 /*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
-"NSFaceIDUsageDescription" = "";
+"NSFaceIDUsageDescription" = "Allow Face ID to securely access your diary.";
 
 /*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
-"face_id_reason_text" = "";
+"face_id_reason_text" = "Authentication needed to access the diary";
 
 /*Check-Ins: Check-Out Button Title*/
-"checkout_button_title" = "";
+"checkout_button_title" = "Check-out";
 
 /*Check-Ins: Titel Modul auf Homescreen*/
-"module_checkins_title" = "";
+"module_checkins_title" = "Check-in";
 
 /*Check-Ins: Titel vom Check-In Screen*/
-"checkin_title" = "";
+"checkin_title" = "Check-in";
 
 /*Check-Ins: QR-Code erstellen Titel*/
-"checkins_create_qr_code" = "";
+"checkins_create_qr_code" = "Generate QR code";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "";
+"events_title" = "Offer check-ins?";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
-"check_in_now_button_title" = "";
+"check_in_now_button_title" = "Check in now";
 
 /*Check-Ins: Reminder Fehlermeldung Titel*/
-"checkin_reminder_settings_alert_title" = "";
+"checkin_reminder_settings_alert_title" = "The reminder could not be set";
 
 /*Check-Ins: Erinnerungen Fehlermeldung Text*/
-"checkin_reminder_settings_alert_message" = "";
+"checkin_reminder_settings_alert_message" = "To receive check-out reminders, you need to allow \\\"notifications\\\" in the app settings.";
 
 /*Check-Ins: Reminder Popup Anpassen*/
-"checkin_reminder_option_open_settings" = "";
+"checkin_reminder_option_open_settings" = "Customise";
 
 /*Check-Ins: Bearbeiten von Check-Ins Titel*/
-"edit_controller_title" = "";
+"edit_controller_title" = "Edit";
 
 /*Check-Ins: Tagebuch leeres Tagbuch Titel*/
-"empty_diary_title" = "";
+"empty_diary_title" = "No entries available yet";
 
 /*Check-Ins: Tagebuch leer, Text*/
-"empty_diary_text" = "";
+"empty_diary_text" = "If you scan a SwissCovid QR code to check in on site, an entry will automatically be created here.";
 
 /*Check-Ins: Kamera Erlaubnis Text*/
-"camera_permission_dialog_text" = "";
+"camera_permission_dialog_text" = "SwissCovid needs to access your device's camera. The camera is only used to scan QR codes.";
 
 /*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
-"camera_permission_dialog_action" = "";
+"camera_permission_dialog_action" = "Allow access to camera";
 
 /*Check-Ins: Veranstaltung Titel Placeholder*/
-"web_generator_title_placeholder" = "";
+"web_generator_title_placeholder" = "e.g. room or event name";
 
 /*Check-Ins: Veranstaltungen Detail PDF Button*/
-"show_pdf_button" = "";
-"bottom_nav_tab_info" = "";
-"error_network_title" = "";
-"error_network_text" = "";
-"error_action_retry" = "";
-"error_notification_deactivated_title" = "";
-"error_notification_deactivated_text" = "";
-"error_action_change_settings" = "";
-"error_camera_permission_title" = "";
-"error_camera_permission_text" = "";
-"error_title" = "";
-"qr_scanner_error_code_not_yet_valid" = "";
-"qr_scanner_error_code_not_valid_anymore" = "";
-"error_already_checked_in" = "";
-"error_update_text" = "";
-"error_update_title" = "";
-"error_action_update" = "";
-"ongoing_notification_checkout_quick_action" = "";
-"reminder_notification_snooze_action" = "";
-"android_ongoing_checkin_notification_channel_name" = "";
-"ongoing_notification_title" = "";
+"show_pdf_button" = "Print PDF";
+"bottom_nav_tab_info" = "Info";
+"error_network_title" = "Network error";
+"error_network_text" = "Check your internet connection.";
+"error_action_retry" = "Try again";
+"error_notification_deactivated_title" = "Notifications deactivated";
+"error_notification_deactivated_text" = "Modify your settings to be informed straight away if you receive a notification.";
+"error_action_change_settings" = "Modify settings";
+"error_camera_permission_title" = "No access to camera";
+"error_camera_permission_text" = "The app needs to access the camera to be able to scan the QR code.";
+"error_title" = "Error";
+"qr_scanner_error_code_not_yet_valid" = "QR code not yet valid";
+"qr_scanner_error_code_not_valid_anymore" = "QR code no longer valid";
+"error_already_checked_in" = "You are already checked in.";
+"error_update_text" = "This QR code is not compatible with the installed version of the app. Please update the app to continue.";
+"error_update_title" = "Update required";
+"error_action_update" = "Update now";
+"ongoing_notification_checkout_quick_action" = "Check out";
+"reminder_notification_snooze_action" = "Snooze";
+"android_ongoing_checkin_notification_channel_name" = "Permanent check-in notification";
+"ongoing_notification_title" = "You have been checked in since {TIME}.";
 
 /*Check-Ins: Sichern Button bei Check-out*/
-"checkout_save_button_title" = "";
+"checkout_save_button_title" = "Save";
 
 /*Check-Ins: QR-Code scannen Button*/
-"scan_qr_code_button_title" = "";
+"scan_qr_code_button_title" = "Scan QR code";
 
 /*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_title" = "";
+"checkin_ended_title" = "Check-in deactivated";
 
 /*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_text" = "";
+"checkin_ended_text" = "Check-in is not possible at the moment";
 
 /*Text im Check-Ins-Screen im nicht eingecheckten Zustand*/
-"checkin_detail_checked_out_text" = "";
+"checkin_detail_checked_out_text" = "Scan a SwissCovid QR code to check in on site.";
 
 /*Text im Check-Ins-Screen, im Tagebuch-Modul*/
-"checkin_detail_diary_text" = "";
+"checkin_detail_diary_text" = "If you scan a SwissCovid QR code to check in on site, an entry will automatically be created here.";
 
 /*Label im Checkin-Modul im eingecheckten Zustand*/
-"checkin_checked_in" = "";
-"checkout_from_to_date" = "";
-"inform_detail_covidcode_info_button" = "";
+"checkin_checked_in" = "You're checked in";
+"checkout_from_to_date" = "{DATE1} to {DATE2}";
+"inform_detail_covidcode_info_button" = "More about the Covidcode";
 
 /*Check-Ins: Button Entfernen um Check-In zu löschen*/
-"remove_from_diary_button" = "";
+"remove_from_diary_button" = "Remove entry";
 
 /*Check-Ins: QR-Code löschen Titel Button*/
-"delete_button_title" = "";
+"delete_button_title" = "Delete";
 
 /*Check-Ins: Teile QR-Code Button Titel*/
-"share_button_title" = "";
+"share_button_title" = "Share";
 
 /*Check-Ins: Drucken Button auf PDF-Detailseite*/
-"print_button_title" = "";
+"print_button_title" = "Print";
 
 /*Check-Ins: Beschreibung Modul auf Homescreen*/
-"module_checkins_description" = "";
+"module_checkins_description" = "Scan a SwissCovid QR code to check in on site.";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_title" = "";
+"inform_share_checkins_title" = "Share check-in entries";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "";
+"inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location at the same time.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "";
-"inform_dont_send_button_title" = "";
-"inform_dont_share_button_title" = "";
-"inform_really_not_share_title" = "";
-"inform_really_not_share_subtitle" = "";
+"inform_share_checkins_select_all" = "Select all";
+"inform_dont_send_button_title" = "Don't send";
+"inform_dont_share_button_title" = "Don't share";
+"inform_really_not_share_title" = "Are you sure you don't want to share?";
+"inform_really_not_share_subtitle" = "Sharing your private key helps SwissCovid to notify other people who may be infected and to stop the virus spreading. If you don't share your private key, people who may be infected will not be notified.";
 
 /*Remove from Diary Warning view title*/
-"remove_diary_warning_title" = "";
+"remove_diary_warning_title" = "Remove entry";
 
 /*Remove from diary warning view explanation text*/
-"remove_diary_warning_text" = "";
+"remove_diary_warning_text" = "Your entry will be permanently removed from the list.";
 
 /*Remove from diary warning view remove button title*/
-"remove_diary_remove_now_button" = "";
+"remove_diary_remove_now_button" = "Completely remove";
 
 /*Hide from diary warning title*/
-"remove_diary_warning_hide_title" = "";
+"remove_diary_warning_hide_title" = "Only hide and keep receiving notifications?";
 
 /*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "";
+"home_covidcode_card_title" = "Tested positive?";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_text" = "";
+"home_end_isolation_card_text" = "Reactivate encounters and check-in";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
-"reminder_option_hours_minutes" = "";
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
-"checkin_overview_isolation_text" = "You can no longer check-in when you tested positive. More text more text more text more text more text more text more";
+"checkin_overview_isolation_text" = "You can no longer check in if you have tested positive.";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "";
+"events_card_subtitle" = "Generate a QR code that people can use to check in on site.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "";
+"delete_qr_code_dialog" = "Are you sure you want to delete the QR code?";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
-"self_checkin_button_title" = "";
+"self_checkin_button_title" = "Self check-in";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer nicht eingecheckt ist.*/
-"checkin_overview_checkins_explanation" = "";
+"checkin_overview_checkins_explanation" = "Scan a SwissCovid QR code to check in on site.";
 
 /*Popup Titel wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
-"checkout_overlapping_alert_title" = "";
+"checkout_overlapping_alert_title" = "Saving not possible";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
-"checkout_overlapping_alert_description" = "";
+"checkout_overlapping_alert_description" = "The times you selected clash with other check-ins in your diary. Please check your entry.";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "";
+"inform_send_thankyou_text_checkins" = "The check-in entries you selected have been sent. Everyone who was checked in at the same location at the same time will be notified.";
 
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
-"pdf_headline" = "";
+"pdf_headline" = "SwissCovid check-in";
 
 /*SwissCovid QR Code PDF: Slogan*/
-"pdf_slogan" = "";
+"pdf_slogan" = "Check in without leaving any data";
 
 /*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
-"pdf_explanation" = "";
+"pdf_explanation" = "The SwissCovid app lets you simply check in with us without leaving behind your data. If there is a risk of infection, you will be rapidly notified in the app.";
 
 /*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
-"pdf_swisscovid_app" = "";
+"pdf_swisscovid_app" = "SwissCovid app";
 
 /*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
-"pdf_download_app" = "";
+"pdf_download_app" = "Download now";
 
 /*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
-"checkin_detail_checked_out_title" = "";
+"checkin_detail_checked_out_title" = "Check in without leaving \ndata";
 
 /*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_text" = "";
+"home_covidcode_card_text" = "Enter your Covidcode here to alert others.";
 
 /*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_title" = "";
+"home_end_isolation_card_title" = "Isolation ended?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "";
-"checkin_footer_title1" = "";
-"checkin_footer_subtitle1" = "";
-"checkin_footer_title2" = "";
-"checkin_footer_subtitle2" = "";
-"events_empty_state_title" = "";
-"events_empty_state_subtitle" = "";
-"events_info_box_title" = "";
-"events_info_box_text" = "";
-"events_footer_title1" = "";
-"events_footer_title2" = "";
-"events_footer_subtitle1" = "";
-"events_footer_subtitle2" = "";
+"events_card_title" = "Do you want to offer check-ins?";
+"checkin_footer_title1" = "Why a check-in function?";
+"checkin_footer_subtitle1" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
+"checkin_footer_title2" = "No central data storage";
+"checkin_footer_subtitle2" = "For the SwissCovid check-ins, you don't have to enter personal details, such as name, address or phone number, and no GPS location data is recorded. The list of check-ins is stored locally on your device. The local data is deleted after 14 days. ";
+"events_empty_state_title" = "Generate a QR code";
+"events_empty_state_subtitle" = "Using a SwissCovid QR code, people can check in on site without leaving their data.";
+"events_info_box_title" = "No substitute for mandatory recording of contact details";
+"events_info_box_text" = "SwissCovid check-ins are no substitute for the obligation to record contact details provided for in the COVID-19 Ordinance Special Situation. ";
+"events_footer_title1" = "Where can check-ins be used?";
+"events_footer_title2" = "Why a check-in function?";
+"events_footer_subtitle1" = "SwissCovid check-ins can be used where people gather but where there is no obligation to record contact details. \n\nPossible locations:\n– Private events\n– Club meetings or events\n– Gatherings in professional settings, e.g. meeting rooms, offices, canteens";
+"events_footer_subtitle2" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
-"meldung_detail_exposed_list_card_subtitle" = "";
+"meldung_detail_exposed_list_card_subtitle" = "Risk situation";
 
 /*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_encounters" = "";
+"meldung_detail_exposed_list_card_title_encounters" = "Encounters";
 
 /*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_checkin" = "";
+"meldung_detail_exposed_list_card_title_checkin" = "Check-in";
 
 /*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_whattodo_button" = "";
+"meldung_detail_exposed_list_card_whattodo_button" = "What should I do?";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_checkin_exposed" = "";
+"debug_state_setting_option_checkin_exposed" = "Positive check-in";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_mutiple_exposed" = "";
+"debug_state_setting_option_mutiple_exposed" = "Positive check-ins/contacts";
 
 /*Anzeigename für User QR Codes*/
-"venue_type_user_qr_code" = "";
+"venue_type_user_qr_code" = "User QR code";
 
 /*Anzeigename für User QR Codes*/
-"venue_type_contact_tracing_qr_code" = "";
+"venue_type_contact_tracing_qr_code" = "Contact tracing QR code";
 
 /*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_text_detailed" = "";
+"checkin_ended_text_detailed" = "The check-in function is automatically deactivated after a positive test result. It can be reactivated after the end of isolation.";
 
 /*Check-Ins: QR-Code erstellen subtitel*/
-"checkins_create_qr_code_subtitle" = "";
-"checkin_report_heading" = "";
-"checkin_report_title1" = "";
-"checkin_report_title2" = "";
-"checkin_report_title3" = "";
-"checkin_report_subtitle1" = "";
-"checkin_report_subtitle2" = "";
-"checkin_report_subtitle3" = "";
+"checkins_create_qr_code_subtitle" = "Enter a title that describes the location or your event in more detail. This title will be displayed on check-in.";
+"checkin_report_heading" = "What can you do?";
+"checkin_report_title1" = "Protect your contacts";
+"checkin_report_title2" = "Look out for symptoms";
+"checkin_report_title3" = "Get tested";
+"checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";
+"checkin_report_subtitle2" = "Monitor your state of health.";
+"checkin_report_subtitle3" = "If you develop symptoms, get tested immediately. Even if you don't have symptoms, a coronavirus test is advisable and recommended.";
 
 /*Titel von CheckIn Meldungen Screen.*/
-"meldung_detail_checkin_title" = "";
-
-/*SubTitel von CheckIn Meldungen Screen.*/
-"meldung_detail_checkin_subtitle" = "";
-"not_thank_you_screen_title" = "";
-"not_thank_you_screen_text1" = "";
-"not_thank_you_screen_back_button" = "";
-"not_thank_you_screen_dont_send_button" = "";
-"not_thank_you_screen_text2" = "";
+"meldung_detail_checkin_title" = "Check-in";
+"not_thank_you_screen_title" = "No data sent";
+"not_thank_you_screen_text1" = "No private key was sent.";
+"not_thank_you_screen_back_button" = "Back";
+"not_thank_you_screen_dont_send_button" = "Don't send data";
+"not_thank_you_screen_text2" = "No check-in entries were sent.";
 
 /*Button text, um ausgewählte Checkins zu senden*/
-"inform_share_checkins_send_button_title" = "";
-"inform_share_checkins_not_send_button" = "";
-"onboarding_checkin_title" = "";
-"onboarding_checkin_heading" = "";
-"onboarding_checkin_text1" = "";
-"onboarding_checkin_text2" = "";
-"checkin_updateboarding_text" = "";
-"onboarding_gaen_button_dont_activate" = "";
+"inform_share_checkins_send_button_title" = "Share selection";
+"inform_share_checkins_not_send_button" = "Don't share anything";
+"onboarding_checkin_title" = "Check in without leaving data";
+"onboarding_checkin_heading" = "Check-ins";
+"onboarding_checkin_text1" = "With SwissCovid check-ins you can check in to a location or meeting using the app.";
+"onboarding_checkin_text2" = "Your presence is only stored in the app. You don’t have to leave behind any personal data. ";
+"checkin_updateboarding_text" = "With SwissCovid check-ins you can check in to a location or meeting using the app. Your presence is only stored in the app. You don't have to leave behind any personal data. The terms of use and privacy policy have been updated.";
+"onboarding_gaen_button_dont_activate" = "Skip";
 
 /*Hide from diary warning text*/
-"remove_diary_warning_hide_text" = "";
+"remove_diary_warning_hide_text" = "The entry is stored in encrypted form in the background of the app for 14 days. This means that you can still be notified if there is a possibility of infection.";
 
 /*CheckIn ausblenden*/
-"remove_diary_warning_hide_button" = "";
-"checkin_set_reminder_explanation" = "";
+"remove_diary_warning_hide_button" = "Hide only";
+"checkin_set_reminder_explanation" = "The app can remind you to check out at the right time.";
 
 /*Remove from diary warning title*/
-"remove_diary_remove_now_title" = "";
+"remove_diary_remove_now_title" = "Or remove completely?";
 
 /*Remove from diary warning text*/
-"remove_diary_remove_now_text" = "";
-"not_thank_you_screen_text3" = "";
+"remove_diary_remove_now_text" = "The entry was removed completely. You can no longer be alerted.";
+"not_thank_you_screen_text3" = "Nobody will be notified.";
 
 /*Link Text zu Informationen übers Testen*/
-"checkin_report_link" = "";
-"instant_app_install_action" = "";
-"partial_onboarding_box_text" = "";
-"partial_onboarding_box_action" = "";
-"partial_onboarding_done_title" = "";
-"partial_onboarding_done_text" = "";
-"web_slogan" = "";
+"checkin_report_link" = "What do I need to know about testing?";
+"instant_app_install_action" = "Install app and check in";
+"partial_onboarding_box_text" = "Complete the app configuration to be able to use the tracing function.";
+"partial_onboarding_box_action" = "Complete now";
+"partial_onboarding_done_title" = "Configuration complete";
+"partial_onboarding_done_text" = "Thank you for helping stop the spread of coronavirus.";
+"web_slogan" = "Find out fast if you're at risk of infection.";
 
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
+"checkout_too_long_alert_text" = "";

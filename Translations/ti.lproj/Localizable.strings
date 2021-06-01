@@ -99,7 +99,7 @@
 "meldungen_meldung_title" = "ብሕማም  ናይ ምልካፍ ተኽእሎ";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "ብሕማም  ናይ ምልካፍ ተኽእሎ ኣሎ።";
+"meldungen_meldung_text" = "ልበዳ ተለኪፍኩም ትኾኑ";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "ኣፕ ይሰርሕ ኣሎ";
@@ -189,7 +189,7 @@
 "inform_detail_box_subtitle" = "ብኮቪድኮድ";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "ሰንሰለት ለበዳ ሕማም ምቁራጽ";
+"inform_detail_box_title" = "ካብ ክፍጸሙ ዝኽእሉ ልበዳታት ምጥንቃቕ";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "ኮቪድኮድ ኣእትው";
@@ -223,7 +223,7 @@
 "tracing_turned_off_title" = "ኣገልግሎት ምክትታል ኣይሰርሕን ኣሎ (ጠፊኡ ኣሎ)";
 "tracing_turned_off_text" = "እቲ ኣፕ ክሰርሕ ምእንታን ነቲ ኣገልግሎት ምክትታል ከም ዝሰርሕ ግበርዎ (ወልዕዎ)። ";
 "bluetooth_turned_off_title" = "ብሉቱዝ ጠፊኡ ኣሎ";
-"bluetooth_turned_off_text" = "ኣገልግሎት ምክትታል ክስርሕ ምእንታን ኣብ ሞባይልኩም ብሉቱዝ ክፈቱ።";
+"bluetooth_turned_off_text" = "ኣገልግሎት ስመ-ስውር ምክትታል ክስርሕ ምእንታን ኣብ ሞባይልኩም ብሉቱዝ ክፈቱ።";
 "bluetooth_turn_on_button_title" = "ብሉቱዝ ክፈትዎ";
 "bluetooth_permission_error_title" = "ምጥቃም ብሉቱዝ ተነጺጉ";
 "bluetooth_permission_error_text" = "ኣገልግሎት ምክትታል ክስርሕ ምእንታን ብሉቱዝ ምጥቃም ኣፍቅዱ።  ";
@@ -255,11 +255,11 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "ንምግላል ዝምልከት ዝተወሃበኩም መምርሒታት ተኸታተሉ። ";
-"tracing_ended_title" = "ምክትታል ተወዲኡ";
-"tracing_ended_text" = "ካብ ሕጂ ንንዮ ርክባት ኣይዕቀቡን እዮም። ";
+"tracing_ended_title" = "ምርኽኻብን ቸክ-ኢንን ተዓጽዩ ኣሎ";
+"tracing_ended_text" = "ዝኾነ ምርኽኻብ ኣይክዕቀብን እዩ";
 "exposed_info_contact_hotline" = "ን…..ተወከሱ";
 "meldung_homescreen_positive_info_line1" = "ን……..ተኸታተሉ";
-"meldung_homescreen_positive_info_line2" = "ባዕልኻ ነብስኻ ንምግላል ዝምልከት መምርሒታት ";
+"meldung_homescreen_positive_info_line2" = "ንምግላል ዝምልከት መምርሒታት";
 
 /*Meldung Detail Exposed Neue Meldung*/
 "meldung_detail_exposed_new_meldung" = "ሓድሽ ሓበሬታ";
@@ -269,7 +269,7 @@
 "meldung_homescreen_positiv_title" = "ውጽኢት መርመራ ፖዚቲቭ ኮይኑ";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "ተኽእሎ ናይ ለበዳ ሕማም ኣሎ። ";
+"meldung_detail_exposed_subtitle" = "ልበዳ ተለኪፍኩም ትኾኑ";
 
 /*Meldung auf Homescreen: Positiv getestet*/
 "meldung_homescreen_positiv_text" = "ዝገበርካዮ መርመራ ንኮሮናቫይረስ ውጽኢቱ ፖዚቲቭ ኮይኑ ተረኺቡ።";
@@ -338,7 +338,7 @@
 "onboarding_privacy_text2" = "እቶም ዝተዓቀቡ ብግምት ዝተሰርዑ መለልዪ ቁጽርታት ኣብ ሞባይልኩም ጸኒሖም ድሕሪ 14 መዓልቲ ይስረዙ።";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "እቲ ኣፕ ከምይ ይሰርሕ፧";
+"onboarding_begegnungen_heading" = "ምርኽኻብ";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "ሳላ ብሉቱዝ ርክባት ምልላይ ";
@@ -410,7 +410,7 @@
 "onboarding_go_title" = "እቲ ኣፕ ተዳልዩ ኣሎ።";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "ሰንሰለት ለበዳ ሕማም ንምቁራጽ ምትሕግጋዝኩም ኣዚና ነመስግነኩም።";
+"onboarding_go_text" = "ምዝርጋሕ ኮሮናቫይረስ ንምድራት እትገብሩ ምትሕብባር ነመስግነኩም ኢና።";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "ምጅማር";
@@ -437,7 +437,7 @@
 "meldung_detail_new_contact_title" = "ከምብሓድሽ ጥርጠራ";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "ተኽእሎ ናይ ምልካፍ ብሕማም ኣሎ።";
+"meldung_detail_new_contact_subtitle" = "ልበዳ ተለኪፍኩም ትኾኑ";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "ናይ ሰዓት ጌጋ";
@@ -569,7 +569,7 @@
 "meldungen_nomeldungen_faq1_title" = "ሓበሬታ ክብሃል ከሎ እንታይ ማለት እዩ፧";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "እቲ ኣፕ ክልኦት ዝተራኸብኩሞም ተጠቀምቲ  ብመርመራ ፖዚቲቭ ከምዝኾኑ ሓቢሮም እንተኾይኖም ቀጻሊ ይምርምር። \nተኽእሎ ምልካፍ ብሕማም ምስዝህሉ ብመነግዲ መልእኽቲ ኣብ ዕጹው ስክሪን ሞባይል ክትሕበሩ ኢኹም።  ";
+"meldungen_nomeldungen_faq1_text" = "እቲ ኣፕ ክልኦት ዝተራኸብኩሞም ተጠቀምቲ  ብመርመራ ፖዚቲቭ ከምዝኾኑ ሓቢሮም እንተኾይኖም ቀጻሊ ይምርምር።\n\nኣብ ክፍጸም ዝኽእል ልበዳ ብመልእኽቲ ኣብ መዕጸዊ ስክሪን ክትሕበሩ ኢኹም።";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "መስመር ሓበሬታ ስዊስኮቪድ ብዛዕባ  ተኽእሎ ካብ ክፍሊት ነጻ ናይ ዝኾነ መርመራ የማኽረኩም።  ";
@@ -603,7 +603,7 @@
 "inform_detail_faq2_title" = "እንታይ እዩ ዝስደድ፧ ";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "ውልቃዊ ሓበሬታ ዘይኮነ፣ ጥራይ እቶም ግላውያን መፋትሕ እዮም ዝስደዱ።\n  \nብኸምዚ መንገዲ ካልኦት ተጠቀምቲ ስዊስኮቪድ ተኽእሎ መልከፍቲ ሕማም ከምዘሎ ይፈልጡ።";
+"inform_detail_faq2_text" = "ውልቃዊ ሓበሬታ ዘይኮነ፣ ጥራይ እቶም ግላውያን መፋትሕ እዮም ዝስደዱ።\n\nተኽእሎ ናይ ምልከፍቲ ከምዘሎ እቶም ተጠቀምቲ ስዊስ ኮቪድ ኣፕ (SwissCovid App) ክፈልጡ ይኽእሉ።";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -612,10 +612,10 @@
 "faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
-"inform_code_intro_title" = "ኣገዳሲ ሓበሬታ";
+"inform_code_intro_title" = "ሓበሬታ ብዛዕባ ምእትታው";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "ዝኾነ ሓበሬታ ብዛዕባኹም ዋላኳ እንተዘይተሰደደ: ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ። ";
+"inform_code_intro_text" = "ዝኾነ ሓበሬታ ብዛዕባኹም ዋላኳ እንተዘይተሰደደ: ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ።";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "ተሰማሚዐ";
@@ -670,7 +670,7 @@
 "onboarding_gaen_title" = "ኣገልግሎት ምክትታል ከም ዝሰርሕ ግበርዎ (ወልዕዎ)";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-"onboarding_gaen_text_ios" = "ኣፕ ምጥቃም ንምኽኣል ናይ ኮቪድ-19 መልእኽትታት ናይ ርክባት ከጅመሩ (ከም ዝሰርሑ ክግበሩ) ኣለዎም።";
+"onboarding_gaen_text_ios" = "እቲ ናይ ምክትታል ኣገባብ ክውላዕ ኣለዎ፣ ምርኽኻብ ክረጋገጽ መታን ክከኣል።";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "ምውላዕ (ከም ዝሰርሕ ምግባር)";
@@ -699,10 +699,10 @@
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "ግለላ ምዝዛም";
 
-/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Meldung im Löschen Dialog nach Isolation-Beenden, kommt auch auf Homescreen-Popup*/
 "delete_infection_dialog" = "ሓበሬታ ናይ ብሓቂ  ክትድምስስዎ ደሊኹም ዶ፧";
 "android_onboarding_battery_permission_title" = "ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ) ሸለል ምባል";
-"android_onboarding_battery_permission_text" = "ርክባት ኩልግዜ ምልላይ ንምኽኣል: ኣገልግሎት ምምሕያሽ ባትሪ (ኣኩ)ናይዚ ኣፕ ዕጹው ክኸውን ኣለዎ።  ";
+"android_onboarding_battery_permission_text" = "ዝኾነ ምቍጣብ ባትሪ ዘልዕል ኣገባብ ኣብቲ ሞባይል ክጠፍእ ኣለዎ፣ እቲ ኤፕ መታን ጽቡቕ ክሰርሕ።";
 "android_onboarding_battery_permission_button" = "ምፍቃድ (ሐራይ ምባል)";
 "android_onboarding_battery_permission_button_deactivated" = "ሐራይ";
 "android_onboarding_battery_permission_info_1_title" = "ነዚ ኣፕ ጥራይ";
@@ -724,7 +724,7 @@
 "tracing_permission_error_title_ios" = "መልእኽትታት ርክባት ኮቪድ-19 ኣይሰርሕን ኣሎ (ዕጹው ኣሎ) ";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-"tracing_permission_error_text_ios" = "ምክትታል ክሰርሕ ምእንቲ  መልእኽትታት ርክባት ኮቪድ-19 ከምዝሰርሕ ግበርዎ (ወልዕዎ)። ";
+"tracing_permission_error_text_ios" = "ን {TRACING_SETTING_TEXT} ወልዕዎ፣ እቲ ስመ-ስውር ምክትታል ክሰርሕ ምእንቲ ክኽእል።";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "መልእኽቲ ክስደድ ኣይክኣለን። ብግምት ዝተሰርዑ መለልዪ ቁጽርታትኩም ብስዊስኮቪድ ኣፕ ንኽከፋፈል ኣፍቅዱ። ";
@@ -764,7 +764,7 @@
 "tracing_active_tracking_always_info" = "እቲ ኣፕ ዋላ እንተተዓጽወ ስዊስኮቪድ ይስርሕ እዩ።";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "ስዊስኮቪድ ንሰነሰለት ለበዳ ሕማም የቋርጾ";
+"oboarding_splashscreen_title" = "SwissCovid -\nኣብ ርከሳ ልበዳ ብቕልጡፍ ትሕበሩ።";
 "inform_detail_faq3_text" = "ዋላኳ  ዝኾነ ሓበሬታ ብዛዕባኹም እንተዘይተሰደደ ዝኾነ ሰብ በቲ ዕለት ጌሩ ምርኻብኩም ክዝክሮ ይኽእል እዩ። ";
 "inform_detail_faq3_title" = "ስቱር ድዩ፧";
 
@@ -775,7 +775,7 @@
 "tracing_setting_text_android" = " መልእኽትታት ኮቪድ-19 ";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
-"onboarding_gaen_text_android" = "ኣፕ ምጥቃም ንኽክኣል መልእኽትታት ናይ ኮቪድ-19 ክኽፈቱ ወይ ከም ዝሰርሑ ክግብሩ ኣለዎም።";
+"onboarding_gaen_text_android" = "እቲ ናይ ምክትታል ኣገባብ ክውላዕ ኣለዎ፣ ምርኽኻብ ክረጋገጽ መታን ክከኣል።";
 
 /*Onboarding Disclaimer Screen: AppName Title*/
 "onboarding_disclaimer_heading" = "ስዊዝኮቪድ";
@@ -866,7 +866,7 @@
 "travel_title" = "መገሻታት";
 
 /*Info text that is displayed  on the Home Travel Card.*/
-"travel_home_description" = "SwissCovid ኣብ ዝስዕቡ ሃገራት ይሰርሕ፥";
+"travel_home_description" = "ምርኽኻብ SwissCovid ኣብ ዝስዕቡ ሃገራት ይሰርሕ፥";
 
 /*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "እዚ እንታይ ማለት፧";
@@ -1179,7 +1179,7 @@
 "delete_infection_dialog_finish_button" = "ተዛዘመ";
 
 /*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
-"tracing_ended_info" = "ምዕቃብ ዝኾነ ምርኽኻብ ተገዲፉ።\n\nእቲ ምክትታል ድሕሪ ግለላ ምሊሱ ክውላዕ ይከኣል።";
+"tracing_ended_info" = "ዝኾነ ሓድሽ ምርኽኻብ ካብ ምዕቃብ ክቋረጽ እዩ ከምኡ ድማ ሓድሽ ቸክ-ኢን ክግበር ኣይክእልን።\n\nእቲ ግለላ ምስተወድአ ክልተኦም ኣገባባት እንደገና ክውላዑ ይከኣሉ።";
 "testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
 "testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
 "testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
@@ -1211,7 +1211,7 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "ክትሰምዑ ኣይትኽእሉን ወይ ናይ ምስማዕ ስንክልና ስለዘለና ነቲ ሓበሬታ ስልኪ ኮሮናቫይረስ ክትድውሉ ኣይትኽእሉን፧\n\nሽዑ ኢመይል ናብ covid-support@medgate.ch ስደዱ ኢኹም";
+"hearing_impaired_info" = "ክትሰምዑ ኣይትኽእሉን ወይ ናይ ምስማዕ ስንክልና ኣለኩም ከምኡ ድማ ክትድውሉ ኣይትኽእሉን፧\n\nሽዑ ኢመይል ናብ covid-support@medgate.ch ስደዱ ኢኹም";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
 "stats_covidcodes_title" = "ኮቪድ-ኮዳት";
@@ -1262,7 +1262,7 @@
 "stats_cases_current_description" = "እቲ ስእሊ ነቶም ዝተሓበሩ ሓድሽቲ ልበዳታት ኣብ ዝሓለፉ 28 መዓልትታት የርኢ። እዚ ሓፈሻዊ ሓበሬታ ብዛዕባ ግዝያዊ ምዕባለ ይህብ።";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "ፖዚቲቭ ተመርሚርኩም (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ከምኡ'ውን ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩምን፧ ሽዑ እቲ ኢንፎላይን ኮሮናቫይረስ ርኸቡ ኢኹም፥";
+"inform_detail_infobox1_text" = "ፖዚቲቭ ተመርሚርኩም (ናይ PCR መርመራ ወይ ቅልጡፍ መርመራ ጸረ-ፈርዒ) ከምኡ'ውን ድሕሪ 4 ሰዓት ገና ናይ ኮቪድ ኮድ ኣይተወሃብኩምን፧\nሽዑ ናብዚ ደውሉ ኢኹም፥";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "ናይ ኮቪድ ኮድ ገና የብልኩምን፧";
@@ -1286,7 +1286,7 @@
 "travel_screen_compatible_countries" = "ተቓደውቲ ሃገራት፥";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "ገየሽቲ ካብ ወጻኢ ውን መታን ክጥንቀቑ፣ እቶም ግላውያን መፋትሕ ምስቶም ኮሮና ኤፕስ ናይቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።";
+"inform_code_travel_text" = "ገየሽቲ ካብ ወጻኢ ውን ድሕሪ ምርኽኻብ መጠንቀቕታ መታን ክወሃቡ፣ እቶም ግላውያን መፋትሕ ምስቶም ኮሮና ኤፕስ ናይቶም ተቓደውቲ ሃገራት ክካፈሉ እዮም።";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "ጥቕላላ";
@@ -1301,13 +1301,13 @@
 "meldungen_positive_tested_faq2_title" = "መን ክሕበር እዩ፧";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "ኩሎም ኣብ እዋንኩም መልከፍቲ ካብ {ONSET_DATE} ክሳብ ምእታው ኮቪድ-ኮድ ዝነበረኩም ርክባት ክሕበሩ እዮም፣ ብምኽንያት ርሕቐትን እዋንን ኣማራጺ ልበዳ እንድሕር ኔሩ።";
+"meldungen_positive_tested_faq2_text" = "ኩሎም ኣብ እዋንኩም መልከፍቲ ካብ {ONSET_DATE} ክሳብ ምእታው ኮቪድ-ኮድ ዝነበረኩም ርክባት ክሕበሩ እዮም፣ ብምኽንያት ርሕቐትን እዋንን ናይ ልበዳ ርከሳ እንድሕር ኔሩ ወይ ኣብ ማዕረ ቦታ ብችክ-ኢን እድንድሕር ተመዝጊብኩም ኔርኩም።";
 
 /*Informieren: Danke Text Onset Date*/
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – ሎሚ";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "ሽዑ ናይ ልበዳ ሰንሰለታት ንክቋረጹ ትሐባበሩ ኢኹም።";
+"inform_send_thankyou_text_stop_infection_chains" = "በዚ መንገዲ‘ዚ ካልኦት ሰባት ካብ ክፍጸም ዝኽእል ልበዳ ንክጥንቀቑ ትሕግዙ ኣለኹ።";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "ግላውያን መፋትሕ ናይ ኤፕኩም ንዝስዕብ እዋን ተሰዲዶም ኔሮም፥";
@@ -1346,355 +1346,353 @@
 "meldungen_detail_free_test_tomorrow" = "ኣብ 1 መዓልቲ";
 
 /*Check-Ins: Titel vom Reminder Push*/
-"checkout_reminder_title" = "";
+"checkout_reminder_title" = "ናይ ቸክ-ኣውት/መውጽኢ መዘኻኸሪ";
 
 /*Check-Ins: Check-out Reminder Push Text*/
-"checkout_reminder_text" = "";
+"checkout_reminder_text" = "ክትወጹ ደሊኹም ዶ፧";
 
 /*Check-Ins: Auto-Checkout Push Titel*/
-"auto_checkout_title" = "";
+"auto_checkout_title" = "ኣውቶማቲካሊ ቸክ-ኣውት";
 
 /*Check-Ins: Auto-checkout Push Text*/
-"auto_checkout_body" = "";
+"auto_checkout_body" = "ብኣውቶማቲካሊ ከም ትወጹ ተገሩ።";
 
 /*Check-Ins: Qr-Scanner Text*/
-"qrscanner_scan_qr_text" = "";
+"qrscanner_scan_qr_text" = "ኮድ Code ስኬን ምግባርን ምእታውን";
 
 /*Check-Ins: Fehler beim QR-Code scannen*/
-"qrscanner_error" = "";
+"qrscanner_error" = "ብቑዕ QR-ኮድ ኣይኮነን!";
 
 /*Check-Ins: Anpassung Check-In Datumwahl von*/
-"datepicker_from" = "";
+"datepicker_from" = "ካብ";
 
 /*Check-Ins: Datumsauswahl bis*/
-"datepicker_to" = "";
+"datepicker_to" = "ክሳብ";
 
 /*Check-Ins: Notiz hinzufügen zu Check-In*/
-"edit_mode_addcomment" = "";
+"edit_mode_addcomment" = "ምልክታ ምውሳኽ";
 
 /*Check-Ins: Notiz zu Check-In Placeholder Text*/
-"edit_mode_comment_placeholder" = "";
+"edit_mode_comment_placeholder" = "ንኣ. ምስ መን ኔርኩም፧";
 
 /*Fertig Button Text*/
-"done_button" = "";
+"done_button" = "ተፈጺሙ";
 
 /*Check-Ins: Titel für Erinnerung*/
-"checkin_set_reminder" = "";
+"checkin_set_reminder" = "ናይ ቸክ-ኣውት/መውጽኢ መዘኻኸሪ";
 
 /*Check-Ins: Erinnerung Option Aus*/
-"reminder_option_off" = "";
+"reminder_option_off" = "ወጽአ";
 
 /*Check-Ins: Tagebuch Zugriff Text*/
-"authenticate_for_diary" = "";
+"authenticate_for_diary" = "መዝገበ-ዕለት ንክትረኽቡ ፍቓድ መእተዊ ኣምጽኡ።";
 
 /*Check-Ins: Errinnerungsoption Stunden*/
-"reminder_option_hours" = "";
+"reminder_option_hours" = "{HOURS} h";
 
 /*Check-Ins: Errinnerungsoption Minuten*/
-"reminder_option_minutes" = "";
+"reminder_option_minutes" = "{MINUTES}'";
 
 /*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
-"qr_scanner_no_camera_permission" = "";
+"qr_scanner_no_camera_permission" = "እቲ ኤፕ ርክብ ምስቲ ካመራ ክህልዎ ኣለዎ፣ ነቲ ኮድ QR ስኬን ክገብር መታን ክኽእል።";
 
 /*Check-Ins: Tagebuch Titel*/
-"diary_title" = "";
+"diary_title" = "ናተይ ቸክ-ኢን";
 
 /*Check-Ins: Button Titel zum Einchecken*/
-"checkin_button_title" = "";
+"checkin_button_title" = "ቸክ-ኢን";
 
 /*Check-Ins: iOS Kamera Erlaubnis Text*/
-"NSCameraUsageDescription" = "";
+"NSCameraUsageDescription" = "ካሜራ ነቲ ኮድ QR ስኬን ንክትገብር፣ ተድልያ።";
 
 /*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
-"NSFaceIDUsageDescription" = "";
+"NSFaceIDUsageDescription" = "ነቲ ናይ ገጽ ኣይ.ዲ. ኣፍቅዱ፣ ንመዝገበ-ዕለትኩም ብርጉጽ ንክትረኽብዎ።";
 
 /*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
-"face_id_reason_text" = "";
+"face_id_reason_text" = "መዝገበ-ዕለት ንክትረኽቡ ፍቓድ መእተዊ ኣምጽኡ።";
 
 /*Check-Ins: Check-Out Button Title*/
-"checkout_button_title" = "";
+"checkout_button_title" = "ቸክ-ኣውት";
 
 /*Check-Ins: Titel Modul auf Homescreen*/
-"module_checkins_title" = "";
+"module_checkins_title" = "ቸክ-ኢን";
 
 /*Check-Ins: Titel vom Check-In Screen*/
-"checkin_title" = "";
+"checkin_title" = "ቸክ-ኢን";
 
 /*Check-Ins: QR-Code erstellen Titel*/
-"checkins_create_qr_code" = "";
+"checkins_create_qr_code" = "QR-ኮድ ምፍጣር";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "";
+"events_title" = "ቸክ-ኢን ምቕራብ";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
-"check_in_now_button_title" = "";
+"check_in_now_button_title" = "ሕጂ ቸክ-ኢን ምእታው";
 
 /*Check-Ins: Reminder Fehlermeldung Titel*/
-"checkin_reminder_settings_alert_title" = "";
+"checkin_reminder_settings_alert_title" = "እቲ መዘኻኸሪ ክዕቀብ ኣይከኣለን";
 
 /*Check-Ins: Erinnerungen Fehlermeldung Text*/
-"checkin_reminder_settings_alert_message" = "";
+"checkin_reminder_settings_alert_message" = "ናይ ቸክ-ኣውት መዘኻኸሪታት መታን ክትቕበሉ \\\"Mitteilungen/መልእኽትታት\\\" ኣብቲ ምስትኽኽእል ኤፕ ከተፍቕዱ ኣለኩም።";
 
 /*Check-Ins: Reminder Popup Anpassen*/
-"checkin_reminder_option_open_settings" = "";
+"checkin_reminder_option_open_settings" = "ምስናድ";
 
 /*Check-Ins: Bearbeiten von Check-Ins Titel*/
-"edit_controller_title" = "";
+"edit_controller_title" = "ምስራሕ";
 
 /*Check-Ins: Tagebuch leeres Tagbuch Titel*/
-"empty_diary_title" = "";
+"empty_diary_title" = "ገና መዝገባት የለውን";
 
 /*Check-Ins: Tagebuch leer, Text*/
-"empty_diary_text" = "";
+"empty_diary_text" = "ናይ ስዊዝ ኮቪድ ኮድ QR ኣብቲ ቦታ ንክትኣትዉ ስከን እንተገበርክኩም፣ ኣውቶማቲካሊ መዝገብ ክዕቀብ እዩ።";
 
 /*Check-Ins: Kamera Erlaubnis Text*/
-"camera_permission_dialog_text" = "";
+"camera_permission_dialog_text" = "SwissCovid ምምርኽኻብ ምስ ካመራ ኣብ መሳርሒኹም የድሊ። እታ ካሜራ ጥራይ ኮድ QR ስኬን ንምግባር ትጥቀም እያ።";
 
 /*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
-"camera_permission_dialog_action" = "";
+"camera_permission_dialog_action" = "መርከቢ ካመራ ምፍቓድ";
 
 /*Check-Ins: Veranstaltung Titel Placeholder*/
-"web_generator_title_placeholder" = "";
+"web_generator_title_placeholder" = "ንኣ. ክፍሊ ወይ ቦታ ፍጻሜ";
 
 /*Check-Ins: Veranstaltungen Detail PDF Button*/
-"show_pdf_button" = "";
-"bottom_nav_tab_info" = "";
-"error_network_title" = "";
-"error_network_text" = "";
-"error_action_retry" = "";
-"error_notification_deactivated_title" = "";
-"error_notification_deactivated_text" = "";
-"error_action_change_settings" = "";
-"error_camera_permission_title" = "";
-"error_camera_permission_text" = "";
-"error_title" = "";
-"qr_scanner_error_code_not_yet_valid" = "";
-"qr_scanner_error_code_not_valid_anymore" = "";
-"error_already_checked_in" = "";
-"error_update_text" = "";
-"error_update_title" = "";
-"error_action_update" = "";
-"ongoing_notification_checkout_quick_action" = "";
-"reminder_notification_snooze_action" = "";
-"android_ongoing_checkin_notification_channel_name" = "";
-"ongoing_notification_title" = "";
+"show_pdf_button" = "PDF ፕሪንት ምግባር";
+"bottom_nav_tab_info" = "ሓበሬታ";
+"error_network_title" = "ጉድለት መርበብ";
+"error_network_text" = "ምትእስሳር ኢንተርነትኩም ኣረጋግጹ ኢኹም";
+"error_action_retry" = "ብሓድሽ ምፍታን";
+"error_notification_deactivated_title" = "መልእኽትታት ጠፊኦም";
+"error_notification_deactivated_text" = "ኣብ ሓደ መልእኽቲ ብቐጥታ መታን ክትሕበሩ ነቲ ምስትኽኻል ቀይሩ ኢኹም።";
+"error_action_change_settings" = "ምስትኽኻል ምቕያር";
+"error_camera_permission_title" = "ካመራ ክትርከብ ኣይከኣለትን";
+"error_camera_permission_text" = "እቲ ኤፕ ርክብ ምስቲ ካመራ ክህልዎ ኣለዎ፣ ነቲ ኮድ QR ስኬን ክገብር መታን ክኽእል።";
+"error_title" = "ጉድለት";
+"qr_scanner_error_code_not_yet_valid" = "QR-ኮድ ገና ብቑዕ ኣይኮነን";
+"qr_scanner_error_code_not_valid_anymore" = "ብቕዓት QR-Code ሓሊፉ";
+"error_already_checked_in" = "ድሮ ኣቲኹም ዲኹም፧";
+"error_update_text" = "እዚ ኮድ QR ምስቲ ዝተተከለ ቨርዝዮን ኤፕ ኣይሰርሕን እዩ። ነቲ ኤፕ ኣሕድስዎ ብኽብረትኩም መታን ክትቕጸሉ።";
+"error_update_title" = "ምምሕዳስ የድሊ";
+"error_action_update" = "ሕጂ ምምሕዳስ";
+"ongoing_notification_checkout_quick_action" = "ቸክ-ኣውት";
+"reminder_notification_snooze_action" = "ስኑዝ";
+"android_ongoing_checkin_notification_channel_name" = "ዝተደጋጋሚ መሓበሪ ቸክ-ኢን";
+"ongoing_notification_title" = "ኣቲኹም ኢኹም ካብ ሰዓት {TIME}።";
 
 /*Check-Ins: Sichern Button bei Check-out*/
-"checkout_save_button_title" = "";
+"checkout_save_button_title" = "ምርግጋጽ";
 
 /*Check-Ins: QR-Code scannen Button*/
-"scan_qr_code_button_title" = "";
+"scan_qr_code_button_title" = "QR-ኮድ ስከን ምግባር";
 
 /*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_title" = "";
+"checkin_ended_title" = "Check-In ተዓጽዩ";
 
 /*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_text" = "";
+"checkin_ended_text" = "ሕጂ Check-in ዝከኣል ኣይኮነን";
 
 /*Text im Check-Ins-Screen im nicht eingecheckten Zustand*/
-"checkin_detail_checked_out_text" = "";
+"checkin_detail_checked_out_text" = "ሓደ ናይ SwissCovid QR ኮድ ስከን ግበሩ ኣብቲ ቦታ ምእንቲ ብቸክ-ኢን ክትኣትው።";
 
 /*Text im Check-Ins-Screen, im Tagebuch-Modul*/
-"checkin_detail_diary_text" = "";
+"checkin_detail_diary_text" = "ናይ ስዊዝ ኮቪድ ኮድ QR ኣብቲ ቦታ ንክትኣትዉ ስከን እንተገበርክኩም፣ ኣብዚ ኣውቶማቲካሊ መዝገብ ክዕቀብ እዩ።";
 
 /*Label im Checkin-Modul im eingecheckten Zustand*/
-"checkin_checked_in" = "";
-"checkout_from_to_date" = "";
-"inform_detail_covidcode_info_button" = "";
+"checkin_checked_in" = "ኣቲኹም ዲኹም።";
+"checkout_from_to_date" = "{DATE1} ክሳብ {DATE2}";
+"inform_detail_covidcode_info_button" = "ዝያዳ ብዛዕባ ኮድ ኮቪድ";
 
 /*Check-Ins: Button Entfernen um Check-In zu löschen*/
-"remove_from_diary_button" = "";
+"remove_from_diary_button" = "መዝገብ ምድምሳስ";
 
 /*Check-Ins: QR-Code löschen Titel Button*/
-"delete_button_title" = "";
+"delete_button_title" = "ምድምሳስ";
 
 /*Check-Ins: Teile QR-Code Button Titel*/
-"share_button_title" = "";
+"share_button_title" = "ምክፍፋል";
 
 /*Check-Ins: Drucken Button auf PDF-Detailseite*/
-"print_button_title" = "";
+"print_button_title" = "ፕሪንት ምግባር";
 
 /*Check-Ins: Beschreibung Modul auf Homescreen*/
-"module_checkins_description" = "";
+"module_checkins_description" = "ሓደ ናይ SwissCovid QR ኮድ ስከን ግበሩ ኣብቲ ቦታ ምእንቲ ብቸክ-ኢን ክትኣትው።";
 
 /*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_title" = "";
+"inform_share_checkins_title" = "ቸክ-ኢን መዝገበኣት ምክፍፋል";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "";
+"inform_share_checkins_subtitle" = "ናይ ቸክ-ኢን መዝገባትኩም እንድሕር ኣካፊልኩም፣ እቲ ኤፕ ኣብ ማዕረ ግዜ ኣብ ሽዑ ቦታ ኔሮም ዝነበሩ ሰባት ክሕብሮም ይኽእል።";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "";
-"inform_dont_send_button_title" = "";
-"inform_dont_share_button_title" = "";
-"inform_really_not_share_title" = "";
-"inform_really_not_share_subtitle" = "";
+"inform_share_checkins_select_all" = "ኩሉ ምምራጽ";
+"inform_dont_send_button_title" = "ኣይትስደድ";
+"inform_dont_share_button_title" = "ዘይምክፍፋል";
+"inform_really_not_share_title" = "ናይ ብሓቂ ብዘይ ምክፍፋል፧";
+"inform_really_not_share_subtitle" = "ምክፍፋል ግላውያን መፋትሕኩም ን«SwissCovid» ይሕግዝ፣ ኣብ ምሕባር ናብ ካልእ ተለቢዶም ዝኾኑ ሰባት ከምኡ ድማ ቀጻሊ ምዝርጋሕ እዚ ቫይረስ ንክውገድ። ምክፍፋል ግላውያን መፋትሕኩም ዘይትገብሩ እንተኾይንኩም፣ ተለቢዶም ዝኾኑ ሰባት ኣይክሕበሩን እዮም።";
 
 /*Remove from Diary Warning view title*/
-"remove_diary_warning_title" = "";
+"remove_diary_warning_title" = "መዝገብ ምድምሳስ";
 
 /*Remove from diary warning view explanation text*/
-"remove_diary_warning_text" = "";
+"remove_diary_warning_text" = "መዝገብኩም ሓንሳዕ ንሓዋሩ ካብቲ ዝርዝር ክድምሰስ እዩ።";
 
 /*Remove from diary warning view remove button title*/
-"remove_diary_remove_now_button" = "";
+"remove_diary_remove_now_button" = "ብምልኡ ምልጋስ";
 
 /*Hide from diary warning title*/
-"remove_diary_warning_hide_title" = "";
+"remove_diary_warning_hide_title" = "ጥራይ ምሕባእ ከምኡ‘ውን ንቀጻሊ ክሕበር ይግባእ፧";
 
 /*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "";
+"home_covidcode_card_title" = "ፖዚቲቭች ተመርሚርካ/ኪ፧";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_text" = "";
+"home_end_isolation_card_text" = "ምርኽኻብን ቸክ-ኢንን እንደገና ምውላዕ።";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
-"reminder_option_hours_minutes" = "";
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
-"checkin_overview_isolation_text" = "You can no longer check-in when you tested positive. More text more text more text more text more text more text more";
+"checkin_overview_isolation_text" = "ፖዚቲቭ ቸክ-ኢን እንድሕር ጌርኩም፣ ክትኣትዉ ኣይትኽእሉን ኢኹም።";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "";
+"events_card_subtitle" = "ኮድ QR ምስፈጠርካዮ ብእኡ ሰባት ኣብቲ ቦታ ክኣትዉ ይኽእሉ።";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "";
+"delete_qr_code_dialog" = "ነቲ ኮድ QR ናይብሓቂ ክትድምሥዎ ደሊኹም ዶ፧";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
-"self_checkin_button_title" = "";
+"self_checkin_button_title" = "ባዕልኻ እትገብር ቸክ-ኢን";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer nicht eingecheckt ist.*/
-"checkin_overview_checkins_explanation" = "";
+"checkin_overview_checkins_explanation" = "ሓደ ናይ SwissCovid QR ኮድ ስከን ግበሩ ኣብቲ ቦታ ምእንቲ ብቸክ-ኢን ክትኣትው።";
 
 /*Popup Titel wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
-"checkout_overlapping_alert_title" = "";
+"checkout_overlapping_alert_title" = "ምዕቃብ ዝከኣል ኣይኮነን";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
-"checkout_overlapping_alert_description" = "";
+"checkout_overlapping_alert_description" = "ዝመረጽኩሞም ግዜታት ምስቶም ካልኦት ካብቲ መዝገበ-ዕለትኩም ዝመጽኡ ቸክ-ኢናት ኣይሰማምዑን እዮም። ሓበሬታኹም እንደገና ኣቈጻጸሩ ብኽበርትኩም።";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "";
+"inform_send_thankyou_text_checkins" = "ዝመረጽኩሞም ቸክ-ኢን ተሰዲዶም ኔሮም። ኣብ ማዕረ ግዜ ኣብ ሽዑ ቦታ ኣትዮም ዝነበሩ ሰባት ክሕበሩ እዮም።";
 
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
-"pdf_headline" = "";
+"pdf_headline" = "SwissCovid-Check-in";
 
 /*SwissCovid QR Code PDF: Slogan*/
-"pdf_slogan" = "";
+"pdf_slogan" = "ምእታው ብዘይ ምግዳፍ ሓበሬታ/ዳታ";
 
 /*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
-"pdf_explanation" = "";
+"pdf_explanation" = "ምስቲ ናይ SwissCovid ኤፕ ኣባና ብቐሊል ብቸክ-ኢን ክትኣትዉ ትኽእሉ ሓበሬታይ ብዘይምግዳፍ። ኩነተ ርከሳ እንተሎ በቲ ኤፕ ቀልጢፍኩም ክትሕበሩ ኢኹም።";
 
 /*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
-"pdf_swisscovid_app" = "";
+"pdf_swisscovid_app" = "ኤፕ SwissCovid";
 
 /*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
-"pdf_download_app" = "";
+"pdf_download_app" = "ሕጂ ምምጻእ ብዳውንሎድ";
 
 /*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
-"checkin_detail_checked_out_title" = "";
+"checkin_detail_checked_out_title" = "ቸክ-ኢን ብዘይ ሓበሬታ\nምግዳፍ";
 
 /*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_text" = "";
+"home_covidcode_card_text" = "ኣብዚ ኮቪድ ኮድኩም ኣእትዉ ንካልኦት መታን ከተጠንቅቕዎም።";
 
 /*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
-"home_end_isolation_card_title" = "";
+"home_end_isolation_card_title" = "ግላለ ምዝዛም፧";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "";
-"checkin_footer_title1" = "";
-"checkin_footer_subtitle1" = "";
-"checkin_footer_title2" = "";
-"checkin_footer_subtitle2" = "";
-"events_empty_state_title" = "";
-"events_empty_state_subtitle" = "";
-"events_info_box_title" = "";
-"events_info_box_text" = "";
-"events_footer_title1" = "";
-"events_footer_title2" = "";
-"events_footer_subtitle1" = "";
-"events_footer_subtitle2" = "";
+"events_card_title" = "ቸክ-ኢን ከተቕርቡ ደሊኹም ዶ፧";
+"checkin_footer_title1" = "ስለምንታይ ናይ ቸክ-ኢን ኣገባብ፧";
+"checkin_footer_subtitle1" = "ናይ ቸክ-ኢን ኣገባብ ብዘይ ምሓዝ ሓበሬታ ርክብ ነቲ SwissCovid ኤፕ ይውስኾ። ምስዚ ኣገባብ‘ዚ ፖዚቲቭ እንተ ደኣ ተመርሚርኩም፣ ጥራይ ቀረባ ርክባት ዘይኮነ ዋላ ውን ኣብ ማዕረ ግዜን ማዕረ ቦታን ኣትዮም ዝነበርይ ሰባት ከተጠንቅቕዎም ትኽእሉ።";
+"checkin_footer_title2" = "ማእከላዊ ዕቃበ ዳታ የለን";
+"checkin_footer_subtitle2" = "ነቲ ናይ SwissCovid-ቸክ-ኢን ግላዊ ዳታ ከም ስም፣ ኣድራሻ ወይ ቁጽሪ ተሌፎን ክወሃብ ኣየድልን ከምኡ‘ውን ናይ GPS ሓበሬታ ቦታ ውን ኣይክተሓዝን እዩ። ዝርዝር ቸክ-ኢን ብዘይ ኢንተርነት ኣብ ሞባይልኩም ክዕቀብ እዩ። ድሕሪ 14 መዓልትታት እቶም ኣብ ሞባይልኩም ዘሎ ሓበሬታ ክድምሰስ እዩ።";
+"events_empty_state_title" = "ኮድ QR ፈጥሩ";
+"events_empty_state_subtitle" = "ምስ ሓደ SwissCovid-QR-ኮድ ሰባት ኣብቲ ቦታ ሓበሬታኦም ብዘይምግዳፍ ቸክ-ኢን ክገብሩ ይኽእሉ።";
+"events_info_box_title" = "ነቲ ግድነታዊ ምልዓል ዳታ ርክብ መተካእታ የለን";
+"events_info_box_text" = "ቸክ-ኢን SwissCovid መተካእታ ንኣብ «ኮቪድ-19-መትከል ፍሉይ ኩነት» ዝተኣዘዘ ግዴታ ምልዓል ዳታ ርክብ ኣይኮነን።";
+"events_footer_title1" = "እዚኦም Check-ins ኣበይ ክጥቀሙ ይከኣሉ፧";
+"events_footer_title2" = "ስለምንታይ ናይ ቸክ-ኢን ኣገባብ፧";
+"events_footer_subtitle1" = "ኣብ ሰብ ዝራኸቡ ቦታ እቲ ስዊዝ ቸክ-ኢን ውን ክጥቐም ይኽእል፣ ግና ግዴታ ናይ ምልዓል ዳታ ርክብ የለን።\n\nዝኾኑ ቦታታት ስራሕ፤\n– ግላውያን ፍጻሜታት\n– ፍጻሜታት ማሕበር\n– ኣኼባታት ኣብ ሞያዊ ከባቢ ከም ንኣ. ክፍሊ ዋዕላ፣ ክፍሊ ቤትጽሕፈት፣ ካንቲናታት፣ ወዘተ";
+"events_footer_subtitle2" = "ናይ ቸክ-ኢን ኣገባብ ብዘይ ምሓዝ ሓበሬታ ርክብ ነቲ SwissCovid ኤፕ ይውስኾ። ምስዚ ኣገባብ‘ዚ ፖዚቲቭ እንተ ደኣ ተመርሚርኩም፣ ጥራይ ቀረባ ርክባት ዘይኮነ ዋላ ውን ኣብ ማዕረ ግዜን ማዕረ ቦታን ኣትዮም ዝነበርይ ሰባት ከተጠንቅቕዎም ትኽእሉ።";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
-"meldung_detail_exposed_list_card_subtitle" = "";
+"meldung_detail_exposed_list_card_subtitle" = "ኩነት ርከሳ";
 
 /*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_encounters" = "";
+"meldung_detail_exposed_list_card_title_encounters" = "ምርኽኻብ";
 
 /*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_title_checkin" = "";
+"meldung_detail_exposed_list_card_title_checkin" = "ቸክ-ኢን";
 
 /*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
-"meldung_detail_exposed_list_card_whattodo_button" = "";
+"meldung_detail_exposed_list_card_whattodo_button" = "እንታይ ክገብር ኣለኒ፧";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_checkin_exposed" = "";
+"debug_state_setting_option_checkin_exposed" = "ኣወንታዊ Check-in";
 
 /*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
-"debug_state_setting_option_mutiple_exposed" = "";
+"debug_state_setting_option_mutiple_exposed" = "ኣወንታዊ Check-ins / ርክባት";
 
 /*Anzeigename für User QR Codes*/
-"venue_type_user_qr_code" = "";
+"venue_type_user_qr_code" = "User QR Code";
 
 /*Anzeigename für User QR Codes*/
-"venue_type_contact_tracing_qr_code" = "";
+"venue_type_contact_tracing_qr_code" = "Contact Tracing QR Code";
 
 /*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_text_detailed" = "";
+"checkin_ended_text_detailed" = "ድሕሪ ሓደ ኣወንታዊ ውጽኢት መርመራ ናይ ቸክ-ኢን ኣገባብ ኣውቶማቲካሊ ተዓጽዩ እዩ። ድሕሪ ምድጻም ግላለኹም እንደገና ክውላዕ ይከኣል።";
 
 /*Check-Ins: QR-Code erstellen subtitel*/
-"checkins_create_qr_code_subtitle" = "";
-"checkin_report_heading" = "";
-"checkin_report_title1" = "";
-"checkin_report_title2" = "";
-"checkin_report_title3" = "";
-"checkin_report_subtitle1" = "";
-"checkin_report_subtitle2" = "";
-"checkin_report_subtitle3" = "";
+"checkins_create_qr_code_subtitle" = "እቲ ቦታ ወይ ፍጻሜኹም ብቀረባ ዝገልጽ ኣርእስቲ ወይ ስም ሃቡ ኢኹም።\nእዚ ኣርእስቲ ኣብ Check-in ክረአ እዩ።";
+"checkin_report_heading" = "እንታይ ክትገብሩ ትኽእሉ፧";
+"checkin_report_title1" = "ርክባት ምክልኻል";
+"checkin_report_title2" = "ምልክታት ምጥንቃቕ";
+"checkin_report_title3" = "ምምርማር";
+"checkin_report_subtitle1" = "ድሮ ተላጋቢ ክትኮኑ ትኽእሉ ከይተገንዘብኩም። እቶም ብቑዓት ናይ ጽሬትን ምክልኻልን ስጉምትታት ተኸተሉ ከምኡውን ስድራኹምን ኣዕሩኽትኹምን ከባብኹምን ኣስተውዕሉ።";
+"checkin_report_subtitle2" = "መርገጽ ጥዕናኹም ተኸታተሉ።";
+"checkin_report_subtitle3" = "ኣብ ምቕልቓል ምልክታት ብዝቐልጠፈ ተመርመሩ። ዋላ ምልክታት ዘይቕልቀሉ እንተኾይኖም፣ መርመራ ኮሮና ጤቓምን ዝምረጽን እዩ።";
 
 /*Titel von CheckIn Meldungen Screen.*/
-"meldung_detail_checkin_title" = "";
-
-/*SubTitel von CheckIn Meldungen Screen.*/
-"meldung_detail_checkin_subtitle" = "";
-"not_thank_you_screen_title" = "";
-"not_thank_you_screen_text1" = "";
-"not_thank_you_screen_back_button" = "";
-"not_thank_you_screen_dont_send_button" = "";
-"not_thank_you_screen_text2" = "";
+"meldung_detail_checkin_title" = "ቸክ-ኢን";
+"not_thank_you_screen_title" = "ዝኾነ ዳታ ኣይተሰደደን";
+"not_thank_you_screen_text1" = "ዝኾነ ግላዊ መፍትሕ ኣይተሰደደን።";
+"not_thank_you_screen_back_button" = "ተመለስ";
+"not_thank_you_screen_dont_send_button" = "ዝኾነ ዳታ ዘይምስዳድ";
+"not_thank_you_screen_text2" = "ቸክ-ኢን መዝገባት ኣይተሰደዱን።";
 
 /*Button text, um ausgewählte Checkins zu senden*/
-"inform_share_checkins_send_button_title" = "";
-"inform_share_checkins_not_send_button" = "";
-"onboarding_checkin_title" = "";
-"onboarding_checkin_heading" = "";
-"onboarding_checkin_text1" = "";
-"onboarding_checkin_text2" = "";
-"checkin_updateboarding_text" = "";
-"onboarding_gaen_button_dont_activate" = "";
+"inform_share_checkins_send_button_title" = "ምክፍፋል መርጫ";
+"inform_share_checkins_not_send_button" = "ዋላሓደ ዘይምክፋል";
+"onboarding_checkin_title" = "ምእታው ብዘይ ምግዳፍ ሓበሬታ/ዳታ";
+"onboarding_checkin_heading" = "Check-ins";
+"onboarding_checkin_text1" = "ምስቲ SwissCovid-ቸክ-ኢን ምስቲ ኤፕ ኣብ ሓደ ቦታ ወይ ኣብ ሓደ ምርኽኻብ ክትኣትዉ ትኽእሉ ኢኹም።";
+"onboarding_checkin_text2" = "ህላወኹም ጥራይ ኣብቲ ኤፕ እዩ ዝዕቀብ። ዝኾነ ግላዊ ሓበሬታ ኣብቲ ኤፕ ክትገድፉ ኣየድልየኩምን።";
+"checkin_updateboarding_text" = "ምስቲ SwissCovid-ቸክ-ኢን ምስቲ ኤፕ ኣብ ሓደ ቦታ ወይ ኣብ ሓደ ምርኽኻብ ክትኣትዉ ትኽእሉ ኢኹም። ህላወኹም ጥራይ ኣብቲ ኤፕ እዩ ዝዕቀብ። ዝኾነ ግላዊ ሓበሬታ ኣብቲ ኤፕ ክትገድፉ ኣየድልየኩምን። ሽዑ እቶም ናይ ኣጠቓቕማ ኩነታት ከምኡ'ውን ስምምዕ ምክልኻል ዳታ ክሕደሱ እዮም።";
+"onboarding_gaen_button_dont_activate" = "ገዲፍካ ምቕጻል";
 
 /*Hide from diary warning text*/
-"remove_diary_warning_hide_text" = "";
+"remove_diary_warning_hide_text" = "እቲ መዝገብ ን14 መዓልታት ዝተመስጠረ ኣብቲ ዳሕረዋይ ኤፕ ክዕቀብ እዩ። ኣብ ክኸውን ዝኽእል ልበዳ ብዝኾነ ክትሕበሩ ትኽእሉ ኢኹም።";
 
 /*CheckIn ausblenden*/
-"remove_diary_warning_hide_button" = "";
-"checkin_set_reminder_explanation" = "";
+"remove_diary_warning_hide_button" = "ጥራይ ምሕባእ";
+"checkin_set_reminder_explanation" = "እቲ ኤፕ ንልክዕ ግዜ ክትወጽኡ ከዘክረኩም ይኽእል።";
 
 /*Remove from diary warning title*/
-"remove_diary_remove_now_title" = "";
+"remove_diary_remove_now_title" = "ወይ ብምልኡ ምድምሳስ፧";
 
 /*Remove from diary warning text*/
-"remove_diary_remove_now_text" = "";
-"not_thank_you_screen_text3" = "";
+"remove_diary_remove_now_text" = "እቲ መዝገብ ብምልኡ ክድምሰስ እዩ። ክትጥንቀቑ ኣይትኽእሉን ኢኹም።";
+"not_thank_you_screen_text3" = "ማንም ሰብ ኣይክሕበርን እዩ።";
 
 /*Link Text zu Informationen übers Testen*/
-"checkin_report_link" = "";
-"instant_app_install_action" = "";
-"partial_onboarding_box_text" = "";
-"partial_onboarding_box_action" = "";
-"partial_onboarding_done_title" = "";
-"partial_onboarding_done_text" = "";
-"web_slogan" = "";
+"checkin_report_link" = "ብዛዕባ ምምርማር እንታይ ክፈልጥ ኣለኒ፧";
+"instant_app_install_action" = "ኤፕ ምትካልን ምእታውን";
+"partial_onboarding_box_text" = "እቲ ምስትኽኻል ኤፕ ወድእዎ፣ መታን ኣገባብ ምክትታል ክትጥቐመሉ።";
+"partial_onboarding_box_action" = "ሕጂ ምውዳእ";
+"partial_onboarding_done_title" = "ምስትኽኻል ምውዳእ";
+"partial_onboarding_done_text" = "ምዝርጋሕ ኮሮናቫይረስ ንምድራት እትገብሩ ምትሕብባር ነመስግነኩም ኢና።";
+"web_slogan" = "ኣብ ርከሳ ልበዳ ብቕልጡፍ ተሓቢርኩም።";
 
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
+"checkout_too_long_alert_text" = "";

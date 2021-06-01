@@ -142,9 +142,37 @@ class NSCheckInEditViewController: NSViewController {
         return false
     }
 
+    private func selectedTimeRangeExceedsMaximum() -> Bool {
+        let timeRange = endDate.timeIntervalSince(startDate)
+        if isCurrentCheckIn,
+           let checkIn = CheckInManager.shared.currentCheckIn,
+           let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval {
+            return timeRange > automaticCheckout
+        } else if let checkIn = self.checkIn,
+                  let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval {
+            return timeRange > automaticCheckout
+        }
+
+        return false
+    }
+
     private func showOverlappingDatesAlert() {
         let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .default)) // TODO: - Localization
+        alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+
+        present(alert, animated: true, completion: nil)
+    }
+
+    private func showTimeRangeErrorAlert() {
+        var durationString = "?"
+        if isCurrentCheckIn, let checkoutInterval = CheckInManager.shared.currentCheckIn?.venue.automaticCheckoutTimeInterval {
+            durationString = ReminderOption(with: checkoutInterval.milliseconds).title
+        } else if let checkoutInterval = checkIn?.venue.automaticCheckoutTimeInterval {
+            durationString = ReminderOption(with: checkoutInterval.milliseconds).title
+        }
+
+        let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_too_long_alert_text".ub_localized.replacingOccurrences(of: "{DURATION}", with: durationString), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
 
         present(alert, animated: true, completion: nil)
     }
@@ -174,6 +202,11 @@ class NSCheckInEditViewController: NSViewController {
             return
         }
 
+        guard !selectedTimeRangeExceedsMaximum() else {
+            showTimeRangeErrorAlert()
+            return
+        }
+
         if isCurrentCheckIn {
             updateCheckIn()
 
@@ -191,25 +224,16 @@ class NSCheckInEditViewController: NSViewController {
     private func setupTimeInteraction() {
         fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
+
             strongSelf.startDate = date
-
-            let calendar = NSCalendar.current
-            var dayComponent = DateComponents()
-            dayComponent.day = 1
-
-            if let nextDate = calendar.date(byAdding: dayComponent, to: date),
-               nextDate < strongSelf.endDate {
-                var minusDateComponent = DateComponents()
-                minusDateComponent.day = -1
-                strongSelf.endDate = calendar.date(byAdding: minusDateComponent, to: strongSelf.endDate)!
-            }
-
             strongSelf.toTimePickerControl.inputControl.setDate(currentStart: date, currentEnd: strongSelf.endDate)
         }
 
         toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
+
             strongSelf.endDate = date
+            strongSelf.fromTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: date)
         }
     }
 
