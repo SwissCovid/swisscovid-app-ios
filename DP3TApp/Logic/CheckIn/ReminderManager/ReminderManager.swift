@@ -24,11 +24,7 @@ enum ReminderOption: Equatable {
         case .off:
             return "reminder_option_off".ub_localized.uppercased()
         case .thirtyMinutes:
-            #if RELEASE_DEV
-                return "reminder_option_minutes".ub_localized.replacingOccurrences(of: "{MINUTES}", with: "5")
-            #else
-                return "reminder_option_minutes".ub_localized.replacingOccurrences(of: "{MINUTES}", with: "30")
-            #endif
+            return "reminder_option_minutes".ub_localized.replacingOccurrences(of: "{MINUTES}", with: "30")
         case .oneHour:
             return "reminder_option_hours".ub_localized.replacingOccurrences(of: "{HOURS}", with: "1")
         case .twoHours:
@@ -54,13 +50,7 @@ enum ReminderOption: Equatable {
         case .off:
             return 0
         case .thirtyMinutes:
-            #if DEBUG
-                return 30 * .second
-            #elseif RELEASE_DEV
-                return 5 * .minute
-            #else
-                return 30 * .minute
-            #endif
+            return 30 * .minute
         case .oneHour:
             return .hour
         case .twoHours:
