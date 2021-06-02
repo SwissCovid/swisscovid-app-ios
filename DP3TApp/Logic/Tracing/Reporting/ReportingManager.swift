@@ -176,7 +176,11 @@ class ReportingManager: ReportingManagerProtocol {
 
                             let oldestKeyDate = wrapper.oldestKeyDate ?? Date()
                             // keys older than 10 days are never persisted on the server
-                            self.oldestSharedKeyDate = max(oldestKeyDate, Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
+                            if let currentOldestShareKeyDate = self.oldestSharedKeyDate {
+                                self.oldestSharedKeyDate = max(min(oldestKeyDate, currentOldestShareKeyDate), Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
+                            } else {
+                                self.oldestSharedKeyDate = max(oldestKeyDate, Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
+                            }
                         }
 
                         completion(.success(()))
@@ -200,10 +204,17 @@ class ReportingManager: ReportingManagerProtocol {
 
         var uploadInfos = [UploadVenueInfo]()
 
+        var oldestDate: Date?
+
         for checkIn in selectedCheckIns {
             guard let checkOutTime = checkIn.checkOutTime else {
                 continue
             }
+
+            if oldestDate == nil || checkIn.checkInTime < (oldestDate ?? Date()) {
+                oldestDate = checkIn.checkInTime
+            }
+
             let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue, arrivalTime: checkIn.checkInTime, departureTime: checkOutTime)
 
             uploadInfos.append(contentsOf: infos.map {
@@ -239,7 +250,8 @@ class ReportingManager: ReportingManagerProtocol {
 
         request.addValue("Bearer \(tokens.checkInToken.token)", forHTTPHeaderField: "Authorization")
 
-        task = URLSession.certificatePinned.dataTask(with: request) { _, response, error in
+        task = URLSession.certificatePinned.dataTask(with: request) { [weak self] _, response, error in
+            guard let self = self else { return }
             DispatchQueue.main.async {
                 if let response = response as? HTTPURLResponse,
                    response.statusCode != 200 {
@@ -247,6 +259,13 @@ class ReportingManager: ReportingManagerProtocol {
                 } else if let e = error {
                     completion(.failure(.unexpected(error: e)))
                 } else {
+                    if let oldestDate = oldestDate {
+                        if let currentOldestShareKeyDate = self.oldestSharedKeyDate {
+                            self.oldestSharedKeyDate = min(oldestDate, currentOldestShareKeyDate)
+                        } else {
+                            self.oldestSharedKeyDate = oldestDate
+                        }
+                    }
                     completion(.success(()))
                 }
             }
