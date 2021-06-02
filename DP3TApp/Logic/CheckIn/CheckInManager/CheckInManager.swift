@@ -90,8 +90,8 @@ class CheckInManager {
     public func autoCheckoutIfNecessary() {
         logger.trace()
 
-        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval) <= Date() {
-            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval)
+        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval) <= Date() {
+            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval)
             checkOut()
         }
     }

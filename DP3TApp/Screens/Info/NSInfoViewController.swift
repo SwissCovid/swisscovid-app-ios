@@ -124,7 +124,7 @@ class NSInfoViewController: NSViewController {
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.large)
         }
-        
+
         stackScrollView.addArrangedView(whatToDoSymptomsButtonWrapper)
 
         travelView.isHidden = true

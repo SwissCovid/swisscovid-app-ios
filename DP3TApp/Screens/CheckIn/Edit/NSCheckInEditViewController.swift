@@ -151,11 +151,11 @@ class NSCheckInEditViewController: NSViewController {
     private func selectedTimeRangeExceedsMaximum() -> Bool {
         let timeRange = endDate.timeIntervalSince(startDate)
         if isCurrentCheckIn,
-           let checkIn = CheckInManager.shared.currentCheckIn,
-           let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval {
+           let checkIn = CheckInManager.shared.currentCheckIn {
+            let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             return timeRange > automaticCheckout
-        } else if let checkIn = self.checkIn,
-                  let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval {
+        } else if let checkIn = self.checkIn {
+            let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             return timeRange > automaticCheckout
         }
 
@@ -171,9 +171,11 @@ class NSCheckInEditViewController: NSViewController {
 
     private func showTimeRangeErrorAlert() {
         var durationString = "?"
-        if isCurrentCheckIn, let checkoutInterval = CheckInManager.shared.currentCheckIn?.venue.automaticCheckoutTimeInterval {
+        if isCurrentCheckIn {
+            let checkoutInterval = CheckInManager.shared.currentCheckIn?.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             durationString = ReminderOption(with: checkoutInterval.milliseconds).title
-        } else if let checkoutInterval = checkIn?.venue.automaticCheckoutTimeInterval {
+        } else {
+            let checkoutInterval = checkIn?.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             durationString = ReminderOption(with: checkoutInterval.milliseconds).title
         }
 

@@ -100,8 +100,11 @@ class NSReportsDetailPositiveTestedViewController: NSTitleViewScrollViewControll
             guard let self = self else { return }
 
             let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
+            alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { [weak self] _ in
+                guard let strongSelf = self else { return }
+
                 TracingManager.shared.deletePositiveTest()
+                strongSelf.navigationController?.popToRootViewController(animated: true)
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 

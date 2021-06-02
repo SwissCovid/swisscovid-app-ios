@@ -30,6 +30,9 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
     private var center: UserNotificationCenter
 
+    static let defaultCheckoutWarningTimeInterval: TimeInterval = .hour * 8
+    static let defaultAutomaticCheckoutTimeInterval: TimeInterval = .hour * 12
+
     enum Identifiers: String, CaseIterable, Codable {
         // Exposure Notifications
         case bluetoothError = "ch.admin.bag.notification.bluetooth.warning"
@@ -378,7 +381,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         #if DEBUG
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 8, repeats: false)
         #else
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: reminderTimeInterval ?? .hour * 8, repeats: false)
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: reminderTimeInterval ?? Self.defaultCheckoutWarningTimeInterval, repeats: false)
         #endif
         let request = UNNotificationRequest(identifier: Identifiers.checkInautomaticReminder.rawValue,
                                             content: notification,
@@ -400,7 +403,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         #if DEBUG
             let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: .minute * 12, repeats: false)
         #else
-            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: checkoutTimeInterval ?? .hour * 12, repeats: false)
+            let trigger2 = UNTimeIntervalNotificationTrigger(timeInterval: checkoutTimeInterval ?? Self.defaultAutomaticCheckoutTimeInterval, repeats: false)
         #endif
         center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticCheckout.rawValue, content: notification2, trigger: trigger2), withCompletionHandler: nil)
     }
