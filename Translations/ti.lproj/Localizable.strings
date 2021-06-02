@@ -1696,3 +1696,6 @@
 
 /*turn camera light off*/
 "accessibility_camera_light_off" = "turn light off";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "";

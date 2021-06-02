@@ -1688,7 +1688,7 @@
 "onboarding_checkin_title" = "Check in without leaving data";
 "onboarding_checkin_heading" = "Check-ins";
 "onboarding_checkin_text1" = "With SwissCovid check-ins you can check in to a location or meeting using the app.";
-"onboarding_checkin_text2" = "Your presence is only stored in the app. You don’t have to leave behind any personal data. ";
+"onboarding_checkin_text2" = "Your presence is only stored in the app. You don’t have to leave behind any personal data.";
 "checkin_updateboarding_text" = "With SwissCovid check-ins you can check in to a location or meeting using the app. Your presence is only stored in the app. You don't have to leave behind any personal data. The terms of use and privacy policy have been updated.";
 "onboarding_gaen_button_dont_activate" = "Skip";
 
@@ -1725,3 +1725,6 @@
 
 /*turn camera light off*/
 "accessibility_camera_light_off" = "turn light off";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "";

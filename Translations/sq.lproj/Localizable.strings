@@ -1377,7 +1377,7 @@
 "checkin_set_reminder" = "Kujtesa e Check-out";
 
 /*Check-Ins: Erinnerung Option Aus*/
-"reminder_option_off" = "Fikur";
+"reminder_option_off" = "Off";
 
 /*Check-Ins: Tagebuch Zugriff Text*/
 "authenticate_for_diary" = "Autentifikohuni për aksesin në ditar";
@@ -1697,3 +1697,6 @@
 
 /*turn camera light off*/
 "accessibility_camera_light_off" = "turn light off";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "";

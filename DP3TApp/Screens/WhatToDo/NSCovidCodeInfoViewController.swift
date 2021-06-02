@@ -112,11 +112,4 @@ class NSCovidCodeInfoViewController: NSViewController {
     }
 
     private func setupAccessibility() {}
-
-    // MARK: - Present
-
-    func presentInformViewController(prefill: String? = nil) {
-        let informVC = NSSendViewController(prefill: prefill)
-        informVC.presentInNavigationController(from: self, useLine: false)
-    }
 }

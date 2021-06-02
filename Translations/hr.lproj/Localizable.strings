@@ -1375,7 +1375,7 @@
 "checkin_set_reminder" = "Podsećanje na prijavu";
 
 /*Check-Ins: Erinnerung Option Aus*/
-"reminder_option_off" = "Isključeno";
+"reminder_option_off" = "Off";
 
 /*Check-Ins: Tagebuch Zugriff Text*/
 "authenticate_for_diary" = "Identifikujte se, kako biste pristupili dnevniku";
@@ -1695,3 +1695,6 @@
 
 /*turn camera light off*/
 "accessibility_camera_light_off" = "turn light off";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "";

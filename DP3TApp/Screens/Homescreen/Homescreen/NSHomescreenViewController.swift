@@ -297,6 +297,12 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     func presentInformViewController(prefill: String? = nil) {
+        if case .checkIn = UIStateManager.shared.uiState.checkInStateModel.checkInState {
+            let checkoutAlert = UIAlertController.createCheckoutAlert(from: self)
+            present(checkoutAlert, animated: true, completion: nil)
+            return
+        }
+
         let informVC = NSSendViewController(prefill: prefill)
         informVC.presentInNavigationController(from: self, useLine: false)
     }

@@ -475,6 +475,8 @@
 		DC85DF00263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
 		DC85DF01263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
 		DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DC8CAEF226677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
+		DC8CAEF326677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
 		DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A3242CE5E000AD1548 /* InfoPlist.strings */; };
 		DCA3FFB424502D370003F5AD /* NSErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA3FFB324502D370003F5AD /* NSErrorView.swift */; };
@@ -964,6 +966,7 @@
 		DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderActiveView.swift; sourceTree = "<group>"; };
 		DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckedOutView.swift; sourceTree = "<group>"; };
 		DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckedInView.swift; sourceTree = "<group>"; };
+		DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+CheckoutAlert.swift"; sourceTree = "<group>"; };
 		DC9A81A2242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC9A81A4242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DC9A81A5242CE5E000AD1548 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -1228,6 +1231,7 @@
 			isa = PBXGroup;
 			children = (
 				6E6E5182242F9586006E532E /* NSSendViewController.swift */,
+				DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */,
 			);
 			path = Send;
 			sourceTree = "<group>";
@@ -2779,6 +2783,7 @@
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
+				DC8CAEF326677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */,
 				242D2225245C4BD8005DAEA8 /* NSCodeInputControl.swift in Sources */,
 				242D2228245C4BD8005DAEA8 /* Logger.swift in Sources */,
 				242D2229245C4BD8005DAEA8 /* NSInfoBoxView.swift in Sources */,
@@ -3032,6 +3037,7 @@
 				8EF2A6E52490E26F002263C3 /* NSLastSyncronizationControl.swift in Sources */,
 				6E6E5185242F9586006E532E /* NSCheckboxControl.swift in Sources */,
 				F8ABA2E52526087D00A8D6B5 /* NSTutorialListItemView.swift in Sources */,
+				DC8CAEF226677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */,
 				DC1617972638717800B56ADA /* NSBaseTextField.swift in Sources */,
 				DC1617812638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */,
 				6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */,
