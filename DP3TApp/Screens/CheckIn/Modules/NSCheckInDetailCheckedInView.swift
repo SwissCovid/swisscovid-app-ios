@@ -18,7 +18,6 @@ class NSCheckInDetailCheckedInView: UIView {
     private let checkedInLabel = NSLabel(.textLight, textAlignment: .center)
     private let timerLabel = NSLabel(.timerLarge, textAlignment: .center)
     private let eventTitleLabel = NSLabel(.textBold, textAlignment: .center)
-    private let eventCategoryLabel = NSLabel(.textLight, textAlignment: .center)
 
     let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_blue))
 
@@ -45,31 +44,27 @@ class NSCheckInDetailCheckedInView: UIView {
 
         addSubview(checkOutButton)
         checkOutButton.snp.makeConstraints { make in
-            make.top.equalTo(stackView.snp.bottom).offset(NSPadding.large)
+            make.top.equalTo(stackView.snp.bottom).offset(2.0 * NSPadding.medium)
             make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.small)
         }
 
         imageView.ub_setContentPriorityRequired()
-        checkOutButton.setImage(UIImage(named: "ic-qrcode")?.withRenderingMode(.alwaysTemplate), for: .normal)
-        checkOutButton.tintColor = .ns_blue
-        checkOutButton.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: NSPadding.large)
         checkedInLabel.text = "checkin_checked_in".ub_localized
 
-        stackView.addSpacerView(20)
+        stackView.addSpacerView(2.0 * NSPadding.medium)
         stackView.addArrangedView(imageView)
-        stackView.addSpacerView(15)
+        stackView.addSpacerView(2.0 * NSPadding.medium)
         stackView.addArrangedView(checkedInLabel)
+        stackView.addSpacerView(2.0)
+        stackView.addArrangedView(eventTitleLabel)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedView(timerLabel)
         stackView.addSpacerView(NSPadding.small)
-        stackView.addArrangedView(eventTitleLabel)
-        stackView.addArrangedView(eventCategoryLabel)
     }
 
     func update(with checkIn: CheckIn) {
         self.checkIn = checkIn
         eventTitleLabel.text = checkIn.venue.description
-        eventCategoryLabel.text = checkIn.venue.venueType?.title
         timerLabel.text = ""
         startTitleTimer()
     }
