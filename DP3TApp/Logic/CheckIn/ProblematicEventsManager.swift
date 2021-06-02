@@ -57,8 +57,8 @@ class ProblematicEventsManager {
 
     public func sync(isInBackground: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
         logger.trace()
-        // Before every sync, check if user has been checked in for more than 12 hours and if so, automatically check out and set the checkout time to 12 hours after checkIn
-        CheckInManager.shared.checkoutAfter12HoursIfNecessary()
+        // Before every sync, check if user has been checked in for more than the maximum time and if so, automatically check out and set the checkout time to the maximum allowed duration
+        CheckInManager.shared.autoCheckoutIfNecessary()
 
         // If there are not checkins, there's no need to sync
         guard CrowdNotifier.hasCheckins() else {

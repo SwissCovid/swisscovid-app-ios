@@ -87,15 +87,11 @@ class CheckInManager {
         }
     }
 
-    public func checkoutAfter12HoursIfNecessary() {
+    public func autoCheckoutIfNecessary() {
         logger.trace()
-        #if DEBUG
-            let timeInterval: TimeInterval = .minute * 12
-        #else
-            let timeInterval: TimeInterval = .hour * 12
-        #endif
-        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(timeInterval) < Date() {
-            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(timeInterval)
+
+        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval) <= Date() {
+            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval)
             checkOut()
         }
     }
