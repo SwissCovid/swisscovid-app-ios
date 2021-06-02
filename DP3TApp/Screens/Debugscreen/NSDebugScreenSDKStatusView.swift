@@ -90,6 +90,14 @@
                 guard let strongSelf = self else { return }
                 strongSelf.resetOnboarding()
             }
+
+            let button3 = NSButton(title: "Updateboarding zurücksetzen", style: .normal(.ns_purple))
+            contentView.addArrangedView(button3)
+
+            button3.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.resetUpdateboarding()
+            }
         }
 
         // MARK: - Logic
@@ -100,6 +108,11 @@
 
         private func resetOnboarding() {
             UserStorage.shared.hasCompletedOnboarding = false
+            exit(0)
+        }
+
+        private func resetUpdateboarding() {
+            UserStorage.shared.hasCompletedUpdateBoardingCheckIn = false
             exit(0)
         }
 
