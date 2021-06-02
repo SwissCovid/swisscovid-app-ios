@@ -38,7 +38,11 @@ class NSReportsDetailExposedViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
+
+        UIStateManager.shared.addObserver(self) { [weak self] _ in
+            guard let self = self else { return }
+            self.configure()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +53,13 @@ class NSReportsDetailExposedViewController: NSViewController {
 
     private func configure() {
         view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
+
+        if encountersViewController.view.superview != nil {
+            removeSubviewController(encountersViewController)
+        }
+        if checkInViewController != nil {
+            removeSubviewController(checkInViewController)
+        }
 
         if checkInReports.isEmpty {
             configureEncountersViewController()
@@ -83,6 +94,7 @@ class NSReportsDetailExposedViewController: NSViewController {
     }
 
     private func configureList() {
+        stackScrollView.stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         view.addSubview(stackScrollView)
         stackScrollView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
@@ -91,8 +103,7 @@ class NSReportsDetailExposedViewController: NSViewController {
         stackScrollView.stackView.isLayoutMarginsRelativeArrangement = true
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
 
-        let hasEncounters = reports.count - checkInReports.count > 0
-        if hasEncounters {
+        if !reports.isEmpty {
             configureEncountersCard()
         }
 
@@ -115,9 +126,10 @@ class NSReportsDetailExposedViewController: NSViewController {
         card.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            strongSelf.encountersViewController.reports = strongSelf.reports
-            strongSelf.encountersViewController.didOpenLeitfaden = strongSelf.encountersDidOpenLeitfaden
-            strongSelf.navigationController?.pushViewController(strongSelf.encountersViewController, animated: true)
+            let vc = NSReportsDetailExposedEncountersViewController()
+            vc.reports = strongSelf.reports
+            vc.didOpenLeitfaden = strongSelf.encountersDidOpenLeitfaden
+            strongSelf.navigationController?.pushViewController(vc, animated: true)
         }
         stackScrollView.addArrangedView(card)
     }

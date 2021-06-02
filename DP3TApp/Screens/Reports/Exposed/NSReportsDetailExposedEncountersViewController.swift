@@ -221,8 +221,11 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         deleteButton.touchUpCallback = { [weak self] in
             let alert = UIAlertController(title: nil, message: "delete_notification_dialog".ub_localized, preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { _ in
+            alert.addAction(UIAlertAction(title: "delete_reports_button".ub_localized, style: .destructive, handler: { [weak self] _ in
+                guard let self = self else { return }
                 TracingManager.shared.deleteReports()
+                UIStateManager.shared.refresh()
+                self.navigationController?.popViewController(animated: true)
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
 

@@ -90,4 +90,9 @@ class NSViewController: UIViewController {
         vc.view.snp.makeConstraints(constraints)
         vc.didMove(toParent: self)
     }
+
+    public func removeSubviewController(_ vc: UIViewController) {
+        vc.removeFromParent()
+        vc.view.removeFromSuperview()
+    }
 }

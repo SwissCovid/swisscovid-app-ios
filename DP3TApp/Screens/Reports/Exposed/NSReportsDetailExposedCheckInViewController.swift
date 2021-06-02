@@ -98,7 +98,7 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
         let whiteBoxView = NSSimpleModuleBaseView(title: "meldung_detail_checkin_title".ub_localized,
                                                   subtitle: "meldung_detail_exposed_list_card_subtitle".ub_localized,
                                                   boldText: dateString,
-                                                  text: checkInReport.venueDescription?.description,
+                                                  text: checkInReport.venueDescription?.description ?? "",
                                                   image: nil, subtitleColor: .ns_blue, bottomPadding: false)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
@@ -189,6 +189,7 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
                     ProblematicEventsManager.shared.removeExposure(exposure)
                 }
                 CheckInManager.shared.hideFromDiary(identifier: self.checkInReport.checkInIdentifier)
+                UIStateManager.shared.refresh()
                 self.navigationController?.popViewController(animated: true)
             }))
             alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
