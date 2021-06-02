@@ -32,7 +32,6 @@ class NSBaseTextField: UITextField, NSFormFieldRepresentable {
         backgroundColor = .ns_backgroundSecondary
         layer.cornerRadius = 3
 
-        autocapitalizationType = .words
         returnKeyType = .done
 
         font = NSLabelType.textBold.font
