@@ -199,6 +199,13 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     @objc private func saveButtonTouched() {
+        // Swap dates if startDate is after endDate
+        if startDate > endDate {
+            let temp = endDate
+            endDate = startDate
+            startDate = temp
+        }
+
         guard !selectedDatesAreOverlapping() else {
             showOverlappingDatesAlert()
             return
@@ -226,16 +233,12 @@ class NSCheckInEditViewController: NSViewController {
     private func setupTimeInteraction() {
         fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
-
             strongSelf.startDate = date
-            strongSelf.toTimePickerControl.inputControl.setDate(currentStart: date, currentEnd: strongSelf.endDate)
         }
 
         toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
-
             strongSelf.endDate = date
-            strongSelf.fromTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: date)
         }
     }
 
