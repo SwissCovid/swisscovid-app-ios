@@ -277,4 +277,14 @@ class PDFLabel: UBLabel<NSPDFLabelType> {
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+    override func draw(_ layer: CALayer, in ctx: CGContext) {
+        let isPDF = !UIGraphicsGetPDFContextBounds().isEmpty
+
+        if !self.layer.shouldRasterize, isPDF {
+            draw(bounds)
+        } else {
+            super.draw(layer, in: ctx)
+        }
+    }
 }
