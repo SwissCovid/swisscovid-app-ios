@@ -18,6 +18,7 @@ class NSInfoViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
     private let informView = NSWhatToDoInformModuleView()
+    private let informWrapperView = UIView()
 
     private let travelView = NSTravelModuleView()
 
@@ -109,8 +110,13 @@ class NSInfoViewController: NSViewController {
 
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(informView)
-        stackScrollView.addSpacerView(NSPadding.large)
+        informWrapperView.addSubview(informView)
+        informView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(NSPadding.large)
+        }
+
+        stackScrollView.addArrangedView(informWrapperView)
 
         whatToDoSymptomsButtonWrapper.addSubview(whatToDoSymptomsButton)
         whatToDoSymptomsButton.snp.makeConstraints { make in
@@ -118,6 +124,7 @@ class NSInfoViewController: NSViewController {
             make.left.right.equalToSuperview()
             make.bottom.equalToSuperview().inset(NSPadding.large)
         }
+        
         stackScrollView.addArrangedView(whatToDoSymptomsButtonWrapper)
 
         travelView.isHidden = true
@@ -149,9 +156,9 @@ class NSInfoViewController: NSViewController {
 
     func updateState(_ state: UIStateModel) {
         let isInfected = state.homescreen.reports.report.isInfected
-        whatToDoSymptomsButtonWrapper.isHidden = isInfected
 
         travelView.isHidden = state.homescreen.countries.isEmpty
+        informWrapperView.isHidden = isInfected
 
         if let hearingImpairedText = ConfigManager.currentConfig?.whatToDoPositiveTestTexts?.value?.infoBox?.hearingImpairedInfo {
             informView.hearingImpairedButtonTouched = { [weak self] in
