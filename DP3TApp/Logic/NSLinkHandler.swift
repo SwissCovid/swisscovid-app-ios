@@ -54,6 +54,11 @@ class NSLinkHandler {
                 // make sure to select homescreen
                 appDelegate.tabBarController.currentTab = .homescreen
 
+                // do not present confirm when already checked in
+                if CheckInManager.shared.currentCheckIn != nil {
+                    return true
+                }
+
                 let vc = NSCheckInConfirmViewController(qrCode: url.absoluteString, venueInfo: venueInfo)
                 vc.checkInCallback = {
                     appDelegate.navigationController.popToRootViewController(animated: false)
