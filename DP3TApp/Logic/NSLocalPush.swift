@@ -397,6 +397,22 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
         center.add(UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil), withCompletionHandler: nil)
     }
+
+    func showCheckoutViewController() {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            // Dismiss any modal views (if even present)
+            appDelegate.navigationController.dismiss(animated: false)
+
+            // Pop to root view controller
+            appDelegate.navigationController.popToRootViewController(animated: false)
+
+            // Reset tab bar back to homescreen tab
+            appDelegate.tabBarController.currentTab = .homescreen
+
+            // Present detail from home screen view controller
+            appDelegate.tabBarController.homescreen.presentCheckOutViewController()
+        }
+    }
 }
 
 extension NSLocalPush: UNUserNotificationCenterDelegate {
@@ -415,6 +431,13 @@ extension NSLocalPush: UNUserNotificationCenterDelegate {
            response.actionIdentifier == UNNotificationDefaultActionIdentifier {
             jumpToReport()
             return
+        }
+
+        switch Identifiers(rawValue: response.notification.request.identifier) {
+        case .checkInReminder, .checkInautomaticReminder:
+            showCheckoutViewController()
+        default:
+            break
         }
     }
 }
