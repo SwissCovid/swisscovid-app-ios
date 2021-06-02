@@ -45,14 +45,16 @@ class NSCheckBoxView: UIView {
          labelType: NSLabelType = .textLight,
          insets: UIEdgeInsets = .zero,
          tintColor: UIColor = .ns_green,
+         backgroundColor: UIColor = .ns_moduleBackground,
          mode: NSCheckBoxControl.Mode = .checkMark,
          selectedBorderColor: UIColor = .clear) {
         textLabel = NSLabel(labelType)
-        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor, mode: mode)
+        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor, mode: mode, inactiveColor: UIColor.setColorsForTheme(lightColor: .ns_text_secondary, darkColor: .ns_purple))
         self.selectedBorderColor = selectedBorderColor
         self.insets = insets
         super.init(frame: .zero)
         setup()
+        button.backgroundColor = backgroundColor
 
         textLabel.text = text
 
@@ -68,11 +70,12 @@ class NSCheckBoxView: UIView {
          tintColor: UIColor = .ns_green,
          selectedBorderColor: UIColor = .clear) {
         textLabel = NSLabel(labelType, numberOfLines: 0)
-        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor)
+        checkBox = NSCheckBoxControl(isChecked: false, tintColor: tintColor, inactiveColor: UIColor.setColorsForTheme(lightColor: .ns_text_secondary, darkColor: .ns_purple))
         self.selectedBorderColor = selectedBorderColor
         self.insets = insets
         super.init(frame: .zero)
         setup()
+        button.backgroundColor = .ns_moduleBackground
 
         textLabel.attributedText = attributedText
 
@@ -96,7 +99,6 @@ class NSCheckBoxView: UIView {
             strongSelf.touchUpCallback?()
         }
 
-        button.backgroundColor = .clear
         button.highlightedBackgroundColor = .ns_background_highlighted
 
         addSubview(button)

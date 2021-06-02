@@ -21,6 +21,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
                                            labelType: .textBold,
                                            insets: UIEdgeInsets(top: NSPadding.large, left: NSPadding.large, bottom: NSPadding.large, right: NSPadding.large),
                                            tintColor: .ns_purple,
+                                           backgroundColor: .ns_backgroundSecondary,
                                            mode: .dash)
 
     private var checkInSelections: [NSCheckBoxView] = []
@@ -111,7 +112,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
 
         stackScrollView.addSpacerView(NSPadding.medium)
 
-        bottomButtonTitle = "inform_send_button_title".ub_localized
+        bottomButtonTitle = "inform_share_checkins_send_button_title".ub_localized
         enableBottomButton = false
         bottomButtonTouchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
