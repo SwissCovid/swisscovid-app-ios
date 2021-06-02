@@ -214,9 +214,6 @@ class AppClipViewController: UIViewController {
             return
         }
 
-        // set url for after installation
-        setAppClipCheckInUrl(url: urlString)
-
         // get venue info from crowdnotifier
         let result = CrowdNotifierBase.getVenueInfo(qrCode: urlString, baseUrl: Environment.current.qrCodeBaseUrl)
 
@@ -225,13 +222,14 @@ class AppClipViewController: UIViewController {
             // TODO: description text
             heroVenueLabel.text = info.description
             venueDescriptionLabel.text = ""
-        case let .failure(failure):
-            // TODO: show error viewe
-            headingContainer.isHidden = true
+            setAppClipCheckInUrl(url: urlString)
+        case let .failure(error):
+            heroVenueLabel.text = ""
+            venueDescriptionLabel.text = error.errorViewModel?.text
         }
     }
 
-    private func setAppClipCheckInUrl(url: String) {
+    private func setAppClipCheckInUrl(url: String?) {
         let bi = (Bundle.main.bundleIdentifier ?? "").replacingOccurrences(of: ".Clip", with: "")
         let defaults = UserDefaults(suiteName: "group." + bi)
         defaults?.setValue(url, forKey: Environment.shareURLKey)
