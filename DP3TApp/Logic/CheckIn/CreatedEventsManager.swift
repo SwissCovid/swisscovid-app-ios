@@ -31,7 +31,7 @@ final class CreatedEventsManager {
 
     func createNewEvent(description: String, venueType: VenueType) -> CreatedEvent? {
         var locationData = SwissCovidLocationData()
-        locationData.version = 1
+        locationData.version = 4
         locationData.room = ""
         locationData.type = venueType
         locationData.checkoutWarningDelayMs = 1000 * 60 * 60 * 8 // 8 hours
