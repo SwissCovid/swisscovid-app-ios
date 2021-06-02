@@ -19,8 +19,8 @@ class NSNavigationController: UINavigationController {
     // MARK: - Init
 
     init(rootViewController: UIViewController, useLine: Bool = true) {
-        super.init(rootViewController: rootViewController)
         self.useLine = useLine
+        super.init(rootViewController: rootViewController)
     }
 
     required init?(coder _: NSCoder) {
