@@ -21,5 +21,9 @@
 	<true/>
 	<key>com.apple.developer.exposure-notification-test-skip-file-verification</key>
 	<true/>
+	<key>com.apple.security.application-groups</key>
+	<array>
+		<string>group.$(PRIMARY_BUNDLE_IDENTIFIER)</string>
+	</array>
 </dict>
 </plist>

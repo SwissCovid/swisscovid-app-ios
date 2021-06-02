@@ -58,6 +58,21 @@ class NSCheckinOnboardingViewController: NSOnboardingBaseViewController {
 
     private let url = UserStorage.shared.appClipCheckinUrl()
 
+    // MARK: - View
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        step7VC.permissionButton.touchUpCallback = {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
+
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.finishAnimation()
+                }
+            }
+        }
+    }
+
     // MARK: - Completion
 
     override func completedOnboarding() {
