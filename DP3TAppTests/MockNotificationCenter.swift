@@ -40,4 +40,6 @@ class MockNotificationCenter: UserNotificationCenter {
             identifiers.contains(req.identifier)
         }
     }
+
+    func setNotificationCategories(_: Set<UNNotificationCategory>) {}
 }

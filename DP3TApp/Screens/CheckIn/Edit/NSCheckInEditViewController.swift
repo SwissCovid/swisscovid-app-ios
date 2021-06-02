@@ -129,8 +129,12 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     private func selectedDatesAreOverlapping() -> Bool {
+        Self.selectedDatesAreOverlapping(startDate: startDate, endDate: endDate, excludeCheckIn: checkIn)
+    }
+
+    static func selectedDatesAreOverlapping(startDate: Date, endDate: Date, excludeCheckIn: CheckIn?) -> Bool {
         var diary = CheckInManager.shared.getDiary()
-        diary = diary.filter { $0 != checkIn }
+        diary = diary.filter { $0 != excludeCheckIn }
         let selectedTimeRange = startDate ... endDate
 
         for savedCheckIn in diary {

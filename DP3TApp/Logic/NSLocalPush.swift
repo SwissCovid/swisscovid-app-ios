@@ -19,6 +19,7 @@ protocol UserNotificationCenter {
     func removeDeliveredNotifications(withIdentifiers identifiers: [String])
     func removeAllDeliveredNotifications()
     func removePendingNotificationRequests(withIdentifiers identifiers: [String])
+    func setNotificationCategories(_ categories: Set<UNNotificationCategory>)
 }
 
 extension UNUserNotificationCenter: UserNotificationCenter {}
@@ -54,6 +55,19 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                 return true
             default:
                 return false
+            }
+        }
+    }
+
+    enum Actions: String, CaseIterable, Codable {
+        case checkOut = "ch.admin.bag.checkout"
+
+        var action: UNNotificationAction {
+            switch self {
+            case .checkOut:
+                return UNNotificationAction(identifier: Actions.checkOut.rawValue,
+                                            title: "checkout_button_title".ub_localized,
+                                            options: [.authenticationRequired])
             }
         }
     }
@@ -338,14 +352,18 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                                                                    Identifiers.checkInautomaticCheckout.rawValue])
     }
 
-    func scheduleCheckInReminderNotification(after timeInterval: TimeInterval) {
+    func scheduleCheckInReminderNotification(after _: TimeInterval) {
         let notification = UNMutableNotificationContent()
         notification.categoryIdentifier = Identifiers.checkInReminder.rawValue
         notification.title = "checkout_reminder_title".ub_localized
         notification.body = "checkout_reminder_text".ub_localized
         notification.sound = .default
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
+        center.setNotificationCategories([UNNotificationCategory(identifier: Identifiers.checkInReminder.rawValue,
+                                                                 actions: [Actions.checkOut.action],
+                                                                 intentIdentifiers: [], options: [])])
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         center.add(UNNotificationRequest(identifier: Identifiers.checkInReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
     }
 
@@ -362,7 +380,15 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         #else
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: reminderTimeInterval ?? .hour * 8, repeats: false)
         #endif
-        center.add(UNNotificationRequest(identifier: Identifiers.checkInautomaticReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
+        let request = UNNotificationRequest(identifier: Identifiers.checkInautomaticReminder.rawValue,
+                                            content: notification,
+                                            trigger: trigger)
+
+        center.setNotificationCategories([UNNotificationCategory(identifier: Identifiers.checkInautomaticReminder.rawValue,
+                                                                 actions: [Actions.checkOut.action],
+                                                                 intentIdentifiers: [], options: [])])
+
+        center.add(request, withCompletionHandler: nil)
 
         // Reminder after 12 hours
         let notification2 = UNMutableNotificationContent()
@@ -426,7 +452,7 @@ extension NSLocalPush: UNUserNotificationCenterDelegate {
         }
     }
 
-    func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler _: @escaping () -> Void) {
+    func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         if exposureIdentifiers.contains(response.notification.request.identifier),
            response.actionIdentifier == UNNotificationDefaultActionIdentifier {
             jumpToReport()
@@ -435,9 +461,22 @@ extension NSLocalPush: UNUserNotificationCenterDelegate {
 
         switch Identifiers(rawValue: response.notification.request.identifier) {
         case .checkInReminder, .checkInautomaticReminder:
-            showCheckoutViewController()
+            switch response.actionIdentifier {
+            case Actions.checkOut.rawValue:
+                if let checkIn = CheckInManager.shared.currentCheckIn,
+                   !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime,
+                                                                            endDate: .init(),
+                                                                            excludeCheckIn: checkIn) {
+                    CheckInManager.shared.currentCheckIn?.checkOutTime = Date()
+                    CheckInManager.shared.checkOut()
+                }
+
+            default:
+                showCheckoutViewController()
+            }
         default:
             break
         }
+        completionHandler()
     }
 }
