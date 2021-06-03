@@ -675,6 +675,7 @@
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
+		F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8F822E02668B16100E1E29B /* CrowdNotifierSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1111,6 +1112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E5B698F265F6C6E00EB0C56 /* CrowdNotifierBaseSDK in Frameworks */,
+				F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */,
 				6E5B6991265F6C8A00EB0C56 /* SnapKit in Frameworks */,
 				6E5B6993265F6C8A00EB0C56 /* Clibsodium in Frameworks */,
 			);
@@ -2240,6 +2242,7 @@
 				6E5B698E265F6C6E00EB0C56 /* CrowdNotifierBaseSDK */,
 				6E5B6990265F6C8A00EB0C56 /* SnapKit */,
 				6E5B6992265F6C8A00EB0C56 /* Clibsodium */,
+				F8F822E02668B16100E1E29B /* CrowdNotifierSDK */,
 			);
 			productName = DP3TAppClip;
 			productReference = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */;
@@ -4762,6 +4765,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
+		};
+		F8F822E02668B16100E1E29B /* CrowdNotifierSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6EB1D5742636F7C000981571 /* XCRemoteSwiftPackageReference "crowdnotifier-sdk-ios" */;
+			productName = CrowdNotifierSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
