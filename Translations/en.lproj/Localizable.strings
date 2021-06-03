@@ -217,7 +217,7 @@
 "symptom_detail_box_text" = "The FOPH recommends that anyone with COVID-19 symptoms should get tested. Call your doctor or your healthcare facility to schedule an appointment.";
 
 /*Informieren Titel in NavigationBar/Toolbar*/
-"inform_detail_navigation_title" = "Tested positive";
+"inform_detail_navigation_title" = "Positive test";
 
 /*Symptome Detail: NavigationBar/Toolbar Titel*/
 "symptom_detail_navigation_title" = "Symptoms";
@@ -243,7 +243,7 @@
 "no_meldungen_box_text" = "Follow the government recommendations on hygiene and social distancing.";
 
 /*Meldung Detail: Positiv Getestet Titel*/
-"meldung_detail_positive_tested_title" = "Tested positive";
+"meldung_detail_positive_tested_title" = "Positive test";
 
 /*Meldung Detail: Positiv Getestet Subtitel*/
 "meldung_detail_positive_tested_subtitle" = "You have tested positive for the coronavirus.";
@@ -267,7 +267,7 @@
 
 /*Meldung Detail Exposed Titel*/
 "meldung_detail_exposed_title" = "Potential infection";
-"meldung_homescreen_positiv_title" = "Tested positive";
+"meldung_homescreen_positiv_title" = "Positive test";
 
 /*Meldung Detail Exposed Subtitel*/
 "meldung_detail_exposed_subtitle" = "You may have been infected";
@@ -402,10 +402,10 @@
 "onboarding_push_gtk_text1" = "In the event of a potential infection, you will receive a message on the lock screen.";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_title" = "Get well soon!";
+"inform_send_getwell_title" = "Take care and...";
 
 /*Code senden: Abschluss Gute Besserung*/
-"inform_send_getwell_text" = "Get well soon! \n\nFollow the instructions  you have received on isolation.";
+"inform_send_getwell_text" = "get well soon! \n\nFollow the instructions you have received on isolation.";
 
 /*Titel auf dem letzen Onboarding Screen*/
 "onboarding_go_title" = "The app is ready to go";
@@ -623,7 +623,7 @@
 "inform_code_intro_text" = "Although no personal data relating to you is sent out, it may well be that someone remembers their encounter with you from the date.";
 
 /*Inform-Flow: Erster Screen Button*/
-"inform_code_intro_button" = "Agree";
+"inform_code_intro_button" = "Agreed";
 
 /*Symptome: FAQ Titel*/
 "symptom_faq1_title" = "What are the symptoms of COVID-19?";
@@ -772,7 +772,7 @@
 /*title in splash screen of onboarding*/
 "oboarding_splashscreen_title" = "SwissCovid –\nfind out fast if you're at risk of infection.";
 "inform_detail_faq3_text" = "Yes, but although no personal data is sent out, it may well be that someone remembers their encounter with you from the date.";
-"inform_detail_faq3_title" = "Does anyone find out who I am?";
+"inform_detail_faq3_title" = "Do I stay anonymous?";
 
 /*Meldung Detail Weiss Box unten*/
 "meldungen_detail_explanation_text4" = "When the first symptoms appear, phone a doctor or health centre.";
@@ -1330,7 +1330,7 @@
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – today";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "In this way you are helping alert others to a possible infection.";
+"inform_send_thankyou_text_stop_infection_chains" = "In this way you are helping to alert others should there be a risk of infection.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "Your app's private key was sent for the following period:";
@@ -1544,14 +1544,14 @@
 "inform_share_checkins_title" = "Share check-in entries";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location at the same time.";
+"inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location and time.";
 
 /*Button text, um alle Checkins zu selektieren*/
 "inform_share_checkins_select_all" = "Select all";
 "inform_dont_send_button_title" = "Don't send";
 "inform_dont_share_button_title" = "Don't share";
 "inform_really_not_share_title" = "Are you sure you don't want to share?";
-"inform_really_not_share_subtitle" = "Sharing your private key helps SwissCovid to notify other people who may be infected and to stop the virus spreading. If you don't share your private key, people who may be infected will not be notified.";
+"inform_really_not_share_subtitle" = "Sharing your private key helps SwissCovid to notify other people who may be infected and helps to stop the virus spreading. If you don't share your private key, people who may be infected will not be notified.";
 
 /*Remove from Diary Warning view title*/
 "remove_diary_warning_title" = "Remove entry";
@@ -1596,7 +1596,7 @@
 "checkout_overlapping_alert_description" = "The times you selected clash with other check-ins in your diary. Please check your entry.";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "The check-in entries you selected have been sent. Everyone who was checked in at the same location at the same time will be notified.";
+"inform_send_thankyou_text_checkins" = "The check-in entries you selected have been sent. Everyone who was checked in at the same location and time will be notified.";
 
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
 "pdf_headline" = "SwissCovid check-in";
@@ -1624,12 +1624,12 @@
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
 "events_card_title" = "Do you want to offer check-ins?";
-"checkin_footer_title1" = "Why a check-in function?";
+"checkin_footer_title1" = "Why a check-in feature?";
 "checkin_footer_subtitle1" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
 "checkin_footer_title2" = "No central data storage";
 "checkin_footer_subtitle2" = "For the SwissCovid check-ins, you don't have to enter personal details, such as name, address or phone number, and no GPS location data is recorded. The list of check-ins is stored locally on your device. The local data is deleted after 14 days. ";
 "events_empty_state_title" = "Generate a QR code";
-"events_empty_state_subtitle" = "Using a SwissCovid QR code, people can check in on site without leaving their data.";
+"events_empty_state_subtitle" = "With a SwissCovid QR code, people can check in on site without leaving their data.";
 "events_info_box_title" = "No substitute for mandatory recording of contact details";
 "events_info_box_text" = "SwissCovid check-ins are no substitute for the obligation to record contact details provided for in the COVID-19 Ordinance Special Situation. ";
 "events_footer_title1" = "Where can check-ins be used?";
@@ -1667,7 +1667,7 @@
 /*Check-Ins: QR-Code erstellen subtitel*/
 "checkins_create_qr_code_subtitle" = "Enter a title that describes the location or your event in more detail. This title will be displayed on check-in.";
 "checkin_report_heading" = "What can you do?";
-"checkin_report_title1" = "Protect your contacts";
+"checkin_report_title1" = "\nProtect your contacts";
 "checkin_report_title2" = "Look out for symptoms";
 "checkin_report_title3" = "Get tested";
 "checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";

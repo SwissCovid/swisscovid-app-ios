@@ -66,10 +66,10 @@
 "NSBluetoothAlwaysUsageDescription" = "Les contacts sont détectés en arrière-plan via Bluetooth (faible consommation).";
 
 /*Inform: Titel der Code abschicken Seite*/
-"inform_code_title" = "Entrer le code COVID";
+"inform_code_title" = "Saisir le code COVID";
 
 /*Inform: Code eingeben Subtext*/
-"inform_code_text" = "Entrez le code COVID reçu.";
+"inform_code_text" = "Saisissez le code COVID reçu.";
 
 /*Inform: Code eingeben kein Code Button Text*/
 "inform_code_no_code" = "Besoin d'aide ?";
@@ -193,7 +193,7 @@
 "inform_detail_box_title" = "Avertir d’une infection possible";
 
 /*Inform Detail Weisse Box Button*/
-"inform_detail_box_button" = "Entrer le code COVID";
+"inform_detail_box_button" = "Saisir le code COVID";
 
 /*Informieren Detail Weisse Box Text*/
 "inform_detail_box_text" = "En saisissant le code COVID, vous indiquez à l'application que vous avez été testé positif au nouveau coronavirus.";
@@ -257,7 +257,7 @@
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Suivez les consignes reçues sur l'isolement.";
 "tracing_ended_title" = "Contacts et check-ins désactivés";
-"tracing_ended_text" = "Aucune contact n’est sauvegardé.";
+"tracing_ended_text" = "Aucun contact n’est sauvegardé.";
 "exposed_info_contact_hotline" = "Contactez";
 "meldung_homescreen_positive_info_line1" = "Suivez";
 "meldung_homescreen_positive_info_line2" = "Consignes sur l’isolement";
@@ -1452,7 +1452,7 @@
 "checkins_create_qr_code" = "Créer un code QR";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "Créer un code check-in?";
+"events_title" = "Créer un code check-in";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Se connecter ";
@@ -1514,7 +1514,7 @@
 "scan_qr_code_button_title" = "Scanner le code QR";
 
 /*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
-"checkin_ended_title" = "Check-in désactivée";
+"checkin_ended_title" = "Check-in désactivé";
 
 /*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
 "checkin_ended_text" = "Pas de check-in possible actuellement";
@@ -1571,7 +1571,7 @@
 "remove_diary_warning_hide_title" = "Masquer uniquement et maintenir en vigueur les notifications ?";
 
 /*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
-"home_covidcode_card_title" = "Test positif ?";
+"home_covidcode_card_title" = "Test positif?";
 
 /*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
 "home_end_isolation_card_text" = "Réactiver contacts et check-ins.";

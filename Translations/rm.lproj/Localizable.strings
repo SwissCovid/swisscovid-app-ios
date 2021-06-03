@@ -1514,14 +1514,14 @@
 "inform_share_checkins_title" = "Share check-in entries";
 
 /*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
-"inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location at the same time.";
+"inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location and time.";
 
 /*Button text, um alle Checkins zu selektieren*/
 "inform_share_checkins_select_all" = "Select all";
 "inform_dont_send_button_title" = "Don't send";
 "inform_dont_share_button_title" = "Don't share";
 "inform_really_not_share_title" = "Are you sure you don't want to share?";
-"inform_really_not_share_subtitle" = "Sharing your private key helps SwissCovid to notify other people who may be infected and to stop the virus spreading. If you don't share your private key, people who may be infected will not be notified.";
+"inform_really_not_share_subtitle" = "Sharing your private key helps SwissCovid to notify other people who may be infected and helps to stop the virus spreading. If you don't share your private key, people who may be infected will not be notified.";
 
 /*Remove from Diary Warning view title*/
 "remove_diary_warning_title" = "Remove entry";
@@ -1566,7 +1566,7 @@
 "checkout_overlapping_alert_description" = "The times you selected clash with other check-ins in your diary. Please check your entry.";
 
 /*Informieren: Danke Text Checkins Teil*/
-"inform_send_thankyou_text_checkins" = "The check-in entries you selected have been sent. Everyone who was checked in at the same location at the same time will be notified.";
+"inform_send_thankyou_text_checkins" = "The check-in entries you selected have been sent. Everyone who was checked in at the same location and time will be notified.";
 
 /*SwissCovid QR Code PDF: Headline über dem Slogan*/
 "pdf_headline" = "SwissCovid check-in";
@@ -1594,12 +1594,12 @@
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
 "events_card_title" = "Do you want to offer check-ins?";
-"checkin_footer_title1" = "Why a check-in function?";
+"checkin_footer_title1" = "Why a check-in feature?";
 "checkin_footer_subtitle1" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
 "checkin_footer_title2" = "No central data storage";
 "checkin_footer_subtitle2" = "For the SwissCovid check-ins, you don't have to enter personal details, such as name, address or phone number, and no GPS location data is recorded. The list of check-ins is stored locally on your device. The local data is deleted after 14 days. ";
 "events_empty_state_title" = "Generate a QR code";
-"events_empty_state_subtitle" = "Using a SwissCovid QR code, people can check in on site without leaving their data.";
+"events_empty_state_subtitle" = "With a SwissCovid QR code, people can check in on site without leaving their data.";
 "events_info_box_title" = "No substitute for mandatory recording of contact details";
 "events_info_box_text" = "SwissCovid check-ins are no substitute for the obligation to record contact details provided for in the COVID-19 Ordinance Special Situation. ";
 "events_footer_title1" = "Where can check-ins be used?";
@@ -1637,7 +1637,7 @@
 /*Check-Ins: QR-Code erstellen subtitel*/
 "checkins_create_qr_code_subtitle" = "Enter a title that describes the location or your event in more detail. This title will be displayed on check-in.";
 "checkin_report_heading" = "What can you do?";
-"checkin_report_title1" = "Protect your contacts";
+"checkin_report_title1" = "\nProtect your contacts";
 "checkin_report_title2" = "Look out for symptoms";
 "checkin_report_title3" = "Get tested";
 "checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";
