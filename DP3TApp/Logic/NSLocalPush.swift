@@ -355,7 +355,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                                                                    Identifiers.checkInautomaticCheckout.rawValue])
     }
 
-    func scheduleCheckInReminderNotification(after _: TimeInterval) {
+    func scheduleCheckInReminderNotification(after timeInterval: TimeInterval) {
         let notification = UNMutableNotificationContent()
         notification.categoryIdentifier = Identifiers.checkInReminder.rawValue
         notification.title = "checkout_reminder_title".ub_localized
@@ -366,7 +366,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                                                                  actions: [Actions.checkOut.action],
                                                                  intentIdentifiers: [], options: [])])
 
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         center.add(UNNotificationRequest(identifier: Identifiers.checkInReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
     }
 
