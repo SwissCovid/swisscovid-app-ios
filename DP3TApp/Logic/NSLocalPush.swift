@@ -411,8 +411,8 @@ class NSLocalPush: NSObject, LocalPushProtocol {
     func showCheckInExposureNotification() {
         let notification = UNMutableNotificationContent()
         notification.categoryIdentifier = Identifiers.checkInExposure.rawValue
-        notification.title = "exposure_notification_title".ub_localized
-        notification.body = "exposure_notification_body".ub_localized
+        notification.title = "push_exposed_title".ub_localized
+        notification.body = "push_exposed_text".ub_localized
         notification.sound = .default
 
         center.add(UNNotificationRequest(identifier: UUID().uuidString, content: notification, trigger: nil), withCompletionHandler: nil)
