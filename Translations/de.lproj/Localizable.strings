@@ -1481,7 +1481,7 @@
 "checkins_create_qr_code" = "QR-Code erstellen";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "Check-ins anbieten?";
+"events_title" = "Check-ins anbieten";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Jetzt einchecken";
@@ -1554,7 +1554,7 @@
 "checkin_detail_checked_out_text" = "Scannen Sie einen SwissCovid-QR-Code, um sich vor Ort einzuchecken.";
 
 /*Text im Check-Ins-Screen, im Tagebuch-Modul*/
-"checkin_detail_diary_text" = "Wenn Sie einen Swiss-Covid-QR-Code scannen, um sich vor Ort einzuchecken, wird hier automatisch ein Eintrag angelegt.";
+"checkin_detail_diary_text" = "Wenn Sie einen SwissCovid-QR-Code scannen, um sich vor Ort einzuchecken, wird hier automatisch ein Eintrag angelegt.";
 
 /*Label im Checkin-Modul im eingecheckten Zustand*/
 /*Fuzzy*/
@@ -1618,7 +1618,7 @@
 "checkin_overview_isolation_text" = "Sie können nicht mehr einchecken, wenn Sie positiv getestet wurden.";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "Erstellen Sie einen QR-Code, mit dem sich Personen vor Ort einchecken können.";
+"events_card_subtitle" = "Erstellen Sie einen SwissCovid-QR-Code, mit dem sich Personen vor Ort einchecken können.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
 "delete_qr_code_dialog" = "Möchten Sie den QR Code wirklich löschen?";
@@ -1663,7 +1663,7 @@
 "home_end_isolation_card_title" = "Isolation beenden?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "Sie möchten Check-ins anbieten?";
+"events_card_title" = "Sie möchten QR-Codes erstellen?";
 
 /*Fuzzy*/
 "checkin_footer_title1" = "Warum eine Check-in-Funktion?";
@@ -1781,3 +1781,6 @@
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
 "error_cannot_enter_covidcode_while_checked_in" = "Sie sind noch eingecheckt. Bitte checken Sie aus bevor Sie den Covidcode eingeben.";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
+"events_card_title_events_not_empty" = "Meine QR-Codes";

@@ -17,11 +17,22 @@ class NSCheckInCreateCheckInsView: NSModuleBaseView {
     override init() {
         super.init()
 
-        headerTitle = "events_card_title".ub_localized
+        updateTitle()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTitle), name: .createdEventAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTitle), name: .createdEventDeleted, object: nil)
     }
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    @objc private func updateTitle() {
+        if CreatedEventsManager.shared.createdEvents.isEmpty {
+            headerTitle = "events_card_title".ub_localized
+        } else {
+            headerTitle = "events_card_title_events_not_empty".ub_localized
+        }
     }
 
     override func sectionViews() -> [UIView] {

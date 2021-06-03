@@ -1634,9 +1634,9 @@
 "checkin_footer_title2" = "Pas de sauvegarde centralisée des données";
 "checkin_footer_subtitle2" = "La fonction des SwissCovid check-ins ne nécessite pas la saisie de coordonnées comme le nom, l’adresse ou le numéro de téléphone et elle n’enregistre pas les données de géolocalisation. La liste des check-ins est enregistrée localement sur votre smartphone. Les données locales sont effacées après 14 jours.";
 "events_empty_state_title" = "Créer un code QR";
-"events_empty_state_subtitle" = "Au moyen du code QR SwissCovid, il est possible de se connecter sur place sans devoir enregistrer ses données.";
+"events_empty_state_subtitle" = "Avec un code QR SwissCovid, il est possible de se connecter sur place sans devoir enregistrer ses données.";
 "events_info_box_title" = "Cette fonction ne remplace pas la collecte obligatoire des coordonnées.";
-"events_info_box_text" = "La check-ins SwissCovid ne remplace la collecte des coordonnées prescrite par l’« ordonnance COVID-19 situation particulière ».";
+"events_info_box_text" = "Les check-ins SwissCovid ne remplacent pas la collecte des coordonnées prescrite par l’« ordonnance COVID-19 situation particulière ».";
 "events_footer_title1" = "Où la fonction de check-in peut-elle être utilisée?";
 "events_footer_title2" = "À quoi sert la fonction de check-in?";
 "events_footer_subtitle1" = "La fonction de check-in SwissCovid sera utile lors de rencontres dans des lieux où la collecte des coordonnées n’est pas obligatoire. Il peut s’agir – de rencontres privées – d’événements organisés par des associations – de rassemblements dans le cadre professionnel, p. ex. salles de réunion, bureaux, cantines, etc.";
@@ -1733,3 +1733,6 @@
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
 "error_cannot_enter_covidcode_while_checked_in" = "";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
+"events_card_title_events_not_empty" = "";
