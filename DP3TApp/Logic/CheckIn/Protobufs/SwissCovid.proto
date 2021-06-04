@@ -16,7 +16,6 @@ enum VenueType {
 
 message SwissCovidAssociatedData {
   int32 version = 1;
-  string room = 2;
   EventCriticality criticality = 3;
 }
 

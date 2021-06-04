@@ -129,8 +129,6 @@ struct SwissCovidAssociatedData {
 
   var version: Int32 = 0
 
-  var room: String = String()
-
   var criticality: EventCriticality = .low
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -220,7 +218,6 @@ extension SwissCovidAssociatedData: SwiftProtobuf.Message, SwiftProtobuf._Messag
   static let protoMessageName: String = "SwissCovidAssociatedData"
   static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
-    2: .same(proto: "room"),
     3: .same(proto: "criticality"),
   ]
 
@@ -231,7 +228,6 @@ extension SwissCovidAssociatedData: SwiftProtobuf.Message, SwiftProtobuf._Messag
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt32Field(value: &self.version) }()
-      case 2: try { try decoder.decodeSingularStringField(value: &self.room) }()
       case 3: try { try decoder.decodeSingularEnumField(value: &self.criticality) }()
       default: break
       }
@@ -242,9 +238,6 @@ extension SwissCovidAssociatedData: SwiftProtobuf.Message, SwiftProtobuf._Messag
     if self.version != 0 {
       try visitor.visitSingularInt32Field(value: self.version, fieldNumber: 1)
     }
-    if !self.room.isEmpty {
-      try visitor.visitSingularStringField(value: self.room, fieldNumber: 2)
-    }
     if self.criticality != .low {
       try visitor.visitSingularEnumField(value: self.criticality, fieldNumber: 3)
     }
@@ -253,7 +246,6 @@ extension SwissCovidAssociatedData: SwiftProtobuf.Message, SwiftProtobuf._Messag
 
   static func ==(lhs: SwissCovidAssociatedData, rhs: SwissCovidAssociatedData) -> Bool {
     if lhs.version != rhs.version {return false}
-    if lhs.room != rhs.room {return false}
     if lhs.criticality != rhs.criticality {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
