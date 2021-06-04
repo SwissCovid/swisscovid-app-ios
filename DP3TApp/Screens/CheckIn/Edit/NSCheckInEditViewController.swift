@@ -36,7 +36,7 @@ class NSCheckInEditViewController: NSViewController {
 
     // MARK: - Init
 
-    init(checkIn: CheckIn? = nil) {
+    init(checkIn: CheckIn) {
         isCurrentCheckIn = false
         self.checkIn = checkIn
         super.init()
@@ -45,6 +45,7 @@ class NSCheckInEditViewController: NSViewController {
 
     override init() {
         isCurrentCheckIn = true
+        checkIn = CheckInManager.shared.currentCheckIn
         super.init()
         title = "checkout_button_title".ub_localized
     }
@@ -83,8 +84,9 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     private func update() {
-        startDate = checkIn?.checkInTime ?? Date()
-        endDate = checkIn?.checkOutTime ?? Date()
+        let (start, end) = CheckInManager.normalizeDates(start: checkIn?.checkInTime ?? Date(), end: checkIn?.checkOutTime ?? Date())
+        startDate = start
+        endDate = end
 
         updateUI()
     }
@@ -240,11 +242,19 @@ class NSCheckInEditViewController: NSViewController {
         fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.startDate = date
+            if strongSelf.startDate == strongSelf.endDate {
+                strongSelf.startDate = strongSelf.startDate.addingTimeInterval(-1 * .minute)
+                strongSelf.fromTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
+            }
         }
 
         toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.endDate = date
+            if strongSelf.startDate == strongSelf.endDate {
+                strongSelf.endDate = strongSelf.endDate.addingTimeInterval(.minute)
+                strongSelf.toTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
+            }
         }
     }
 

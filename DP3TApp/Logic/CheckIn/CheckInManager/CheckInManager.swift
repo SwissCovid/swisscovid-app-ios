@@ -71,7 +71,9 @@ class CheckInManager {
                 UBPushManager.shared.setActive(true)
             }
 
-            let result = CrowdNotifier.addCheckin(venueInfo: cc.venue, arrivalTime: cc.checkInTime, departureTime: outTime)
+            let (arrivalTime, departureTime) = Self.normalizeDates(start: cc.checkInTime, end: outTime)
+
+            let result = CrowdNotifier.addCheckin(venueInfo: cc.venue, arrivalTime: arrivalTime, departureTime: departureTime)
 
             switch result {
             case let .success(id):
@@ -99,7 +101,9 @@ class CheckInManager {
     public func updateCheckIn(checkIn: CheckIn) {
         guard let checkOutTime = checkIn.checkOutTime else { return }
 
-        let result = CrowdNotifier.updateCheckin(checkinId: checkIn.identifier, venueInfo: checkIn.venue, newArrivalTime: checkIn.checkInTime, newDepartureTime: checkOutTime)
+        let (arrivalTime, departureTime) = Self.normalizeDates(start: checkIn.checkInTime, end: checkOutTime)
+
+        let result = CrowdNotifier.updateCheckin(checkinId: checkIn.identifier, venueInfo: checkIn.venue, newArrivalTime: arrivalTime, newDepartureTime: departureTime)
 
         switch result {
         case .success:
@@ -111,6 +115,21 @@ class CheckInManager {
     }
 
     // MARK: - Helpers
+
+    static func normalizeDates(start: Date, end: Date) -> (start: Date, end: Date) {
+        // If for some reason, checkout is before checkin, just swap the two dates
+        var startTime = start > end ? end : start
+        var endTime = start > end ? start : end
+
+        startTime = startTime.roundedToMinute(rule: .down)
+        endTime = endTime.roundedToMinute(rule: .up)
+
+        if startTime == endTime {
+            endTime = endTime.addingTimeInterval(.minute)
+        }
+
+        return (start: startTime, end: endTime)
+    }
 
     private func saveAdditionalInfo(checkIn: CheckIn) {
         var infos: [CheckIn] = diary
