@@ -24,6 +24,12 @@ extension Date {
         default: return "report_message_days_ago".ub_localized.replacingOccurrences(of: "{NUMBER}", with: "\(components.day ?? 0)")
         }
     }
+
+    func roundedToMinute(rule: FloatingPointRoundingRule) -> Date {
+        let oneMinute: Double = 1000 * 60
+        let rounded = (Double(millisecondsSince1970) / oneMinute).rounded(rule) * oneMinute
+        return Date(millisecondsSince1970: Int(rounded))
+    }
 }
 
 extension TimeInterval {
