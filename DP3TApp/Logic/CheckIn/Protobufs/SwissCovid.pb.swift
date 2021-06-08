@@ -202,14 +202,28 @@ extension SwissCovidLocationData: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SwissCovidLocationData, rhs: SwissCovidLocationData) -> Bool {
-    if lhs.version != rhs.version {return false}
-    if lhs.type != rhs.type {return false}
-    if lhs.room != rhs.room {return false}
-    if lhs.checkoutWarningDelayMs != rhs.checkoutWarningDelayMs {return false}
-    if lhs.automaticCheckoutDelaylMs != rhs.automaticCheckoutDelaylMs {return false}
-    if lhs.reminderDelayOptionsMs != rhs.reminderDelayOptionsMs {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
+  static func == (lhs: SwissCovidLocationData, rhs: SwissCovidLocationData) -> Bool {
+    if lhs.version != rhs.version {
+        return false
+    }
+    if lhs.type != rhs.type {
+        return false
+    }
+    if lhs.room != rhs.room {
+        return false
+    }
+    if lhs.checkoutWarningDelayMs != rhs.checkoutWarningDelayMs {
+        return false
+    }
+    if lhs.automaticCheckoutDelaylMs != rhs.automaticCheckoutDelaylMs {
+        return false
+    }
+    if lhs.reminderDelayOptionsMs != rhs.reminderDelayOptionsMs {
+        return false
+    }
+    if lhs.unknownFields != rhs.unknownFields {
+        return false
+    }
     return true
   }
 }
@@ -244,10 +258,16 @@ extension SwissCovidAssociatedData: SwiftProtobuf.Message, SwiftProtobuf._Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: SwissCovidAssociatedData, rhs: SwissCovidAssociatedData) -> Bool {
-    if lhs.version != rhs.version {return false}
-    if lhs.criticality != rhs.criticality {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
+  static func == (lhs: SwissCovidAssociatedData, rhs: SwissCovidAssociatedData) -> Bool {
+    if lhs.version != rhs.version {
+        return false
+    }
+    if lhs.criticality != rhs.criticality {
+        return false
+    }
+    if lhs.unknownFields != rhs.unknownFields {
+        return false
+    }
     return true
   }
 }

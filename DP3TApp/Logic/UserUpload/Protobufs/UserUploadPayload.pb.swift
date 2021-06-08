@@ -95,11 +95,19 @@ extension UserUploadPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: UserUploadPayload, rhs: UserUploadPayload) -> Bool {
-    if lhs.version != rhs.version {return false}
-    if lhs.venueInfos != rhs.venueInfos {return false}
-    if lhs.userInteractionDurationMs != rhs.userInteractionDurationMs {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
+  static func == (lhs: UserUploadPayload, rhs: UserUploadPayload) -> Bool {
+    if lhs.version != rhs.version {
+        return false
+    }
+    if lhs.venueInfos != rhs.venueInfos {
+        return false
+    }
+    if lhs.userInteractionDurationMs != rhs.userInteractionDurationMs {
+        return false
+    }
+    if lhs.unknownFields != rhs.unknownFields {
+        return false
+    }
     return true
   }
 }
@@ -154,14 +162,28 @@ extension UploadVenueInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: UploadVenueInfo, rhs: UploadVenueInfo) -> Bool {
-    if lhs.preID != rhs.preID {return false}
-    if lhs.timeKey != rhs.timeKey {return false}
-    if lhs.intervalStartMs != rhs.intervalStartMs {return false}
-    if lhs.intervalEndMs != rhs.intervalEndMs {return false}
-    if lhs.notificationKey != rhs.notificationKey {return false}
-    if lhs.fake != rhs.fake {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
+  static func == (lhs: UploadVenueInfo, rhs: UploadVenueInfo) -> Bool {
+    if lhs.preID != rhs.preID {
+        return false
+    }
+    if lhs.timeKey != rhs.timeKey {
+        return false
+    }
+    if lhs.intervalStartMs != rhs.intervalStartMs {
+        return false
+    }
+    if lhs.intervalEndMs != rhs.intervalEndMs {
+        return false
+    }
+    if lhs.notificationKey != rhs.notificationKey {
+        return false
+    }
+    if lhs.fake != rhs.fake {
+        return false
+    }
+    if lhs.unknownFields != rhs.unknownFields {
+        return false
+    }
     return true
   }
 }

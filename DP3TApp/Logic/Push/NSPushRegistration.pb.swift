@@ -132,12 +132,22 @@ extension NSPushRegistration: SwiftProtobuf.Message, SwiftProtobuf._MessageImple
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: NSPushRegistration, rhs: NSPushRegistration) -> Bool {
-    if lhs.version != rhs.version {return false}
-    if lhs.pushToken != rhs.pushToken {return false}
-    if lhs.pushType != rhs.pushType {return false}
-    if lhs.deviceID != rhs.deviceID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
+  static func == (lhs: NSPushRegistration, rhs: NSPushRegistration) -> Bool {
+    if lhs.version != rhs.version {
+        return false
+    }
+    if lhs.pushToken != rhs.pushToken {
+        return false
+    }
+    if lhs.pushType != rhs.pushType {
+        return false
+    }
+    if lhs.deviceID != rhs.deviceID {
+        return false
+    }
+    if lhs.unknownFields != rhs.unknownFields {
+        return false
+    }
     return true
   }
 }
