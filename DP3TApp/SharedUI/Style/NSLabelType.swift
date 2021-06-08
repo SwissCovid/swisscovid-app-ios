@@ -243,7 +243,7 @@ public enum NSPDFLabelType: UBLabelType {
         case .textBold:
             return 14.0 / 13.0
         case .textBoldLarger:
-            return 14.0 / 14.0
+            return 1
         case .textSmallLight:
             return 16.0 / 10.0
         }
