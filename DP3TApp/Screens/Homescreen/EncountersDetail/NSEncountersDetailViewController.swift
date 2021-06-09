@@ -12,7 +12,7 @@ import DP3TSDK
 import UIKit
 
 class NSEncountersDetailViewController: NSTitleViewScrollViewController {
-    private let bluetoothControl: NSBluetoothSettingsControl
+    private let tracingControl: NSTracingSettingsControl
 
     private let lastSyncronizationControl: NSLastSyncronizationControl
 
@@ -21,7 +21,7 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
     // MARK: - Init
 
     init(initialState: UIStateModel.EncountersDetail) {
-        bluetoothControl = NSBluetoothSettingsControl(initialState: initialState)
+        tracingControl = NSTracingSettingsControl(initialState: initialState)
         appTitleView = NSAppTitleView(initialState: initialState.tracing)
         lastSyncronizationControl = NSLastSyncronizationControl(frame: .zero)
 
@@ -35,19 +35,28 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             strongSelf.updateState(state)
         })
 
-        bluetoothControl.switchCallback = { [weak self] state, confirmCallback in
+        tracingControl.switchCallback = { [weak self] state, confirmCallback in
             guard let self = self else { return }
             // if trackingState is permissonError show tutorial view
-            if case TrackingState.inactive(error: .permissonError) = UIStateManager.shared.trackingState,
-               #available(iOS 13.7, *) {
-                confirmCallback(!state)
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                NSSettingsTutorialViewController.present(from: appDelegate.tabBarController)
-                return
+            if state, #available(iOS 13.7, *) {
+                switch UIStateManager.shared.trackingState {
+                case let .inactive(e):
+                    switch e {
+                    case .permissonError, .exposureNotificationError:
+                        confirmCallback(!state)
+                        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                        NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)
+                        return
+                    default:
+                        break
+                    }
+                default:
+                    break
+                }
             }
             // only show popup when switching tracing off
             guard !state else {
-                TracingLocalPush.shared.resetReminderNotification()
+                NSLocalPush.shared.resetReminderNotification()
                 confirmCallback(state)
                 return
             }
@@ -98,9 +107,9 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
             make.edges.equalToSuperview()
         }
 
-        bluetoothControl.viewToBeLayouted = view
+        tracingControl.viewToBeLayouted = view
 
-        stackScrollView.addArrangedView(bluetoothControl)
+        stackScrollView.addArrangedView(tracingControl)
 
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(lastSyncronizationControl)

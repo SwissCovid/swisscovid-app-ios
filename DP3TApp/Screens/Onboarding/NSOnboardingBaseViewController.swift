@@ -181,7 +181,7 @@ class NSOnboardingBaseViewController: NSViewController {
     internal func finishAnimation() {
         let vcToHide = stepViewControllers[currentStep]
 
-        vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0) { (_) -> Void in
+        vcToHide.fadeAnimation(fromFactor: 0, toFactor: -1, delay: 0.0) { _ -> Void in
             self.completedOnboarding()
             self.dismiss(animated: true, completion: nil)
         }

@@ -10,16 +10,19 @@
 
 import UIKit
 
-public class NSCheckBoxControl: UIControl {
+class NSCheckBoxControl: UIControl {
+    private let checkmarkShortContainerView = UIView()
     private let checkmarkShortLineView = UIView()
+    private let checkmarkLongContainerView = UIView()
     private let checkmarkLongLineView = UIView()
 
     private let checkmarkContainer = UIView()
 
     private var isChecked: Bool
 
-    public func setChecked(checked: Bool, animated: Bool) {
+    func setChecked(_ checked: Bool, mode: Mode = .checkMark, animated: Bool) {
         isChecked = checked
+        self.mode = mode
         update(animated: animated)
     }
 
@@ -27,17 +30,24 @@ public class NSCheckBoxControl: UIControl {
     private var inactiveColor: UIColor
     private var inactiveBackground: UIColor
 
-    init(isChecked: Bool, noBorder: Bool = false) {
+    enum Mode {
+        case checkMark, dash
+    }
+
+    private var mode: Mode
+
+    init(isChecked: Bool, noBorder: Bool = false, tintColor: UIColor = .ns_green, mode: Mode = .checkMark, inactiveColor: UIColor = .ns_text_secondary) {
         self.isChecked = isChecked
+        self.mode = mode
 
         if noBorder { // no nations
             activeColor = .clear
-            inactiveColor = .clear
+            self.inactiveColor = .clear
             inactiveBackground = .clear
         } else {
-            activeColor = .ns_green
-            inactiveColor = .ns_text_secondary
-            inactiveBackground = .white
+            activeColor = tintColor
+            self.inactiveColor = inactiveColor
+            inactiveBackground = .clear
         }
 
         super.init(frame: .zero)
@@ -62,33 +72,38 @@ public class NSCheckBoxControl: UIControl {
 
         clipsToBounds = true
 
-        layer.borderColor = isChecked ? UIColor.clear.cgColor : UIColor.ns_text_secondary.cgColor
+        layer.borderColor = isChecked ? UIColor.clear.cgColor : inactiveColor.cgColor
         layer.borderWidth = 2
 
         checkmarkContainer.layer.cornerRadius = 0
         checkmarkContainer.layer.borderWidth = 2
-        checkmarkContainer.layer.borderColor = isChecked ? activeColor.cgColor : UIColor.ns_text_secondary.cgColor
+        checkmarkContainer.layer.borderColor = isChecked ? activeColor.cgColor : inactiveColor.cgColor
 
-        let checkmarkShortContainerView = UIView()
         checkmarkShortContainerView.translatesAutoresizingMaskIntoConstraints = false
         checkmarkContainer.addSubview(checkmarkShortContainerView)
         checkmarkShortContainerView.addSubview(checkmarkShortLineView)
-        checkmarkShortLineView.backgroundColor = .white
+        checkmarkShortLineView.backgroundColor = isChecked ? .white : .clear
         checkmarkShortLineView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.center.equalTo(self)
             make.height.equalTo(2)
-            make.width.equalTo(6)
+            if mode == .checkMark {
+                make.width.equalTo(6)
+            } else {
+                make.width.equalTo(12)
+            }
         }
-        checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
-        checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
 
-        let checkmarkLongContainerView = UIView()
+        if mode == .checkMark {
+            checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+            checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
+        }
+
         checkmarkLongContainerView.translatesAutoresizingMaskIntoConstraints = false
         checkmarkContainer.addSubview(checkmarkLongContainerView)
         checkmarkLongContainerView.addSubview(checkmarkLongLineView)
-        checkmarkLongLineView.backgroundColor = .white
+        checkmarkLongLineView.backgroundColor = isChecked ? .white : .clear
         checkmarkLongLineView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
             make.center.equalTo(self)
@@ -106,6 +121,25 @@ public class NSCheckBoxControl: UIControl {
             checkmarkContainer.backgroundColor = isChecked ? activeColor : inactiveBackground
             checkmarkContainer.layer.borderColor = isChecked ? activeColor.cgColor : inactiveColor.cgColor
             layer.borderColor = isChecked ? UIColor.clear.cgColor : inactiveColor.cgColor
+            checkmarkLongLineView.backgroundColor = isChecked ? .white : .clear
+            checkmarkShortLineView.backgroundColor = isChecked ? .white : .clear
+            checkmarkShortLineView.snp.updateConstraints { make in
+                if mode == .checkMark {
+                    make.width.equalTo(6)
+                } else {
+                    make.width.equalTo(12)
+                }
+            }
+            if mode == .checkMark {
+                checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
+            } else {
+                checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                checkmarkShortContainerView.transform = .identity
+            }
+            checkmarkLongContainerView.alpha = mode == .checkMark ? 1 : 0
         } else {
             if isChecked {
                 checkmarkContainer.transform = .identity
@@ -114,7 +148,26 @@ public class NSCheckBoxControl: UIControl {
                 checkmarkLongLineView.transform = CGAffineTransform(scaleX: 0.00001, y: 1)
 
                 UIView.animate(withDuration: 0.075, delay: 0.0, options: [.beginFromCurrentState, .curveEaseIn], animations: {
+                    self.checkmarkLongLineView.backgroundColor = .white
+                    self.checkmarkShortLineView.backgroundColor = .white
                     self.checkmarkShortLineView.transform = .identity
+                    self.checkmarkShortLineView.snp.updateConstraints { make in
+                        if self.mode == .checkMark {
+                            make.width.equalTo(6)
+                        } else {
+                            make.width.equalTo(12)
+                        }
+                    }
+                    if self.mode == .checkMark {
+                        self.checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                        self.checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0, y: 0.5)
+                        self.checkmarkShortContainerView.transform = CGAffineTransform(rotationAngle: .pi * 0.25).translatedBy(x: -7, y: 4)
+                    } else {
+                        self.checkmarkShortLineView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        self.checkmarkShortContainerView.layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+                        self.checkmarkShortContainerView.transform = .identity
+                    }
+                    self.checkmarkLongContainerView.alpha = self.mode == .checkMark ? 1 : 0
                     self.checkmarkContainer.backgroundColor = self.activeColor
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.15, delay: 0.0, options: [.beginFromCurrentState, .curveEaseOut], animations: {
@@ -134,6 +187,8 @@ public class NSCheckBoxControl: UIControl {
                 layer.borderColor = inactiveColor.cgColor
 
                 UIView.animate(withDuration: 0.15, delay: 0.0, options: [.beginFromCurrentState, .curveEaseIn], animations: {
+                    self.checkmarkLongLineView.backgroundColor = .clear
+                    self.checkmarkShortLineView.backgroundColor = .clear
                     self.checkmarkContainer.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
                     self.checkmarkContainer.backgroundColor = self.inactiveBackground
                     self.checkmarkContainer.layer.borderColor = UIColor.clear.cgColor

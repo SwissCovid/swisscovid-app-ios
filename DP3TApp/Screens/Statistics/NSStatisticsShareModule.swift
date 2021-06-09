@@ -20,7 +20,7 @@ class NSStatisticsShareModule: UIView {
     private let imageView = UIImageView()
 
     private let shareButton = NSButton(title: "share_app_button".ub_localized,
-                                       style: .uppercase(.ns_blue))
+                                       style: .normal(.ns_blue))
 
     private let text = NSLabel(.textLight)
 

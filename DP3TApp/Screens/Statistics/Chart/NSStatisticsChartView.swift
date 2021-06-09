@@ -71,7 +71,7 @@ class NSStatisticsChartView: UIView {
     }
 
     private func updateChart() {
-        let maxValue = ceil(history.reduce(0.0) { (result, element) -> Double in
+        let maxValue = ceil(history.reduce(0.0) { result, element -> Double in
             max(result, Double(element.maxValue))
         } * 1.1)
 

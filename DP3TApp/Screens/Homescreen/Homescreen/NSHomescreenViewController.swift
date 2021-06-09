@@ -17,13 +17,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     private let infoBoxView = HomescreenInfoBoxView()
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
-    private let travelView = NSTravelModuleView()
+    private let checkInView = NSCheckInHomescreenModuleView()
+    private let covidCodeView = NSCovidCodeModuleView()
 
-    private let whatToDoSymptomsButton = NSWhatToDoButton(title: "whattodo_title_symptoms".ub_localized, subtitle: "whattodo_subtitle_symptoms".ub_localized, image: UIImage(named: "illu-symptoms"))
-
-    private let whatToDoPositiveTestButton = NSWhatToDoButton(title: "whattodo_title_positivetest".ub_localized, subtitle: "whattodo_subtitle_positivetest".ub_localized, image: UIImage(named: "illu-tested-positive"))
-
-    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outlineUppercase(.ns_red))
+    private let debugScreenButton = NSButton(title: "debug_settings_title".ub_localized, style: .outline(.ns_red))
 
     private var lastState: UIStateModel = .init()
 
@@ -67,19 +64,36 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             strongSelf.presentEncountersDetail()
         }
 
-        whatToDoPositiveTestButton.touchUpCallback = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoPositiveTest()
+        handshakesModuleView.onboardingTouchUpCallback = {
+            let window = UIApplication.shared.keyWindow
+            let onboardingViewController = NSTracingOnboardingViewController()
+            onboardingViewController.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(onboardingViewController, animated: true)
         }
 
-        whatToDoSymptomsButton.touchUpCallback = { [weak self] in
+        checkInView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presentWhatToDoSymptoms()
+            strongSelf.presentCheckInOverviewController()
         }
 
-        travelView.touchUpCallback = { [weak self] in
+        checkInView.scanQrCodeCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presentTravelDetail()
+            strongSelf.navigationController?.pushViewController(NSCheckInViewController(), animated: true)
+        }
+
+        checkInView.checkoutCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentCheckOutViewController()
+        }
+
+        covidCodeView.enterCovidCodeCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentInformViewController()
+        }
+
+        covidCodeView.endIsolationModeCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.showEndIsolationAlert()
         }
 
         // Ensure that Screen builds without animation if app not started on homescreen
@@ -137,20 +151,17 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // other views
         stackScrollView.addArrangedView(infoBoxView)
 
-        stackScrollView.addArrangedView(handshakesModuleView)
-        stackScrollView.addSpacerView(NSPadding.large)
-
         stackScrollView.addArrangedView(reportsView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(travelView)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
-        travelView.isHidden = true
+        stackScrollView.addArrangedView(checkInView)
+        stackScrollView.addSpacerView(NSPadding.large)
 
-        stackScrollView.addArrangedView(whatToDoSymptomsButton)
-        stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
-        stackScrollView.addArrangedView(whatToDoPositiveTestButton)
-        stackScrollView.addSpacerView(2.0 * NSPadding.large)
+        stackScrollView.addArrangedView(handshakesModuleView)
+        stackScrollView.addSpacerView(NSPadding.large)
+
+        stackScrollView.addArrangedView(covidCodeView)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         #if ENABLE_TESTING
             #if ENABLE_STATUS_OVERRIDE
@@ -207,10 +218,9 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         // End DEBUG version for testing
 
         handshakesModuleView.alpha = 0
+        checkInView.alpha = 0
         reportsView.alpha = 0
-        travelView.alpha = 0
-        whatToDoSymptomsButton.alpha = 0
-        whatToDoPositiveTestButton.alpha = 0
+        covidCodeView.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -218,33 +228,29 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.35, options: [.allowUserInteraction], animations: {
-                self.handshakesModuleView.alpha = 1
-            }, completion: nil)
-
-            UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
                 self.reportsView.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.travelView.alpha = 1
+            UIView.animate(withDuration: 0.3, delay: 0.5, options: [.allowUserInteraction], animations: {
+                self.checkInView.alpha = 1
             }, completion: nil)
 
-            UIView.animate(withDuration: 0.3, delay: 0.8, options: [.allowUserInteraction], animations: {
-                self.whatToDoSymptomsButton.alpha = 1
+            UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
+                self.handshakesModuleView.alpha = 1
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
-                self.whatToDoPositiveTestButton.alpha = 1
+                self.covidCodeView.alpha = 1
             }, completion: nil)
 
             #if ENABLE_TESTING
-                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
                     debugScreenContainer.alpha = 1
                 }, completion: nil)
             #endif
 
             #if ENABLE_LOGGING
-                UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
+                UIView.animate(withDuration: 0.3, delay: 0.95, options: [.allowUserInteraction], animations: {
                     uploadDBContainer.alpha = 1
                 }, completion: nil)
             #endif
@@ -255,10 +261,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.encounters
         reportsView.uiState = state.homescreen
-
-        let isInfected = state.homescreen.reports.report.isInfected
-        whatToDoSymptomsButton.isHidden = isInfected
-        whatToDoPositiveTestButton.isHidden = isInfected
 
         if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
             infoBoxView.hearingImpairedButtonTouched = { [weak self] in
@@ -279,8 +281,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }
         }
 
-        travelView.isHidden = state.homescreen.countries.isEmpty
-
         infoBoxView.isHidden = state.homescreen.infoBox == nil
 
         lastState = state
@@ -296,6 +296,39 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         navigationController?.pushViewController(NSReportsDetailViewController(), animated: animated)
     }
 
+    func presentInformViewController(prefill: String? = nil) {
+        if case .checkIn = UIStateManager.shared.uiState.checkInStateModel.checkInState {
+            let checkoutAlert = UIAlertController.createCheckoutAlert(from: self)
+            present(checkoutAlert, animated: true, completion: nil)
+            return
+        }
+
+        let informVC = NSSendViewController(prefill: prefill)
+        informVC.presentInNavigationController(from: self, useLine: false)
+    }
+
+    func showEndIsolationAlert() {
+        let alert = UIAlertController(title: nil, message: "delete_infection_dialog".ub_localized, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "delete_infection_dialog_finish_button".ub_localized, style: .destructive, handler: { _ in
+            TracingManager.shared.deletePositiveTest()
+        }))
+        alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: { _ in
+
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+
+    func presentCheckInOverviewController() {
+        navigationController?.pushViewController(NSCheckInOverviewViewController(), animated: true)
+    }
+
+    func presentCheckOutViewController() {
+        if CheckInManager.shared.currentCheckIn != nil {
+            let checkoutVC = NSCheckInEditViewController()
+            checkoutVC.presentInNavigationController(from: self, useLine: false)
+        }
+    }
+
     private func presentTravelDetail() {
         navigationController?.pushViewController(NSTravelDetailViewController(), animated: true)
     }
@@ -306,13 +339,6 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         }
     #endif
 
-    @discardableResult
-    func presentWhatToDoPositiveTest(animated: Bool = true) -> NSWhatToDoPositiveTestViewController {
-        let vc = NSWhatToDoPositiveTestViewController()
-        navigationController?.pushViewController(vc, animated: animated)
-        return vc
-    }
-
     private func presentWhatToDoSymptoms() {
         navigationController?.pushViewController(NSWhatToDoSymptomViewController(), animated: true)
     }
@@ -322,7 +348,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     #if ENABLE_LOGGING
-        private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outlineUppercase(.ns_red))
+        private let uploadDBButton = NSButton(title: "Upload DB to server", style: .outline(.ns_red))
         private let uploadHelper = NSDebugDatabaseUploadHelper()
         private func uploadDatabaseForDebugPurposes() {
             let alert = UIAlertController(title: "Username", message: nil, preferredStyle: .alert)

@@ -14,27 +14,51 @@ class NSNavigationController: UINavigationController {
     // MARK: - Views
 
     let lineView = UIView()
+    var useLine: Bool = true
+
+    // MARK: - Init
+
+    init(rootViewController: UIViewController, useLine: Bool = true) {
+        self.useLine = useLine
+        super.init(rootViewController: rootViewController)
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
 
     // MARK: - View Loading
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = UIColor.ns_background
     }
 
     // MARK: - Setup
 
     private func setup() {
-        lineView.backgroundColor = .ns_red
+        navigationBar.isTranslucent = false
 
-        navigationBar.addSubview(lineView)
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(3.0)
-            make.top.equalTo(navigationBar.snp.bottom)
-            make.left.right.equalToSuperview()
+        if useLine {
+            lineView.backgroundColor = .ns_red
+
+            navigationBar.addSubview(lineView)
+            lineView.snp.makeConstraints { make in
+                make.height.equalTo(3.0)
+                make.top.equalTo(navigationBar.snp.bottom)
+                make.left.right.equalToSuperview()
+            }
+
+            navigationBar.barTintColor = .ns_background
+        } else {
+            // remove bottom 1 px line
+            navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+            navigationBar.shadowImage = UIImage()
+            navigationBar.barTintColor = .ns_backgroundSecondary
         }
     }
 }

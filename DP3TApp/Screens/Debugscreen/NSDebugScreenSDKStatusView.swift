@@ -75,7 +75,7 @@
         }
 
         private func setupButton() {
-            let button = NSButton(title: "debug_sdk_button_reset".ub_localized, style: .uppercase(.ns_purple))
+            let button = NSButton(title: "debug_sdk_button_reset".ub_localized, style: .normal(.ns_purple))
             contentView.addArrangedView(button)
 
             button.touchUpCallback = { [weak self] in
@@ -83,12 +83,20 @@
                 strongSelf.resetSDK()
             }
 
-            let button2 = NSButton(title: "reset_onboarding".ub_localized, style: .uppercase(.ns_purple))
+            let button2 = NSButton(title: "reset_onboarding".ub_localized, style: .normal(.ns_purple))
             contentView.addArrangedView(button2)
 
             button2.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
                 strongSelf.resetOnboarding()
+            }
+
+            let button3 = NSButton(title: "Updateboarding zurücksetzen", style: .normal(.ns_purple))
+            contentView.addArrangedView(button3)
+
+            button3.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.resetUpdateboarding()
             }
         }
 
@@ -103,12 +111,17 @@
             exit(0)
         }
 
+        private func resetUpdateboarding() {
+            UserStorage.shared.hasCompletedUpdateBoardingCheckIn = false
+            exit(0)
+        }
+
         #if ENABLE_STATUS_OVERRIDE
             private func update(_ state: UIStateModel) {
                 switch state.homescreen.encounters {
                 case .tracingActive:
                     tracingLabel.text = "tracing_active_title".ub_localized
-                case .tracingDisabled, .bluetoothTurnedOff, .bluetoothPermissionError, .tracingEnded, .timeInconsistencyError, .unexpectedError, .tracingPermissionError, .tracingAuthorizationUnknown:
+                case .tracingDisabled, .bluetoothTurnedOff, .bluetoothPermissionError, .tracingEnded, .timeInconsistencyError, .unexpectedError, .tracingPermissionError, .tracingAuthorizationUnknown, .onboarding:
                     tracingLabel.text = "bluetooth_setting_tracking_inactive".ub_localized
                 }
 

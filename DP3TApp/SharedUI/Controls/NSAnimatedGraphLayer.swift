@@ -135,7 +135,7 @@ class NSAnimatedGraphLayer: CALayer {
     }
 
     @objc private func step() {
-        let newPositions = zip(nodeCenters, nodeLayers).map { (arg) -> CGPoint in
+        let newPositions = zip(nodeCenters, nodeLayers).map { arg -> CGPoint in
             let (center, node) = arg
             let rect = node.bounds.inset(by: UIEdgeInsets(top: -Self.range, left: -NSAnimatedGraphLayer.self.range, bottom: -Self.range, right: -Self.range))
 

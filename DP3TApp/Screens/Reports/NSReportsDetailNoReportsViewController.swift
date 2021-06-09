@@ -28,11 +28,11 @@ class NSReportsDetailNoReportsViewController: NSTitleViewScrollViewController {
     // MARK: - Setup
 
     private func setupLayout() {
-        let whiteBoxView = NSSimpleModuleBaseView(title: "no_meldungen_box_title".ub_localized, subtitle: "no_meldungen_box_subtitle".ub_localized, text: "no_meldungen_box_text".ub_localized, image: UIImage(named: "illu-no-message"), subtitleColor: .ns_green)
+        let whiteBoxView = NSSimpleModuleBaseView(title: "no_meldungen_box_title".ub_localized, subtitle: "no_meldungen_box_subtitle".ub_localized, text: "no_meldungen_box_text".ub_localized, image: UIImage(named: "illu-no-message"), subtitleColor: .ns_blue)
 
         let buttonView = UIView()
 
-        let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_green))
+        let externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_blue))
         externalLinkButton.title = "no_meldungen_box_link".ub_localized
         externalLinkButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
         externalLinkButton.touchUpCallback = { [weak self] in
@@ -51,13 +51,9 @@ class NSReportsDetailNoReportsViewController: NSTitleViewScrollViewController {
 
         stackScrollView.addArrangedView(whiteBoxView)
 
-        stackScrollView.addSpacerView(3.0 * NSPadding.large)
+        stackScrollView.addSpacerView(2 * NSPadding.large)
 
         stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-report")!, text: "meldungen_nomeldungen_faq1_text".ub_localized, title: "meldungen_nomeldungen_faq1_title".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
-
-        stackScrollView.addSpacerView(2.0 * NSPadding.medium)
-
-        stackScrollView.addArrangedView(NSOnboardingInfoView(icon: UIImage(named: "ic-tracing")!, text: "meldungen_nomeldungen_faq2_text".ub_localized, title: "meldungen_nomeldungen_faq2_titel".ub_localized, leftRightInset: 0, dynamicIconTintColor: .ns_blue))
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 

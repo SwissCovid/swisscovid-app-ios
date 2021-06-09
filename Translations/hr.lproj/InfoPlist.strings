@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Kontakti se prepoznaju u pozadini preko Bluetooth-a, uz uštedu energije.";
 "NSBluetoothAlwaysUsageDescription" = "Kontakti se prepoznaju u pozadini preko Bluetooth-a, uz uštedu energije.";
+"NSCameraUsageDescription" = "Kamera je potrebna, kako bi se skenirao QR kod.";
+"NSFaceIDUsageDescription" = "Dozvolite identifikaciju lica, da biste mogli bezbedno pristupiti vašem dnevniku.";

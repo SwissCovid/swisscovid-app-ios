@@ -27,7 +27,7 @@ class NSRadioButtonItem: UIControl {
         }
     }
 
-    init(text: String, allowUnselection: Bool = false) {
+    init(text: String, leftPadding: CGFloat, allowUnselection: Bool = false) {
         self.allowUnselection = allowUnselection
         super.init(frame: .zero)
 
@@ -40,7 +40,7 @@ class NSRadioButtonItem: UIControl {
             make.centerY.equalToSuperview()
             make.top.greaterThanOrEqualToSuperview().inset(NSPadding.medium)
             make.bottom.lessThanOrEqualToSuperview().inset(NSPadding.small)
-            make.leading.equalToSuperview().inset(NSPadding.large)
+            make.leading.equalToSuperview().inset(leftPadding)
             make.size.equalTo(24)
         }
 

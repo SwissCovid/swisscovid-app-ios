@@ -23,6 +23,9 @@
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 5"),
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 10"),
             NSCheckBoxView(text: "debug_state_setting_option_exposed".ub_localized + " 20"),
+            NSCheckBoxView(text: "debug_state_setting_option_checkin_exposed".ub_localized + " 1"),
+            NSCheckBoxView(text: "debug_state_setting_option_checkin_exposed".ub_localized + " 5"),
+            NSCheckBoxView(text: "debug_state_setting_option_mutiple_exposed".ub_localized),
             NSCheckBoxView(text: "debug_state_setting_option_infected".ub_localized),
         ]
 
@@ -59,7 +62,6 @@
 
             for c in checkboxes {
                 checkBoxStackView.addArrangedView(c)
-                c.radioMode = true
                 c.touchUpCallback = { [weak self, weak c] in
                     guard let strongSelf = self, let strongC = c else { return }
                     strongSelf.select(strongC)
@@ -97,6 +99,12 @@
                     case 5:
                         stateManager.overwrittenInfectionState = .exposed20
                     case 6:
+                        stateManager.overwrittenInfectionState = .checkInExposed1
+                    case 7:
+                        stateManager.overwrittenInfectionState = .checkInExposed5
+                    case 8:
+                        stateManager.overwrittenInfectionState = .checkInAndEncounterExposed
+                    case 9:
                         stateManager.overwrittenInfectionState = .infected(oldestSharedKeyDate: Date())
                     default:
                         stateManager.overwrittenInfectionState = nil
@@ -115,7 +123,10 @@
                     checkboxes[3].isChecked = s == .exposed5
                     checkboxes[4].isChecked = s == .exposed10
                     checkboxes[5].isChecked = s == .exposed20
-                    checkboxes[6].isChecked = s.isInfected
+                    checkboxes[6].isChecked = s == .checkInExposed1
+                    checkboxes[7].isChecked = s == .checkInExposed5
+                    checkboxes[8].isChecked = s == .checkInAndEncounterExposed
+                    checkboxes[9].isChecked = s.isInfected
                 } else {
                     checkboxes[1].isChecked = false
                     checkboxes[2].isChecked = false
@@ -123,6 +134,9 @@
                     checkboxes[4].isChecked = false
                     checkboxes[5].isChecked = false
                     checkboxes[6].isChecked = false
+                    checkboxes[7].isChecked = false
+                    checkboxes[8].isChecked = false
+                    checkboxes[9].isChecked = false
                 }
             }
         #endif

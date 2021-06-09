@@ -11,6 +11,14 @@
 import UIKit
 
 class NSUnderlinedButton: UBButton {
+    var textColor: UIColor = UIColor.ns_text {
+        didSet {
+            if let t = self.title {
+                self.title = t
+            }
+        }
+    }
+
     override var title: String? {
         didSet {
             guard let t = title else { return }
@@ -20,8 +28,8 @@ class NSUnderlinedButton: UBButton {
             attributedText.addAttributes([
                 .underlineStyle: NSUnderlineStyle.single.rawValue,
                 .font: NSLabelType.button.font,
-                .underlineColor: UIColor.ns_text,
-                .foregroundColor: UIColor.ns_text,
+                .underlineColor: self.textColor,
+                .foregroundColor: self.textColor,
             ], range: range)
 
             setAttributedTitle(attributedText, for: .normal)

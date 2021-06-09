@@ -99,7 +99,7 @@
 "meldungen_meldung_title" = "Olası enfeksiyon";
 
 /*Text im Meldung Detail*/
-"meldungen_meldung_text" = "Enfeksiyon olasılığı mevcuttur.";
+"meldungen_meldung_text" = "Hastalık size bulaşmış olabilir";
 
 /*Titel ob Tracing aktiv*/
 "tracing_active_title" = "Uygulama etkindir";
@@ -189,7 +189,7 @@
 "inform_detail_box_subtitle" = "Kovid kodu ile...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Enfeksiyon zincirini kır";
+"inform_detail_box_title" = "Olası bulaşmalara karşı uyar";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Kovid kodu gir";
@@ -222,8 +222,8 @@
 "symptom_detail_navigation_title" = "Semptomlar";
 "tracing_turned_off_title" = "Takip devre dışı bırakıldı";
 "tracing_turned_off_text" = "Uygulamanın çalışabilmesi için takibi etkinleştirin.";
-"bluetooth_turned_off_title" = "Bluetooth'u kapat";
-"bluetooth_turned_off_text" = "Takibin çalışabilmesi için cep telefonunuzun Bluetooth özelliğini etkinleştirin.";
+"bluetooth_turned_off_title" = "Bluetooth kapalı";
+"bluetooth_turned_off_text" = "Anonim takibin çalışabilmesi için cep telefonunuzun Bluetooth özelliğini etkinleştirin.";
 "bluetooth_turn_on_button_title" = "Bluetooth'u ektinleştirin";
 "bluetooth_permission_error_title" = "Bluetooth kullanımı rededildi";
 "bluetooth_permission_error_text" = "Takibin çalışabilmesi için Bluetooth kullanımına izin verin.";
@@ -255,11 +255,11 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "İzolasyona ilişkin size bildirilen talimatlara uyun";
-"tracing_ended_title" = "Takip sonlandırıldı";
-"tracing_ended_text" = "Temaslarınız artık kaydedilmiyor.";
+"tracing_ended_title" = "Temaslar ve Check-in devre dışı";
+"tracing_ended_text" = "Temaslar kaydedilmiyor";
 "exposed_info_contact_hotline" = "... ile iletişime girin";
 "meldung_homescreen_positive_info_line1" = "...'lere/lara uyun";
-"meldung_homescreen_positive_info_line2" = "Kendini İzole Etme Talimatları";
+"meldung_homescreen_positive_info_line2" = "İzolasyon Talimatları";
 
 /*Meldung Detail Exposed Neue Meldung*/
 "meldung_detail_exposed_new_meldung" = "Yeni bildirim";
@@ -269,7 +269,7 @@
 "meldung_homescreen_positiv_title" = "Testiniz pozitif";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Enfeksiyon riski bulunmaktadır.";
+"meldung_detail_exposed_subtitle" = "Hastalık size bulaşmış olabilir";
 
 /*Meldung auf Homescreen: Positiv getestet*/
 "meldung_homescreen_positiv_text" = "Korona virüsü testiniz pozitiftir.";
@@ -323,7 +323,7 @@
 "onboarding_prinzip_text1" = "SwissCovid uygulaması ile Korona virüsünün yayılımını sınırlandırmaya yardımcı olabilirsiniz.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Korona virüsü ile potansiyel temaslarda uygulama sizi bilgilendirir.";
+"onboarding_prinzip_text2" = "Korona virüsü ile potansiyel temaslarda uygulama sizi uyarır.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
@@ -338,7 +338,7 @@
 "onboarding_privacy_text2" = "Rastgele ID'ler telefonunuza kaydedilir ve 14 gün sonra silinir.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Uygulama nasıl çalışır?";
+"onboarding_begegnungen_heading" = "Temaslar";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Bluetooth sayesinde temasların tespit edilmesi";
@@ -356,7 +356,7 @@
 "onboarding_meldung_title" = "Enfeksiyon riskinde dair bildirim";
 
 /*Onboarding Meldung: Text*/
-"onboarding_meldung_text1" = "Uygulama, potansiyel olarak Korona virüsü ile temasınız olduğunda sizi uyarır.";
+"onboarding_meldung_text1" = "Korona virüsü ile potansiyel temaslarda uygulama sizi uyarır.";
 
 /*Onboarding Meldung: Text*/
 "onboarding_meldung_text2" = "Doğru davranışlarla enfeksiyon zincirlerini kırabilir ve diğer insanları koruyabilirsiniz.";
@@ -389,7 +389,7 @@
 "onboarding_push_title" = "Mesajlara izin ver";
 
 /*Onboarding Mitteilungen: Text*/
-"onboarding_push_text" = "Uygulamanın sizi bilgilendirebilmesi için mesajlara izin vermeniz gerekmektedir.";
+"onboarding_push_text" = "Uygulamanın sizi uyarabilmesi için bildirimlere izin vermeniz gerekir.";
 
 /*Onboarding Mitteilungen: Button*/
 "onboarding_push_button" = "Mesajlara izin ver";
@@ -410,7 +410,7 @@
 "onboarding_go_title" = "Uygulama kuruldu";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Enfeksiyon zincirlerini kırmaya yardımcı olduğunuz için teşekkür ederiz.";
+"onboarding_go_text" = "Korona virüsün yayılmasını önlemeye yardımcı olduğunuz için teşekkür ederiz.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Başlat";
@@ -437,7 +437,7 @@
 "meldung_detail_new_contact_title" = "Yeni şüphe";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Bir enfeksiyon şüphesi vardır.";
+"meldung_detail_new_contact_subtitle" = "Hastalık size bulaşmış olabilir";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Saat hatası";
@@ -569,13 +569,7 @@
 "meldungen_nomeldungen_faq1_title" = "Bildirimler nedir?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Uygulama düzenli olarak temas ettiğiniz kişilerin pozitif bir test sonucu bildirip bildirmediğini kontrol eder.\nOlası bir enfeksiyon riskinde kilit ekranında bir mesaj ile bilgilendirileceksiniz.";
-
-/*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Enfeksiyon riski ne anlama gelmektedir?";
-
-/*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Uygulama yalnızca enfekte kişiler temaz olup olmadığını değil, temasların ne kadar sürdüğünü ve ne kadar yakın olduklarını da takip eder.\n\nYalnızca bulaşma riski yeterince büyük ise bilgilendirilirsiniz.";
+"meldungen_nomeldungen_faq1_text" = "Uygulama düzenli olarak, temas ettiğiniz veya sizinle aynı yerde bulunan diğer kullanıcıların pozitif bir test sonucu bildirip bildirmediğini kontrol eder.\n\nOlası bir bulaşma durumunda kilit ekranındaki gösterilecek bir bildirim ile bilgilendirilirsiniz.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "SwissCovid Bilgi Hattı sizi ücretsiz testler konusunda bilgilendirir.";
@@ -609,7 +603,7 @@
 "inform_detail_faq2_title" = "Neler iletilir?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Şahsi bilgileriniz değil, uygulamanızın yalnızca özel kodları iletilir. \nBu şekilde diğer SwissCovid uygulaması kullanıcıları yalnızca bir bulaşma riski olabileceğini öğenir.";
+"inform_detail_faq2_text" = "Şahsi verileriniz değil, sadece uygulamanızın özel kodları ve yaptığınız Check-in’lerin şifrelenmiş ID’leri iletilir.\n\n Bu şekilde diğer SwissCovid uygulaması kullanıcıları bir bulaşma riski söz konusu olabileceğini öğrenir.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -618,10 +612,10 @@
 "faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
-"inform_code_intro_title" = "Önemli Bilgiler";
+"inform_code_intro_title" = "Girişler Hakkında Bilgiler";
 
 /*Informieren-Flow: Erster Screen Text*/
-"inform_code_intro_text" = "Kişisel bilgileriniz iletilmese dahi, bazı kişiler tarihler temelinde sizinle olan teması hatırlayabilirler.";
+"inform_code_intro_text" = "Kişisel bilgileriniz iletilmezse dahi, bir kişini tarihi dikkate alarak sizinle temas ettiğini hatırlayabilir.";
 
 /*Inform-Flow: Erster Screen Button*/
 "inform_code_intro_button" = "Kabul ediyorum";
@@ -636,7 +630,7 @@
 "meldungen_positive_tested_faq1_title" = "İzleme neden devre dışı bırakıldı?";
 
 /*Meldungen: Positiv getestet FAQ Text*/
-"meldungen_positive_tested_faq1_text" = "Pozitif bir testten sonra uygulamadaki izleme otomatik olarak devre dışı bırakılır. İzolasyonu sona erdiğirdiğiniz anda, izleme yeniden etkinleştirilebilir.";
+"meldungen_positive_tested_faq1_text" = "Pozitif bir test sonucundan sonra uygulamadaki takip otomatik olarak devre dışı bırakılır. İzolasyonu sona erdirdiğiniz andan itibaren, takip fonksiyonu yeniden etkinleştirilebilir.";
 
 /*Sprache Abkürzung (BITTE NICHT ÄNDERN)*/
 "language_key" = "tr";
@@ -676,7 +670,7 @@
 "onboarding_gaen_title" = "Takibi etkinleştir";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-"onboarding_gaen_text_ios" = "Uygulamayı kullanabilmek için KOVİD-19 temas bildirimlerini etkinleştirmiş olmalısınız.";
+"onboarding_gaen_text_ios" = "Temasların algılanabilmesi için takip fonksiyonunun etkinleştirilmiş olması gerekmektedir.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Etkinleştir";
@@ -705,10 +699,10 @@
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "İzolasyonu sona erdir";
 
-/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Meldung im Löschen Dialog nach Isolation-Beenden, kommt auch auf Homescreen-Popup*/
 "delete_infection_dialog" = "Bildirimi gerçekten silmek mi istiyorsunuz?";
 "android_onboarding_battery_permission_title" = "Pil optimizasyonunu yoksay";
-"android_onboarding_battery_permission_text" = "Temasların her zaman takip edebilebilmesi için pil optimizasyonunun bu uygulama için devre dışı bırakılması gerekmektedir.";
+"android_onboarding_battery_permission_text" = "Uygulamanın düzgün çalışabilmesi için pil optimizasyonunun bu uygulama için devre dışı bırakılmış olması gerekir.";
 "android_onboarding_battery_permission_button" = "İzin ver";
 "android_onboarding_battery_permission_button_deactivated" = "OK";
 "android_onboarding_battery_permission_info_1_title" = "Yalnızca bu uygulama için";
@@ -730,7 +724,7 @@
 "tracing_permission_error_title_ios" = "KOVİD-19 temas mesajları devre dışı bırakıldı";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-"tracing_permission_error_text_ios" = "Takibin çalışabilmesi için KOVİD-19 iletişim mesajlarının etkinleştirilmesi gerekmektedir.";
+"tracing_permission_error_text_ios" = "Anonim takibin çalışabilmesi için {TRACING_SETTING_TEXT}’i etkinleştirin.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Mesaj iletilemedi. Lütfen rastgele ID'lerinizin SwissCovid uygulaması ile paylaşılmasına izin verin.";
@@ -770,8 +764,8 @@
 "tracing_active_tracking_always_info" = "SwissCovid uygulama kapatıldığında da aktiftir.";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "SwissCovid enfeksiyon zincirlerini kırar.";
-"inform_detail_faq3_text" = "Kişisel bilgileriniz iletilmese dahi, bazı kişiler tarihler temelinde sizinle olan teması hatırlayabilirler.";
+"oboarding_splashscreen_title" = "SwissCovid –\nbir bulaş riski durumunda hızlıca bilgi sahibi olun.";
+"inform_detail_faq3_text" = "Evet, ancak kişisel bilgileriniz iletilmezse dahi, bazı kişiler tarihler temelinde sizinle olan teması hatırlayabilirler.";
 "inform_detail_faq3_title" = "Bilgilerim anonim mi?";
 
 /*Meldung Detail Weiss Box unten*/
@@ -781,7 +775,7 @@
 "tracing_setting_text_android" = "KOVİD-19 Bildirimleri";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
-"onboarding_gaen_text_android" = "Uygulamanın kullanılabilmesi için KOVİD-19 bildirimlerinin etkinleştirilmiş olması gerekmektedir.";
+"onboarding_gaen_text_android" = "Temasların algılanabilmesi için takip fonksiyonunun etkinleştirilmiş olması gerekmektedir.";
 
 /*Onboarding Disclaimer Screen: AppName Title*/
 "onboarding_disclaimer_heading" = "SwissCovid";
@@ -872,7 +866,7 @@
 "travel_title" = "Seyahatler";
 
 /*Info text that is displayed  on the Home Travel Card.*/
-"travel_home_description" = "SwissCovid şu ülkelerde çalışır:";
+"travel_home_description" = "SwissCovid temas takibi şu ülkelerde çalışır:";
 
 /*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Bunun anlamı nedir?";
@@ -897,12 +891,6 @@
 
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 387 77 80";
-
-/*Text beim Bluetooth Control iOS 13.5*/
-"tracing_setting_text_ios_13_5" = "";
-
-/*Text beim Bluetooth Control iOS 13.6*/
-"tracing_setting_text_ios_13_6" = "";
 
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Maruz Kalma Bildirimleri";
@@ -1185,7 +1173,7 @@
 "delete_infection_dialog_finish_button" = "Sona erdir";
 
 /*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
-"tracing_ended_info" = "Temaslar artık kaydedilmeyecek.\n\nİzolasyondan sonra izleme yeniden etkinleştirilebilir.";
+"tracing_ended_info" = "Artık temaslar kaydedilmiyor ve yeni Check-in’ler yapmak de artık mümkün değil.\n\n Her iki fonksiyon da İzolasyon sona erdikten sonra yeniden etkinleştirilebilir.";
 "testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
 "testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
 "testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
@@ -1217,7 +1205,7 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "İşitmiyor veya işitme özürlü müsünüz ve Koronavirüs bilgi hattını arayamıyor musunuz?\n\nO halde covid-support@medgate.ch adresine bir e-posta gönderiniz";
+"hearing_impaired_info" = "İşitme sorununuz var veya işitme engellisiniz ve telefon edemiyor musunuz?\n\n O halde covid-support@medgate.ch adresine bir e-posta gönderin.";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
 "stats_covidcodes_title" = "Covid kodları";
@@ -1268,7 +1256,7 @@
 "stats_cases_current_description" = "Grafik son 28 günde bildirilmiş olan yeni enfeksiyonları gösterir. Bu ise güncel gelişme hakkında genel bir bakış kazandırır.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Testiniz pozitif çıktı (PCR testi veya hızlı antijen testi) ve 4 saat sonra halen bir Covid kodu almadınız mı?\nO halde koronavirüz danışma hattıyla iletişim kurun:";
+"inform_detail_infobox1_text" = "Testiniz pozitif çıktı (PCR testi veya hızlı antijen testi) ve 4 saat sonra halen bir Covid kodu almadınız mı?\nO halde şu numarayı arayın:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Covid kodunu henüz almadınız mı?";
@@ -1292,7 +1280,7 @@
 "travel_screen_compatible_countries" = "Uyumlu ülkeler:";
 
 /*Informieren Flow: Erster Screen Reise-Infotext*/
-"inform_code_travel_text" = "Yurt dışı seyahatlerinden dönen kişilere de uyarıda bulunulabilmesi için, özel kodlar uyumlu ülkelerin Korona uygulamalarıyla paylaşılır.";
+"inform_code_travel_text" = "Yurt dışından gelen ziyaretçilerin de bir temastan sonra uyarılabilmesi için kişiye özel kodlar uygulamaları uyumlu olan ülkelerin korona uygulamalarıyla paylaşılır.";
 
 /*Überschrift der "eingegebene Covidcodes" Statistikbox*/
 "stats_covidcodes_total_header" = "Toplam";
@@ -1307,13 +1295,13 @@
 "meldungen_positive_tested_faq2_title" = "Kimlere haber verilir?";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "Mesafe ve süre nedeniyle bir bulaşma olasılığı mevcut ise {ONSET_DATE} gününden başlamak üzere, Covid kodunuzun girilmesine kadar, bulaşma döneminizin aralığındaki tüm temaslılara haber verilir.";
+"meldungen_positive_tested_faq2_text" = "Mesafe ve süre nedeniyle veya aynı yere Check-in yapmış olmanız nedeniyle bir bulaşma riski söz konusu olduğunda {ONSET_DATE} tarihinden başlamak üzere, Covid kodunuzun girilmesine kadar geçen sürede temas ettiğiniz herkes durum hakkında bilgilendirilir.";
 
 /*Informieren: Danke Text Onset Date*/
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – bugün";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "Bu sayede enfeksiyon zincirlerinin durdurulması için yardımcı olacaksınız.";
+"inform_send_thankyou_text_stop_infection_chains" = "Bu şekilde diğer kişilerin olası bir bulaşmaya karşı uyarılmasına yardım etmiş olursunuz.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "Uygulamanızın özel anahtarları şu zaman aralığı için gönderildi:";
@@ -1350,3 +1338,367 @@
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
 "meldungen_detail_free_test_tomorrow" = "1 gün sonra";
+
+/*Check-Ins: Titel vom Reminder Push*/
+"checkout_reminder_title" = "Check-out hatırlatması";
+
+/*Check-Ins: Check-out Reminder Push Text*/
+"checkout_reminder_text" = "Çıkış yapmak mı istiyorsunuz?";
+
+/*Check-Ins: Auto-Checkout Push Titel*/
+"auto_checkout_title" = "Otomatik Check-out";
+
+/*Check-Ins: Auto-checkout Push Text*/
+"auto_checkout_body" = "Çıkış işleminiz otomatik olarak yapıldı.";
+
+/*Check-Ins: Qr-Scanner Text*/
+"qrscanner_scan_qr_text" = "Kare kodu okutun ve giriş yapın";
+
+/*Check-Ins: Fehler beim QR-Code scannen*/
+"qrscanner_error" = "Geçerli kare kod yok!";
+
+/*Check-Ins: Anpassung Check-In Datumwahl von*/
+"datepicker_from" = "Başlangıç tarihi";
+
+/*Check-Ins: Datumsauswahl bis*/
+"datepicker_to" = "Bitiş tarihi";
+
+/*Check-Ins: Notiz hinzufügen zu Check-In*/
+"edit_mode_addcomment" = "Not ekle";
+
+/*Check-Ins: Notiz zu Check-In Placeholder Text*/
+"edit_mode_comment_placeholder" = "Örn. kiminle oradaydınız?";
+
+/*Fertig Button Text*/
+"done_button" = "Bitti";
+
+/*Check-Ins: Titel für Erinnerung*/
+"checkin_set_reminder" = "Check-out hatırlatması";
+
+/*Check-Ins: Erinnerung Option Aus*/
+"reminder_option_off" = "Off";
+
+/*Check-Ins: Tagebuch Zugriff Text*/
+"authenticate_for_diary" = "Günlüğe erişim için kendinizi yetkilendirin";
+
+/*Check-Ins: Errinnerungsoption Stunden*/
+"reminder_option_hours" = "{HOURS} h";
+
+/*Check-Ins: Errinnerungsoption Minuten*/
+"reminder_option_minutes" = "{MINUTES}'";
+
+/*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
+"qr_scanner_no_camera_permission" = "Uygulamanın kare kodu tarayabilmek için kamera erişimine ihtiyacı var.";
+
+/*Check-Ins: Tagebuch Titel*/
+"diary_title" = "Check-in’lerim";
+
+/*Check-Ins: Button Titel zum Einchecken*/
+"checkin_button_title" = "Check-in";
+
+/*Check-Ins: iOS Kamera Erlaubnis Text*/
+"NSCameraUsageDescription" = "Kare kodu taramak için kameraya ihtiyaç duyuluyor.";
+
+/*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
+"NSFaceIDUsageDescription" = "Günlüğünüze güvenli bir şekilde erişebilmek için Face-ID’ye izin verin.";
+
+/*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
+"face_id_reason_text" = "Günlüğe erişim için kendinizi yetkilendirin";
+
+/*Check-Ins: Check-Out Button Title*/
+"checkout_button_title" = "Check out";
+
+/*Check-Ins: Titel Modul auf Homescreen*/
+"module_checkins_title" = "Check-in";
+
+/*Check-Ins: Titel vom Check-In Screen*/
+"checkin_title" = "Check-in";
+
+/*Check-Ins: QR-Code erstellen Titel*/
+"checkins_create_qr_code" = "Kare kod oluşturun";
+
+/*Veranstaltungen-Screen Titel*/
+"events_title" = "Check-in’leri öner?";
+
+/*Check-Ins: Jetzt einchecken Button Titel*/
+"check_in_now_button_title" = "Şimdi check-in yap";
+
+/*Check-Ins: Reminder Fehlermeldung Titel*/
+"checkin_reminder_settings_alert_title" = "Hatırlatma oluşturulamadı";
+
+/*Check-Ins: Erinnerungen Fehlermeldung Text*/
+"checkin_reminder_settings_alert_message" = "Check-out hatırlatmasını alabilmeniz için uygulama ayarlarında \\”Bildirimler\\”e izin verin.";
+
+/*Check-Ins: Reminder Popup Anpassen*/
+"checkin_reminder_option_open_settings" = "Uyarla";
+
+/*Check-Ins: Bearbeiten von Check-Ins Titel*/
+"edit_controller_title" = "Düzenle";
+
+/*Check-Ins: Tagebuch leeres Tagbuch Titel*/
+"empty_diary_title" = "Henüz giriş yok";
+
+/*Check-Ins: Tagebuch leer, Text*/
+"empty_diary_text" = "Bir yere check-in yapmak için bir SwissCovid kare kodunu taradığınızda buraya otomatik olarak bir kayıt oluşturulur.";
+
+/*Check-Ins: Kamera Erlaubnis Text*/
+"camera_permission_dialog_text" = "SwissCovid’in cihazınızın kamerasına erişimine sahip olması gerekiyor. Kamera sadece kare kodları taramak için kullanılacaktır.";
+
+/*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
+"camera_permission_dialog_action" = "Kamera erişimine izin ver";
+
+/*Check-Ins: Veranstaltung Titel Placeholder*/
+"web_generator_title_placeholder" = "Örn. Oda veya etkinlik adı";
+
+/*Check-Ins: Veranstaltungen Detail PDF Button*/
+"show_pdf_button" = "PDF yazdır";
+"bottom_nav_tab_info" = "Bilgi";
+"error_network_title" = "Ağ hatası";
+"error_network_text" = "İnternet bağlantısını kontrol edin.";
+"error_action_retry" = "Yeniden dene";
+"error_notification_deactivated_title" = "Bildirimler devre dışı";
+"error_notification_deactivated_text" = "Bir bildirim ile doğrudan bilgi alabilmek için ayarları değiştirin.";
+"error_action_change_settings" = "Ayarları değiştir";
+"error_camera_permission_title" = "Kamera erişimi yok";
+"error_camera_permission_text" = "Uygulamanın kare kodu tarayabilmek için kamera erişimine ihtiyacı var.";
+"error_title" = "Hata";
+"qr_scanner_error_code_not_yet_valid" = "Kare kod henüz geçerli değil";
+"qr_scanner_error_code_not_valid_anymore" = "Kare kod artık geçerli değil";
+"error_already_checked_in" = "Zaten check-in yaptınız.";
+"error_update_text" = "Bu kare kod artık kurulu olan uygulama sürümü ile uyumlu değil. Lütfen işleme devam edebilmek için uygulamayı güncelleyin.";
+"error_update_title" = "Güncelleme gerekiyor";
+"error_action_update" = "Şimdi güncelleyin";
+"ongoing_notification_checkout_quick_action" = "Check out";
+"reminder_notification_snooze_action" = "Sustur";
+"android_ongoing_checkin_notification_channel_name" = "Kalıcı Check-in Bildirimi";
+"ongoing_notification_title" = "Saat {TIME}’den beri check-in yapmış durumdasınız.";
+
+/*Check-Ins: Sichern Button bei Check-out*/
+"checkout_save_button_title" = "Emniyete al";
+
+/*Check-Ins: QR-Code scannen Button*/
+"scan_qr_code_button_title" = "Kare kod tara";
+
+/*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_title" = "Check-in devre dışı";
+
+/*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text" = "Şu anda check-in yapılamıyor";
+
+/*Text im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_text" = "Bulunduğunuz yere check-in yapmak için bir SwissCovid kare kodunu tarayın.";
+
+/*Text im Check-Ins-Screen, im Tagebuch-Modul*/
+"checkin_detail_diary_text" = "Bir yere check-in yapmak için bir Swiss-Covid kare kodunu taradığınızda buraya otomatik olarak bir kayıt oluşturulur.";
+
+/*Label im Checkin-Modul im eingecheckten Zustand*/
+"checkin_checked_in" = "Check-in yaptınız";
+"checkout_from_to_date" = "{DATE1} ile {DATE2} arasında";
+"inform_detail_covidcode_info_button" = "Covid kodu hakkında daha fazla bilgi";
+
+/*Check-Ins: Button Entfernen um Check-In zu löschen*/
+"remove_from_diary_button" = "Kaydı sil";
+
+/*Check-Ins: QR-Code löschen Titel Button*/
+"delete_button_title" = "Sil";
+
+/*Check-Ins: Teile QR-Code Button Titel*/
+"share_button_title" = "Paylaş";
+
+/*Check-Ins: Drucken Button auf PDF-Detailseite*/
+"print_button_title" = "Yazdır";
+
+/*Check-Ins: Beschreibung Modul auf Homescreen*/
+"module_checkins_description" = "Bulunduğunuz yere check-in yapmak için bir SwissCovid kare kodunu tarayın.";
+
+/*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_title" = "Check-in kayıtlarını paylaş";
+
+/*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_subtitle" = "Check-in kayıtlarınızı paylaştığınızda, uygulama aynı zaman aralığında aynı yerde check-in yapmış olan kişileri bu durum hakkında bilgilendirebilir.";
+
+/*Button text, um alle Checkins zu selektieren*/
+"inform_share_checkins_select_all" = "Tümünü seç";
+"inform_dont_send_button_title" = "Gönderme";
+"inform_dont_share_button_title" = "Paylaşma";
+"inform_really_not_share_title" = "Gerçekten paylaşılmasın mı?";
+"inform_really_not_share_subtitle" = "Özel kodlarınızın paylaşılması «SwissCovid»’e, hastalığın bulaşmış olabileceği kişileri durumdan haberdar etmesi ve böylece virüsün daha da fazla yayılmasının önlenmesine yardımcı olur. Özel kodlarınızı paylaşmadığınızda hastalığın bulaşmış olması potansiyeli olan kişiler bu durumdan haberdar edilmez.";
+
+/*Remove from Diary Warning view title*/
+"remove_diary_warning_title" = "Kaydı sil";
+
+/*Remove from diary warning view explanation text*/
+"remove_diary_warning_text" = "Kaydınız kalıcı olarak listeden silinecektir.";
+
+/*Remove from diary warning view remove button title*/
+"remove_diary_remove_now_button" = "Kalıcı olarak sil";
+
+/*Hide from diary warning title*/
+"remove_diary_warning_hide_title" = "Sadece gizleyip bildirimleri almaya devam et?";
+
+/*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "Testiniz pozitif mi sonuçlandı?";
+
+/*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_text" = "Temasları ve Check-in’i yeniden aktif et.";
+
+/*Check-Ins: Erinnerungsoption Stunden & Minuten*/
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
+"checkin_overview_isolation_text" = "Test sonucunuz pozitif ise artık check-in yapamazsınız.";
+
+/*Veranstaltungen-Card Text im Infotab*/
+"events_card_subtitle" = "Kişilerin ilgili yere check-in yapabileceği bir kare kod oluşturun.";
+
+/*Dialog Text beim Löschen eines erstellten QR Codes.*/
+"delete_qr_code_dialog" = "Kare kodu gerçekten silmek istiyor musunuz?";
+
+/*Self-Check-In Button Titel im QR-Code Screen*/
+"self_checkin_button_title" = "Kendi kendine check-in";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer nicht eingecheckt ist.*/
+"checkin_overview_checkins_explanation" = "Bulunduğunuz yere check-in yapmak için bir SwissCovid kare kodunu tarayın.";
+
+/*Popup Titel wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_title" = "Emniyete alınamıyor";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_description" = "Seçmiş olduğunuz zaman aralıkları günlüğünüzde bulunan diğer check-in’ler ile kesişiyor. Lütfen bilgileri bir kez daha kontrol edin.";
+
+/*Informieren: Danke Text Checkins Teil*/
+"inform_send_thankyou_text_checkins" = "Seçmiş olduğunuz check-in kayıtlarınız gönderildi. Aynı zaman aralığında aynı yere check-in yapmış olan tüm kişilere bilgi verilecek.";
+
+/*SwissCovid QR Code PDF: Headline über dem Slogan*/
+"pdf_headline" = "SwissCovid-Check-in";
+
+/*SwissCovid QR Code PDF: Slogan*/
+"pdf_slogan" = "Kayıtlı veri bırakmadan check-in yap";
+
+/*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
+"pdf_explanation" = "SwissCovid uygulaması ile kayıtlı veri bırakmadan kolayca check-in yapabilirsiniz. Bir risk durumunda uygulama üzerinden hızlıca bilgilendirilirsiniz.";
+
+/*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
+"pdf_swisscovid_app" = "SwissCovid Uygulaması";
+
+/*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
+"pdf_download_app" = "Şimdi indir";
+
+/*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_title" = "Kayıtlı veri \nbırakmadan check-in yap";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_text" = "Başkalarını uyarmak için covid kodunuzu buraya girin.";
+
+/*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "İzolasyonu sonlandır?";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
+"events_card_title" = "Check-in’leri önermek mi istiyorsunuz?";
+"checkin_footer_title1" = "Bir check-in uygulaması neden gerekli?";
+"checkin_footer_subtitle1" = "İletişim verileri olmadan çalışan check-in fonksiyonu SwissCovid uygulamasının kapsamını genişletiyor. Bu fonksiyon ile testinizin pozitif sonuçlanması halinde sadece yakın temasta bulunduğunuz kişileri değil, aynı zaman aralığında aynı yerde check-in yapmış olan kişileri de uyarabilirsiniz.";
+"checkin_footer_title2" = "Merkezi veri kaydı yok";
+"checkin_footer_subtitle2" = "SwissCovid-Check-in’leri için isim, adres veya telefon numarası gibi kişisel verilerin belirtilmesi gerekmez ve GPS konum bilgileri de kayıt edilmez. Check-in’lerin listesi yerel olarak cep telefonunuza kayıt edilir. 14 gün sonra bu yerel veriler yeniden cihazınızdan silinir.";
+"events_empty_state_title" = "Bir kare kod oluşturun.";
+"events_empty_state_subtitle" = "Bir SwissCode kare kodu ile kişiler bir yere, geride kayıtlı herhangi bir veri bırakmadan check-in yapabilir.";
+"events_info_box_title" = "Zorunlu olan iletişim bilgileri kaydının ikamesi değildir";
+"events_info_box_text" = "SwissCovid-Check-in’leri «Covid-19-Düzenlemesi Özel Durum» kapsamında talep edilen iletişim bilgileri kaydı yükümlülüğünü ikame etmez.";
+"events_footer_title1" = "Check-in’ler nerede kullanılabilir?";
+"events_footer_title2" = "Bir check-in uygulaması neden gerekli?";
+"events_footer_subtitle1" = "SwissCovid-Check-in’leri insanların bir araya geldiği ancak iletişim bilgileri kaydı zorunluluğunun olmadığı yerlerde kullanılabilir.\n\n Olası kullanım yerleri: \n– Özel etkinlikler\n– Dernek etkinlikleri\n– örneğin toplantı odaları, ofis alanları, yemekhaneler, vs. gibi bir araya gelinebilen profesyonel ortamlar.";
+"events_footer_subtitle2" = "İletişim verileri olmadan çalışan check-in fonksiyonu SwissCovid uygulamasının kapsamını genişletiyor. Bu fonksiyon ile testinizin pozitif sonuçlanması halinde sadece yakın temasta bulunduğunuz kişileri değil, aynı zaman aralığında aynı yerde check-in yapmış olan kişileri de uyarabilirsiniz.";
+
+/*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
+"meldung_detail_exposed_list_card_subtitle" = "Risk durumu";
+
+/*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_encounters" = "Temaslar";
+
+/*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_checkin" = "Check-in";
+
+/*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_whattodo_button" = "Ne yapmalıyım?";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_checkin_exposed" = "Pozitif check-in";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_mutiple_exposed" = "Pozitif check-in’ler / temaslar";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_user_qr_code" = "User QR Code";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_contact_tracing_qr_code" = "Contact Tracing QR Code";
+
+/*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text_detailed" = "Pozitif bir test sonucundan sonra check-in fonksiyonu otomatik olarak devre dışı bırakılır. İzolasyon sürenizin dolmasının ardından yeniden aktif edilebilir.";
+
+/*Check-Ins: QR-Code erstellen subtitel*/
+"checkins_create_qr_code_subtitle" = "Yeri veya etkinliği daha yakından tanımlayan bir başlık belirleyin.\nBu başlık check-in sırasında gösterilir.";
+"checkin_report_heading" = "Ne yapabilirsiniz?";
+"checkin_report_title1" = "Temaslıları koruyun";
+"checkin_report_title2" = "Semptomlara dikkat edin";
+"checkin_report_title3" = "Test yaptırın";
+"checkin_report_subtitle1" = "Henüz kendiniz fark etmeden de hastalığı bulaştırabilirsiniz. Geçerli hijyen ve koruma önlemlerini dikkate alın ve ailenizi, arkadaşlarınızı ve çevrenizi koruyun.";
+"checkin_report_subtitle2" = "Sağlık durumunuzu gözetim altında tutun.";
+"checkin_report_subtitle3" = "Kendinizde semptomların varlığını gözlemlediğinizde hemen test yaptırın. Semptomlar olmadığında da bir korona testi mantıklıdır ve tavsiye edilmektedir.";
+
+/*Titel von CheckIn Meldungen Screen.*/
+"meldung_detail_checkin_title" = "Check-in";
+"not_thank_you_screen_title" = "Gönderilen veri yok";
+"not_thank_you_screen_text1" = "Gönderilen özel kod yok.";
+"not_thank_you_screen_back_button" = "Geri";
+"not_thank_you_screen_dont_send_button" = "Veri gönderme";
+"not_thank_you_screen_text2" = "Check-in kayıtları gönderilmedi.";
+
+/*Button text, um ausgewählte Checkins zu senden*/
+"inform_share_checkins_send_button_title" = "Seçimi paylaş";
+"inform_share_checkins_not_send_button" = "Hiçbir şey paylaşma";
+"onboarding_checkin_title" = "Kayıtlı veri bırakmadan check-in yap";
+"onboarding_checkin_heading" = "Check-in’ler";
+"onboarding_checkin_text1" = "SwissCovid-Check-in’leri ile uygulama ile bir yerde veya bir buluşmada check-in yapabilirsiniz.";
+"onboarding_checkin_text2" = "Orada bulunduğunuz sadece uygulama içinde kayıt edilir. Uygulama içinde kayıtlı kişisel veri bırakmanıza gerek yoktur.";
+"checkin_updateboarding_text" = "SwissCovid-Check-in’leri ile uygulama ile bir yerde veya bir buluşmada check-in yapabilirsiniz. Orada bulunduğunuz sadece uygulama içinde kayıt edilir. Uygulama içinde kayıtlı kişisel veri bırakmanıza gerek yoktur. Bunun için kullanım koşulları ve kişisel verilen korunması beyanı güncellenmiştir.";
+"onboarding_gaen_button_dont_activate" = "Atla";
+
+/*Hide from diary warning text*/
+"remove_diary_warning_hide_text" = "Kayıt 14 gün boyunca şifrelenmiş olarak uygulamanın arka planında saklanır. Olası bir bulaşma durumunda bu sayede yine de bilgilendirilebilirsiniz.";
+
+/*CheckIn ausblenden*/
+"remove_diary_warning_hide_button" = "Sadece gizle";
+"checkin_set_reminder_explanation" = "Uygulama size doğru zamanda check-out, yani çıkış yapmanızı hatırlatabilir.";
+
+/*Remove from diary warning title*/
+"remove_diary_remove_now_title" = "Veya kalıcı olarak sil?";
+
+/*Remove from diary warning text*/
+"remove_diary_remove_now_text" = "Kayıt kalıcı olarak silinir. Artık size uyarılar gönderilemez.";
+"not_thank_you_screen_text3" = "Kimseye haber verilmez.";
+
+/*Link Text zu Informationen übers Testen*/
+"checkin_report_link" = "Test yaptırmak hakkında bilmem gerekenler nelerdir?";
+"instant_app_install_action" = "Uygulamayı yükle ve check-in yap";
+"partial_onboarding_box_text" = "Takip fonksiyonunu yeniden kullanabilmek için uygulama yapılandırmasını tamamlayın.";
+"partial_onboarding_box_action" = "Şimdi tamamla";
+"partial_onboarding_done_title" = "Yapılandırma tamamlandı";
+"partial_onboarding_done_text" = "Korona virüsün yayılmasını önlemeye yardımcı olduğunuz için teşekkür ederiz.";
+"web_slogan" = "Bir bulaş riski durumunda hızlıca bilgi sahibi olun.";
+
+/*Info URL for testing*/
+/*Fuzzy*/
+"test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
+"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+
+/*turn camera light on*/
+"accessibility_camera_light_on" = "turn light on";
+
+/*turn camera light off*/
+"accessibility_camera_light_off" = "turn light off";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
+"events_card_title_events_not_empty" = "";

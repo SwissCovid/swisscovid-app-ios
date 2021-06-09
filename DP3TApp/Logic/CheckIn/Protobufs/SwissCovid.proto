@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+message SwissCovidLocationData {
+  uint32 version = 1;
+  VenueType type = 2;
+  string room = 3;
+  int64 checkoutWarningDelayMs = 4;
+  int64 automaticCheckoutDelaylMs = 5;
+  repeated int64 reminderDelayOptionsMs = 6;
+}
+
+enum VenueType {
+  USER_QR_CODE = 0;
+  CONTACT_TRACING_QR_CODE = 1;
+}
+
+message SwissCovidAssociatedData {
+  int32 version = 1;
+  EventCriticality criticality = 3;
+}
+
+enum EventCriticality {
+  LOW = 0;
+  HIGH = 1;
+}

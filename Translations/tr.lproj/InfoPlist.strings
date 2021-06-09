@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Temaslar arka planda Bluetooth yoluyla, asgari pil kullanımı ile tespit edilmektedir.";
 "NSBluetoothAlwaysUsageDescription" = "Temaslar arka planda Bluetooth yoluyla, asgari pil kullanımı ile tespit edilmektedir.";
+"NSCameraUsageDescription" = "Kare kodu taramak için kameraya ihtiyaç duyuluyor.";
+"NSFaceIDUsageDescription" = "Günlüğünüze güvenli bir şekilde erişebilmek için Face-ID’ye izin verin.";

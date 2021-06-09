@@ -9,14 +9,52 @@
  */
 
 @testable import DP3TApp
+import DP3TSDK
 import XCTest
 
 class MockReportingManager: ReportingManagerProtocol {
-    var callsToReport: Int = 0
+    var hasUserConsent: Bool = true
 
-    func report(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (ReportingProblem?) -> Void) {
-        callsToReport += 1
-        completion(.none)
+    private var fakeCode: String {
+        String(Int.random(in: 100_000_000_000 ... 999_999_999_999))
+    }
+
+    func getFakeOnsetDate(completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        getOnsetDate(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+    }
+
+    var callsToGetOnsetDate = 0
+    func getOnsetDate(covidCode _: String, isFakeRequest _: Bool, completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void) {
+        callsToGetOnsetDate += 1
+        completion(.success(.init(onset: Date())))
+    }
+
+    func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
+        getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+    }
+
+    var callsToGetJwtTokens = 0
+    func getJWTTokens(covidCode: String, isFakeRequest _: Bool, completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
+        callsToGetJwtTokens += 1
+        completion(.success(.init(code: covidCode, enToken: .init(onset: Date(), token: ""), checkInToken: .init(onset: Date(), token: ""))))
+    }
+
+    var callsToGetUserConsent = 0
+    func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void) {
+        callsToGetUserConsent += 1
+        callback(.success(()))
+    }
+
+    var callsToSendCheckIns = 0
+    func sendCheckIns(tokens _: CodeValidator.TokenWrapper, selectedCheckIns _: [CheckIn], isFakeRequest _: Bool, completion: @escaping (Result<Void, NetworkError>) -> Void) {
+        callsToSendCheckIns += 1
+        completion(.success(()))
+    }
+
+    var callsToSendEnKeys = 0
+    func sendENKeys(tokens _: CodeValidator.TokenWrapper, isFakeRequest _: Bool, completion: @escaping (Result<Void, DP3TTracingError>) -> Void) {
+        callsToSendEnKeys += 1
+        completion(.success(()))
     }
 }
 
@@ -67,7 +105,9 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.1)
 
-        XCTAssertEqual(reportingManager.callsToReport, 0)
+        XCTAssertEqual(reportingManager.callsToGetJwtTokens, 0)
+        XCTAssertEqual(reportingManager.callsToSendEnKeys, 0)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 0)
 
         XCTAssertEqual(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -84,9 +124,11 @@ class FakePublishManagerTests: XCTestCase {
         manager.runTask(reportingManager: reportingManager) {
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 1.5)
+        wait(for: [exp], timeout: 10.5)
 
-        XCTAssertEqual(reportingManager.callsToReport, 1)
+        XCTAssertEqual(reportingManager.callsToGetJwtTokens, 1)
+        XCTAssertEqual(reportingManager.callsToSendEnKeys, 1)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 1)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -105,7 +147,9 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1.5)
 
-        XCTAssertEqual(reportingManager.callsToReport, 0)
+        XCTAssertEqual(reportingManager.callsToGetJwtTokens, 0)
+        XCTAssertEqual(reportingManager.callsToSendEnKeys, 0)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 0)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }
@@ -126,7 +170,9 @@ class FakePublishManagerTests: XCTestCase {
         }
         wait(for: [exp], timeout: 1.5)
 
-        XCTAssertEqual(reportingManager.callsToReport, 48)
+        XCTAssertEqual(reportingManager.callsToGetJwtTokens, 48)
+        XCTAssertEqual(reportingManager.callsToSendEnKeys, 48)
+        XCTAssertEqual(reportingManager.callsToSendCheckIns, 48)
 
         XCTAssertGreaterThan(manager.nextScheduledFakeRequestDate, nextSchedule)
     }

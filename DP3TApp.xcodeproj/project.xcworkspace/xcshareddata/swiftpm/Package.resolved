@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Cryptor",
-        "repositoryURL": "https://github.com/Kitura/BlueCryptor.git",
+        "repositoryURL": "https://github.com/Kitura/BlueCryptor",
         "state": {
           "branch": null,
           "revision": "ee5880e031da4c609f372cf7472476ab51d5dd19",
@@ -29,12 +29,30 @@
         }
       },
       {
+        "package": "CrowdNotifierSDK",
+        "repositoryURL": "https://github.com/CrowdNotifier/crowdnotifier-sdk-ios",
+        "state": {
+          "branch": "feature/swisscovid-integration",
+          "revision": "c9594f786632fde737ad11af35a61c7f730d82aa",
+          "version": null
+        }
+      },
+      {
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
+          "branch": "develop",
+          "revision": "d1b0e8efa614edde58e9c0d0722c0377f4551fd2",
+          "version": null
+        }
+      },
+      {
+        "package": "HKDF",
+        "repositoryURL": "https://github.com/Bouke/HKDF.git",
+        "state": {
           "branch": null,
-          "revision": "1a311c37c35a429c8f1db4b90224d173f763afde",
-          "version": "2.3.0"
+          "revision": "9b9e521b49e5b529c33f4abe35a00e144af51e00",
+          "version": "3.1.0"
         }
       },
       {
@@ -89,6 +107,15 @@
           "branch": null,
           "revision": "5d66f7ba25daf4f94100e7022febf3c75e37a6c7",
           "version": "1.4.2"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "426bef0ddfdc6449b7bd1418baafad6bbc56110b",
+          "version": "1.13.0"
         }
       },
       {

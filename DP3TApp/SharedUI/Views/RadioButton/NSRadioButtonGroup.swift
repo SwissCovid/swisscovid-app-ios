@@ -33,7 +33,7 @@ class NSRadioButtonGroup<Data>: UIControl {
         selections[selectedIndex].data
     }
 
-    init(selections: [Selection], defaultSelectionIndex: Int = 0) {
+    init(selections: [Selection], leftPadding: CGFloat = NSPadding.large, defaultSelectionIndex: Int = 0) {
         assert(!selections.isEmpty)
         assert(defaultSelectionIndex <= selections.count)
 
@@ -49,7 +49,7 @@ class NSRadioButtonGroup<Data>: UIControl {
         }
 
         for (index, item) in selections.enumerated() {
-            let radioButtonItem = NSRadioButtonItem(text: item.title)
+            let radioButtonItem = NSRadioButtonItem(text: item.title, leftPadding: leftPadding)
             if index == defaultSelectionIndex {
                 radioButtonItem.setSelected(true, animated: false)
             }

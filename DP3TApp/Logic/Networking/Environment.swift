@@ -13,7 +13,6 @@ import Foundation
 /// The backend environment under which the application runs.
 enum Environment {
     case dev
-    case test
     case abnahme
     case prod
 
@@ -23,8 +22,6 @@ enum Environment {
             return .dev
         #elseif RELEASE_DEV
             return .dev
-        #elseif RELEASE_TEST
-            return .test
         #elseif RELEASE_ABNAHME
             return .abnahme
         #elseif RELEASE_PROD
@@ -37,39 +34,63 @@ enum Environment {
     var codegenService: Backend {
         switch self {
         case .dev:
-            return Backend("https://codegen-service-d.bag.admin.ch", version: "v1")
-        case .test:
-            return Backend("https://codegen-service-t.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service-d.bag.admin.ch", version: "v2")
         case .abnahme:
-            return Backend("https://codegen-service-a.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service-a.bag.admin.ch", version: "v2")
         case .prod:
-            return Backend("https://codegen-service.bag.admin.ch", version: "v1")
+            return Backend("https://codegen-service.bag.admin.ch", version: "v2")
         }
     }
 
     var configService: Backend {
-        switch self {
-        case .dev:
-            return Backend("https://www.pt-d.bfs.admin.ch", version: "v1")
-        case .test:
-            return Backend("https://www.pt-t.bfs.admin.ch", version: "v1")
-        case .abnahme:
-            return Backend("https://www.pt-a.bfs.admin.ch", version: "v1")
-        case .prod:
-            return Backend("https://www.pt.bfs.admin.ch", version: "v1")
-        }
+        return Backend(ptBaseUrl, version: "v1")
     }
 
     var publishService: Backend {
+        return Backend(pt1BaseUrl, version: "v2")
+    }
+
+    var traceKeysService: Backend {
+        return Backend(ptBaseUrl, version: "v3")
+    }
+
+    var userUploadService: Backend {
+        return Backend(pt1BaseUrl, version: "v3")
+    }
+
+    private var ptBaseUrl: String {
         switch self {
         case .dev:
-            return Backend("https://www.pt1-d.bfs.admin.ch", version: "v1")
-        case .test:
-            return Backend("https://www.pt1-t.bfs.admin.ch", version: "v1")
+            return "https://www.pt-d.bfs.admin.ch"
         case .abnahme:
-            return Backend("https://www.pt1-a.bfs.admin.ch", version: "v1")
+            return "https://www.pt-a.bfs.admin.ch"
         case .prod:
-            return Backend("https://www.pt1.bfs.admin.ch", version: "v1")
+            return "https://www.pt.bfs.admin.ch"
         }
     }
+
+    private var pt1BaseUrl: String {
+        switch self {
+        case .dev:
+            return "https://www.pt1-d.bfs.admin.ch"
+        case .abnahme:
+            return "https://www.pt1-a.bfs.admin.ch"
+        case .prod:
+            return "https://www.pt1.bfs.admin.ch"
+        }
+    }
+
+    // TODO: Add correct base URLs for public QR Codes
+    var qrCodeBaseUrl: String {
+        switch self {
+        case .dev:
+            return "https://qr-d.swisscovid.ch"
+        case .abnahme:
+            return "https://qr-a.swisscovid.ch"
+        case .prod:
+            return "https://qr.swisscovid.ch"
+        }
+    }
+
+    static let shareURLKey: String = "ch.admin.bag.swisscovid.appclip.url.key"
 }

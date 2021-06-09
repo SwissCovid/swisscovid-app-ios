@@ -46,6 +46,18 @@ class NSViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - Present
+
+    func presentInNavigationController(from rootViewController: UIViewController, useLine: Bool) {
+        let navCon = NSNavigationController(rootViewController: self, useLine: useLine)
+
+        if UIDevice.current.isSmallScreenPhone {
+            navCon.modalPresentationStyle = .fullScreen
+        }
+
+        rootViewController.present(navCon, animated: true, completion: nil)
+    }
+
     // MARK: - View
 
     override func viewDidLoad() {
@@ -57,7 +69,7 @@ class NSViewController: UIViewController {
         super.viewWillAppear(animated)
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
-        if navigationController?.viewControllers.count == 1 {
+        if let nvc = navigationController, nvc.viewControllers.count == 1, !nvc.isBeingPresented {
             navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIImageView(image: swissFlagImage))
         }
     }
@@ -70,5 +82,17 @@ class NSViewController: UIViewController {
                 .foregroundColor: UIColor.ns_text,
             ]
         }
+    }
+
+    public func addSubviewController(_ vc: UIViewController, constraints: ((_ make: ConstraintMaker) -> Void) = { $0.edges.equalToSuperview() }) {
+        addChild(vc)
+        view.addSubview(vc.view)
+        vc.view.snp.makeConstraints(constraints)
+        vc.didMove(toParent: self)
+    }
+
+    public func removeSubviewController(_ vc: UIViewController) {
+        vc.removeFromParent()
+        vc.view.removeFromSuperview()
     }
 }

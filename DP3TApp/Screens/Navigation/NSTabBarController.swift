@@ -12,17 +12,19 @@ import UIKit
 
 class NSTabBarController: UITabBarController {
     let homescreen = NSHomescreenViewController()
-
+    let info = NSInfoViewController()
     let statistics = NSStatisticsViewController()
 
     enum Tab: Int, CaseIterable {
-        case homescreen, statics
+        case homescreen, info, statics
     }
 
     func viewControler(for tab: Tab) -> NSViewController {
         switch tab {
         case .homescreen:
             return homescreen
+        case .info:
+            return info
         case .statics:
             return statistics
         }

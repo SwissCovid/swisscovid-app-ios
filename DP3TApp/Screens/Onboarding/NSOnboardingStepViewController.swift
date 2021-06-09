@@ -48,6 +48,9 @@ class NSOnboardingStepViewController: NSOnboardingContentViewController {
             make.left.right.equalToSuperview().inset(NSPadding.medium)
             make.top.bottom.equalToSuperview()
         }
+
+        titleLabel.text = model.title
+
         addArrangedView(titleContainer, spacing: NSPadding.large + NSPadding.small)
 
         for (icon, text) in model.textGroups {

@@ -112,7 +112,7 @@ class NSTracingReminderViewController: NSPopupViewController {
         }
         confirmButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }
-            TracingLocalPush.shared.scheduleReminderNotification(reminder: self.radioButtons.selectedData)
+            NSLocalPush.shared.scheduleReminderNotification(reminder: self.radioButtons.selectedData)
             self.dismissCallback?(true)
             self.dismiss()
         }

@@ -12,17 +12,18 @@
 import Foundation
 
 class NSUpdateBoardingViewController: NSOnboardingBaseViewController {
-    private let germanyUpdateViewController = NSUpdateBoardingGermanyViewController()
+    private let checkInUpdateBoardingViewController = NSUpdateBoardingCheckInViewController()
 
     override internal var stepViewControllers: [NSOnboardingContentViewController] {
-        [germanyUpdateViewController]
+        [checkInUpdateBoardingViewController]
     }
 
     override internal var finalStepIndex: Int {
-        return stepViewControllers.firstIndex(of: germanyUpdateViewController)!
+        return stepViewControllers.firstIndex(of: checkInUpdateBoardingViewController)!
     }
 
     override internal func completedOnboarding() {
-        UserStorage.shared.hasCompletedUpdateBoardingGermany = true
+        UserStorage.shared.hasCompletedUpdateBoardingCheckIn = true
+        UserStorage.shared.tracingSettingEnabled = TracingManager.shared.isActivated
     }
 }

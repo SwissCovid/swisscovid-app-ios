@@ -15,8 +15,8 @@ class NSReportsDetailNoReportsTitleView: NSTitleView {
 
     private let stackView = UIStackView()
 
-    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle"))
-    private let titleLabel = NSLabel(.title, textColor: .ns_green, textAlignment: .center)
+    private let imageView = UIImageView(image: UIImage(named: "ic-check-circle-blue"))
+    private let titleLabel = NSLabel(.title, textColor: .ns_blue, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textColor: .ns_defaultTextColor, textAlignment: .center)
 
     // MARK: - Init
@@ -27,7 +27,7 @@ class NSReportsDetailNoReportsTitleView: NSTitleView {
         titleLabel.text = "meldungen_no_meldungen_title".ub_localized
         textLabel.text = "meldungen_no_meldungen_subtitle".ub_localized
 
-        backgroundColor = UIColor.ns_greenBackground
+        backgroundColor = UIColor.ns_blueBackground
         setup()
         isAccessibilityElement = true
         accessibilityLabel = "\(titleLabel.text ?? ""). \(textLabel.text ?? "")"
