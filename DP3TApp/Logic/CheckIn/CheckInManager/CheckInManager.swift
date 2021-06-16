@@ -92,9 +92,45 @@ class CheckInManager {
     public func autoCheckoutIfNecessary() {
         logger.trace()
 
-        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval) <= Date() {
-            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval)
-            checkOut()
+        if let checkIn = currentCheckIn,
+           checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval) <= Date() {
+            let checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval)
+            currentCheckIn?.checkOutTime = checkOutTime
+            if !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime, endDate: checkOutTime, excludeCheckIn: checkIn) {
+                checkOut()
+            } else {
+                // If there are overlaps due to the automatic checkout we split the checkout up into chunks that dont overlap
+                var diary = CheckInManager.shared.getDiary()
+                diary = diary.filter { $0 != checkIn }
+                let selectedInterval = DateInterval(start: checkIn.checkInTime, end: checkOutTime)
+
+                let existingIntervals = diary.compactMap { checkin -> DateInterval? in
+                    guard let checkOutTime = checkin.checkOutTime else { return nil }
+                    return DateInterval(start: checkin.checkInTime, end: checkOutTime)
+                }
+
+                let intervals = existingIntervals.getIntervalsWithoutOverlapping(dateInterval: selectedInterval)
+
+                currentCheckIn = nil
+                ReminderManager.shared.removeAllReminders()
+
+                for interval in intervals {
+                    let (arrivalTime, departureTime) = Self.normalizeDates(start: interval.start, end: interval.end)
+
+                    let result = CrowdNotifier.addCheckin(venueInfo: checkIn.venue, arrivalTime: arrivalTime, departureTime: departureTime)
+
+                    switch result {
+                    case let .success(id):
+                        hasCheckedOutOnce = true
+                        NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                        var intervalCheckIn = CheckIn(identifier: id, qrCode: checkIn.qrCode, checkInTime: arrivalTime, venue: checkIn.venue)
+                        intervalCheckIn.checkOutTime = departureTime
+                        saveAdditionalInfo(checkIn: intervalCheckIn)
+                    case .failure:
+                        break
+                    }
+                }
+            }
         }
     }
 
