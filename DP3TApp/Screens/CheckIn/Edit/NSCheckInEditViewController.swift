@@ -13,7 +13,7 @@ import CrowdNotifierSDK
 import Foundation
 
 class NSCheckInEditViewController: NSViewController {
-    private let venueView = NSVenueView(large: true, showCategory: true)
+    private let venueView = NSVenueView(large: true)
     private let startDateLabel = NSLabel(.textBold, textAlignment: .center)
 
     private let fromTimePickerControl = NSFormField(inputControl: NSTimePickerControl(text: "datepicker_from".ub_localized, isStart: true))
