@@ -36,6 +36,9 @@ class UserStorage {
     @UBUserDefault(key: "hasCompletedUpdateBoardingCheckIn", defaultValue: false)
     var hasCompletedUpdateBoardingCheckIn: Bool
 
+    @UBUserDefault(key: "hasShownCheckInUpdateNotification", defaultValue: false)
+    var hasShownCheckInUpdateNotification: Bool
+
     func registerSeenMessages(identifier: UUID) {
         seenMessages.append("\(identifier.uuidString)")
     }

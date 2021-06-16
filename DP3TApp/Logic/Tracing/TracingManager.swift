@@ -330,6 +330,26 @@ extension TracingManager: DP3TBackgroundHandler {
 
         queue.addOperation(configOperation)
 
+        group.enter()
+        queue.addOperation {
+            // check if notificaton is enabled in cofig request
+            // && if user has not completed the checkinOnboarding
+            // && the notification has not been shown
+            if ConfigManager.currentConfig?.checkInUpdateNotificationEnabled ?? false,
+               !UserStorage.shared.hasCompletedUpdateBoardingCheckIn,
+               !UserStorage.shared.hasShownCheckInUpdateNotification {
+                // only show the notification between 8:00 and 20:00
+                let hour = Calendar.current.dateComponents([.hour], from: Date())
+                if let hour = hour.hour,
+                   (8 ... 20).contains(hour) {
+                    NSLocalPush.shared.schedulecheckInUpdateNotification()
+                    UserStorage.shared.hasShownCheckInUpdateNotification = true
+                }
+            }
+
+            group.leave()
+        }
+
         group.notify(queue: .global(qos: .background)) {
             completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)
         }
