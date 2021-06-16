@@ -99,7 +99,7 @@ class CheckInManager {
             if !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime, endDate: checkOutTime, excludeCheckIn: checkIn) {
                 checkOut()
             } else {
-                //TODO: split current checkin is order that no overlaps are happening
+                // TODO: split current checkin is order that no overlaps are happening
             }
         }
     }

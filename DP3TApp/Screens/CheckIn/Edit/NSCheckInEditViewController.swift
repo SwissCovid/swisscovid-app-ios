@@ -164,6 +164,14 @@ class NSCheckInEditViewController: NSViewController {
         return false
     }
 
+    private func showEndDateBeforeStartDateAlert() {
+        let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_inverse_time_alert_description".ub_localized, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+
+        present(alert, animated: true, completion: nil)
+    }
+
     private func showOverlappingDatesAlert() {
         let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
@@ -207,11 +215,9 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     @objc private func saveButtonTouched() {
-        // Swap dates if startDate is after endDate
-        if startDate > endDate {
-            let temp = endDate
-            endDate = startDate
-            startDate = temp
+        guard startDate < endDate else {
+            showEndDateBeforeStartDateAlert()
+            return
         }
 
         guard !selectedDatesAreOverlapping() else {
