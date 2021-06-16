@@ -219,7 +219,9 @@ class ReportingManager: ReportingManagerProtocol {
                 oldestDate = checkIn.checkInTime
             }
 
-            let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue, arrivalTime: checkIn.checkInTime, departureTime: checkOutTime)
+            let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue,
+                                                             arrivalTime: checkIn.checkInTime,
+                                                             departureTime: checkOutTime.addingTimeInterval(.minute * 30))
 
             uploadInfos.append(contentsOf: infos.map {
                 var info = UploadVenueInfo()
