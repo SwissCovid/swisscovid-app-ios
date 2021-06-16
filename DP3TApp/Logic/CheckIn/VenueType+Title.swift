@@ -12,12 +12,12 @@
 import UIKit
 
 extension VenueType {
-    var title: String {
+    var title: String? {
         switch self {
         case .UNRECOGNIZED:
-            return "web_generator_category_other".ub_localized
+            return nil
         case .userQrCode:
-            return "venue_type_user_qr_code".ub_localized
+            return nil
         case .contactTracingQrCode:
             return "venue_type_contact_tracing_qr_code".ub_localized
         }

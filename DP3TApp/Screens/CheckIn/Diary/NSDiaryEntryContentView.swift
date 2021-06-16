@@ -107,6 +107,11 @@ class NSDiaryEntryContentView: UIView {
         texts.append(checkIn?.venue.venueType?.title)
         texts.append(checkIn?.venue.subtitle)
 
+        if checkIn?.venue.venueType?.title == nil {
+            // make sure the cell has alway at least the same number of lines
+            texts.append("")
+        }
+
         let timeText = DateFormatter.ub_fromTimeToTime(from: checkIn?.checkInTime, to: checkIn?.checkOutTime)
         texts.append(timeText)
 
