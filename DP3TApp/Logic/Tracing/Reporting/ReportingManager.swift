@@ -206,7 +206,11 @@ class ReportingManager: ReportingManagerProtocol {
 
         var oldestDate: Date?
 
-        for checkIn in selectedCheckIns {
+        let sortedCheckIns = selectedCheckIns.sorted { lhs, rhs in
+            lhs.checkInTime < rhs.checkInTime
+        }
+
+        for checkIn in sortedCheckIns {
             guard let checkOutTime = checkIn.checkOutTime else {
                 continue
             }
