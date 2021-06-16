@@ -199,7 +199,9 @@ class NSCheckInEditViewController: NSViewController {
 
     fileprivate func setupCheckout() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(cancelButtonTouched))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(saveButtonTouched))
+        if !isCurrentCheckIn {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(saveButtonTouched))
+        }
 
         let attributes = [
             NSAttributedString.Key.font: NSLabelType.textBold.font,
