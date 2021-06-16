@@ -23,7 +23,17 @@ class NSCreatedEventsViewController: NSViewController {
 
     override init() {
         super.init()
-        title = "events_title".ub_localized
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTitle), name: .createdEventAdded, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTitle), name: .createdEventDeleted, object: nil)
+        updateTitle()
+    }
+
+    @objc private func updateTitle() {
+        if CreatedEventsManager.shared.createdEvents.isEmpty {
+            title = "events_title".ub_localized
+        } else {
+            title = "events_card_title_events_not_empty".ub_localized
+        }
     }
 
     override func viewDidLoad() {
