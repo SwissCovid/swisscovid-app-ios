@@ -169,22 +169,27 @@ class TracingManager: NSObject {
 
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
+        UIStateManager.shared.blockUpdate {
+            // reset end isolation question date and onset date
+            ReportingManager.shared.endIsolationQuestionDate = nil
+            ReportingManager.shared.oldestSharedKeyDate = nil
 
-        // reset end isolation question date and onset date
-        ReportingManager.shared.endIsolationQuestionDate = nil
-        ReportingManager.shared.oldestSharedKeyDate = nil
+            // reset infection status
+            DP3TTracing.resetInfectionStatus()
 
-        // reset infection status
-        DP3TTracing.resetInfectionStatus()
+            // reset debug fake data to test UI reset
+            #if ENABLE_STATUS_OVERRIDE
+                UIStateManager.shared.overwrittenInfectionState = nil
+            #endif
 
-        // reset debug fake data to test UI reset
-        #if ENABLE_STATUS_OVERRIDE
-            UIStateManager.shared.overwrittenInfectionState = nil
-        #endif
+            UserStorage.shared.didMarkAsInfected = false
 
-        UserStorage.shared.didMarkAsInfected = false
-
-        UIStateManager.shared.refresh()
+            // enable tracing if it was enabled before isolation
+            if UserStorage.shared.tracingWasEnabledBeforeIsolation {
+                UserStorage.shared.tracingWasEnabledBeforeIsolation = false
+                startTracing()
+            }
+        }
     }
 
     func deleteReports() {

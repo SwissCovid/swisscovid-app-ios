@@ -68,6 +68,9 @@ class UserStorage {
         }
     }
 
+    @UBUserDefault(key: "tracingWasEnabledBeforeIsolation", defaultValue: false)
+    var tracingWasEnabledBeforeIsolation: Bool
+
     @UBOptionalUserDefault(key: "lastTracingDisabledDate")
     var lastTracingDisabledDate: Date?
 
