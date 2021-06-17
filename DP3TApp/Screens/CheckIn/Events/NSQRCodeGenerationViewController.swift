@@ -23,6 +23,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
     var codeCreatedCallback: ((CreatedEvent) -> Void)?
 
+    private let keyboardObserver = UBKeyboardObserver()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,7 +75,17 @@ class NSQRCodeGenerationViewController: NSViewController {
             make.centerX.equalToSuperview()
         }
 
+        keyboardObserver.callback = { [weak self] height in
+            guard let self = self else { return }
+            self.createButton.snp.remakeConstraints { make in
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.large + height)
+                make.centerX.equalToSuperview()
+            }
+        }
+
         createButton.isEnabled = false
+
+        titleTextField.inputControl.becomeFirstResponder()
     }
 
     @objc private func dismissSelf() {

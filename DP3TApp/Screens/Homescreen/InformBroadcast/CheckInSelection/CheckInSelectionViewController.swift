@@ -74,7 +74,6 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         checkInSelections = checkIns.compactMap { [weak self] checkIn in
             guard let self = self else { return nil }
             var texts: [String?] = []
-            texts.append(checkIn.venue.venueType?.title)
             texts.append(checkIn.venue.subtitle)
             texts.append(DateFormatter.ub_daysAgo(from: checkIn.checkInTime, addExplicitDate: true))
 
@@ -85,7 +84,6 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
 
             var accessibilityTexts: [String?] = []
             accessibilityTexts.append(checkIn.venue.description)
-            accessibilityTexts.append(checkIn.venue.venueType?.title)
             accessibilityTexts.append(checkIn.venue.subtitle)
             accessibilityTexts.append(DateFormatter.ub_accessibilityDate(from: checkIn.checkInTime))
 

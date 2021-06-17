@@ -104,7 +104,6 @@ class NSDiaryEntryContentView: UIView {
         titleLabel.text = checkIn?.venue.description
 
         var texts: [String?] = []
-        texts.append(checkIn?.venue.venueType?.title)
         texts.append(checkIn?.venue.subtitle)
 
         let timeText = DateFormatter.ub_fromTimeToTime(from: checkIn?.checkInTime, to: checkIn?.checkOutTime)
@@ -125,7 +124,6 @@ class NSDiaryEntryContentView: UIView {
             guard let checkIn = checkIn else { return nil }
             var texts: [String?] = []
             texts.append(checkIn.venue.description)
-            texts.append(checkIn.venue.venueType?.title)
             texts.append(checkIn.venue.subtitle)
             if let checkOutTime = checkIn.checkOutTime {
                 texts.append(DateFormatter.ub_accessibilityFromTimeToTime(from: checkIn.checkInTime, to: checkOutTime))
