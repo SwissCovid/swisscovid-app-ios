@@ -542,6 +542,7 @@
 		F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
+		F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
 		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */; };
@@ -675,6 +676,8 @@
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
+		F8D77D12267A9C4A00460C27 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
+		F8D77D14267AA32D00460C27 /* DateIntervalIntersectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */; };
 		F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8F822E02668B16100E1E29B /* CrowdNotifierSDK */; };
 /* End PBXBuildFile section */
 
@@ -1088,6 +1091,8 @@
 		F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
 		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
 		F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSViewController.swift; sourceTree = "<group>"; };
+		F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateInterval+intervals.swift"; sourceTree = "<group>"; };
+		F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalIntersectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1616,6 +1621,7 @@
 			children = (
 				6EB1D5552636F65300981571 /* CheckIn.swift */,
 				6EB1D5572636F65300981571 /* CheckInManager.swift */,
+				F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */,
 			);
 			path = CheckInManager;
 			sourceTree = "<group>";
@@ -1747,6 +1753,7 @@
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 				DC003DDE2642C4070027F379 /* ReminderManagerTests.swift */,
+				F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */,
 			);
 			path = DP3TAppTests;
 			sourceTree = "<group>";
@@ -2807,6 +2814,7 @@
 				242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */,
 				F84BC8AD2664FBBF00678456 /* NSPushHandler.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */,
 				DC1617962638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
 				F80E407825092AE100876906 /* NSChartColumnView.swift in Sources */,
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
@@ -2908,6 +2916,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D77D12267A9C4A00460C27 /* DateInterval+intervals.swift in Sources */,
 				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				F87C3712258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
@@ -3180,6 +3189,7 @@
 				F806D34124F91DB900672DFC /* MockIdentifierProvider.swift in Sources */,
 				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
+				F8D77D14267AA32D00460C27 /* DateIntervalIntersectionTests.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 				F807812C25022091008986EE /* ConfigManagerTests.swift in Sources */,
 			);
