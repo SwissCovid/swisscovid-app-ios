@@ -54,8 +54,10 @@ class NSLinkHandler {
                 // make sure to select homescreen
                 appDelegate.tabBarController.currentTab = .homescreen
 
-                // do not present confirm when already checked in
+                // present checkout controller when already checked in
                 if CheckInManager.shared.currentCheckIn != nil {
+                    let vc = NSCheckInEditViewController()
+                    vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
                     return true
                 }
 
