@@ -100,8 +100,8 @@ class CheckInManager {
                 checkOut()
             } else {
                 // If there are overlaps due to the automatic checkout we split the checkout up into chunks that dont overlap
-                var diary = CheckInManager.shared.getDiary()
-                diary = diary.filter { $0 != checkIn }
+                var diaryCopy = getDiary()
+                diaryCopy = diaryCopy.filter { $0 != checkIn }
                 let selectedInterval = DateInterval(start: checkIn.checkInTime, end: checkOutTime)
 
                 let existingIntervals = diary.compactMap { checkin -> DateInterval? in

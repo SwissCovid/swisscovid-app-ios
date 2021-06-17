@@ -542,6 +542,7 @@
 		F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
+		F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
 		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */; };
@@ -2813,6 +2814,7 @@
 				242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */,
 				F84BC8AD2664FBBF00678456 /* NSPushHandler.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */,
 				DC1617962638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
 				F80E407825092AE100876906 /* NSChartColumnView.swift in Sources */,
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
