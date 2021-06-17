@@ -56,7 +56,7 @@ class NSCreatedEventsViewController: NSViewController {
                 if let eventView = eventView {
                     self.stackScrollView.scrollView.scrollRectToVisible(eventView.bounds, animated: false)
                 }
-                self.navigationController?.pushViewController(NSCreatedEventDetailViewController(createdEvent: event), animated: true)
+                self.present(NSCreatedEventDetailViewController(createdEvent: event), animated: true, completion: nil)
             }
             vc.presentInNavigationController(from: strongSelf, useLine: false)
         }
@@ -126,8 +126,7 @@ class NSCreatedEventsViewController: NSViewController {
 
             card.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
-
-                strongSelf.navigationController?.pushViewController(NSCreatedEventDetailViewController(createdEvent: event), animated: true)
+                strongSelf.present(NSCreatedEventDetailViewController(createdEvent: event), animated: true, completion: nil)
             }
             stackScrollView.addArrangedView(card)
         }
