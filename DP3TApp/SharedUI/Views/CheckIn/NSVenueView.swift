@@ -44,6 +44,8 @@ class NSVenueView: UIView {
         super.init(frame: .zero)
         setup()
         update()
+
+        titleLabel.accessibilityTraits = .header
     }
 
     required init?(coder _: NSCoder) {

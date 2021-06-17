@@ -49,6 +49,7 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
+        label.accessibilityTraits = .header
     }
 
     required init?(coder _: NSCoder) {
