@@ -35,7 +35,8 @@ class QRCodePDFGenerator {
             label.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
             ctx.cgContext.translateBy(x: x, y: y)
 
-            label.layer.render(in: ctx.cgContext)
+            let attrs = [NSAttributedString.Key.font: label.font!]
+            venue.draw(with: CGRect(x: 0, y: 0, width: size.width, height: size.height), options: .usesLineFragmentOrigin, attributes: attrs, context: nil)
 
             ctx.cgContext.translateBy(x: -x, y: -y)
 
