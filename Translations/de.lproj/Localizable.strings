@@ -899,7 +899,7 @@
 "travel_screen_explanation_title_1" = "Was bedeutet das?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Wenn Sie in einem der kompatiblen Länder unterwegs sind, müssen Sie keine andere Corona-App installieren.\n\nSwissCovid überprüft die in den kompatiblen Ländern veröffentlichten privaten Schlüssel. So können Sie auch bei einer möglichen Ansteckung im Ausland gewarnt werden.";
+"travel_screen_explanation_text_1" = "Wenn Sie in einem der kompatiblen Länder unterwegs sind, müssen Sie für Begegnungen keine andere Corona-App installieren.\n\nSwissCovid überprüft die in den kompatiblen Ländern veröffentlichten privaten Schlüssel. So können Sie auch bei einer möglichen Ansteckung im Ausland gewarnt werden.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Was geschieht bei Eingabe des Covidcodes?";
@@ -934,10 +934,10 @@
 "share_app_button" = "App teilen";
 
 /*Fuzzy*/
-"share_app_body" = "Wenn möglichst viele die SwissCovid App nutzen, können wir Infektionsketten frühzeitig unterbrechen.";
+"share_app_body" = "Wenn möglichst viele Ihrer Kontakte die SwissCovid App nutzen, können Sie bei einem Ansteckungsrisiko schnell informiert werden.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Wenn möglichst viele die SwissCovid App nutzen, können wir Infektionsketten frühzeitig unterbrechen.";
+"share_app_message" = "Mit der SwissCovid App können alle dazu beitragen, die Verbreitung des Coronavirus einzudämmen.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
@@ -1336,7 +1336,7 @@
 
 /*Text in der Infobox auf dem Reisen-Screen*/
 /*Fuzzy*/
-"travel_screen_info" = "Unterwegs im Ausland? In diesen Ländern funktioniert SwissCovid.";
+"travel_screen_info" = "Unterwegs im Ausland? In diesen Ländern funktioniert SwissCovid-Begegnungen.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
 "travel_screen_compatible_countries" = "Kompatible Länder:";
@@ -1369,7 +1369,7 @@
 "inform_send_thankyou_text_onsetdate_info" = "Die privaten Schlüssel Ihrer App wurden für den folgenden Zeitraum gesendet:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Beim Eingeben eines Covidcodes muss das Tracing aktiviert sein, damit Ihre privaten Schlüssel geteilt werden können.";
+"android_inform_tracing_enabled_explanation" = "Bitte Tracing aktivieren, um automatisch erkannte Begegnungen zu teilen und andere zu warnen.";
 
 /*Leitfaden Info Popup Text*/
 /*Fuzzy*/
@@ -1481,7 +1481,7 @@
 "checkins_create_qr_code" = "QR-Code erstellen";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "Check-ins anbieten";
+"events_title" = "QR-Codes erstellen";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Jetzt einchecken";
@@ -1585,7 +1585,7 @@
 "inform_share_checkins_subtitle" = "Wenn Sie Ihre Check-in-Einträge teilen, kann die App Personen benachrichtigen, die zum gleichen Zeitpunkt am gleichen Ort eingecheckt haben.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "Alle auswählen";
+"inform_share_checkins_select_all" = "Alle passenden auswählen";
 "inform_dont_send_button_title" = "Nicht senden";
 "inform_dont_share_button_title" = "Nicht teilen";
 "inform_really_not_share_title" = "Wirklich nicht teilen?";
@@ -1720,7 +1720,7 @@
 "checkin_report_title3" = "Testen lassen";
 "checkin_report_subtitle1" = "Sie könnten bereits ansteckend sein, ohne es zu merken. Beachten Sie die geltenden Hygiene- und Schutzmassnahmen und schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld.";
 "checkin_report_subtitle2" = "Überwachen Sie Ihren Gesundheitszustand.";
-"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von Symptomen sofort testen. Auch wenn keine Symptome auftreten, ist ein Corona-Test sinnvoll und empfohlen.";
+"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von Symptomen sofort testen. Auch wenn keine Symptome auftreten, ist ein Corona-Test sinnvoll und empfohlen. Wenn Sie vollständig geimpft sind ist ein Corona-Test nur wenn Symptome auftreten empfohlen.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 /*Fuzzy*/
@@ -1784,3 +1784,36 @@
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
 "events_card_title_events_not_empty" = "Meine QR-Codes";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
+"checkout_inverse_time_alert_description" = "Ihre gewählte Checkout-Zeit liegt vor der Check-In-Zeit. Bitte überprüfen Sie nochmals Ihre Angabe.";
+
+/*Titel für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_title" = "Neue Funktion: Check-in";
+
+/*Text für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_text" = "Danke für die Nutzung von SwissCovid. Mit der neusten App-Version können Sie sich vor Ort einchecken, ohne Daten zu hinterlassen.";
+
+/*Titel für aktuellen Check-in im Tagebuch*/
+"diary_current_title" = "Aktuell";
+
+/*Snooze Option um 30min später an Checkout zu erinnern*/
+"ios_snooze_option_30min" = "Nochmals erinnern (30min)";
+
+/*Snooze Option um 1h später an Checkout zu erinnern*/
+"ios_snooze_option_1h" = "Nochmals erinnern (1h)";
+
+/*Snooze Option um 2h später an Checkout zu erinnern*/
+"ios_snooze_option_2h" = "Nochmals erinnern (2h)";
+
+/*Notification Quickaction um jetzt auszuchecken*/
+"ios_notification_checkout_now" = "Jetzt auschecken";
+
+/*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
+"covid_certificate_alert_text" = "Bitte benutzen Sie zum Scannen dieses QR-Codes die App \"COVID Certificate\".";
+
+/*Button um Covid Certificate App zu öffnen*/
+"covid_certificate_open_app" = "App öffnen";
+
+/*Button um Covid Certificate App zu installieren*/
+"covid_certificate_install_app" = "App installieren";
