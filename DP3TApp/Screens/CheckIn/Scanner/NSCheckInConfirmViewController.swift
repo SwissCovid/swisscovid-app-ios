@@ -34,7 +34,10 @@ class NSCheckInConfirmViewController: NSViewController {
     init(qrCode: String, venueInfo: VenueInfo) {
         self.qrCode = qrCode
         self.venueInfo = venueInfo
-        reminderControl = NSReminderControl(options: venueInfo.reminderOptions ?? ReminderOption.fallbackOptions)
+        var options = venueInfo.reminderOptions ?? ReminderOption.fallbackOptions
+        options = Array(options.prefix(4))
+        options.append(.custom(milliseconds: -1))
+        reminderControl = NSReminderControl(options: options)
 
         super.init()
 
@@ -44,7 +47,10 @@ class NSCheckInConfirmViewController: NSViewController {
     init(createdEvent: CreatedEvent) {
         qrCode = createdEvent.qrCodeString
         venueInfo = createdEvent.venueInfo
-        reminderControl = NSReminderControl(options: venueInfo.reminderOptions ?? ReminderOption.fallbackOptions)
+        var options = venueInfo.reminderOptions ?? ReminderOption.fallbackOptions
+        options = Array(options.prefix(4))
+        options.append(.custom(milliseconds: -1))
+        reminderControl = NSReminderControl(options: options)
 
         super.init()
 
@@ -59,6 +65,13 @@ class NSCheckInConfirmViewController: NSViewController {
         setupCheckIn()
 
         reminderControl.changeCallback = { self.reminderOption = $0 }
+
+        reminderControl.customSelectionCallback = { [weak self] current, callback in
+            guard let self = self else { return }
+            NSDatePickerBottomSheetViewController(mode: .interval(selected: current, callback: { newInterval in
+                callback(newInterval)
+            })).present(from: self)
+        }
     }
 
     // MARK: - Reminder Control
