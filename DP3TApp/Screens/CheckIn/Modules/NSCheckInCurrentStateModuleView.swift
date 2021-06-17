@@ -13,7 +13,7 @@ import Foundation
 
 class NSCheckInCurrentStateModuleView: NSModuleBaseView {
     private let checkedOutView = NSCheckInDetailCheckedOutView()
-    private let checkedInView = NSCheckInDetailCheckedInView()
+    private let checkedInView = NSCheckInContentView(style: .detail)
     private let checkInEndedView = NSCheckInDetailCheckInEndedView()
 
     var scanQrCodeCallback: (() -> Void)?
