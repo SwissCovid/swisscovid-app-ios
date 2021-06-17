@@ -144,7 +144,7 @@ private class InteractiveModalPresentationController: UIPresentationController {
         guard let container = containerView else { return nil }
 
         let view = UIView(frame: container.bounds)
-        view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        view.backgroundColor = UIColor.ns_disclaimerIconColor.withAlphaComponent(0.6)
         return view
     }()
 

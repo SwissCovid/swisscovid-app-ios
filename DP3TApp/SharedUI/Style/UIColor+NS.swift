@@ -84,6 +84,9 @@ public extension UIColor {
     static var ns_gray = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .black),
                                                    darkColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .white))
 
+    static var ns_lightGray = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#F0F0F0")!,
+                                                        darkColor: UIColor(ub_hexString: "#1E1E23")!)
+
     // MARK: - Splashscreen
 
     static var ns_backgroundOnboardingSplashscreen = UIColor(ub_hexString: "#07a0e2")!
