@@ -36,6 +36,8 @@ class NSCreatedEventCard: UBButton {
         eventTitleLabel.text = createdEvent.venueInfo.description
 
         highlightedBackgroundColor = .ns_background_highlighted
+
+        accessibilityLabel = eventTitleLabel.text
     }
 
     required init?(coder _: NSCoder) {
