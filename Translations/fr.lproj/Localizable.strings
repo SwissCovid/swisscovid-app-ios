@@ -914,7 +914,7 @@
 "share_app_body" = "Si un maximum de personnes activent l'application SwissCovid, nous pouvons interrompre rapidement les chaînes d'infection.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Si un maximum de personnes activent l'application SwissCovid, nous pouvons interrompre rapidement les chaînes d'infection.";
+"share_app_message" = "Grâce à l'application SwissCovid, tout le monde peut contribuer à endiguer la propagation du virus.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://ofsp-coronavirus.ch/application-swisscovid/#download";
@@ -1736,3 +1736,36 @@
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
 "events_card_title_events_not_empty" = "";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
+"checkout_inverse_time_alert_description" = "";
+
+/*Titel für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_title" = "";
+
+/*Text für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_text" = "";
+
+/*Titel für aktuellen Check-in im Tagebuch*/
+"diary_current_title" = "";
+
+/*Snooze Option um 30min später an Checkout zu erinnern*/
+"ios_snooze_option_30min" = "";
+
+/*Snooze Option um 1h später an Checkout zu erinnern*/
+"ios_snooze_option_1h" = "";
+
+/*Snooze Option um 2h später an Checkout zu erinnern*/
+"ios_snooze_option_2h" = "";
+
+/*Notification Quickaction um jetzt auszuchecken*/
+"ios_notification_checkout_now" = "";
+
+/*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
+"covid_certificate_alert_text" = "";
+
+/*Button um Covid Certificate App zu öffnen*/
+"covid_certificate_open_app" = "";
+
+/*Button um Covid Certificate App zu installieren*/
+"covid_certificate_install_app" = "";
