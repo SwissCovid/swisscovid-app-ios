@@ -173,6 +173,24 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
         guard let str = str else { return }
         lastQrCode = str
 
+        // Handle case where user tries to check in a covid certificate
+        if str.starts(with: "HC1:") {
+            let alert = UIAlertController(title: "", message: "covid_certificate_alert_text".ub_localized, preferredStyle: .alert)
+            if UIApplication.shared.canOpenURL(URL(string: "covidcert://")!) {
+                alert.addAction(UIAlertAction(title: "covid_certificate_open_app".ub_localized, style: .default, handler: { _ in
+                    UIApplication.shared.open(URL(string: "covidcert://")!, options: [:], completionHandler: nil)
+                }))
+            } else {
+                alert.addAction(UIAlertAction(title: "covid_certificate_install_app".ub_localized, style: .default, handler: { _ in
+                    UIApplication.shared.open(URL(string: "itms-apps://itunes.apple.com/app/apple-store/id1565917320?mt=8")!, options: [:], completionHandler: nil)
+                }))
+            }
+            alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel, handler: nil))
+
+            present(alert, animated: true, completion: nil)
+            return
+        }
+
         let result = CrowdNotifier.getVenueInfo(qrCode: str, baseUrl: Environment.current.qrCodeBaseUrl)
 
         switch result {
