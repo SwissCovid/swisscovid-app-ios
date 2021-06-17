@@ -631,6 +631,8 @@
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */; };
+		F8A25129267BA3D900A07B37 /* NSCheckInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED050267B742E0039A4D6 /* NSCheckInContentView.swift */; };
+		F8A2512A267BA3E300A07B37 /* NSCurrentCheckInCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED04E267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift */; };
 		F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
 		F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
 		F8A6BE1524C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */; };
@@ -2822,6 +2824,7 @@
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
 				242D2233245C4BD8005DAEA8 /* AppDelegate.swift in Sources */,
 				F84BC8B32664FBBF00678456 /* NSSilentPushManager.swift in Sources */,
+				F8A2512A267BA3E300A07B37 /* NSCurrentCheckInCollectionViewCell.swift in Sources */,
 				6E9D79182625BF6C005C7B7F /* NSUpdateBoardingGermanyViewController.swift in Sources */,
 				DC1617822638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */,
 				242D2234245C4BD8005DAEA8 /* NSFancyNumberView.swift in Sources */,
@@ -2846,6 +2849,7 @@
 				F84BC8A52664FBBF00678456 /* UBPushRegistrationManager.swift in Sources */,
 				242D223E245C4BD8005DAEA8 /* NSSplashViewController.swift in Sources */,
 				6E5B69DD2660C3A400EB0C56 /* NSTracingOnboardingViewController.swift in Sources */,
+				F8A25129267BA3D900A07B37 /* NSCheckInContentView.swift in Sources */,
 				F87E96DF263C321000755AF1 /* CheckInSelectionViewController.swift in Sources */,
 				8EF2A6F0249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */,
 				DC16179E2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */,
