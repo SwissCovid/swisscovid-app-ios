@@ -675,6 +675,8 @@
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
+		F8D77D16267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
+		F8D77D18267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
 		F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8F822E02668B16100E1E29B /* CrowdNotifierSDK */; };
 /* End PBXBuildFile section */
 
@@ -1088,6 +1090,7 @@
 		F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
 		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
 		F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSViewController.swift; sourceTree = "<group>"; };
+		F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDatePickerBottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2011,6 +2014,7 @@
 				6EF28CFB26370538001C1565 /* QRScanner */,
 				DCA3FFB324502D370003F5AD /* NSErrorView.swift */,
 				6EFB09782445B2CA0097BD3D /* NSInfoBoxView.swift */,
+				F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */,
 				DC0135F225DFB997001A33F4 /* NSHearingImpairedPopupViewController.swift */,
 				6E33086924506E0600913B0E /* NSExplanationView.swift */,
 				B6AEA30724B74ACA0055B5BB /* NSImageView.swift */,
@@ -2869,6 +2873,7 @@
 				242D2250245C4BD8005DAEA8 /* NetworkError.swift in Sources */,
 				242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */,
 				242D2252245C4BD8005DAEA8 /* UIStateModel.swift in Sources */,
+				F8D77D18267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */,
 				DC3B578025F109380075B5CE /* NSTravelTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3146,6 +3151,7 @@
 				6E889756261F228200508334 /* NSOnboardingBaseViewController.swift in Sources */,
 				F8B44EF02653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */,
 				DC1617912638717800B56ADA /* NSDiaryEmptyView.swift in Sources */,
+				F8D77D16267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */,
 				6E3308752450885300913B0E /* NSReportsDetailPositiveTestedTitleView.swift in Sources */,
 				DC1617952638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
 				6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */,

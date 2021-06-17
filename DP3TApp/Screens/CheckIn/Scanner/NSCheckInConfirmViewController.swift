@@ -22,6 +22,9 @@ class NSCheckInConfirmViewController: NSViewController {
     private let reminderControl: NSReminderControl
     private let checkInButton = NSButton(title: "check_in_now_button_title".ub_localized, style: .normal(.ns_blue))
 
+    private var checkInTime: Date = Date()
+    private let checkInTimeButton = NSButton(title: "", style: .normal(.ns_gray.withAlphaComponent(0.3)), customTextColor: .ns_blue)
+
     private var reminderOption: ReminderOption?
 
     var checkInCallback: (() -> Void)?
@@ -92,7 +95,7 @@ class NSCheckInConfirmViewController: NSViewController {
         checkInButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
 
-            CheckInManager.shared.checkIn(qrCode: strongSelf.qrCode, venueInfo: strongSelf.venueInfo)
+            CheckInManager.shared.checkIn(qrCode: strongSelf.qrCode, venueInfo: strongSelf.venueInfo, checkInTime: strongSelf.checkInTime)
 
             NSLocalPush.shared.scheduleAutomaticReminderAndCheckoutNotifications(reminderTimeInterval: strongSelf.venueInfo.automaticReminderTimeInterval, checkoutTimeInterval: strongSelf.venueInfo.automaticCheckoutTimeInterval)
 
@@ -124,21 +127,36 @@ class NSCheckInConfirmViewController: NSViewController {
             make.bottom.equalTo(checkInButton.snp.top)
         }
 
-        let imageView = UIImageView(image: UIImage(named: "illu-check-in"))
-        imageView.ub_setContentPriorityRequired()
-        view.addSubview(imageView)
-
-        let venueView = NSVenueView(venue: venueInfo)
+        let venueView = NSVenueView(venue: venueInfo, large: true)
         reminderLabel.text = "checkin_set_reminder".ub_localized
         reminderSubtitleLabel.text = "checkin_set_reminder_explanation".ub_localized
 
+        let checkInTitle = NSLabel(.button, textAlignment: .center)
+        checkInTitle.textColor = .ns_text
+        checkInTitle.text = "checkin_title".ub_localized.uppercased()
+
+        updateCheckInTime()
+        checkInTimeButton.titleLabel?.font = NSLabelType.title.font
+        checkInTimeButton.titleEdgeInsets = .init(top: NSPadding.large, left: 0, bottom: NSPadding.large, right: 0)
+        checkInTimeButton.touchUpCallback = { [weak self] in
+            guard let self = self else { return }
+            let vc = NSDatePickerBottomSheetViewController(mode: .dateAndTime(selected: self.checkInTime, maxDate: .init(), callback: { [weak self] dateTime in
+                guard let self = self else { return }
+                self.checkInTime = dateTime
+                self.updateCheckInTime()
+            }))
+            vc.present(from: self)
+        }
+
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.addSpacerView(2.0 * NSPadding.large)
-        stackView.addArrangedView(imageView)
         stackView.addSpacerView(NSPadding.large + NSPadding.medium)
         stackView.addArrangedView(venueView)
-        stackView.addSpacerView(2.0 * NSPadding.large)
+        stackView.addSpacerView(NSPadding.large)
+        stackView.addArrangedView(checkInTitle)
+        stackView.addSpacerView(NSPadding.medium + NSPadding.small)
+        stackView.addArrangedView(checkInTimeButton)
+        stackView.addSpacerView(3.0 * NSPadding.large)
         stackView.addArrangedView(reminderLabel)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedView(reminderSubtitleLabel)
@@ -149,6 +167,14 @@ class NSCheckInConfirmViewController: NSViewController {
         stackView.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(2.0 * NSPadding.medium)
+        }
+    }
+
+    private func updateCheckInTime() {
+        if abs(checkInTime.timeIntervalSinceNow) > .day * 2 {
+            checkInTimeButton.title = DateFormatter.ub_dayString(from: checkInTime) + ", " + DateFormatter.ub_timeFormat(from: checkInTime)
+        } else {
+            checkInTimeButton.title = DateFormatter.ub_daysAgo(from: checkInTime, addExplicitDate: false) + ", " + DateFormatter.ub_timeFormat(from: checkInTime)
         }
     }
 }
