@@ -157,6 +157,13 @@ struct UIStateModel: Equatable {
             case noCheckIn
             case checkIn(CheckIn)
             case checkInEnded
+
+            var currentCheckIn: CheckIn? {
+                if case let .checkIn(checkIn) = self {
+                    return checkIn
+                }
+                return nil
+            }
         }
 
         enum ExposureState: Equatable {

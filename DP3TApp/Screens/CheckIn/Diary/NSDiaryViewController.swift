@@ -16,6 +16,8 @@ class NSDiaryViewController: NSViewController {
     private let collectionView: NSDiaryCollectionView
     private let emptyView: NSDiaryEmptyView
 
+    private var currentCheckIn: CheckIn?
+    var hasCurrentCheckIn: Bool { currentCheckIn != nil }
     private var diary: [[CheckIn]] = []
     private var exposures: [CheckInExposure] = []
 
@@ -107,6 +109,7 @@ class NSDiaryViewController: NSViewController {
     }
 
     private func update(_ state: UIStateModel.CheckInStateModel) {
+        currentCheckIn = state.checkInState.currentCheckIn
         diary = state.diaryState
 
         switch state.exposureState {
@@ -116,8 +119,8 @@ class NSDiaryViewController: NSViewController {
             exposures = []
         }
 
-        emptyView.alpha = diary.count == 0 ? 1.0 : 0.0
-        collectionView.alpha = (diary.count == 0) ? 0.0 : 1.0
+        emptyView.alpha = !hasCurrentCheckIn && diary.count == 0 ? 1.0 : 0.0
+        collectionView.alpha = !hasCurrentCheckIn && diary.count == 0 ? 0.0 : 1.0
 
         collectionView.reloadData()
     }
@@ -129,7 +132,7 @@ class NSDiaryViewController: NSViewController {
 
 extension NSDiaryViewController: UICollectionViewDelegateFlowLayout {
     func numberOfSections(in _: UICollectionView) -> Int {
-        return diary.count
+        return (hasCurrentCheckIn ? 1 : 0) + diary.count
     }
 
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, referenceSizeForHeaderInSection _: Int) -> CGSize {
@@ -139,21 +142,46 @@ extension NSDiaryViewController: UICollectionViewDelegateFlowLayout {
 
 extension NSDiaryViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return diary[section].count
+        if hasCurrentCheckIn, section == 0 {
+            return 1
+        } else if hasCurrentCheckIn {
+            return diary[section - 1].count
+        } else {
+            return diary[section].count
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(for: indexPath) as NSDiaryEntryCollectionViewCell
-
-        let entry = diary[indexPath.section][indexPath.item]
-
-        if let exposure = exposureForDiary(diaryEntry: entry) {
-            cell.exposure = exposure
+        if hasCurrentCheckIn, indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(for: indexPath) as NSCurrentCheckInCollectionViewCell
+            cell.checkIn = currentCheckIn
+            cell.checkOutButton.touchUpCallback = { [weak self] in
+                guard let strongSelf = self else { return }
+                let checkoutVC = NSCheckInEditViewController()
+                checkoutVC.present(from: strongSelf)
+            }
+            return cell
         } else {
-            cell.checkIn = entry
-        }
+            let cell = collectionView.dequeueReusableCell(for: indexPath) as NSDiaryEntryCollectionViewCell
 
-        return cell
+            let entry = diaryEntryForIndexPath(indexPath)
+
+            if let exposure = exposureForDiary(diaryEntry: entry) {
+                cell.exposure = exposure
+            } else {
+                cell.checkIn = entry
+            }
+            return cell
+        }
+    }
+
+    private func diaryEntryForIndexPath(_ indexPath: IndexPath) -> CheckIn {
+        assert(!hasCurrentCheckIn || indexPath.section >= 1)
+        if hasCurrentCheckIn {
+            return diary[indexPath.section - 1][indexPath.row]
+        } else {
+            return diary[indexPath.section][indexPath.row]
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -162,7 +190,13 @@ extension NSDiaryViewController: UICollectionViewDataSource {
         }
 
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath) as NSDiaryDateSectionHeaderSupplementaryView
-        headerView.date = diary[indexPath.section].first?.checkInTime
+
+        if hasCurrentCheckIn, indexPath.section == 0 {
+            headerView.text = "diary_current_title".ub_localized
+        } else {
+            let entry = diaryEntryForIndexPath(indexPath)
+            headerView.date = entry.checkInTime
+        }
 
         return headerView
     }
@@ -170,7 +204,11 @@ extension NSDiaryViewController: UICollectionViewDataSource {
     func collectionView(_: UICollectionView, layout _: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.size.width - 2 * 20
 
-        let entry = diary[indexPath.section][indexPath.item]
+        if let checkIn = currentCheckIn, indexPath.section == 0 {
+            return NSDiaryCollectionView.currentCheckInCellSize(width: width, checkIn: checkIn)
+        }
+
+        let entry = diaryEntryForIndexPath(indexPath)
         if let exposure = exposureForDiary(diaryEntry: entry) {
             return NSDiaryCollectionView.diaryCellSize(width: width, exposure: exposure)
         }
@@ -179,7 +217,11 @@ extension NSDiaryViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let d = diary[indexPath.section][indexPath.item]
+        guard !hasCurrentCheckIn || indexPath.section > 0 else {
+            return
+        }
+
+        let d = diaryEntryForIndexPath(indexPath)
 
         if let exposure = exposureForDiary(diaryEntry: d) {
             let vc = NSReportsDetailExposedCheckInViewController(report: .init(checkInIdentifier: exposure.exposureEvent.checkinId,

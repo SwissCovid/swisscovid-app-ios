@@ -32,6 +32,7 @@ class NSDiaryCollectionView: UICollectionView {
         backgroundColor = UIColor.clear
         contentInset = UIEdgeInsets(top: 0.0, left: NSPadding.large, bottom: 0.0, right: NSPadding.large)
 
+        register(NSCurrentCheckInCollectionViewCell.self)
         register(NSDiaryEntryCollectionViewCell.self)
         register(NSDiaryDateSectionHeaderSupplementaryView.self,
                  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader)
@@ -45,30 +46,44 @@ class NSDiaryCollectionView: UICollectionView {
         reloadData()
     }
 
-    private static let cell = NSDiaryEntryContentView()
+    private static let currentCheckInCell = NSCurrentCheckInCollectionViewCell()
+    private static let diaryCell = NSDiaryEntryContentView()
 
     public static func diaryCellSize(width: CGFloat, exposure: CheckInExposure) -> CGSize {
-        cell.exposure = exposure
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        diaryCell.exposure = exposure
+        diaryCell.setNeedsLayout()
+        diaryCell.layoutIfNeeded()
 
         var fittingSize = UIView.layoutFittingCompressedSize
         fittingSize.width = width
 
-        let size = cell.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
+        let size = diaryCell.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
 
         return CGSize(width: width, height: size.height)
     }
 
     public static func diaryCellSize(width: CGFloat, checkIn: CheckIn) -> CGSize {
-        cell.checkIn = checkIn
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
+        diaryCell.checkIn = checkIn
+        diaryCell.setNeedsLayout()
+        diaryCell.layoutIfNeeded()
 
         var fittingSize = UIView.layoutFittingCompressedSize
         fittingSize.width = width
 
-        let size = cell.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
+        let size = diaryCell.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
+
+        return CGSize(width: width, height: size.height)
+    }
+
+    public static func currentCheckInCellSize(width: CGFloat, checkIn: CheckIn) -> CGSize {
+        currentCheckInCell.checkIn = checkIn
+        currentCheckInCell.setNeedsLayout()
+        currentCheckInCell.layoutIfNeeded()
+
+        var fittingSize = UIView.layoutFittingCompressedSize
+        fittingSize.width = width
+
+        let size = currentCheckInCell.systemLayoutSizeFitting(fittingSize, withHorizontalFittingPriority: .required, verticalFittingPriority: .defaultLow)
 
         return CGSize(width: width, height: size.height)
     }
