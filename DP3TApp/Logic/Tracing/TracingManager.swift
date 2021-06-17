@@ -119,7 +119,7 @@ class TracingManager: NSObject {
         }
     }
 
-    func startTracing() {
+    func startTracing(callback: ((TracingEnableResult) -> Void)? = nil) {
         guard #available(iOS 12.5, *) else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
@@ -141,6 +141,7 @@ class TracingManager: NSObject {
                         UIStateManager.shared.tracingStartError = error
                     }
                 }
+                callback?(result)
             })
         }
 
