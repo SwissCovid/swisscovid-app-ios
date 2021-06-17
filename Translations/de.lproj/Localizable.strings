@@ -1621,7 +1621,7 @@
 "events_card_subtitle" = "Erstellen Sie einen SwissCovid-QR-Code, mit dem sich Personen vor Ort einchecken können.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "Möchten Sie den QR Code wirklich löschen?";
+"delete_qr_code_dialog" = "Möchten Sie den QR Code wirklich löschen? Gedruckte QR-Codes bleiben weiterhin gültig.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Self Check-In";
@@ -1720,7 +1720,7 @@
 "checkin_report_title3" = "Testen lassen";
 "checkin_report_subtitle1" = "Sie könnten bereits ansteckend sein, ohne es zu merken. Beachten Sie die geltenden Hygiene- und Schutzmassnahmen und schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld.";
 "checkin_report_subtitle2" = "Überwachen Sie Ihren Gesundheitszustand.";
-"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von Symptomen sofort testen. Auch wenn keine Symptome auftreten, ist ein Corona-Test sinnvoll und empfohlen.";
+"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von Symptomen sofort testen. Wenn keine Symptome auftreten und Sie noch nicht vollständig geimpft sind, ist ein Corona-Test ebenfalls sinnvoll und empfohlen.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 /*Fuzzy*/
