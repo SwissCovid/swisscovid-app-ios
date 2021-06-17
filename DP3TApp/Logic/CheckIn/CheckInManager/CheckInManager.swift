@@ -92,15 +92,9 @@ class CheckInManager {
     public func autoCheckoutIfNecessary() {
         logger.trace()
 
-        if let checkIn = currentCheckIn,
-           checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval) <= Date() {
-            let checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval)
-            currentCheckIn?.checkOutTime = checkOutTime
-            if !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime, endDate: checkOutTime, excludeCheckIn: checkIn) {
-                checkOut()
-            } else {
-                // TODO: split current checkin is order that no overlaps are happening
-            }
+        if let checkIn = currentCheckIn, checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval) <= Date() {
+            currentCheckIn?.checkOutTime = checkIn.checkInTime.addingTimeInterval(checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval)
+            checkOut()
         }
     }
 
