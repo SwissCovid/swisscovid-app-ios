@@ -41,6 +41,7 @@ class NSDiaryEntryContentView: UIView {
         setup()
 
         isAccessibilityElement = true
+        accessibilityTraits = .button
         accessibilityElements = []
     }
 

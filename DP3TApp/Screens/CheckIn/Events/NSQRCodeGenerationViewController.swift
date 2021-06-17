@@ -46,6 +46,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
             strongSelf.dismissSelf()
         }
+
+        UIAccessibility.post(notification: .layoutChanged, argument: titleLabel)
     }
 
     private func setupView() {
@@ -60,6 +62,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
         titleLabel.text = "checkins_create_qr_code".ub_localized
+        titleLabel.accessibilityTraits = .header
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
         subttitleLabel.text = "checkins_create_qr_code_subtitle".ub_localized
