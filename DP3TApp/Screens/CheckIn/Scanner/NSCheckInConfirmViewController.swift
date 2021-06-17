@@ -23,7 +23,7 @@ class NSCheckInConfirmViewController: NSViewController {
     private let checkInButton = NSButton(title: "check_in_now_button_title".ub_localized, style: .normal(.ns_blue))
 
     private var checkInTime: Date = Date()
-    private let checkInTimeButton = NSButton(title: "", style: .normal(.ns_gray.withAlphaComponent(0.3)), customTextColor: .ns_blue)
+    private let checkInTimeButton = NSButton(title: "", style: .normal(UIColor.ns_gray.withAlphaComponent(0.3)), customTextColor: .ns_blue)
 
     private var reminderOption: ReminderOption?
 
