@@ -187,7 +187,8 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                         }
                     }))
                     alert.addAction(UIAlertAction(title: "meldung_in_app_alert_ignore_button".ub_localized, style: .cancel, handler: { _ in
-                        requestPermission()
+                        let vc = NSAreYouSureViewController(covidCode: self.codeControl.code(), relevantCheckIns: relevantCheckIns)
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 } else {
