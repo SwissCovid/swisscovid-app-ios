@@ -71,6 +71,7 @@ class NSSimpleModuleBaseView: UIView {
         titleContentStackView.axis = .vertical
         titleContentStackView.alignment = .leading
         titleContentStackView.spacing = NSPadding.small
+        titleContentStackView.accessibilityTraits = .header
         titleContentStackView.isAccessibilityElement = true
         titleContentStackView.accessibilityLabel = (subtitleLabel.text ?? "").deleteSuffix("...") + (titleLabel.text ?? "")
         addSubview(titleContentStackView)

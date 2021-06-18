@@ -14,18 +14,27 @@ import Foundation
 class NSReminderControl: UIView {
     // MARK: - Views
 
-    private let options: [ReminderOption]
+    private var options: [ReminderOption]
     private let segmentedControl: UISegmentedControl
 
     // MARK: - Callbacks
 
     public var changeCallback: ((ReminderOption) -> Void)?
 
+    public var customSelectionCallback: ((TimeInterval, @escaping (TimeInterval?) -> Void) -> Void)?
+
     // MARK: - Init
 
     init(options: [ReminderOption]) {
         self.options = Array(options.prefix(5)) // Never show more than 5 options as this would lead to layout problems
-        segmentedControl = UISegmentedControl(items: self.options.map { $0.title })
+        segmentedControl = UISegmentedControl(items: self.options.map {
+            switch $0 {
+            case .custom(milliseconds: -1):
+                return UIImage(named: "ic-stopwatch-small") ?? $0.title
+            default:
+                return $0.title
+            }
+        })
 
         super.init(frame: .zero)
         setup()
@@ -50,5 +59,17 @@ class NSReminderControl: UIView {
     @objc private func changeSelectedSegment() {
         let s = segmentedControl.selectedSegmentIndex
         changeCallback?(options[s])
+
+        if options[s].isCustom,
+           let callback = customSelectionCallback {
+            callback(options[s].timeInterval) { [weak self] newInterval in
+                guard let self = self,
+                      let newInterval = newInterval else { return }
+                self.options[s] = .custom(milliseconds: newInterval.milliseconds)
+                self.segmentedControl.setTitle(self.options[s].title,
+                                               forSegmentAt: self.segmentedControl.selectedSegmentIndex)
+                self.changeCallback?(self.options[s])
+            }
+        }
     }
 }

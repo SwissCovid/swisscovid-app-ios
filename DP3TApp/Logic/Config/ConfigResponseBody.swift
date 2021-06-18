@@ -43,6 +43,7 @@ class ConfigResponseBody: UBCodable {
     public let testLocations: LocalizedValue<[TestLocation]>?
     public let interOpsCountries: [String]
     public let testInformationUrls: LocalizedValue<String>?
+    public let checkInUpdateNotificationEnabled: Bool?
 
     class InfoBox: UBCodable {
         let title, msg: String

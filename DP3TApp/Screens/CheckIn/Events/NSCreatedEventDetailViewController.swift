@@ -16,7 +16,7 @@ class NSCreatedEventDetailViewController: NSViewController {
 
     private let qrCodeImageView = UIImageView()
 
-    private let venueView = NSVenueView(large: true, showCategory: true)
+    private let venueView = NSVenueView(large: true)
 
     private let createdEvent: CreatedEvent
 

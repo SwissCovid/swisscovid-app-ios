@@ -23,6 +23,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
     var codeCreatedCallback: ((CreatedEvent) -> Void)?
 
+    private let keyboardObserver = UBKeyboardObserver()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,6 +46,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
             strongSelf.dismissSelf()
         }
+
+        UIAccessibility.post(notification: .layoutChanged, argument: titleLabel)
     }
 
     private func setupView() {
@@ -58,6 +62,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
 
         titleLabel.text = "checkins_create_qr_code".ub_localized
+        titleLabel.accessibilityTraits = .header
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(titleLabel)
         subttitleLabel.text = "checkins_create_qr_code_subtitle".ub_localized
@@ -73,7 +78,17 @@ class NSQRCodeGenerationViewController: NSViewController {
             make.centerX.equalToSuperview()
         }
 
+        keyboardObserver.callback = { [weak self] height in
+            guard let self = self else { return }
+            self.createButton.snp.remakeConstraints { make in
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.large + height)
+                make.centerX.equalToSuperview()
+            }
+        }
+
         createButton.isEnabled = false
+
+        titleTextField.inputControl.becomeFirstResponder()
     }
 
     @objc private func dismissSelf() {

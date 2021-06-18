@@ -9,34 +9,53 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import UIKit
+import Foundation
 
-class NSCheckInDetailCheckedInView: UIView {
+class NSCheckInContentView: UIView {
+    enum Style: Equatable {
+        case homescreen
+        case detail
+        case diary
+
+        var stackViewAlignment: UIStackView.Alignment {
+            self == .diary ? .leading : .center
+        }
+
+        var textAlignment: NSTextAlignment {
+            self == .diary ? .left : .center
+        }
+
+        var textColor: UIColor {
+            self == .diary ? .ns_blue : .ns_text
+        }
+
+        var timerLabelType: NSLabelType {
+            self == .diary ? .textLight : .timerLarge
+        }
+    }
+
+    private let style: Style
+
     private let stackView = UIStackView()
 
-    private let imageView = UIImageView(image: UIImage(named: "illu-checked-in"))
-    private let checkedInLabel = NSLabel(.textLight, textAlignment: .center)
-    private let timerLabel = NSLabel(.timerLarge, textAlignment: .center)
-    private let eventTitleLabel = NSLabel(.textBold, textAlignment: .center)
-
+    private lazy var imageView = UIImageView(image: UIImage(named: "illu-checked-in"))
+    private lazy var checkedInLabel = NSLabel(.textLight, textColor: style.textColor, textAlignment: style.textAlignment)
+    private lazy var eventTitleLabel = NSLabel(.textBold, textColor: style.textColor, textAlignment: style.textAlignment)
+    private lazy var timerLabel = NSLabel(style.timerLabelType, textColor: style.textColor, textAlignment: style.textAlignment)
     let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_blue))
 
     private var checkIn: CheckIn?
     private var titleTimer: Timer?
 
-    init() {
+    init(style: Style) {
+        self.style = style
         super.init(frame: .zero)
-
         setupView()
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     private func setupView() {
         stackView.axis = .vertical
-        stackView.alignment = .center
+        stackView.alignment = style.stackViewAlignment
         addSubview(stackView)
         stackView.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
@@ -45,17 +64,25 @@ class NSCheckInDetailCheckedInView: UIView {
         addSubview(checkOutButton)
         checkOutButton.snp.makeConstraints { make in
             make.top.equalTo(stackView.snp.bottom).offset(2.0 * NSPadding.medium)
-            make.leading.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+            make.leading.trailing.bottom.equalToSuperview().inset(style == .diary ? 0 : NSPadding.small)
         }
 
-        imageView.ub_setContentPriorityRequired()
-        checkedInLabel.text = "checkin_checked_in".ub_localized
+        if style != .diary {
+            stackView.addSpacerView(2.0 * NSPadding.medium)
+        }
 
-        stackView.addSpacerView(2.0 * NSPadding.medium)
-        stackView.addArrangedView(imageView)
-        stackView.addSpacerView(2.0 * NSPadding.medium)
-        stackView.addArrangedView(checkedInLabel)
-        stackView.addSpacerView(2.0)
+        if style == .detail {
+            imageView.ub_setContentPriorityRequired()
+            stackView.addArrangedView(imageView)
+            stackView.addSpacerView(2.0 * NSPadding.medium)
+        }
+
+        if style != .diary {
+            checkedInLabel.text = "checkin_checked_in".ub_localized
+            stackView.addArrangedView(checkedInLabel)
+            stackView.addSpacerView(2.0)
+        }
+
         stackView.addArrangedView(eventTitleLabel)
         stackView.addSpacerView(NSPadding.medium)
         stackView.addArrangedView(timerLabel)
@@ -71,8 +98,14 @@ class NSCheckInDetailCheckedInView: UIView {
 
     override var isHidden: Bool {
         didSet {
-            if isHidden { stopTitleTimer() }
+            if isHidden {
+                stopTitleTimer()
+            }
         }
+    }
+
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - Title timer
@@ -81,6 +114,7 @@ class NSCheckInDetailCheckedInView: UIView {
         titleTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.timerLabel.text = strongSelf.checkIn?.timeSinceCheckIn() ?? ""
+
             if let checkInTime = strongSelf.checkIn?.checkInTime {
                 let timeInterval = Date().timeIntervalSince(checkInTime)
                 strongSelf.timerLabel.accessibilityLabel = DateComponentsFormatter.localizedString(from: DateComponents(hour: timeInterval.ub_hours, minute: timeInterval.ub_minutes, second: timeInterval.ub_seconds), unitsStyle: .spellOut)

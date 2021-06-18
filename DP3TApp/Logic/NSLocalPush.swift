@@ -47,10 +47,12 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
         // CheckIn
         case checkInReminder = "ch.admin.bag.dp3t.notificationtype.reminder"
+        case checkInReminderErrorNotification = "ch.admin.bag.dp3t.notificationtype.reminder.checkout.error"
         case checkInautomaticReminder = "ch.admin.bag.dp3t.notificationtype.automaticReminder"
         case checkInautomaticCheckout = "ch.admin.bag.dp3t.notificationtype.automaticCheckout"
         case checkInExposure = "ch.admin.bag.dp3t.notificationtype.exposure"
         case checkInbackgroundTaskWarningTrigger = "ch.admin.bag.dp3t.notificationtype.backgroundtaskwarning"
+        case checkInUpdateNotification = "ch.admin.bag.dp3t.notificationtype.checkInUpdateNotificationEnabled"
 
         var isErrorNotification: Bool {
             switch self {
@@ -64,13 +66,28 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
     enum Actions: String, CaseIterable, Codable {
         case checkOut = "ch.admin.bag.checkout"
+        case checkOutSnooze30min = "ch.admin.bag.checkout.snooze.30min"
+        case checkOutSnooze1h = "ch.admin.bag.checkout.snooze.1h"
+        case checkOutSnooze2h = "ch.admin.bag.checkout.snooze.2h"
 
         var action: UNNotificationAction {
             switch self {
             case .checkOut:
-                return UNNotificationAction(identifier: Actions.checkOut.rawValue,
-                                            title: "checkout_button_title".ub_localized,
-                                            options: [.authenticationRequired])
+                return UNNotificationAction(identifier: rawValue,
+                                            title: "ios_notification_checkout_now".ub_localized,
+                                            options: [.authenticationRequired, .destructive])
+            case .checkOutSnooze30min:
+                return UNNotificationAction(identifier: rawValue,
+                                            title: "ios_snooze_option_30min".ub_localized,
+                                            options: [])
+            case .checkOutSnooze1h:
+                return UNNotificationAction(identifier: rawValue,
+                                            title: "ios_snooze_option_1h".ub_localized,
+                                            options: [])
+            case .checkOutSnooze2h:
+                return UNNotificationAction(identifier: rawValue,
+                                            title: "ios_snooze_option_2h".ub_localized,
+                                            options: [])
             }
         }
     }
@@ -349,6 +366,15 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
     // MARK: - CheckIn Reminder Notifications
 
+    func schedulecheckInUpdateNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "update_notification_checkin_feature_title".ub_localized
+        content.body = "update_notification_checkin_feature_text".ub_localized
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .second * 30, repeats: false)
+        let request = UNNotificationRequest(identifier: Identifiers.checkInUpdateNotification.rawValue, content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
+    }
+
     func removeAllCheckInReminders() {
         center.removePendingNotificationRequests(withIdentifiers: [Identifiers.checkInReminder.rawValue,
                                                                    Identifiers.checkInautomaticReminder.rawValue,
@@ -363,11 +389,27 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         notification.sound = .default
 
         center.setNotificationCategories([UNNotificationCategory(identifier: Identifiers.checkInReminder.rawValue,
-                                                                 actions: [Actions.checkOut.action],
+                                                                 actions: [
+                                                                     Actions.checkOutSnooze30min.action,
+                                                                     Actions.checkOutSnooze1h.action,
+                                                                     Actions.checkOutSnooze2h.action,
+                                                                     Actions.checkOut.action,
+                                                                 ],
                                                                  intentIdentifiers: [], options: [])])
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: false)
         center.add(UNNotificationRequest(identifier: Identifiers.checkInReminder.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
+    }
+
+    func scheduleCheckInReminderCheckoutErrorNotification() {
+        let notification = UNMutableNotificationContent()
+        notification.categoryIdentifier = Identifiers.checkInReminder.rawValue
+        notification.title = "checkout_overlapping_alert_title".ub_localized
+        notification.body = "checkout_overlapping_alert_description".ub_localized
+        notification.sound = .default
+
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        center.add(UNNotificationRequest(identifier: Identifiers.checkInReminderErrorNotification.rawValue, content: notification, trigger: trigger), withCompletionHandler: nil)
     }
 
     func scheduleAutomaticReminderAndCheckoutNotifications(reminderTimeInterval: TimeInterval? = nil, checkoutTimeInterval: TimeInterval? = nil) {
@@ -466,13 +508,23 @@ extension NSLocalPush: UNUserNotificationCenterDelegate {
         case .checkInReminder, .checkInautomaticReminder:
             switch response.actionIdentifier {
             case Actions.checkOut.rawValue:
-                if let checkIn = CheckInManager.shared.currentCheckIn,
-                   !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime,
-                                                                            endDate: .init(),
-                                                                            excludeCheckIn: checkIn) {
-                    CheckInManager.shared.currentCheckIn?.checkOutTime = Date()
-                    CheckInManager.shared.checkOut()
+                if let checkIn = CheckInManager.shared.currentCheckIn {
+                    if !NSCheckInEditViewController.selectedDatesAreOverlapping(startDate: checkIn.checkInTime,
+                                                                                endDate: .init(),
+                                                                                excludeCheckIn: checkIn) {
+                        CheckInManager.shared.currentCheckIn?.checkOutTime = Date()
+                        CheckInManager.shared.checkOut()
+
+                    } else {
+                        NSLocalPush.shared.scheduleCheckInReminderCheckoutErrorNotification()
+                    }
                 }
+            case Actions.checkOutSnooze30min.rawValue:
+                ReminderManager.shared.scheduleReminder(with: .thirtyMinutes, didFailCallback: {})
+            case Actions.checkOutSnooze1h.rawValue:
+                ReminderManager.shared.scheduleReminder(with: .oneHour, didFailCallback: {})
+            case Actions.checkOutSnooze2h.rawValue:
+                ReminderManager.shared.scheduleReminder(with: .twoHours, didFailCallback: {})
 
             default:
                 showCheckoutViewController()

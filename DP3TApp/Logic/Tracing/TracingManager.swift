@@ -119,7 +119,7 @@ class TracingManager: NSObject {
         }
     }
 
-    func startTracing() {
+    func startTracing(callback: ((TracingEnableResult) -> Void)? = nil) {
         guard #available(iOS 12.5, *) else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
@@ -141,6 +141,7 @@ class TracingManager: NSObject {
                         UIStateManager.shared.tracingStartError = error
                     }
                 }
+                callback?(result)
             })
         }
 
@@ -169,22 +170,27 @@ class TracingManager: NSObject {
 
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
+        UIStateManager.shared.blockUpdate {
+            // reset end isolation question date and onset date
+            ReportingManager.shared.endIsolationQuestionDate = nil
+            ReportingManager.shared.oldestSharedKeyDate = nil
 
-        // reset end isolation question date and onset date
-        ReportingManager.shared.endIsolationQuestionDate = nil
-        ReportingManager.shared.oldestSharedKeyDate = nil
+            // reset infection status
+            DP3TTracing.resetInfectionStatus()
 
-        // reset infection status
-        DP3TTracing.resetInfectionStatus()
+            // reset debug fake data to test UI reset
+            #if ENABLE_STATUS_OVERRIDE
+                UIStateManager.shared.overwrittenInfectionState = nil
+            #endif
 
-        // reset debug fake data to test UI reset
-        #if ENABLE_STATUS_OVERRIDE
-            UIStateManager.shared.overwrittenInfectionState = nil
-        #endif
+            UserStorage.shared.didMarkAsInfected = false
 
-        UserStorage.shared.didMarkAsInfected = false
-
-        UIStateManager.shared.refresh()
+            // enable tracing if it was enabled before isolation
+            if UserStorage.shared.tracingWasEnabledBeforeIsolation {
+                UserStorage.shared.tracingWasEnabledBeforeIsolation = false
+                startTracing()
+            }
+        }
     }
 
     func deleteReports() {
@@ -329,6 +335,26 @@ extension TracingManager: DP3TBackgroundHandler {
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 
         queue.addOperation(configOperation)
+
+        group.enter()
+        queue.addOperation {
+            // check if notificaton is enabled in cofig request
+            // && if user has not completed the checkinOnboarding
+            // && the notification has not been shown
+            if ConfigManager.currentConfig?.checkInUpdateNotificationEnabled ?? false,
+               !UserStorage.shared.hasCompletedUpdateBoardingCheckIn,
+               !UserStorage.shared.hasShownCheckInUpdateNotification {
+                // only show the notification between 8:00 and 20:00
+                let hour = Calendar.current.dateComponents([.hour], from: Date())
+                if let hour = hour.hour,
+                   (8 ... 20).contains(hour) {
+                    NSLocalPush.shared.schedulecheckInUpdateNotification()
+                    UserStorage.shared.hasShownCheckInUpdateNotification = true
+                }
+            }
+
+            group.leave()
+        }
 
         group.notify(queue: .global(qos: .background)) {
             completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)

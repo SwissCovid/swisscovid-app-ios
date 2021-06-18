@@ -82,8 +82,17 @@ enum ReminderOption: Equatable {
         }
     }
 
+    var isCustom: Bool {
+        switch self {
+        case .custom(milliseconds: _):
+            return true
+        default:
+            return false
+        }
+    }
+
     static var fallbackOptions: [ReminderOption] {
-        return [.off, .thirtyMinutes, .oneHour, .twoHours, .fourHours]
+        return [.off, .thirtyMinutes, .oneHour, .twoHours]
     }
 }
 

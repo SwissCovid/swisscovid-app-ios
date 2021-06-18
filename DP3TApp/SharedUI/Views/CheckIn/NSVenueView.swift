@@ -23,7 +23,6 @@ class NSVenueView: UIView {
     private let imageContentView = UIView()
 
     private let large: Bool
-    private let showCategory: Bool
 
     // MARK: - Properties
 
@@ -35,15 +34,16 @@ class NSVenueView: UIView {
 
     // MARK: - Init
 
-    init(venue: VenueInfo? = nil, large: Bool = false, showCategory: Bool = false) {
+    init(venue: VenueInfo? = nil, large: Bool = false) {
         titleLabel = NSLabel(large ? .titleLarge : .title, textAlignment: .center)
         self.venue = venue
         self.large = large
-        self.showCategory = showCategory
 
         super.init(frame: .zero)
         setup()
         update()
+
+        titleLabel.accessibilityTraits = .header
     }
 
     required init?(coder _: NSCoder) {
@@ -54,7 +54,7 @@ class NSVenueView: UIView {
 
     private func update() {
         titleLabel.text = venue?.description
-        textLabel.text = showCategory ? venue?.venueType?.title : venue?.subtitle
+        textLabel.text = venue?.subtitle
     }
 
     // MARK: - Setup
