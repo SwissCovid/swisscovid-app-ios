@@ -13,10 +13,6 @@ import UIKit
 class NSStatisticsShareModule: UIView {
     private let stackView = UIStackView()
 
-    private let superTitle = NSLabel(.textLight, textColor: .ns_blue, textAlignment: .center)
-
-    private let title = NSLabel(.title, textAlignment: .center)
-
     private let imageView = UIImageView()
 
     private let shareButton = NSButton(title: "share_app_button".ub_localized,
@@ -40,10 +36,6 @@ class NSStatisticsShareModule: UIView {
         }
 
         stackView.addSpacerView(NSPadding.medium)
-        stackView.addArrangedView(superTitle)
-        stackView.addSpacerView(NSPadding.small)
-        stackView.addArrangedView(title)
-        stackView.addSpacerView(NSPadding.small)
         stackView.addArrangedView(imageView)
         stackView.addSpacerView(NSPadding.small)
         stackView.addArrangedView(shareButton)
@@ -51,15 +43,13 @@ class NSStatisticsShareModule: UIView {
         stackView.addArrangedView(text)
         stackView.addSpacerView(NSPadding.large * 2)
 
-        superTitle.text = "share_app_supertitle".ub_localized
-        title.text = "share_app_title".ub_localized
         text.text = "share_app_body".ub_localized
 
         imageView.image = UIImage(named: "illu-gemeinsam")
         imageView.contentMode = .scaleAspectFit
 
         isAccessibilityElement = false
-        accessibilityElements = [title, shareButton, text]
+        accessibilityElements = [shareButton, text]
     }
 
     required init?(coder _: NSCoder) {
