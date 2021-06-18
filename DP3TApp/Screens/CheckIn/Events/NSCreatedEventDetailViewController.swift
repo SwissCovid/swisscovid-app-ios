@@ -63,6 +63,8 @@ class NSCreatedEventDetailViewController: NSViewController {
         }
 
         view.accessibilityViewIsModal = true
+
+        view.backgroundColor = .ns_moduleBackground
     }
 
     override func viewDidLoad() {
@@ -163,11 +165,11 @@ class NSCreatedEventDetailViewController: NSViewController {
     private func checkInPressed() {
         let vc = NSCheckInConfirmViewController(createdEvent: createdEvent)
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissPresented))
-        vc.checkInCallback = { [weak self] in
-            guard let self = self else { return }
-            if let viewcontroller = self.navigationController?.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
+        vc.checkInCallback = {
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let viewcontroller = appDelegate.navigationController.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
                 viewcontroller.scrollToTop()
-                self.navigationController?.popToViewController(viewcontroller, animated: false)
+                appDelegate.navigationController.popToViewController(viewcontroller, animated: false)
+                appDelegate.navigationController.dismiss(animated: true)
             }
         }
         vc.presentInNavigationController(from: self, useLine: false)
@@ -198,7 +200,7 @@ class NSCreatedEventDetailViewController: NSViewController {
         alert.addAction(UIAlertAction(title: "delete_button_title".ub_localized, style: .destructive, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
             CreatedEventsManager.shared.deleteEvent(with: strongSelf.createdEvent.id)
-            strongSelf.navigationController?.popViewController(animated: true)
+            strongSelf.dismissPresented()
         }))
         alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel))
 
