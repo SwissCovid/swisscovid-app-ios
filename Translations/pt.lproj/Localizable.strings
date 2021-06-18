@@ -1308,7 +1308,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Os códigos privados do seu aplicativo foram enviados para o seguinte período:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Ao introduzir um código Covid, o rastreamento deve estar ativado para que seja possível compartilhar os seus códigos privados.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Ao introduzir um código Covid, o rastreamento deve estar ativado para que seja possível compartilhar os seus códigos privados.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Ao premir \"{BUTTON_TITLE}\" você sai do aplicativo e vai para o website do Guia SwissCovid. Nisso, os dados dos últimos encontros com possibilidade de infecção do website também são enviados.";

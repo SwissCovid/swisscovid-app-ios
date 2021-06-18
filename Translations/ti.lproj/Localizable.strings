@@ -1307,7 +1307,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "ግላውያን መፋትሕ ናይ ኤፕኩም ንዝስዕብ እዋን ተሰዲዶም ኔሮም፥";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "ኣብ ምእታው ኮቪድ-ኮድ እቲ ምክትታል ክውላዕ ኣለዎ፣ ግላዊ መፍትሕኩም ክካፈል መታን ክከኣል።";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "ኣብ ምእታው ኮቪድ-ኮድ እቲ ምክትታል ክውላዕ ኣለዎ፣ ግላዊ መፍትሕኩም ክካፈል መታን ክከኣል።";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "መጠወቒ \"{BUTTON_TITLE}\" ትጥውቕዎ እንተኾይንኩም፣ ካብቲ ኤፕ ትወጽኡ ከምኡ'ውን ናብቲ መርበብ ኢንተርነት መምርሒ SwissCovid ክትቕይሩ። ሽዑ ሓበሬታ/ዳታ ናይ ተፈጺሞም ዝኾኑ ልበዳታት ናይቲ ዝሓለፈ ምርኽኻብ ካብቲ መርበብ ኢንተርነት እንተላይ ይስደዱ።";

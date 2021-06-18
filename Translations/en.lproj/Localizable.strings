@@ -1336,7 +1336,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Your app's private key was sent for the following period:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "When you enter a Covidcode, tracing needs to be activated so that your private key can be shared.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "When you enter a Covidcode, tracing needs to be activated so that your private key can be shared.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "If you press \"{BUTTON_TITLE}\", you leave the app and switch to the SwissCovid Guide website. The data on recent encounters with potentially infected people is sent to the website.";

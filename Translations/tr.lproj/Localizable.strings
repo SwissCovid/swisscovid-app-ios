@@ -1307,7 +1307,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Uygulamanızın özel anahtarları şu zaman aralığı için gönderildi:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Bir Covid kodu girerken, özel anahtarlarınızın paylaşılabilmesi için izleme etkinleştirilmiş olmalıdır.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Bir Covid kodu girerken, özel anahtarlarınızın paylaşılabilmesi için izleme etkinleştirilmiş olmalıdır.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "\"{BUTTON_TITLE}\" üzerine basarsanız, uygulamadan çıkıp SwissCovid rehberinin web sitesine gidersiniz. Bu esnada olası bulaşmalara ait son karşılaşmaların verileri de web sitesine gönderilir.";

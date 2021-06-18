@@ -1306,7 +1306,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Privatni ključevi vaše aplikacije poslati su za sledeći period:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Prilikom unosa kovid šifre mora se aktivirati praćenje (tracing) kako bi vaši privatni ključevi mogli da se dele.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Prilikom unosa kovid šifre mora se aktivirati praćenje (tracing) kako bi vaši privatni ključevi mogli da se dele.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Kada pritisnete \"{BUTTON_TITLE}\" napuštate aplikaciju i dolazite na internet stranicu SwissCovid vodiča. Pri tome se podaci poslednjeg susreta sa mogućim zaražavanjem šalju internet stranici.";

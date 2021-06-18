@@ -1341,7 +1341,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Les clés privées de votre application ont été envoyées pour la période suivante :";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Le traçage doit être activé lors de la saisie d'un code COVID, afin que les clés privées puissent être envoyées.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Le traçage doit être activé lors de la saisie d'un code COVID, afin que les clés privées puissent être envoyées.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "En cliquant sur \"{BUTTON_TITLE}\", vous quitterez l'application et serez redirigé sur le site du guide SwissCovid. Les dates de vos derniers contacts avec des personnes potentiellement infectées seront alors transmises au site.";

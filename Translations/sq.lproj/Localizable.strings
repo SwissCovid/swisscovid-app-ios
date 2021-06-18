@@ -1308,7 +1308,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Çelësat privatë të aplikacionit tuaj janë dërguar për periudhën kohore vijuese:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Kur futni një kod Covid, gjurmimi duhet të aktivizohet në mënyrë që çelësat tuaj privatë të mund të shpërndahen.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Kur futni një kod Covid, gjurmimi duhet të aktivizohet në mënyrë që çelësat tuaj privatë të mund të shpërndahen.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Nëse shtypni \"{BUTTON_TITLE}\", dilni nga aplikacioni dhe kaloni në faqen e internetit të udhëzuesit SwissCovid. Të dhënat e takimeve të fundit të infektimeve të mundshme dërgohen gjithashtu në faqen e internetit.";

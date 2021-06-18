@@ -1306,7 +1306,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Las clavs privatas da Vossa app èn vegnidas tramessas per il suandant spazi da temp:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Per che Vossas clavs privatas possian vegnir cundivididas sto il tracing esser activà cun endatar in code covid.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Per che Vossas clavs privatas possian vegnir cundivididas sto il tracing esser activà cun endatar in code covid.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Sche Vus schmatgais sin \"{BUTTON_TITLE}\", bandunais Vus l'app e midais a la pagina d'internet dal mussavia SwissCovid. Uschia vegnan tramessas a la pagina d'internet er las datas dals ultims inscunters d'eventualas infecziuns.";
