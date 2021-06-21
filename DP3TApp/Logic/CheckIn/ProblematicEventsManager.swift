@@ -228,6 +228,6 @@ class ProblematicEventsManager {
 
         CrowdNotifier.cleanUpOldData(maxDaysToKeep: 14)
         CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 14)
-        exposureEvents = CrowdNotifier.checkForMatches(problematicEventInfos: problematicEvents, requiredOverlap: .minute * 15)
+        exposureEvents = CrowdNotifier.checkForMatches(problematicEventInfos: problematicEvents)
     }
 }

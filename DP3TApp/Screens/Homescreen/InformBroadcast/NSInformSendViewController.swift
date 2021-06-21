@@ -111,6 +111,7 @@ class NSInformSendViewController: NSViewController {
 
     private func finish() {
         UserStorage.shared.didMarkAsInfected = true
+        UserStorage.shared.tracingWasEnabledBeforeIsolation = UserStorage.shared.tracingSettingEnabled
         UserStorage.shared.tracingSettingEnabled = false
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
         UBPushManager.shared.setActive(false)

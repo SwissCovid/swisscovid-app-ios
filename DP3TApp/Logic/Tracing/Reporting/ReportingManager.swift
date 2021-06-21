@@ -206,7 +206,11 @@ class ReportingManager: ReportingManagerProtocol {
 
         var oldestDate: Date?
 
-        for checkIn in selectedCheckIns {
+        let sortedCheckIns = selectedCheckIns.sorted { lhs, rhs in
+            lhs.checkInTime < rhs.checkInTime
+        }
+
+        for checkIn in sortedCheckIns {
             guard let checkOutTime = checkIn.checkOutTime else {
                 continue
             }
@@ -215,7 +219,9 @@ class ReportingManager: ReportingManagerProtocol {
                 oldestDate = checkIn.checkInTime
             }
 
-            let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue, arrivalTime: checkIn.checkInTime, departureTime: checkOutTime)
+            let infos = CrowdNotifier.generateUserUploadInfo(venueInfo: checkIn.venue,
+                                                             arrivalTime: checkIn.checkInTime,
+                                                             departureTime: checkOutTime.addingTimeInterval(.minute * 30))
 
             uploadInfos.append(contentsOf: infos.map {
                 var info = UploadVenueInfo()
