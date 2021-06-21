@@ -143,6 +143,8 @@ class TracingManager: NSObject {
                 }
                 callback?(result)
             })
+        } else {
+            callback?(.failure(.permissonError))
         }
 
         updateStatus(shouldSync: false, completion: nil)
