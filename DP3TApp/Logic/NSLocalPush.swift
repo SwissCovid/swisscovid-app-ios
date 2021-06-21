@@ -52,6 +52,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         case checkInautomaticCheckout = "ch.admin.bag.dp3t.notificationtype.automaticCheckout"
         case checkInExposure = "ch.admin.bag.dp3t.notificationtype.exposure"
         case checkInbackgroundTaskWarningTrigger = "ch.admin.bag.dp3t.notificationtype.backgroundtaskwarning"
+        case checkInUpdateNotification = "ch.admin.bag.dp3t.notificationtype.checkInUpdateNotificationEnabled"
 
         var isErrorNotification: Bool {
             switch self {
@@ -364,6 +365,15 @@ class NSLocalPush: NSObject, LocalPushProtocol {
     }
 
     // MARK: - CheckIn Reminder Notifications
+
+    func schedulecheckInUpdateNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "update_notification_checkin_feature_title".ub_localized
+        content.body = "update_notification_checkin_feature_text".ub_localized
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: .second * 30, repeats: false)
+        let request = UNNotificationRequest(identifier: Identifiers.checkInUpdateNotification.rawValue, content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: nil)
+    }
 
     func removeAllCheckInReminders() {
         center.removePendingNotificationRequests(withIdentifiers: [Identifiers.checkInReminder.rawValue,
