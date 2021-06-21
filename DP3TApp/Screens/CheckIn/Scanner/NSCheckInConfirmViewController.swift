@@ -164,11 +164,14 @@ class NSCheckInConfirmViewController: NSViewController {
         checkInTimeButton.titleEdgeInsets = .init(top: NSPadding.large, left: 0, bottom: NSPadding.large, right: 0)
         checkInTimeButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }
-            let vc = NSDatePickerBottomSheetViewController(mode: .dateAndTime(selected: self.checkInTime, maxDate: .init(), callback: { [weak self] dateTime in
-                guard let self = self else { return }
-                self.checkInTime = dateTime
-                self.updateCheckInTime()
-            }))
+            let vc = NSDatePickerBottomSheetViewController(mode: .dateAndTime(selected: self.checkInTime,
+                                                                              minDate: .init(timeIntervalSinceNow: -(self.venueInfo.automaticCheckoutTimeInterval ?? .hour * 8)),
+                                                                              maxDate: .init(),
+                                                                              callback: { [weak self] dateTime in
+                                                                                  guard let self = self else { return }
+                                                                                  self.checkInTime = dateTime
+                                                                                  self.updateCheckInTime()
+                                                                              }))
             vc.present(from: self)
         }
 

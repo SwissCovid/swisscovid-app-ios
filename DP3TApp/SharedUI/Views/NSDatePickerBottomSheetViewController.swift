@@ -23,9 +23,16 @@ class NSDatePickerBottomSheetViewController: NSViewController {
     var dismissCallback: (() -> Void)?
 
     enum Mode {
-        case interval(selected: TimeInterval, callback: (TimeInterval) -> Void)
-        case dateAndTime(selected: Date, maxDate: Date, callback: (Date) -> Void)
-        case date(selected: Date, maxDate: Date, callback: (Date) -> Void)
+        case interval(selected: TimeInterval,
+                      callback: (TimeInterval) -> Void)
+        case dateAndTime(selected: Date,
+                         minDate: Date,
+                         maxDate: Date,
+                         callback: (Date) -> Void)
+        case date(selected: Date,
+                  minDate: Date,
+                  maxDate: Date,
+                  callback: (Date) -> Void)
     }
 
     private let mode: Mode
@@ -33,14 +40,16 @@ class NSDatePickerBottomSheetViewController: NSViewController {
     init(mode: Mode) {
         self.mode = mode
         switch mode {
-        case let .date(selected, maxDate, _):
+        case let .date(selected, minDate, maxDate, _):
             picker.date = selected
             picker.datePickerMode = .date
             picker.maximumDate = maxDate
-        case let .dateAndTime(selected, maxDate, _):
+            picker.minimumDate = minDate
+        case let .dateAndTime(selected, minDate, maxDate, _):
             picker.date = selected
             picker.datePickerMode = .dateAndTime
             picker.maximumDate = maxDate
+            picker.minimumDate = minDate
         case let .interval(selected, _):
             picker.datePickerMode = .countDownTimer
             picker.countDownDuration = selected
@@ -96,9 +105,9 @@ class NSDatePickerBottomSheetViewController: NSViewController {
         saveButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }
             switch self.mode {
-            case let .date(_, _, callback):
+            case let .date(_, _, _, callback):
                 callback(self.picker.date)
-            case let .dateAndTime(_, _, callback):
+            case let .dateAndTime(_, _, _, callback):
                 callback(self.picker.date)
             case let .interval(_, callback):
                 callback(self.picker.countDownDuration)
