@@ -347,7 +347,7 @@ extension TracingManager: DP3TBackgroundHandler {
                 // only show the notification between 8:00 and 20:00
                 let hour = Calendar.current.dateComponents([.hour], from: Date())
                 if let hour = hour.hour,
-                   (8 ... 20).contains(hour) {
+                   (8 ... 19).contains(hour) {
                     NSLocalPush.shared.schedulecheckInUpdateNotification()
                     UserStorage.shared.hasShownCheckInUpdateNotification = true
                 }

@@ -228,9 +228,9 @@ class ReportingManager: ReportingManagerProtocol {
                 info.preID = $0.preId.data
                 info.timeKey = $0.timeKey.data
                 info.notificationKey = $0.notificationKey.data
-                info.intervalStartMs = Int64($0.intervalStartMs)
-                info.intervalEndMs = Int64($0.intervalEndMs)
-                info.fake = false
+                info.intervalStartMs = UInt64($0.intervalStartMs)
+                info.intervalEndMs = UInt64($0.intervalEndMs)
+                info.fake = Bytes([0]).data
                 return info
             })
         }
@@ -241,9 +241,9 @@ class ReportingManager: ReportingManagerProtocol {
             info.preID = .randomBytes(32)
             info.timeKey = .randomBytes(32)
             info.notificationKey = .randomBytes(32)
-            info.intervalStartMs = Int64.random(in: 0 ... Int64.max)
-            info.intervalEndMs = Int64.random(in: 0 ... Int64.max)
-            info.fake = true
+            info.intervalStartMs = UInt64.random(in: 0 ... UInt64.max)
+            info.intervalEndMs = UInt64.random(in: 0 ... UInt64.max)
+            info.fake = Bytes([1]).data
             return info
         }
         uploadInfos.append(contentsOf: fakeCheckins)
