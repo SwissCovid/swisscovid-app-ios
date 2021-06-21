@@ -1784,3 +1784,6 @@
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
 "events_card_title_events_not_empty" = "Meine QR-Codes";
+
+/*Titel für aktuellen Check-in im Tagebuch*/
+"diary_current_title" = "Aktuell";

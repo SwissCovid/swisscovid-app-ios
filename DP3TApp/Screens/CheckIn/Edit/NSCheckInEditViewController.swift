@@ -347,4 +347,13 @@ class NSCheckInEditViewController: NSViewController {
 
         present(controller, animated: true, completion: nil)
     }
+
+    // MARK: - Presentation
+
+    func present(from presentingViewController: UIViewController) {
+        guard CheckInManager.shared.currentCheckIn != nil else {
+            return
+        }
+        presentInNavigationController(from: presentingViewController, useLine: false)
+    }
 }

@@ -13,7 +13,7 @@ import Foundation
 
 class NSCheckInHomescreenModuleView: NSModuleBaseView {
     private let checkedOutView = NSCheckInHomescreenModuleCheckedOutView()
-    private let checkedInView = NSCheckInHomescreenModuleCheckedInView()
+    private let checkedInView = NSCheckInContentView(style: .homescreen)
 
     private let checkinEndedView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "checkin_ended_title".ub_localized,
@@ -61,7 +61,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
             checkinEndedView.isHidden = true
-            checkedInView.update(checkIn: checkedIn)
+            checkedInView.update(with: checkedIn)
         case .checkInEnded:
             checkedInView.isHidden = true
             checkedOutView.isHidden = true
@@ -108,81 +108,5 @@ class NSCheckInHomescreenModuleCheckedOutView: UIView {
 
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class NSCheckInHomescreenModuleCheckedInView: UIView {
-    private let label = NSLabel(.textLight, numberOfLines: 0)
-    private let timerLabel = NSLabel(.timerLarge, textAlignment: .center)
-    let checkOutButton = NSButton(title: "checkout_button_title".ub_localized, style: .outline(.ns_blue))
-
-    private var checkIn: CheckIn?
-    private var titleTimer: Timer?
-
-    init() {
-        super.init(frame: .zero)
-
-        addSubview(label)
-        addSubview(timerLabel)
-        addSubview(checkOutButton)
-
-        label.snp.makeConstraints { make in
-            make.leading.top.trailing.equalToSuperview().inset(NSPadding.small)
-        }
-
-        timerLabel.snp.makeConstraints { make in
-            make.top.equalTo(label.snp.bottom).inset(-NSPadding.medium)
-            make.leading.trailing.equalToSuperview().inset(NSPadding.small)
-        }
-
-        checkOutButton.snp.makeConstraints { make in
-            make.top.equalTo(timerLabel.snp.bottom).offset(NSPadding.medium + 3.0)
-            make.leading.trailing.equalToSuperview()
-            make.bottom.equalToSuperview().inset(NSPadding.small)
-        }
-    }
-
-    func update(checkIn: CheckIn) {
-        self.checkIn = checkIn
-
-        label.attributedText = NSMutableAttributedString()
-            .ns_add("checkin_checked_in".ub_localized, labelType: .textLight, alignment: .center)
-            .ns_add("\n", labelType: .textLight)
-            .ns_add(checkIn.venue.description, labelType: .textBold, alignment: .center)
-
-        timerLabel.text = ""
-        startTitleTimer()
-    }
-
-    override var isHidden: Bool {
-        didSet {
-            if isHidden {
-                stopTitleTimer()
-            }
-        }
-    }
-
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    // MARK: - Title timer
-
-    private func startTitleTimer() {
-        titleTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] _ in
-            guard let strongSelf = self else { return }
-            strongSelf.timerLabel.text = strongSelf.checkIn?.timeSinceCheckIn() ?? ""
-
-            if let checkInTime = strongSelf.checkIn?.checkInTime {
-                let timeInterval = Date().timeIntervalSince(checkInTime)
-                strongSelf.timerLabel.accessibilityLabel = DateComponentsFormatter.localizedString(from: DateComponents(hour: timeInterval.ub_hours, minute: timeInterval.ub_minutes, second: timeInterval.ub_seconds), unitsStyle: .spellOut)
-            }
-        })
-        titleTimer?.fire()
-    }
-
-    private func stopTitleTimer() {
-        titleTimer?.invalidate()
-        titleTimer = nil
     }
 }
