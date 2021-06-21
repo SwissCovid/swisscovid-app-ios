@@ -676,10 +676,10 @@
 		F8D3526F2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */; };
 		F8D581262589703000307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
-		F8D77D16267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
-		F8D77D18267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
 		F8D77D12267A9C4A00460C27 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
 		F8D77D14267AA32D00460C27 /* DateIntervalIntersectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */; };
+		F8D77D16267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
+		F8D77D18267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
 		F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8F822E02668B16100E1E29B /* CrowdNotifierSDK */; };
 /* End PBXBuildFile section */
 
@@ -1093,9 +1093,9 @@
 		F8D32BF22579184700ED1657 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
 		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
 		F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSViewController.swift; sourceTree = "<group>"; };
-		F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDatePickerBottomSheetViewController.swift; sourceTree = "<group>"; };
 		F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateInterval+intervals.swift"; sourceTree = "<group>"; };
 		F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalIntersectionTests.swift; sourceTree = "<group>"; };
+		F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDatePickerBottomSheetViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

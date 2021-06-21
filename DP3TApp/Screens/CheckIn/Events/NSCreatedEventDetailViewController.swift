@@ -24,6 +24,7 @@ class NSCreatedEventDetailViewController: NSViewController {
     private let shareButton = NSButton(title: "share_button_title".ub_localized, style: .normal(.ns_blue))
     private let showPDFButton = NSButton(title: "print_button_title".ub_localized, style: .normal(.ns_blue))
     private let deleteButton = NSButton(title: "delete_button_title".ub_localized, style: .outline(.ns_red))
+    private let dismissButton = UBButton()
 
     init(createdEvent: CreatedEvent) {
         self.createdEvent = createdEvent
@@ -34,6 +35,7 @@ class NSCreatedEventDetailViewController: NSViewController {
         shareButton.setImage(UIImage(named: "ic-share-ios"), for: .normal)
         showPDFButton.setImage(UIImage(named: "ic-print"), for: .normal)
         deleteButton.setImage(UIImage(named: "ic-delete"), for: .normal)
+        updateDismissButtonColor()
 
         showPDFButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -54,6 +56,15 @@ class NSCreatedEventDetailViewController: NSViewController {
             guard let strongSelf = self else { return }
             strongSelf.deletePressed()
         }
+
+        dismissButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.dismissPresented()
+        }
+
+        view.accessibilityViewIsModal = true
+
+        view.backgroundColor = .ns_moduleBackground
     }
 
     override func viewDidLoad() {
@@ -69,6 +80,8 @@ class NSCreatedEventDetailViewController: NSViewController {
             guard let self = self else { return }
             self.update(state)
         }
+
+        accessibilityElements = [dismissButton, venueView, checkInButton, shareButton, showPDFButton, deleteButton]
     }
 
     private func update(_ state: UIStateModel) {
@@ -134,6 +147,14 @@ class NSCreatedEventDetailViewController: NSViewController {
         }
 
         stackScrollView.addArrangedView(contentView)
+
+        view.addSubview(dismissButton)
+        dismissButton.snp.makeConstraints { make in
+            make.top.trailing.equalToSuperview().inset(NSPadding.medium)
+            make.size.equalTo(38)
+        }
+        dismissButton.highlightCornerRadius = 19
+        dismissButton.accessibilityLabel = "infobox_close_button_accessibility".ub_localized
     }
 
     private func sharePDF() {
@@ -144,11 +165,11 @@ class NSCreatedEventDetailViewController: NSViewController {
     private func checkInPressed() {
         let vc = NSCheckInConfirmViewController(createdEvent: createdEvent)
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(dismissPresented))
-        vc.checkInCallback = { [weak self] in
-            guard let self = self else { return }
-            if let viewcontroller = self.navigationController?.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
+        vc.checkInCallback = {
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let viewcontroller = appDelegate.navigationController.viewControllers.first(where: { $0 is NSCheckInOverviewViewController }) as? NSCheckInOverviewViewController {
                 viewcontroller.scrollToTop()
-                self.navigationController?.popToViewController(viewcontroller, animated: false)
+                appDelegate.navigationController.popToViewController(viewcontroller, animated: false)
+                appDelegate.navigationController.dismiss(animated: true)
             }
         }
         vc.presentInNavigationController(from: self, useLine: false)
@@ -179,10 +200,21 @@ class NSCreatedEventDetailViewController: NSViewController {
         alert.addAction(UIAlertAction(title: "delete_button_title".ub_localized, style: .destructive, handler: { [weak self] _ in
             guard let strongSelf = self else { return }
             CreatedEventsManager.shared.deleteEvent(with: strongSelf.createdEvent.id)
-            strongSelf.navigationController?.popViewController(animated: true)
+            strongSelf.dismissPresented()
         }))
         alert.addAction(UIAlertAction(title: "cancel".ub_localized, style: .cancel))
 
         present(alert, animated: true, completion: nil)
+    }
+
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        if #available(iOS 13.0, *), previousTraitCollection?.hasDifferentColorAppearance(comparedTo: traitCollection) ?? false {
+            updateDismissButtonColor()
+        }
+    }
+
+    private func updateDismissButtonColor() {
+        let color = UIColor.setColorsForTheme(lightColor: .black, darkColor: .white)
+        dismissButton.setImage(UIImage(named: "ic-close")?.ub_image(with: color), for: .normal)
     }
 }
