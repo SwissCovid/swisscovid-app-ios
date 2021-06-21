@@ -12,7 +12,7 @@
 import UIKit
 
 class NSReportsDetailExposedViewController: NSViewController {
-    private let encountersViewController = NSReportsDetailExposedEncountersViewController()
+    private var encountersViewController: NSReportsDetailExposedEncountersViewController?
 
     private var checkInViewController: NSReportsDetailExposedCheckInViewController!
 
@@ -28,7 +28,7 @@ class NSReportsDetailExposedViewController: NSViewController {
 
     public var encountersDidOpenLeitfaden: Bool = false {
         didSet {
-            encountersViewController.didOpenLeitfaden = encountersDidOpenLeitfaden
+            encountersViewController?.didOpenLeitfaden = encountersDidOpenLeitfaden
         }
     }
 
@@ -54,7 +54,7 @@ class NSReportsDetailExposedViewController: NSViewController {
     private func configure() {
         view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
-        if encountersViewController.view.superview != nil {
+        if let encountersViewController = encountersViewController {
             removeSubviewController(encountersViewController)
         }
         if checkInViewController != nil {
@@ -73,6 +73,8 @@ class NSReportsDetailExposedViewController: NSViewController {
     }
 
     private func configureEncountersViewController() {
+        encountersViewController = NSReportsDetailExposedEncountersViewController()
+        guard let encountersViewController = encountersViewController else { return }
         encountersViewController.showReportWithAnimation = showReportWithAnimation
         encountersViewController.reports = reports
         encountersViewController.didOpenLeitfaden = encountersDidOpenLeitfaden
