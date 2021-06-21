@@ -40,7 +40,6 @@ final class CreatedEventsManager {
             Int64(1000 * 60 * 30), // 30 minutes
             Int64(1000 * 60 * 60), // 1 hour
             Int64(1000 * 60 * 60 * 2), // 2 hours
-            Int64(1000 * 60 * 60 * 4), // 4 hours
         ]
 
         guard let countryData = try? locationData.serializedData() else {
