@@ -93,6 +93,10 @@ extension DateFormatter {
         return formatter
     }()
 
+    static func ub_timeFormat(from: Date) -> String {
+        return timeFormatter.string(from: from)
+    }
+
     static func ub_fromTimeToTime(from: Date?, to: Date?) -> String? {
         let timeText = [from, to].compactMap { date -> String? in
             if let d = date {

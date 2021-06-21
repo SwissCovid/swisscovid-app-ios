@@ -57,9 +57,9 @@ class CheckInManager {
         removeFromDiary(identifier: identifier)
     }
 
-    public func checkIn(qrCode: String, venueInfo: VenueInfo) {
+    public func checkIn(qrCode: String, venueInfo: VenueInfo, checkInTime: Date = Date()) {
         logger.trace()
-        currentCheckIn = CheckIn(identifier: "", qrCode: qrCode, checkInTime: Date(), venue: venueInfo)
+        currentCheckIn = CheckIn(identifier: "", qrCode: qrCode, checkInTime: checkInTime, venue: venueInfo)
     }
 
     public func checkOut() {
