@@ -73,6 +73,9 @@ class ReportingManager: ReportingManagerProtocol {
 
     private(set) var onsetDate: Date?
 
+    // Used for the thank you screen where we differentiate between keys and checkIns
+    private(set) var oldestENKeyDate: Date?
+
     private var onsetResponseDate: Date?
     private var userInteractionDuration: TimeInterval = 0
 
@@ -106,6 +109,7 @@ class ReportingManager: ReportingManagerProtocol {
                 self.state = state
                 callback(.success(()))
             case let .failure(error):
+                self.state = nil
                 callback(.failure(error))
             }
         }
@@ -181,6 +185,7 @@ class ReportingManager: ReportingManagerProtocol {
                             } else {
                                 self.oldestSharedKeyDate = max(oldestKeyDate, Date(timeIntervalSinceNow: -60 * 60 * 24 * 10))
                             }
+                            self.oldestENKeyDate = self.oldestSharedKeyDate
                         }
 
                         completion(.success(()))
@@ -278,6 +283,15 @@ class ReportingManager: ReportingManagerProtocol {
         }
 
         task?.resume()
+    }
+
+    func reset() {
+        tokenCache = [:]
+        state = nil
+        oldestENKeyDate = nil
+        onsetDate = nil
+        onsetResponseDate = nil
+        userInteractionDuration = 0
     }
 }
 

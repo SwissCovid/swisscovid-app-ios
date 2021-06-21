@@ -177,7 +177,7 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
 
                 if !ReportingManager.shared.hasUserConsent,
                    !UserStorage.shared.tracingSettingEnabled {
-                    let alert = UIAlertController(title: "", message: "android_inform_tracing_enabled_explanation".ub_localized, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "", message: "inform_tracing_enabled_explanation".ub_localized, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "activate_tracing_button".ub_localized, style: .default, handler: { _ in
                         TracingManager.shared.startTracing { result in
                             if case TracingEnableResult.success = result {
