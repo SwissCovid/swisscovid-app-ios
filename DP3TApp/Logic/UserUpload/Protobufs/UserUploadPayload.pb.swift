@@ -45,13 +45,13 @@ struct UploadVenueInfo {
 
   var timeKey: Data = Data()
 
-  var intervalStartMs: Int64 = 0
+  var intervalStartMs: UInt64 = 0
 
-  var intervalEndMs: Int64 = 0
+  var intervalEndMs: UInt64 = 0
 
   var notificationKey: Data = Data()
 
-  var fake: Bool = false
+  var fake: Data = Data()
 
   var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -95,19 +95,11 @@ extension UserUploadPayload: SwiftProtobuf.Message, SwiftProtobuf._MessageImplem
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func == (lhs: UserUploadPayload, rhs: UserUploadPayload) -> Bool {
-    if lhs.version != rhs.version {
-        return false
-    }
-    if lhs.venueInfos != rhs.venueInfos {
-        return false
-    }
-    if lhs.userInteractionDurationMs != rhs.userInteractionDurationMs {
-        return false
-    }
-    if lhs.unknownFields != rhs.unknownFields {
-        return false
-    }
+  static func ==(lhs: UserUploadPayload, rhs: UserUploadPayload) -> Bool {
+    if lhs.version != rhs.version {return false}
+    if lhs.venueInfos != rhs.venueInfos {return false}
+    if lhs.userInteractionDurationMs != rhs.userInteractionDurationMs {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
@@ -131,10 +123,10 @@ extension UploadVenueInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularBytesField(value: &self.preID) }()
       case 2: try { try decoder.decodeSingularBytesField(value: &self.timeKey) }()
-      case 3: try { try decoder.decodeSingularInt64Field(value: &self.intervalStartMs) }()
-      case 4: try { try decoder.decodeSingularInt64Field(value: &self.intervalEndMs) }()
+      case 3: try { try decoder.decodeSingularFixed64Field(value: &self.intervalStartMs) }()
+      case 4: try { try decoder.decodeSingularFixed64Field(value: &self.intervalEndMs) }()
       case 5: try { try decoder.decodeSingularBytesField(value: &self.notificationKey) }()
-      case 6: try { try decoder.decodeSingularBoolField(value: &self.fake) }()
+      case 6: try { try decoder.decodeSingularBytesField(value: &self.fake) }()
       default: break
       }
     }
@@ -148,42 +140,28 @@ extension UploadVenueInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplemen
       try visitor.visitSingularBytesField(value: self.timeKey, fieldNumber: 2)
     }
     if self.intervalStartMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.intervalStartMs, fieldNumber: 3)
+      try visitor.visitSingularFixed64Field(value: self.intervalStartMs, fieldNumber: 3)
     }
     if self.intervalEndMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.intervalEndMs, fieldNumber: 4)
+      try visitor.visitSingularFixed64Field(value: self.intervalEndMs, fieldNumber: 4)
     }
     if !self.notificationKey.isEmpty {
       try visitor.visitSingularBytesField(value: self.notificationKey, fieldNumber: 5)
     }
-    if self.fake != false {
-      try visitor.visitSingularBoolField(value: self.fake, fieldNumber: 6)
+    if !self.fake.isEmpty {
+      try visitor.visitSingularBytesField(value: self.fake, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func == (lhs: UploadVenueInfo, rhs: UploadVenueInfo) -> Bool {
-    if lhs.preID != rhs.preID {
-        return false
-    }
-    if lhs.timeKey != rhs.timeKey {
-        return false
-    }
-    if lhs.intervalStartMs != rhs.intervalStartMs {
-        return false
-    }
-    if lhs.intervalEndMs != rhs.intervalEndMs {
-        return false
-    }
-    if lhs.notificationKey != rhs.notificationKey {
-        return false
-    }
-    if lhs.fake != rhs.fake {
-        return false
-    }
-    if lhs.unknownFields != rhs.unknownFields {
-        return false
-    }
+  static func ==(lhs: UploadVenueInfo, rhs: UploadVenueInfo) -> Bool {
+    if lhs.preID != rhs.preID {return false}
+    if lhs.timeKey != rhs.timeKey {return false}
+    if lhs.intervalStartMs != rhs.intervalStartMs {return false}
+    if lhs.intervalEndMs != rhs.intervalEndMs {return false}
+    if lhs.notificationKey != rhs.notificationKey {return false}
+    if lhs.fake != rhs.fake {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
