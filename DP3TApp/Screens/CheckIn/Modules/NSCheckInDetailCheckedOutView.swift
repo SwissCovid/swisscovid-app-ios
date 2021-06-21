@@ -45,6 +45,7 @@ class NSCheckInDetailCheckedOutView: UIView {
         }
 
         titleLabel.text = "checkin_detail_checked_out_title".ub_localized
+        titleLabel.accessibilityTraits = .header
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(superTitleLabel.snp.bottom).offset(NSPadding.small)

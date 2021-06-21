@@ -130,6 +130,7 @@ class NSCheckInConfirmViewController: NSViewController {
 
         let venueView = NSVenueView(venue: venueInfo)
         reminderLabel.text = "checkin_set_reminder".ub_localized
+        reminderLabel.accessibilityTraits = .header
         reminderSubtitleLabel.text = "checkin_set_reminder_explanation".ub_localized
 
         let stackView = UIStackView()
