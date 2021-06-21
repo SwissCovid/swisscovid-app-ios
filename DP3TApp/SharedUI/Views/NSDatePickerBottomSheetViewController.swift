@@ -20,6 +20,8 @@ class NSDatePickerBottomSheetViewController: NSViewController {
     private let saveButton = NSSimpleTextButton(title: "done_button".ub_localized, color: .ns_blue)
     private let dismissButton = NSSimpleTextButton(title: "cancel".ub_localized, color: .ns_blue)
 
+    var dismissCallback: (() -> Void)?
+
     enum Mode {
         case interval(selected: TimeInterval, callback: (TimeInterval) -> Void)
         case dateAndTime(selected: Date, maxDate: Date, callback: (Date) -> Void)
@@ -84,6 +86,7 @@ class NSDatePickerBottomSheetViewController: NSViewController {
         }
         dismissButton.touchUpCallback = { [weak self] in
             self?.dismiss(animated: true, completion: nil)
+            self?.dismissCallback?()
         }
         dismissButton.titleLabel?.font = NSLabelType.textLight.font
         saveButton.snp.makeConstraints { make in
