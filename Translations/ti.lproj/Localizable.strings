@@ -872,7 +872,7 @@
 "travel_screen_explanation_title_1" = "እዚ እንታይ ማለት፧";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "ንስኹም ኣብ ሓደ ካብቶም ተቓደውቲ ሃገራት እንተትግዕዙ ኮይንኩም፣ ካልእ ኮሮና ኤፕ ከተምጽኡ ኣየድልየኩምን።\n\nSwissCovid ነቶም ኣብቶም ተቓደውቲ ሃገራት ዝተዘርገሑ ግላውያን መፋትሕ ይቈጻጸር። ንስኹም ዋላ ኣብ ክፍጸም ዝኽእል ልበዳ ኣብ ወጻኢ ክትጥንቐቑ ትኽእሉ ኢኹም።";
+"travel_screen_explanation_text_1" = "ንስኹም ኣብ ሓደ ካብቶም ተቓደውቲ ሃገራት እንተትግዕዙ ኮይንኩም፣ ንምርኽኻብሲ ካልእ ኮሮና ኤፕ ከተምጽኡ ኣየድልየኩምን።\n\nSwissCovid ነቶም ኣብቶም ተቓደውቲ ሃገራት ዝተዘርገሑ ግላውያን መፋትሕ ይቈጻጸር። ንስኹም ዋላ ኣብ ክፍጸም ዝኽእል ልበዳ ኣብ ወጻኢ ክትጥንቐቑ ትኽእሉ ኢኹም።";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "ኣብ ምእታው ኮቪድኮድ እንታይ ክፍጸም ድዩ፧";
@@ -903,7 +903,7 @@
 "share_app_supertitle" = "ብሓባር…";
 "share_app_title" = "ልበዳታት ምውጋድ";
 "share_app_button" = "ነቲ ኤፕ ምኽፋል";
-"share_app_body" = "ብዝተኻእለ መጠን ብዙሓት ንSwissCovid ኤፕ እንድሕር ወሊዖሞ፣ ናይ ልበዳ ሰንሰለታት ብኣጋኡ ከነቋርጾም ንኽእል ኢና።";
+"share_app_body" = "ብዝተኻእለ መጠን ብዙሓት ካብ ፈለጥትኹም ነቲ ኤፕ ዝጥቐሙሉ ኮይኖም፣ ኣብ ናይ ልበዳ ርከሳ ብቕልጡፍ ክትሕበሩ ትኽእሉ።";
 
 /*Text der geteilt wird*/
 "share_app_message" = "ብስዊስኮድ ኣፕ ዝርግሐ ናይ ኮሮናቫይረስ ንኽዕገት እጃምኩም ተበርክቱ።";
@@ -1274,7 +1274,7 @@
 "answer_no" = "ኣይፋል";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "ኣብ ወጻኢ ምግዓዝ፧ ኣብዚኦም ሃገራት SwissCovid ይሰርሕ እዩ።";
+"travel_screen_info" = "ኣብ ወጻኢ ምግዓዝ፧ ኣብዚኦም ሃገራት ምርኽኻብ SwissCovid ይሰርሕ እዩ።";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
 "travel_screen_compatible_countries" = "ተቓደውቲ ሃገራት፥";
@@ -1419,7 +1419,7 @@
 "checkins_create_qr_code" = "QR-ኮድ ምፍጣር";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "ቸክ-ኢን ምቕራብ";
+"events_title" = "ምፍጣር ኮድ QR";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "ሕጂ ቸክ-ኢን ምእታው";
@@ -1519,7 +1519,7 @@
 "inform_share_checkins_subtitle" = "ናይ ቸክ-ኢን መዝገባትኩም እንድሕር ኣካፊልኩም፣ እቲ ኤፕ ኣብ ማዕረ ግዜ ኣብ ሽዑ ቦታ ኔሮም ዝነበሩ ሰባት ክሕብሮም ይኽእል።";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "ኩሉ ምምራጽ";
+"inform_share_checkins_select_all" = "ኩሉ ብቑዕ ዝኾነ ምምራጽ";
 "inform_dont_send_button_title" = "ኣይትስደድ";
 "inform_dont_share_button_title" = "ዘይምክፍፋል";
 "inform_really_not_share_title" = "ናይ ብሓቂ ብዘይ ምክፍፋል፧";
@@ -1550,10 +1550,10 @@
 "checkin_overview_isolation_text" = "ፖዚቲቭ ቸክ-ኢን እንድሕር ጌርኩም፣ ክትኣትዉ ኣይትኽእሉን ኢኹም።";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "ኮድ QR ምስፈጠርካዮ ብእኡ ሰባት ኣብቲ ቦታ ክኣትዉ ይኽእሉ።";
+"events_card_subtitle" = "ኮድ QR SwissCovid ምስፈጠርካዮ ብእኡ ሰባት ኣብቲ ቦታ ክኣትዉ ይኽእሉ።";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "ነቲ ኮድ QR ናይብሓቂ ክትድምሥዎ ደሊኹም ዶ፧";
+"delete_qr_code_dialog" = "ነቲ ኮድ QR ናይብሓቂ ክትድምስሱዎ ደሊኹም ዶ፧ ዝተሓተሙ ኮዳት QR ቀጺሎም ብቑዓት እዮም።";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "ባዕልኻ እትገብር ቸክ-ኢን";
@@ -1595,7 +1595,7 @@
 "home_end_isolation_card_title" = "ግላለ ምዝዛም፧";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "ቸክ-ኢን ከተቕርቡ ደሊኹም ዶ፧";
+"events_card_title" = "ኮዳት QR ብሓድሽ ክትፈጥሩ ደሊኹም፧";
 "checkin_footer_title1" = "ስለምንታይ ናይ ቸክ-ኢን ኣገባብ፧";
 "checkin_footer_subtitle1" = "ናይ ቸክ-ኢን ኣገባብ ብዘይ ምሓዝ ሓበሬታ ርክብ ነቲ SwissCovid ኤፕ ይውስኾ። ምስዚ ኣገባብ‘ዚ ፖዚቲቭ እንተ ደኣ ተመርሚርኩም፣ ጥራይ ቀረባ ርክባት ዘይኮነ ዋላ ውን ኣብ ማዕረ ግዜን ማዕረ ቦታን ኣትዮም ዝነበርይ ሰባት ከተጠንቅቕዎም ትኽእሉ።";
 "checkin_footer_title2" = "ማእከላዊ ዕቃበ ዳታ የለን";
@@ -1644,7 +1644,7 @@
 "checkin_report_title3" = "ምምርማር";
 "checkin_report_subtitle1" = "ድሮ ተላጋቢ ክትኮኑ ትኽእሉ ከይተገንዘብኩም። እቶም ብቑዓት ናይ ጽሬትን ምክልኻልን ስጉምትታት ተኸተሉ ከምኡውን ስድራኹምን ኣዕሩኽትኹምን ከባብኹምን ኣስተውዕሉ።";
 "checkin_report_subtitle2" = "መርገጽ ጥዕናኹም ተኸታተሉ።";
-"checkin_report_subtitle3" = "ኣብ ምቕልቓል ምልክታት ብዝቐልጠፈ ተመርመሩ። ዋላ ምልክታት ዘይቕልቀሉ እንተኾይኖም፣ መርመራ ኮሮና ጤቓምን ዝምረጽን እዩ።";
+"checkin_report_subtitle3" = "ኣብ ምቕልቓል ምልክታት ብዝቐልጠፈ ተመርመሩ። ዋላ ምልክታት ዘይቕልቀሉ እንተኾይኖም ኮምኡውን ገና ብምልኡ ዘይተኸተብኩም እንተኾይንኩም፣ መርመራ ኮሮና እንተላይ ጤቓምን ዝምረጽን እዩ።";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "ቸክ-ኢን";
@@ -1690,49 +1690,49 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+"checkout_too_long_alert_text" = "ነዚ ቸክ-ኢን እዋኑ ልዕሊ {DURATION} ክወስድ የብሉን። እንደገና ዝሃብኩም ሓበሬታ ተቈጻጸሩ ብኽብረትኩም።";
 
 /*turn camera light on*/
-"accessibility_camera_light_on" = "turn light on";
+"accessibility_camera_light_on" = "ልቺ ምውላዕ";
 
 /*turn camera light off*/
-"accessibility_camera_light_off" = "turn light off";
+"accessibility_camera_light_off" = "ልቺ ምጥፋእ";
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
-"error_cannot_enter_covidcode_while_checked_in" = "";
+"error_cannot_enter_covidcode_while_checked_in" = "ገና ኣቲኹም ኣለኹም። ኮቪድኮድ ቅድሚ ትህቡ ብኽብረትኩም ውጹ።";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
-"events_card_title_events_not_empty" = "";
+"events_card_title_events_not_empty" = "ናተይ ኮዳት QR";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
-"checkout_inverse_time_alert_description" = "";
+"checkout_inverse_time_alert_description" = "ዝመረጽኩም ቸክ-ኣውት ግዜ ቅድሚ ቸክ-ኢን ግዜ እዩ ዘሎ። እቲ ዝሃብኩም ሓበሬታ እንደገና ተቈጻጸሩ ብኽብረትኩም።";
 
 /*Titel für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_title" = "";
+"update_notification_checkin_feature_title" = "ሓድሽ ኣገባብ፥ ቸክ-ኢን";
 
 /*Text für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_text" = "";
+"update_notification_checkin_feature_text" = "ናይ ምጥቓም SwissCovid ነመስግነኩም። በቲ ሓድሽ ቨርዝዮን ኤፕ ዝኾነ ሓበሬታ ከይገደፍኩም ኣብቲ ቦታ ቸክ-ኢን/ክትኣትዉ ትኽእሉ።";
 
 /*Titel für aktuellen Check-in im Tagebuch*/
-"diary_current_title" = "";
+"diary_current_title" = "ሕጂ";
 
 /*Snooze Option um 30min später an Checkout zu erinnern*/
-"ios_snooze_option_30min" = "";
+"ios_snooze_option_30min" = "እንደገና ኣዘክር (30 ደቓይቕ)";
 
 /*Snooze Option um 1h später an Checkout zu erinnern*/
-"ios_snooze_option_1h" = "";
+"ios_snooze_option_1h" = "እንደገና ኣዘክር (1 ሰዓት)";
 
 /*Snooze Option um 2h später an Checkout zu erinnern*/
-"ios_snooze_option_2h" = "";
+"ios_snooze_option_2h" = "እንደገና ኣዘክር (2 ሰዓት)";
 
 /*Notification Quickaction um jetzt auszuchecken*/
-"ios_notification_checkout_now" = "";
+"ios_notification_checkout_now" = "ሕጂ ቸክ-ኣውት/ምውጻእ";
 
 /*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
-"covid_certificate_alert_text" = "";
+"covid_certificate_alert_text" = "ነዚ QR-ኮድ ስኬን ንክትገብርዎ እቲ \"COVID Certificate\" ዝብሃል ኤፕ ተጠቐምሉ ብኽብረትኩም።";
 
 /*Button um Covid Certificate App zu öffnen*/
-"covid_certificate_open_app" = "";
+"covid_certificate_open_app" = "ኤፕ ምኽፋት";
 
 /*Button um Covid Certificate App zu installieren*/
-"covid_certificate_install_app" = "";
+"covid_certificate_install_app" = "ኤፕ ምትካል";

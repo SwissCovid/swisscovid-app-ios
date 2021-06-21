@@ -902,7 +902,7 @@
 "share_app_supertitle" = "Zajedno…";
 "share_app_title" = "Sprečimo širenje infekcije";
 "share_app_button" = "Deli aplikaciju";
-"share_app_body" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
+"share_app_body" = "Ako većina vaših kontakata koristi aplikaciju SwissCovid, možete brzo biti obavešteni u slučaju rizika od zaraze.";
 
 /*Text der geteilt wird*/
 "share_app_message" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
@@ -1418,7 +1418,7 @@
 "checkins_create_qr_code" = "Napraviti QR kod";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "Ponuditi prijave?";
+"events_title" = "Napravite QR kodove";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Sada se prijaviti";
@@ -1518,7 +1518,7 @@
 "inform_share_checkins_subtitle" = "Kada delite unose prijave, aplikacija može istovremeno da obavesti lica, koja su se prijavila na istoj lokaciji.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "Izabrati sve";
+"inform_share_checkins_select_all" = "Izaberite sve što odgovara";
 "inform_dont_send_button_title" = "Ne slati";
 "inform_dont_share_button_title" = "Ne deliti";
 "inform_really_not_share_title" = "Zaista ne deliti?";
@@ -1552,7 +1552,7 @@
 "events_card_subtitle" = "Napravite QR kod, pomoću kojeg lica mogu da se prijave na lokaciji.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "Želite li zaista da izbrišete QR kod? ";
+"delete_qr_code_dialog" = "Želite li zaista da izbrišete QR kod? Štampani QR kodovi ostaju i dalje na snazi.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Samostalno prijavljivanje";
@@ -1594,7 +1594,7 @@
 "home_end_isolation_card_title" = "Kraj izolacije?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "Želite da ponudite prijave?";
+"events_card_title" = "Da li želite da napravite QR kodove?";
 "checkin_footer_title1" = "Čemu služi funkcija prijave?";
 "checkin_footer_subtitle1" = "Funkcija prijave bez unošenja podataka o kontaktima povećava funkcije aplikacije SwissCovid. Pomoću ove funkcije, u slučaju pozitivnog testa, možete ne samo da upozorite bliske kontakte, već i lica koja su se istovremeno prijavila na istom mestu.";
 "checkin_footer_title2" = "Nema centralnog čuvanja podataka";
@@ -1643,7 +1643,7 @@
 "checkin_report_title3" = "Vršiti testiranje";
 "checkin_report_subtitle1" = "Mogli biste biti zarazni, a da to ne primetite. Pridržavajte se važećih higijenskih i zaštitnih mera i zaštitite svoju porodicu, prijatelje i okolinu.";
 "checkin_report_subtitle2" = "Proveravajte svoje zdravsveno stanje.";
-"checkin_report_subtitle3" = "Odmah se testirajte ako imate simptome. Čak i ako nema simptoma, test korone je važan i  preporučuje se.";
+"checkin_report_subtitle3" = "Odmah se testirajte ako imate simptome. Čak i ako nema simptoma i niste u potpunosti vakcinisani, test korone je važan i  preporučuje se.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Prijava";
@@ -1689,49 +1689,49 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+"checkout_too_long_alert_text" = "Ova prijava važi maksimalno u trajanju od {DURATION}. Molimo vas da ponovo proverite svoje podatke.";
 
 /*turn camera light on*/
-"accessibility_camera_light_on" = "turn light on";
+"accessibility_camera_light_on" = "Uključiti svetlo";
 
 /*turn camera light off*/
-"accessibility_camera_light_off" = "turn light off";
+"accessibility_camera_light_off" = "Isključiti svetlo";
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
-"error_cannot_enter_covidcode_while_checked_in" = "";
+"error_cannot_enter_covidcode_while_checked_in" = "Još uvek ste prijavljeni. Molimo odjavite se pre unosa Covid koda.";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
-"events_card_title_events_not_empty" = "";
+"events_card_title_events_not_empty" = "Moji QR kodovi";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
-"checkout_inverse_time_alert_description" = "";
+"checkout_inverse_time_alert_description" = "Odabrano vreme za odjavu nalazi se je pre vremena za prijavu. Molimo vas da ponovo proverite svoje podatke.";
 
 /*Titel für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_title" = "";
+"update_notification_checkin_feature_title" = "Nova funkcija: prijava";
 
 /*Text für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_text" = "";
+"update_notification_checkin_feature_text" = "Hvala vam što koristite SwissCovid. Sa najnovijom verzijom aplikacije možete da se prijavite na lokaciji bez ostavljanja podataka.";
 
 /*Titel für aktuellen Check-in im Tagebuch*/
-"diary_current_title" = "";
+"diary_current_title" = "Trenutno";
 
 /*Snooze Option um 30min später an Checkout zu erinnern*/
-"ios_snooze_option_30min" = "";
+"ios_snooze_option_30min" = "Podsetiti ponovo (30min)";
 
 /*Snooze Option um 1h später an Checkout zu erinnern*/
-"ios_snooze_option_1h" = "";
+"ios_snooze_option_1h" = "Podsetiti ponovo (1h)";
 
 /*Snooze Option um 2h später an Checkout zu erinnern*/
-"ios_snooze_option_2h" = "";
+"ios_snooze_option_2h" = "Podsetiti ponovo (2h)";
 
 /*Notification Quickaction um jetzt auszuchecken*/
-"ios_notification_checkout_now" = "";
+"ios_notification_checkout_now" = "Sada se odjaviti";
 
 /*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
-"covid_certificate_alert_text" = "";
+"covid_certificate_alert_text" = "Molimo koristite aplikaciju \"COVID certifikat\" za skeniranje ovog QR koda.";
 
 /*Button um Covid Certificate App zu öffnen*/
-"covid_certificate_open_app" = "";
+"covid_certificate_open_app" = "Otvoriti aplikaciju";
 
 /*Button um Covid Certificate App zu installieren*/
-"covid_certificate_install_app" = "";
+"covid_certificate_install_app" = "Instalirati aplikaciju";

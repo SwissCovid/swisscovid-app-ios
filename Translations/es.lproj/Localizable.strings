@@ -873,7 +873,7 @@
 "travel_screen_explanation_title_1" = "¿Y esto qué significa?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Si está usted de viaje en uno de los países compatibles no es necesario descargar otra aplicación contra el coronavirus.\n\nSwissCovid analiza las claves privadas difundidas en los países compatibles. Así, la aplicación le avisa de un posible contagio incluso estando en el extranjero.";
+"travel_screen_explanation_text_1" = "Si está usted de viaje en uno de los países compatibles, no es necesario descargar otra aplicación para los contactos.\n\nSwissCovid analiza las claves privadas difundidas en los países compatibles. Así, la aplicación le avisa de un posible contagio incluso estando en el extranjero.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "¿Qué ocurre al introducir el código Covid?";
@@ -904,7 +904,7 @@
 "share_app_supertitle" = "Juntos…";
 "share_app_title" = "evitamos los contagios";
 "share_app_button" = "Compartir la aplicación";
-"share_app_body" = "Si un gran número de personas activan la app SwissCovid, es posible interrumpir las cadenas de contagio a tiempo.";
+"share_app_body" = "Cuantas más personas de entre sus contractos utilicen la app SwissCovid, más rápidamente será informado de un riesgo de contagio.";
 
 /*Text der geteilt wird*/
 "share_app_message" = "Con la aplicación Swiss Covid, todos podemos contribuir a contener la propagación del virus.";
@@ -1275,7 +1275,7 @@
 "answer_no" = "No";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "¿En el extranjero? SwissCovid funciona en estos países.";
+"travel_screen_info" = "¿En el extranjero? SwissCovid-Contactos funciona en estos países.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
 "travel_screen_compatible_countries" = "Países compatibles:";
@@ -1420,7 +1420,7 @@
 "checkins_create_qr_code" = "Generar código QR";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "¿Quiere ofrecer Check-in a otros?";
+"events_title" = "Generar códigos QR";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Check-in ahora";
@@ -1520,7 +1520,7 @@
 "inform_share_checkins_subtitle" = "Al compartir los registros de Check-in, la aplicación puede informar a personas que se registraron al mismo tiempo en el mismo sitio.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "Seleccionar todos";
+"inform_share_checkins_select_all" = "Seleccionar todo lo apropiado";
 "inform_dont_send_button_title" = "No enviar";
 "inform_dont_share_button_title" = "No compartir";
 "inform_really_not_share_title" = "¿Seguro que no quiere compartir?";
@@ -1551,10 +1551,10 @@
 "checkin_overview_isolation_text" = "No puede usted hacer un registro de entrada si ha dado positivo en el test.";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "Genere un código QR para permitir que las personas puedan registrase in situ.";
+"events_card_subtitle" = "Genere un código QR-SwissCovid para permitir que las personas puedan registrase in situ.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "¿Seguro que quiere eliminar el código QR?";
+"delete_qr_code_dialog" = "¿Seguro que quiere eliminar el código QR? Los códigos QR impresos mantienen su vigencia.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Auto Check-in";
@@ -1596,7 +1596,7 @@
 "home_end_isolation_card_title" = "¿Finalizado el aislamiento?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "¿Quiere usted ofrecer Check-in a otros?";
+"events_card_title" = "¿Quiere usted generar códigos QR?";
 "checkin_footer_title1" = "¿Por qué una función Check-in?";
 "checkin_footer_subtitle1" = "La función Check-in sin registro de datos de contacto es una ampliación de la app SwissCovid. En caso de dar positivo en un test, esta función le permite alertar no solo a los contactos estrechos, sino también a personas que se registraron al mismo tiempo en el mismo lugar que usted.";
 "checkin_footer_title2" = "Sin almacenamiento centralizado de datos";
@@ -1645,7 +1645,7 @@
 "checkin_report_title3" = "Hacer el test";
 "checkin_report_subtitle1" = "Es posible que sea usted contagioso sin darse cuenta. Observe las reglas de higiene y comportamiento y proteja a su familia, sus amigos y su entorno.";
 "checkin_report_subtitle2" = "Vigile su estado de salud.";
-"checkin_report_subtitle3" = "Ante la aparición de síntomas haga el test inmediatamente. Incluso si no tiene síntomas, es oportuno y recomendable hacer el test de Covid-19.";
+"checkin_report_subtitle3" = "Ante la aparición de síntomas haga el test inmediatamente. Incluso si no tiene síntomas y aún no está vacunado por completo, es conveniente y recomendable hacer el test del coronavirus.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
@@ -1691,49 +1691,49 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+"checkout_too_long_alert_text" = "Este Check-In tiene una duración máxima de {DURATION}. Por favor, compruebe los datos introducidos.";
 
 /*turn camera light on*/
-"accessibility_camera_light_on" = "turn light on";
+"accessibility_camera_light_on" = "Luz encendida";
 
 /*turn camera light off*/
-"accessibility_camera_light_off" = "turn light off";
+"accessibility_camera_light_off" = "Luz apagada";
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
-"error_cannot_enter_covidcode_while_checked_in" = "";
+"error_cannot_enter_covidcode_while_checked_in" = "Aún no ha hecho el Check-in. Dése de baja antes de introducir el código Covid.";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
-"events_card_title_events_not_empty" = "";
+"events_card_title_events_not_empty" = "Mis códigos QR";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
-"checkout_inverse_time_alert_description" = "";
+"checkout_inverse_time_alert_description" = "La hora de Chek-out seleccionada es anterior a la de Check-in. Por favor, compruebe los datos introducidos.";
 
 /*Titel für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_title" = "";
+"update_notification_checkin_feature_title" = "Nueva función: Check-in";
 
 /*Text für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_text" = "";
+"update_notification_checkin_feature_text" = "Gracias por utilizar SwissCovid. Con la nueva versión de la aplicación puede usted registrarse en un lugar sin dejar ningún dato.";
 
 /*Titel für aktuellen Check-in im Tagebuch*/
-"diary_current_title" = "";
+"diary_current_title" = "Ahora";
 
 /*Snooze Option um 30min später an Checkout zu erinnern*/
-"ios_snooze_option_30min" = "";
+"ios_snooze_option_30min" = "Volver a recordar (30 min)";
 
 /*Snooze Option um 1h später an Checkout zu erinnern*/
-"ios_snooze_option_1h" = "";
+"ios_snooze_option_1h" = "Volver a recordar (1 h)";
 
 /*Snooze Option um 2h später an Checkout zu erinnern*/
-"ios_snooze_option_2h" = "";
+"ios_snooze_option_2h" = "Volver a recordar (2 h)";
 
 /*Notification Quickaction um jetzt auszuchecken*/
-"ios_notification_checkout_now" = "";
+"ios_notification_checkout_now" = "Check-out ahora";
 
 /*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
-"covid_certificate_alert_text" = "";
+"covid_certificate_alert_text" = "Para escanear este código QR utilice la aplicación \"COVID Certificate\".";
 
 /*Button um Covid Certificate App zu öffnen*/
-"covid_certificate_open_app" = "";
+"covid_certificate_open_app" = "Abrir la aplicación";
 
 /*Button um Covid Certificate App zu installieren*/
-"covid_certificate_install_app" = "";
+"covid_certificate_install_app" = "Instalar la aplicación";
