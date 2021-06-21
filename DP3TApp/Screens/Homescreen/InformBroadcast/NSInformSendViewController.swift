@@ -116,11 +116,12 @@ class NSInformSendViewController: NSViewController {
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
         UBPushManager.shared.setActive(false)
         UIStateManager.shared.refresh()
+        ReportingManager.shared.reset()
 
         if skipThankYou {
             navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
         } else {
-            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestSharedKeyDate, hasSentCheckIns: checkIns != nil), animated: true)
+            navigationController?.pushViewController(NSInformThankYouViewController(onsetDate: ReportingManager.shared.oldestENKeyDate, hasSentCheckIns: checkIns != nil), animated: true)
         }
         let nav = presentingViewController as? NSNavigationController
         nav?.popToRootViewController(animated: true)
