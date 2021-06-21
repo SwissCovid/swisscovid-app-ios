@@ -61,7 +61,7 @@ class NSAreYouSureViewController: NSViewController {
             switch UIStateManager.shared.trackingState {
             case let .inactive(error):
                 switch error {
-                case .permissonError:
+                case .permissonError, .exposureNotificationError:
                     guard let navigationController = self.navigationController else { return }
                     NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
                 default:
