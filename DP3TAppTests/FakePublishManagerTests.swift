@@ -30,11 +30,12 @@ class MockReportingManager: ReportingManagerProtocol {
     }
 
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
-        getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+        callsToGetJwtTokens += 1
+        completion(.success(.init(code: "", enToken: .init(onset: Date(), token: ""), checkInToken: .init(onset: Date(), token: ""))))
     }
 
     var callsToGetJwtTokens = 0
-    func getJWTTokens(covidCode: String, isFakeRequest _: Bool, completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
+    func getJWTTokens(covidCode: String, completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
         callsToGetJwtTokens += 1
         completion(.success(.init(code: covidCode, enToken: .init(onset: Date(), token: ""), checkInToken: .init(onset: Date(), token: ""))))
     }

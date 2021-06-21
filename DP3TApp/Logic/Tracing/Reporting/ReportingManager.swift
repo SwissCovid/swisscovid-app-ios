@@ -19,14 +19,13 @@ protocol ReportingManagerProtocol: AnyObject {
                       isFakeRequest fake: Bool,
                       completion: @escaping (Result<CodeValidator.OnsetDateWrapper, CodeValidator.ValidationError>) -> Void)
 
-    func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
-
     var hasUserConsent: Bool { get }
 
     func getUserConsent(callback: @escaping (Result<Void, DP3TTracingError>) -> Void)
 
+    func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
+
     func getJWTTokens(covidCode: String,
-                      isFakeRequest fake: Bool,
                       completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void)
 
     func sendENKeys(tokens: CodeValidator.TokenWrapper,
@@ -91,7 +90,7 @@ class ReportingManager: ReportingManagerProtocol {
         codeValidator.sendOnsetDateRequest(code: covidCode, isFakeRequest: fake) { result in
             switch result {
             case let .success(onset):
-                self.onsetResponseDate = Date().addingTimeInterval(-ExponentialDistribution.sample(rate: 0.2))
+                self.onsetResponseDate = Date()
                 self.onsetDate = onset.onset
                 completion(.success(onset))
             case let .failure(error):
@@ -116,19 +115,29 @@ class ReportingManager: ReportingManagerProtocol {
     }
 
     func getFakeJWTTokens(completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
-        getJWTTokens(covidCode: fakeCode, isFakeRequest: true, completion: completion)
+        getJWTTokens(covidCode: fakeCode,
+                     isFakeRequest: true,
+                     delay: TimeInterval.random(in: 0 ... 180),
+                     completion: completion)
+    }
+
+    func getJWTTokens(covidCode: String,
+                      completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
+        getJWTTokens(covidCode: covidCode,
+                     isFakeRequest: false,
+                     delay: TimeInterval.random(in: 0 ... 5),
+                     completion: completion)
     }
 
     func getJWTTokens(covidCode: String,
                       isFakeRequest fake: Bool = false,
+                      delay: TimeInterval,
                       completion: @escaping (Result<CodeValidator.TokenWrapper, CodeValidator.ValidationError>) -> Void) {
         if let tokens = tokenCache[covidCode] {
             completion(.success(tokens))
         } else {
-            var delay: TimeInterval = 0
             if let start = onsetResponseDate {
                 userInteractionDuration = Date().timeIntervalSince(start)
-                delay = start.sendPadding
             }
 
             DispatchQueue.global().asyncAfter(deadline: .now() + delay) {
@@ -302,20 +311,5 @@ extension Data {
             SecRandomCopyBytes(kSecRandomDefault, 32, $0.baseAddress!)
         }
         return keyData
-    }
-}
-
-private extension Date {
-    var sendPadding: TimeInterval {
-        let now = Date()
-        guard now > self else { return 0 }
-
-        var padding: TimeInterval = .second * 5
-
-        while addingTimeInterval(padding) < now {
-            padding += .second * 5
-        }
-
-        return addingTimeInterval(padding).timeIntervalSince(now)
     }
 }
