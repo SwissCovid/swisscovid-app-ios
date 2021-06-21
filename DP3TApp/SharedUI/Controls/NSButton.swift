@@ -103,7 +103,6 @@ class NSButton: UBButton {
 
         highlightCornerRadius = 3
         layer.cornerRadius = 3
-        contentEdgeInsets = UIEdgeInsets(top: NSPadding.medium, left: NSPadding.large, bottom: NSPadding.medium, right: NSPadding.large)
 
         titleLabel?.numberOfLines = 2
 
@@ -130,12 +129,15 @@ class NSButton: UBButton {
     override var intrinsicContentSize: CGSize {
         var contentSize = super.intrinsicContentSize
 
-        if contentSize.height > 44.0 {
+        contentSize.height = max(contentSize.height, 44)
+        if contentSize.height > 44 {
             contentSize.height += NSPadding.medium
         }
 
         if let img = imageView?.image {
             contentSize.width += 2 * (img.size.width + 12)
+        } else {
+            contentSize.width += 2 * NSPadding.large
         }
 
         return contentSize
@@ -145,8 +147,10 @@ class NSButton: UBButton {
         super.layoutSubviews()
 
         if let img = imageView?.image {
-            imageEdgeInsets = UIEdgeInsets(top: 0, left: bounds.width - 12 - img.size.width, bottom: 0, right: 12)
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: img.size.width / 2, bottom: 0, right: -img.size.width / 2)
+            let contentWidth = (img.size.width + (titleLabel?.intrinsicContentSize.width ?? 0)) / 2
+            let offset = contentWidth + bounds.width / 2 - img.size.width - 12
+            imageEdgeInsets = UIEdgeInsets(top: 0, left: offset, bottom: 0, right: -offset)
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: -img.size.width / 2, bottom: 0, right: img.size.width / 2)
         }
     }
 
