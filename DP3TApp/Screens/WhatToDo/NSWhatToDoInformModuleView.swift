@@ -68,6 +68,7 @@ class NSWhatToDoInformModuleView: NSSimpleModuleBaseView {
                                                 additionalURL: infoBox.url?.absoluteString,
                                                 dynamicIconTintColor: .ns_purple,
                                                 externalLinkStyle: .normal(color: .ns_purple),
+                                                externalLinkType: infoBox.url?.scheme == "tel" ? .phone : .url,
                                                 hearingImpairedButtonCallback: hearingImpairedCallback)
 
             model.image = UIImage(named: "ic-info")
