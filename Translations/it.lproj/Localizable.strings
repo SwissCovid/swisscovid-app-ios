@@ -880,7 +880,7 @@
 "travel_screen_explanation_title_1" = "Cosa significa?";
 
 /*First text for the travel feauter explenation at the bottom of the travel screen.*/
-"travel_screen_explanation_text_1" = "Se ti trovi in un Paese compatibile non devi installare una nuova app di tracciamento.\n\nL'app SwissCovid verifica le chiavi private pubblicate nei Paesi compatibili. In questo modo ti può avvisare anche in caso di possibile contagio all'estero.";
+"travel_screen_explanation_text_1" = "Se ti trovi in un Paese compatibile non devi installare una nuova app di tracciamento per gli incontri.\n\nL'app SwissCovid verifica le chiavi private pubblicate nei Paesi compatibili. In questo modo ti può avvisare anche in caso di possibile contagio all'estero.";
 
 /*Second title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_2" = "Cosa succede immettendo un codice Covid?";
@@ -911,7 +911,7 @@
 "share_app_supertitle" = "Insieme…";
 "share_app_title" = "impediamo i contagi";
 "share_app_button" = "Condividi l'app";
-"share_app_body" = "Quante più persone attivano l'app SwissCovid, tanto più è possibile interrompere precocemente le catene di infezione.";
+"share_app_body" = "Se il maggior numero possibile dei tuoi contatti utilizza l'app SwisCovid, in caso di rischio di contagio puoi essere informato rapidamente.";
 
 /*Text der geteilt wird*/
 "share_app_message" = "Con l'app SwissCovid tutti possono contribuire a contenere la diffusione del coronavirus.";
@@ -1308,7 +1308,7 @@
 "answer_no" = "No";
 
 /*Text in der Infobox auf dem Reisen-Screen*/
-"travel_screen_info" = "Vi trovate all'estero? L'app SwissCovid funziona nei seguenti Paesi.";
+"travel_screen_info" = "Ti trovi all'estero? L'app SwissCovid funziona nei seguenti Paesi per gli incontri.";
 
 /*Überschrift der Liste der kompatiblen Länder auf dem Reisen-Screen*/
 "travel_screen_compatible_countries" = "Paesi compatibili:";
@@ -1341,7 +1341,8 @@
 "inform_send_thankyou_text_onsetdate_info" = "Le chiavi private della tua app sono state inviate per il seguente periodo:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Al momento dell'immissione di un codice Covid il tracciamento deve essere attivato affinché sia possibile condividere le tue chiavi private.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Al momento dell'immissione di un codice Covid il tracciamento deve essere attivato affinché sia possibile condividere le tue chiavi private.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Premendo il pulsante \"{BUTTON_TITLE}\" si esce dall'app e si passa al sito web della guida SwissCovid. I dati degli ultimi incontri con persone potenzialmente infette vengono trasmessi al sito web.";
@@ -1452,7 +1453,7 @@
 "checkins_create_qr_code" = "Crea codice QR";
 
 /*Veranstaltungen-Screen Titel*/
-"events_title" = "Offrire i check-in";
+"events_title" = "Creare codici QR";
 
 /*Check-Ins: Jetzt einchecken Button Titel*/
 "check_in_now_button_title" = "Fai il check-in ora";
@@ -1552,7 +1553,7 @@
 "inform_share_checkins_subtitle" = "Se condividi le tue voci di check-in, l'app potrà informare le persone che hanno fatto il check-in nello stesso luogo e nello stesso momento.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "Seleziona tutto";
+"inform_share_checkins_select_all" = "Seleziona tutti quelli adatti";
 "inform_dont_send_button_title" = "Non inviare";
 "inform_dont_share_button_title" = "Non condividere";
 "inform_really_not_share_title" = "Non condividere?";
@@ -1583,7 +1584,7 @@
 "checkin_overview_isolation_text" = "Se sei risultato positivo al test, non puoi più fare il check-in.";
 
 /*Veranstaltungen-Card Text im Infotab*/
-"events_card_subtitle" = "Crea un codice QR per consentire alle persone di fare il check-in sul posto";
+"events_card_subtitle" = "Crea un codice QR SwissCovid con il quale le persone possono fare il check-in sul posto";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
 "delete_qr_code_dialog" = "Eliminare il codice QR?";
@@ -1628,7 +1629,7 @@
 "home_end_isolation_card_title" = "Terminare l'isolamento?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "Vuoi offrire i check-in?";
+"events_card_title" = "Creare codici QR?";
 "checkin_footer_title1" = "Perché una funzione check-in?";
 "checkin_footer_subtitle1" = "La funzione check-in senza registrazione dei dati di contatto completa l'app SwissCovid. Con questa funzione, in caso di test positivo puoi avvisare non solo i contatti stretti, ma anche le persone che hanno fatto il check-in nello stesso luogo e nello stesso momento.";
 "checkin_footer_title2" = "Nessun salvataggio centralizzato dei dati";
@@ -1723,49 +1724,49 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/it/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "For this check-in a maximum check-in duration of {DURATION} applies. Please check your input again.";
+"checkout_too_long_alert_text" = "Per questo check-in vige una durata massima di {DURATION}. Controlla il dato immesso.";
 
 /*turn camera light on*/
-"accessibility_camera_light_on" = "turn light on";
+"accessibility_camera_light_on" = "Accendi la torcia";
 
 /*turn camera light off*/
-"accessibility_camera_light_off" = "turn light off";
+"accessibility_camera_light_off" = "Spegni la torcia";
 
 /*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
-"error_cannot_enter_covidcode_while_checked_in" = "";
+"error_cannot_enter_covidcode_while_checked_in" = "Il tuo check-in è ancora attivo. Fai il check-out prima di immettere il codice COVID.";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
-"events_card_title_events_not_empty" = "";
+"events_card_title_events_not_empty" = "I miei codici QR";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
-"checkout_inverse_time_alert_description" = "";
+"checkout_inverse_time_alert_description" = "L'orario di check-out che hai selezionato è anteriore all'orario di check-in. Controlla il dato immesso.";
 
 /*Titel für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_title" = "";
+"update_notification_checkin_feature_title" = "Nuova funzione: check-in";
 
 /*Text für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_text" = "";
+"update_notification_checkin_feature_text" = "Grazie per utilizzare l'app SwissCovid. Con la versione più recente dell'app puoi fare il check-in sul posto senza lasciare dati.";
 
 /*Titel für aktuellen Check-in im Tagebuch*/
-"diary_current_title" = "";
+"diary_current_title" = "Attuali";
 
 /*Snooze Option um 30min später an Checkout zu erinnern*/
-"ios_snooze_option_30min" = "";
+"ios_snooze_option_30min" = "Ricordamelo più tardi (30min)";
 
 /*Snooze Option um 1h später an Checkout zu erinnern*/
-"ios_snooze_option_1h" = "";
+"ios_snooze_option_1h" = "Ricordamelo più tardi (1h)";
 
 /*Snooze Option um 2h später an Checkout zu erinnern*/
-"ios_snooze_option_2h" = "";
+"ios_snooze_option_2h" = "Ricordamelo più tardi (2h)";
 
 /*Notification Quickaction um jetzt auszuchecken*/
-"ios_notification_checkout_now" = "";
+"ios_notification_checkout_now" = "Fai il check-out";
 
 /*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
-"covid_certificate_alert_text" = "";
+"covid_certificate_alert_text" = "Utilizza l'app \"Covid Certificate\" per scansionare questo codice QR.";
 
 /*Button um Covid Certificate App zu öffnen*/
-"covid_certificate_open_app" = "";
+"covid_certificate_open_app" = "Apri l'app";
 
 /*Button um Covid Certificate App zu installieren*/
-"covid_certificate_install_app" = "";
+"covid_certificate_install_app" = "Installa l'app";
