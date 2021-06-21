@@ -323,10 +323,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     }
 
     func presentCheckOutViewController() {
-        if CheckInManager.shared.currentCheckIn != nil {
-            let checkoutVC = NSCheckInEditViewController()
-            checkoutVC.presentInNavigationController(from: self, useLine: false)
-        }
+        let checkoutVC = NSCheckInEditViewController()
+        checkoutVC.present(from: self)
     }
 
     private func presentTravelDetail() {

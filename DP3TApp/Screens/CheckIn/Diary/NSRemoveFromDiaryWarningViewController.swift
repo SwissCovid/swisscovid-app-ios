@@ -57,12 +57,14 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
     private func setupContent() {
         let title = NSLabel(.title)
+        title.accessibilityTraits = .header
         title.text = "remove_diary_warning_title".ub_localized
-
+        UIAccessibility.post(notification: .layoutChanged, argument: title)
         stackView.addArrangedView(title, insets: insets)
         stackView.addSpacerView(4 * NSPadding.medium)
 
         let hideTitle = NSLabel(.textBold, textColor: .ns_blue)
+        hideTitle.accessibilityTraits = .header
         hideTitle.text = "remove_diary_warning_hide_title".ub_localized
         stackView.addArrangedView(hideTitle, insets: insets)
         stackView.addSpacerView(NSPadding.medium)
@@ -77,6 +79,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         stackView.addSpacerView(4 * NSPadding.medium)
 
         let removeTitle = NSLabel(.textBold)
+        removeTitle.accessibilityTraits = .header
         removeTitle.text = "remove_diary_remove_now_title".ub_localized
         stackView.addArrangedView(removeTitle, insets: insets)
         stackView.addSpacerView(NSPadding.medium + NSPadding.small)
@@ -90,5 +93,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         removeButton.title = "remove_diary_remove_now_button".ub_localized
         stackView.addArrangedView(removeButton, insets: insets)
         stackView.addSpacerView(NSPadding.large)
+
+        accessibilityElements = [title, hideTitle, hideText, removeTitle, removeLabel, hideButton, removeButton, closeButton]
     }
 }

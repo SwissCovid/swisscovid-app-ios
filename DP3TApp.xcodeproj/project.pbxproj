@@ -357,6 +357,8 @@
 		8EFBAB2C249145070004138B /* NSSynchronizationPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E24DEC024914088002B1F16 /* NSSynchronizationPersistence.swift */; };
 		91E1EBA424CB0A7100C5103D /* Impressum in Resources */ = {isa = PBXBuildFile; fileRef = 91E1EBA324CB0A7100C5103D /* Impressum */; };
 		A6BBA110246BFCBC00E42EE7 /* UIDevice+ScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */; };
+		AA5ED04F267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED04E267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift */; };
+		AA5ED051267B742E0039A4D6 /* NSCheckInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED050267B742E0039A4D6 /* NSCheckInContentView.swift */; };
 		AACFA6A3243088A4005595E6 /* NSAnimatedGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */; };
 		AAF73663242F2DC90051E34A /* NSModuleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */; };
 		AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSEncountersModuleView.swift */; };
@@ -473,8 +475,6 @@
 		DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */; };
 		DC85DEFD263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */; };
 		DC85DEFE263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */; };
-		DC85DF00263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
-		DC85DF01263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */; };
 		DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DC8CAEF226677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
 		DC8CAEF326677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
@@ -542,6 +542,7 @@
 		F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
+		F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
 		F830799424929090005D3C65 /* LoggingStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F830798E24928EC4005D3C65 /* LoggingStorage.swift */; };
 		F83E31D9249A0F2000C08C31 /* Bundle+BuildInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85ED9A22499EF93007EBC49 /* Bundle+BuildInfo.swift */; };
 		F83ECEE62577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */; };
@@ -632,6 +633,8 @@
 		F88D99DB2497938E0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F88D99DC2497957C0081790E /* UIImage+localizedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88D99DA2497938E0081790E /* UIImage+localizedImage.swift */; };
 		F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F891129B24C96C4300DCB111 /* ConfigResponseBodyTests.swift */; };
+		F8A25129267BA3D900A07B37 /* NSCheckInContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED050267B742E0039A4D6 /* NSCheckInContentView.swift */; };
+		F8A2512A267BA3E300A07B37 /* NSCurrentCheckInCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5ED04E267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift */; };
 		F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
 		F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0B24C9BF9F00DE6B44 /* FR_App_Nutzungsbedingungen.html */; };
 		F8A6BE1524C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */ = {isa = PBXBuildFile; fileRef = F8A6BE0C24C9BF9F00DE6B44 /* EN_App_Datenschutzerklaerung.html */; };
@@ -677,6 +680,8 @@
 		F8D581482589EBDB00307C2B /* NSUnsupportedOSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */; };
 		F8D77D16267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
 		F8D77D18267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */; };
+		F8D77D12267A9C4A00460C27 /* DateInterval+intervals.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */; };
+		F8D77D14267AA32D00460C27 /* DateIntervalIntersectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */; };
 		F8F822E12668B16100E1E29B /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8F822E02668B16100E1E29B /* CrowdNotifierSDK */; };
 /* End PBXBuildFile section */
 
@@ -898,6 +903,8 @@
 		8EF2A6EE249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSSynchronizationTableViewSectionView.swift; sourceTree = "<group>"; };
 		91E1EBA324CB0A7100C5103D /* Impressum */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Impressum; sourceTree = "<group>"; };
 		A6BBA10F246BFCBC00E42EE7 /* UIDevice+ScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+ScreenType.swift"; sourceTree = "<group>"; };
+		AA5ED04E267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCurrentCheckInCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA5ED050267B742E0039A4D6 /* NSCheckInContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInContentView.swift; sourceTree = "<group>"; };
 		AACFA6A2243088A4005595E6 /* NSAnimatedGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphView.swift; sourceTree = "<group>"; };
 		AAF73662242F2DC90051E34A /* NSModuleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSModuleHeaderView.swift; sourceTree = "<group>"; };
 		AAF73665242F2EA00051E34A /* NSEncountersModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersModuleView.swift; sourceTree = "<group>"; };
@@ -969,7 +976,6 @@
 		DC746D572451D50B009426B1 /* NSHeaderErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderErrorView.swift; sourceTree = "<group>"; };
 		DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSHeaderActiveView.swift; sourceTree = "<group>"; };
 		DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckedOutView.swift; sourceTree = "<group>"; };
-		DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckedInView.swift; sourceTree = "<group>"; };
 		DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+CheckoutAlert.swift"; sourceTree = "<group>"; };
 		DC9A81A2242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DC9A81A4242CE5E000AD1548 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -1091,6 +1097,8 @@
 		F8D3526D2541D0B50092914B /* NSAppUsageStatisticsModuleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAppUsageStatisticsModuleView.swift; sourceTree = "<group>"; };
 		F8D581252589703000307C2B /* NSUnsupportedOSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSViewController.swift; sourceTree = "<group>"; };
 		F8D77D15267B1D9D00460C27 /* NSDatePickerBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDatePickerBottomSheetViewController.swift; sourceTree = "<group>"; };
+		F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateInterval+intervals.swift"; sourceTree = "<group>"; };
+		F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIntervalIntersectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1619,6 +1627,7 @@
 			children = (
 				6EB1D5552636F65300981571 /* CheckIn.swift */,
 				6EB1D5572636F65300981571 /* CheckInManager.swift */,
+				F8D77D11267A9C4A00460C27 /* DateInterval+intervals.swift */,
 			);
 			path = CheckInManager;
 			sourceTree = "<group>";
@@ -1750,6 +1759,7 @@
 				8E81CCB1241FCC7F006F2437 /* Info.plist */,
 				F84089EF24936D8700A66CD1 /* MockKeychain.swift */,
 				DC003DDE2642C4070027F379 /* ReminderManagerTests.swift */,
+				F8D77D13267AA32D00460C27 /* DateIntervalIntersectionTests.swift */,
 			);
 			path = DP3TAppTests;
 			sourceTree = "<group>";
@@ -1795,6 +1805,7 @@
 			children = (
 				DC16176B2638717800B56ADA /* NSCheckInHomescreenModuleView.swift */,
 				DC16175A2638717800B56ADA /* NSCheckInOverviewViewController.swift */,
+				AA5ED050267B742E0039A4D6 /* NSCheckInContentView.swift */,
 				DC1617722638717800B56ADA /* Modules */,
 				DC1617762638717800B56ADA /* Scanner */,
 				DC16175B2638717800B56ADA /* Edit */,
@@ -1831,6 +1842,7 @@
 			isa = PBXGroup;
 			children = (
 				DC1617632638717800B56ADA /* NSDiaryEntryCollectionViewCell.swift */,
+				AA5ED04E267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift */,
 				DC1617652638717800B56ADA /* NSDiaryCollectionView.swift */,
 				DC1617662638717800B56ADA /* NSDiaryDateSectionHeaderSupplementaryView.swift */,
 			);
@@ -1857,7 +1869,6 @@
 				DC1617732638717800B56ADA /* NSCheckInDiaryModuleView.swift */,
 				DC1617742638717800B56ADA /* NSCheckInCurrentStateModuleView.swift */,
 				DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */,
-				DC85DEFF263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift */,
 				3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */,
 				DC1617752638717800B56ADA /* NSCheckInCreateCheckInsView.swift */,
 			);
@@ -2811,11 +2822,13 @@
 				242D2230245C4BD8005DAEA8 /* NSEncountersModuleView.swift in Sources */,
 				F84BC8AD2664FBBF00678456 /* NSPushHandler.swift in Sources */,
 				242D2231245C4BD8005DAEA8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */,
+				F82ADC89267B60B3001B55E1 /* DateInterval+intervals.swift in Sources */,
 				DC1617962638717800B56ADA /* NSCheckInHomescreenModuleView.swift in Sources */,
 				F80E407825092AE100876906 /* NSChartColumnView.swift in Sources */,
 				242D2232245C4BD8005DAEA8 /* UBCodable.swift in Sources */,
 				242D2233245C4BD8005DAEA8 /* AppDelegate.swift in Sources */,
 				F84BC8B32664FBBF00678456 /* NSSilentPushManager.swift in Sources */,
+				F8A2512A267BA3E300A07B37 /* NSCurrentCheckInCollectionViewCell.swift in Sources */,
 				6E9D79182625BF6C005C7B7F /* NSUpdateBoardingGermanyViewController.swift in Sources */,
 				DC1617822638717800B56ADA /* NSDiaryDetailViewController.swift in Sources */,
 				242D2234245C4BD8005DAEA8 /* NSFancyNumberView.swift in Sources */,
@@ -2841,7 +2854,7 @@
 				F84BC8A52664FBBF00678456 /* UBPushRegistrationManager.swift in Sources */,
 				242D223E245C4BD8005DAEA8 /* NSSplashViewController.swift in Sources */,
 				6E5B69DD2660C3A400EB0C56 /* NSTracingOnboardingViewController.swift in Sources */,
-				DC85DF01263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */,
+				F8A25129267BA3D900A07B37 /* NSCheckInContentView.swift in Sources */,
 				F87E96DF263C321000755AF1 /* CheckInSelectionViewController.swift in Sources */,
 				8EF2A6F0249124F8002263C3 /* NSSynchronizationTableViewSectionView.swift in Sources */,
 				DC16179E2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */,
@@ -2913,6 +2926,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8D77D12267A9C4A00460C27 /* DateInterval+intervals.swift in Sources */,
 				DCA3FFBE24518E850003F5AD /* NSOnboardingInfoView.swift in Sources */,
 				6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */,
 				F87C3712258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
@@ -2931,11 +2945,11 @@
 				F84BC8A82664FBBF00678456 /* UBPushManagerError.swift in Sources */,
 				6E0D1232263AA26C0014CF7C /* NSEventPDFViewController.swift in Sources */,
 				DC17F96125DC25D600C7C706 /* NSCovidCodesStatisticsModuleView.swift in Sources */,
-				DC85DF00263ADEE4002DF191 /* NSCheckInDetailCheckedInView.swift in Sources */,
 				F80E406D2509002200876906 /* StatisticsResponse.swift in Sources */,
 				6E33087724508CFF00913B0E /* NSTitleViewScrollViewController.swift in Sources */,
 				F87C3714258C2613008DCC81 /* NSRadioButtonItem.swift in Sources */,
 				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
+				AA5ED051267B742E0039A4D6 /* NSCheckInContentView.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
@@ -3161,6 +3175,7 @@
 				DC702B0A243F6FAE0066C773 /* UBOptionalUserDefault.swift in Sources */,
 				F84BC8AA2664FBBF00678456 /* NSPushRegistrationManager.swift in Sources */,
 				6E33086F24507A1600913B0E /* NSReportsDetailPositiveTestedViewController.swift in Sources */,
+				AA5ED04F267B70770039A4D6 /* NSCurrentCheckInCollectionViewCell.swift in Sources */,
 				F80E40692508FE3000876906 /* NSCovidStatisticsModuleView.swift in Sources */,
 				6E3F65FB2449CF0900980A4E /* NSSimpleModuleBaseView.swift in Sources */,
 				F84089EC2493695200A66CD1 /* Keychain.swift in Sources */,
@@ -3186,6 +3201,7 @@
 				F806D34124F91DB900672DFC /* MockIdentifierProvider.swift in Sources */,
 				F891129C24C96C4300DCB111 /* ConfigResponseBodyTests.swift in Sources */,
 				F84089F024936D8700A66CD1 /* MockKeychain.swift in Sources */,
+				F8D77D14267AA32D00460C27 /* DateIntervalIntersectionTests.swift in Sources */,
 				8E81CCB0241FCC7F006F2437 /* FakePublishManagerTests.swift in Sources */,
 				F807812C25022091008986EE /* ConfigManagerTests.swift in Sources */,
 			);
