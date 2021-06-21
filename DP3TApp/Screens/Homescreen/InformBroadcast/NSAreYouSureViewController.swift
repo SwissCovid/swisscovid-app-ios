@@ -61,7 +61,7 @@ class NSAreYouSureViewController: NSViewController {
             switch UIStateManager.shared.trackingState {
             case let .inactive(error):
                 switch error {
-                case .permissonError:
+                case .permissonError, .exposureNotificationError, .authorizationUnknown:
                     guard let navigationController = self.navigationController else { return }
                     NSSettingsTutorialViewController().presentInNavigationController(from: navigationController, useLine: false)
                 default:
@@ -76,7 +76,12 @@ class NSAreYouSureViewController: NSViewController {
     }
 
     private func dontShareButtonTouched() {
-        CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: relevantCheckIns, from: self)
+        if relevantCheckIns.isEmpty {
+            let vc = NSInformNotThankYouViewController(covidCode: covidCode)
+            navigationController?.pushViewController(vc, animated: true)
+        } else {
+            CheckInSelectionViewController.presentIfNeeded(covidCode: covidCode, checkIns: relevantCheckIns, from: self)
+        }
     }
 
     func setupLayout() {

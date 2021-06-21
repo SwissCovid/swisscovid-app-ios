@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import DP3TSDK
 import Foundation
 import UIKit
 
@@ -157,20 +158,43 @@ class NSCodeInputViewController: NSInformStepViewController, NSCodeControlProtoc
                 let relevantCheckIns = CheckInManager.shared.getDiary()
                     .filter { $0.checkOutTime != nil && $0.checkOutTime! >= onset.onset }
                     .filter { $0.venue.venueType == .userQrCode }
-                if !ReportingManager.shared.hasUserConsent, UserStorage.shared.tracingSettingEnabled {
-                    ReportingManager.shared.getUserConsent { [weak self] result in
-                        guard let self = self else { return }
-                        switch result {
-                        case .success:
-                            CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
-                        case .failure:
-                            let vc = NSAreYouSureViewController(covidCode: self.codeControl.code(), relevantCheckIns: relevantCheckIns)
-                            self.navigationController?.pushViewController(vc, animated: true)
+                func requestPermission() {
+                    if !ReportingManager.shared.hasUserConsent, UserStorage.shared.tracingSettingEnabled {
+                        ReportingManager.shared.getUserConsent { [weak self] result in
+                            guard let self = self else { return }
+                            switch result {
+                            case .success:
+                                CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
+                            case .failure:
+                                let vc = NSAreYouSureViewController(covidCode: self.codeControl.code(), relevantCheckIns: relevantCheckIns)
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }
                         }
+                    } else {
+                        CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
                     }
-                } else {
-                    CheckInSelectionViewController.presentIfNeeded(covidCode: self.codeControl.code(), checkIns: relevantCheckIns, from: self)
                 }
+
+                if !ReportingManager.shared.hasUserConsent,
+                   !UserStorage.shared.tracingSettingEnabled {
+                    let alert = UIAlertController(title: "", message: "inform_tracing_enabled_explanation".ub_localized, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "activate_tracing_button".ub_localized, style: .default, handler: { _ in
+                        TracingManager.shared.startTracing { result in
+                            if case TracingEnableResult.success = result {
+                                UserStorage.shared.tracingSettingEnabled = true
+                            }
+                            requestPermission()
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "meldung_in_app_alert_ignore_button".ub_localized, style: .cancel, handler: { _ in
+                        let vc = NSAreYouSureViewController(covidCode: self.codeControl.code(), relevantCheckIns: relevantCheckIns)
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }))
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    requestPermission()
+                }
+
             case let .failure(error):
                 switch error {
                 case .invalidToken:
