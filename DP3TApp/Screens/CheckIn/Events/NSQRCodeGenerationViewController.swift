@@ -21,6 +21,8 @@ class NSQRCodeGenerationViewController: NSViewController {
 
     private let createButton = NSButton(title: "checkins_create_qr_code".ub_localized, style: .normal(.ns_blue))
 
+    private let fillerView = UIView()
+
     var codeCreatedCallback: ((CreatedEvent) -> Void)?
 
     private let keyboardObserver = UBKeyboardObserver()
@@ -71,24 +73,41 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.medium)
         stackScrollView.addArrangedView(titleTextField)
         stackScrollView.addSpacerView(NSPadding.large)
-
-        view.addSubview(createButton)
-        createButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-        }
-
-        keyboardObserver.callback = { [weak self] height in
-            guard let self = self else { return }
-            self.createButton.snp.remakeConstraints { make in
-                make.bottom.equalTo(self.view.safeAreaLayoutGuide).inset(NSPadding.large + height)
-                make.centerX.equalToSuperview()
-            }
-        }
+        stackScrollView.addArrangedView(fillerView)
+        stackScrollView.addArrangedView(createButton)
+        stackScrollView.addSpacerView(NSPadding.large)
 
         createButton.isEnabled = false
 
+        keyboardObserver.callback = { [weak self] _ in
+            guard let self = self else { return }
+            self.updateFillerHeight()
+        }
         titleTextField.inputControl.becomeFirstResponder()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        stackScrollView.layoutSubviews()
+        updateFillerHeight()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        updateFillerHeight()
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateFillerHeight()
+    }
+
+    private func updateFillerHeight() {
+        stackScrollView.layoutSubviews()
+        let remainingHeight = (view.frame.height - stackScrollView.scrollView.contentInset.bottom) - (stackScrollView.stackView.frame.height - fillerView.frame.height)
+        fillerView.snp.remakeConstraints { make in
+            make.height.equalTo(remainingHeight)
+        }
     }
 
     @objc private func dismissSelf() {
