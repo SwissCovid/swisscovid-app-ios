@@ -321,7 +321,7 @@
 "onboarding_prinzip_title" = "Anticiparnos al virus";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text1" = "Con la aplicación Swiss Covid, todos podemos contribuir a contener la propagación del virus.";
+"onboarding_prinzip_text1" = "Con la aplicación SwissCovid, todos podemos contribuir a contener la propagación del virus.";
 
 /*Onboarding Prinzip Text*/
 "onboarding_prinzip_text2" = "La aplicación le avisa si ha estado usted potencialmente expuesto al coronavirus.";
@@ -722,7 +722,7 @@
 
 /*Fehler-Titel, wenn Tracing deaktiviert wurde im System, iOS*/
 /*Fuzzy*/
-"tracing_permission_error_title_ios" = "Notificaciones de exposición a la COVID-19 desactivado desactivado";
+"tracing_permission_error_title_ios" = "Notificaciones de exposición a la COVID-19 desactivado";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
 "tracing_permission_error_text_ios" = "Active {TRACING_SETTING_TEXT} para que el rastreo anónimo pueda funcionar.";
@@ -894,7 +894,7 @@
 "infoline_coronavirus_number" = "+41 58 387 77 80";
 
 /*Text beim Bluetooth Control iOS 14*/
-"tracing_setting_text_ios_14_0" = "Exposure Notifications";
+"tracing_setting_text_ios_14_0" = "Notificaciones de exposición";
 "bottom_nav_tab_home" = "SwissCovid";
 "bottom_nav_tab_stats" = "Datos";
 "stats_title" = "ya utilizan SwissCovid";
@@ -907,7 +907,7 @@
 "share_app_body" = "Cuantas más personas de entre sus contractos utilicen la app SwissCovid, más rápidamente será informado de un riesgo de contagio.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Con la aplicación Swiss Covid, todos podemos contribuir a contener la propagación del virus.";
+"share_app_message" = "Con la aplicación SwissCovid, todos podemos contribuir a contener la propagación del virus.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
@@ -1387,7 +1387,7 @@
 "reminder_option_hours" = "{HOURS} h";
 
 /*Check-Ins: Errinnerungsoption Minuten*/
-"reminder_option_minutes" = "{HOURS} h";
+"reminder_option_minutes" = "{MINUTES}'";
 
 /*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
 "qr_scanner_no_camera_permission" = "La app debe acceder a la cámara del dispositivo para poder escanear el código QR.";
@@ -1604,10 +1604,10 @@
 "events_empty_state_title" = "Genere un código QR";
 "events_empty_state_subtitle" = "Con un código QR SwissCovid es posible registrarse in situ sin necesidad de dejar datos personales.";
 "events_info_box_title" = "No sustituye el registro obligatorio de los datos de contacto";
-"events_info_box_text" = "Los Check-in SwissCovid nos sustituyen el registro obligatorio de los datos de contacto estipulado en la «Ordenanza Covid-19, situación particular». ";
+"events_info_box_text" = "Los Check-in SwissCovid no sustituyen el registro obligatorio de los datos de contacto estipulado en la «Ordenanza Covid-19, situación particular».";
 "events_footer_title1" = "¿Dónde utilizar los Check-in?";
 "events_footer_title2" = "¿Por qué una función Check-in?";
-"events_footer_subtitle1" = "Los Check-in SwissCovid puede utilizarse allí donde las personas se reúnen pero el registro de los datos de contacto no es obligatorio.\n\nPosibles utilizaciones:\n– eventos privados\n– eventos de asociaciones\n– reuniones en el entorno laboral, por ej. salas de reuniones, oficinas, cantinas, etc.";
+"events_footer_subtitle1" = "Los Check-in SwissCovid pueden utilizarse allí donde las personas se reúnen pero el registro de los datos de contacto no es obligatorio.\n\nPosibles utilizaciones:\n– eventos privados\n– eventos de asociaciones\n– reuniones en el entorno laboral, por ej. salas de reuniones, oficinas, cantinas, etc.";
 "events_footer_subtitle2" = "La función Check-in sin registro de datos de contacto es una ampliación de la app SwissCovid. En caso de dar positivo en un test, esta función le permite alertar no solo a los contactos estrechos, sino también a personas que se registraron al mismo tiempo";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
@@ -1661,7 +1661,7 @@
 "onboarding_checkin_title" = "Check-in sin dejar datos";
 "onboarding_checkin_heading" = "Registros de Check-in";
 "onboarding_checkin_text1" = "La función Check-in SwissCovid le permite registrarse con la aplicación en un lugar o en un evento.";
-"onboarding_checkin_text2" = "Su presencia solo queda registra en la aplicación. No es necesario indicar datos personales en la app.";
+"onboarding_checkin_text2" = "Su presencia solo queda registrada en la aplicación. No es necesario indicar datos personales en la app.";
 "checkin_updateboarding_text" = "La función Check-in SwissCovid le permite registrarse con la aplicación en un lugar o en un evento. Su presencia solo queda registrada en la aplicación. No es necesario indicar datos personales en la app. A estos efectos se han actualizado las condiciones de uso y la política de privacidad.";
 "onboarding_gaen_button_dont_activate" = "Omitir";
 

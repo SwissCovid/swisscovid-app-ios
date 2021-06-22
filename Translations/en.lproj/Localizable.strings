@@ -1548,7 +1548,7 @@
 "inform_share_checkins_subtitle" = "If you share check-in entries, the app can notify people who were checked in at the same location and time.";
 
 /*Button text, um alle Checkins zu selektieren*/
-"inform_share_checkins_select_all" = "Select all suitable??";
+"inform_share_checkins_select_all" = "Select all suitable";
 "inform_dont_send_button_title" = "Don't send";
 "inform_dont_share_button_title" = "Don't share";
 "inform_really_not_share_title" = "Are you sure you don't want to share?";
@@ -1561,7 +1561,7 @@
 "remove_diary_warning_text" = "Your entry will be permanently removed from the list.";
 
 /*Remove from diary warning view remove button title*/
-"remove_diary_remove_now_button" = "Completely remove";
+"remove_diary_remove_now_button" = "Remove completely";
 
 /*Hide from diary warning title*/
 "remove_diary_warning_hide_title" = "Only hide and keep receiving notifications?";
@@ -1582,7 +1582,7 @@
 "events_card_subtitle" = "Generate a QR code that people can use to check in on site.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "Are you sure you want to delete the QR code?";
+"delete_qr_code_dialog" = "Are you sure you want to delete the QR code? Printed QR codes will remain valid.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Self check-in";
@@ -1626,7 +1626,7 @@
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
 "events_card_title" = "Want to generate QR codes?";
 "checkin_footer_title1" = "Why a check-in feature?";
-"checkin_footer_subtitle1" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
+"checkin_footer_subtitle1" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert not only close contacts, but also people who were checked in at the same location at the same time.";
 "checkin_footer_title2" = "No central data storage";
 "checkin_footer_subtitle2" = "For the SwissCovid check-ins, you don't have to enter personal details, such as name, address or phone number, and no GPS location data is recorded. The list of check-ins is stored locally on your device. The local data is deleted after 14 days. ";
 "events_empty_state_title" = "Generate a QR code";
@@ -1636,7 +1636,7 @@
 "events_footer_title1" = "Where can check-ins be used?";
 "events_footer_title2" = "Why a check-in function?";
 "events_footer_subtitle1" = "SwissCovid check-ins can be used where people gather but where there is no obligation to record contact details. \n\nPossible locations:\n– Private events\n– Club meetings or events\n– Gatherings in professional settings, e.g. meeting rooms, offices, canteens";
-"events_footer_subtitle2" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert people who were checked in at the same location at the same time, as well as close contacts.";
+"events_footer_subtitle2" = "The SwissCovid app has been upgraded to include the check-in function without entering contact details. If you test positive, this function lets you alert not only close contacts, but also people who were checked in at the same location at the same time.";
 
 /*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
 "meldung_detail_exposed_list_card_subtitle" = "Risk situation";
@@ -1673,7 +1673,7 @@
 "checkin_report_title3" = "Get tested";
 "checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";
 "checkin_report_subtitle2" = "Monitor your state of health.";
-"checkin_report_subtitle3" = "If you develop symptoms, get tested immediately. Even if you don't have symptoms, a coronavirus test is advisable and recommended.";
+"checkin_report_subtitle3" = "If you develop symptoms, get tested immediately. A coronavirus test is also advisable and recommended if you have no symptoms and are not yet fully vaccinated.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
@@ -1704,7 +1704,7 @@
 "remove_diary_remove_now_title" = "Or remove completely?";
 
 /*Remove from diary warning text*/
-"remove_diary_remove_now_text" = "The entry was removed completely. You can no longer be alerted.";
+"remove_diary_remove_now_text" = "The entry will be removed completely. You will no longer be alerted.";
 "not_thank_you_screen_text3" = "Nobody will be notified.";
 
 /*Link Text zu Informationen übers Testen*/
