@@ -181,12 +181,31 @@ class NSLabel: UBLabel<NSLabelType> {
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if previousTraitCollection?.preferredContentSizeCategory != traitCollection.preferredContentSizeCategory {
+            guard let text = attributedText else { return }
+            let mutableText = NSMutableAttributedString(attributedString: text)
             font = labelType.font
+            mutableText.replaceFont(with: labelType.font)
+            attributedText = mutableText
         }
     }
 
     public var lineDistance: CGFloat {
         (labelType.lineSpacing - 1.0) * font.lineHeight
+    }
+}
+
+extension NSMutableAttributedString {
+    func replaceFont(with font: UIFont) {
+        beginEditing()
+        enumerateAttribute(.font, in: NSRange(location: 0, length: length)) { value, range, _ in
+            if let f = value as? UIFont {
+                let ufd = f.fontDescriptor.withFamily(f.familyName).withSymbolicTraits(f.fontDescriptor.symbolicTraits)!
+                let newFont = UIFont(descriptor: ufd, size: font.pointSize)
+                removeAttribute(.font, range: range)
+                addAttribute(.font, value: newFont, range: range)
+            }
+        }
+        endEditing()
     }
 }
 
