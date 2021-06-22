@@ -501,10 +501,13 @@ extension NSLocalPush: UNUserNotificationCenterDelegate {
         if exposureIdentifiers.contains(response.notification.request.identifier),
            response.actionIdentifier == UNNotificationDefaultActionIdentifier {
             jumpToReport()
+            completionHandler()
             return
         }
 
         switch Identifiers(rawValue: response.notification.request.identifier) {
+        case .checkInExposure:
+            jumpToReport()
         case .checkInReminder, .checkInautomaticReminder:
             switch response.actionIdentifier {
             case Actions.checkOut.rawValue:
