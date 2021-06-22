@@ -287,6 +287,7 @@ public enum NSPDFLabelType: UBLabelType {
 
 class PDFLabel: UBLabel<NSPDFLabelType> {
     private var labelType: NSPDFLabelType
+    private var count = 0
 
     override init(_ type: NSPDFLabelType, textColor: UIColor? = nil, numberOfLines: Int = 0, textAlignment: NSTextAlignment = .left) {
         labelType = type
@@ -297,10 +298,17 @@ class PDFLabel: UBLabel<NSPDFLabelType> {
         fatalError("init(coder:) has not been implemented")
     }
 
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        count = 0
+    }
+
     override func draw(_ layer: CALayer, in ctx: CGContext) {
         let isPDF = !UIGraphicsGetPDFContextBounds().isEmpty
-
-        if !self.layer.shouldRasterize, isPDF {
+        if isPDF {
+            if count > 0 { draw(bounds) }
+            count += 1
+        } else if !layer.shouldRasterize {
             draw(bounds)
         } else {
             super.draw(layer, in: ctx)
