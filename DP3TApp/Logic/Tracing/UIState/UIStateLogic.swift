@@ -251,7 +251,7 @@ class UIStateLogic {
             newState.homescreen.reports.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
 
-        if manager.immediatelyShowSyncError {
+        if UserStorage.shared.tracingSettingEnabled, manager.immediatelyShowSyncError { // Only show EN sync errors if user has enabled tracing
             if manager.syncErrorIsNetworkError {
                 newState.homescreen.reports.syncProblemNetworkingError = true
             } else {
