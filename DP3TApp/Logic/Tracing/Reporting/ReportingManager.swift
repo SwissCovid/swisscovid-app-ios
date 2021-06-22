@@ -166,7 +166,7 @@ class ReportingManager: ReportingManagerProtocol {
             state = .fake
         } else {
             guard self.state != nil else {
-                completion(.failure(.permissonError))
+                completion(.failure(.permissionError))
                 return
             }
             state = self.state!

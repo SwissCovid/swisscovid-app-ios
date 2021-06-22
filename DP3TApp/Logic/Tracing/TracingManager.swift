@@ -144,7 +144,7 @@ class TracingManager: NSObject {
                 callback?(result)
             })
         } else {
-            callback?(.failure(.permissonError))
+            callback?(.failure(.permissionError))
         }
 
         updateStatus(shouldSync: false, completion: nil)
