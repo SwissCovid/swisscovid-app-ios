@@ -22,7 +22,7 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
 
     static var dayNumberFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM"
+        formatter.dateFormat = "dd.MM."
         return formatter
     }()
 
@@ -30,7 +30,7 @@ class NSDiaryDateSectionHeaderSupplementaryView: UICollectionReusableView {
         didSet {
             if let d = date {
                 if d.ns_differenceInDaysWithDate(date: Date()) == 0 {
-                    label.text = "date_today".ub_localized
+                    label.text = "date_today".ub_localized.localizedUppercase
                 } else {
                     label.text = Self.dayStringFormatter.string(from: d).localizedUppercase + ", " + Self.dayNumberFormatter.string(from: d)
                 }

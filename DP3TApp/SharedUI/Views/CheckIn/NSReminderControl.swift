@@ -44,6 +44,10 @@ class NSReminderControl: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    public func selectOption(_ index: Int) {
+        segmentedControl.selectedSegmentIndex = index
+    }
+
     // MARK: - Setup
 
     private func setup() {

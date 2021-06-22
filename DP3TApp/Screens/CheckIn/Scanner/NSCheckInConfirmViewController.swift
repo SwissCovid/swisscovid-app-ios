@@ -64,13 +64,23 @@ class NSCheckInConfirmViewController: NSViewController {
         setup()
         setupCheckIn()
 
-        reminderControl.changeCallback = { self.reminderOption = $0 }
+        reminderControl.changeCallback = {
+            self.reminderOption = $0
+        }
 
         reminderControl.customSelectionCallback = { [weak self] current, callback in
             guard let self = self else { return }
-            NSDatePickerBottomSheetViewController(mode: .interval(selected: current, callback: { newInterval in
+            let picker = NSDatePickerBottomSheetViewController(mode: .interval(selected: current, callback: { newInterval in
                 callback(newInterval)
-            })).present(from: self)
+            }))
+            picker.dismissCallback = { [weak self] in
+                guard let self = self,
+                      let reminderOption = self.reminderOption else { return }
+                if case ReminderOption.custom(milliseconds: -1) = reminderOption {
+                    self.reminderControl.selectOption(0)
+                }
+            }
+            picker.present(from: self)
         }
     }
 
@@ -154,11 +164,14 @@ class NSCheckInConfirmViewController: NSViewController {
         checkInTimeButton.titleEdgeInsets = .init(top: NSPadding.large, left: 0, bottom: NSPadding.large, right: 0)
         checkInTimeButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }
-            let vc = NSDatePickerBottomSheetViewController(mode: .dateAndTime(selected: self.checkInTime, maxDate: .init(), callback: { [weak self] dateTime in
-                guard let self = self else { return }
-                self.checkInTime = dateTime
-                self.updateCheckInTime()
-            }))
+            let vc = NSDatePickerBottomSheetViewController(mode: .dateAndTime(selected: self.checkInTime,
+                                                                              minDate: .init(timeIntervalSinceNow: -(self.venueInfo.automaticCheckoutTimeInterval ?? .hour * 8)),
+                                                                              maxDate: .init(),
+                                                                              callback: { [weak self] dateTime in
+                                                                                  guard let self = self else { return }
+                                                                                  self.checkInTime = dateTime
+                                                                                  self.updateCheckInTime()
+                                                                              }))
             vc.present(from: self)
         }
 

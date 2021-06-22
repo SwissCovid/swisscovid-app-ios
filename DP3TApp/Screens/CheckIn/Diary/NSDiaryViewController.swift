@@ -192,7 +192,7 @@ extension NSDiaryViewController: UICollectionViewDataSource {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, for: indexPath) as NSDiaryDateSectionHeaderSupplementaryView
 
         if hasCurrentCheckIn, indexPath.section == 0 {
-            headerView.text = "diary_current_title".ub_localized
+            headerView.text = "diary_current_title".ub_localized.uppercased()
         } else {
             let entry = diaryEntryForIndexPath(indexPath)
             headerView.date = entry.checkInTime
