@@ -91,7 +91,7 @@
 "meldungen_no_meldungen_title" = "No reports";
 
 /*Push deaktiviert Titel*/
-"push_deactivated_title" = "Messages deactivated";
+"push_deactivated_title" = "Notifications deactivated";
 
 /*Push deaktiviert Text*/
 "push_deactivated_text" = "Change the settings to receive information directly in the event of a report.";
@@ -1668,7 +1668,7 @@
 /*Check-Ins: QR-Code erstellen subtitel*/
 "checkins_create_qr_code_subtitle" = "Enter a title that describes the location or your event in more detail. This title will be displayed on check-in.";
 "checkin_report_heading" = "What can you do?";
-"checkin_report_title1" = "\nProtect your contacts";
+"checkin_report_title1" = "Protect your contacts";
 "checkin_report_title2" = "Look out for symptoms";
 "checkin_report_title3" = "Get tested";
 "checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";

@@ -1629,7 +1629,7 @@
 "home_end_isolation_card_title" = "Fin de l’isolement ?";
 
 /*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
-"events_card_title" = "Vous souhaitez créer un code QR ?";
+"events_card_title" = "Souhaitez-vous créer un code QR?";
 "checkin_footer_title1" = "À quoi sert la fonction de check-in?";
 "checkin_footer_subtitle1" = "La fonction de check-in sans enregistrement des coordonnées complète l’application SwissCovid. En cas de test positif, elle vous permet d’avertir non seulement vos proches, mais aussi les personnes qui étaient présentes au même endroit au même moment.";
 "checkin_footer_title2" = "Pas de sauvegarde centralisée des données";
@@ -1724,7 +1724,7 @@
 /*Info URL for testing*/
 /*Fuzzy*/
 "test_info_url" = "https://www.bag.admin.ch/bag/fr/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
-"checkout_too_long_alert_text" = "Cette connextion dure au maximum {DURATION}. Veuillez revérifier les informations saisies.";
+"checkout_too_long_alert_text" = "Cette connexion dure au maximum {DURATION}. Veuillez revérifier les informations saisies.";
 
 /*turn camera light on*/
 "accessibility_camera_light_on" = "Allumer la lampe de poche";
@@ -1739,13 +1739,13 @@
 "events_card_title_events_not_empty" = "Mes codes QR";
 
 /*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
-"checkout_inverse_time_alert_description" = "L'heure de déconnextion est antérieure à l'heure de connexion. Veuillez vérifier les informations saisies.";
+"checkout_inverse_time_alert_description" = "L'heure de déconnexion est antérieure à l'heure de connexion. Veuillez vérifier les informations saisies.";
 
 /*Titel für die Notification die SwissCovid 2.0 ankündigt*/
 "update_notification_checkin_feature_title" = "Nouvelle fonction : connexion";
 
 /*Text für die Notification die SwissCovid 2.0 ankündigt*/
-"update_notification_checkin_feature_text" = "Merci d'utiliser SwissCovid. La dernière version de l'application vous permet de vous connecter sur place sans devoir laisser de données.";
+"update_notification_checkin_feature_text" = "Merci d'utiliser SwissCovid. La dernière version de l'application vous permet de vous connecter sur place de façon anonyme.";
 
 /*Titel für aktuellen Check-in im Tagebuch*/
 "diary_current_title" = "Actuellement";
