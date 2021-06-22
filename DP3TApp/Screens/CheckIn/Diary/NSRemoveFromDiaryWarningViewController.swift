@@ -45,6 +45,7 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
     init(venueInfo: VenueInfo) {
         venue = venueInfo
         super.init()
+        modalPresentationStyle = .overFullScreen
     }
 
     override func viewDidLoad() {
