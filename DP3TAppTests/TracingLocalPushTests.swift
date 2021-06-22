@@ -62,7 +62,7 @@ class NSLocalPushTests: XCTestCase {
 
     func testSyncErrorNotification() {
         let referenceDate = Date()
-        tlp.handleSync(result: .failure(.permissonError))
+        tlp.handleSync(result: .failure(.permissionError))
 
         XCTAssertEqual(center.requests.count, 1)
 
@@ -175,7 +175,7 @@ class NSLocalPushTests: XCTestCase {
     }
 
     func testGeneratingPermissionNotification() {
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
         XCTAssertEqual(center.requests.first?.identifier, NSLocalPush.Identifiers.permissionError.rawValue)
 
@@ -184,10 +184,10 @@ class NSLocalPushTests: XCTestCase {
     }
 
     func testGeneratingNotificationOnlyOnce() {
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
-        tlp.handleTracingState(.inactive(error: .permissonError))
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
         tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         XCTAssertEqual(center.requests.count, 2)

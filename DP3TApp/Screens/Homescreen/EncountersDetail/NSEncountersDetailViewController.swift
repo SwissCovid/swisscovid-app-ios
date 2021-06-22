@@ -37,12 +37,12 @@ class NSEncountersDetailViewController: NSTitleViewScrollViewController {
 
         tracingControl.switchCallback = { [weak self] state, confirmCallback in
             guard let self = self else { return }
-            // if trackingState is permissonError show tutorial view
+            // if trackingState is permissionError show tutorial view
             if state, #available(iOS 13.7, *) {
                 switch UIStateManager.shared.trackingState {
                 case let .inactive(e):
                     switch e {
-                    case .permissonError, .exposureNotificationError:
+                    case .permissionError, .exposureNotificationError:
                         confirmCallback(!state)
                         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                         NSSettingsTutorialViewController().presentInNavigationController(from: appDelegate.tabBarController, useLine: false)

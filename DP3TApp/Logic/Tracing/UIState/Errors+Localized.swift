@@ -37,7 +37,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return unexpected.ub_localized
         case .bluetoothTurnedOff:
             return "bluetooth_turned_off".ub_localized // custom UI, this should never be visible
-        case .permissonError:
+        case .permissionError:
             return "bluetooth_permission_turned_off".ub_localized // custom UI, this should never be visible
         case .authorizationUnknown:
             return "authorization unknown" // custom UI, this should never be visible
@@ -60,7 +60,7 @@ extension DP3TTracingError: LocalizedError, CodedError {
             return "IBLOFF"
         case .cancelled:
             return "ICANCU"
-        case .permissonError:
+        case .permissionError:
             return "IPERME"
         case .authorizationUnknown:
             return "IPERMU"

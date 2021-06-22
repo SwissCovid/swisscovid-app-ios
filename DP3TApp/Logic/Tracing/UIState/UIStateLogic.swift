@@ -207,7 +207,7 @@ class UIStateLogic {
             switch error {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
-            case .permissonError:
+            case .permissionError:
                 if !UserStorage.shared.tracingSettingEnabled {
                     tracing = .tracingDisabled
                 } else {

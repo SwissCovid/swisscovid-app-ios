@@ -277,8 +277,8 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                         handleENError(error)
                     }
                 }
-            case .permissonError:
-                schedulePermissonErrorNotification()
+            case .permissionError:
+                schedulePermissionErrorNotification()
             default:
                 break
             }
@@ -291,7 +291,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
                                   text: "bluetooth_turned_off_text".ub_localized)
     }
 
-    private func schedulePermissonErrorNotification() {
+    private func schedulePermissionErrorNotification() {
         scheduleErrorNotification(identifier: .permissionError,
                                   title: "tracing_permission_error_title_ios".ub_localized.replaceSettingsString,
                                   text: "tracing_permission_error_text_ios".ub_localized.replaceSettingsString)
@@ -303,7 +303,7 @@ class NSLocalPush: NSObject, LocalPushProtocol {
         case .bluetoothOff:
             scheduleBluetoothNotification()
         case .notAuthorized, .notEnabled, .restricted:
-            schedulePermissonErrorNotification()
+            schedulePermissionErrorNotification()
         default:
             break
         }
