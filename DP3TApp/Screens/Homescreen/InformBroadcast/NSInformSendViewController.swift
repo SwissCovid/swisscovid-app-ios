@@ -114,7 +114,6 @@ class NSInformSendViewController: NSViewController {
         UserStorage.shared.tracingWasEnabledBeforeIsolation = UserStorage.shared.tracingSettingEnabled
         UserStorage.shared.tracingSettingEnabled = false
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
-        UBPushManager.shared.setActive(false)
         UIStateManager.shared.refresh()
         defer { ReportingManager.shared.reset() } // Needed so ´oldestENKeyDate´ is still set when next viewcontroller is created
 

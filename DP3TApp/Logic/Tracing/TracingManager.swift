@@ -42,6 +42,8 @@ class TracingManager: NSObject {
         }
     }
 
+    private(set) var isAuthorized: Bool = false
+
     var isSupported: Bool {
         DP3TTracing.isOSCompatible
     }
@@ -131,8 +133,6 @@ class TracingManager: NSObject {
                     UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
                     DatabaseSyncer.shared.forceSyncDatabase(completionHandler: nil)
-
-                    UBPushManager.shared.setActive(false)
                 case let .failure(error):
                     if case DP3TTracingError.userAlreadyMarkedAsInfected = error {
                         // Tracing should not start if the user is marked as infected
@@ -154,9 +154,6 @@ class TracingManager: NSObject {
         guard #available(iOS 12.5, *) else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
-        if CrowdNotifier.hasCheckins() {
-            UBPushManager.shared.setActive(true)
-        }
     }
 
     func resetSDK() {
@@ -271,6 +268,11 @@ extension TracingManager: DP3TTracingDelegate {
         localPush.scheduleExposureNotificationsIfNeeded(provider: state)
 
         isActivated = state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff)
+        isAuthorized = (state.trackingState != .inactive(error: .authorizationUnknown) &&
+            state.trackingState != .inactive(error: .permissionError))
+
+        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins()
+        UBPushManager.shared.setActive(needsPush)
 
         // update tracing error states if needed
         localPush.handleTracingState(state.trackingState)

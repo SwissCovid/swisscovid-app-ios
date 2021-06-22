@@ -67,7 +67,7 @@ class CheckInManager {
         if var cc = currentCheckIn, let outTime = cc.checkOutTime {
             ReminderManager.shared.removeAllReminders()
 
-            if !TracingManager.shared.isActivated {
+            if !TracingManager.shared.isAuthorized {
                 UBPushManager.shared.setActive(true)
             }
 

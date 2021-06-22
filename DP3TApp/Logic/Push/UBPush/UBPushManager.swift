@@ -71,7 +71,6 @@ open class UBPushManager: NSObject {
                                               pushRegistrationManager: UBPushRegistrationManager) {
         self.pushHandler = pushHandler
         self.pushRegistrationManager = pushRegistrationManager
-        self.pushRegistrationManager.sendPushRegistrationIfOutdated()
         self.pushHandler.handleLaunchOptions(launchOptions)
 
         if isActive {
@@ -85,6 +84,8 @@ open class UBPushManager: NSObject {
             registerForPushNotification()
         } else if isActive, !active {
             pushRegistrationManager.setPushToken(nil)
+        } else if active {
+            pushRegistrationManager.sendPushRegistrationIfOutdated()
         }
 
         isActive = active
