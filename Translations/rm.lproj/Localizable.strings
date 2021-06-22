@@ -1552,7 +1552,7 @@
 "events_card_subtitle" = "Creai in code QR, cun il qual persunas pon sa registrar al lieu.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "Vulais Vus propi stizzar il code QR?";
+"delete_qr_code_dialog" = "Vulais Vus propi stizzar il code QR? Ils codes QR stampads restan vinavant valaivels.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Autoregistraziun";
@@ -1643,7 +1643,7 @@
 "checkin_report_title3" = "Laschar far in test";
 "checkin_report_subtitle1" = "Vus pudais gia esser infectusa u infectus senza badar quai. Observai las mesiras d'igiena e da protecziun vertentas e protegi Vossa famiglia, Vossas amias e Voss amis sco er Voss conturn.";
 "checkin_report_subtitle2" = "Survegliai Voss stadi da sanadad.";
-"checkin_report_subtitle3" = "Faschai immediatamain in test, sche Vus avais sintoms. In test dal coronavirus è raschunaivel e vegn cusseglià, er sche Vus n'avais nagins sintoms.";
+"checkin_report_subtitle3" = "Faschai immediatamain in test, sche Vus avais sintoms. In test dal coronavirus è raschunaivel e vegn cusseglià, er sche Vus n'avais nagins sintoms e sche Vus n'essas anc betg vaccinada u vaccinà cumplettamain.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Registraziun";
