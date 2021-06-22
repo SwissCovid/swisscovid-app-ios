@@ -4662,7 +4662,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CrowdNotifier/crowdnotifier-sdk-ios";
 			requirement = {
-				branch = "feature/swisscovid-integration";
+				branch = develop;
 				kind = branch;
 			};
 		};
