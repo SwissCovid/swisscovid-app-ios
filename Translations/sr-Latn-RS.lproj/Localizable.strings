@@ -1382,10 +1382,10 @@
 "authenticate_for_diary" = "Identifikujte se, kako biste pristupili dnevniku";
 
 /*Check-Ins: Errinnerungsoption Stunden*/
-"reminder_option_hours" = "časovi {HOURS} h";
+"reminder_option_hours" = "{HOURS} h";
 
 /*Check-Ins: Errinnerungsoption Minuten*/
-"reminder_option_minutes" = "minute {MINUTES}'";
+"reminder_option_minutes" = "{MINUTES}'";
 
 /*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
 "qr_scanner_no_camera_permission" = "Aplikaciji je potreban pristup kameri, da bi se skenirao QR kod.";
@@ -1543,7 +1543,7 @@
 "home_end_isolation_card_text" = "Kontakte i prijave ponovo aktivirati. ";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
-"reminder_option_hours_minutes" = "časovi {HOURS} h minute {MINUTES}'";
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
 "checkin_overview_isolation_text" = "Ne možete ponovo da se prijavite ako imate pozitivan test.";

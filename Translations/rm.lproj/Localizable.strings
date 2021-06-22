@@ -1376,7 +1376,7 @@
 "checkin_set_reminder" = "Pro memoria sortida";
 
 /*Check-Ins: Erinnerung Option Aus*/
-"reminder_option_off" = "Deactivà";
+"reminder_option_off" = "Off";
 
 /*Check-Ins: Tagebuch Zugriff Text*/
 "authenticate_for_diary" = "As autentifitgai per avair access al diari";
@@ -1385,7 +1385,7 @@
 "reminder_option_hours" = "{HOURS} h";
 
 /*Check-Ins: Errinnerungsoption Minuten*/
-"reminder_option_minutes" = "{MINUTES} min";
+"reminder_option_minutes" = "{MINUTES}'";
 
 /*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
 "qr_scanner_no_camera_permission" = "Per pudair scannar il code QR dovra l'app access a la camera.";
@@ -1543,7 +1543,7 @@
 "home_end_isolation_card_text" = "Puspè activar inscunters e registraziuns.";
 
 /*Check-Ins: Erinnerungsoption Stunden & Minuten*/
-"reminder_option_hours_minutes" = "{HOURS} h {MINUTES} min";
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
 
 /*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
 "checkin_overview_isolation_text" = "Vus na pudais betg pli As registrar, sche Vus avais survegnì in resultat positiv.";

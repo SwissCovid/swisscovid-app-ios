@@ -1587,7 +1587,7 @@
 "events_card_subtitle" = "Créez un code QR SwissCovid permettant aux utilisateurs de se connecter sur place.";
 
 /*Dialog Text beim Löschen eines erstellten QR Codes.*/
-"delete_qr_code_dialog" = "Souhaitez-vous vraiment supprimer le QR code?";
+"delete_qr_code_dialog" = "Souhaitez-vous vraiment supprimer le QR code? Les codes QR imprimés restent valides.";
 
 /*Self-Check-In Button Titel im QR-Code Screen*/
 "self_checkin_button_title" = "Auto-check-in";
@@ -1678,7 +1678,7 @@
 "checkin_report_title3" = "Se faire tester";
 "checkin_report_subtitle1" = "Il est possible d’être contagieux sans le savoir. Respectez les règles d’hygiène et de conduite pour protéger votre famille, vos amis et tout votre entourage.";
 "checkin_report_subtitle2" = "Surveillez votre état de santé.";
-"checkin_report_subtitle3" = "Faites-vous immédiatement tester si vous présentez des symptômes. Même en l’absence de symptômes il peut être utile et recommandé de se faire tester pour le coronavirus.";
+"checkin_report_subtitle3" = "Faites-vous immédiatement tester si vous présentez des symptômes. Même en l’absence de symptômes, il peut être utile et recommandé de se faire tester pour le coronavirus si vous n'êtes pas encore complètement vacciné.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
