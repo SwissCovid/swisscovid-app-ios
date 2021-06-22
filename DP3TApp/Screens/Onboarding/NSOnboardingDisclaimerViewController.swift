@@ -153,9 +153,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
             warningStack.addSpacerView(NSPadding.small)
             warningStack.addArrangedView(warningBody)
             warningStack.addSpacerView(NSPadding.large)
-            warningStack.addArrangedView(warningRow0)
-            warningStack.addSpacerView(3)
-            warningStack.addArrangedView(warningRow1)
             warningContainer.addSubview(warningStack)
             addArrangedView(warningContainer, spacing: NSPadding.large, insets: sidePadding)
 
@@ -170,77 +167,6 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
 
             warningStack.snp.makeConstraints { make in
                 make.edges.equalToSuperview()
-            }
-
-            // warning row 0
-            warningRow0.axis = .horizontal
-            let iconWrapper = UIView()
-            iconWrapper.backgroundColor = .ns_backgroundTertiary
-            let manufacturerImage = UIImage(named: "manufacturer-iso-icon")?.withRenderingMode(.alwaysTemplate)
-            let manufacturerIcon = UIImageView(image: manufacturerImage)
-            manufacturerIcon.tintColor = UIColor.ns_disclaimerIconColor
-            iconWrapper.addSubview(manufacturerIcon)
-
-            let label = NSLabel(.smallLight, textColor: .ns_text)
-            label.text = "onboarding_disclaimer_manufacturer".ub_localized
-            label.ub_setContentPriorityRequired()
-
-            let labelWrapper = UIView()
-            labelWrapper.addSubview(label)
-            labelWrapper.backgroundColor = .ns_backgroundTertiary
-
-            warningRow0.addArrangedSubview(iconWrapper)
-
-            manufacturerIcon.snp.makeConstraints { make in
-                make.leading.trailing.equalToSuperview().inset(NSPadding.large)
-                make.top.bottom.equalToSuperview().inset(NSPadding.large).priority(.low)
-                make.centerY.equalToSuperview()
-                make.height.equalTo(35)
-                make.width.equalTo(46)
-            }
-
-            label.snp.makeConstraints { make in
-                make.edges.equalToSuperview().inset(NSPadding.large)
-            }
-
-            warningRow0.addSpacerView(3)
-            warningRow0.addArrangedSubview(labelWrapper)
-
-            // warning row 1
-
-            warningRow1.backgroundColor = .ns_backgroundTertiary
-
-            let versionStack = UIStackView()
-            versionStack.axis = .vertical
-
-            let versionLabel = NSLabel(.smallLight, textColor: .ns_text)
-            versionLabel.text = "\("onboarding_disclaimer_app_version".ub_localized) \(Bundle.appVersion)"
-
-            versionStack.addArrangedSubview(versionLabel)
-            if let buildDate = Bundle.buildDate {
-                let releaseDateLabel = NSLabel(.smallLight, textColor: .ns_text)
-                releaseDateLabel.text = "onboarding_disclaimer_release_version".ub_localized + " " + DateFormatter.ub_dayString(from: buildDate)
-                versionStack.addArrangedSubview(releaseDateLabel)
-            }
-
-            let renderedMarkingImage = UIImage(named: "ce-marking")?.withRenderingMode(.alwaysTemplate)
-            let ceIcon = UIImageView(image: renderedMarkingImage)
-            ceIcon.tintColor = UIColor.ns_disclaimerIconColor
-
-            warningRow1.addSubview(versionStack)
-            warningRow1.addSubview(ceIcon)
-
-            versionStack.ub_setContentPriorityRequired()
-            versionStack.snp.makeConstraints { make in
-                make.left.top.bottom.equalToSuperview().inset(NSPadding.large)
-            }
-
-            ceIcon.snp.makeConstraints { make in
-                make.width.equalTo(32)
-                make.height.equalTo(23)
-                make.centerY.equalToSuperview()
-                make.right.equalToSuperview().inset(NSPadding.large)
-                make.left.equalTo(versionStack.snp.right).inset(-NSPadding.medium)
             }
 
             background.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
