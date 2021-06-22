@@ -390,10 +390,10 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
         center.setNotificationCategories([UNNotificationCategory(identifier: Identifiers.checkInReminder.rawValue,
                                                                  actions: [
+                                                                     Actions.checkOut.action,
                                                                      Actions.checkOutSnooze30min.action,
                                                                      Actions.checkOutSnooze1h.action,
                                                                      Actions.checkOutSnooze2h.action,
-                                                                     Actions.checkOut.action,
                                                                  ],
                                                                  intentIdentifiers: [], options: [])])
 
