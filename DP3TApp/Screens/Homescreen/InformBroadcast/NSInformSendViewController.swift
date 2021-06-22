@@ -116,7 +116,7 @@ class NSInformSendViewController: NSViewController {
         FakePublishManager.shared.rescheduleFakeRequest(force: true)
         UBPushManager.shared.setActive(false)
         UIStateManager.shared.refresh()
-        ReportingManager.shared.reset()
+        defer { ReportingManager.shared.reset() } // Needed so ´oldestENKeyDate´ is still set when next viewcontroller is created
 
         if skipThankYou {
             navigationController?.pushViewController(NSInformTracingEndViewController(), animated: true)
