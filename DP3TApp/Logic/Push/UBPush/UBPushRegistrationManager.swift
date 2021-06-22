@@ -91,6 +91,7 @@ open class UBPushRegistrationManager {
             }
         }
 
+        task?.cancel()
         task = session.dataTask(with: registrationRequest, completionHandler: { [weak self] data, _, error in
             guard let self = self else {
                 return
