@@ -30,7 +30,11 @@ class NSReminderControl: UIView {
         segmentedControl = UISegmentedControl(items: self.options.map {
             switch $0 {
             case .custom(milliseconds: -1):
-                return UIImage(named: "ic-stopwatch-small") ?? $0.title
+                guard let image = UIImage(named: "ic-stopwatch-small") else {
+                    return $0.title
+                }
+                image.accessibilityLabel = "checkin_reminder_option_open_settings".ub_localized
+                return image
             default:
                 return $0.title
             }
