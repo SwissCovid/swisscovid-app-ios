@@ -10,14 +10,13 @@ platform :ios do
   match(
     type: "appstore",
     readonly: is_ci,
+    app_identifier: [ENV["APP_IDENTIFIER"], ENV["APP_IDENTIFIER"] + ".Clip" ].join(","),
   )
 
   update_code_signing_settings(
     use_automatic_signing: false,
     path: ENV["XCODE_PROJ"],
-    profile_name: ENV["sigh_"+ENV["APP_IDENTIFIER"] +"_appstore_profile-name"],
-    code_sign_identity: "iPhone Distribution",
-    bundle_identifier: ENV["APP_IDENTIFIER"] 
+    code_sign_identity: "iPhone Distribution"
   )
 
   build_number = getCustomBundleVersion()
@@ -29,7 +28,7 @@ platform :ios do
     output_name: "SwissCovid.ipa",
     archive_path: "build/SwissCovid.xcarchive",
     buildlog_path: "build/build.log",
-    xcargs: "BUILD_NUMBER=#{build_number}"
+    xcargs: "BUILD_NUMBER=#{build_number} PRIMARY_BUNDLE_IDENTIFIER=#{ENV["APP_IDENTIFIER"]} PROVISIONING_PROFILE_SPECIFIER='$(sigh_$(PRODUCT_BUNDLE_IDENTIFIER)_appstore_profile-name)' "
   )
   end
 
