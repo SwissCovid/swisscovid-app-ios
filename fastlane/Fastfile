@@ -10,6 +10,7 @@ platform :ios do
   match(
     type: "appstore",
     readonly: is_ci,
+    app_identifier: [ENV["APP_IDENTIFIER"], ENV["APP_IDENTIFIER"] + ".Clip" ].join(","),
   )
 
   update_code_signing_settings(
