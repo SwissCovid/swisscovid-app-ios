@@ -39,8 +39,6 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_DEV }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "DEV"
-        PROVISIONING_PROFILE_NAME: "SwissCovid Provisioning DEV"
-        CLIP_PROVISIONING_PROFILE_NAME: "SwissCovid App Clip DEV"
       run: bundle exec fastlane build_and_sign
 
     - name: SHA256
@@ -93,8 +91,6 @@ jobs:
         APP_IDENTIFIER: ${{ secrets.APP_IDENTIFIER_ABNAHME }}
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "ABN"
-        PROVISIONING_PROFILE_NAME: "SwissCovid Provisioning ABNAHME"
-        CLIP_PROVISIONING_PROFILE_NAME: "SwissCovid App Clip ABNAHME"
       run: bundle exec fastlane build_and_sign
     
     - name: SHA256
@@ -143,8 +139,6 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         SKIP_ADD_BADGE: true
         BADGE_TITLE: ""
-        PROVISIONING_PROFILE_NAME: "SwissCovid Provisioning PROD"
-        CLIP_PROVISIONING_PROFILE_NAME: "SwissCovid App Clip PROD"
       run: bundle exec fastlane build_and_sign
 
     - name: SHA256
@@ -199,8 +193,6 @@ jobs:
         FASTLANE_TEAM_ID: ${{ secrets.TEAM_ID }}
         BADGE_TITLE: "LOG"
         BUILD_NUMBER_POSTFIX: "999"
-        PROVISIONING_PROFILE_NAME: "SwissCovid Provisioning PROD"
-        CLIP_PROVISIONING_PROFILE_NAME: "SwissCovid App Clip PROD"
       run: bundle exec fastlane build_and_sign
 
     - name: SHA256
