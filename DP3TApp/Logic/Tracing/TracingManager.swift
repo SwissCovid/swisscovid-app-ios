@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import DP3TSDK
 import Foundation
 import UIKit
@@ -31,7 +32,7 @@ class TracingManager: NSObject {
         var loggingStorage: LoggingStorage?
     #endif
 
-    init(localPush: LocalPushProtocol = TracingLocalPush.shared) {
+    init(localPush: LocalPushProtocol = NSLocalPush.shared) {
         self.localPush = localPush
     }
 
@@ -40,6 +41,8 @@ class TracingManager: NSObject {
             UIStateManager.shared.changedTracingActivated()
         }
     }
+
+    private(set) var isAuthorized: Bool = false
 
     var isSupported: Bool {
         DP3TTracing.isOSCompatible
@@ -100,7 +103,7 @@ class TracingManager: NSObject {
                                federationGateway: .yes)
 
         // Do not sync because applicationState is still .background
-        updateStatus(shouldSync: false) { _ in
+        updateStatus(shouldSync: false) {
             self.uiStateManager.refresh()
         }
     }
@@ -118,14 +121,14 @@ class TracingManager: NSObject {
         }
     }
 
-    func startTracing() {
+    func startTracing(callback: ((TracingEnableResult) -> Void)? = nil) {
         guard #available(iOS 12.5, *) else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
                 case .success:
                     // reset reminder Notifications
-                    TracingLocalPush.shared.resetReminderNotification()
+                    NSLocalPush.shared.resetReminderNotification()
                     // reset stored error when starting tracing
                     UIStateManager.shared.tracingStartError = nil
                     // When tracing is enabled trigger sync (for example after ENManager is initialized)
@@ -138,7 +141,10 @@ class TracingManager: NSObject {
                         UIStateManager.shared.tracingStartError = error
                     }
                 }
+                callback?(result)
             })
+        } else {
+            callback?(.failure(.permissionError))
         }
 
         updateStatus(shouldSync: false, completion: nil)
@@ -163,20 +169,27 @@ class TracingManager: NSObject {
 
     func deletePositiveTest() {
         guard #available(iOS 12.5, *) else { return }
+        UIStateManager.shared.blockUpdate {
+            // reset end isolation question date and onset date
+            ReportingManager.shared.endIsolationQuestionDate = nil
+            ReportingManager.shared.oldestSharedKeyDate = nil
 
-        // reset end isolation question date and onset date
-        ReportingManager.shared.endIsolationQuestionDate = nil
-        ReportingManager.shared.oldestSharedKeyDate = nil
+            // reset infection status
+            DP3TTracing.resetInfectionStatus()
 
-        // reset infection status
-        DP3TTracing.resetInfectionStatus()
+            // reset debug fake data to test UI reset
+            #if ENABLE_STATUS_OVERRIDE
+                UIStateManager.shared.overwrittenInfectionState = nil
+            #endif
 
-        // reset debug fake data to test UI reset
-        #if ENABLE_STATUS_OVERRIDE
-            UIStateManager.shared.overwrittenInfectionState = nil
-        #endif
+            UserStorage.shared.didMarkAsInfected = false
 
-        UIStateManager.shared.refresh()
+            // enable tracing if it was enabled before isolation
+            if UserStorage.shared.tracingWasEnabledBeforeIsolation {
+                UserStorage.shared.tracingWasEnabledBeforeIsolation = false
+                startTracing()
+            }
+        }
     }
 
     func deleteReports() {
@@ -194,7 +207,7 @@ class TracingManager: NSObject {
 
     func userHasCompletedOnboarding() {
         guard #available(iOS 12.5, *) else { return }
-        if ConfigManager.allowTracing {
+        if ConfigManager.allowTracing, UserStorage.shared.tracingSettingEnabled {
             DP3TTracing.startTracing { result in
                 switch result {
                 case .success:
@@ -213,7 +226,7 @@ class TracingManager: NSObject {
         updateStatus(completion: nil)
     }
 
-    func updateStatus(shouldSync: Bool = true, completion: ((CodedError?) -> Void)?) {
+    func updateStatus(shouldSync: Bool = true, completion: (() -> Void)?) {
         guard isSupported else { return }
         guard #available(iOS 12.5, *) else { return }
 
@@ -231,16 +244,19 @@ class TracingManager: NSObject {
 
         if shouldSync {
             DatabaseSyncer.shared.syncDatabaseIfNeeded { _ in
-                completion?(nil)
+                completion?()
             }
         } else {
-            completion?(nil)
+            completion?()
         }
     }
 }
 
 extension TracingManager: DP3TTracingDelegate {
     func DP3TTracingStateChanged(_ state: TracingState) {
+        if state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff) {
+            UserStorage.shared.tracingSettingEnabled = true
+        }
         DispatchQueue.main.async {
             UIStateManager.shared.blockUpdate {
                 UIStateManager.shared.updateError = nil
@@ -252,6 +268,11 @@ extension TracingManager: DP3TTracingDelegate {
         localPush.scheduleExposureNotificationsIfNeeded(provider: state)
 
         isActivated = state.trackingState == .active || state.trackingState == .inactive(error: .bluetoothTurnedOff)
+        isAuthorized = (state.trackingState != .inactive(error: .authorizationUnknown) &&
+            state.trackingState != .inactive(error: .permissionError))
+
+        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins()
+        UBPushManager.shared.setActive(needsPush)
 
         // update tracing error states if needed
         localPush.handleTracingState(state.trackingState)
@@ -267,14 +288,7 @@ extension TracingManager: DP3TBackgroundHandler {
 
     func performBackgroundTasks(completionHandler: @escaping (Bool) -> Void) {
         #if DEBUG || RELEASE_DEV
-            let center = UNUserNotificationCenter.current()
-            let content = UNMutableNotificationContent()
-            content.title = "Debug"
-            content.body = "Backgroundtask got triggered at \(Date().description)"
-            content.sound = UNNotificationSound.default
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-            center.add(request)
+            NSLocalPush.shared.showDebugNotification(title: "Debug", body: "Backgroundtask got triggered at \(Date().description)")
         #endif
 
         // wait another 2 days befor warning
@@ -299,9 +313,52 @@ extension TracingManager: DP3TBackgroundHandler {
             localPush.handleTracingState(DP3TTracing.status.trackingState)
         }
 
+        group.enter()
+        queue.addOperation {
+            let state: UIApplication.State
+            if Thread.isMainThread {
+                state = UIApplication.shared.applicationState
+            } else {
+                state = DispatchQueue.main.sync {
+                    UIApplication.shared.applicationState
+                }
+            }
+            let isInBackground = state != .active
+            ProblematicEventsManager.shared.sync(isInBackground: isInBackground) { _, needsNotification in
+                if needsNotification {
+                    NSLocalPush.shared.showCheckInExposureNotification()
+                }
+
+                // data are updated -> reschedule background task warning triggers
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+
+                group.leave()
+            }
+        }
+
         NSSynchronizationPersistence.shared?.removeLogsBefore14Days()
 
         queue.addOperation(configOperation)
+
+        group.enter()
+        queue.addOperation {
+            // check if notificaton is enabled in cofig request
+            // && if user has not completed the checkinOnboarding
+            // && the notification has not been shown
+            if ConfigManager.currentConfig?.checkInUpdateNotificationEnabled ?? false,
+               !UserStorage.shared.hasCompletedUpdateBoardingCheckIn,
+               !UserStorage.shared.hasShownCheckInUpdateNotification {
+                // only show the notification between 8:00 and 20:00
+                let hour = Calendar.current.dateComponents([.hour], from: Date())
+                if let hour = hour.hour,
+                   (8 ... 19).contains(hour) {
+                    NSLocalPush.shared.schedulecheckInUpdateNotification()
+                    UserStorage.shared.hasShownCheckInUpdateNotification = true
+                }
+            }
+
+            group.leave()
+        }
 
         group.notify(queue: .global(qos: .background)) {
             completionHandler(!configOperation.isCancelled && !fakePublishOperation.isCancelled)

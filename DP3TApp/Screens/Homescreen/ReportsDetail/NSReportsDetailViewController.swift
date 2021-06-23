@@ -15,7 +15,7 @@ class NSReportsDetailViewController: NSViewController {
 
     private let positiveTestedViewController = NSReportsDetailPositiveTestedViewController()
 
-    private let reportsViewController = NSReportsDetailReportViewController()
+    private let exposedViewController = NSReportsDetailExposedViewController()
 
     // MARK: - Init
 
@@ -28,11 +28,11 @@ class NSReportsDetailViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .ns_backgroundSecondary
+        view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 
         UIStateManager.shared.addObserver(self) { [weak self] state in
             guard let strongSelf = self else { return }
-            strongSelf.setup(state.reportsDetail)
+            strongSelf.update(state)
         }
 
         setupViewControllers()
@@ -45,7 +45,6 @@ class NSReportsDetailViewController: NSViewController {
         addChild(noReportsViewController)
         view.addSubview(noReportsViewController.view)
         noReportsViewController.didMove(toParent: self)
-
         noReportsViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -58,28 +57,30 @@ class NSReportsDetailViewController: NSViewController {
             make.edges.equalToSuperview()
         }
 
-        // Reports View Controller
-        addChild(reportsViewController)
-        view.addSubview(reportsViewController.view)
-        reportsViewController.didMove(toParent: self)
-
-        reportsViewController.view.snp.makeConstraints { make in
+        // Exposed View Controller
+        addChild(exposedViewController)
+        view.addSubview(exposedViewController.view)
+        exposedViewController.didMove(toParent: self)
+        exposedViewController.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
 
-    private func setup(_ state: UIStateModel.ReportsDetail) {
-        reportsViewController.showReportWithAnimation = state.showReportWithAnimation
+    private func update(_ state: UIStateModel) {
+        let reportDetail = state.reportsDetail
+
+        exposedViewController.showReportWithAnimation = reportDetail.showReportWithAnimation
+        exposedViewController.reports = reportDetail.reports
+        exposedViewController.checkInReports = reportDetail.checkInReports
+        exposedViewController.encountersDidOpenLeitfaden = reportDetail.didOpenLeitfaden
 
         noReportsViewController.view.isHidden = true
         positiveTestedViewController.view.isHidden = true
-        reportsViewController.view.isHidden = true
+        exposedViewController.view.isHidden = true
 
-        switch state.report {
+        switch reportDetail.report {
         case .exposed:
-            reportsViewController.view.isHidden = false
-            reportsViewController.reports = state.reports
-            reportsViewController.didOpenLeitfaden = state.didOpenLeitfaden
+            exposedViewController.view.isHidden = false
         case let .infected(onsetDate):
             positiveTestedViewController.view.isHidden = false
             positiveTestedViewController.onsetDate = onsetDate

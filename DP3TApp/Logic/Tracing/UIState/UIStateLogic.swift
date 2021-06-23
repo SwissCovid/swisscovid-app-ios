@@ -8,9 +8,8 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
-import Foundation
-
 import DP3TSDK
+import Foundation
 
 /// Implementation of business rules to link SDK and all errors and states  to UI state
 class UIStateLogic {
@@ -28,8 +27,15 @@ class UIStateLogic {
         // Check errors
         setErrorStates(&newState, tracing: &tracing)
 
+        // if user has not touched tracing onboarding yet,
+        // show onboarding
+        if !UserStorage.shared.hasCompletedTracingOnboarding {
+            tracing = .onboarding
+        }
+
         // Set tracing active
         newState.encountersDetail.tracingEnabled = TracingManager.shared.isActivated
+        newState.encountersDetail.tracingSettingEnabled = UserStorage.shared.tracingSettingEnabled
         newState.encountersDetail.tracing = tracing
 
         // Get state of SDK tracing
@@ -46,6 +52,8 @@ class UIStateLogic {
         // Detect exposure, infection
         //
 
+        newState.checkInStateModel = buildCheckInState()
+
         var infectionStatus = tracingState.infectionStatus
         var oldestSharedKeyDate = ReportingManager.shared.oldestSharedKeyDate
         #if ENABLE_STATUS_OVERRIDE
@@ -55,13 +63,28 @@ class UIStateLogic {
 
         switch infectionStatus {
         case .healthy:
-            break
+            if UserStorage.shared.didMarkAsInfected {
+                setInfectedState(&newState, oldestSharedKeyDate: oldestSharedKeyDate)
+            }
 
         case .infected:
             setInfectedState(&newState, oldestSharedKeyDate: oldestSharedKeyDate)
 
         case let .exposed(days):
             setExposedState(&newState, days: days)
+            setLastReportState(&newState)
+        }
+
+        if case UIStateModel.CheckInStateModel.ExposureState.exposure(exposure: let exposure, exposureByDay: _) = newState.checkInStateModel.exposureState {
+            if newState.homescreen.reports.report == .noReport {
+                newState.homescreen.reports.report = .exposed
+            }
+            if newState.reportsDetail.report == .noReport {
+                newState.reportsDetail.report = .exposed
+            }
+
+            newState.reportsDetail.checkInReports.append(contentsOf: exposure.map { .init(checkInIdentifier: $0.exposureEvent.checkinId, arrivalTime: $0.exposureEvent.arrivalTime, departureTime: $0.exposureEvent.departureTime, venueDescription: $0.diaryEntry?.venue.description) })
+
             setLastReportState(&newState)
         }
 
@@ -78,6 +101,104 @@ class UIStateLogic {
         return newState
     }
 
+    private func buildCheckInState() -> UIStateModel.CheckInStateModel {
+        var model = UIStateModel.CheckInStateModel()
+
+        if let checkIn = CheckInManager.shared.currentCheckIn {
+            model.checkInState = .checkIn(checkIn)
+        }
+
+        model.exposureState = buildExposureCheckInState()
+
+        model.diaryState = buildCheckInDiaryState()
+
+        return model
+    }
+
+    private func buildExposureCheckInState() -> UIStateModel.CheckInStateModel.ExposureState {
+        let events = ProblematicEventsManager.shared.getExposureEvents().sorted { $0.arrivalTime > $1.arrivalTime
+        }
+
+        let diary = CheckInManager.shared.getDiary()
+
+        var exposures: [CheckInExposure] = []
+
+        for event in events {
+            let diaryEntry = diary.first { $0.identifier == event.checkinId }
+            exposures.append(CheckInExposure(exposureEvent: event, diaryEntry: diaryEntry))
+        }
+
+        var result: [[CheckInExposure]] = []
+        var currentDate: Date?
+        var currentCheckIns: [CheckInExposure] = []
+
+        let calendar = NSCalendar.current
+
+        for i in exposures {
+            let d = calendar.startOfDay(for: i.exposureEvent.arrivalTime)
+
+            if currentDate == nil {
+                currentDate = d
+            }
+
+            guard let cd = currentDate else { continue }
+
+            if cd == d {
+                currentCheckIns.append(i)
+            } else {
+                result.append(currentCheckIns)
+                currentCheckIns.removeAll()
+
+                currentDate = d
+                currentCheckIns.append(i)
+            }
+        }
+
+        if currentCheckIns.count > 0 {
+            result.append(currentCheckIns)
+        }
+
+        return exposures.count > 0 ? .exposure(exposure: exposures, exposureByDay: result) : .noExposure
+    }
+
+    private func buildCheckInDiaryState() -> [[CheckIn]] {
+        let diary = CheckInManager.shared.getDiary()
+
+        var result: [[CheckIn]] = []
+        var currentDate: Date?
+        var currentCheckIns: [CheckIn] = []
+
+        let calendar = NSCalendar.current
+
+        for i in diary.sorted(by: { a, b -> Bool in
+            a.checkInTime > b.checkInTime
+        }) {
+            let d = calendar.startOfDay(for: i.checkInTime)
+
+            if currentDate == nil {
+                currentDate = d
+            }
+
+            guard let cd = currentDate else { continue }
+
+            if cd == d {
+                currentCheckIns.append(i)
+            } else {
+                result.append(currentCheckIns)
+                currentCheckIns.removeAll()
+
+                currentDate = d
+                currentCheckIns.append(i)
+            }
+        }
+
+        if currentCheckIns.count > 0 {
+            result.append(currentCheckIns)
+        }
+
+        return result
+    }
+
     private func setErrorStates(_: inout UIStateModel, tracing: inout UIStateModel.TracingState) {
         switch manager.trackingState {
         case .initialization:
@@ -86,12 +207,24 @@ class UIStateLogic {
             switch error {
             case .bluetoothTurnedOff:
                 tracing = .bluetoothTurnedOff
-            case .permissonError:
-                tracing = .tracingPermissionError(code: nil)
+            case .permissionError:
+                if !UserStorage.shared.tracingSettingEnabled {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingPermissionError(code: nil)
+                }
             case .authorizationUnknown:
-                tracing = .tracingAuthorizationUnknown
+                if !UserStorage.shared.tracingSettingEnabled {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingAuthorizationUnknown
+                }
             case .exposureNotificationError:
-                tracing = .tracingPermissionError(code: error.errorCodeString)
+                if !UserStorage.shared.tracingSettingEnabled {
+                    tracing = .tracingDisabled
+                } else {
+                    tracing = .tracingPermissionError(code: error.errorCodeString)
+                }
             case .networkingError, .caseSynchronizationError, .userAlreadyMarkedAsInfected, .cancelled:
                 // TODO: Something
                 break // networkingError should already be handled elsewhere, ignore caseSynchronizationError for now
@@ -118,7 +251,7 @@ class UIStateLogic {
             newState.homescreen.reports.backgroundUpdateProblem = st.backgroundRefreshState != .available
         }
 
-        if manager.immediatelyShowSyncError {
+        if UserStorage.shared.tracingSettingEnabled, manager.immediatelyShowSyncError { // Only show EN sync errors if user has enabled tracing
             if manager.syncErrorIsNetworkError {
                 newState.homescreen.reports.syncProblemNetworkingError = true
             } else {
@@ -140,6 +273,20 @@ class UIStateLogic {
 
                 newState.homescreen.reports.canRetrySyncError = !errorCode.contains(DP3TTracingError.nonRecoverableSyncErrorCode)
             }
+        }
+
+        if let error = manager.checkInError,
+           abs(manager.lastCheckInSyncErrorTime?.timeIntervalSinceNow ?? 0) >= 60 * 60 * 24,
+           newState.homescreen.reports.errorTitle == nil {
+            newState.homescreen.reports.syncProblemNetworkingError = true
+            newState.homescreen.reports.errorTitle = error.errorTitle
+            newState.homescreen.reports.errorMessage = error.localizedDescription
+            #if ENABLE_VERBOSE
+                newState.homescreen.reports.errorCode = "\(error.errorCodeString): \(error)"
+            #else
+                newState.homescreen.reports.errorCode = error.errorCodeString
+            #endif
+            newState.homescreen.reports.canRetrySyncError = true
         }
 
         if let first = manager.firstSyncErrorTime,
@@ -181,14 +328,15 @@ class UIStateLogic {
         newState.reportsDetail.report = .infected(oldestSharedKeyDate: oldestSharedKeyDate)
         newState.homescreen.header = .tracingEnded
         newState.homescreen.encounters = .tracingEnded
+        newState.checkInStateModel.checkInState = .checkInEnded
     }
 
     private func setExposedState(_ newState: inout UIStateModel, days: [ExposureDay]) {
         newState.homescreen.reports.report = .exposed
         newState.reportsDetail.report = .exposed
 
-        newState.reportsDetail.reports = days.map { (mc) -> UIStateModel.ReportsDetail.NSReportModel in UIStateModel.ReportsDetail.NSReportModel(identifier: mc.identifier, timestamp: mc.exposedDate)
-        }.sorted(by: { (a, b) -> Bool in
+        newState.reportsDetail.reports = days.map { mc -> UIStateModel.ReportsDetail.NSReportModel in UIStateModel.ReportsDetail.NSReportModel(identifier: mc.identifier, timestamp: mc.exposedDate)
+        }.sorted(by: { a, b -> Bool in
             a.timestamp > b.timestamp
         })
     }
@@ -200,6 +348,12 @@ class UIStateLogic {
             newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: report.identifier)
 
             newState.reportsDetail.didOpenLeitfaden = UserStorage.shared.didOpenLeitfaden
+        }
+
+        if let lastExposure = newState.reportsDetail.checkInReports.first,
+           lastExposure.arrivalTime > (newState.homescreen.reports.lastReport ?? .distantPast) {
+            newState.homescreen.reports.lastReport = lastExposure.arrivalTime
+            newState.reportsDetail.showReportWithAnimation = !UserStorage.shared.hasSeenMessage(for: lastExposure.checkInIdentifier)
         }
     }
 
@@ -220,6 +374,12 @@ class UIStateLogic {
                     infectionStatus = .exposed(days: [])
                 case .exposed20:
                     infectionStatus = .exposed(days: [])
+                case .checkInExposed1:
+                    infectionStatus = .exposed(days: [])
+                case .checkInExposed5:
+                    infectionStatus = .exposed(days: [])
+                case .checkInAndEncounterExposed:
+                    infectionStatus = .exposed(days: [])
                 case .healthy:
                     infectionStatus = .healthy
                 }
@@ -236,11 +396,21 @@ class UIStateLogic {
             return identifiers
         }()
 
+        static var checkInidentifiers: [UUID] = {
+            var identifiers = [UUID]()
+            for _ in 0 ... 20 {
+                identifiers.append(.init())
+            }
+            return identifiers
+        }()
+
         private func setDebugReports(_ newState: inout UIStateModel) {
             // in case the infection state is overwritten, we need to
             // add at least one report
             if let os = manager.overwrittenInfectionState {
-                var count = 1
+                var count = 0
+                var checkInCount = 0
+
                 switch os {
                 case .exposed1:
                     count = 1
@@ -250,11 +420,25 @@ class UIStateLogic {
                     count = 10
                 case .exposed20:
                     count = 20
+                case .checkInExposed1:
+                    checkInCount = 1
+                case .checkInExposed5:
+                    checkInCount = 5
+                case .checkInAndEncounterExposed:
+                    count = 5
+                    checkInCount = 3
                 default:
                     return
                 }
 
                 newState.reportsDetail.reports = []
+                newState.reportsDetail.checkInReports = []
+
+                for i in 0 ..< checkInCount {
+                    let date = Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))
+
+                    newState.reportsDetail.checkInReports.append(UIStateModel.ReportsDetail.NSCheckInReportModel(checkInIdentifier: Self.checkInidentifiers[i].uuidString, arrivalTime: date, departureTime: date.addingTimeInterval(60 * 60 * 5), venueDescription: "Venue \(i + 1)"))
+                }
 
                 for i in 0 ..< count {
                     newState.reportsDetail.reports.append(UIStateModel.ReportsDetail.NSReportModel(identifier: Self.identifiers[i], timestamp: Date(timeIntervalSinceNow: Double(i * 60 * 60 * 24 * -1))))

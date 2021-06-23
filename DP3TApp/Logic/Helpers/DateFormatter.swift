@@ -43,7 +43,11 @@ extension DateFormatter {
         dayWithMonthFormatter.string(from: date)
     }
 
-    static func ub_daysAgo(from date: Date, addExplicitDate: Bool) -> String {
+    static func ub_accessibilityDate(from date: Date) -> String {
+        DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
+    }
+
+    static func ub_daysAgo(from date: Date, addExplicitDate: Bool, withLabel: Bool = true) -> String {
         let days = date.ns_differenceInDaysWithDate(date: Date())
 
         var daysAgo = ""
@@ -57,7 +61,13 @@ extension DateFormatter {
         }
 
         if addExplicitDate {
-            let dateText = "date_text_before_date".ub_localized.replacingOccurrences(of: "{DATE}", with: dayDateFormatter.string(from: date))
+            let dateText: String
+
+            if withLabel {
+                dateText = "date_text_before_date".ub_localized.replacingOccurrences(of: "{DATE}", with: dayDateFormatter.string(from: date))
+            } else {
+                dateText = dayDateFormatter.string(from: date)
+            }
 
             return "\(dateText) / \(daysAgo)"
         } else {
@@ -73,6 +83,34 @@ extension DateFormatter {
         } else {
             return "date_in_days".ub_localized.replacingOccurrences(of: "{COUNT}", with: "\(days)")
         }
+    }
+}
+
+extension DateFormatter {
+    private static let timeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter
+    }()
+
+    static func ub_timeFormat(from: Date) -> String {
+        return timeFormatter.string(from: from)
+    }
+
+    static func ub_fromTimeToTime(from: Date?, to: Date?) -> String? {
+        let timeText = [from, to].compactMap { date -> String? in
+            if let d = date {
+                return timeFormatter.string(from: d)
+            } else { return nil }
+        }.joined(separator: " – ")
+
+        return timeText
+    }
+
+    static func ub_accessibilityFromTimeToTime(from: Date, to: Date) -> String {
+        return "checkout_from_to_date".ub_localized
+            .replacingOccurrences(of: "{DATE1}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: from), unitsStyle: .full) ?? "")
+            .replacingOccurrences(of: "{DATE2}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: to), unitsStyle: .full) ?? "")
     }
 }
 

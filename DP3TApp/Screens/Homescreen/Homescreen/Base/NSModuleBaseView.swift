@@ -18,13 +18,19 @@ class NSModuleBaseView: UIControl {
             headerView.title
         }
         set {
-            headerView.title = newValue
-            stackView.accessibilityLabel = newValue
+            if let headerTitle = newValue {
+                headerView.title = headerTitle
+                stackView.accessibilityLabel = headerTitle
+            } else {
+                headerView.isHidden = true
+            }
         }
     }
 
     let headerView = NSModuleHeaderView()
     internal let stackView = NSClickthroughStackView()
+
+    var enableHighlightBackground = true
 
     init() {
         super.init(frame: .zero)
@@ -82,6 +88,7 @@ class NSModuleBaseView: UIControl {
 
     override var isHighlighted: Bool {
         didSet {
+            guard enableHighlightBackground else { return }
             backgroundColor = isHighlighted ? .ns_background_highlighted : .ns_moduleBackground
         }
     }

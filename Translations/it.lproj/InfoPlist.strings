@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Gli incontri vengono riconosciuti tramite Bluetooth in background risparmiando energia.";
 "NSBluetoothAlwaysUsageDescription" = "Gli incontri vengono riconosciuti tramite Bluetooth in background risparmiando energia.";
+"NSCameraUsageDescription" = "Per scansionare il codice QR è necessaria la fotocamera.";
+"NSFaceIDUsageDescription" = "Consenti l'utilizzo di Face-ID per accedere al diario in modo sicuro.";

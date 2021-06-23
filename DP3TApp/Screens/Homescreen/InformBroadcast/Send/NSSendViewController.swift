@@ -13,6 +13,7 @@ import UIKit
 class NSSendViewController: NSInformBottomButtonViewController {
     let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
+    private let headerLabel = NSLabel(.textBold, textColor: .ns_purple, textAlignment: .center)
     private let titleLabel = NSLabel(.title, numberOfLines: 0, textAlignment: .center)
     private let textLabel = NSLabel(.textLight, textAlignment: .center)
     private let flagLabel = NSImageListLabel()
@@ -47,6 +48,8 @@ class NSSendViewController: NSInformBottomButtonViewController {
         let container = UIStackView()
         container.isAccessibilityElement = true
         container.axis = .vertical
+        container.addArrangedView(headerLabel)
+        container.addSpacerView(NSPadding.medium)
         container.addArrangedView(titleLabel)
         container.addSpacerView(NSPadding.large)
         container.addArrangedView(textLabel)
@@ -67,6 +70,7 @@ class NSSendViewController: NSInformBottomButtonViewController {
     private func setupTested() {
         let countries = ConfigManager.currentConfig?.interOpsCountries ?? []
 
+        headerLabel.text = "inform_code_title".ub_localized
         titleLabel.text = "inform_code_intro_title".ub_localized
 
         if countries.isEmpty {

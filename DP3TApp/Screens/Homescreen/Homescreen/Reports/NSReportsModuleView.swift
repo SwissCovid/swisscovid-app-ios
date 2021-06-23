@@ -21,19 +21,19 @@ class NSReportsModuleView: NSModuleBaseView {
     let noReportsView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_no_meldungen_title".ub_localized,
                                                 subText: "meldungen_no_meldungen_subtitle".ub_localized,
-                                                image: UIImage(named: "ic-check"),
-                                                titleColor: .ns_green,
+                                                image: UIImage(named: "ic-check-round"),
+                                                titleColor: .ns_blue,
                                                 subtextColor: .ns_text)
         viewModel.illustration = UIImage(named: "illu-no-message")!
-        viewModel.backgroundColor = .ns_greenBackground
-        viewModel.dynamicIconTintColor = .ns_green
+        viewModel.backgroundColor = .ns_blueBackground
+        viewModel.dynamicIconTintColor = .ns_blue
         return .init(viewModel: viewModel)
     }()
 
     let exposedView: NSInfoBoxView = {
         var viewModel = NSInfoBoxView.ViewModel(title: "meldungen_meldung_title".ub_localized,
                                                 subText: "meldungen_meldung_text".ub_localized,
-                                                image: UIImage(named: "ic-info"),
+                                                image: UIImage(named: "ic-warning"),
                                                 titleColor: .white,
                                                 subtextColor: .white)
         viewModel.hasBubble = true
@@ -54,20 +54,16 @@ class NSReportsModuleView: NSModuleBaseView {
         return .init(viewModel: viewModel)
     }()
 
-    private let noPushView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: { _ in
+    private let noPushView = NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(named: "ic-push-disabled")!, title: "push_deactivated_title".ub_localized, text: "push_deactivated_text".ub_localized, buttonTitle: "push_open_settings_button".ub_localized, action: { _ in
         guard let settingsUrl = URL(string: UIApplication.openSettingsURLString),
               UIApplication.shared.canOpenURL(settingsUrl) else { return }
 
         UIApplication.shared.open(settingsUrl)
     }))
 
-    private let tracingDisabledView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "meldungen_tracing_turned_off_title".ub_localized, text: "meldungen_tracing_not_active_warning".ub_localized, buttonTitle: "activate_tracing_button".ub_localized, action: { _ in
-        TracingManager.shared.startTracing()
-    }))
+    private let unexpectedErrorView = NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_title".ub_localized, buttonTitle: nil, action: nil))
 
-    private let unexpectedErrorView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_title".ub_localized, buttonTitle: nil, action: nil))
-
-    private let unexpectedErrorWithRetryView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
+    private let unexpectedErrorWithRetryView = NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(named: "ic-error")!, title: "unexpected_error_title".ub_localized, text: "unexpected_error_with_retry".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
@@ -76,7 +72,7 @@ class NSReportsModuleView: NSModuleBaseView {
         }
     }))
 
-    private let syncProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-error")!, title: "homescreen_meldung_data_outdated_title".ub_localized, text: "homescreen_meldung_data_outdated_text".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
+    private let syncProblemView = NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(named: "ic-error")!, title: "homescreen_meldung_data_outdated_title".ub_localized, text: "homescreen_meldung_data_outdated_text".ub_localized, buttonTitle: "homescreen_meldung_data_outdated_retry_button".ub_localized, action: { view in
         view?.startAnimating()
         view?.isEnabled = false
         DatabaseSyncer.shared.forceSyncDatabase {
@@ -85,7 +81,7 @@ class NSReportsModuleView: NSModuleBaseView {
         }
     }))
 
-    private let backgroundFetchProblemView = NSTracingErrorView(model: NSTracingErrorView.NSTracingErrorViewModel(icon: UIImage(named: "ic-refresh")!, title: "meldungen_background_error_title".ub_localized, text: "meldungen_background_error_text".ub_localized, buttonTitle: nil, action: nil))
+    private let backgroundFetchProblemView = NSErrorView(model: NSErrorView.NSErrorViewModel(icon: UIImage(named: "ic-refresh")!, title: "meldungen_background_error_title".ub_localized, text: "meldungen_background_error_text".ub_localized, buttonTitle: nil, action: nil))
 
     override init() {
         super.init()
@@ -104,15 +100,6 @@ class NSReportsModuleView: NSModuleBaseView {
 
         let reportsState = uiState.reports
 
-        @discardableResult
-        func showTracingDisabledErrorIfNeeded() -> Bool {
-            if uiState.encounters == .tracingDisabled {
-                views.append(tracingDisabledView)
-                return true
-            }
-            return false
-        }
-
         switch reportsState.report {
         case .noReport:
             views.append(noReportsView)
@@ -129,7 +116,6 @@ class NSReportsModuleView: NSModuleBaseView {
                     unexpectedErrorView.model?.errorCode = reportsState.errorCode
                     views.append(unexpectedErrorView)
                 }
-            } else if showTracingDisabledErrorIfNeeded() {
             } else if reportsState.syncProblemNetworkingError {
                 views.append(syncProblemView)
                 syncProblemView.model?.text = reportsState.errorMessage ?? "homescreen_meldung_data_outdated_text".ub_localized
@@ -140,21 +126,21 @@ class NSReportsModuleView: NSModuleBaseView {
             }
         case .exposed:
             views.append(exposedView)
-            views.append(NSMoreInfoView(line1: "exposed_info_answer_questions_in_leitfaden".ub_localized, line2: "exposed_info_swisscovid_leitfaden".ub_localized))
+            var dateText = ""
             if let lastReport = reportsState.lastReport {
-                let container = UIView()
-                let dateLabel = NSLabel(.date, textColor: .ns_blue)
-
-                dateLabel.text = DateFormatter.ub_daysAgo(from: lastReport, addExplicitDate: false)
-
-                container.addSubview(dateLabel)
-                dateLabel.snp.makeConstraints { make in
-                    make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
-                }
-                views.append(container)
+                dateText = DateFormatter.ub_daysAgo(from: lastReport, addExplicitDate: false)
             }
+            let container = UIView()
+            let dateLabel = NSLabel(.date, textColor: .ns_blue)
 
-            showTracingDisabledErrorIfNeeded()
+            dateLabel.text = dateText
+
+            container.addSubview(dateLabel)
+            dateLabel.snp.makeConstraints { make in
+                make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
+            }
+            views.append(container)
+
         case .infected:
             views.append(infectedView)
             views.append(NSMoreInfoView(line1: "meldung_homescreen_positive_info_line1".ub_localized, line2: "meldung_homescreen_positive_info_line2".ub_localized))

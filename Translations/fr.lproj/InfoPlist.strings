@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Les contacts sont détectés en arrière-plan via Bluetooth (faible consommation).";
 "NSBluetoothAlwaysUsageDescription" = "Les contacts sont détectés en arrière-plan via Bluetooth (faible consommation).";
+"NSCameraUsageDescription" = "L’appareil photo est nécessaire pour scanner le code QR.";
+"NSFaceIDUsageDescription" = "Autorisez la reconnaissance faciale pour accéder à votre journal en toute sécurité.";

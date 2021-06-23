@@ -1,3 +1,5 @@
 "CFBundleDisplayName" = "SwissCovid";
 "NSBluetoothPeripheralUsageDescription" = "Os contactos serão detectados em segundo plano através de Bluetooth de baixo consumo energético.";
 "NSBluetoothAlwaysUsageDescription" = "Os contactos serão detectados em segundo plano através de Bluetooth de baixo consumo energético.";
+"NSCameraUsageDescription" = "A câmara é necessária para ler o código QR.";
+"NSFaceIDUsageDescription" = "Permita Face-ID para aceder seguramente ao seu diário.";

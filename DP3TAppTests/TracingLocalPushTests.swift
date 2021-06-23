@@ -11,7 +11,7 @@
 @testable import DP3TApp
 import XCTest
 
-class MockTracingLocalPush: TracingLocalPush {
+class MockNSLocalPush: NSLocalPush {
     var nowString = "01.09.2020 10:00"
 
     override var applicationState: UIApplication.State {
@@ -33,15 +33,15 @@ class MockTracingLocalPush: TracingLocalPush {
     }()
 }
 
-class TracingLocalPushTests: XCTestCase {
+class NSLocalPushTests: XCTestCase {
     fileprivate var center: MockNotificationCenter!
-    fileprivate var tlp: MockTracingLocalPush!
+    fileprivate var tlp: MockNSLocalPush!
     fileprivate var keychain: MockKeychain!
 
     override func setUp() {
         keychain = MockKeychain()
         center = MockNotificationCenter()
-        tlp = MockTracingLocalPush(notificationCenter: center, keychain: keychain)
+        tlp = MockNSLocalPush(notificationCenter: center, keychain: keychain)
     }
 
     func testBackgroundTaskWarning() {
@@ -62,7 +62,7 @@ class TracingLocalPushTests: XCTestCase {
 
     func testSyncErrorNotification() {
         let referenceDate = Date()
-        tlp.handleSync(result: .failure(.permissonError))
+        tlp.handleSync(result: .failure(.permissionError))
 
         XCTAssertEqual(center.requests.count, 1)
 
@@ -154,7 +154,7 @@ class TracingLocalPushTests: XCTestCase {
     func testGeneratingBluetoothNotification() {
         tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         XCTAssertEqual(center.requests.count, 1)
-        XCTAssertEqual(center.requests.first?.identifier, TracingLocalPush.ErrorIdentifiers.bluetooth.rawValue)
+        XCTAssertEqual(center.requests.first?.identifier, NSLocalPush.Identifiers.bluetoothError.rawValue)
 
         tlp.handleTracingState(.active)
         XCTAssertEqual(center.requests.count, 0)
@@ -175,19 +175,19 @@ class TracingLocalPushTests: XCTestCase {
     }
 
     func testGeneratingPermissionNotification() {
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
-        XCTAssertEqual(center.requests.first?.identifier, TracingLocalPush.ErrorIdentifiers.permission.rawValue)
+        XCTAssertEqual(center.requests.first?.identifier, NSLocalPush.Identifiers.permissionError.rawValue)
 
         tlp.handleTracingState(.active)
         XCTAssertEqual(center.requests.count, 0)
     }
 
     func testGeneratingNotificationOnlyOnce() {
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
-        tlp.handleTracingState(.inactive(error: .permissonError))
-        tlp.handleTracingState(.inactive(error: .permissonError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
+        tlp.handleTracingState(.inactive(error: .permissionError))
         XCTAssertEqual(center.requests.count, 1)
         tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         XCTAssertEqual(center.requests.count, 2)
@@ -195,8 +195,8 @@ class TracingLocalPushTests: XCTestCase {
         tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         tlp.handleTracingState(.inactive(error: .bluetoothTurnedOff))
         XCTAssertEqual(center.requests.count, 2)
-        XCTAssert(center.requests.map(\.identifier).contains(TracingLocalPush.ErrorIdentifiers.permission.rawValue))
-        XCTAssert(center.requests.map(\.identifier).contains(TracingLocalPush.ErrorIdentifiers.bluetooth.rawValue))
+        XCTAssert(center.requests.map(\.identifier).contains(NSLocalPush.Identifiers.permissionError.rawValue))
+        XCTAssert(center.requests.map(\.identifier).contains(NSLocalPush.Identifiers.bluetoothError.rawValue))
 
         tlp.handleTracingState(.active)
         XCTAssertEqual(center.requests.count, 0)

@@ -8,6 +8,7 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import CrowdNotifierSDK
 import UIKit
 
 @UIApplicationMain
@@ -35,13 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             isFirstLaunch = false
         }
 
-        // setup sdk
+        // Initialize CrowdNotifier SDK
+        CrowdNotifier.initialize()
+
+        // Initialize DP3TSDK
         TracingManager.shared.initialize()
 
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
-            TracingLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
@@ -52,6 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            let url = launchOptions[UIApplication.LaunchOptionsKey.url] as? URL {
             linkHandler.handle(url: url)
         }
+
+        // Setup push manager
+        setupPushManager(launchOptions: launchOptions)
 
         return true
     }
@@ -105,12 +112,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        if TracingManager.shared.isSupported,
-           !UserStorage.shared.hasCompletedOnboarding {
+        if UserStorage.shared.appClipCheckinUrl() != nil {
+            let checkinOnboardingVC = NSCheckinOnboardingViewController()
+            checkinOnboardingVC.modalPresentationStyle = .fullScreen
+            window?.rootViewController?.present(checkinOnboardingVC, animated: false)
+        } else if TracingManager.shared.isSupported,
+                  !UserStorage.shared.hasCompletedOnboarding {
             let onboardingViewController = NSOnboardingViewController()
             onboardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(onboardingViewController, animated: false)
-        } else if TracingManager.shared.isSupported, !UserStorage.shared.hasCompletedUpdateBoardingGermany {
+        } else if TracingManager.shared.isSupported, !UserStorage.shared.hasCompletedUpdateBoardingCheckIn {
             let updateBoardingViewController = NSUpdateBoardingViewController()
             updateBoardingViewController.modalPresentationStyle = .fullScreen
             window?.rootViewController?.present(updateBoardingViewController, animated: false)
@@ -164,7 +175,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             shouldJump = UIStateManager.shared.uiState.shouldStartAtReportsDetail && UIStateManager.shared.uiState.reportsDetail.showReportWithAnimation
         }
         if shouldJump {
-            TracingLocalPush.shared.jumpToReport(animated: false)
+            NSLocalPush.shared.jumpToReport(animated: false)
             return true
         } else {
             return false
@@ -177,7 +188,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // App should not have badges
         // Reset to 0 to ensure a unexpected badge doesn't stay forever
         application.applicationIconBadgeNumber = 0
-        TracingLocalPush.shared.clearNotifications()
+        NSLocalPush.shared.clearNotifications()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -191,7 +202,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let backgroundTime = -(lastForegroundActivity?.timeIntervalSinceNow ?? 0)
             willAppearAfterColdstart(application, coldStart: false, backgroundTime: backgroundTime)
             application.applicationIconBadgeNumber = 0
-            TracingLocalPush.shared.clearNotifications()
+            NSLocalPush.shared.clearNotifications()
+        }
+    }
+
+    // MARK: - Push
+
+    func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        UBPushManager.shared.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
+    }
+
+    func application(_: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        UBPushManager.shared.didFailToRegisterForRemoteNotifications(with: error)
+    }
+
+    func setupPushManager(launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        UBPushManager.shared.didFinishLaunchingWithOptions(launchOptions, pushHandler: NSPushHandler(), pushRegistrationManager: NSPushRegistrationManager())
+    }
+
+    func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        UBPushManager.shared.pushHandler.handleDidReceiveResponse(userInfo) {
+            completionHandler(.newData)
         }
     }
 

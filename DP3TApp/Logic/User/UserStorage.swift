@@ -17,19 +17,42 @@ class UserStorage {
     var hasCompletedOnboarding: Bool {
         didSet {
             TracingManager.shared.userHasCompletedOnboarding()
+            ProblematicEventsManager.shared.sync { _, _ in }
             hasCompletedUpdateBoardingGermany = true
+            hasCompletedUpdateBoardingCheckIn = true
+        }
+    }
+
+    @UBUserDefault(key: "hasCompletedTracingOnboarding", defaultValue: true)
+    var hasCompletedTracingOnboarding: Bool {
+        didSet {
+            UIStateManager.shared.refresh()
         }
     }
 
     @UBUserDefault(key: "hasCompletedUpdateBoardingGermany", defaultValue: false)
     var hasCompletedUpdateBoardingGermany: Bool
 
+    @UBUserDefault(key: "hasCompletedUpdateBoardingCheckIn", defaultValue: false)
+    var hasCompletedUpdateBoardingCheckIn: Bool
+
+    @UBUserDefault(key: "hasShownCheckInUpdateNotification", defaultValue: false)
+    var hasShownCheckInUpdateNotification: Bool
+
     func registerSeenMessages(identifier: UUID) {
         seenMessages.append("\(identifier.uuidString)")
     }
 
+    func registerSeenMessages(identifier: String) {
+        seenMessages.append(identifier)
+    }
+
     func hasSeenMessage(for identifier: UUID) -> Bool {
         return seenMessages.contains("\(identifier.uuidString)")
+    }
+
+    func hasSeenMessage(for identifier: String) -> Bool {
+        return seenMessages.contains(identifier)
     }
 
     @KeychainPersisted(key: "didOpenLeitfaden", defaultValue: false)
@@ -37,6 +60,39 @@ class UserStorage {
 
     @KeychainPersisted(key: "seenMessages", defaultValue: [])
     private var seenMessages: [String]
+
+    @KeychainPersisted(key: "didMarkAsInfected", defaultValue: false)
+    public var didMarkAsInfected: Bool
+
+    @UBUserDefault(key: "tracingSettingEnabled", defaultValue: true)
+    var tracingSettingEnabled: Bool {
+        didSet {
+            lastTracingDisabledDate = tracingSettingEnabled ? nil : Date()
+        }
+    }
+
+    @UBUserDefault(key: "tracingWasEnabledBeforeIsolation", defaultValue: false)
+    var tracingWasEnabledBeforeIsolation: Bool
+
+    @UBOptionalUserDefault(key: "lastTracingDisabledDate")
+    var lastTracingDisabledDate: Date?
+
+    // method to get AppClip url in Main App
+    public func appClipCheckinUrl() -> String? {
+        let bi = (Bundle.main.bundleIdentifier ?? "")
+        let defaults = UserDefaults(suiteName: "group." + bi)
+        if let url = defaults?.value(forKey: Environment.shareURLKey) as? String {
+            return url
+        }
+
+        return nil
+    }
+
+    public func removeAppClipCheckinUrl() {
+        let bi = (Bundle.main.bundleIdentifier ?? "")
+        let defaults = UserDefaults(suiteName: "group." + bi)
+        defaults?.removeObject(forKey: Environment.shareURLKey)
+    }
 }
 
 enum KeychainMigration {

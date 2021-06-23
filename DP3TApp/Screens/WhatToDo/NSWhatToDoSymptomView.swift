@@ -23,7 +23,7 @@ class NSWhatToDoSymptomView: NSSimpleModuleBaseView {
         super.init(title: titleText, subtitle: subtitleText, text: text, image: nil, subtitleColor: .ns_purple)
 
         let moreInformationButton = NSButton(title: "symptom_detail_box_button".ub_localized,
-                                             style: .uppercase(UIColor.ns_purple))
+                                             style: .normal(UIColor.ns_purple))
 
         moreInformationButton.touchUpCallback = { [weak self] in
             guard let self = self else { return }

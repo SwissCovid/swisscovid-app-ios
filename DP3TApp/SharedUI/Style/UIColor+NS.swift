@@ -84,6 +84,9 @@ public extension UIColor {
     static var ns_gray = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .black),
                                                    darkColor: UIColor(ub_hexString: grayColor)!.withHighContrastColor(color: .white))
 
+    static var ns_lightGray = UIColor.setColorsForTheme(lightColor: UIColor(ub_hexString: "#F0F0F0")!,
+                                                        darkColor: UIColor(ub_hexString: "#1E1E23")!)
+
     // MARK: - Splashscreen
 
     static var ns_backgroundOnboardingSplashscreen = UIColor(ub_hexString: "#07a0e2")!
@@ -106,7 +109,7 @@ public extension UIColor {
 
     internal static func setColorsForTheme(lightColor: UIColor, darkColor: UIColor) -> UIColor {
         if #available(iOS 13.0, *) {
-            return UIColor { (traits) -> UIColor in
+            return UIColor { traits -> UIColor in
                 // Return one of two colors depending on light or dark mode
                 traits.userInterfaceStyle == .dark ?
                     darkColor :

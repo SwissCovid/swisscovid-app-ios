@@ -15,7 +15,7 @@ class NSOnboardingViewController: NSOnboardingBaseViewController {
     private let splashVC = NSSplashViewController()
 
     private let step1VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step1)
-    private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step2)
+    private let step2VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.checkIns)
     private let step3VC = NSOnboardingStepViewController(model: NSOnboardingStepModel.step3)
     private let step4VC = NSOnboardingDisclaimerViewController()
     private let step5VC = NSOnboardingPermissionsViewController(type: .gapple)
@@ -63,9 +63,18 @@ class NSOnboardingViewController: NSOnboardingBaseViewController {
         super.viewDidLoad()
 
         step5VC.permissionButton.touchUpCallback = { [weak self] in
-            TracingManager.shared.requestTracingPermission { _ in
+            TracingManager.shared.requestTracingPermission { error in
+                UserStorage.shared.tracingSettingEnabled = error == nil
                 self?.animateToNextStep()
             }
+        }
+
+        step5VC.passButton.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            // user passed on starting tracing, we disable the
+            // tracing setting here
+            UserStorage.shared.tracingSettingEnabled = false
+            strongSelf.animateToNextStep()
         }
 
         step7VC.permissionButton.touchUpCallback = {

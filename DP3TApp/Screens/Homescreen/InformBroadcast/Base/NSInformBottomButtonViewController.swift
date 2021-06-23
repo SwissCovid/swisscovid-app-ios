@@ -27,11 +27,31 @@ class NSInformBottomButtonViewController: NSInformStepViewController {
         didSet { button.isEnabled = enableBottomButton }
     }
 
+    public var secondaryBottomButtonHidden: Bool = true {
+        didSet { secondaryButtonWrapper.isHidden = secondaryBottomButtonHidden }
+    }
+
+    public var secondaryBottomButtonTitle: String? {
+        didSet { secondaryButton.title = secondaryBottomButtonTitle }
+    }
+
+    public var secondaryBottomButtonTouchUpCallback: (() -> Void)? {
+        didSet { secondaryButton.touchUpCallback = secondaryBottomButtonTouchUpCallback }
+    }
+
+    public var enableSecondaryBottomButton: Bool = false {
+        didSet { secondaryButton.isEnabled = enableSecondaryBottomButton }
+    }
+
     // MARK: - Views
 
-    private let buttonView = UIView()
+    private let buttonView = UIStackView()
 
+    private let buttonWrapper = UIView()
     private let button = NSButton(title: "")
+
+    private let secondaryButtonWrapper = UIView()
+    private let secondaryButton = NSUnderlinedButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +67,10 @@ class NSInformBottomButtonViewController: NSInformStepViewController {
     // MARK: - Setup
 
     private func setup() {
-        let stackView = UIStackView(arrangedSubviews: [contentView, buttonView])
+        let buttonViewWrapper = UIView()
+        buttonViewWrapper.addSubview(buttonView)
+
+        let stackView = UIStackView(arrangedSubviews: [contentView, buttonViewWrapper])
         stackView.axis = .vertical
         stackView.spacing = 0
 
@@ -58,22 +81,36 @@ class NSInformBottomButtonViewController: NSInformStepViewController {
         }
 
         buttonView.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-        }
-
-        buttonView.ub_addShadow(radius: 8.0, opacity: 0.15, xOffset: 0.0, yOffset: 0.0)
-
-        buttonView.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
-
-        buttonView.addSubview(button)
-
-        button.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview().inset(NSPadding.large)
-            make.centerX.equalToSuperview()
-
             make.bottom.equalTo(self.view.safeAreaLayoutGuide).priority(.low)
             make.bottom.lessThanOrEqualTo(self.view.snp.bottom).inset(NSPadding.large)
         }
+
+        buttonView.axis = .vertical
+        buttonView.spacing = NSPadding.medium
+
+        buttonViewWrapper.ub_addShadow(radius: 8.0, opacity: 0.15, xOffset: 0.0, yOffset: 0.0)
+
+        buttonViewWrapper.backgroundColor = .setColorsForTheme(lightColor: .ns_background, darkColor: .ns_backgroundTertiary)
+
+        buttonWrapper.addSubview(button)
+        buttonView.addArrangedSubview(buttonWrapper)
+
+        button.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.bottom.equalToSuperview()
+        }
+
+        secondaryButtonWrapper.addSubview(secondaryButton)
+        secondaryButtonWrapper.isHidden = secondaryBottomButtonHidden
+
+        secondaryButton.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
+        }
+
+        buttonView.addArrangedSubview(secondaryButtonWrapper)
 
         button.isEnabled = enableBottomButton
     }

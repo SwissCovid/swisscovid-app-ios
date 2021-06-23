@@ -190,7 +190,7 @@
 "inform_detail_box_subtitle" = "Sa Covid šifrom...";
 
 /*Inform Detai Weisse Box Titel*/
-"inform_detail_box_title" = "Zaustavljanje lanca širenja infekcije";
+"inform_detail_box_title" = "Upozorenje u slučaju moguće infekcije";
 
 /*Inform Detail Weisse Box Button*/
 "inform_detail_box_button" = "Unos Covid šifre";
@@ -224,7 +224,7 @@
 "tracing_turned_off_title" = "Praćenje je deaktivirano";
 "tracing_turned_off_text" = "Aktivirajte praćenje da bi aplikacija radila.";
 "bluetooth_turned_off_title" = "Bluetooth isključen";
-"bluetooth_turned_off_text" = "Uključite Bluetooth na vašem uređaju da bi praćenje radilo.";
+"bluetooth_turned_off_text" = "Uključite Bluetooth na vašem uređaju, kako bi funkcionisalo anonomno praćenje.";
 "bluetooth_turn_on_button_title" = "Uključi Bluetooth";
 "bluetooth_permission_error_title" = "Korišćenje Bluetooth-a odbijeno";
 "bluetooth_permission_error_text" = "Dozvolite korišćenje Bluetooth-a da bi praćenje radilo.";
@@ -256,8 +256,8 @@
 
 /*Meldung Detail Positiv Getestet Weisse Box Text*/
 "meldung_detail_positive_test_box_text" = "Sledite uputstva za izolaciju koja ste dobili";
-"tracing_ended_title" = "Praćenje završeno";
-"tracing_ended_text" = "Dalji kontakti se više ne čuvaju.";
+"tracing_ended_title" = "Deaktivirani kontakti i prijave ";
+"tracing_ended_text" = "Dalji kontakti se više ne čuvaju";
 "exposed_info_contact_hotline" = "Obratite se";
 "meldung_homescreen_positive_info_line1" = "Sledite";
 "meldung_homescreen_positive_info_line2" = "Uputstva za samoizolaciju";
@@ -270,7 +270,7 @@
 "meldung_homescreen_positiv_title" = "Testiran pozitivno";
 
 /*Meldung Detail Exposed Subtitel*/
-"meldung_detail_exposed_subtitle" = "Postoji mogućnost infekcije.";
+"meldung_detail_exposed_subtitle" = "Postoji mogućnost infekcije";
 
 /*Meldung auf Homescreen: Positiv getestet*/
 "meldung_homescreen_positiv_text" = "Testirani ste pozitivno na virus korona.";
@@ -324,7 +324,7 @@
 "onboarding_prinzip_text1" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
 
 /*Onboarding Prinzip Text*/
-"onboarding_prinzip_text2" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korona.";
+"onboarding_prinzip_text2" = "Aplikacija vas obaveštava ako postoji sumnja na to da ste zaraženi virusom korone.";
 
 /*Onboarding Privacy: Titel oben*/
 "onboarding_privacy_heading" = "Privacy by Design";
@@ -339,7 +339,7 @@
 "onboarding_privacy_text2" = "Sačuvani nasumični ID-ovi se čuvaju na vašem mobilnom telefonu i brišu se nakon 14 dana.";
 
 /*Onboarding Begegnungen: Titel oben*/
-"onboarding_begegnungen_heading" = "Kako funkcioniše aplikacija?";
+"onboarding_begegnungen_heading" = "Kontakti";
 
 /*Onboarding Begegnungen: Titel*/
 "onboarding_begegnungen_title" = "Prepoznavanje kontakta\npomoću Bluetooth-a";
@@ -411,7 +411,7 @@
 "onboarding_go_title" = "Aplikacija je spremna";
 
 /*Text auf dem letzten Onboarding Screen*/
-"onboarding_go_text" = "Hvala vam što pomažete u prekidanju lanca širenja infekcije.";
+"onboarding_go_text" = "Hvala vam što pomažete u suzbijanju širenja virusa korone.";
 
 /*Button-Label auf dem letzten Onboarding screen*/
 "onboarding_go_button" = "Pokreni";
@@ -438,7 +438,7 @@
 "meldung_detail_new_contact_title" = "Moguća infekcija";
 
 /*Meldungen Detail: Text*/
-"meldung_detail_new_contact_subtitle" = "Postoji sumnja na moguću infekciju.";
+"meldung_detail_new_contact_subtitle" = "Postoji sumnja da ste se inficirali.";
 
 /*Fehler mit Uhrzeit Titel*/
 "time_inconsistency_title" = "Vremenska greška";
@@ -570,13 +570,7 @@
 "meldungen_nomeldungen_faq1_title" = "Šta su poruke?";
 
 /*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq1_text" = "Aplikacija redovno proverava da li su drugi korisnici sa kojima ste bili u kontaktu prijavili pozitivan test.\n\nU slučaju moguće infekcije, dobićete obaveštenje na zaključanom ekranu.";
-
-/*Meldungen: Keine Meldungen FAQ Titel*/
-"meldungen_nomeldungen_faq2_titel" = "Šta je moguća infekcija?";
-
-/*Meldungen: Keine Meldungen FAQ Text*/
-"meldungen_nomeldungen_faq2_text" = "Aplikacija ne samo da proverava da li ste imali kontakte sa inficiranim osobama, već i koliko dugo su oni trajali i koliko bliski su bili.\n\nBićete obavešteni samo ako postoji dovoljno velika mogućnost infekcije.";
+"meldungen_nomeldungen_faq1_text" = "Aplikacija redovno proverava da li su drugi korisnici, sa kojima ste bili u kontaktu, prijavili pozitivan test.\n\nU slučaju moguće infekcije, dobićete obaveštenje na zaključanom ekranu.";
 
 /*Meldungen Detail Weisse Box Texte Unten*/
 "meldungen_detail_explanation_text3" = "Preko info linije aplikacije SwissCovid možete da dobijete savete o mogućnosti besplatnog testiranja.";
@@ -609,7 +603,7 @@
 "inform_detail_faq2_title" = "Šta se šalje?";
 
 /*Inform Detail FAQ Text*/
-"inform_detail_faq2_text" = "Šalju se samo privatni identifikacioni ključevi iz vaše aplikacije, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da postoji mogućnost infekcije.";
+"inform_detail_faq2_text" = "Šalju se samo privatni ključevi iz vaše aplikacije i šifrovani ID podaci vaših prijava, a ne šalju se lični podaci.\n\nTime drugi korisnici aplikacije SwissCovid mogu da saznaju da postoji mogućnost infekcije.";
 
 /*Telefonnummer der Infoline*/
 "infoline_tel_number" = "+41 58 387 77 78";
@@ -618,7 +612,7 @@
 "faq_button_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/faq-kontakte-downloads/haeufig-gestellte-fragen.html?faq-url=/de/categories/swisscovid-app";
 
 /*Informieren Flow: Titel erster Screen*/
-"inform_code_intro_title" = "Važna napomena";
+"inform_code_intro_title" = "Informacije za korišćenje ";
 
 /*Informieren-Flow: Erster Screen Text*/
 "inform_code_intro_text" = "Iako se lični podaci koji se odnose na vas ne šalju, možda se neko seća svog kontakta sa vama na osnovu datuma.";
@@ -676,8 +670,7 @@
 "onboarding_gaen_title" = "Aktiviraj praćenje";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, iOS*/
-/*Fuzzy*/
-"onboarding_gaen_text_ios" = "Da biste mogli da koristite aplikaciju, morate da aktivirate obavijesti o izloženosti bolesti COVID-19.";
+"onboarding_gaen_text_ios" = "Za identifikaciju kontakata, mora biti aktivirana funkcija praćenja.";
 
 /*Aktivieren-Button auf der Onboarding Page für die Permission der Exposure-Library*/
 "onboarding_gaen_button_activate" = "Aktiviraj";
@@ -706,10 +699,10 @@
 /*Code-Eingabe in der App löschen, wenn infiziert*/
 "delete_infection_button" = "Da li želite da završite fazu izolacije?";
 
-/*Meldung im Löschen Dialog nach Code-Einfragen*/
+/*Meldung im Löschen Dialog nach Isolation-Beenden, kommt auch auf Homescreen-Popup*/
 "delete_infection_dialog" = "Da li ste sigurni da želite da obrišete poruku?";
 "android_onboarding_battery_permission_title" = "Ignoriši optimizaciju baterije";
-"android_onboarding_battery_permission_text" = "Da biste uvek mogli da prepoznate kontakte, optimizacija baterije za ovu aplikaciju mora biti isključena.";
+"android_onboarding_battery_permission_text" = "Kako bi aplikacija funkcionisala, optimizacija baterije mora biti isključena.";
 "android_onboarding_battery_permission_button" = "Dozvoli";
 "android_onboarding_battery_permission_button_deactivated" = "OK";
 "android_onboarding_battery_permission_info_1_title" = "Samo za ovu aplikaciju";
@@ -732,8 +725,7 @@
 "tracing_permission_error_title_ios" = "COVID-19: obavještenja deaktivirano";
 
 /*Fehler-Text, wenn Tracing deaktiviert wurde im System, iOS*/
-/*Fuzzy*/
-"tracing_permission_error_text_ios" = "Aktivirajte Obavijesti o izloženosti bolesti COVID-19 da bi praćenje radilo.";
+"tracing_permission_error_text_ios" = "Aktivirajte funkciju  {TRACING_SETTING_TEXT}, kako bi  funkcionisalo anonimno praćenje.";
 
 /*Error-Meldung, wenn der Benutzer während des Informieren-Flows bei GApple das Key-Sharing nicht erlaubt.*/
 "user_cancelled_key_sharing_error" = "Slanje poruke nije uspelo. Dozvolite deljenje nasumičnog ID-a sa aplikacijom SwissCovid.";
@@ -773,7 +765,7 @@
 "tracing_active_tracking_always_info" = "Aplikacija SwissCovid ostaje aktivna čak i kad se zatvori.";
 
 /*title in splash screen of onboarding*/
-"oboarding_splashscreen_title" = "SwissCovid \nprekida lanac \nširenja infekcije.";
+"oboarding_splashscreen_title" = "SwissCovid - brze informacije u slučaju rizika od zaraze. \n";
 "inform_detail_faq3_text" = "Iako se lični podaci koji se odnose na vas ne šalju, možda se neko seća svog kontakta sa vama na osnovu datuma.";
 "inform_detail_faq3_title" = "Da li ostajem anoniman?";
 
@@ -784,7 +776,7 @@
 "tracing_setting_text_android" = "Obavijesti o izloženosti bolesti COVID-19";
 
 /*Text auf der Onboarding Page für die Permission der Exposure-Library, Android*/
-"onboarding_gaen_text_android" = "Da biste mogli da koristite aplikaciju, morate da aktivirate obavijesti o izloženosti bolesti COVID-19.";
+"onboarding_gaen_text_android" = "Za identifikaciju kontakata, mora biti aktivirana funkcija praćenja.";
 
 /*Onboarding Disclaimer Screen: AppName Title*/
 "onboarding_disclaimer_heading" = "SwissCovid";
@@ -875,7 +867,7 @@
 "travel_title" = "Putovanja";
 
 /*Info text that is displayed  on the Home Travel Card.*/
-"travel_home_description" = "SwissCovid funkcijoniše u sledećim državama:";
+"travel_home_description" = "SwissCovid-kontakti funkcionišu u sledećim državama:";
 
 /*First title for the travel feauter explenation at the bottom of the travel screen.*/
 "travel_screen_explanation_title_1" = "Šta to znači?";
@@ -901,12 +893,6 @@
 /*Telefonnummer der allgemeinen Infoline Coronavirus*/
 "infoline_coronavirus_number" = "+41 58 387 77 80";
 
-/*Text beim Bluetooth Control iOS 13.5*/
-"tracing_setting_text_ios_13_5" = "";
-
-/*Text beim Bluetooth Control iOS 13.6*/
-"tracing_setting_text_ios_13_6" = "";
-
 /*Text beim Bluetooth Control iOS 14*/
 "tracing_setting_text_ios_14_0" = "Exposure Notifications";
 "bottom_nav_tab_home" = "SwissCovid";
@@ -918,10 +904,10 @@
 "share_app_supertitle" = "Zajedno…";
 "share_app_title" = "Sprečimo širenje infekcije";
 "share_app_button" = "Deli aplikaciju";
-"share_app_body" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
+"share_app_body" = "Ako većina vaših kontakata koristi aplikaciju SwissCovid, možete brzo biti obavešteni u slučaju rizika od zaraze.";
 
 /*Text der geteilt wird*/
-"share_app_message" = "Ako što više nas aktivira aplikaciju SwissCovid, moći ćemo pravovremeno da prekinemo lanac širenja infekcije.";
+"share_app_message" = "Pomoću aplikacije Swiss Covid svi možemo da pomognemo u suzbijanju širenja virusa korona.";
 
 /*URL die geteilt wird*/
 "share_app_url" = "https://bag-coronavirus.ch/swisscovid-app/#download";
@@ -1188,7 +1174,7 @@
 "delete_infection_dialog_finish_button" = "Beenden (završi)";
 
 /*Text der nach der Eingabe des Covidcodes angezeigt wird.*/
-"tracing_ended_info" = "Kontakti više neće da se čuvaju.\n\nPraćenje može ponovo da se aktivira po završetku izolacije.";
+"tracing_ended_info" = "Kontakti se više neće čuvati i nove prijave nisu više moguće.\n\nOve dve funkcije mogu se ponovo aktivirati po završetku izolacije.";
 "testlocation_url_canton_aargau" = "https://www.ag.ch/de/themen_1/coronavirus_2/coronavirus.jsp";
 "testlocation_url_canton_appenzell_ausserrhoden" = "https://www.ar.ch/verwaltung/departement-gesundheit-und-soziales/amt-fuer-gesundheit/informationsseite-coronavirus/";
 "testlocation_url_canton_appenzell_innerrhoden" = "https://www.ai.ch/themen/gesundheit-alter-und-soziales/gesundheitsfoerderung-und-praevention/uebertragbare-krankheiten/coronavirus";
@@ -1220,7 +1206,7 @@
 "testlocation_url_country_liechtenstein" = "https://www.llv.li/inhalt/118724/amtsstellen/coronavirus";
 
 /*text for info box pop up for the hearing impaired*/
-"hearing_impaired_info" = "Da li ste bez sluha ili imate smetnju sluha i ne možete nazvati Infoline Coronavirus?\n\nOnda pošaljite e-mail na covid-support@medgate.ch";
+"hearing_impaired_info" = "Da li ste bez sluha ili imate oštećenje sluha i ne možete nazvati?\n\nOnda pošaljite e-mail na covid-support@medgate.ch";
 
 /*Überschrift des Covidcodes-Statistik-Moduls*/
 "stats_covidcodes_title" = "Covid-kodovi";
@@ -1271,7 +1257,7 @@
 "stats_cases_current_description" = "Grafika pokazuje prijavljene nove infekcije poslednjih 28 dana. Time imate pregled o aktuelnom razvoju.";
 
 /*Inform Detail: Infobox Text*/
-"inform_detail_infobox1_text" = "Pozitivno ste testirani (PCR test ili antigen brzi test) i ni posle 4 sata niste dobili kovid šifru?\nU tom slučaju kontaktirajte Infoline Coronavirus:";
+"inform_detail_infobox1_text" = "Pozitivno ste testirani (PCR test ili brzi antigen test) i ni posle 4 sata niste dobili Covid kod?\nU tom slučaju kontaktirajte nas ovde:";
 
 /*Inform Detail: Infobox Title*/
 "inform_detail_infobox1_title" = "Još niste dobili Covid šifru?";
@@ -1310,19 +1296,20 @@
 "meldungen_positive_tested_faq2_title" = "Ko se obaveštava";
 
 /*Meldungen: Positiv getestet FAQ 2 Text (Benachrichtigung)*/
-"meldungen_positive_tested_faq2_text" = "Obaveštavaju se svi kontakti u periodu vaše faze zaražavanja od {ONSET_DATE} do unosa kovid šifre, ukoliko je na osnovu distance i trajanja postojala mogućnost zaraze.";
+"meldungen_positive_tested_faq2_text" = "Obaveštavaju se svi kontakti u periodu vaše faze infekcioznosti od {ONSET_DATE} do unosa Covid koda, ukoliko je na osnovu distance i trajanja ili zbog prijave na istoj lokaciji postojala mogućnost zaraze.";
 
 /*Informieren: Danke Text Onset Date*/
 "inform_send_thankyou_text_onsetdate" = "{ONSET_DATE} – danas";
 
 /*Informieren: Danke Text Abschluss*/
-"inform_send_thankyou_text_stop_infection_chains" = "Na taj način pomažete u zaustavljanju lanca zaraze.";
+"inform_send_thankyou_text_stop_infection_chains" = "Na taj način pomažete da se upozore drugi o mogućosti zaraze.";
 
 /*Informieren: Danke Text Onset Date Einleitung*/
 "inform_send_thankyou_text_onsetdate_info" = "Privatni ključevi vaše aplikacije poslati su za sledeći period:";
 
 /*Dialogtext wenn ein Covidcode eingegeben wird während das Tracing deaktiviert ist*/
-"android_inform_tracing_enabled_explanation" = "Prilikom unosa kovid šifre mora se aktivirati praćenje (tracing) kako bi vaši privatni ključevi mogli da se dele.";
+/*Fuzzy*/
+"inform_tracing_enabled_explanation" = "Prilikom unosa kovid šifre mora se aktivirati praćenje (tracing) kako bi vaši privatni ključevi mogli da se dele.";
 
 /*Leitfaden Info Popup Text*/
 "leitfaden_infopopup_text" = "Kada pritisnete \"{BUTTON_TITLE}\" napuštate aplikaciju i dolazite na internet stranicu SwissCovid vodiča. Pri tome se podaci poslednjeg susreta sa mogućim zaražavanjem šalju internet stranici.";
@@ -1353,3 +1340,400 @@
 
 /*Anzeige in der blauen Box im MeldungenDetail Screen, welche angibt dass in 1 Tag ein Test gemacht werden soll.*/
 "meldungen_detail_free_test_tomorrow" = "Za 1 dan";
+
+/*Check-Ins: Titel vom Reminder Push*/
+"checkout_reminder_title" = "Podsećanje na prijavu";
+
+/*Check-Ins: Check-out Reminder Push Text*/
+"checkout_reminder_text" = "Želite li da se odjavite?";
+
+/*Check-Ins: Auto-Checkout Push Titel*/
+"auto_checkout_title" = "Automatska odjava";
+
+/*Check-Ins: Auto-checkout Push Text*/
+"auto_checkout_body" = "Automatski ste odjavljeni.";
+
+/*Check-Ins: Qr-Scanner Text*/
+"qrscanner_scan_qr_text" = "Skenirati QR kod i prijaviti se";
+
+/*Check-Ins: Fehler beim QR-Code scannen*/
+"qrscanner_error" = "Nevažeći QR kod!";
+
+/*Check-Ins: Anpassung Check-In Datumwahl von*/
+"datepicker_from" = "Od";
+
+/*Check-Ins: Datumsauswahl bis*/
+"datepicker_to" = "Do";
+
+/*Check-Ins: Notiz hinzufügen zu Check-In*/
+"edit_mode_addcomment" = "Dodati zabelešku";
+
+/*Check-Ins: Notiz zu Check-In Placeholder Text*/
+"edit_mode_comment_placeholder" = "npr. S kim ste bili tamo?";
+
+/*Fertig Button Text*/
+"done_button" = "Gotovo";
+
+/*Check-Ins: Titel für Erinnerung*/
+"checkin_set_reminder" = "Podsećanje na prijavu";
+
+/*Check-Ins: Erinnerung Option Aus*/
+"reminder_option_off" = "Off";
+
+/*Check-Ins: Tagebuch Zugriff Text*/
+"authenticate_for_diary" = "Identifikujte se, kako biste pristupili dnevniku";
+
+/*Check-Ins: Errinnerungsoption Stunden*/
+"reminder_option_hours" = "{HOURS} h";
+
+/*Check-Ins: Errinnerungsoption Minuten*/
+"reminder_option_minutes" = "{MINUTES}'";
+
+/*Check-Ins: Fehler wenn Kamera-Erlaubnis nicht gegeben*/
+"qr_scanner_no_camera_permission" = "Aplikaciji je potreban pristup kameri, da bi se skenirao QR kod.";
+
+/*Check-Ins: Tagebuch Titel*/
+"diary_title" = "Moje prijave";
+
+/*Check-Ins: Button Titel zum Einchecken*/
+"checkin_button_title" = "Prijava";
+
+/*Check-Ins: iOS Kamera Erlaubnis Text*/
+"NSCameraUsageDescription" = "Kamera je potrebna, kako bi se skenirao QR kod.";
+
+/*Check-Ins: FaceID Text um Tagebuch anzuschauen*/
+"NSFaceIDUsageDescription" = "Dozvolite identifikaciju lica, da biste mogli bezbedno pristupiti vašem dnevniku.";
+
+/*Check-Ins: Text der angezeigt wieso FaceId gebraucht wird*/
+"face_id_reason_text" = "Identifikujte se za pristup dnevniku";
+
+/*Check-Ins: Check-Out Button Title*/
+"checkout_button_title" = "Odjava ";
+
+/*Check-Ins: Titel Modul auf Homescreen*/
+"module_checkins_title" = "Prijava";
+
+/*Check-Ins: Titel vom Check-In Screen*/
+"checkin_title" = "Prijava";
+
+/*Check-Ins: QR-Code erstellen Titel*/
+"checkins_create_qr_code" = "Napraviti QR kod";
+
+/*Veranstaltungen-Screen Titel*/
+"events_title" = "Napravite QR kodove";
+
+/*Check-Ins: Jetzt einchecken Button Titel*/
+"check_in_now_button_title" = "Sada se prijaviti";
+
+/*Check-Ins: Reminder Fehlermeldung Titel*/
+"checkin_reminder_settings_alert_title" = "Podsećanje nije uspelo da se unese";
+
+/*Check-Ins: Erinnerungen Fehlermeldung Text*/
+"checkin_reminder_settings_alert_message" = "Da biste dobijali podsetnike za odjavu, morate da dozvolite \\ \"Obaveštenja \\\" u podešavanjima aplikacije.";
+
+/*Check-Ins: Reminder Popup Anpassen*/
+"checkin_reminder_option_open_settings" = "Prilagoditi";
+
+/*Check-Ins: Bearbeiten von Check-Ins Titel*/
+"edit_controller_title" = "Urediti";
+
+/*Check-Ins: Tagebuch leeres Tagbuch Titel*/
+"empty_diary_title" = "Još nema unosa";
+
+/*Check-Ins: Tagebuch leer, Text*/
+"empty_diary_text" = "Ako skenirate SwissCovid-QR kod, da biste se prijavili na nekoj lokaciji, ovde se automatski uređuje unos.";
+
+/*Check-Ins: Kamera Erlaubnis Text*/
+"camera_permission_dialog_text" = "SwissCovid-u treba pristup kameri na vašem aparatu. Kamera se koristi, kako bi se skenirao QR kod.";
+
+/*Check-Ins: Button Titel, welcher in einem Popup erscheint um die Camera Permission Abfrage zu erklären*/
+"camera_permission_dialog_action" = "Dozvoliti pristup kameri";
+
+/*Check-Ins: Veranstaltung Titel Placeholder*/
+"web_generator_title_placeholder" = "npr. soba ili naziv događaja";
+
+/*Check-Ins: Veranstaltungen Detail PDF Button*/
+"show_pdf_button" = "Odštampati PDF";
+"bottom_nav_tab_info" = "Informacija";
+"error_network_title" = "Mrežna greška";
+"error_network_text" = "Proverite vašu vezu sa internetom ";
+"error_action_retry" = "Pokušajte ponovo";
+"error_notification_deactivated_title" = "Deaktivirati obaveštenja";
+"error_notification_deactivated_text" = "Promenite podešavanja, kako biste bili direktno bili obavešteni o prijavi.";
+"error_action_change_settings" = "Promenite podešavanja";
+"error_camera_permission_title" = "Nema pristupa kameri";
+"error_camera_permission_text" = "Aplikaciji je potreban pristup kameri, kako bi se mogao skenirati QR kod.";
+"error_title" = "Greška";
+"qr_scanner_error_code_not_yet_valid" = "QR kod je još nevažeći";
+"qr_scanner_error_code_not_valid_anymore" = "QR kod je nevažeći ";
+"error_already_checked_in" = "Upravo ste prijavljeni.";
+"error_update_text" = "Ovaj QR kod nije kompatibilan sa instaliranom verzijom aplikacije. Ažurirajte aplikaciju, da biste nastavili korišćenje.";
+"error_update_title" = "Potrebno ažuriranje";
+"error_action_update" = "Sada ažurirati";
+"ongoing_notification_checkout_quick_action" = "Odjava ";
+"reminder_notification_snooze_action" = "Snooze mirovanje";
+"android_ongoing_checkin_notification_channel_name" = "Poruka o trajnom prijavljivanju";
+"ongoing_notification_title" = "Prijavljeni ste {TIME} časova.";
+
+/*Check-Ins: Sichern Button bei Check-out*/
+"checkout_save_button_title" = "Osigurati";
+
+/*Check-Ins: QR-Code scannen Button*/
+"scan_qr_code_button_title" = "Skenirati QR kod";
+
+/*Titel der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_title" = "Deaktivirano prijavljivanje";
+
+/*Text der Infobox auf dem Homescreen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text" = "Trenutno nije moguća prijava";
+
+/*Text im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_text" = "Skenirajte SwissCovid-QR kod, kako biste se prijavili na nekoj lokaciji.";
+
+/*Text im Check-Ins-Screen, im Tagebuch-Modul*/
+"checkin_detail_diary_text" = "Ako skenirate SwissCovid-QR kod, da biste se prijavili na nekoj lokaciji, ovde se automatski uređuje unos.";
+
+/*Label im Checkin-Modul im eingecheckten Zustand*/
+"checkin_checked_in" = "Prijavljeni ste";
+"checkout_from_to_date" = "{DATE1} do {DATE2}";
+"inform_detail_covidcode_info_button" = "Više o Covid kodu";
+
+/*Check-Ins: Button Entfernen um Check-In zu löschen*/
+"remove_from_diary_button" = "Ukloniti unos";
+
+/*Check-Ins: QR-Code löschen Titel Button*/
+"delete_button_title" = "Izbrisati";
+
+/*Check-Ins: Teile QR-Code Button Titel*/
+"share_button_title" = "Podeliti";
+
+/*Check-Ins: Drucken Button auf PDF-Detailseite*/
+"print_button_title" = "Štampati";
+
+/*Check-Ins: Beschreibung Modul auf Homescreen*/
+"module_checkins_description" = "Skenirajte SwissCovid-QR kod, kako biste se prijavili na nekoj lokaciji.";
+
+/*Titel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_title" = "Deliti unose o prijavama";
+
+/*Untertitel im "Covidcode flow", wo man check ins wählen kann, welche geshared werden sollen.*/
+"inform_share_checkins_subtitle" = "Kada delite unose prijave, aplikacija može istovremeno da obavesti lica, koja su se prijavila na istoj lokaciji.";
+
+/*Button text, um alle Checkins zu selektieren*/
+"inform_share_checkins_select_all" = "Izaberite sve što odgovara";
+"inform_dont_send_button_title" = "Ne slati";
+"inform_dont_share_button_title" = "Ne deliti";
+"inform_really_not_share_title" = "Zaista ne deliti?";
+"inform_really_not_share_subtitle" = "Deljenje privatnog ključa pomaže «SvissCovid» da obavesti druge potencijalno zaražene ljude i spreči dalje širenje virusa. Ako ne delite privatne ključeve, potencijalno zaražene osobe neće biti obaveštene.";
+
+/*Remove from Diary Warning view title*/
+"remove_diary_warning_title" = "Ukloniti unos";
+
+/*Remove from diary warning view explanation text*/
+"remove_diary_warning_text" = "Vaš unos će biti neopozivo uklonjen sa liste.";
+
+/*Remove from diary warning view remove button title*/
+"remove_diary_remove_now_button" = "Ukoniti u potpunosti";
+
+/*Hide from diary warning title*/
+"remove_diary_warning_hide_title" = "Samo sakriti i nastaviti da budete obaveštavani?";
+
+/*Titel auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_title" = "Test pozitivan?";
+
+/*Text auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_text" = "Kontakte i prijave ponovo aktivirati. ";
+
+/*Check-Ins: Erinnerungsoption Stunden & Minuten*/
+"reminder_option_hours_minutes" = "{HOURS} h {MINUTES}'";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer sich in Isolation befindet.*/
+"checkin_overview_isolation_text" = "Ne možete ponovo da se prijavite ako imate pozitivan test.";
+
+/*Veranstaltungen-Card Text im Infotab*/
+"events_card_subtitle" = "Napravite QR kod, pomoću kojeg lica mogu da se prijave na lokaciji.";
+
+/*Dialog Text beim Löschen eines erstellten QR Codes.*/
+"delete_qr_code_dialog" = "Želite li zaista da izbrišete QR kod? Štampani QR kodovi ostaju i dalje na snazi.";
+
+/*Self-Check-In Button Titel im QR-Code Screen*/
+"self_checkin_button_title" = "Samostalno prijavljivanje";
+
+/*Text, welcher im Checkin-Overview Screen erscheint, wenn der Benutzer nicht eingecheckt ist.*/
+"checkin_overview_checkins_explanation" = "Skenirajte SwissCovid-QR kod, kako biste se prijavili na lokaciji.";
+
+/*Popup Titel wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_title" = "Nije moguće obezbeđenje";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns sich die neu gewählte Zeit mit vorhandenen aus dem Tagebuch überschneidet*/
+"checkout_overlapping_alert_description" = "Odabrana vremena se preklapaju sa ostalim prijavama iz vašeg dnevnika. Molimo vas da ponovo proverite svoje podatke.";
+
+/*Informieren: Danke Text Checkins Teil*/
+"inform_send_thankyou_text_checkins" = "Vaši odabrani unosi za prijavu su poslati. Biće obaveštena sva lica koja su se istovremeno prijavili na istom mestu.";
+
+/*SwissCovid QR Code PDF: Headline über dem Slogan*/
+"pdf_headline" = "SwissCovid prijava\n\n";
+
+/*SwissCovid QR Code PDF: Slogan*/
+"pdf_slogan" = "Prijaviti se bez ostavljanja podataka";
+
+/*SwissCovid QR Code PDF: Erklärungstext unter dem Slogan*/
+"pdf_explanation" = "Pomoći aplikacije SwissCovid možete jednostavno da se prijavite kod nas ne ostavljajući svoje podatke. U slučaju rizične situacije, brzo ćete biti obavešteni u aplikaciji.";
+
+/*SwissCovid QR Code PDF: App Bezeichnung neben dem App Icon*/
+"pdf_swisscovid_app" = "SwissCovid aplikacija";
+
+/*SwissCovid QR Code PDF: Download Hinweis neben dem App Icon*/
+"pdf_download_app" = "Sada preuzeti";
+
+/*Title im Check-Ins-Screen im nicht eingecheckten Zustand*/
+"checkin_detail_checked_out_title" = "Prijaviti se bez ostavljanja podataka";
+
+/*Text auf der "CovidCode eingeben"-Card auf dem Home Screen*/
+"home_covidcode_card_text" = "Ovde unesite svoj Covid kod, kako biste upozorili druge.";
+
+/*Titel auf der "Isolation beenden"-Card auf dem Home Screen*/
+"home_end_isolation_card_title" = "Kraj izolacije?";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann.*/
+"events_card_title" = "Da li želite da napravite QR kodove?";
+"checkin_footer_title1" = "Čemu služi funkcija prijave?";
+"checkin_footer_subtitle1" = "Funkcija prijave bez unošenja podataka o kontaktima povećava funkcije aplikacije SwissCovid. Pomoću ove funkcije, u slučaju pozitivnog testa, možete ne samo da upozorite bliske kontakte, već i lica koja su se istovremeno prijavila na istom mestu.";
+"checkin_footer_title2" = "Nema centralnog čuvanja podataka";
+"checkin_footer_subtitle2" = "Za SwissCovid prijave ne treba unositi lične podatke kao što su ime, adresa ili telefonski broj i ne beleže se GPS podaci o lokaciji. Spisak prijava čuva se lokalno na vašem mobilnom telefonu. Lokalni podaci će se izbrisati nakon 14 dana.";
+"events_empty_state_title" = "Napravite QR kod";
+"events_empty_state_subtitle" = "Sa SwissCovid-QR kodom mogu se na licu mjesta prijaviti lica, a da ne ostavljaju svoje podatke.  ";
+"events_info_box_title" = "To nije zamena za obavezni unos kontakt podataka";
+"events_info_box_text" = "SwissCovid prijave nisu zamena za obavezu evidenciju kontakt podataka utvrđenu u „Pravilniku Covid 19 za posebne situacije“.";
+"events_footer_title1" = "Gde se mogu koristiti prijave?";
+"events_footer_title2" = "Zašto služi funkcija prijave?";
+"events_footer_subtitle1" = "SwissCovid prijave se mogu koristiti tamo gde se ljudi sastaju, ali ne postoji obaveza beleženja podataka o kontaktima.                                                                 Moguće lokacije:\n- Privatni događaji\n- Događaji u klubovima\n- Sastanci u profesionalnom okruženju kao što su sale za sastanke, kancelarije, menze itd. \"";
+"events_footer_subtitle2" = "Funkcija prijave bez unošenja podataka o kontaktima proširuje funkcije aplikacije. Pomoću ove funkcije, u slučaju pozitivnog testa, možete ne samo da upozorite bliske kontakte, već i lica koja su se istovremeno prijavila na istoj lokaciji.";
+
+/*Subtitle vom Meldungen Card in der Liste aller Meldungen.*/
+"meldung_detail_exposed_list_card_subtitle" = "Rizična situacija";
+
+/*Title vom Encounters Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_encounters" = "Kontakti";
+
+/*Title vom CheckIn Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_title_checkin" = "Prijava";
+
+/*Was soll ich tun? Button im Meldungen Card in der Liste aller Meldungen*/
+"meldung_detail_exposed_list_card_whattodo_button" = "Šta treba da uradima?";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: An einem Check-In einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_checkin_exposed" = "Pozitivna prijava";
+
+/*Debug: Einstellungs-Option zum überschreiben des App-Zustands: Auf verschiedener Weise einem positiven Kontakt ausgesetzt*/
+"debug_state_setting_option_mutiple_exposed" = "Pozitivne prijave / kontakti";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_user_qr_code" = "QR kod korisnika";
+
+/*Anzeigename für User QR Codes*/
+"venue_type_contact_tracing_qr_code" = "QR kod za praćenje kontakata";
+
+/*Text der Module im Check-ins Screen, wenn aufgrund von Isolation keine Checkins mehr möglich sind*/
+"checkin_ended_text_detailed" = "Ako je rezultat testa pozitivan, funkcija prijave se automatski deaktivira. Može se ponovo aktivirati nakon završetka izolacije.";
+
+/*Check-Ins: QR-Code erstellen subtitel*/
+"checkins_create_qr_code_subtitle" = "Dodelite naziv, koji detaljnije opisuje lokaciju ili vaš događaj.                                            Ovaj naziv će biti prikazan prilikom prijave.";
+"checkin_report_heading" = "Šta možete da uradite?";
+"checkin_report_title1" = "Zaštititi kontakte";
+"checkin_report_title2" = "Obratiti pažnju na simptome";
+"checkin_report_title3" = "Vršiti testiranje";
+"checkin_report_subtitle1" = "Mogli biste biti zarazni, a da to ne primetite. Pridržavajte se važećih higijenskih i zaštitnih mera i zaštitite svoju porodicu, prijatelje i okolinu.";
+"checkin_report_subtitle2" = "Proveravajte svoje zdravsveno stanje.";
+"checkin_report_subtitle3" = "Odmah se testirajte ako imate simptome. Čak i ako nema simptoma i niste u potpunosti vakcinisani, test korone je važan i  preporučuje se.";
+
+/*Titel von CheckIn Meldungen Screen.*/
+"meldung_detail_checkin_title" = "Prijava";
+"not_thank_you_screen_title" = "Podaci nisu poslati";
+"not_thank_you_screen_text1" = "Nisu poslati privatni ključevi.";
+"not_thank_you_screen_back_button" = "Nazad";
+"not_thank_you_screen_dont_send_button" = "Ne slati nikakve podatke";
+"not_thank_you_screen_text2" = "Nisu poslati unosi za prijavu.";
+
+/*Button text, um ausgewählte Checkins zu senden*/
+"inform_share_checkins_send_button_title" = "Deliti izbor";
+"inform_share_checkins_not_send_button" = "Ne deliti";
+"onboarding_checkin_title" = "Prijaviti se bez unošenja podataka";
+"onboarding_checkin_heading" = "Prijave";
+"onboarding_checkin_text1" = "Sa SwissCovid prijavama možete da koristite aplikaciju za prijavu na nekoj lokaciji ili prilikom sastanka.";
+"onboarding_checkin_text2" = "Vaše prisustvo se memoriše samo u aplikaciji. Ne morate da ostavljate lične podatke u aplikaciji.";
+"checkin_updateboarding_text" = "Sa SwissCovid prijavama možete da koristite aplikaciju za prijavu na nekoj lokaciji ili prilikom sastanka. Vaše prisustvo se memoriše samo u aplikaciji. Ne morate da ostavljate lične podatke u aplikaciji. U ove svrhe ažurirani su uslovi korišćenja i izjava o zaštiti podataka.";
+"onboarding_gaen_button_dont_activate" = "Preskočiti";
+
+/*Hide from diary warning text*/
+"remove_diary_warning_hide_text" = "Šifrovani unos čuva se u pozadini aplikacije 14 dana. U slučaju moguće infekcije, i dalje možete biti obavešteni.";
+
+/*CheckIn ausblenden*/
+"remove_diary_warning_hide_button" = "Sada sakriti";
+"checkin_set_reminder_explanation" = "Aplikacija vas može podsetiti da se odjavite u pravo vreme.";
+
+/*Remove from diary warning title*/
+"remove_diary_remove_now_title" = "Ili potpuno ukloniti?";
+
+/*Remove from diary warning text*/
+"remove_diary_remove_now_text" = "Unos je potpuno uklonjen. Više ne možete biti upozoreni.";
+"not_thank_you_screen_text3" = "Niko neće biti obavešten.";
+
+/*Link Text zu Informationen übers Testen*/
+"checkin_report_link" = "Šta treba da znam o testiranju?";
+"instant_app_install_action" = "Instalirati aplikaciju i prijavite se";
+"partial_onboarding_box_text" = "Završite konfiguraciju aplikacije, kako biste mogli da koristite funkciju praćenja.";
+"partial_onboarding_box_action" = "Završiti sada";
+"partial_onboarding_done_title" = "Konfiguracija završena";
+"partial_onboarding_done_text" = "Hvala vam što pomažete u suzbijanju širenja virusa korone.";
+"web_slogan" = "Brze informacije u slučaju rizika od zaraze. ";
+
+/*Info URL for testing*/
+/*Fuzzy*/
+"test_info_url" = "https://www.bag.admin.ch/bag/en/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/testen.html";
+"checkout_too_long_alert_text" = "Ova prijava važi maksimalno u trajanju od {DURATION}. Molimo vas da ponovo proverite svoje podatke.";
+
+/*turn camera light on*/
+"accessibility_camera_light_on" = "Uključiti svetlo";
+
+/*turn camera light off*/
+"accessibility_camera_light_off" = "Isključiti svetlo";
+
+/*Popup Text, welcher erscheint, wenn man den Covidcode eingeben will, man aber noch eingecheckt ist.*/
+"error_cannot_enter_covidcode_while_checked_in" = "Još uvek ste prijavljeni. Molimo odjavite se pre unosa Covid koda.";
+
+/*Titel auf der Card, welche zum Screen führt, wo man eigene QR Codes erstellen kann. Wird angezeigt falls bereits ein QR Code erstellt wurde*/
+"events_card_title_events_not_empty" = "Moji QR kodovi";
+
+/*Popup Beschreibung wenn beim Checkout oder Editieren von CheckIns die Checkin-Zeit nach der Checkout-Zeit liegt*/
+"checkout_inverse_time_alert_description" = "Odabrano vreme za odjavu nalazi se je pre vremena za prijavu. Molimo vas da ponovo proverite svoje podatke.";
+
+/*Titel für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_title" = "Nova funkcija: prijava";
+
+/*Text für die Notification die SwissCovid 2.0 ankündigt*/
+"update_notification_checkin_feature_text" = "Hvala vam što koristite SwissCovid. Sa najnovijom verzijom aplikacije možete da se prijavite na lokaciji bez ostavljanja podataka.";
+
+/*Titel für aktuellen Check-in im Tagebuch*/
+"diary_current_title" = "Trenutno";
+
+/*Snooze Option um 30min später an Checkout zu erinnern*/
+"ios_snooze_option_30min" = "Podsetiti ponovo (30min)";
+
+/*Snooze Option um 1h später an Checkout zu erinnern*/
+"ios_snooze_option_1h" = "Podsetiti ponovo (1h)";
+
+/*Snooze Option um 2h später an Checkout zu erinnern*/
+"ios_snooze_option_2h" = "Podsetiti ponovo (2h)";
+
+/*Notification Quickaction um jetzt auszuchecken*/
+"ios_notification_checkout_now" = "Sada se odjaviti";
+
+/*Hinweis falls fälschlicherweise ein Covid-Zertifikat mit SwissCovid gescannt wird.*/
+"covid_certificate_alert_text" = "Molimo koristite aplikaciju \"COVID certifikat\" za skeniranje ovog QR koda.";
+
+/*Button um Covid Certificate App zu öffnen*/
+"covid_certificate_open_app" = "Otvoriti aplikaciju";
+
+/*Button um Covid Certificate App zu installieren*/
+"covid_certificate_install_app" = "Instalirati aplikaciju";

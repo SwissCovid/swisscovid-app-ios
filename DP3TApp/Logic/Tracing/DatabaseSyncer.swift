@@ -129,7 +129,7 @@ class DatabaseSyncer {
                     UIStateManager.shared.syncError = nil
                 }
 
-                TracingLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
 
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
@@ -138,7 +138,7 @@ class DatabaseSyncer {
                 completionHandler?(.newData)
             }
 
-            TracingLocalPush.shared.handleSync(result: result)
+            NSLocalPush.shared.handleSync(result: result)
 
             if taskIdentifier != .invalid {
                 UIApplication.shared.endBackgroundTask(taskIdentifier)

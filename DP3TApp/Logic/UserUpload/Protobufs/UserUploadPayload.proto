@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+message UserUploadPayload {
+  int32 version = 1;
+  repeated UploadVenueInfo venueInfos = 2;
+  fixed32 userInteractionDurationMs = 3;
+}
+
+message UploadVenueInfo {
+  bytes preId = 1;
+  bytes timeKey = 2;
+  fixed64 intervalStartMs = 3;
+  fixed64 intervalEndMs = 4;
+  bytes notificationKey = 5;
+  bytes fake = 6;
+}

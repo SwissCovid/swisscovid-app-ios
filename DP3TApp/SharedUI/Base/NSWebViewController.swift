@@ -83,8 +83,6 @@ class NSWebViewController: NSViewController {
 
             string = string.replacingOccurrences(of: "{VERSION}", with: Bundle.appVersion)
             string = string.replacingOccurrences(of: "{BUILD}", with: Bundle.buildNumber + Bundle.environment)
-            string = string.replacingOccurrences(of: "{APPVERSION}", with: Bundle.appVersion)
-            string = string.replacingOccurrences(of: "{RELEASEDATE}", with: DateFormatter.ub_dayString(from: Bundle.buildDate ?? Date()))
 
             webView.loadHTMLString(string, baseURL: url.deletingLastPathComponent())
         } catch {}
@@ -163,8 +161,6 @@ extension Bundle {
             switch Environment.current {
             case .dev:
                 return " DEV"
-            case .test:
-                return " TEST"
             case .abnahme:
                 return " ABNAHME"
             case .prod:
@@ -174,8 +170,6 @@ extension Bundle {
             switch Environment.current {
             case .dev:
                 return " DEV"
-            case .test:
-                return " TEST"
             case .abnahme:
                 return " ABNAHME"
             case .prod:

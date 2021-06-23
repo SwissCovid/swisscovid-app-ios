@@ -1,3 +1,6 @@
 --disable wrapMultilineStatementBraces
 --disable initCoderUnavailable
 --disable redundantType
+
+# Don't format generated protobuf wrappers
+--exclude **/*.pb.swift

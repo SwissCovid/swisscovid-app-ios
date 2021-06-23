@@ -8,14 +8,16 @@
  * SPDX-License-Identifier: MPL-2.0
  */
 
+import SnapKit
 import UIKit
 
 class NSExternalLinkButton: UBButton {
-    enum LinkType {
-        case url, phone, popup
+    enum LinkType: Equatable {
+        case url, phone, popup, other(image: UIImage?)
     }
 
     enum Style {
+        case fill(color: UIColor)
         case normal(color: UIColor)
         case outlined(color: UIColor)
     }
@@ -38,7 +40,9 @@ class NSExternalLinkButton: UBButton {
             case .normal(color: _):
                 super.title = newValue
             case .outlined(color: _):
-                super.title = newValue?.uppercased()
+                super.title = newValue
+            case .fill(color: _):
+                super.title = newValue
             }
         }
         get {
@@ -64,6 +68,8 @@ class NSExternalLinkButton: UBButton {
             image = UIImage(named: "ic-call")
         case .popup:
             image = UIImage(named: "ic-link-internal")
+        case let .other(img):
+            image = img
         }
 
         switch style {
@@ -95,6 +101,33 @@ class NSExternalLinkButton: UBButton {
 
             layer.borderColor = color.cgColor
             layer.borderWidth = 2
+
+            highlightCornerRadius = 3
+            layer.cornerRadius = 3
+            contentEdgeInsets = UIEdgeInsets(top: 0, left: NSPadding.large, bottom: 0, right: NSPadding.large)
+
+            // move image to right side
+            semanticContentAttribute = UIApplication.shared.userInterfaceLayoutDirection == .rightToLeft ? .forceLeftToRight : .forceRightToLeft
+
+            let spacing: CGFloat
+            switch buttonSize {
+            case .normal:
+                spacing = 8.0
+            case .small:
+                spacing = 6.0
+            }
+            imageEdgeInsets = UIEdgeInsets(top: 0.0, left: spacing, bottom: 0.0, right: 0.0)
+            titleEdgeInsets = UIEdgeInsets(top: spacing, left: 0.0, bottom: spacing, right: spacing)
+        case let .fill(color: color):
+
+            backgroundColor = color
+
+            image = image?.ub_image(with: .white)
+            titleLabel?.textAlignment = .center
+
+            contentHorizontalAlignment = .center
+
+            setTitleColor(.white, for: .normal)
 
             highlightCornerRadius = 3
             layer.cornerRadius = 3

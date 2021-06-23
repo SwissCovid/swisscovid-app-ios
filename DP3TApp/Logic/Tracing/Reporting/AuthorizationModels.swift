@@ -15,7 +15,16 @@ struct AuthorizationRequestBody: Codable {
     let fake: Int
 }
 
+struct OnsetDateResponseBody: Codable {
+    let onset: String
+}
+
 struct AuthorizationResponseBody: Codable {
+    let checkInAccessToken: AccessToken
+    let dp3TAccessToken: AccessToken
+}
+
+struct AccessToken: Codable {
     let accessToken: JWTToken
 }
 

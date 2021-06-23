@@ -95,19 +95,4 @@ class NSTutorialViewController: NSViewController {
             make.height.equalTo(72 + self.view.safeAreaInsets.bottom)
         }
     }
-
-    static func present(from rootViewController: UIViewController) {
-        let navCon = NSNavigationController(rootViewController: self.init())
-        navCon.lineView.isHidden = true
-        // remove bottom 1 px line
-        navCon.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-        navCon.navigationBar.shadowImage = UIImage()
-        navCon.navigationBar.barTintColor = .ns_backgroundSecondary
-
-        if UIDevice.current.isSmallScreenPhone {
-            navCon.modalPresentationStyle = .fullScreen
-        }
-
-        rootViewController.present(navCon, animated: true, completion: nil)
-    }
 }
