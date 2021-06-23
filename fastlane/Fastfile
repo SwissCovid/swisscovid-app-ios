@@ -30,7 +30,7 @@ platform :ios do
     output_name: "SwissCovid.ipa",
     archive_path: "build/SwissCovid.xcarchive",
     buildlog_path: "build/build.log",
-    xcargs: "BUILD_NUMBER=#{build_number}"
+    xcargs: "BUILD_NUMBER=#{build_number} PRIMARY_BUNDLE_IDENTIFIER=#{ENV["APP_IDENTIFIER"]} CODE_SIGN_IDENTITY='iPhone Distribution' PROVISIONING_PROFILE_SPECIFIER='$(sigh_$(PRODUCT_BUNDLE_IDENTIFIER)_appstore_profile-name)' "
   )
   end
 
