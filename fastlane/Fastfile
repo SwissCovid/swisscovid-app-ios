@@ -30,7 +30,14 @@ platform :ios do
     output_name: "SwissCovid.ipa",
     archive_path: "build/SwissCovid.xcarchive",
     buildlog_path: "build/build.log",
-    xcargs: "BUILD_NUMBER=#{build_number}"
+    xcargs: "BUILD_NUMBER=#{build_number}",
+    export_options: {
+      method: "app-store",
+      provisioningProfiles: { 
+        ENV["APP_IDENTIFIER"] => ENV["PROVISIONING_PROFILE_NAME"],
+        ENV["APP_IDENTIFIER"] + ".Clip" => ENV["CLIP_PROVISIONING_PROFILE_NAME"]
+      }
+    }
   )
   end
 
