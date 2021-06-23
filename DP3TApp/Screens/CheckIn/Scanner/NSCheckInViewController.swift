@@ -176,10 +176,10 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
         // Handle case where user tries to check in a covid certificate
         if str.starts(with: "HC1:") {
             let alert = UIAlertController(title: "", message: "covid_certificate_alert_text".ub_localized, preferredStyle: .alert)
-            if UIApplication.shared.canOpenURL(URL(string: "chcovidcert://")!) {
+            if UIApplication.shared.canOpenURL(URL(string: "covidcert://")!) {
                 alert.addAction(UIAlertAction(title: "covid_certificate_open_app".ub_localized, style: .default, handler: { _ in
-                    guard let b64Encoded = str.data(using: .utf8)?.base64EncodedString(),
-                          let url = URL(string: "chcovidcert://\(b64Encoded)") else { return }
+                    guard let urlEncoded = str.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+                          let url = URL(string: "covidcert://\(urlEncoded)") else { return }
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }))
             } else {
