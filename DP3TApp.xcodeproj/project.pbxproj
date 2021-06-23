@@ -4662,8 +4662,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/CrowdNotifier/crowdnotifier-sdk-ios";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = exactVersion;
+				version = 4.0.0;
 			};
 		};
 		8E81CCCD241FD813006F2437 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
@@ -4678,8 +4678,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
-				branch = develop;
-				kind = branch;
+				kind = exactVersion;
+				version = 2.4.0;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {

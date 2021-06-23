@@ -32,18 +32,18 @@
         "package": "CrowdNotifierSDK",
         "repositoryURL": "https://github.com/CrowdNotifier/crowdnotifier-sdk-ios",
         "state": {
-          "branch": "develop",
-          "revision": "32026dbc6ce32f110ea248dc948b02de4e815b29",
-          "version": null
+          "branch": null,
+          "revision": "280ddc024aa2a6a38b30a3fa83a2b7be75aa579b",
+          "version": "4.0.0"
         }
       },
       {
         "package": "DP3TSDK",
         "repositoryURL": "https://github.com/DP-3T/dp3t-sdk-ios.git",
         "state": {
-          "branch": "develop",
-          "revision": "c52d650b46529a4de8207c947e5ff84074b199fb",
-          "version": null
+          "branch": null,
+          "revision": "f0897a3e013e8ad3e693288f82757068b4ce08f2",
+          "version": "2.4.0"
         }
       },
       {
