@@ -178,7 +178,9 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
             let alert = UIAlertController(title: "", message: "covid_certificate_alert_text".ub_localized, preferredStyle: .alert)
             if UIApplication.shared.canOpenURL(URL(string: "covidcert://")!) {
                 alert.addAction(UIAlertAction(title: "covid_certificate_open_app".ub_localized, style: .default, handler: { _ in
-                    UIApplication.shared.open(URL(string: "covidcert://\(str)")!, options: [:], completionHandler: nil)
+                    guard let urlEncoded = str.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed),
+                          let url = URL(string: "covidcert://\(urlEncoded)") else { return }
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }))
             } else {
                 alert.addAction(UIAlertAction(title: "covid_certificate_install_app".ub_localized, style: .default, handler: { _ in
