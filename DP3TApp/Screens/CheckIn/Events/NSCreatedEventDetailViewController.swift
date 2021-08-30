@@ -81,7 +81,13 @@ class NSCreatedEventDetailViewController: NSViewController {
             self.update(state)
         }
 
-        accessibilityElements = [dismissButton, venueView, checkInButton, shareButton, showPDFButton, deleteButton]
+        accessibilityElements = [venueView, checkInButton, shareButton, showPDFButton, deleteButton, dismissButton]
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIAccessibility.post(notification: .layoutChanged, argument: venueView)
     }
 
     private func update(_ state: UIStateModel) {
