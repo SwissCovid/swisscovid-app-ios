@@ -272,19 +272,11 @@ class NSCheckInEditViewController: NSViewController {
         fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.startDate = date
-            if strongSelf.startDate == strongSelf.endDate {
-                strongSelf.startDate = strongSelf.startDate.addingTimeInterval(-1 * .minute)
-                strongSelf.fromTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
-            }
         }
 
         toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.endDate = date
-            if strongSelf.startDate == strongSelf.endDate {
-                strongSelf.endDate = strongSelf.endDate.addingTimeInterval(.minute)
-                strongSelf.toTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
-            }
         }
     }
 
