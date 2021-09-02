@@ -27,6 +27,8 @@ class NSErrorView: UIView {
         }
     }()
 
+    private let secondActionButton = NSUnderlinedButton()
+
     // MARK: - Model
 
     struct NSErrorViewModel {
@@ -38,6 +40,9 @@ class NSErrorView: UIView {
         var action: ((NSErrorView?) -> Void)?
         var customColor: UIColor? = nil
         var customBackgroundColor: UIColor? = nil
+
+        var secondActionButtonTitle: String?
+        var secondAction: ((NSErrorView?) -> Void)?
     }
 
     var model: NSErrorViewModel? {
@@ -84,7 +89,12 @@ class NSErrorView: UIView {
         actionButton.touchUpCallback = { [weak self] in
             self?.model?.action?(self)
         }
+        secondActionButton.touchUpCallback = { [weak self] in
+            self?.model?.secondAction?(self)
+        }
+
         actionButton.title = model?.buttonTitle
+        secondActionButton.title = model?.secondActionButtonTitle
 
         stackView.setNeedsLayout()
         stackView.clearSubviews()
@@ -97,7 +107,12 @@ class NSErrorView: UIView {
             stackView.addArrangedView(activityIndicator)
             activityIndicator.hidesWhenStopped = true
             activityIndicator.stopAnimating()
+
+            if model?.secondAction != nil {
+                stackView.addArrangedView(secondActionButton)
+            }
         }
+
         if let code = model?.errorCode {
             stackView.addArrangedView(errorCodeLabel)
             errorCodeLabel.text = code
@@ -115,6 +130,7 @@ class NSErrorView: UIView {
 
             if let c = model?.customColor {
                 actionButton.textColor = c
+                secondActionButton.textColor = c
                 textLabel.textColor = c
             }
         }
@@ -126,10 +142,11 @@ class NSErrorView: UIView {
 
     public var isEnabled: Bool {
         get {
-            actionButton.isEnabled
+            actionButton.isEnabled && secondActionButton.isEnabled
         }
         set {
             actionButton.isEnabled = newValue
+            secondActionButton.isEnabled = newValue
         }
     }
 
@@ -309,6 +326,22 @@ class NSErrorView: UIView {
             return nil
         }
     }
+
+    static func alreadyCheckedInErrorView(checkOutCallback: (() -> Void)? = nil, cancelCallback: (() -> Void)? = nil) -> NSErrorView {
+        let model = NSErrorViewModel(icon: UIImage(named: "ic-error")!,
+                                     title: "error_already_checked_in".ub_localized,
+                                     text: "error_already_checked_in_text".ub_localized,
+                                     buttonTitle: "checkout_button_title".ub_localized,
+                                     action: { _ in
+                                         checkOutCallback?()
+                                     },
+                                     customBackgroundColor: UIColor.white,
+                                     secondActionButtonTitle: "cancel".ub_localized,
+                                     secondAction: { _ in
+                                         cancelCallback?()
+                                     })
+        return NSErrorView(model: model)
+    }
 }
 
 // MARK: - Accessibility
@@ -322,7 +355,7 @@ extension NSErrorView {
     }
 
     func updateAccessibility() {
-        accessibilityElements = model?.action != nil ? [stackView, actionButton] : [stackView]
+        accessibilityElements = (model?.secondAction != nil) ? [stackView, actionButton, secondActionButton] : ((model?.secondAction != nil) ? [stackView, actionButton] : [stackView])
         stackView.accessibilityLabel = model.map { "\($0.title), \($0.text)" }
         UIAccessibility.post(notification: .screenChanged, argument: nil)
     }

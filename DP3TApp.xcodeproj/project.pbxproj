@@ -288,6 +288,8 @@
 		6E7C0D43242E44D80017C4F9 /* NSWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */; };
 		6E7C0D45242E4AA90017C4F9 /* NSLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */; };
 		6E7C0D47242E58600017C4F9 /* NSAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */; };
+		6E84B1A726E0CD770000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84B1A626E0CD760000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift */; };
+		6E84B1A826E0CEE80000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E84B1A626E0CD760000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift */; };
 		6E88973C261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */; };
 		6E889756261F228200508334 /* NSOnboardingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */; };
 		6E88975F261F25A700508334 /* NSOnboardingBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */; };
@@ -845,6 +847,7 @@
 		6E7C0D42242E44D80017C4F9 /* NSWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSWebViewController.swift; sourceTree = "<group>"; };
 		6E7C0D44242E4AA90017C4F9 /* NSLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLoadingView.swift; sourceTree = "<group>"; };
 		6E7C0D46242E58600017C4F9 /* NSAboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAboutViewController.swift; sourceTree = "<group>"; };
+		6E84B1A626E0CD760000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSAlreadyCheckedInErrorPopupViewController.swift; path = DP3TApp/Screens/Checkin/Edit/NSAlreadyCheckedInErrorPopupViewController.swift; sourceTree = SOURCE_ROOT; };
 		6E88973B261F01BA00508334 /* NSReportsLeitfadenInfoPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsLeitfadenInfoPopupViewController.swift; sourceTree = "<group>"; };
 		6E889755261F228200508334 /* NSOnboardingBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSOnboardingBaseViewController.swift; sourceTree = "<group>"; };
 		6E889764261F27D400508334 /* NSUpdateBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUpdateBoardingViewController.swift; sourceTree = "<group>"; };
@@ -1816,6 +1819,7 @@
 			children = (
 				DC16175C2638717800B56ADA /* NSTimePickerControl.swift */,
 				DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */,
+				6E84B1A626E0CD760000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -2665,6 +2669,7 @@
 				F8B44EF12653E8DA009F0ED0 /* NSInformSendViewController.swift in Sources */,
 				242D21EE245C4BD8005DAEA8 /* NSClickthroughStackView.swift in Sources */,
 				F80E406E2509002200876906 /* StatisticsResponse.swift in Sources */,
+				6E84B1A826E0CEE80000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift in Sources */,
 				DC1617A42638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */,
 				F86A6A9926383803003CAC1B /* NSVenueView.swift in Sources */,
 				242D21EF245C4BD8005DAEA8 /* NSSimpleTextButton.swift in Sources */,
@@ -2946,6 +2951,7 @@
 				F8512244250A6F8E009BE733 /* NSChartYAxisLegend.swift in Sources */,
 				AA5ED051267B742E0039A4D6 /* NSCheckInContentView.swift in Sources */,
 				6E8FC0FB24518BF2002AB1E5 /* UBKeyboardObserver.m in Sources */,
+				6E84B1A726E0CD770000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift in Sources */,
 				DC56B8BB242EACF00077B99C /* NSOnboardingStepViewController.swift in Sources */,
 				2485F47C2458625F00C3D8C3 /* DatabaseSyncer.swift in Sources */,
 				F8089694250B55080023F639 /* NSStatisticsModuleLegendView.swift in Sources */,
