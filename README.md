@@ -29,7 +29,11 @@
     </a>
 </div>
 
-SwissCovid is the official contact tracing app of Switzerland. The app can be installed from the [App Store](https://apps.apple.com/ch/app/swisscovid/id1509275381). The SwissCovid 2.0 app uses two types of contact tracing to prevent the spread of COVID-19.
+SwissCovid is the official contact tracing app of Switzerland. The app can be installed from the [App Store](https://apps.apple.com/ch/app/swisscovid/id1509275381). The app design, UX and implementation was done by [Ubique](https://www.ubique.ch/?app=github).
+
+## Contact tracing
+
+The SwissCovid 2.0 app uses two types of contact tracing to prevent the spread of COVID-19.
 
 With proximity tracing close contacts are detected using the bluetooth technology. For this the [DP3T iOS SDK](https://github.com/DP-3T/dp3t-sdk-ios) is used that builds on top of the Google & Apple Exposure Notifications. This feature is called SwissCovid encounters.
 
