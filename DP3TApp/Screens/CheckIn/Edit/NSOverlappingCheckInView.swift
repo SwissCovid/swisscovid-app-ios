@@ -29,7 +29,7 @@ class NSOverlappingCheckInView: UBButton {
     // MARK: - Setup
 
     private func setup() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.ns_background
         highlightedBackgroundColor = UIColor.black.withAlphaComponent(0.15)
 
         addSubview(diaryContentView)
@@ -41,7 +41,7 @@ class NSOverlappingCheckInView: UBButton {
             make.top.left.bottom.equalToSuperview()
         }
 
-        let imageView = UIImageView(image: UIImage(named: "ic-edit"))
+        let imageView = NSImageView(image: UIImage(named: "ic-edit"), dynamicColor: UIColor.ns_text)
         addSubview(imageView)
 
         imageView.ub_setContentPriorityRequired()
