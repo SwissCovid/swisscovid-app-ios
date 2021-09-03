@@ -21,7 +21,7 @@ class NSCreatedEventsViewController: NSViewController {
         return NSInfoBoxView(viewModel: model)
     }()
 
-    private let additionalInfoLabel = NSLinkifiedTextView(labelType: .textLight, textColor: .ns_defaultTextColor, linkLabelType: .textBold)
+    private let additionalInfoLabel = NSLabel(.textLight, textAlignment: .center)
 
     override init() {
         super.init()
