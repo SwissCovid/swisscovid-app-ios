@@ -102,8 +102,9 @@ class NSOverlappingCheckinPopupViewController: NSPopupViewController {
 
         checkoutButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.dismiss()
-            strongSelf.checkOutCallback?()
+            strongSelf.dismiss(animated: true) {
+                strongSelf.checkOutCallback?()
+            }
         }
     }
 

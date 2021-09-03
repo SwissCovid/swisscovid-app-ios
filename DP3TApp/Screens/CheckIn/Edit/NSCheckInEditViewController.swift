@@ -191,7 +191,7 @@ class NSCheckInEditViewController: NSViewController {
 
                 alert.checkOutCallback = { [weak self] in
                     guard let strongSelf = self else { return }
-                    strongSelf.saveButtonTouched()
+                    strongSelf.saveButtonTouched(delayDismiss: 0.15)
                 }
 
                 present(alert, animated: true, completion: nil)
@@ -220,7 +220,7 @@ class NSCheckInEditViewController: NSViewController {
     fileprivate func setupCheckout() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(cancelButtonTouched))
         if !isCurrentCheckIn {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(saveButtonTouched))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(save))
         }
 
         let attributes = [
@@ -236,7 +236,11 @@ class NSCheckInEditViewController: NSViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @objc private func saveButtonTouched() {
+    @objc private func save() {
+        saveButtonTouched()
+    }
+
+    private func saveButtonTouched(delayDismiss: CGFloat? = nil) {
         guard startDate < endDate else {
             showEndDateBeforeStartDateAlert()
             return
@@ -252,18 +256,22 @@ class NSCheckInEditViewController: NSViewController {
             return
         }
 
+        // update checkin or checkout
         if isCurrentCheckIn {
             updateCheckIn()
-
             userWillCheckOutCallback?()
             CheckInManager.shared.checkOut()
-
-            dismiss(animated: true, completion: nil)
-
         } else {
             updateCheckIn()
-
             userUpdatedCheckIn?()
+        }
+
+        // dismiss after saving/checkout
+        if let d = delayDismiss {
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(d)) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
             dismiss(animated: true, completion: nil)
         }
     }
@@ -322,7 +330,7 @@ class NSCheckInEditViewController: NSViewController {
 
             checkoutButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.saveButtonTouched()
+                strongSelf.save()
             }
 
             stackScrollView.addArrangedView(view)
