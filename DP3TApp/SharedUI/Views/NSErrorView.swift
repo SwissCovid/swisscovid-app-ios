@@ -335,7 +335,7 @@ class NSErrorView: UIView {
                                      action: { _ in
                                          checkOutCallback?()
                                      },
-                                     customBackgroundColor: UIColor.white,
+                                     customBackgroundColor: UIColor.clear,
                                      secondActionButtonTitle: "cancel".ub_localized,
                                      secondAction: { _ in
                                          cancelCallback?()

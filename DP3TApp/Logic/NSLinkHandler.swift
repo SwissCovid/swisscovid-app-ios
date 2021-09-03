@@ -66,7 +66,9 @@ class NSLinkHandler {
                             let vc = NSCheckInEditViewController()
                             vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
                         }
-                        vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
+
+                        let hs = appDelegate.tabBarController.homescreen
+                        hs.navigationController?.present(vc, animated: true, completion: nil)
                     }
 
                     return true
