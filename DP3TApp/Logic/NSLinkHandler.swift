@@ -55,9 +55,22 @@ class NSLinkHandler {
                 appDelegate.tabBarController.currentTab = .homescreen
 
                 // present checkout controller when already checked in
-                if CheckInManager.shared.currentCheckIn != nil {
-                    let vc = NSCheckInEditViewController()
-                    vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
+                if let checkIn = CheckInManager.shared.currentCheckIn {
+                    if checkIn.qrCode == url.absoluteString {
+                        // same qr-code: directly present checkout
+                        let vc = NSCheckInEditViewController()
+                        vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
+                    } else {
+                        // otherwise show error that you are already checked in
+                        let vc = NSAlreadyCheckedInErrorPopupViewController {
+                            let vc = NSCheckInEditViewController()
+                            vc.presentInNavigationController(from: appDelegate.tabBarController.homescreen, useLine: false)
+                        }
+
+                        let hs = appDelegate.tabBarController.homescreen
+                        hs.navigationController?.present(vc, animated: true, completion: nil)
+                    }
+
                     return true
                 }
 
