@@ -1825,12 +1825,9 @@
 			children = (
 				DC16175C2638717800B56ADA /* NSTimePickerControl.swift */,
 				DC16175D2638717800B56ADA /* NSCheckInEditViewController.swift */,
-<<<<<<< HEAD
 				6E84B1A626E0CD760000AC92 /* NSAlreadyCheckedInErrorPopupViewController.swift */,
-=======
 				6E5F789C26DD4190006D11B0 /* NSOverlappingCheckinPopupViewController.swift */,
 				6E5F789F26DD4B5A006D11B0 /* NSOverlappingCheckInView.swift */,
->>>>>>> b23ce612 (adds popup for overlapping checkins)
 			);
 			path = Edit;
 			sourceTree = "<group>";

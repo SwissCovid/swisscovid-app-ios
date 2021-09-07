@@ -1466,7 +1466,7 @@
 "error_title" = "Gabim";
 "qr_scanner_error_code_not_yet_valid" = "Kodi QR nuk është ende i vlefshëm";
 "qr_scanner_error_code_not_valid_anymore" = "Kodi QR nuk është më i vlefshëm";
-"error_already_checked_in" = "Ju jeni kontrolluar tashmë.";
+"error_already_checked_in" = "";
 "error_update_text" = "Ky kod QR nuk është i pajtueshëm me versionin e aplikacionit të instaluar. Përditësoni aplikacionin për të vazhduar më tej.";
 "error_update_title" = "Përditësimi i nevojshëm";
 "error_action_update" = "Përditësoni tani";
@@ -1737,9 +1737,6 @@
 
 /*Button um Covid Certificate App zu installieren*/
 "covid_certificate_install_app" = "Instaloni aplikacionin";
-"web_generator_title" = "";
-"web_generator_title_label" = "";
-"web_generator_generate_button" = "";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
 "web_generator_download_pdf_button" = "";
@@ -1771,14 +1768,8 @@
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
 "checkin_overlap_popup_success_text" = "";
 
-/*Infotext beim Generieren eines QR-Codes*/
-"web_generator_message" = "";
-
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
 "web_generator_success_title" = "";
-
-/*Titel des Buttons, der das PDF ausdruckt*/
-"web_generator_print_pdf_button" = "";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
 "web_generator_reset_button" = "";

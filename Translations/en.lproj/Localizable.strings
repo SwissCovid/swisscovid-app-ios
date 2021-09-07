@@ -1494,7 +1494,7 @@
 "error_title" = "Error";
 "qr_scanner_error_code_not_yet_valid" = "QR code not yet valid";
 "qr_scanner_error_code_not_valid_anymore" = "QR code no longer valid";
-"error_already_checked_in" = "You are already checked in.";
+"error_already_checked_in" = "";
 "error_update_text" = "This QR code is not compatible with the installed version of the app. Please update the app to continue.";
 "error_update_title" = "Update required";
 "error_action_update" = "Update now";
@@ -1765,9 +1765,6 @@
 
 /*Button um Covid Certificate App zu installieren*/
 "covid_certificate_install_app" = "Install app";
-"web_generator_title" = "";
-"web_generator_title_label" = "";
-"web_generator_generate_button" = "";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
 "web_generator_download_pdf_button" = "";
@@ -1799,14 +1796,8 @@
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
 "checkin_overlap_popup_success_text" = "";
 
-/*Infotext beim Generieren eines QR-Codes*/
-"web_generator_message" = "";
-
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
 "web_generator_success_title" = "";
-
-/*Titel des Buttons, der das PDF ausdruckt*/
-"web_generator_print_pdf_button" = "";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
 "web_generator_reset_button" = "";
