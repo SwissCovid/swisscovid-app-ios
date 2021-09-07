@@ -42,7 +42,7 @@ class NSInfoBoxView: UIView {
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType, isClickable: viewModel.isClickable)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType, isClickable: viewModel.isClickable, separateAccessibility: viewModel.separateAccessibility)
     }
 
     public var popupCallback: (() -> Void)?
@@ -67,6 +67,7 @@ class NSInfoBoxView: UIView {
         var externalLinkType: NSExternalLinkButton.LinkType = .url
         var hearingImpairedButtonCallback: (() -> Void)? = nil
         var isClickable: Bool = false
+        var separateAccessibility: Bool = false
     }
 
     init(viewModel: ViewModel) {
@@ -86,7 +87,7 @@ class NSInfoBoxView: UIView {
         illustrationImageView.image = viewModel.illustration
 
         setup(viewModel: viewModel)
-        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType, isClickable: viewModel.isClickable)
+        setupAccessibility(title: viewModel.title, subTitle: viewModel.subText, boldSubText: viewModel.boldSubText, additionalText: viewModel.additionalText, additionalURL: viewModel.additionalURL, externalLinkType: viewModel.externalLinkType, isClickable: viewModel.isClickable, separateAccessibility: viewModel.separateAccessibility)
     }
 
     required init?(coder _: NSCoder) {
@@ -266,7 +267,7 @@ class NSInfoBoxView: UIView {
 // MARK: - Accessibility
 
 extension NSInfoBoxView {
-    private func setupAccessibility(title: String, subTitle: String, boldSubText: String?, additionalText: String?, additionalURL: String?, externalLinkType: NSExternalLinkButton.LinkType, isClickable: Bool) {
+    private func setupAccessibility(title: String, subTitle: String, boldSubText: String?, additionalText: String?, additionalURL: String?, externalLinkType: NSExternalLinkButton.LinkType, isClickable: Bool, separateAccessibility: Bool) {
         if let additionalURL = additionalURL {
             isAccessibilityElement = false
 
@@ -277,8 +278,13 @@ extension NSInfoBoxView {
             return
         }
 
-        isAccessibilityElement = true
-        accessibilityTraits = isClickable ? [.button] : []
-        accessibilityLabel = "\(title), \(subTitle), \(boldSubText ?? ""), \(additionalText ?? "")"
+        if !separateAccessibility {
+            isAccessibilityElement = true
+            accessibilityTraits = isClickable ? [.button] : []
+            accessibilityLabel = "\(title), \(subTitle), \(boldSubText ?? ""), \(additionalText ?? "")"
+        } else {
+            isAccessibilityElement = false
+            titleLabel.accessibilityTraits = [.header]
+        }
     }
 }

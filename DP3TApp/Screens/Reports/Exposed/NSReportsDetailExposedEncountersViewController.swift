@@ -111,7 +111,6 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
         let faqButton = NSButton.faqButton(color: .ns_blue)
-        faqButton.accessibilityTraits = [.link]
         stackScrollView.addArrangedView(faqButton)
 
         stackScrollView.addSpacerView(NSPadding.large)
@@ -125,9 +124,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         }
 
         notYetOpenedView?.isHidden = didOpenLeitfaden
-        notYetOpenedView?.accessibilityViewIsModal = didOpenLeitfaden
         alreadyOpenedView?.isHidden = !didOpenLeitfaden
-        alreadyOpenedView?.accessibilityViewIsModal = didOpenLeitfaden
 
         let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
         if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
@@ -161,9 +158,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             strongSelf.openLeitfaden()
         }
 
-        let sView = addInfoButton(to: leitfadenButton, buttonText: text)
-        sView.isAccessibilityElement = false
-        whiteBoxView.contentView.addArrangedSubview(sView)
+        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
         whiteBoxView.contentView.addSpacerView(40.0)
         addTextContentSection(to: whiteBoxView)
         addTestInfo(to: whiteBoxView)
@@ -333,6 +328,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             let popup = NSReportsLeitfadenInfoPopupViewController(buttonText: buttonText)
             strongSelf.present(popup, animated: true, completion: nil)
         }
+        stackView.shouldGroupAccessibilityChildren = false
         stackView.accessibilityElements = [button, infoButton]
 
         return stackView
