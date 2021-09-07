@@ -154,16 +154,8 @@ class CheckInManager {
 
     static func normalizeDates(start: Date, end: Date) -> (start: Date, end: Date) {
         // If for some reason, checkout is before checkin, just swap the two dates
-        var startTime = start > end ? end : start
-        var endTime = start > end ? start : end
-
-        startTime = startTime.roundedToMinute(rule: .down)
-        endTime = endTime.roundedToMinute(rule: .up)
-
-        if startTime == endTime {
-            endTime = endTime.addingTimeInterval(.minute)
-        }
-
+        let startTime = start > end ? end : start
+        let endTime = start > end ? start : end
         return (start: startTime, end: endTime)
     }
 

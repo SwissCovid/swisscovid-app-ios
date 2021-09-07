@@ -1465,7 +1465,7 @@
 "error_title" = "ጉድለት";
 "qr_scanner_error_code_not_yet_valid" = "QR-ኮድ ገና ብቑዕ ኣይኮነን";
 "qr_scanner_error_code_not_valid_anymore" = "ብቕዓት QR-Code ሓሊፉ";
-"error_already_checked_in" = "ድሮ ኣቲኹም ዲኹም፧";
+"error_already_checked_in" = "";
 "error_update_text" = "እዚ ኮድ QR ምስቲ ዝተተከለ ቨርዝዮን ኤፕ ኣይሰርሕን እዩ። ነቲ ኤፕ ኣሕድስዎ ብኽብረትኩም መታን ክትቕጸሉ።";
 "error_update_title" = "ምምሕዳስ የድሊ";
 "error_action_update" = "ሕጂ ምምሕዳስ";
@@ -1736,9 +1736,6 @@
 
 /*Button um Covid Certificate App zu installieren*/
 "covid_certificate_install_app" = "ኤፕ ምትካል";
-"web_generator_title" = "";
-"web_generator_title_label" = "";
-"web_generator_generate_button" = "";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
 "web_generator_download_pdf_button" = "";
@@ -1770,14 +1767,8 @@
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
 "checkin_overlap_popup_success_text" = "";
 
-/*Infotext beim Generieren eines QR-Codes*/
-"web_generator_message" = "";
-
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
 "web_generator_success_title" = "";
-
-/*Titel des Buttons, der das PDF ausdruckt*/
-"web_generator_print_pdf_button" = "";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
 "web_generator_reset_button" = "";

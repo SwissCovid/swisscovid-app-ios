@@ -1529,7 +1529,7 @@
 "error_title" = "Fehler";
 "qr_scanner_error_code_not_yet_valid" = "QR-Code noch nicht gültig";
 "qr_scanner_error_code_not_valid_anymore" = "QR-Code nicht mehr gültig";
-"error_already_checked_in" = "Sie sind bereits eingecheckt.";
+"error_already_checked_in" = "Sie sind bereits an einem anderen Ort eingecheckt.";
 "error_update_text" = "Dieser QR-Code ist nicht mit der installierten App-Version kompatibel. Bitte aktualisieren Sie die App, um fortzufahren.";
 "error_update_title" = "Update erforderlich";
 "error_action_update" = "Jetzt aktualisieren";
@@ -1818,11 +1818,6 @@
 
 /*Button um Covid Certificate App zu installieren*/
 "covid_certificate_install_app" = "App installieren";
-"web_generator_title" = "QR-Code erstellen";
-"web_generator_title_label" = "";
-
-/*Fuzzy*/
-"web_generator_generate_button" = "QR-Code erstellen";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
 /*Fuzzy*/
@@ -1855,15 +1850,8 @@
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
 "checkin_overlap_popup_success_text" = "Es gibt keine Konflikte mehr für Ihre eingetragene Zeit. Sie können jetzt bei {CHECKIN} auschecken.";
 
-/*Infotext beim Generieren eines QR-Codes*/
-/*Fuzzy*/
-"web_generator_message" = "Vergeben Sie einen Titel, der den Ort \noder Ihren Anlass näher beschreibt. \nDieser Titel wird beim Check-in angezeigt.";
-
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
 "web_generator_success_title" = "QR-Code erstellt";
-
-/*Titel des Buttons, der das PDF ausdruckt*/
-"web_generator_print_pdf_button" = "PDF drucken";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
 "web_generator_reset_button" = "Neuen QR-Code erstellen";
