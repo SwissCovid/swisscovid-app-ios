@@ -33,6 +33,7 @@ class NSMoreTestInformationPopupViewController: NSPopupViewController {
         let titleText = "test_location_popup_title".ub_localized
         let titleLabel = NSLabel(.title)
         titleLabel.text = titleText
+        titleLabel.accessibilityTraits = [.header]
         stackView.addArrangedSubview(titleLabel)
         stackView.addSpacerView(NSPadding.large)
 
@@ -49,6 +50,7 @@ class NSMoreTestInformationPopupViewController: NSPopupViewController {
                 externalLinkButton.touchUpCallback = { [weak self] in
                     self?.openUrl(location.url)
                 }
+                externalLinkButton.accessibilityTraits = [.link]
                 stackView.addArrangedSubview(externalLinkButton)
                 if index != (locations.count - 1) {
                     stackView.addSpacerView(NSPadding.medium)

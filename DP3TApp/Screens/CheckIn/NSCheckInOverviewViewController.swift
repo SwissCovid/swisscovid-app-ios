@@ -32,6 +32,12 @@ class NSCheckInOverviewViewController: NSViewController {
         setupCallbacks()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIAccessibility.post(notification: .screenChanged, argument: currentStateView)
+    }
+
     private func setupView() {
         view.backgroundColor = .setColorsForTheme(lightColor: .ns_backgroundSecondary, darkColor: .ns_background)
 

@@ -21,6 +21,7 @@ class NSCheckInHomescreenModuleView: NSModuleBaseView {
                                                 image: UIImage(named: "ic-stopp"),
                                                 titleColor: .ns_purple,
                                                 subtextColor: .ns_text)
+        viewModel.isClickable = true
         viewModel.illustration = UIImage(named: "illu-checkin-ended")!
         viewModel.backgroundColor = .ns_purpleBackground
         viewModel.dynamicIconTintColor = .ns_purple

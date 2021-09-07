@@ -24,6 +24,7 @@ class NSReportsModuleView: NSModuleBaseView {
                                                 image: UIImage(named: "ic-check-round"),
                                                 titleColor: .ns_blue,
                                                 subtextColor: .ns_text)
+        viewModel.isClickable = true
         viewModel.illustration = UIImage(named: "illu-no-message")!
         viewModel.backgroundColor = .ns_blueBackground
         viewModel.dynamicIconTintColor = .ns_blue
@@ -36,6 +37,7 @@ class NSReportsModuleView: NSModuleBaseView {
                                                 image: UIImage(named: "ic-warning"),
                                                 titleColor: .white,
                                                 subtextColor: .white)
+        viewModel.isClickable = true
         viewModel.hasBubble = true
         viewModel.backgroundColor = .ns_blue
         viewModel.dynamicIconTintColor = .white
@@ -48,6 +50,7 @@ class NSReportsModuleView: NSModuleBaseView {
                                                 image: UIImage(named: "ic-info"),
                                                 titleColor: .white,
                                                 subtextColor: .white)
+        viewModel.isClickable = true
         viewModel.hasBubble = true
         viewModel.backgroundColor = .ns_purple
         viewModel.dynamicIconTintColor = .white
@@ -140,6 +143,7 @@ class NSReportsModuleView: NSModuleBaseView {
                 make.top.trailing.bottom.equalToSuperview().inset(NSPadding.small)
             }
             views.append(container)
+            dateLabel.accessibilityTraits = [.button]
 
         case .infected:
             views.append(infectedView)

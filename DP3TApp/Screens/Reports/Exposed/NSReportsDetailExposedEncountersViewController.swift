@@ -110,7 +110,9 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
+        let faqButton = NSButton.faqButton(color: .ns_blue)
+        faqButton.accessibilityTraits = [.link]
+        stackScrollView.addArrangedView(faqButton)
 
         stackScrollView.addSpacerView(NSPadding.large)
     }
@@ -123,7 +125,9 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         }
 
         notYetOpenedView?.isHidden = didOpenLeitfaden
+        notYetOpenedView?.accessibilityViewIsModal = didOpenLeitfaden
         alreadyOpenedView?.isHidden = !didOpenLeitfaden
+        alreadyOpenedView?.accessibilityViewIsModal = didOpenLeitfaden
 
         let quarantinePeriod: TimeInterval = 60 * 60 * 24 * 10
         if let latestExposure: Date = reports.map(\.timestamp).sorted(by: >).first {
@@ -147,16 +151,19 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
-        let text = "meldungen_detail_open_leitfaden_button".ub_localized
+        let text = "meldungen_detail_open_leitfaden_again_button".ub_localized
         leitfadenButton.title = text
         leitfadenButton.backgroundColor = .ns_blue
+        leitfadenButton.accessibilityTraits = [.link]
 
         leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.openLeitfaden()
         }
 
-        whiteBoxView.contentView.addArrangedSubview(addInfoButton(to: leitfadenButton, buttonText: text))
+        let sView = addInfoButton(to: leitfadenButton, buttonText: text)
+        sView.isAccessibilityElement = false
+        whiteBoxView.contentView.addArrangedSubview(sView)
         whiteBoxView.contentView.addSpacerView(40.0)
         addTextContentSection(to: whiteBoxView)
         addTestInfo(to: whiteBoxView)
@@ -266,6 +273,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             UIApplication.shared.open(url)
         }
 
+        popupButton.accessibilityTraits = [.link]
+
         moduleView.contentView.addArrangedView(popupButton)
         moduleView.contentView.addSpacerView(NSPadding.large)
     }
@@ -290,6 +299,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         titleLabel.text = title
         view.addArrangedView(titleLabel)
         view.addSpacerView(2 * NSPadding.small)
+        titleLabel.accessibilityTraits = [.header]
 
         let textLabel = NSLabel(.textLight)
         textLabel.text = text
@@ -323,6 +333,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             let popup = NSReportsLeitfadenInfoPopupViewController(buttonText: buttonText)
             strongSelf.present(popup, animated: true, completion: nil)
         }
+        stackView.accessibilityElements = [button, infoButton]
 
         return stackView
     }

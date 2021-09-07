@@ -109,8 +109,8 @@ extension DateFormatter {
 
     static func ub_accessibilityFromTimeToTime(from: Date, to: Date) -> String {
         return "checkout_from_to_date".ub_localized
-            .replacingOccurrences(of: "{DATE1}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: from), unitsStyle: .full) ?? "")
-            .replacingOccurrences(of: "{DATE2}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: to), unitsStyle: .full) ?? "")
+            .replacingOccurrences(of: "{DATE1}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: from), unitsStyle: .positional) ?? "")
+            .replacingOccurrences(of: "{DATE2}", with: DateComponentsFormatter.localizedString(from: Calendar.current.dateComponents([.hour, .minute], from: to), unitsStyle: .positional) ?? "")
     }
 }
 
