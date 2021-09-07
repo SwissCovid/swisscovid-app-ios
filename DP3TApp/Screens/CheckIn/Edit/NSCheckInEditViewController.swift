@@ -29,6 +29,7 @@ class NSCheckInEditViewController: NSViewController {
     private var checkIn: CheckIn?
 
     public var userWillCheckOutCallback: (() -> Void)?
+    public var userUpdatedCheckIn: (() -> Void)?
 
     private let checkoutButton = NSButton(title: "checkout_button_title".ub_localized, style: .normal(.ns_blue))
 
@@ -135,19 +136,26 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     static func selectedDatesAreOverlapping(startDate: Date, endDate: Date, excludeCheckIn: CheckIn?) -> Bool {
+        return overlappingCheckIns(startDate: startDate, endDate: endDate, excludeCheckIn: excludeCheckIn).count != 0
+    }
+
+    static func overlappingCheckIns(startDate: Date, endDate: Date, excludeCheckIn: CheckIn?) -> [CheckIn] {
         var diary = CheckInManager.shared.getDiary()
         diary = diary.filter { $0 != excludeCheckIn }
         let selectedTimeRange = startDate ... endDate
+
+        var overlappingCheckins: [CheckIn] = []
 
         for savedCheckIn in diary {
             if let checkOutTime = savedCheckIn.checkOutTime { // diary entries should always have checkOutTime
                 let savedTimeRange = savedCheckIn.checkInTime ... checkOutTime
                 if savedTimeRange.overlaps(selectedTimeRange) {
-                    return true
+                    overlappingCheckins.append(savedCheckIn)
                 }
             }
         }
-        return false
+
+        return overlappingCheckins
     }
 
     private func selectedTimeRangeExceedsMaximum() -> Bool {
@@ -173,10 +181,22 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     private func showOverlappingDatesAlert() {
-        let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+        if !isCurrentCheckIn {
+            let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+            present(alert, animated: true, completion: nil)
+        } else {
+            if let ci = checkIn {
+                let alert = NSOverlappingCheckinPopupViewController(checkIn: ci, startDate: startDate, endDate: endDate)
 
-        present(alert, animated: true, completion: nil)
+                alert.checkOutCallback = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.saveButtonTouched()
+                }
+
+                present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     private func showTimeRangeErrorAlert() {
@@ -222,13 +242,13 @@ class NSCheckInEditViewController: NSViewController {
             return
         }
 
-        guard !selectedDatesAreOverlapping() else {
-            showOverlappingDatesAlert()
+        guard !selectedTimeRangeExceedsMaximum() else {
+            showTimeRangeErrorAlert()
             return
         }
 
-        guard !selectedTimeRangeExceedsMaximum() else {
-            showTimeRangeErrorAlert()
+        guard !selectedDatesAreOverlapping() else {
+            showOverlappingDatesAlert()
             return
         }
 
@@ -242,6 +262,8 @@ class NSCheckInEditViewController: NSViewController {
 
         } else {
             updateCheckIn()
+
+            userUpdatedCheckIn?()
             dismiss(animated: true, completion: nil)
         }
     }
@@ -342,6 +364,8 @@ class NSCheckInEditViewController: NSViewController {
             guard let strongSelf = self else { return }
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
+
+            strongSelf.userUpdatedCheckIn?()
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
@@ -350,6 +374,8 @@ class NSCheckInEditViewController: NSViewController {
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
             CrowdNotifier.removeCheckin(with: checkIn.identifier)
+
+            strongSelf.userUpdatedCheckIn?()
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
