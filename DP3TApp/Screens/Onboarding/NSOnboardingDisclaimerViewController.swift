@@ -113,6 +113,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         privacyBody.superview?.isHidden = true
         privacyHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
+            self.privacyHeader.accessibilityValue = expanded ? "accessibility_expandable_box_expanded_state".ub_localized : "accessibility_expandable_box_reduced_state".ub_localized
             self.privacyBody.superview?.isHidden = !expanded
             UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.privacyBody : self.privacyHeader)
         }
@@ -136,6 +137,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         conditionOfUseBody.superview?.isHidden = true
         conditionOfUseHeader.didExpand = { [weak self] expanded in
             guard let self = self else { return }
+            self.conditionOfUseHeader.accessibilityValue = expanded ? "accessibility_expandable_box_expanded_state".ub_localized : "accessibility_expandable_box_reduced_state".ub_localized
             self.conditionOfUseBody.superview?.isHidden = !expanded
             UIAccessibility.post(notification: .screenChanged, argument: expanded ? self.conditionOfUseBody : self.conditionOfUseHeader)
         }
@@ -187,6 +189,7 @@ class NSOnboardingDisclaimerViewController: NSOnboardingContentViewController {
         info.text = infoText
 
         titleLabel.accessibilityTraits = [.header]
+        headingLabel.accessibilityTraits = [.header]
         warningTitle.text = "onboarding_disclaimer_warning_title".ub_localized
         warningBody.text = "onboarding_disclaimer_warning_body".ub_localized
     }

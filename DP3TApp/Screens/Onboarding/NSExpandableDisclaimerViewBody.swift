@@ -48,6 +48,7 @@ class NSExpandableDisclaimerViewBody: UIView {
 
         privacyButton.title = "onboarding_disclaimer_to_online_version_button".ub_localized
         privacyButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
+        privacyButton.accessibilityTraits = [.link]
 
         addSubview(textLabel)
         addSubview(privacyButton)

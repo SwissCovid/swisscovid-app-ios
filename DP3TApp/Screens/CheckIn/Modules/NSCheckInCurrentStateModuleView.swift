@@ -49,6 +49,7 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
             checkInEndedView.isHidden = true
+            headerTitle = checkedOutView.titleLabel.text?.replacingOccurrences(of: "\n", with: "")
         case let .checkIn(checkIn):
             checkedInView.isHidden = false
             checkedOutView.isHidden = true
