@@ -21,6 +21,8 @@ class NSCreatedEventsViewController: NSViewController {
         return NSInfoBoxView(viewModel: model)
     }()
 
+    private let additionalInfoLabel = NSLabel(.textLight, textAlignment: .center)
+
     override init() {
         super.init()
         NotificationCenter.default.addObserver(self, selector: #selector(updateTitle), name: .createdEventAdded, object: nil)
@@ -99,17 +101,27 @@ class NSCreatedEventsViewController: NSViewController {
 
         eventsModule.contentView.addSpacerView(NSPadding.medium + NSPadding.small)
         eventsModule.contentView.addArrangedView(eventsInfoBox)
+        eventsModule.contentView.addSpacerView(NSPadding.medium + NSPadding.small)
 
         eventsInfoBox.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
-        eventsModule.contentView.addSpacerView(NSPadding.large)
+
+        eventsModule.contentView.addSpacerView(NSPadding.medium)
 
         eventsModule.contentView.addArrangedView(generateButton)
         generateButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(-(NSPadding.medium + NSPadding.small))
         }
-        eventsModule.contentView.addSpacerView(10)
+
+        eventsModule.contentView.addSpacerView(NSPadding.medium)
+
+        // add additional label with hint to qr-code generation in web
+        eventsModule.contentView.addArrangedView(additionalInfoLabel)
+
+        additionalInfoLabel.snp.remakeConstraints { make in
+            make.left.right.equalToSuperview().inset(-NSPadding.small)
+        }
 
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -138,7 +150,14 @@ class NSCreatedEventsViewController: NSViewController {
         infoBoxModule.ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
 
         eventsInfoBox.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(NSPadding.medium)
+            make.top.left.right.equalToSuperview().inset(NSPadding.medium)
+        }
+
+        infoBoxModule.addSubview(additionalInfoLabel)
+        additionalInfoLabel.snp.remakeConstraints { make in
+            make.top.equalTo(eventsInfoBox.snp.bottom).offset(2.0 * NSPadding.medium)
+            make.bottom.equalToSuperview().inset(2.0 * NSPadding.medium)
+            make.left.right.equalToSuperview().inset(NSPadding.medium)
         }
 
         stackScrollView.addArrangedView(infoBoxModule)
@@ -157,6 +176,8 @@ class NSCreatedEventsViewController: NSViewController {
         let faqButton = NSButton.faqButton(color: .ns_blue)
         stackScrollView.addArrangedView(faqButton)
         stackScrollView.addSpacerView(NSPadding.large)
+
+        additionalInfoLabel.text = "checkin_generate_web_hint".ub_localized
     }
 
     deinit {
