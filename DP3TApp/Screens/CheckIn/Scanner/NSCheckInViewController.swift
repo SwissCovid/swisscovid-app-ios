@@ -157,6 +157,7 @@ extension NSCheckInViewController: NSQRScannerViewDelegate {
         errorContainer.alpha = 1.0
         qrErrorLabel.alpha = 1.0
         lampButton.alpha = 0.0
+        errorContainer.accessibilityViewIsModal = true
     }
 
     func qrScanningSucceededWithCode(_ str: String?) {

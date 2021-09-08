@@ -17,6 +17,12 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
 
     private let hideButton = NSButton(title: "remove_diary_warning_hide_button".ub_localized, style: .normal(.ns_blue))
 
+    private let modalTitle = NSLabel(.title)
+    private let hideTitle = NSLabel(.textBold, textColor: .ns_blue)
+    private let hideText = NSLabel(.textLight)
+    private let removeTitle = NSLabel(.textBold)
+    private let removeLabel = NSLabel(.textLight)
+
     private let venue: VenueInfo
     private let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
@@ -56,21 +62,24 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         setupContent()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        view.accessibilityElements = [modalTitle, hideTitle, hideText, hideButton, removeTitle, removeLabel, removeButton, closeButton]
+        UIAccessibility.post(notification: .screenChanged, argument: self)
+    }
+
     private func setupContent() {
-        let title = NSLabel(.title)
-        title.accessibilityTraits = .header
-        title.text = "remove_diary_warning_title".ub_localized
-        UIAccessibility.post(notification: .layoutChanged, argument: title)
-        stackView.addArrangedView(title, insets: insets)
+        modalTitle.accessibilityTraits = .header
+        modalTitle.text = "remove_diary_warning_title".ub_localized
+        stackView.addArrangedView(modalTitle, insets: insets)
         stackView.addSpacerView(4 * NSPadding.medium)
 
-        let hideTitle = NSLabel(.textBold, textColor: .ns_blue)
         hideTitle.accessibilityTraits = .header
         hideTitle.text = "remove_diary_warning_hide_title".ub_localized
         stackView.addArrangedView(hideTitle, insets: insets)
         stackView.addSpacerView(NSPadding.medium)
 
-        let hideText = NSLabel(.textLight)
         hideText.text = "remove_diary_warning_hide_text".ub_localized
         stackView.addArrangedView(hideText, insets: insets)
         stackView.addSpacerView(3 * NSPadding.medium)
@@ -79,13 +88,11 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         stackView.addArrangedView(hideButton, insets: insets)
         stackView.addSpacerView(4 * NSPadding.medium)
 
-        let removeTitle = NSLabel(.textBold)
         removeTitle.accessibilityTraits = .header
         removeTitle.text = "remove_diary_remove_now_title".ub_localized
         stackView.addArrangedView(removeTitle, insets: insets)
         stackView.addSpacerView(NSPadding.medium + NSPadding.small)
 
-        let removeLabel = NSLabel(.textLight)
         removeLabel.text = "remove_diary_remove_now_text".ub_localized
 
         stackView.addArrangedView(removeLabel, insets: insets)
@@ -94,7 +101,5 @@ class NSRemoveFromDiaryWarningViewController: NSPopupViewController {
         removeButton.title = "remove_diary_remove_now_button".ub_localized
         stackView.addArrangedView(removeButton, insets: insets)
         stackView.addSpacerView(NSPadding.large)
-
-        accessibilityElements = [title, hideTitle, hideText, removeTitle, removeLabel, hideButton, removeButton, closeButton]
     }
 }

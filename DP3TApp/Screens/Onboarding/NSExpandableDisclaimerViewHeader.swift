@@ -58,6 +58,7 @@ class NSExpandableDisclaimerViewHeader: UBButton {
         }
 
         accessibilityLabel = headerLabel.text
+        accessibilityValue = "accessibility_expandable_box_reduced_state".ub_localized
         accessibilityTraits = [.button, .header]
     }
 

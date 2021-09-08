@@ -54,6 +54,7 @@ class NSOverlappingCheckInView: UBButton {
         highlightCornerRadius = 3.0
         ub_addShadow(radius: 5.0, opacity: 0.17, xOffset: 0.0, yOffset: 0.0)
 
-        self.accessibilityElements = [self.diaryContentView]
+        isAccessibilityElement = true
+        accessibilityLabel = diaryContentView.accessibilityLabel
     }
 }

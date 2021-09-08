@@ -184,7 +184,7 @@ extension NSButton {
         }
 
         faqButton.accessibilityHint = "accessibility_faq_button_hint".ub_localized
-        faqButton.accessibilityTraits = [.button, .header]
+        faqButton.accessibilityTraits = [.link, .header]
         return view
     }
 }

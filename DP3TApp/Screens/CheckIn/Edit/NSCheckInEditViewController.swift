@@ -68,6 +68,17 @@ class NSCheckInEditViewController: NSViewController {
         update()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if isCurrentCheckIn {
+            accessibilityElements = [navigationController?.navigationBar as Any, venueView, startDateLabel, fromTimePickerControl, toTimePickerControl, checkoutButton, navigationController?.navigationBar as Any]
+        } else {
+            accessibilityElements = [navigationController?.navigationBar as Any, venueView, startDateLabel, fromTimePickerControl, toTimePickerControl, removeFromDiaryButton, navigationController?.navigationBar as Any]
+        }
+        UIAccessibility.post(notification: .screenChanged, argument: self)
+    }
+
     // MARK: - Update
 
     private func update(_ state: UIStateModel) {
@@ -378,6 +389,8 @@ class NSCheckInEditViewController: NSViewController {
             strongSelf.userUpdatedCheckIn?()
             strongSelf.dismiss(animated: true, completion: nil)
         }
+
+        controller.view.accessibilityViewIsModal = true
 
         present(controller, animated: true, completion: nil)
     }

@@ -32,7 +32,7 @@ class NSOnboardingInfoView: UIView {
         imgView.ub_setContentPriorityRequired()
 
         label.text = text
-        label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.")
+        label.accessibilityLabel = text.ub_localized.replacingOccurrences(of: "BAG", with: "B. A. G.").replacingOccurrences(of: "(BLE)", with: "(B. L. E.)")
 
         addSubview(imgView)
         addSubview(label)
