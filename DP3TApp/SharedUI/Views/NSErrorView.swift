@@ -85,6 +85,7 @@ class NSErrorView: UIView {
         imageView.image = model?.icon
         titleLabel.text = model?.title
         titleLabel.accessibilityLabel = "\("loading_view_error_title".ub_localized): \(titleLabel.text ?? "")"
+        titleLabel.accessibilityTraits = [.header]
         textLabel.text = model?.text
         actionButton.touchUpCallback = { [weak self] in
             self?.model?.action?(self)
