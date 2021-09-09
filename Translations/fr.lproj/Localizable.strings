@@ -1499,7 +1499,7 @@
 "error_title" = "Erreur";
 "qr_scanner_error_code_not_yet_valid" = "Le code QR n’est pas encore valable.";
 "qr_scanner_error_code_not_valid_anymore" = "Le code QR n’est plus valable.";
-"error_already_checked_in" = "";
+"error_already_checked_in" = "Vous êtes déjà enregistré à un autre endroit.";
 "error_update_text" = "Ce code QR n'est pas compatible avec la version installée de l’application. Veuillez mettre à jour l’application.";
 "error_update_title" = "Mise à jour requise";
 "error_action_update" = "Mettre à jour ";
@@ -1772,7 +1772,7 @@
 "covid_certificate_install_app" = "Installer l'application";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
-"web_generator_download_pdf_button" = "";
+"web_generator_download_pdf_button" = "Télécharger le PDF";
 
 /*Shown when the Datenschutzerklärung/Nutzungsbedingungen is reduced*/
 "accessibility_expandable_box_reduced_state" = "réduit";
@@ -1781,46 +1781,46 @@
 "accessibility_expandable_box_expanded_state" = "étendu";
 
 /*CheckIns: Titel in Popup bei überlappenden Check-Ins*/
-"checkin_overlap_popup_title" = "";
+"checkin_overlap_popup_title" = "Sauvegarde impossible";
 
 /*Check-Ins: Text bei Popup bei überlappenden Check-Ins, {CHECKIN} wird z.B. durch "Sitzungszimmer E318" ersetzt*/
-"checkin_overlap_popup_text" = "";
+"checkin_overlap_popup_text" = "Les heures que vous avez saisies pour {CHECKIN} sont en conflit avec d'autres enregistrements. Veuillez vérifier à nouveau vos données.";
 
 /*Check-Ins: Button bei Popup bei überlappenden Check-Ins*/
-"checkin_overlap_back_button" = "";
+"checkin_overlap_back_button" = "Retour";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in plural form*/
-"accessibility_reminder_option_hours_plural" = "hours";
+"accessibility_reminder_option_hours_plural" = "heures";
 
 /*This will be read by the screenreader instead of "'" (for the reminder options)*/
 "accessibility_reminder_option_minutes" = "minutes";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in singular form*/
-"accessibility_reminder_option_hour" = "hour";
+"accessibility_reminder_option_hour" = "heure";
 
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
-"checkin_overlap_popup_success_text" = "";
+"checkin_overlap_popup_success_text" = "Il n'y a plus de conflits pour les heures que vous avez saisies. Vous pouvez maintenant enregistrer votre départ pour {CHECKIN}.";
 
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
-"web_generator_success_title" = "";
+"web_generator_success_title" = "Code QR créé";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
-"web_generator_reset_button" = "";
+"web_generator_reset_button" = "Créer un nouveau code QR";
 
 /*Used by VoiceOver to explain what the info button in the navigation bar does*/
-"accessibility_info_button_app" = "";
+"accessibility_info_button_app" = "Plus d'informations sur l'application";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at CovidCodes does*/
-"accessibility_info_button_covidcode" = "";
+"accessibility_info_button_covidcode" = "Plus d'informations sur les codes COVID";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at Number of cases does*/
-"accessibility_info_button_numberofcases" = "";
+"accessibility_info_button_numberofcases" = "Plus d'informations sur le nombre de cas";
 
 /*Is read by the screenreader, when newly created QR-code is shown*/
-"accessibility_preview_qr_code_alternative_text" = "";
+"accessibility_preview_qr_code_alternative_text" = "Code QR créé";
 
 /*Check-In: Hinweis, dass QR-Codes auch im Web erstellt werden können*/
-"checkin_generate_web_hint" = "";
+"checkin_generate_web_hint" = "Vous pouvez également créer des codes QR sur qr.swisscovid.ch.";
 
 /*Check-In: Hinweis dass man sich beim vorherigen Ort zuerst auschecken muss.*/
-"error_already_checked_in_text" = "";
+"error_already_checked_in_text" = "Pour vous connecter à un nouvel endroit, vous devez d'abord enregistrer votre départ.";
