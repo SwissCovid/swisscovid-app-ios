@@ -67,6 +67,7 @@ class NSCovidCodesStatisticsModuleView: UIView {
 
     private func addContent() {
         title.text = "stats_covidcodes_title".ub_localized
+        title.accessibilityTraits = [.header]
 
         stackView.addArrangedView(title)
         stackView.addSpacerView(NSPadding.medium)

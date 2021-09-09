@@ -49,7 +49,7 @@ class NSCheckInCurrentStateModuleView: NSModuleBaseView {
             checkedInView.isHidden = true
             checkedOutView.isHidden = false
             checkInEndedView.isHidden = true
-            headerTitle = ("checkin_detail_checked_out_title".ub_localized).replacingOccurrences(of: "\n", with: "")
+            headerTitle = "checkin_detail_checked_out_title".ub_localized.replacingOccurrences(of: "\n", with: "")
             stackView.accessibilityTraits = [.header]
         case let .checkIn(checkIn):
             checkedInView.isHidden = false

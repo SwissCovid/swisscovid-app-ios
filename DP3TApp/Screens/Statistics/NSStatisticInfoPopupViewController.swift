@@ -30,6 +30,7 @@ class NSStatisticInfoPopupViewController: NSPopupViewController {
 
         let subtitle = NSLabel(.title)
         subtitle.text = type.subtitle
+        subtitle.accessibilityTraits = [.header]
 
         let insets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
 
