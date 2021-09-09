@@ -1465,7 +1465,7 @@
 "error_title" = "Hata";
 "qr_scanner_error_code_not_yet_valid" = "Kare kod henüz geçerli değil";
 "qr_scanner_error_code_not_valid_anymore" = "Kare kod artık geçerli değil";
-"error_already_checked_in" = "You are already checked in at another location.";
+"error_already_checked_in" = "Şu anda başka bir yerde Check-in yapmış durumdasınız.";
 "error_update_text" = "Bu kare kod artık kurulu olan uygulama sürümü ile uyumlu değil. Lütfen işleme devam edebilmek için uygulamayı güncelleyin.";
 "error_update_title" = "Güncelleme gerekiyor";
 "error_action_update" = "Şimdi güncelleyin";
@@ -1738,55 +1738,55 @@
 "covid_certificate_install_app" = "Uygulamayı kur";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
-"web_generator_download_pdf_button" = "Download PDF";
+"web_generator_download_pdf_button" = "PDF indir";
 
 /*Shown when the Datenschutzerklärung/Nutzungsbedingungen is reduced*/
-"accessibility_expandable_box_reduced_state" = "collapsed";
+"accessibility_expandable_box_reduced_state" = "azaltılmış";
 
 /*Shown when the Datenschutzerklärung/Nutzungsbedingungen is expanded*/
-"accessibility_expandable_box_expanded_state" = "expanded";
+"accessibility_expandable_box_expanded_state" = "genişletilmiş";
 
 /*CheckIns: Titel in Popup bei überlappenden Check-Ins*/
-"checkin_overlap_popup_title" = "Cannot save";
+"checkin_overlap_popup_title" = "Kaydedilemiyor";
 
 /*Check-Ins: Text bei Popup bei überlappenden Check-Ins, {CHECKIN} wird z.B. durch "Sitzungszimmer E318" ersetzt*/
-"checkin_overlap_popup_text" = "The times you selected for {CHECKIN} overlap with other check-ins. Please check your entries again.";
+"checkin_overlap_popup_text" = "Seçmiş olduğunuz saatler {CHECKIN} başka Ckeck-in'ler ile kesişiyor. Lütfen bilgilerinizi yeniden kontrol edin.";
 
 /*Check-Ins: Button bei Popup bei überlappenden Check-Ins*/
-"checkin_overlap_back_button" = "Back";
+"checkin_overlap_back_button" = "Geri";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in plural form*/
-"accessibility_reminder_option_hours_plural" = "Hours";
+"accessibility_reminder_option_hours_plural" = "saat";
 
 /*This will be read by the screenreader instead of "'" (for the reminder options)*/
-"accessibility_reminder_option_minutes" = "Minutes";
+"accessibility_reminder_option_minutes" = "dakika";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in singular form*/
-"accessibility_reminder_option_hour" = "Hour";
+"accessibility_reminder_option_hour" = "saat";
 
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
-"checkin_overlap_popup_success_text" = "There are no longer any conflicts for the time you entered. You can now check out of {CHECKIN}.";
+"checkin_overlap_popup_success_text" = "Girmiş olduğunuz süreler için artık çatışma yok. Şimdi {CHECKIN}'de çıkış yapabilirsiniz.";
 
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
-"web_generator_success_title" = "QR code generated";
+"web_generator_success_title" = "Kare kod oluşturuldu";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
-"web_generator_reset_button" = "Generate new QR code";
+"web_generator_reset_button" = "Yeni kare kod oluştur";
 
 /*Used by VoiceOver to explain what the info button in the navigation bar does*/
-"accessibility_info_button_app" = "More information on the app";
+"accessibility_info_button_app" = "Uygulama hakkında daha fazla bilgi";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at CovidCodes does*/
-"accessibility_info_button_covidcode" = "More information on Covidcodes";
+"accessibility_info_button_covidcode" = "Covid kodları hakkında daha fazla bilgi";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at Number of cases does*/
-"accessibility_info_button_numberofcases" = "More information on case numbers";
+"accessibility_info_button_numberofcases" = "Vaka sayıları hakkında daha fazla bilgi";
 
 /*Is read by the screenreader, when newly created QR-code is shown*/
-"accessibility_preview_qr_code_alternative_text" = "Generated QR code";
+"accessibility_preview_qr_code_alternative_text" = "Oluşturulan kare kod";
 
 /*Check-In: Hinweis, dass QR-Codes auch im Web erstellt werden können*/
-"checkin_generate_web_hint" = "Alternatively, you can also generate QR codes at qr.swisscovid.ch.";
+"checkin_generate_web_hint" = "Alternatif olarak kare kodları qr.swisscovid.ch sayfasında da oluşturabilirsiniz.";
 
 /*Check-In: Hinweis dass man sich beim vorherigen Ort zuerst auschecken muss.*/
-"error_already_checked_in_text" = "To check in to a new location, you first need to check out.";
+"error_already_checked_in_text" = "Yeni bir yere Check-in yapmak için öncelikle Check-out yapmanız gerekir.";

@@ -1466,7 +1466,7 @@
 "error_title" = "Error";
 "qr_scanner_error_code_not_yet_valid" = "Código QR aún no válido";
 "qr_scanner_error_code_not_valid_anymore" = "Código QR ya no es válido";
-"error_already_checked_in" = "You are already checked in at another location.";
+"error_already_checked_in" = "Está usted registrado mediante Check-in en otro lugar.";
 "error_update_text" = "Este código QR no es compatible con la versión instalada de la app. Actualice la aplicación para continuar.";
 "error_update_title" = "Se requiere actualización";
 "error_action_update" = "Actualizar ahora";
@@ -1739,55 +1739,55 @@
 "covid_certificate_install_app" = "Instalar la aplicación";
 
 /*Titel des Buttons, der das PDF herunterlädt*/
-"web_generator_download_pdf_button" = "Download PDF";
+"web_generator_download_pdf_button" = "Descargar PDF";
 
 /*Shown when the Datenschutzerklärung/Nutzungsbedingungen is reduced*/
-"accessibility_expandable_box_reduced_state" = "collapsed";
+"accessibility_expandable_box_reduced_state" = "visión reducida";
 
 /*Shown when the Datenschutzerklärung/Nutzungsbedingungen is expanded*/
-"accessibility_expandable_box_expanded_state" = "expanded";
+"accessibility_expandable_box_expanded_state" = "visión ampliada";
 
 /*CheckIns: Titel in Popup bei überlappenden Check-Ins*/
-"checkin_overlap_popup_title" = "Cannot save";
+"checkin_overlap_popup_title" = "No es posible guardar";
 
 /*Check-Ins: Text bei Popup bei überlappenden Check-Ins, {CHECKIN} wird z.B. durch "Sitzungszimmer E318" ersetzt*/
-"checkin_overlap_popup_text" = "The times you selected for {CHECKIN} overlap with other check-ins. Please check your entries again.";
+"checkin_overlap_popup_text" = "La hora seleccionada para {CHECKIN} coincide con otros Check-ins. Por favor, controle nuevamente las indicaciones.";
 
 /*Check-Ins: Button bei Popup bei überlappenden Check-Ins*/
-"checkin_overlap_back_button" = "Back";
+"checkin_overlap_back_button" = "Volver";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in plural form*/
-"accessibility_reminder_option_hours_plural" = "Hours";
+"accessibility_reminder_option_hours_plural" = "horas";
 
 /*This will be read by the screenreader instead of "'" (for the reminder options)*/
-"accessibility_reminder_option_minutes" = "Minutes";
+"accessibility_reminder_option_minutes" = "minutos";
 
 /*This will be read by the screenreader instead of "h" (for the reminder options), in singular form*/
-"accessibility_reminder_option_hour" = "Hour";
+"accessibility_reminder_option_hour" = "hora";
 
 /*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
-"checkin_overlap_popup_success_text" = "There are no longer any conflicts for the time you entered. You can now check out of {CHECKIN}.";
+"checkin_overlap_popup_success_text" = "No hay conflicto para la hora indicada. Puede usted salir de {CHECKIN}.";
 
 /*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
-"web_generator_success_title" = "QR code generated";
+"web_generator_success_title" = "Código QR ha sido generado";
 
 /*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
-"web_generator_reset_button" = "Generate new QR code";
+"web_generator_reset_button" = "Generar un nuevo código QR";
 
 /*Used by VoiceOver to explain what the info button in the navigation bar does*/
-"accessibility_info_button_app" = "More information on the app";
+"accessibility_info_button_app" = "Más información sobre la app";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at CovidCodes does*/
-"accessibility_info_button_covidcode" = "More information on Covidcodes";
+"accessibility_info_button_covidcode" = "Más información sobre el código Covid";
 
 /*Used by VoiceOver to explain what the info button in the Stats-Tab at Number of cases does*/
-"accessibility_info_button_numberofcases" = "More information on case numbers";
+"accessibility_info_button_numberofcases" = "Más información sobre el número de casos";
 
 /*Is read by the screenreader, when newly created QR-code is shown*/
-"accessibility_preview_qr_code_alternative_text" = "Generated QR code";
+"accessibility_preview_qr_code_alternative_text" = "Código QR generado";
 
 /*Check-In: Hinweis, dass QR-Codes auch im Web erstellt werden können*/
-"checkin_generate_web_hint" = "Alternatively, you can also generate QR codes at qr.swisscovid.ch.";
+"checkin_generate_web_hint" = "También puede usted generar códigos QR en qr.swisscovid.ch.";
 
 /*Check-In: Hinweis dass man sich beim vorherigen Ort zuerst auschecken muss.*/
-"error_already_checked_in_text" = "To check in to a new location, you first need to check out.";
+"error_already_checked_in_text" = "Para poder registrarse en una nueva localidad, tiene que primero darse de baja mediante Check-out. ";
