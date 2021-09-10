@@ -33,6 +33,9 @@ class ProblematicEventsManager {
     @UBOptionalUserDefault(key: "ch.admin.bag.dp3t.exposure.lastKeyBundleTag")
     private var lastKeyBundleTag: Int?
 
+    @UBOptionalUserDefault(key: "ch.admin.bag.dp3t.exposure.lastSync")
+    private var lastSync: Date?
+
     @UBUserDefault(key: "ch.admin.bag.dp3t.exposure.notifiedIds", defaultValue: [])
     private(set) var notifiedIds: [String]
 
@@ -53,6 +56,18 @@ class ProblematicEventsManager {
     public func removeExposure(_ exposure: ExposureEvent) {
         CrowdNotifier.removeExposure(exposure: exposure)
         exposureEvents = CrowdNotifier.getExposureEvents()
+    }
+
+    public func syncIfNeeded() {
+        var syncNeeded = true
+        if let date = lastSync,
+           Date(timeIntervalSinceNow: -2 * 60 * 60) < date {
+            syncNeeded = false
+        }
+
+        if syncNeeded {
+            sync { _, _ in }
+        }
     }
 
     public func sync(isInBackground: Bool = false, completion: @escaping (_ newData: Bool, _ needsNotification: Bool) -> Void) {
@@ -91,6 +106,9 @@ class ProblematicEventsManager {
             UIStateManager.shared.checkInError = nil
 
             strongSelf.lastSyncFailed = error != nil
+            if error == nil {
+                strongSelf.lastSync = Date()
+            }
 
             if let error = error {
                 UIStateManager.shared.checkInError = CheckInError.networkError(error: .unexpected(error: error))
