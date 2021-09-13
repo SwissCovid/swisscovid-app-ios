@@ -75,6 +75,7 @@ class NSCheckInContentView: UIView {
             imageView.ub_setContentPriorityRequired()
             stackView.addArrangedView(imageView)
             stackView.addSpacerView(2.0 * NSPadding.medium)
+            checkedInLabel.isAccessibilityElement = false
         }
 
         if style != .diary {

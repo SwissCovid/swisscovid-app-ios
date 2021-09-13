@@ -44,6 +44,8 @@ class NSPopupViewController: NSViewController {
         return button
     }()
 
+    let closeButtonWrapper = UIView()
+
     var tintColor: UIColor = .white {
         didSet {
             if showCloseButton {
@@ -141,7 +143,6 @@ class NSPopupViewController: NSViewController {
         stackView.distribution = .fill
 
         if showCloseButton {
-            let closeButtonWrapper = UIView()
             closeButtonWrapper.addSubview(closeButton)
             closeButton.snp.makeConstraints { make in
                 make.top.bottom.trailing.equalToSuperview()

@@ -14,7 +14,7 @@ import UIKit
 class NSCheckInDetailCheckedOutView: UIView {
     private let imageView = UIImageView(image: UIImage(named: "illu-checked-in"))
     private let superTitleLabel = NSLabel(.textBold, textColor: .ns_blue)
-    private let titleLabel = NSLabel(.title)
+    let titleLabel = NSLabel(.title)
     private let textLabel = NSLabel(.textLight)
 
     let scanQrCodeButton = NSButton(title: "scan_qr_code_button_title".ub_localized, style: .normal(.ns_blue))
@@ -38,6 +38,7 @@ class NSCheckInDetailCheckedOutView: UIView {
         }
 
         superTitleLabel.text = "module_checkins_title".ub_localized
+        superTitleLabel.isAccessibilityElement = false
         addSubview(superTitleLabel)
         superTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(20)
@@ -45,7 +46,7 @@ class NSCheckInDetailCheckedOutView: UIView {
         }
 
         titleLabel.text = "checkin_detail_checked_out_title".ub_localized
-        titleLabel.accessibilityTraits = .header
+        titleLabel.isAccessibilityElement = false
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(superTitleLabel.snp.bottom).offset(NSPadding.small)

@@ -49,6 +49,7 @@ class NSDiaryEmptyView: UIView {
         titleView.addSubview(titleLabel)
 
         titleLabel.text = "empty_diary_title".ub_localized
+        titleLabel.accessibilityTraits = [.header]
 
         titleLabel.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: NSPadding.medium, left: NSPadding.medium, bottom: 0, right: NSPadding.medium))

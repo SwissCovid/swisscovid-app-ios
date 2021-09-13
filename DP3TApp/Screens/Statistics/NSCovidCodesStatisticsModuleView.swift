@@ -55,7 +55,7 @@ class NSCovidCodesStatisticsModuleView: UIView {
         infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
         infoButton.tintColor = .ns_blue
         infoButton.highlightCornerRadius = 20
-        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
+        infoButton.accessibilityLabel = "accessibility_info_button_covidcode".ub_localized
         addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()
@@ -67,6 +67,7 @@ class NSCovidCodesStatisticsModuleView: UIView {
 
     private func addContent() {
         title.text = "stats_covidcodes_title".ub_localized
+        title.accessibilityTraits = [.header]
 
         stackView.addArrangedView(title)
         stackView.addSpacerView(NSPadding.medium)

@@ -40,6 +40,11 @@ class NSReminderControl: UIView {
             }
         })
 
+        // is the only way to set the accessibilityLabels of the segmentedControls
+        for i in 0 ..< self.options.count {
+            (segmentedControl.accessibilityElement(at: i) as? UIView)?.accessibilityLabel = self.options[i].accessibilityTitle
+        }
+
         super.init(frame: .zero)
         setup()
     }
@@ -76,6 +81,7 @@ class NSReminderControl: UIView {
                 self.options[s] = .custom(milliseconds: newInterval.milliseconds)
                 self.segmentedControl.setTitle(self.options[s].title,
                                                forSegmentAt: self.segmentedControl.selectedSegmentIndex)
+                (self.segmentedControl.accessibilityElement(at: self.segmentedControl.selectedSegmentIndex) as? UIView)?.accessibilityLabel = self.options[self.segmentedControl.selectedSegmentIndex].accessibilityTitle
                 self.changeCallback?(self.options[s])
             }
         }

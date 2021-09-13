@@ -48,11 +48,6 @@ extension CrowdNotifierError {
 }
 
 extension NSCheckInErrorViewModel {
-    static let alreadyCheckedIn = NSCheckInErrorViewModel(title: "error_title".ub_localized,
-                                                          text: "error_already_checked_in".ub_localized,
-                                                          buttonText: "ok_button".ub_localized,
-                                                          icon: UIImage(named: "ic-error"))
-
     static let invalidQrCode = NSCheckInErrorViewModel(title: "error_title".ub_localized,
                                                        text: "qrscanner_error".ub_localized,
                                                        buttonText: "ok_button".ub_localized,

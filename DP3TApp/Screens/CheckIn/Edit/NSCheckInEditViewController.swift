@@ -29,6 +29,7 @@ class NSCheckInEditViewController: NSViewController {
     private var checkIn: CheckIn?
 
     public var userWillCheckOutCallback: (() -> Void)?
+    public var userUpdatedCheckIn: (() -> Void)?
 
     private let checkoutButton = NSButton(title: "checkout_button_title".ub_localized, style: .normal(.ns_blue))
 
@@ -65,6 +66,17 @@ class NSCheckInEditViewController: NSViewController {
         setupTimeInteraction()
 
         update()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if isCurrentCheckIn {
+            accessibilityElements = [navigationController?.navigationBar as Any, venueView, startDateLabel, fromTimePickerControl, toTimePickerControl, checkoutButton, navigationController?.navigationBar as Any]
+        } else {
+            accessibilityElements = [navigationController?.navigationBar as Any, venueView, startDateLabel, fromTimePickerControl, toTimePickerControl, removeFromDiaryButton, navigationController?.navigationBar as Any]
+        }
+        UIAccessibility.post(notification: .screenChanged, argument: self)
     }
 
     // MARK: - Update
@@ -135,19 +147,26 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     static func selectedDatesAreOverlapping(startDate: Date, endDate: Date, excludeCheckIn: CheckIn?) -> Bool {
+        return overlappingCheckIns(startDate: startDate, endDate: endDate, excludeCheckIn: excludeCheckIn).count != 0
+    }
+
+    static func overlappingCheckIns(startDate: Date, endDate: Date, excludeCheckIn: CheckIn?) -> [CheckIn] {
         var diary = CheckInManager.shared.getDiary()
         diary = diary.filter { $0 != excludeCheckIn }
         let selectedTimeRange = startDate ... endDate
+
+        var overlappingCheckins: [CheckIn] = []
 
         for savedCheckIn in diary {
             if let checkOutTime = savedCheckIn.checkOutTime { // diary entries should always have checkOutTime
                 let savedTimeRange = savedCheckIn.checkInTime ... checkOutTime
                 if savedTimeRange.overlaps(selectedTimeRange) {
-                    return true
+                    overlappingCheckins.append(savedCheckIn)
                 }
             }
         }
-        return false
+
+        return overlappingCheckins
     }
 
     private func selectedTimeRangeExceedsMaximum() -> Bool {
@@ -173,10 +192,22 @@ class NSCheckInEditViewController: NSViewController {
     }
 
     private func showOverlappingDatesAlert() {
-        let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+        if !isCurrentCheckIn {
+            let alert = UIAlertController(title: "checkout_overlapping_alert_title".ub_localized, message: "checkout_overlapping_alert_description".ub_localized, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "android_button_ok".ub_localized, style: .default))
+            present(alert, animated: true, completion: nil)
+        } else {
+            if let ci = checkIn {
+                let alert = NSOverlappingCheckinPopupViewController(checkIn: ci, startDate: startDate, endDate: endDate)
 
-        present(alert, animated: true, completion: nil)
+                alert.checkOutCallback = { [weak self] in
+                    guard let strongSelf = self else { return }
+                    strongSelf.saveButtonTouched(delayDismiss: 0.15)
+                }
+
+                present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     private func showTimeRangeErrorAlert() {
@@ -200,7 +231,7 @@ class NSCheckInEditViewController: NSViewController {
     fileprivate func setupCheckout() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "cancel".ub_localized, style: .done, target: self, action: #selector(cancelButtonTouched))
         if !isCurrentCheckIn {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(saveButtonTouched))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "checkout_save_button_title".ub_localized, style: .done, target: self, action: #selector(save))
         }
 
         let attributes = [
@@ -216,14 +247,13 @@ class NSCheckInEditViewController: NSViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @objc private func saveButtonTouched() {
+    @objc private func save() {
+        saveButtonTouched()
+    }
+
+    private func saveButtonTouched(delayDismiss: CGFloat? = nil) {
         guard startDate < endDate else {
             showEndDateBeforeStartDateAlert()
-            return
-        }
-
-        guard !selectedDatesAreOverlapping() else {
-            showOverlappingDatesAlert()
             return
         }
 
@@ -232,16 +262,27 @@ class NSCheckInEditViewController: NSViewController {
             return
         }
 
+        guard !selectedDatesAreOverlapping() else {
+            showOverlappingDatesAlert()
+            return
+        }
+
+        // update checkin or checkout
         if isCurrentCheckIn {
             updateCheckIn()
-
             userWillCheckOutCallback?()
             CheckInManager.shared.checkOut()
-
-            dismiss(animated: true, completion: nil)
-
         } else {
             updateCheckIn()
+            userUpdatedCheckIn?()
+        }
+
+        // dismiss after saving/checkout
+        if let d = delayDismiss {
+            DispatchQueue.main.asyncAfter(deadline: .now() + TimeInterval(d)) {
+                self.dismiss(animated: true, completion: nil)
+            }
+        } else {
             dismiss(animated: true, completion: nil)
         }
     }
@@ -250,19 +291,11 @@ class NSCheckInEditViewController: NSViewController {
         fromTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.startDate = date
-            if strongSelf.startDate == strongSelf.endDate {
-                strongSelf.startDate = strongSelf.startDate.addingTimeInterval(-1 * .minute)
-                strongSelf.fromTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
-            }
         }
 
         toTimePickerControl.inputControl.timeChangedCallback = { [weak self] date in
             guard let strongSelf = self else { return }
             strongSelf.endDate = date
-            if strongSelf.startDate == strongSelf.endDate {
-                strongSelf.endDate = strongSelf.endDate.addingTimeInterval(.minute)
-                strongSelf.toTimePickerControl.inputControl.setDate(currentStart: strongSelf.startDate, currentEnd: strongSelf.endDate)
-            }
         }
     }
 
@@ -308,7 +341,7 @@ class NSCheckInEditViewController: NSViewController {
 
             checkoutButton.touchUpCallback = { [weak self] in
                 guard let strongSelf = self else { return }
-                strongSelf.saveButtonTouched()
+                strongSelf.save()
             }
 
             stackScrollView.addArrangedView(view)
@@ -342,6 +375,8 @@ class NSCheckInEditViewController: NSViewController {
             guard let strongSelf = self else { return }
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
+
+            strongSelf.userUpdatedCheckIn?()
             strongSelf.dismiss(animated: true, completion: nil)
         }
 
@@ -350,8 +385,12 @@ class NSCheckInEditViewController: NSViewController {
 
             CheckInManager.shared.hideFromDiary(identifier: checkIn.identifier)
             CrowdNotifier.removeCheckin(with: checkIn.identifier)
+
+            strongSelf.userUpdatedCheckIn?()
             strongSelf.dismiss(animated: true, completion: nil)
         }
+
+        controller.view.accessibilityViewIsModal = true
 
         present(controller, animated: true, completion: nil)
     }

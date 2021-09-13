@@ -48,6 +48,7 @@ class NSTravelDetailModuleView: UIView {
         }
 
         titleLabel.text = "travel_title".ub_localized
+        titleLabel.accessibilityTraits = [.header]
 
         stackView.addArrangedView(titleLabel, insets: UIEdgeInsets(top: NSPadding.small, left: NSPadding.small, bottom: 0, right: 0))
         stackView.addSpacerView(NSPadding.large)

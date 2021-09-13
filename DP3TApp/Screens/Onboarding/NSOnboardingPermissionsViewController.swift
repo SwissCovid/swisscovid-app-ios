@@ -30,7 +30,6 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
     private let type: NSOnboardingPermissionType
     private let showSkip: Bool
 
-    private var elements: [Any] = []
     init(type: NSOnboardingPermissionType, showSkip: Bool = true) {
         self.type = type
         self.showSkip = showSkip
@@ -40,12 +39,8 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        elements = [titleLabel, textLabel, goodToKnowContainer].compactMap { $0 }
         setupViews()
         fillViews()
-
-        elements.append(permissionButton)
-        accessibilityElements = elements.compactMap { $0 }
     }
 
     deinit {
@@ -80,6 +75,7 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
         }
 
         titleLabel.accessibilityTraits = [.header]
+        goodToKnowLabel.accessibilityTraits = [.header]
     }
 
     private func fillViews() {
@@ -98,8 +94,6 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
 
             let info1 = NSOnboardingInfoView(icon: UIImage(named: "ic-encrypted")!, text: "onboarding_gaen_info_text_1".ub_localized, title: "onboarding_gaen_info_title_1".ub_localized, dynamicIconTintColor: .ns_blue)
             let info2 = NSOnboardingInfoView(icon: UIImage(named: "ic-battery")!, text: "onboarding_gaen_info_text_2".ub_localized, title: "onboarding_gaen_info_title_2".ub_localized, dynamicIconTintColor: .ns_blue)
-            elements.append(info1)
-            elements.append(info2)
 
             goodToKnowContainer.addSubview(info1)
             goodToKnowContainer.addSubview(info2)
@@ -122,7 +116,6 @@ class NSOnboardingPermissionsViewController: NSOnboardingContentViewController {
             permissionButton.title = "onboarding_push_button".ub_localized
 
             let info = NSOnboardingInfoView(icon: UIImage(named: "ic-report")!, text: "onboarding_push_gtk_text1".ub_localized, title: "onboarding_push_gtk_title1".ub_localized, dynamicIconTintColor: .ns_blue)
-            elements.append(info)
             goodToKnowContainer.addSubview(info)
             info.snp.makeConstraints { make in
                 make.top.equalTo(goodToKnowLabel.snp.bottom).offset(2 * NSPadding.medium)

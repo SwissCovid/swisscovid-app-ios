@@ -111,7 +111,7 @@ class NSCovidStatisticsModuleView: UIView {
         infoButton.setImage(UIImage(named: "ic-info-outline")?.withRenderingMode(.alwaysTemplate), for: .normal)
         infoButton.tintColor = .ns_purple
         infoButton.highlightCornerRadius = 20
-        infoButton.accessibilityLabel = "accessibility_info_button".ub_localized
+        infoButton.accessibilityLabel = "accessibility_info_button_numberofcases".ub_localized
         addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
             make.top.trailing.equalToSuperview()

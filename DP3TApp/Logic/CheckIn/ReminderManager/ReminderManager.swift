@@ -45,6 +45,35 @@ enum ReminderOption: Equatable {
         }
     }
 
+    var accessibilityTitle: String {
+        switch self {
+        case .thirtyMinutes:
+            return title.replacingOccurrences(of: "'", with: "accessibility_reminder_option_minutes".ub_localized)
+        case .oneHour:
+            return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hour".ub_localized)
+        case .twoHours, .fourHours:
+            return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hours_plural".ub_localized)
+        case let .custom(ms):
+            if ms == -1 {
+                return "checkin_reminder_option_open_settings".ub_localized
+            } else if timeInterval < .hour {
+                return title.replacingOccurrences(of: "'", with: "accessibility_reminder_option_minutes".ub_localized)
+            } else if timeInterval.milliseconds % .hour == 0, Int((timeInterval / 3600).rounded()) == 1 {
+                return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hour".ub_localized)
+            } else if timeInterval.milliseconds % .hour == 0 {
+                return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hours_plural".ub_localized)
+            } else {
+                if (Int((timeInterval / 60).rounded()) / 60) == 1 {
+                    return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hour".ub_localized).replacingOccurrences(of: "'", with: "accessibility_reminder_option_minutes".ub_localized)
+                } else {
+                    return title.replacingOccurrences(of: "h", with: "accessibility_reminder_option_hours_plural".ub_localized).replacingOccurrences(of: "'", with: "accessibility_reminder_option_minutes".ub_localized)
+                }
+            }
+        default:
+            return title
+        }
+    }
+
     var timeInterval: TimeInterval {
         switch self {
         case .off:

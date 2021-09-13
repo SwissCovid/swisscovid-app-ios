@@ -29,4 +29,10 @@ public extension UIView {
         setContentCompressionResistancePriority(.required, for: .horizontal)
         setContentCompressionResistancePriority(.required, for: .vertical)
     }
+
+    func ub_setHidden(_ hidden: Bool) {
+        if isHidden != hidden {
+            isHidden = hidden
+        }
+    }
 }

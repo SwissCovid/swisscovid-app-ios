@@ -101,6 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             DatabaseSyncer.shared.syncDatabaseIfNeeded()
         }
 
+        ProblematicEventsManager.shared.syncIfNeeded()
+
         window?.makeKey()
         if TracingManager.shared.isSupported {
             window?.rootViewController = navigationController

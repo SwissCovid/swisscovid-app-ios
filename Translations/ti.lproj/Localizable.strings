@@ -1465,7 +1465,7 @@
 "error_title" = "ጉድለት";
 "qr_scanner_error_code_not_yet_valid" = "QR-ኮድ ገና ብቑዕ ኣይኮነን";
 "qr_scanner_error_code_not_valid_anymore" = "ብቕዓት QR-Code ሓሊፉ";
-"error_already_checked_in" = "ድሮ ኣቲኹም ዲኹም፧";
+"error_already_checked_in" = "ድሮ ኣብ ካልእ ቦታ ኣቲኻ ዘለኻ።";
 "error_update_text" = "እዚ ኮድ QR ምስቲ ዝተተከለ ቨርዝዮን ኤፕ ኣይሰርሕን እዩ። ነቲ ኤፕ ኣሕድስዎ ብኽብረትኩም መታን ክትቕጸሉ።";
 "error_update_title" = "ምምሕዳስ የድሊ";
 "error_action_update" = "ሕጂ ምምሕዳስ";
@@ -1736,3 +1736,57 @@
 
 /*Button um Covid Certificate App zu installieren*/
 "covid_certificate_install_app" = "ኤፕ ምትካል";
+
+/*Titel des Buttons, der das PDF herunterlädt*/
+"web_generator_download_pdf_button" = "PDF ኣራግፍ";
+
+/*Shown when the Datenschutzerklärung/Nutzungsbedingungen is reduced*/
+"accessibility_expandable_box_reduced_state" = "ዝነከየ";
+
+/*Shown when the Datenschutzerklärung/Nutzungsbedingungen is expanded*/
+"accessibility_expandable_box_expanded_state" = "ዝሰፍሐ";
+
+/*CheckIns: Titel in Popup bei überlappenden Check-Ins*/
+"checkin_overlap_popup_title" = "ክድግፍ ኣይክእልን ኢዩ";
+
+/*Check-Ins: Text bei Popup bei überlappenden Check-Ins, {CHECKIN} wird z.B. durch "Sitzungszimmer E318" ersetzt*/
+"checkin_overlap_popup_text" = "እቲ ዝመረጽካዮ ግዜታት ን {CHECKIN} ምስ ካልእ ቸክ-ኢን ተመሳቒሉ። ተ ብኽብረትካ ዝርዝር ሓበሬታኻ እንደገና ርአ።";
+
+/*Check-Ins: Button bei Popup bei überlappenden Check-Ins*/
+"checkin_overlap_back_button" = "ተመለስ";
+
+/*This will be read by the screenreader instead of "h" (for the reminder options), in plural form*/
+"accessibility_reminder_option_hours_plural" = "ሰዓታት";
+
+/*This will be read by the screenreader instead of "'" (for the reminder options)*/
+"accessibility_reminder_option_minutes" = "ደቓይቕ";
+
+/*This will be read by the screenreader instead of "h" (for the reminder options), in singular form*/
+"accessibility_reminder_option_hour" = "ሰዓት";
+
+/*Check-Ins: Text im Popup bei überlappenden Check-Ins, wenn keine Überlappungen mehr da sind. {CHECKIN} wird durch Raum ersetzt.*/
+"checkin_overlap_popup_success_text" = "ኣብቲ እትምዝገብሉ ግዜ ግጭት ኣይኪህሉን እዩ ። ሕጂ ኣብ {CHECKIN} ክትወጽእ ትኽእል ኢኻ።";
+
+/*Wird angezeigt, wenn der QR-Code erfolgreich erstellt wurde*/
+"web_generator_success_title" = "ኮድ QR ተፈጢሩ";
+
+/*Titel des Buttons, mit dem man einen neuen QR-Code erstellen kann*/
+"web_generator_reset_button" = "ሓድሽ ኮድ QR ምፍጣር";
+
+/*Used by VoiceOver to explain what the info button in the navigation bar does*/
+"accessibility_info_button_app" = "ብዛዕባ እቲ ኣፕሊኬሽን ዝያዳ ሓበሬታ";
+
+/*Used by VoiceOver to explain what the info button in the Stats-Tab at CovidCodes does*/
+"accessibility_info_button_covidcode" = "ብዛዕባ ኮቪድኮድ ዝያዳ ሓበሬታ";
+
+/*Used by VoiceOver to explain what the info button in the Stats-Tab at Number of cases does*/
+"accessibility_info_button_numberofcases" = "ብዛዕባ ብዝሒ ተለበድቲ ዝያዳ ሓበሬታ";
+
+/*Is read by the screenreader, when newly created QR-code is shown*/
+"accessibility_preview_qr_code_alternative_text" = "ዝተፈጥረ QR-ኮድ";
+
+/*Check-In: Hinweis, dass QR-Codes auch im Web erstellt werden können*/
+"checkin_generate_web_hint" = "ብዘይካዚ ኣብ qr.swisscovid.ch ኮድ QR ክትፈጥር ትኽእል ኢኻ።";
+
+/*Check-In: Hinweis dass man sich beim vorherigen Ort zuerst auschecken muss.*/
+"error_already_checked_in_text" = "ናብ ካልእ ቦታ ኽትከይድ እንተ ደሊኻ ፈለማ ክትወጽእ (ቸክ-ኣውት ክትገብር) ኣሎካ።";

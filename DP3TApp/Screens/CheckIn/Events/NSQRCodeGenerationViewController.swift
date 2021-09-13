@@ -75,6 +75,7 @@ class NSQRCodeGenerationViewController: NSViewController {
         stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(fillerView)
         stackScrollView.addArrangedView(createButton)
+
         stackScrollView.addSpacerView(NSPadding.large)
 
         createButton.isEnabled = false

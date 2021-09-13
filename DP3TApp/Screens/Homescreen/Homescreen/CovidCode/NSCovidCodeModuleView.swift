@@ -40,6 +40,8 @@ class NSCovidCodeModuleView: NSModuleBaseView {
             guard let strongSelf = self else { return }
             strongSelf.endIsolationModeCallback?()
         }
+
+        stackView.accessibilityTraits = [.header]
     }
 
     required init(coder _: NSCoder) {

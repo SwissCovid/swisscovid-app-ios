@@ -14,6 +14,7 @@ import UIKit
 class NSCreatedEventDetailViewController: NSViewController {
     private let stackScrollView = NSStackScrollView(axis: .vertical, spacing: 0)
 
+    private let qrContainer = UIView()
     private let qrCodeImageView = UIImageView()
 
     private let venueView = NSVenueView(large: true)
@@ -81,7 +82,13 @@ class NSCreatedEventDetailViewController: NSViewController {
             self.update(state)
         }
 
-        accessibilityElements = [dismissButton, venueView, checkInButton, shareButton, showPDFButton, deleteButton]
+        accessibilityElements = [venueView, qrContainer, checkInButton, shareButton, showPDFButton, deleteButton, dismissButton]
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIAccessibility.post(notification: .layoutChanged, argument: venueView)
     }
 
     private func update(_ state: UIStateModel) {
@@ -111,15 +118,17 @@ class NSCreatedEventDetailViewController: NSViewController {
         stackScrollView.addArrangedView(venueView)
         stackScrollView.addSpacerView(NSPadding.large)
 
-        let container = UIView()
-        stackScrollView.addArrangedView(container)
+        stackScrollView.addArrangedView(qrContainer)
 
         qrCodeImageView.layer.magnificationFilter = .nearest
-        container.addSubview(qrCodeImageView)
+        qrContainer.addSubview(qrCodeImageView)
         qrCodeImageView.snp.makeConstraints { make in
             make.top.bottom.centerX.equalToSuperview()
             make.size.equalTo(self.view.snp.width).offset(-3 * NSPadding.large)
         }
+
+        qrContainer.isAccessibilityElement = true
+        qrContainer.accessibilityLabel = "accessibility_preview_qr_code_alternative_text".ub_localized
 
         stackScrollView.addSpacerView(NSPadding.large + NSPadding.small)
 

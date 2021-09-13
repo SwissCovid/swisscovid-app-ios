@@ -41,6 +41,7 @@ class NSEncountersModuleView: NSModuleBaseView {
                                                 image: UIImage(named: "ic-check"),
                                                 titleColor: .ns_blue,
                                                 subtextColor: .ns_text)
+        viewModel.isClickable = true
         viewModel.illustration = UIImage(named: "illu-tracking-active")!
         viewModel.backgroundColor = .ns_blueBackground
         viewModel.dynamicIconTintColor = .ns_blue
@@ -77,6 +78,7 @@ class NSEncountersModuleView: NSModuleBaseView {
         }
         imageView.setContentHuggingPriority(UILayoutPriority(rawValue: 260), for: .horizontal)
         imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 760), for: .horizontal)
+        titleLabel.accessibilityTraits = [.button]
         return view
     }()
 
@@ -125,5 +127,7 @@ class NSEncountersModuleView: NSModuleBaseView {
         isEnabled = uiState != .tracingEnded
 
         stackView.layoutIfNeeded()
+        stackView.accessibilityTraits = uiState == .tracingEnded ? [.header] : [.header, .button]
+        UIAccessibility.post(notification: .screenChanged, argument: self)
     }
 }

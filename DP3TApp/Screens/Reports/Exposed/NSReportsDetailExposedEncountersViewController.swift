@@ -110,7 +110,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         stackScrollView.addSpacerView(3 * NSPadding.large)
 
-        stackScrollView.addArrangedView(NSButton.faqButton(color: .ns_blue))
+        let faqButton = NSButton.faqButton(color: .ns_blue)
+        stackScrollView.addArrangedView(faqButton)
 
         stackScrollView.addSpacerView(NSPadding.large)
     }
@@ -147,9 +148,10 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         whiteBoxView.contentView.addSpacerView(NSPadding.medium)
 
         let leitfadenButton = NSExternalLinkButton(style: .outlined(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .white)
-        let text = "meldungen_detail_open_leitfaden_button".ub_localized
+        let text = "meldungen_detail_open_leitfaden_again_button".ub_localized
         leitfadenButton.title = text
         leitfadenButton.backgroundColor = .ns_blue
+        leitfadenButton.accessibilityTraits = [.link]
 
         leitfadenButton.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -266,6 +268,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             UIApplication.shared.open(url)
         }
 
+        popupButton.accessibilityTraits = [.link]
+
         moduleView.contentView.addArrangedView(popupButton)
         moduleView.contentView.addSpacerView(NSPadding.large)
     }
@@ -290,6 +294,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         titleLabel.text = title
         view.addArrangedView(titleLabel)
         view.addSpacerView(2 * NSPadding.small)
+        titleLabel.accessibilityTraits = [.header]
 
         let textLabel = NSLabel(.textLight)
         textLabel.text = text
@@ -323,6 +328,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
             let popup = NSReportsLeitfadenInfoPopupViewController(buttonText: buttonText)
             strongSelf.present(popup, animated: true, completion: nil)
         }
+        stackView.shouldGroupAccessibilityChildren = false
+        stackView.accessibilityElements = [button, infoButton]
 
         return stackView
     }

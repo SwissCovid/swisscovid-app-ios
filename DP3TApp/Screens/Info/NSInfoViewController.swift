@@ -106,7 +106,7 @@ class NSInfoViewController: NSViewController {
         let image = UIImage(named: "ic-info-outline")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
         navigationItem.rightBarButtonItem?.tintColor = .ns_blue
-        navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button".ub_localized
+        navigationItem.rightBarButtonItem?.accessibilityLabel = "accessibility_info_button_app".ub_localized
 
         stackScrollView.addSpacerView(NSPadding.large)
 
