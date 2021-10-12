@@ -45,6 +45,10 @@ class ConfigResponseBody: UBCodable {
     public let testInformationUrls: LocalizedValue<String>?
     public let checkInUpdateNotificationEnabled: Bool?
 
+    public var showVaccinationInfo = false
+    public let vaccinationBookingCantons: LocalizedValue<[VaccinationBookingCanton]>
+    public let vaccinationBookingInfo: LocalizedValue<VaccinationBookingInfo>
+
     class InfoBox: UBCodable {
         let title, msg: String
         let url: URL?
@@ -83,5 +87,22 @@ class ConfigResponseBody: UBCodable {
     class TestLocation: Codable {
         let region: String
         let url: URL
+    }
+
+    class VaccinationHint: UBCodable {
+        let title: String
+        let text: String
+    }
+
+    class VaccinationBookingCanton: UBCodable {
+        let name: String
+        let iconIos: String
+        let linkUrl: String
+    }
+
+    class VaccinationBookingInfo: UBCodable {
+        let title: String
+        let text: String
+        let info: String
     }
 }
