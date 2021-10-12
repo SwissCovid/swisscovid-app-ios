@@ -1793,13 +1793,13 @@
 "error_already_checked_in_text" = "Para poder registrarse en una nueva localidad, tiene que primero darse de baja mediante Check-out. ";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Concertar una cita para la vacunación cerca de usted";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "Es posible vacunarse, por ejemplo, en los siguientes puntos cerca de usted:\n\n- en centros de vacunación específicos\n- en hospitales\n- en la consulta de su médico de familia\n- en farmacias que ofrecen la vacunación\n\nMuchos centros ofrecen la posibllidad de vacunarse sin cita previa.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "Se recomienda la vacuna contra la Covid-19 a las personas mayores de 12 años. La vacuna es gratuita.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1880,22 +1880,22 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Cita de vacunación";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "¿Aún no se ha vacunado?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Concierte su cita ahora";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
-"vaccination_booking_info_url" = "https://foph-coronavirus.ch/vaccination/";
+"vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
 
 /*Impfhinweis Detail: Link Titel unten*/
-"vaccination_more_information_title" = "More information about the COVID-19 vaccination";
+"vaccination_more_information_title" = "Más informaciones sobre la vacuna contra la Covid-19";
 
 /*Impf-Hinweis Screen: Titel Info Box*/
 "vaccination_booking_info_info_title" = "Observación";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Seleccione su cantón";

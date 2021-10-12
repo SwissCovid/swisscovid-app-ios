@@ -1826,13 +1826,13 @@
 "error_already_checked_in_text" = "Per fare il check-in altrove, devi prima fare il check-out.";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Prendi appuntamento per la vaccinazione nelle tue vicinanze";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "Per esempio potresti farti vaccinare in uno di questi luoghi nelle tue vicinanze:\n\n- in centri di vaccinazione specifici\n- negli ospedali\n- dal tuo medico di famiglia\n- nelle farmacie che vaccinano\n\nMolti di essi offrono anche vaccinazioni libere senza appuntamento.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "La vaccinazione anti-COVID-19 è raccomandata per le persone a partire dai 12 anni ed è gratuita.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1913,13 +1913,13 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Appuntamento per la vaccinazione";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "Non sei ancora vaccinato?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Prendi appuntamento ora";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
 "vaccination_booking_info_url" = "https://ufsp-coronavirus.ch/vaccinazione/";
@@ -1931,4 +1931,4 @@
 "vaccination_booking_info_info_title" = "Avvertenza";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Scegli il Cantone";

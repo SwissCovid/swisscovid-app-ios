@@ -1826,13 +1826,13 @@
 "error_already_checked_in_text" = "Pour vous connecter à un nouvel endroit, vous devez d'abord enregistrer votre départ.";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Prendre un rendez-vous de vaccination près de chez vous";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "La vaccination pourrait, par exemple, être proposée dans les lieux suivants situés à proximité de chez vous :\n\n- dans des centres de vaccination désignés\n- dans les hôpitaux\n- chez votre médecin de famille\n- dans les pharmacies\n\nIl est aussi possible de se faire vacciner sans rendez-vous dans de nombreux endroits.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "Gratuite, la vaccination contre le COVID-19 est recommandée pour les personnes dès 12 ans.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1913,13 +1913,13 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Rendez-vous de vaccination";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "Pas encore vacciné ?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Prendre un rendez-vous maintenant";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
 "vaccination_booking_info_url" = "https://foph-coronavirus.ch/vaccination/";
@@ -1931,4 +1931,4 @@
 "vaccination_booking_info_info_title" = "Information";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Sélectionnez votre canton";

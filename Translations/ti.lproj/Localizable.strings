@@ -1326,7 +1326,7 @@
 "germany_update_boarding_heading" = "ምምሕዳስ SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
-"reset_update_boarding" = "Reset update boarding";
+"reset_update_boarding" = "Update Boarding zurücksetzen";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
 "meldungen_detail_free_test_text" = "መርመራ ኮሮና ካብ 5ይ መዓልቲ ድሕሪ ዝተረኣየ ዕለት ርክብ ጠቓሚ እዩ ከምኡ'ውን ክግበር ይመርጽ።";
@@ -1792,13 +1792,13 @@
 "error_already_checked_in_text" = "ናብ ካልእ ቦታ ኽትከይድ እንተ ደሊኻ ፈለማ ክትወጽእ (ቸክ-ኣውት ክትገብር) ኣሎካ።";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "ቈጸራ ክታበት ኣብ ከባቢኻ መዝግብ";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "ንኣብነት ኣብዚ ኣብ ጥቓኻ ዘለ ቦታታት ክትኽተብ ትኽእል ኢኻ፥\n\n- ኣብ እተወሰነ ማእከላት ክታበት\n- ኣብ ሆስፒታላት\n- ምስ ዘቤታዊ ሓኪም\n- ኣብ ናይ ክታበት ፋርማሲታት\n\nኣብ መብዛሕትኦም ቦታታት ብዘይ ቈጸራ ብቐጥታ ክትኽተብ ትኽእል።";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "ክታበት ኮቪድ-19 ነቶም 12 ዓመትን ልዕሊኡን ዝዕድሚኦም ሰባት ተመኺሩ። እቲ ክታበት ነጻ እዩ።";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1879,22 +1879,22 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "ቆጸራ ክታበት";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "ገና ኣይተኸተብካን።";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "ሕጂ ቘጸራ ሓዝ";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
-"vaccination_booking_info_url" = "https://foph-coronavirus.ch/vaccination/";
+"vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
 
 /*Impfhinweis Detail: Link Titel unten*/
-"vaccination_more_information_title" = "More information about the COVID-19 vaccination";
+"vaccination_more_information_title" = "ብዛዕባ ክታበት ኮቪድ-19 ዝያዳ ሓበሬታ";
 
 /*Impf-Hinweis Screen: Titel Info Box*/
 "vaccination_booking_info_info_title" = "ምልክታ";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "ካንቶንካ ምረጽ";

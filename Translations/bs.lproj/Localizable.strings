@@ -1793,13 +1793,13 @@
 "error_already_checked_in_text" = "Kako biste se prijavili na nekom drugom mestu, najpre se morate odjaviti odavde.";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Zakazivanje termina za vakcinaciju u Vašoj blizini";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "Vakcinacija se može održati na primer na sledećim mestima u Vašoj blizini:\n\n- u specifičnim centrima za vakcinaciju\n- u bolnicama\n- kod Vašeg ličnog lekara ili lekarke\n- u vakcinišućim apotekama\n\nMnoga mesta nude i vakcinaciju bez zakazanog termina";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "Vakcina za Covid-19 preporučena je osobama starijim od 12 godina.  Vakcinacija je besplatna.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1880,22 +1880,22 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Termin za vakcinaciju";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "Još niste vakcinisani?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Zakažite sada termin ";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
-"vaccination_booking_info_url" = "https://foph-coronavirus.ch/vaccination/";
+"vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
 
 /*Impfhinweis Detail: Link Titel unten*/
-"vaccination_more_information_title" = "More information about the COVID-19 vaccination";
+"vaccination_more_information_title" = "Dalje informacije oko vakcine za Covid-19";
 
 /*Impf-Hinweis Screen: Titel Info Box*/
 "vaccination_booking_info_info_title" = "Napomena";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Izaberite svoj kanton";

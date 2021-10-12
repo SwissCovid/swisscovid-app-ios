@@ -1791,13 +1791,13 @@
 "error_already_checked_in_text" = "Per As registrar en in nov lieu stuais Vus l'emprim sortir dal vegl lieu.";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Reservar in termin da vaccinaziun en Vossa vischinanza";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "Ina vaccinaziun pudess per exempel vegnir fatga en quests lieus en Vossa vischinanza:\n\n- en centers da vaccinaziun specifics\n- en ospitals\n- tar Vossa media u tar Voss medi da chasa\n- en apotecas da vaccinaziun\n\nBlers lieus porschan er vaccinaziuns «walk-in» senza termin.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "La vaccinaziun cunter COVID-19 è recumandada per persunas a partir da 12 onns. La vaccinaziun è gratuita.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1878,13 +1878,13 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Termin da vaccinaziun";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "Anc betg vaccinada u vaccinà?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Reservar in termin ussa";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
 "vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
@@ -1896,4 +1896,4 @@
 "vaccination_booking_info_info_title" = "Infurmaziun";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Tscherni Voss chantun";

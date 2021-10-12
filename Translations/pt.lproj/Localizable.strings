@@ -1327,7 +1327,7 @@
 "germany_update_boarding_heading" = "Atualização SwissCovid";
 
 /*Debug Screen: Update-Boarding Reset Button*/
-"reset_update_boarding" = "Reset update boarding";
+"reset_update_boarding" = "Update Boarding zurücksetzen";
 
 /*Meldungen Detail Kostenloser Test Box Text*/
 "meldungen_detail_free_test_text" = "Um teste de corona é útil e recomendado a partir de 5 dias após a data de contacto indicada.";
@@ -1793,13 +1793,13 @@
 "error_already_checked_in_text" = "Para fazer check-in noutro lugar, primeiro é necessário fazer check-out.";
 
 /*vaccination booking info screen title*/
-"vaccination_booking_info_title" = "";
+"vaccination_booking_info_title" = "Agendar uma data para a vacinação na sua proximidade";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "";
+"vaccination_booking_info_text" = "Uma vacinação pode ser feita, por exemplo, nestes lugares na sua proximidade:\n\n- nos centros de vacinação específicos\n- nos hospitais\n- no seu médico de família\n- nas farmácias de vacinação\n\nMuitos lugares também oferecem vacinações Walk-in sem agendamento.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "";
+"vaccination_booking_info_info" = "A vacina contra a Covid-19 é recomendada para pessoas a partir dos 12 anos de idade. A vacinação é gratuita.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
@@ -1880,22 +1880,22 @@
 "vaccination_booking_zh_url" = "http://www.zh.ch/coronaimpfung";
 
 /*Impfen Hinweis Titel*/
-"vaccination_info_detail_title" = "";
+"vaccination_info_detail_title" = "Data agendada para a vacinação";
 
 /*Homescreen Impfhinweis: Titel*/
-"vaccination_info_homescreen_title" = "";
+"vaccination_info_homescreen_title" = "Ainda não foi vacinado?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "";
+"vaccination_info_homescreen_title_bold" = "Agende a data agora";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
-"vaccination_booking_info_url" = "https://foph-coronavirus.ch/vaccination/";
+"vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
 
 /*Impfhinweis Detail: Link Titel unten*/
-"vaccination_more_information_title" = "More information about the COVID-19 vaccination";
+"vaccination_more_information_title" = "Outras informações sobre a vacina contra a Covid-19";
 
 /*Impf-Hinweis Screen: Titel Info Box*/
 "vaccination_booking_info_info_title" = "Aviso";
 
 /*Impf-Hinweis Screen: Kanton Titel*/
-"vaccination_canton_title" = "";
+"vaccination_canton_title" = "Selecione o seu cantão";
