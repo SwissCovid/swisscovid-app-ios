@@ -14,7 +14,7 @@ class NSWhatToDoButton: UBButton {
     // MARK: - Views
 
     private let titleTextLabel = NSLabel(.textBold)
-    private let subtitleLabel = NSLabel(.textLight)
+    private let subtitleTextLabel = NSLabel(.textLight)
 
     private let leftImageView: UIImageView
 
@@ -28,7 +28,7 @@ class NSWhatToDoButton: UBButton {
         super.init()
 
         titleTextLabel.text = title
-        subtitleLabel.text = subtitle
+        subtitleTextLabel.text = subtitle
 
         setupBackground()
         setup()
@@ -57,14 +57,14 @@ class NSWhatToDoButton: UBButton {
 
         textViewContainer.isUserInteractionEnabled = false
         textViewContainer.addSubview(titleTextLabel)
-        textViewContainer.addSubview(subtitleLabel)
+        textViewContainer.addSubview(subtitleTextLabel)
 
-        subtitleLabel.snp.makeConstraints { make in
+        subtitleTextLabel.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
         }
 
         titleTextLabel.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(3.0)
+            make.top.equalTo(subtitleTextLabel.snp.bottom).offset(3.0)
             make.bottom.right.left.equalToSuperview()
         }
 
@@ -98,7 +98,7 @@ class NSWhatToDoButton: UBButton {
 extension NSWhatToDoButton {
     func setupAccessibility() {
         accessibilityTraits = [.button, .header]
-        accessibilityLabel = [subtitleLabel, titleTextLabel]
+        accessibilityLabel = [subtitleTextLabel, titleTextLabel]
             .compactMap { $0.text }
             .joined(separator: " ")
             .replacingOccurrences(of: "...", with: "")
