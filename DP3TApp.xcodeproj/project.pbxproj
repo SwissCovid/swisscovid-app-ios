@@ -324,6 +324,7 @@
 		6EB1D57A2636F7C000981571 /* CrowdNotifierSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D5792636F7C000981571 /* CrowdNotifierSDK */; };
 		6EB1D57C2636F7C000981571 /* libmcl in Frameworks */ = {isa = PBXBuildFile; productRef = 6EB1D57B2636F7C000981571 /* libmcl */; };
 		6EB9887927158F0B00DFFA17 /* NSVaccinationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB9887827158F0B00DFFA17 /* NSVaccinationInfoViewController.swift */; };
+		6EB9887B2716B5A400DFFA17 /* NSVaccinationInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EB9887827158F0B00DFFA17 /* NSVaccinationInfoViewController.swift */; };
 		6EC172CE26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
 		6EC172CF26411C0F002E27DB /* NSUpdateBoardingCheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC172CD26411BEF002E27DB /* NSUpdateBoardingCheckInViewController.swift */; };
 		6EC47BD42451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC47BD32451C3C2000D7686 /* NSReportsDetailExposedEncountersTitleHeader.swift */; };
@@ -2881,6 +2882,7 @@
 				DC16179E2638717800B56ADA /* NSQRCodeGenerationViewController.swift in Sources */,
 				242D223F245C4BD8005DAEA8 /* NSReportsModuleView.swift in Sources */,
 				242D2240245C4BD8005DAEA8 /* ConfigManager.swift in Sources */,
+				6EB9887B2716B5A400DFFA17 /* NSVaccinationInfoViewController.swift in Sources */,
 				242D2241245C4BD8005DAEA8 /* NSInformThankYouViewController.swift in Sources */,
 				242D2242245C4BD8005DAEA8 /* NSWhatToDoButton.swift in Sources */,
 				242D2243245C4BD8005DAEA8 /* Errors+Localized.swift in Sources */,
