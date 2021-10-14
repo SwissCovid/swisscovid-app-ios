@@ -57,6 +57,10 @@ class NSExternalLinkButton: UBButton {
         buttonSize = size
         super.init()
         updateLayout()
+
+        if self.linkType == .url {
+            accessibilityTraits = [.link, .button]
+        }
     }
 
     private func updateLayout() {

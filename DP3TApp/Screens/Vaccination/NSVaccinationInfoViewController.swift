@@ -113,6 +113,7 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
         for c in config?.vaccinationBookingCantons.value ?? [] {
             let externalLink = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .ns_blue)
             externalLink.title = c.name
+            externalLink.titleLabel?.numberOfLines = 1
             externalLink.touchUpCallback = {
                 guard let url = URL(string: c.linkUrl) else { return }
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
