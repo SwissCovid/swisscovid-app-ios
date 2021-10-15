@@ -15,6 +15,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()
+    private let vaccinationInfoView = NSWhatToDoButton(title: "vaccination_info_homescreen_title".ub_localized, subtitle: "vaccination_info_homescreen_title_bold".ub_localized, image: UIImage(named: "illu-impfung-doc"))
+
+    private let vaccinationContainerView = UIView()
+
     private let handshakesModuleView = NSEncountersModuleView()
     private let reportsView = NSReportsModuleView()
     private let checkInView = NSCheckInHomescreenModuleView()
@@ -58,6 +62,11 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             guard let strongSelf = self else { return }
             strongSelf.updateState(state)
         })
+
+        vaccinationInfoView.touchUpCallback = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.presentVaccinationInfo()
+        }
 
         handshakesModuleView.touchUpCallback = { [weak self] in
             guard let strongSelf = self else { return }
@@ -155,8 +164,16 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         stackScrollView.addSpacerView(NSPadding.large)
 
         stackScrollView.addArrangedView(checkInView)
-        stackScrollView.addSpacerView(NSPadding.large)
 
+        vaccinationContainerView.addSubview(vaccinationInfoView)
+        vaccinationInfoView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(NSPadding.large + NSPadding.medium + NSPadding.small)
+            make.left.right.bottom.equalToSuperview()
+        }
+
+        stackScrollView.addArrangedView(vaccinationContainerView)
+
+        stackScrollView.addSpacerView(NSPadding.large)
         stackScrollView.addArrangedView(handshakesModuleView)
         stackScrollView.addSpacerView(NSPadding.large)
 
@@ -221,6 +238,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         checkInView.alpha = 0
         reportsView.alpha = 0
         covidCodeView.alpha = 0
+        vaccinationContainerView.alpha = 0
 
         finishTransition = {
             UIView.animate(withDuration: 0.8, delay: 0.0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.0, options: [.allowUserInteraction], animations: {
@@ -236,7 +254,8 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.65, options: [.allowUserInteraction], animations: {
-                self.handshakesModuleView.alpha = 1
+                self.handshakesModuleView.alpha = 1.0
+                self.vaccinationContainerView.alpha = 1.0
             }, completion: nil)
 
             UIView.animate(withDuration: 0.3, delay: 0.85, options: [.allowUserInteraction], animations: {
@@ -261,6 +280,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
         appTitleView.uiState = state.homescreen.header
         handshakesModuleView.uiState = state.homescreen.encounters
         reportsView.uiState = state.homescreen
+        vaccinationContainerView.isHidden = !(ConfigManager.currentConfig?.showVaccinationInfo ?? false)
 
         if let hearingImpairedText = state.homescreen.infoBox?.hearingImpairedInfo {
             infoBoxView.hearingImpairedButtonTouched = { [weak self] in
@@ -343,6 +363,10 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
 
     @objc private func infoButtonPressed() {
         present(NSNavigationController(rootViewController: NSAboutViewController()), animated: true)
+    }
+
+    private func presentVaccinationInfo() {
+        navigationController?.pushViewController(NSVaccinationInfoViewController(), animated: true)
     }
 
     #if ENABLE_LOGGING
