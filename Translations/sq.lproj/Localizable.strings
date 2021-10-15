@@ -1796,7 +1796,7 @@
 "vaccination_booking_info_title" = "Rezervoni një takim për vaksinim pranë jush";
 
 /*vaccination booking info screen text*/
-"vaccination_booking_info_text" = "\"Vaksinimi mund të bëhet pranë jush, për shembull:\n\n- në qendrat specifike të vaksinimit\n- në spitale\n- nga mjeku juaj i familjes\n- në farmacitë e vaksinimit\n\nShumë vende gjithashtu ofrojnë vaksinime pa takim.";
+"vaccination_booking_info_text" = "Vaksinimi mund të bëhet pranë jush, për shembull:\n\n- në qendrat specifike të vaksinimit\n- në spitale\n- nga mjeku juaj i familjes\n- në farmacitë e vaksinimit\n\nShumë vende gjithashtu ofrojnë vaksinime pa takim.";
 
 /*vaccination booking info screen info box at bottom*/
 "vaccination_booking_info_info" = "Vaksinimi kundër Covid-19 rekomandohet për njerëzit e moshës 12 vjeç e lart. Vaksinimi është falas.";
