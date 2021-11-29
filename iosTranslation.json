@@ -1,5 +1,6 @@
 {
-	"platform": "POEditor",
+	"translationPlatform": "POEditor",
+	"targetPlatform": "iOS",
 	"projectID": "334421",
 	"translationDirectory": "Translations",
 	"excludedLanguages": [],

@@ -1884,7 +1884,7 @@
 "vaccination_info_homescreen_title" = "Još niste vakcinisani?";
 
 /*Homescreen Impfhinweis: Titel fett*/
-"vaccination_info_homescreen_title_bold" = "Zakažite sada termin ";
+"vaccination_info_homescreen_title_bold" = "Zakažite sada termin";
 
 /*Impfhinweis Detail: URL unten Weitere Informationen*/
 "vaccination_booking_info_url" = "https://bag-coronavirus.ch/impfung/";
@@ -1897,3 +1897,13 @@
 
 /*Impf-Hinweis Screen: Kanton Titel*/
 "vaccination_canton_title" = "Izaberite svoj kanton";
+
+/*vaccination booking  screen info about Impf-Check (impf-check.ch)*/
+"vaccination_impf_check_info_text" = "Provera vakcinisanja protiv Covida-19 pruža informacije o prvim i booster dozama i navigira Vas do odgovarajućeg kontakt mesta u Vašem kantonu.";
+
+/*button title for link to impf-check.ch*/
+"vaccination_impf_check_action" = "Na proveru vakcinisanja";
+
+/*URL to ImpfCheck*/
+"vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
+"vaccination_impf_check_title" = "Zakažite sada termin";

@@ -2638,7 +2638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if ! [ -x \"$(command -v iOSTranslations)\" ]; then\n  echo 'Error: iOSTranslation not installed. Download it from https://bitbucket.org/ubique-innovation/iostranslations/' >&2\n  exit 1\nfi\necho \"Running Translation Script. This will take a few seconds...\"\npwd\niOSTranslations\n";
+			shellScript = "PATH=${PATH}:/usr/local/bin:/opt/homebrew/bin # Pick up iOSTranslations from Homebrew\n\nif ! [ -x \"$(command -v iOSTranslations)\" ]; then\n  echo 'Error: iOSTranslation not installed. Download it from https://bitbucket.org/ubique-innovation/iostranslations/' >&2\n  exit 1\nfi\necho \"Running Translation Script. This will take a few seconds...\"\npwd\niOSTranslations\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

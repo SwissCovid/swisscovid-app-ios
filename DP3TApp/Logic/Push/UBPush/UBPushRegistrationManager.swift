@@ -117,7 +117,7 @@ open class UBPushRegistrationManager {
     open var pushRegistrationRequest: URLRequest? {
         guard
             let pushToken = UBPushLocalStorage.shared.pushToken,
-            let registrationUrl = self.registrationUrl else {
+            let registrationUrl = registrationUrl else {
             return nil
         }
 

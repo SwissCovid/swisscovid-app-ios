@@ -1898,3 +1898,13 @@
 
 /*Impf-Hinweis Screen: Kanton Titel*/
 "vaccination_canton_title" = "ካንቶንካ ምረጽ";
+
+/*vaccination booking  screen info about Impf-Check (impf-check.ch)*/
+"vaccination_impf_check_info_text" = "እቲ ኮቪድ-19 ዚብሃል መርመራ ብዛዕባ እቲ ኣብ ፈለማ እተገብረ ክታበት ሓበሬታ ይህብ፣ ናብቲ ኣብ ካንቶንካ (ክፍለ-ሃገርካ/ኪ) ዚርከብ ግቡእ ኣድራሻ ድማ ይወስደካ።";
+
+/*button title for link to impf-check.ch*/
+"vaccination_impf_check_action" = "ናብ ቸክ/ፈተና ክታበት";
+
+/*URL to ImpfCheck*/
+"vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
+"vaccination_impf_check_title" = "ሕጂ ቘጸራ ሓዝ";
