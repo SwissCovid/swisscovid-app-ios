@@ -1898,3 +1898,13 @@
 
 /*Impf-Hinweis Screen: Kanton Titel*/
 "vaccination_canton_title" = "Kantonunuzu seçin";
+
+/*vaccination booking  screen info about Impf-Check (impf-check.ch)*/
+"vaccination_impf_check_info_text" = "Covid-19 aşı kontrolü, ilk aşı ve güçlendirici dozlarla ilgili bilgi verir ve sizi kantonunuzdaki yetkili kuruma yönlendirir.";
+
+/*button title for link to impf-check.ch*/
+"vaccination_impf_check_action" = "Aşı kontrolüne git";
+
+/*URL to ImpfCheck*/
+"vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
+"vaccination_impf_check_title" = "Hemen randevu alın";

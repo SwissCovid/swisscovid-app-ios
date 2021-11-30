@@ -136,7 +136,7 @@ class NSCheckInEditViewController: NSViewController {
         if isCurrentCheckIn {
             CheckInManager.shared.currentCheckIn = checkIn
         } else {
-            if let checkIn = self.checkIn {
+            if let checkIn = checkIn {
                 CheckInManager.shared.updateCheckIn(checkIn: checkIn)
             }
         }
@@ -175,7 +175,7 @@ class NSCheckInEditViewController: NSViewController {
            let checkIn = CheckInManager.shared.currentCheckIn {
             let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             return timeRange > automaticCheckout
-        } else if let checkIn = self.checkIn {
+        } else if let checkIn = checkIn {
             let automaticCheckout = checkIn.venue.automaticCheckoutTimeInterval ?? NSLocalPush.defaultAutomaticCheckoutTimeInterval
             return timeRange > automaticCheckout
         }
@@ -368,7 +368,7 @@ class NSCheckInEditViewController: NSViewController {
     // MARK: - Show remove warning
 
     private func showRemoveWarning() {
-        guard let checkIn = self.checkIn else { return }
+        guard let checkIn = checkIn else { return }
 
         let controller = NSRemoveFromDiaryWarningViewController(venueInfo: checkIn.venue)
         controller.hideCallback = { [weak self] in

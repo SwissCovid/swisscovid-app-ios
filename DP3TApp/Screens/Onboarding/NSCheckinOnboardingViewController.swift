@@ -86,7 +86,7 @@ class NSCheckinOnboardingViewController: NSOnboardingBaseViewController {
     // MARK: - Checkin
 
     private func checkin() {
-        guard let url = self.url else { return }
+        guard let url = url else { return }
 
         let result = CrowdNotifier.getVenueInfo(qrCode: url, baseUrl: Environment.current.qrCodeBaseUrl)
 

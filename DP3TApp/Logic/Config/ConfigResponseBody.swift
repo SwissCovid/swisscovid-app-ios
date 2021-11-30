@@ -46,7 +46,6 @@ class ConfigResponseBody: UBCodable {
     public let checkInUpdateNotificationEnabled: Bool?
 
     public var showVaccinationInfo = false
-    public let vaccinationBookingCantons: LocalizedValue<[VaccinationBookingCanton]>
     public let vaccinationBookingInfo: LocalizedValue<VaccinationBookingInfo>
 
     class InfoBox: UBCodable {
@@ -94,15 +93,22 @@ class ConfigResponseBody: UBCodable {
         let text: String
     }
 
-    class VaccinationBookingCanton: UBCodable {
-        let name: String
-        let iconIos: String
-        let linkUrl: String
-    }
-
     class VaccinationBookingInfo: UBCodable {
         let title: String
         let text: String
         let info: String
+        let impfcheckTitle: String?
+        let impfcheckText: String?
+        let impfcheckButton: String?
+        let impfcheckUrl: String?
+    }
+}
+
+extension ConfigResponseBody.VaccinationBookingInfo {
+    var hasAllImpfCheckValues: Bool {
+        return impfcheckTitle != nil
+            && impfcheckText != nil
+            && impfcheckButton != nil
+            && impfcheckUrl != nil
     }
 }

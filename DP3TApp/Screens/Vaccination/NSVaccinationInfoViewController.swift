@@ -38,6 +38,7 @@ class NSVaccinationInfoViewController: NSViewController {
     private func setup() {
         let stackScrollView = NSStackScrollView()
         stackScrollView.addArrangedView(contentView)
+        stackScrollView.addSpacerView(NSPadding.medium + NSPadding.small)
         stackScrollView.addArrangedView(additionalExternalLink())
 
         stackScrollView.stackView.layoutMargins = UIEdgeInsets(top: 2.0 * NSPadding.medium + 2.0, left: NSPadding.medium + NSPadding.small, bottom: 2.0 * NSPadding.medium, right: NSPadding.medium + NSPadding.small)
@@ -74,8 +75,9 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
     private let config = ConfigManager.currentConfig
 
     init() {
-        super.init(title: "vaccination_info_homescreen_title".ub_localized,
-                   subtitle: config?.vaccinationBookingInfo.value?.title ?? "vaccination_booking_info_title".ub_localized, text: config?.vaccinationBookingInfo.value?.text ?? "vaccination_booking_info_text".ub_localized,
+        super.init(title: config?.vaccinationBookingInfo.value?.title ?? "vaccination_booking_info_title".ub_localized,
+                   subtitle: "vaccination_info_homescreen_title".ub_localized,
+                   text: config?.vaccinationBookingInfo.value?.text ?? "vaccination_booking_info_text".ub_localized,
                    image: nil,
                    subtitleColor: .ns_lightBlue,
                    bottomPadding: true)
@@ -90,8 +92,41 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
+        if config?.vaccinationBookingInfo.value?.hasAllImpfCheckValues ?? false {
+            let bookNowLabel = NSLabel(.textBold)
+            bookNowLabel.text = config?.vaccinationBookingInfo.value?.impfcheckTitle ?? "vaccination_impf_check_title".ub_localized
+
+            contentView.addSpacerView(NSPadding.large + NSPadding.small)
+            contentView.addArrangedView(bookNowLabel, insets: .zero)
+
+            let bookNowTextLabel = NSLabel(.textLight)
+            bookNowTextLabel.text = config?.vaccinationBookingInfo.value?.impfcheckText ?? "vaccination_impf_check_info_text".ub_localized
+
+            contentView.addSpacerView(NSPadding.medium + 2.0)
+            contentView.addArrangedView(bookNowTextLabel, insets: .zero)
+
+            let button = NSButton(title: config?.vaccinationBookingInfo.value?.impfcheckButton ?? "vaccination_impf_check_action".ub_localized, style: .normal(.ns_blue))
+            button.setImage(UIImage(named: "ic-link-external"), for: .normal)
+            button.touchUpCallback = { [weak self] in
+                self?.vaccinationCheckButtonPressed()
+            }
+
+            contentView.addSpacerView(NSPadding.large)
+            let buttonWrapper = UIView()
+            buttonWrapper.addSubview(button)
+            button.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
+            }
+            contentView.addArrangedView(buttonWrapper, insets: .zero)
+        }
+
         let infoBoxView: NSInfoBoxView = {
-            var viewModel = NSInfoBoxView.ViewModel(title: "vaccination_booking_info_info_title".ub_localized, subText: config?.vaccinationBookingInfo.value?.info ?? "vaccination_booking_info_info".ub_localized, image: UIImage(named: "ic-info"), titleColor: .ns_blue, subtextColor: .ns_blue)
+            var viewModel = NSInfoBoxView.ViewModel(title: "vaccination_booking_info_info_title".ub_localized,
+                                                    subText: config?.vaccinationBookingInfo.value?.info ?? "vaccination_booking_info_info".ub_localized,
+                                                    image: UIImage(named: "ic-info"),
+                                                    titleColor: .ns_blue,
+                                                    subtextColor: .ns_blue)
 
             viewModel.titleLabelType = .textBold
             viewModel.dynamicIconTintColor = .ns_blue
@@ -99,27 +134,20 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
             return .init(viewModel: viewModel)
         }()
 
-        contentView.addSpacerView(2.0 * NSPadding.medium)
-
-        contentView.addArrangedView(infoBoxView, insets: UIEdgeInsets(top: 0.0, left: -NSPadding.medium, bottom: 0.0, right: -NSPadding.medium - NSPadding.small))
-
-        let cantonLabel = NSLabel(.textBold)
-        cantonLabel.text = "vaccination_canton_title".ub_localized
-
         contentView.addSpacerView(NSPadding.large + NSPadding.small)
-        contentView.addArrangedSubview(cantonLabel)
-        contentView.addSpacerView(NSPadding.medium + 2.0)
+        let infoWrapper = UIView()
+        infoWrapper.addSubview(infoBoxView)
+        infoBoxView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
+        }
+        contentView.addArrangedView(infoWrapper, insets: .zero)
+    }
 
-        for c in config?.vaccinationBookingCantons.value ?? [] {
-            let externalLink = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url, buttonTintColor: .ns_blue)
-            externalLink.title = c.name
-            externalLink.titleLabel?.numberOfLines = 1
-            externalLink.touchUpCallback = {
-                guard let url = URL(string: c.linkUrl) else { return }
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-
-            contentView.addArrangedView(externalLink, insets: UIEdgeInsets(top: 0.0, left: -NSPadding.small, bottom: 0.0, right: -NSPadding.small))
+    private func vaccinationCheckButtonPressed() {
+        let urlString = config?.vaccinationBookingInfo.value?.impfcheckUrl ?? "vaccination_impf_check_url".ub_localized
+        if let url = URL(string: urlString) {
+            UIApplication.shared.open(url)
         }
     }
 }

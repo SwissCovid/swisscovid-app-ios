@@ -1899,3 +1899,13 @@
 
 /*Impf-Hinweis Screen: Kanton Titel*/
 "vaccination_canton_title" = "Seleccione su cantón";
+
+/*vaccination booking  screen info about Impf-Check (impf-check.ch)*/
+"vaccination_impf_check_info_text" = "El  Vac-Check Covid-19 le informa sobre la  vacunación inicial y  la vacuna de refuerzo, y le indica cuál es la oficina competente en su cantón.";
+
+/*button title for link to impf-check.ch*/
+"vaccination_impf_check_action" = "Ir al Vac-Check";
+
+/*URL to ImpfCheck*/
+"vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
+"vaccination_impf_check_title" = "Concierte su cita ahora";

@@ -79,7 +79,7 @@ class NSCheckInViewController: NSViewController {
     // MARK: - Setup
 
     private func setupQRView() {
-        guard let qrView = self.qrView else { return }
+        guard let qrView = qrView else { return }
 
         view.addSubview(qrView)
 
