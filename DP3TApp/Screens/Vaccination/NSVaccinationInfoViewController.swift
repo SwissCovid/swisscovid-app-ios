@@ -96,13 +96,13 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
         bookNowLabel.text = "vaccination_impf_check_title".ub_localized
 
         contentView.addSpacerView(NSPadding.large + NSPadding.small)
-        contentView.addArrangedSubview(bookNowLabel)
+        contentView.addArrangedView(bookNowLabel, insets: .zero)
 
         let bookNowTextLabel = NSLabel(.textLight)
         bookNowTextLabel.text = "vaccination_impf_check_info_text".ub_localized
 
         contentView.addSpacerView(NSPadding.medium + 2.0)
-        contentView.addArrangedSubview(bookNowTextLabel)
+        contentView.addArrangedView(bookNowTextLabel, insets: .zero)
 
         let button = NSButton(title: config?.vaccinationBookingInfo.value?.impfcheckButton ?? "vaccination_impf_check_action".ub_localized, style: .normal(.ns_blue))
         button.setImage(UIImage(named: "ic-link-external"), for: .normal)
@@ -111,7 +111,13 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
         }
 
         contentView.addSpacerView(NSPadding.large)
-        contentView.addArrangedSubview(button)
+        let buttonWrapper = UIView()
+        buttonWrapper.addSubview(button)
+        button.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
+        }
+        contentView.addArrangedView(buttonWrapper, insets: .zero)
 
         let infoBoxView: NSInfoBoxView = {
             var viewModel = NSInfoBoxView.ViewModel(title: "vaccination_booking_info_info_title".ub_localized,
@@ -127,7 +133,13 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
         }()
 
         contentView.addSpacerView(NSPadding.large + NSPadding.small)
-        contentView.addArrangedView(infoBoxView, insets: UIEdgeInsets(top: 0.0, left: -NSPadding.medium, bottom: 0.0, right: -NSPadding.medium - NSPadding.small))
+        let infoWrapper = UIView()
+        infoWrapper.addSubview(infoBoxView)
+        infoBoxView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview()
+            make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
+        }
+        contentView.addArrangedView(infoWrapper, insets: .zero)
     }
 
     private func vaccinationCheckButtonPressed() {
