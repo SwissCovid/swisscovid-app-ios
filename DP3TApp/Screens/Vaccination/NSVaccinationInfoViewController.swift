@@ -92,32 +92,34 @@ private class VaccinationInfoContentView: NSSimpleModuleBaseView {
     // MARK: - Setup
 
     private func setup() {
-        let bookNowLabel = NSLabel(.textBold)
-        bookNowLabel.text = "vaccination_impf_check_title".ub_localized
+        if config?.vaccinationBookingInfo.value?.hasAllImpfCheckValues ?? false {
+            let bookNowLabel = NSLabel(.textBold)
+            bookNowLabel.text = config?.vaccinationBookingInfo.value?.impfcheckTitle ?? "vaccination_impf_check_title".ub_localized
 
-        contentView.addSpacerView(NSPadding.large + NSPadding.small)
-        contentView.addArrangedView(bookNowLabel, insets: .zero)
+            contentView.addSpacerView(NSPadding.large + NSPadding.small)
+            contentView.addArrangedView(bookNowLabel, insets: .zero)
 
-        let bookNowTextLabel = NSLabel(.textLight)
-        bookNowTextLabel.text = "vaccination_impf_check_info_text".ub_localized
+            let bookNowTextLabel = NSLabel(.textLight)
+            bookNowTextLabel.text = config?.vaccinationBookingInfo.value?.impfcheckText ?? "vaccination_impf_check_info_text".ub_localized
 
-        contentView.addSpacerView(NSPadding.medium + 2.0)
-        contentView.addArrangedView(bookNowTextLabel, insets: .zero)
+            contentView.addSpacerView(NSPadding.medium + 2.0)
+            contentView.addArrangedView(bookNowTextLabel, insets: .zero)
 
-        let button = NSButton(title: config?.vaccinationBookingInfo.value?.impfcheckButton ?? "vaccination_impf_check_action".ub_localized, style: .normal(.ns_blue))
-        button.setImage(UIImage(named: "ic-link-external"), for: .normal)
-        button.touchUpCallback = { [weak self] in
-            self?.vaccinationCheckButtonPressed()
+            let button = NSButton(title: config?.vaccinationBookingInfo.value?.impfcheckButton ?? "vaccination_impf_check_action".ub_localized, style: .normal(.ns_blue))
+            button.setImage(UIImage(named: "ic-link-external"), for: .normal)
+            button.touchUpCallback = { [weak self] in
+                self?.vaccinationCheckButtonPressed()
+            }
+
+            contentView.addSpacerView(NSPadding.large)
+            let buttonWrapper = UIView()
+            buttonWrapper.addSubview(button)
+            button.snp.makeConstraints { make in
+                make.top.bottom.equalToSuperview()
+                make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
+            }
+            contentView.addArrangedView(buttonWrapper, insets: .zero)
         }
-
-        contentView.addSpacerView(NSPadding.large)
-        let buttonWrapper = UIView()
-        buttonWrapper.addSubview(button)
-        button.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalToSuperview().inset(-NSPadding.medium - NSPadding.small)
-        }
-        contentView.addArrangedView(buttonWrapper, insets: .zero)
 
         let infoBoxView: NSInfoBoxView = {
             var viewModel = NSInfoBoxView.ViewModel(title: "vaccination_booking_info_info_title".ub_localized,

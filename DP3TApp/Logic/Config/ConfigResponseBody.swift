@@ -93,12 +93,6 @@ class ConfigResponseBody: UBCodable {
         let text: String
     }
 
-    class VaccinationBookingCanton: UBCodable {
-        let name: String
-        let iconIos: String
-        let linkUrl: String
-    }
-
     class VaccinationBookingInfo: UBCodable {
         let title: String
         let text: String
@@ -107,5 +101,14 @@ class ConfigResponseBody: UBCodable {
         let impfcheckText: String?
         let impfcheckButton: String?
         let impfcheckUrl: String?
+    }
+}
+
+extension ConfigResponseBody.VaccinationBookingInfo {
+    var hasAllImpfCheckValues: Bool {
+        return impfcheckTitle != nil
+            && impfcheckText != nil
+            && impfcheckButton != nil
+            && impfcheckUrl != nil
     }
 }
