@@ -15,7 +15,7 @@ class NSHomescreenViewController: NSTitleViewScrollViewController {
     // MARK: - Views
 
     private let infoBoxView = HomescreenInfoBoxView()
-    private let vaccinationInfoView = NSWhatToDoButton(title: "vaccination_info_homescreen_title".ub_localized, subtitle: "vaccination_info_homescreen_title_bold".ub_localized, image: UIImage(named: "illu-impfung-doc"))
+    private let vaccinationInfoView = NSWhatToDoButton(title: "vaccination_info_homescreen_title_bold".ub_localized, subtitle: "vaccination_info_homescreen_title".ub_localized, image: UIImage(named: "illu-impfung-doc"))
 
     private let vaccinationContainerView = UIView()
 

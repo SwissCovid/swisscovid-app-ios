@@ -179,7 +179,7 @@ class NSErrorView: UIView {
     }
 
     static func tracingErrorView(for state: UIStateModel.TracingState, isHomeScreen: Bool, action: ((NSErrorView?) -> Void)? = nil) -> NSErrorView? {
-        if let model = self.model(for: state, isHomeScreen: isHomeScreen, action: action) {
+        if let model = model(for: state, isHomeScreen: isHomeScreen, action: action) {
             return NSErrorView(model: model)
         }
 

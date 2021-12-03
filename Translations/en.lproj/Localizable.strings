@@ -1927,3 +1927,13 @@
 
 /*Impf-Hinweis Screen: Kanton Titel*/
 "vaccination_canton_title" = "Select your canton";
+
+/*vaccination booking  screen info about Impf-Check (impf-check.ch)*/
+"vaccination_impf_check_info_text" = "The COVID-19 Vaccination Check provides information on initial and booster vaccinations and guides you to the relevant point of contact in your canton.";
+
+/*button title for link to impf-check.ch*/
+"vaccination_impf_check_action" = "To the Vaccination Check";
+
+/*URL to ImpfCheck*/
+"vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
+"vaccination_impf_check_title" = "Book an appointment now";
