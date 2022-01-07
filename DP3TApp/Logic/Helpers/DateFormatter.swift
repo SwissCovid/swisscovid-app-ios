@@ -21,13 +21,13 @@ extension DateFormatter {
 
     private static let dayDateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.YYYY"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter
     }()
 
     private static let dayWithMonthFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd. MMMM YYYY"
+        dateFormatter.dateFormat = "dd. MMMM yyyy"
         return dateFormatter
     }()
 
