@@ -1797,7 +1797,7 @@
 "vaccination_booking_info_text" = "Ina vaccinaziun pudess per exempel vegnir fatga en quests lieus en Vossa vischinanza:\n\n- en centers da vaccinaziun specifics\n- en ospitals\n- tar Vossa media u tar Voss medi da chasa\n- en apotecas da vaccinaziun\n\nBlers lieus porschan er vaccinaziuns «walk-in» senza termin.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "La vaccinaziun cunter COVID-19 è recumandada per persunas a partir da 12 onns. La vaccinaziun è gratuita.";
+"vaccination_booking_info_info" = "La vaccinaziun cunter COVID-19 è recumandada per persunas a partir da 5 onns.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

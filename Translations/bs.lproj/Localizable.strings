@@ -1799,7 +1799,7 @@
 "vaccination_booking_info_text" = "Vakcinacija se može održati na primer na sledećim mestima u Vašoj blizini:\n\n- u specifičnim centrima za vakcinaciju\n- u bolnicama\n- kod Vašeg ličnog lekara ili lekarke\n- u vakcinišućim apotekama\n\nMnoga mesta nude i vakcinaciju bez zakazanog termina";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Vakcina za Covid-19 preporučena je osobama starijim od 12 godina.  Vakcinacija je besplatna.";
+"vaccination_booking_info_info" = "Vakcina za Covid-19 preporučena je osobama starijim od 5 godina.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

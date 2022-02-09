@@ -1798,7 +1798,7 @@
 "vaccination_booking_info_text" = "Örneğin yakınınızdaki şu yerlerde aşı yaptırabilirsiniz:\n\n- özel aşı merkezlerinde\n- kliniklerde\n- eile hekiminizde\n- aşı yapan eczanelerde\n\nBirçok yerde, randevu almadan doğrudan aşı yaptırılabilmektedir.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Covid-19 aşısı 12 yaş ve üstü kişilere tavsiye edilmektedir. Aşı ücretsizdir.";
+"vaccination_booking_info_info" = "Covid-19 aşısı 5 yaş ve üstü kişilere tavsiye edilmektedir.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

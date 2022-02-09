@@ -1799,7 +1799,7 @@
 "vaccination_booking_info_text" = "Es posible vacunarse, por ejemplo, en los siguientes puntos cerca de usted:\n\n- en centros de vacunación específicos\n- en hospitales\n- en la consulta de su médico de familia\n- en farmacias que ofrecen la vacunación\n\nMuchos centros ofrecen la posibllidad de vacunarse sin cita previa.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Se recomienda la vacuna contra la Covid-19 a las personas mayores de 12 años. La vacuna es gratuita.";
+"vaccination_booking_info_info" = "Se recomienda la vacuna contra la Covid-19 a las personas mayores de 5 años.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

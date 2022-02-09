@@ -1832,7 +1832,7 @@
 "vaccination_booking_info_text" = "La vaccination pourrait, par exemple, être proposée dans les lieux suivants situés à proximité de chez vous :\n\n- dans des centres de vaccination désignés\n- dans les hôpitaux\n- chez votre médecin de famille\n- dans les pharmacies\n\nIl est aussi possible de se faire vacciner sans rendez-vous dans de nombreux endroits.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Gratuite, la vaccination contre le COVID-19 est recommandée pour les personnes dès 12 ans.";
+"vaccination_booking_info_info" = "La vaccination contre le COVID-19 est recommandée pour les personnes dès 5 ans.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

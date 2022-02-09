@@ -1827,7 +1827,7 @@
 "vaccination_booking_info_text" = "Vaccination may be performed at the following locations near you:\n\n- at specific vaccination centres\n- in hospitals\n- at your general practitioner's surgery\n- at a vaccination pharmacy\n\nMany places also offer walk-in vaccinations without an appointment.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "The COVID-19 vaccination is recommended for those over 12. It's free of charge.";
+"vaccination_booking_info_info" = "The COVID-19 vaccination is recommended for those over 5.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

@@ -1798,7 +1798,7 @@
 "vaccination_booking_info_text" = "ንኣብነት ኣብዚ ኣብ ጥቓኻ ዘለ ቦታታት ክትኽተብ ትኽእል ኢኻ፥\n\n- ኣብ እተወሰነ ማእከላት ክታበት\n- ኣብ ሆስፒታላት\n- ምስ ዘቤታዊ ሓኪም\n- ኣብ ናይ ክታበት ፋርማሲታት\n\nኣብ መብዛሕትኦም ቦታታት ብዘይ ቈጸራ ብቐጥታ ክትኽተብ ትኽእል።";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "ክታበት ኮቪድ-19 ነቶም 12 ዓመትን ልዕሊኡን ዝዕድሚኦም ሰባት ተመኺሩ። እቲ ክታበት ነጻ እዩ።";
+"vaccination_booking_info_info" = "ክታበት ኮቪድ-19 ነቶም 5 ዓመትን ልዕሊኡን ዝዕድሚኦም ሰባት ተመኺሩ።";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
