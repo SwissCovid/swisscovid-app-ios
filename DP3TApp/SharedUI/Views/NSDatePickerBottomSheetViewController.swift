@@ -210,7 +210,7 @@ private class InteractiveModalPresentationController: UIPresentationController {
             return
         }
 
-        coordinator.animate(alongsideTransition: { [weak self] _ -> Void in
+        coordinator.animate(alongsideTransition: { [weak self] _ in
             guard let self = self else { return }
             view.sheetView.transform = .init(translationX: 0, y: view.sheetView.frame.height)
             self.dimmingView.alpha = 0
