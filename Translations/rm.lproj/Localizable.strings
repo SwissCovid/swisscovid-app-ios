@@ -623,7 +623,7 @@
 "symptom_faq1_title" = "Tge èn sintoms da COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Quests sintoms cumparan savens:\n\n– fevra, sentiment da fevra\n– mal la gula\n– tuss (per il solit tuss sitga)\n– respiraziun asmatica\n– mal il pèz\n– perdita andetga da l'odurat e/u dal palat\n\nPussaivels èn er ils suandants sintoms:\n\n– mal il chau\n– deblezza generala, malesser\n– mal ils musculs\n– dafraid\n– sintoms dal tract digestiv (indispostadad, vomitar, diarrea, mal il venter)\n– eczems";
+"symptom_faq1_text" = "Il nov coronavirus po mussar sintoms da la malsogna fitg differents.\nIls sintoms ils pli frequents èn:\n\n– mal la gula\n– tuss (il pli savens sitga)\n– respiraziun asmatica\n– mal il pèz\n– fevra\n– perdita andetga da l'odurat e/u dal palat\n– mal il chau\n– deblezza generala, malesser\n– mal ils musculs\n– dafraid\n– sintoms dal tract digestiv (indispostadad, vomitar, diarrea, mal il venter)\n– eczems\n\nResguardai per plaschair: Ils sintoms da la malsogna èn da differenta grevezza e pon variar tut tenor la varianta dal virus. Ils sintoms pon er esser miaivels. Gia in dafraid po signifitgar ina infecziun.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pertge è il tracing deactivà?";
@@ -1641,9 +1641,9 @@
 "checkin_report_title1" = "Proteger contacts";
 "checkin_report_title2" = "Far stim da sintoms";
 "checkin_report_title3" = "Laschar far in test";
-"checkin_report_subtitle1" = "Vus pudais gia esser infectusa u infectus senza badar quai. Observai las mesiras d'igiena e da protecziun vertentas e protegi Vossa famiglia, Vossas amias e Voss amis sco er Voss conturn.";
+"checkin_report_subtitle1" = "Vus As pudais esser infectada u infectà senza badar. Resguardai las suandantas mesiras preventivas:\n\n- purtar ina mascrina (fin 7 dis suenter il contact)\n\n- restrenscher ils contacts\n\n- tegnair distanza (almain 1,5 meters)\n\n- evitar locals publics";
 "checkin_report_subtitle2" = "Survegliai Voss stadi da sanadad.";
-"checkin_report_subtitle3" = "Faschai immediatamain in test, sche Vus avais sintoms. In test dal coronavirus è raschunaivel e vegn cusseglià, er sche Vus n'avais nagins sintoms e sche Vus n'essas anc betg vaccinada u vaccinà cumplettamain.";
+"checkin_report_subtitle3" = "As laschai <b>testar immediatamain, sche Vus avais sintoms</b> – er sche Vus essas vaccinada u vaccinà (incl. vaccinaziuns da rinfrestgament) ubain guarida u guarì. Er sche Vus avais mo levs sintoms, è in test raschunaivel e vegn recumandà.<br/><br/>As laschai <b>er testar</b>, sche Vus n'avais <b>nagins sintoms</b>. Vus As pudais esser infectada u infectà, però n'avais nagins sintoms. En quest cas duessas Vus far in test pir in pèr dis (4–7) suenter il contact da ristga. Lura po vegnir identifitgada il pli tgunsch ina infecziun senza sintoms.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Registraziun";

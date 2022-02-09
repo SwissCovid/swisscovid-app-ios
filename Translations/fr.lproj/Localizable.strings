@@ -628,7 +628,7 @@
 "symptom_faq1_title" = "Quels sont les symptômes du COVID-19 ?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Ces symptômes sont fréquents :\n\n– Fièvre, sensation de fièvre\n– Mal de gorge\n– Toux (généralement sèche)\n– Difficultés respiratoires\n– Douleurs dans la poitrine\n– Perte soudaine de l’odorat et/ou du goût\n\nLes symptômes suivants peuvent aussi apparaître :\n\n– Maux de tête\n– Faiblesse générale, sensation de malaise\n– Douleurs musculaires\n– Rhume\n– Symptômes gastro-intestinaux (nausées, vomissements, diarrhée, maux de ventre)\n– Éruptions cutanées";
+"symptom_faq1_text" = "Le coronavirus peut présenter des symptômes très variés. Symptômes les plus fréquents :\n\n– Mal de gorge\n– Toux (généralement sèche)\n– Difficultés respiratoires\n– Douleurs dans la poitrine\n– Fièvre\n– Perte soudaine de l’odorat et/ou du goût\n– Maux de tête\n– Faiblesse générale, sensation de malaise\n– Douleurs musculaires\n– Rhume\n– Symptômes gastro-intestinaux (nausées, vomissements, diarrhée, maux de ventre)\n– Éruptions cutanées\n\nAttention : les symptômes varient fortement et peuvent être différents selon le variant. Ils peuvent également être légers. Un rhume peut déjà indiquer une infection.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pourquoi le traçage est-il désactivé ?";
@@ -1676,9 +1676,9 @@
 "checkin_report_title1" = "Protéger les contacts";
 "checkin_report_title2" = "Observer les symptômes";
 "checkin_report_title3" = "Se faire tester";
-"checkin_report_subtitle1" = "Il est possible d’être contagieux sans le savoir. Respectez les règles d’hygiène et de conduite pour protéger votre famille, vos amis et tout votre entourage.";
+"checkin_report_subtitle1" = "Vous pourriez avoir été infecté sans le remarquer. Veuillez suivre les mesures de précaution suivantes :\n\n- Porter le masque (jusqu'à 7 jours après le contact)\n\n- Limiter les contacts\n\n- Garder ses distances (au moins 1,5 m)\n\n- Éviter les espaces publics";
 "checkin_report_subtitle2" = "Surveillez votre état de santé.";
-"checkin_report_subtitle3" = "Faites-vous immédiatement tester si vous présentez des symptômes. Même en l’absence de symptômes, il peut être utile et recommandé de se faire tester pour le coronavirus si vous n'êtes pas encore complètement vacciné.";
+"checkin_report_subtitle3" = "En cas de symptômes, <b>faites-vous tester immédiatement</b> même si vous êtes vacciné (rappel compris) ou guéri. Même si vous ressentez seulement des symptômes légers, il est recommandé de procéder à un test.<br/><br/>Faites-vous <b>aussi tester</b> si vous n'avez <b>aucun symptôme</b>. Vous pourriez avoir été infecté et ne présenter aucun symptôme. Dans ce cas, le dépistage devrait avoir lieu seulement quelques jours (4 à 7) après le contact à risque. C'est le meilleur moment pour détecter une infection asymptomatique.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";

@@ -624,7 +624,7 @@
 "symptom_faq1_title" = "Çfarë simptomash ka COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Simptomat më të shpeshta janë:\n\n– Temperaturë, ndjesi ethesh\n– Dhimbje fyti\n– Kollë (zakonisht e thatë)\n– Vështirësi në frymëmarrje\n– Dhimbje kraharori\n– Humbje e papritur e shqisës së nuhatjes dhe/ose të shijuarit\n\nJanë gjithashtu të mundshme simptomat e mëposhtme:\n\n– Dhimbje koke\n– Dobësi e përgjithshme, parehati\n– Dhimbje muskulore\n– Nuhat\nSimptoma gastrointestinale (të përziera, të vjella, diarre, dhimbje abdominale)\n– Skuqje e lëkurës";
+"symptom_faq1_text" = "Koronavirusi i ri mund të shfaqë simptoma shumë të ndryshme sëmundjeje.\nSimptomat më të shpeshta janë:\n\n– Dhimbje fyti\n– Kollë (zakonisht e thatë)\n– Vështirësi në frymëmarrje\n– Dhimbje kraharori\n– Temperaturë,\n– Humbje e papritur e shqisës së nuhatjes dhe/ose të shijuarit\n– Dhimbje koke\n– Dobësi e përgjithshme, parehati\n– Dhimbje muskulore\n– Rrufë\n– Simptoma gastrointestinale (të përziera, të vjella, diarre, dhimbje abdominale)\n– Skuqje e lëkurës\n\nVini re: Simptomat kanë intensitete të ndryshme dhe mund të ndryshojnë në varësi të variantit të virusit. Mund të jenë edhe të lehta. Rrufa tashme mund të jetë një infektim.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Pse është çaktivizuar gjurmimi?";
@@ -1643,9 +1643,9 @@
 "checkin_report_title1" = "Mbroni kontaktet";
 "checkin_report_title2" = "Kini parasysh simptomat";
 "checkin_report_title3" = "Kryeni testin";
-"checkin_report_subtitle1" = "Ju tashmë mund të jeni i infektuar pa e vënë re. Mbani parasysh masat e higjienës dhe të mbrojtjes dhe mbroni familjen tuaj, miqtë tuaj dhe mjedisin tuaj rrethues.";
+"checkin_report_subtitle1" = "Mundet që ju jeni infektuar pa vënë re këtë gjë. Vini re këto masa kujdesjeje:\n\n- mbani maskë (deri në 7 ditë pas kontaktit)\n\n- kufizojini kontaktet\n\n- mbani distancë (të paktën 1.5 metër)\n\n- shmanguni ambienteve publike";
 "checkin_report_subtitle2" = "Mbikëqyrni gjendjen tuaj shëndetësore.";
-"checkin_report_subtitle3" = "Testohuni menjëherë gjatë shfaqjes së simptomave. Edhe nëse nuk shfaqet asnjë simptomë dhe nuk jeni akoma i vaksinuar plotësisht, testi i koronës është i arsyeshëm dhe i rekomandueshëm.";
+"checkin_report_subtitle3" = "Në rastin e shfaqjes së <b>simptomave testohuni menjëherë</b> – edhe nëse jeni vaksinuar (përfshirë vaksinimet përforcuese) ose shëruar. Edhe nëse keni vetëm simtoma të lehta, një test është kuptimplotë dhe rekomandohet.<br/><br/><b>Testohuni gjithashtu</b>, nëse <b>nuk keni simptoma</b>. Ju mund të jeni infektuar, por jeni pa simptoma. Në këtë rast, një test duhej kryer vetëm disa ditë (4–7) pas kontaktit të rrezikuar. Atëherë një infektim pa simptoma mund të zbulohet më mirë.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-In";

@@ -637,7 +637,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Brustschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns\n\nZudem sind folgende Symptome möglich:\n\n– Kopfschmerzen\n– Allgemeine Schwäche, Unwohlsein\n– Muskelschmerzen\n– Schnupfen\n– Magen-Darm-Symptome (Übelkeit, Erbrechen, Durchfall, Bauchschmerzen)\n– Hautausschläge";
+"symptom_faq1_text" = "Das neue Coronavirus kann sehr unterschiedliche Krankheitssymptome zeigen.\nDie häufigsten Symptome sind:\n\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Brustschmerzen\n– Fieber\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns\n– Kopfschmerzen\n– Allgemeine Schwäche, Unwohlsein\n– Muskelschmerzen\n– Schnupfen\n– Magen-Darm-Symptome (Übelkeit, Erbrechen, Durchfall, Bauchschmerzen)\n– Hautausschläge\n\nBeachten Sie: Die Krankheitssymptome sind unterschiedlich stark und können je nach Virusvariante variieren. Sie können auch leicht sein. Bereits ein Schnupfen kann eine Infektion bedeuten.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing deaktiviert?";
@@ -1721,7 +1721,7 @@
 "checkin_report_title3" = "Testen lassen";
 "checkin_report_subtitle1" = "Sie könnten sich angesteckt haben, ohne es zu merken. Beachten Sie folgende Vorsichtsmassnahmen:\n\n- Maske tragen (bis 7 Tagen nach Kontakt)\n\n- Kontakte einschränken\n\n- Abstand halten (mind. 1,5 Meter)\n\n- öffentliche Räume meiden";
 "checkin_report_subtitle2" = "Überwachen Sie Ihren Gesundheitszustand.";
-"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von <b>Symptomen sofort testen</b> – auch wenn Sie geimpft (inkl. Auffrischimpfungen) oder genesen sind. Selbst wenn Sie nur leichte Symptome haben, ist ein Test sinnvoll und empfohlen.\n\nLassen Sie sich <b>auch testen</b>, wenn Sie <b>keine Symptome</b> haben. Sie könnten sich angesteckt haben, aber symptomlos sein. Ein Test sollte in diesem Fall erst einige Tage (4–7) nach dem Risiko-Kontakt stattfinden. Dann kann eine symptomlose Ansteckung am ehesten entdeckt werden.";
+"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von <b>Symptomen sofort testen</b> – auch wenn Sie geimpft (inkl. Auffrischimpfungen) oder genesen sind. Selbst wenn Sie nur leichte Symptome haben, ist ein Test sinnvoll und empfohlen.<br/><br/>Lassen Sie sich <b>auch testen</b>, wenn Sie <b>keine Symptome</b> haben. Sie könnten sich angesteckt haben, aber symptomlos sein. Ein Test sollte in diesem Fall erst einige Tage (4–7) nach dem Risiko-Kontakt stattfinden. Dann kann eine symptomlose Ansteckung am ehesten entdeckt werden.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 /*Fuzzy*/

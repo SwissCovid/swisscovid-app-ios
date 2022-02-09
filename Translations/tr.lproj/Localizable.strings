@@ -624,7 +624,7 @@
 "symptom_faq1_title" = "KOVİD-19 semptomları nedir?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Bu semptomlar sıklıkla ortaya çıkmaktadır:\n\n– Ateş, ateşlenme\n– Boğaz ağrısı\n– Öksürme (genelde kuru)\n– Nefes darlığı\n– Göğüs ağrıları\n– Koku ve tad alma yetisinin aniden kaybolması\n\nAyrıca bu semptomlar görülebilir:\n\n– Başağrıları\n– Genel halsizlik, rahatsızlık\n– Kas ağrıları\n– Nezle\n– Mide-bağırsak semptomları (bulantı, kusma, ishal, mide ağrıları)\n– Deri döküntüleri";
+"symptom_faq1_text" = "Yeni koronavirüs çok farklı hastalık semptomları gösterebilir. En sık görülen semptomlar şunlardır:\n\n– Boğaz ağrısı\n– Öksürük (çoğunlukla kuru öksürük)\n– Nefes darlığı\n– Göğüs ağrıları\n– Koku ve tad alma duyusunun aniden kaybolması\n– Başağrıları\n– Genel halsizlik, rahatsızlık\n– Kas ağrıları\n– Nezle\n– Mide-bağırsak semptomları (bulantı, kusma, ishal, karın ağrıları)\n– Deri döküntüleri\n\nŞuna dikkat edin: Hastalık semptomlarının şiddeti farklı farklı olur ve virüsün varyantına göre değişebilir. Hafif de olabilirler. Sadece nezle bir enfeksiyon demek olabilir.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "İzleme neden devre dışı bırakıldı?";
@@ -1642,9 +1642,9 @@
 "checkin_report_title1" = "Temaslıları koruyun";
 "checkin_report_title2" = "Semptomlara dikkat edin";
 "checkin_report_title3" = "Test yaptırın";
-"checkin_report_subtitle1" = "Henüz kendiniz fark etmeden de hastalığı bulaştırabilirsiniz. Geçerli hijyen ve koruma önlemlerini dikkate alın ve ailenizi, arkadaşlarınızı ve çevrenizi koruyun.";
+"checkin_report_subtitle1" = "Hastalığı farkına varmadan kapmış olabilirsiniz. Lütfen şu ihtiyat tedbirlerine uyun:\n\n- Maske takın (temastan 7 gün sonrasına kadar)\n\n- Temasları sınırlayın\n\n- Mesafe bırakın (en az 1,5 metre)\n\n- Umumi mekânlardan uzak durun";
 "checkin_report_subtitle2" = "Sağlık durumunuzu gözetim altında tutun.";
-"checkin_report_subtitle3" = "Kendinizde semptomların varlığını gözlemlediğinizde hemen test yaptırın. Semptomlar olmadığında ve ilgili tüm aşıları olmadıysanız da bir korona testi mantıklıdır ve tavsiye edilmektedir.";
+"checkin_report_subtitle3" = "'<b>Semptomlar görürseniz hemen test olun</b> -aşılı (güçlendirme aşıları dahil) ya da iyileşmiş olsanız bile. Sadece hafif semptomlarınız varsa bile, test yaptırmanız yararlıdır ve tavsiye edilir.<br/><br/>'Ayrıca <b>semptomlarınız yoksa</b> da test olun. Hastalık size bulaştığı halde semptomlarınız olmayabilir. Böyle bir durumda bir test ancak riskli temastan birkaç gün sonra (4-7) yapılmalıdır. Semptomsuz bir bulaşmanın tespit edilmesi o günlerde daha kolaydır.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";

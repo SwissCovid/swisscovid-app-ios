@@ -624,7 +624,7 @@
 "symptom_faq1_title" = "¿Cuáles son los síntomas de COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Los síntomas siguientes aparecen con frecuencia:\n\n– fiebre, sensación febril\n– dolor de garganta\n– tos (casi siempre seca)\n– dificultad respiratoria\n– dolor en el pecho\n– pérdida repentina del sentido del gusto y/o del olfato    \nPueden aparecer también los síntomas siguientes:\n\n– dolor de cabeza\n– debilidad general, malestar\n– dolores musculares\n– catarro\n– síntomas gastrointestinales (nauseas, vómitos, diarrea, dolor de estómago)\n– erupciones cutáneas";
+"symptom_faq1_text" = "El nuevo coronavirus puede causar síntomas de enfermedad muy diversos. Los síntomas mas frecuentes son:\n\n– dolor de garganta\n– tos (casi siempre seca)\n– dificultad respiratoria\n– dolor en el pecho\n– fiebre\n– pérdida repentina del sentido del gusto y/o del olfato    \n– dolor de cabeza\n– debilidad general, malestar\n– dolores musculares\n– catarro\n– síntomas gastrointestinales (nauseas, vómitos, diarrea, dolor de estómago)\n– erupciones cutáneas\n\nTenga en cuenta: Los síntomas pueden ser más o menos graves y variar en función de la variante del virus. Es posible que sean muy leves. Incluso un catarro puede significar un contagio.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "¿Por qué está desactivado el rastreo?";
@@ -1643,9 +1643,9 @@
 "checkin_report_title1" = "Proteger a sus contactos";
 "checkin_report_title2" = "Estar atento a los síntomas";
 "checkin_report_title3" = "Hacer el test";
-"checkin_report_subtitle1" = "Es posible que sea usted contagioso sin darse cuenta. Observe las reglas de higiene y comportamiento y proteja a su familia, sus amigos y su entorno.";
+"checkin_report_subtitle1" = "Es posible que se haya contagiado sin darse cuenta. Observe las siguientes medidas de precaución:\n\n- llevar mascarilla (hasta 7 días tras el contacto)\n\n- limitar los contactos\n\n- mantener la distancia ( 1,5 metros como mín.)\n\n- evitar los espacios públicos";
 "checkin_report_subtitle2" = "Vigile su estado de salud.";
-"checkin_report_subtitle3" = "Ante la aparición de síntomas haga el test inmediatamente. Incluso si no tiene síntomas y aún no está vacunado por completo, es conveniente y recomendable hacer el test del coronavirus.";
+"checkin_report_subtitle3" = "Haga inmediatamente el test si aparecen <b>síntomas</b> – también si está vacunado (incl. vacunas de refuerzo) o si se ha recuperado. Hacer el test es apropiado y recomendable incluso si los síntomas son leves.<br/><br/>Haga también <b>el test</b> si no tiene<b>síntomas</b>. Puede usted haberse contagiado pero ser asintomático. En este caso, el test debería realizarse trascurridos algunos días (4-7) tras el contacto de riesgo. A partir de ese momento, la probabilidad de detectar un contagio asintomático es mayor.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
