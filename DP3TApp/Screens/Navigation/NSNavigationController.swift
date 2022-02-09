@@ -41,6 +41,7 @@ class NSNavigationController: UINavigationController {
     // MARK: - Setup
 
     private func setup() {
+        view.backgroundColor = .ns_background
         navigationBar.isTranslucent = false
 
         if useLine {
