@@ -624,7 +624,7 @@
 "symptom_faq1_title" = "Quais são os sintomas da COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Estes sintomas são frequentes:\n\n– Febre, sensação de febre\n– Dores de garganta\n– Tosse (seca, na maioria dos casos)\n– Falta de ar\n– Dores no peito\n– Perda repentina do olfato e/ou do paladar\n\nOutros sintomas podem ser:\n\n– Dores de cabeça\n– Fraqueza geral, indisposição\n– Dores musculares\n– Constipação\n– Sintomas gastrointestinais (náusea, vómito, diarréia, dores de estômago)\n– Erupções cutâneas";
+"symptom_faq1_text" = "O novo coronavírus pode proovocar sintomas muito variados. Os sintomas mais frequentes são:\n\n– Dores de garganta\n– Tosse (seca, na maioria dos casos)\n– Falta de ar\n– Dores no peito\n– Febre\n– Perda repentina do olfato e/ou do paladar\n– Dores de cabeça\n– Fraqueza geral, indisposição\n– Dores musculares\n– Constipação\n– Sintomas gastrointestinais (náusea, vómito, diarréia, dores de estômago)\n– Erupções cutâneas\n\nÉ favor observar: A intensidade do sintomas da doença é diferente e pode variar dependendo da variante do vírus. Os sintomas também podem ser ligeiros. Uma mera constipação também pode ser devida a uma infeção.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Porque está o rastreamento desativado?";
@@ -1643,9 +1643,9 @@
 "checkin_report_title1" = "Proteger os contactos";
 "checkin_report_title2" = "Observar os sintomas";
 "checkin_report_title3" = "Deixar testar-se";
-"checkin_report_subtitle1" = "Você já pode ser contagioso, sem percebê-lo. Observe as medidas de higiene e proteção vigentes e proteja a sua família, os amigos e o seu ambiente.";
+"checkin_report_subtitle1" = "É possível que se tenha infetado sem percebê-lo. Observe as seguintes regras de precaução:\n\n- Use a máscara (até 7 dias após o contacto)\n\n- Limite os contactos\n\n- Mantenha a distância (pelo menos 1,5 metros)\n\n- Evite os espaços públicos";
 "checkin_report_subtitle2" = "Observe o seu estado de saúde.";
-"checkin_report_subtitle3" = "Deixe testar-se imediatamente se aparecerem sintomas. Mesmo se não aparecerem sintomas e se você ainda não tiver sido completamente vacinado, um teste de corona é conveniente e recomendado.";
+"checkin_report_subtitle3" = "Deixe testar-se imediatamente quando surgirem <b>sintomas</b> – mesmo se for vacinado (incl. vacinas de reforço) ou recuperado. Um teste é conveniente e recomendado, mesmo se só tiver sintomas ligeiros.<br/><br/>Também deixe <b>testar-se</b>, se <b>não tiver sintomas</b>. É possível que tenha sido infetado, mas não tenha sintomas. Neste caso, um teste só deve ser feito alguns dias (4 a 7) após o contacto de risco. Isso permite descubrir melhor uma infeção sem sintomas.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
@@ -1799,7 +1799,7 @@
 "vaccination_booking_info_text" = "Uma vacinação pode ser feita, por exemplo, nestes lugares na sua proximidade:\n\n- nos centros de vacinação específicos\n- nos hospitais\n- no seu médico de família\n- nas farmácias de vacinação\n\nMuitos lugares também oferecem vacinações Walk-in sem agendamento.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "A vacina contra a Covid-19 é recomendada para pessoas a partir dos 12 anos de idade. A vacinação é gratuita.";
+"vaccination_booking_info_info" = "A vacina contra a Covid-19 é recomendada para pessoas a partir dos 5 anos de idade.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

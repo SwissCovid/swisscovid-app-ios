@@ -637,7 +637,7 @@
 "symptom_faq1_title" = "Was sind COVID-19-Symptome?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Diese Symptome treten häufig auf:\n\n– Fieber, Fiebergefühl\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Brustschmerzen\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns\n\nZudem sind folgende Symptome möglich:\n\n– Kopfschmerzen\n– Allgemeine Schwäche, Unwohlsein\n– Muskelschmerzen\n– Schnupfen\n– Magen-Darm-Symptome (Übelkeit, Erbrechen, Durchfall, Bauchschmerzen)\n– Hautausschläge";
+"symptom_faq1_text" = "Das neue Coronavirus kann sehr unterschiedliche Krankheitssymptome zeigen.\nDie häufigsten Symptome sind:\n\n– Halsschmerzen\n– Husten (meist trocken)\n– Kurzatmigkeit\n– Brustschmerzen\n– Fieber\n– Plötzlicher Verlust des Geruchs- und/oder Geschmackssinns\n– Kopfschmerzen\n– Allgemeine Schwäche, Unwohlsein\n– Muskelschmerzen\n– Schnupfen\n– Magen-Darm-Symptome (Übelkeit, Erbrechen, Durchfall, Bauchschmerzen)\n– Hautausschläge\n\nBeachten Sie: Die Krankheitssymptome sind unterschiedlich stark und können je nach Virusvariante variieren. Sie können auch leicht sein. Bereits ein Schnupfen kann eine Infektion bedeuten.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Warum ist das Tracing deaktiviert?";
@@ -1719,9 +1719,9 @@
 "checkin_report_title1" = "Kontakte schützen";
 "checkin_report_title2" = "Auf Symptome achten";
 "checkin_report_title3" = "Testen lassen";
-"checkin_report_subtitle1" = "Sie könnten bereits ansteckend sein, ohne es zu merken. Beachten Sie die geltenden Hygiene- und Schutzmassnahmen und schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld.";
+"checkin_report_subtitle1" = "Sie könnten sich angesteckt haben, ohne es zu merken. Beachten Sie folgende Vorsichtsmassnahmen:\n\n- Maske tragen (bis 7 Tagen nach Kontakt)\n\n- Kontakte einschränken\n\n- Abstand halten (mind. 1,5 Meter)\n\n- öffentliche Räume meiden";
 "checkin_report_subtitle2" = "Überwachen Sie Ihren Gesundheitszustand.";
-"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von Symptomen sofort testen. Wenn keine Symptome auftreten und Sie noch nicht vollständig geimpft sind, ist ein Corona-Test ebenfalls sinnvoll und empfohlen.";
+"checkin_report_subtitle3" = "Lassen Sie sich beim Auftreten von <b>Symptomen sofort testen</b> – auch wenn Sie geimpft (inkl. Auffrischimpfungen) oder genesen sind. Selbst wenn Sie nur leichte Symptome haben, ist ein Test sinnvoll und empfohlen.<br/><br/>Lassen Sie sich <b>auch testen</b>, wenn Sie <b>keine Symptome</b> haben. Sie könnten sich angesteckt haben, aber symptomlos sein. Ein Test sollte in diesem Fall erst einige Tage (4–7) nach dem Risiko-Kontakt stattfinden. Dann kann eine symptomlose Ansteckung am ehesten entdeckt werden.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 /*Fuzzy*/
@@ -1882,7 +1882,7 @@
 "vaccination_booking_info_text" = "Eine Impfung könnte zum Beispiel an diesen Orten in Ihrer Nähe stattfinden:\n\n- in spezifischen Impfzentren\n- in Spitälern\n- bei Ihrem Hausarzt oder Ihrer Hausärztin\n- in Impfapotheken\n\nViele Orte bieten auch Walk-in-Impfungen ohne Termine an.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Die Covid-19-Impfung ist für Personen ab 12 Jahren empfohlen. Die Impfung ist gratis.";
+"vaccination_booking_info_info" = "Die Covid-19-Impfung ist für Personen ab 5 Jahren empfohlen.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

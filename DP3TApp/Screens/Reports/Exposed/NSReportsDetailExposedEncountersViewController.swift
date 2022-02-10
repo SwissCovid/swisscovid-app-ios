@@ -297,6 +297,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         titleLabel.accessibilityTraits = [.header]
 
         let textLabel = NSLabel(.textLight)
+        textLabel.isHtmlContent = true
         textLabel.text = text
         view.addArrangedView(textLabel)
     }
