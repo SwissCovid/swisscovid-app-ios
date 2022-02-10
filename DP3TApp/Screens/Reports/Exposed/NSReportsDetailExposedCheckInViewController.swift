@@ -125,7 +125,8 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
 
         addWhatToDoSection(title: "checkin_report_title3".ub_localized,
                            text: "checkin_report_subtitle3".ub_localized,
-                           view: whiteBoxView.contentView)
+                           view: whiteBoxView.contentView,
+                           isHtmlContent: true)
 
         whiteBoxView.contentView.addSpacerView(NSPadding.large)
 
@@ -149,14 +150,14 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
         return whiteBoxView
     }
 
-    private func addWhatToDoSection(title: String, text: String, view: UIStackView) {
+    private func addWhatToDoSection(title: String, text: String, view: UIStackView, isHtmlContent: Bool = false) {
         let titleLabel = NSLabel(.textBold)
         titleLabel.text = title
         view.addArrangedView(titleLabel)
         view.addSpacerView(2 * NSPadding.small)
 
         let textLabel = NSLabel(.textLight)
-        textLabel.isHtmlContent = true
+        textLabel.isHtmlContent = isHtmlContent
         textLabel.text = text
         view.addArrangedView(textLabel)
     }
