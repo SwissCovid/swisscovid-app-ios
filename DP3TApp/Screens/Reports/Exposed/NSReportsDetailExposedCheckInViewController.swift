@@ -156,6 +156,7 @@ class NSReportsDetailExposedCheckInViewController: NSTitleViewScrollViewControll
         view.addSpacerView(2 * NSPadding.small)
 
         let textLabel = NSLabel(.textLight)
+        textLabel.isHtmlContent = true
         textLabel.text = text
         view.addArrangedView(textLabel)
     }

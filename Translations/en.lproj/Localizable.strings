@@ -629,7 +629,7 @@
 "symptom_faq1_title" = "What are the symptoms of COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "These are the most common symptoms of COVID-19:\n\n– Fever, feverish feeling \n– Sore throat\n– Cough (mostly dry)\n– Shortness of breath\n– Body aches\n– Sudden loss of the sense of taste and/or smell\n\nOther symptoms may include:\n\n– Headache\n– General weakness, feeling unwell\n– Aching muscles\n– Head cold\n– Gastrointestinal symptoms (nausea, vomiting, diarrhoea, stomach ache)\n– Skin rash";
+"symptom_faq1_text" = "The new coronavirus can show many different symptoms. The most common symptoms are:\n\n– Sore throat\n– Cough (mostly dry)\n– Shortness of breath\n– Chest pain\n– High temperature\n– Sudden loss of sense of smell and/or taste\n– Headache\n– General weakness, feeling unwell\n– Aching muscles\n– Head cold\n– Gastrointestinal symptoms (nausea, vomiting, diarrhoea, stomach ache)\n– Skin rash\n\nNote: The symptoms of the disease vary in severity and can vary depending on the variant. They may also be mild. Even a head cold may mean an infection.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Why is tracing deactivated?";
@@ -1671,9 +1671,9 @@
 "checkin_report_title1" = "Protect your contacts";
 "checkin_report_title2" = "Look out for symptoms";
 "checkin_report_title3" = "Get tested";
-"checkin_report_subtitle1" = "You may already be infectious without realising it. Follow the rules on hygiene and social distancing and protect your loved ones and those around you.";
+"checkin_report_subtitle1" = "You might have been infected without noticing. Take these precautions:\n\n- Wear a mask (until 7 days after contact)\n\n- Limit your contacts\n\n- Social distance (min. 1.5 metres)\n\n- Avoid public places";
 "checkin_report_subtitle2" = "Monitor your state of health.";
-"checkin_report_subtitle3" = "If you develop symptoms, get tested immediately. A coronavirus test is also advisable and recommended if you have no symptoms and are not yet fully vaccinated.";
+"checkin_report_subtitle3" = "If <b>symptoms appear, get tested immediately</b> – even if you’ve been vaccinated or have recovered from COVID. A test makes sense and is recommended even if you only have slight symptoms.<br/><br/>Also <b>get tested</b> if you have <b>no symptoms</b>. You could have been infected but be symptom free. In this case you should not get tested until a few (4–7) days after the risky contact. That’s when a symptom-free infection is most likely to be detected.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Check-in";
@@ -1827,7 +1827,7 @@
 "vaccination_booking_info_text" = "Vaccination may be performed at the following locations near you:\n\n- at specific vaccination centres\n- in hospitals\n- at your general practitioner's surgery\n- at a vaccination pharmacy\n\nMany places also offer walk-in vaccinations without an appointment.";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "The COVID-19 vaccination is recommended for those over 12. It's free of charge.";
+"vaccination_booking_info_info" = "The COVID-19 vaccination is recommended for those over 5.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";
