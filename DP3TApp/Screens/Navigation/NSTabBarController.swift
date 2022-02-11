@@ -47,6 +47,8 @@ class NSTabBarController: UITabBarController {
 
         navigationItem.title = "app_name".ub_localized
 
+        view.backgroundColor = .ns_background
+
         // navigation bar
         let image = UIImage(named: "ic-info-outline")
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, landscapeImagePhone: image, style: .plain, target: self, action: #selector(infoButtonPressed))
@@ -95,6 +97,9 @@ class NSTabBarController: UITabBarController {
             setTabBarItemColors(appearance.inlineLayoutAppearance)
             setTabBarItemColors(appearance.compactInlineLayoutAppearance)
             tabBar.standardAppearance = appearance
+            if #available(iOS 15.0, *) {
+                tabBar.scrollEdgeAppearance = appearance
+            }
         } else {
             tabBar.unselectedItemTintColor = .ns_tabbarNormalBlue
             tabBar.tintColor = .ns_tabbarSelectedBlue

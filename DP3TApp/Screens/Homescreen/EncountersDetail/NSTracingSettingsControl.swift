@@ -77,6 +77,7 @@ class NSTracingSettingsControl: UIView {
         titleLabel.text = "tracing_setting_title".ub_localized
         subtitleLabel.text = "tracing_setting_text_ios".ub_localized_per_version
         switchControl.onTintColor = .ns_blue
+        switchControl.accessibilityLabel = "tracing_setting_text_ios".ub_localized_per_version
 
         setup()
         setupAccessibility()

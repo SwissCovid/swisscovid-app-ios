@@ -18,7 +18,7 @@ class ProblematicEventsManager {
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US")
-        formatter.dateFormat = "E, dd MMM YYYY HH:mm:ss zzz"
+        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss zzz"
         return formatter
     }()
 

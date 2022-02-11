@@ -251,7 +251,8 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
 
         addWhatToDoSection(title: "checkin_report_title3".ub_localized,
                            text: "checkin_report_subtitle3".ub_localized,
-                           view: moduleView.contentView)
+                           view: moduleView.contentView,
+                           isHtmlContent: true)
 
         moduleView.contentView.addSpacerView(NSPadding.large)
     }
@@ -289,7 +290,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         moduleView.contentView.addArrangedView(phoneButton)
     }
 
-    private func addWhatToDoSection(title: String, text: String, view: UIStackView) {
+    private func addWhatToDoSection(title: String, text: String, view: UIStackView, isHtmlContent: Bool = false) {
         let titleLabel = NSLabel(.textBold)
         titleLabel.text = title
         view.addArrangedView(titleLabel)
@@ -297,6 +298,7 @@ class NSReportsDetailExposedEncountersViewController: NSTitleViewScrollViewContr
         titleLabel.accessibilityTraits = [.header]
 
         let textLabel = NSLabel(.textLight)
+        textLabel.isHtmlContent = isHtmlContent
         textLabel.text = text
         view.addArrangedView(textLabel)
     }

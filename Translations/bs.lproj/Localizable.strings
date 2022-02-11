@@ -624,7 +624,7 @@
 "symptom_faq1_title" = "Koji su simptomi COVID-19?";
 
 /*Symptome: FAQ Text*/
-"symptom_faq1_text" = "Ovi simptomi se često javljaju:\n\n– temperatura, osećaj groznice\n– bolovi u grlu\n– kašalj (najčešće suv)\n– kratak dah\n– bolovi u grudima\n– iznenadni gubitak čula mirisa i/ili ukusa\n\nOsim toga, mogući su sledeći simptomi:\n\n– glavobolja\n– opšta slabost, malaksalost\n– bolovi u mišićima\n– kijavica\n– simptomi gastrointestinalnog trakta (mučnina, povraćanje, proliv, bolovi u stomaku)\n– osipi na koži";
+"symptom_faq1_text" = "Novi virus korone često može pokazati različite simptome bolesti. Najčešći simptomi su:\n\n– bol u grlu\n– kašalj (uglavnom suv)\n– kratak dah\n– bol u grudima\n– temperatura\n– iznenadni gubitak čula mirisa i/ili ukusa\n– glavobolja\n– opšta slabost, malaksalost\n– bolovi u mišićima\n– kijavica\n– simptomi gastrointestinalnog trakta (mučnina, povraćanje, proliv, bolovi u stomaku)\n– osipi na koži\n\nImajte na umu sledeće: Simptomi bolesti su različite jačine i mogu varati u zavisnost od varijante virusa. Mogu biti i blagi. I samo kijavica može značiti da ste zaraženi.";
 
 /*Meldungen: Positiv getestet FAQ Titel*/
 "meldungen_positive_tested_faq1_title" = "Zbog čega je praćenje deaktivirano?";
@@ -1643,9 +1643,9 @@
 "checkin_report_title1" = "Zaštititi kontakte";
 "checkin_report_title2" = "Obratiti pažnju na simptome";
 "checkin_report_title3" = "Vršiti testiranje";
-"checkin_report_subtitle1" = "Mogli biste biti zarazni, a da to ne primetite. Pridržavajte se važećih higijenskih i zaštitnih mera i zaštitite svoju porodicu, prijatelje i okolinu.";
+"checkin_report_subtitle1" = "Mogli ste da se zarazite, a da ne primetite. Obratite pažnju na sledeće mere opreza:\n\n- nositi masku do 7 dana posle kontakta)\n\n- ograničiti kontakte\n\n- držati razmak (najmanje 1,5 metar)\n\n- izbegavati javne zatvorene prostore";
 "checkin_report_subtitle2" = "Proveravajte svoje zdravsveno stanje.";
-"checkin_report_subtitle3" = "Odmah se testirajte ako imate simptome. Čak i ako nema simptoma i niste u potpunosti vakcinisani, test korone je važan i  preporučuje se.";
+"checkin_report_subtitle3" = "U slučaju pojave <b>simptoma odmah se testirati</b> – i ako ste vakcinisati (uključ. dopunske vakcine) ili ste preležali koronu. Čak i ako imate samo blage simptome, testiranje je korisno i preporučljivo.<br/><br/><b>Testirajte se</b>, i ako <b>nemate simptome</b>. Možete biti zaraženi i kada nemate simptome. Test u tom slučaju treba uraditi nekoliko dana (4–7) posle rizičnog kontakta. U tom vremenu se najčešće može otkriti zaraza.";
 
 /*Titel von CheckIn Meldungen Screen.*/
 "meldung_detail_checkin_title" = "Prijava";
@@ -1799,7 +1799,7 @@
 "vaccination_booking_info_text" = "Vakcinacija se može održati na primer na sledećim mestima u Vašoj blizini:\n\n- u specifičnim centrima za vakcinaciju\n- u bolnicama\n- kod Vašeg ličnog lekara ili lekarke\n- u vakcinišućim apotekama\n\nMnoga mesta nude i vakcinaciju bez zakazanog termina";
 
 /*vaccination booking info screen info box at bottom*/
-"vaccination_booking_info_info" = "Vakcina za Covid-19 preporučena je osobama starijim od 12 godina.  Vakcinacija je besplatna.";
+"vaccination_booking_info_info" = "Vakcina za Covid-19 preporučena je osobama starijim od 5 godina.";
 
 /*url for booking an appointment for vaccination for canton ag*/
 "vaccination_booking_ag_url" = "https://www.ag.ch/coronavirus-impfung";

@@ -69,7 +69,7 @@ class CheckInSelectionViewController: NSInformBottomButtonViewController {
         }
 
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd.mm.YYYY"
+        formatter.dateFormat = "dd.mm.yyyy"
 
         checkInSelections = checkIns.compactMap { [weak self] checkIn in
             guard let self = self else { return nil }
