@@ -65,7 +65,9 @@ class ProblematicEventsManager {
             syncNeeded = false
         }
 
-        if syncNeeded {
+        let deactivated = (ConfigManager.currentConfig?.deactivate ?? false)
+
+        if syncNeeded, !deactivated {
             sync { _, _ in }
         }
     }

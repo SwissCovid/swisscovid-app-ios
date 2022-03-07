@@ -48,6 +48,9 @@ class ConfigResponseBody: UBCodable {
     public var showVaccinationInfo = false
     public let vaccinationBookingInfo: LocalizedValue<VaccinationBookingInfo>
 
+    public let deactivate: Bool
+    public let deactivationMessage: LocalizedValue<InfoBox>?
+
     class InfoBox: UBCodable {
         let title, msg: String
         let url: URL?

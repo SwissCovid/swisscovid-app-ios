@@ -33,6 +33,15 @@ class ConfigLoadOperation: Operation {
 
                     ConfigLoadOperation.presentedConfigForVersion = ConfigManager.appVersion
                 }
+            } else if let c = config, c.deactivate {
+                let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+                vc.modalPresentationStyle = .fullScreen
+
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController?.present(vc, animated: true, completion: nil)
+
+                TracingManager.shared.endTracing()
+                CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
             } else {
                 self.cancel()
             }

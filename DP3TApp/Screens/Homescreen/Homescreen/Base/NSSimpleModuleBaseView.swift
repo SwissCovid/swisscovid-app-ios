@@ -27,6 +27,7 @@ class NSSimpleModuleBaseView: UIView {
 
     private let sideInset: CGFloat
     private let bottomPadding: Bool
+    private let subviewOnTop: Bool
 
     // MARK: - Public
 
@@ -34,10 +35,11 @@ class NSSimpleModuleBaseView: UIView {
 
     // MARK: - Init
 
-    init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil, bottomPadding: Bool = true) {
+    init(title: String, subtitle: String? = nil, subview: UIView? = nil, boldText: String? = nil, text: String? = nil, image: UIImage? = nil, subtitleColor: UIColor? = nil, bottomPadding: Bool = true, subviewOnTop: Bool = false) {
         sideInset = NSPadding.large
         self.bottomPadding = bottomPadding
         self.subview = subview
+        self.subviewOnTop = subviewOnTop
 
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -67,6 +69,14 @@ class NSSimpleModuleBaseView: UIView {
         ub_addShadow(radius: 4, opacity: 0.1, xOffset: 0, yOffset: -1)
         let topInset = NSPadding.medium + NSPadding.small
 
+        if let sv = subview, subviewOnTop {
+            addSubview(sv)
+            sv.snp.makeConstraints { make in
+                make.top.equalToSuperview().inset(topInset)
+                make.centerX.equalToSuperview()
+            }
+        }
+
         let titleContentStackView = UIStackView()
         titleContentStackView.axis = .vertical
         titleContentStackView.alignment = .leading
@@ -77,7 +87,11 @@ class NSSimpleModuleBaseView: UIView {
         addSubview(titleContentStackView)
 
         titleContentStackView.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(topInset)
+            if let sv = subview, subviewOnTop {
+                make.top.equalTo(sv.snp.bottom).offset(NSPadding.large)
+            } else {
+                make.top.equalToSuperview().inset(topInset)
+            }
             make.left.right.equalToSuperview().inset(sideInset)
         }
         addSubview(contentView)
@@ -117,7 +131,7 @@ class NSSimpleModuleBaseView: UIView {
                 make.bottom.lessThanOrEqualToSuperview()
             }
 
-            if let subview = subview {
+            if let subview = subview, !subviewOnTop {
                 view.addSubview(subview)
                 subview.snp.makeConstraints { make in
                     make.top.equalTo(textLabel.snp.bottom).offset(NSPadding.large)

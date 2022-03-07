@@ -31,6 +31,7 @@ class ConfigManager: NSObject {
             if let config = currentConfig?.iOSGaenSdkConfig {
                 ConfigManager.updateSDKParameters(config: config)
             }
+            ConfigManager.presentDeactivationIfNeeded(config: currentConfig, window: nil)
         }
     }
 
@@ -208,6 +209,23 @@ class ConfigManager: NSObject {
                 Self.configAlert?.dismiss(animated: true, completion: nil)
                 Self.configAlert = nil
             }
+        }
+    }
+
+    private static func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
+        if let config = config, config.deactivate {
+            let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+            vc.modalPresentationStyle = .fullScreen
+
+            if let window = window {
+                window.rootViewController?.present(vc, animated: false, completion: nil)
+            } else {
+                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                appDelegate.window?.rootViewController?.present(vc, animated: true, completion: nil)
+            }
+
+            TracingManager.shared.endTracing()
+            CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
         }
     }
 }
