@@ -114,6 +114,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
+        ConfigManager().startConfigRequest(window: window)
+
         if UserStorage.shared.appClipCheckinUrl() != nil {
             let checkinOnboardingVC = NSCheckinOnboardingViewController()
             checkinOnboardingVC.modalPresentationStyle = .fullScreen

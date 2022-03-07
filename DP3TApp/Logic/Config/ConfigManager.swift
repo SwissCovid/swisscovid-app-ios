@@ -31,7 +31,6 @@ class ConfigManager: NSObject {
             if let config = currentConfig?.iOSGaenSdkConfig {
                 ConfigManager.updateSDKParameters(config: config)
             }
-            ConfigManager.presentDeactivationIfNeeded(config: currentConfig, window: nil)
         }
     }
 
@@ -45,7 +44,7 @@ class ConfigManager: NSObject {
     static let configBackgroundValidityInterval: TimeInterval = 60 * 60 * 6 // 6h
 
     static var allowTracing: Bool {
-        return true
+        return !(ConfigManager.currentConfig?.deactivate ?? false)
     }
 
     // MARK: - Version Numbers
@@ -162,6 +161,7 @@ class ConfigManager: NSObject {
             // self must be strong
             if let config = config {
                 self.presentAlertIfNeeded(config: config, window: window)
+                self.presentDeactivationIfNeeded(config: config, window: window)
             }
         }
     }
@@ -212,16 +212,15 @@ class ConfigManager: NSObject {
         }
     }
 
-    private static func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
+    private func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
         if let config = config, config.deactivate {
             let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
-            vc.modalPresentationStyle = .fullScreen
 
             if let window = window {
-                window.rootViewController?.present(vc, animated: false, completion: nil)
+                window.rootViewController = vc
             } else {
                 let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                appDelegate.window?.rootViewController?.present(vc, animated: true, completion: nil)
+                appDelegate.window?.rootViewController? = vc
             }
 
             TracingManager.shared.endTracing()
