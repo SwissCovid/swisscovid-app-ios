@@ -116,6 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         ConfigManager().startConfigRequest(window: window)
 
+        let deactivated = UserStorage.shared.appDeactivated
+
+        guard !deactivated else { return }
+
         if UserStorage.shared.appClipCheckinUrl() != nil {
             let checkinOnboardingVC = NSCheckinOnboardingViewController()
             checkinOnboardingVC.modalPresentationStyle = .fullScreen

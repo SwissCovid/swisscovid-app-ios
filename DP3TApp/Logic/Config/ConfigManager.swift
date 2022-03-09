@@ -160,8 +160,8 @@ class ConfigManager: NSObject {
         loadConfig(backgroundTask: false) { config in
             // self must be strong
             if let config = config {
-                self.presentAlertIfNeeded(config: config, window: window)
                 self.presentDeactivationIfNeeded(config: config, window: window)
+                self.presentAlertIfNeeded(config: config, window: window)
             }
         }
     }
@@ -212,19 +212,41 @@ class ConfigManager: NSObject {
         }
     }
 
-    private func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
-        if let config = config, config.deactivate {
+    public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
+        guard let config = config else { return }
+
+        if config.deactivate, !UserStorage.shared.appDeactivated {
+            if TracingManager.shared.isActivated {
+                TracingManager.shared.endTracing()
+            }
+
+            TracingManager.shared.endTracing()
+            TracingManager.shared.setBackgroundRefreshEnabled(false)
+            UBPushManager.shared.setActive(false)
+            CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
+            UserStorage.shared.appDeactivated = true
+
+        } else if !config.deactivate && UserStorage.shared.appDeactivated {
+            TracingManager.shared.startTracing()
+            TracingManager.shared.setBackgroundRefreshEnabled(true)
+            UserStorage.shared.appDeactivated = false
+
+            if !UserStorage.shared.hasCompletedOnboarding {
+                let onboardingViewController = NSOnboardingViewController()
+                onboardingViewController.modalPresentationStyle = .fullScreen
+                window?.rootViewController?.present(onboardingViewController, animated: false)
+            }
+        }
+
+        if config.deactivate {
             let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
 
             if let window = window {
                 window.rootViewController = vc
             } else {
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                 appDelegate.window?.rootViewController? = vc
             }
-
-            TracingManager.shared.endTracing()
-            CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
         }
     }
 }

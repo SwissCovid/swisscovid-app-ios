@@ -250,6 +250,12 @@ class TracingManager: NSObject {
             completion?()
         }
     }
+
+    func setBackgroundRefreshEnabled(_ enabled: Bool) {
+        guard #available(iOS 12.5, *) else { return }
+
+        DP3TTracing.setBackgroundTasksEnabled(enabled)
+    }
 }
 
 extension TracingManager: DP3TTracingDelegate {
@@ -271,7 +277,7 @@ extension TracingManager: DP3TTracingDelegate {
         isAuthorized = (state.trackingState != .inactive(error: .authorizationUnknown) &&
             state.trackingState != .inactive(error: .permissionError))
 
-        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins()
+        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins() && !UserStorage.shared.appDeactivated
         UBPushManager.shared.setActive(needsPush)
 
         // update tracing error states if needed
