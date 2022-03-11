@@ -83,7 +83,6 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
 
         let bundle = Bundle.main
 
-        // all these hosts have a seperate certificate
         let hosts = ["www.pt1.bfs.admin.ch",
                      "www.pt1-d.bfs.admin.ch",
                      "www.pt1-a.bfs.admin.ch",
@@ -96,16 +95,18 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
                      "www.pt-a.bfs.admin.ch",
                      "www.pt-t.bfs.admin.ch",
                      "www.pt.bfs.admin.ch"]
-        for host in hosts {
-            if let certificate = bundle.getCertificate(with: host) {
-                let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [certificate],
-                                                                   acceptSelfSignedCertificates: true,
-                                                                   performDefaultValidation: false,
-                                                                   validateHost: true)
+        
+        if let QuovadisRootCA = bundle.getCertificate(with: "QuoVadis-Root-CA-2-G3.cer") {
+            for host in hosts {
+                let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [QuovadisRootCA],
+                                                                       acceptSelfSignedCertificates: true,
+                                                                       performDefaultValidation: false,
+                                                                       validateHost: true)
                 evaluators[host] = evaluator
-            } else {
-                assertionFailure("Could not load certificate for pinned host")
+
             }
+        } else {
+            assertionFailure("Could not load certificate for pinned host")
         }
 
         return UBServerTrustManager(evaluators: evaluators)
