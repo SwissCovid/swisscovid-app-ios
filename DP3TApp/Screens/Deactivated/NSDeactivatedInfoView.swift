@@ -15,7 +15,7 @@ class NSDeactivatedInfoView: NSSimpleModuleBaseView {
     private let externalLinkButton: NSExternalLinkButton
     private let externalLinkButtonWrapper = UIView()
 
-    private let illuView = UIImageView(image: UIImage(named: "onboarding-prinzip"))
+    private let illuView = UIImageView(image: UIImage(named: "illu-shutdown"))
 
     init() {
         externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url)

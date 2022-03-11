@@ -215,17 +215,26 @@ class ConfigManager: NSObject {
     public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
         guard let config = config else { return }
 
-        if config.deactivate, !UserStorage.shared.appDeactivated {
+        if config.deactivate {
+            let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+
+            if let window = window {
+                window.rootViewController = vc
+            } else {
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                appDelegate.window?.rootViewController? = vc
+            }
+            
             if TracingManager.shared.isActivated {
                 TracingManager.shared.endTracing()
             }
 
-            TracingManager.shared.endTracing()
             TracingManager.shared.setBackgroundRefreshEnabled(false)
             UBPushManager.shared.setActive(false)
             CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
-            UserStorage.shared.appDeactivated = true
-
+            if !UserStorage.shared.appDeactivated {
+                UserStorage.shared.appDeactivated = true
+            }
         } else if !config.deactivate && UserStorage.shared.appDeactivated {
             TracingManager.shared.startTracing()
             TracingManager.shared.setBackgroundRefreshEnabled(true)
@@ -235,17 +244,6 @@ class ConfigManager: NSObject {
                 let onboardingViewController = NSOnboardingViewController()
                 onboardingViewController.modalPresentationStyle = .fullScreen
                 window?.rootViewController?.present(onboardingViewController, animated: false)
-            }
-        }
-
-        if config.deactivate {
-            let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
-
-            if let window = window {
-                window.rootViewController = vc
-            } else {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                appDelegate.window?.rootViewController? = vc
             }
         }
     }
