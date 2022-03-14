@@ -508,6 +508,8 @@
 		DCE1398E26382B5E0093D8F6 /* CreatedEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1398C26382B5E0093D8F6 /* CreatedEventsManager.swift */; };
 		DCE32DF52637D05F00168693 /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE32DF42637D05F00168693 /* QRCodeTests.swift */; };
 		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
+		F20EEE3627DF889D004DADA2 /* NSDeactivatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */; };
+		F20EEE3727DF88A1004DADA2 /* NSDeactivatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */; };
 		F223579E27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */; };
 		F22357A027D60473001EFCD6 /* NSDeactivatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */; };
 		F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
@@ -2775,6 +2777,7 @@
 				246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */,
 				242D220B245C4BD8005DAEA8 /* NSCovidCodeInfoViewController.swift in Sources */,
 				6EF28D9226393878001C1565 /* QRCodePDFGenerator.swift in Sources */,
+				F20EEE3727DF88A1004DADA2 /* NSDeactivatedInfoView.swift in Sources */,
 				F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */,
@@ -2836,6 +2839,7 @@
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
 				F86A6A772637F226003CAC1B /* CheckInExposure.swift in Sources */,
 				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
+				F20EEE3627DF889D004DADA2 /* NSDeactivatedInfoViewController.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,

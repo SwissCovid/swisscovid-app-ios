@@ -224,7 +224,7 @@ class ConfigManager: NSObject {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                 appDelegate.window?.rootViewController? = vc
             }
-            
+
             if TracingManager.shared.isActivated {
                 TracingManager.shared.endTracing()
             }
@@ -235,8 +235,10 @@ class ConfigManager: NSObject {
             if !UserStorage.shared.appDeactivated {
                 UserStorage.shared.appDeactivated = true
             }
-        } else if !config.deactivate && UserStorage.shared.appDeactivated {
-            TracingManager.shared.startTracing()
+        } else if !config.deactivate, UserStorage.shared.appDeactivated {
+            if TracingManager.shared.isAuthorized {
+                TracingManager.shared.startTracing()
+            }
             TracingManager.shared.setBackgroundRefreshEnabled(true)
             UserStorage.shared.appDeactivated = false
 
