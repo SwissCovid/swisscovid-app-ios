@@ -137,12 +137,6 @@
 		242D2251245C4BD8005DAEA8 /* CodeValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2462BA122451F0F60046906D /* CodeValidator.swift */; };
 		242D2252245C4BD8005DAEA8 /* UIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D5EF692448CAE800C197D6 /* UIStateModel.swift */; };
 		242D2254245C4BD8005DAEA8 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 242D21D3245C4BD8005DAEA8 /* SnapKit */; };
-		242D2257245C4BD8005DAEA8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
-		242D2258245C4BD8005DAEA8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
-		242D2259245C4BD8005DAEA8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
-		242D225A245C4BD8005DAEA8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
-		242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
-		242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */; };
 		242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D27242D04280017C4F9 /* Inter-SemiBold.ttf */; };
 		242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D28242D04280017C4F9 /* Inter-Bold.ttf */; };
 		242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E7C0D2A242D04280017C4F9 /* Inter-Light.ttf */; };
@@ -198,10 +192,6 @@
 		3DCD3E152655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */; };
 		3DCD3E162655585D0050945D /* NSCheckInDetailCheckInEndedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */; };
 		3DCE4F4D264C1F8C000115C8 /* NSCovidCodeModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */; };
-		48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
-		48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */; };
-		48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */; };
-		48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = 48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */; };
 		6E0D1227263A92050014CF7C /* NSRoundImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D1226263A92050014CF7C /* NSRoundImageButton.swift */; };
 		6E0D1228263A92050014CF7C /* NSRoundImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D1226263A92050014CF7C /* NSRoundImageButton.swift */; };
 		6E0D1232263AA26C0014CF7C /* NSEventPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D1231263AA26C0014CF7C /* NSEventPDFViewController.swift */; };
@@ -372,6 +362,8 @@
 		AAF73666242F2EA00051E34A /* NSEncountersModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73665242F2EA00051E34A /* NSEncountersModuleView.swift */; };
 		AAF73668242F3D030051E34A /* UIStackView+NS.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF73667242F3D030051E34A /* UIStackView+NS.swift */; };
 		AAF7366B2430838A0051E34A /* NSAnimatedGraphLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */; };
+		AC35602927DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer in Resources */ = {isa = PBXBuildFile; fileRef = AC35602827DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer */; };
+		AC35602A27DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer in Resources */ = {isa = PBXBuildFile; fileRef = AC35602827DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer */; };
 		B67A11AE24B8CB1700B46306 /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		B6AEA30824B74ACA0055B5BB /* NSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6AEA30724B74ACA0055B5BB /* NSImageView.swift */; };
 		DC003DD326413E3A0027F379 /* UserUploadPayload.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */; };
@@ -538,13 +530,7 @@
 		F80E407A25092B0500876906 /* NSStatisticsChartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E407925092B0500876906 /* NSStatisticsChartContentView.swift */; };
 		F80E407B25092B0500876906 /* NSStatisticsChartContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E407925092B0500876906 /* NSStatisticsChartContentView.swift */; };
 		F80E735A245AD7B400C934B8 /* URLSession+pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */; };
-		F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */; };
-		F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */; };
-		F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */; };
 		F80E7376245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */; };
-		F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */; };
-		F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */; };
-		F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */; };
 		F82341D6258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F82341D7258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */; };
 		F8287D17246ABCAF0022CFD9 /* DP3TSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F8287D16246ABCAF0022CFD9 /* DP3TSDK */; };
@@ -611,14 +597,6 @@
 		F86A6A9926383803003CAC1B /* NSVenueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86A6A9726383803003CAC1B /* NSVenueView.swift */; };
 		F870A5B72492C6D500C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B62492C6D500C34FFA /* SQLite */; };
 		F870A5B92492C6DE00C34FFA /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F870A5B82492C6DE00C34FFA /* SQLite */; };
-		F87685B525B5F89B00538B8B /* www.pt-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */; };
-		F87685B625B5F89B00538B8B /* www.pt-a.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */; };
-		F87685B725B5F89B00538B8B /* www.pt-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B225B5F89900538B8B /* www.pt-d.bfs.admin.ch.der */; };
-		F87685B825B5F89B00538B8B /* www.pt-d.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B225B5F89900538B8B /* www.pt-d.bfs.admin.ch.der */; };
-		F87685B925B5F89B00538B8B /* www.pt-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B325B5F89A00538B8B /* www.pt-t.bfs.admin.ch.der */; };
-		F87685BA25B5F89B00538B8B /* www.pt-t.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B325B5F89A00538B8B /* www.pt-t.bfs.admin.ch.der */; };
-		F87685BB25B5F89B00538B8B /* www.pt.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B425B5F89A00538B8B /* www.pt.bfs.admin.ch.der */; };
-		F87685BC25B5F89B00538B8B /* www.pt.bfs.admin.ch.der in Resources */ = {isa = PBXBuildFile; fileRef = F87685B425B5F89A00538B8B /* www.pt.bfs.admin.ch.der */; };
 		F87C36A0258B6652008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F87C36A1258B6868008DCC81 /* ExposureNotification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F87C369F258B6652008DCC81 /* ExposureNotification.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F87C3710258C2613008DCC81 /* NSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87C370D258C2613008DCC81 /* NSRadioButton.swift */; };
@@ -796,8 +774,6 @@
 		3DCD3E0F2654256A0050945D /* NSReportsDetailExposedCheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSReportsDetailExposedCheckInViewController.swift; sourceTree = "<group>"; };
 		3DCD3E142655585D0050945D /* NSCheckInDetailCheckInEndedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCheckInDetailCheckInEndedView.swift; sourceTree = "<group>"; };
 		3DCE4F4C264C1F8C000115C8 /* NSCovidCodeModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCovidCodeModuleView.swift; sourceTree = "<group>"; };
-		48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-t.bag.admin.ch.der"; sourceTree = "<group>"; };
-		48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		6E0D1226263A92050014CF7C /* NSRoundImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSRoundImageButton.swift; sourceTree = "<group>"; };
 		6E0D1231263AA26C0014CF7C /* NSEventPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NSEventPDFViewController.swift; path = DP3TApp/Screens/Checkin/Events/NSEventPDFViewController.swift; sourceTree = SOURCE_ROOT; };
 		6E1771532440B09A0008D73D /* NSCodeInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCodeInputViewController.swift; sourceTree = "<group>"; };
@@ -920,6 +896,7 @@
 		AAF73665242F2EA00051E34A /* NSEncountersModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSEncountersModuleView.swift; sourceTree = "<group>"; };
 		AAF73667242F3D030051E34A /* UIStackView+NS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+NS.swift"; sourceTree = "<group>"; };
 		AAF7366A2430838A0051E34A /* NSAnimatedGraphLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAnimatedGraphLayer.swift; sourceTree = "<group>"; };
+		AC35602827DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = "QuoVadis-Root-CA-2-G3.cer"; sourceTree = "<group>"; };
 		B6AEA30724B74ACA0055B5BB /* NSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImageView.swift; sourceTree = "<group>"; };
 		DC003DD126413DE30027F379 /* UserUploadPayload.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = UserUploadPayload.proto; sourceTree = "<group>"; };
 		DC003DD226413E390027F379 /* UserUploadPayload.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserUploadPayload.pb.swift; sourceTree = "<group>"; };
@@ -1024,13 +1001,7 @@
 		F80E407625092AE100876906 /* NSChartColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSChartColumnView.swift; sourceTree = "<group>"; };
 		F80E407925092B0500876906 /* NSStatisticsChartContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSStatisticsChartContentView.swift; sourceTree = "<group>"; };
 		F80E7359245AD7B400C934B8 /* URLSession+pinning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+pinning.swift"; sourceTree = "<group>"; };
-		F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt1.bfs.admin.ch.der; sourceTree = "<group>"; };
-		F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt1-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
 		F80E7375245AF74C00C934B8 /* UBPinnedCertificatesTrustEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UBPinnedCertificatesTrustEvaluator.swift; sourceTree = "<group>"; };
-		F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-a.bag.admin.ch.der"; sourceTree = "<group>"; };
-		F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service.bag.admin.ch.der"; sourceTree = "<group>"; };
-		F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "codegen-service-d.bag.admin.ch.der"; sourceTree = "<group>"; };
 		F82341D5258A41CF007A51BA /* NSUnsupportedOSNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSUnsupportedOSNotificationManager.swift; sourceTree = "<group>"; };
 		F830798E24928EC4005D3C65 /* LoggingStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingStorage.swift; sourceTree = "<group>"; };
 		F83ECEE52577EEF300DB18CB /* NSTracingReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSTracingReminderViewController.swift; sourceTree = "<group>"; };
@@ -1065,10 +1036,6 @@
 		F86A6A8926380C7E003CAC1B /* SwissCovid.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = SwissCovid.proto; sourceTree = "<group>"; };
 		F86A6A94263837AC003CAC1B /* NSReminderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSReminderControl.swift; sourceTree = "<group>"; };
 		F86A6A9726383803003CAC1B /* NSVenueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSVenueView.swift; sourceTree = "<group>"; };
-		F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-a.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F87685B225B5F89900538B8B /* www.pt-d.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-d.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F87685B325B5F89A00538B8B /* www.pt-t.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = "www.pt-t.bfs.admin.ch.der"; sourceTree = "<group>"; };
-		F87685B425B5F89A00538B8B /* www.pt.bfs.admin.ch.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = www.pt.bfs.admin.ch.der; sourceTree = "<group>"; };
 		F87C369F258B6652008DCC81 /* ExposureNotification.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExposureNotification.framework; path = System/Library/Frameworks/ExposureNotification.framework; sourceTree = SDKROOT; };
 		F87C370D258C2613008DCC81 /* NSRadioButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButton.swift; sourceTree = "<group>"; };
 		F87C370E258C2613008DCC81 /* NSRadioButtonGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRadioButtonGroup.swift; sourceTree = "<group>"; };
@@ -2111,18 +2078,7 @@
 		F80E735C245ADEBC00C934B8 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
-				48E967992473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der */,
-				F80E7377245AFD2000C934B8 /* codegen-service-a.bag.admin.ch.der */,
-				F80E7379245AFD2000C934B8 /* codegen-service-d.bag.admin.ch.der */,
-				F80E7378245AFD2000C934B8 /* codegen-service.bag.admin.ch.der */,
-				48E9679C2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der */,
-				F80E736E245AF38E00C934B8 /* www.pt1-a.bfs.admin.ch.der */,
-				F80E736F245AF38E00C934B8 /* www.pt1-d.bfs.admin.ch.der */,
-				F80E736D245AF38E00C934B8 /* www.pt1.bfs.admin.ch.der */,
-				F87685B125B5F89900538B8B /* www.pt-a.bfs.admin.ch.der */,
-				F87685B225B5F89900538B8B /* www.pt-d.bfs.admin.ch.der */,
-				F87685B325B5F89A00538B8B /* www.pt-t.bfs.admin.ch.der */,
-				F87685B425B5F89A00538B8B /* www.pt.bfs.admin.ch.der */,
+				AC35602827DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer */,
 			);
 			path = Certificates;
 			sourceTree = "<group>";
@@ -2407,32 +2363,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A6BE1E24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */,
-				242D2257245C4BD8005DAEA8 /* codegen-service-a.bag.admin.ch.der in Resources */,
-				242D2258245C4BD8005DAEA8 /* codegen-service-d.bag.admin.ch.der in Resources */,
-				F87685B825B5F89B00538B8B /* www.pt-d.bfs.admin.ch.der in Resources */,
-				242D2259245C4BD8005DAEA8 /* codegen-service.bag.admin.ch.der in Resources */,
-				242D225A245C4BD8005DAEA8 /* www.pt1-a.bfs.admin.ch.der in Resources */,
-				48E9679B2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
-				242D225B245C4BD8005DAEA8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
-				F87685BC25B5F89B00538B8B /* www.pt.bfs.admin.ch.der in Resources */,
-				242D225C245C4BD8005DAEA8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				F8A6BE2224C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				242D225E245C4BD8005DAEA8 /* Inter-SemiBold.ttf in Resources */,
 				F8A6BE1A24C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
 				242D225F245C4BD8005DAEA8 /* Inter-Bold.ttf in Resources */,
-				48E9679E2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				F8A6BE1624C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */,
 				F869AED524F54C7D00FC4556 /* Impressum in Resources */,
 				F8A6BE2024C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				242D2260245C4BD8005DAEA8 /* Inter-Light.ttf in Resources */,
 				F8A6BE1824C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,
-				F87685B625B5F89B00538B8B /* www.pt-a.bfs.admin.ch.der in Resources */,
-				F87685BA25B5F89B00538B8B /* www.pt-t.bfs.admin.ch.der in Resources */,
 				242D2261245C4BD8005DAEA8 /* Assets.xcassets in Resources */,
 				F8A6BE1C24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */,
 				242D2262245C4BD8005DAEA8 /* InfoPlist.strings in Resources */,
 				F8A6BE1424C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				242D2263245C4BD8005DAEA8 /* Inter-ExtraLight.ttf in Resources */,
+				AC35602A27DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer in Resources */,
 				242D2264245C4BD8005DAEA8 /* Launch Screen.storyboard in Resources */,
 				F8B30B5A24D2C728006FBBBE /* DebugStrings.strings in Resources */,
 				242D2265245C4BD8005DAEA8 /* Inter-ExtraBold.ttf in Resources */,
@@ -2469,32 +2414,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8A6BE1D24C9BFA100DE6B44 /* FR_App_Datenschutzerklaerung.html in Resources */,
-				F80E737A245AFE4500C934B8 /* codegen-service-a.bag.admin.ch.der in Resources */,
-				F80E737B245AFE4500C934B8 /* codegen-service-d.bag.admin.ch.der in Resources */,
-				F87685B725B5F89B00538B8B /* www.pt-d.bfs.admin.ch.der in Resources */,
-				F80E737C245AFE4500C934B8 /* codegen-service.bag.admin.ch.der in Resources */,
-				F80E7371245AF51C00C934B8 /* www.pt1-a.bfs.admin.ch.der in Resources */,
-				48E9679A2473478100E4A5D6 /* codegen-service-t.bag.admin.ch.der in Resources */,
-				F80E7372245AF51C00C934B8 /* www.pt1-d.bfs.admin.ch.der in Resources */,
-				F87685BB25B5F89B00538B8B /* www.pt.bfs.admin.ch.der in Resources */,
-				F80E7373245AF51C00C934B8 /* www.pt1.bfs.admin.ch.der in Resources */,
 				F8A6BE2124C9BFA100DE6B44 /* DE_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430E242DD34700F19AA5 /* Inter-SemiBold.ttf in Resources */,
 				F8A6BE1924C9BFA100DE6B44 /* IT_App_Nutzungsbedingungen.html in Resources */,
 				DCB44308242DD34700F19AA5 /* Inter-Bold.ttf in Resources */,
-				48E9679D2473479100E4A5D6 /* www.pt1-t.bfs.admin.ch.der in Resources */,
 				F8A6BE1524C9BFA100DE6B44 /* EN_App_Datenschutzerklaerung.html in Resources */,
 				F8A6BE1F24C9BFA100DE6B44 /* EN_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430B242DD34700F19AA5 /* Inter-Light.ttf in Resources */,
 				F8A6BE1724C9BFA100DE6B44 /* IT_App_Datenschutzerklaerung.html in Resources */,
 				91E1EBA424CB0A7100C5103D /* Impressum in Resources */,
-				F87685B525B5F89B00538B8B /* www.pt-a.bfs.admin.ch.der in Resources */,
-				F87685B925B5F89B00538B8B /* www.pt-t.bfs.admin.ch.der in Resources */,
 				8E81CCA2241FCC7F006F2437 /* Assets.xcassets in Resources */,
 				F8A6BE1B24C9BFA100DE6B44 /* DE_App_Datenschutzerklaerung.html in Resources */,
 				DC9A81AC242CE5E000AD1548 /* InfoPlist.strings in Resources */,
 				F8A6BE1324C9BFA100DE6B44 /* FR_App_Nutzungsbedingungen.html in Resources */,
 				DCB4430A242DD34700F19AA5 /* Inter-ExtraLight.ttf in Resources */,
+				AC35602927DB9DCE00FE4AD8 /* QuoVadis-Root-CA-2-G3.cer in Resources */,
 				24780B34242FDF4C003BB26C /* Launch Screen.storyboard in Resources */,
 				F8B30B5924D2C728006FBBBE /* DebugStrings.strings in Resources */,
 				DCB44309242DD34700F19AA5 /* Inter-ExtraBold.ttf in Resources */,
