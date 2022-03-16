@@ -311,8 +311,8 @@ class UIStateLogic {
     private func setInfoBoxState(_ newState: inout UIStateModel) {
         if let infoBox = ConfigManager.currentConfig?.infoBox?.value,
            infoBox.infoId == nil || !NSInfoBoxVisibilityManager.shared.dismissedInfoBoxIds.contains(infoBox.infoId!) {
-            newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title,
-                                                                          text: infoBox.msg,
+            newState.homescreen.infoBox = UIStateModel.Homescreen.InfoBox(title: infoBox.title ?? "",
+                                                                          text: infoBox.msg ?? "",
                                                                           link: infoBox.urlTitle,
                                                                           url: infoBox.url,
                                                                           isDismissible: infoBox.isDismissible,

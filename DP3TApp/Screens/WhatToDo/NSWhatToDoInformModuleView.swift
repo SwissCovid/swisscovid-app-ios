@@ -60,8 +60,8 @@ class NSWhatToDoInformModuleView: NSSimpleModuleBaseView {
                     self.hearingImpairedButtonTouched?()
                 }
             }
-            var model = NSInfoBoxView.ViewModel(title: infoBox.title,
-                                                subText: infoBox.msg,
+            var model = NSInfoBoxView.ViewModel(title: infoBox.title ?? "",
+                                                subText: infoBox.msg ?? "",
                                                 titleColor: .ns_text,
                                                 subtextColor: .ns_text,
                                                 additionalText: infoBox.urlTitle,

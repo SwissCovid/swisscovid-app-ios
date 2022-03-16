@@ -52,7 +52,7 @@ class ConfigResponseBody: UBCodable {
     public let deactivationMessage: LocalizedValue<InfoBox>?
 
     class InfoBox: UBCodable {
-        let title, msg: String
+        let title, msg: String?
         let url: URL?
         let urlTitle: String?
         let infoId: String?
