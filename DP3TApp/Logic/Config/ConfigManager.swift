@@ -166,6 +166,9 @@ class ConfigManager: NSObject {
             if let config = config {
                 self.presentDeactivationIfNeeded(config: config, window: window)
                 self.presentAlertIfNeeded(config: config, window: window)
+            } else {
+                //still show deactivationScreen if no internet
+                self.presentDeactivationIfNeeded(config: ConfigManager.currentConfig)
             }
         }
     }
@@ -216,17 +219,21 @@ class ConfigManager: NSObject {
         }
     }
 
-    public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow?) {
+    public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow? = nil) {
         guard let config = config else { return }
 
         if config.deactivate {
             let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
 
             if let window = window {
-                window.rootViewController = vc
+                if (window.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
+                    window.rootViewController = vc
+                }
             } else {
                 guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                appDelegate.window?.rootViewController? = vc
+                if (appDelegate.window?.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
+                    appDelegate.window?.rootViewController? = vc
+                }
             }
 
             if TracingManager.shared.isActivated {
