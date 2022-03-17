@@ -113,7 +113,8 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
-        let request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        var request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        request.cachePolicy = .reloadIgnoringLocalCacheData
 
         guard Self.shouldLoadConfig(backgroundTask: backgroundTask,
                                     url: request.url?.absoluteString,
