@@ -44,7 +44,7 @@ class ConfigManager: NSObject {
     static let configBackgroundValidityInterval: TimeInterval = 60 * 60 * 6 // 6h
 
     static var allowTracing: Bool {
-        return true
+        return !(ConfigManager.currentConfig?.deactivate ?? false)
     }
 
     // MARK: - Version Numbers
@@ -81,6 +81,9 @@ class ConfigManager: NSObject {
     }
 
     static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?) -> Bool {
+        if ConfigManager.currentConfig?.deactivate ?? false {
+            return true
+        }
         // if the config url was changed (by OS version or app version changing) load config in anycase
         if url != lastConfigUrl {
             return true
@@ -110,7 +113,8 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
-        let request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        var request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        request.cachePolicy = .reloadIgnoringLocalCacheData
 
         guard Self.shouldLoadConfig(backgroundTask: backgroundTask,
                                     url: request.url?.absoluteString,
@@ -160,7 +164,11 @@ class ConfigManager: NSObject {
         loadConfig(backgroundTask: false) { config in
             // self must be strong
             if let config = config {
+                self.presentDeactivationIfNeeded(config: config, window: window)
                 self.presentAlertIfNeeded(config: config, window: window)
+            } else {
+                //still show deactivationScreen if no internet
+                self.presentDeactivationIfNeeded(config: ConfigManager.currentConfig)
             }
         }
     }
@@ -207,6 +215,48 @@ class ConfigManager: NSObject {
             if Self.configAlert != nil {
                 Self.configAlert?.dismiss(animated: true, completion: nil)
                 Self.configAlert = nil
+            }
+        }
+    }
+
+    public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow? = nil) {
+        guard let config = config else { return }
+
+        if config.deactivate {
+            let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+
+            if let window = window {
+                if (window.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
+                    window.rootViewController = vc
+                }
+            } else {
+                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                if (appDelegate.window?.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
+                    appDelegate.window?.rootViewController? = vc
+                }
+            }
+
+            if TracingManager.shared.isActivated {
+                TracingManager.shared.endTracing()
+            }
+
+            TracingManager.shared.setBackgroundRefreshEnabled(false)
+            UBPushManager.shared.setActive(false)
+            CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
+            if !UserStorage.shared.appDeactivated {
+                UserStorage.shared.appDeactivated = true
+            }
+        } else if !config.deactivate, UserStorage.shared.appDeactivated {
+            if TracingManager.shared.isAuthorized {
+                TracingManager.shared.startTracing()
+            }
+            TracingManager.shared.setBackgroundRefreshEnabled(true)
+            UserStorage.shared.appDeactivated = false
+
+            if !UserStorage.shared.hasCompletedOnboarding {
+                let onboardingViewController = NSOnboardingViewController()
+                onboardingViewController.modalPresentationStyle = .fullScreen
+                window?.rootViewController?.present(onboardingViewController, animated: false)
             }
         }
     }

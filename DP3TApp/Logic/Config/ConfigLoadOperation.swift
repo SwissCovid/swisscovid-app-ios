@@ -33,6 +33,26 @@ class ConfigLoadOperation: Operation {
 
                     ConfigLoadOperation.presentedConfigForVersion = ConfigManager.appVersion
                 }
+            } else if let c = config, c.deactivate {
+                DispatchQueue.main.sync {
+                    let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                    appDelegate.window?.rootViewController? = vc
+                }
+
+                if TracingManager.shared.isActivated {
+                    TracingManager.shared.endTracing()
+                }
+
+                TracingManager.shared.setBackgroundRefreshEnabled(false)
+                UBPushManager.shared.setActive(false)
+                CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
+
+                if !UserStorage.shared.appDeactivated {
+                    UserStorage.shared.appDeactivated = true
+                }
+
             } else {
                 self.cancel()
             }

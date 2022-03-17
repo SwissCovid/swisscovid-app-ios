@@ -114,6 +114,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
+        let deactivated = UserStorage.shared.appDeactivated
+
+        guard !deactivated else { return }
+
         if UserStorage.shared.appClipCheckinUrl() != nil {
             let checkinOnboardingVC = NSCheckinOnboardingViewController()
             checkinOnboardingVC.modalPresentationStyle = .fullScreen
@@ -140,6 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Nothing to do here if device is not supported
         guard TracingManager.shared.isSupported else {
+            startForceUpdateCheck()
             return
         }
 

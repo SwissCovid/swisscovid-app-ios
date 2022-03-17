@@ -1942,3 +1942,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19-vac-check.ch/";
 "vaccination_impf_check_title" = "Prendre un rendez-vous maintenant";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Information";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "L’application SwissCovid n’est plus en service";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "Nous vous remercions d’avoir téléchargé l’application SwissCovid.\n\nEn utilisant cette application, vous avez fourni une contribution essentielle à la lutte contre la pandémie. Plus de 175 000 personnes ont pu rapidement informer d’autres d'un risque d’infection et ainsi interrompre les chaînes de transmission.\n\nParallèlement à la levée des mesures de la Confédération, l’exploitation de l’application SwissCovid a été suspendue. L’application est inactive dès à présent et doit être désinstallée. Si une réactivation s’avérait nécessaire en raison de la situation épidémiologique, nous serions à nouveau heureux de pouvoir compter sur votre soutien.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "Nous vous remercions d’avoir téléchargé l’application SwissCovid.\n\nEn utilisant cette application, vous avez fourni une contribution essentielle à la lutte contre la pandémie. Plus de 175 000 personnes ont pu rapidement informer d’autres d'un risque d’infection et ainsi interrompre les chaînes de transmission.\n\nParallèlement à la levée des mesures de la Confédération, l’exploitation de l’application SwissCovid a été suspendue. L’application doit être désinstallée. Si une réactivation s’avérait nécessaire en raison de la situation épidémiologique, nous serions à nouveau heureux de pouvoir compter sur votre soutien.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Informations complémentaires";

@@ -1908,3 +1908,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "ሕጂ ቘጸራ ሓዝ";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "ሓበሬታ";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "ኣሰራርሓ እቲ SwissCovid ዚብሃል ኣፕሊኬሽን ተቛሪጹ እዩ።";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "ነቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን ስለ ዘራገፍኩምልና (ዳውንሎውድ ብምግባርኩም) አመስግነኩም።\n\nነቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን ተጠቒምካ ነዚ ለብዒ እዚ ንምቅላስ ኣገዳሲ ኣበርክቶ ጌርካ ኢኻ። ልዕሊ 175,000 ዝዀኑ ሰባት ንኻልኦት ሰባት ብዛዕባ እቲ ኼጋጥም ዚኽእል ረኽሲ ቐልጢፎም ኪነግርዎም ንሰንሰለት እቲ ረኽሲ ድማ ኬቋርጽዎ ኽኢሎም እዮም።\n\nእቲ ፈደራላዊ መንግስቲ ዝወሰዶ ስጕምትታት ምስ ተደምሰሰ ኣሰራርሓ እቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን እውን ተቛረጸ። እቲ ኣፕሊኬሽን ብኡንብኡ ዘይንጡፍ ስለ ዝዀነ ኪቕመጥ ኣለዎ። ብሰንኪ እቲ ለብዒ እንደገና ምላሽ ምሃብ ኣድላዪ እንተ ዀይኑ እንደገና ደገፍካ ኽንረክብ ሕጉሳት ኢና ።";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "ነቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን ስለ ዘራገፍኩምልና (ዳውንሎውድ ብምግባርኩም) አመስግነኩም።\n\nነቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን ተጠቒምካ ነዚ ለብዒ እዚ ንምቅላስ ኣገዳሲ ኣበርክቶ ጌርካ ኢኻ። ልዕሊ 175,000 ዝዀኑ ሰባት ንኻልኦት ሰባት ብዛዕባ እቲ ኼጋጥም ዚኽእል ረኽሲ ቐልጢፎም ኪነግርዎም ንሰንሰለት እቲ ረኽሲ ድማ ኬቋርጽዎ ኽኢሎም እዮም።\n\nእቲ ፈደራላዊ መንግስቲ ዝወሰዶ ስጕምትታት ምስ ተደምሰሰ ኣሰራርሓ እቲ ስዊዝኮቪድ ዚብሃል ኣፕሊኬሽን እውን ተቛረጸ። እቲ ኣፕሊኬሽን ኪገጣጠም ኣለዎ። ብሰንኪ እቲ ለብዒ እንደገና ምላሽ ምሃብ ኣድላዪ እንተ ዀይኑ እንደገና ደገፍካ ኽንረክብ ሕጉሳት ኢና።";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "ዝያዳ ሓበሬታ";

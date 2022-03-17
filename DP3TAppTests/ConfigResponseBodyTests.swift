@@ -14,14 +14,21 @@ import XCTest
 class ConfigResponseBodyTests: XCTestCase {
     func testParsing() {
         let json = """
-            {"forceUpdate": false,"forceTraceShutdown": false,"infoBox": {"deInfoBox": {"title": "Hinweis","msg": "Info box body","url": "https://www.bag.admin.ch/","urlTitle": "Weitere Informationen"},"frInfoBox": null,"itInfoBox": null,"enInfoBox": null,"ptInfoBox": null,"esInfoBox": null,"sqInfoBox": null,"bsInfoBox": null,"hrInfoBox": null,"srInfoBox": null,"rmInfoBox": null},"sdkConfig": {"numberOfWindowsForExposure": 3,"eventThreshold": 0.8,"badAttenuationThreshold": 73,"contactAttenuationThreshold": 73},"iOSGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15},"androidGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15}, "interOpsCountries": ["CH", "LI", "DE"], "showVaccinationInfo": true, "vaccinationBookingInfo": {} }
+            {"forceUpdate": false,"forceTraceShutdown": false,"infoBox": {"deInfoBox": {"title": "Hinweis","msg": "Info box body","url": "https://www.bag.admin.ch/","urlTitle": "Weitere Informationen"},"frInfoBox": null,"itInfoBox": null,"enInfoBox": null,"ptInfoBox": null,"esInfoBox": null,"sqInfoBox": null,"bsInfoBox": null,"hrInfoBox": null,"srInfoBox": null,"rmInfoBox": null},"sdkConfig": {"numberOfWindowsForExposure": 3,"eventThreshold": 0.8,"badAttenuationThreshold": 73,"contactAttenuationThreshold": 73},"iOSGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15},"androidGaenSdkConfig": {"lowerThreshold": 53,"higherThreshold": 60,"factorLow": 1,"factorHigh": 0.5,"triggerThreshold": 15}, "interOpsCountries": ["CH", "LI", "DE"], "showVaccinationInfo": true, "vaccinationBookingInfo": {}, "deactivate": false, "deactivationMessage": {"deInfoBox": {"title": "Deaktiviert","msg": "Deactivation Message Body","url": "https://www.bag.admin.ch/deactivated","urlTitle": "Weitere Informationen zur Deaktivierung"},"frInfoBox": null,"itInfoBox": null,"enInfoBox": null,"ptInfoBox": null,"esInfoBox": null,"sqInfoBox": null,"bsInfoBox": null,"hrInfoBox": null,"srInfoBox": null,"rmInfoBox": null}}
         """
         let config = try! JSONDecoder().decode(ConfigResponseBody.self, from: json.data(using: .utf8)!)
+
         XCTAssertEqual(config.forceUpdate, false)
         XCTAssertEqual(config.infoBox?.value(for: "de")?.title, "Hinweis")
         XCTAssertEqual(config.infoBox?.value(for: "de")?.msg, "Info box body")
         XCTAssertEqual(config.infoBox?.value(for: "de")?.url?.absoluteString, "https://www.bag.admin.ch/")
         XCTAssertEqual(config.infoBox?.value(for: "de")?.urlTitle, "Weitere Informationen")
+
+        XCTAssertEqual(config.deactivate, false)
+        XCTAssertEqual(config.deactivationMessage?.value(for: "de")?.title, "Deaktiviert")
+        XCTAssertEqual(config.deactivationMessage?.value(for: "de")?.msg, "Deactivation Message Body")
+        XCTAssertEqual(config.deactivationMessage?.value(for: "de")?.url?.absoluteString, "https://www.bag.admin.ch/deactivated")
+        XCTAssertEqual(config.deactivationMessage?.value(for: "de")?.urlTitle, "Weitere Informationen zur Deaktivierung")
 
         XCTAssertNil(config.infoBox?.value(for: "fr"))
         XCTAssertNil(config.infoBox?.value(for: "it"))
@@ -33,6 +40,17 @@ class ConfigResponseBodyTests: XCTestCase {
         XCTAssertNil(config.infoBox?.value(for: "hr"))
         XCTAssertNil(config.infoBox?.value(for: "sr"))
         XCTAssertNil(config.infoBox?.value(for: "rm"))
+
+        XCTAssertNil(config.deactivationMessage?.value(for: "fr"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "it"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "en"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "pt"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "es"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "sq"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "bs"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "hr"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "sr"))
+        XCTAssertNil(config.deactivationMessage?.value(for: "rm"))
 
         XCTAssertEqual(config.iOSGaenSdkConfig?.factorHigh, 0.5)
         XCTAssertEqual(config.iOSGaenSdkConfig?.lowerThreshold, 53)

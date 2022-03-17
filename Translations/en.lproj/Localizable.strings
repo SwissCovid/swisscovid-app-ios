@@ -1937,3 +1937,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "Book an appointment now";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Information";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "The SwissCovid app has been discontinued";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "Thank you for downloading the SwissCovid app.\n\nYou have made an important contribution to fighting the pandemic by using the SwissCovid app. More than 175,000 people were able to break the transmission chain by quickly informing others of the risk of infection.\n\nThe SwissCovid app was discontinued when the federal government's other measures were lifted. The app is now inactive and you should delete it. We hope we can count on your support again if the epidemiological situation should require its reactivation in the future.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "Thank you for downloading the SwissCovid app.\n\nYou have made an important contribution to fighting the pandemic by using the SwissCovid app. More than 175,000 people were able to break the transmission chain by quickly informing others of the risk of infection.\n\nThe SwissCovid app was discontinued when the federal government's other measures were lifted, and it should now be deleted. We hope we can count on your support again if the epidemiological situation should require its reactivation in the future.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Further information";

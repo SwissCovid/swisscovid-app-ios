@@ -500,6 +500,10 @@
 		DCE1398E26382B5E0093D8F6 /* CreatedEventsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE1398C26382B5E0093D8F6 /* CreatedEventsManager.swift */; };
 		DCE32DF52637D05F00168693 /* QRCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE32DF42637D05F00168693 /* QRCodeTests.swift */; };
 		DF3BA22324520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */; };
+		F20EEE3627DF889D004DADA2 /* NSDeactivatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */; };
+		F20EEE3727DF88A1004DADA2 /* NSDeactivatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */; };
+		F223579E27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */; };
+		F22357A027D60473001EFCD6 /* NSDeactivatedInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */; };
 		F806D33C24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
 		F806D33D24F91C7800672DFC /* LocalPushProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */; };
 		F806D33F24F91D5B00672DFC /* TracingManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */; };
@@ -984,6 +988,8 @@
 		DCE1398C26382B5E0093D8F6 /* CreatedEventsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedEventsManager.swift; sourceTree = "<group>"; };
 		DCE32DF42637D05F00168693 /* QRCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeTests.swift; sourceTree = "<group>"; };
 		DF3BA22224520EE3009086E7 /* NSDebugDatabaseUploadHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDebugDatabaseUploadHelper.swift; sourceTree = "<group>"; };
+		F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDeactivatedInfoView.swift; sourceTree = "<group>"; };
+		F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDeactivatedInfoViewController.swift; sourceTree = "<group>"; };
 		F806D33B24F91C7800672DFC /* LocalPushProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPushProtocol.swift; sourceTree = "<group>"; };
 		F806D33E24F91D5B00672DFC /* TracingManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TracingManagerTests.swift; sourceTree = "<group>"; };
 		F806D34024F91DB900672DFC /* MockIdentifierProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockIdentifierProvider.swift; sourceTree = "<group>"; };
@@ -1894,6 +1900,7 @@
 		DC286A27242CE1D2001D5344 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F223579C27D5F780001EFCD6 /* Deactivated */,
 				6EB9887727158EFD00DFFA17 /* Vaccination */,
 				F87E96AE2639966400755AF1 /* Info */,
 				F8D581242589701C00307C2B /* Unsupported */,
@@ -2021,6 +2028,15 @@
 				F87C36EA258C25B1008DCC81 /* RadioButton */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		F223579C27D5F780001EFCD6 /* Deactivated */ = {
+			isa = PBXGroup;
+			children = (
+				F223579D27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift */,
+				F223579F27D60473001EFCD6 /* NSDeactivatedInfoViewController.swift */,
+			);
+			path = Deactivated;
 			sourceTree = "<group>";
 		};
 		F80465142525F58900311802 /* Tutorials */ = {
@@ -2695,6 +2711,7 @@
 				246FD176249B568F00FD36F8 /* Environment+AppStore.swift in Sources */,
 				242D220B245C4BD8005DAEA8 /* NSCovidCodeInfoViewController.swift in Sources */,
 				6EF28D9226393878001C1565 /* QRCodePDFGenerator.swift in Sources */,
+				F20EEE3727DF88A1004DADA2 /* NSDeactivatedInfoView.swift in Sources */,
 				F87C3713258C2613008DCC81 /* NSRadioButtonGroup.swift in Sources */,
 				242D220C245C4BD8005DAEA8 /* RandomGenerators.swift in Sources */,
 				6EF28D052637053C001C1565 /* NSQRScanningView.swift in Sources */,
@@ -2756,6 +2773,7 @@
 				242D2223245C4BD8005DAEA8 /* ConfigResponseBody.swift in Sources */,
 				F86A6A772637F226003CAC1B /* CheckInExposure.swift in Sources */,
 				F8A6BE2B24CAC2C700DE6B44 /* NSInfoBoxVisibilityManager.swift in Sources */,
+				F20EEE3627DF889D004DADA2 /* NSDeactivatedInfoViewController.swift in Sources */,
 				242D2224245C4BD8005DAEA8 /* NSLayoutConstants.swift in Sources */,
 				2411CA9D245F1085002FB5A9 /* Environment+PublicKeys.swift in Sources */,
 				F83ECEE72577EEF300DB18CB /* NSTracingReminderViewController.swift in Sources */,
@@ -3058,6 +3076,7 @@
 				6E1771562440B5140008D73D /* NSCodeInputControl.swift in Sources */,
 				F851223D250A2676009BE733 /* NSChartLineView.swift in Sources */,
 				DC01360925DFE5D6001A33F4 /* StatisticInfoPopupType.swift in Sources */,
+				F22357A027D60473001EFCD6 /* NSDeactivatedInfoViewController.swift in Sources */,
 				242D21D1245C3853005DAEA8 /* Logger.swift in Sources */,
 				6EFB09792445B2CA0097BD3D /* NSInfoBoxView.swift in Sources */,
 				6EF4D24824582BBB005E2A9C /* NSExternalLinkButton.swift in Sources */,
@@ -3101,6 +3120,7 @@
 				6E3F65F72449B61A00980A4E /* NSDebugscreenViewController.swift in Sources */,
 				F80E40632508F83100876906 /* NSStatisticsHeaderView.swift in Sources */,
 				DC1617A32638717800B56ADA /* NSCheckInCurrentStateModuleView.swift in Sources */,
+				F223579E27D5F7BC001EFCD6 /* NSDeactivatedInfoView.swift in Sources */,
 				DCA3FFBC2451621D0003F5AD /* NSSplashViewController.swift in Sources */,
 				DC16178F2638717800B56ADA /* NSDiaryEntryContentView.swift in Sources */,
 				F80E40662508FE1600876906 /* NSStatsticsModuleHeader.swift in Sources */,
@@ -4645,7 +4665,7 @@
 			repositoryURL = "https://github.com/DP-3T/dp3t-sdk-ios.git";
 			requirement = {
 				kind = exactVersion;
-				version = 2.4.0;
+				version = 2.5.1;
 			};
 		};
 		F870A5B52492C6D500C34FFA /* XCRemoteSwiftPackageReference "SQLite" */ = {

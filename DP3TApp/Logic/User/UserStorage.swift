@@ -77,6 +77,9 @@ class UserStorage {
     @UBOptionalUserDefault(key: "lastTracingDisabledDate")
     var lastTracingDisabledDate: Date?
 
+    @UBUserDefault(key: "appDeactivated", defaultValue: false)
+    var appDeactivated: Bool
+
     // method to get AppClip url in Main App
     public func appClipCheckinUrl() -> String? {
         let bi = (Bundle.main.bundleIdentifier ?? "")

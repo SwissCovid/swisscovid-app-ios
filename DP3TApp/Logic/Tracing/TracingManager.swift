@@ -109,7 +109,7 @@ class TracingManager: NSObject {
     }
 
     func requestTracingPermission(completion: @escaping (Error?) -> Void) {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
 
         DP3TTracing.startTracing { result in
             switch result {
@@ -122,7 +122,7 @@ class TracingManager: NSObject {
     }
 
     func startTracing(callback: ((TracingEnableResult) -> Void)? = nil) {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
@@ -151,13 +151,13 @@ class TracingManager: NSObject {
     }
 
     func endTracing() {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         DP3TTracing.stopTracing()
         localPush.removeSyncWarningTriggers()
     }
 
     func resetSDK() {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         // completely reset SDK
         DP3TTracing.reset()
 
@@ -168,7 +168,7 @@ class TracingManager: NSObject {
     }
 
     func deletePositiveTest() {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         UIStateManager.shared.blockUpdate {
             // reset end isolation question date and onset date
             ReportingManager.shared.endIsolationQuestionDate = nil
@@ -193,7 +193,7 @@ class TracingManager: NSObject {
     }
 
     func deleteReports() {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         // delete all visible messages
         DP3TTracing.resetExposureDays()
 
@@ -206,7 +206,7 @@ class TracingManager: NSObject {
     }
 
     func userHasCompletedOnboarding() {
-        guard #available(iOS 12.5, *) else { return }
+        guard #available(iOS 12.5, *), isSupported else { return }
         if ConfigManager.allowTracing, UserStorage.shared.tracingSettingEnabled {
             DP3TTracing.startTracing { result in
                 switch result {
@@ -250,6 +250,12 @@ class TracingManager: NSObject {
             completion?()
         }
     }
+
+    func setBackgroundRefreshEnabled(_ enabled: Bool) {
+        guard #available(iOS 12.5, *), isSupported else { return }
+
+        DP3TTracing.setBackgroundTasksEnabled(enabled)
+    }
 }
 
 extension TracingManager: DP3TTracingDelegate {
@@ -271,7 +277,7 @@ extension TracingManager: DP3TTracingDelegate {
         isAuthorized = (state.trackingState != .inactive(error: .authorizationUnknown) &&
             state.trackingState != .inactive(error: .permissionError))
 
-        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins()
+        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins() && !UserStorage.shared.appDeactivated
         UBPushManager.shared.setActive(needsPush)
 
         // update tracing error states if needed
