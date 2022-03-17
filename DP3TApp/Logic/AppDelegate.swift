@@ -144,6 +144,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Nothing to do here if device is not supported
         guard TracingManager.shared.isSupported else {
+            startForceUpdateCheck()
             return
         }
 
