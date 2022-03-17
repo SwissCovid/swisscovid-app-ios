@@ -81,6 +81,9 @@ class ConfigManager: NSObject {
     }
 
     static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?) -> Bool {
+        if ConfigManager.currentConfig?.deactivate ?? false {
+            return true
+        }
         // if the config url was changed (by OS version or app version changing) load config in anycase
         if url != lastConfigUrl {
             return true

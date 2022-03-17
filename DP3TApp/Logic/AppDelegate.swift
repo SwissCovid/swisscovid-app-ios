@@ -114,8 +114,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        ConfigManager().startConfigRequest(window: window)
-
         let deactivated = UserStorage.shared.appDeactivated
 
         guard !deactivated else { return }
@@ -139,6 +137,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_: UIApplication) {
         // Start sync after app became active
         TracingManager.shared.updateStatus(shouldSync: true, completion: nil)
+
+        ConfigManager().startConfigRequest(window: window)
     }
 
     private func willAppearAfterColdstart(_: UIApplication, coldStart: Bool, backgroundTime: TimeInterval) {
