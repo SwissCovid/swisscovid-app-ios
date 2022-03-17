@@ -1909,3 +1909,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "Agende a data agora";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Informação";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "A operação do aplicativo SwissCovid cessou";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "Agradecemos ter baixado o aplicativo SwissCovid.\n\nCom a utilização do aplicativo você prestou um contributo relevante para o combate à pandemia. Mais de 175.000 pessoas puderam informar outros rapidamente sobre um risco de contágio e interromper as cadeias de infeção.\n\nCom a revogação das medidas da Confederação, a operação do aplicativo SwissCovid também cessou. A partir de agora, o aplicativo é inativo e deve ser desinstalado. Se uma reativação for necessária devido à situação epidemiológica, seríamos muito grato pela sua ajuda.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "Agradecemos ter baixado o aplicativo SwissCovid.\n\nCom a utilização do aplicativo você prestou um contributo relevante para o combate à pandemia. Mais de 175.000 pessoas puderam informar outros rapidamente sobre um risco de contágio e interromper as cadeias de infeção.\n\nCom a revogação das medidas da Confederação, a operação do aplicativo SwissCovid também cessou. A partir de agora, o aplicativo é inativo e deve ser desinstalado. Se uma reativação for necessária devido à situação epidemiológica, seríamos muito grato pela sua ajuda.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Mais informações";

@@ -21,7 +21,7 @@ class NSDeactivatedInfoView: NSSimpleModuleBaseView {
         externalLinkButton = NSExternalLinkButton(style: .normal(color: .ns_blue), size: .normal, linkType: .url)
 
         super.init(title: ConfigManager.currentConfig?.deactivationMessage?.value?.title ?? "",
-                   subtitle: "accessibility_info_button".ub_localized,
+                   subtitle: "termination_header".ub_localized,
                    subview: illuView,
                    text: ConfigManager.currentConfig?.deactivationMessage?.value?.msg ?? "",
                    subtitleColor: .ns_blue,

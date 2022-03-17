@@ -1909,3 +1909,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "Rezervoni një takim tani";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Informacion";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "Funksionimi i aplikacionit “SwissCovid” u ndërpre";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "Faleminderit shumë, që ju e keni shkarkuar aplikacionin “SwissCovid”.\n\nMe përdorimin e aplikacionin “SwissCovid” ju keni dhënë një kontribut të spikatshëm për luftimin e pandemisë. Mbi 175’000 persona mundën të informonin shpejt të tjerët mbi një rrezik infektimi dhe të ndërprisnin me këtë zinxhirin e infektimit.\n\nMe shfuqizimin e masave të federatës u ndërpre edhe funksionimi i aplikacionit “SwissCovid”. Aplikacioni është menjëherë joveprues dhe duhet të deinstalohet. Nëse për shkak të situatës epidemiologjike do të jetë i nevojshëm një riaktivizim, ne do të gëzoheshim përsëri për mbështetjen tuaj.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "Faleminderit shumë, që ju e keni shkarkuar aplikacionin “SwissCovid”.\n\nMe përdorimin e aplikacionin “SwissCovid” ju keni dhënë një kontribut të spikatshëm për luftimin e pandemisë. Mbi 175’000 persona mundën të informonin shpejt të tjerët mbi një rrezik infektimi dhe të ndërprisnin me këtë zinxhirin e infektimit.\n\nMe shfuqizimin e masave të federatës u ndërpre edhe funksionimi i aplikacionit “SwissCovid”. Aplikacioni duhet të deinstalohet. Nëse për shkak të situatës epidemiologjike do të jetë i nevojshëm një riaktivizim, ne do të gëzoheshim përsëri për mbështetjen tuaj.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Informacione të tjera";
