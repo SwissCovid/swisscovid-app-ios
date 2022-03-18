@@ -58,7 +58,7 @@ class NSDeactivatedInfoView: NSSimpleModuleBaseView {
     }
 
     private func moreInfoTouched() {
-        if let url = ConfigManager.currentConfig?.deactivationMessage?.value?.url { 
+        if let url = ConfigManager.currentConfig?.deactivationMessage?.value?.url {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             print("URL is null")

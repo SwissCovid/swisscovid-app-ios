@@ -277,7 +277,7 @@ extension TracingManager: DP3TTracingDelegate {
         isAuthorized = (state.trackingState != .inactive(error: .authorizationUnknown) &&
             state.trackingState != .inactive(error: .permissionError))
 
-        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins() && !UserStorage.shared.appDeactivated
+        let needsPush = !isAuthorized && CrowdNotifier.hasCheckins() && !(ConfigManager.currentConfig?.deactivate ?? false)
         UBPushManager.shared.setActive(needsPush)
 
         // update tracing error states if needed

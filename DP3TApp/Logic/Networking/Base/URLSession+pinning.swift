@@ -95,15 +95,14 @@ class CertificateEvaluator: NSObject, URLSessionDelegate {
                      "www.pt-a.bfs.admin.ch",
                      "www.pt-t.bfs.admin.ch",
                      "www.pt.bfs.admin.ch"]
-        
+
         if let QuovadisRootCA = bundle.getCertificate(with: "QuoVadis-Root-CA-2-G3", fileExtension: "cer") {
             for host in hosts {
                 let evaluator = UBPinnedCertificatesTrustEvaluator(certificates: [QuovadisRootCA],
-                                                                       acceptSelfSignedCertificates: true,
-                                                                       performDefaultValidation: false,
-                                                                       validateHost: true)
+                                                                   acceptSelfSignedCertificates: true,
+                                                                   performDefaultValidation: false,
+                                                                   validateHost: true)
                 evaluators[host] = evaluator
-
             }
         } else {
             assertionFailure("Could not load certificate for pinned host")

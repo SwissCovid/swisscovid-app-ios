@@ -164,11 +164,8 @@ class ConfigManager: NSObject {
         loadConfig(backgroundTask: false) { config in
             // self must be strong
             if let config = config {
-                self.presentDeactivationIfNeeded(config: config, window: window)
+                Self.presentDeactivationIfNeeded(config: config, window: window)
                 self.presentAlertIfNeeded(config: config, window: window)
-            } else {
-                //still show deactivationScreen if no internet
-                self.presentDeactivationIfNeeded(config: ConfigManager.currentConfig)
             }
         }
     }
@@ -219,45 +216,55 @@ class ConfigManager: NSObject {
         }
     }
 
-    public func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow? = nil) {
+    public static func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow? = nil) {
         guard let config = config else { return }
 
         if config.deactivate {
+            if (window?.rootViewController as? UINavigationController)?.visibleViewController is NSDeactivatedInfoViewController {
+                // The NSDeactivatedInfoViewController is already visible
+                return
+            }
+
             let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
 
             if let window = window {
-                if (window.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
-                    window.rootViewController = vc
-                }
-            } else {
-                guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
-                if (appDelegate.window?.rootViewController as? NSNavigationController)?.visibleViewController as? NSDeactivatedInfoViewController == nil {
-                    appDelegate.window?.rootViewController? = vc
-                }
-            }
-
-            if TracingManager.shared.isActivated {
-                TracingManager.shared.endTracing()
+                window.rootViewController = vc
             }
 
             TracingManager.shared.setBackgroundRefreshEnabled(false)
+
+            if TracingManager.shared.isActivated {
+                UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
+                TracingManager.shared.endTracing()
+            }
+
             UBPushManager.shared.setActive(false)
             CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
-            if !UserStorage.shared.appDeactivated {
-                UserStorage.shared.appDeactivated = true
-            }
+
+            UserStorage.shared.appDeactivated = true
+
         } else if !config.deactivate, UserStorage.shared.appDeactivated {
-            if TracingManager.shared.isAuthorized {
+            if TracingManager.shared.isAuthorized, UserStorage.shared.tracingWasActivatedBeforeDeaktivation {
                 TracingManager.shared.startTracing()
             }
-            TracingManager.shared.setBackgroundRefreshEnabled(true)
-            UserStorage.shared.appDeactivated = false
 
-            if !UserStorage.shared.hasCompletedOnboarding {
-                let onboardingViewController = NSOnboardingViewController()
-                onboardingViewController.modalPresentationStyle = .fullScreen
-                window?.rootViewController?.present(onboardingViewController, animated: false)
+            TracingManager.shared.setBackgroundRefreshEnabled(true)
+
+            if TracingManager.shared.isSupported {
+                window?.rootViewController = (UIApplication.shared.delegate as? AppDelegate)?.navigationController
+
+                if !UserStorage.shared.hasCompletedOnboarding {
+                    let onboardingViewController = NSOnboardingViewController()
+                    onboardingViewController.modalPresentationStyle = .fullScreen
+                    window?.rootViewController?.present(onboardingViewController, animated: false)
+                }
+
+            } else {
+                window?.rootViewController = NSUnsupportedOSViewController()
             }
+
+            UserStorage.shared.appDeactivated = false
+            UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
         }
     }
 }
