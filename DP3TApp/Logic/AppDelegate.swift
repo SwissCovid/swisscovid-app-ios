@@ -114,9 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
-        let deactivated = UserStorage.shared.appDeactivated
-
-        guard !deactivated else { return }
+        guard !(ConfigManager.currentConfig?.deactivate ?? false) else { return }
 
         if UserStorage.shared.appClipCheckinUrl() != nil {
             let checkinOnboardingVC = NSCheckinOnboardingViewController()
@@ -166,6 +164,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
+
+        ConfigManager.presentDeactivationIfNeeded(config: ConfigManager.currentConfig, window: window)
 
         startForceUpdateCheck()
 

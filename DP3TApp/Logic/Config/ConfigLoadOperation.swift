@@ -41,17 +41,17 @@ class ConfigLoadOperation: Operation {
                     appDelegate.window?.rootViewController? = vc
                 }
 
+                TracingManager.shared.setBackgroundRefreshEnabled(false)
+
                 if TracingManager.shared.isActivated {
                     TracingManager.shared.endTracing()
+                    UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
                 }
 
-                TracingManager.shared.setBackgroundRefreshEnabled(false)
                 UBPushManager.shared.setActive(false)
                 CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
 
-                if !UserStorage.shared.appDeactivated {
-                    UserStorage.shared.appDeactivated = true
-                }
+                UserStorage.shared.appDeactivated = true
 
             } else {
                 self.cancel()
