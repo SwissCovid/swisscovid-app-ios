@@ -223,7 +223,6 @@
 		6E5B6979265F6A0500EB0C56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B6978265F6A0500EB0C56 /* Assets.xcassets */; };
 		6E5B697C265F6A0500EB0C56 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B697B265F6A0500EB0C56 /* Preview Assets.xcassets */; };
 		6E5B697F265F6A0500EB0C56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E5B697D265F6A0500EB0C56 /* LaunchScreen.storyboard */; };
-		6E5B6984265F6A0500EB0C56 /* DP3TAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6E5B698F265F6C6E00EB0C56 /* CrowdNotifierBaseSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5B698E265F6C6E00EB0C56 /* CrowdNotifierBaseSDK */; };
 		6E5B6991265F6C8A00EB0C56 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5B6990265F6C8A00EB0C56 /* SnapKit */; };
 		6E5B6993265F6C8A00EB0C56 /* Clibsodium in Frameworks */ = {isa = PBXBuildFile; productRef = 6E5B6992265F6C8A00EB0C56 /* Clibsodium */; };
@@ -473,7 +472,6 @@
 		DC746D5A2451DF78009426B1 /* NSHeaderActiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC746D592451DF78009426B1 /* NSHeaderActiveView.swift */; };
 		DC85DEFD263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */; };
 		DC85DEFE263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC85DEFC263ADEDA002DF191 /* NSCheckInDetailCheckedOutView.swift */; };
-		DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */ = {isa = PBXBuildFile; fileRef = 6E5B6970265F6A0400EB0C56 /* DP3TAppClip.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DC8CAEF226677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
 		DC8CAEF326677BC7002D78EF /* UIAlertController+CheckoutAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8CAEF126677BC6002D78EF /* UIAlertController+CheckoutAlert.swift */; };
 		DC9A81AB242CE5E000AD1548 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC9A81A1242CE5E000AD1548 /* Localizable.strings */; };
@@ -674,13 +672,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6E5B6982265F6A0500EB0C56 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E81CC8D241FCC7D006F2437 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E5B696F265F6A0400EB0C56;
-			remoteInfo = DP3TAppClip;
-		};
 		8E81CCAC241FCC7F006F2437 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8E81CC8D241FCC7D006F2437 /* Project object */;
@@ -688,39 +679,7 @@
 			remoteGlobalIDString = 8E81CC94241FCC7D006F2437;
 			remoteInfo = IVC;
 		};
-		DC8CAEEE266666CB002D78EF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 8E81CC8D241FCC7D006F2437 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6E5B696F265F6A0400EB0C56;
-			remoteInfo = DP3TAppClip;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6E5B6985265F6A0500EB0C56 /* Embed App Clips */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
-			dstSubfolderSpec = 16;
-			files = (
-				6E5B6984265F6A0500EB0C56 /* DP3TAppClip.app in Embed App Clips */,
-			);
-			name = "Embed App Clips";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DC8CAEF0266666CB002D78EF /* Embed App Clips */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/AppClips";
-			dstSubfolderSpec = 16;
-			files = (
-				DC8CAEED266666CB002D78EF /* DP3TAppClip.app in Embed App Clips */,
-			);
-			name = "Embed App Clips";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2411CA9E2462ADBE002FB5A9 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
@@ -2210,12 +2169,10 @@
 				242D2253245C4BD8005DAEA8 /* Frameworks */,
 				242D2256245C4BD8005DAEA8 /* Resources */,
 				242D226B245C4BD8005DAEA8 /* ShellScript */,
-				DC8CAEF0266666CB002D78EF /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DC8CAEEF266666CB002D78EF /* PBXTargetDependency */,
 			);
 			name = DP3TAppCalibration;
 			packageProductDependencies = (
@@ -2265,12 +2222,10 @@
 				8E81CC92241FCC7D006F2437 /* Frameworks */,
 				8E81CC93241FCC7D006F2437 /* Resources */,
 				240879652440504500001462 /* Run Script */,
-				6E5B6985265F6A0500EB0C56 /* Embed App Clips */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6E5B6983265F6A0500EB0C56 /* PBXTargetDependency */,
 			);
 			name = DP3TApp;
 			packageProductDependencies = (
@@ -3190,20 +3145,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6E5B6983265F6A0500EB0C56 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E5B696F265F6A0400EB0C56 /* DP3TAppClip */;
-			targetProxy = 6E5B6982265F6A0500EB0C56 /* PBXContainerItemProxy */;
-		};
 		8E81CCAD241FCC7F006F2437 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8E81CC94241FCC7D006F2437 /* DP3TApp */;
 			targetProxy = 8E81CCAC241FCC7F006F2437 /* PBXContainerItemProxy */;
-		};
-		DC8CAEEF266666CB002D78EF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6E5B696F265F6A0400EB0C56 /* DP3TAppClip */;
-			targetProxy = DC8CAEEE266666CB002D78EF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
