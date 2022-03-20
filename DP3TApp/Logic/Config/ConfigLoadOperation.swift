@@ -34,11 +34,16 @@ class ConfigLoadOperation: Operation {
                     ConfigLoadOperation.presentedConfigForVersion = ConfigManager.appVersion
                 }
             } else if let c = config, c.deactivate {
-                DispatchQueue.main.sync {
+                if Thread.isMainThread {
                     let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
-
                     guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
                     appDelegate.window?.rootViewController? = vc
+                } else {
+                    DispatchQueue.main.async {
+                        let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+                        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                        appDelegate.window?.rootViewController? = vc
+                    }
                 }
 
                 TracingManager.shared.setBackgroundRefreshEnabled(false)
