@@ -24,8 +24,10 @@ class DatabaseSyncer {
     private var databaseSyncInterval: TimeInterval = 10
 
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
+        let deactivated = (ConfigManager.currentConfig?.deactivate ?? false)
         guard !databaseIsSyncing,
-              UserStorage.shared.hasCompletedOnboarding else {
+              UserStorage.shared.hasCompletedOnboarding,
+              !deactivated else {
             completionHandler?(.noData)
             return
         }

@@ -53,6 +53,8 @@ class ConfigLoadOperation: Operation {
                     UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
                 }
 
+                NSLocalPush.shared.cancelAllPendingAndDeliveredNotifications()
+
                 UBPushManager.shared.setActive(false)
                 CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
 

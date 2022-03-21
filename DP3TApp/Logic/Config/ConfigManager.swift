@@ -220,6 +220,8 @@ class ConfigManager: NSObject {
         guard let config = config else { return }
 
         if config.deactivate {
+            NSLocalPush.shared.cancelAllPendingAndDeliveredNotifications()
+
             if (window?.rootViewController as? UINavigationController)?.visibleViewController is NSDeactivatedInfoViewController {
                 // The NSDeactivatedInfoViewController is already visible
                 return

@@ -109,7 +109,7 @@ class TracingManager: NSObject {
     }
 
     func requestTracingPermission(completion: @escaping (Error?) -> Void) {
-        guard #available(iOS 12.5, *), isSupported else { return }
+        guard #available(iOS 12.5, *), isSupported, ConfigManager.allowTracing else { return }
 
         DP3TTracing.startTracing { result in
             switch result {
@@ -122,7 +122,7 @@ class TracingManager: NSObject {
     }
 
     func startTracing(callback: ((TracingEnableResult) -> Void)? = nil) {
-        guard #available(iOS 12.5, *), isSupported else { return }
+        guard #available(iOS 12.5, *), isSupported, ConfigManager.allowTracing else { return }
         if UserStorage.shared.hasCompletedOnboarding, ConfigManager.allowTracing {
             DP3TTracing.startTracing(completionHandler: { result in
                 switch result {
@@ -206,7 +206,7 @@ class TracingManager: NSObject {
     }
 
     func userHasCompletedOnboarding() {
-        guard #available(iOS 12.5, *), isSupported else { return }
+        guard #available(iOS 12.5, *), isSupported, ConfigManager.allowTracing else { return }
         if ConfigManager.allowTracing, UserStorage.shared.tracingSettingEnabled {
             DP3TTracing.startTracing { result in
                 switch result {
