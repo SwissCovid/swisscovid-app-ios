@@ -18,6 +18,7 @@ protocol UserNotificationCenter {
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
     func removeDeliveredNotifications(withIdentifiers identifiers: [String])
     func removeAllDeliveredNotifications()
+    func removeAllPendingNotificationRequests()
     func removePendingNotificationRequests(withIdentifiers identifiers: [String])
     func setNotificationCategories(_ categories: Set<UNNotificationCategory>)
 }
@@ -138,6 +139,11 @@ class NSLocalPush: NSObject, LocalPushProtocol {
             }
         }
         center.removePendingNotificationRequests(withIdentifiers: allIdentifier)
+    }
+
+    func cancelAllPendingAndDeliveredNotifications() {
+        center.removeAllDeliveredNotifications()
+        center.removeAllPendingNotificationRequests()
     }
 
     var now: Date {

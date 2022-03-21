@@ -29,6 +29,10 @@ class MockNotificationCenter: UserNotificationCenter {
         requests.removeAll()
     }
 
+    func removeAllPendingNotificationRequests() {
+        requests.removeAll()
+    }
+
     func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
         requests.removeAll { req -> Bool in
             identifiers.contains(req.identifier)

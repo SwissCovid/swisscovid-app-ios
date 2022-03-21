@@ -46,7 +46,10 @@ class NSPushHandler: UBPushHandler {
                 }
 
                 // data are updated -> reschedule background task warning triggers
-                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                // Only schedule warnings if app is not deactivated
+                if ConfigManager.currentConfig?.deactivate != true {
+                    NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                }
             }
 
             if self.backgroundTask != .invalid {

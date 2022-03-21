@@ -24,8 +24,10 @@ class DatabaseSyncer {
     private var databaseSyncInterval: TimeInterval = 10
 
     func syncDatabaseIfNeeded(completionHandler: ((UIBackgroundFetchResult) -> Void)? = nil) {
+        let deactivated = (ConfigManager.currentConfig?.deactivate ?? false)
         guard !databaseIsSyncing,
-              UserStorage.shared.hasCompletedOnboarding else {
+              UserStorage.shared.hasCompletedOnboarding,
+              !deactivated else {
             completionHandler?(.noData)
             return
         }
@@ -129,7 +131,10 @@ class DatabaseSyncer {
                     UIStateManager.shared.syncError = nil
                 }
 
-                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                // Only schedule warnings if app is not deactivated
+                if ConfigManager.currentConfig?.deactivate != true {
+                    NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                }
 
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)
