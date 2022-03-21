@@ -246,6 +246,8 @@ class NSLocalPush: NSObject, LocalPushProtocol {
 
     // This method gets called everytime we get executed in the backgrund or if the app was launched manually
     func resetBackgroundTaskWarningTriggers() {
+        // Only schedule warnings if app is not deactivated
+        guard (ConfigManager.currentConfig?.deactivate ?? false) == false else { return }
         // Adding a request with the same identifier again automatically cancels an existing request with that identifier, if present
         scheduleSyncWarningNotification(delay: timeInterval1, identifier: Identifiers.syncWarning1.rawValue)
         scheduleSyncWarningNotification(delay: timeInterval2, identifier: Identifiers.syncWarning2.rawValue)
