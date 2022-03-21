@@ -1907,3 +1907,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "Zakažite sada termin";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Informacije";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "Rad aplikacije SvissCovid je obustavljen";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "Hvala vam što ste preuzeli aplikaciju SwissCovid.\n\nKorišćenjem aplikacije SwissCovid dali ste relevantan doprinos u borbi protiv pandemije. Više od 175.000 ljudi bilo je u mogućnosti da brzo informiše druge o riziku od infekcije i tako prekine lance infekcije.\n\nUkidanjem saveznih mera obustavljen je i rad aplikacije SwissCovid. Aplikacija je sada neaktivna i trebalo bi da je deinstalirate. Ukoliko bi reaktivacija bila neophodna zbog epidemiološke situacije, ponovo se radujemo  vašoj  podršci.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "Hvala vam što ste preuzeli aplikaciju SwissCovid.\n\nKorišćenjem aplikacije SwissCovid dali ste relevantan doprinos u borbi protiv pandemije. Više od 175.000 ljudi bilo je u mogućnosti da brzo informiše druge o riziku od infekcije i tako prekine lance infekcije.\n\nUkidanjem saveznih mera obustavljen je i rad aplikacije SwissCovid. Aplikacija je sada neaktivna i trebalo bi da je deinstalirate. Ukoliko bi reaktivacija bila neophodna zbog epidemiološke situacije, ponovo se radujemo  vašoj  podršci.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Dalje informacije";

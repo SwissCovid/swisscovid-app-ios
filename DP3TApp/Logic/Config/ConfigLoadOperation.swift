@@ -33,6 +33,33 @@ class ConfigLoadOperation: Operation {
 
                     ConfigLoadOperation.presentedConfigForVersion = ConfigManager.appVersion
                 }
+            } else if let c = config, c.deactivate {
+                if Thread.isMainThread {
+                    let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+                    guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                    appDelegate.window?.rootViewController? = vc
+                } else {
+                    DispatchQueue.main.async {
+                        let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+                        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+                        appDelegate.window?.rootViewController? = vc
+                    }
+                }
+
+                TracingManager.shared.setBackgroundRefreshEnabled(false)
+
+                if TracingManager.shared.isActivated {
+                    TracingManager.shared.endTracing()
+                    UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
+                }
+
+                NSLocalPush.shared.cancelAllPendingAndDeliveredNotifications()
+
+                UBPushManager.shared.setActive(false)
+                CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
+
+                UserStorage.shared.appDeactivated = true
+
             } else {
                 self.cancel()
             }

@@ -44,7 +44,7 @@ class ConfigManager: NSObject {
     static let configBackgroundValidityInterval: TimeInterval = 60 * 60 * 6 // 6h
 
     static var allowTracing: Bool {
-        return true
+        return !(ConfigManager.currentConfig?.deactivate ?? false)
     }
 
     // MARK: - Version Numbers
@@ -80,7 +80,10 @@ class ConfigManager: NSObject {
         }
     }
 
-    static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?) -> Bool {
+    static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?, deactivate: Bool?) -> Bool {
+        if deactivate ?? false {
+            return true
+        }
         // if the config url was changed (by OS version or app version changing) load config in anycase
         if url != lastConfigUrl {
             return true
@@ -110,12 +113,14 @@ class ConfigManager: NSObject {
     }
 
     public func loadConfig(backgroundTask: Bool, completion: @escaping (ConfigResponseBody?) -> Void) {
-        let request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        var request = Endpoint.config(appversion: ConfigManager.appVersion, osversion: ConfigManager.osVersion, buildnr: ConfigManager.buildNumber).request()
+        request.cachePolicy = .reloadIgnoringLocalCacheData
 
         guard Self.shouldLoadConfig(backgroundTask: backgroundTask,
                                     url: request.url?.absoluteString,
                                     lastConfigUrl: Self.lastConfigUrl,
-                                    lastConfigLoad: Self.lastConfigLoad) else {
+                                    lastConfigLoad: Self.lastConfigLoad,
+                                    deactivate: ConfigManager.currentConfig?.deactivate) else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return
@@ -160,6 +165,7 @@ class ConfigManager: NSObject {
         loadConfig(backgroundTask: false) { config in
             // self must be strong
             if let config = config {
+                Self.presentDeactivationIfNeeded(config: config, window: window)
                 self.presentAlertIfNeeded(config: config, window: window)
             }
         }
@@ -208,6 +214,60 @@ class ConfigManager: NSObject {
                 Self.configAlert?.dismiss(animated: true, completion: nil)
                 Self.configAlert = nil
             }
+        }
+    }
+
+    public static func presentDeactivationIfNeeded(config: ConfigResponseBody?, window: UIWindow? = nil) {
+        guard let config = config else { return }
+
+        if config.deactivate {
+            NSLocalPush.shared.cancelAllPendingAndDeliveredNotifications()
+
+            if (window?.rootViewController as? UINavigationController)?.visibleViewController is NSDeactivatedInfoViewController {
+                // The NSDeactivatedInfoViewController is already visible
+                return
+            }
+
+            let vc = NSNavigationController(rootViewController: NSDeactivatedInfoViewController())
+
+            if let window = window {
+                window.rootViewController = vc
+            }
+
+            TracingManager.shared.setBackgroundRefreshEnabled(false)
+
+            if TracingManager.shared.isActivated {
+                UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
+                TracingManager.shared.endTracing()
+            }
+
+            UBPushManager.shared.setActive(false)
+            CheckInManager.shared.cleanUpOldData(maxDaysToKeep: 0)
+
+            UserStorage.shared.appDeactivated = true
+
+        } else if !config.deactivate, UserStorage.shared.appDeactivated {
+            if TracingManager.shared.isAuthorized, UserStorage.shared.tracingWasActivatedBeforeDeaktivation {
+                TracingManager.shared.startTracing()
+            }
+
+            TracingManager.shared.setBackgroundRefreshEnabled(true)
+
+            if TracingManager.shared.isSupported {
+                window?.rootViewController = (UIApplication.shared.delegate as? AppDelegate)?.navigationController
+
+                if !UserStorage.shared.hasCompletedOnboarding {
+                    let onboardingViewController = NSOnboardingViewController()
+                    onboardingViewController.modalPresentationStyle = .fullScreen
+                    window?.rootViewController?.present(onboardingViewController, animated: false)
+                }
+
+            } else {
+                window?.rootViewController = NSUnsupportedOSViewController()
+            }
+
+            UserStorage.shared.appDeactivated = false
+            UserStorage.shared.tracingWasActivatedBeforeDeaktivation = true
         }
     }
 }

@@ -45,7 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
-            NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            // Only schedule warnings if app is not deactivated
+            if ConfigManager.currentConfig?.deactivate != true {
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            }
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }
@@ -114,6 +117,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window?.makeKeyAndVisible()
 
+        guard !(ConfigManager.currentConfig?.deactivate ?? false) else { return }
+
         if UserStorage.shared.appClipCheckinUrl() != nil {
             let checkinOnboardingVC = NSCheckinOnboardingViewController()
             checkinOnboardingVC.modalPresentationStyle = .fullScreen
@@ -140,6 +145,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Nothing to do here if device is not supported
         guard TracingManager.shared.isSupported else {
+            startForceUpdateCheck()
             return
         }
 
@@ -161,6 +167,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             _ = jumpToMessageIfRequired(onlyFirst: false)
         }
+
+        ConfigManager.presentDeactivationIfNeeded(config: ConfigManager.currentConfig, window: window)
 
         startForceUpdateCheck()
 

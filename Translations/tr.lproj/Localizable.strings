@@ -1908,3 +1908,18 @@
 /*URL to ImpfCheck*/
 "vaccination_impf_check_url" = "https://covid19.impf-check.ch/";
 "vaccination_impf_check_title" = "Hemen randevu alın";
+
+/*Über Titel auf Abschaltungs-Screen*/
+"termination_header" = "Bilgilendirme";
+
+/*Titel auf Abschaltungs-Screen*/
+"termination_title" = "SwissCovid uygulaması devre dışı bırakıldı";
+
+/*Text auf Abschaltungs-Screen*/
+"termination_text" = "SwissCovid uygulamasını yüklediğiniz için çok teşekkür ederiz.\n\nSwissCovid uygulamasını kullanmakla pandemiyle mücadeleye önemli bir katkı sağlamış oldunuz. Sayıları 175’000'i geçen kişi bulaşma riski konusunda diğerlerini hızlı bir şekilde bilgilendirme imkânına sahip oldu ve dolayısıyla enfeksiyon zincirini kesintiye uğratabildi.\n\nFederal resmi makamların önlemleri kaldırmasıyla birlikte SwissCovid uygulaması da devre dışı bırakıldı. Bu uygulama şu andan itibaren aktif durumda değildir ve silinmesi gerekmektedir. Epidemiyolojik durum bunun yeniden aktif hale getirilmesini gerekli kılarsa yine destek sağlamanıza seviniriz.";
+
+/*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
+"termination_text_infobox" = "SwissCovid uygulamasını yüklediğiniz için çok teşekkür ederiz.\n\nSwissCovid uygulamasını kullanmakla pandemiyle mücadeleye önemli bir katkı sağlamış oldunuz. Sayıları 175’000'i geçen kişi bulaşma riski konusunda diğerlerini hızlı bir şekilde bilgilendirme imkânına sahip oldu ve dolayısıyla enfeksiyon zincirini kesintiye uğratabildi.\n\nFederal resmi makamların önlemleri kaldırmasıyla birlikte SwissCovid uygulaması da devre dışı bırakıldı. Uygulamanın silinmesi gerekmektedir. Epidemiyolojik durum bunun yeniden aktif hale getirilmesini gerekli kılarsa yine destek sağlamanıza seviniriz.";
+
+/*Link Text auf Abschaltungs-Screen*/
+"termination_link_title" = "Daha fazla bilgi";
