@@ -80,8 +80,8 @@ class ConfigManager: NSObject {
         }
     }
 
-    static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?) -> Bool {
-        if ConfigManager.currentConfig?.deactivate ?? false {
+    static func shouldLoadConfig(backgroundTask: Bool, url: String?, lastConfigUrl: String?, lastConfigLoad: Date?, deactivate: Bool?) -> Bool {
+        if deactivate ?? false {
             return true
         }
         // if the config url was changed (by OS version or app version changing) load config in anycase
@@ -119,7 +119,8 @@ class ConfigManager: NSObject {
         guard Self.shouldLoadConfig(backgroundTask: backgroundTask,
                                     url: request.url?.absoluteString,
                                     lastConfigUrl: Self.lastConfigUrl,
-                                    lastConfigLoad: Self.lastConfigLoad) else {
+                                    lastConfigLoad: Self.lastConfigLoad,
+                                    deactivate: ConfigManager.currentConfig?.deactivate) else {
             Logger.log("Skipping config load request and returning from cache", appState: true)
             completion(Self.currentConfig)
             return

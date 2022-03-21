@@ -14,29 +14,34 @@ import XCTest
 class ConfigManagerTests: XCTestCase {
     func testLoadingAfterTimeForeground() {
         let lastLoad = Date(timeIntervalSinceNow: -ConfigManager.configForegroundValidityInterval)
-        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: false, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad))
+        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: false, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad, deactivate: false))
     }
 
     func testDontLoadAfterTimeForeground() {
         let lastLoad = Date(timeIntervalSinceNow: -ConfigManager.configForegroundValidityInterval + 1)
-        XCTAssertFalse(ConfigManager.shouldLoadConfig(backgroundTask: false, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad))
+        XCTAssertFalse(ConfigManager.shouldLoadConfig(backgroundTask: false, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad, deactivate: false))
     }
 
     func testLoadingAfterTimeBackground() {
         let lastLoad = Date(timeIntervalSinceNow: -ConfigManager.configBackgroundValidityInterval)
-        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad))
+        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad, deactivate: false))
     }
 
     func testDontLoadAfterTimeBackground() {
         let lastLoad = Date(timeIntervalSinceNow: -ConfigManager.configBackgroundValidityInterval + 1)
-        XCTAssertFalse(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad))
+        XCTAssertFalse(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad, deactivate: false))
     }
 
     func testLoadConfigAfterUrlChange() {
-        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "newUrl", lastConfigUrl: "url", lastConfigLoad: .init()))
+        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "newUrl", lastConfigUrl: "url", lastConfigLoad: .init(), deactivate: false))
     }
 
     func testLoadConfigAfterUpdate() {
-        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "newUrl", lastConfigUrl: nil, lastConfigLoad: .init()))
+        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "newUrl", lastConfigUrl: nil, lastConfigLoad: .init(), deactivate: false))
+    }
+
+    func testAlwaysLoadConfigAfterDeactivate() {
+        let lastLoad = Date(timeIntervalSinceNow: -ConfigManager.configBackgroundValidityInterval + 1)
+        XCTAssert(ConfigManager.shouldLoadConfig(backgroundTask: true, url: "url", lastConfigUrl: "url", lastConfigLoad: lastLoad, deactivate: true))
     }
 }
