@@ -131,7 +131,10 @@ class DatabaseSyncer {
                     UIStateManager.shared.syncError = nil
                 }
 
-                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                // Only schedule warnings if app is not deactivated
+                if ConfigManager.currentConfig?.deactivate != true {
+                    NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                }
 
                 // reload status, user could have been exposed
                 TracingManager.shared.updateStatus(completion: nil)

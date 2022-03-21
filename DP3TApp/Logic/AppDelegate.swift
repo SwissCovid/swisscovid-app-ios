@@ -45,7 +45,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // defer window initialization if app was launched in
         // background because of location change
         if shouldSetupWindow(application: application, launchOptions: launchOptions) {
-            NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            // Only schedule warnings if app is not deactivated
+            if ConfigManager.currentConfig?.deactivate != true {
+                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+            }
             setupWindow()
             willAppearAfterColdstart(application, coldStart: true, backgroundTime: 0)
         }

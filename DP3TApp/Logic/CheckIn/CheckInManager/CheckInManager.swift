@@ -78,7 +78,10 @@ class CheckInManager {
             switch result {
             case let .success(id):
                 hasCheckedOutOnce = true
-                NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                // Only schedule warnings if app is not deactivated
+                if ConfigManager.currentConfig?.deactivate != true {
+                    NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                }
                 cc.identifier = id
                 saveAdditionalInfo(checkIn: cc)
             case .failure:
@@ -122,7 +125,10 @@ class CheckInManager {
                     switch result {
                     case let .success(id):
                         hasCheckedOutOnce = true
-                        NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                        // Only schedule warnings if app is not deactivated
+                        if ConfigManager.currentConfig?.deactivate != true {
+                            NSLocalPush.shared.resetBackgroundTaskWarningTriggers()
+                        }
                         var intervalCheckIn = CheckIn(identifier: id, qrCode: checkIn.qrCode, checkInTime: arrivalTime, venue: checkIn.venue)
                         intervalCheckIn.checkOutTime = departureTime
                         saveAdditionalInfo(checkIn: intervalCheckIn)
