@@ -260,8 +260,6 @@
 "tracing_ended_text" = "Es werden keine Begegnungen gespeichert";
 "exposed_info_contact_hotline" = "Kontaktieren Sie die";
 "meldung_homescreen_positive_info_line1" = "Befolgen Sie die";
-
-/*CFL: Selbst-Isolation*/
 "meldung_homescreen_positive_info_line2" = "Anweisungen zur Isolation";
 
 /*Meldung Detail Exposed Neue Meldung*/
@@ -301,7 +299,6 @@
 /*Meldungen Detail Weisse Box Erklärungstext 1*/
 "meldungen_detail_explanation_text1" = "Sie könnten ansteckend sein, ohne es zu merken.";
 
-/*CFL: Hier hats die Latest Version deutsch mit "10 Tage ab Anstechung" nicht mehr reingeschafft. Schauen wir, wenn Übersetzungen da sind.*/
 /*Meldungen Detail: Weisse Box Erklärtext 2*/
 "meldungen_detail_explanation_text2" = "Bitte schützen Sie Ihre Familie, Ihre Freunde und Ihr Umfeld. Vermeiden Sie Kontakte bis 10 Tage nach einer möglichen Ansteckung.";
 
@@ -314,7 +311,6 @@
 /*Meldungen Detail: Weisse Box Anruf Zeitpunkt*/
 "meldungen_detail_call_last_call" = "Letzter Anruf: {DATE}";
 
-/*CFL: Platzhalter-Text Onboarding – ev. später obsolet*/
 /*Subtitel im Onboarding erste Seite*/
 "app_subtitle" = "Untertitel";
 
@@ -378,19 +374,15 @@
 /*Onboarding: Untetitel unten*/
 "onboarding_good_to_know" = "Gut zu wissen";
 
-/*OBSOLETE?*/
 /*Onboarding Bluetooth: Titel unten*/
 "onboarding_bluetooth_gtk_title1" = "Sie bleiben anonym";
 
-/*OBSOLETE?*/
 /*Onboarding Bluetooth: Text unten*/
 "onboarding_bluetooth_gtk_text1" = "Über Bluetooth werden keine persönlichen Daten sichtbar.";
 
-/*OBSOLETE?*/
 /*Onboarding Bluetooth: Titel unten*/
 "onboarding_bluetooth_gtk_title2" = "Leicht erhöhte Batterienutzung";
 
-/*OBSOLETE?*/
 /*Onboarding Bluetooth: Text unten*/
 "onboarding_bluetooth_gtk_text2" = "Die App ist so energiesparend wie möglich umgesetzt. Die Batterienutzung erhöht sich nur leicht.";
 
@@ -2001,10 +1993,11 @@
 "termination_title" = "Der Betrieb der SwissCovid App wurde eingestellt";
 
 /*Text auf Abschaltungs-Screen*/
-"termination_text" = "Vielen Dank, dass Sie die SwissCovid App heruntergeladen haben.\n\nMit der Verwendung der SwissCovid App haben Sie einen relevanten Beitrag zur Pandemiebekämpfung geleistet. Über 175’000 Personen konnten andere schnell über ein Ansteckungsrisiko informieren und somit Infektionsketten unterbrechen.\n\nMit der Aufhebung der Massnahmen des Bundes wurde auch der Betrieb der SwissCovid App eingestellt. Die App ist per sofort inaktiv und soll deinstalliert werden. Sollte eine Reaktivierung aufgrund der epidemiologischen Situation nötig sein, würden wir uns wieder über Ihre Unterstützung freuen.";
+"termination_text" = "Vielen Dank, dass Sie die SwissCovid App heruntergeladen haben.\n\nMit der Verwendung der SwissCovid App haben Sie einen relevanten Beitrag zur Pandemiebekämpfung geleistet. Über 200’000 Personen konnten andere schnell über ein Ansteckungsrisiko informieren und somit Infektionsketten unterbrechen.\n\nMit der Aufhebung der Massnahmen des Bundes wurde auch der Betrieb der SwissCovid App eingestellt. Die App ist per sofort inaktiv und soll deinstalliert werden. Sollte eine Reaktivierung aufgrund der epidemiologischen Situation nötig sein, würden wir uns wieder über Ihre Unterstützung freuen.";
 
 /*Gleicher Text wie auf Abschaltungs-Screen für Nutzer, die die App nicht auf die aktuellste Version aktualisiert haben, mit dem Unterschied, dass hier die App nicht per sofort komplett inaktiv ist*/
-"termination_text_infobox" = "Vielen Dank, dass Sie die SwissCovid App heruntergeladen haben.\n\nMit der Verwendung der SwissCovid App haben Sie einen relevanten Beitrag zur Pandemiebekämpfung geleistet. Über 175’000 Personen konnten andere schnell über ein Ansteckungsrisiko informieren und somit Infektionsketten unterbrechen.\n\nMit der Aufhebung der Massnahmen des Bundes wurde auch der Betrieb der SwissCovid App eingestellt. Die App ist per sofort inaktiv und soll deinstalliert werden. Sollte eine Reaktivierung aufgrund der epidemiologischen Situation nötig sein, würden wir uns wieder über Ihre Unterstützung freuen.";
+"termination_text_infobox" = "Vielen Dank, dass Sie die SwissCovid App heruntergeladen haben.\n\nMit der Verwendung der SwissCovid App haben Sie einen relevanten Beitrag zur Pandemiebekämpfung geleistet. Über 200’000 Personen konnten andere schnell über ein Ansteckungsrisiko informieren und somit Infektionsketten unterbrechen.\n\nMit der Aufhebung der Massnahmen des Bundes wurde auch der Betrieb der SwissCovid App eingestellt. Die App soll deinstalliert werden. Sollte eine Reaktivierung aufgrund der epidemiologischen Situation nötig sein, würden wir uns wieder über Ihre Unterstützung freuen.";
 
 /*Link Text auf Abschaltungs-Screen*/
 "termination_link_title" = "Weitere Informationen";
+"termination_url" = "https://www.bag.admin.ch/bag/de/home/krankheiten/ausbrueche-epidemien-pandemien/aktuelle-ausbrueche-epidemien/novel-cov/swisscovid-app-und-contact-tracing.html";
